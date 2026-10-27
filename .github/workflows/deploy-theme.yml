@@ -2,6 +2,12 @@ name: Deploy WordPress theme
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'wp-content/themes/mrseo-tech/**'
+      - '.github/workflows/deploy-theme.yml'
 
 permissions:
   contents: read
