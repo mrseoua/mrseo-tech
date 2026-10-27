@@ -1,0 +1,1 @@
+</main><footer class="footer"><div class="container"><span>© <?php echo esc_html(date('Y')); ?> MrSeo.tech</span><span>SEO · Google Ads · Web Analytics</span><a href="<?php echo esc_url(home_url('/')); ?>">Наверх ↑</a></div></footer><?php wp_footer(); ?></body></html>
