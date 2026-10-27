@@ -1,5 +1,6 @@
 <?php
 if (!defined('ABSPATH')) exit;
+require_once get_template_directory() . '/inc/site-pages.php';
 function mrseo_setup() {
  add_theme_support('title-tag');
  add_theme_support('post-thumbnails');
@@ -8,8 +9,8 @@ function mrseo_setup() {
 }
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'0.6.0');
- wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'0.6.0',true);
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'0.7.0');
+ wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'0.7.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
