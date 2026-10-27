@@ -1,1 +1,6 @@
-<?php get_header(); ?><div class="container page-content"><?php while(have_posts()):the_post(); ?><article><h1><?php the_title(); ?></h1><?php the_content(); ?></article><?php endwhile; ?></div><?php get_footer(); ?>
+<?php get_header(); ?>
+<?php while (have_posts()): the_post(); ?>
+<section class="inner-hero"><div class="container"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url(home_url('/')); ?>">Главная</a><span>/</span><span><?php the_title(); ?></span></nav><div class="eyebrow">MRSEO / SERVICES</div><h1><?php the_title(); ?></h1><p>Техническая экспертиза, измеримые процессы и решения на основе данных.</p></div></section>
+<section class="inner-body"><div class="container inner-grid"><article class="inner-copy"><?php the_content(); ?></article><aside class="inner-aside"><span class="eyebrow">РАБОТА С ПРОЕКТАМИ</span><h2>Есть конкретная задача?</h2><p>Начнём с исходных данных и оценки приоритетов. Никаких неподтверждённых обещаний.</p><a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn">Обсудить проект ↗</a></aside></div></section>
+<section class="inner-links"><div class="container"><h2>Другие направления</h2><div class="inner-link-grid"><a href="<?php echo esc_url(home_url('/seo/')); ?>">SEO ↗</a><a href="<?php echo esc_url(home_url('/google-ads/')); ?>">Google Ads ↗</a><a href="<?php echo esc_url(home_url('/analytics/')); ?>">Аналитика ↗</a></div></div></section>
+<?php endwhile; get_footer(); ?>
