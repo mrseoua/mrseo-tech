@@ -1,0 +1,56 @@
+name: Deploy WordPress theme
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mrseo-theme-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Validate theme files
+        run: |
+          test -f wp-content/themes/mrseo-tech/style.css
+          test -f wp-content/themes/mrseo-tech/functions.php
+          test -f wp-content/themes/mrseo-tech/front-page.php
+          find wp-content/themes/mrseo-tech -name '*.php' -print0 | xargs -0 -n 1 php -l
+
+      - name: Configure SSH
+        env:
+          DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy theme files only
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -euo pipefail
+          REMOTE_THEME="/home/fv630979/mrseo.tech/www/wp-content/themes/mrseo-tech"
+          SSH_ARGS="-i $HOME/.ssh/deploy_key -p $SSH_PORT -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+          ssh $SSH_ARGS "$SSH_USER@$SSH_HOST" "mkdir -p '$REMOTE_THEME'"
+          rsync -az --checksum \
+            -e "ssh $SSH_ARGS" \
+            wp-content/themes/mrseo-tech/ \
+            "$SSH_USER@$SSH_HOST:$REMOTE_THEME/"
+          echo "Theme files transferred; WordPress core, wp-config.php, plugins and DB unchanged."
