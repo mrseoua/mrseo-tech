@@ -17,3 +17,24 @@ function mrseo_meta_description(){
  if(is_front_page()) echo '<meta name="description" content="MrSeo.tech — SEO и Google Ads: технический аудит, стратегия роста органического трафика и результативная реклама для бизнеса.">' . "\n";
 }
 add_action('wp_head','mrseo_meta_description',1);
+
+/** Simple contact form handler; mail delivery depends on server configuration. */
+function mrseo_handle_contact() {
+ $redirect=home_url('/contact/');
+ if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {wp_safe_redirect(add_query_arg('message_status','invalid',$redirect));exit;}
+ if(!empty($_POST['contact_company_extra'])) {wp_safe_redirect($redirect);exit;}
+ $name=mb_substr(sanitize_text_field(wp_unslash($_POST['contact_name']??'')),0,90);
+ $email=sanitize_email(wp_unslash($_POST['contact_email']??''));
+ $site=esc_url_raw(wp_unslash($_POST['contact_site']??''));
+ $message=mb_substr(sanitize_textarea_field(wp_unslash($_POST['contact_message']??'')),0,3000);
+ if(!$name || !is_email($email) || mb_strlen($message)<10){wp_safe_redirect(add_query_arg('message_status','invalid',$redirect));exit;}
+ $ip=isset($_SERVER['REMOTE_ADDR'])?sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])):'';
+ $rate_key='mrseo_form_'.md5($ip);
+ if(get_transient($rate_key)){wp_safe_redirect(add_query_arg('message_status','error',$redirect));exit;}
+ set_transient($rate_key,1,90);
+ $body="Имя: $name\nEmail: $email\nСайт: $site\n\n$message";
+ $ok=wp_mail(get_option('admin_email'),'Заявка MrSeo.tech',$body,array('Reply-To: '.$email));
+ wp_safe_redirect(add_query_arg('message_status',$ok?'sent':'error',$redirect));exit;
+}
+add_action('admin_post_nopriv_mrseo_contact','mrseo_handle_contact');
+add_action('admin_post_mrseo_contact','mrseo_handle_contact');
