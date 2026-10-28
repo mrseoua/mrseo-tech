@@ -10,8 +10,8 @@ function mrseo_setup() {
 }
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'1.2.0');
- wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'1.2.0',true);
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'1.3.0');
+ wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'1.3.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
