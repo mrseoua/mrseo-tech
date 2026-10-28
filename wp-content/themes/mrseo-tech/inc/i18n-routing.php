@@ -8,6 +8,7 @@ function mrseo_t($uk,$ru,$en){$l=mrseo_locale();return $l==='uk'?$uk:($l==='ru'?
 function mrseo_translation($slug){$all=mrseo_translation_drafts();$l=mrseo_locale();return $all[$l][$slug]??array('','','',array());}
 function mrseo_is_case(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');return (bool)preg_match('~^(?:ru/|en/)?portfolio/[a-z0-9-]+/?$~',$p);}
 function mrseo_case_id(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$p);return sanitize_title(end($a));}
+function mrseo_virtual_page(){return mrseo_slug()==='portfolio' || mrseo_locale()!=='uk';}
 function mrseo_router($template){$slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$allowed,true))return $template;
 if($slug==='')return get_template_directory().'/front-localized.php';
 if($slug==='portfolio' && mrseo_is_case())return get_template_directory().'/case-localized.php';
