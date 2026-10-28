@@ -13,6 +13,7 @@ function mrseo_router($template){$slug=mrseo_slug();$allowed=array('','seo','seo
 if($slug==='')return get_template_directory().'/front-localized.php';
 if($slug==='portfolio' && mrseo_is_case())return get_template_directory().'/portfolio-localized.php';
 if($slug==='portfolio')return get_template_directory().'/portfolio-localized.php';
+if($slug==='ecommerce-seo')return get_template_directory().'/ecommerce-landing.php';
 if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
 add_filter('template_include','mrseo_router',99);
