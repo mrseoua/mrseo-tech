@@ -15,7 +15,14 @@ function mrseo_assets(){
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
- if(is_front_page()) echo '<meta name="description" content="MrSeo.tech — SEO и Google Ads: технический аудит, стратегия роста органического трафика и результативная реклама для бизнеса.">' . "\n";
+ $slug=mrseo_slug();
+ if(!in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact'),true))return;
+ if($slug===''){
+  $desc=mrseo_t('MrSeo.tech — SEO, реклама Google та аналітика для розвитку бізнесу. Зрозумілі рішення й прозорий підхід.','MrSeo.tech — SEO, реклама Google и аналитика для развития бизнеса. Понятные решения и прозрачный подход.','MrSeo.tech — SEO, Google Ads and actionable marketing analytics for growing businesses.');
+ }else{
+  $d=mrseo_translation($slug);$desc=$d[2];
+ }
+ echo '<meta name="description" content="'.esc_attr($desc).'">'."\n";
 }
 add_action('wp_head','mrseo_meta_description',1);
 
