@@ -10,15 +10,15 @@ function mrseo_setup() {
 }
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.1.0');
- wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.1.0',true);
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.2.0');
+ wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.2.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
  if(!mrseo_valid_route())return;
  $slug=mrseo_slug();
- if(!in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return;
- if($slug==='portfolio'){ $desc=mrseo_t('Портфоліо MrSeo.tech — 148 проєктів у різних нішах.','Портфолио MrSeo.tech — 148 проектов в разных нишах.','MrSeo.tech portfolio — 148 projects across different industries.'); }elseif($slug===''){
+ if(!in_array($slug,array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','google-ads','performance-max','analytics','about','contact','portfolio'),true))return;
+ if($slug==='horoshop'){$desc=mrseo_t('Створення, налаштування та SEO-просування магазинів на Хорошоп: категорії, фільтри, товари, індексація і Google Ads.','Создание, настройка и SEO-продвижение магазинов на Хорошоп: категории, фильтры, товары и Google Ads.','Horoshop store development and SEO: catalog architecture, indexing, product data and Google Ads.');}elseif($slug==='service-websites'){$desc=mrseo_t('Створення і SEO-просування сайтів послуг для отримання заявок: структура, комерційні сторінки, локальний пошук та аналітика.','Создание и SEO-продвижение сайтов услуг для заявок: структура, коммерческие страницы, локальный поиск и аналитика.','Service website development and SEO for lead generation, service landing pages and local search.');}elseif($slug==='portfolio'){ $desc=mrseo_t('Портфоліо MrSeo.tech — 148 проєктів у різних нішах.','Портфолио MrSeo.tech — 148 проектов в разных нишах.','MrSeo.tech portfolio — 148 projects across different industries.'); }elseif($slug===''){
   $desc=mrseo_t('MrSeo.tech — SEO, реклама Google та аналітика для розвитку бізнесу. Зрозумілі рішення й прозорий підхід.','MrSeo.tech — SEO, реклама Google и аналитика для развития бизнеса. Понятные решения и прозрачный подход.','MrSeo.tech — SEO, Google Ads and actionable marketing analytics for growing businesses.');
  }else{
   $d=mrseo_translation($slug);$desc=$d[2];
