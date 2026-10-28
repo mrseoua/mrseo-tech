@@ -17,3 +17,5 @@
 
 /* Muted videos only play when visible; never replace native pointer. */
 (()=>{const clips=[...document.querySelectorAll('[data-motion-video]')];if(!clips.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{const video=e.target;if(e.isIntersecting){video.play().catch(()=>{})}else video.pause()})},{rootMargin:'90px 0px',threshold:.15});clips.forEach(v=>observer.observe(v));document.addEventListener('visibilitychange',()=>{if(document.hidden)clips.forEach(v=>v.pause())})})();
+
+(()=>{const buttons=[...document.querySelectorAll('[data-portfolio-filter]')];if(!buttons.length)return;const cards=[...document.querySelectorAll('[data-portfolio-cat]')];buttons.forEach(b=>b.addEventListener('click',()=>{const selected=b.dataset.portfolioFilter;buttons.forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});cards.forEach(card=>card.hidden=selected!=='all'&&card.dataset.portfolioCat!==selected)}))})();
