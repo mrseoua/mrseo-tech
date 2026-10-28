@@ -11,7 +11,7 @@ function mrseo_case_id(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_
 function mrseo_virtual_page(){return mrseo_slug()==='portfolio' || mrseo_locale()!=='uk';}
 function mrseo_router($template){$slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$allowed,true))return $template;
 if($slug==='')return get_template_directory().'/front-localized.php';
-if($slug==='portfolio' && mrseo_is_case()){status_header(404);return get_template_directory().'/404.php';}
+if($slug==='portfolio' && mrseo_is_case())return get_template_directory().'/portfolio-localized.php';
 if($slug==='portfolio')return get_template_directory().'/portfolio-localized.php';
 if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
@@ -28,3 +28,5 @@ add_filter('query_vars',function($vars){return array_merge($vars,array('mrseo_la
 add_filter('redirect_canonical',function($url){return (mrseo_is_case()||mrseo_locale()!=='uk'||mrseo_slug()==='portfolio')?false:$url;});
 add_filter('pre_handle_404',function($pre){$s=mrseo_slug();if(mrseo_is_case())return $pre;if(mrseo_locale()!=='uk'&&in_array($s,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return true;if($s==='portfolio')return true;return $pre;});
 add_action('init',function(){if(get_option('mrseo_i18n_rules_v4')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v4','ready',false);}},30);
+
+add_action('template_redirect',function(){if(mrseo_is_case()){wp_safe_redirect(mrseo_url('portfolio'),301);exit;}},1);
