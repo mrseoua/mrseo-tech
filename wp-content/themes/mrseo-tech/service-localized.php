@@ -1,11 +1,15 @@
 <?php if(!defined('ABSPATH'))exit;$slug=mrseo_slug();$d=mrseo_translation($slug);get_header();?>
 <section class="sp-hero sp-hero-cinematic"><div class="container sp-hero-layout"><div class="sp-hero-copy"><nav class="breadcrumbs"><a href="<?php echo esc_url(mrseo_url()); ?>"><?php echo esc_html(mrseo_t('Головна','Главная','Home')); ?></a><span>/</span><span><?php echo esc_html($d[0]); ?></span></nav><div class="eyebrow"><?php echo esc_html(mrseo_t('ПОСЛУГИ ТА РІШЕННЯ','УСЛУГИ И РЕШЕНИЯ','SERVICES & SOLUTIONS')); ?></div><h1><?php echo esc_html($d[1]); ?></h1><p><?php echo esc_html($d[2]); ?></p><a class="btn" href="<?php echo esc_url(mrseo_url('contact')); ?>"><?php echo esc_html(mrseo_t('Обговорити проєкт ↗','Обсудить проект ↗','Discuss your project ↗')); ?></a></div><div class="inner-cinema inner-cinema-<?php echo esc_attr($slug);?>" aria-hidden="true"><div class="inner-cinema-top"><span><?php echo esc_html(mrseo_t('ВІЗУАЛІЗАЦІЯ ПІДХОДУ','ВИЗУАЛИЗАЦИЯ ПОДХОДА','OUR APPROACH IN MOTION'));?></span><span>↗</span></div><div class="inner-cinema-art">
-<?php if($slug==='seo'||$slug==='seo-audit'): ?>
+<?php if($slug==='seo'): ?>
 <div class="unique-search"><div class="unique-search-bar"><i></i><i></i><i></i></div><div class="unique-search-row"><span></span><b></b><em></em></div><div class="unique-search-row"><span></span><b></b><em></em></div><div class="unique-search-row"><span></span><b></b><em></em></div><div class="unique-search-cursor">↗</div></div>
+<?php elseif($slug==='seo-audit'): ?>
+<div class="audit-scene"><div class="audit-top"><span>URL</span><span>200</span><span>301</span><span>404</span></div><div class="audit-list"><?php for($i=0;$i<5;$i++):?><div class="audit-row"><i></i><b></b><em class="<?php echo $i===2?'warning':'good';?>"></em></div><?php endfor;?></div><div class="audit-scanner"></div><div class="audit-mark">✓</div></div>
 <?php elseif($slug==='ecommerce-seo'): ?>
 <div class="unique-catalog"><?php for($i=0;$i<9;$i++):?><div class="unique-product"><i></i><span></span><b></b></div><?php endfor;?></div><div class="unique-catalog-glow"></div>
-<?php elseif($slug==='google-ads'||$slug==='performance-max'): ?>
+<?php elseif($slug==='google-ads'): ?>
 <div class="unique-ads"><?php for($i=0;$i<11;$i++):?><i style="--i:<?php echo esc_attr($i);?>"></i><?php endfor;?></div><div class="unique-ads-pulse"></div><div class="unique-ads-line"></div>
+<?php elseif($slug==='performance-max'): ?>
+<div class="pmax-scene"><div class="pmax-hub">PMax</div><?php for($i=0;$i<6;$i++):?><div class="pmax-node node-<?php echo $i;?>"><i></i><b></b></div><?php endfor;?><div class="pmax-halo"></div></div>
 <?php elseif($slug==='analytics'): ?>
 <div class="unique-analytics"><svg viewBox="0 0 480 300" preserveAspectRatio="none"><path class="analytics-grid" d="M0 70H480 M0 140H480 M0 210H480 M100 0V300 M220 0V300 M340 0V300"/><path class="analytics-path a" d="M0 235 C70 210 102 247 155 175 S250 200 310 108 S420 130 480 42"/><path class="analytics-path b" d="M0 265 C95 240 120 202 205 220 S330 160 395 182 S450 140 480 105"/></svg><div class="unique-data-marker">+</div></div>
 <?php else: ?>
