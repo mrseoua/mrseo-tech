@@ -14,7 +14,7 @@ if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';
 }
 add_filter('template_include','mrseo_router',99);
-add_filter('pre_get_document_title',function($title){if(mrseo_locale()==='uk')return $title;$slug=mrseo_slug();if(!$slug)return mrseo_t('MrSeo.tech','MrSeo.tech','MrSeo.tech');$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
+add_filter('pre_get_document_title',function($title){$slug=mrseo_slug();if(!$slug)return mrseo_t('MrSeo.tech','MrSeo.tech','MrSeo.tech');$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
 add_filter('language_attributes',function($attr){return preg_replace('/lang="[^"]*"/','lang="'.esc_attr(mrseo_locale()).'"',$attr);});
 add_action('wp_head',function(){ $slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact');if(!in_array($slug,$allowed,true))return;foreach(array('uk','ru','en') as $lang){echo '<link rel="alternate" hreflang="'.esc_attr($lang).'" href="'.esc_url(mrseo_url($slug,$lang)).'">'."\n";}echo '<link rel="alternate" hreflang="x-default" href="'.esc_url(mrseo_url($slug,'uk')).'">'."\n";echo '<link rel="canonical" href="'.esc_url(mrseo_url($slug)).'">'."\n";},2);
 add_action('init',function(){add_rewrite_rule('^(ru|en)/?$','index.php?mrseo_lang=$matches[1]','top');add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|google-ads|performance-max|analytics|about|contact)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');});
