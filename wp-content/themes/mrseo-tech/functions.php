@@ -16,11 +16,17 @@ function mrseo_assets(){
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
  $slug=mrseo_slug();
- if(!in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact'),true))return;
+ if(!in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return;
  if($slug==='portfolio'){ $desc=mrseo_t('Портфоліо MrSeo.tech — 148 проєктів у різних нішах.','Портфолио MrSeo.tech — 148 проектов в разных нишах.','MrSeo.tech portfolio — 148 projects across different industries.'); }elseif($slug===''){
   $desc=mrseo_t('MrSeo.tech — SEO, реклама Google та аналітика для розвитку бізнесу. Зрозумілі рішення й прозорий підхід.','MrSeo.tech — SEO, реклама Google и аналитика для развития бизнеса. Понятные решения и прозрачный подход.','MrSeo.tech — SEO, Google Ads and actionable marketing analytics for growing businesses.');
  }else{
   $d=mrseo_translation($slug);$desc=$d[2];
+  if(in_array($slug,array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about'),true)){
+   require_once get_template_directory().'/inc/service-editorial.php';
+   $editorial=mrseo_service_editorial();
+   $lang=mrseo_locale();
+   if(isset($editorial[$slug][$lang][1]))$desc=wp_trim_words($editorial[$slug][$lang][1],27,'…');
+  }
  }
  echo '<meta name="description" content="'.esc_attr($desc).'">'."\n";
 }
