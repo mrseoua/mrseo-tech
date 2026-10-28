@@ -1,6 +1,7 @@
 <?php
 if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/inc/site-pages.php';
+require_once get_template_directory() . '/inc/i18n-routing.php';
 function mrseo_setup() {
  add_theme_support('title-tag');
  add_theme_support('post-thumbnails');
@@ -9,8 +10,8 @@ function mrseo_setup() {
 }
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'0.9.1');
- wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'0.9.1',true);
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'1.0.0');
+ wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'1.0.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
@@ -20,7 +21,8 @@ add_action('wp_head','mrseo_meta_description',1);
 
 /** Simple contact form handler; mail delivery depends on server configuration. */
 function mrseo_handle_contact() {
- $redirect=home_url('/contact/');
+ $post_lang=sanitize_key(wp_unslash($_POST['mrseo_lang']??'uk'));
+ $redirect=mrseo_url('contact',in_array($post_lang,array('uk','ru','en'),true)?$post_lang:'uk');
  if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {wp_safe_redirect(add_query_arg('message_status','invalid',$redirect));exit;}
  if(!empty($_POST['contact_company_extra'])) {wp_safe_redirect($redirect);exit;}
  $name=mb_substr(sanitize_text_field(wp_unslash($_POST['contact_name']??'')),0,90);
