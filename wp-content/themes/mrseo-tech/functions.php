@@ -15,6 +15,7 @@ function mrseo_assets(){
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
+ if(!mrseo_valid_route())return;
  $slug=mrseo_slug();
  if(!in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return;
  if($slug==='portfolio'){ $desc=mrseo_t('Портфоліо MrSeo.tech — 148 проєктів у різних нішах.','Портфолио MrSeo.tech — 148 проектов в разных нишах.','MrSeo.tech portfolio — 148 projects across different industries.'); }elseif($slug===''){
