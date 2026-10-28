@@ -10,24 +10,25 @@ function mrseo_is_case(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_
 function mrseo_case_id(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$p);return sanitize_title(end($a));}
 function mrseo_valid_route(){
  $path=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');
- return (bool)preg_match('~^(?:(?:ru|en)(?:/|$))?(?:seo|seo-audit|ecommerce-seo|google-ads|performance-max|analytics|about|contact|portfolio)?/?$~D',$path);
+ return (bool)preg_match('~^(?:(?:ru|en)(?:/|$))?(?:seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio)?/?$~D',$path);
 }
 function mrseo_virtual_page(){return mrseo_slug()==='portfolio' || mrseo_locale()!=='uk';}
-function mrseo_router($template){if(!mrseo_valid_route())return $template;$slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$allowed,true))return $template;
+function mrseo_router($template){if(!mrseo_valid_route())return $template;$slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$allowed,true))return $template;
 if($slug==='')return get_template_directory().'/front-localized.php';
 if($slug==='portfolio' && mrseo_is_case())return get_template_directory().'/portfolio-localized.php';
 if($slug==='portfolio')return get_template_directory().'/portfolio-localized.php';
+if(in_array($slug,array('service-websites','horoshop'),true))return get_template_directory().'/specialized-landing.php';
 if($slug==='ecommerce-seo')return get_template_directory().'/ecommerce-landing.php';
 if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
 add_filter('template_include','mrseo_router',99);
-add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;$slug=mrseo_slug();if(!$slug)return 'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
+add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;$slug=mrseo_slug();if(!$slug)return 'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';if($slug==='horoshop')return mrseo_t('Сайти на Хорошоп','Сайты на Хорошоп','Horoshop Websites').' | MrSeo.tech';if($slug==='service-websites')return mrseo_t('Створення та просування сайтів послуг','Создание и продвижение сайтов услуг','Service Website SEO & Development').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
 add_action('wp_head',function(){if(!mrseo_valid_route())return;$slug=mrseo_slug();$valid=array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$valid,true)||mrseo_is_case())return;$path=$slug;foreach(array('uk','ru','en') as $l)echo '<link rel="alternate" hreflang="'.esc_attr($l).'" href="'.esc_url(mrseo_url($path,$l)).'">'."\n";echo '<link rel="alternate" hreflang="x-default" href="'.esc_url(mrseo_url($path,'uk')).'">'."\n";echo '<link rel="canonical" href="'.esc_url(mrseo_url($path)).'">'."\n";},2);
 add_action('init',function(){
 add_rewrite_rule('^portfolio/([^/]+)/?$','index.php?mrseo_service=portfolio&mrseo_case=$matches[1]','top');
 add_rewrite_rule('^(ru|en)/portfolio/([^/]+)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=portfolio&mrseo_case=$matches[2]','top');
 add_rewrite_rule('^(ru|en)/?$','index.php?mrseo_lang=$matches[1]','top');
-add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|google-ads|performance-max|analytics|about|contact|portfolio)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
+add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
 },10);
 add_filter('query_vars',function($vars){return array_merge($vars,array('mrseo_lang','mrseo_service','mrseo_case'));});
 add_filter('redirect_canonical',function($url){return (mrseo_is_case()||mrseo_locale()!=='uk'||mrseo_slug()==='portfolio')?false:$url;});
