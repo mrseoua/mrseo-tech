@@ -23,3 +23,5 @@ add_filter('redirect_canonical',function($url){return mrseo_locale()==='uk'?$url
 add_action('after_switch_theme',function(){flush_rewrite_rules();});
 
 add_filter('pre_handle_404',function($pre){return mrseo_locale()!=='uk' && in_array(mrseo_slug(),array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact'),true)?true:$pre;},10);
+
+add_action('init',function(){if(get_option('mrseo_i18n_rules_v1')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v1','ready',false);}},30);
