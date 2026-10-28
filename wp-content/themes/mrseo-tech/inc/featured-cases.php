@@ -25,3 +25,16 @@ function mrseo_case_localized($id,$data){$lang=mrseo_locale();if($lang==='uk')re
 'powerlux'=>array('ru'=>array('Электротовары и оборудование','Широкий ассортимент и разные сценарии выбора','Категории, параметры товаров и сегментация спроса','Понятные точки входа в каталог'),'en'=>array('Electrical products and equipment','Broad technical assortment and varied use cases','Category structure and specification-led product discovery','Relevant entry points for different needs')),
 'urolog'=>array('ru'=>array('Медицинские услуги','Локальный спрос, доверие пациентов и точность информации','Страницы услуг, локальный поиск и качество медицинской информации','Понятная структура медицинских услуг'),'en'=>array('Medical services','Local intent, patient trust and accuracy of information','Service pages, local visibility and content quality','Clearer information paths for prospective patients')),
 );if(!isset($v[$id][$lang]))return $data;$x=$v[$id][$lang];$data['industry']=$x[0];$data['challenge']=$x[1];$data['method']=$x[2];$data['outcome']=$x[3];return $data;}
+
+function mrseo_case_presentations(){return array(
+'welltex'=>array('Оптимізація каталогу швейного обладнання','Оптимизация каталога швейного оборудования','Sewing equipment catalog optimization','+42%','органічний трафік','органический трафик','organic traffic'),
+'avtomoda'=>array('SEO та товарна реклама автотоварів','SEO и товарная реклама автотоваров','SEO and shopping ads for automotive retail','+68%','пошуковий попит','поисковый спрос','search visibility'),
+'akkb'=>array('Пошук акумуляторів за характеристиками','Подбор аккумуляторов по характеристикам','Battery search by specifications','+35%','цільові переходи','целевые переходы','qualified visits'),
+'turboparts'=>array('Просування каталогу автозапчастин','Продвижение каталога автозапчастей','Automotive parts catalog growth','+51%','входи в каталог','входы в каталог','catalog visits'),
+'armonelli'=>array('Реклама та SEO магазину сумок','Реклама и SEO магазина сумок','SEO and ads for handbags','+46%','замовлення','заказы','orders'),
+'bellabertucci'=>array('Розвиток видимості fashion-магазину','Рост видимости fashion-магазина','Fashion store search visibility','+39%','цільові переходи','целевые переходы','qualified visits'),
+'pair'=>array('Структура SEO для магазину взуття','SEO-структура магазина обуви','SEO structure for footwear retail','+32%','органічні переходи','органические переходы','organic visits'),
+'pckey'=>array('Пошукове просування комп’ютерних товарів','Продвижение компьютерных товаров','Search growth for computer products','+44%','видимість','видимость','visibility'),
+'powerlux'=>array('SEO технічного асортименту','SEO технического ассортимента','SEO for technical products','+37%','відвідування категорій','посещения категорий','category visits'),
+'urolog'=>array('Локальне SEO медичних послуг','Локальное SEO медицинских услуг','Local SEO for medical services','+29%','звернення з пошуку','обращения из поиска','search inquiries'),
+);}
