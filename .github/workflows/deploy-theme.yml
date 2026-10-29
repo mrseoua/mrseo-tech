@@ -65,3 +65,5 @@ jobs:
             wp-content/themes/mrseo-tech/ \
             "$SSH_USER@$SSH_HOST:$REMOTE_THEME/"
           echo "Theme files transferred; WordPress core, wp-config.php, plugins and DB unchanged."
+          ssh $SSH_ARGS "$SSH_USER@$SSH_HOST" "test -f '$REMOTE_THEME/functions.php' && grep -q '3.7.0' '$REMOTE_THEME/functions.php' && test -f '$REMOTE_THEME/assets/site.js'"
+          echo "Remote theme version 3.7.0 verified in deployment destination."
