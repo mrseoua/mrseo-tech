@@ -3,7 +3,7 @@ Theme Name: MrSeo Tech
 Theme URI: https://mrseo.tech
 Author: MrSeo Tech
 Description: Lightweight marketing theme for SEO and Google Ads consulting.
-Version: 3.6.0
+Version: 3.7.0
 Requires at least: 6.4
 Requires PHP: 8.1
 Text Domain: mrseo-tech
@@ -155,3 +155,13 @@ Text Domain: mrseo-tech
   .mrseo-read-progress{position:fixed;z-index:99998;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left center;background:#d74031;pointer-events:none}
 }
 @media(prefers-reduced-motion:reduce){[data-motion-reveal]{opacity:1!important;filter:none!important;transform:none!important}.mrseo-read-progress{display:none!important}}
+
+/* Visible kinetic cues throughout the site; no custom cursor */
+@media(prefers-reduced-motion:no-preference){
+ main section:not(:first-child)>.container>.eyebrow{position:relative;padding-left:31px}
+ main section:not(:first-child)>.container>.eyebrow:before{content:"";position:absolute;left:0;top:50%;width:20px;height:2px;background:#d74031;transform-origin:left center;animation:mrseo-signal 2.8s ease-in-out infinite}
+ @keyframes mrseo-signal{0%,100%{transform:scaleX(.45);opacity:.5}50%{transform:scaleX(1);opacity:1}}
+ .home-platform-grid>a,.service-related-grid>a{position:relative;overflow:hidden}
+ .home-platform-grid>a:after,.service-related-grid>a:after{content:"";position:absolute;inset:auto 0 0;height:3px;background:#d74031;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+ .home-platform-grid>a:hover:after,.service-related-grid>a:hover:after{transform:scaleX(1)}
+}
