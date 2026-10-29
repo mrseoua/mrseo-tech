@@ -198,6 +198,13 @@
 .orbit-lab.lab-webgl-ready .lab-core:before{animation:none!important;opacity:0!important}
 .orbit-lab .lab-core:after{border:1px solid #7cc4f344;box-shadow:inset -12px -10px 30px #010c1a99,0 0 17px #58c6ff29}
 @media(prefers-reduced-motion:reduce){.orbit-lab .lab-core:before{animation:none!important}}
+
+/* Orbit cards follow six evenly spaced elliptical tracks while staying upright.
+   All other pages remain untouched. */
+@media(min-width:1101px) and (prefers-reduced-motion:no-preference){
+ .orbit-lab .lab-node.lab-orbiting{top:0!important;left:0!important;right:auto!important;bottom:auto!important;will-change:transform;transition:border-color .3s,background .3s,box-shadow .3s!important}
+ .orbit-lab .lab-node.lab-orbiting:hover,.orbit-lab .lab-node.lab-orbiting.active{filter:brightness(1.07)}
+}
 </style>
 <main class="orbit-lab"><div class="lab-nebula" aria-hidden="true"></div><div class="lab-stars" aria-hidden="true"></div><div class="lab-landscape" aria-hidden="true"><svg viewBox="0 0 1500 300" preserveAspectRatio="none"><defs><linearGradient id="lab-ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#76331e"/><stop offset=".65" stop-color="#180d0b"/><stop offset="1" stop-color="#08090a"/></linearGradient></defs><path d="M0 210 75 166 130 188 240 90 332 198 422 132 500 216 592 172 715 225 812 143 910 227 1000 100 1100 196 1178 123 1280 211 1400 160 1500 216V300H0Z" fill="url(#lab-ground)"/><path d="M0 254Q360 208 720 261T1500 246V300H0Z" fill="#120e0c"/><path d="M530 254Q720 237 915 260" stroke="#f4763a" stroke-width="2" opacity=".68" fill="none"/></svg></div><div class="lab-grid" aria-hidden="true"></div><div class="lab-shell"><div class="lab-copy"><div class="lab-label">MRSEO.TECH / EXPERIMENT 01</div><h1><?php echo wp_kses_post(mrseo_t('Сайт є.<br><em>А клієнти?</em>','Сайт есть.<br><em>А клиенты?</em>','You have a website.<br><em>Where are the customers?</em>'));?></h1><p class="lab-lead"><?php echo esc_html(mrseo_t('SEO, реклама й аналітика не повинні працювати окремо. Ми поєднуємо технології та маркетинг в одну систему, яка допомагає вирішувати бізнес-завдання.','SEO, реклама и аналитика не должны работать по отдельности. Мы объединяем технологии и маркетинг в систему для решения бизнес-задач.','SEO, paid media and analytics work best as one connected system. We align technology and marketing around business problems.'));?></p><div class="lab-actions"><a class="lab-action" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити проєкт','Обсудить проект','Discuss a project'));?> <span>↗</span></a><a class="lab-action lab-action-quiet" href="<?php echo esc_url(mrseo_url());?>"><?php echo esc_html(mrseo_t('На головну','На главную','Back to homepage'));?></a></div><div class="lab-controls"><button type="button" class="lab-control" id="lab-autoplay" aria-pressed="false">▶ <?php echo esc_html(mrseo_t("Автоогляд","Автообзор","Auto tour"));?></button><button type="button" class="lab-control" id="lab-motion" aria-pressed="false">Ⅱ <?php echo esc_html(mrseo_t("Зупинити рух","Остановить движение","Pause motion"));?></button><span class="lab-controls-note"><?php echo esc_html(mrseo_t("Наведіть курсор на орбіту або оберіть напрям","Наведите курсор на орбиту или выберите направление","Move your pointer or select a service"));?></span></div><div class="lab-status"><div><span>DESIGN DIRECTION</span><strong>Orbital Growth System</strong></div><div><span>EXPERIMENT STATUS</span><strong>Private concept / 01</strong></div></div></div><div class="lab-visual" aria-label="<?php echo esc_attr(mrseo_t('Інтерактивна схема маркетингових напрямів','Интерактивная схема маркетинговых направлений','Interactive marketing service map'));?>"><svg class="lab-connectors" aria-hidden="true"><g id="lab-spokes"></g><line id="lab-link" x1="50%" y1="50%" x2="50%" y2="50%"></line><circle id="lab-link-point" cx="50%" cy="50%" r="4"></circle></svg><div class="lab-orbit lab-orbit-one"></div><div class="lab-data lab-data-a"><svg viewBox="0 0 70 35"><path d="M1 30L13 26L25 28L37 15L46 20L55 9L68 3"/></svg><span><b>SEARCH / ORGANIC</b><small><?php echo esc_html(mrseo_t("Тренди попиту","Тренды спроса","Demand trends"));?></small></span></div><div class="lab-data lab-data-b"><svg viewBox="0 0 70 35"><path d="M1 29L13 21L24 25L35 14L45 17L55 8L68 3"/></svg><span><b>ANALYTICS / LIVE</b><small><?php echo esc_html(mrseo_t("Сигнали зростання","Сигналы роста","Growth signals"));?></small></span></div><div class="lab-orbit lab-orbit-two"></div><div class="lab-orbit lab-orbit-three"></div><div class="lab-core"><small>CONNECTED SYSTEM</small><strong>MRSEO<br>GROWTH</strong><div class="lab-core-signal"></div></div>
 <?php
@@ -207,7 +214,7 @@ array('Google Ads',mrseo_t('Керований платний трафік','У�
 array('Analytics',mrseo_t('Дані для точних рішень','Данные для точных решений','Data-driven decisions')),
 array('E-commerce',mrseo_t('Зростання каталогу та продажів','Рост каталога и продаж','Catalog architecture & growth')),
 array('Technical SEO',mrseo_t('Технічна якість сайту','Техническое качество сайта','Technical foundations')),
-array('Web Development',mrseo_t('Сайти, які працюють на бізнес','Сайты, которые работают на бизнес','Websites built for business'))
+array('Web Development',mrseo_t('Розробка та технічні рішення для бізнесу','Разработка и технические решения для бизнеса','Development and technical solutions for business'))
 );
 foreach($nodes as $i=>$node):?><button type="button" class="lab-node lab-node-<?php echo $i+1;?><?php echo $i===0?' active':'';?>" data-lab-title="<?php echo esc_attr($node[0]);?>" data-lab-detail="<?php echo esc_attr($node[1]);?>" aria-pressed="<?php echo $i===0?'true':'false';?>"><span class="lab-node-glyph" aria-hidden="true"><?php if($i===1):?><svg viewBox="0 0 36 36" aria-hidden="true" width="30" height="30"><path d="M19.4 4.7c2.4-1.4 5.4-.6 6.8 1.9l9 15.7c1.3 2.4.5 5.3-1.9 6.7-2.4 1.3-5.3.6-6.7-1.9l-9-15.7c-1.4-2.4-.6-5.4 1.8-6.7Z" fill="#4285F4"/><path d="M18.8 5c-2.3-1.4-5.3-.6-6.7 1.9L1.6 25.4c-1.4 2.4-.6 5.4 1.8 6.8 2.4 1.4 5.4.6 6.8-1.8L20.6 11.8c1.4-2.4.6-5.4-1.8-6.8Z" fill="#34A853"/><circle cx="6" cy="28.2" r="5.4" fill="#FBBC04"/></svg><?php elseif($i===2):?><svg viewBox="0 0 36 36" aria-hidden="true" width="30" height="30"><path d="M25 4a5 5 0 0 1 5 5v21a5 5 0 0 1-10 0V9a5 5 0 0 1 5-5Z" fill="#F9AB00"/><path d="M16 14a5 5 0 0 1 5 5v11a5 5 0 0 1-10 0V19a5 5 0 0 1 5-5Z" fill="#E37400"/><circle cx="6" cy="30" r="5" fill="#E37400"/></svg><?php else:echo esc_html(array("↗","", "", "◇","⚙","▣")[$i]);endif;?></span><span class="lab-node-content"><strong><?php echo esc_html($node[0]);?></strong><small><?php echo esc_html($node[1]);?></small></span><span class="lab-node-arrow" aria-hidden="true">↗</span></button><?php endforeach;?><div class="lab-detail" aria-live="polite"><span id="lab-selected">01 / SEO</span><strong id="lab-selected-detail"><?php echo esc_html($nodes[0][1]);?></strong></div></div><span class="lab-intro-note">INTERACTIVE STRATEGY MODEL / 2026</span></div><div class="lab-footer-line"><span>MRSEO.TECH / CONNECTED GROWTH SYSTEM</span><span>SEO · GOOGLE ADS · ANALYTICS · WEB</span><span>INTERACTIVE CONCEPT 03</span></div></main>
 <script>
@@ -251,6 +258,35 @@ if(!reduced&&window.matchMedia('(pointer:fine)').matches){
 window.addEventListener('resize',connect,{passive:true});window.addEventListener('load',connect,{once:true});
 if('ResizeObserver' in window)new ResizeObserver(connect).observe(visual);
 if(reduced){root.classList.add('lab-paused');motion.setAttribute('aria-pressed','true')}
+
+/* Slow orbital service navigation, progressive enhancement: cards remain static
+   until their first valid layout; disabled for reduced motion and small screens. */
+if(!reduced&&window.matchMedia('(min-width:1101px)').matches){
+ let orbitalFrame=0,lastOrbit=0,angle=0,hovering=false,enabled=true;
+ const orbitSpeed=.026;
+ function moveOrbit(now){
+  if(!enabled)return;
+  if(lastOrbit&&!hovering&&!root.classList.contains('lab-paused'))angle+=Math.min((now-lastOrbit)/1000,.05)*orbitSpeed;
+  lastOrbit=now;
+  const w=visual.clientWidth,h=visual.clientHeight;
+  const xRadius=w*.355,yRadius=h*.345;
+  nodes.forEach((n,i)=>{
+   const a=angle+(i*Math.PI*2/nodes.length)-Math.PI*5/6;
+   const x=w*.5+Math.cos(a)*xRadius-n.offsetWidth*.5;
+   const y=h*.50+Math.sin(a)*yRadius-n.offsetHeight*.5;
+   n.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0)';
+   n.classList.add('lab-orbiting');
+  });
+  connect();
+  orbitalFrame=requestAnimationFrame(moveOrbit);
+ }
+ nodes.forEach(n=>{n.addEventListener('pointerenter',()=>{hovering=true});n.addEventListener('pointerleave',()=>{hovering=false})});
+ visual.addEventListener('focusin',()=>{hovering=true});visual.addEventListener('focusout',e=>{if(!visual.contains(e.relatedTarget))hovering=false});
+ const visibility=()=>{if(document.hidden){enabled=false;cancelAnimationFrame(orbitalFrame)}else if(!enabled){enabled=true;lastOrbit=0;orbitalFrame=requestAnimationFrame(moveOrbit)}};
+ document.addEventListener('visibilitychange',visibility);
+ orbitalFrame=requestAnimationFrame(moveOrbit);
+}
+
 requestAnimationFrame(connect);
 })();
 </script>
