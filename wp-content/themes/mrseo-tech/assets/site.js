@@ -21,3 +21,27 @@
 (()=>{const buttons=[...document.querySelectorAll('[data-portfolio-filter]')];if(!buttons.length)return;const cards=[...document.querySelectorAll('[data-portfolio-cat]')];buttons.forEach(b=>b.addEventListener('click',()=>{const selected=b.dataset.portfolioFilter;buttons.forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});cards.forEach(card=>card.hidden=selected!=='all'&&card.dataset.portfolioCat!==selected)}))})();
 
 (()=>{const buttons=[...document.querySelectorAll('[data-ec-tab]')],panes=[...document.querySelectorAll('[data-ec-pane]')],target=document.getElementById('ec-explain'),source=document.getElementById('ec-explanations');if(!buttons.length||!source)return;let texts=[];try{texts=JSON.parse(source.textContent)}catch{return}buttons.forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.ecTab;buttons.forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active))});panes.forEach(p=>{const visible=p.dataset.ecPane===id;p.hidden=!visible;p.classList.toggle('active',visible)});if(target)target.textContent=texts[Number(id)]||''}))})();
+
+/* MrSeo motion system: progressive enhancement, never hides content without JS. */
+(()=>{'use strict';
+ const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce)return;
+ const sections=[...document.querySelectorAll('main section')];
+ const candidates=[];
+ sections.forEach((section,index)=>{
+   if(index===0)return; // preserve existing cinematic first screen
+   const heads=section.querySelectorAll('h2, .eyebrow');
+   const objects=section.querySelectorAll('.service,.home-problem-row,.home-platform-grid>a,.client-directory-card,.sp-cards article,.service-editorial-grid article,.ec-story-item,.ec-outcomes-list article,.ec-scope-grid article,.special-issue-list article,.special-work-grid article,.seo-conversion-issues article,.seo-conversion-steps article,.seo-conversion-value li,.seo-conversion-steps article');
+   [...heads,...objects].forEach((el,i)=>{if(!el.closest('[hidden]')&&!el.hasAttribute('data-motion-reveal')){el.dataset.motionReveal='';el.style.setProperty('--motion-order',String(Math.min(i%5,4)));candidates.push(el)}});
+ });
+ if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('motion-pending');e.target.classList.add('motion-visible');observer.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px 65px 0px'});
+   candidates.forEach(el=>{const rect=el.getBoundingClientRect();if(rect.top>window.innerHeight+30){el.classList.add('motion-pending');observer.observe(el)}else el.classList.add('motion-visible')});
+ }
+ // Minimal reading-progress indicator; no smooth-scroll hijacking or custom pointer.
+ const bar=document.createElement('div');bar.className='mrseo-read-progress';bar.setAttribute('aria-hidden','true');document.body.appendChild(bar);
+ let queued=false;
+ const update=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;bar.style.transform='scaleX('+Math.max(0,Math.min(1,max>0?window.scrollY/max:0))+')';queued=false};
+ window.addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});
+ window.addEventListener('resize',update,{passive:true});update();
+})();
