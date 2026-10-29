@@ -17,7 +17,7 @@ float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mi
 void main(){
  vec2 p=v*1.025;float r2=dot(p,p);if(r2>1.)discard;
  vec3 n=normalize(vec3(p,sqrt(max(0.,1.-r2))));
- float a=u_time*.035+u_pointer.x*.24;
+ float a=u_time*.031+u_pointer.x*.18+1.2;
  mat3 ry=mat3(cos(a),0.,sin(a),0.,1.,0.,-sin(a),0.,cos(a));
  vec3 q=ry*n;
  float tilt=u_pointer.y*.14;
@@ -27,7 +27,7 @@ void main(){
  vec2 uv=vec2(fract(lon/6.2831853+.5),.5-lat/3.14159265);
  vec3 tex=texture2D(u_earth,uv).rgb;
  float continents=noise(q*3.8)+noise(q*8.1)*.3;
- vec3 fallback=mix(vec3(.019,.15,.33),vec3(.16,.38,.19),smoothstep(.46,.61,continents));
+ vec3 fallback=mix(vec3(.025,.13,.32),vec3(.14,.35,.18),smoothstep(.46,.61,continents));
  vec3 earth=mix(fallback,tex,clamp(u_has_texture,0.,1.));
  vec3 light=normalize(vec3(-.52,.64,.82));
  float diffuse=max(dot(n,light),0.);
@@ -55,7 +55,7 @@ gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Ar
 gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
 gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
 gl.uniform1i(earthSampler,0);let textured=0;
-const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{if(!active)return;try{gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);textured=1}catch{}};img.src='https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg';
+const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{if(!active)return;try{gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);textured=1}catch{}};img.onerror=()=>{img.onerror=null;img.src='https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg'};img.src='https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png';
 
 core.prepend(canvas);root.classList.add('lab-webgl-ready');
 let active=true,visible=true,frame=0,time=0,last=0,targetX=0,targetY=0,smoothX=0,smoothY=0;
