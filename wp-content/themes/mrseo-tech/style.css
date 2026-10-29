@@ -3,7 +3,7 @@ Theme Name: MrSeo Tech
 Theme URI: https://mrseo.tech
 Author: MrSeo Tech
 Description: Lightweight marketing theme for SEO and Google Ads consulting.
-Version: 3.5.2
+Version: 3.6.0
 Requires at least: 6.4
 Requires PHP: 8.1
 Text Domain: mrseo-tech
@@ -142,3 +142,16 @@ Text Domain: mrseo-tech
 
 /* SEO page: prominent deliverables list */
 .seo-conversion-value ol{list-style:none;counter-reset:seo-benefit;margin:34px 0 0;padding:0!important}.seo-conversion-value ol li{counter-increment:seo-benefit;position:relative;display:flex;align-items:center;gap:22px;padding:21px 0!important;border-bottom:1px solid #bdb3a7;font-size:clamp(20px,2vw,27px)!important;font-weight:750;line-height:1.38!important;letter-spacing:-.025em;color:#1d211d}.seo-conversion-value ol li:first-child{border-top:1px solid #bdb3a7}.seo-conversion-value ol li:before{content:counter(seo-benefit,decimal-leading-zero);display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;background:#d74031;color:#fff;border-radius:10px;font-size:15px;font-weight:800;letter-spacing:0}.seo-conversion-value ol li:hover{color:#b94130}@media(max-width:600px){.seo-conversion-value ol li{font-size:19px!important;gap:14px}.seo-conversion-value ol li:before{flex-basis:38px;width:38px;height:38px}}
+
+/* MrSeo Motion System: tactile microinteractions + scroll reveals */
+@media (prefers-reduced-motion:no-preference){
+  [data-motion-reveal].motion-pending{opacity:0;transform:translate3d(0,33px,0);filter:blur(4px)}
+  [data-motion-reveal].motion-visible{opacity:1;transform:translate3d(0,0,0);filter:blur(0);transition:opacity .78s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.15,.82,.25,1),filter .75s ease;transition-delay:calc(var(--motion-order,0)*45ms)}
+  .site-header .logo,.nav-cta,.btn,.service-related-grid a,.home-platform-grid>a,.portfolio-card,.home-problem-row,.sp-tab{transition-property:transform,background,border-color,color,box-shadow;transition-duration:.3s;transition-timing-function:cubic-bezier(.22,.7,.25,1)}
+  .home-problem-row:hover,.service-related-grid a:hover{transform:translateX(5px)}
+  .btn:hover,.nav-cta:hover{transform:translateY(-3px)}
+  .service-related-grid a:hover,.home-platform-grid>a:hover{box-shadow:0 20px 44px #161a1719}
+  .inner-cinema,.ec-hero-art,.hero-cinema{will-change:auto}
+  .mrseo-read-progress{position:fixed;z-index:99998;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left center;background:#d74031;pointer-events:none}
+}
+@media(prefers-reduced-motion:reduce){[data-motion-reveal]{opacity:1!important;filter:none!important;transform:none!important}.mrseo-read-progress{display:none!important}}
