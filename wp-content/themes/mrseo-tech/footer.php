@@ -22,7 +22,7 @@
 <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Контакти','Контакты','Contact'));?></a>
 </div>
 <div class="mrseo-footer-col mrseo-footer-contact"><h2><?php echo esc_html(mrseo_t('Зв’язок','Связаться','Get in touch'));?></h2>
-<a href="mailto:hello@mrseo.tech">hello@mrseo.tech</a>
+<a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Форма зв’язку ↗','Форма обратной связи ↗','Contact form ↗'));?></a>
 <span><?php echo esc_html(mrseo_t('Працюємо з бізнесами в Україні та за кордоном','Работаем с бизнесом в Украине и за рубежом','Working with businesses in Ukraine and internationally'));?></span>
 <div class="mrseo-footer-languages" aria-label="Language"><?php foreach(array('uk'=>'UA','ru'=>'RU','en'=>'EN') as $lang=>$label):?><a <?php if(mrseo_locale()===$lang)echo 'aria-current="page"';?> href="<?php echo esc_url(mrseo_url(mrseo_slug(),$lang));?>"><?php echo esc_html($label);?></a><?php endforeach;?></div>
 </div>
