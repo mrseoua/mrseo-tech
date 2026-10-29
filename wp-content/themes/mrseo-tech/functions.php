@@ -68,3 +68,13 @@ add_filter('wp_robots', function($robots) {
 add_action('send_headers', function() {
     if (!is_admin()) header('X-Robots-Tag: noindex, nofollow', true);
 });
+
+/**
+ * Let automated readers fetch public pages while indexing stays disabled.
+ * WordPress only serves this virtual robots.txt when no physical robots.txt exists.
+ * Keep the separate wp_robots and X-Robots-Tag noindex safeguards above.
+ */
+function mrseo_public_robots_during_development($output, $public) {
+    return "User-agent: *\nAllow: /\n";
+}
+add_filter('robots_txt', 'mrseo_public_robots_during_development', 99, 2);
