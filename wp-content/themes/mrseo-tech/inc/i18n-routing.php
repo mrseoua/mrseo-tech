@@ -18,6 +18,7 @@ if($slug==='')return get_template_directory().'/front-localized.php';
 if($slug==='portfolio' && mrseo_is_case())return get_template_directory().'/portfolio-localized.php';
 if($slug==='portfolio')return get_template_directory().'/portfolio-localized.php';
 if(in_array($slug,array('service-websites','horoshop'),true))return get_template_directory().'/specialized-landing.php';
+if($slug==='seo')return get_template_directory().'/seo-landing.php';
 if($slug==='ecommerce-seo')return get_template_directory().'/ecommerce-landing.php';
 if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
