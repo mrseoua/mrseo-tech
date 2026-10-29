@@ -17,7 +17,7 @@ float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mi
 void main(){
  vec2 p=v*1.025;float r2=dot(p,p);if(r2>1.)discard;
  vec3 n=normalize(vec3(p,sqrt(max(0.,1.-r2))));
- float a=u_time*.055+u_pointer.x*.33;
+ float a=u_time*.035+u_pointer.x*.24;
  mat3 ry=mat3(cos(a),0.,sin(a),0.,1.,0.,-sin(a),0.,cos(a));
  vec3 q=ry*n;
  float tilt=u_pointer.y*.14;
@@ -32,13 +32,11 @@ void main(){
  vec3 light=normalize(vec3(-.52,.64,.82));
  float diffuse=max(dot(n,light),0.);
  float terminator=smoothstep(-.34,.18,dot(n,light));
- earth*=.12+.95*diffuse;
+ earth*=.30+.91*diffuse;
  earth+=vec3(.015,.045,.10)*(1.-terminator);
- float cloud=noise(q*20.+vec3(1.,0.,u_time*.015));
- float wisps=smoothstep(.60,.79,cloud)*.31;
- earth=mix(earth,vec3(.87,.95,1.),wisps*terminator);
- float atm=pow(1.-max(n.z,0.),3.4);
- earth+=vec3(.08,.39,.91)*atm*1.18;
+ /* The photographic Earth texture includes clouds; synthetic noise made it look blotchy. */
+ float atm=pow(1.-max(n.z,0.),4.5);
+ earth+=vec3(.10,.28,.60)*atm*.57;
  float spec=pow(max(dot(reflect(-light,n),vec3(0.,0.,1.)),0.),36.);
  earth+=vec3(.5,.7,1.)*spec*.14;
  gl_FragColor=vec4(earth,1.-smoothstep(.99,1.003,length(p)));
@@ -61,7 +59,7 @@ const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{if(!active)ret
 
 core.prepend(canvas);root.classList.add('lab-webgl-ready');
 let active=true,visible=true,frame=0,time=0,last=0,targetX=0,targetY=0,smoothX=0,smoothY=0;
-function resize(){const r=core.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,1.6);const size=Math.max(160,Math.min(900,Math.round(Math.max(r.width,r.height)*dpr)));if(canvas.width!==size){canvas.width=size;canvas.height=size;gl.viewport(0,0,size,size)}}
+function resize(){const r=core.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);const size=Math.max(256,Math.min(1200,Math.round(Math.max(r.width,r.height)*dpr)));if(canvas.width!==size){canvas.width=size;canvas.height=size;gl.viewport(0,0,size,size)}}
 function draw(now){frame=0;if(!active||!visible||root.classList.contains('lab-paused'))return;
 if(last)time+=Math.min((now-last)/1000,.05);last=now;resize();smoothX+=(targetX-smoothX)*.08;smoothY+=(targetY-smoothY)*.08;
 gl.uniform1f(tm,time);gl.uniform2f(pointer,smoothX,smoothY);gl.uniform1f(hasTex,textured);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);frame=requestAnimationFrame(draw)}
