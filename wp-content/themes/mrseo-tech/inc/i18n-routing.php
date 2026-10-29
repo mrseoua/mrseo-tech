@@ -14,7 +14,7 @@ function mrseo_valid_route(){
 }
 function mrseo_virtual_page(){return in_array(mrseo_slug(),array('portfolio','orbit-lab','orbit-light'),true) || mrseo_locale()!=='uk';}
 function mrseo_router($template){if(!mrseo_valid_route())return $template;$slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','google-ads','performance-max','analytics','about','contact','portfolio','orbit-lab','orbit-light');if(!in_array($slug,$allowed,true))return $template;
-if($slug==='')return get_template_directory().'/front-localized.php';
+if($slug==='')return get_template_directory().'/orbit-lab.php';
 if($slug==='orbit-lab')return get_template_directory().'/orbit-lab.php';
 if($slug==='orbit-light')return get_template_directory().'/orbit-light.php';
 if($slug==='portfolio' && mrseo_is_case())return get_template_directory().'/portfolio-localized.php';
