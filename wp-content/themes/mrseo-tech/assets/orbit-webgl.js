@@ -17,7 +17,7 @@ float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mi
 void main(){
  vec2 p=v*1.025;float r2=dot(p,p);if(r2>1.)discard;
  vec3 n=normalize(vec3(p,sqrt(max(0.,1.-r2))));
- float a=u_time*.031+u_pointer.x*.18+1.2;
+ float a=u_time*.20+u_pointer.x*.28+1.2;
  mat3 ry=mat3(cos(a),0.,sin(a),0.,1.,0.,-sin(a),0.,cos(a));
  vec3 q=ry*n;
  float tilt=u_pointer.y*.14;
@@ -32,11 +32,11 @@ void main(){
  vec3 light=normalize(vec3(-.52,.64,.82));
  float diffuse=max(dot(n,light),0.);
  float terminator=smoothstep(-.34,.18,dot(n,light));
- earth*=.30+.91*diffuse;
+ earth*=.23+1.05*diffuse;
  earth+=vec3(.015,.045,.10)*(1.-terminator);
  /* The photographic Earth texture includes clouds; synthetic noise made it look blotchy. */
  float atm=pow(1.-max(n.z,0.),4.5);
- earth+=vec3(.10,.28,.60)*atm*.57;
+ earth+=vec3(.10,.28,.60)*atm*.41;
  float spec=pow(max(dot(reflect(-light,n),vec3(0.,0.,1.)),0.),36.);
  earth+=vec3(.5,.7,1.)*spec*.14;
  gl_FragColor=vec4(earth,1.-smoothstep(.99,1.003,length(p)));
@@ -55,7 +55,26 @@ gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Ar
 gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
 gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
 gl.uniform1i(earthSampler,0);let textured=0;
-const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{if(!active)return;try{gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);textured=1;root.classList.add('lab-webgl-ready')}catch{root.classList.remove('lab-webgl-ready');active=false;stop() }};img.onerror=()=>{textured=0;root.classList.remove('lab-webgl-ready');active=false;stop();};img.src='https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png';
+// Try CORS-friendly, equirectangular Earth textures in priority order.
+const candidates=[
+ 'https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg',
+ 'https://raw.githubusercontent.com/MaxwellLee/physics-lab/main/assets/textures/earth_2048.jpg',
+ 'https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x5400x2700.jpg'
+];
+let current=0;
+function loadEarth(){
+ if(current>=candidates.length){root.classList.remove('lab-webgl-ready');active=false;stop();return}
+ const img=new Image();img.crossOrigin='anonymous';
+ img.onload=()=>{if(!active)return;try{
+ gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,tex);
+ gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);
+ gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);
+ textured=1;root.classList.add('lab-webgl-ready');start();
+ }catch(e){current++;loadEarth()}};
+ img.onerror=()=>{current++;loadEarth()};
+ img.src=candidates[current];
+}
+
 
 core.prepend(canvas);
 let active=true,visible=true,frame=0,time=0,last=0,targetX=0,targetY=0,smoothX=0,smoothY=0;
@@ -71,5 +90,5 @@ document.addEventListener('visibilitychange',()=>{visible=!document.hidden;if(vi
 const obs=new IntersectionObserver(es=>{visible=es[0].isIntersecting&&!document.hidden;if(visible)start();else stop()},{threshold:0});obs.observe(visual);
 const mo=new MutationObserver(()=>{if(root.classList.contains('lab-paused'))stop();else start()});mo.observe(root,{attributes:true,attributeFilter:['class']});
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();active=false;stop();root.classList.remove('lab-webgl-ready')});
-window.addEventListener('resize',resize,{passive:true});start();
+window.addEventListener('resize',resize,{passive:true});loadEarth();start();
 })();
