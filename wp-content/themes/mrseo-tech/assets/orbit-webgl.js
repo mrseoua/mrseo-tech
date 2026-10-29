@@ -10,38 +10,40 @@ const fs=`precision highp float;
 varying vec2 v;
 uniform vec2 u_pointer;
 uniform float u_time;
+uniform sampler2D u_earth;
+uniform float u_has_texture;
 float hash(vec3 p){p=fract(p*.3183099+.1);p*=17.;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
 float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
-float fbm(vec3 p){float f=0.,a=.5;for(int k=0;k<5;k++){f+=noise(p)*a;p=p*2.03+2.1;a*=.5;}return f;}
 void main(){
-vec2 p=v*1.035;float r2=dot(p,p);if(r2>1.)discard;
-vec3 n=normalize(vec3(p,sqrt(max(0.,1.-r2))));
-float t=u_time*.065;
-float a=t+u_pointer.x*.34;
-mat3 ry=mat3(cos(a),0.,sin(a),0.,1.,0.,-sin(a),0.,cos(a));
-vec3 q=ry*n;
-q.yz=mat2(cos(u_pointer.y*.18),-sin(u_pointer.y*.18),sin(u_pointer.y*.18),cos(u_pointer.y*.18))*q.yz;
-float tect=fbm(q*3.2+vec3(.7,1.8,4.1));
-float detail=fbm(q*13.+vec3(3.2,4.,1.));
-float ridges=abs(sin(tect*18.+detail*4.));
-float land=smoothstep(.42,.67,tect+detail*.16);
-vec3 deep=vec3(.022,.072,.074);
-vec3 stone=mix(vec3(.18,.19,.17),vec3(.54,.39,.29),detail);
-vec3 base=mix(deep,stone,land);
-float fault=pow(1.-ridges,10.)*land;
-float lava=fault*smoothstep(.44,.74,tect+detail*.14);
-base+=vec3(1.25,.24,.035)*lava;
-vec3 light=normalize(vec3(-.55,.68,1.));
-float lit=max(dot(n,light),0.);
-base*=.2+1.13*lit;
-float rim=pow(1.-max(n.z,0.),3.);
-base+=vec3(1.,.31,.10)*rim*.8;
-base+=vec3(.16,.5,.4)*pow(max(dot(n,normalize(vec3(.5,-.5,1.))),0.),9.)*.19;
-float spec=pow(max(dot(reflect(-light,n),vec3(0,0,1)),0.),19.)*.2;
-base+=spec*vec3(1.,.78,.48);
-float alpha=1.-smoothstep(.985,1.005,length(p));
-gl_FragColor=vec4(base,alpha);
+ vec2 p=v*1.025;float r2=dot(p,p);if(r2>1.)discard;
+ vec3 n=normalize(vec3(p,sqrt(max(0.,1.-r2))));
+ float a=u_time*.055+u_pointer.x*.33;
+ mat3 ry=mat3(cos(a),0.,sin(a),0.,1.,0.,-sin(a),0.,cos(a));
+ vec3 q=ry*n;
+ float tilt=u_pointer.y*.14;
+ q.yz=mat2(cos(tilt),-sin(tilt),sin(tilt),cos(tilt))*q.yz;
+ float lon=atan(q.z,q.x);
+ float lat=asin(clamp(q.y,-1.,1.));
+ vec2 uv=vec2(fract(lon/6.2831853+.5),.5-lat/3.14159265);
+ vec3 tex=texture2D(u_earth,uv).rgb;
+ float continents=noise(q*3.8)+noise(q*8.1)*.3;
+ vec3 fallback=mix(vec3(.019,.15,.33),vec3(.16,.38,.19),smoothstep(.46,.61,continents));
+ vec3 earth=mix(fallback,tex,clamp(u_has_texture,0.,1.));
+ vec3 light=normalize(vec3(-.52,.64,.82));
+ float diffuse=max(dot(n,light),0.);
+ float terminator=smoothstep(-.34,.18,dot(n,light));
+ earth*=.12+.95*diffuse;
+ earth+=vec3(.015,.045,.10)*(1.-terminator);
+ float cloud=noise(q*20.+vec3(1.,0.,u_time*.015));
+ float wisps=smoothstep(.60,.79,cloud)*.31;
+ earth=mix(earth,vec3(.87,.95,1.),wisps*terminator);
+ float atm=pow(1.-max(n.z,0.),3.4);
+ earth+=vec3(.08,.39,.91)*atm*1.18;
+ float spec=pow(max(dot(reflect(-light,n),vec3(0.,0.,1.)),0.),36.);
+ earth+=vec3(.5,.7,1.)*spec*.14;
+ gl_FragColor=vec4(earth,1.-smoothstep(.99,1.003,length(p)));
 }`;
+
 function compile(kind,src){const sh=gl.createShader(kind);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS)){gl.deleteShader(sh);throw Error('WebGL shader compile failed')}return sh}
 let program;
 try{program=gl.createProgram();gl.attachShader(program,compile(gl.VERTEX_SHADER,vs));gl.attachShader(program,compile(gl.FRAGMENT_SHADER,fs));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('WebGL link failed')}catch{return}
@@ -49,12 +51,20 @@ gl.useProgram(program);
 const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
 const loc=gl.getAttribLocation(program,'a');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
 const tm=gl.getUniformLocation(program,'u_time'),pointer=gl.getUniformLocation(program,'u_pointer');
+const earthSampler=gl.getUniformLocation(program,'u_earth'),hasTex=gl.getUniformLocation(program,'u_has_texture');
+const tex=gl.createTexture();gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,tex);
+gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array([20,56,108,255]));
+gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+gl.uniform1i(earthSampler,0);let textured=0;
+const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{if(!active)return;try{gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);textured=1}catch{}};img.src='https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg';
+
 core.prepend(canvas);root.classList.add('lab-webgl-ready');
 let active=true,visible=true,frame=0,time=0,last=0,targetX=0,targetY=0,smoothX=0,smoothY=0;
 function resize(){const r=core.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,1.6);const size=Math.max(160,Math.min(900,Math.round(Math.max(r.width,r.height)*dpr)));if(canvas.width!==size){canvas.width=size;canvas.height=size;gl.viewport(0,0,size,size)}}
 function draw(now){frame=0;if(!active||!visible||root.classList.contains('lab-paused'))return;
 if(last)time+=Math.min((now-last)/1000,.05);last=now;resize();smoothX+=(targetX-smoothX)*.08;smoothY+=(targetY-smoothY)*.08;
-gl.uniform1f(tm,time);gl.uniform2f(pointer,smoothX,smoothY);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);frame=requestAnimationFrame(draw)}
+gl.uniform1f(tm,time);gl.uniform2f(pointer,smoothX,smoothY);gl.uniform1f(hasTex,textured);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);frame=requestAnimationFrame(draw)}
 function start(){last=0;if(!frame&&active&&visible&&!root.classList.contains('lab-paused'))frame=requestAnimationFrame(draw)}
 function stop(){if(frame)cancelAnimationFrame(frame);frame=0}
 visual.addEventListener('pointermove',e=>{const r=visual.getBoundingClientRect();targetX=(e.clientX-r.left)/r.width*2.-1.;targetY=(e.clientY-r.top)/r.height*2.-1.},{passive:true});
