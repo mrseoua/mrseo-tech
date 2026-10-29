@@ -55,9 +55,9 @@ gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Ar
 gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
 gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
 gl.uniform1i(earthSampler,0);let textured=0;
-const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{if(!active)return;try{gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);textured=1}catch{}};img.onerror=()=>{img.onerror=null;img.src='https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg'};img.src='https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png';
+const img=new Image();img.crossOrigin='anonymous';img.onload=()=>{if(!active)return;try{gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);textured=1;root.classList.add('lab-webgl-ready')}catch{root.classList.remove('lab-webgl-ready');active=false;stop() }};img.onerror=()=>{textured=0;root.classList.remove('lab-webgl-ready');active=false;stop();};img.src='https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png';
 
-core.prepend(canvas);root.classList.add('lab-webgl-ready');
+core.prepend(canvas);
 let active=true,visible=true,frame=0,time=0,last=0,targetX=0,targetY=0,smoothX=0,smoothY=0;
 function resize(){const r=core.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);const size=Math.max(256,Math.min(1200,Math.round(Math.max(r.width,r.height)*dpr)));if(canvas.width!==size){canvas.width=size;canvas.height=size;gl.viewport(0,0,size,size)}}
 function draw(now){frame=0;if(!active||!visible||root.classList.contains('lab-paused'))return;
