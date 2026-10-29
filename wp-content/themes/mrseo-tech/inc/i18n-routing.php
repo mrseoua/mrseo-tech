@@ -27,43 +27,15 @@ add_filter('template_include','mrseo_router',99);
 add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;$slug=mrseo_slug();if(!$slug)return 'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='orbit-lab')return 'Orbit Lab — Private Concept | MrSeo.tech';if($slug==='seo')return mrseo_t('SEO-просування сайтів у Google — замовити SEO','SEO-продвижение сайтов в Google — заказать SEO','SEO Services & Website Optimization').' | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';if($slug==='horoshop')return mrseo_t('Сайти на Хорошоп','Сайты на Хорошоп','Horoshop Websites').' | MrSeo.tech';if($slug==='service-websites')return mrseo_t('Створення та просування сайтів послуг','Создание и продвижение сайтов услуг','Service Website SEO & Development').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
 add_action('wp_head',function(){if(!mrseo_valid_route())return;$slug=mrseo_slug();$valid=array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$valid,true)||mrseo_is_case())return;$path=$slug;foreach(array('uk','ru','en') as $l)echo '<link rel="alternate" hreflang="'.esc_attr($l).'" href="'.esc_url(mrseo_url($path,$l)).'">'."\n";echo '<link rel="alternate" hreflang="x-default" href="'.esc_url(mrseo_url($path,'uk')).'">'."\n";echo '<link rel="canonical" href="'.esc_url(mrseo_url($path)).'">'."\n";},2);
 add_action('init',function(){
-add_rewrite_rule('^portfolio/([^/]+)/?$','index.php?mrseo_service=portfolio&mrseo_case=$matches[1]','top');
-add_rewrite_rule('^(ru|en)/portfolio/([^/]+)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=portfolio&mrseo_case=$matches[2]','top');
-add_rewrite_rule('^orbit-lab/?,'index.php?mrseo_lang=$matches[1]','top');
-add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
+ add_rewrite_rule('^portfolio/([^/]+)/?$','index.php?mrseo_service=portfolio&mrseo_case=$matches[1]','top');
+ add_rewrite_rule('^(ru|en)/portfolio/([^/]+)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=portfolio&mrseo_case=$matches[2]','top');
+ add_rewrite_rule('^orbit-lab/?$','index.php?mrseo_service=orbit-lab','top');
+ add_rewrite_rule('^(ru|en)/orbit-lab/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=orbit-lab','top');
+ add_rewrite_rule('^(ru|en)/?$','index.php?mrseo_lang=$matches[1]','top');
+ add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
 },10);
 add_filter('query_vars',function($vars){return array_merge($vars,array('mrseo_lang','mrseo_service','mrseo_case'));});
 add_filter('redirect_canonical',function($url){return (mrseo_is_case()||mrseo_locale()!=='uk'||in_array(mrseo_slug(),array('portfolio','orbit-lab'),true))?false:$url;});
-add_filter('pre_handle_404',function($pre){if(!mrseo_valid_route())return $pre;$s=mrseo_slug();if(mrseo_is_case())return $pre;if(mrseo_locale()!=='uk'&&in_array($s,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return true;if(in_array($s,array('portfolio','orbit-lab'),true))return true;return $pre;});
-add_action('init',function(){if(get_option('mrseo_i18n_rules_v5')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v4','ready',false);}},30);
-
-add_action('template_redirect',function(){if(mrseo_is_case()){wp_safe_redirect(mrseo_url('portfolio'),301);exit;}},1);
-,'index.php?mrseo_service=orbit-lab','top');
-add_rewrite_rule('^(ru|en)/orbit-lab/?,'index.php?mrseo_lang=$matches[1]','top');
-add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
-},10);
-add_filter('query_vars',function($vars){return array_merge($vars,array('mrseo_lang','mrseo_service','mrseo_case'));});
-add_filter('redirect_canonical',function($url){return (mrseo_is_case()||mrseo_locale()!=='uk'||mrseo_slug()==='portfolio')?false:$url;});
-add_filter('pre_handle_404',function($pre){if(!mrseo_valid_route())return $pre;$s=mrseo_slug();if(mrseo_is_case())return $pre;if(mrseo_locale()!=='uk'&&in_array($s,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return true;if($s==='portfolio')return true;return $pre;});
-add_action('init',function(){if(get_option('mrseo_i18n_rules_v4')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v4','ready',false);}},30);
-
-add_action('template_redirect',function(){if(mrseo_is_case()){wp_safe_redirect(mrseo_url('portfolio'),301);exit;}},1);
-,'index.php?mrseo_lang=$matches[1]&mrseo_service=orbit-lab','top');
-add_rewrite_rule('^(ru|en)/?,'index.php?mrseo_lang=$matches[1]','top');
-add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
-},10);
-add_filter('query_vars',function($vars){return array_merge($vars,array('mrseo_lang','mrseo_service','mrseo_case'));});
-add_filter('redirect_canonical',function($url){return (mrseo_is_case()||mrseo_locale()!=='uk'||mrseo_slug()==='portfolio')?false:$url;});
-add_filter('pre_handle_404',function($pre){if(!mrseo_valid_route())return $pre;$s=mrseo_slug();if(mrseo_is_case())return $pre;if(mrseo_locale()!=='uk'&&in_array($s,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return true;if($s==='portfolio')return true;return $pre;});
-add_action('init',function(){if(get_option('mrseo_i18n_rules_v4')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v4','ready',false);}},30);
-
-add_action('template_redirect',function(){if(mrseo_is_case()){wp_safe_redirect(mrseo_url('portfolio'),301);exit;}},1);
-,'index.php?mrseo_lang=$matches[1]','top');
-add_rewrite_rule('^(ru|en)/(seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
-},10);
-add_filter('query_vars',function($vars){return array_merge($vars,array('mrseo_lang','mrseo_service','mrseo_case'));});
-add_filter('redirect_canonical',function($url){return (mrseo_is_case()||mrseo_locale()!=='uk'||mrseo_slug()==='portfolio')?false:$url;});
-add_filter('pre_handle_404',function($pre){if(!mrseo_valid_route())return $pre;$s=mrseo_slug();if(mrseo_is_case())return $pre;if(mrseo_locale()!=='uk'&&in_array($s,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return true;if($s==='portfolio')return true;return $pre;});
-add_action('init',function(){if(get_option('mrseo_i18n_rules_v4')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v4','ready',false);}},30);
-
+add_filter('pre_handle_404',function($pre){if(!mrseo_valid_route())return $pre;$slug=mrseo_slug();if(mrseo_is_case())return $pre;if($slug==='orbit-lab')return true;if(mrseo_locale()!=='uk'&&in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','about','contact','portfolio'),true))return true;if($slug==='portfolio')return true;return $pre;});
+add_action('init',function(){if(get_option('mrseo_i18n_rules_v6')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v6','ready',false);}},30);
 add_action('template_redirect',function(){if(mrseo_is_case()){wp_safe_redirect(mrseo_url('portfolio'),301);exit;}},1);
