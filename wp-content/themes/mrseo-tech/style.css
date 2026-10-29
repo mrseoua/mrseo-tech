@@ -3,7 +3,7 @@ Theme Name: MrSeo Tech
 Theme URI: https://mrseo.tech
 Author: MrSeo Tech
 Description: Lightweight marketing theme for SEO and Google Ads consulting.
-Version: 3.5.1
+Version: 3.5.2
 Requires at least: 6.4
 Requires PHP: 8.1
 Text Domain: mrseo-tech
@@ -139,3 +139,6 @@ Text Domain: mrseo-tech
 
 /* Visible solutions cards and explanatory text */
 .sp-cards-premium article{min-height:290px;gap:15px}.sp-cards-premium .sp-card-description{font-size:15px;line-height:1.65;color:#66625c;margin:0}.sp-cards-premium h3{margin-top:auto}.sp-cards-premium{align-items:stretch}@media(max-width:850px){.sp-cards-premium{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.sp-cards-premium{grid-template-columns:1fr}.sp-cards-premium article{min-height:230px}}
+
+/* SEO page: prominent deliverables list */
+.seo-conversion-value ol{list-style:none;counter-reset:seo-benefit;margin:34px 0 0;padding:0!important}.seo-conversion-value ol li{counter-increment:seo-benefit;position:relative;display:flex;align-items:center;gap:22px;padding:21px 0!important;border-bottom:1px solid #bdb3a7;font-size:clamp(20px,2vw,27px)!important;font-weight:750;line-height:1.38!important;letter-spacing:-.025em;color:#1d211d}.seo-conversion-value ol li:first-child{border-top:1px solid #bdb3a7}.seo-conversion-value ol li:before{content:counter(seo-benefit,decimal-leading-zero);display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;background:#d74031;color:#fff;border-radius:10px;font-size:15px;font-weight:800;letter-spacing:0}.seo-conversion-value ol li:hover{color:#b94130}@media(max-width:600px){.seo-conversion-value ol li{font-size:19px!important;gap:14px}.seo-conversion-value ol li:before{flex-basis:38px;width:38px;height:38px}}
