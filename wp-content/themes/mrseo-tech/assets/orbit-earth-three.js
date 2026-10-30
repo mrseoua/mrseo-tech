@@ -29,7 +29,7 @@ const earthMaterial=new THREE.ShaderMaterial({
  uniforms:{dayMap:{value:day},nightMap:{value:night},lightDirection:{value:new THREE.Vector3(-.22,.37,.9).normalize()}},
  vertexShader:`varying vec2 vUv;varying vec3 vNormal;void main(){vUv=uv;vNormal=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
  fragmentShader:`uniform sampler2D dayMap;uniform sampler2D nightMap;uniform vec3 lightDirection;varying vec2 vUv;varying vec3 vNormal;
- void main(){vec3 n=normalize(vNormal);float d=dot(n,normalize(lightDirection));float light=mix(.52,1.24,smoothstep(-.50,.72,d));vec3 col=texture2D(dayMap,vUv).rgb*light;vec3 night=texture2D(nightMap,vUv).rgb;col+=night*.36*(1.-smoothstep(-.42,.18,d));gl_FragColor=vec4(col,1.);}`
+ void main(){vec3 n=normalize(vNormal);float d=dot(n,normalize(lightDirection));float light=mix(1.02,1.37,smoothstep(-.65,.65,d));vec3 col=texture2D(dayMap,vUv).rgb*light;col=pow(max(col,vec3(0.)),vec3(.81));vec3 night=texture2D(nightMap,vUv).rgb;col+=night*.36*(1.-smoothstep(-.42,.18,d));gl_FragColor=vec4(col,1.);}`
 });
 const earth=new THREE.Mesh(geometry,earthMaterial);globe.add(earth);
 const cloudMaterial=new THREE.MeshBasicMaterial({color:0xe6f4ff,alphaMap:clouds,transparent:true,opacity:.07,depthWrite:false,side:THREE.FrontSide});
@@ -41,7 +41,7 @@ const atmosphereMaterial=new THREE.ShaderMaterial({
  fragmentShader:`varying vec3 vNormal;varying vec3 vWorldPosition;uniform vec3 glowColor;uniform float intensity;void main(){vec3 viewDir=normalize(cameraPosition-vWorldPosition);float rim=pow(1.-abs(dot(normalize(vNormal),viewDir)),3.2);gl_FragColor=vec4(glowColor,rim*intensity);}`
 });
 const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(1.30,96,64),atmosphereMaterial);atmosphere.visible=false;scene.add(atmosphere); // CSS rim supplies clear atmosphere without central shader glare.
-globe.rotation.z=.10;globe.rotation.y=-.75;
+globe.rotation.z=.10;globe.rotation.y=1.65;
 core.prepend(canvas);
 let visible=true,raf=0,last=0,dx=0,dy=0,tx=0,ty=0;
 function resize(){const w=Math.max(150,core.clientWidth),h=Math.max(150,core.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
