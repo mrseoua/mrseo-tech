@@ -38,7 +38,7 @@
 .hs-logo-mask{display:block;position:relative;flex:none;width:159px;height:30px;overflow:hidden;border-radius:3px;background:#fff}
 .hs-logo-mask img{position:absolute!important;width:197px!important;max-width:none!important;height:146px!important;left:-20px;top:-24px;object-fit:fill}
 .hs-logo-caption{font-size:11px;font-weight:800;letter-spacing:.12em;color:#ebbb9c;white-space:nowrap}
-.hs-official-badge{flex:none;display:block;object-fit:contain;width:83px;height:auto;border-radius:8px;background:#fff;box-shadow:0 5px 18px #0003}
+.hs-official-badge{flex:none;display:block;object-fit:contain;width:99px;height:auto;border-radius:8px;background:#fff;box-shadow:0 5px 18px #0003}
 .hs-demo{position:relative;background:linear-gradient(135deg,#fefcf8,#f6f2ec);color:var(--hs-ink);border-radius:15px;padding:21px 22px 19px;min-width:0;overflow:hidden}
 .hs-demo-meta{display:flex;justify-content:space-between;gap:15px;align-items:center}
 .hs-demo-meta span{color:#bc5a39;font-size:12px;font-weight:850;letter-spacing:.105em}
@@ -93,7 +93,7 @@
  .hs-logo-mask{width:124px;height:24px}
  .hs-logo-mask img{width:158px!important;height:117px!important;left:-18px;top:-20px}
  .hs-logo-caption{font-size:9px}
- .hs-official-badge{width:68px;border-radius:6px}
+ .hs-official-badge{width:76px;border-radius:6px}
  .hs-demo{padding:16px 13px 14px;border-radius:12px}
  .hs-demo-meta span{font-size:10px}
  .hs-demo-problem{font-size:21px!important;min-height:50px;margin:9px 0 12px!important}
