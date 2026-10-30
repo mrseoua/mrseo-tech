@@ -318,3 +318,82 @@ Text Domain: mrseo-tech
 .contact-brief-choice:focus-visible{outline:2px solid #bf5744;outline-offset:2px}
 .contact-brief-note{font-size:12px!important;line-height:1.55!important;color:#666e67!important;margin:12px 0 0!important}
 @media(max-width:650px){.contact-brief{margin:22px 0}.contact-brief-choice{min-height:54px;font-size:13px}}
+
+
+/* Editorial readability pass — stronger paragraph hierarchy across service pages.
+   Large headings remain unchanged; target explanatory copy instead. */
+.service-faq-list details p,
+.ec-questions-list details p {
+  font-size:18px;
+  line-height:1.78;
+  color:#414440;
+  max-width:72ch;
+}
+.service-questions-layout>div>p,
+.service-editorial-head p,
+.service-challenges-intro p,
+.sp-process-intro,
+.sp-next p,
+.ec-story-lead p,
+.ec-lab-heading>p,
+.ec-questions-layout>div>p,
+.seo-conversion-intro p,
+.seo-conversion-price p,
+.seo-semantic-heading>p {
+  color:#474a46;
+  font-size:clamp(18px,1.3vw,20px);
+  line-height:1.75;
+}
+.seo-conversion-issues p,
+.ec-story-item p,
+.service-editorial-grid p,
+.sp-cards-premium .sp-card-description,
+.special-issue-list p,
+.special-work-grid p,
+.ec-expertise-columns p,
+.ec-scope-grid p,
+.ec-expertise-heading p,
+.ec-outcomes-list p,
+.ec-client-trust p,
+.seo-semantic-rows p {
+  color:#454841;
+  font-size:clamp(17px,1.17vw,19px);
+  line-height:1.72;
+}
+.seo-conversion-method .seo-conversion-steps p,
+.ec-situations .ec-situations-list p {
+  color:#e3e7e0;
+  font-size:clamp(17px,1.16vw,19px);
+  line-height:1.76;
+}
+.sp-workflow .sp-answer p{
+  color:#e5e9e2;
+  font-size:clamp(18px,1.3vw,20px);
+  line-height:1.75;
+}
+.sp-workflow .sp-deliverable strong{font-size:19px;color:#fff}
+.sp-workflow .sp-answer small,
+.sp-workflow .sp-progress-label{
+  font-size:13px;
+  color:#d0d8ce;
+  line-height:1.55;
+}
+.sp-workflow .sp-answer-top,
+.sp-workflow .sp-deliverable>span,
+.sp-workflow .sp-tab-label{
+  color:#edf0e8;
+}
+.special-hero p,.sp-hero p,.ec-hero-copy p {
+  color:#454944;
+  line-height:1.75;
+}
+@media(max-width:600px){
+  .service-faq-list details p,.ec-questions-list details p{font-size:17px;line-height:1.72}
+  .seo-conversion-issues p,.ec-story-item p,
+  .service-editorial-grid p,.sp-cards-premium .sp-card-description,
+  .special-issue-list p,.special-work-grid p,
+  .ec-expertise-columns p,.ec-scope-grid p,
+  .seo-conversion-steps p,.ec-situations-list p{
+    font-size:17px;line-height:1.7;
+  }
+}
