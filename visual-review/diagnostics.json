@@ -1,6 +1,6 @@
 {
   "target": "https://mrseo.tech/",
-  "capturedAt": "2026-10-30T15:56:25.465Z",
+  "capturedAt": "2026-10-30T15:58:46.524Z",
   "profiles": [
     {
       "name": "desktop",
@@ -8,9 +8,7 @@
         "width": 1600,
         "height": 920
       },
-      "errors": [
-        "Hover test: TimeoutError: locator.hover: Timeout 9000ms exceeded.\nCall log:\n  - waiting for locator('.lab-node').nth(1)\n    - locator resolved to <a class=\"lab-node lab-node-2\" data-lab-title=\"Google Ads\" href=\"https://mrseo.tech/google-ads/\" data-lab-"
-      ],
+      "errors": [],
       "failedRequests": [],
       "httpStatus": 200,
       "responseRobots": "noindex, nofollow",
@@ -77,7 +75,12 @@
           "left": 979.6875
         }
       },
-      "screenshotBytes": 102474
+      "screenshotBytes": 103734,
+      "hoverCheck": {
+        "hoveredNode": 1,
+        "hoveredBeam": 1,
+        "beamAnimation": "mrseo-signal-stream"
+      }
     },
     {
       "name": "mobile",
@@ -152,8 +155,8 @@
           "left": 81.90625
         }
       },
-      "screenshotBytes": 95762,
-      "servicesScreenshotBytes": 99687
+      "screenshotBytes": 95586,
+      "servicesScreenshotBytes": 99552
     }
   ],
   "notes": []
