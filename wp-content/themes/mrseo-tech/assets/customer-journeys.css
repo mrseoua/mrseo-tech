@@ -66,3 +66,22 @@
  .mrseo-journey-detail p{font-size:16px;line-height:1.72}
  .mrseo-journey-outcome p{font-size:17px}
 }
+
+/* Legibility upgrade v2 — make the client explanation genuinely readable. */
+.mrseo-journey .mrseo-journey-case summary .mrseo-journey-question{font-size:clamp(19px,1.5vw,23px);line-height:1.35;font-weight:800}
+.mrseo-journey .mrseo-journey-detail{gap:21px}
+.mrseo-journey .mrseo-journey-detail>div{padding-top:20px}
+.mrseo-journey .mrseo-journey-detail span{display:block;color:#983b2d;font-size:15px;line-height:1.4;font-weight:850;letter-spacing:.065em}
+.mrseo-journey .mrseo-journey-detail p{font-size:clamp(19px,1.35vw,21px);font-weight:600;line-height:1.65;color:#252b27;margin-top:9px}
+.mrseo-journey .mrseo-journey-check{padding:19px 18px 4px!important;background:#f0f5ee;border:1px solid #d5e4d2;border-radius:11px}
+.mrseo-journey .mrseo-journey-check p{font-size:clamp(20px,1.5vw,22px);font-weight:750;line-height:1.55;color:#193c2d}
+@media(max-width:600px){
+.mrseo-journey .mrseo-journey-case summary{grid-template-columns:38px minmax(0,1fr) 28px;gap:10px;padding:16px 13px;min-height:82px}
+.mrseo-journey .mrseo-journey-case summary .mrseo-journey-question{font-size:18px;line-height:1.36;font-weight:800;overflow-wrap:anywhere}
+.mrseo-journey .mrseo-journey-detail{padding:0 15px 23px;gap:17px}
+.mrseo-journey .mrseo-journey-detail>div{padding-top:17px}
+.mrseo-journey .mrseo-journey-detail span{font-size:14px;letter-spacing:.045em}
+.mrseo-journey .mrseo-journey-detail p{font-size:18px;font-weight:620;line-height:1.65}
+.mrseo-journey .mrseo-journey-check{padding:16px 14px 8px!important}
+.mrseo-journey .mrseo-journey-check p{font-size:19px;font-weight:770;line-height:1.55;overflow-wrap:break-word}
+}
