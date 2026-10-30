@@ -24,9 +24,9 @@ get_header();?>
     <div class="hs-hero-copy">
       <div class="eyebrow"><?php echo esc_html(mrseo_t('SEO ТА РОЗВИТОК МАГАЗИНІВ НА ХОРОШОП','SEO И РАЗВИТИЕ МАГАЗИНОВ НА ХОРОШОП','HOROSHOP SEO'));?></div>
       <h1 id="horoshop-title"><?php echo esc_html(mrseo_t(
-        'Магазин на Хорошоп працює. А де покупці з Google?',
-        'Магазин на Хорошоп работает. А где покупатели из Google?',
-        'Your Horoshop store is online. Where are the customers?'
+        'SEO для Хорошоп: магазин є, а покупців із Google замало?',
+        'SEO для Хорошоп: магазин есть, а покупателей из Google мало?',
+        'Horoshop SEO: where are your Google customers?'
       ));?></h1>
       <p><?php echo esc_html(mrseo_t(
         'Категорії не знаходять у пошуку? Фільтри створюють дублі? Товари не проходять перевірку Merchant Center? Знаходимо реальні причини, виправляємо те, що дозволяє Хорошоп, і перевіряємо вплив на заявки та продажі.',
