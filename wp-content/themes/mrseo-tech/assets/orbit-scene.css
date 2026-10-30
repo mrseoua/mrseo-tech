@@ -1,4 +1,4 @@
-/* Shared geometry for the globe and its seven navigational satellites. */
+/* Shared geometry for the globe and its locale-specific navigational satellites. */
 .orbit-lab .lab-visual{isolation:isolate;aspect-ratio:1!important}
 .orbit-lab .lab-visual>.lab-core{width:34%!important;transform:none!important;transition:none!important;border:0!important;box-shadow:none!important;background-color:#071528!important}
 .orbit-lab .lab-core:after{display:none!important}
@@ -69,7 +69,7 @@
 
 
 /* 2026-10-30: viewport-fit orbital composition.
-   The seven satellites remain fully inside one desktop screen; orbit geometry
+   All visible satellites remain inside one desktop screen; orbit geometry
    is driven by the actual visual bounding box (orbit-scene.js). */
 @media (min-width:1101px){
   .orbit-lab{min-height:calc(100svh - 88px)!important}
