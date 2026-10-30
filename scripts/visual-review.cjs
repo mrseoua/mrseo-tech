@@ -33,7 +33,7 @@ async function capture(browser, name, viewport, mobile) {
     profile.responseRobots = response ? response.headers()['x-robots-tag']||null : null;
     try{await page.evaluate(()=>document.fonts.ready)}catch(_){}
     await sleep(4500);
-    try{await page.waitForFunction(()=>document.querySelector('.orbit-lab.lab-webgl-ready'),{timeout:12000})}catch(_){}
+    try{await page.waitForFunction(()=>document.querySelector('.orbit-lab.lab-webgl-ready'),null,{timeout:12000})}catch(_){}
     await sleep(1300);
     profile.page = await page.evaluate(()=>{
       const r=document.querySelector('.orbit-lab'),c=document.querySelector('.lab-core');
@@ -46,7 +46,8 @@ async function capture(browser, name, viewport, mobile) {
         satellites:n.length,
         services:n.map(e=>({title:(e.innerText||'').trim().slice(0,90),href:e.getAttribute('href'),rect:Math.round(e.getBoundingClientRect().width)})),
         connections:spokes.length,
-        connectedLines:spokes.filter(e=>{const x1=Number(e.getAttribute('x1')),x2=Number(e.getAttribute('x2')),y1=Number(e.getAttribute('y1')),y2=Number(e.getAttribute('y2'));return Math.hypot(x2-x1,y2-y1)>15}).length,
+        connectedLines:spokes.filter(e=>{try{return e.getTotalLength()>15}catch(_){return false}}).length,
+        linesVisible:getComputedStyle(document.querySelector('.lab-connectors')).display!=='none',
         noIndexMeta:document.querySelector('meta[name=robots]')?.content||null,
         globeRect:c?.getBoundingClientRect().toJSON()||null
       };
