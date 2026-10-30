@@ -1,6 +1,6 @@
 {
   "target": "https://mrseo.tech/",
-  "capturedAt": "2026-10-30T15:43:29.456Z",
+  "capturedAt": "2026-10-30T15:47:40.723Z",
   "profiles": [
     {
       "name": "desktop",
@@ -59,7 +59,8 @@
           }
         ],
         "connections": 7,
-        "connectedLines": 0,
+        "connectedLines": 7,
+        "linesVisible": true,
         "noIndexMeta": "noindex, nofollow",
         "globeRect": {
           "x": 979.6875,
@@ -72,7 +73,7 @@
           "left": 979.6875
         }
       },
-      "screenshotBytes": 112355
+      "screenshotBytes": 112811
     },
     {
       "name": "mobile",
@@ -131,7 +132,8 @@
           }
         ],
         "connections": 7,
-        "connectedLines": 0,
+        "connectedLines": 7,
+        "linesVisible": true,
         "noIndexMeta": "noindex, nofollow",
         "globeRect": {
           "x": 81.90625,
@@ -144,8 +146,8 @@
           "left": 81.90625
         }
       },
-      "screenshotBytes": 97948,
-      "servicesScreenshotBytes": 105431
+      "screenshotBytes": 97989,
+      "servicesScreenshotBytes": 105436
     }
   ],
   "notes": []
