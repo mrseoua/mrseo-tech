@@ -1,6 +1,6 @@
 {
   "target": "https://mrseo.tech/",
-  "capturedAt": "2026-10-30T16:14:37.880Z",
+  "capturedAt": "2026-10-30T16:16:34.737Z",
   "profiles": [
     {
       "name": "desktop",
@@ -96,8 +96,8 @@
             "right": 1010
           },
           {
-            "top": 282,
-            "bottom": 370,
+            "top": 281,
+            "bottom": 369,
             "left": 880,
             "right": 1060
           }
@@ -130,7 +130,7 @@
           "left": 1025.390625
         }
       },
-      "screenshotBytes": 94985,
+      "screenshotBytes": 94507,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -219,14 +219,14 @@
             "right": 1448
           },
           {
-            "top": 666,
-            "bottom": 754,
+            "top": 667,
+            "bottom": 755,
             "left": 1077,
             "right": 1257
           },
           {
-            "top": 483,
-            "bottom": 571,
+            "top": 484,
+            "bottom": 572,
             "left": 962,
             "right": 1142
           },
@@ -265,7 +265,7 @@
           "left": 1148.03125
         }
       },
-      "screenshotBytes": 98417,
+      "screenshotBytes": 97888,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -400,7 +400,7 @@
           "left": 876.328125
         }
       },
-      "screenshotBytes": 82384,
+      "screenshotBytes": 82296,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -535,8 +535,8 @@
           "left": 81.90625
         }
       },
-      "screenshotBytes": 96940,
-      "servicesScreenshotBytes": 100932
+      "screenshotBytes": 96937,
+      "servicesScreenshotBytes": 97755
     }
   ],
   "notes": []
