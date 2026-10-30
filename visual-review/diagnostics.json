@@ -1,6 +1,6 @@
 {
   "target": "https://mrseo.tech/",
-  "capturedAt": "2026-10-30T16:11:10.940Z",
+  "capturedAt": "2026-10-30T16:12:31.895Z",
   "profiles": [
     {
       "name": "desktop",
@@ -58,6 +58,61 @@
             "rect": 180
           }
         ],
+        "satelliteBounds": [
+          {
+            "top": 181,
+            "bottom": 269,
+            "left": 1065,
+            "right": 1245
+          },
+          {
+            "top": 289,
+            "bottom": 377,
+            "left": 1249,
+            "right": 1429
+          },
+          {
+            "top": 528,
+            "bottom": 616,
+            "left": 1291,
+            "right": 1471
+          },
+          {
+            "top": 716,
+            "bottom": 804,
+            "left": 1161,
+            "right": 1341
+          },
+          {
+            "top": 712,
+            "bottom": 800,
+            "left": 956,
+            "right": 1136
+          },
+          {
+            "top": 519,
+            "bottom": 607,
+            "left": 830,
+            "right": 1010
+          },
+          {
+            "top": 283,
+            "bottom": 371,
+            "left": 879,
+            "right": 1059
+          }
+        ],
+        "satellitesFitViewport": true,
+        "heroRect": {
+          "x": 0,
+          "y": 89,
+          "width": 1600,
+          "height": 832,
+          "top": 89,
+          "right": 1600,
+          "bottom": 921,
+          "left": 0
+        },
         "connections": 7,
         "signalLines": 7,
         "animatedSignals": 7,
@@ -75,7 +130,277 @@
           "left": 1025.390625
         }
       },
-      "screenshotBytes": 93152,
+      "screenshotBytes": 94460,
+      "hoverCheck": {
+        "hoveredNode": 1,
+        "hoveredBeam": 1,
+        "beamAnimation": "mrseo-signal-stream"
+      }
+    },
+    {
+      "name": "desktop-wide",
+      "viewport": {
+        "width": 1792,
+        "height": 862
+      },
+      "errors": [],
+      "failedRequests": [],
+      "httpStatus": 200,
+      "responseRobots": "noindex, nofollow",
+      "page": {
+        "title": "MrSeo.tech",
+        "href": "https://mrseo.tech/",
+        "width": 1792,
+        "viewport": 1792,
+        "hasHero": true,
+        "webglReady": true,
+        "earthCanvas": true,
+        "satellites": 7,
+        "services": [
+          {
+            "title": "↗\nSEO\nОрганічний попит і видимість",
+            "href": "https://mrseo.tech/seo/",
+            "rect": 180
+          },
+          {
+            "title": "Google Ads\nКерований платний трафік",
+            "href": "https://mrseo.tech/google-ads/",
+            "rect": 180
+          },
+          {
+            "title": "Analytics\nДані для точних рішень",
+            "href": "https://mrseo.tech/analytics/",
+            "rect": 180
+          },
+          {
+            "title": "◇\nE-commerce\nЗростання каталогу та продажів",
+            "href": "https://mrseo.tech/horoshop/",
+            "rect": 180
+          },
+          {
+            "title": "⚙\nTechnical SEO\nТехнічна якість сайту",
+            "href": "https://mrseo.tech/seo-audit/",
+            "rect": 180
+          },
+          {
+            "title": "▣\nWeb Development\nРозробка та технічні рішення для бізнесу",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 180
+          },
+          {
+            "title": "▤\nСтворення сайтів\nСайти для бізнесу та інтернет-магазини",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 180
+          }
+        ],
+        "satelliteBounds": [
+          {
+            "top": 168,
+            "bottom": 256,
+            "left": 1183,
+            "right": 1363
+          },
+          {
+            "top": 272,
+            "bottom": 360,
+            "left": 1353,
+            "right": 1533
+          },
+          {
+            "top": 497,
+            "bottom": 585,
+            "left": 1391,
+            "right": 1571
+          },
+          {
+            "top": 673,
+            "bottom": 761,
+            "left": 1269,
+            "right": 1449
+          },
+          {
+            "top": 667,
+            "bottom": 755,
+            "left": 1078,
+            "right": 1258
+          },
+          {
+            "top": 485,
+            "bottom": 573,
+            "left": 963,
+            "right": 1143
+          },
+          {
+            "top": 263,
+            "bottom": 351,
+            "left": 1009,
+            "right": 1189
+          }
+        ],
+        "satellitesFitViewport": true,
+        "heroRect": {
+          "x": 0,
+          "y": 89,
+          "width": 1792,
+          "height": 774,
+          "top": 89,
+          "right": 1792,
+          "bottom": 863,
+          "left": 0
+        },
+        "connections": 7,
+        "signalLines": 7,
+        "animatedSignals": 7,
+        "connectedLines": 7,
+        "linesVisible": true,
+        "noIndexMeta": "noindex, nofollow",
+        "globeRect": {
+          "x": 1148.03125,
+          "y": 355.921875,
+          "width": 240.15625,
+          "height": 240.15625,
+          "top": 355.921875,
+          "right": 1388.1875,
+          "bottom": 596.078125,
+          "left": 1148.03125
+        }
+      },
+      "screenshotBytes": 97585,
+      "hoverCheck": {
+        "hoveredNode": 1,
+        "hoveredBeam": 1,
+        "beamAnimation": "mrseo-signal-stream"
+      }
+    },
+    {
+      "name": "desktop-compact",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "errors": [],
+      "failedRequests": [],
+      "httpStatus": 200,
+      "responseRobots": "noindex, nofollow",
+      "page": {
+        "title": "MrSeo.tech",
+        "href": "https://mrseo.tech/",
+        "width": 1366,
+        "viewport": 1366,
+        "hasHero": true,
+        "webglReady": true,
+        "earthCanvas": true,
+        "satellites": 7,
+        "services": [
+          {
+            "title": "↗\nSEO\nОрганічний попит і видимість",
+            "href": "https://mrseo.tech/seo/",
+            "rect": 156
+          },
+          {
+            "title": "Google Ads\nКерований платний трафік",
+            "href": "https://mrseo.tech/google-ads/",
+            "rect": 156
+          },
+          {
+            "title": "Analytics\nДані для точних рішень",
+            "href": "https://mrseo.tech/analytics/",
+            "rect": 156
+          },
+          {
+            "title": "◇\nE-commerce\nЗростання каталогу та продажів",
+            "href": "https://mrseo.tech/horoshop/",
+            "rect": 156
+          },
+          {
+            "title": "⚙\nTechnical SEO\nТехнічна якість сайту",
+            "href": "https://mrseo.tech/seo-audit/",
+            "rect": 156
+          },
+          {
+            "title": "▣\nWeb Development\nРозробка та технічні рішення для бізнесу",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 156
+          },
+          {
+            "title": "▤\nСтворення сайтів\nСайти для бізнесу та інтернет-магазини",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 156
+          }
+        ],
+        "satelliteBounds": [
+          {
+            "top": 156,
+            "bottom": 244,
+            "left": 911,
+            "right": 1067
+          },
+          {
+            "top": 247,
+            "bottom": 335,
+            "left": 1063,
+            "right": 1219
+          },
+          {
+            "top": 443,
+            "bottom": 531,
+            "left": 1096,
+            "right": 1252
+          },
+          {
+            "top": 595,
+            "bottom": 683,
+            "left": 986,
+            "right": 1141
+          },
+          {
+            "top": 589,
+            "bottom": 677,
+            "left": 814,
+            "right": 970
+          },
+          {
+            "top": 429,
+            "bottom": 517,
+            "left": 712,
+            "right": 867
+          },
+          {
+            "top": 237,
+            "bottom": 325,
+            "left": 755,
+            "right": 910
+          }
+        ],
+        "satellitesFitViewport": true,
+        "heroRect": {
+          "x": 0,
+          "y": 89,
+          "width": 1366,
+          "height": 680,
+          "top": 89,
+          "right": 1366,
+          "bottom": 769,
+          "left": 0
+        },
+        "connections": 7,
+        "signalLines": 7,
+        "animatedSignals": 7,
+        "connectedLines": 7,
+        "linesVisible": true,
+        "noIndexMeta": "noindex, nofollow",
+        "globeRect": {
+          "x": 876.328125,
+          "y": 322.03125,
+          "width": 213.9375,
+          "height": 213.9375,
+          "top": 322.03125,
+          "right": 1090.265625,
+          "bottom": 535.96875,
+          "left": 876.328125
+        }
+      },
+      "screenshotBytes": 81932,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -88,7 +413,9 @@
         "width": 390,
         "height": 844
       },
-      "errors": [],
+      "errors": [
+        "Mobile services crop: locator.scrollIntoViewIfNeeded: Timeout 6982.995999999999ms exceeded.\nCall log:\n  - attempting scroll into view action\n    - waiting for element to be stable\n"
+      ],
       "failedRequests": [],
       "httpStatus": 200,
       "responseRobots": "noindex, nofollow",
@@ -138,6 +465,61 @@
             "rect": 358
           }
         ],
+        "satelliteBounds": [
+          {
+            "top": 782,
+            "bottom": 888,
+            "left": 16,
+            "right": 179
+          },
+          {
+            "top": 782,
+            "bottom": 888,
+            "left": 211,
+            "right": 374
+          },
+          {
+            "top": 910,
+            "bottom": 1016,
+            "left": 16,
+            "right": 179
+          },
+          {
+            "top": 910,
+            "bottom": 1016,
+            "left": 211,
+            "right": 374
+          },
+          {
+            "top": 1038,
+            "bottom": 1144,
+            "left": 16,
+            "right": 179
+          },
+          {
+            "top": 1038,
+            "bottom": 1144,
+            "left": 211,
+            "right": 374
+          },
+          {
+            "top": 1166,
+            "bottom": 1272,
+            "left": 16,
+            "right": 374
+          }
+        ],
+        "satellitesFitViewport": false,
+        "heroRect": {
+          "x": 0,
+          "y": 76,
+          "width": 390,
+          "height": 1255.875,
+          "top": 76,
+          "right": 390,
+          "bottom": 1331.875,
+          "left": 0
+        },
         "connections": 7,
         "signalLines": 7,
         "animatedSignals": 7,
@@ -155,8 +537,7 @@
           "left": 81.90625
         }
       },
-      "screenshotBytes": 95984,
-      "servicesScreenshotBytes": 99890
+      "screenshotBytes": 96888
     }
   ],
   "notes": []
