@@ -15,6 +15,7 @@ function mrseo_assets(){
  if(in_array(mrseo_slug(),array('seo','seo-audit','google-ads','performance-max','analytics','ecommerce-seo','horoshop','service-websites'),true)){
   wp_enqueue_style('mrseo-customer-journeys',get_template_directory_uri().'/assets/customer-journeys.css',array('mrseo-style'),'1.0.2');
  }
+ if(mrseo_slug()==='horoshop' && in_array(mrseo_locale(),array('uk','ru'),true))wp_enqueue_style('mrseo-horoshop-hero',get_template_directory_uri().'/assets/horoshop-hero.css',array('mrseo-style'),'1.0.0');
  if(mrseo_slug()==='about')wp_enqueue_style('mrseo-about',get_template_directory_uri().'/assets/about-page.css',array('mrseo-style'),'1.0.0');
  wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.0',true);
 }
