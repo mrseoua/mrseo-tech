@@ -41,3 +41,28 @@
 @media(max-width:1000px){.mrseo-journey-layout{grid-template-columns:1fr}.mrseo-journey-outcome{min-height:305px}.mrseo-journey-mark{margin-bottom:22px}.mrseo-journey-head{grid-template-columns:1fr}.mrseo-journey-head>p{max-width:600px}}
 @media(max-width:600px){.mrseo-journey{padding:65px 0}.mrseo-journey-head{margin-bottom:26px;gap:19px}.mrseo-journey h2{font-size:clamp(34px,8.5vw,49px)}.mrseo-journey-case summary{grid-template-columns:35px 1fr 28px;gap:11px;min-height:80px;padding:14px 13px}.mrseo-journey-num{width:34px;height:34px;font-size:11px}.mrseo-journey-question{font-size:16px}.mrseo-journey-toggle{width:27px;height:27px;line-height:23px;font-size:20px}.mrseo-journey-detail{padding:0 17px 21px 58px}.mrseo-journey-detail p{font-size:14px}.mrseo-journey-outcome{padding:28px 24px}.mrseo-journey-outcome h3{font-size:32px}}
 @media(prefers-reduced-motion:reduce){.mrseo-journey *, .mrseo-journey *:before{transition:none!important}}
+
+
+/* Match interactive problem stories to the more readable service typography. */
+.mrseo-journey-head>p{
+  font-size:17px;
+  line-height:1.7;
+  color:#4b514c;
+}
+.mrseo-journey-detail p{
+  font-size:17px;
+  line-height:1.73;
+  color:#353e38;
+}
+.mrseo-journey-detail span{font-size:12px;color:#934233}
+.mrseo-journey-outcome p{
+  font-size:18px;
+  line-height:1.72;
+  color:#e0e9e2;
+}
+.mrseo-journey-outcome .mrseo-journey-kicker{color:#cce1da;font-size:11px}
+@media(max-width:600px){
+ .mrseo-journey-head>p{font-size:16px}
+ .mrseo-journey-detail p{font-size:16px;line-height:1.72}
+ .mrseo-journey-outcome p{font-size:17px}
+}
