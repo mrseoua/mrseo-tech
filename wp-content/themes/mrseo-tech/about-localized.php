@@ -27,7 +27,7 @@ get_header();
       <div class="about-experience" aria-label="<?php echo esc_attr(mrseo_t('10 років практичного досвіду','10 лет практического опыта','10 years of practical experience'));?>">
         <div class="about-experience-top"><span>MRSEO.TECH</span><span>↗</span></div>
         <div class="about-experience-main">
-          <span class="about-experience-number">10<span>+</span></span>
+          <span class="about-experience-number">10</span>
           <span class="about-experience-caption"><?php echo esc_html(mrseo_t('років практичного досвіду','лет практического опыта','years of hands-on experience'));?></span>
         </div>
         <div class="about-experience-bottom">
