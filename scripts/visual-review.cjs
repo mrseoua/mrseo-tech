@@ -45,6 +45,9 @@ async function capture(browser, name, viewport, mobile) {
         earthCanvas:!!document.querySelector('.lab-core canvas.lab-webgl-canvas'),
         satellites:n.length,
         services:n.map(e=>({title:(e.innerText||'').trim().slice(0,90),href:e.getAttribute('href'),rect:Math.round(e.getBoundingClientRect().width)})),
+        satelliteBounds:n.map(e=>{const b=e.getBoundingClientRect();return {top:Math.round(b.top),bottom:Math.round(b.bottom),left:Math.round(b.left),right:Math.round(b.right)}}),
+        satellitesFitViewport:n.every(e=>{const b=e.getBoundingClientRect();return b.top>=75&&b.bottom<=innerHeight-7&&b.left>=0&&b.right<=innerWidth}),
+        heroRect:r?.getBoundingClientRect().toJSON()||null,
         connections:spokes.length,
         signalLines:document.querySelectorAll('.lab-spoke-flow').length,
         animatedSignals:[...document.querySelectorAll('.lab-spoke-flow')].filter(e=>getComputedStyle(e).animationName!=='none').length,
@@ -67,15 +70,15 @@ async function capture(browser, name, viewport, mobile) {
           hoveredBeam:document.querySelectorAll('.lab-spoke-flow.is-link-hovered').length,
           beamAnimation:getComputedStyle(document.querySelector('.lab-spoke-flow.is-link-hovered')).animationName
         }));
-        await snapshot(page,'desktop-hover');
+        await snapshot(page,name+'-hover');
         await page.mouse.move(12,116);
       }catch(e){profile.errors.push('Hover test: '+String(e).slice(0,240))}
       const globe=page.locator('.lab-visual');
       if(await globe.count()) {
         try{
           const jpg=await globe.screenshot({type:'jpeg',quality:84,timeout:10000});
-          await fs.writeFile(output+'/globe.jpg',jpg);
-          await fs.writeFile(output+'/globe.b64',jpg.toString('base64'),'utf8');
+          await fs.writeFile(output+'/'+name+'-globe.jpg',jpg);
+          await fs.writeFile(output+'/'+name+'-globe.b64',jpg.toString('base64'),'utf8');
         }catch(e){profile.errors.push('Globe crop: '+e.message.slice(0,160))}
       }
     }else{
@@ -104,6 +107,8 @@ async function capture(browser, name, viewport, mobile) {
      '--enable-unsafe-swiftshader','--disable-dev-shm-usage'
    ]});
    await capture(browser,'desktop',{width:1600,height:920},false);
+   await capture(browser,'desktop-wide',{width:1792,height:862},false);
+   await capture(browser,'desktop-compact',{width:1366,height:768},false);
    await capture(browser,'mobile',{width:390,height:844},true);
  }catch(e){result.notes.push('Browser launch/capture: '+String(e).slice(0,700))}
  finally{
