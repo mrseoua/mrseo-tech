@@ -85,7 +85,7 @@ async function capture(browser, name, viewport, mobile) {
       const node=page.locator('.lab-visual');
       if(await node.count()){
         try{
-          await node.scrollIntoViewIfNeeded({timeout:7000});
+          await page.evaluate(()=>document.querySelector('.lab-visual')?.scrollIntoView({block:'start',behavior:'instant'}));
           await sleep(500);
           profile.servicesScreenshotBytes=await snapshot(page,'mobile-services');
         }catch(e){profile.errors.push('Mobile services crop: '+e.message.slice(0,160))}
