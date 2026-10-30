@@ -1,48 +1,54 @@
-/* Horoshop interactive SEO explainer — scoped to two localized Horoshop pages. */
+/* Compact Horoshop SEO demo: three genuinely interactive scenarios, UA/RU only. */
 (()=>{'use strict';
-const root=document.querySelector('.special-hero-horoshop .hs-visual');
+const root=document.querySelector('.special-hero-horoshop .hs-showcase');
 if(!root)return;
 const buttons=[...root.querySelectorAll('[data-hs-step]')];
-const title=root.querySelector('[data-hs-detail-title]');
-const detail=root.querySelector('[data-hs-detail]');
-const browserTitle=root.querySelector('[data-hs-browser-title]');
-const browserAddress=root.querySelector('[data-hs-address]:not(button)');
-const orbitLabel=root.querySelector('[data-hs-stage-label]');
-const zone=root.querySelector('.hs-browser-zone');
-if(buttons.length!==3||!title||!detail||!browserTitle||!browserAddress||!orbitLabel||!zone)return;
-const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
-let active=0, timer=null, paused=false;
-function select(index){
-  if(index<0||index>=buttons.length)return;
-  active=index;
-  const btn=buttons[index];
-  buttons.forEach((button,i)=>{const yes=i===index;button.classList.toggle('is-active',yes);button.setAttribute('aria-pressed',String(yes))});
-  title.textContent=btn.dataset.hsTitle||'';
-  detail.textContent=btn.dataset.hsDescription||'';
-  browserTitle.textContent=btn.dataset.hsBrowser||'';
-  browserAddress.textContent=btn.dataset.hsAddress||'';
-  orbitLabel.textContent=btn.dataset.hsOrbit||'';
-  zone.dataset.hsScenario=String(index);
+const demo=root.querySelector('.hs-demo');
+const problem=root.querySelector('[data-hs-problem]');
+const source=root.querySelector('[data-hs-source]');
+const target=root.querySelector('[data-hs-target]');
+const solution=root.querySelector('[data-hs-solution]');
+const count=root.querySelector('[data-hs-count]');
+if(!demo||!problem||!source||!target||!solution||!count||buttons.length!==3)return;
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+let active=0,timer=null,manual=false,visible=true,hover=false,focus=false;
+function select(i){
+ if(i<0||i>=buttons.length)return;
+ active=i;
+ const button=buttons[i];
+ buttons.forEach((el,index)=>{const selected=index===i;el.classList.toggle('is-active',selected);el.setAttribute('aria-pressed',String(selected))});
+ problem.textContent=button.dataset.hsProblem||'';
+ source.textContent=button.dataset.hsSource||'';
+ target.textContent=button.dataset.hsTarget||'';
+ solution.textContent=button.dataset.hsSolution||'';
+ count.textContent=String(i+1).padStart(2,'0')+' / 03';
+ demo.dataset.hsScene=String(i);
 }
-function stop(){if(timer!==null){clearInterval(timer);timer=null}}
-function play(){
-  stop();
-  if(paused||motion.matches||document.hidden)return;
-  timer=setInterval(()=>{if(!document.hidden&&!paused)select((active+1)%buttons.length)},5500);
+function stop(){if(timer!==null){window.clearInterval(timer);timer=null}}
+function start(){
+ stop();
+ if(manual||hover||focus||!visible||reduce.matches||document.hidden)return;
+ timer=window.setInterval(()=>select((active+1)%buttons.length),6500);
 }
 buttons.forEach((button,i)=>{
-  button.addEventListener('click',()=>{paused=true;stop();select(i)});
-  button.addEventListener('focus',()=>{paused=true;stop()});
+ button.addEventListener('click',()=>{manual=true;stop();select(i)});
+ button.addEventListener('keydown',e=>{
+  const next=e.key==='ArrowRight'||e.key==='ArrowDown'?i+1:e.key==='ArrowLeft'||e.key==='ArrowUp'?i-1:e.key==='Home'?0:e.key==='End'?buttons.length-1:null;
+  if(next===null)return;
+  e.preventDefault();manual=true;stop();
+  const newIndex=(next+buttons.length)%buttons.length;
+  select(newIndex);buttons[newIndex].focus();
+ });
 });
-root.addEventListener('pointerenter',()=>{paused=true;stop()});
-root.addEventListener('pointerleave',()=>{if(!root.contains(document.activeElement)){paused=false;play()}});
-root.addEventListener('focusin',()=>{paused=true;stop()});
-root.addEventListener('focusout',event=>{if(!root.contains(event.relatedTarget)){paused=false;play()}});
-motion.addEventListener?.('change',()=>{if(motion.matches)stop();else play()});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else play()});
+root.addEventListener('pointerenter',()=>{hover=true;stop()});
+root.addEventListener('pointerleave',()=>{hover=false;start()});
+root.addEventListener('focusin',()=>{focus=true;stop()});
+root.addEventListener('focusout',event=>{if(!root.contains(event.relatedTarget)){focus=false;start()}});
+reduce.addEventListener?.('change',start);
+document.addEventListener('visibilitychange',start);
 if('IntersectionObserver' in window){
-  const observer=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)stop();else play()},{threshold:.16});
-  observer.observe(root);
+ const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)start();else stop()},{threshold:.2});
+ observer.observe(root);
 }
-select(0);play();
+select(0);start();
 })();
