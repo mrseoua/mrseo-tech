@@ -164,3 +164,8 @@ main.orbit-lab>.lab-shell{
   border-left:0!important;
   border-right:0!important;
 }
+
+/* UA/RU have eight services: four balanced mobile rows. EN keeps the last of seven full-width. */
+@media(max-width:650px){
+ .orbit-lab:has(.lab-node-8) .lab-visual>.lab-node:last-of-type{grid-column:auto!important;max-width:none!important}
+}
