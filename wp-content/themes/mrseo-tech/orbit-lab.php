@@ -509,6 +509,45 @@ foreach($nodes as $i=>$node):?><a href="<?php echo esc_url(mrseo_url($service_ur
 <script type="module" src="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-earth-three.js?v=5');?>"></script>
 
 <?php if($mrseo_is_home):?>
+<?php
+// Selected public portfolio domains. Verify names against the current portfolio data.
+require_once get_template_directory().'/inc/portfolio-data.php';
+$mrseo_client_groups=mrseo_portfolio_items();
+$mrseo_known_clients=array();
+foreach($mrseo_client_groups as $mrseo_client_group){
+  $mrseo_known_clients=array_merge($mrseo_known_clients,$mrseo_client_group);
+}
+$mrseo_featured_domains=array(
+  'avtomoda.com.ua','armonelli.com.ua','urolog.kr.ua','luxurylinens.ua',
+  'bedstore.com.ua','kiwismart.ua','lecharme.com.ua','garden-house.in.ua',
+  'powerlux.com.ua','wenergycoffee.com','goodbaking.pro','monkey.com.ua'
+);
+$mrseo_featured_clients=array_values(array_filter($mrseo_featured_domains,function($domain)use($mrseo_known_clients){
+  return in_array($domain,$mrseo_known_clients,true);
+}));
+?>
+<?php if($mrseo_featured_clients):?>
+<section class="client-band client-band-home" aria-label="<?php echo esc_attr(mrseo_t('Проєкти з нашого портфоліо','Проекты из нашего портфолио','Projects in our portfolio'));?>">
+  <div class="container client-band-head">
+    <div>
+      <div class="eyebrow"><?php echo esc_html(mrseo_t('ДОСВІД У РІЗНИХ НІШАХ','ОПЫТ В РАЗНЫХ НИШАХ','EXPERIENCE ACROSS INDUSTRIES'));?></div>
+      <h2><?php echo esc_html(mrseo_t('Проєкти, з якими працювали','Проекты, с которыми работали','Projects we have worked with'));?></h2>
+    </div>
+    <a class="client-band-link" href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html(mrseo_t('Усі проєкти','Все проекты','Explore the portfolio'));?> <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="client-marquee" role="group" aria-label="<?php echo esc_attr(mrseo_t('Назви сайтів з портфоліо','Названия сайтов из портфолио','Website names from our portfolio'));?>">
+    <div class="client-track">
+      <?php foreach(array(false,true) as $mrseo_clone):?>
+      <div class="client-set"<?php if($mrseo_clone):?> aria-hidden="true"<?php endif;?>>
+        <?php foreach($mrseo_featured_clients as $mrseo_domain):?>
+          <span class="client-wordmark"><?php echo esc_html($mrseo_domain);?></span>
+        <?php endforeach;?>
+      </div>
+      <?php endforeach;?>
+    </div>
+  </div>
+</section>
+<?php endif;?>
 <section class="mrseo-home-editorial" aria-label="<?php echo esc_attr(mrseo_t('Наш підхід до розвитку бізнесу','Наш подход к развитию бизнеса','Our business growth approach'));?>">
 <div class="mhe-inner">
 <div class="mhe-kicker"><?php echo esc_html(mrseo_t('ВІД ПРОБЛЕМИ ДО РІШЕННЯ','ОТ ПРОБЛЕМЫ К РЕШЕНИЮ','FROM CHALLENGE TO SOLUTION'));?></div>
