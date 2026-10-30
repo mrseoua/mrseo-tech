@@ -1,0 +1,622 @@
+{
+  "version": 1,
+  "updated": "2026-10-30",
+  "pages": {
+    "seo": {
+      "uk": {
+        "headline": "У Google є попит. Чому клієнти знаходять конкурентів?",
+        "lead": "Не починаємо з обіцянок позицій. Шукаємо місце, де бізнес втрачає пошуковий попит: у структурі, індексації, змісті сторінок або на шляху до заявки.",
+        "outcome": "Не список ключових слів, а карта можливостей: які сторінки створити чи переробити, що заважає їм зростати та як виміряти ефект.",
+        "stories": [
+          [
+            "Пишете статті, а заявок більше не стає",
+            "Інформаційний трафік може зростати, поки комерційні послуги не мають власних сильних сторінок.",
+            "Зіставляємо запити з етапами вибору; розвиваємо сторінки під послуги, категорії та намір купити.",
+            "Частка цільових запитів, покази й переходи потрібних сторінок, звернення з органіки."
+          ],
+          [
+            "Важливі сторінки є, але Google їх майже не показує",
+            "Сторінки можуть конкурувати між собою або губитися через канонікали, посилання й технічні обмеження.",
+            "Перевіряємо індексацію, внутрішні зв’язки, дублікати й зміст; визначаємо конкретні URL для виправлення.",
+            "Статус індексації, пошукові покази й кліки після впровадження."
+          ],
+          [
+            "Трафік приходить, але люди йдуть",
+            "Пошуковий запит привів людину, але сторінка не допомогла зрозуміти ціну, умови чи наступний крок.",
+            "Перепаковуємо пропозицію: відповіді на заперечення, приклади, характеристики, довіру та зрозумілий CTA.",
+            "Заявки, дзвінки й інші підтверджені цільові дії, а не лише позиції."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "В Google есть спрос. Почему клиенты находят конкурентов?",
+        "lead": "Не начинаем с обещаний позиций. Ищем место, где бизнес теряет поисковый спрос: в структуре, индексации, содержании страниц или на пути к заявке.",
+        "outcome": "Не список ключевых слов, а карта возможностей: какие страницы создать или переделать, что мешает им расти и как проверить эффект.",
+        "stories": [
+          [
+            "Пишете статьи, а заявок больше не становится",
+            "Информационный трафик может расти, пока коммерческим услугам не хватает сильных посадочных страниц.",
+            "Сопоставляем запросы с этапами выбора; развиваем страницы под услуги, категории и намерение купить.",
+            "Доля целевых запросов, показы и переходы нужных страниц, обращения из органики."
+          ],
+          [
+            "Нужные страницы есть, но Google почти их не показывает",
+            "Страницы могут конкурировать между собой или теряться из-за canonical, ссылок и технических ограничений.",
+            "Проверяем индексацию, внутренние связи, дубли и содержание; определяем конкретные URL для исправления.",
+            "Статус индексации, поисковые показы и клики после внедрения."
+          ],
+          [
+            "Трафик приходит, но люди уходят",
+            "Запрос привёл человека, но страница не помогла разобраться в цене, условиях или следующем шаге.",
+            "Пересобираем предложение: ответы на возражения, примеры, характеристики, доверие и ясный призыв к действию.",
+            "Заявки, звонки и подтверждённые целевые действия, а не только позиции."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "People are searching. Why are they finding competitors?",
+        "lead": "We do not begin with ranking promises. We locate where demand is lost: site architecture, indexing, page relevance or the route from visit to enquiry.",
+        "outcome": "Not just a keyword list: a map of pages to create or improve, blockers to fix and signals that reveal progress.",
+        "stories": [
+          [
+            "You publish content, but enquiries stay flat",
+            "Informational visits can increase while commercial services still lack convincing landing pages.",
+            "Map intent across the buying journey; improve pages for services, categories and transactional searches.",
+            "Commercial search impressions, clicks to priority pages and organic enquiries."
+          ],
+          [
+            "Important pages barely appear in Google",
+            "Pages may compete with each other or disappear behind canonical, linking and technical issues.",
+            "Audit indexing, duplication, internal links and page intent; specify exactly which URLs to fix.",
+            "Indexing status, relevant impressions and clicks after deployment."
+          ],
+          [
+            "Visitors arrive and then leave",
+            "The page fails to answer pricing, trust or next-step questions.",
+            "Clarify the offer, handle objections and make contact actions straightforward.",
+            "Enquiries and qualified actions, not rankings alone."
+          ]
+        ]
+      }
+    },
+    "seo-audit": {
+      "uk": {
+        "headline": "Сайт відкривається. А що насправді бачить Google?",
+        "lead": "Аудит потрібен не заради сотні помилок у звіті. Відокремлюємо технічні ризики, які можуть впливати на важливі сторінки й гроші, від другорядних попереджень.",
+        "outcome": "Пріоритетні задачі з URL, поясненням ризику, умовами перевірки й порядком впровадження.",
+        "stories": [
+          [
+            "Після оновлення сайту впали переходи",
+            "Могли змінитися URL, шаблони, canonical, посилання або доступність сторінок.",
+            "Порівнюємо стан до й після, аналізуємо редиректи, статуси, шаблони та Search Console.",
+            "Відновлення доступності потрібних URL і тенденція показів та кліків."
+          ],
+          [
+            "Каталог величезний, але Google бачить малу частину",
+            "Бюджет обходу витрачається на дублікати, фільтри й непотрібні параметри.",
+            "Зіставляємо sitemap, сканування й індексацію; будуємо правила для корисних і технічних URL.",
+            "Кількість потрібних сторінок в індексі, чистота sitemap, покриття обходом."
+          ],
+          [
+            "Розробник каже «усе працює», SEO каже «не працює»",
+            "Немає єдиного переліку проблем, відтворюваних тестів і критеріїв приймання.",
+            "Формуємо задачі для розробки з прикладами URL, пріоритетом і перевіркою після релізу.",
+            "Статуси задач, повторний crawl і контроль індексації."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "Сайт открывается. А что на самом деле видит Google?",
+        "lead": "Аудит нужен не ради сотни ошибок в отчёте. Отделяем технические риски, которые могут влиять на важные страницы и деньги, от второстепенных предупреждений.",
+        "outcome": "Приоритетные задачи с URL, объяснением риска, критериями проверки и порядком внедрения.",
+        "stories": [
+          [
+            "После обновления сайта упали переходы",
+            "Могли измениться URL, шаблоны, canonical, ссылки или доступность страниц.",
+            "Сравниваем состояние до и после, анализируем редиректы, статусы, шаблоны и Search Console.",
+            "Доступность нужных URL, динамика показов и кликов."
+          ],
+          [
+            "Каталог большой, а Google видит малую часть",
+            "Ресурсы обхода уходят на дубли, фильтры и технические параметры.",
+            "Сопоставляем sitemap, сканирование и индексацию; создаём правила для полезных и технических URL.",
+            "Нужные страницы в индексе, чистота sitemap, охват обхода."
+          ],
+          [
+            "Разработчик говорит «всё работает», SEO — «нет»",
+            "Нет общего списка проблем, воспроизводимых тестов и критериев приёмки.",
+            "Готовим задачи для разработчика с примерами URL, приоритетом и повторной проверкой после релиза.",
+            "Статусы задач, повторный crawl и контроль индексации."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "Your website loads. What does Google actually see?",
+        "lead": "An audit should not be a hundred warnings in a PDF. We separate technical blockers affecting valuable pages from low-impact noise.",
+        "outcome": "Prioritized tickets with example URLs, business impact, acceptance checks and implementation order.",
+        "stories": [
+          [
+            "Traffic dropped after a redesign",
+            "URLs, templates, canonical tags, links or indexability may have changed.",
+            "Compare before and after; audit redirects, status codes, templates and Search Console.",
+            "Recovery of key URLs and trends in impressions and clicks."
+          ],
+          [
+            "Your catalog is huge, but few pages are indexed",
+            "Duplicate filters and parameter URLs can crowd out useful pages.",
+            "Reconcile sitemaps, crawl results and indexing; define rules for valuable and technical URLs.",
+            "Priority URLs indexed, sitemap hygiene and crawl coverage."
+          ],
+          [
+            "Developers say it works; SEO data says otherwise",
+            "Teams lack reproducible defects and shared acceptance criteria.",
+            "Deliver clear developer tickets with affected URLs, priorities and post-release tests.",
+            "Completed fixes, recrawl results and indexing checks."
+          ]
+        ]
+      }
+    },
+    "google-ads": {
+      "uk": {
+        "headline": "Реклама витрачає бюджет. А де прибуткові замовлення?",
+        "lead": "Кліки й конверсії самі по собі не доводять ефективність. Перевіряємо, чи правильні продажі бачить Google Ads і куди реально йдуть гроші.",
+        "outcome": "План перерозподілу бюджету, перевірені конверсії, зрозуміла структура кампаній та рішення, прив’язані до економіки бізнесу.",
+        "stories": [
+          [
+            "Бюджет витрачається, а продажі не ростуть",
+            "Кампанії можуть приводити не той попит або оптимізуватися під слабкі сигнали.",
+            "Перевіряємо запити, цілі, посадкові сторінки й обмеження; змінюємо структуру та пріоритети.",
+            "Витрати, цінність покупок або якісних лідів, CPA та дохід після витрат."
+          ],
+          [
+            "У кабінеті багато конверсій, у CRM — набагато менше",
+            "Події можуть дублюватися, рахувати некорисні дії або мати помилкову цінність.",
+            "Звіряємо Google Ads, GA4 і фактичні замовлення; прибираємо некоректні сигнали оптимізації.",
+            "Узгоджені визначення конверсій, відсутність дублювань, коректні цінності."
+          ],
+          [
+            "Усі товари рекламуються однаково",
+            "Товари мають різну маржу, попит і здатність окупати клік.",
+            "Сегментуємо асортимент там, де це виправдано даними; працюємо з фідом і пріоритетами.",
+            "ROAS разом із маржею, витрати на групи товарів, підтверджені покупки."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "Реклама расходует бюджет. А где прибыльные заказы?",
+        "lead": "Клики и конверсии сами по себе не доказывают эффективность. Проверяем, какие продажи видит Google Ads и куда действительно уходят деньги.",
+        "outcome": "План перераспределения бюджета, проверенные конверсии, понятная структура кампаний и решения, привязанные к экономике бизнеса.",
+        "stories": [
+          [
+            "Бюджет расходуется, а продажи не растут",
+            "Кампании могут приводить не тот спрос или оптимизироваться под слабые сигналы.",
+            "Проверяем запросы, цели, посадочные страницы и ограничения; меняем структуру и приоритеты.",
+            "Расходы, ценность покупок или качественных лидов, CPA и доход после затрат."
+          ],
+          [
+            "В кабинете много конверсий, в CRM — намного меньше",
+            "События могут дублироваться, считать бесполезные действия или иметь неверную ценность.",
+            "Сверяем Google Ads, GA4 и фактические заказы; убираем неправильные сигналы оптимизации.",
+            "Единые определения конверсий, отсутствие дублей, корректные ценности."
+          ],
+          [
+            "Все товары рекламируются одинаково",
+            "У товаров разные маржа, спрос и способность окупать клик.",
+            "Сегментируем ассортимент там, где это обосновано данными; улучшаем фид и приоритеты.",
+            "ROAS с учётом маржи, расходы на группы товаров, подтверждённые покупки."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "Your ads are spending. Where are the profitable orders?",
+        "lead": "Clicks and reported conversions do not establish profitability. We validate what Google Ads learns from and where the budget really goes.",
+        "outcome": "A budget-priority plan, verified conversions, intelligible campaign structure and decisions tied to unit economics.",
+        "stories": [
+          [
+            "Spend rises but sales do not",
+            "Campaigns may target weak intent or learn from misleading conversion signals.",
+            "Review queries, goals, landing pages and constraints; revise structure and priorities.",
+            "Spend, verified order or qualified-lead value, CPA and contribution after costs."
+          ],
+          [
+            "Google Ads reports more conversions than your CRM",
+            "Events may be duplicated, low value or assigned incorrect revenue.",
+            "Reconcile Ads, GA4 and actual orders; remove misleading optimization signals.",
+            "Defined conversion rules, no duplicate events and realistic values."
+          ],
+          [
+            "Every product gets the same treatment",
+            "Product margins, demand and achievable returns differ.",
+            "Segment only where the data supports it; improve feeds and spend priorities.",
+            "ROAS in the context of margin, spend by product group and verified purchases."
+          ]
+        ]
+      }
+    },
+    "performance-max": {
+      "uk": {
+        "headline": "PMax навчається. Але на яких товарах ви втрачаєте гроші?",
+        "lead": "Автоматизацію не потрібно ламати. Їй потрібні якісні сигнали, придатний фід і правила, які враховують економіку асортименту.",
+        "outcome": "Прозора товарна сегментація, правила тестів і висновки про те, що масштабувати, що виправити, а що не варто фінансувати.",
+        "stories": [
+          [
+            "Бюджет «з’їдають» товари без продажів",
+            "Алгоритм бачить кліки чи конверсії, але не завжди знає вашу реальну маржу.",
+            "Зіставляємо витрати зі SKU, покупками й маржинальністю; визначаємо групи для перевірки та обережних обмежень.",
+            "Результат по SKU або групах, витрати без покупок, ROAS відносно беззбитковості."
+          ],
+          [
+            "Хіти не отримують достатньо показів",
+            "Слабкі назви, невідповідність фіда, конкуренція асортименту й структура можуть обмежувати видимість.",
+            "Перевіряємо Merchant Center, атрибути й розподіл показів; тестуємо зміни поступово.",
+            "Покриття товарів, покази, кліки, покупки та дохід у тестових групах."
+          ],
+          [
+            "Після оптимізації показники стрибають",
+            "Занадто часті зміни, мала статистика й затримка конверсій ускладнюють висновки.",
+            "Фіксуємо дату змін, розділяємо періоди навчання й оцінки, визначаємо мінімум даних.",
+            "Порівнянні періоди, коректні покупки й контроль витрат."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "PMax обучается. Но на каких товарах вы теряете деньги?",
+        "lead": "Автоматизацию не нужно ломать. Ей нужны качественные сигналы, корректный фид и правила с учётом экономики ассортимента.",
+        "outcome": "Прозрачная сегментация товаров, правила тестов и выводы: что масштабировать, что исправить, а что не финансировать.",
+        "stories": [
+          [
+            "Бюджет «съедают» товары без продаж",
+            "Алгоритм видит клики и конверсии, но не всегда знает вашу фактическую маржу.",
+            "Сопоставляем расходы со SKU, покупками и маржой; определяем группы для проверки и осторожных ограничений.",
+            "Результат по SKU или группам, траты без покупок, ROAS относительно безубыточности."
+          ],
+          [
+            "Хиты не получают достаточно показов",
+            "Слабые названия, ошибки фида и конкуренция внутри ассортимента ограничивают видимость.",
+            "Проверяем Merchant Center, атрибуты и распределение показов; тестируем изменения постепенно.",
+            "Покрытие товаров, показы, клики, покупки и выручка тестовых групп."
+          ],
+          [
+            "После изменений результаты скачут",
+            "Частые правки, мало данных и задержка конверсий мешают оценке.",
+            "Фиксируем дату изменений, разделяем обучение и оценку, определяем достаточный объём статистики.",
+            "Сопоставимые периоды, корректные покупки и контроль расходов."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "PMax is learning. Which products are costing you money?",
+        "lead": "Automation needs usable signals, a healthy feed and decisions that reflect product economics — not endless structural changes.",
+        "outcome": "Transparent product segmentation, clear testing rules and priorities for scaling, repairing or stopping spend.",
+        "stories": [
+          [
+            "Budget goes to products with no orders",
+            "The algorithm sees clicks and conversions, not necessarily real product margin.",
+            "Compare spend with SKU-level purchases and margins; identify groups for careful testing.",
+            "SKU/group results, spend without purchases and ROAS versus break-even."
+          ],
+          [
+            "Best sellers barely receive impressions",
+            "Feed quality, product eligibility and catalog competition can suppress delivery.",
+            "Audit Merchant Center, attributes and impression distribution; test changes incrementally.",
+            "Eligible product coverage, impressions, clicks, purchases and revenue."
+          ],
+          [
+            "Results swing after every adjustment",
+            "Frequent edits, limited data and conversion delays distort comparisons.",
+            "Log change dates, distinguish learning from evaluation and define evidence thresholds.",
+            "Comparable time windows, valid purchases and controlled spend."
+          ]
+        ]
+      }
+    },
+    "analytics": {
+      "uk": {
+        "headline": "У вас є звіти. Але чи можна їм довіряти?",
+        "lead": "Коли GA4, Google Ads і CRM показують різні цифри, додатковий дашборд не вирішить проблему. Спочатку налагоджуємо джерела й визначення показників.",
+        "outcome": "Зрозуміла карта подій, узгоджені визначення метрик, контроль якості та звіт, який допомагає ухвалювати рішення.",
+        "stories": [
+          [
+            "Продажів у рекламі більше, ніж у магазині",
+            "Події можуть дублюватися, повертатися пізніше або відрізнятися за атрибуцією.",
+            "Перевіряємо purchase, transaction_id, значення й валюту; документуємо відмінності систем.",
+            "Частка узгоджених транзакцій, дублі та розбіжності у виручці."
+          ],
+          [
+            "Звіти красиві, але незрозуміло, що робити",
+            "Показники описують активність, а не рішення: яка сторінка чи кампанія потребує уваги.",
+            "Будуємо зрізи за каналами, категоріями й етапами воронки, додаємо причини відхилень.",
+            "Реальні рішення за даними: що перевірити, змінити, зупинити або масштабувати."
+          ],
+          [
+            "Потрібно щодня збирати таблиці вручну",
+            "Дані розкидані по сервісах, немає перевірок свіжості й єдиного формату.",
+            "Автоматизуємо доступні вигрузки через API, BigQuery або Sheets із контролем помилок.",
+            "Свіжість, повнота даних, час ручної роботи, своєчасні сигнали про проблеми."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "У вас есть отчёты. Но можно ли им верить?",
+        "lead": "Когда GA4, Google Ads и CRM показывают разные цифры, ещё один дашборд не решит проблему. Сначала наводим порядок в источниках и определениях метрик.",
+        "outcome": "Понятная карта событий, согласованные определения показателей, контроль качества и отчёт для принятия решений.",
+        "stories": [
+          [
+            "Продаж в рекламе больше, чем в магазине",
+            "События могут дублироваться, поступать с задержкой или различаться по атрибуции.",
+            "Проверяем purchase, transaction_id, сумму и валюту; документируем расхождения систем.",
+            "Доля согласованных транзакций, дубли и расхождения в выручке."
+          ],
+          [
+            "Отчёты красивые, но непонятно, что делать",
+            "Метрики описывают активность, а не действия: какой странице или кампании нужна помощь.",
+            "Строим срезы по каналам, категориям и шагам воронки; показываем причины отклонений.",
+            "Решения на данных: что проверить, изменить, остановить или масштабировать."
+          ],
+          [
+            "Приходится каждый день собирать таблицы вручную",
+            "Данные разбросаны по сервисам, нет контроля свежести и общего формата.",
+            "Автоматизируем доступные выгрузки через API, BigQuery или Sheets с проверками ошибок.",
+            "Свежесть и полнота данных, снижение ручной работы, сигналы о проблемах."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "You have reports. Can you trust the numbers?",
+        "lead": "When GA4, Google Ads and the CRM disagree, another dashboard is not the fix. We start with definitions and data integrity.",
+        "outcome": "Documented events and metrics, quality controls and reports that support actual decisions.",
+        "stories": [
+          [
+            "Ad platforms show more sales than the store",
+            "Events may duplicate, arrive late or use different attribution models.",
+            "Check purchase, transaction_id, values and currency; document system differences.",
+            "Matched transactions, duplicate rates and revenue discrepancies."
+          ],
+          [
+            "Dashboards look good, but nothing changes",
+            "Metrics describe activity without identifying which actions matter.",
+            "Build views across channels, categories and funnel steps; surface meaningful deviations.",
+            "Decisions about what to inspect, fix, stop or scale."
+          ],
+          [
+            "Someone rebuilds spreadsheets every morning",
+            "Sources are fragmented, freshness is unclear and definitions vary.",
+            "Automate supported API, BigQuery or Sheets pipelines with validation checks.",
+            "Freshness and completeness, time saved and timely failure alerts."
+          ]
+        ]
+      }
+    },
+    "ecommerce-seo": {
+      "uk": {
+        "headline": "У магазині тисячі товарів. Скільки з них знаходять у Google?",
+        "lead": "Не потрібно індексувати кожен фільтр. Потрібно, щоб покупець знаходив правильну категорію, модель і товар саме за своїм запитом.",
+        "outcome": "Карта комерційного попиту, правила для каталогів і фільтрів, пріоритети сторінок та контроль пошукової видимості.",
+        "stories": [
+          [
+            "Є товари, але немає сторінки під конкретний попит",
+            "Люди шукають бренд, модель, сумісність чи властивість, а каталог не має відповідної посадкової.",
+            "Визначаємо цінні комбінації запитів і створюємо логічні категорії та сторінки під них.",
+            "Покриття цільових груп запитів, покази категорій, переходи й продажі."
+          ],
+          [
+            "Фільтри множать тисячі схожих URL",
+            "Технічні параметри й дублікати відволікають пошуковик від комерційно корисних сторінок.",
+            "Вибудовуємо індексацію фільтрів, canonical, навігацію, sitemap і внутрішні посилання.",
+            "Чисті індексовані URL, відсутність зайвих дублів, видимість потрібних категорій."
+          ],
+          [
+            "Картки товарів не переконують купити",
+            "Назви, сумісність, характеристики й наявність описані не так, як їх шукає покупець.",
+            "Працюємо з назвами, структурою характеристик, відповідями на питання й пов’язаними товарами.",
+            "Переходи з пошуку на товарні URL, додавання в кошик і покупки."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "В магазине тысячи товаров. Сколько из них находят в Google?",
+        "lead": "Не нужно индексировать каждый фильтр. Нужно, чтобы покупатель находил правильную категорию, модель и товар именно по своему запросу.",
+        "outcome": "Карта коммерческого спроса, правила каталогов и фильтров, приоритеты страниц и контроль поисковой видимости.",
+        "stories": [
+          [
+            "Товары есть, а страницы под конкретный спрос нет",
+            "Люди ищут бренд, модель, совместимость или свойство, но каталог не предлагает подходящую посадочную.",
+            "Определяем ценные комбинации запросов и создаём логичные категории и страницы под них.",
+            "Охват целевых групп запросов, показы категорий, переходы и продажи."
+          ],
+          [
+            "Фильтры создают тысячи похожих URL",
+            "Технические параметры и дубли отвлекают поисковик от полезных коммерческих страниц.",
+            "Настраиваем индексацию фильтров, canonical, навигацию, sitemap и внутренние ссылки.",
+            "Чистый индекс, меньше ненужных дублей, видимость целевых категорий."
+          ],
+          [
+            "Карточки товаров не убеждают купить",
+            "Названия, совместимость, характеристики и наличие не отвечают на реальные вопросы покупателей.",
+            "Работаем с названиями, атрибутами, ответами на вопросы и связанными товарами.",
+            "Переходы из поиска на карточки, добавления в корзину и покупки."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "Thousands of products. How many are discoverable in Google?",
+        "lead": "Indexing every filter is not the goal. Buyers need to reach the right category, compatible model and product for their search.",
+        "outcome": "A commercial-demand map, indexation rules for catalog facets and clear page priorities with measurable visibility.",
+        "stories": [
+          [
+            "Products exist, but no landing page matches demand",
+            "Shoppers search by brand, model, compatibility or feature and find no relevant entry point.",
+            "Select valuable search combinations and create coherent landing and category pages.",
+            "Coverage of valuable intents, category impressions, organic visits and purchases."
+          ],
+          [
+            "Filters generate thousands of near-identical URLs",
+            "Technical parameter URLs compete with useful commercial pages.",
+            "Define facet indexing, canonicals, sitemaps, navigation and internal links.",
+            "Relevant URLs indexed, fewer unwanted duplicates and category visibility."
+          ],
+          [
+            "Product pages do not help people decide",
+            "Titles, compatibility, attributes and stock details miss buyers' questions.",
+            "Improve product naming, structured attributes, supporting answers and related items.",
+            "Product-page organic visits, add-to-cart actions and purchases."
+          ]
+        ]
+      }
+    },
+    "horoshop": {
+      "uk": {
+        "headline": "Магазин на Хорошоп працює. Чому продажів менше, ніж міг би бути?",
+        "lead": "Платформа дає основу, але не вирішує за бізнес структуру каталогу, правила індексації, якість фіда й шлях покупця. Зосереджуємося на тому, що можна реально змінити.",
+        "outcome": "Пріоритети для конкретного магазину: посадкові сторінки, налаштування каталогів, товарні дані й вимірювання покупок.",
+        "stories": [
+          [
+            "Товари є, а категорії не приносять трафік",
+            "Попит за моделями, брендами чи характеристиками не відображений у навігації.",
+            "Перебудовуємо категорії та корисні посадкові з урахуванням можливостей Хорошоп.",
+            "Покази й переходи категорій, цільові покупки з органіки."
+          ],
+          [
+            "Google знаходить фільтри, а не потрібні сторінки",
+            "Некеровані URL фільтрів, canonical або перелінкування віддають неправильні сигнали.",
+            "Налаштовуємо правила індексації, sitemap та внутрішні посилання там, де дозволяє платформа.",
+            "Частка потрібних URL в індексі та видимість ключових категорій."
+          ],
+          [
+            "Merchant Center відхиляє товари або реклама не окупається",
+            "Назви, наявність, ціна чи події покупки можуть суперечити сайту й фіду.",
+            "Звіряємо товарні дані, діагностику Merchant Center і передачу покупок.",
+            "Допуск товарів до показу, коректні покупки, дохід і витрати на рекламу."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "Магазин на Хорошоп работает. Почему продаж меньше, чем могло бы быть?",
+        "lead": "Платформа даёт основу, но не решает за бизнес структуру каталога, индексацию, качество фида и путь покупателя. Работаем с тем, что действительно можно изменить.",
+        "outcome": "Приоритеты для конкретного магазина: посадочные страницы, настройки каталога, товарные данные и измерение покупок.",
+        "stories": [
+          [
+            "Товары есть, а категории не приводят трафик",
+            "Спрос по моделям, брендам и свойствам не отражён в навигации.",
+            "Пересматриваем категории и полезные посадочные с учётом возможностей Хорошоп.",
+            "Показы и переходы категорий, целевые покупки из органики."
+          ],
+          [
+            "Google находит фильтры вместо нужных страниц",
+            "Неконтролируемые URL фильтров, canonical или перелинковка посылают неправильные сигналы.",
+            "Настраиваем индексацию, sitemap и внутренние ссылки там, где позволяет платформа.",
+            "Доля нужных URL в индексе и видимость ключевых категорий."
+          ],
+          [
+            "Merchant Center отклоняет товары или реклама не окупается",
+            "Названия, наличие, цены или события покупки могут расходиться между сайтом и фидом.",
+            "Сверяем товарные данные, диагностику Merchant Center и учёт покупок.",
+            "Допуск товаров к показу, корректность покупок, выручка и рекламные затраты."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "Your Horoshop store is running. What's holding sales back?",
+        "lead": "The platform is a foundation, not a strategy for catalog structure, indexing, product feeds and buyer journeys. We improve what the platform actually allows.",
+        "outcome": "Store-specific priorities: useful landing pages, catalog settings, product data and verified purchase tracking.",
+        "stories": [
+          [
+            "Products exist but categories get little traffic",
+            "Demand for models, brands and attributes is not reflected in navigation.",
+            "Improve useful category and landing pages within Horoshop capabilities.",
+            "Category impressions, organic visits and purchases."
+          ],
+          [
+            "Google discovers filters instead of important pages",
+            "Facet URLs, canonicals and internal links send conflicting signals.",
+            "Review indexation, sitemaps and internal links within platform controls.",
+            "Share of priority URLs indexed and visibility of key categories."
+          ],
+          [
+            "Merchant Center rejects items or ads underperform",
+            "Names, stock, prices or purchase events disagree between store and feed.",
+            "Reconcile product attributes, Merchant diagnostics and purchase events.",
+            "Eligible products, valid purchases, revenue and ad costs."
+          ]
+        ]
+      }
+    },
+    "service-websites": {
+      "uk": {
+        "headline": "Красивий сайт — ще не причина залишити заявку",
+        "lead": "Відвідувач має за кілька секунд зрозуміти, чи вирішите ви його завдання, чому вам довіряти й як звернутися. Будуємо сайт навколо цього вибору.",
+        "outcome": "Структура сторінок послуг, переконливі сценарії звернення, технічна готовність до SEO й перевірка заявок.",
+        "stories": [
+          [
+            "Сайт виглядає дорого, але люди не пишуть",
+            "На першому екрані є красиві слова, але немає відповіді: що робите, для кого і як замовити.",
+            "Переписуємо перші екрани, додаємо конкретні переваги, приклади й помітний шлях до контакту.",
+            "Кліки на контакт, відправлені форми й дзвінки з цільових сторінок."
+          ],
+          [
+            "Усі послуги заховані на одній сторінці",
+            "Люди шукають конкретну проблему чи послугу, а Google не має релевантної сторінки.",
+            "Проєктуємо окремі сторінки послуг та тематичні зв’язки, де є реальний попит.",
+            "Видимість сторінок послуг, цільові запити й звернення."
+          ],
+          [
+            "Заявки губляться між сайтом, поштою й месенджерами",
+            "Форма незручна, повідомлення не доходять або події не вимірюються.",
+            "Перевіряємо контактні сценарії, доставку, мобільну версію й вимірювання лідів.",
+            "Тестові доставки форм, частка успішних звернень, джерела лідів."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "Красивый сайт — ещё не причина оставить заявку",
+        "lead": "Посетитель должен за несколько секунд понять, решите ли вы его задачу, почему вам доверять и как обратиться. Строим сайт вокруг этого выбора.",
+        "outcome": "Структура страниц услуг, убедительные сценарии обращения, техническая готовность к SEO и проверка заявок.",
+        "stories": [
+          [
+            "Сайт выглядит дорого, но люди не пишут",
+            "На первом экране красивые слова, но нет ответа: что делаете, для кого и как заказать.",
+            "Пересобираем первые экраны, добавляем конкретику, примеры и заметный путь к контакту.",
+            "Клики на контакт, отправленные формы и звонки с целевых страниц."
+          ],
+          [
+            "Все услуги спрятаны на одной странице",
+            "Люди ищут конкретную проблему, а Google не находит подходящей страницы.",
+            "Проектируем отдельные страницы услуг и смысловые связи там, где есть реальный спрос.",
+            "Видимость страниц услуг, целевые запросы и обращения."
+          ],
+          [
+            "Заявки теряются между сайтом, почтой и мессенджерами",
+            "Форма неудобна, сообщения не доходят или события не измеряются.",
+            "Проверяем контактные сценарии, доставку, мобильную версию и отслеживание лидов.",
+            "Тестовые отправки, доля успешных обращений, источники лидов."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "A beautiful website is not a reason to enquire",
+        "lead": "People need to understand in seconds whether you solve their problem, why they should trust you and how to get in touch. We build around that decision.",
+        "outcome": "Service-page architecture, persuasive enquiry journeys, SEO-ready foundations and verified lead tracking.",
+        "stories": [
+          [
+            "The website looks great, but nobody contacts you",
+            "The first screen sounds impressive without saying what you do or for whom.",
+            "Rewrite first-screen propositions, show concrete value and create clear contact journeys.",
+            "Contact clicks, submitted forms and calls from relevant pages."
+          ],
+          [
+            "Every service is buried on one page",
+            "People search for specific needs, but Google has no relevant dedicated page.",
+            "Plan focused service pages and meaningful internal links where demand supports them.",
+            "Service-page search visibility, relevant queries and enquiries."
+          ],
+          [
+            "Enquiries disappear between forms and inboxes",
+            "Forms may fail, messages may be lost or leads may not be tracked.",
+            "Test contact delivery, mobile UX, enquiry paths and measurement.",
+            "Successful test submissions, lead completion and source attribution."
+          ]
+        ]
+      }
+    }
+  }
+}
