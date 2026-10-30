@@ -1,6 +1,6 @@
 {
   "target": "https://mrseo.tech/",
-  "capturedAt": "2026-10-30T16:16:34.737Z",
+  "capturedAt": "2026-10-30T16:18:34.640Z",
   "profiles": [
     {
       "name": "desktop",
@@ -62,44 +62,44 @@
           {
             "top": 181,
             "bottom": 269,
-            "left": 1067,
-            "right": 1247
+            "left": 1066,
+            "right": 1246
           },
           {
-            "top": 291,
-            "bottom": 379,
-            "left": 1250,
-            "right": 1430
+            "top": 290,
+            "bottom": 378,
+            "left": 1249,
+            "right": 1429
           },
           {
-            "top": 529,
-            "bottom": 617,
+            "top": 528,
+            "bottom": 616,
             "left": 1291,
             "right": 1471
           },
           {
             "top": 716,
             "bottom": 804,
-            "left": 1160,
-            "right": 1340
+            "left": 1161,
+            "right": 1341
           },
           {
-            "top": 711,
-            "bottom": 799,
-            "left": 955,
-            "right": 1135
+            "top": 712,
+            "bottom": 800,
+            "left": 956,
+            "right": 1136
           },
           {
-            "top": 518,
-            "bottom": 606,
+            "top": 519,
+            "bottom": 607,
             "left": 830,
             "right": 1010
           },
           {
-            "top": 281,
-            "bottom": 369,
-            "left": 880,
-            "right": 1060
+            "top": 283,
+            "bottom": 371,
+            "left": 879,
+            "right": 1059
           }
         ],
         "satellitesFitViewport": true,
@@ -130,7 +130,7 @@
           "left": 1025.390625
         }
       },
-      "screenshotBytes": 94507,
+      "screenshotBytes": 97533,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -197,44 +197,44 @@
           {
             "top": 168,
             "bottom": 256,
-            "left": 1184,
-            "right": 1364
+            "left": 1183,
+            "right": 1363
           },
           {
-            "top": 273,
-            "bottom": 361,
-            "left": 1354,
-            "right": 1534
+            "top": 272,
+            "bottom": 360,
+            "left": 1353,
+            "right": 1533
           },
           {
-            "top": 498,
-            "bottom": 586,
+            "top": 497,
+            "bottom": 585,
             "left": 1391,
             "right": 1571
           },
           {
             "top": 673,
             "bottom": 761,
-            "left": 1268,
-            "right": 1448
+            "left": 1269,
+            "right": 1449
           },
           {
             "top": 667,
             "bottom": 755,
-            "left": 1077,
-            "right": 1257
+            "left": 1078,
+            "right": 1258
           },
           {
-            "top": 484,
-            "bottom": 572,
-            "left": 962,
-            "right": 1142
+            "top": 485,
+            "bottom": 573,
+            "left": 963,
+            "right": 1143
           },
           {
-            "top": 262,
-            "bottom": 350,
-            "left": 1010,
-            "right": 1190
+            "top": 263,
+            "bottom": 351,
+            "left": 1009,
+            "right": 1189
           }
         ],
         "satellitesFitViewport": true,
@@ -265,7 +265,7 @@
           "left": 1148.03125
         }
       },
-      "screenshotBytes": 97888,
+      "screenshotBytes": 100276,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -332,44 +332,44 @@
           {
             "top": 156,
             "bottom": 244,
-            "left": 912,
-            "right": 1068
+            "left": 911,
+            "right": 1067
           },
           {
-            "top": 248,
-            "bottom": 336,
-            "left": 1064,
-            "right": 1220
+            "top": 247,
+            "bottom": 335,
+            "left": 1063,
+            "right": 1219
           },
           {
-            "top": 444,
-            "bottom": 532,
-            "left": 1096,
+            "top": 442,
+            "bottom": 530,
+            "left": 1097,
             "right": 1252
           },
           {
             "top": 595,
             "bottom": 683,
-            "left": 985,
-            "right": 1140
+            "left": 986,
+            "right": 1142
           },
           {
-            "top": 588,
-            "bottom": 676,
-            "left": 813,
-            "right": 969
+            "top": 589,
+            "bottom": 677,
+            "left": 815,
+            "right": 970
           },
           {
-            "top": 428,
-            "bottom": 516,
-            "left": 711,
+            "top": 430,
+            "bottom": 518,
+            "left": 712,
             "right": 867
           },
           {
-            "top": 236,
-            "bottom": 324,
-            "left": 755,
-            "right": 911
+            "top": 237,
+            "bottom": 325,
+            "left": 754,
+            "right": 910
           }
         ],
         "satellitesFitViewport": true,
@@ -400,7 +400,7 @@
           "left": 876.328125
         }
       },
-      "screenshotBytes": 82296,
+      "screenshotBytes": 84146,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -535,8 +535,8 @@
           "left": 81.90625
         }
       },
-      "screenshotBytes": 96937,
-      "servicesScreenshotBytes": 97755
+      "screenshotBytes": 104408,
+      "servicesScreenshotBytes": 103643
     }
   ],
   "notes": []
