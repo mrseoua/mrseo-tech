@@ -1,54 +1,56 @@
-/* Compact Horoshop SEO demo: three genuinely interactive scenarios, UA/RU only. */
+/* Horoshop-only animated product showcase: three simple, accessible scenarios. */
 (()=>{'use strict';
 const root=document.querySelector('.special-hero-horoshop .hs-showcase');
 if(!root)return;
-const buttons=[...root.querySelectorAll('[data-hs-step]')];
+const buttons=[...root.querySelectorAll('.hs-switch[data-hs-step]')];
 const demo=root.querySelector('.hs-demo');
-const problem=root.querySelector('[data-hs-problem]');
-const source=root.querySelector('[data-hs-source]');
-const target=root.querySelector('[data-hs-target]');
-const solution=root.querySelector('[data-hs-solution]');
-const count=root.querySelector('[data-hs-count]');
-if(!demo||!problem||!source||!target||!solution||!count||buttons.length!==3)return;
-const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
-let active=0,timer=null,manual=false,visible=true,hover=false,focus=false;
-function select(i){
- if(i<0||i>=buttons.length)return;
- active=i;
- const button=buttons[i];
- buttons.forEach((el,index)=>{const selected=index===i;el.classList.toggle('is-active',selected);el.setAttribute('aria-pressed',String(selected))});
- problem.textContent=button.dataset.hsProblem||'';
- source.textContent=button.dataset.hsSource||'';
- target.textContent=button.dataset.hsTarget||'';
- solution.textContent=button.dataset.hsSolution||'';
- count.textContent=String(i+1).padStart(2,'0')+' / 03';
- demo.dataset.hsScene=String(i);
+const problem=root.querySelector('.hs-demo-message [data-hs-problem]');
+const solution=root.querySelector('.hs-demo-message [data-hs-solution]');
+if(buttons.length!==3||!demo||!problem||!solution)return;
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+let active=0,interval=null,resume=null,visible=true;
+function select(index){
+ if(index<0||index>=buttons.length)return;
+ active=index;
+ const item=buttons[index];
+ buttons.forEach((button,i)=>{
+  const on=i===index;
+  button.classList.toggle('is-active',on);
+  button.setAttribute('aria-pressed',String(on));
+ });
+ problem.textContent=item.dataset.hsProblem||'';
+ solution.textContent=item.dataset.hsSolution||'';
+ demo.dataset.hsScene=String(index);
 }
-function stop(){if(timer!==null){window.clearInterval(timer);timer=null}}
-function start(){
+function stop(){if(interval!==null){clearInterval(interval);interval=null}}
+function play(){
  stop();
- if(manual||hover||focus||!visible||reduce.matches||document.hidden)return;
- timer=window.setInterval(()=>select((active+1)%buttons.length),6500);
+ if(!visible||document.hidden||reduced.matches||resume!==null)return;
+ interval=setInterval(()=>select((active+1)%buttons.length),4600);
+}
+function manual(index){
+ stop();
+ if(resume!==null){clearTimeout(resume);resume=null}
+ select(index);
+ // Let the visitor read their chosen solution before the illustration resumes.
+ resume=setTimeout(()=>{resume=null;play()},16000);
 }
 buttons.forEach((button,i)=>{
- button.addEventListener('click',()=>{manual=true;stop();select(i)});
+ button.addEventListener('click',()=>manual(i));
  button.addEventListener('keydown',e=>{
   const next=e.key==='ArrowRight'||e.key==='ArrowDown'?i+1:e.key==='ArrowLeft'||e.key==='ArrowUp'?i-1:e.key==='Home'?0:e.key==='End'?buttons.length-1:null;
   if(next===null)return;
-  e.preventDefault();manual=true;stop();
-  const newIndex=(next+buttons.length)%buttons.length;
-  select(newIndex);buttons[newIndex].focus();
+  e.preventDefault();
+  const target=(next+buttons.length)%buttons.length;
+  manual(target);buttons[target].focus();
  });
 });
-root.addEventListener('pointerenter',()=>{hover=true;stop()});
-root.addEventListener('pointerleave',()=>{hover=false;start()});
-root.addEventListener('focusin',()=>{focus=true;stop()});
-root.addEventListener('focusout',event=>{if(!root.contains(event.relatedTarget)){focus=false;start()}});
-reduce.addEventListener?.('change',start);
-document.addEventListener('visibilitychange',start);
+root.addEventListener('focusin',stop);
+root.addEventListener('focusout',event=>{if(!root.contains(event.relatedTarget))play()});
+reduced.addEventListener?.('change',play);
+document.addEventListener('visibilitychange',play);
 if('IntersectionObserver' in window){
- const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)start();else stop()},{threshold:.2});
- observer.observe(root);
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;play()},{threshold:.15}).observe(root);
 }
-select(0);start();
+select(0);play();
 })();
