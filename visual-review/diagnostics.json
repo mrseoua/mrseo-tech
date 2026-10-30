@@ -1,0 +1,152 @@
+{
+  "target": "https://mrseo.tech/",
+  "capturedAt": "2026-10-30T15:43:29.456Z",
+  "profiles": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1600,
+        "height": 920
+      },
+      "errors": [],
+      "failedRequests": [],
+      "httpStatus": 200,
+      "responseRobots": "noindex, nofollow",
+      "page": {
+        "title": "MrSeo.tech",
+        "href": "https://mrseo.tech/",
+        "width": 1600,
+        "viewport": 1600,
+        "hasHero": true,
+        "webglReady": true,
+        "earthCanvas": true,
+        "satellites": 7,
+        "services": [
+          {
+            "title": "↗\nSEO\nОрганічний попит і видимість",
+            "href": "https://mrseo.tech/seo/",
+            "rect": 192
+          },
+          {
+            "title": "Google Ads\nКерований платний трафік",
+            "href": "https://mrseo.tech/google-ads/",
+            "rect": 192
+          },
+          {
+            "title": "Analytics\nДані для точних рішень",
+            "href": "https://mrseo.tech/analytics/",
+            "rect": 192
+          },
+          {
+            "title": "◇\nE-commerce\nЗростання каталогу та продажів",
+            "href": "https://mrseo.tech/horoshop/",
+            "rect": 192
+          },
+          {
+            "title": "⚙\nTechnical SEO\nТехнічна якість сайту",
+            "href": "https://mrseo.tech/seo-audit/",
+            "rect": 192
+          },
+          {
+            "title": "▣\nWeb Development\nРозробка та технічні рішення для бізнесу",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 192
+          },
+          {
+            "title": "▤\nСтворення сайтів\nСайти для бізнесу та інтернет-магазини",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 192
+          }
+        ],
+        "connections": 7,
+        "connectedLines": 0,
+        "noIndexMeta": "noindex, nofollow",
+        "globeRect": {
+          "x": 979.6875,
+          "y": 415,
+          "width": 282.296875,
+          "height": 282.296875,
+          "top": 415,
+          "right": 1261.984375,
+          "bottom": 697.296875,
+          "left": 979.6875
+        }
+      },
+      "screenshotBytes": 112355
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "failedRequests": [],
+      "httpStatus": 200,
+      "responseRobots": "noindex, nofollow",
+      "page": {
+        "title": "MrSeo.tech",
+        "href": "https://mrseo.tech/",
+        "width": 390,
+        "viewport": 390,
+        "hasHero": true,
+        "webglReady": true,
+        "earthCanvas": true,
+        "satellites": 7,
+        "services": [
+          {
+            "title": "↗\nSEO\nОрганічний попит і видимість",
+            "href": "https://mrseo.tech/seo/",
+            "rect": 163
+          },
+          {
+            "title": "Google Ads\nКерований платний трафік",
+            "href": "https://mrseo.tech/google-ads/",
+            "rect": 163
+          },
+          {
+            "title": "Analytics\nДані для точних рішень",
+            "href": "https://mrseo.tech/analytics/",
+            "rect": 163
+          },
+          {
+            "title": "◇\nE-commerce\nЗростання каталогу та продажів",
+            "href": "https://mrseo.tech/horoshop/",
+            "rect": 163
+          },
+          {
+            "title": "⚙\nTechnical SEO\nТехнічна якість сайту",
+            "href": "https://mrseo.tech/seo-audit/",
+            "rect": 163
+          },
+          {
+            "title": "▣\nWeb Development\nРозробка та технічні рішення для бізнесу",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 163
+          },
+          {
+            "title": "▤\nСтворення сайтів\nСайти для бізнесу та інтернет-магазини",
+            "href": "https://mrseo.tech/service-websites/",
+            "rect": 358
+          }
+        ],
+        "connections": 7,
+        "connectedLines": 0,
+        "noIndexMeta": "noindex, nofollow",
+        "globeRect": {
+          "x": 81.90625,
+          "y": 505.6875,
+          "width": 226.1875,
+          "height": 226.1875,
+          "top": 505.6875,
+          "right": 308.09375,
+          "bottom": 731.875,
+          "left": 81.90625
+        }
+      },
+      "screenshotBytes": 97948,
+      "servicesScreenshotBytes": 105431
+    }
+  ],
+  "notes": []
+}
