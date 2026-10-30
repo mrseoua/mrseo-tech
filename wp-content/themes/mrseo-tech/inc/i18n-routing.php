@@ -22,6 +22,7 @@ if($slug==='portfolio')return get_template_directory().'/portfolio-localized.php
 if(in_array($slug,array('service-websites','horoshop'),true))return get_template_directory().'/specialized-landing.php';
 if($slug==='seo')return get_template_directory().'/seo-landing.php';
 if($slug==='ecommerce-seo')return get_template_directory().'/ecommerce-landing.php';
+if($slug==='about')return get_template_directory().'/about-localized.php';
 if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
 add_filter('template_include','mrseo_router',99);
