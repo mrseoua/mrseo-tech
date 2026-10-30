@@ -306,3 +306,15 @@ Text Domain: mrseo-tech
   .site-header .nav-submenu a.is-current::after,
   .site-header .nav-submenu a:hover::after{color:#b74738}
 }
+
+/* Problem-first contact brief picker: UI stays within the existing contact layout. */
+.contact-brief{margin:27px 0 28px;position:relative;z-index:2}
+.contact-brief-kicker{font-size:10px;letter-spacing:.16em;font-weight:850;color:#b6503d;margin-bottom:14px}
+.contact-brief-list{display:grid;gap:8px}
+.contact-brief-choice{width:100%;background:#fffdf8;border:1px solid #e0dbd2;color:#242a26;display:grid;grid-template-columns:29px 1fr 18px;gap:12px;text-align:left;align-items:center;padding:14px 13px;border-radius:10px;min-height:54px;font-size:14px;line-height:1.35;font-weight:700;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.contact-brief-choice span{font-size:11px;font-weight:850;color:#ba604d}
+.contact-brief-choice b{font-size:16px;color:#ba604d;font-weight:650}
+.contact-brief-choice:hover,.contact-brief-choice.is-selected{border-color:#dca491;background:#f7ece5;transform:translateX(2px)}
+.contact-brief-choice:focus-visible{outline:2px solid #bf5744;outline-offset:2px}
+.contact-brief-note{font-size:12px!important;line-height:1.55!important;color:#666e67!important;margin:12px 0 0!important}
+@media(max-width:650px){.contact-brief{margin:22px 0}.contact-brief-choice{min-height:54px;font-size:13px}}
