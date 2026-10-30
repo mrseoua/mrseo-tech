@@ -5,7 +5,7 @@ const visual=root.querySelector('.lab-visual'),core=root.querySelector('.lab-cor
 const nodes=[...root.querySelectorAll('.lab-node')],svg=root.querySelector('.lab-connectors'),group=root.querySelector('#lab-spokes');
 if(!visual||!core||!svg||!group||!nodes.length)return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),desktop=matchMedia('(min-width:651px)');
-const palette=['#ff985a','#72d3e4','#a7e4a0','#d8b1ff','#ffca74','#ff849c','#80d7bd'];
+const palette=['#ff985a','#72d3e4','#a7e4a0','#d8b1ff','#ffca74','#ff849c','#80d7bd','#9eb5ff'];
 let selected=0,angle=-Math.PI/2,raf=0,last=0,inView=true,hovered=false,focused=false,tour=null;
 const paths=nodes.map((node,i)=>{const ns='http://www.w3.org/2000/svg',path=document.createElementNS(ns,'path'),flow=document.createElementNS(ns,'path'),end=document.createElementNS(ns,'circle');path.classList.add('lab-spoke');flow.classList.add('lab-spoke-flow');end.classList.add('lab-spoke-end');for(const element of [path,flow,end])element.style.setProperty('--spoke',palette[i%palette.length]);flow.setAttribute('aria-hidden','true');end.setAttribute('r','3');group.append(path,flow,end);return {path,flow,end}});
 function layout(){
@@ -27,7 +27,7 @@ function layout(){
    ex=nx-ux*(edge+3);ey=ny-uy*(edge+3);
    d=`M ${cx+ux*r} ${cy+uy*r} L ${ex} ${ey}`;
   }else{
-   // Seven separate lanes in the centre gutter keep connections clear of labels.
+   // Separate lanes in the centre gutter keep connections clear of labels.
    const lane=cx+(i-(nodes.length-1)/2)*3;
    const sy=cy+Math.sqrt(Math.max(0,r*r-(lane-cx)**2));
    const full=b.width>w*.75;
