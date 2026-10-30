@@ -46,6 +46,8 @@ async function capture(browser, name, viewport, mobile) {
         satellites:n.length,
         services:n.map(e=>({title:(e.innerText||'').trim().slice(0,90),href:e.getAttribute('href'),rect:Math.round(e.getBoundingClientRect().width)})),
         connections:spokes.length,
+        signalLines:document.querySelectorAll('.lab-spoke-flow').length,
+        animatedSignals:[...document.querySelectorAll('.lab-spoke-flow')].filter(e=>getComputedStyle(e).animationName!=='none').length,
         connectedLines:spokes.filter(e=>{try{return e.getTotalLength()>15}catch(_){return false}}).length,
         linesVisible:getComputedStyle(document.querySelector('.lab-connectors')).display!=='none',
         noIndexMeta:document.querySelector('meta[name=robots]')?.content||null,
@@ -54,6 +56,18 @@ async function capture(browser, name, viewport, mobile) {
     });
     profile.screenshotBytes = await snapshot(page,name);
     if(!mobile){
+      try{
+        const hoverNode=page.locator('.lab-node').nth(1);
+        await hoverNode.hover({timeout:9000});
+        await sleep(650);
+        profile.hoverCheck=await page.evaluate(()=>({
+          hoveredNode:document.querySelectorAll('.lab-node.is-link-hovered').length,
+          hoveredBeam:document.querySelectorAll('.lab-spoke-flow.is-link-hovered').length,
+          beamAnimation:getComputedStyle(document.querySelector('.lab-spoke-flow.is-link-hovered')).animationName
+        }));
+        await snapshot(page,'desktop-hover');
+        await page.mouse.move(12,116);
+      }catch(e){profile.errors.push('Hover test: '+String(e).slice(0,240))}
       const globe=page.locator('.lab-visual');
       if(await globe.count()) {
         try{
