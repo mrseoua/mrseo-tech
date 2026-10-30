@@ -11,7 +11,7 @@ function mrseo_setup() {
 }
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.3');
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.4');
  if(in_array(mrseo_slug(),array('seo','seo-audit','google-ads','performance-max','analytics','ecommerce-seo','horoshop','service-websites'),true)){
   wp_enqueue_style('mrseo-customer-journeys',get_template_directory_uri().'/assets/customer-journeys.css',array('mrseo-style'),'1.0.2');
  }
