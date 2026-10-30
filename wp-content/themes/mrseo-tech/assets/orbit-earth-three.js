@@ -25,13 +25,14 @@ try{[day,night,normal,clouds]=await Promise.all([load('earth_atmos_2048.jpg'),lo
 catch(e){console.warn('Earth texture unavailable; keeping CSS globe',e);renderer.dispose();return}
 for(const t of [day,night,clouds])t.colorSpace=THREE.SRGBColorSpace;
 // Physically plausible matte globe: no specular hotspot over oceans.
-const earthMaterial=new THREE.MeshStandardMaterial({
- map:day,normalMap:normal,normalScale:new THREE.Vector2(.035,.035),
- roughness:1,metalness:0,
- emissive:new THREE.Color(0xe0a16e),emissiveMap:night,emissiveIntensity:.075
+const earthMaterial=new THREE.ShaderMaterial({
+ uniforms:{dayMap:{value:day},nightMap:{value:night},lightDirection:{value:new THREE.Vector3(-.22,.37,.9).normalize()}},
+ vertexShader:`varying vec2 vUv;varying vec3 vNormal;void main(){vUv=uv;vNormal=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+ fragmentShader:`uniform sampler2D dayMap;uniform sampler2D nightMap;uniform vec3 lightDirection;varying vec2 vUv;varying vec3 vNormal;
+ void main(){vec3 n=normalize(vNormal);float d=dot(n,normalize(lightDirection));float light=mix(.52,1.24,smoothstep(-.50,.72,d));vec3 col=texture2D(dayMap,vUv).rgb*light;vec3 night=texture2D(nightMap,vUv).rgb;col+=night*.36*(1.-smoothstep(-.42,.18,d));gl_FragColor=vec4(col,1.);}`
 });
 const earth=new THREE.Mesh(geometry,earthMaterial);globe.add(earth);
-const cloudMaterial=new THREE.MeshBasicMaterial({color:0xffffff,alphaMap:clouds,transparent:true,opacity:.17,depthWrite:false,side:THREE.FrontSide});
+const cloudMaterial=new THREE.MeshBasicMaterial({color:0xe6f4ff,alphaMap:clouds,transparent:true,opacity:.07,depthWrite:false,side:THREE.FrontSide});
 const cloudShell=new THREE.Mesh(new THREE.SphereGeometry(1.212,96,64),cloudMaterial);globe.add(cloudShell);
 const atmosphereMaterial=new THREE.ShaderMaterial({
  transparent:true,side:THREE.BackSide,depthWrite:false,blending:THREE.AdditiveBlending,
@@ -40,14 +41,14 @@ const atmosphereMaterial=new THREE.ShaderMaterial({
  fragmentShader:`varying vec3 vNormal;varying vec3 vWorldPosition;uniform vec3 glowColor;uniform float intensity;void main(){vec3 viewDir=normalize(cameraPosition-vWorldPosition);float rim=pow(1.-abs(dot(normalize(vNormal),viewDir)),3.2);gl_FragColor=vec4(glowColor,rim*intensity);}`
 });
 const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(1.30,96,64),atmosphereMaterial);atmosphere.visible=false;scene.add(atmosphere); // CSS rim supplies clear atmosphere without central shader glare.
-globe.rotation.z=.10;globe.rotation.y=.45;
+globe.rotation.z=.10;globe.rotation.y=-.75;
 core.prepend(canvas);
 let visible=true,raf=0,last=0,dx=0,dy=0,tx=0,ty=0;
 function resize(){const w=Math.max(150,core.clientWidth),h=Math.max(150,core.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
 function frame(now){
  raf=0;if(!visible||root.classList.contains('lab-paused'))return;
  const dt=last?Math.min(.06,(now-last)/1000):0;last=now;
- globe.rotation.y+=dt*.085;cloudShell.rotation.y+=dt*.018;
+ globe.rotation.y+=dt*.11;cloudShell.rotation.y+=dt*.018;
  dx+=(tx-dx)*.035;dy+=(ty-dy)*.035;globe.rotation.x=dy*.075;globe.rotation.z=.10+dx*.05;
  renderer.render(scene,camera);raf=requestAnimationFrame(frame)
 }
