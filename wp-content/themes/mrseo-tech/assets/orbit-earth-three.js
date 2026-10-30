@@ -61,7 +61,7 @@ const fill=new THREE.DirectionalLight(0x4499dd,.35);fill.position.set(3,-1,1);sc
 let texture;
 try{texture=await new THREE.TextureLoader().loadAsync(new URL('./earth-day.jpg',import.meta.url).href)}catch(error){renderer.dispose();console.warn('Earth: retaining static fallback',error);return}
 texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
-const material=new THREE.MeshStandardMaterial({map:texture,roughness:1,metalness:0});
+const material=new THREE.MeshStandardMaterial({map:texture,roughness:1,metalness:0,emissive:new THREE.Color(0xffffff),emissiveMap:texture,emissiveIntensity:.36});
 const earth=new THREE.Mesh(new THREE.SphereGeometry(1,96,64),material);earth.rotation.set(.06,1.65,.1);scene.add(earth);
 // View-space normals and positions must be in the same space for a clean limb glow.
 const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(1.035,64,48),new THREE.ShaderMaterial({transparent:true,side:THREE.BackSide,depthWrite:false,blending:THREE.AdditiveBlending,
