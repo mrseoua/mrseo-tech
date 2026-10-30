@@ -40,3 +40,29 @@
  .site-header .locale-switcher a{padding:7px}
  .site-header .menu-toggle{padding:6px 8px;margin-left:0}
 }
+
+/* Refined full-bleed scene: remove panel-like edge artifacts and oversized outer rings. */
+.orbit-lab{background:#171d20!important;background-image:none!important;box-shadow:none!important;border-left:0!important;border-right:0!important}
+.orbit-lab:before{background:radial-gradient(ellipse 70% 65% at 72% 47%,rgba(15,51,73,.64) 0%,rgba(23,29,32,.24) 58%,#171d20 100%)!important;inset:0!important}
+.orbit-lab .lab-nebula,.orbit-lab .lab-stars,.orbit-lab .lab-landscape,.orbit-lab .lab-grid{display:none!important}
+.orbit-lab .lab-orbit-three{display:none!important}
+.orbit-lab .lab-orbit-two{opacity:.26!important}
+.orbit-lab .lab-visual:after{opacity:.3!important}
+
+/* Each real curved SVG connector: dim filament + continuous moving data pulses. */
+.orbit-lab .lab-connectors{overflow:visible!important}
+.orbit-lab .lab-connectors .lab-spoke{stroke:var(--spoke)!important;stroke-width:1.2!important;stroke-opacity:.38!important;stroke-dasharray:none!important;filter:none!important;animation:none!important;transition:stroke-opacity .2s,stroke-width .2s!important}
+.orbit-lab .lab-connectors .lab-spoke-flow{fill:none;stroke:var(--spoke);stroke-width:2.2;stroke-opacity:.8;stroke-linecap:round;stroke-dasharray:2 19;animation:mrseo-signal-stream 2.8s linear infinite;filter:drop-shadow(0 0 3px var(--spoke));pointer-events:none;transition:stroke-width .2s,stroke-opacity .2s,filter .2s}
+.orbit-lab .lab-connectors .lab-spoke-end{opacity:.8!important;transition:opacity .2s,filter .2s,r .2s!important}
+.orbit-lab .lab-connectors .lab-spoke.active{stroke-opacity:.65!important;stroke-width:1.7!important}
+.orbit-lab .lab-connectors .lab-spoke-flow.active{stroke-opacity:.93}
+.orbit-lab .lab-connectors .lab-spoke.is-link-hovered{stroke-opacity:1!important;stroke-width:3!important;filter:drop-shadow(0 0 7px var(--spoke))!important}
+.orbit-lab .lab-connectors .lab-spoke-flow.is-link-hovered{stroke-width:4;stroke-opacity:1;stroke-dasharray:5 12;animation-duration:1.1s;filter:drop-shadow(0 0 8px var(--spoke)) drop-shadow(0 0 4px #fff)}
+.orbit-lab .lab-connectors .lab-spoke-end.is-link-hovered{opacity:1!important;r:5!important;filter:drop-shadow(0 0 10px var(--spoke))!important}
+.orbit-lab .lab-node.is-link-hovered{border-color:var(--service-color,#79d5ff)!important;box-shadow:inset 3px 0 0 var(--service-color,#79d5ff),0 0 22px color-mix(in srgb,var(--service-color,#79d5ff) 60%,transparent),0 0 43px color-mix(in srgb,var(--service-color,#79d5ff) 30%,transparent)!important}
+@keyframes mrseo-signal-stream{from{stroke-dashoffset:0}to{stroke-dashoffset:-84}}
+@media(max-width:650px){
+ .orbit-lab .lab-connectors{display:none!important}
+ .orbit-lab .lab-orbit-two,.orbit-lab .lab-orbit-three{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){.orbit-lab .lab-spoke-flow{animation:none!important;stroke-dasharray:2 10}}
