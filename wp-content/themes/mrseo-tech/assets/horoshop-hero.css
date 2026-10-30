@@ -90,3 +90,38 @@
 }
 @media(max-width:370px){.hs-fix-issue,.hs-fix-solution{font-size:9px}.hs-visual{padding-left:9px;padding-right:9px}.hs-visual-title span{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.hs-browser,.hs-seo-orbit,.hs-seo-orbit:after,.hs-product-thumb:after,.hs-fix,.hs-fix:after,.hs-fix-arrow{animation:none!important}}
+
+/* Authentic partner artwork from the uploaded Horoshop Partner ACTIVE credential. */
+.hs-browser-zone .hs-partner-badge{position:absolute;right:-4px;bottom:-14px;z-index:5;display:block;width:112px;height:auto;border-radius:12px;box-shadow:0 16px 30px #0007,0 0 0 2px #ffffff1d;transform:rotate(3deg);transition:transform .25s,box-shadow .25s;user-select:none;pointer-events:none}
+.hs-store-logo{min-width:154px}
+.hs-brand-crop{display:block;position:relative;width:154px;height:28px;overflow:hidden;background:white;border-radius:2px}
+.hs-brand-crop img{position:absolute!important;display:block!important;width:190px!important;height:141px!important;max-width:none!important;min-width:190px!important;left:-21px;top:-24px;object-fit:fill}
+.hs-visual .hs-fix{display:grid;appearance:none;-webkit-appearance:none;width:100%;font:inherit;color:inherit;text-align:left;cursor:pointer;transition:border-color .25s,background .25s,transform .25s}
+.hs-visual .hs-fix:hover{border-color:#79ccae9b;background:#64ca9a18;transform:translateX(3px)}
+.hs-visual .hs-fix:focus-visible{outline:3px solid #bdf9d5;outline-offset:3px}
+.hs-visual .hs-fix.is-active{border-color:#90dec6;background:linear-gradient(110deg,#36524a4d,#50c9951f);box-shadow:inset 3px 0 0 #75e1b4,0 0 15px #58c59c1c}
+.hs-visual .hs-fix.is-active .hs-fix-arrow{color:#b9ffde;transform:translateX(2px)}
+.hs-diagnostic{position:relative;z-index:1;display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start;margin-top:15px;padding:15px;border:1px solid #5fb6956c;border-radius:12px;background:linear-gradient(110deg,#143c35c9,#17302bcc)}
+.hs-diagnostic-icon{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#2f80623d;border:1px solid #79d7ae;color:#b8ffdb;font-weight:800}
+.hs-diagnostic-label{display:block;margin-bottom:6px;font-size:10px;line-height:1.35;font-weight:850;letter-spacing:.095em;color:#8acdac}
+.hs-diagnostic strong{display:block;font-size:15px;line-height:1.32;color:#f6fff7}
+.hs-diagnostic p{margin:6px 0 0;font-size:12.5px;line-height:1.65;color:#bdcfca}
+.hs-browser-zone[data-hs-scenario="1"] .hs-store-banner{background:linear-gradient(105deg,#e7e5d7,#f0d9b6)}
+.hs-browser-zone[data-hs-scenario="1"] .hs-product:nth-child(2){border-color:#d5a577;box-shadow:0 0 0 2px #d5a57755}
+.hs-browser-zone[data-hs-scenario="2"] .hs-store-banner{background:linear-gradient(105deg,#dce9e0,#d6e5f1)}
+.hs-browser-zone[data-hs-scenario="2"] .hs-product{border-color:#82b99f;box-shadow:0 0 0 1px #84b59855}
+.hs-browser-zone[data-hs-scenario="2"] .hs-product>small{background:#51a47b}
+.hs-visual:has(.hs-fix:hover) .hs-seo-orbit{box-shadow:0 0 0 10px #40bda526,0 0 43px #75f6c672}
+@media(max-width:650px){
+  .hs-store-logo{min-width:100px}.hs-brand-crop{width:105px;height:21px}
+  .hs-brand-crop img{width:132px!important;height:98px!important;min-width:132px!important;left:-15px;top:-17px}
+  .hs-browser-zone .hs-partner-badge{width:75px;right:-5px;bottom:-9px;border-radius:8px}
+  .hs-diagnostic{grid-template-columns:27px minmax(0,1fr);padding:12px;gap:9px}
+  .hs-diagnostic-icon{width:26px;height:26px;font-size:12px}
+  .hs-diagnostic strong{font-size:13.5px}
+  .hs-diagnostic p{font-size:11.5px}
+  .hs-visual .hs-fix:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .hs-visual .hs-fix,.hs-browser-zone .hs-partner-badge{transition:none!important}
+}
