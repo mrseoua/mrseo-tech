@@ -12,7 +12,7 @@
 <a href="<?php echo esc_url(mrseo_url('google-ads'));?>">Google Ads</a>
 <a href="<?php echo esc_url(mrseo_url('analytics'));?>">Analytics</a>
 <a href="<?php echo esc_url(mrseo_url('ecommerce-seo'));?>"><?php echo esc_html(mrseo_t('SEO інтернет-магазинів','SEO интернет-магазинов','E-commerce SEO'));?></a>
-<?php if(mrseo_locale()!=='en'):?><a href="<?php echo esc_url(mrseo_url('horoshop'));?>"><?php echo esc_html(mrseo_t('Магазини на Хорошоп','Магазины на Хорошоп','Horoshop'));?></a><?php endif;?>
+<?php if(in_array(mrseo_locale(),array('uk','ru'),true)):?><a href="<?php echo esc_url(mrseo_url('horoshop'));?>"><?php echo esc_html(mrseo_t('Магазини на Хорошоп','Магазины на Хорошоп','Horoshop'));?></a><?php endif;?>
 <a href="<?php echo esc_url(mrseo_url('seo-audit'));?>">Technical SEO</a>
 <a href="<?php echo esc_url(mrseo_url('service-websites'));?>">Web Development</a>
 <a href="<?php echo esc_url(mrseo_url('service-websites'));?>"><?php echo esc_html(mrseo_t('Створення сайтів','Создание сайтов','Website Creation'));?></a>
