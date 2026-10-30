@@ -167,7 +167,7 @@
 @media(max-width:650px){.orbit-lab .lab-node{width:140px!important;min-width:140px!important;max-width:140px!important;height:63px!important;min-height:63px!important;padding:7px!important;gap:6px;border-radius:10px}.orbit-lab .lab-node-glyph{flex-basis:23px;width:23px;height:23px;border-radius:6px;font-size:15px}.orbit-lab .lab-node-content{gap:3px}.orbit-lab .lab-node-content strong{font-size:10px}.orbit-lab .lab-node-content small{font-size:8px;line-height:1.2}.orbit-lab .lab-node-arrow{display:none}.orbit-lab .lab-node-1{top:8%;left:0}.orbit-lab .lab-node-2{top:24%;right:0}.orbit-lab .lab-node-3{bottom:24%;right:0}.orbit-lab .lab-node-4{bottom:8%;left:20%}.orbit-lab .lab-node-5{bottom:29%;left:0}.orbit-lab .lab-node-6{top:0;right:1%}}
 
 /* Earth + equal professional service tiles — concept 05 */
-.orbit-lab .lab-core:before{background-image:url('https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png')!important;background-size:210% 104%!important;background-position:67% 50%!important;opacity:1!important;mix-blend-mode:normal!important;animation:none!important;filter:brightness(.7) saturate(1.12)}
+.orbit-lab .lab-core:before{background-image:url('<?php echo esc_url(get_template_directory_uri().'/assets/earth-day.jpg');?>')!important;background-size:210% 104%!important;background-position:67% 50%!important;opacity:1!important;mix-blend-mode:normal!important;animation:none!important;filter:brightness(.7) saturate(1.12)}
 .orbit-lab.lab-webgl-ready .lab-core:before{opacity:0!important}
 .orbit-lab .lab-core{box-shadow:inset -24px -19px 55px #000c,inset 17px 17px 30px #bde9ff42,0 0 34px #55a6e96b}
 .orbit-lab .lab-shell{grid-template-columns:minmax(360px,.85fr) minmax(640px,1.15fr);gap:10px;max-width:1650px}
@@ -472,6 +472,7 @@ html,body{overflow-x:clip}
 .orbit-lab .lab-spoke.active{stroke-width:2.8!important;stroke-opacity:1!important}
 }
 </style>
+<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-scene.css?v=3');?>">
 <main class="orbit-lab"><div class="lab-nebula" aria-hidden="true"></div><div class="lab-stars" aria-hidden="true"></div><div class="lab-landscape" aria-hidden="true"><svg viewBox="0 0 1500 300" preserveAspectRatio="none"><defs><linearGradient id="lab-ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#76331e"/><stop offset=".65" stop-color="#180d0b"/><stop offset="1" stop-color="#08090a"/></linearGradient></defs><path d="M0 210 75 166 130 188 240 90 332 198 422 132 500 216 592 172 715 225 812 143 910 227 1000 100 1100 196 1178 123 1280 211 1400 160 1500 216V300H0Z" fill="url(#lab-ground)"/><path d="M0 254Q360 208 720 261T1500 246V300H0Z" fill="#120e0c"/><path d="M530 254Q720 237 915 260" stroke="#f4763a" stroke-width="2" opacity=".68" fill="none"/></svg></div><div class="lab-grid" aria-hidden="true"></div><div class="lab-shell"><div class="lab-copy"><div class="lab-label"><?php echo esc_html($mrseo_is_home?mrseo_t('СТРАТЕГІЯ · ТЕХНОЛОГІЇ · ЗРОСТАННЯ','СТРАТЕГИЯ · ТЕХНОЛОГИИ · РОСТ','STRATEGY · TECHNOLOGY · GROWTH'):'MRSEO.TECH / EXPERIMENT 01');?></div><h1><?php echo wp_kses_post(mrseo_t('Сайт є.<br><em>А клієнти?</em>','Сайт есть.<br><em>А клиенты?</em>','You have a website.<br><em>Where are the customers?</em>'));?></h1><p class="lab-lead"><?php echo esc_html(mrseo_t('SEO, реклама й аналітика не повинні працювати окремо. Ми поєднуємо технології та маркетинг в одну систему, яка допомагає вирішувати бізнес-завдання.','SEO, реклама и аналитика не должны работать по отдельности. Мы объединяем технологии и маркетинг в систему для решения бизнес-задач.','SEO, paid media and analytics work best as one connected system. We align technology and marketing around business problems.'));?></p><div class="lab-actions"><a class="lab-action" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити проєкт','Обсудить проект','Discuss a project'));?> <span>↗</span></a><a class="lab-action lab-action-quiet" href="<?php echo esc_url(mrseo_url());?>"><?php echo esc_html(mrseo_t('На головну','На главную','Back to homepage'));?></a></div><div class="lab-controls"><button type="button" class="lab-control" id="lab-autoplay" aria-pressed="false">▶ <?php echo esc_html(mrseo_t("Автоогляд","Автообзор","Auto tour"));?></button><button type="button" class="lab-control" id="lab-motion" aria-pressed="false">Ⅱ <?php echo esc_html(mrseo_t("Зупинити рух","Остановить движение","Pause motion"));?></button><span class="lab-controls-note"><?php echo esc_html(mrseo_t("Наведіть курсор на орбіту або оберіть напрям","Наведите курсор на орбиту или выберите направление","Move your pointer or select a service"));?></span></div><div class="lab-status"><div><span>DESIGN DIRECTION</span><strong>Orbital Growth System</strong></div><div><span>EXPERIMENT STATUS</span><strong>Private concept / 01</strong></div></div></div><div class="lab-visual" aria-label="<?php echo esc_attr(mrseo_t('Інтерактивна схема маркетингових напрямів','Интерактивная схема маркетинговых направлений','Interactive marketing service map'));?>"><svg class="lab-connectors" aria-hidden="true"><g id="lab-spokes"></g><line id="lab-link" x1="50%" y1="50%" x2="50%" y2="50%"></line><circle id="lab-link-point" cx="50%" cy="50%" r="4"></circle></svg><div class="lab-orbit lab-orbit-one"></div><div class="lab-data lab-data-a"><svg viewBox="0 0 70 35"><path d="M1 30L13 26L25 28L37 15L46 20L55 9L68 3"/></svg><span><b>SEARCH / ORGANIC</b><small><?php echo esc_html(mrseo_t("Тренди попиту","Тренды спроса","Demand trends"));?></small></span></div><div class="lab-data lab-data-b"><svg viewBox="0 0 70 35"><path d="M1 29L13 21L24 25L35 14L45 17L55 8L68 3"/></svg><span><b>ANALYTICS / LIVE</b><small><?php echo esc_html(mrseo_t("Сигнали зростання","Сигналы роста","Growth signals"));?></small></span></div><div class="lab-orbit lab-orbit-two"></div><div class="lab-orbit lab-orbit-three"></div><div class="lab-core"><small>CONNECTED SYSTEM</small><strong>MRSEO<br>GROWTH</strong><div class="lab-core-signal"></div></div>
 <?php
 $nodes=array(
@@ -485,80 +486,8 @@ array(mrseo_t('Створення сайтів','Создание сайтов',
 );
 $service_urls=array('seo','google-ads','analytics','horoshop','seo-audit','service-websites','service-websites');
 foreach($nodes as $i=>$node):?><a href="<?php echo esc_url(mrseo_url($service_urls[$i]));?>" class="lab-node lab-node-<?php echo $i+1;?><?php echo $i===0?' active':'';?>" data-lab-title="<?php echo esc_attr($node[0]);?>" data-lab-detail="<?php echo esc_attr($node[1]);?>" aria-pressed="<?php echo $i===0?'true':'false';?>"><span class="lab-node-glyph" aria-hidden="true"><?php if($i===1):?><svg viewBox="0 0 36 36" aria-hidden="true" width="30" height="30"><path d="M19.4 4.7c2.4-1.4 5.4-.6 6.8 1.9l9 15.7c1.3 2.4.5 5.3-1.9 6.7-2.4 1.3-5.3.6-6.7-1.9l-9-15.7c-1.4-2.4-.6-5.4 1.8-6.7Z" fill="#4285F4"/><path d="M18.8 5c-2.3-1.4-5.3-.6-6.7 1.9L1.6 25.4c-1.4 2.4-.6 5.4 1.8 6.8 2.4 1.4 5.4.6 6.8-1.8L20.6 11.8c1.4-2.4.6-5.4-1.8-6.8Z" fill="#34A853"/><circle cx="6" cy="28.2" r="5.4" fill="#FBBC04"/></svg><?php elseif($i===2):?><svg viewBox="0 0 36 36" aria-hidden="true" width="30" height="30"><path d="M25 4a5 5 0 0 1 5 5v21a5 5 0 0 1-10 0V9a5 5 0 0 1 5-5Z" fill="#F9AB00"/><path d="M16 14a5 5 0 0 1 5 5v11a5 5 0 0 1-10 0V19a5 5 0 0 1 5-5Z" fill="#E37400"/><circle cx="6" cy="30" r="5" fill="#E37400"/></svg><?php else:echo esc_html(array("↗","", "", "◇","⚙","▣","▤")[$i]);endif;?></span><span class="lab-node-content"><strong><?php echo esc_html($node[0]);?></strong><small><?php echo esc_html($node[1]);?></small></span><span class="lab-node-arrow" aria-hidden="true">↗</span></a><?php endforeach;?><div class="lab-detail" aria-live="polite"><span id="lab-selected">01 / SEO</span><strong id="lab-selected-detail"><?php echo esc_html($nodes[0][1]);?></strong></div></div><span class="lab-intro-note">INTERACTIVE STRATEGY MODEL / 2026</span></div><div class="lab-footer-line"><span>MRSEO.TECH / CONNECTED GROWTH SYSTEM</span><span>SEO · GOOGLE ADS · ANALYTICS · WEB</span><span>INTERACTIVE CONCEPT 03</span></div></main>
-<script>
-(()=>{'use strict';
-const root=document.querySelector('.orbit-lab');if(!root)return;
-const visual=root.querySelector('.lab-visual'),core=root.querySelector('.lab-core');
-const nodes=[...root.querySelectorAll('.lab-node')],title=root.querySelector('#lab-selected'),detail=root.querySelector('#lab-selected-detail'),box=root.querySelector('.lab-detail');
-const line=root.querySelector('#lab-link'),dot=root.querySelector('#lab-link-point'),auto=root.querySelector('#lab-autoplay'),motion=root.querySelector('#lab-motion');
-const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-let selected=0,tour=null,flash=null,raf=0;
-const palette=['#ff985a','#72d3e4','#a7e4a0','#d8b1ff','#ffca74','#ff849c','#80d7bd'];const spokes=root.querySelector('#lab-spokes');
-const paths=nodes.map((n,i)=>{const color=palette[i],ns='http://www.w3.org/2000/svg';const link=document.createElementNS(ns,'line'),end=document.createElementNS(ns,'circle');link.setAttribute('class','lab-spoke');end.setAttribute('class','lab-spoke-end');link.style.setProperty('--spoke',color);end.style.setProperty('--spoke',color);end.setAttribute('r','4');spokes.append(link,end);return {link,end};});
-function connect(){
- const v=visual.getBoundingClientRect(),n=nodes[selected].getBoundingClientRect(),c=core.getBoundingClientRect();
- const x1=c.left+c.width/2-v.left,y1=c.top+c.height/2-v.top,x2=n.left+n.width/2-v.left,y2=n.top+n.height/2-v.top;
- line.setAttribute('x1',x1);line.setAttribute('y1',y1);line.setAttribute('x2',x2);line.setAttribute('y2',y2);
- dot.setAttribute('cx',x2);dot.setAttribute('cy',y2);
- nodes.forEach((node,i)=>{const rect=node.getBoundingClientRect();const tx=rect.left+rect.width/2-v.left,ty=rect.top+rect.height/2-v.top;const angle=Math.atan2(ty-y1,tx-x1);const rr=Math.min(c.width,c.height)*.50;const sx=x1+Math.cos(angle)*rr,sy=y1+Math.sin(angle)*rr;const {link,end}=paths[i];link.setAttribute('x1',sx);link.setAttribute('y1',sy);link.setAttribute('x2',tx);link.setAttribute('y2',ty);end.setAttribute('cx',tx);end.setAttribute('cy',ty);link.classList.toggle('active',i===selected);end.classList.toggle('active',i===selected)});
-}
-function pick(index){
- selected=(index+nodes.length)%nodes.length;visual.style.setProperty('--active-signal',palette[selected]);
- nodes.forEach((n,i)=>{const active=i===selected;n.classList.toggle('active',active);n.setAttribute('aria-pressed',String(active))});
- title.textContent=String(selected+1).padStart(2,'0')+' / '+nodes[selected].dataset.labTitle;
- detail.textContent=nodes[selected].dataset.labDetail;
- box.classList.remove('lab-flash');void box.offsetWidth;box.classList.add('lab-flash');
- if(flash)clearTimeout(flash);flash=setTimeout(()=>box.classList.remove('lab-flash'),550);
- connect();
-}
-function stopTour(){if(tour)clearInterval(tour);tour=null;auto.setAttribute('aria-pressed','false')}
-nodes.forEach((n,i)=>{n.addEventListener('mouseenter',()=>{if(!tour)pick(i)});n.addEventListener('focus',()=>{stopTour();pick(i)})});
-auto.addEventListener('click',()=>{if(tour){stopTour();return}pick((selected+1)%nodes.length);tour=setInterval(()=>pick((selected+1)%nodes.length),2600);auto.setAttribute('aria-pressed','true')});
-motion.addEventListener('click',()=>{const paused=root.classList.toggle('lab-paused');motion.setAttribute('aria-pressed',String(paused));if(paused){stopTour();visual.style.setProperty('--lab-x','0px');visual.style.setProperty('--lab-y','0px');visual.style.setProperty('--lab-tilt-x','0deg');visual.style.setProperty('--lab-tilt-y','0deg')}});
-if(!reduced&&window.matchMedia('(pointer:fine)').matches){
- visual.addEventListener('pointermove',e=>{if(root.classList.contains('lab-paused'))return;const r=visual.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
- visual.style.setProperty('--lab-x',(x*22).toFixed(1)+'px');visual.style.setProperty('--lab-y',(y*22).toFixed(1)+'px');
- visual.style.setProperty('--lab-tilt-x',(-y*12).toFixed(1)+'deg');visual.style.setProperty('--lab-tilt-y',(x*12).toFixed(1)+'deg');
- if(!raf)raf=requestAnimationFrame(()=>{connect();raf=0});
- },{passive:true});
- visual.addEventListener('pointerleave',()=>{visual.style.setProperty('--lab-x','0px');visual.style.setProperty('--lab-y','0px');visual.style.setProperty('--lab-tilt-x','0deg');visual.style.setProperty('--lab-tilt-y','0deg');requestAnimationFrame(connect)});
-}
-window.addEventListener('resize',connect,{passive:true});window.addEventListener('load',connect,{once:true});
-if('ResizeObserver' in window)new ResizeObserver(connect).observe(visual);
-if(reduced){root.classList.add('lab-paused');motion.setAttribute('aria-pressed','true')}
-
-/* Six linked satellites travel on one circle, never on independent paths. */
-if(!reduced&&window.matchMedia('(min-width:1101px)').matches){
- let orbitalFrame=0,lastOrbit=0,angle=-Math.PI/2,hovering=false,enabled=true;
- const orbitSpeed=.055;
- function moveOrbit(now){
-  if(!enabled)return;
-  if(lastOrbit&&!hovering&&!root.classList.contains('lab-paused'))angle+=Math.min((now-lastOrbit)/1000,.05)*orbitSpeed;
-  lastOrbit=now;
-  const w=visual.clientWidth,h=visual.clientHeight;
-  const cardW=nodes[0].offsetWidth,cardH=nodes[0].offsetHeight;
-  const radius=Math.max(0,Math.min(w*.37,h*.37,(w-cardW)/2-12,(h-cardH)/2-12));
-  nodes.forEach((n,i)=>{
-   const a=angle+(i*Math.PI*2/nodes.length);
-   const x=w*.5+Math.cos(a)*radius-n.offsetWidth*.5;
-   const y=h*.5+Math.sin(a)*radius-n.offsetHeight*.5;
-   n.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0)';
-   n.classList.add('lab-orbiting');
-  });
-  connect();
-  orbitalFrame=requestAnimationFrame(moveOrbit);
- }
- nodes.forEach(n=>{n.addEventListener('pointerenter',()=>{hovering=true});n.addEventListener('pointerleave',()=>{hovering=false})});
- visual.addEventListener('focusin',()=>{hovering=true});visual.addEventListener('focusout',e=>{if(!visual.contains(e.relatedTarget))hovering=false});
- const visibility=()=>{if(document.hidden){enabled=false;cancelAnimationFrame(orbitalFrame)}else if(!enabled){enabled=true;lastOrbit=0;orbitalFrame=requestAnimationFrame(moveOrbit)}};
- document.addEventListener('visibilitychange',visibility);
- orbitalFrame=requestAnimationFrame(moveOrbit);
-}
-
-requestAnimationFrame(connect);
-})();
-</script>
-<script type="module" src="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-earth-three.js?v=2');?>"></script>
+<script defer src="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-scene.js?v=3');?>"></script>
+<script type="module" src="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-earth-three.js?v=3');?>"></script>
 
 <?php if($mrseo_is_home):?>
 <section class="mrseo-home-editorial" aria-label="<?php echo esc_attr(mrseo_t('Наш підхід до розвитку бізнесу','Наш подход к развитию бизнеса','Our business growth approach'));?>">

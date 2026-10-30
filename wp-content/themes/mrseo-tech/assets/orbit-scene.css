@@ -1,0 +1,42 @@
+/* Shared geometry for the globe and its seven navigational satellites. */
+.orbit-lab .lab-visual{isolation:isolate;aspect-ratio:1!important}
+.orbit-lab .lab-visual>.lab-core{width:34%!important;transform:none!important;transition:none!important;border:0!important;box-shadow:none!important;background-color:#071528!important}
+.orbit-lab .lab-core:after{display:none!important}
+.orbit-lab.lab-webgl-ready .lab-core{background:transparent!important}
+.orbit-lab.lab-webgl-ready .lab-core:before{display:none!important}
+.orbit-lab .lab-webgl-canvas{display:block!important;pointer-events:none}
+.orbit-lab .lab-connectors{display:block!important;inset:0!important;z-index:3!important;opacity:1!important;filter:none!important;overflow:visible!important;pointer-events:none}
+.orbit-lab .lab-connectors .lab-spoke{fill:none;stroke:var(--spoke)!important;stroke-width:1.6!important;stroke-opacity:.8!important;stroke-dasharray:none!important;filter:none!important;animation:none!important;transition:none!important;vector-effect:non-scaling-stroke}
+.orbit-lab .lab-connectors .lab-spoke.active{stroke-width:2.4!important;stroke-opacity:1!important}
+.orbit-lab .lab-connectors .lab-spoke-end{fill:var(--spoke)!important;r:3;stroke:none;filter:none!important}
+.orbit-lab .lab-node-content{min-width:0}
+.orbit-lab .lab-node-content strong{overflow-wrap:normal!important}
+.orbit-lab .lab-node-arrow{position:static!important;margin-left:auto;flex:none}
+@media(min-width:651px){
+ .orbit-lab .lab-visual{min-height:600px!important}
+ .orbit-lab .lab-visual>.lab-node{position:absolute!important;inset:0 auto auto 0!important;width:clamp(154px,12.5vw,192px)!important;min-width:0!important;max-width:none!important;height:100px!important;min-height:100px!important;padding:12px!important;gap:9px!important;transition:background .25s,border-color .25s,box-shadow .25s!important}
+ .orbit-lab .lab-node-glyph{width:32px!important;height:32px!important;flex-basis:32px!important}
+ .orbit-lab .lab-node-content strong{font-size:13px!important;line-height:1.2!important}
+ .orbit-lab .lab-node-content small{font-size:10px!important;line-height:1.35!important}
+ .orbit-lab .lab-node-arrow{display:none!important}
+}
+@media(min-width:1101px){
+ .orbit-lab .lab-shell{grid-template-columns:minmax(300px,.85fr) minmax(540px,1.15fr)!important;gap:28px!important;padding-left:4vw!important;padding-right:4vw!important}
+}
+@media(max-width:650px){
+ .orbit-lab .lab-visual{aspect-ratio:auto!important;column-gap:32px!important;row-gap:22px!important}
+ .orbit-lab .lab-visual>.lab-core{width:clamp(185px,58vw,260px)!important;margin-bottom:28px!important}
+ .orbit-lab .lab-visual>.lab-node{padding:11px 9px!important;gap:8px!important;min-height:106px!important;flex-wrap:wrap;align-content:center!important}
+ .orbit-lab .lab-node-content{flex:1 1 72px!important}
+ .orbit-lab .lab-node-content strong{font-size:12px!important;line-height:1.25!important}
+ .orbit-lab .lab-node-content small{font-size:10px!important;line-height:1.35!important}
+ .orbit-lab .lab-node-arrow{display:none!important}
+ .orbit-lab .lab-connectors .lab-spoke{stroke-width:1.25!important;stroke-opacity:.72!important}
+}
+@media(max-width:360px){
+ .site-header .nav{padding-left:12px;padding-right:12px;gap:6px}
+ .site-header .logo{font-size:20px}
+ .site-header .locale-switcher{gap:1px;padding:3px}
+ .site-header .locale-switcher a{padding:7px}
+ .site-header .menu-toggle{padding:6px 8px;margin-left:0}
+}
