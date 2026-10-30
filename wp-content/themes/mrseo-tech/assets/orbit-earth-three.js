@@ -12,9 +12,9 @@ const canvas=renderer.domElement;canvas.className='lab-webgl-canvas';canvas.setA
 renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setClearColor(0x000000,0);
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,100);camera.position.set(0,0,3.85);
-scene.add(new THREE.AmbientLight(0xb4d5ff,.65));
-const sunlight=new THREE.DirectionalLight(0xfff5e9,3.0);sunlight.position.set(-3.5,2.5,5);scene.add(sunlight);
-const fill=new THREE.DirectionalLight(0x4baaff,.6);fill.position.set(3,-1,-2);scene.add(fill);
+scene.add(new THREE.HemisphereLight(0xffffff,0x406590,2.1));
+const sunlight=new THREE.DirectionalLight(0xfff7e7,1.4);sunlight.position.set(-2,3,6);scene.add(sunlight);
+const fill=new THREE.DirectionalLight(0x7cb7ff,.45);fill.position.set(3,-1,3);scene.add(fill);
 const globe=new THREE.Group();scene.add(globe);
 const geometry=new THREE.SphereGeometry(1.2,96,64);
 const loader=new THREE.TextureLoader();loader.setCrossOrigin('anonymous');
@@ -24,13 +24,14 @@ let day,night,normal,clouds;
 try{[day,night,normal,clouds]=await Promise.all([load('earth_atmos_2048.jpg'),load('earth_lights_2048.png'),load('earth_normal_2048.jpg'),load('earth_clouds_1024.png')])}
 catch(e){console.warn('Earth texture unavailable; keeping CSS globe',e);renderer.dispose();return}
 for(const t of [day,night,clouds])t.colorSpace=THREE.SRGBColorSpace;
-const earthMaterial=new THREE.MeshPhongMaterial({
- map:day,normalMap:normal,normalScale:new THREE.Vector2(.09,.09),
- specular:new THREE.Color(0x517b9c),shininess:18,
- emissive:new THREE.Color(0xffad71),emissiveMap:night,emissiveIntensity:.22
+// Physically plausible matte globe: no specular hotspot over oceans.
+const earthMaterial=new THREE.MeshStandardMaterial({
+ map:day,normalMap:normal,normalScale:new THREE.Vector2(.035,.035),
+ roughness:1,metalness:0,
+ emissive:new THREE.Color(0xe0a16e),emissiveMap:night,emissiveIntensity:.075
 });
 const earth=new THREE.Mesh(geometry,earthMaterial);globe.add(earth);
-const cloudMaterial=new THREE.MeshPhongMaterial({map:clouds,transparent:true,opacity:.23,depthWrite:false,blending:THREE.NormalBlending,side:THREE.FrontSide});
+const cloudMaterial=new THREE.MeshBasicMaterial({color:0xffffff,alphaMap:clouds,transparent:true,opacity:.17,depthWrite:false,side:THREE.FrontSide});
 const cloudShell=new THREE.Mesh(new THREE.SphereGeometry(1.212,96,64),cloudMaterial);globe.add(cloudShell);
 const atmosphereMaterial=new THREE.ShaderMaterial({
  transparent:true,side:THREE.BackSide,depthWrite:false,blending:THREE.AdditiveBlending,
@@ -38,8 +39,8 @@ const atmosphereMaterial=new THREE.ShaderMaterial({
  vertexShader:`varying vec3 vNormal;varying vec3 vWorldPosition;void main(){vNormal=normalize(normalMatrix*normal);vec4 world=modelMatrix*vec4(position,1.);vWorldPosition=world.xyz;gl_Position=projectionMatrix*viewMatrix*world;}`,
  fragmentShader:`varying vec3 vNormal;varying vec3 vWorldPosition;uniform vec3 glowColor;uniform float intensity;void main(){vec3 viewDir=normalize(cameraPosition-vWorldPosition);float rim=pow(1.-abs(dot(normalize(vNormal),viewDir)),3.2);gl_FragColor=vec4(glowColor,rim*intensity);}`
 });
-const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(1.30,96,64),atmosphereMaterial);scene.add(atmosphere);
-globe.rotation.z=.10;globe.rotation.y=-.65;
+const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(1.30,96,64),atmosphereMaterial);atmosphere.visible=false;scene.add(atmosphere); // CSS rim supplies clear atmosphere without central shader glare.
+globe.rotation.z=.10;globe.rotation.y=.45;
 core.prepend(canvas);
 let visible=true,raf=0,last=0,dx=0,dy=0,tx=0,ty=0;
 function resize(){const w=Math.max(150,core.clientWidth),h=Math.max(150,core.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
