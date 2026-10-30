@@ -7,7 +7,7 @@ if(!visual||!core||!svg||!group||!nodes.length)return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),desktop=matchMedia('(min-width:651px)');
 const palette=['#ff985a','#72d3e4','#a7e4a0','#d8b1ff','#ffca74','#ff849c','#80d7bd'];
 let selected=0,angle=-Math.PI/2,raf=0,last=0,inView=true,hovered=false,focused=false,tour=null;
-const paths=nodes.map((node,i)=>{const ns='http://www.w3.org/2000/svg',path=document.createElementNS(ns,'path'),end=document.createElementNS(ns,'circle');path.classList.add('lab-spoke');end.classList.add('lab-spoke-end');path.style.setProperty('--spoke',palette[i%palette.length]);end.style.setProperty('--spoke',palette[i%palette.length]);end.setAttribute('r','3');group.append(path,end);return {path,end}});
+const paths=nodes.map((node,i)=>{const ns='http://www.w3.org/2000/svg',path=document.createElementNS(ns,'path'),flow=document.createElementNS(ns,'path'),end=document.createElementNS(ns,'circle');path.classList.add('lab-spoke');flow.classList.add('lab-spoke-flow');end.classList.add('lab-spoke-end');for(const element of [path,flow,end])element.style.setProperty('--spoke',palette[i%palette.length]);flow.setAttribute('aria-hidden','true');end.setAttribute('r','3');group.append(path,flow,end);return {path,flow,end}});
 function layout(){
  const w=visual.clientWidth,h=visual.clientHeight;
  svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
@@ -34,10 +34,11 @@ function layout(){
    ex=full?lane:(nx<cx?b.right-v.left+2:b.left-v.left-2);ey=full?b.top-v.top-3:ny;
    d=`M ${lane} ${sy} L ${lane} ${ey} L ${ex} ${ey}`;
   }
-  paths[i].path.setAttribute('d',d);paths[i].end.setAttribute('cx',ex);paths[i].end.setAttribute('cy',ey);
+  paths[i].path.setAttribute('d',d);paths[i].flow.setAttribute('d',d);paths[i].end.setAttribute('cx',ex);paths[i].end.setAttribute('cy',ey);
  });
 }
-function select(i){selected=i;nodes.forEach((node,j)=>{node.classList.toggle('active',i===j);paths[j].path.classList.toggle('active',i===j)});}
+function select(i){selected=i;nodes.forEach((node,j)=>{const active=i===j;node.classList.toggle('active',active);paths[j].path.classList.toggle('active',active);paths[j].flow.classList.toggle('active',active);paths[j].end.classList.toggle('active',active)});}
+function hoverLink(i,on){const item=paths[i];if(!item)return;nodes[i].classList.toggle('is-link-hovered',on);item.path.classList.toggle('is-link-hovered',on);item.flow.classList.toggle('is-link-hovered',on);item.end.classList.toggle('is-link-hovered',on);}
 function animate(now){raf=0;if(document.hidden||!inView)return;const dt=last?Math.min((now-last)/1000,.05):0;last=now;
  if(desktop.matches&&!reduced.matches&&!root.classList.contains('lab-paused')&&!hovered&&!focused)angle+=dt*.025;
  layout();if(desktop.matches&&!reduced.matches&&!root.classList.contains('lab-paused'))raf=requestAnimationFrame(animate);
@@ -45,7 +46,7 @@ function animate(now){raf=0;if(document.hidden||!inView)return;const dt=last?Mat
 function start(){layout();if(!raf&&!document.hidden&&inView){last=0;raf=requestAnimationFrame(animate)}}
 function stop(){cancelAnimationFrame(raf);raf=0;last=0}
 function stopTour(){clearInterval(tour);tour=null;root.querySelector('#lab-autoplay')?.setAttribute('aria-pressed','false')}
-nodes.forEach((node,i)=>{node.removeAttribute('aria-pressed');node.addEventListener('pointerenter',()=>select(i));node.addEventListener('focus',()=>{stopTour();select(i)})});
+nodes.forEach((node,i)=>{node.removeAttribute('aria-pressed');node.addEventListener('pointerenter',()=>{select(i);hoverLink(i,true)});node.addEventListener('pointerleave',()=>hoverLink(i,false));node.addEventListener('focus',()=>{stopTour();select(i);hoverLink(i,true)});node.addEventListener('blur',()=>hoverLink(i,false))});
 visual.addEventListener('pointerenter',()=>{hovered=true});visual.addEventListener('pointerleave',()=>{hovered=false});
 visual.addEventListener('focusin',()=>{focused=true});visual.addEventListener('focusout',e=>{focused=visual.contains(e.relatedTarget)});
 root.querySelector('#lab-motion')?.addEventListener('click',e=>{const paused=root.classList.toggle('lab-paused');e.currentTarget.setAttribute('aria-pressed',String(paused));stopTour();stop();start()});
