@@ -25,15 +25,14 @@ try{[day,night,normal,clouds]=await Promise.all([load('earth_atmos_2048.jpg'),lo
 catch(e){console.warn('Earth texture unavailable; keeping CSS globe',e);renderer.dispose();return}
 for(const t of [day,night,clouds])t.colorSpace=THREE.SRGBColorSpace;
 // Physically plausible matte globe: no specular hotspot over oceans.
-const earthMaterial=new THREE.ShaderMaterial({
- uniforms:{dayMap:{value:day},nightMap:{value:night},lightDirection:{value:new THREE.Vector3(-.22,.37,.9).normalize()}},
- vertexShader:`varying vec2 vUv;varying vec3 vNormal;void main(){vUv=uv;vNormal=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
- fragmentShader:`uniform sampler2D dayMap;uniform sampler2D nightMap;uniform vec3 lightDirection;varying vec2 vUv;varying vec3 vNormal;
- void main(){vec3 n=normalize(vNormal);float d=dot(n,normalize(lightDirection));float light=mix(1.02,1.37,smoothstep(-.65,.65,d));vec3 col=texture2D(dayMap,vUv).rgb*light;col=pow(max(col,vec3(0.)),vec3(.81));vec3 night=texture2D(nightMap,vUv).rgb;col+=night*.36*(1.-smoothstep(-.42,.18,d));gl_FragColor=vec4(col,1.);}`
-});
+// Sharp daylight globe. Avoid low-resolution night map compositing and broken cloud alpha maps.
+const earthMaterial=new THREE.MeshBasicMaterial({map:day,color:0xffffff});
+day.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
+day.minFilter=THREE.LinearMipmapLinearFilter;
+day.magFilter=THREE.LinearFilter;
 const earth=new THREE.Mesh(geometry,earthMaterial);globe.add(earth);
 const cloudMaterial=new THREE.MeshBasicMaterial({color:0xe6f4ff,alphaMap:clouds,transparent:true,opacity:.07,depthWrite:false,side:THREE.FrontSide});
-const cloudShell=new THREE.Mesh(new THREE.SphereGeometry(1.212,96,64),cloudMaterial);globe.add(cloudShell);
+const cloudShell=new THREE.Mesh(new THREE.SphereGeometry(1.212,96,64),cloudMaterial);cloudShell.visible=false;globe.add(cloudShell);
 const atmosphereMaterial=new THREE.ShaderMaterial({
  transparent:true,side:THREE.BackSide,depthWrite:false,blending:THREE.AdditiveBlending,
  uniforms:{glowColor:{value:new THREE.Color(0x49bfff)},intensity:{value:.48}},
