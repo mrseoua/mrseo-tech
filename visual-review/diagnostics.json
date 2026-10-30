@@ -1,6 +1,6 @@
 {
   "target": "https://mrseo.tech/",
-  "capturedAt": "2026-10-30T15:58:46.524Z",
+  "capturedAt": "2026-10-30T16:11:10.940Z",
   "profiles": [
     {
       "name": "desktop",
@@ -25,37 +25,37 @@
           {
             "title": "↗\nSEO\nОрганічний попит і видимість",
             "href": "https://mrseo.tech/seo/",
-            "rect": 192
+            "rect": 180
           },
           {
             "title": "Google Ads\nКерований платний трафік",
             "href": "https://mrseo.tech/google-ads/",
-            "rect": 192
+            "rect": 180
           },
           {
             "title": "Analytics\nДані для точних рішень",
             "href": "https://mrseo.tech/analytics/",
-            "rect": 192
+            "rect": 180
           },
           {
             "title": "◇\nE-commerce\nЗростання каталогу та продажів",
             "href": "https://mrseo.tech/horoshop/",
-            "rect": 192
+            "rect": 180
           },
           {
             "title": "⚙\nTechnical SEO\nТехнічна якість сайту",
             "href": "https://mrseo.tech/seo-audit/",
-            "rect": 192
+            "rect": 180
           },
           {
             "title": "▣\nWeb Development\nРозробка та технічні рішення для бізнесу",
             "href": "https://mrseo.tech/service-websites/",
-            "rect": 192
+            "rect": 180
           },
           {
             "title": "▤\nСтворення сайтів\nСайти для бізнесу та інтернет-магазини",
             "href": "https://mrseo.tech/service-websites/",
-            "rect": 192
+            "rect": 180
           }
         ],
         "connections": 7,
@@ -65,17 +65,17 @@
         "linesVisible": true,
         "noIndexMeta": "noindex, nofollow",
         "globeRect": {
-          "x": 979.6875,
-          "y": 415,
-          "width": 282.296875,
-          "height": 282.296875,
-          "top": 415,
-          "right": 1261.984375,
-          "bottom": 697.296875,
-          "left": 979.6875
+          "x": 1025.390625,
+          "y": 378.65625,
+          "width": 252.6875,
+          "height": 252.6875,
+          "top": 378.65625,
+          "right": 1278.078125,
+          "bottom": 631.34375,
+          "left": 1025.390625
         }
       },
-      "screenshotBytes": 103734,
+      "screenshotBytes": 93152,
       "hoverCheck": {
         "hoveredNode": 1,
         "hoveredBeam": 1,
@@ -155,8 +155,8 @@
           "left": 81.90625
         }
       },
-      "screenshotBytes": 95586,
-      "servicesScreenshotBytes": 99552
+      "screenshotBytes": 95984,
+      "servicesScreenshotBytes": 99890
     }
   ],
   "notes": []
