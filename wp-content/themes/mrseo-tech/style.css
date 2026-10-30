@@ -397,3 +397,46 @@ Text Domain: mrseo-tech
     font-size:17px;line-height:1.7;
   }
 }
+
+/* MrSeo homepage — understated client/portfolio marquee below the Earth hero. */
+.client-band.client-band-home{
+  padding:clamp(32px,3.6vw,52px) 0 clamp(27px,3vw,41px);
+  background:#f2eee7;border-color:#ded8cf;isolation:isolate;
+}
+.client-band-home .container{max-width:1440px}
+.client-band-home .client-band-head{margin-bottom:19px}
+.client-band-home .eyebrow{color:#bb5747;font-size:11px;font-weight:820;letter-spacing:.135em}
+.client-band-home .client-band-head h2{
+  margin:10px 0 0;line-height:1.16;letter-spacing:-.05em;
+  font-size:clamp(24px,2.3vw,34px);font-weight:800;color:#222723;
+}
+.client-band-home .client-band-link{
+  display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:760;
+  text-decoration:none;color:#272c28;border-bottom:1px solid #b35b4d;padding-bottom:6px;
+}
+.client-band-home .client-band-link:hover,.client-band-home .client-band-link:focus-visible{color:#bb5747}
+.client-band-home .client-track{animation-duration:48s}
+.client-band-home .client-wordmark,
+.client-band-home .client-wordmark:nth-child(3n),
+.client-band-home .client-wordmark:nth-child(4n){
+  color:#3f4540;font-size:clamp(17px,1.5vw,22px);font-weight:730;
+  font-style:normal;letter-spacing:-.035em;text-transform:none;
+  opacity:.78;filter:none;padding:13px clamp(22px,2.65vw,40px);
+  border-right:1px solid #d6d0c7;transition:opacity .2s,color .2s;
+}
+.client-band-home .client-wordmark:hover{opacity:1;color:#1a211d}
+@media(max-width:650px){
+ .client-band.client-band-home{padding:35px 0 30px}
+ .client-band-home .client-band-head{gap:14px;margin-bottom:16px}
+ .client-band-home .client-band-link{font-size:13px}
+ .client-band-home .client-wordmark,
+ .client-band-home .client-wordmark:nth-child(3n),
+ .client-band-home .client-wordmark:nth-child(4n){
+    font-size:18px;padding:12px 23px;
+ }
+ .client-band-home .client-track{animation-duration:38s}
+}
+@media(prefers-reduced-motion:reduce){
+ .client-band-home .client-track{animation:none}
+ .client-band-home .client-set[aria-hidden="true"]{display:none}
+}
