@@ -43,29 +43,34 @@ get_header();?>
     <div class="hs-visual" aria-hidden="true">
       <div class="hs-visual-top">
         <b>HOROSHOP <span aria-hidden="true">/</span> SEO SYSTEM</b>
-        <span class="hs-live"><i></i><?php echo esc_html(mrseo_t('СХЕМА РІШЕННЯ','СХЕМА РЕШЕНИЯ','SOLUTION MODEL'));?></span>
+        <span class="hs-live"><i></i><?php echo esc_html(mrseo_t('ІНТЕРАКТИВНИЙ ПРИКЛАД','ИНТЕРАКТИВНЫЙ ПРИМЕР','INTERACTIVE DEMO'));?></span>
       </div>
+      <img class="hs-partner-badge" src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-partner-active.svg');?>" alt="<?php echo esc_attr(mrseo_t('Хорошоп Partner ACTIVE — офіційний партнер','Хорошоп Partner ACTIVE — официальный партнёр','Horoshop Partner ACTIVE'));?>" width="120" height="89" loading="eager" decoding="async">
       <div class="hs-browser-zone">
         <div class="hs-browser">
-          <div class="hs-browser-bar"><i></i><i></i><i></i><span class="hs-browser-address">shop.example / catalog</span></div>
-          <div class="hs-store-head"><div class="hs-store-logo">my<span> </span><em>store.</em></div><div class="hs-store-nav"><i></i><i></i><i></i></div></div>
-          <div class="hs-store-banner"><strong><?php echo esc_html(mrseo_t('Каталог товарів','Каталог товаров','Product catalog'));?></strong><span><?php echo esc_html(mrseo_t('Категорії · Бренди · Моделі','Категории · Бренды · Модели','Categories · Brands · Models'));?></span></div>
+          <div class="hs-browser-bar"><i></i><i></i><i></i><span class="hs-browser-address" data-hs-address>shop.example /catalog/</span></div>
+          <div class="hs-store-head"><div class="hs-store-logo"><span class="hs-brand-crop"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-partner-active.svg');?>" width="190" height="141" alt="<?php echo esc_attr(mrseo_t('Логотип Хорошоп','Логотип Хорошоп','Horoshop'));?>" loading="eager" decoding="async"></span></div><div class="hs-store-nav"><i></i><i></i><i></i></div></div>
+          <div class="hs-store-banner"><strong data-hs-browser-title><?php echo esc_html(mrseo_t('Каталог товарів','Каталог товаров','Product catalog'));?></strong><span><?php echo esc_html(mrseo_t('Категорії · Бренди · Моделі','Категории · Бренды · Модели','Categories · Brands · Models'));?></span></div>
           <div class="hs-product-grid">
             <div class="hs-product"><div class="hs-product-thumb"></div><i></i><small></small></div>
             <div class="hs-product"><div class="hs-product-thumb"></div><i></i><small></small></div>
             <div class="hs-product"><div class="hs-product-thumb"></div><i></i><small></small></div>
           </div>
         </div>
-        <div class="hs-seo-orbit"><div><b>SEO</b><small><?php echo esc_html(mrseo_t('ПЕРЕВІРКА','ПРОВЕРКА','AUDIT'));?></small></div></div>
+        <div class="hs-seo-orbit"><div><b>SEO</b><small data-hs-stage-label><?php echo esc_html(mrseo_t('КАТАЛОГ','КАТАЛОГ','CATALOG'));?></small></div></div>
       </div>
       <div class="hs-visual-title">
         <span><?php echo esc_html(mrseo_t('ЗНАХОДИМО ПРОБЛЕМУ','НАХОДИМ ПРОБЛЕМУ','IDENTIFY ISSUE'));?></span>
         <span><?php echo esc_html(mrseo_t('ПРОПОНУЄМО РІШЕННЯ','ПРЕДЛАГАЕМ РЕШЕНИЕ','PROPOSE FIX'));?></span>
       </div>
       <div class="hs-fix-list">
-        <div class="hs-fix"><span class="hs-fix-issue"><?php echo esc_html(mrseo_t('Категорії не видно','Категории не видны','Missing categories'));?></span><span class="hs-fix-arrow">→</span><span class="hs-fix-solution"><?php echo esc_html(mrseo_t('Посадкові під попит','Посадочные под спрос','Intent landing pages'));?></span></div>
-        <div class="hs-fix"><span class="hs-fix-issue"><?php echo esc_html(mrseo_t('Дублі фільтрів','Дубли фильтров','Duplicate filters'));?></span><span class="hs-fix-arrow">→</span><span class="hs-fix-solution"><?php echo esc_html(mrseo_t('Правила індексації','Правила индексации','Indexing rules'));?></span></div>
-        <div class="hs-fix"><span class="hs-fix-issue"><?php echo esc_html(mrseo_t('Помилки фіда','Ошибки фида','Feed issues'));?></span><span class="hs-fix-arrow">→</span><span class="hs-fix-solution"><?php echo esc_html(mrseo_t('Перевірка товарів','Проверка товаров','Product validation'));?></span></div>
+        <button type="button" class="hs-fix is-active" data-hs-step="0" aria-pressed="true" data-hs-title="<?php echo esc_attr(mrseo_t('Категорії не отримують трафік','Категории не получают трафик',''));?>" data-hs-description="<?php echo esc_attr(mrseo_t('Порівнюємо пошукові запити з деревом каталогу. Пропонуємо сторінки під реальний попит та перевіряємо їх індексацію — у межах можливостей Хорошоп.','Сверяем спрос со структурой каталога. Предлагаем посадочные страницы под реальные запросы и проверяем индексацию с учётом возможностей Хорошоп.',''));?>" data-hs-browser="<?php echo esc_attr(mrseo_t('Каталог і SEO-сторінки','Каталог и SEO-страницы',''));?>" data-hs-orbit="<?php echo esc_attr(mrseo_t('КАТАЛОГ','КАТАЛОГ',''));?>" data-hs-address="shop.example /catalog/"><span class="hs-fix-issue"><?php echo esc_html(mrseo_t('Категорії не видно','Категории не видны',''));?></span><span class="hs-fix-arrow" aria-hidden="true">→</span><span class="hs-fix-solution"><?php echo esc_html(mrseo_t('Посадкові під попит','Посадочные под спрос',''));?></span></button>
+        <button type="button" class="hs-fix" data-hs-step="1" aria-pressed="false" data-hs-title="<?php echo esc_attr(mrseo_t('Фільтри створюють дублікати URL','Фильтры создают дубли URL',''));?>" data-hs-description="<?php echo esc_attr(mrseo_t('Розділяємо корисні комбінації та технічні адреси. Перевіряємо canonical, sitemap, внутрішні посилання й доступні налаштування індексації.','Разделяем полезные комбинации фильтров и технические адреса. Проверяем canonical, sitemap, ссылки и доступные настройки индексации.',''));?>" data-hs-browser="<?php echo esc_attr(mrseo_t('Керування фільтрами','Управление фильтрами',''));?>" data-hs-orbit="<?php echo esc_attr(mrseo_t('ФІЛЬТРИ','ФИЛЬТРЫ',''));?>" data-hs-address="shop.example /filter/"><span class="hs-fix-issue"><?php echo esc_html(mrseo_t('Дублі фільтрів','Дубли фильтров',''));?></span><span class="hs-fix-arrow" aria-hidden="true">→</span><span class="hs-fix-solution"><?php echo esc_html(mrseo_t('Правила індексації','Правила индексации',''));?></span></button>
+        <button type="button" class="hs-fix" data-hs-step="2" aria-pressed="false" data-hs-title="<?php echo esc_attr(mrseo_t('Merchant Center не приймає товари','Merchant Center отклоняет товары',''));?>" data-hs-description="<?php echo esc_attr(mrseo_t('Звіряємо ціни, наявність, назви й атрибути на сайті та у фіді; перевіряємо діагностику Merchant Center і коректність подій покупки.','Сверяем цены, наличие, названия и атрибуты на сайте и в фиде; проверяем диагностику Merchant Center и события покупки.',''));?>" data-hs-browser="<?php echo esc_attr(mrseo_t('Товари й товарний фід','Товары и товарный фид',''));?>" data-hs-orbit="<?php echo esc_attr(mrseo_t('ТОВАРИ','ТОВАРЫ',''));?>" data-hs-address="shop.example /products/"><span class="hs-fix-issue"><?php echo esc_html(mrseo_t('Помилки фіда','Ошибки фида',''));?></span><span class="hs-fix-arrow" aria-hidden="true">→</span><span class="hs-fix-solution"><?php echo esc_html(mrseo_t('Перевірка товарів','Проверка товаров',''));?></span></button>
+      </div>
+      <div class="hs-diagnostic" aria-live="polite" aria-atomic="true">
+        <div class="hs-diagnostic-icon" aria-hidden="true">✓</div>
+        <div><span class="hs-diagnostic-label"><?php echo esc_html(mrseo_t('ЩО РОБИМО НА ПРАКТИЦІ','ЧТО ДЕЛАЕМ НА ПРАКТИКЕ','WHAT WE DO'));?></span><strong data-hs-detail-title><?php echo esc_html(mrseo_t('Категорії не отримують трафік','Категории не получают трафик',''));?></strong><p data-hs-detail><?php echo esc_html(mrseo_t('Порівнюємо пошукові запити з деревом каталогу. Пропонуємо сторінки під реальний попит та перевіряємо їх індексацію — у межах можливостей Хорошоп.','Сверяем спрос со структурой каталога. Предлагаем посадочные страницы под реальные запросы и проверяем индексацию с учётом возможностей Хорошоп.',''));?></p></div>
       </div>
       <div class="hs-visual-foot"><span><?php echo esc_html(mrseo_t('СХЕМА, НЕ ДАНІ КЛІЄНТА','СХЕМА, НЕ ДАННЫЕ КЛИЕНТА','ILLUSTRATION ONLY'));?></span><span><?php echo esc_html(mrseo_t('ПЕРЕВІРЮВАНІ ЗМІНИ','ПРОВЕРЯЕМЫЕ ИЗМЕНЕНИЯ','VERIFIABLE CHANGES'));?> <span aria-hidden="true">↗</span></span></div>
     </div>
