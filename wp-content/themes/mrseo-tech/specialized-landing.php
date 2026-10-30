@@ -45,7 +45,7 @@ get_header();?>
         <b>HOROSHOP <span aria-hidden="true">/</span> SEO SYSTEM</b>
         <span class="hs-live"><i></i><?php echo esc_html(mrseo_t('ІНТЕРАКТИВНИЙ ПРИКЛАД','ИНТЕРАКТИВНЫЙ ПРИМЕР','INTERACTIVE DEMO'));?></span>
       </div>
-      <img class="hs-partner-badge" src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-partner-active.svg');?>" alt="<?php echo esc_attr(mrseo_t('Хорошоп Partner ACTIVE — офіційний партнер','Хорошоп Partner ACTIVE — официальный партнёр','Horoshop Partner ACTIVE'));?>" width="120" height="89" loading="eager" decoding="async">
+      
       <div class="hs-browser-zone">
         <div class="hs-browser">
           <div class="hs-browser-bar"><i></i><i></i><i></i><span class="hs-browser-address" data-hs-address>shop.example /catalog/</span></div>
@@ -58,6 +58,7 @@ get_header();?>
           </div>
         </div>
         <div class="hs-seo-orbit"><div><b>SEO</b><small data-hs-stage-label><?php echo esc_html(mrseo_t('КАТАЛОГ','КАТАЛОГ','CATALOG'));?></small></div></div>
+        <img class="hs-partner-badge" src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-partner-active.svg');?>" alt="<?php echo esc_attr(mrseo_t('Хорошоп Partner ACTIVE — офіційний партнер','Хорошоп Partner ACTIVE — официальный партнёр','Horoshop Partner ACTIVE'));?>" width="120" height="89" loading="eager" decoding="async">
       </div>
       <div class="hs-visual-title">
         <span><?php echo esc_html(mrseo_t('ЗНАХОДИМО ПРОБЛЕМУ','НАХОДИМ ПРОБЛЕМУ','IDENTIFY ISSUE'));?></span>
