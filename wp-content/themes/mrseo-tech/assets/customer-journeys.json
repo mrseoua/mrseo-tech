@@ -617,6 +617,83 @@
           ]
         ]
       }
+    },
+    "about": {
+      "uk": {
+        "headline": "Спочатку проблема бізнесу. Потім — SEO, реклама чи розробка.",
+        "lead": "Якщо заявок замало, відповідь не завжди у новій рекламі. Розбираємося в попиті, сайті, даних та економіці, щоб запропонувати роботу, яка має сенс.",
+        "outcome": "Зрозумілу картину проблеми, пріоритети й чесне пояснення, що варто робити зараз, що відкласти, а що взагалі не потрібно.",
+        "stories": [
+          [
+            "Підрядники пропонують різне, а відповідей немає",
+            "Кожен дивиться на свою послугу й легко пропускає справжнє вузьке місце.",
+            "Пов’язуємо органіку, рекламу, сайт та дані; перевіряємо гіпотези, перш ніж обирати інструмент.",
+            "Узгоджена проблема, список пріоритетів і спосіб перевірити кожну зміну."
+          ],
+          [
+            "Усі працюють, але незрозуміло, що змінилося",
+            "Звіт містить активності, але не пояснює їхнього зв’язку із заявками, продажами й витратами.",
+            "Фіксуємо вихідну точку, цілі, обмеження й ключові зміни за період.",
+            "Не кількість виконаних дій, а перевірені впровадження та динаміка цільових показників."
+          ],
+          [
+            "Завдань багато, ресурсу вистачає не на все",
+            "Немає оцінки впливу, складності й ризику, тому важливі роботи постійно відкладають.",
+            "Визначаємо черговість: що блокує результат, що дає шанс на зростання, а що може почекати.",
+            "Реалістичний план, відповідальні за задачі й контроль якості після змін."
+          ]
+        ]
+      },
+      "ru": {
+        "headline": "Сначала проблема бизнеса. Потом — SEO, реклама или разработка.",
+        "lead": "Если заявок мало, ответ не всегда в новой рекламе. Разбираемся в спросе, сайте, данных и экономике, чтобы предложить работу, в которой есть смысл.",
+        "outcome": "Понятную картину проблемы, приоритеты и честное объяснение, что стоит делать сейчас, что отложить, а что вообще не нужно.",
+        "stories": [
+          [
+            "Подрядчики предлагают разное, а ответов нет",
+            "Каждый смотрит на свою услугу и легко пропускает настоящую узкую точку.",
+            "Связываем органику, рекламу, сайт и данные; проверяем гипотезы, прежде чем выбирать инструмент.",
+            "Согласованная проблема, список приоритетов и способ проверить каждое изменение."
+          ],
+          [
+            "Все работают, но непонятно, что изменилось",
+            "Отчёт перечисляет действия, но не связывает их с заявками, продажами и затратами.",
+            "Фиксируем исходное состояние, цели, ограничения и ключевые изменения за период.",
+            "Не количество задач, а проверенные внедрения и динамика целевых показателей."
+          ],
+          [
+            "Задач много, а ресурсов на всё не хватает",
+            "Нет оценки влияния, сложности и риска, поэтому важные работы постоянно откладывают.",
+            "Расставляем очередь: что блокирует результат, что может дать рост, а что подождёт.",
+            "Реалистичный план, ответственные за задачи и проверка качества после изменений."
+          ]
+        ]
+      },
+      "en": {
+        "headline": "Start with the business problem. Then choose SEO, ads or development.",
+        "lead": "If enquiries are low, another campaign is not automatically the answer. We look at demand, the website, measurement and economics before recommending work.",
+        "outcome": "A clear picture of the challenge, priorities and a candid assessment of what to do now, what to defer and what is not needed.",
+        "stories": [
+          [
+            "Every provider proposes a different service",
+            "Specialists may look only at their channel and miss the real bottleneck.",
+            "Connect organic search, ads, website experience and data; test hypotheses before choosing a channel.",
+            "A shared diagnosis, priorities and a way to validate each change."
+          ],
+          [
+            "Everyone is busy, but the outcome is unclear",
+            "Reports list activities without linking them to enquiries, orders or costs.",
+            "Define a baseline, objectives, constraints and meaningful changes.",
+            "Verified improvements and movement in relevant outcomes, not task volume."
+          ],
+          [
+            "There are more tasks than available resources",
+            "Impact, effort and risk are not prioritized, so critical work is repeatedly delayed.",
+            "Order changes by what blocks progress, what might unlock growth and what can wait.",
+            "A realistic plan, accountable owners and post-release validation."
+          ]
+        ]
+      }
     }
   }
 }
