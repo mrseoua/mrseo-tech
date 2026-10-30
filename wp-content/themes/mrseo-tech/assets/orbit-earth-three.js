@@ -11,7 +11,7 @@ try{renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:
 const canvas=renderer.domElement;canvas.className='lab-webgl-canvas';canvas.setAttribute('aria-hidden','true');canvas.style.display='block';
 renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setClearColor(0x000000,0);
 renderer.outputColorSpace=THREE.SRGBColorSpace;
-const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,100);camera.position.set(0,0,4.5);
+const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,100);camera.position.set(0,0,3.85);
 scene.add(new THREE.AmbientLight(0xb4d5ff,.65));
 const sunlight=new THREE.DirectionalLight(0xfff5e9,3.0);sunlight.position.set(-3.5,2.5,5);scene.add(sunlight);
 const fill=new THREE.DirectionalLight(0x4baaff,.6);fill.position.set(3,-1,-2);scene.add(fill);
@@ -55,7 +55,7 @@ function stop(){if(raf)cancelAnimationFrame(raf);raf=0}
 visual.addEventListener('pointermove',e=>{const b=visual.getBoundingClientRect();tx=(e.clientX-b.left)/b.width*2-1;ty=(e.clientY-b.top)/b.height*2-1},{passive:true});
 visual.addEventListener('pointerleave',()=>{tx=0;ty=0});
 const observer=new IntersectionObserver(e=>{visible=e[0].isIntersecting&&!document.hidden;if(visible)start();else stop()});observer.observe(core);
-document.addEventListener('visibilitychange',()=>{visible=!document.hidden&&observer.takeRecords().length===0;if(document.hidden)stop();else start()});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){visible=false;stop()}else{visible=true;start()}});
 new MutationObserver(()=>{if(root.classList.contains('lab-paused'))stop();else start()}).observe(root,{attributes:true,attributeFilter:['class']});
 window.addEventListener('resize',resize,{passive:true});
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();stop();root.classList.remove('lab-webgl-ready')});
