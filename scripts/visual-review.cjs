@@ -58,7 +58,9 @@ async function capture(browser, name, viewport, mobile) {
     if(!mobile){
       try{
         const hoverNode=page.locator('.lab-node').nth(1);
-        await hoverNode.hover({timeout:9000});
+        const rect=await hoverNode.boundingBox();
+        if(!rect)throw Error('Second satellite is outside viewport');
+        await page.mouse.move(rect.x+rect.width*.5,rect.y+rect.height*.5,{steps:2});
         await sleep(650);
         profile.hoverCheck=await page.evaluate(()=>({
           hoveredNode:document.querySelectorAll('.lab-node.is-link-hovered').length,
