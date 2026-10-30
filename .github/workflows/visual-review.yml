@@ -1,0 +1,76 @@
+name: Visual review of live MrSeo.tech
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/visual-review.yml'
+      - 'scripts/visual-review.cjs'
+  workflow_run:
+    workflows: ['Deploy WordPress theme']
+    types: [completed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mrseo-live-visual-review
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Capture public site on desktop and mobile
+        env:
+          TARGET_URL: https://mrseo.tech/
+        run: node scripts/visual-review.cjs
+
+      - name: Upload real browser screenshots and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mrseo-visual-review
+          path: |
+            shots/*.jpg
+            shots/diagnostics.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Save readable screenshot snapshots to separate review branch
+        if: always()
+        run: |
+          set -euo pipefail
+          test -d shots || exit 0
+          mkdir -p /tmp/mrseo-visual-output
+          cp shots/*.b64 /tmp/mrseo-visual-output/ 2>/dev/null || true
+          cp shots/diagnostics.json /tmp/mrseo-visual-output/ || true
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin visual-review
+          git checkout -B visual-review origin/visual-review
+          mkdir -p visual-review
+          cp /tmp/mrseo-visual-output/* visual-review/
+          git add visual-review/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh live browser screenshots [skip ci]'
+            git push origin visual-review
+          fi
