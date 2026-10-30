@@ -132,3 +132,35 @@
   .orbit-lab .lab-lead{font-size:16px!important;line-height:1.58!important}
   .orbit-lab .lab-actions{margin-top:23px!important}
 }
+
+/* Full-bleed hero — eliminate exposed side gutters even if a layout wrapper constrains main. */
+body:has(main.orbit-lab){background-color:#171d20!important;overflow-x:clip}
+main.orbit-lab{
+  display:block;
+  position:relative!important;
+  box-sizing:border-box!important;
+  width:100vw!important;
+  min-width:100vw!important;
+  max-width:100vw!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:#171d20!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+main.orbit-lab::before{
+  inset:0!important;
+  border:0!important;
+  background:radial-gradient(ellipse 58% 73% at 73% 47%,rgba(15,55,78,.22),transparent 75%),#171d20!important;
+  opacity:1!important;
+}
+main.orbit-lab>.lab-shell{
+  background-color:transparent!important;
+  box-shadow:none!important;
+  border-left:0!important;
+  border-right:0!important;
+}
