@@ -101,7 +101,7 @@ $mrseo_selected=array(
   <div class="intl-diagnostic-intro">
    <div class="intl-kicker"><?php echo esc_html($mrseo_common['strategy']);?></div>
    <h2><?php echo esc_html($mrseo_common['problems']);?></h2>
-   <p><?php echo esc_html($mrseo_common['nextText']);?></p>
+   <p><?php echo esc_html($mrseo_common['diagnosticIntro']);?></p>
    <div class="intl-diag-index"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
   </div>
   <div class="intl-diag-list">
