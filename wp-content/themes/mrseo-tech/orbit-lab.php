@@ -489,6 +489,58 @@ html,body{overflow-x:clip}
 .orbit-lab .lab-spoke-end{fill:var(--spoke,#75c9ed)!important;opacity:1!important;filter:drop-shadow(0 0 5px var(--spoke,#75c9ed))}
 .orbit-lab .lab-spoke.active{stroke-width:2.8!important;stroke-opacity:1!important}
 }
+
+/* 8 service cards + 1 solution card: complete the UA/RU three-column grid.
+   EN retains 7 service cards + a two-column solution panel. */
+@media(min-width:1001px){
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution{
+  grid-column:span 1;
+  min-width:0;min-height:440px;
+  padding:clamp(22px,2.5vw,36px);
+  gap:13px;
+ }
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution h3{
+  font-size:clamp(30px,2.7vw,43px);
+  line-height:1.09;
+  overflow-wrap:break-word;
+ }
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution p{
+  font-size:clamp(14px,1.05vw,16px);
+  line-height:1.56;
+ }
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution>a{
+  gap:12px;
+  padding:12px 17px;
+  max-width:100%;
+  line-height:1.4;
+ }
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution-top{
+  font-size:9px;
+  letter-spacing:.07em;
+ }
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution-orbit{right:-290px;opacity:.7}
+}
+/* On tablets: UA/RU fill four two-card rows followed by a full-width CTA.
+   EN has seven cards, so its CTA fills the eighth cell instead of leaving a gap. */
+@media(min-width:601px) and (max-width:1000px){
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution{grid-column:1/-1;min-height:350px}
+ .mrseo-home-editorial:not(.mhe-eight-services) .mhe-resolution{
+  grid-column:span 1;
+  min-height:430px;
+  padding:clamp(22px,3vw,32px);
+  gap:13px;
+ }
+ .mrseo-home-editorial:not(.mhe-eight-services) .mhe-resolution h3{font-size:clamp(30px,3.3vw,40px)}
+ .mrseo-home-editorial:not(.mhe-eight-services) .mhe-resolution>a{gap:10px}
+}
+/* One-column mobile is always complete. */
+@media(max-width:600px){
+ .mrseo-home-editorial.mhe-eight-services .mhe-resolution{
+  grid-column:1/-1;
+  min-height:350px;
+ }
+}
+
 </style>
 <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-scene.css?v=7');?>">
 <main class="orbit-lab"><div class="lab-nebula" aria-hidden="true"></div><div class="lab-stars" aria-hidden="true"></div><div class="lab-landscape" aria-hidden="true"><svg viewBox="0 0 1500 300" preserveAspectRatio="none"><defs><linearGradient id="lab-ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#76331e"/><stop offset=".65" stop-color="#180d0b"/><stop offset="1" stop-color="#08090a"/></linearGradient></defs><path d="M0 210 75 166 130 188 240 90 332 198 422 132 500 216 592 172 715 225 812 143 910 227 1000 100 1100 196 1178 123 1280 211 1400 160 1500 216V300H0Z" fill="url(#lab-ground)"/><path d="M0 254Q360 208 720 261T1500 246V300H0Z" fill="#120e0c"/><path d="M530 254Q720 237 915 260" stroke="#f4763a" stroke-width="2" opacity=".68" fill="none"/></svg></div><div class="lab-grid" aria-hidden="true"></div><div class="lab-shell"><div class="lab-copy"><div class="lab-label"><?php echo esc_html($mrseo_is_home?mrseo_t('СТРАТЕГІЯ · ТЕХНОЛОГІЇ · ЗРОСТАННЯ','СТРАТЕГИЯ · ТЕХНОЛОГИИ · РОСТ','STRATEGY · TECHNOLOGY · GROWTH'):'MRSEO.TECH / EXPERIMENT 01');?></div><h1><?php echo wp_kses_post(mrseo_t('Сайт є.<br><em>А клієнти?</em>','Сайт есть.<br><em>А клиенты?</em>','You have a website.<br><em>Where are the customers?</em>'));?></h1><p class="lab-lead"><?php echo esc_html(mrseo_t('SEO, реклама й аналітика не повинні працювати окремо. Ми поєднуємо технології та маркетинг в одну систему, яка допомагає вирішувати бізнес-завдання.','SEO, реклама и аналитика не должны работать по отдельности. Мы объединяем технологии и маркетинг в систему для решения бизнес-задач.','SEO, paid media and analytics work best as one connected system. We align technology and marketing around business problems.'));?></p><div class="lab-actions"><a class="lab-action" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити проєкт','Обсудить проект','Discuss a project'));?> <span>↗</span></a><a class="lab-action lab-action-quiet" href="<?php echo esc_url(mrseo_url());?>"><?php echo esc_html(mrseo_t('На головну','На главную','Back to homepage'));?></a></div><div class="lab-controls"><button type="button" class="lab-control" id="lab-autoplay" aria-pressed="false">▶ <?php echo esc_html(mrseo_t("Автоогляд","Автообзор","Auto tour"));?></button><button type="button" class="lab-control" id="lab-motion" aria-pressed="false">Ⅱ <?php echo esc_html(mrseo_t("Зупинити рух","Остановить движение","Pause motion"));?></button><span class="lab-controls-note"><?php echo esc_html(mrseo_t("Наведіть курсор на орбіту або оберіть напрям","Наведите курсор на орбиту или выберите направление","Move your pointer or select a service"));?></span></div><div class="lab-status"><div><span>DESIGN DIRECTION</span><strong>Orbital Growth System</strong></div><div><span>EXPERIMENT STATUS</span><strong>Private concept / 01</strong></div></div></div><div class="lab-visual" aria-label="<?php echo esc_attr(mrseo_t('Інтерактивна схема маркетингових напрямів','Интерактивная схема маркетинговых направлений','Interactive marketing service map'));?>"><svg class="lab-connectors" aria-hidden="true"><g id="lab-spokes"></g><line id="lab-link" x1="50%" y1="50%" x2="50%" y2="50%"></line><circle id="lab-link-point" cx="50%" cy="50%" r="4"></circle></svg><div class="lab-orbit lab-orbit-one"></div><div class="lab-data lab-data-a"><svg viewBox="0 0 70 35"><path d="M1 30L13 26L25 28L37 15L46 20L55 9L68 3"/></svg><span><b>SEARCH / ORGANIC</b><small><?php echo esc_html(mrseo_t("Тренди попиту","Тренды спроса","Demand trends"));?></small></span></div><div class="lab-data lab-data-b"><svg viewBox="0 0 70 35"><path d="M1 29L13 21L24 25L35 14L45 17L55 8L68 3"/></svg><span><b>ANALYTICS / LIVE</b><small><?php echo esc_html(mrseo_t("Сигнали зростання","Сигналы роста","Growth signals"));?></small></span></div><div class="lab-orbit lab-orbit-two"></div><div class="lab-orbit lab-orbit-three"></div><div class="lab-core"><small>CONNECTED SYSTEM</small><strong>MRSEO<br>GROWTH</strong><div class="lab-core-signal"></div></div>
@@ -548,7 +600,7 @@ $mrseo_featured_clients=array_values(array_filter($mrseo_featured_domains,functi
   </div>
 </section>
 <?php endif;?>
-<section class="mrseo-home-editorial" aria-label="<?php echo esc_attr(mrseo_t('Наш підхід до розвитку бізнесу','Наш подход к развитию бизнеса','Our business growth approach'));?>">
+<section class="mrseo-home-editorial<?php echo in_array(mrseo_locale(),array('uk','ru'),true)?' mhe-eight-services':'';?>" aria-label="<?php echo esc_attr(mrseo_t('Наш підхід до розвитку бізнесу','Наш подход к развитию бизнеса','Our business growth approach'));?>">
 <div class="mhe-inner">
 <div class="mhe-kicker"><?php echo esc_html(mrseo_t('ВІД ПРОБЛЕМИ ДО РІШЕННЯ','ОТ ПРОБЛЕМЫ К РЕШЕНИЮ','FROM CHALLENGE TO SOLUTION'));?></div>
 <h2><?php echo esc_html(mrseo_t('Сайт має працювати на бізнес, а не просто існувати.','Сайт должен работать на бизнес, а не просто существовать.','Your website should drive business, not just exist.'));?></h2>
