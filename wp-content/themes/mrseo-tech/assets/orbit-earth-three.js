@@ -1,6 +1,6 @@
 /* Lit, high-DPI Earth. A static texture remains visible if WebGL is unavailable. */
 (async()=>{'use strict';
-const root=document.querySelector('.orbit-lab'),core=root?.querySelector('.lab-core');if(!core)return;
+const root=document.querySelector('.orbit-lab')||document.querySelector('.intl-scene'),core=root?.querySelector('.lab-core, .intl-earth-core');if(!core)return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 // Software sphere is also available in browsers that disable WebGL.
 async function renderCanvasEarth(){
