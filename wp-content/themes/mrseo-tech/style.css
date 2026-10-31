@@ -440,3 +440,18 @@ Text Domain: mrseo-tech
  .client-band-home .client-track{animation:none}
  .client-band-home .client-set[aria-hidden="true"]{display:none}
 }
+
+/* Five-language selector: prevent collisions on compact UA/RU/EN headers. */
+@media(max-width:650px){
+ .site-header .nav{gap:7px;padding-left:15px;padding-right:15px}
+ .site-header .logo{font-size:22px;letter-spacing:-1.25px;white-space:nowrap}
+ .site-header .locale-switcher{margin-left:auto;gap:1px;padding:2px;flex-shrink:0}
+ .site-header .locale-switcher a{padding:7px 6px;font-size:10px;min-width:26px;text-align:center}
+ .site-header .menu-toggle{flex-shrink:0;min-width:34px}
+}
+@media(max-width:390px){
+ .site-header .nav{gap:5px;padding-left:10px;padding-right:10px}
+ .site-header .logo{font-size:19px;letter-spacing:-1.1px}
+ .site-header .locale-switcher a{min-width:23px;padding:6px 4px;font-size:9px}
+ .site-header .menu-toggle{min-width:28px}
+}
