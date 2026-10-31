@@ -135,6 +135,21 @@ $mrseo_selected=array(
  </div>
 </section>
 <?php endif;?>
+<?php if(!empty($mrseo_page['verification'])):?>
+<section class="intl-section intl-verification" id="technical-checks">
+ <div class="intl-wrap">
+  <div class="intl-section-head"><div class="intl-kicker"><?php echo esc_html($mrseo_common['verificationLabel']);?></div><h2><?php echo esc_html($mrseo_common['verificationTitle']);?></h2></div>
+  <div class="intl-check-grid">
+   <?php foreach($mrseo_page['verification'] as $check):?>
+   <article class="intl-check-item">
+    <div class="intl-check-mark" aria-hidden="true">✓</div>
+    <div><h3><?php echo esc_html($check[0]);?></h3><p><?php echo esc_html($check[1]);?></p></div>
+   </article>
+   <?php endforeach;?>
+  </div>
+ </div>
+</section>
+<?php endif;?>
 <?php if(!empty($mrseo_page['faq'])):?>
 <section class="intl-section intl-faq"><div class="intl-wrap intl-faq-grid">
  <div><div class="intl-kicker">FAQ</div><h2><?php echo esc_html($mrseo_common['faq']);?></h2></div>
