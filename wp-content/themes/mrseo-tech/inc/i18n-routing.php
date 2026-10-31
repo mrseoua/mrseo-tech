@@ -62,7 +62,7 @@ add_action('init',function(){
 add_filter('query_vars',function($vars){return array_merge($vars,array('mrseo_lang','mrseo_service','mrseo_case'));});
 add_filter('redirect_canonical',function($url){return (mrseo_is_case()||mrseo_locale()!=='uk'||in_array(mrseo_slug(),array('portfolio','orbit-lab','orbit-light'),true))?false:$url;});
 add_filter('pre_handle_404',function($pre){if(!mrseo_valid_route())return $pre;$slug=mrseo_slug();if(mrseo_is_case())return $pre;if(in_array($slug,array('orbit-lab','orbit-light'),true))return true;if(mrseo_locale()!=='uk'&&in_array($slug,array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','google-ads','performance-max','analytics','about','contact','portfolio'),true))return true;if($slug==='portfolio')return true;return $pre;});
-add_action('init',function(){if(get_option('mrseo_i18n_rules_v10')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v10','ready',false);}},30);
+add_action('init',function(){if(get_option('mrseo_i18n_rules_v11')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_i18n_rules_v11','ready',false);}},30);
 add_action('template_redirect',function(){
  if(mrseo_locale()==='en' && mrseo_slug()==='horoshop'){
   status_header(404);nocache_headers();
@@ -72,3 +72,6 @@ add_action('template_redirect',function(){
  }
 },0);
 add_action('template_redirect',function(){if(mrseo_is_case()){wp_safe_redirect(mrseo_url('portfolio'),301);exit;}},1);
+
+// International XML sitemap contains only complete public routes; staging noindex is unchanged.
+require_once __DIR__.'/international-sitemap.php';
