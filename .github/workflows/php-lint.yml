@@ -1,10 +1,12 @@
-name: PHP syntax checks
+name: Theme international QA
 
 on:
   push:
     branches: [main]
     paths:
       - 'wp-content/themes/mrseo-tech/**/*.php'
+      - 'wp-content/themes/mrseo-tech/assets/international.css'
+      - 'wp-content/themes/mrseo-tech/assets/orbit-earth-three.js'
       - '.github/workflows/php-lint.yml'
   workflow_dispatch:
 
@@ -20,3 +22,36 @@ jobs:
         run: |
           find wp-content/themes/mrseo-tech -type f -name '*.php' -print0 \
             | xargs -0 -n1 php -l
+      - name: Check Earth module syntax
+        run: |
+          node --input-type=module --check < wp-content/themes/mrseo-tech/assets/orbit-earth-three.js
+      - name: Verify international content and launch safeguards
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re
+          root=pathlib.Path('wp-content/themes/mrseo-tech')
+          content=(root/'inc/international-content.php').read_text()
+          data_match=re.search(r"<<<'MRSEO_INT_DATA'\n(.*?)\nMRSEO_INT_DATA;",content,re.S)
+          assert data_match, 'Missing localization data'
+          data=json.loads(data_match.group(1))
+          slugs={'','seo','seo-audit','ecommerce-seo','google-ads','analytics','about','contact','portfolio'}
+          for locale in ('pl','de'):
+              pages=data['pages'][locale]
+              assert set(pages)==slugs, (locale,'Incomplete country routes')
+              assert len({p['title'] for p in pages.values()})==9
+              for slug in ('seo','seo-audit','ecommerce-seo','google-ads','analytics'):
+                  assert len(pages[slug]['problems'])==3
+                  assert len(pages[slug]['solutions'])==3
+                  assert len(pages[slug]['verification'])==4
+          routes=(root/'inc/i18n-routing.php').read_text()
+          template=(root/'international-landing.php').read_text()
+          css=(root/'assets/international.css').read_text()
+          functions=(root/'functions.php').read_text()
+          assert 'international-sitemap.php' in routes
+          assert "if($slug==='horoshop' && !in_array($lang,array('uk','ru'),true))" in routes
+          assert 'intl-earth-core' in template
+          assert 'name="intl-problem-solution"' in template
+          assert css.count('{')==css.count('}')
+          assert "X-Robots-Tag: noindex, nofollow" in functions, 'Do not disable staging noindex'
+          print('18 localized pages, 40 country-specific checks, real Earth, Horoshop restriction and noindex passed')
+          PY
