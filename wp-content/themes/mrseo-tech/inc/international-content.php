@@ -45,7 +45,8 @@ function mrseo_international_data(){
         "sent": "Dziękujemy. Formularz został przekazany do wysłania; odpowiemy na podany e-mail.",
         "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
         "invalid": "Sprawdź wymagane pola i spróbuj ponownie.",
-        "close": "Praca zdalna z klientami w Europie. Zakres i komunikację ustalamy przed rozpoczęciem."
+        "close": "Praca zdalna z klientami w Europie. Zakres i komunikację ustalamy przed rozpoczęciem.",
+        "diagnosticIntro": "Wybierz sytuację, która pasuje do Twojego sklepu. Zobacz, jak przekładamy problem na konkretne działania."
       }
     },
     "de": {
@@ -86,7 +87,8 @@ function mrseo_international_data(){
         "sent": "Vielen Dank. Ihre Nachricht wurde zur Zustellung übergeben; wir antworten per E-Mail.",
         "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
         "invalid": "Bitte prüfen Sie die Pflichtfelder und versuchen Sie es erneut.",
-        "close": "Remote-Zusammenarbeit mit Unternehmen in Europa. Umfang und Kommunikation klären wir vor Projektbeginn."
+        "close": "Remote-Zusammenarbeit mit Unternehmen in Europa. Umfang und Kommunikation klären wir vor Projektbeginn.",
+        "diagnosticIntro": "Wählen Sie das Problem, das auf Ihren Shop zutrifft. Sehen Sie, welche konkreten Schritte wir daraus ableiten."
       }
     }
   },
