@@ -95,30 +95,33 @@ $mrseo_selected=array(
  </div>
 </div></section>
 <?php else:?>
-<?php if(!empty($mrseo_page['problems'])):?>
-<section class="intl-section intl-problems">
- <div class="intl-wrap">
-  <div class="intl-section-head"><div class="intl-kicker"><?php echo esc_html($mrseo_common['strategy']);?></div><h2><?php echo esc_html($mrseo_common['problems']);?></h2></div>
-  <div class="intl-cards">
-  <?php foreach($mrseo_page['problems'] as $i=>$problem):?>
-   <article class="intl-problem-card"><span><?php echo esc_html(sprintf('%02d',$i+1));?></span><h3><?php echo esc_html($problem[0]);?></h3><p><?php echo esc_html($problem[1]);?></p></article>
-  <?php endforeach;?>
+<?php if(!empty($mrseo_page['problems'])&&!empty($mrseo_page['solutions'])):?>
+<section class="intl-section intl-diagnostic" id="how-we-solve">
+ <div class="intl-wrap intl-diagnostic-grid">
+  <div class="intl-diagnostic-intro">
+   <div class="intl-kicker"><?php echo esc_html($mrseo_common['strategy']);?></div>
+   <h2><?php echo esc_html($mrseo_common['problems']);?></h2>
+   <p><?php echo esc_html($mrseo_common['nextText']);?></p>
+   <div class="intl-diag-index"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
   </div>
- </div>
-</section>
-<?php endif;?>
-<?php if(!empty($mrseo_page['solutions'])):?>
-<section class="intl-section intl-solutions">
- <div class="intl-wrap">
-  <div class="intl-section-head"><div class="intl-kicker">MRSEO / SOLUTIONS</div><h2><?php echo esc_html($mrseo_common['solutions']);?></h2></div>
-  <div class="intl-cards">
-   <?php foreach($mrseo_page['solutions'] as $i=>$solution):?>
-   <article class="intl-solution-card">
-     <span>0<?php echo esc_html($i+1);?> / ↗</span>
+  <div class="intl-diag-list">
+   <?php foreach($mrseo_page['problems'] as $i=>$problem):
+    $solution=$mrseo_page['solutions'][$i]??null;
+    if(!$solution)continue;
+   ?>
+   <details class="intl-diag-item"<?php if($i===0):?> open<?php endif;?>>
+    <summary>
+     <span class="intl-diag-num"><?php echo esc_html(sprintf('%02d',$i+1));?></span>
+     <span class="intl-diag-summary-text"><strong><?php echo esc_html($problem[0]);?></strong><small><?php echo esc_html($problem[1]);?></small></span>
+     <span class="intl-diag-toggle" aria-hidden="true">+</span>
+    </summary>
+    <div class="intl-diag-answer">
+     <span class="intl-diag-answer-label"><?php echo esc_html($mrseo_common['solutions']);?></span>
      <h3><?php echo esc_html($solution[0]);?></h3>
      <p><?php echo esc_html($solution[1]);?></p>
-     <?php if(!empty($solution[2])&&mrseo_int_page($mrseo_lang,$solution[2])):?><a href="<?php echo esc_url(mrseo_url($solution[2]));?>"><?php echo esc_html($mrseo_nav['services']);?> ↗</a><?php endif;?>
-   </article>
+     <?php if(!empty($solution[2])&&mrseo_int_page($mrseo_lang,$solution[2])):?><a class="intl-diag-link" href="<?php echo esc_url(mrseo_url($solution[2]));?>"><?php echo esc_html($mrseo_nav['services']);?> ↗</a><?php endif;?>
+    </div>
+   </details>
    <?php endforeach;?>
   </div>
  </div>
