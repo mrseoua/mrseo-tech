@@ -46,7 +46,9 @@ function mrseo_international_data(){
         "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
         "invalid": "Sprawdź wymagane pola i spróbuj ponownie.",
         "close": "Praca zdalna z klientami w Europie. Zakres i komunikację ustalamy przed rozpoczęciem.",
-        "diagnosticIntro": "Wybierz sytuację, która pasuje do Twojego sklepu. Zobacz, jak przekładamy problem na konkretne działania."
+        "diagnosticIntro": "Wybierz sytuację, która pasuje do Twojego sklepu. Zobacz, jak przekładamy problem na konkretne działania.",
+        "verificationLabel": "KONTROLA TECHNICZNA",
+        "verificationTitle": "Co dokładnie sprawdzamy?"
       }
     },
     "de": {
@@ -88,7 +90,9 @@ function mrseo_international_data(){
         "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
         "invalid": "Bitte prüfen Sie die Pflichtfelder und versuchen Sie es erneut.",
         "close": "Remote-Zusammenarbeit mit Unternehmen in Europa. Umfang und Kommunikation klären wir vor Projektbeginn.",
-        "diagnosticIntro": "Wählen Sie das Problem, das auf Ihren Shop zutrifft. Sehen Sie, welche konkreten Schritte wir daraus ableiten."
+        "diagnosticIntro": "Wählen Sie das Problem, das auf Ihren Shop zutrifft. Sehen Sie, welche konkreten Schritte wir daraus ableiten.",
+        "verificationLabel": "TECHNISCHE PRÜFUNG",
+        "verificationTitle": "Was prüfen wir konkret?"
       }
     }
   },
@@ -195,6 +199,24 @@ function mrseo_international_data(){
             "Kiedy można oczekiwać efektów SEO sklepu?",
             "To zależy od stanu technicznego, konkurencji i wdrożenia zmian. Nie podajemy gwarantowanych terminów ani pozycji."
           ]
+        ],
+        "verification": [
+          [
+            "Indeksowanie filtrów",
+            "Sprawdzamy kombinacje cech: które mają potencjał w wyszukiwarce, a które generują szum."
+          ],
+          [
+            "Canonical i sitemap",
+            "Porównujemy adresy kanoniczne z linkami wewnętrznymi, mapami XML i faktyczną indeksacją."
+          ],
+          [
+            "Warianty produktów",
+            "Badamy rozdzielenie modeli, rozmiarów i kolorów oraz linkowanie do dostępnego asortymentu."
+          ],
+          [
+            "Priorytety biznesowe",
+            "Zestawiamy popyt z asortymentem i potencjałem sprzedażowym, nie tylko z wolumenem zapytań."
+          ]
         ]
       },
       "seo": {
@@ -244,6 +266,24 @@ function mrseo_international_data(){
           [
             "Czy zajmujecie się też reklamą?",
             "Tak, gdy ma to sens dla celu biznesowego, łączymy SEO z Google Ads i analityką."
+          ]
+        ],
+        "verification": [
+          [
+            "Intencje SERP",
+            "Porównujemy zapytania z rzeczywistymi wynikami Google w Polsce, a nie tylko z listą fraz."
+          ],
+          [
+            "Kanibalizacja",
+            "Sprawdzamy, czy kilka podstron nie konkuruje o te same zapytania."
+          ],
+          [
+            "Ścieżki wewnętrzne",
+            "Oceniamy głębokość kliknięć, linkowanie do usług i dostępność ważnych URL-i."
+          ],
+          [
+            "Pomiar zgłoszeń",
+            "Weryfikujemy, czy wejścia organiczne da się powiązać z wartościowymi kontaktami."
           ]
         ]
       },
@@ -295,6 +335,24 @@ function mrseo_international_data(){
             "Co muszę udostępnić?",
             "Na początek wystarczy adres strony. Dostępy do narzędzi uzgadniamy tylko wtedy, gdy są potrzebne."
           ]
+        ],
+        "verification": [
+          [
+            "Próbka rzeczywistych URL-i",
+            "Analizujemy odpowiedzi HTTP, łańcuchy przekierowań i szablony najważniejszych sekcji."
+          ],
+          [
+            "Search Console a crawler",
+            "Wyjaśniamy różnice między adresami odkrytymi, przeskanowanymi i indeksowanymi."
+          ],
+          [
+            "Sygnały kanoniczne",
+            "Testujemy zgodność canonical, sitemap, hreflang i linkowania wewnętrznego."
+          ],
+          [
+            "Renderowanie mobilne",
+            "Sprawdzamy widoczność istotnych treści i zasobów dla użytkownika oraz Google."
+          ]
         ]
       },
       "google-ads": {
@@ -345,6 +403,24 @@ function mrseo_international_data(){
             "Czy gwarantujecie określony ROAS?",
             "Nie. Wynik zależy również od cen, marży, sezonowości i konkurencji; ustalamy realistyczne kryteria oceny."
           ]
+        ],
+        "verification": [
+          [
+            "Zakup bez duplikacji",
+            "Porównujemy zdarzenia purchase, identyfikatory transakcji i wartości w Google Ads oraz GA4."
+          ],
+          [
+            "Diagnostyka Merchant Center",
+            "Sprawdzamy spójność ceny, dostępności, identyfikatorów i danych produktów."
+          ],
+          [
+            "Segmentacja asortymentu",
+            "Oceniamy kampanie w kontekście kategorii, marży i realnego wolumenu danych."
+          ],
+          [
+            "Decyzje budżetowe",
+            "Odnotowujemy czas opóźnienia konwersji i progi opłacalności przed skalowaniem."
+          ]
         ]
       },
       "analytics": {
@@ -394,6 +470,24 @@ function mrseo_international_data(){
           [
             "Czy potrzebuję BigQuery?",
             "Nie w każdym projekcie. Dobieramy narzędzia do wielkości danych i pytań, na które mają odpowiadać."
+          ]
+        ],
+        "verification": [
+          [
+            "Ścieżka zdarzeń e-commerce",
+            "Kontrolujemy view_item, add_to_cart, begin_checkout i purchase tam, gdzie są używane."
+          ],
+          [
+            "Spójność transakcji",
+            "Weryfikujemy identyfikatory, walutę, value, podatki i ewentualne zdublowania."
+          ],
+          [
+            "Zgoda i tagowanie",
+            "Badamy działanie tagów względem konfiguracji zgód i środowiska strony."
+          ],
+          [
+            "Raport decyzji",
+            "Oddzielamy metryki pomocnicze od wskaźników potrzebnych do oceny kampanii."
           ]
         ]
       },
@@ -585,6 +679,24 @@ function mrseo_international_data(){
             "Wann zeigt Shop-SEO Ergebnisse?",
             "Das hängt von Wettbewerb, technischem Zustand und der Umsetzung ab. Feste Rankings oder Zeiträume garantieren wir nicht."
           ]
+        ],
+        "verification": [
+          [
+            "Facettierte Navigation",
+            "Wir trennen nachgefragte Filterkombinationen von technisch unnötigen URL-Varianten."
+          ],
+          [
+            "Canonical und Sitemap",
+            "Wir prüfen, ob interne Links, XML-Sitemaps und Canonical-Tags dieselben Ziel-URLs unterstützen."
+          ],
+          [
+            "Shopware- und Shopify-Varianten",
+            "Wir bewerten die URL- und Variantenlogik passend zu den Funktionen des eingesetzten Systems."
+          ],
+          [
+            "Sortiment und Nachfrage",
+            "Wir verbinden Suchpotenzial mit Kategorien, Verfügbarkeit und wirtschaftlicher Relevanz."
+          ]
         ]
       },
       "seo": {
@@ -634,6 +746,24 @@ function mrseo_international_data(){
           [
             "Bieten Sie auch Google Ads an?",
             "Ja. Wenn es zum Ziel passt, können SEO, Ads und Tracking abgestimmt werden."
+          ]
+        ],
+        "verification": [
+          [
+            "Suchintention im deutschen SERP",
+            "Wir vergleichen Zielbegriffe mit realen organischen Treffern und den Erwartungen der Nutzer."
+          ],
+          [
+            "Keyword-Kannibalisierung",
+            "Wir identifizieren konkurrierende URLs und fehlende eindeutige Einstiegsseiten."
+          ],
+          [
+            "Interne Pfade",
+            "Wir prüfen Linktiefe, Navigation und die Verteilung relevanter interner Links."
+          ],
+          [
+            "Lead-Messung",
+            "Wir klären, wie sich organische Besuche mit qualifizierten Anfragen verbinden lassen."
           ]
         ]
       },
@@ -685,6 +815,24 @@ function mrseo_international_data(){
             "Welche Zugänge sind nötig?",
             "Für die erste Einschätzung genügt meist die URL. Weitere Zugänge stimmen wir nur bei Bedarf ab."
           ]
+        ],
+        "verification": [
+          [
+            "HTTP- und Redirect-Ketten",
+            "Wir prüfen repräsentative URLs, Weiterleitungswege und Statuscodes einzelner Templates."
+          ],
+          [
+            "Crawler gegen Search Console",
+            "Wir vergleichen auffindbare, gecrawlte und tatsächlich indexierte Seiten."
+          ],
+          [
+            "Canonical, hreflang, Sitemap",
+            "Wir prüfen widersprüchliche Signale und interne Links auf zentrale URLs."
+          ],
+          [
+            "Rendering auf Mobilgeräten",
+            "Wir kontrollieren die Darstellung und Erreichbarkeit entscheidender Inhalte."
+          ]
         ]
       },
       "google-ads": {
@@ -735,6 +883,24 @@ function mrseo_international_data(){
             "Garantieren Sie einen bestimmten ROAS?",
             "Nein. Preise, Marge, Nachfrage und Wettbewerb beeinflussen den Wert. Wir definieren realistische Ziele und prüfen sie anhand der Daten."
           ]
+        ],
+        "verification": [
+          [
+            "Kaufereignisse und Transaktions-IDs",
+            "Wir prüfen Dubletten, Umsatzwerte und Abweichungen zwischen Ads, GA4 und Shop."
+          ],
+          [
+            "Merchant-Center-Diagnose",
+            "Wir vergleichen Preise, Verfügbarkeit und Produktattribute mit den Landingpages."
+          ],
+          [
+            "Produktsortiment nach Wirtschaftlichkeit",
+            "Wir unterscheiden Kategorien nach Marge, Nachfrage und belastbarer Datenbasis."
+          ],
+          [
+            "Auswertung vor der Skalierung",
+            "Wir berücksichtigen Conversion-Verzug, Lernphasen und die tatsächlich erreichbare Profitabilität."
+          ]
         ]
       },
       "analytics": {
@@ -784,6 +950,24 @@ function mrseo_international_data(){
           [
             "Brauchen wir dafür BigQuery?",
             "Nicht zwingend. Die Architektur richtet sich nach Datenmenge, Aufwand und geschäftlichen Fragen."
+          ]
+        ],
+        "verification": [
+          [
+            "E-Commerce-Ereigniskette",
+            "Wir überprüfen view_item, add_to_cart, begin_checkout und purchase bei entsprechendem Setup."
+          ],
+          [
+            "Transaktionsdaten",
+            "Wir vergleichen IDs, Währung, Umsatzwerte und fehlerhafte doppelte Ereignisse."
+          ],
+          [
+            "Tag- und Consent-Konfiguration",
+            "Wir prüfen, ob Tracking gemäß der vorhandenen Consent-Einrichtung ausgelöst wird."
+          ],
+          [
+            "Berichte für Entscheidungen",
+            "Wir reduzieren unnötige Dashboards auf nachvollziehbare betriebliche Kennzahlen."
           ]
         ]
       },
