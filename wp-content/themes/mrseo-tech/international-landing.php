@@ -109,7 +109,7 @@ $mrseo_selected=array(
     $solution=$mrseo_page['solutions'][$i]??null;
     if(!$solution)continue;
    ?>
-   <details class="intl-diag-item"<?php if($i===0):?> open<?php endif;?>>
+   <details class="intl-diag-item" name="intl-problem-solution"<?php if($i===0):?> open<?php endif;?>>
     <summary>
      <span class="intl-diag-num"><?php echo esc_html(sprintf('%02d',$i+1));?></span>
      <span class="intl-diag-summary-text"><strong><?php echo esc_html($problem[0]);?></strong><small><?php echo esc_html($problem[1]);?></small></span>
