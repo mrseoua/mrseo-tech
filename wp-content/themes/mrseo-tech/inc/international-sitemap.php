@@ -32,7 +32,8 @@ add_action('init',function(){
 },10);
 add_filter('query_vars',function($vars){$vars[]='mrseo_locales_sitemap';return $vars;});
 add_filter('pre_handle_404',function($pre){
- return get_query_var('mrseo_locales_sitemap')?$pre===false?true:$pre:$pre;
+ if(get_query_var('mrseo_locales_sitemap'))return true;
+ return $pre;
 },1);
 add_action('template_redirect',function(){
  if(!get_query_var('mrseo_locales_sitemap'))return;
