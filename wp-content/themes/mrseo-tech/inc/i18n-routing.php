@@ -45,7 +45,7 @@ add_action('wp_head',function(){if(!mrseo_valid_route())return;$slug=mrseo_slug(
   $codes=mrseo_int_locales();
   $hreflang=$codes[$l]??$l;
   echo '<link rel="alternate" hreflang="'.esc_attr($hreflang).'" href="'.esc_url(mrseo_url($path,$l)).'">'."\n";
- }echo '<link rel="alternate" hreflang="x-default" href="'.esc_url(mrseo_url($path,'uk')).'">'."\n";echo '<link rel="canonical" href="'.esc_url(mrseo_url($path)).'">'."\n";},2);
+ }echo '<link rel="alternate" hreflang="x-default" href="'.esc_url(mrseo_url($path,$slug==='horoshop'?'uk':'en')).'">'."\n";echo '<link rel="canonical" href="'.esc_url(mrseo_url($path)).'">'."\n";},2);
 add_action('init',function(){
  add_rewrite_rule('^portfolio/([^/]+)/?$','index.php?mrseo_service=portfolio&mrseo_case=$matches[1]','top');
  add_rewrite_rule('^(ru|en)/portfolio/([^/]+)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=portfolio&mrseo_case=$matches[2]','top');
