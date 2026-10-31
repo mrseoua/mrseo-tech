@@ -11,7 +11,10 @@ function mrseo_setup() {
 }
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.4');
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.5');
+ if(in_array(mrseo_locale(),array('pl','de'),true)){
+  wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.0.0');
+ }
  if(in_array(mrseo_slug(),array('seo','seo-audit','google-ads','performance-max','analytics','ecommerce-seo','horoshop','service-websites'),true)){
   wp_enqueue_style('mrseo-customer-journeys',get_template_directory_uri().'/assets/customer-journeys.css',array('mrseo-style'),'1.0.2');
  }
@@ -25,6 +28,12 @@ function mrseo_assets(){
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
  if(!mrseo_valid_route())return;
+ if(in_array(mrseo_locale(),array('pl','de'),true)){
+  $international=mrseo_int_page();
+  if($international&&!empty($international['description']))
+   echo '<meta name="description" content="'.esc_attr($international['description']).'">'."\n";
+  return;
+ }
  $slug=mrseo_slug();
  if(!in_array($slug,array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','google-ads','performance-max','analytics','about','contact','portfolio'),true))return;
  if($slug==='seo'){$desc=mrseo_t('SEO-просування сайтів у Google: усуваємо проблеми індексації, структури й пошукової видимості. Аудит, семантика, комерційні сторінки та аналітика.','SEO-продвижение сайтов в Google: исправляем проблемы индексации, структуры и видимости. Аудит, семантика, посадочные страницы и аналитика.','SEO services to improve technical accessibility, search intent coverage, website visibility and meaningful conversions.');}elseif($slug==='horoshop'){$desc=mrseo_t('SEO для Хорошоп: знаходимо причини слабкої видимості магазину, виправляємо проблеми категорій, фільтрів, індексації та товарного фіда.','SEO для Хорошоп: находим причины слабой видимости магазина, решаем проблемы категорий, фильтров, индексации и товарного фида.','Horoshop SEO: catalog architecture, indexing, product data and Google Ads.');}elseif($slug==='service-websites'){$desc=mrseo_t('Створення і SEO-просування сайтів послуг для отримання заявок: структура, комерційні сторінки, локальний пошук та аналітика.','Создание и SEO-продвижение сайтов услуг для заявок: структура, коммерческие страницы, локальный поиск и аналитика.','Service website development and SEO for lead generation, service landing pages and local search.');}elseif($slug==='about'){ $desc=mrseo_t('MrSeo.tech — невелика команда професіоналів із 10-річним досвідом у SEO, Google Ads, аналітиці та розробці сайтів. Допомагаємо бізнесу вирішувати конкретні задачі.','MrSeo.tech — небольшая команда профессионалов с 10-летним опытом в SEO, Google Ads, аналитике и разработке сайтов. Решаем задачи бизнеса без лишней сложности.','MrSeo.tech — a small team with 10 years of experience in SEO, Google Ads, analytics and website development. Clear solutions to real business challenges.'); }elseif($slug==='portfolio'){ $desc=mrseo_t('Портфоліо MrSeo.tech — 148 проєктів у різних нішах.','Портфолио MrSeo.tech — 148 проектов в разных нишах.','MrSeo.tech portfolio — 148 projects across different industries.'); }elseif($slug===''){
@@ -45,7 +54,7 @@ add_action('wp_head','mrseo_meta_description',1);
 /** Simple contact form handler; mail delivery depends on server configuration. */
 function mrseo_handle_contact() {
  $post_lang=sanitize_key(wp_unslash($_POST['mrseo_lang']??'uk'));
- $redirect=mrseo_url('contact',in_array($post_lang,array('uk','ru','en'),true)?$post_lang:'uk');
+ $redirect=mrseo_url('contact',in_array($post_lang,array('uk','ru','en','pl','de'),true)?$post_lang:'uk');
  if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {wp_safe_redirect(add_query_arg('message_status','invalid',$redirect));exit;}
  if(!empty($_POST['contact_company_extra'])) {wp_safe_redirect($redirect);exit;}
  $name=mb_substr(sanitize_text_field(wp_unslash($_POST['contact_name']??'')),0,90);
