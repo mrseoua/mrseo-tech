@@ -2,6 +2,8 @@
 if(!defined('ABSPATH'))exit;
 /* Country-specific Polish and German editorial copy. Only completed routes are exposed. */
 function mrseo_international_data(){
+ static $cached=null;
+ if($cached!==null)return $cached;
  $json=<<<'MRSEO_INT_DATA'
 {
   "ui": {
@@ -872,7 +874,7 @@ function mrseo_international_data(){
   }
 }
 MRSEO_INT_DATA;
- return json_decode($json,true);
+ return $cached=json_decode($json,true);
 }
 function mrseo_int_locales(){return array('pl'=>'pl-PL','de'=>'de-DE');}
 function mrseo_int_pages(){return array('','seo','ecommerce-seo','seo-audit','google-ads','analytics','about','contact','portfolio');}
