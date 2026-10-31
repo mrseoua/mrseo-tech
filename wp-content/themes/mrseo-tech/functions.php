@@ -11,7 +11,7 @@ function mrseo_setup() {
 }
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.5');
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
  if(in_array(mrseo_locale(),array('pl','de'),true)){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.0.0');
  }
