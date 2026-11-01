@@ -68,7 +68,7 @@ get_header();
      <div class="ec-pane" id="ec-panel-1" data-ec-pane="1" aria-labelledby="ec-tab-1" hidden><div class="ec-filter good"><span aria-hidden="true">✓</span>Окрема сторінка під підтверджений попит</div><div class="ec-filter bad"><span aria-hidden="true">×</span>Технічний URL без самостійної цінності</div></div>
      <div class="ec-pane" id="ec-panel-2" data-ec-pane="2" aria-labelledby="ec-tab-2" hidden><div class="ec-check"><span aria-hidden="true">✓</span>Зрозуміла назва товару</div><div class="ec-check"><span aria-hidden="true">✓</span>Точні характеристики</div><div class="ec-check"><span aria-hidden="true">✓</span>Зв'язок із категоріями</div></div>
     </div>
-    <div class="ec-lab-footer"><span>MRSEO / 0<span id="ec-current-step">1</span></span><div class="ec-lab-explanation" role="status" aria-live="polite" id="ec-explain">Зіставляємо попит і категорії, щоб потрібна сторінка відповідала запиту покупця.</div></div>
+    <div class="ec-lab-footer"><span>MRSEO / КАТАЛОГ</span><div class="ec-lab-explanation" role="status" aria-live="polite" id="ec-explain">Зіставляємо попит і категорії, щоб потрібна сторінка відповідала запиту покупця.</div></div>
    </div>
    <script type="application/json" id="ec-explanations"><?php echo wp_json_encode(array(
    'Зіставляємо попит і категорії, щоб потрібна сторінка відповідала запиту покупця.',
