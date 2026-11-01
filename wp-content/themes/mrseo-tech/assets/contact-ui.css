@@ -38,7 +38,7 @@
 @media(max-width:980px){.intl-header .mrseo-header-contact{margin-left:auto;gap:7px}.intl-header .mrseo-language-dropdown{margin-left:0}}
 @media(max-width:950px){.site-header .mrseo-header-contact{order:1;margin-left:auto}.site-header .mrseo-language-dropdown{order:2;margin-left:0}.site-header .menu-toggle{order:3;margin-left:0}}
 @media(max-width:700px){
- body{padding-bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+ .mrseo-footer,.intl-footer{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))!important}
  .mrseo-floating-contact{display:none}
  .mrseo-mobile-contact-bar{position:fixed;z-index:11000;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);display:flex;align-items:stretch;gap:8px;width:min(calc(100% - 24px),420px);padding:7px;border-radius:16px;border:1px solid #dfd8d0;background:#fffdf8;box-shadow:0 14px 45px #14251b35}
  .mrseo-mobile-contact-bar>.mrseo-contact-popover,.mrseo-mobile-call{flex:1 1 50%;min-width:0}
