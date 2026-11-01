@@ -59,7 +59,7 @@ function mrseo_render_customer_journey($slug=null){
         </div>
         <aside class="mrseo-journey-outcome">
           <span class="mrseo-journey-mark" aria-hidden="true">✳</span>
-          <span class="mrseo-journey-kicker">MRSEO.TECH / SOLUTION</span>
+          <span class="mrseo-journey-kicker">MRSEO.TECH / <?php echo esc_html(mrseo_t('РІШЕННЯ','РЕШЕНИЕ','SOLUTION'));?></span>
           <h3><?php echo esc_html($titles['deliver']);?></h3>
           <p><?php echo esc_html($story['outcome']);?></p>
           <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($titles['cta']);?></a>
