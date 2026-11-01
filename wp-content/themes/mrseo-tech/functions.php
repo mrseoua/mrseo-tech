@@ -58,7 +58,8 @@ function mrseo_assets(){
  }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.0');
- wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.1',true);
+ wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'1.0.0');
+ wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.2',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
