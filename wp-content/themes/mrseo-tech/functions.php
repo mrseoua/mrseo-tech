@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/inc/site-pages.php';
 require_once get_template_directory() . '/inc/i18n-routing.php';
 require_once get_template_directory() . '/inc/language-dropdown.php';
+require_once get_template_directory() . '/inc/contact-channels.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
 require_once get_template_directory() . '/inc/motion-scenes.php';
 function mrseo_setup() {
