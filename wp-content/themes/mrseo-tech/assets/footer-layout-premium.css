@@ -1,0 +1,172 @@
+/* MrSeo.tech / premium footer layout 2026-11.
+   Critically override legacy .footer .container { display:flex; } which
+   placed the footer columns and copyright beside each other on desktop.
+   Footer-only styling; no header, homepage scene or page content changes. */
+
+/* Common footer */
+.mrseo-footer .mrseo-footer-inner{
+  display:block;max-width:1360px;width:100%;margin:0 auto;
+  padding:62px clamp(24px,4.1vw,60px) 26px;
+}
+.mrseo-footer .mrseo-footer-feature{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;gap:clamp(28px,5vw,90px);
+  padding:0 0 37px;border-bottom:1px solid #35453e;
+}
+.mrseo-footer .mrseo-footer-brand{min-width:0}
+.mrseo-footer .mrseo-footer-logo{
+  display:inline-block;color:#f8f3ec;font-size:clamp(34px,3.15vw,43px);
+  font-weight:850;letter-spacing:-.055em;line-height:1.13;
+}
+.mrseo-footer .mrseo-footer-brand p{
+  max-width:720px;margin:16px 0 13px;
+  color:#d1ddd4;font-size:clamp(17px,1.48vw,20px);
+  font-weight:550;line-height:1.62;
+}
+.mrseo-footer .mrseo-footer-region{
+  display:block;color:#a8bbae;font-size:13px;
+  font-weight:620;line-height:1.55;
+}
+.mrseo-footer .mrseo-footer-cta{
+  display:inline-flex;align-items:center;justify-content:space-between;
+  gap:25px;min-width:220px;min-height:55px;padding:17px 23px;
+  border-radius:100px;background:#f7f2ea;color:#202724!important;
+  font-size:15px;font-weight:800;line-height:1.35;white-space:nowrap;
+}
+.mrseo-footer .mrseo-footer-cta span{font-size:22px;line-height:1}
+.mrseo-footer .mrseo-footer-cta:hover{background:#e7ae9a;color:#202724!important}
+.mrseo-footer .mrseo-footer-top{
+  display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.8fr) minmax(325px,1.32fr);
+  align-items:start;gap:clamp(30px,4.4vw,75px);padding:40px 0 43px;
+}
+.mrseo-footer .mrseo-footer-col{min-width:0;gap:11px;align-items:flex-start}
+.mrseo-footer .mrseo-footer-col h2{
+  color:#f8f4ef;font-size:13px;font-weight:820;
+  margin:0 0 16px;letter-spacing:.12em;line-height:1.5;
+}
+.mrseo-footer .mrseo-footer-col>a{
+  font-size:15px;font-weight:560;line-height:1.52;color:#bdcec4;
+}
+.mrseo-footer .mrseo-footer-col>a:hover{color:#f0a38a}
+.mrseo-footer .mrseo-footer-contact{grid-column:auto;gap:13px;min-width:0}
+.mrseo-footer .mrseo-footer-contact .mrseo-contact-channels{gap:8px;max-width:100%}
+.mrseo-footer .mrseo-footer-contact .mrseo-contact-heading{font-size:18px;line-height:1.35;margin:0 0 8px;font-weight:770}
+.mrseo-footer .mrseo-footer-contact .mrseo-contact-phone{font-size:clamp(22px,2vw,26px);font-weight:840}
+.mrseo-footer .mrseo-footer-contact .mrseo-contact-messengers{gap:9px}
+.mrseo-footer .mrseo-footer-contact .mrseo-contact-messenger{font-size:14px;min-height:46px}
+.mrseo-footer .mrseo-footer-bottom{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;
+  align-items:center;justify-content:initial;gap:22px;
+  width:100%;border-top:1px solid #35453e;padding:21px 0 0;
+  color:#a8baaf;font-size:13px;line-height:1.5;
+}
+.mrseo-footer .mrseo-footer-promise{text-align:center;color:#aebbb2}
+.mrseo-footer .mrseo-footer-utilities{display:flex;align-items:center;justify-content:flex-end;gap:20px;min-width:0}
+.mrseo-footer .mrseo-footer-utilities>a{color:#f2eae1;font-size:14px;font-weight:730;white-space:nowrap}
+.mrseo-footer .mrseo-footer-utilities>a:hover{color:#efa58d}
+.mrseo-footer .mrseo-footer-utilities .mrseo-language-dropdown{margin:0}
+
+/* Match international PL and DE footers to the same strong hierarchy. */
+.intl-footer{padding:0!important}
+.intl-footer .intl-footer-feature,
+.intl-footer .intl-footer-grid,
+.intl-footer .intl-footer-bottom{width:min(calc(100% - 80px),1310px);margin:0 auto}
+.intl-footer .intl-footer-feature{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;gap:clamp(28px,5vw,90px);
+  padding:62px 0 37px;border-bottom:1px solid #3b4941;
+}
+.intl-footer .intl-footer-intro{min-width:0;grid-column:auto}
+.intl-footer .intl-footer-intro .intl-logo{
+  color:#f8f3ec;font-size:clamp(34px,3.15vw,43px);
+  font-weight:850;line-height:1.13;letter-spacing:-.055em;
+}
+.intl-footer .intl-footer-intro p{
+  max-width:720px;margin:16px 0 0;color:#d1ddd4;
+  font-size:clamp(17px,1.48vw,20px);font-weight:550;line-height:1.62;
+}
+.intl-footer .intl-footer-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:55px;padding:17px 24px;border-radius:100px;
+  background:#f7f2ea;color:#202724!important;font-size:15px;
+  line-height:1.35;font-weight:800;white-space:nowrap;
+  text-decoration:none;
+}
+.intl-footer .intl-footer-cta:hover{background:#e7ae9a;color:#202724!important}
+.intl-footer .intl-footer-grid{
+  display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.8fr) minmax(325px,1.32fr);
+  align-items:start;gap:clamp(30px,4.4vw,75px);
+  padding:40px 0 43px;
+}
+.intl-footer .intl-footer-grid nav{min-width:0;gap:11px}
+.intl-footer .intl-footer-grid nav strong{
+  color:#f8f4ef;font-size:13px;font-weight:820;
+  letter-spacing:.09em;line-height:1.5;margin:0 0 16px;
+}
+.intl-footer .intl-footer-grid nav a{
+  color:#bdcec4;font-size:15px;font-weight:560;line-height:1.52;
+}
+.intl-footer .intl-footer-grid nav a:hover{color:#f0a38a}
+.intl-footer .intl-footer-contact{grid-column:auto;min-width:0}
+.intl-footer .intl-footer-contact .mrseo-contact-heading{font-size:18px}
+.intl-footer .intl-footer-contact .mrseo-contact-phone{font-size:clamp(22px,2vw,26px)}
+.intl-footer .intl-footer-bottom{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;
+  align-items:center;justify-content:initial;gap:22px;
+  border-top:1px solid #3b4941;padding:21px 0 26px;
+  color:#a8baaf;font-size:13px;line-height:1.5;
+}
+.intl-footer .intl-footer-promise{text-align:center}
+.intl-footer .intl-footer-utilities{display:flex;align-items:center;justify-content:flex-end;gap:20px}
+.intl-footer .intl-footer-utilities>a{color:#f2eae1;font-size:19px;font-weight:770;min-width:35px;text-align:center}
+.intl-footer .intl-footer-utilities>a:hover{color:#efa58d}
+
+/* Tablet: two useful columns, contacts across the second row. */
+@media(max-width:1000px){
+  .mrseo-footer .mrseo-footer-top,
+  .intl-footer .intl-footer-grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    column-gap:36px;row-gap:34px;
+  }
+  .mrseo-footer .mrseo-footer-contact,
+  .intl-footer .intl-footer-contact{grid-column:1/-1}
+  .mrseo-footer .mrseo-footer-contact .mrseo-contact-messengers,
+  .intl-footer .intl-footer-contact .mrseo-contact-messengers{max-width:530px}
+}
+/* Mobile: brand and action stacked, comfortable readable controls. */
+@media(max-width:650px){
+  .mrseo-footer .mrseo-footer-inner{padding:48px 21px 24px}
+  .mrseo-footer .mrseo-footer-feature,
+  .intl-footer .intl-footer-feature{
+    grid-template-columns:minmax(0,1fr);gap:24px;
+    padding-bottom:30px;
+  }
+  .mrseo-footer .mrseo-footer-cta,.intl-footer .intl-footer-cta{width:max-content;max-width:100%;white-space:normal}
+  .mrseo-footer .mrseo-footer-brand p,.intl-footer .intl-footer-intro p{font-size:17px;line-height:1.6}
+  .mrseo-footer .mrseo-footer-top,.intl-footer .intl-footer-grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:29px 18px;padding:33px 0;
+  }
+  .mrseo-footer .mrseo-footer-contact,.intl-footer .intl-footer-contact{grid-column:1/-1}
+  .mrseo-footer .mrseo-footer-bottom,
+  .intl-footer .intl-footer-bottom{
+    display:flex;align-items:flex-start;justify-content:flex-start;
+    flex-wrap:wrap;gap:14px 25px;
+  }
+  .mrseo-footer .mrseo-footer-promise,.intl-footer .intl-footer-promise{display:none}
+  .mrseo-footer .mrseo-footer-utilities,.intl-footer .intl-footer-utilities{
+    width:100%;justify-content:space-between;gap:20px;
+  }
+  .intl-footer .intl-footer-feature,.intl-footer .intl-footer-grid,.intl-footer .intl-footer-bottom{
+    width:calc(100% - 42px);
+  }
+  .intl-footer .intl-footer-feature{padding-top:48px}
+}
+@media(max-width:420px){
+  .mrseo-footer .mrseo-footer-top,.intl-footer .intl-footer-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+  .mrseo-footer .mrseo-footer-contact,.intl-footer .intl-footer-contact{grid-column:auto}
+  .mrseo-footer .mrseo-footer-contact .mrseo-contact-messengers,
+  .intl-footer .intl-footer-contact .mrseo-contact-messengers{max-width:100%}
+}
