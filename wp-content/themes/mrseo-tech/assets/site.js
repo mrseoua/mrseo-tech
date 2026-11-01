@@ -64,3 +64,46 @@
   if(menu.open)selectors.forEach(other=>{if(other!==menu)other.open=false});
  }));
 })();
+
+
+// Header Services is a disclosure, never a link to the first service.
+(()=>{
+ const dropdowns=[...document.querySelectorAll('.nav-dropdown,.intl-dropdown')].filter(node=>node.querySelector('.services-menu-toggle'));
+ if(!dropdowns.length)return;
+ function setOpen(node,open){
+  node.classList.toggle('is-open',open);
+  node.querySelector('.services-menu-toggle')?.setAttribute('aria-expanded',String(open));
+ }
+ dropdowns.forEach(node=>{
+  const trigger=node.querySelector('.services-menu-toggle');
+  const anchors=[...node.querySelectorAll('.nav-submenu a,.intl-dropdown-menu a')];
+  trigger.addEventListener('click',()=>{
+   const next=!node.classList.contains('is-open');
+   dropdowns.forEach(other=>setOpen(other,false));
+   setOpen(node,next);
+  });
+  trigger.addEventListener('keydown',event=>{
+   if(event.key==='ArrowDown'&&anchors.length){
+    event.preventDefault();setOpen(node,true);anchors[0].focus();
+   }
+  });
+  anchors.forEach(link=>link.addEventListener('click',()=>setOpen(node,false)));
+ });
+ document.addEventListener('pointerdown',event=>{
+  dropdowns.forEach(node=>{if(!node.contains(event.target))setOpen(node,false)});
+ });
+ document.addEventListener('focusin',event=>{
+  dropdowns.forEach(node=>{if(!node.contains(event.target))setOpen(node,false)});
+ });
+ document.addEventListener('keydown',event=>{
+  if(event.key!=='Escape')return;
+  dropdowns.filter(node=>node.classList.contains('is-open')).forEach(node=>{
+   setOpen(node,false);node.querySelector('.services-menu-toggle')?.focus();
+  });
+ });
+ document.querySelector('.menu-toggle')?.addEventListener('click',()=>{
+  if(!document.querySelector('.nav-links')?.classList.contains('open')){
+   dropdowns.forEach(node=>setOpen(node,false));
+  }
+ });
+})();
