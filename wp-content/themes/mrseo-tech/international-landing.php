@@ -65,7 +65,7 @@ $mrseo_selected=array(
 );
 ?>
 <section class="intl-section"><div class="intl-wrap">
- <div class="intl-section-head"><div class="intl-kicker">PORTFOLIO</div><h2><?php echo esc_html($mrseo_common['portfolioLink']);?></h2><p><?php echo esc_html($mrseo_common['proof']);?></p></div>
+ <div class="intl-section-head"><div class="intl-kicker"><?php echo esc_html($mrseo_common['portfolioTag']);?></div><h2><?php echo esc_html($mrseo_common['portfolioHeading']);?></h2><p><?php echo esc_html($mrseo_common['proof']);?></p></div>
  <div class="intl-project-grid">
   <?php foreach($mrseo_selected as $group=>$domains):foreach($domains as $domain):if(!in_array($domain,$mrseo_portfolio[$group]??array(),true))continue;?>
   <a class="intl-project" href="<?php echo esc_url('https://'.$domain.'/');?>" target="_blank" rel="noopener noreferrer">
@@ -140,7 +140,7 @@ $mrseo_selected=array(
 <?php if(!$mrseo_is_contact):?>
 <section class="intl-final">
  <div class="intl-wrap intl-final-grid">
-  <div><div class="intl-kicker">MRSEO.TECH / NEXT STEP</div><h2><?php echo esc_html($mrseo_common['next']);?></h2><p><?php echo esc_html($mrseo_common['nextText']);?></p></div>
+  <div><div class="intl-kicker"><?php echo esc_html($mrseo_common['nextLabel']);?></div><h2><?php echo esc_html($mrseo_common['next']);?></h2><p><?php echo esc_html($mrseo_common['nextText']);?></p></div>
   <a class="intl-final-link" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['cta']);?> ↗</a>
  </div>
 </section>
