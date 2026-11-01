@@ -6,6 +6,7 @@ on:
     paths:
       - 'wp-content/themes/mrseo-tech/**/*.php'
       - 'wp-content/themes/mrseo-tech/assets/international.css'
+      - 'wp-content/themes/mrseo-tech/assets/development.css'
       - 'wp-content/themes/mrseo-tech/assets/orbit-earth-three.js'
       - '.github/workflows/php-lint.yml'
   workflow_dispatch:
@@ -56,7 +57,7 @@ jobs:
           assert home_match, 'Missing Polish/German homepage translations'
           home_translations=json.loads(home_match.group(1))
           for locale in ('pl','de'):
-              assert len(home_translations[locale])>=75, (locale,'Missing homepage copy')
+              assert len(home_translations[locale])>=78, (locale,'Missing homepage copy')
               assert all(isinstance(v,str) and v.strip() for v in home_translations[locale].values())
           assert "mrseo_int_home_copy($l,$en)" in routes
           assert "mrseo_slug()===''?'/orbit-lab.php':'/international-landing.php'" in routes
@@ -64,9 +65,27 @@ jobs:
           assert 'mhe-five-services' in home
           assert "array('seo-audit'):array('seo-audit','service-websites')" in chrome
           assert 'orbit-earth-three.js?v=5' in home, 'Shared real Earth renderer must remain'
+          dev_php=(root/'inc/development-content.php').read_text()
+          dev_match=re.search(r"<<<'MRSEO_DEV_DATA'\n(.*?)\nMRSEO_DEV_DATA;",dev_php,re.S)
+          assert dev_match, 'Missing Web Development data'
+          dev=json.loads(dev_match.group(1))
+          assert set(dev)=={'uk','ru','en','pl','de'}
+          assert len({page['title'] for page in dev.values()})==5
+          for locale,page in dev.items():
+              assert len(page['problems'])==3 and len(page['solutions'])==3
+              assert len(page['capabilities'])==6 and len(page['workflow'])==4
+              assert len(page['verification'])==4 and len(page['faq'])==3
+              assert page['description'] and page['headline'] and page['lead']
+          dev_template=(root/'development-landing.php').read_text()
+          assert 'intl-earth-core' in dev_template and 'orbit-earth-three.js?v=6' in dev_template
+          assert 'name="dev-problem"' in dev_template
+          assert "mrseo_dev_page()" in routes or 'mrseo_dev_page' in routes
+          assert 'web-development' in routes and 'web-development' in home
+          assert "mrseo_int_pages()" in (root/'inc/international-sitemap.php').read_text()
+          assert (root/'assets/development.css').read_text().count('{')==(root/'assets/development.css').read_text().count('}')
           assert 'intl-earth-core' in template
           assert 'name="intl-problem-solution"' in template
           assert css.count('{')==css.count('}')
           assert "X-Robots-Tag: noindex, nofollow" in functions, 'Do not disable staging noindex'
-          print('Five localized premium homepages, 18 international pages, 40 checks, Horoshop restriction and noindex passed')
+          print('Five premium homepages, five Web Development pages, 18 existing PL/DE pages, 40 checks, Horoshop and noindex validated')
           PY
