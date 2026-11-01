@@ -61,7 +61,17 @@ get_header();?>
  </div>
 </section>
 <?php else:?>
-<section class="special-hero"><div class="container"><div class="eyebrow"><?php echo esc_html(mrseo_t('САЙТИ ПОСЛУГ / SEO','САЙТЫ УСЛУГ / SEO','SERVICE WEBSITES / SEO'));?></div><h1><?php echo esc_html($title);?></h1><p><?php echo esc_html($intro);?></p><a class="btn" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити ваш сайт','Обсудить ваш сайт','Discuss your website'));?> ↗</a></div></section>
+<section class="special-hero special-hero-websites">
+ <div class="container special-hero-layout">
+  <div class="special-websites-copy">
+   <div class="eyebrow"><?php echo esc_html(mrseo_t('СТВОРЕННЯ САЙТІВ ПІД ЗАЯВКИ','СОЗДАНИЕ САЙТОВ ПОД ЗАЯВКИ','WEBSITES BUILT FOR ENQUIRIES'));?></div>
+   <h1><?php echo esc_html($title);?></h1>
+   <p><?php echo esc_html($intro);?></p>
+   <a class="btn" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити ваш сайт','Обсудить ваш сайт','Discuss your website'));?> ↗</a>
+  </div>
+  <?php mrseo_render_motion_scene('service-websites');?>
+ </div>
+</section>
 <?php endif;?>
 <?php mrseo_render_customer_journey(mrseo_slug());?>
 <span id="common-problems" aria-hidden="true"></span>
