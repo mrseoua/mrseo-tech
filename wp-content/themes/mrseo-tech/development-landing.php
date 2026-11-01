@@ -13,7 +13,7 @@ $dev_nav=array(
 );
 get_header($is_int_dev?'international':null);
 ?>
-<div class="dev-scope">
+<div class="dev-scope<?php echo $dev_locale==='uk'?' dev-scope-uk':'';?>">
 <section class="dev-hero" aria-labelledby="dev-title">
  <div class="dev-wrap dev-hero-grid">
   <div class="dev-hero-copy">
@@ -81,15 +81,15 @@ get_header($is_int_dev?'international':null);
  </div>
 </section>
 <section class="dev-outcomes" aria-labelledby="dev-outcomes-title"><div class="dev-wrap dev-outcomes-grid">
- <div><div class="dev-eyebrow">05 / DELIVERABLES</div><h2 id="dev-outcomes-title"><?php echo esc_html($dev['labels']['results']);?></h2></div>
+ <div><div class="dev-eyebrow">05 / <?php echo $dev_locale==='uk'?'РЕЗУЛЬТАТ РОБОТИ':'DELIVERABLES';?></div><h2 id="dev-outcomes-title"><?php echo esc_html($dev['labels']['results']);?></h2></div>
  <div><?php foreach($dev['outcomes'] as $i=>$outcome):?><div class="dev-outcome"><span><?php echo esc_html(sprintf('%02d',$i+1));?></span><strong><?php echo esc_html($outcome);?></strong></div><?php endforeach;?></div>
 </div></section>
 <section class="dev-section dev-faq" aria-labelledby="dev-faq-title"><div class="dev-wrap dev-faq-grid">
  <div><div class="dev-eyebrow">06 / FAQ</div><h2 id="dev-faq-title"><?php echo esc_html($dev['labels']['faq']);?></h2></div>
  <div><?php foreach($dev['faq'] as $entry):?><details><summary><?php echo esc_html($entry[0]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($entry[1]);?></p></details><?php endforeach;?></div>
 </div></section>
-<section class="dev-cta"><div class="dev-wrap"><div class="dev-eyebrow">MRSEO.TECH / NEXT STEP</div>
- <h2><?php echo esc_html($dev['labels']['cta']);?></h2><p><?php echo esc_html($dev['labels']['contactNote']);?></p>
+<section class="dev-cta"><div class="dev-wrap"><div class="dev-eyebrow">MRSEO.TECH / <?php echo $dev_locale==='uk'?'НАСТУПНИЙ КРОК':'NEXT STEP';?></div>
+ <h2><?php echo esc_html($dev_locale==='uk'?'Є процес, який варто спростити?':$dev['labels']['cta']);?></h2><p><?php echo esc_html($dev_locale==='uk'?'Опишіть задачу та поточні інструменти. Визначимо перший крок і перевіримо, чи справді потрібна індивідуальна розробка.':$dev['labels']['contactNote']);?></p>
  <a class="dev-button" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($dev['labels']['cta']);?> ↗</a>
 </div></section>
 </div>
