@@ -12,8 +12,11 @@ function mrseo_setup() {
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
  wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
- if(in_array(mrseo_locale(),array('pl','de'),true)){
-  wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.2.0');
+ if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'){
+  wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
+ }
+ if(mrseo_slug()==='web-development'){
+  wp_enqueue_style('mrseo-development',get_template_directory_uri().'/assets/development.css',array('mrseo-international'),'1.0.0');
  }
  if(in_array(mrseo_slug(),array('seo','seo-audit','google-ads','performance-max','analytics','ecommerce-seo','horoshop','service-websites'),true)){
   wp_enqueue_style('mrseo-customer-journeys',get_template_directory_uri().'/assets/customer-journeys.css',array('mrseo-style'),'1.0.2');
@@ -28,6 +31,11 @@ function mrseo_assets(){
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
  if(!mrseo_valid_route())return;
+ if(mrseo_slug()==='web-development'){
+  $dev=mrseo_dev_page();
+  if($dev)echo '<meta name="description" content="'.esc_attr($dev['description']).'">'."\n";
+  return;
+ }
  if(in_array(mrseo_locale(),array('pl','de'),true)){
   $international=mrseo_int_page();
   if($international&&!empty($international['description']))
