@@ -1,0 +1,32 @@
+/* Ukraine-only Google Ads visual extension. Reuses approved problem-led UA typography. */
+.ukseo--ads .ukseo-hero{background:radial-gradient(ellipse at 88% 18%,#e1b4a43b,transparent 42%),linear-gradient(120deg,#faf7f0,#efebe2)}
+.ukseo--ads .ukseo-hero h1 em{color:#a94634}
+.ukseo--ads .ukseo-hero-art .ms-scene{border:1px solid #526051;box-shadow:0 28px 74px #242e2729}
+.ukseo--ads .ukseo-problem-card:nth-child(2){background:#f0e7e0}
+.ukseo--ads .ukseo-problem-card:nth-child(3){border-top:3px solid #ae5341}
+.ukseo--ads .ukseo-visual-caption{font-size:13px;font-weight:670}
+.ukseo--ads .ms-top-mark{font-size:12px;font-weight:850}
+.ukseo--ads .ms-ads-card{font-size:13px;font-weight:790;line-height:1.45;overflow-wrap:anywhere}
+.ukseo--ads .ms-ads-card small{font-size:12px;font-weight:850}
+.ukseo--ads .ms-ads-measure{font-size:12px;font-weight:750;line-height:1.35}
+.ukseo--ads .ms-description p{font-size:14px;font-weight:580;line-height:1.55}
+.ukseo--ads .ms-tab{font-size:13px;font-weight:800}
+.ukseo--ads .ukseo-decision{background:#eae5dd}
+.ukseo--ads .ukseo-spec{background:#202b27}
+.ukseo--ads .ukseo-spec-row{border-top-color:#4d5c50}
+.ukseo--ads .ukseo-spec-row strong{font-size:17px;font-weight:700;line-height:1.55}
+.ukseo--ads .ukseo-spec-row small{font-size:12px;color:#f0b19c}
+.ukads-signal{display:flex;align-items:center;gap:10px;padding:16px 0 21px;border-top:1px solid #4d5c50;color:#e7d9c8;font-size:12px;line-height:1.5;letter-spacing:.065em;font-weight:830}
+.ukads-signal-dot{width:9px;height:9px;background:#f0a88d;border-radius:50%;flex:none;box-shadow:0 0 0 5px #f0a88d22}
+.ukseo--ads .ukseo-faq-items details>p{font-size:18px;font-weight:580;line-height:1.7}
+@media(max-width:780px){
+ .ukseo--ads .ukseo-spec-row strong{font-size:16px}
+ .ukseo--ads .ms-ads-card{font-size:12px}
+}
+@media(max-width:480px){
+ .ukseo--ads .ukseo-visual-caption{font-size:13px}
+ .ukseo--ads .ms-ads-card{font-size:11px;line-height:1.35;padding:7px}
+ .ukseo--ads .ms-ads-measure{font-size:11px}
+ .ukseo--ads .ukseo-spec-row strong{font-size:16px}
+ .ukads-signal{font-size:12px}
+}
