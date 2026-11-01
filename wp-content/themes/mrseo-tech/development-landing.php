@@ -25,18 +25,7 @@ get_header($is_int_dev?'international':null);
     <a class="dev-text-link" href="#dev-capabilities"><?php echo esc_html($dev['labels']['scope']);?> ↓</a>
    </div>
   </div>
-  <div class="intl-scene dev-earth-scene" aria-label="<?php echo esc_attr($dev['labels']['scope']);?>">
-   <div class="intl-scene-head"><span>MRSEO.TECH / <?php echo esc_html($dev['labels']['planet']);?></span><span><?php echo esc_html(strtoupper($dev_locale));?></span></div>
-   <div class="intl-scene-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
-   <div class="intl-earth-core" aria-hidden="true"><div class="intl-earth-fallback"></div></div>
-   <div class="intl-earth-halo" aria-hidden="true"></div>
-   <?php foreach(array('seo','ecommerce-seo','google-ads','analytics','seo-audit','web-development') as $i=>$slug):?>
-    <a class="intl-satellite intl-satellite-<?php echo esc_attr($i+1);?><?php if($slug==='web-development'):?> is-current<?php endif;?>" href="<?php echo esc_url(mrseo_url($slug));?>"<?php if($slug==='web-development'):?> aria-current="page"<?php endif;?>>
-     <span class="intl-sat-dot" aria-hidden="true"></span><span><?php echo esc_html($dev_nav[$dev_locale][$i]);?></span><b aria-hidden="true">↗</b>
-    </a>
-   <?php endforeach;?>
-   <div class="intl-scene-foot" aria-hidden="true"><span><?php echo esc_html($dev['labels']['foot'][0]);?></span><span><?php echo esc_html($dev['labels']['foot'][1]);?></span><span><?php echo esc_html($dev['labels']['foot'][2]);?></span></div>
-  </div>
+  <?php mrseo_render_motion_scene('web-development',$dev_locale);?>
  </div>
 </section>
 <section class="dev-section dev-diagnosis" aria-labelledby="dev-problems-title">
@@ -104,5 +93,4 @@ get_header($is_int_dev?'international':null);
  <a class="dev-button" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($dev['labels']['cta']);?> ↗</a>
 </div></section>
 </div>
-<script type="module" src="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-earth-three.js?v=6');?>"></script>
 <?php get_footer($is_int_dev?'international':null);?>
