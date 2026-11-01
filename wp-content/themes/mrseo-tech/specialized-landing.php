@@ -1,5 +1,10 @@
 <?php
 if(!defined('ABSPATH'))exit;
+// Ukrainian service redesign only. Preserve other locales and approved Horoshop hero.
+if(mrseo_locale()==='uk'){
+ if(mrseo_slug()==='horoshop'){require get_template_directory().'/horoshop-uk.php';return;}
+ if(mrseo_slug()==='service-websites'){require get_template_directory().'/uk-solution-page.php';return;}
+}
 $is_horoshop=mrseo_slug()==='horoshop';
 if($is_horoshop){
 $title=mrseo_t('Магазин на Хорошоп є. А його потенціал у Google реалізований?','Магазин на Хорошоп есть. А его потенциал в Google раскрыт?','Your Horoshop store is live. Is it discoverable?');

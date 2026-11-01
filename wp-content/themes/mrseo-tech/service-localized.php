@@ -9,6 +9,11 @@ if(mrseo_slug()==='google-ads' && mrseo_locale()==='uk'){
  require get_template_directory().'/google-ads-uk.php';
  return;
 }
+// Ukrainian premium service pages; other locales unchanged.
+if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('performance-max','analytics'),true)){
+ require get_template_directory().'/uk-solution-page.php';
+ return;
+}
 require_once get_template_directory().'/inc/service-editorial.php';require_once get_template_directory().'/inc/service-process.php';$slug=mrseo_slug();$d=mrseo_translation($slug);$editorial=mrseo_service_editorial()[$slug][mrseo_locale()]??null;$storyCopy=mrseo_customer_journey_copy($slug);get_header();?>
 <section class="sp-hero sp-hero-cinematic"><div class="container sp-hero-layout"><div class="sp-hero-copy"><nav class="breadcrumbs"><a href="<?php echo esc_url(mrseo_url()); ?>"><?php echo esc_html(mrseo_t('Головна','Главная','Home')); ?></a><span>/</span><span><?php echo esc_html($d[0]); ?></span></nav><div class="eyebrow"><?php echo esc_html(mrseo_t('ПОСЛУГИ ТА РІШЕННЯ','УСЛУГИ И РЕШЕНИЯ','SERVICES & SOLUTIONS')); ?></div><h1><?php echo esc_html($slug==='seo'?mrseo_t('SEO-просування сайтів у Google — знаходимо причини та рішення','SEO-продвижение сайтов в Google — находим причины и решения','SEO services: diagnose problems and improve search visibility'):($storyCopy['headline']??($editorial[0]??$d[1]))); ?></h1><p><?php echo esc_html($storyCopy['lead']??($editorial[1]??$d[2])); ?></p><a class="btn" href="<?php echo esc_url(mrseo_url('contact')); ?>"><?php echo esc_html(mrseo_t('Обговорити проєкт ↗','Обсудить проект ↗','Discuss your project ↗')); ?></a></div><?php mrseo_render_motion_scene($slug);?></div></section>
 <?php mrseo_render_customer_journey(mrseo_slug());?>
