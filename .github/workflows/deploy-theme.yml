@@ -65,5 +65,9 @@ jobs:
             wp-content/themes/mrseo-tech/ \
             "$SSH_USER@$SSH_HOST:$REMOTE_THEME/"
           echo "Theme files transferred; WordPress core, wp-config.php, plugins and DB unchanged."
-          ssh $SSH_ARGS "$SSH_USER@$SSH_HOST" "test -f '$REMOTE_THEME/functions.php' && grep -q '3.7.0' '$REMOTE_THEME/functions.php' && test -f '$REMOTE_THEME/assets/site.js'"
-          echo "Remote theme version 3.7.0 verified in deployment destination."
+          # Verify actual deployed bytes; hardcoded script/theme versions break on every legitimate update.
+          LOCAL_FUNCTIONS_SHA="$(sha256sum wp-content/themes/mrseo-tech/functions.php | cut -d' ' -f1)"
+          REMOTE_FUNCTIONS_SHA="$(ssh $SSH_ARGS "$SSH_USER@$SSH_HOST" "sha256sum '$REMOTE_THEME/functions.php' | cut -d' ' -f1")"
+          test "$LOCAL_FUNCTIONS_SHA" = "$REMOTE_FUNCTIONS_SHA"
+          ssh $SSH_ARGS "$SSH_USER@$SSH_HOST" "test -f '$REMOTE_THEME/assets/site.js' && test -f '$REMOTE_THEME/assets/language-dropdown.css' && test -f '$REMOTE_THEME/inc/language-dropdown.php'"
+          echo "Remote theme files verified by checksum; WordPress core and config unchanged."
