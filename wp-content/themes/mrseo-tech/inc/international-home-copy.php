@@ -24,7 +24,6 @@ function mrseo_int_home_copy($locale,$english){
     "Data-driven decisions": "Decyzje oparte na danych",
     "Catalog architecture & growth": "Struktura katalogu i sprzedaż",
     "Technical foundations": "Techniczne fundamenty SEO",
-    "Development and technical solutions for business": "Rozwiązania programistyczne dla firm",
     "Website Creation": "Tworzenie stron",
     "Business websites and online stores": "Strony firmowe i sklepy internetowe",
     "Horoshop stores": "Sklepy na Horoshop",
@@ -49,7 +48,6 @@ function mrseo_int_home_copy($locale,$english){
     "Explore E-commerce SEO": "SEO dla sklepów",
     "We identify crawling, indexing, canonical, performance and structural issues and prioritize fixes.": "Weryfikujemy crawling, canonical, indeksację, przekierowania i szablony. Wnioski zamieniamy w konkretne zadania.",
     "Explore Technical SEO": "Zobacz audyt SEO",
-    "Development and technical solutions for business. Our team includes a full-stack developer, connecting marketing priorities with implementation.": "Rozwiązujemy problemy techniczne i pomagamy we wdrożeniach, łącząc zadania marketingowe z programowaniem.",
     "Business websites": "Strony dla firm",
     "We create service websites, company sites and online stores with thoughtful structure, usability and foundations for SEO and ads.": "Tworzymy strony usług i sklepy z logiczną strukturą, czytelną ofertą i gotowością pod SEO oraz reklamę.",
     "Explore Website Creation": "Tworzenie stron",
@@ -85,7 +83,9 @@ function mrseo_int_home_copy($locale,$english){
     "Strategy · Execution · Outcomes": "Strategia · Wdrożenie · Rezultaty",
     "Back to top ↑": "Do góry ↑",
     "Web Development": "Tworzenie aplikacji i systemów",
-    "Explore Web Development": "Poznaj usługi programistyczne"
+    "Explore Web Development": "Poznaj usługi programistyczne",
+    "SaaS, CRM, API integrations and automation": "SaaS, CRM, integracje API i automatyzacja",
+    "We build SaaS products, CRM workflows, client portals, API integrations and automations. First we diagnose the process, then design and deliver in stages.": "Budujemy aplikacje SaaS, systemy CRM, portale klienta, integracje API i automatyzacje. Najpierw analizujemy proces, a potem projektujemy i wdrażamy rozwiązanie etapami."
   },
   "de": {
     "STRATEGY · TECHNOLOGY · GROWTH": "STRATEGIE · TECHNOLOGIE · WACHSTUM",
@@ -104,7 +104,6 @@ function mrseo_int_home_copy($locale,$english){
     "Data-driven decisions": "Entscheidungen auf Datenbasis",
     "Catalog architecture & growth": "Shopstruktur und Wachstum",
     "Technical foundations": "Technische SEO-Grundlagen",
-    "Development and technical solutions for business": "Entwicklung und technische Lösungen",
     "Website Creation": "Website-Erstellung",
     "Business websites and online stores": "Unternehmensseiten und Onlineshops",
     "Horoshop stores": "Horoshop-Shops",
@@ -129,7 +128,6 @@ function mrseo_int_home_copy($locale,$english){
     "Explore E-commerce SEO": "Onlineshop SEO ansehen",
     "We identify crawling, indexing, canonical, performance and structural issues and prioritize fixes.": "Wir untersuchen Crawling, Canonical-Signale, Indexierung und Templates und machen daraus priorisierte Aufgaben.",
     "Explore Technical SEO": "Technisches Audit ansehen",
-    "Development and technical solutions for business. Our team includes a full-stack developer, connecting marketing priorities with implementation.": "Technische Lösungen und Umsetzung mit einem Full-Stack-Entwickler: von Marketinganforderungen zu funktionierenden Änderungen.",
     "Business websites": "Websites für Unternehmen",
     "We create service websites, company sites and online stores with thoughtful structure, usability and foundations for SEO and ads.": "Wir entwickeln nutzerfreundliche Unternehmensseiten und Shops mit sauberer Struktur für SEO und Werbung.",
     "Explore Website Creation": "Website-Erstellung ansehen",
@@ -165,7 +163,9 @@ function mrseo_int_home_copy($locale,$english){
     "Strategy · Execution · Outcomes": "Strategie · Umsetzung · Ergebnisse",
     "Back to top ↑": "Nach oben ↑",
     "Web Development": "Webentwicklung",
-    "Explore Web Development": "Webentwicklung entdecken"
+    "Explore Web Development": "Webentwicklung entdecken",
+    "SaaS, CRM, API integrations and automation": "SaaS, CRM, API-Schnittstellen und Automatisierung",
+    "We build SaaS products, CRM workflows, client portals, API integrations and automations. First we diagnose the process, then design and deliver in stages.": "Wir entwickeln SaaS-Anwendungen, CRM-Prozesse, Kundenportale, API-Schnittstellen und Automatisierungen. Zuerst analysieren wir den Ablauf, dann planen und realisieren wir in überprüfbaren Schritten."
   }
 }
 MRSEO_HOME_TRANSLATIONS;
