@@ -20,7 +20,7 @@ function mrseo_assets(){
  }
  // Ukrainian-only SEO design pilot, loaded after shared motion scene styles.
  if(mrseo_slug()==='seo' && mrseo_locale()==='uk'){
-  wp_enqueue_style('mrseo-ukseo-pilot',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-motion-scenes'),'1.0.0');
+  wp_enqueue_style('mrseo-ukseo-pilot',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-motion-scenes'),'1.0.1');
  }
  if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
