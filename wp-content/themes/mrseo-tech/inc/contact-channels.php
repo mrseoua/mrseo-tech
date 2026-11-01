@@ -1,8 +1,8 @@
 <?php
 /**
  * Public MrSeo.tech business contact channels.
- * WhatsApp and Viber are links by the requested phone number. Account presence
- * must be checked manually by the owner; never invent a Telegram username.
+ * WhatsApp and Viber are linked by the provided business phone number.
+ * Telegram uses the explicitly provided business handle @mrseo_ua.
  */
 if (!defined('ABSPATH')) exit;
 
@@ -29,5 +29,6 @@ function mrseo_render_contact_channels($placement = 'footer') {
     echo '<a class="mrseo-contact-messenger" href="' . esc_url('https://wa.me/' . $phone_digits) . '" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><span aria-hidden="true">↗</span>WhatsApp</a>';
     // Use a personal Viber chat deep link: viber.me is for Viber Business accounts.
     echo '<a class="mrseo-contact-messenger" href="' . esc_url('viber://chat?number=%2B' . $phone_digits, array('viber')) . '" aria-label="Viber"><span aria-hidden="true">↗</span>Viber</a>';
+    echo '<a class="mrseo-contact-messenger" href="' . esc_url('https://t.me/mrseo_ua') . '" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><span aria-hidden="true">↗</span>Telegram</a>';
     echo '</div></section>';
 }
