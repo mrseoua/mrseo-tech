@@ -8,7 +8,7 @@ $dev_nav=array(
  'uk'=>array('SEO','SEO інтернет-магазинів','Google Ads','Аналітика','SEO-аудит','Веброзробка'),
  'ru'=>array('SEO','SEO интернет-магазинов','Google Ads','Аналитика','SEO-аудит','Веб-разработка'),
  'en'=>array('SEO','E-commerce SEO','Google Ads','Analytics','SEO Audit','Web Development'),
- 'pl'=>array('SEO','SEO sklepów','Google Ads','Analityka','Audyt SEO','Web Development'),
+ 'pl'=>array('SEO','SEO sklepów','Google Ads','Analityka','Audyt SEO','Aplikacje i integracje'),
  'de'=>array('SEO','Onlineshop SEO','Google Ads','Webanalyse','SEO-Audit','Webentwicklung')
 );
 get_header($is_int_dev?'international':null);
@@ -26,7 +26,7 @@ get_header($is_int_dev?'international':null);
    </div>
   </div>
   <div class="intl-scene dev-earth-scene" aria-label="<?php echo esc_attr($dev['labels']['scope']);?>">
-   <div class="intl-scene-head"><span>MRSEO.TECH / ENGINEERING</span><span><?php echo esc_html(strtoupper($dev_locale));?></span></div>
+   <div class="intl-scene-head"><span>MRSEO.TECH / <?php echo esc_html($dev['labels']['planet']);?></span><span><?php echo esc_html(strtoupper($dev_locale));?></span></div>
    <div class="intl-scene-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
    <div class="intl-earth-core" aria-hidden="true"><div class="intl-earth-fallback"></div></div>
    <div class="intl-earth-halo" aria-hidden="true"></div>
@@ -35,7 +35,7 @@ get_header($is_int_dev?'international':null);
      <span class="intl-sat-dot" aria-hidden="true"></span><span><?php echo esc_html($dev_nav[$dev_locale][$i]);?></span><b aria-hidden="true">↗</b>
     </a>
    <?php endforeach;?>
-   <div class="intl-scene-foot" aria-hidden="true"><span>DISCOVER</span><span>BUILD</span><span>IMPROVE</span></div>
+   <div class="intl-scene-foot" aria-hidden="true"><span><?php echo esc_html($dev['labels']['foot'][0]);?></span><span><?php echo esc_html($dev['labels']['foot'][1]);?></span><span><?php echo esc_html($dev['labels']['foot'][2]);?></span></div>
   </div>
  </div>
 </section>
