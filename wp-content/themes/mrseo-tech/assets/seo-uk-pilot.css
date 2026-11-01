@@ -13,7 +13,7 @@
 .ukseo-crumbs a{text-decoration:underline;text-decoration-color:#afaba2;text-underline-offset:4px}
 .ukseo-crumbs a:hover{color:var(--ukseo-red)}
 .ukseo .ukseo-hero-copy h1{font-size:clamp(48px,5.15vw,80px);font-weight:830;letter-spacing:-.069em;line-height:1.055;margin:0 0 28px}
-.ukseo-hero h1 em{font-style:normal;color:var(--ukseo-red);display:block}
+.ukseo-hero h1 em{font-style:normal;color:var(--ukseo-red);display:block;letter-spacing:-.025em}
 .ukseo-hero-lead{font-size:clamp(18px,1.5vw,20px);font-weight:580;line-height:1.68;color:#414b43;max-width:620px;margin:0}
 .ukseo-actions{display:flex;flex-wrap:wrap;align-items:center;gap:23px;margin:33px 0 0}
 .ukseo-button{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:54px;padding:15px 24px;border-radius:999px;font-size:15px;line-height:1.4;font-weight:790;text-decoration:none;transition:transform .22s ease,background .22s ease}
