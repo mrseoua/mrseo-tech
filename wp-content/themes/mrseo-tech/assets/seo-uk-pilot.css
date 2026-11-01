@@ -1,0 +1,138 @@
+/* MrSeo.tech / Ukrainian SEO page design pilot. Isolated from all other locales and homepage. */
+.ukseo{--ukseo-paper:#f6f3ec;--ukseo-cream:#eee9df;--ukseo-white:#fffdf8;--ukseo-ink:#202523;--ukseo-muted:#59615a;--ukseo-red:#c64b37;--ukseo-line:#ded8ce;color:var(--ukseo-ink);background:var(--ukseo-paper);overflow:clip}
+.ukseo :where(h1,h2,h3,p){margin-top:0}
+.ukseo :where(h1,h2,h3){text-wrap:balance}
+.ukseo :where(a,button,summary):focus-visible{outline:3px solid var(--ukseo-red);outline-offset:4px}
+.ukseo .ukseo-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:830;color:#955442;line-height:1.5;margin:0 0 22px}
+.ukseo h2{font-size:clamp(37px,4.55vw,64px);line-height:1.08;letter-spacing:-.057em;font-weight:820}
+.ukseo h2 em{font-style:normal;color:var(--ukseo-red)}
+.ukseo-hero{padding:51px 0 90px;background:radial-gradient(ellipse at 91% 26%,#dfb9a539,transparent 42%),linear-gradient(125deg,#f9f6ef,#f0ebe2);border-bottom:1px solid var(--ukseo-line)}
+.ukseo-hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(28px,4.4vw,75px);align-items:center}
+.ukseo-hero-copy,.ukseo-hero-art{min-width:0}
+.ukseo-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:11px;font-size:13px;font-weight:650;color:#535d54;margin:0 0 52px}
+.ukseo-crumbs a{text-decoration:underline;text-decoration-color:#afaba2;text-underline-offset:4px}
+.ukseo-crumbs a:hover{color:var(--ukseo-red)}
+.ukseo .ukseo-hero-copy h1{font-size:clamp(48px,5.15vw,80px);font-weight:830;letter-spacing:-.069em;line-height:1.055;margin:0 0 28px}
+.ukseo-hero h1 em{font-style:normal;color:var(--ukseo-red);display:block}
+.ukseo-hero-lead{font-size:clamp(17px,1.5vw,19px);line-height:1.68;color:#414b43;max-width:620px;margin:0}
+.ukseo-actions{display:flex;flex-wrap:wrap;align-items:center;gap:23px;margin:33px 0 0}
+.ukseo-button{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:54px;padding:15px 24px;border-radius:999px;font-size:15px;line-height:1.4;font-weight:790;text-decoration:none;transition:transform .22s ease,background .22s ease}
+.ukseo-button:hover{transform:translateY(-2px)}
+.ukseo-button-dark{background:#202723;color:#fff}
+.ukseo-button-dark:hover{background:#364139}
+.ukseo-button-light{background:#faf5ed;color:#202723}
+.ukseo-button-light:hover{background:#fff}
+.ukseo-button span{font-size:20px}
+.ukseo-text-link{display:inline-flex;align-items:center;gap:10px;font-size:15px;line-height:1.55;font-weight:770;text-decoration:underline;text-decoration-color:#b6a9a0;text-underline-offset:5px;min-height:44px}
+.ukseo-text-link:hover{color:#a73b2d;text-decoration-color:currentColor}
+.ukseo-hero-foot{margin:27px 0 0;color:#606b62;font-size:13px;line-height:1.55;max-width:540px}
+.ukseo-hero-art .ms-scene{box-shadow:0 30px 70px #242a2221;border-radius:22px}
+.ukseo-visual-caption{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px;margin-top:15px;font-size:12px;line-height:1.5;color:#60635a}
+.ukseo-visual-caption-mark{font-weight:850;color:#92513e;letter-spacing:.08em}
+.ukseo-cases{padding:clamp(75px,8vw,125px) 0}
+.ukseo-section-head{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(240px,.62fr);align-items:end;gap:28px;margin-bottom:45px}
+.ukseo-section-head h2{margin:0}
+.ukseo-section-head>p{font-size:17px;line-height:1.65;color:var(--ukseo-muted);max-width:470px;margin:0 0 5px}
+.ukseo-problem-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.ukseo-problem-card{display:flex;flex-direction:column;min-height:380px;background:var(--ukseo-white);padding:clamp(23px,2.5vw,35px);border:1px solid var(--ukseo-line);border-radius:19px;box-shadow:0 15px 38px #32271909}
+.ukseo-problem-card:nth-child(2){background:#efe9e1}
+.ukseo-card-number{display:flex;justify-content:space-between;align-items:center;color:#91503d;font-size:13px;letter-spacing:.09em;font-weight:850;margin-bottom:50px}
+.ukseo-card-number span{font-size:26px;font-weight:500}
+.ukseo-problem-card h3{font-size:clamp(23px,2vw,29px);line-height:1.18;letter-spacing:-.04em;font-weight:810;margin:0 0 15px}
+.ukseo-problem-card>p{color:#565f57;font-size:16px;line-height:1.62;margin:0 0 24px}
+.ukseo-card-diagnosis{border-top:1px solid #d6d0c6;padding-top:20px;margin-top:auto}
+.ukseo-card-diagnosis span{display:block;font-size:12px;font-weight:840;letter-spacing:.07em;text-transform:uppercase;color:#9b513e;margin-bottom:9px}
+.ukseo-card-diagnosis strong{font-size:15px;line-height:1.55;color:#364238;font-weight:690}
+.ukseo-decision{background:#e8e4dc;padding:clamp(75px,8vw,120px) 0;border-top:1px solid #d9d2c8;border-bottom:1px solid #d9d2c8}
+.ukseo-decision-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.84fr);gap:clamp(42px,8vw,140px);align-items:center}
+.ukseo-decision-copy>p{font-size:17px;line-height:1.72;color:#4c564e;margin-bottom:24px;max-width:590px}
+.ukseo-spec{border-radius:19px;overflow:hidden;background:#1e2724;color:#f5f0e8;padding:29px 32px;box-shadow:0 26px 60px #24291c27}
+.ukseo-spec-top{display:flex;justify-content:space-between;gap:15px;color:#ecc2b1;font-size:12px;font-weight:820;letter-spacing:.1em;padding-bottom:19px}
+.ukseo-spec-top span:last-child{font-size:22px}
+.ukseo-spec-row{padding:20px 0;border-top:1px solid #45534a}
+.ukseo-spec-row small{display:block;font-size:12px;letter-spacing:.07em;color:#e5a88f;font-weight:800;margin-bottom:9px}
+.ukseo-spec-row strong{display:block;font-size:clamp(15px,1.35vw,18px);line-height:1.5;font-weight:660;color:#f5f1e9}
+.ukseo-spec-foot{border-top:1px solid #45534a;padding-top:19px;font-size:13px;line-height:1.6;color:#cad7cc}
+.ukseo-work{padding:clamp(80px,8vw,130px) 0;background:#fbf9f4}
+.ukseo-steps{list-style:none;padding:0;margin:0;border-top:1px solid #cfc9bf}
+.ukseo-steps li{display:grid;grid-template-columns:66px minmax(0,1.05fr) minmax(210px,.62fr);align-items:start;gap:25px;padding:27px 10px;border-bottom:1px solid #d7d1c8}
+.ukseo-step-index{font-size:14px;font-weight:810;letter-spacing:.04em;color:#ad5842;padding-top:5px}
+.ukseo-steps h3{font-size:clamp(23px,2.3vw,31px);line-height:1.25;font-weight:800;letter-spacing:-.04em;margin:0 0 9px}
+.ukseo-steps p{font-size:16px;line-height:1.62;color:#4f5c52;max-width:580px;margin:0}
+.ukseo-steps li>strong{display:block;align-self:center;font-size:15px;font-weight:730;line-height:1.53;color:#48554b;border-left:3px solid #bd5946;padding-left:16px}
+.ukseo-delivery{padding:clamp(75px,8vw,125px) 0;background:#f0ece4}
+.ukseo-delivery-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(30px,8vw,120px);align-items:start}
+.ukseo-delivery-grid>div:first-child>p{font-size:17px;line-height:1.7;color:#4e594e;max-width:490px}
+.ukseo-delivery-list{border-top:1px solid #c6c1b7}
+.ukseo-delivery-list>div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:19px;padding:27px 0;border-bottom:1px solid #c6c1b7}
+.ukseo-delivery-list>div>span{font-size:13px;color:#a34a38;font-weight:850;padding-top:5px}
+.ukseo-delivery-list h3{font-size:clamp(22px,2.3vw,29px);line-height:1.22;letter-spacing:-.043em;margin-bottom:9px}
+.ukseo-delivery-list p{font-size:16px;color:#586157;line-height:1.65;margin:0}
+.ukseo-proof{padding:clamp(70px,7vw,110px) 0;background:#fffdf8}
+.ukseo-proof-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.82fr);gap:clamp(34px,7vw,110px);align-items:end}
+.ukseo-proof p{font-size:17px;line-height:1.72;color:#4a574d;margin-bottom:23px}
+.ukseo-faq{padding:clamp(70px,7vw,115px) 0;background:#f4f0e9}
+.ukseo-faq-grid{display:grid;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);gap:clamp(30px,7vw,110px)}
+.ukseo-faq-grid>div:first-child>p{font-size:17px;color:#526056;line-height:1.65}
+.ukseo-faq-items{border-top:1px solid #cbc6bc}
+.ukseo-faq-items details{border-bottom:1px solid #cbc6bc}
+.ukseo-faq-items summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:82px;padding:19px 0;font-weight:760;font-size:clamp(17px,1.7vw,21px);line-height:1.4;letter-spacing:-.02em;list-style:none}
+.ukseo-faq-items summary::-webkit-details-marker{display:none}
+.ukseo-faq-items summary span{display:grid;place-items:center;flex:none;width:34px;height:34px;font-weight:500;font-size:24px;color:#ad4e37;border:1px solid #c9b0a6;border-radius:50%;transition:transform .2s ease}
+.ukseo-faq-items details[open] summary span{transform:rotate(45deg)}
+.ukseo-faq-items details>p{font-size:16px;line-height:1.72;color:#4d594f;max-width:630px;padding:0 40px 22px 0;margin:0}
+.ukseo-final{background:#252f29;padding:clamp(68px,7.2vw,112px) 0;color:#f8f3ed}
+.ukseo-final-grid{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.ukseo-final-grid>div{max-width:770px}
+.ukseo-final .ukseo-kicker{color:#eaa990}
+.ukseo-final h2{color:#f9f3eb;margin:0 0 17px}
+.ukseo-final h2 em{color:#efa58c}
+.ukseo-final p{font-size:17px;line-height:1.7;color:#d7e1d8;margin:0;max-width:660px}
+.ukseo-final .ukseo-button{flex:none}
+@media(max-width:1080px){
+ .ukseo-hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:25px}
+ .ukseo .ukseo-hero-copy h1{font-size:clamp(44px,5.2vw,64px)}
+ .ukseo-problem-card{min-height:410px}
+ .ukseo-card-number{margin-bottom:34px}
+ .ukseo-decision-layout{gap:40px}
+}
+@media(max-width:780px){
+ .ukseo-hero{padding:30px 0 72px}
+ .ukseo-hero-grid,.ukseo-section-head,.ukseo-decision-layout,.ukseo-delivery-grid,.ukseo-proof-layout,.ukseo-faq-grid{grid-template-columns:1fr}
+ .ukseo-hero-art{max-width:720px;width:100%}
+ .ukseo .ukseo-hero-copy h1{font-size:clamp(43px,7vw,72px)}
+ .ukseo-crumbs{margin-bottom:34px}
+ .ukseo-section-head{gap:14px;margin-bottom:31px}
+ .ukseo-section-head>p{max-width:650px}
+ .ukseo-problem-grid{grid-template-columns:1fr;gap:12px}
+ .ukseo-problem-card{min-height:0;padding:28px}
+ .ukseo-card-number{margin-bottom:24px}
+ .ukseo-problem-card>p{margin-bottom:22px}
+ .ukseo-steps li{grid-template-columns:48px minmax(0,1fr);gap:13px;padding:24px 0}
+ .ukseo-steps li>strong{grid-column:2;align-self:start}
+ .ukseo-delivery-grid,.ukseo-faq-grid{gap:22px}
+ .ukseo-proof-layout{gap:20px}
+ .ukseo-final-grid{align-items:flex-start;flex-direction:column;gap:25px}
+}
+@media(max-width:480px){
+ .ukseo .container{padding-left:19px;padding-right:19px}
+ .ukseo-hero{padding:24px 0 61px}
+ .ukseo .ukseo-hero-copy h1{font-size:clamp(39px,10.3vw,53px);line-height:1.08;letter-spacing:-.06em}
+ .ukseo h2{font-size:clamp(34px,9vw,45px)}
+ .ukseo-hero-lead,.ukseo-section-head>p,.ukseo-decision-copy>p,.ukseo-delivery-grid>div:first-child>p,.ukseo-proof p,.ukseo-final p{font-size:16px;line-height:1.65}
+ .ukseo-actions{align-items:stretch;flex-direction:column;gap:12px}
+ .ukseo-actions .ukseo-button{width:100%}
+ .ukseo-visual-caption{font-size:12px}
+ .ukseo-problem-card{padding:24px}
+ .ukseo-problem-card h3{font-size:24px}
+ .ukseo-spec{padding:22px}
+ .ukseo-spec-row strong{font-size:16px}
+ .ukseo-steps h3{font-size:23px}
+ .ukseo-steps li>strong{font-size:14px}
+ .ukseo-faq-items summary{min-height:76px}
+ .ukseo-final .ukseo-button{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo-button,.ukseo-faq-items summary span{transition:none}
+ .ukseo-button:hover{transform:none}
+}
