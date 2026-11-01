@@ -12,8 +12,8 @@ $mrseo_links=array('ecommerce-seo'=>$mrseo_nav['ecommerce'],'seo'=>$mrseo_nav['s
   <a class="intl-logo" href="<?php echo esc_url(mrseo_url('',$mrseo_lang));?>" aria-label="MrSeo.tech">MrSeo<span>.</span>tech</a>
   <nav class="intl-nav" aria-label="<?php echo esc_attr($mrseo_nav['services']);?>">
    <div class="intl-dropdown">
-    <a href="<?php echo esc_url(mrseo_url('ecommerce-seo'));?>"><?php echo esc_html($mrseo_nav['services']);?> <span aria-hidden="true">⌄</span></a>
-    <div class="intl-dropdown-menu">
+    <button class="services-menu-toggle" type="button" aria-expanded="false" aria-controls="mrseo-intl-services-menu"><?php echo esc_html($mrseo_nav['services']);?> <span class="services-menu-chevron" aria-hidden="true">⌄</span></button>
+    <div class="intl-dropdown-menu" id="mrseo-intl-services-menu">
      <?php foreach($mrseo_links as $slug=>$name):?><a href="<?php echo esc_url(mrseo_url($slug));?>"<?php if($mrseo_slug===$slug):?> aria-current="page"<?php endif;?>><?php echo esc_html($name);?></a><?php endforeach;?>
     </div>
    </div>
