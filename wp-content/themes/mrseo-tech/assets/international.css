@@ -172,3 +172,7 @@
 .intl-check-item h3{font-size:clamp(19px,1.7vw,24px);font-weight:780;line-height:1.22;letter-spacing:-.04em;margin:2px 0 12px}
 .intl-check-item p{font-size:15.5px;line-height:1.63;color:#626a64;margin:0}
 @media(max-width:650px){.intl-check-grid{grid-template-columns:1fr}.intl-check-item{min-height:0;padding:20px 18px;grid-template-columns:30px 1fr;gap:13px}.intl-check-mark{width:29px;height:29px}.intl-check-item h3{font-size:20px}.intl-check-item p{font-size:15px}}
+
+/* Six launched directions (including Web Development) in PL/DE orbital scenes. */
+.mrseo-international .intl-satellite-6{left:34%;top:10%;max-width:39%}
+@media(max-width:650px){.mrseo-international .intl-satellite-6{left:29%;top:11%;max-width:44%}}
