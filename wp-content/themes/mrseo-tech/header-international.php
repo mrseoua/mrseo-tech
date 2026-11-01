@@ -21,6 +21,7 @@ $mrseo_links=array('ecommerce-seo'=>$mrseo_nav['ecommerce'],'seo'=>$mrseo_nav['s
    <a href="<?php echo esc_url(mrseo_url('about'));?>"><?php echo esc_html($mrseo_nav['about']);?></a>
    <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['contact']);?></a>
   </nav>
+  <?php mrseo_render_header_contact();?>
   <?php mrseo_render_language_dropdown(in_array($mrseo_slug,mrseo_int_pages(),true)?$mrseo_slug:'',$mrseo_lang);?>
   <a class="intl-nav-cta" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['cta']);?> ↗</a>
   <details class="intl-mobile-menu"><summary aria-label="Menu">☰</summary><div class="intl-mobile-panel">

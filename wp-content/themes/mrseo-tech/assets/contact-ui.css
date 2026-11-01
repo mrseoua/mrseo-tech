@@ -1,0 +1,64 @@
+/* Lightweight premium contact navigation for all five languages. */
+.mrseo-header-contact{display:flex;align-items:center;gap:9px;flex:none;min-width:0}
+.mrseo-header-phone{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 7px;color:#252923!important;font-size:14px;font-weight:800;white-space:nowrap;text-decoration:none!important}
+.mrseo-header-phone:hover{color:#aa4738!important}
+.mrseo-header-phone svg{flex:none;color:#b24e3e}
+.mrseo-contact-popover{position:relative;flex:none}
+.mrseo-contact-popover>summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:0 15px;white-space:nowrap;cursor:pointer;color:#232925;font-size:14px;font-weight:760;border:1px solid #d9d1c7;border-radius:999px;background:#fffdf8;transition:border-color .2s,background .2s;user-select:none}
+.mrseo-contact-popover>summary::-webkit-details-marker{display:none}
+.mrseo-contact-popover>summary::marker{content:""}
+.mrseo-contact-popover>summary:hover,.mrseo-contact-popover[open]>summary{background:#f4ebe4;border-color:#bc8d7d}
+.mrseo-contact-popover>summary svg{flex:none;color:#ae4d3b}
+.mrseo-header-message>summary{width:44px;padding:0}
+.mrseo-contact-ui-panel{position:absolute;z-index:10060;right:0;top:calc(100% + 11px);width:265px;max-width:calc(100vw - 28px);padding:17px;border:1px solid #ded3c7;border-radius:17px;background:#fffdf9;box-shadow:0 22px 60px #1c28222d;color:#252b26}
+.mrseo-contact-ui-panel>strong{display:block;font-size:15px;line-height:1.35;font-weight:800;margin-bottom:13px;white-space:normal}
+.mrseo-contact-ui-links{display:grid;gap:7px}
+.mrseo-contact-ui-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:45px;padding:10px 12px;border:1px solid #e6ded5;border-radius:10px;color:#242c27!important;background:#f8f5f0;font-size:14px;line-height:1.4;font-weight:740;text-decoration:none!important;transition:background .2s,border-color .2s}
+.mrseo-contact-ui-links a:hover{background:#f2e7df;border-color:#d8baa9;color:#9c4235!important}
+.mrseo-contact-ui-links a span:last-child{color:#c45b47;font-size:17px}
+.mrseo-contact-popover>summary:focus-visible,.mrseo-header-phone:focus-visible,.mrseo-contact-ui-links a:focus-visible,.mrseo-mobile-call:focus-visible,.mrseo-contact-page-phone:focus-visible{outline:3px solid #b84b38;outline-offset:3px}
+.mrseo-floating-contact{position:fixed;right:clamp(15px,2.8vw,38px);bottom:clamp(18px,2.8vw,38px);z-index:900}
+.mrseo-floating-contact .mrseo-contact-popover>summary{min-height:54px;padding:0 19px;background:#262b28;border:1px solid #262b28;color:#fff;box-shadow:0 12px 32px #141a1640}
+.mrseo-floating-contact .mrseo-contact-popover>summary svg{color:#f3b09b}
+.mrseo-floating-contact .mrseo-contact-popover>summary:hover{background:#424741}
+.mrseo-floating-contact .mrseo-contact-ui-panel{top:auto;bottom:calc(100% + 12px)}
+.mrseo-contact-ui-caret{color:#e5a590;font-size:20px;line-height:1}
+.mrseo-mobile-contact-bar{display:none}
+.mrseo-contact-page-links{max-width:540px;margin:24px 0 28px;padding:22px;border:1px solid #ded7cc;border-radius:16px;background:#fffdf9;box-shadow:0 8px 30px #28291b0d}
+.mrseo-contact-page-links>strong{display:block;font-size:19px;font-weight:820;line-height:1.3;color:#272d28}
+.mrseo-contact-page-links>p{margin:8px 0 15px!important;font-size:15px!important;line-height:1.6!important;color:#626b65!important}
+.mrseo-contact-page-phone{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-bottom:14px;color:#282c28!important;font-size:clamp(17px,2vw,23px);font-weight:850;text-decoration:none!important}
+.mrseo-contact-page-phone svg{color:#c45b47}
+.mrseo-contact-page-links .mrseo-contact-ui-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.mrseo-contact-page-links .mrseo-contact-ui-links a{font-size:13px;padding:9px;min-width:0}
+.mrseo-contact-page-links .mrseo-contact-ui-links a span:first-child{overflow-wrap:anywhere}
+.intl-contact-grid .mrseo-contact-page-links{margin:25px 0 22px}
+@media(max-width:1320px){.site-header .mrseo-header-phone-number,.intl-header .mrseo-header-phone-number{display:none}.mrseo-header-phone{width:44px;padding:0}}
+@media(max-width:1170px){.site-header .nav{gap:10px}.site-header .mrseo-header-contact{gap:5px}}
+@media(max-width:980px){.intl-header .mrseo-header-contact{margin-left:auto;gap:7px}.intl-header .mrseo-language-dropdown{margin-left:0}}
+@media(max-width:950px){.site-header .mrseo-header-contact{order:1;margin-left:auto}.site-header .mrseo-language-dropdown{order:2;margin-left:0}.site-header .menu-toggle{order:3;margin-left:0}}
+@media(max-width:700px){
+ .mrseo-footer,.intl-footer{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))!important}
+ .mrseo-floating-contact{display:none}
+ .mrseo-mobile-contact-bar{position:fixed;z-index:11000;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);display:flex;align-items:stretch;gap:8px;width:min(calc(100% - 24px),420px);padding:7px;border-radius:16px;border:1px solid #dfd8d0;background:#fffdf8;box-shadow:0 14px 45px #14251b35}
+ .mrseo-mobile-contact-bar>.mrseo-contact-popover,.mrseo-mobile-call{flex:1 1 50%;min-width:0}
+ .mrseo-mobile-contact-bar .mrseo-contact-popover>summary,.mrseo-mobile-call{display:flex;justify-content:center;align-items:center;gap:9px;min-height:51px;width:100%;border-radius:11px;padding:8px 7px;font-size:14px;font-weight:790;line-height:1.2;white-space:normal;text-align:center}
+ .mrseo-mobile-contact-bar .mrseo-contact-popover>summary{color:#fff;background:#292f2a;border:1px solid #292f2a}
+ .mrseo-mobile-contact-bar .mrseo-contact-popover>summary svg{color:#f4b09a}
+ .mrseo-mobile-call{border:1px solid #dcd4c9;color:#262c28!important;background:#f7f2ec;text-decoration:none!important}
+ .mrseo-mobile-call svg{flex:none;color:#b44a37}
+ .mrseo-mobile-contact-bar .mrseo-contact-ui-panel{left:0;right:auto;top:auto;bottom:calc(100% + 18px);width:min(305px,calc(100vw - 32px))}
+ .mrseo-header-message{display:none}
+ .mrseo-contact-page-links .mrseo-contact-ui-links{grid-template-columns:1fr}
+ .mrseo-contact-page-links .mrseo-contact-ui-links a{font-size:14px}
+}
+@media(max-width:390px){
+ .site-header .nav{padding-left:13px;padding-right:13px;gap:7px}
+ .site-header .logo{font-size:22px}
+ .site-header .mrseo-header-contact{gap:0}
+ .site-header .mrseo-header-phone{width:41px;min-height:41px}
+ .intl-header .mrseo-header-contact{gap:0}
+ .intl-header .mrseo-header-phone{width:39px;min-height:41px}
+ .mrseo-mobile-contact-bar .mrseo-contact-popover>summary,.mrseo-mobile-call{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.mrseo-contact-popover>summary,.mrseo-contact-ui-links a{transition:none}}

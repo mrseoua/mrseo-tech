@@ -40,4 +40,4 @@
    <a href="#main"><?php echo esc_html(mrseo_t('Нагору ↑','Наверх ↑','Back to top ↑'));?></a>
   </div>
  </div>
-</div></footer><?php wp_footer();?></body></html>
+</div></footer><?php mrseo_render_floating_contact();?><?php wp_footer();?></body></html>
