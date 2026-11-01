@@ -131,7 +131,10 @@ function mrseo_dev_content(){
       "checkTitle": "Ризики до початку реалізації",
       "faq": "Питання перед стартом",
       "cta": "Обговорити розробку",
-      "contactNote": "Опишіть процес, який потрібно покращити, або покажіть чинний продукт."
+      "contactNote": "Опишіть процес, який потрібно покращити, або покажіть чинний продукт.",
+      "problem": "ЯКУ ПРОБЛЕМУ ВИРІШУЄМО",
+      "problemTitle": "Де бізнес втрачає час і контроль?",
+      "solution": "НАШЕ РІШЕННЯ"
     }
   },
   "ru": {
@@ -259,7 +262,10 @@ function mrseo_dev_content(){
       "checkTitle": "Риски, которые учитываем заранее",
       "faq": "Перед началом работы",
       "cta": "Обсудить разработку",
-      "contactNote": "Расскажите, какой процесс нужно улучшить, или покажите существующий продукт."
+      "contactNote": "Расскажите, какой процесс нужно улучшить, или покажите существующий продукт.",
+      "problem": "КАКУЮ ПРОБЛЕМУ РЕШАЕМ",
+      "problemTitle": "Где бизнес теряет время и контроль?",
+      "solution": "НАШЕ РЕШЕНИЕ"
     }
   },
   "en": {
@@ -387,7 +393,10 @@ function mrseo_dev_content(){
       "checkTitle": "Risks we examine before building",
       "faq": "Questions before starting",
       "cta": "Discuss development",
-      "contactNote": "Describe a process that needs fixing or share your current product."
+      "contactNote": "Describe a process that needs fixing or share your current product.",
+      "problem": "BUSINESS BOTTLENECKS",
+      "problemTitle": "Where do teams lose time and control?",
+      "solution": "OUR APPROACH"
     }
   },
   "pl": {
@@ -515,7 +524,10 @@ function mrseo_dev_content(){
       "checkTitle": "Realne ograniczenia i bezpieczeństwo",
       "faq": "Najczęstsze pytania",
       "cta": "Omów projekt programistyczny",
-      "contactNote": "Opisz proces, który chcesz usprawnić, lub udostępnij adres obecnego systemu."
+      "contactNote": "Opisz proces, który chcesz usprawnić, lub udostępnij adres obecnego systemu.",
+      "problem": "PROBLEMY W PROCESACH",
+      "problemTitle": "Gdzie firma traci czas i kontrolę?",
+      "solution": "NASZE ROZWIĄZANIE"
     }
   },
   "de": {
@@ -643,7 +655,10 @@ function mrseo_dev_content(){
       "checkTitle": "Risiken und Schnittstellen vor Projektbeginn",
       "faq": "Fragen zur Zusammenarbeit",
       "cta": "Entwicklung besprechen",
-      "contactNote": "Beschreiben Sie den Prozess, der nicht funktioniert, oder zeigen Sie Ihre bestehende Anwendung."
+      "contactNote": "Beschreiben Sie den Prozess, der nicht funktioniert, oder zeigen Sie Ihre bestehende Anwendung.",
+      "problem": "GESCHÄFTSPROZESSE",
+      "problemTitle": "Wo gehen Zeit und Übersicht verloren?",
+      "solution": "UNSERE LÖSUNG"
     }
   }
 }
