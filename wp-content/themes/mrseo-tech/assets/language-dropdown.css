@@ -1,0 +1,49 @@
+/* MrSeo.tech — one compact language dropdown for every header and the standard footer.
+   Independent of site design, no JS needed to open/close the native <details>. */
+.mrseo-language-dropdown{position:relative;z-index:110;display:block;flex:none;font:inherit;line-height:1.35}
+.mrseo-language-dropdown,.mrseo-language-dropdown *{box-sizing:border-box}
+.mrseo-language-dropdown .mrseo-language-trigger{display:flex;align-items:center;justify-content:center;gap:12px;min-width:78px;height:44px;padding:0 14px;list-style:none;cursor:pointer;user-select:none;white-space:nowrap;border:1px solid #d6d0c6;border-radius:999px;background:#f4f0e8;color:#202823;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
+.mrseo-language-dropdown .mrseo-language-trigger::-webkit-details-marker{display:none}
+.mrseo-language-dropdown .mrseo-language-trigger::marker{content:""}
+.mrseo-language-dropdown .mrseo-language-trigger:hover,.mrseo-language-dropdown[open] .mrseo-language-trigger{border-color:#b9ada0;background:#fffaf3;box-shadow:0 3px 12px #29231b10}
+.mrseo-language-dropdown .mrseo-language-trigger:focus-visible,.mrseo-language-dropdown .mrseo-language-options a:focus-visible{outline:3px solid #bf4b37;outline-offset:3px}
+.mrseo-language-dropdown .mrseo-language-trigger-code{font-size:14px;font-weight:850;letter-spacing:.035em;line-height:1}
+.mrseo-language-dropdown .mrseo-language-chevron{display:inline-block;font-size:21px;line-height:.6;font-weight:650;color:#98634f;transform:translateY(-3px);transition:transform .2s ease}
+.mrseo-language-dropdown[open] .mrseo-language-chevron{transform:translateY(-1px) rotate(180deg)}
+.mrseo-language-dropdown .mrseo-language-options{position:absolute;top:calc(100% + 10px);right:0;z-index:10050;width:223px;max-width:calc(100vw - 24px);padding:8px;border:1px solid #ded5ca;border-radius:15px;background:#fffdf9;box-shadow:0 22px 55px #17221e30;white-space:normal}
+.mrseo-language-dropdown .mrseo-language-options a{display:flex;align-items:center;gap:13px;min-height:45px;width:100%;padding:10px 12px;border-radius:9px;color:#283129;text-decoration:none;font-size:15px;font-weight:650;line-height:1.4;transition:background .16s ease,color .16s ease}
+.mrseo-language-dropdown .mrseo-language-options a:hover{background:#f1ece3;color:#9a3d2d}
+.mrseo-language-dropdown .mrseo-language-options a[aria-current="page"]{background:#f2e6df;color:#963c2d;font-weight:800}
+.mrseo-language-dropdown .mrseo-language-option-code{display:inline-block;flex:0 0 30px;font-size:12px;font-weight:850;letter-spacing:.045em}
+.mrseo-language-dropdown .mrseo-language-option-name{flex:1;min-width:0;white-space:nowrap}
+.mrseo-language-dropdown .mrseo-language-selected{font-size:16px;font-weight:850}
+.site-header .mrseo-language-dropdown{z-index:10030}
+.intl-header .mrseo-language-dropdown{z-index:10030}
+@media(max-width:950px){
+ .site-header .mrseo-language-dropdown{order:2;margin-left:auto}
+ .site-header .menu-toggle{order:3;margin-left:0}
+}
+@media(max-width:980px){
+ .intl-header .mrseo-language-dropdown{margin-left:auto}
+}
+@media(max-width:650px){
+ .site-header .mrseo-language-dropdown .mrseo-language-trigger,
+ .intl-header .mrseo-language-dropdown .mrseo-language-trigger{min-width:71px;height:43px;gap:9px;padding:0 12px}
+ .site-header .mrseo-language-dropdown .mrseo-language-trigger-code,
+ .intl-header .mrseo-language-dropdown .mrseo-language-trigger-code{font-size:14px}
+}
+@media(max-width:390px){
+ .site-header .mrseo-language-dropdown .mrseo-language-trigger,
+ .intl-header .mrseo-language-dropdown .mrseo-language-trigger{min-width:66px;padding:0 10px}
+}
+/* Footer matches the dark background, with options opening upwards. */
+.mrseo-language-dropdown--footer .mrseo-language-trigger{color:#f4f6f0;background:#25342f;border-color:#52665d}
+.mrseo-language-dropdown--footer .mrseo-language-trigger:hover,
+.mrseo-language-dropdown--footer[open] .mrseo-language-trigger{color:#fff;background:#30443b;border-color:#7c9589}
+.mrseo-language-dropdown--footer .mrseo-language-chevron{color:#f0aa95}
+.mrseo-language-dropdown--footer .mrseo-language-options{top:auto;bottom:calc(100% + 10px)}
+@media(prefers-reduced-motion:reduce){
+ .mrseo-language-dropdown .mrseo-language-trigger,
+ .mrseo-language-dropdown .mrseo-language-options a,
+ .mrseo-language-dropdown .mrseo-language-chevron{transition:none}
+}

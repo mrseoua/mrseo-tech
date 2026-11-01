@@ -21,11 +21,7 @@ $mrseo_links=array('ecommerce-seo'=>$mrseo_nav['ecommerce'],'seo'=>$mrseo_nav['s
    <a href="<?php echo esc_url(mrseo_url('about'));?>"><?php echo esc_html($mrseo_nav['about']);?></a>
    <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['contact']);?></a>
   </nav>
-  <div class="intl-lang-switch" aria-label="Language">
-   <?php foreach(array('uk'=>'UA','ru'=>'RU','en'=>'EN','pl'=>'PL','de'=>'DE') as $locale=>$label):?>
-    <a href="<?php echo esc_url(mrseo_url(in_array($mrseo_slug,mrseo_int_pages(),true)?$mrseo_slug:'',$locale));?>"<?php if($mrseo_lang===$locale):?> aria-current="page"<?php endif;?>><?php echo esc_html($label);?></a>
-   <?php endforeach;?>
-  </div>
+  <?php mrseo_render_language_dropdown(in_array($mrseo_slug,mrseo_int_pages(),true)?$mrseo_slug:'',$mrseo_lang);?>
   <a class="intl-nav-cta" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['cta']);?> ↗</a>
   <details class="intl-mobile-menu"><summary aria-label="Menu">☰</summary><div class="intl-mobile-panel">
    <?php foreach($mrseo_links as $slug=>$name):?><a href="<?php echo esc_url(mrseo_url($slug));?>"><?php echo esc_html($name);?></a><?php endforeach;?>

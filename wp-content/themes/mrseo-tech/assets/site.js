@@ -45,3 +45,22 @@
  window.addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});
  window.addEventListener('resize',update,{passive:true});update();
 })();
+
+// Native language selector: close on outside click or Escape; no JS needed to open it.
+(()=>{'use strict';
+ const selectors=[...document.querySelectorAll('.mrseo-language-dropdown')];
+ if(!selectors.length)return;
+ document.addEventListener('pointerdown',event=>{
+  selectors.forEach(menu=>{if(menu.open&&!menu.contains(event.target))menu.open=false});
+ });
+ document.addEventListener('keydown',event=>{
+  if(event.key!=='Escape')return;
+  selectors.filter(menu=>menu.open).forEach(menu=>{
+   menu.open=false;
+   menu.querySelector('summary')?.focus();
+  });
+ });
+ selectors.forEach(menu=>menu.addEventListener('toggle',()=>{
+  if(menu.open)selectors.forEach(other=>{if(other!==menu)other.open=false});
+ }));
+})();
