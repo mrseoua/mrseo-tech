@@ -1,0 +1,46 @@
+/* MrSeo.tech — remaining premium Ukrainian service pages. 
+   Extends approved ukseo.css. Exclusively included for selected UA internal routes. */
+.ukseo--solution .ukseo-hero{background:radial-gradient(ellipse at 87% 26%,#e3c5af46,transparent 44%),linear-gradient(125deg,#faf7f0,#f0ebe3)}
+.ukseo--solution .ukseo-problem-card:nth-child(3){border-top:3px solid #a94a38}
+.ukseo--solution .ukseo-hero-art .ms-scene{box-shadow:0 28px 70px #1c251c29}
+.ukseo--solution .ukseo-spec-row strong{font-size:17px;font-weight:700;line-height:1.57}
+.ukseo--solution .ukseo-spec-foot{font-size:14px;font-weight:600}
+.ukseo--solution .ukseo-visual-caption{font-size:13px;font-weight:680}
+.ukseo--solution .ms-top-mark{font-size:12px;font-weight:830}
+.ukseo--solution .ms-description p{font-size:14px;font-weight:580;line-height:1.6}
+.ukseo--solution .ms-tab{font-size:13px;font-weight:800}
+.ukseo--solution .ms-ads-card,.ukseo--solution .ms-pmax-bottom{font-size:12px;font-weight:760}
+.ukseo--solution .ms-data-event{font-size:13px;font-weight:780}
+.ukseo--solution .ms-data-check{font-size:12px}
+.ukseo--solution .ms-web-toolbar{font-size:12px}
+.ukseo--solution .ukseo-faq-items details>p{font-size:18px;font-weight:580}
+.ukseo--solution .ukseo-faq-items summary{font-size:clamp(19px,1.7vw,23px);font-weight:800}
+/* Each service gets its own modest editorial colour atmosphere. */
+.ukseo--performance-max .ukseo-hero{background:radial-gradient(ellipse at 88% 18%,#ddb39f54,transparent 45%),linear-gradient(125deg,#faf7f0,#f2e9e0)}
+.ukseo--analytics .ukseo-hero{background:radial-gradient(ellipse at 88% 22%,#c8d6c048,transparent 44%),linear-gradient(125deg,#faf8f1,#e9ede5)}
+.ukseo--service-websites .ukseo-hero{background:radial-gradient(ellipse at 90% 21%,#e0c0aa50,transparent 45%),linear-gradient(125deg,#faf7f2,#efe8dc)}
+/* Horoshop keeps its approved, official interactive and partner-badged hero. */
+.ukseo--horoshop .special-hero-horoshop{margin:0}
+.ukseo--horoshop .hs-demo-message h2{font-size:clamp(21px,2.05vw,29px)!important;line-height:1.2!important;letter-spacing:-.025em!important}
+.ukseo--horoshop .hs-demo-message p{font-size:clamp(15px,1.3vw,18px);font-weight:640;line-height:1.5}
+.ukseo--horoshop .hs-demo-kicker{font-size:12px;font-weight:840}
+.ukseo--horoshop .hs-switch{font-size:15px!important;font-weight:800;line-height:1.3}
+.ukseo--horoshop .ukseo-decision{background:#e8e5dc}
+.ukseo--horoshop .ukseo-problem-card:nth-child(3){border-top:3px solid #a94a38}
+.ukseo--horoshop .ukseo-spec-row strong{font-size:17px;font-weight:700}
+.ukseo--horoshop .ukseo-faq-items details>p{font-size:18px;font-weight:580}
+.ukseo--horoshop .ukseo-faq-items summary{font-weight:800}
+@media(max-width:780px){
+ .ukseo--solution .ukseo-visual-caption{font-size:13px}
+ .ukseo--solution .ms-pmax-bottom,.ukseo--solution .ms-ads-card{font-size:12px}
+ .ukseo--horoshop .hs-demo-message h2{font-size:24px!important}
+}
+@media(max-width:480px){
+ .ukseo--solution .ms-tab{font-size:12px}
+ .ukseo--solution .ms-description p{font-size:13px}
+ .ukseo--solution .ms-ads-card,.ukseo--solution .ms-pmax-bottom{font-size:11px}
+ .ukseo--solution .ms-data-event{font-size:11px}
+ .ukseo--horoshop .hs-demo-message h2{font-size:21px!important}
+ .ukseo--horoshop .hs-switch{font-size:13px!important;min-height:46px}
+ .ukseo--horoshop .hs-demo-message p{font-size:15px}
+}
