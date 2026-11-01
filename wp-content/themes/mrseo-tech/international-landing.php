@@ -31,7 +31,8 @@ get_header('international');
     array('ecommerce-seo',$mrseo_nav['ecommerce']),
     array('google-ads','Google Ads'),
     array('analytics',$mrseo_nav['analytics']),
-    array('seo-audit',$mrseo_nav['audit'])
+    array('seo-audit',$mrseo_nav['audit']),
+    array('web-development',$mrseo_nav['development'])
    );
    foreach($mrseo_satellites as $index=>$satellite):
    ?>
