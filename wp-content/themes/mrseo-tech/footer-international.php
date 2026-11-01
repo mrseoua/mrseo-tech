@@ -8,7 +8,7 @@
    <a class="intl-footer-cta" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['cta']);?> ↗</a>
   </div>
   <nav aria-label="<?php echo esc_attr($mrseo_nav['services']);?>"><strong><?php echo esc_html($mrseo_nav['services']);?></strong>
-   <?php foreach(array('ecommerce-seo'=>'ecommerce','seo'=>'seo','seo-audit'=>'audit','google-ads'=>'ads','analytics'=>'analytics') as $slug=>$key):?>
+   <?php foreach(array('ecommerce-seo'=>'ecommerce','seo'=>'seo','seo-audit'=>'audit','google-ads'=>'ads','analytics'=>'analytics','web-development'=>'development') as $slug=>$key):?>
    <a href="<?php echo esc_url(mrseo_url($slug));?>"><?php echo esc_html($mrseo_nav[$key]);?></a><?php endforeach;?>
   </nav>
   <nav aria-label="<?php echo esc_attr($mrseo_nav['about']);?>"><strong>MrSeo.tech</strong>
