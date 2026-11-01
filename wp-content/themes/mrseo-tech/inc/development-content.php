@@ -134,7 +134,13 @@ function mrseo_dev_content(){
       "contactNote": "Опишіть процес, який потрібно покращити, або покажіть чинний продукт.",
       "problem": "ЯКУ ПРОБЛЕМУ ВИРІШУЄМО",
       "problemTitle": "Де бізнес втрачає час і контроль?",
-      "solution": "НАШЕ РІШЕННЯ"
+      "solution": "НАШЕ РІШЕННЯ",
+      "planet": "РОЗРОБКА ТА ІНТЕГРАЦІЇ",
+      "foot": [
+        "АНАЛІЗ",
+        "РОЗРОБКА",
+        "РОЗВИТОК"
+      ]
     }
   },
   "ru": {
@@ -265,7 +271,13 @@ function mrseo_dev_content(){
       "contactNote": "Расскажите, какой процесс нужно улучшить, или покажите существующий продукт.",
       "problem": "КАКУЮ ПРОБЛЕМУ РЕШАЕМ",
       "problemTitle": "Где бизнес теряет время и контроль?",
-      "solution": "НАШЕ РЕШЕНИЕ"
+      "solution": "НАШЕ РЕШЕНИЕ",
+      "planet": "РАЗРАБОТКА И ИНТЕГРАЦИИ",
+      "foot": [
+        "АНАЛИЗ",
+        "РАЗРАБОТКА",
+        "РАЗВИТИЕ"
+      ]
     }
   },
   "en": {
@@ -396,7 +408,13 @@ function mrseo_dev_content(){
       "contactNote": "Describe a process that needs fixing or share your current product.",
       "problem": "BUSINESS BOTTLENECKS",
       "problemTitle": "Where do teams lose time and control?",
-      "solution": "OUR APPROACH"
+      "solution": "OUR APPROACH",
+      "planet": "DEVELOPMENT AND INTEGRATIONS",
+      "foot": [
+        "DISCOVER",
+        "BUILD",
+        "IMPROVE"
+      ]
     }
   },
   "pl": {
@@ -527,7 +545,13 @@ function mrseo_dev_content(){
       "contactNote": "Opisz proces, który chcesz usprawnić, lub udostępnij adres obecnego systemu.",
       "problem": "PROBLEMY W PROCESACH",
       "problemTitle": "Gdzie firma traci czas i kontrolę?",
-      "solution": "NASZE ROZWIĄZANIE"
+      "solution": "NASZE ROZWIĄZANIE",
+      "planet": "APLIKACJE I INTEGRACJE",
+      "foot": [
+        "ANALIZA",
+        "WDROŻENIE",
+        "ROZWÓJ"
+      ]
     }
   },
   "de": {
@@ -658,7 +682,13 @@ function mrseo_dev_content(){
       "contactNote": "Beschreiben Sie den Prozess, der nicht funktioniert, oder zeigen Sie Ihre bestehende Anwendung.",
       "problem": "GESCHÄFTSPROZESSE",
       "problemTitle": "Wo gehen Zeit und Übersicht verloren?",
-      "solution": "UNSERE LÖSUNG"
+      "solution": "UNSERE LÖSUNG",
+      "planet": "WEBENTWICKLUNG UND SCHNITTSTELLEN",
+      "foot": [
+        "ANALYSE",
+        "UMSETZUNG",
+        "WEITERENTWICKLUNG"
+      ]
     }
   }
 }
