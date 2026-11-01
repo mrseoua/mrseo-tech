@@ -18,9 +18,10 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.css',array('mrseo-style'),'1.0.0');
   wp_enqueue_script('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.js',array(),'1.0.0',true);
  }
- // Approved problem-first typography shared by selected Ukrainian service pages only.
- if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads'),true)){
-  wp_enqueue_style('mrseo-ukseo-pilot',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-motion-scenes'),'1.0.2');
+ // Ukrainian premium service visual system. Horoshop uses its own interactive hero.
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
+  $ua_base_deps=mrseo_slug()==='horoshop'?array('mrseo-style'):array('mrseo-motion-scenes');
+  wp_enqueue_style('mrseo-ukseo-pilot',get_template_directory_uri().'/assets/seo-uk-pilot.css',$ua_base_deps,'1.0.2');
  }
  if(mrseo_locale()==='uk' && mrseo_slug()==='seo-audit'){
   wp_enqueue_style('mrseo-ukaudit',get_template_directory_uri().'/assets/seo-audit-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
@@ -45,6 +46,15 @@ function mrseo_assets(){
   wp_enqueue_script('mrseo-horoshop-interactive',get_template_directory_uri().'/assets/horoshop-interactive.js',array(),'3.0.0',true);
  }
  if(mrseo_slug()==='about')wp_enqueue_style('mrseo-about',get_template_directory_uri().'/assets/about-page.css',array('mrseo-style'),'1.0.0');
+ // Remaining Ukrainian service pages and existing About/Portfolio/Contact/Development refinements.
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('performance-max','analytics','service-websites','horoshop'),true)){
+  $ua_extra_deps=mrseo_slug()==='horoshop'?array('mrseo-ukseo-pilot','mrseo-horoshop-hero'):array('mrseo-ukseo-pilot');
+  wp_enqueue_style('mrseo-uk-rest',get_template_directory_uri().'/assets/uk-service-rest.css',$ua_extra_deps,'1.0.0');
+ }
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('about','portfolio','contact','web-development'),true)){
+  $ua_polish_deps=mrseo_slug()==='about'?array('mrseo-about'):(mrseo_slug()==='web-development'?array('mrseo-development'):array('mrseo-style'));
+  wp_enqueue_style('mrseo-uk-polish',get_template_directory_uri().'/assets/uk-interior-polish.css',$ua_polish_deps,'1.0.0');
+ }
  wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
