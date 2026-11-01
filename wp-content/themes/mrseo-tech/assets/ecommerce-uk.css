@@ -1,0 +1,47 @@
+/* Ukraine-only e-commerce SEO visual extension. Uses approved Ukrainian SEO layout. */
+.ukseo--commerce .ukseo-hero{background:radial-gradient(ellipse at 90% 22%,#cfb09a38,transparent 45%),linear-gradient(125deg,#faf7f0,#efe9e0)}
+.ukseo--commerce .ukseo-hero-copy h1 em{color:#a94634}
+.ukseo--commerce .ukseo-hero-art .ms-scene{box-shadow:0 28px 70px #2e342720}
+.ukseo--commerce .ukseo-problem-card:nth-child(2){background:#f0e8e1}
+.ukseo--commerce .ukseo-problem-card:nth-child(3){border-top:3px solid #aa5842}
+.ukseo--commerce .ukseo-visual-caption{font-size:13px;font-weight:670}
+.ukseo--commerce .ms-top-mark{font-size:12px;font-weight:850}
+.ukseo--commerce .ms-store-nav-head{font-size:12px;font-weight:850;line-height:1.3}
+.ukseo--commerce .ms-store-nav>span{font-size:12px;font-weight:780;line-height:1.35}
+.ukseo--commerce .ms-store-filter{font-size:12px;font-weight:780;line-height:1.35}
+.ukseo--commerce .ms-description p{font-size:14px;font-weight:580;line-height:1.55}
+.ukseo--commerce .ms-tab{font-size:13px;font-weight:800}
+.ukseo--commerce .ukcommerce-lab{padding:clamp(80px,8vw,120px) 0;background:#e8e4dc}
+.ukseo--commerce .ukcommerce-lab .ukseo-section-head{margin-bottom:33px}
+.ukseo--commerce .ec-lab-frame{background:#212a25;border:1px solid #3c4b42;border-radius:20px;box-shadow:0 28px 62px #19282028}
+.ukseo--commerce .ec-lab-v3 .ec-tabs{padding:22px 24px;gap:9px}
+.ukseo--commerce .ec-tabs button{flex:1;justify-content:center;min-height:52px;font-size:16px;font-weight:790;line-height:1.35;padding:13px 15px;white-space:normal;text-wrap:balance;color:#f1f2ea}
+.ukseo--commerce .ec-tabs button.active{color:#1e2923}
+.ukseo--commerce .ec-tabs button span{font-size:13px;font-weight:830}
+.ukseo--commerce .ec-lab-v3 .ec-lab-stage{height:355px}
+.ukseo--commerce .ec-branch-root,.ukseo--commerce .ec-branch-row>div{font-size:19px;font-weight:780;line-height:1.4;padding:19px 23px}
+.ukseo--commerce .ec-filter,.ukseo--commerce .ec-check{font-size:17px;line-height:1.5;font-weight:720;padding:18px 22px}
+.ukseo--commerce .ec-lab-footer{grid-template-columns:120px minmax(0,1fr);gap:21px;padding:20px 26px 23px}
+.ukseo--commerce .ec-lab-footer>span{font-size:14px;color:#f1b39c}
+.ukseo--commerce .ec-lab-explanation{font-size:17px;font-weight:610;line-height:1.6;color:#f4efe7}
+.ukseo--commerce .ukseo-faq-items details>p a{color:#934732;font-weight:760;text-decoration:underline;text-underline-offset:3px}
+.ukseo--commerce .ukseo-faq-items details>p a:hover{color:#652c22}
+@media(max-width:780px){
+ .ukseo--commerce .ec-lab-v3 .ec-lab-stage{height:310px}
+ .ukseo--commerce .ec-tabs button{font-size:15px;min-height:52px}
+}
+@media(max-width:480px){
+ .ukseo--commerce .ec-lab-v3 .ec-tabs{padding:16px 12px;gap:6px}
+ .ukseo--commerce .ec-tabs button{font-size:14px;min-height:50px;padding:12px 6px;gap:4px;flex-direction:column}
+ .ukseo--commerce .ec-tabs button span{font-size:12px}
+ .ukseo--commerce .ec-lab-v3 .ec-lab-stage{height:295px}
+ .ukseo--commerce .ec-lab-footer{grid-template-columns:1fr;gap:8px;padding:17px 18px 20px}
+ .ukseo--commerce .ec-lab-explanation{font-size:16px;line-height:1.55}
+ .ukseo--commerce .ec-branch-root,.ukseo--commerce .ec-branch-row>div{font-size:16px;padding:17px 10px}
+ .ukseo--commerce .ec-filter,.ukseo--commerce .ec-check{font-size:16px;line-height:1.5;padding:14px 13px}
+ .ukseo--commerce .ms-store-nav>span{font-size:11px;padding:5px}
+ .ukseo--commerce .ms-store-filter{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo--commerce .ec-tabs button{transition:none}
+}
