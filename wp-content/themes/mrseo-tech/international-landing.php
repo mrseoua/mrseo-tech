@@ -69,7 +69,7 @@ $mrseo_selected=array(
  <div class="intl-project-grid">
   <?php foreach($mrseo_selected as $group=>$domains):foreach($domains as $domain):if(!in_array($domain,$mrseo_portfolio[$group]??array(),true))continue;?>
   <a class="intl-project" href="<?php echo esc_url('https://'.$domain.'/');?>" target="_blank" rel="noopener noreferrer">
-   <span><?php echo esc_html(strtoupper($group));?></span><strong><?php echo esc_html($domain);?></strong><small>↗</small>
+   <span><?php echo esc_html($mrseo_common['portfolioCategories'][$group]??$group);?></span><strong><?php echo esc_html($domain);?></strong><small>↗</small>
   </a>
   <?php endforeach;endforeach;?>
  </div>
