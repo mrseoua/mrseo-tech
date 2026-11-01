@@ -1,0 +1,36 @@
+# Claude Code runs only when the repository owner explicitly requests it.
+# Store API credentials in GitHub Actions secret ANTHROPIC_API_KEY.
+name: Claude Code — MrSeo.tech
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: claude-owner-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  claude:
+    # Deliberately restrict paid requests to the repo owner to limit API spending.
+    if: github.actor == 'mrseoua' && contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: |
+            --max-turns 12
