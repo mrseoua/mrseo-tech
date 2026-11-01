@@ -1,0 +1,29 @@
+/* Ukrainian SEO-audit extension: depends on approved /seo/ visual system.
+   Only enqueued at /seo-audit/ in Ukrainian. Keep all essential text readable. */
+.ukseo--audit .ukseo-hero{background:radial-gradient(ellipse at 89% 19%,#c6d3c444,transparent 37%),linear-gradient(125deg,#faf7f0,#eee9df)}
+.ukseo--audit .ukseo-hero-copy h1 em{color:#a94634}
+.ukseo--audit .ukseo-hero-art .ms-scene{border:1px solid #3f4b40;box-shadow:0 35px 74px #26332929}
+.ukseo--audit .ukseo-visual-caption{font-size:13px;font-weight:670}
+.ukseo--audit .ukseo-problem-card:nth-child(2){background:#ece9e1}
+.ukseo--audit .ukseo-problem-card:nth-child(3){border-top:4px solid #be634b}
+.ukseo--audit .ukseo-decision{background:#e9e5dd}
+.ukseo--audit .ukseo-spec{background:#202d29}
+.ukaudit-report-header{display:flex;flex-direction:column;gap:12px;padding:18px 0 20px;border-top:1px solid #526057}
+.ukaudit-report-tag{align-self:flex-start;font-weight:850;font-size:12px;letter-spacing:.1em;color:#f6b8a0;background:#38483f;border:1px solid #758b78;border-radius:30px;padding:7px 12px}
+.ukaudit-report-header strong{display:block;font-size:clamp(20px,2vw,27px);line-height:1.22;letter-spacing:-.03em;color:#fff8f1;font-weight:790}
+.ukseo--audit .ukseo-spec-row{border-color:#46584e}
+.ukseo--audit .ukseo-spec-row small{color:#f0b79d}
+.ukseo--audit .ukseo-spec-row strong{font-size:16px;font-weight:700}
+.ukseo--audit .ukseo-delivery-list h3{letter-spacing:-.035em}
+.ukseo--audit .ukseo-faq-items details>p{font-size:18px;font-weight:580;line-height:1.7}
+.ukseo--audit .ukseo-faq-items summary{font-weight:800}
+@media(max-width:780px){
+ .ukaudit-report-header strong{font-size:23px}
+ .ukseo--audit .ukseo-spec-row strong{font-size:16px}
+}
+@media(max-width:480px){
+ .ukseo--audit .ukseo-hero{padding-top:24px}
+ .ukseo--audit .ukseo-problem-card:nth-child(3){border-top-width:3px}
+ .ukaudit-report-header strong{font-size:21px}
+ .ukseo--audit .ukseo-visual-caption{font-size:13px}
+}
