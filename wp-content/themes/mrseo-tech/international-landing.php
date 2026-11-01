@@ -20,28 +20,7 @@ get_header('international');
    </div>
    <div class="intl-proofline"><span class="intl-proof-dot" aria-hidden="true"></span><?php echo esc_html($mrseo_common['badge']);?></div>
   </div>
-  <div class="intl-scene" aria-label="<?php echo esc_attr($mrseo_nav['services']);?>">
-   <div class="intl-scene-head"><span>MRSEO.TECH / PLANET SEO</span><span><?php echo esc_html(strtoupper($mrseo_ui['name']));?></span></div>
-   <div class="intl-scene-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
-   <div class="intl-earth-core" aria-hidden="true"><div class="intl-earth-fallback"></div></div>
-   <div class="intl-earth-halo" aria-hidden="true"></div>
-   <?php
-   $mrseo_satellites=array(
-    array('seo','SEO'),
-    array('ecommerce-seo',$mrseo_nav['ecommerce']),
-    array('google-ads','Google Ads'),
-    array('analytics',$mrseo_nav['analytics']),
-    array('seo-audit',$mrseo_nav['audit']),
-    array('web-development',$mrseo_nav['development'])
-   );
-   foreach($mrseo_satellites as $index=>$satellite):
-   ?>
-   <a class="intl-satellite intl-satellite-<?php echo esc_attr($index+1);?><?php if($mrseo_slug===$satellite[0]):?> is-current<?php endif;?>" href="<?php echo esc_url(mrseo_url($satellite[0]));?>"<?php if($mrseo_slug===$satellite[0]):?> aria-current="page"<?php endif;?>>
-     <span class="intl-sat-dot" aria-hidden="true"></span><span><?php echo esc_html($satellite[1]);?></span><b aria-hidden="true">↗</b>
-   </a>
-   <?php endforeach;?>
-   <div class="intl-scene-foot" aria-hidden="true"><span>SEARCH</span><span>DIAGNOSE</span><span>GROW</span></div>
-  </div>
+  <?php mrseo_render_motion_scene($mrseo_slug,$mrseo_lang);?>
  </div>
 </section>
 <?php if($mrseo_is_contact):?>
@@ -166,5 +145,4 @@ $mrseo_selected=array(
  </div>
 </section>
 <?php endif;?>
-<script type="module" src="<?php echo esc_url(get_template_directory_uri().'/assets/orbit-earth-three.js?v=6');?>"></script>
 <?php get_footer('international');?>
