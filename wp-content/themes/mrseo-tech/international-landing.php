@@ -28,6 +28,7 @@ get_header('international');
  <div class="intl-wrap intl-contact-grid">
   <div><div class="intl-kicker"><?php echo esc_html($mrseo_common['strategy']);?></div>
     <h2><?php echo esc_html($mrseo_common['problems']);?></h2>
+    <?php mrseo_render_contact_page_links();?>
     <div class="intl-contact-examples">
     <?php foreach($mrseo_page['problems'] as $i=>$problem):?><div class="intl-contact-example"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><strong><?php echo esc_html($problem[0]);?></strong><p><?php echo esc_html($problem[1]);?></p></div></div><?php endforeach;?>
     </div>

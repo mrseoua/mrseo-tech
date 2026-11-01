@@ -31,4 +31,5 @@
   </div>
  </div>
 </footer>
+<?php mrseo_render_floating_contact();?>
 <?php wp_footer();?></body></html>
