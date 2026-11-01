@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/inc/site-pages.php';
 require_once get_template_directory() . '/inc/i18n-routing.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
+require_once get_template_directory() . '/inc/motion-scenes.php';
 function mrseo_setup() {
  add_theme_support('title-tag');
  add_theme_support('post-thumbnails');
@@ -12,6 +13,11 @@ function mrseo_setup() {
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
  wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
+ $motion_slugs=array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','service-websites','performance-max','about','portfolio','contact');
+ if(in_array(mrseo_slug(),$motion_slugs,true)){
+  wp_enqueue_style('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.css',array('mrseo-style'),'1.0.0');
+  wp_enqueue_script('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.js',array(),'1.0.0',true);
+ }
  if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
  }
