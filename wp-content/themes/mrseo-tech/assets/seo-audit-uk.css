@@ -3,6 +3,16 @@
 .ukseo--audit .ukseo-hero{background:radial-gradient(ellipse at 89% 19%,#c6d3c444,transparent 37%),linear-gradient(125deg,#faf7f0,#eee9df)}
 .ukseo--audit .ukseo-hero-copy h1 em{color:#a94634}
 .ukseo--audit .ukseo-hero-art .ms-scene{border:1px solid #3f4b40;box-shadow:0 35px 74px #26332929}
+/* Scanner preview: descriptive text must remain legible on mobile. */
+.ukseo--audit .ms-top-mark{font-size:12px;font-weight:850}
+.ukseo--audit .ms-window-top{font-size:12px;font-weight:780;gap:10px}
+.ukseo--audit .ms-window-top>span:first-child{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ukseo--audit .ms-window-status{flex:none}
+.ukseo--audit .ms-audit-row span{font-size:12px;font-weight:850}
+.ukseo--audit .ms-audit-row strong{font-size:14px;font-weight:800}
+.ukseo--audit .ms-audit-stamp span{font-size:12px}
+.ukseo--audit .ms-description p{font-size:14px;font-weight:580;line-height:1.58}
+.ukseo--audit .ms-tab{font-size:13px;font-weight:780}
 .ukseo--audit .ukseo-visual-caption{font-size:13px;font-weight:670}
 .ukseo--audit .ukseo-problem-card:nth-child(2){background:#ece9e1}
 .ukseo--audit .ukseo-problem-card:nth-child(3){border-top:4px solid #be634b}
