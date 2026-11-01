@@ -14,8 +14,8 @@
 <a href="<?php echo esc_url(mrseo_url('ecommerce-seo'));?>"><?php echo esc_html(mrseo_t('SEO інтернет-магазинів','SEO интернет-магазинов','E-commerce SEO'));?></a>
 <?php if(in_array(mrseo_locale(),array('uk','ru'),true)):?><a href="<?php echo esc_url(mrseo_url('horoshop'));?>"><?php echo esc_html(mrseo_t('Магазини на Хорошоп','Магазины на Хорошоп','Horoshop'));?></a><?php endif;?>
 <a href="<?php echo esc_url(mrseo_url('seo-audit'));?>"><?php echo esc_html(mrseo_locale()==='pl'?'Audyt SEO':(mrseo_locale()==='de'?'Technisches SEO-Audit':'Technical SEO'));?></a>
+<a href="<?php echo esc_url(mrseo_url('web-development'));?>"><?php echo esc_html(mrseo_t('Веброзробка','Веб-разработка','Web Development'));?></a>
 <?php if(!in_array(mrseo_locale(),array('pl','de'),true)):?>
-<a href="<?php echo esc_url(mrseo_url('service-websites'));?>">Web Development</a>
 <a href="<?php echo esc_url(mrseo_url('service-websites'));?>"><?php echo esc_html(mrseo_t('Створення сайтів','Создание сайтов','Website Creation'));?></a>
 <?php endif;?>
 </div>
