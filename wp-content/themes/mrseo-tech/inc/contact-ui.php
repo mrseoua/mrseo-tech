@@ -37,7 +37,7 @@ function mrseo_render_header_contact() {
     echo '<div class="mrseo-header-contact">';
     echo '<a class="mrseo-header-phone" href="'.esc_url($channels['tel'],array('tel')).'" aria-label="'.esc_attr($copy['call'].': '.$channels['phone_display']).'">';
     echo mrseo_contact_ui_icon('phone').'<span class="mrseo-header-phone-number">'.esc_html($channels['phone_display']).'</span></a>';
-    echo '<details class="mrseo-contact-popover mrseo-header-message"><summary aria-label="'.esc_attr($copy['channels']).'">'.mrseo_contact_ui_icon('message').'<span class="screen-reader-text">'.esc_html($copy['write']).'</span></summary>';
+    echo '<details class="mrseo-contact-popover mrseo-header-message"><summary aria-label="'.esc_attr($copy['channels']).'">'.mrseo_contact_ui_icon('message').'</summary>';
     echo '<div class="mrseo-contact-ui-panel"><strong>'.esc_html($copy['choice']).'</strong>';
     mrseo_contact_ui_messengers();
     echo '</div></details></div>';
