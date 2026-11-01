@@ -32,7 +32,7 @@ get_header();
         </div>
         <div class="about-experience-bottom">
           <span><?php echo esc_html(mrseo_t('НЕВЕЛИКА КОМАНДА','НЕБОЛЬШАЯ КОМАНДА','SMALL TEAM'));?></span>
-          <div><span>SEO</span><span>ADS</span><span>DATA</span><span>WEB</span></div>
+          <div><span>SEO</span><span><?php echo esc_html(mrseo_t('РЕКЛАМА','ADS','ADS'));?></span><span><?php echo esc_html(mrseo_t('ДАНІ','DATA','DATA'));?></span><span><?php echo esc_html(mrseo_t('САЙТИ','WEB','WEB'));?></span></div>
         </div>
         <span class="about-experience-ring about-experience-ring-one" aria-hidden="true"></span>
         <span class="about-experience-ring about-experience-ring-two" aria-hidden="true"></span>
