@@ -1,0 +1,47 @@
+/* MrSeo.tech — non-navigating Services dropdown trigger.
+ * The first SEO page remains available as a normal link inside the submenu.
+ * CSS is loaded after the legacy theme rules to keep desktop/mobile behavior consistent.
+ */
+.site-header .nav-dropdown .services-menu-toggle,
+.intl-header .intl-dropdown .services-menu-toggle{
+ appearance:none;-webkit-appearance:none;border:0;border-radius:0;background:transparent;
+ display:inline-flex;align-items:center;gap:9px;min-height:44px;
+ font:inherit;font-family:inherit;color:#222623;text-align:left;
+ padding:12px 5px;cursor:pointer;line-height:1.35;white-space:nowrap;
+}
+.site-header .nav-dropdown .services-menu-toggle{font-size:15px;font-weight:680;position:relative}
+.site-header .nav-dropdown .services-menu-toggle::after{
+ content:"";position:absolute;bottom:5px;left:5px;right:5px;height:2px;
+ background:#ed7864;transform:scaleX(0);transform-origin:left;transition:transform .2s ease;
+}
+.site-header .nav-dropdown .services-menu-toggle:hover::after,
+.site-header .nav-dropdown .services-menu-toggle[aria-expanded="true"]::after{transform:scaleX(1)}
+.intl-header .intl-dropdown .services-menu-toggle{font-size:13px;font-weight:760;color:#222724}
+.site-header .nav-dropdown .services-menu-toggle:hover,
+.intl-header .intl-dropdown .services-menu-toggle:hover{color:#b74738}
+.site-header .nav-dropdown .services-menu-toggle:focus-visible,
+.intl-header .intl-dropdown .services-menu-toggle:focus-visible{
+ outline:3px solid #c4513e;outline-offset:3px;border-radius:5px;
+}
+.services-menu-toggle .services-menu-chevron{
+ display:inline-block;font-size:20px;line-height:1;color:#a55743;
+ transition:transform .2s ease;transform-origin:center;transform:translateY(-2px);
+}
+.nav-dropdown.is-open .services-menu-chevron,
+.intl-dropdown.is-open .services-menu-chevron{transform:translateY(1px) rotate(180deg)}
+/* Disable hover/focus-only disclosure: aria-expanded now matches actual visibility. */
+.site-header .nav-dropdown:not(.is-open) .nav-submenu{display:none!important}
+.site-header .nav-dropdown.is-open .nav-submenu{display:flex!important;flex-direction:column}
+.intl-header .intl-dropdown:not(.is-open) .intl-dropdown-menu{display:none!important}
+.intl-header .intl-dropdown.is-open .intl-dropdown-menu{display:block!important}
+@media(max-width:950px){
+ .site-header .nav-dropdown .services-menu-toggle{
+  width:100%;min-height:48px;justify-content:space-between;
+  padding:13px 8px;font-size:16px;font-weight:760;
+ }
+ .site-header .nav-dropdown.is-open .nav-submenu{display:block!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .site-header .nav-dropdown .services-menu-toggle::after,
+ .services-menu-toggle .services-menu-chevron{transition:none}
+}
