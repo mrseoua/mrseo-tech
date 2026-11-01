@@ -20,7 +20,7 @@ function mrseo_assets(){
  }
  // Approved problem-first typography shared by selected Ukrainian service pages only.
  if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads'),true)){
-  wp_enqueue_style('mrseo-ukseo-pilot',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-motion-scenes'),'1.0.1');
+  wp_enqueue_style('mrseo-ukseo-pilot',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-motion-scenes'),'1.0.2');
  }
  if(mrseo_locale()==='uk' && mrseo_slug()==='seo-audit'){
   wp_enqueue_style('mrseo-ukaudit',get_template_directory_uri().'/assets/seo-audit-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
