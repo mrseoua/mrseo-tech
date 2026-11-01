@@ -49,9 +49,24 @@ jobs:
           functions=(root/'functions.php').read_text()
           assert 'international-sitemap.php' in routes
           assert "if($slug==='horoshop' && !in_array($lang,array('uk','ru'),true))" in routes
+          home=(root/'orbit-lab.php').read_text()
+          chrome=(root/'header.php').read_text()+(root/'footer.php').read_text()
+          home_text=(root/'inc/international-home-copy.php').read_text()
+          home_match=re.search(r"<<<'MRSEO_HOME_TRANSLATIONS'\n(.*?)\nMRSEO_HOME_TRANSLATIONS;",home_text,re.S)
+          assert home_match, 'Missing Polish/German homepage translations'
+          home_translations=json.loads(home_match.group(1))
+          for locale in ('pl','de'):
+              assert len(home_translations[locale])>=75, (locale,'Missing homepage copy')
+              assert all(isinstance(v,str) and v.strip() for v in home_translations[locale].values())
+          assert "mrseo_int_home_copy($l,$en)" in routes
+          assert "mrseo_slug()===''?'/orbit-lab.php':'/international-landing.php'" in routes
+          assert '$nodes=array_slice($nodes,0,5)' in home
+          assert 'mhe-five-services' in home
+          assert "array('seo-audit'):array('seo-audit','service-websites')" in chrome
+          assert 'orbit-earth-three.js?v=5' in home, 'Shared real Earth renderer must remain'
           assert 'intl-earth-core' in template
           assert 'name="intl-problem-solution"' in template
           assert css.count('{')==css.count('}')
           assert "X-Robots-Tag: noindex, nofollow" in functions, 'Do not disable staging noindex'
-          print('18 localized pages, 40 country-specific checks, real Earth, Horoshop restriction and noindex passed')
+          print('Five localized premium homepages, 18 international pages, 40 checks, Horoshop restriction and noindex passed')
           PY
