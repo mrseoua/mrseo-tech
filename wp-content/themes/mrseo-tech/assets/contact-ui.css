@@ -33,7 +33,7 @@
 .mrseo-contact-page-links .mrseo-contact-ui-links a{font-size:13px;padding:9px;min-width:0}
 .mrseo-contact-page-links .mrseo-contact-ui-links a span:first-child{overflow-wrap:anywhere}
 .intl-contact-grid .mrseo-contact-page-links{margin:25px 0 22px}
-@media(max-width:1500px){.site-header .mrseo-header-phone-number,.intl-header .mrseo-header-phone-number{display:none}.mrseo-header-phone{width:44px;padding:0}}
+@media(max-width:1320px){.site-header .mrseo-header-phone-number,.intl-header .mrseo-header-phone-number{display:none}.mrseo-header-phone{width:44px;padding:0}}
 @media(max-width:1170px){.site-header .nav{gap:10px}.site-header .mrseo-header-contact{gap:5px}}
 @media(max-width:980px){.intl-header .mrseo-header-contact{margin-left:auto;gap:7px}.intl-header .mrseo-language-dropdown{margin-left:0}}
 @media(max-width:950px){.site-header .mrseo-header-contact{order:1;margin-left:auto}.site-header .mrseo-language-dropdown{order:2;margin-left:0}.site-header .menu-toggle{order:3;margin-left:0}}
