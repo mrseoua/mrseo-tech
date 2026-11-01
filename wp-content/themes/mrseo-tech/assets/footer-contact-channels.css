@@ -1,0 +1,59 @@
+/* Business phone and messenger links in both footer variants; preserve site palette. */
+.mrseo-footer .mrseo-contact-channels,.intl-footer .mrseo-contact-channels{
+ display:flex;flex-direction:column;align-items:flex-start;gap:8px;
+ min-width:0;max-width:100%;
+}
+.mrseo-footer .mrseo-contact-heading,.intl-footer .mrseo-contact-heading{
+ margin:0 0 10px;color:#f7f2e9;letter-spacing:-.015em;
+ font-size:16px;font-weight:780;line-height:1.35;text-transform:none;
+}
+.mrseo-footer .mrseo-contact-label,.intl-footer .mrseo-contact-label{
+ display:block;font-size:12px;line-height:1.45;
+ color:#b2c2b8;font-weight:660;letter-spacing:.025em;
+}
+.mrseo-footer .mrseo-contact-phone,.intl-footer .mrseo-contact-phone{
+ display:inline-block;margin-bottom:10px;color:#fff9f0;
+ font-size:clamp(19px,1.6vw,24px);line-height:1.25;
+ font-weight:820;letter-spacing:-.014em;text-decoration:none;
+ white-space:nowrap;
+}
+.mrseo-footer .mrseo-contact-phone:hover,.intl-footer .mrseo-contact-phone:hover{color:#f1af99}
+.mrseo-footer .mrseo-contact-message-label,.intl-footer .mrseo-contact-message-label{margin-top:2px}
+.mrseo-footer .mrseo-contact-messengers,.intl-footer .mrseo-contact-messengers{
+ display:flex;align-items:center;flex-wrap:wrap;gap:9px;width:100%;margin-top:3px;
+}
+.mrseo-footer .mrseo-contact-messenger,.intl-footer .mrseo-contact-messenger{
+ box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;
+ gap:8px;min-height:45px;padding:11px 14px;border-radius:11px;
+ border:1px solid #53645b;background:#23312d;color:#f5f0e8;
+ font-size:14px;line-height:1.3;font-weight:770;text-decoration:none;
+ transition:background-color .2s ease,border-color .2s ease;
+}
+.mrseo-footer .mrseo-contact-messenger:hover,.intl-footer .mrseo-contact-messenger:hover{
+ background:#37463b;color:#fff;border-color:#a77865;
+}
+.mrseo-footer .mrseo-contact-messenger span,.intl-footer .mrseo-contact-messenger span{
+ color:#f0a48c;font-size:17px;font-weight:600;
+}
+.mrseo-footer .mrseo-contact-messenger:focus-visible,.intl-footer .mrseo-contact-messenger:focus-visible,
+.mrseo-footer .mrseo-contact-phone:focus-visible,.intl-footer .mrseo-contact-phone:focus-visible{
+ outline:3px solid #f1ad96;outline-offset:3px;
+}
+.mrseo-footer-contact .mrseo-contact-channels{margin:0 0 8px}
+.mrseo-footer-contact>.mrseo-contact-channels + a{
+ color:#edd1c3;font-weight:700;text-decoration:underline;text-underline-offset:4px;
+}
+.intl-footer-grid{grid-template-columns:minmax(0,1.65fr) minmax(0,.9fr) minmax(0,.8fr) minmax(230px,1.25fr)}
+.intl-footer-contact{min-width:0}
+@media(max-width:1050px){
+ .intl-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+ .intl-footer-intro{grid-column:auto}
+}
+@media(max-width:650px){
+ .intl-footer-grid{grid-template-columns:minmax(0,1fr);gap:31px}
+ .intl-footer-intro{grid-column:auto}
+ .mrseo-footer .mrseo-contact-phone,.intl-footer .mrseo-contact-phone{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ .mrseo-contact-messenger{transition:none!important}
+}

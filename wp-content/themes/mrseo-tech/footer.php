@@ -25,6 +25,7 @@
 <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Контакти','Контакты','Contact'));?></a>
 </div>
 <div class="mrseo-footer-col mrseo-footer-contact"><h2><?php echo esc_html(mrseo_t('Зв’язок','Связаться','Get in touch'));?></h2>
+<?php mrseo_render_contact_channels();?>
 <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Форма зв’язку ↗','Форма обратной связи ↗','Contact form ↗'));?></a>
 <span><?php echo esc_html(mrseo_t('Працюємо з бізнесами в Україні та за кордоном','Работаем с бизнесом в Украине и за рубежом','Working with businesses in Ukraine and internationally'));?></span>
 <div class="mrseo-footer-languages"><?php mrseo_render_language_dropdown(mrseo_slug(),mrseo_locale(),'footer');?></div>

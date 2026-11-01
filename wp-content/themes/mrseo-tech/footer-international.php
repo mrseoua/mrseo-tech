@@ -16,6 +16,9 @@
    <a href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($mrseo_nav['portfolio']);?></a>
    <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['contact']);?></a>
   </nav>
+  <div class="intl-footer-contact">
+   <?php mrseo_render_contact_channels('international');?>
+  </div>
  </div>
  <div class="intl-footer-bottom"><span>© <?php echo esc_html(date('Y'));?> MrSeo.tech</span><span><?php echo esc_html($mrseo_common['close']);?></span><a href="#main">↑</a></div>
 </footer>
