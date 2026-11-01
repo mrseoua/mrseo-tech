@@ -1,0 +1,58 @@
+/* Final Ukrainian inner-page editorial polish.
+   Enqueue only on UA about, portfolio, contact and Web Development.
+   No homepage and no other locales. */
+.about-page .about-hero-copy h1{letter-spacing:-.038em}
+.about-page .about-hero-lead{font-weight:620;line-height:1.66}
+.about-page .about-method-item p{font-size:clamp(18px,1.35vw,20px);font-weight:570;line-height:1.7}
+.about-page .about-fit-card p{font-size:clamp(17px,1.28vw,19px);font-weight:570;line-height:1.65}
+.about-page .about-final h2{letter-spacing:-.035em}
+.about-page .about-section-intro h2{letter-spacing:-.038em}
+.about-page .about-fit-card h3{letter-spacing:-.025em}
+body .portfolio-hero h1{letter-spacing:-.035em!important}
+body .portfolio-hero>div>p{font-weight:590!important;line-height:1.65!important}
+body .portfolio-stats-editorial .portfolio-stat-top{font-size:12px!important;font-weight:840!important;letter-spacing:.06em!important}
+body .portfolio-stats-editorial .portfolio-stat>span:last-child{font-size:15px!important;font-weight:600!important}
+body .client-directory .portfolio-heading h2{letter-spacing:-.035em!important}
+body .client-grid-refined .portfolio-card-name{letter-spacing:-.03em!important}
+body .client-grid-refined .portfolio-card-category{font-size:14px;font-weight:670}
+body .client-grid-refined .portfolio-card-bottom{font-size:14px;font-weight:600}
+body .portfolio-filters button{font-size:14px;font-weight:700}
+body .client-confidential p{font-weight:570!important}
+.contact-cinematic-hero h1{letter-spacing:-.035em;line-height:1.07}
+.contact-cinematic-hero p{font-size:clamp(18px,1.65vw,21px);font-weight:590;line-height:1.65}
+.contact-layout .contact-intro>h2{letter-spacing:-.035em}
+.contact-layout .contact-intro>p,.contact-brief-note{font-size:17px;font-weight:570;line-height:1.65}
+.contact-brief-choice{font-size:16px;font-weight:750;line-height:1.45;min-height:55px}
+.contact-field label{font-size:15px;font-weight:800}
+.contact-field input,.contact-field textarea{font-size:17px;font-weight:560;line-height:1.55}
+.contact-form-wrap .btn{font-size:16px;font-weight:790;min-height:54px}
+.contact-status{font-size:16px;font-weight:650;line-height:1.6}
+.dev-scope-uk .dev-hero h1{letter-spacing:-.037em!important}
+.dev-scope-uk .dev-hero h1 em{letter-spacing:-.025em}
+.dev-scope-uk .dev-lead{font-size:clamp(18px,1.45vw,21px);font-weight:590;line-height:1.67}
+.dev-scope-uk .dev-sticky-copy p{font-size:18px;font-weight:570;line-height:1.7}
+.dev-scope-uk .dev-issue-title strong{font-weight:820}
+.dev-scope-uk .dev-issue-title small{font-size:16px;font-weight:560;line-height:1.6}
+.dev-scope-uk .dev-issue-answer p{font-size:17px;font-weight:580;line-height:1.7}
+.dev-scope-uk .dev-section-heading p,.dev-scope-uk .dev-check p{font-size:17px;font-weight:570;line-height:1.65}
+.dev-scope-uk .dev-capability p,.dev-scope-uk .dev-workflow p{font-size:17px;font-weight:560;line-height:1.65}
+.dev-scope-uk .dev-faq details p{font-size:18px;font-weight:580;line-height:1.7}
+.dev-scope-uk .dev-faq summary{font-size:clamp(18px,1.7vw,22px);font-weight:790}
+.dev-scope-uk .dev-cta p{font-size:18px;font-weight:590;line-height:1.65}
+.dev-scope-uk .ms-top-mark{font-size:12px}
+.dev-scope-uk .ms-dev-node strong{font-size:14px}
+.dev-scope-uk .ms-dev-node span,.dev-scope-uk .ms-dev-node small{font-size:11px}
+.dev-scope-uk .ms-description p{font-size:14px;font-weight:580}
+@media(max-width:650px){
+ .about-page .about-hero-lead{font-size:18px}
+ .about-page .about-method-item p,.about-page .about-fit-card p{font-size:18px}
+ body .portfolio-hero h1{letter-spacing:-.025em!important}
+ body .portfolio-stats-editorial .portfolio-stat>span:last-child{font-size:14px!important}
+ .contact-cinematic-hero h1{letter-spacing:-.025em}
+ .contact-cinematic-hero p{font-size:18px}
+ .contact-brief-choice{font-size:16px}
+ .dev-scope-uk .dev-hero h1{letter-spacing:-.028em!important}
+ .dev-scope-uk .dev-lead{font-size:18px}
+ .dev-scope-uk .dev-issue-title small{font-size:16px}
+ .dev-scope-uk .dev-faq details p{font-size:17px}
+}
