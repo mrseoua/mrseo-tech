@@ -7,6 +7,8 @@ on:
       - 'wp-content/themes/mrseo-tech/**/*.php'
       - 'wp-content/themes/mrseo-tech/assets/international.css'
       - 'wp-content/themes/mrseo-tech/assets/development.css'
+      - 'wp-content/themes/mrseo-tech/assets/motion-scenes.css'
+      - 'wp-content/themes/mrseo-tech/assets/motion-scenes.js'
       - 'wp-content/themes/mrseo-tech/assets/orbit-earth-three.js'
       - '.github/workflows/php-lint.yml'
   workflow_dispatch:
@@ -26,6 +28,9 @@ jobs:
       - name: Check Earth module syntax
         run: |
           node --input-type=module --check < wp-content/themes/mrseo-tech/assets/orbit-earth-three.js
+      - name: Check motion-scenes JavaScript syntax
+        run: |
+          node --check wp-content/themes/mrseo-tech/assets/motion-scenes.js
       - name: Verify international content and launch safeguards
         run: |
           python3 - <<'PY'
@@ -61,9 +66,9 @@ jobs:
               assert all(isinstance(v,str) and v.strip() for v in home_translations[locale].values())
           assert "mrseo_int_home_copy($l,$en)" in routes
           assert "mrseo_slug()===''?'/orbit-lab.php':'/international-landing.php'" in routes
-          assert '$nodes=array_slice($nodes,0,5)' in home
-          assert 'mhe-five-services' in home
-          assert "array('seo-audit'):array('seo-audit','service-websites')" in chrome
+          assert '$nodes=array_slice($nodes,0,6)' in home
+          assert 'mhe-six-services' in home
+          assert "array('seo-audit','web-development'):array('seo-audit','web-development','service-websites')" in chrome
           assert 'orbit-earth-three.js?v=5' in home, 'Shared real Earth renderer must remain'
           dev_php=(root/'inc/development-content.php').read_text()
           dev_match=re.search(r"<<<'MRSEO_DEV_DATA'\n(.*?)\nMRSEO_DEV_DATA;",dev_php,re.S)
@@ -77,15 +82,34 @@ jobs:
               assert len(page['verification'])==4 and len(page['faq'])==3
               assert page['description'] and page['headline'] and page['lead']
           dev_template=(root/'development-landing.php').read_text()
-          assert 'intl-earth-core' in dev_template and 'orbit-earth-three.js?v=6' in dev_template
+          assert "mrseo_render_motion_scene('web-development',$dev_locale)" in dev_template
+          assert 'intl-earth-core' not in dev_template and 'orbit-earth-three.js?v=6' not in dev_template
           assert 'name="dev-problem"' in dev_template
           assert "mrseo_dev_page()" in routes or 'mrseo_dev_page' in routes
           assert 'web-development' in routes and 'web-development' in home
           assert "mrseo_int_pages()" in (root/'inc/international-sitemap.php').read_text()
           assert (root/'assets/development.css').read_text().count('{')==(root/'assets/development.css').read_text().count('}')
-          assert 'intl-earth-core' in template
+          assert 'mrseo_render_motion_scene($mrseo_slug,$mrseo_lang)' in template
+          assert 'intl-earth-core' not in template and 'orbit-earth-three.js?v=6' not in template
           assert 'name="intl-problem-solution"' in template
           assert css.count('{')==css.count('}')
+          motion=(root/'inc/motion-scenes.php').read_text()
+          motion_copy=(root/'inc/motion-scenes-copy.php').read_text()
+          motion_match=re.search(r"<<<'MRSEO_SCENES_DATA'\n(.*?)\nMRSEO_SCENES_DATA;",motion_copy,re.S)
+          assert motion_match, 'Missing motion scene localization'
+          scene_data=json.loads(motion_match.group(1))
+          expected={'seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','service-websites','performance-max','about','portfolio','contact'}
+          assert set(scene_data)==expected
+          for slug,translations in scene_data.items():
+              assert set(translations)=={'uk','ru','en','pl','de'}, (slug,'missing locale')
+              for locale,copy in translations.items():
+                  assert copy['name'] and copy['intro'] and len(copy['tabs'])==3 and len(copy['steps'])==3
+          for page in ('seo-landing.php','service-localized.php','ecommerce-landing.php','specialized-landing.php'):
+              assert 'mrseo_render_motion_scene(' in (root/page).read_text()
+          assert 'mrseo_render_motion_scene' in motion
+          assert (root/'assets/motion-scenes.css').read_text().count('{')==(root/'assets/motion-scenes.css').read_text().count('}')
+          assert 'mrseo-motion-scenes' in functions
+          assert 'orbit-earth-three.js?v=5' in home, '3D Earth remains only on the homepage'
           assert "X-Robots-Tag: noindex, nofollow" in functions, 'Do not disable staging noindex'
-          print('Five premium homepages, five Web Development pages, 18 existing PL/DE pages, 40 checks, Horoshop and noindex validated')
+          print('11 localized motion scenes × 5 languages; 3D Earth only on homepages; 5 development pages and noindex verified')
           PY
