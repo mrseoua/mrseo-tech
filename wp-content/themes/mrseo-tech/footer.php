@@ -27,7 +27,7 @@
 <div class="mrseo-footer-col mrseo-footer-contact"><h2><?php echo esc_html(mrseo_t('Зв’язок','Связаться','Get in touch'));?></h2>
 <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Форма зв’язку ↗','Форма обратной связи ↗','Contact form ↗'));?></a>
 <span><?php echo esc_html(mrseo_t('Працюємо з бізнесами в Україні та за кордоном','Работаем с бизнесом в Украине и за рубежом','Working with businesses in Ukraine and internationally'));?></span>
-<div class="mrseo-footer-languages" aria-label="Language"><?php foreach(array('uk'=>'UA','ru'=>'RU','en'=>'EN','pl'=>'PL','de'=>'DE') as $lang=>$label):?><a <?php if(mrseo_locale()===$lang)echo 'aria-current="page"';?> href="<?php echo esc_url(mrseo_url(mrseo_slug(),$lang));?>"><?php echo esc_html($label);?></a><?php endforeach;?></div>
+<div class="mrseo-footer-languages"><?php mrseo_render_language_dropdown(mrseo_slug(),mrseo_locale(),'footer');?></div>
 </div>
 </div>
 <div class="mrseo-footer-bottom"><span>© <?php echo esc_html(date('Y'));?> MrSeo.tech · <?php echo esc_html(mrseo_t('Усі права захищено','Все права защищены','All rights reserved'));?></span><span><?php echo esc_html(mrseo_t('Стратегія · Реалізація · Результат','Стратегия · Реализация · Результат','Strategy · Execution · Outcomes'));?></span><a href="#main"><?php echo esc_html(mrseo_t('Нагору ↑','Наверх ↑','Back to top ↑'));?></a></div>
