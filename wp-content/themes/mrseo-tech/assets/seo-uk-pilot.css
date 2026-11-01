@@ -28,7 +28,7 @@
 .ukseo-hero-foot{margin:27px 0 0;color:#606b62;font-size:13px;line-height:1.55;max-width:540px}
 .ukseo-hero-art .ms-scene{box-shadow:0 30px 70px #242a2221;border-radius:22px}
 .ukseo-visual-caption{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px;margin-top:15px;font-size:12px;line-height:1.5;color:#60635a}
-.ukseo-visual-caption-mark{font-weight:850;color:#ae624c;letter-spacing:.08em}
+.ukseo-visual-caption-mark{font-weight:850;color:#92513e;letter-spacing:.08em}
 .ukseo-cases{padding:clamp(75px,8vw,125px) 0}
 .ukseo-section-head{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(240px,.62fr);align-items:end;gap:28px;margin-bottom:45px}
 .ukseo-section-head h2{margin:0}
@@ -36,7 +36,7 @@
 .ukseo-problem-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
 .ukseo-problem-card{display:flex;flex-direction:column;min-height:380px;background:var(--ukseo-white);padding:clamp(23px,2.5vw,35px);border:1px solid var(--ukseo-line);border-radius:19px;box-shadow:0 15px 38px #32271909}
 .ukseo-problem-card:nth-child(2){background:#efe9e1}
-.ukseo-card-number{display:flex;justify-content:space-between;align-items:center;color:#a35a47;font-size:13px;letter-spacing:.09em;font-weight:850;margin-bottom:50px}
+.ukseo-card-number{display:flex;justify-content:space-between;align-items:center;color:#91503d;font-size:13px;letter-spacing:.09em;font-weight:850;margin-bottom:50px}
 .ukseo-card-number span{font-size:26px;font-weight:500}
 .ukseo-problem-card h3{font-size:clamp(23px,2vw,29px);line-height:1.18;letter-spacing:-.04em;font-weight:810;margin:0 0 15px}
 .ukseo-problem-card>p{color:#565f57;font-size:16px;line-height:1.62;margin:0 0 24px}
@@ -65,7 +65,7 @@
 .ukseo-delivery-grid>div:first-child>p{font-size:17px;line-height:1.7;color:#4e594e;max-width:490px}
 .ukseo-delivery-list{border-top:1px solid #c6c1b7}
 .ukseo-delivery-list>div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:19px;padding:27px 0;border-bottom:1px solid #c6c1b7}
-.ukseo-delivery-list>div>span{font-size:13px;color:#b14d3b;font-weight:850;padding-top:5px}
+.ukseo-delivery-list>div>span{font-size:13px;color:#a34a38;font-weight:850;padding-top:5px}
 .ukseo-delivery-list h3{font-size:clamp(22px,2.3vw,29px);line-height:1.22;letter-spacing:-.043em;margin-bottom:9px}
 .ukseo-delivery-list p{font-size:16px;color:#586157;line-height:1.65;margin:0}
 .ukseo-proof{padding:clamp(70px,7vw,110px) 0;background:#fffdf8}
