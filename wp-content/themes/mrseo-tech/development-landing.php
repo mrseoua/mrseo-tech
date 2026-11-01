@@ -41,8 +41,8 @@ get_header($is_int_dev?'international':null);
 </section>
 <section class="dev-section dev-diagnosis" aria-labelledby="dev-problems-title">
  <div class="dev-wrap dev-diag-grid">
-  <div class="dev-sticky-copy"><div class="dev-eyebrow">01 / <?php echo esc_html($dev['labels']['process']);?></div>
-   <h2 id="dev-problems-title"><?php echo esc_html($dev['labels']['processTitle']);?></h2>
+  <div class="dev-sticky-copy"><div class="dev-eyebrow">01 / <?php echo esc_html($dev['labels']['problem']);?></div>
+   <h2 id="dev-problems-title"><?php echo esc_html($dev['labels']['problemTitle']);?></h2>
    <p><?php echo esc_html($dev['labels']['contactNote']);?></p>
   </div>
   <div class="dev-issues">
@@ -52,7 +52,7 @@ get_header($is_int_dev?'international':null);
       <span class="dev-issue-title"><strong><?php echo esc_html($problem[0]);?></strong><small><?php echo esc_html($problem[1]);?></small></span>
       <span class="dev-issue-toggle" aria-hidden="true">+</span>
      </summary>
-     <div class="dev-issue-answer"><span><?php echo esc_html($dev['labels']['process']);?> / SOLUTION</span>
+     <div class="dev-issue-answer"><span><?php echo esc_html($dev['labels']['solution']);?></span>
       <h3><?php echo esc_html($solution[0]);?></h3><p><?php echo esc_html($solution[1]);?></p>
      </div>
     </details>
