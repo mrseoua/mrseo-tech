@@ -1,5 +1,6 @@
 <?php
 if(!defined('ABSPATH'))exit;
+require_once __DIR__.'/development-content.php';
 /* Country-specific Polish and German editorial copy. Only completed routes are exposed. */
 function mrseo_international_data(){
  static $cached=null;
@@ -21,7 +22,8 @@ function mrseo_international_data(){
         "ecommerce": "SEO dla sklepów",
         "audit": "Audyt SEO",
         "ads": "Google Ads",
-        "analytics": "Analityka"
+        "analytics": "Analityka",
+        "development": "Tworzenie aplikacji i systemów"
       },
       "common": {
         "badge": "MAŁY ZESPÓŁ · 10 LAT DOŚWIADCZENIA",
@@ -65,7 +67,8 @@ function mrseo_international_data(){
         "ecommerce": "Onlineshop SEO",
         "audit": "Technisches SEO-Audit",
         "ads": "Google Ads",
-        "analytics": "Webanalyse"
+        "analytics": "Webanalyse",
+        "development": "Webentwicklung & Software"
       },
       "common": {
         "badge": "KLEINES EXPERTENTEAM · 10 JAHRE ERFAHRUNG",
@@ -1063,10 +1066,11 @@ MRSEO_INT_DATA;
  return $cached=json_decode($json,true);
 }
 function mrseo_int_locales(){return array('pl'=>'pl-PL','de'=>'de-DE');}
-function mrseo_int_pages(){return array('','seo','ecommerce-seo','seo-audit','google-ads','analytics','about','contact','portfolio');}
+function mrseo_int_pages(){return array('','seo','ecommerce-seo','seo-audit','google-ads','analytics','web-development','about','contact','portfolio');}
 function mrseo_int_page($lang=null,$slug=null){
  $data=mrseo_international_data();
  $lang=$lang?:mrseo_locale();$slug=$slug===null?mrseo_slug():$slug;
+ if($slug==='web-development')return mrseo_dev_page($lang);
  return $data['pages'][$lang][$slug]??null;
 }
 function mrseo_int_ui($lang=null){
