@@ -83,7 +83,9 @@ function mrseo_int_home_copy($locale,$english){
     "Working with businesses in Ukraine and internationally": "Współpraca z firmami w Europie — zdalnie",
     "All rights reserved": "Wszelkie prawa zastrzeżone",
     "Strategy · Execution · Outcomes": "Strategia · Wdrożenie · Rezultaty",
-    "Back to top ↑": "Do góry ↑"
+    "Back to top ↑": "Do góry ↑",
+    "Web Development": "Tworzenie aplikacji i systemów",
+    "Explore Web Development": "Poznaj usługi programistyczne"
   },
   "de": {
     "STRATEGY · TECHNOLOGY · GROWTH": "STRATEGIE · TECHNOLOGIE · WACHSTUM",
@@ -161,7 +163,9 @@ function mrseo_int_home_copy($locale,$english){
     "Working with businesses in Ukraine and internationally": "Remote-Zusammenarbeit mit Unternehmen in Europa",
     "All rights reserved": "Alle Rechte vorbehalten",
     "Strategy · Execution · Outcomes": "Strategie · Umsetzung · Ergebnisse",
-    "Back to top ↑": "Nach oben ↑"
+    "Back to top ↑": "Nach oben ↑",
+    "Web Development": "Webentwicklung",
+    "Explore Web Development": "Webentwicklung entdecken"
   }
 }
 MRSEO_HOME_TRANSLATIONS;
