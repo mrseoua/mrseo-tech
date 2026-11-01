@@ -2,6 +2,7 @@
 if(!defined('ABSPATH'))exit;
 require_once __DIR__.'/languages.php';
 require_once __DIR__.'/international-content.php';
+require_once __DIR__.'/international-home-copy.php';
 function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$s);return in_array($a[0]??'',array('ru','en','pl','de'),true)?$a[0]:'uk';}
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
@@ -12,7 +13,11 @@ function mrseo_url($slug='',$lang=null){
  }
  return home_url('/'.($lang==='uk'?'':$lang.'/').($slug?$slug.'/':''));
 }
-function mrseo_t($uk,$ru,$en){$l=mrseo_locale();return $l==='uk'?$uk:($l==='ru'?$ru:$en);}
+function mrseo_t($uk,$ru,$en){
+ $l=mrseo_locale();
+ if(($l==='pl'||$l==='de') && mrseo_slug()==='')return mrseo_int_home_copy($l,$en);
+ return $l==='uk'?$uk:($l==='ru'?$ru:$en);
+}
 function mrseo_translation($slug){$all=mrseo_translation_drafts();$l=mrseo_locale();return $all[$l][$slug]??array('','','',array());}
 function mrseo_is_case(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');return (bool)preg_match('~^(?:ru/|en/)?portfolio/[a-z0-9-]+/?$~',$p);}
 function mrseo_case_id(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$p);return sanitize_title(end($a));}
@@ -25,7 +30,9 @@ function mrseo_valid_route(){
  return (bool)preg_match('~^(?:(?:ru|en)(?:/|$))?(?:seo|seo-audit|ecommerce-seo|service-websites|horoshop|google-ads|performance-max|analytics|about|contact|portfolio|orbit-lab|orbit-light)?/?$~D',$path);
 }
 function mrseo_virtual_page(){return in_array(mrseo_slug(),array('portfolio','orbit-lab','orbit-light'),true) || mrseo_locale()!=='uk';}
-function mrseo_router($template){if(!mrseo_valid_route())return $template;if(in_array(mrseo_locale(),array('pl','de'),true))return get_template_directory().'/international-landing.php';$slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','google-ads','performance-max','analytics','about','contact','portfolio','orbit-lab','orbit-light');if(!in_array($slug,$allowed,true))return $template;
+function mrseo_router($template){if(!mrseo_valid_route())return $template;if(in_array(mrseo_locale(),array('pl','de'),true)){
+ return get_template_directory().(mrseo_slug()===''?'/orbit-lab.php':'/international-landing.php');
+}$slug=mrseo_slug();$allowed=array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','google-ads','performance-max','analytics','about','contact','portfolio','orbit-lab','orbit-light');if(!in_array($slug,$allowed,true))return $template;
 if($slug==='')return get_template_directory().'/orbit-lab.php';
 if($slug==='orbit-lab')return get_template_directory().'/orbit-lab.php';
 if($slug==='orbit-light')return get_template_directory().'/orbit-light.php';
