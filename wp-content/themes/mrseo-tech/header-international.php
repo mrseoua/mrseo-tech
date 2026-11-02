@@ -14,7 +14,7 @@ $mrseo_links=array('ecommerce-seo'=>$mrseo_nav['ecommerce'],'seo'=>$mrseo_nav['s
    <div class="intl-dropdown">
     <button class="services-menu-toggle" type="button" aria-expanded="false" aria-controls="mrseo-intl-services-menu"><?php echo esc_html($mrseo_nav['services']);?> <span class="services-menu-chevron" aria-hidden="true">⌄</span></button>
     <div class="intl-dropdown-menu" id="mrseo-intl-services-menu">
-     <?php foreach($mrseo_links as $slug=>$name):?><a href="<?php echo esc_url(mrseo_url($slug));?>"<?php if($mrseo_slug===$slug):?> aria-current="page"<?php endif;?>><?php echo esc_html($name);?></a><?php endforeach;?>
+     <?php mrseo_render_mega_menu();?>
     </div>
    </div>
    <a href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($mrseo_nav['portfolio']);?></a>
@@ -25,7 +25,7 @@ $mrseo_links=array('ecommerce-seo'=>$mrseo_nav['ecommerce'],'seo'=>$mrseo_nav['s
   <?php mrseo_render_language_dropdown(in_array($mrseo_slug,mrseo_int_pages(),true)?$mrseo_slug:'',$mrseo_lang);?>
   <a class="intl-nav-cta" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['cta']);?> ↗</a>
   <details class="intl-mobile-menu"><summary aria-label="Menu">☰</summary><div class="intl-mobile-panel">
-   <?php foreach($mrseo_links as $slug=>$name):?><a href="<?php echo esc_url(mrseo_url($slug));?>"><?php echo esc_html($name);?></a><?php endforeach;?>
+   <?php mrseo_render_mega_menu(true);?>
    <a href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($mrseo_nav['portfolio']);?></a>
    <a href="<?php echo esc_url(mrseo_url('about'));?>"><?php echo esc_html($mrseo_nav['about']);?></a>
    <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['contact']);?></a>
