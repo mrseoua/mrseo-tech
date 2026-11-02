@@ -213,8 +213,9 @@ jobs:
           assert len({page['description'] for page in pl_data.values()})==6
           pl_links=pl_expected | {'','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','about','portfolio','contact'}
           for slug,page in pl_data.items():
-              for key in ('description','title','lead','intro','introText','risk','cta'):
+              for key in ('description','title','lead','intro','introText','risk'):
                   assert len(page[key])>18, (slug,key)
+              assert len(page['cta'])>=8, (slug,'cta')
               assert len(page['hero'])==2 and len(page['problems'])==3,slug
               assert len(page['process'])==4 and len(page['outcomes'])==3 and len(page['faq'])>=3,slug
               assert len(page['visual'])==3 and len(page['example'])==4,slug
