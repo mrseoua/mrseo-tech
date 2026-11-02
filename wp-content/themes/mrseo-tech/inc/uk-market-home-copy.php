@@ -40,7 +40,18 @@ function mrseo_uk_home_copy($source){
   "Contact form ↗": "Send an enquiry ↗",
   "Working with businesses in Ukraine and internationally": "Remote delivery for clients in the UK and internationally",
   "About": "About us",
-  "Contact": "Contact"
+  "Contact": "Contact",
+  "What is holding your business back?": "What would you like to build or improve?",
+  "You do not need to know whether SEO, ads or a new site is the answer. Describe what is not working — we will start by looking for the cause.": "Whether you need a new website, an online shop or help with an existing site, describe your aim. We'll discuss a sensible next step.",
+  "CHOOSE YOUR CHALLENGE": "WHAT WOULD YOU LIKE TO DISCUSS?",
+  "Which situation sounds familiar?": "What best describes your project?",
+  "Need a site that converts": "Need a website or a redesign",
+  "We need a new or improved site with a clearer offer and a better enquiry journey.": "We need a new site or a redesign that clearly explains our services and makes it easier for customers to get in touch.",
+  "Trusted by businesses across industries.": "Experience across different business sectors.",
+  "Our experience spans specialist retailers, online catalogs and businesses across many sectors.": "Our experience includes specialist retailers, online catalogues and service firms.",
+  "Search optimization": "Search optimisation",
+  "Services": "Services",
+  "Discuss project ↗": "Discuss a project ↗"
 }
 MRSEO_UK_HOME;
   $map=json_decode($json,true,512,JSON_THROW_ON_ERROR);
