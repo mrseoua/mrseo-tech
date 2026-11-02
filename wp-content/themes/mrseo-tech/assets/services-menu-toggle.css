@@ -154,3 +154,16 @@
 }
 @media(max-width:380px){.mrseo-mega-more ul{grid-template-columns:1fr}.mrseo-mega-grid{padding:14px 7px}}
 @media(prefers-reduced-motion:reduce){.mrseo-mega *{transition:none!important}}
+
+/* PL/DE mobile navigation starts at 980px, unlike the main header's 950px. */
+@media(min-width:951px) and (max-width:980px){
+ .intl-header .intl-mobile-panel{max-height:calc(100dvh - 83px);overflow-y:auto;overscroll-behavior:contain}
+ .intl-header .intl-mobile-panel>.mrseo-mega{border-radius:11px;overflow:hidden}
+ .intl-header .intl-mobile-panel .mrseo-mega-grid{grid-template-columns:1fr;padding:14px 11px;gap:12px}
+ .intl-header .intl-mobile-panel .mrseo-mega-group{border-right:0;border-bottom:1px solid #e7dfd5;padding:0 7px 14px}
+ .intl-header .intl-mobile-panel .mrseo-mega-group:last-child{border-bottom:0}
+ .intl-header .intl-mobile-panel .mrseo-mega-intro{padding:17px 13px}
+ .intl-header .intl-mobile-panel .mrseo-mega-title{font-size:20px}
+ .intl-header .intl-mobile-panel .mrseo-mega-bottom{flex-direction:column;align-items:stretch;padding:17px 12px;gap:15px}
+ .intl-header .intl-mobile-panel .mrseo-mega-contact{width:100%;justify-content:center}
+}
