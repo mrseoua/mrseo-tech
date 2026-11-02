@@ -64,7 +64,7 @@ jobs:
           assert 'mhe-six-services' in home
           # Mega navigation replaced the legacy inline service array.
           mega_file=(root/'inc/mega-menu.php').read_text()
-          mega_match=re.search(r"<<<'MRSEO_MEGA_DATA'\\n(.*?)\\nMRSEO_MEGA_DATA;", mega_file, re.S)
+          mega_match=re.search(r"<<<'MRSEO_MEGA_DATA'\n(.*?)\nMRSEO_MEGA_DATA;", mega_file, re.S)
           assert mega_match, 'Missing localized mega-menu data'
           mega=json.loads(mega_match.group(1))
           assert set(mega)=={'uk','ru','en','pl','de'}
