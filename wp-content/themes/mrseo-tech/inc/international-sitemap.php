@@ -25,6 +25,13 @@ function mrseo_localized_sitemap_paths(){
  }
  $shopAlternates=array('uk'=>mrseo_url('horoshop','uk'),'ru'=>mrseo_url('horoshop','ru'));
  foreach(array('uk','ru') as $language)$entries[]=array('loc'=>mrseo_url('horoshop',$language),'alternates'=>$shopAlternates,'default'=>mrseo_url('horoshop','uk'));
+ // Staged, fully written UA/RU standalone service pages (no incomplete language variants).
+ foreach(mrseo_new_service_slugs() as $slug){
+  $alternates=array('uk'=>mrseo_url($slug,'uk'),'ru'=>mrseo_url($slug,'ru'));
+  foreach(array('uk','ru') as $language){
+   $entries[]=array('loc'=>mrseo_url($slug,$language),'alternates'=>$alternates,'default'=>mrseo_url($slug,'uk'));
+  }
+ }
  return $entries;
 }
 add_action('init',function(){

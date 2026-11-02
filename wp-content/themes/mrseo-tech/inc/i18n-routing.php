@@ -7,6 +7,11 @@ function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_P
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ // New pages have original UA/RU copy; other languages use a relevant completed parent page.
+ if(function_exists('mrseo_new_service_parent_slugs') && !in_array($lang,array('uk','ru'),true)){
+  $new_parents=mrseo_new_service_parent_slugs();
+  if(isset($new_parents[$slug]))$slug=$new_parents[$slug];
+ }
  if($slug==='horoshop' && !in_array($lang,array('uk','ru'),true))$slug='ecommerce-seo';
  if(in_array($lang,array('pl','de'),true) && !in_array($slug,mrseo_int_pages(),true)){
   $slug=$slug==='performance-max'?'google-ads':($slug==='service-websites'?'seo':'');
