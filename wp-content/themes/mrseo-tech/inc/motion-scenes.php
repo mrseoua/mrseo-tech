@@ -3,7 +3,17 @@ if(!defined('ABSPATH'))exit;
 require_once __DIR__.'/motion-scenes-copy.php';
 /** Domain-specific editorial previews, not real customer metrics. */
 function mrseo_render_motion_scene($slug,$locale=null){
- $copy=mrseo_scene_copy($slug,$locale);if(!$copy)return;
+ $copy=mrseo_scene_copy($slug,$locale);
+ if($slug==='horoshop' && !$copy){
+  // Horoshop has a dedicated shop animation, without changing the canonical scenes dataset.
+  $copy=array(
+   'name'=>'Магазин на Хорошоп',
+   'intro'=>'Проверяем структуру каталога, SEO-фильтры и товарные данные в Merchant Center.',
+   'tabs'=>array('Категории','SEO-фильтры','Merchant'),
+   'steps'=>array('Поисковый спрос','Страница каталога','Покупка'),
+  );
+ }
+ if(!$copy)return;
  $steps=$copy['steps'];$tabs=$copy['tabs'];
  ?>
  <div class="ms-scene ms-scene-<?php echo esc_attr($slug);?>" data-ms-scene="<?php echo esc_attr($slug);?>" data-ms-active="0" aria-label="<?php echo esc_attr($copy['name']);?>">
