@@ -611,5 +611,5 @@ MRSEO_UK_MARKET;
  }
  return $data;
 }
-function mrseo_uk_market_page($slug=null){return mrseo_uk_market_data()[$slug??mrseo_slug()]??null;}
-function mrseo_uk_market_slugs(){return array_keys(mrseo_uk_market_data());}
+// The routing layer owns mrseo_uk_market_page() and mrseo_uk_market_slugs().
+// Keep data definitions here only to avoid PHP redeclaration fatal errors.
