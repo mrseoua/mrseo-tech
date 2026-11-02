@@ -237,6 +237,50 @@ jobs:
           assert 'min-height:435px' in pl_css, 'Responsive diagram required'
           assert "X-Robots-Tag: noindex, nofollow" in functions
           assert '$nodes=array_slice($nodes,0,6)' in home, 'Homepage Earth untouched'
+          # British English site: existing en/ URLs + six new UK-specific commercial landings.
+          uk_new_file=(root/'inc/uk-market-content.php').read_text()
+          uk_core_file=(root/'inc/uk-market-core-content.php').read_text()
+          match_new=re.search(r"<<<'MRSEO_UK_MARKET'\n(.*?)\nMRSEO_UK_MARKET;",uk_new_file,re.S)
+          match_core=re.search(r"<<<'MRSEO_UK_CORE'\n(.*?)\nMRSEO_UK_CORE;",uk_core_file,re.S)
+          assert match_new and match_core, 'UK-first commercial datasets are missing'
+          uk_new=json.loads(match_new.group(1))
+          uk_core=json.loads(match_core.group(1))
+          assert set(uk_new)=={'website-design','online-shop-development','google-ads-audit','merchant-center-help','google-shopping','wordpress-care'}
+          assert set(uk_core)=={'seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites'}
+          uk_all={**uk_new,**uk_core}
+          assert len({x['title'] for x in uk_all.values()})==13
+          assert len({tuple(x['hero']) for x in uk_all.values()})==13
+          assert len({x['desc'] for x in uk_all.values()})==13
+          all_links=set(uk_all)|{'web-development','about','contact','portfolio'}
+          for slug,entry in uk_all.items():
+              for key in ('title','desc','lead','intro','introText','risk','cta','kicker'):
+                  assert entry[key] and len(entry[key])>=8,(slug,key)
+              assert len(entry['hero'])==2 and len(entry['problems'])==3,(slug,'problems')
+              assert len(entry['process'])==4 and len(entry['outcomes'])==3,(slug,'process')
+              assert len(entry['example'])==4 and len(entry['faq'])>=3,(slug,'faq')
+              assert len(entry['related'])==2 and len(entry['visual'])==3,(slug,'links')
+              assert all(a[0] in all_links and a[0]!=slug for a in entry['related']),slug
+          uk_template=(root/'uk-market-landing.php').read_text()
+          uk_routes=(root/'inc/uk-market-routing.php').read_text()
+          uk_home=(root/'inc/uk-market-home-copy.php').read_text()
+          uk_home_match=re.search(r"<<<'MRSEO_UK_HOME'\n(.*?)\nMRSEO_UK_HOME;",uk_home,re.S)
+          assert uk_home_match and len(json.loads(uk_home_match.group(1)))>=30
+          assert "get_header();" in uk_template and "get_footer();" in uk_template
+          assert '<main' not in uk_template and 'mrseo_uk_market_page' in uk_template
+          assert 'mrseo_uk_market_route()' in uk_routes
+          assert 'mrseo_render_uk_market_menu($in_mobile_panel)' in mega_file
+          assert "require_once __DIR__.'/uk-market-home-copy.php';" in routes
+          assert "mrseo_uk_home_copy($en)" in routes
+          assert "if($lang!=='en' && function_exists('mrseo_uk_market_new_slugs')" in routes
+          assert "function mrseo_int_locales(){return array('en'=>'en-GB'" in (root/'inc/international-content.php').read_text()
+          assert "mrseo_uk_market_new_slugs()" in (root/'inc/international-sitemap.php').read_text()
+          assert 'mrseo-uk-market-base' in functions and 'mrseo-uk-market' in functions
+          assert 'mrseo_uk_market_route()' in functions
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+          assert '$nodes=array_slice($nodes,0,6)' in home, 'Do not change the Earth renderer'
+          assert (root/'assets/uk-market.css').read_text().count('{')==(root/'assets/uk-market.css').read_text().count('}')
+          print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
+
           print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
 
           print('11 localized motion scenes × 5 languages; 3D Earth only on homepages; 5 development pages and noindex verified')

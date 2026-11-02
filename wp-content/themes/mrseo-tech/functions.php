@@ -8,6 +8,7 @@ require_once get_template_directory() . '/inc/contact-ui.php';
 require_once get_template_directory() . '/inc/mega-menu.php';
 require_once get_template_directory() . '/inc/new-service-routes.php';
 require_once get_template_directory() . '/inc/pl-service-routing.php';
+require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
 require_once get_template_directory() . '/inc/motion-scenes.php';
 function mrseo_setup() {
@@ -19,6 +20,10 @@ function mrseo_setup() {
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
  wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
+ if(function_exists('mrseo_uk_market_route') && mrseo_uk_market_route()){
+  wp_enqueue_style('mrseo-uk-market-base',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
+  wp_enqueue_style('mrseo-uk-market',get_template_directory_uri().'/assets/uk-market.css',array('mrseo-uk-market-base'),'1.0.0');
+ }
  if(function_exists('mrseo_pl_service_route') && mrseo_pl_service_route()){
   wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
  }
@@ -46,7 +51,7 @@ function mrseo_assets(){
  if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='google-ads'){
   wp_enqueue_style('mrseo-ukads',get_template_directory_uri().'/assets/google-ads-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
  }
- if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'){
+ if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'||(function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
  }
  if(mrseo_slug()==='web-development'){
@@ -84,6 +89,11 @@ function mrseo_assets(){
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
+ if(mrseo_locale()==='en' && function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())return;
+ if(mrseo_locale()==='en' && mrseo_slug()===''){
+  echo '<meta name="description" content="'.esc_attr('Website design, online shops, SEO, PPC and bespoke development for UK businesses. Build something new or improve your existing website with MrSeo.tech.').'">'."\n";
+  return;
+ }
  if(!mrseo_valid_route())return;
  if(mrseo_slug()==='web-development'){
   $dev=mrseo_dev_page();

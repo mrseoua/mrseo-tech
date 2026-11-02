@@ -281,37 +281,37 @@ function mrseo_dev_content(){
     }
   },
   "en": {
-    "title": "Web Development, SaaS, CRM & API Integrations | MrSeo.tech",
-    "description": "Custom web development for business: SaaS platforms, CRM, client portals, API integrations, workflow automation, websites and legacy modernization.",
-    "eyebrow": "WEB DEVELOPMENT · SYSTEMS · AUTOMATION",
-    "headline": "Your business needs more<br><em>than another website?</em>",
-    "lead": "When off-the-shelf tools cannot support a real workflow, we build web applications, customer portals, CRM systems and integrations. We first verify whether custom development is actually the right choice.",
+    "title": "Bespoke Web Applications, CRM & API Integrations UK | MrSeo.tech",
+    "description": "Bespoke web application development for UK businesses: client portals, CRM workflows, API integrations, SaaS platforms and dependable automation.",
+    "eyebrow": "BESPOKE SOFTWARE · BUSINESS AUTOMATION",
+    "headline": "Off-the-shelf tools don't fit?<br><em>Build a solution around your team.</em>",
+    "lead": "When spreadsheets and disconnected systems slow down your team, we help assess whether an integration, a client portal or a bespoke web application is the sensible next step. We don't recommend building software from scratch unless there is a business case.",
     "problems": [
       [
-        "Teams copy data between tools",
-        "Leads, orders and statuses move manually between disconnected systems."
+        "Manual data entry wastes time",
+        "Orders, enquiries and status updates are copied between disconnected systems."
       ],
       [
-        "Your CRM does not fit the workflow",
-        "People depend on spreadsheets, workarounds and missing permissions."
+        "Your CRM doesn't reflect how people work",
+        "Teams rely on spreadsheets, duplicate records and awkward workarounds."
       ],
       [
-        "Your platform needs to evolve",
-        "New accounts, roles, integrations or performance work are required without a risky full rebuild."
+        "A platform needs to grow safely",
+        "New roles, permissions and integrations are needed without disrupting existing users."
       ]
     ],
     "solutions": [
       [
-        "Connect your systems",
-        "Plan API integrations, synchronization, validation and error handling."
+        "Connect existing systems",
+        "Plan APIs, data checks, retry handling and auditability."
       ],
       [
-        "Build around real users",
-        "Develop a practical CRM, internal portal or web application for actual workflows."
+        "Build for real workflows",
+        "Design a client portal or internal application around actual users."
       ],
       [
-        "Modernize with control",
-        "Assess existing code and introduce modules in measured, testable stages."
+        "Modernise in measured stages",
+        "Keep critical services running while adding verified improvements."
       ]
     ],
     "outcomes": [
@@ -391,8 +391,8 @@ function mrseo_dev_content(){
         "Yes, after reviewing the architecture, repository, access and associated risks."
       ],
       [
-        "How are projects priced?",
-        "Scope, integrations and delivery phases determine the estimate. We discuss requirements before proposing pricing."
+        "How much does bespoke development cost?",
+        "We price the agreed scope and delivery stages after reviewing requirements, technical constraints and access. We don't advertise an invented fixed fee."
       ]
     ],
     "labels": {
