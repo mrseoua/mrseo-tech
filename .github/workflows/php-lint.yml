@@ -19,6 +19,26 @@ jobs:
         run: |
           find wp-content/themes/mrseo-tech -type f -name '*.php' -print0 \
             | xargs -0 -n1 php -l
+      - name: Smoke test UK PHP includes and route functions
+        run: |
+          php -d display_errors=1 <<'PHP'
+          <?php
+          define('ABSPATH', __DIR__ . '/');
+          function add_action($hook, $callback, $priority = 10) { return true; }
+          function add_filter($hook, $callback, $priority = 10) { return true; }
+          function mrseo_slug() { return 'seo'; }
+          require __DIR__ . '/wp-content/themes/mrseo-tech/inc/uk-market-routing.php';
+          $new = mrseo_uk_market_data();
+          $core = mrseo_uk_core_data();
+          if (count($new) !== 6 || count($core) !== 7 || count(mrseo_uk_market_slugs()) !== 13) {
+              throw new RuntimeException('Expected 6 new and 7 existing UK services');
+          }
+          if (mrseo_uk_market_page('seo')['title'] !== $core['seo']['title'] ||
+              mrseo_uk_market_page('website-design')['title'] !== $new['website-design']['title']) {
+              throw new RuntimeException('UK route data resolution failed');
+          }
+          echo "UK route functions loaded and 13 service pages resolved successfully.\n";
+          PHP
       - name: Check Earth module syntax
         run: |
           node --input-type=module --check < wp-content/themes/mrseo-tech/assets/orbit-earth-three.js
