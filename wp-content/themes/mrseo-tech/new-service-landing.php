@@ -91,7 +91,7 @@ get_header();
  <section class="ukseo-work" aria-labelledby="ns-process-title"><div class="container">
   <div class="ukseo-section-head"><div><span class="ukseo-kicker"><?php echo esc_html($copy['process']);?></span><h2 id="ns-process-title"><?php echo esc_html($copy['processTitle']);?></h2></div><p><?php echo esc_html($copy['processLead']);?></p></div>
   <ol class="ukseo-steps"><?php foreach($page['steps'] as $i=>$step):?>
-   <li><div class="ukseo-step-index"><?php echo esc_html(sprintf('%02d',$i+1));?></div><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div><strong><?php echo esc_html($ru?'Результат для проверки':'Результат для перевірки');?></strong></li>
+   <li><div class="ukseo-step-index"><?php echo esc_html(sprintf('%02d',$i+1));?></div><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div><strong><?php echo esc_html($i<3 ? $page['outcomes'][$i] : ($ru?'Проверка после внедрения':'Перевірка після впровадження'));?></strong></li>
   <?php endforeach;?></ol>
  </div></section>
  <section class="ukseo-delivery" aria-labelledby="ns-outcomes-title"><div class="container ukseo-delivery-grid">
