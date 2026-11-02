@@ -76,7 +76,15 @@ jobs:
           assert 'mrseo_render_mega_menu()' in (root/'header-international.php').read_text()
           assert 'mrseo_render_mega_menu(true)' in (root/'header-international.php').read_text()
           assert 'mrseo_int_pages()' in mega_file, 'PL/DE URLs must be whitelisted'
-          assert "if (!in_array($slug, $available, true)) continue;" in mega_file
+          assert "if (in_array($item_slug, $valid, true))" in mega_file, 'Only known pages may be linked'
+          assert "if ($item_slug === 'horoshop' && !in_array($locale, array('uk','ru'), true)) continue;" in mega_file
+          # Full 3+2 reference menu: all live destinations and pending offers must be visible.
+          for locale,copy in mega.items():
+              assert len(copy['sections']['seo']['topics'])==2
+              assert len(copy['sections']['ads']['topics'])==2
+              assert len(copy['sections']['commerce']['topics'])==2
+              assert len(copy['sections']['dev']['topics'])==3
+              assert len(copy['sections']['data']['topics'])==3
           assert 'orbit-earth-three.js?v=5' in home, 'Shared real Earth renderer must remain'
           dev_php=(root/'inc/development-content.php').read_text()
           dev_match=re.search(r"<<<'MRSEO_DEV_DATA'\n(.*?)\nMRSEO_DEV_DATA;",dev_php,re.S)
