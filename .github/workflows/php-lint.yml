@@ -62,7 +62,21 @@ jobs:
           assert "mrseo_slug()===''?'/orbit-lab.php':'/international-landing.php'" in routes
           assert '$nodes=array_slice($nodes,0,6)' in home
           assert 'mhe-six-services' in home
-          assert "array('seo-audit','web-development'):array('seo-audit','web-development','service-websites')" in chrome
+          # Mega navigation replaced the legacy inline service array.
+          mega_file=(root/'inc/mega-menu.php').read_text()
+          mega_match=re.search(r"<<<'MRSEO_MEGA_DATA'\n(.*?)\nMRSEO_MEGA_DATA;", mega_file, re.S)
+          assert mega_match, 'Missing localized mega-menu data'
+          mega=json.loads(mega_match.group(1))
+          assert set(mega)=={'uk','ru','en','pl','de'}
+          for locale,copy in mega.items():
+              assert set(copy['sections'])=={'seo','ads','commerce','dev','data'}
+              assert all(copy['links'].get(slug) for slug in ('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development'))
+              assert copy['cta'] and copy['ctaText']
+          assert 'mrseo_render_mega_menu()' in (root/'header.php').read_text()
+          assert 'mrseo_render_mega_menu()' in (root/'header-international.php').read_text()
+          assert 'mrseo_render_mega_menu(true)' in (root/'header-international.php').read_text()
+          assert 'mrseo_int_pages()' in mega_file, 'PL/DE URLs must be whitelisted'
+          assert "if (!in_array($slug, $available, true)) continue;" in mega_file
           assert 'orbit-earth-three.js?v=5' in home, 'Shared real Earth renderer must remain'
           dev_php=(root/'inc/development-content.php').read_text()
           dev_match=re.search(r"<<<'MRSEO_DEV_DATA'\n(.*?)\nMRSEO_DEV_DATA;",dev_php,re.S)
