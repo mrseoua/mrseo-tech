@@ -2,7 +2,6 @@
 if(!defined('ABSPATH'))exit;
 $mrseo_ui=mrseo_int_ui();$mrseo_nav=$mrseo_ui['nav'];
 $mrseo_lang=mrseo_locale();$mrseo_slug=mrseo_slug();
-$mrseo_links=array('ecommerce-seo'=>$mrseo_nav['ecommerce'],'seo'=>$mrseo_nav['seo'],'seo-audit'=>$mrseo_nav['audit'],'google-ads'=>$mrseo_nav['ads'],'analytics'=>$mrseo_nav['analytics'],'web-development'=>$mrseo_nav['development']);
 ?><!doctype html>
 <html lang="<?php echo esc_attr($mrseo_ui['lang']);?>">
 <head><meta charset="<?php bloginfo('charset');?>"><meta name="viewport" content="width=device-width,initial-scale=1"><?php wp_head();?></head>
