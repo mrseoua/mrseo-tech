@@ -156,6 +156,29 @@ jobs:
           assert "array('uk','ru')" in ns_routes and "mrseo_new_service_route()" in new_template
           assert "wp_enqueue_style('mrseo-new-services'" in functions
           assert new_styles.count('{')==new_styles.count('}')
+          # Ukrainian editorial QA: 12 distinct problem-led offers, no fake links or nested <main>.
+          polished=(root/'inc/ua-service-ux.php').read_text()
+          polished_match=re.search(r"<<<'MRSEO_UA_UX'\n(.*?)\nMRSEO_UA_UX;",polished,re.S)
+          assert polished_match, 'Missing Ukrainian service polish'
+          pages_uk=json.loads(polished_match.group(1))
+          assert set(pages_uk)==set(new_pages), 'A new service has no Ukrainian editorial refinements'
+          assert len({item['hero'] for item in pages_uk.values()})==12
+          assert len({item['deliveryTitle'] for item in pages_uk.values()})==12
+          assert len({tuple(item['exampleTitle']) for item in pages_uk.values()})==12
+          all_existing=set(new_pages)|{'seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','web-development','service-websites','horoshop'}
+          for slug,item in pages_uk.items():
+              assert len(item['hero'])>=110 and len(item['problemLead'])>=90, slug
+              assert len(item['related'])==2 and len({r[0] for r in item['related']})==2
+              assert all(r[0] in all_existing and r[0]!=slug for r in item['related']), slug
+              assert all(len(r)==3 and all(r) for r in item['related']), slug
+          for page in ('seo-uk-pilot.php','seo-audit-uk.php','google-ads-uk.php','ecommerce-uk.php','horoshop-uk.php','uk-solution-page.php','about-localized.php'):
+              html=(root/page).read_text()
+              assert not re.search(r'<main\\b',html), ('Nested main landmark remains',page)
+              assert not re.search(r'</main>',html), ('Nested closing main remains',page)
+          assert 'mrseo_ua_service_ux($slug,$lang)' in new_template
+          assert 'ns-related-card' in new_template and 'ns-related-grid' in new_styles
+          assert 'font-size:14px;line-height:1.4' in new_styles, 'Readable mobile scene labels missing'
+          assert "require_once __DIR__.'/ua-service-ux.php';" in ns_routes
           assert "X-Robots-Tag: noindex, nofollow" in functions
           print('11 localized motion scenes × 5 languages; 3D Earth only on homepages; 5 development pages and noindex verified')
           PY
