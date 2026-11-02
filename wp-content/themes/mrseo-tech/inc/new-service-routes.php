@@ -6,11 +6,11 @@ require_once __DIR__.'/new-service-copy-part3.php';
 
 /** New standalone service pages; staged translations are intentionally limited to UA/RU. */
 function mrseo_new_service_parent_slugs(){
- return {'website-audit'=>'seo-audit','traffic-recovery'=>'seo','google-shopping'=>'google-ads','merchant-center'=>'google-ads','online-store-development'=>'web-development','catalog-automation'=>'web-development','web-applications'=>'web-development','api-integrations'=>'web-development','custom-functionality'=>'web-development','ga4-conversions'=>'analytics','business-dashboards'=>'analytics','reporting-automation'=>'analytics'};
+ return array('website-audit'=>'seo-audit','traffic-recovery'=>'seo','google-shopping'=>'google-ads','merchant-center'=>'google-ads','online-store-development'=>'web-development','catalog-automation'=>'web-development','web-applications'=>'web-development','api-integrations'=>'web-development','custom-functionality'=>'web-development','ga4-conversions'=>'analytics','business-dashboards'=>'analytics','reporting-automation'=>'analytics');
 }
 function mrseo_new_service_slugs(){return array_keys(mrseo_new_service_parent_slugs());}
 function mrseo_new_service_group($slug){
- $groups={'website-audit'=>'audit','traffic-recovery'=>'audit','google-shopping'=>'ads','merchant-center'=>'ads','online-store-development'=>'commerce','catalog-automation'=>'commerce','web-applications'=>'dev','api-integrations'=>'dev','custom-functionality'=>'dev','ga4-conversions'=>'data','business-dashboards'=>'data','reporting-automation'=>'data'};
+ $groups=array('website-audit'=>'audit','traffic-recovery'=>'audit','google-shopping'=>'ads','merchant-center'=>'ads','online-store-development'=>'commerce','catalog-automation'=>'commerce','web-applications'=>'dev','api-integrations'=>'dev','custom-functionality'=>'dev','ga4-conversions'=>'data','business-dashboards'=>'data','reporting-automation'=>'data');
  return $groups[$slug]??'dev';
 }
 function mrseo_new_service_copy($slug=null, $locale=null){
@@ -45,7 +45,7 @@ add_filter('pre_get_document_title',function($title){
 add_filter('body_class',function($classes){
  if(mrseo_new_service_route())$classes[]='mrseo-new-service-page';
  return $classes;
-});
+);
 add_action('wp_head',function(){
  if(!mrseo_new_service_route())return;
  $slug=mrseo_slug();$copy=mrseo_new_service_copy();
