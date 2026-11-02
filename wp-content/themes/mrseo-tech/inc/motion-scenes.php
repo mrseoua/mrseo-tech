@@ -3,7 +3,17 @@ if(!defined('ABSPATH'))exit;
 require_once __DIR__.'/motion-scenes-copy.php';
 /** Domain-specific editorial previews, not real customer metrics. */
 function mrseo_render_motion_scene($slug,$locale=null){
- $copy=mrseo_scene_copy($slug,$locale);if(!$copy)return;
+ $copy=mrseo_scene_copy($slug,$locale);
+ if($slug==='horoshop' && !$copy){
+  // Horoshop has a dedicated shop animation, without changing the canonical scenes dataset.
+  $copy=array(
+   'name'=>'Магазин на Хорошоп',
+   'intro'=>'Проверяем структуру каталога, SEO-фильтры и товарные данные в Merchant Center.',
+   'tabs'=>array('Категории','SEO-фильтры','Merchant'),
+   'steps'=>array('Поисковый спрос','Страница каталога','Покупка'),
+  );
+ }
+ if(!$copy)return;
  $steps=$copy['steps'];$tabs=$copy['tabs'];
  ?>
  <div class="ms-scene ms-scene-<?php echo esc_attr($slug);?>" data-ms-scene="<?php echo esc_attr($slug);?>" data-ms-active="0" aria-label="<?php echo esc_attr($copy['name']);?>">
@@ -56,6 +66,16 @@ function mrseo_render_motion_scene($slug,$locale=null){
    <div class="ms-pmax-hub"><div class="ms-pmax-core">PMax<span>↗</span></div>
     <span class="ms-pmax-node ms-pmax-node-a">FEED</span><span class="ms-pmax-node ms-pmax-node-b">SEARCH</span><span class="ms-pmax-node ms-pmax-node-c">SHOPPING</span><div class="ms-pmax-ring"></div><div class="ms-pmax-ring ms-pmax-ring-two"></div>
    </div><div class="ms-pmax-bottom"><span><?php echo esc_html($steps[0]);?></span><i></i><span><?php echo esc_html($steps[2]);?></span></div>
+  <?php break;
+  case 'horoshop':?>
+   <div class="ms-horoshop-window">
+    <div class="ms-horoshop-toolbar"><span class="ms-horoshop-dots" aria-hidden="true"><i></i><i></i><i></i></span><strong>ХОРОШОП / КАТАЛОГ</strong><b>↗</b></div>
+    <div class="ms-horoshop-layout">
+     <div class="ms-horoshop-side"><?php foreach($tabs as $i=>$tab):?><div class="ms-select-<?php echo esc_attr($i);?>"><span><?php echo esc_html(sprintf('%02d',$i+1));?></span><strong><?php echo esc_html($tab);?></strong><b>↗</b></div><?php endforeach;?></div>
+     <div class="ms-horoshop-products"><div><span class="ms-horoshop-product-icon">▤</span><i></i><i></i></div><div><span class="ms-horoshop-product-icon">◈</span><i></i><i></i></div><div><span class="ms-horoshop-product-icon">▣</span><i></i><i></i></div></div>
+    </div>
+    <div class="ms-horoshop-pipeline"><span>SEO</span><i></i><span>MERCHANT</span><i></i><span>ПОКУПКА ✓</span></div>
+   </div>
   <?php break;
   case 'about':?>
    <div class="ms-about-center"><span><?php echo esc_html($copy['name']);?></span><strong>10</strong><small><?php echo esc_html(array('uk'=>'РОКІВ','ru'=>'ЛЕТ','en'=>'YEARS','pl'=>'LAT','de'=>'JAHRE')[$locale?:mrseo_locale()]??'YEARS');?></small></div>

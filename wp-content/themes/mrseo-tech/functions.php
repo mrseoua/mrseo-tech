@@ -17,22 +17,23 @@ add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
  wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
  $motion_slugs=array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','service-websites','performance-max','about','portfolio','contact');
+ if(mrseo_locale()==='ru')$motion_slugs[]='horoshop';
  if(in_array(mrseo_slug(),$motion_slugs,true)){
   wp_enqueue_style('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.css',array('mrseo-style'),'1.0.0');
   wp_enqueue_script('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.js',array(),'1.0.0',true);
  }
  // Ukrainian premium service visual system. Horoshop uses its own interactive hero.
- if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
+ if(in_array(mrseo_locale(),array('uk','ru'),true) && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
   $ua_base_deps=mrseo_slug()==='horoshop'?array('mrseo-style'):array('mrseo-motion-scenes');
   wp_enqueue_style('mrseo-ukseo-pilot',get_template_directory_uri().'/assets/seo-uk-pilot.css',$ua_base_deps,'1.0.2');
  }
- if(mrseo_locale()==='uk' && mrseo_slug()==='seo-audit'){
+ if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='seo-audit'){
   wp_enqueue_style('mrseo-ukaudit',get_template_directory_uri().'/assets/seo-audit-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
  }
- if(mrseo_locale()==='uk' && mrseo_slug()==='ecommerce-seo'){
+ if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='ecommerce-seo'){
   wp_enqueue_style('mrseo-ukcommerce',get_template_directory_uri().'/assets/ecommerce-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
  }
- if(mrseo_locale()==='uk' && mrseo_slug()==='google-ads'){
+ if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='google-ads'){
   wp_enqueue_style('mrseo-ukads',get_template_directory_uri().'/assets/google-ads-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
  }
  if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'){
@@ -50,13 +51,16 @@ function mrseo_assets(){
  }
  if(mrseo_slug()==='about')wp_enqueue_style('mrseo-about',get_template_directory_uri().'/assets/about-page.css',array('mrseo-style'),'1.0.0');
  // Remaining Ukrainian service pages and existing About/Portfolio/Contact/Development refinements.
- if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('performance-max','analytics','service-websites','horoshop'),true)){
+ if(in_array(mrseo_locale(),array('uk','ru'),true) && in_array(mrseo_slug(),array('performance-max','analytics','service-websites','horoshop'),true)){
   $ua_extra_deps=mrseo_slug()==='horoshop'?array('mrseo-ukseo-pilot','mrseo-horoshop-hero'):array('mrseo-ukseo-pilot');
   wp_enqueue_style('mrseo-uk-rest',get_template_directory_uri().'/assets/uk-service-rest.css',$ua_extra_deps,'1.0.0');
  }
- if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('about','portfolio','contact','web-development'),true)){
+ if(in_array(mrseo_locale(),array('uk','ru'),true) && in_array(mrseo_slug(),array('about','portfolio','contact','web-development'),true)){
   $ua_polish_deps=mrseo_slug()==='about'?array('mrseo-about'):(mrseo_slug()==='web-development'?array('mrseo-development'):array('mrseo-style'));
   wp_enqueue_style('mrseo-uk-polish',get_template_directory_uri().'/assets/uk-interior-polish.css',$ua_polish_deps,'1.0.0');
+ }
+ if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
+  wp_enqueue_style('mrseo-ru-premium',get_template_directory_uri().'/assets/ru-premium.css',array('mrseo-ukseo-pilot'),'1.0.1');
  }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.0');

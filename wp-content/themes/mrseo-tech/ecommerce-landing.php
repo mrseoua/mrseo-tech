@@ -5,6 +5,10 @@ if(mrseo_locale()==='uk'){
  require get_template_directory().'/ecommerce-uk.php';
  return;
 }
+if(mrseo_locale()==='ru'){
+ require get_template_directory().'/ru-premium-page.php';
+ return;
+}
 require_once get_template_directory().'/inc/service-editorial.php';
 $locale=mrseo_locale();
 $copy=array(
