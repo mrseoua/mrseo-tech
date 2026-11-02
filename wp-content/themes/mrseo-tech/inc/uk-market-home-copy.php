@@ -42,7 +42,6 @@ function mrseo_uk_home_copy($source){
   "About": "About us",
   "Contact": "Contact",
   "What is holding your business back?": "What would you like to build or improve?",
-  "You do not need to know whether SEO, ads or a new site is the answer. Describe what is not working — we will start by looking for the cause.": "Whether you need a new website, an online shop or help with an existing site, describe your aim. We'll discuss a sensible next step.",
   "CHOOSE YOUR CHALLENGE": "WHAT WOULD YOU LIKE TO DISCUSS?",
   "Which situation sounds familiar?": "What best describes your project?",
   "Need a site that converts": "Need a website or a redesign",
@@ -51,7 +50,8 @@ function mrseo_uk_home_copy($source){
   "Our experience spans specialist retailers, online catalogs and businesses across many sectors.": "Our experience includes specialist retailers, online catalogues and service firms.",
   "Search optimization": "Search optimisation",
   "Services": "Services",
-  "Discuss project ↗": "Discuss a project ↗"
+  "Discuss project ↗": "Discuss a project ↗",
+  "You do not need to know whether SEO, ads or a new site is the answer. Describe what is not working — we will start with the cause.": "Whether you need a new website, an online shop or help with an existing site, describe your aim. We'll discuss a sensible next step."
 }
 MRSEO_UK_HOME;
   $map=json_decode($json,true,512,JSON_THROW_ON_ERROR);
