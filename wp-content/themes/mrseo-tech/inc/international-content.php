@@ -1073,7 +1073,7 @@ function mrseo_international_data(){
 MRSEO_INT_DATA;
  return $cached=json_decode($json,true);
 }
-function mrseo_int_locales(){return array('pl'=>'pl-PL','de'=>'de-DE');}
+function mrseo_int_locales(){return array('en'=>'en-GB','pl'=>'pl-PL','de'=>'de-DE');}
 function mrseo_int_pages(){return array('','seo','ecommerce-seo','seo-audit','google-ads','analytics','web-development','about','contact','portfolio');}
 function mrseo_int_page($lang=null,$slug=null){
  $data=mrseo_international_data();

@@ -15,7 +15,7 @@ function mrseo_render_language_dropdown($slug = null, $current = null, $placemen
     $languages = array(
         'uk' => array('short' => 'UA', 'name' => 'Українська'),
         'ru' => array('short' => 'RU', 'name' => 'Русский'),
-        'en' => array('short' => 'EN', 'name' => 'English'),
+        'en' => array('short' => 'EN', 'name' => 'English (United Kingdom)'),
         'pl' => array('short' => 'PL', 'name' => 'Polski'),
         'de' => array('short' => 'DE', 'name' => 'Deutsch'),
     );

@@ -5,7 +5,7 @@ $pl_slug=mrseo_slug();
 $pl_page=mrseo_uk_market_page($pl_slug);
 if(mrseo_locale()!=='en'||!$pl_page){status_header(404);include get_404_template();return;}
 get_header();
-$pl_group=strpos($pl_slug,'shop')!==false?'commerce':(in_array($pl_slug,array('google-ads-audit','google-shopping'),true)?'ads':($pl_slug==='merchant-center-help'?'merchant':($pl_slug==='wordpress-care'?'support':'web')));
+$pl_group=(strpos($pl_slug,'shop')!==false||$pl_slug==='ecommerce-seo')?'commerce':(in_array($pl_slug,array('google-ads-audit','google-shopping'),true)?'ads':($pl_slug==='merchant-center-help'?'merchant':($pl_slug==='wordpress-care'?'support':'web')));
 ?>
 <div class="pl-svc pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>">
  <section class="pl-svc-hero" aria-labelledby="pl-title">

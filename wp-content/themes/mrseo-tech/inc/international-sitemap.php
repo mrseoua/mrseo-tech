@@ -20,7 +20,7 @@ function mrseo_localized_sitemap_paths(){
  }
  foreach(array('service-websites','performance-max') as $slug){
   $alternates=array();
-  foreach(array('uk','ru','en') as $language)$alternates[$language]=mrseo_url($slug,$language);
+  foreach(array('uk','ru','en') as $language)$alternates[($language==='en'?'en-GB':$language)]=mrseo_url($slug,$language);
   foreach(array('uk','ru','en') as $language)$entries[]=array('loc'=>mrseo_url($slug,$language),'alternates'=>$alternates,'default'=>mrseo_url($slug,'en'));
  }
  $shopAlternates=array('uk'=>mrseo_url('horoshop','uk'),'ru'=>mrseo_url('horoshop','ru'));
@@ -31,6 +31,11 @@ function mrseo_localized_sitemap_paths(){
   foreach(array('uk','ru') as $language){
    $entries[]=array('loc'=>mrseo_url($slug,$language),'alternates'=>$alternates,'default'=>mrseo_url($slug,'uk'));
   }
+ }
+ // UK-only services: self-referential en-GB hreflang, no fabricated translated pages.
+ foreach(mrseo_uk_market_new_slugs() as $slug){
+  $url=mrseo_url($slug,'en');
+  $entries[]=array('loc'=>$url,'alternates'=>array('en-GB'=>$url),'default'=>$url);
  }
  // Finished Poland-only commercial pages — do not advertise untranslated equivalents.
  foreach(mrseo_pl_service_slugs() as $slug){

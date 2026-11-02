@@ -3,10 +3,16 @@ if(!defined('ABSPATH'))exit;
 require_once __DIR__.'/languages.php';
 require_once __DIR__.'/international-content.php';
 require_once __DIR__.'/international-home-copy.php';
+require_once __DIR__.'/uk-market-home-copy.php';
 function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$s);return in_array($a[0]??'',array('ru','en','pl','de'),true)?$a[0]:'uk';}
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ // UK-only routes switch to real parent services in other languages.
+ if($lang!=='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)){
+  $slug=mrseo_uk_market_parent($slug,$lang);
+ }
+
  // Country-only Polish offers link to relevant existing pages when switching languages.
  if($lang!=='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)){
   $slug=mrseo_pl_service_parent($slug,$lang);
@@ -19,7 +25,7 @@ function mrseo_url($slug='',$lang=null){
  // New pages have original UA/RU copy; other languages use a relevant completed parent page.
  if(function_exists('mrseo_new_service_parent_slugs') && !in_array($lang,array('uk','ru'),true)){
   $new_parents=mrseo_new_service_parent_slugs();
-  if(isset($new_parents[$slug]))$slug=$new_parents[$slug];
+  if(isset($new_parents[$slug]) && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)) && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)))$slug=$new_parents[$slug];
  }
  if($slug==='horoshop' && !in_array($lang,array('uk','ru'),true))$slug='ecommerce-seo';
  if(in_array($lang,array('pl','de'),true) && !in_array($slug,mrseo_int_pages(),true) && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true))){
@@ -30,7 +36,7 @@ function mrseo_url($slug='',$lang=null){
 function mrseo_t($uk,$ru,$en){
  $l=mrseo_locale();
  if(($l==='pl'||$l==='de') && mrseo_slug()==='')return mrseo_int_home_copy($l,$en);
- return $l==='uk'?$uk:($l==='ru'?$ru:$en);
+ return $l==='uk'?$uk:($l==='ru'?$ru:($l==='en'?mrseo_uk_home_copy($en):$en));
 }
 function mrseo_translation($slug){$all=mrseo_translation_drafts();$l=mrseo_locale();return $all[$l][$slug]??array('','','',array());}
 function mrseo_is_case(){$p=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');return (bool)preg_match('~^(?:ru/|en/)?portfolio/[a-z0-9-]+/?$~',$p);}
@@ -59,7 +65,7 @@ if($slug==='about')return get_template_directory().'/about-localized.php';
 if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
 add_filter('template_include','mrseo_router',99);
-add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;if(in_array(mrseo_locale(),array('pl','de'),true)){$p=mrseo_int_page();return $p['title']??$title;}$slug=mrseo_slug();if(!$slug)return 'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='orbit-lab')return 'Orbit Lab — Private Concept | MrSeo.tech';if($slug==='orbit-light')return 'Orbital Growth Light — Concept 02 | MrSeo.tech';if($slug==='seo')return mrseo_t('SEO-просування сайтів у Google — замовити SEO','SEO-продвижение сайтов в Google — заказать SEO','SEO Services & Website Optimization').' | MrSeo.tech';if($slug==='about')return mrseo_t('Про нас — команда з 10-річним досвідом','О нас — команда с 10-летним опытом','About — a team with 10 years of experience').' | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';if($slug==='horoshop')return mrseo_t('SEO для Хорошоп — просування та розвиток магазину','SEO для Хорошоп — продвижение и развитие магазина','Horoshop SEO').' | MrSeo.tech';if($slug==='web-development')return mrseo_dev_page()['title'];if($slug==='service-websites')return mrseo_t('Створення та просування сайтів послуг','Создание и продвижение сайтов услуг','Service Website SEO & Development').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
+add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;if(in_array(mrseo_locale(),array('pl','de'),true)){$p=mrseo_int_page();return $p['title']??$title;}$slug=mrseo_slug();if(!$slug)return mrseo_locale()==='en'?'Website Design, SEO & Google Ads for UK Businesses | MrSeo.tech':'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='orbit-lab')return 'Orbit Lab — Private Concept | MrSeo.tech';if($slug==='orbit-light')return 'Orbital Growth Light — Concept 02 | MrSeo.tech';if($slug==='seo')return mrseo_t('SEO-просування сайтів у Google — замовити SEO','SEO-продвижение сайтов в Google — заказать SEO','SEO Services & Website Optimization').' | MrSeo.tech';if($slug==='about')return mrseo_t('Про нас — команда з 10-річним досвідом','О нас — команда с 10-летним опытом','About — a team with 10 years of experience').' | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';if($slug==='horoshop')return mrseo_t('SEO для Хорошоп — просування та розвиток магазину','SEO для Хорошоп — продвижение и развитие магазина','Horoshop SEO').' | MrSeo.tech';if($slug==='web-development')return mrseo_dev_page()['title'];if($slug==='service-websites')return mrseo_t('Створення та просування сайтів послуг','Создание и продвижение сайтов услуг','Service Website SEO & Development').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
 add_action('wp_head',function(){if(!mrseo_valid_route())return;$slug=mrseo_slug();$valid=array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','web-development','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$valid,true)||mrseo_is_case())return;$path=$slug;$langs=$slug==='horoshop'?array('uk','ru'):array('uk','ru','en');
  if(in_array($slug,mrseo_int_pages(),true))$langs=array_merge($langs,array('pl','de'));
  foreach($langs as $l){

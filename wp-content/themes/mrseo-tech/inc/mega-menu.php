@@ -347,6 +347,9 @@ function mrseo_mega_menu_icon($key) {
     return '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'.($paths[$key] ?? $paths['seo']).'</svg>';
 }
 function mrseo_render_mega_menu($in_mobile_panel = false) {
+    if(mrseo_locale()==='en' && function_exists('mrseo_render_uk_market_menu')){
+        mrseo_render_uk_market_menu($in_mobile_panel);return;
+    }
     if(mrseo_locale()==='pl' && function_exists('mrseo_render_pl_mega_menu')){
         mrseo_render_pl_mega_menu($in_mobile_panel);
         return;
