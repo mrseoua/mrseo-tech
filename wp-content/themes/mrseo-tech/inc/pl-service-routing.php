@@ -41,7 +41,7 @@ function mrseo_render_pl_mega_menu($mobile=false){
   array('key'=>'dev','heading'=>'Strony internetowe','items'=>array(
    array('tworzenie-stron-internetowych','Tworzenie stron dla firm'),
    array('opieka-wordpress','Opieka nad WordPress'),
-   array('web-development','Indywidualna web development'))),
+   array('web-development','Aplikacje i systemy na zamówienie'))),
   array('key'=>'commerce','heading'=>'Sklepy internetowe','items'=>array(
    array('tworzenie-sklepow-internetowych','Tworzenie sklepów'),
    array('ecommerce-seo','SEO sklepów internetowych'),

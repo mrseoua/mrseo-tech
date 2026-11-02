@@ -641,14 +641,11 @@ function mrseo_pl_service_page($slug=null){
  return mrseo_pl_service_data()[$slug]??null;
 }
 function mrseo_pl_service_slugs(){return array_keys(mrseo_pl_service_data());}
-function mrseo_pl_service_parent($slug){
- $parents=array(
-  'tworzenie-stron-internetowych'=>'web-development',
-  'tworzenie-sklepow-internetowych'=>'ecommerce-seo',
-  'audyt-google-ads'=>'google-ads',
-  'problemy-merchant-center'=>'google-ads',
-  'google-shopping'=>'google-ads',
-  'opieka-wordpress'=>'web-development',
- );
- return $parents[$slug]??'';
+function mrseo_pl_service_parent($slug,$lang='en'){
+ if($slug==='tworzenie-stron-internetowych')return 'service-websites';
+ if($slug==='tworzenie-sklepow-internetowych')return in_array($lang,array('uk','ru'),true)?'online-store-development':'ecommerce-seo';
+ if($slug==='problemy-merchant-center')return in_array($lang,array('uk','ru'),true)?'merchant-center':'google-ads';
+ if($slug==='google-shopping')return in_array($lang,array('uk','ru'),true)?'google-shopping':'google-ads';
+ if($slug==='audyt-google-ads')return 'google-ads';
+ return 'web-development';
 }
