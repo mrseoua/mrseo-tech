@@ -102,11 +102,11 @@ function mrseo_international_data(){
   "pages": {
     "pl": {
       "": {
-        "title": "SEO i Google Ads dla sklepów internetowych | MrSeo.tech",
-        "description": "Techniczne SEO, optymalizacja e-commerce, Google Ads i analityka. Znajdujemy przyczyny problemów i wdrażamy działania dopasowane do biznesu.",
-        "eyebrow": "SEO · E-COMMERCE · GOOGLE ADS",
-        "headline": "Masz sklep. <em>Czy klienci mogą go znaleźć?</em>",
-        "lead": "Łączymy techniczne SEO, reklamę i analitykę, żeby rozwiązywać konkretne problemy: niewidoczne kategorie, błędy indeksowania, kosztowne kampanie i niejasne dane o sprzedaży.",
+        "title": "Tworzenie stron, sklepów, SEO i Google Ads dla firm | MrSeo.tech",
+        "description": "MrSeo.tech: strony internetowe, sklepy, SEO, Google Ads, aplikacje i integracje. Nowy projekt lub problem z widocznością? Dobieramy rozwiązanie do celu firmy.",
+        "eyebrow": "STRONY · SKLEPY · SEO · GOOGLE ADS",
+        "headline": "Potrzebujesz strony? <em>A może więcej klientów?</em>",
+        "lead": "Projektujemy strony i sklepy, wspieramy SEO i reklamę oraz tworzymy rozwiązania dopasowane do procesów firmy. Zaczynamy od Twojego celu — niezależnie, czy budujesz od zera, czy poprawiasz istniejący serwis.",
         "problems": [
           [
             "Produkty nie są widoczne",
@@ -359,11 +359,11 @@ function mrseo_international_data(){
         ]
       },
       "google-ads": {
-        "title": "Google Ads dla e-commerce – audyt i prowadzenie kampanii | MrSeo.tech",
-        "description": "Google Ads dla sklepów: konwersje, Merchant Center, Shopping, Performance Max i optymalizacja wydatków na podstawie ekonomiki sprzedaży.",
+        "title": "Prowadzenie Google Ads dla firm i sklepów | MrSeo.tech",
+        "description": "Prowadzenie Google Ads dla usług i e-commerce: jakość leadów, zakupy, konwersje, Search, Shopping i Performance Max. Kontrola wydatków i czytelne cele.",
         "eyebrow": "GOOGLE ADS · E-COMMERCE",
-        "headline": "Reklamy wydają budżet. <em>A co z zyskiem?</em>",
-        "lead": "Zaczynamy od wiarygodnego pomiaru zakupów i wartości konwersji. Dopiero potem analizujemy kampanie, asortyment i decyzje dotyczące budżetu.",
+        "headline": "Płacisz za kliknięcia. <em>Czy zdobywasz właściwych klientów?</em>",
+        "lead": "Prowadzimy kampanie Google Ads dla firm usługowych i sklepów. Łączymy zapytania klientów, ofertę, jakość pomiaru i budżet. Nie traktujemy samych kliknięć jako dowodu skuteczności.",
         "problems": [
           [
             "Konwersje się nie zgadzają",

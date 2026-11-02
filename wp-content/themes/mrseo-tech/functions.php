@@ -7,6 +7,7 @@ require_once get_template_directory() . '/inc/contact-channels.php';
 require_once get_template_directory() . '/inc/contact-ui.php';
 require_once get_template_directory() . '/inc/mega-menu.php';
 require_once get_template_directory() . '/inc/new-service-routes.php';
+require_once get_template_directory() . '/inc/pl-service-routing.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
 require_once get_template_directory() . '/inc/motion-scenes.php';
 function mrseo_setup() {
@@ -18,6 +19,9 @@ function mrseo_setup() {
 add_action('after_setup_theme','mrseo_setup');
 function mrseo_assets(){
  wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
+ if(function_exists('mrseo_pl_service_route') && mrseo_pl_service_route()){
+  wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
+ }
  if(function_exists('mrseo_new_service_route') && mrseo_new_service_route()){
   wp_enqueue_style('mrseo-ukseo-new-base',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-style'),'1.0.2');
   wp_enqueue_style('mrseo-new-services',get_template_directory_uri().'/assets/new-services.css',array('mrseo-ukseo-new-base'),'1.1.0');
