@@ -1,4 +1,8 @@
 <?php if(!defined('ABSPATH'))exit;
+if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('seo-audit','google-ads','performance-max','analytics'),true)){
+ require get_template_directory().'/ru-premium-page.php';
+ return;
+}
 // Ukrainian audit uses a dedicated, problem-led template. Other services/locales are unchanged.
 if(mrseo_slug()==='seo-audit' && mrseo_locale()==='uk'){
  require get_template_directory().'/seo-audit-uk.php';

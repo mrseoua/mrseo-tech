@@ -1,0 +1,37 @@
+/* RU premium editorial uses the established Ukrainian design tokens and spacing. */
+.ru-premium .ukseo-problem-card{min-height:0}
+.ru-premium .ukseo-problem-card>p{margin-bottom:20px}
+.ru-premium .ukseo-card-number{margin-bottom:35px}
+.ru-premium .ukseo-card-diagnosis{padding-top:17px}
+.ru-premium .ukseo-card-diagnosis strong{font-size:15px;line-height:1.58}
+.ru-case-proof{border-top:1px solid #ded6cc;padding-top:16px;margin-top:18px}
+.ru-case-proof span{display:block;color:#94503d;font-size:12px;font-weight:840;letter-spacing:.065em;text-transform:uppercase;margin-bottom:7px}
+.ru-case-proof p{color:#4c5a51;font-size:15px;line-height:1.56;font-weight:630;margin:0}
+.ru-premium .ukseo-steps li>strong{max-width:380px}
+.ru-premium .ukseo-hero-copy h1{overflow-wrap:break-word;hyphens:auto}
+.ru-premium .ukseo-spec{align-self:center}
+.ru-premium .ukseo-hero-art .ms-scene{width:100%;min-width:0}
+.ru-premium .ukseo-spec-row strong{overflow-wrap:break-word}
+.ru-premium .ukseo-button{max-width:100%}
+.ru-horoshop-brand{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:16px;padding:12px 17px;background:#fffdf8;border:1px solid #ded9d1;border-radius:13px}
+.ru-horoshop-brand img{max-width:70%;height:auto;object-fit:contain}
+.ru-horoshop-brand img:last-child{max-width:72px}
+.ru-premium.ukseo--horoshop .ukseo-hero{background:radial-gradient(ellipse at 85% 14%,#ddbcab47,transparent 45%),linear-gradient(125deg,#faf7f0,#ece7de)}
+.ru-premium.ukseo--ecommerce-seo .ukseo-hero{background:radial-gradient(ellipse at 83% 18%,#ead1ba57,transparent 45%),linear-gradient(125deg,#faf7f1,#f1eae1)}
+.ru-premium.ukseo--seo-audit .ukseo-hero{background:radial-gradient(ellipse at 86% 18%,#c6d5c44a,transparent 45%),linear-gradient(125deg,#fbf8f2,#ecebe1)}
+@media(max-width:780px){
+ .ru-premium .ukseo-hero-grid{grid-template-columns:minmax(0,1fr)}
+ .ru-premium .ukseo-hero-art{max-width:680px}
+ .ru-premium .ukseo-problem-card{min-height:0}
+ .ru-premium .ukseo-steps li>strong{max-width:none}
+}
+@media(max-width:480px){
+ .ru-premium .ukseo-problem-card{padding:25px 22px}
+ .ru-premium .ukseo-problem-card>p{font-size:16px}
+ .ru-premium .ukseo-card-diagnosis strong,.ru-case-proof p{font-size:15px}
+ .ru-premium .ukseo-section-head h2{overflow-wrap:break-word}
+ .ru-premium .ukseo-hero-copy h1{font-size:clamp(37px,10vw,52px);line-height:1.07}
+ .ru-premium .ukseo-spec{padding:22px}
+ .ru-premium .ukseo-crumbs{margin-bottom:25px}
+ .ru-premium .ukseo-hero-art .ms-scene{max-width:100%}
+}

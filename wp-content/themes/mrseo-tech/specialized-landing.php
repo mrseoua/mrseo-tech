@@ -5,6 +5,10 @@ if(mrseo_locale()==='uk'){
  if(mrseo_slug()==='horoshop'){require get_template_directory().'/horoshop-uk.php';return;}
  if(mrseo_slug()==='service-websites'){require get_template_directory().'/uk-solution-page.php';return;}
 }
+if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('horoshop','service-websites'),true)){
+ require get_template_directory().'/ru-premium-page.php';
+ return;
+}
 $is_horoshop=mrseo_slug()==='horoshop';
 if($is_horoshop){
 $title=mrseo_t('Магазин на Хорошоп є. А його потенціал у Google реалізований?','Магазин на Хорошоп есть. А его потенциал в Google раскрыт?','Your Horoshop store is live. Is it discoverable?');
