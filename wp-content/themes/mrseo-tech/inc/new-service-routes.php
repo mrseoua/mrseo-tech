@@ -45,7 +45,7 @@ add_filter('pre_get_document_title',function($title){
 add_filter('body_class',function($classes){
  if(mrseo_new_service_route())$classes[]='mrseo-new-service-page';
  return $classes;
-);
+});
 add_action('wp_head',function(){
  if(!mrseo_new_service_route())return;
  $slug=mrseo_slug();$copy=mrseo_new_service_copy();
