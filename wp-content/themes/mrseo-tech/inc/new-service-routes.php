@@ -4,6 +4,7 @@ require_once __DIR__.'/new-service-copy-part1.php';
 require_once __DIR__.'/new-service-copy-part2.php';
 require_once __DIR__.'/new-service-copy-part3.php';
 require_once __DIR__.'/new-service-editorial.php';
+require_once __DIR__.'/ua-service-ux.php';
 
 /** New standalone service pages; staged translations are intentionally limited to UA/RU. */
 function mrseo_new_service_parent_slugs(){

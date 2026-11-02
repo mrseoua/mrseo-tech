@@ -6,7 +6,7 @@
 if (!defined('ABSPATH')) exit;
 get_header();
 ?>
-<main class="ukseo ukseo--audit" id="main-content">
+<div class="ukseo ukseo--audit" id="main-content">
   <section class="ukseo-hero" aria-labelledby="ukaudit-title">
     <div class="container ukseo-hero-grid">
       <div class="ukseo-hero-copy">
@@ -137,5 +137,5 @@ get_header();
       <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити проблему сайту <span aria-hidden="true">↗</span></a>
     </div>
   </section>
-</main>
+</div>
 <?php get_footer(); ?>

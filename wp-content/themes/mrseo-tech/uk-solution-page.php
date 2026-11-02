@@ -7,7 +7,7 @@ $page=mrseo_uk_solution_content($slug);
 if(!$page || mrseo_locale()!=='uk'){status_header(404);include get_404_template();return;}
 get_header();
 ?>
-<main class="ukseo ukseo--solution ukseo--<?php echo esc_attr($slug);?>" id="main-content">
+<div class="ukseo ukseo--solution ukseo--<?php echo esc_attr($slug);?>" id="main-content">
  <section class="ukseo-hero" aria-labelledby="uksolution-title">
   <div class="container ukseo-hero-grid">
    <div class="ukseo-hero-copy">
@@ -97,5 +97,5 @@ get_header();
    <p><?php echo esc_html($page['finalText']);?></p></div>
   <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($page['button']);?> <span aria-hidden="true">↗</span></a>
  </div></section>
-</main>
+</div>
 <?php get_footer();?>
