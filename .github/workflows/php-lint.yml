@@ -179,6 +179,27 @@ jobs:
           assert 'ns-related-card' in new_template and 'ns-related-grid' in new_styles
           assert 'font-size:14px;line-height:1.4' in new_styles, 'Readable mobile scene labels missing'
           assert "require_once __DIR__.'/ua-service-ux.php';" in ns_routes
+          # Russian quality parity: distinct service offers without touching the UA reference.
+          ru_ux=(root/'inc/ru-service-ux.php').read_text()
+          ru_match=re.search(r"<<<'MRSEO_RU_UX'\n(.*?)\nMRSEO_RU_UX;",ru_ux,re.S)
+          assert ru_match, 'Russian editorial data missing'
+          ru_services=json.loads(ru_match.group(1))
+          assert set(ru_services)==set(new_pages), 'Missing RU refinements for a service'
+          assert len({entry['hero'] for entry in ru_services.values()})==12
+          assert len({entry['deliveryTitle'] for entry in ru_services.values()})==12
+          assert len({tuple(entry['exampleTitle']) for entry in ru_services.values()})==12
+          assert len({entry['finalTitle'] for entry in ru_services.values()})==12
+          for slug,entry in ru_services.items():
+              assert len(entry['hero'])>=110 and len(entry['problemLead'])>=95, slug
+              assert len(entry['exampleTitle'])==2
+              assert len(entry['related'])==2 and len({x[0] for x in entry['related']})==2,slug
+              assert all(len(link)==3 and link[0] in all_existing and link[0]!=slug for link in entry['related']),slug
+          assert "require_once __DIR__.'/ru-service-ux.php';" in ns_routes
+          assert "mrseo_ru_service_ux($slug,$lang)" in new_template
+          assert "$lang==='uk'?mrseo_ua_service_ux($slug,$lang)" in new_template
+          assert "Связанные услуги" in new_template
+          assert "Что ещё может помочь?" in new_template
+          assert (root/'assets/new-services.css').read_text().count('{')==(root/'assets/new-services.css').read_text().count('}')
           assert "X-Robots-Tag: noindex, nofollow" in functions
           print('11 localized motion scenes × 5 languages; 3D Earth only on homepages; 5 development pages and noindex verified')
           PY
