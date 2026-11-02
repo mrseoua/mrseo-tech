@@ -379,8 +379,22 @@ function mrseo_render_mega_menu($in_mobile_panel = false) {
                 echo '<span class="mrseo-mega-item">'.esc_html($name).'</span>';
             }
         }
-        foreach (($group['topics'] ?? array()) as $topic) {
-            echo '<span class="mrseo-mega-item">'.esc_html($topic).'</span>';
+        // Align the 12 planned offers with real pages; other locales stay textual until written.
+        $new_topics=array(
+           'seo'=>array('website-audit','traffic-recovery'),
+           'ads'=>array('google-shopping','merchant-center'),
+           'commerce'=>array('online-store-development','catalog-automation'),
+           'dev'=>array('web-applications','api-integrations','custom-functionality'),
+           'data'=>array('ga4-conversions','business-dashboards','reporting-automation')
+        );
+        foreach (($group['topics'] ?? array()) as $i=>$topic) {
+            $new_slug=$new_topics[$key][$i]??null;
+            if($new_slug && in_array($locale,array('uk','ru'),true) && mrseo_new_service_copy($new_slug,$locale)){
+                $active=$new_slug===$slug;
+                echo '<a class="mrseo-mega-item'.($active?' is-current':'').'" href="'.esc_url(mrseo_url($new_slug)).'"'.($active?' aria-current="page"':'').'>'.esc_html($topic).'</a>';
+            }else{
+                echo '<span class="mrseo-mega-item">'.esc_html($topic).'</span>';
+            }
         }
         echo '</div></section>';
     }

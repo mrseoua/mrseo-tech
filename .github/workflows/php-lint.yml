@@ -127,5 +127,35 @@ jobs:
           assert 'mrseo-motion-scenes' in functions
           assert 'orbit-earth-three.js?v=5' in home, '3D Earth remains only on the homepage'
           assert "X-Robots-Tag: noindex, nofollow" in functions, 'Do not disable staging noindex'
+          # Verify every commercial new service has original UA/RU copy and a reachable route.
+          new_pages={}
+          for part in range(1,4):
+              content=(root/f'inc/new-service-copy-part{part}.php').read_text()
+              matcher=re.search(r"<<<'MRSEO_NEW_SERVICE_P"+str(part)+r"'\n(.*?)\nMRSEO_NEW_SERVICE_P"+str(part)+r";",content,re.S)
+              assert matcher, ('missing new service copy',part)
+              new_pages.update(json.loads(matcher.group(1)))
+          assert len(new_pages)==12, ('expected 12 new service routes',len(new_pages))
+          titles=set()
+          for slug,translations in new_pages.items():
+              assert set(translations)=={'uk','ru'}, (slug,'locale mismatch')
+              for locale,page in translations.items():
+                  assert all(page.get(key) for key in ('title','head','lead','risk','scene','cta','related'))
+                  assert len(page['head'])==2 and len(page['problems'])==3 and len(page['steps'])==4
+                  assert len(page['outcomes'])==3 and len(page['faq'])>=2 and len(page['example'])==3
+                  assert len(page['scene'])==3
+                  assert len(page['lead'])>=80, (slug,locale,'thin description')
+                  title=(locale,page['title'])
+                  assert title not in titles, title
+                  titles.add(title)
+          ns_routes=(root/'inc/new-service-routes.php').read_text()
+          new_template=(root/'new-service-landing.php').read_text()
+          new_styles=(root/'assets/new-services.css').read_text()
+          assert all(slug in ns_routes for slug in new_pages)
+          assert 'mrseo_new_service_slugs()' in (root/'inc/international-sitemap.php').read_text()
+          assert 'mrseo_new_service_copy($new_slug,$locale)' in mega_file
+          assert "array('uk','ru')" in ns_routes and "mrseo_new_service_route()" in new_template
+          assert "wp_enqueue_style('mrseo-new-services'" in functions
+          assert new_styles.count('{')==new_styles.count('}')
+          assert "X-Robots-Tag: noindex, nofollow" in functions
           print('11 localized motion scenes × 5 languages; 3D Earth only on homepages; 5 development pages and noindex verified')
           PY
