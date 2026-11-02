@@ -77,3 +77,33 @@
 @media(max-width:780px){.ns-scene{min-height:380px}.ns-page .ukseo-hero-grid{grid-template-columns:1fr}.ns-page .ukseo-problem-card{min-height:0}.ns-page .ukseo-hero-art{max-width:650px}}
 @media(max-width:480px){.ns-scene{min-height:335px;padding:14px;border-radius:15px}.ns-scene-pipeline{gap:3px;grid-template-columns:minmax(0,1fr) 10px minmax(0,1fr) 10px minmax(0,1fr)}.ns-scene-node{padding:8px 5px;min-height:85px}.ns-scene-node strong{font-size:10px;line-height:1.35}.ns-scene-arrow{font-size:13px}.ns-product-preview,.ns-commerce-preview{gap:5px;margin:23px 2px 36px}.ns-product-preview>div,.ns-commerce-preview>div{height:105px;font-size:31px}.ns-audit-wave,.ns-data-preview{height:123px;margin:19px 7px 30px}.ns-dev-preview{gap:4px;height:136px;margin:15px 0 25px}.ns-dev-preview span{height:90px;font-size:18px}.ns-dev-preview i{flex-basis:10px}.ns-page .ukseo-card-number{margin-bottom:20px}.ns-page .ukseo-hero-copy h1{font-size:clamp(39px,10vw,55px)}}
 @media(prefers-reduced-motion:reduce){.ns-page .ns-scene *, .ns-scene::after{animation:none!important;transition:none!important}}
+
+/* Quality review: contextual service discovery and readable diagrams. */
+.ns-related{padding:clamp(55px,6vw,90px) 0;background:#f3eee6;border-top:1px solid #e6ddd2}
+.ns-related-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+.ns-related-head h2{font-size:clamp(28px,3.6vw,45px);letter-spacing:-.05em;line-height:1.12;font-weight:830;color:#252b26;margin:9px 0 0}
+.ns-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.ns-related-card{position:relative;display:flex;flex-direction:column;gap:12px;min-height:146px;padding:23px 55px 24px 23px;border:1px solid #ded5c8;border-radius:16px;background:#fffdf9;color:#222b25;text-decoration:none!important;transition:transform .22s,box-shadow .22s,border-color .22s}
+.ns-related-card strong{font-size:clamp(18px,1.7vw,23px);line-height:1.25;letter-spacing:-.02em;font-weight:820}
+.ns-related-card span{font-size:15px;line-height:1.6;color:#526157;font-weight:530}
+.ns-related-card b{position:absolute;right:23px;top:23px;color:#b5533e;font-size:24px}
+.ns-related-card:hover{transform:translateY(-3px);border-color:#bf8574;box-shadow:0 12px 28px #1e231b14}
+.ns-related-card:focus-visible{outline:3px solid #b5533e;outline-offset:3px}
+.ns-scene-top{font-size:12px}
+.ns-scene-node small{font-size:12px}
+.ns-scene-node strong{font-size:clamp(13px,1.12vw,17px)}
+.ns-scene-foot{font-size:12px}
+@media(max-width:1080px){.ns-scene-node strong{font-size:13px}}
+@media(max-width:620px){.ns-related-grid{grid-template-columns:1fr}.ns-related-card{min-height:120px;padding:21px 54px 22px 20px}.ns-related-card span{font-size:15px}}
+@media(max-width:480px){
+ .ns-scene{min-height:420px;padding:16px}
+ .ns-scene-top{font-size:12px}
+ .ns-scene-pipeline{grid-template-columns:minmax(0,1fr);gap:0;margin-top:auto}
+ .ns-scene-node{min-height:60px;padding:10px 14px;flex-direction:row;justify-content:flex-start;align-items:center;gap:13px}
+ .ns-scene-node small{font-size:12px;min-width:24px;margin:0}
+ .ns-scene-node strong{font-size:14px;line-height:1.4}
+ .ns-scene-arrow{min-height:23px;font-size:20px;line-height:1;animation:none;transform:rotate(90deg)}
+ .ns-scene-foot{font-size:12px;padding-top:11px;margin-top:13px}
+ .ns-related-head h2{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){.ns-related-card{transition:none!important}}

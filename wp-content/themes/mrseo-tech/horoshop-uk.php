@@ -3,7 +3,7 @@
 if(!defined('ABSPATH'))exit;
 get_header();
 ?>
-<main class="ukseo ukseo--horoshop" id="main-content">
+<div class="ukseo ukseo--horoshop" id="main-content">
 <section class="ukhoroshop-wrap">
 <section class="special-hero special-hero-horoshop" aria-labelledby="horoshop-title">
  <div class="container hs-hero-layout">
@@ -99,5 +99,5 @@ get_header();
  <div><span class="ukseo-kicker">ПЕРШИЙ КРОК</span><h2 id="ukhoroshop-final-title">Магазин працює. <em>Знайдімо, що стримує його зростання.</em></h2><p>Надішліть адресу вашого магазину й коротко опишіть проблему. Почнемо з перевірки того, що справді впливає на результат.</p></div>
  <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити Хорошоп <span aria-hidden="true">↗</span></a>
 </div></section>
-</main>
+</div>
 <?php get_footer();?>

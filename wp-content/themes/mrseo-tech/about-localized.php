@@ -2,7 +2,7 @@
 if(!defined('ABSPATH'))exit;
 get_header();
 ?>
-<main class="about-page">
+<div class="about-page">
   <section class="about-hero" aria-labelledby="about-heading">
     <div class="container about-hero-grid">
       <div class="about-hero-copy">
@@ -106,5 +106,5 @@ get_header();
       <a class="about-final-link" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити проєкт','Обсудить проект','Discuss your project'));?> <span aria-hidden="true">↗</span></a>
     </div>
   </section>
-</main>
+</div>
 <?php get_footer();?>
