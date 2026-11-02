@@ -1,0 +1,8 @@
+/* British English premium: warm background, restrained red, dark slate diagrams. */
+.pl-svc{--pl-ink:#27323b;--pl-rust:#aa5142}
+.pl-svc-hero{background:linear-gradient(150deg,#fcf9f4,#f0ede5)}
+.pl-svc-scene{background:linear-gradient(145deg,#303a4c,#1c2734);border-color:#5c6470}
+.pl-svc-scene-step{background:#f7f3eb}
+.pl-svc-case,.pl-svc-limits,.pl-svc-final{background:#27313d}
+.pl-svc-hero h1 em,.pl-svc-example h2 em{color:#ab4e40}
+.pl-svc-related-grid>a:hover{border-color:#ab4e40}
