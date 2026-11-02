@@ -32,6 +32,11 @@ function mrseo_localized_sitemap_paths(){
    $entries[]=array('loc'=>mrseo_url($slug,$language),'alternates'=>$alternates,'default'=>mrseo_url($slug,'uk'));
   }
  }
+ // Finished Poland-only commercial pages — do not advertise untranslated equivalents.
+ foreach(mrseo_pl_service_slugs() as $slug){
+  $url=mrseo_url($slug,'pl');
+  $entries[]=array('loc'=>$url,'alternates'=>array('pl-PL'=>$url),'default'=>$url);
+ }
  return $entries;
 }
 add_action('init',function(){

@@ -21,7 +21,7 @@ $mrseo_lang=mrseo_locale();$mrseo_slug=mrseo_slug();
    <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['contact']);?></a>
   </nav>
   <?php mrseo_render_header_contact();?>
-  <?php mrseo_render_language_dropdown(in_array($mrseo_slug,mrseo_int_pages(),true)?$mrseo_slug:'',$mrseo_lang);?>
+  <?php mrseo_render_language_dropdown((in_array($mrseo_slug,mrseo_int_pages(),true)||($mrseo_lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($mrseo_slug,mrseo_pl_service_slugs(),true)))?$mrseo_slug:'',$mrseo_lang);?>
   <a class="intl-nav-cta" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['cta']);?> ↗</a>
   <details class="intl-mobile-menu"><summary aria-label="Menu">☰</summary><div class="intl-mobile-panel">
    <?php mrseo_render_mega_menu(true);?>

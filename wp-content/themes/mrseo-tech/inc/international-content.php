@@ -102,11 +102,11 @@ function mrseo_international_data(){
   "pages": {
     "pl": {
       "": {
-        "title": "SEO i Google Ads dla sklepów internetowych | MrSeo.tech",
-        "description": "Techniczne SEO, optymalizacja e-commerce, Google Ads i analityka. Znajdujemy przyczyny problemów i wdrażamy działania dopasowane do biznesu.",
-        "eyebrow": "SEO · E-COMMERCE · GOOGLE ADS",
-        "headline": "Masz sklep. <em>Czy klienci mogą go znaleźć?</em>",
-        "lead": "Łączymy techniczne SEO, reklamę i analitykę, żeby rozwiązywać konkretne problemy: niewidoczne kategorie, błędy indeksowania, kosztowne kampanie i niejasne dane o sprzedaży.",
+        "title": "Tworzenie stron, sklepów, SEO i Google Ads dla firm | MrSeo.tech",
+        "description": "MrSeo.tech: strony internetowe, sklepy, SEO, Google Ads, aplikacje i integracje. Nowy projekt lub problem z widocznością? Dobieramy rozwiązanie do celu firmy.",
+        "eyebrow": "STRONY · SKLEPY · SEO · GOOGLE ADS",
+        "headline": "Potrzebujesz strony? <em>A może więcej klientów?</em>",
+        "lead": "Projektujemy strony i sklepy, wspieramy SEO i reklamę oraz tworzymy rozwiązania dopasowane do procesów firmy. Zaczynamy od Twojego celu — niezależnie, czy budujesz od zera, czy poprawiasz istniejący serwis.",
         "problems": [
           [
             "Produkty nie są widoczne",
@@ -359,52 +359,60 @@ function mrseo_international_data(){
         ]
       },
       "google-ads": {
-        "title": "Google Ads dla e-commerce – audyt i prowadzenie kampanii | MrSeo.tech",
-        "description": "Google Ads dla sklepów: konwersje, Merchant Center, Shopping, Performance Max i optymalizacja wydatków na podstawie ekonomiki sprzedaży.",
+        "title": "Prowadzenie Google Ads dla firm i sklepów | MrSeo.tech",
+        "description": "Prowadzenie Google Ads dla usług i e-commerce: jakość leadów, zakupy, konwersje, Search, Shopping i Performance Max. Kontrola wydatków i czytelne cele.",
         "eyebrow": "GOOGLE ADS · E-COMMERCE",
-        "headline": "Reklamy wydają budżet. <em>A co z zyskiem?</em>",
-        "lead": "Zaczynamy od wiarygodnego pomiaru zakupów i wartości konwersji. Dopiero potem analizujemy kampanie, asortyment i decyzje dotyczące budżetu.",
+        "headline": "Płacisz za kliknięcia. <em>Czy zdobywasz właściwych klientów?</em>",
+        "lead": "Prowadzimy kampanie Google Ads dla firm usługowych i sklepów. Łączymy zapytania klientów, ofertę, jakość pomiaru i budżet. Nie traktujemy samych kliknięć jako dowodu skuteczności.",
         "problems": [
           [
-            "Konwersje się nie zgadzają",
-            "Dane Google Ads, GA4 i zamówienia pokazują inne wyniki."
+            "Kliknięcia są, zapytań brakuje",
+            "Kampanie przyciągają ruch, ale klienci nie kontaktują się z firmą lub nie kupują."
           ],
           [
-            "Budżet idzie w słabe produkty",
-            "Nie wszystkie kategorie mają tę samą marżę ani szanse na sprzedaż."
+            "Konwersje nie zgadzają się z biznesem",
+            "Zdarzenia, wartości i źródła mogą różnić się od realnych zamówień i leadów."
           ],
           [
-            "Performance Max to czarna skrzynka",
-            "Brakuje podziału asortymentu i zasad oceny testów."
+            "Budżet rośnie bez jasnego planu",
+            "Brakuje podziału usług lub produktów oraz przejrzystych kryteriów testów."
           ]
         ],
         "solutions": [
           [
-            "Porządek w pomiarze",
-            "Weryfikujemy zakupy, wartości, atrybucję i duplikaty."
+            "Sprawdzamy drogę klienta",
+            "Porównujemy intencje zapytań z reklamą, ofertą na stronie i możliwością kontaktu."
           ],
           [
-            "Struktura z sensem",
-            "Dostosowujemy segmentację kampanii do asortymentu i celów."
+            "Weryfikujemy pomiar",
+            "Testujemy zakup lub zgłoszenie, analizujemy duplikaty i wartość konwersji."
           ],
           [
-            "Decyzje na podstawie danych",
-            "Analizujemy koszty i realną wartość sprzedaży, uwzględniając opóźnienia konwersji."
+            "Ustalamy sensowne priorytety",
+            "Dobieramy strukturę Search, Shopping lub Performance Max do celów i dostępnych danych."
           ]
         ],
         "outcomes": [
-          "Lista błędów śledzenia",
-          "Plan kampanii i hipotez testów",
-          "Zasady oceny CPA, ROAS i rentowności"
+          "Plan kampanii dla usług lub produktów",
+          "Lista błędów pomiaru i jakości ruchu",
+          "Kryteria oceny kosztu zapytań i zakupów"
         ],
         "faq": [
           [
-            "Czy pracujecie z Merchant Center i Performance Max?",
-            "Tak, analizujemy dane produktowe, dostępność, konwersje i strukturę kampanii."
+            "Czy obsługujecie kampanie dla firm usługowych?",
+            "Tak, cele kampanii usługowych definiujemy przez jakość i liczbę wartościowych zapytań, a nie tylko kliknięcia."
           ],
           [
-            "Czy gwarantujecie określony ROAS?",
-            "Nie. Wynik zależy również od cen, marży, sezonowości i konkurencji; ustalamy realistyczne kryteria oceny."
+            "Czy prowadzicie Shopping i Performance Max?",
+            "Możemy ocenić kampanie produktowe, feed i pomiar zakupów. Ostateczna struktura zależy od danych i oferty sklepu."
+          ],
+          [
+            "Czy możliwy jest osobny audyt konta?",
+            "Tak. Audyt Google Ads może być niezależnym etapem poprzedzającym dalszą obsługę."
+          ],
+          [
+            "Czy gwarantujecie konkretny ROAS?",
+            "Nie. Wynik zależy od konkurencji, oferty, marży i jakości danych; ustalamy realne kryteria oceny."
           ]
         ],
         "verification": [

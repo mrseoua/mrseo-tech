@@ -201,5 +201,43 @@ jobs:
           assert "Что ещё может помочь?" in new_template
           assert (root/'assets/new-services.css').read_text().count('{')==(root/'assets/new-services.css').read_text().count('}')
           assert "X-Robots-Tag: noindex, nofollow" in functions
+          # Six genuine Poland-only offers, localized content, routes, navigation and SEO.
+          pl_source=(root/'inc/pl-service-content.php').read_text()
+          pl_match=re.search(r"<<<'MRSEO_PL_SERVICES'\n(.*?)\nMRSEO_PL_SERVICES;",pl_source,re.S)
+          assert pl_match, 'Poland service dataset missing'
+          pl_data=json.loads(pl_match.group(1))
+          pl_expected={'tworzenie-stron-internetowych','tworzenie-sklepow-internetowych','audyt-google-ads','problemy-merchant-center','google-shopping','opieka-wordpress'}
+          assert set(pl_data)==pl_expected
+          assert len({page['title'] for page in pl_data.values()})==6
+          assert len({tuple(page['hero']) for page in pl_data.values()})==6
+          assert len({page['description'] for page in pl_data.values()})==6
+          pl_links=pl_expected | {'','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','about','portfolio','contact'}
+          for slug,page in pl_data.items():
+              for key in ('description','title','lead','intro','introText','risk'):
+                  assert len(page[key])>18, (slug,key)
+              assert len(page['cta'])>=8, (slug,'cta')
+              assert len(page['hero'])==2 and len(page['problems'])==3,slug
+              assert len(page['process'])==4 and len(page['outcomes'])==3 and len(page['faq'])>=3,slug
+              assert len(page['visual'])==3 and len(page['example'])==4,slug
+              assert len(page['related'])==2 and all(link[0] in pl_links for link in page['related']),slug
+          pl_routes=(root/'inc/pl-service-routing.php').read_text()
+          pl_template=(root/'pl-service-landing.php').read_text()
+          pl_css=(root/'assets/pl-services.css').read_text()
+          assert "get_header('international')" in pl_template
+          assert "get_footer('international')" in pl_template
+          assert '<main' not in pl_template, 'Avoid nested main landmark'
+          assert 'mrseo_pl_service_route()' in pl_routes
+          assert "hreflang=\"pl-PL\"" in pl_routes
+          assert "wp_enqueue_style('mrseo-pl-services'" in functions
+          assert 'mrseo_render_pl_mega_menu($in_mobile_panel)' in mega_file
+          assert 'mrseo_pl_service_slugs()' in routes
+          assert 'mrseo_pl_service_slugs()' in (root/'inc/international-sitemap.php').read_text()
+          assert 'mrseo_pl_service_parent' in routes, 'Language switch fallbacks missing'
+          assert pl_css.count('{')==pl_css.count('}')
+          assert 'min-height:435px' in pl_css, 'Responsive diagram required'
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+          assert '$nodes=array_slice($nodes,0,6)' in home, 'Homepage Earth untouched'
+          print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
+
           print('11 localized motion scenes × 5 languages; 3D Earth only on homepages; 5 development pages and noindex verified')
           PY
