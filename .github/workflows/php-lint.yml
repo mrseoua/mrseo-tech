@@ -127,7 +127,7 @@ jobs:
           assert 'name="dev-problem"' in dev_template
           assert "mrseo_dev_page()" in routes or 'mrseo_dev_page' in routes
           assert 'web-development' in routes and 'web-development' in home
-          assert "mrseo_int_pages()" in (root/'inc/international-sitemap.php').read_text()
+          assert 'mrseo_i18n_inventory()' in (root/'inc/international-sitemap.php').read_text()
           assert (root/'assets/development.css').read_text().count('{')==(root/'assets/development.css').read_text().count('}')
           assert 'mrseo_render_motion_scene($mrseo_slug,$mrseo_lang)' in template
           assert 'intl-earth-core' not in template and 'orbit-earth-three.js?v=6' not in template
@@ -175,7 +175,7 @@ jobs:
           new_template=(root/'new-service-landing.php').read_text()
           new_styles=(root/'assets/new-services.css').read_text()
           assert all(slug in ns_routes for slug in new_pages)
-          assert 'mrseo_new_service_slugs()' in (root/'inc/international-sitemap.php').read_text()
+          assert 'mrseo_new_service_slugs()' in (root/'inc/international-seo.php').read_text()
           assert 'mrseo_new_service_copy($new_slug,$locale)' in mega_file
           assert "array('uk','ru')" in ns_routes and "mrseo_new_service_route()" in new_template
           assert "wp_enqueue_style('mrseo-new-services'" in functions
@@ -251,11 +251,11 @@ jobs:
           assert "get_footer('international')" in pl_template
           assert '<main' not in pl_template, 'Avoid nested main landmark'
           assert 'mrseo_pl_service_route()' in pl_routes
-          assert "hreflang=\"pl-PL\"" in pl_routes
+          assert "'pl' => 'pl-PL'" in (root/'inc/international-seo.php').read_text()
           assert "wp_enqueue_style('mrseo-pl-services'" in functions
           assert 'mrseo_render_pl_mega_menu($in_mobile_panel)' in mega_file
           assert 'mrseo_pl_service_slugs()' in routes
-          assert 'mrseo_pl_service_slugs()' in (root/'inc/international-sitemap.php').read_text()
+          assert 'tworzenie-stron-internetowych' in (root/'inc/international-seo.php').read_text()
           assert 'mrseo_pl_service_parent' in routes, 'Language switch fallbacks missing'
           assert pl_css.count('{')==pl_css.count('}')
           assert 'min-height:435px' in pl_css, 'Responsive diagram required'
@@ -297,7 +297,7 @@ jobs:
           assert "mrseo_uk_home_copy($en)" in routes
           assert "if($lang!=='en' && function_exists('mrseo_uk_market_new_slugs')" in routes
           assert "function mrseo_int_locales(){return array('en'=>'en-GB'" in (root/'inc/international-content.php').read_text()
-          assert "mrseo_uk_market_new_slugs()" in (root/'inc/international-sitemap.php').read_text()
+          assert 'website-design' in (root/'inc/international-seo.php').read_text()
           assert 'mrseo-uk-market-base' in functions and 'mrseo-uk-market' in functions
           assert 'mrseo_uk_market_route()' in functions
           assert "X-Robots-Tag: noindex, nofollow" in functions
