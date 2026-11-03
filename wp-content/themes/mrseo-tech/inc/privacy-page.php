@@ -5,6 +5,10 @@
  */
 if (!defined('ABSPATH')) exit;
 function mrseo_privacy_copy($locale=null) {
+    if(function_exists('mrseo_eu_privacy_copy')){
+        $new_copy=mrseo_eu_privacy_copy($locale??mrseo_locale());
+        if($new_copy)return $new_copy;
+    }
     static $data=null;
     if($data===null){
         $json=<<<'MRSEO_PRIVACY_TRANSLATIONS'
