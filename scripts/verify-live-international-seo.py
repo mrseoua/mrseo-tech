@@ -144,7 +144,7 @@ if __name__ == "__main__":
             try:
                 future.result()
             except Exception as exc:
-                problems.append(str(exc))
+                problems.append(f"{futures[future]}: {exc}")
     if problems:
         fail(f"{len(problems)} URLs failed live HEAD checks:\n" + "\n".join(problems[:24]))
 
