@@ -10,13 +10,13 @@
 .mrseo-language-dropdown .mrseo-language-trigger-code{font-size:14px;font-weight:850;letter-spacing:.035em;line-height:1}
 .mrseo-language-dropdown .mrseo-language-chevron{display:inline-block;font-size:21px;line-height:.6;font-weight:650;color:#98634f;transform:translateY(-3px);transition:transform .2s ease}
 .mrseo-language-dropdown[open] .mrseo-language-chevron{transform:translateY(-1px) rotate(180deg)}
-.mrseo-language-dropdown .mrseo-language-options{position:absolute;top:calc(100% + 10px);right:0;z-index:10050;width:223px;max-width:calc(100vw - 24px);padding:8px;border:1px solid #ded5ca;border-radius:15px;background:#fffdf9;box-shadow:0 22px 55px #17221e30;white-space:normal}
-.mrseo-language-dropdown .mrseo-language-options a{display:flex;align-items:center;gap:13px;min-height:45px;width:100%;padding:10px 12px;border-radius:9px;color:#283129;text-decoration:none;font-size:15px;font-weight:650;line-height:1.4;transition:background .16s ease,color .16s ease}
+.mrseo-language-dropdown .mrseo-language-options{position:absolute;top:calc(100% + 10px);right:0;z-index:10050;width:252px;max-width:calc(100vw - 24px);padding:8px;border:1px solid #ded5ca;border-radius:15px;background:#fffdf9;box-shadow:0 22px 55px #17221e30;white-space:normal}
+.mrseo-language-dropdown .mrseo-language-options a{display:flex;align-items:center;gap:10px;min-width:0;min-height:45px;width:100%;padding:10px 12px;border-radius:9px;color:#283129;text-decoration:none;font-size:15px;font-weight:650;line-height:1.4;transition:background .16s ease,color .16s ease}
 .mrseo-language-dropdown .mrseo-language-options a:hover{background:#f1ece3;color:#9a3d2d}
 .mrseo-language-dropdown .mrseo-language-options a[aria-current="page"]{background:#f2e6df;color:#963c2d;font-weight:800}
 .mrseo-language-dropdown .mrseo-language-option-code{display:inline-block;flex:0 0 30px;font-size:12px;font-weight:850;letter-spacing:.045em}
-.mrseo-language-dropdown .mrseo-language-option-name{flex:1;min-width:0;white-space:nowrap}
-.mrseo-language-dropdown .mrseo-language-selected{font-size:16px;font-weight:850}
+.mrseo-language-dropdown .mrseo-language-option-name{flex:1 1 auto;min-width:0;white-space:normal;overflow-wrap:anywhere}
+.mrseo-language-dropdown .mrseo-language-selected{flex:0 0 auto;margin-left:auto;font-size:16px;font-weight:850}
 .site-header .mrseo-language-dropdown{z-index:10030}
 .intl-header .mrseo-language-dropdown{z-index:10030}
 @media(max-width:950px){
