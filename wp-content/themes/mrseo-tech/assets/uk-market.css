@@ -6,3 +6,9 @@
 .pl-svc-case,.pl-svc-limits,.pl-svc-final{background:#27313d}
 .pl-svc-hero h1 em,.pl-svc-example h2 em{color:#ab4e40}
 .pl-svc-related-grid>a:hover{border-color:#ab4e40}
+
+/* The UK service template uses the standard header, not the international body
+   class. Restore the shared editorial container with responsive side gutters. */
+.pl-svc .intl-wrap{width:min(calc(100% - 64px),1370px);margin-inline:auto}
+@media(max-width:650px){.pl-svc .intl-wrap{width:calc(100% - 36px)}}
+@media(max-width:390px){.pl-svc .intl-wrap{width:calc(100% - 32px)}}
