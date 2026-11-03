@@ -13,15 +13,6 @@
 .dev-button:hover{background:#b95343;transform:translateY(-2px)}
 .dev-text-link{font-size:14px;font-weight:780;color:#37413a;border-bottom:1px solid #c19586;text-decoration:none;padding-bottom:5px}
 .dev-text-link:hover{color:#b95343}
-.dev-earth-scene{position:relative;isolation:isolate;min-width:0;overflow:hidden;height:clamp(440px,37vw,555px);background:radial-gradient(ellipse at 50% 48%,#31463f 0%,#132124 76%);border:1px solid #44534d;border-radius:25px;box-shadow:0 30px 63px #222b2533}
-.dev-earth-scene .intl-scene-head,.dev-earth-scene .intl-scene-foot{z-index:8}
-.dev-earth-scene .intl-scene-orbits{pointer-events:none}
-.dev-earth-scene .intl-earth-core{z-index:4;width:min(44%,255px)}
-.dev-earth-scene .intl-satellite{z-index:6;max-width:35%;min-height:43px;padding:9px 10px;background:#243630eb;border:1px solid #839589a8;border-radius:10px;display:flex;align-items:center;gap:7px;color:#f5f2ed!important;box-shadow:0 7px 20px #0008;font-size:12px;line-height:1.32;font-weight:780;transition:transform .2s,border-color .2s}
-.dev-earth-scene .intl-satellite b{margin-left:auto;color:#f3aa98}
-.dev-earth-scene .intl-satellite.is-current,.dev-earth-scene .intl-satellite:hover{border-color:#f0b3a1;background:#3d5249}
-.dev-earth-scene .intl-satellite:hover{transform:translateY(-3px)}
-.dev-earth-scene .intl-satellite-6{left:35%;top:11%;max-width:36%}
 .dev-section{padding:clamp(65px,7.6vw,108px) 0}
 .dev-diagnosis{background:#faf7f1}
 .dev-diag-grid{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(32px,6vw,92px)}
@@ -90,7 +81,7 @@
 .dev-cta .dev-wrap{max-width:870px}.dev-cta h2{color:#f5f2ec;font-size:clamp(41px,5.1vw,75px);margin:18px 0}
 .dev-cta p{color:#c5d1c7;font-size:18px;line-height:1.68;margin:0 auto 31px;max-width:720px}
 .dev-cta .dev-button{background:#f1ede4;color:#202723!important}.dev-cta .dev-button:hover{background:#e5c6b8}
-@media(max-width:1100px){.dev-hero-grid{grid-template-columns:1fr;max-width:830px}.dev-earth-scene{max-width:780px}.dev-hero h1{font-size:clamp(48px,6vw,72px)!important}.dev-cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dev-workflow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:740px){.dev-wrap{width:calc(100% - 36px)}.dev-diag-grid,.dev-faq-grid,.dev-outcomes-grid{grid-template-columns:1fr;gap:30px}.dev-sticky-copy{position:static}.dev-check-grid{grid-template-columns:1fr}.dev-earth-scene{height:420px}.dev-earth-scene .intl-satellite{font-size:11px;min-height:37px;padding:7px;max-width:36%}.dev-earth-scene .intl-satellite-6{top:12%;left:32%}.dev-scope .intl-earth-core{width:45%}}
-@media(max-width:560px){.dev-hero{padding:55px 0 64px}.dev-hero h1{font-size:clamp(38px,10vw,54px)!important;letter-spacing:-.066em!important}.dev-lead{font-size:16px}.dev-earth-scene{height:365px;border-radius:17px}.dev-earth-scene .intl-satellite{font-size:9.5px;gap:4px;max-width:36%;padding:6px 5px;min-height:32px}.dev-earth-scene .intl-satellite-6{left:28%;top:12%;max-width:45%}.dev-cap-grid,.dev-workflow-grid{grid-template-columns:1fr}.dev-cap{min-height:255px}.dev-issue summary{gap:8px;padding:19px 6px;grid-template-columns:24px minmax(0,1fr) 26px}.dev-issue-title strong{font-size:21px}.dev-issue-title small{font-size:14px}.dev-issue-answer{margin:0 8px 19px 34px;padding:17px 15px}.dev-check{padding:20px}.dev-outcome strong{font-size:19px}.dev-sticky-copy h2,.dev-section-heading h2,.dev-outcomes h2,.dev-faq h2{font-size:39px}}
-@media(prefers-reduced-motion:reduce){.dev-cap-visual i:nth-child(2){animation:none!important}.dev-cap,.dev-button,.dev-earth-scene .intl-satellite{transition:none!important}}
+@media(max-width:1100px){.dev-hero-grid{grid-template-columns:1fr;max-width:830px}.dev-hero h1{font-size:clamp(48px,6vw,72px)!important}.dev-cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dev-workflow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:740px){.dev-wrap{width:calc(100% - 36px)}.dev-diag-grid,.dev-faq-grid,.dev-outcomes-grid{grid-template-columns:1fr;gap:30px}.dev-sticky-copy{position:static}.dev-check-grid{grid-template-columns:1fr}.dev-scope .intl-earth-core{width:45%}}
+@media(max-width:560px){.dev-hero{padding:55px 0 64px}.dev-hero h1{font-size:clamp(38px,10vw,54px)!important;letter-spacing:-.066em!important}.dev-lead{font-size:16px}.dev-cap-grid,.dev-workflow-grid{grid-template-columns:1fr}.dev-cap{min-height:255px}.dev-issue summary{gap:8px;padding:19px 6px;grid-template-columns:24px minmax(0,1fr) 26px}.dev-issue-title strong{font-size:21px}.dev-issue-title small{font-size:14px}.dev-issue-answer{margin:0 8px 19px 34px;padding:17px 15px}.dev-check{padding:20px}.dev-outcome strong{font-size:19px}.dev-sticky-copy h2,.dev-section-heading h2,.dev-outcomes h2,.dev-faq h2{font-size:39px}}
+@media(prefers-reduced-motion:reduce){.dev-cap-visual i:nth-child(2){animation:none!important}.dev-cap,.dev-button{transition:none!important}}
