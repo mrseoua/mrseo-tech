@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+"""Read-only production HTTP audit for the pre-indexing international site.
+
+Runs AFTER WordPress theme deployment on GitHub Actions. Does not modify pages,
+send forms, submit sitemaps, change robots or remove noindex.
+"""
+import concurrent.futures
+import html
+from html.parser import HTMLParser
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
+import xml.etree.ElementTree as ET
+
+HOST = "https://mrseo.tech"
+SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
+EXPECTED_PAGES = 94
+NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
+      "x": "http://www.w3.org/1999/xhtml"}
+USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
+SAMPLE = [
+    "/", "/ru/", "/en/", "/pl/", "/de/",
+    "/seo/", "/ru/seo/", "/en/seo/", "/pl/seo/", "/de/seo/",
+    "/en/website-design/", "/pl/tworzenie-stron-internetowych/",
+    "/en/google-shopping/", "/pl/google-shopping/", "/google-shopping/",
+    "/ru/google-shopping/", "/pl/problemy-merchant-center/",
+    "/en/merchant-center-help/", "/ru/merchant-center/",
+    "/en/wordpress-care/", "/pl/opieka-wordpress/",
+    "/online-store-development/", "/pl/tworzenie-sklepow-internetowych/",
+    "/en/online-shop-development/"
+]
+
+def fetch(url, method="GET", timeout=16):
+    req = Request(url, method=method,
+                  headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/xml;q=0.9,*/*;q=0.8"})
+    with urlopen(req, timeout=timeout) as resp:
+        body = resp.read() if method == "GET" else b""
+        return resp.status, resp.geturl(), dict(resp.headers.items()), body
+
+class HeadParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.in_head = False
+        self.links = []
+        self.robots = []
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "head":
+            self.in_head = True
+        if not self.in_head:
+            return
+        if tag == "link":
+            self.links.append(a)
+        if tag == "meta" and a.get("name", "").lower() == "robots":
+            self.robots.append(a.get("content", ""))
+    def handle_endtag(self, tag):
+        if tag == "head":
+            self.in_head = False
+
+def fail(message):
+    raise AssertionError(message)
+
+def check_head(url):
+    status, target, headers, body = fetch(url)
+    if status != 200 or target != url:
+        fail(f"GET response not canonical: {url} returned {status}, {target}")
+    parser = HeadParser()
+    parser.feed(body.decode("utf-8", errors="replace"))
+    canonicals = [a.get("href") for a in parser.links if a.get("rel", "").lower() == "canonical"]
+    if canonicals != [url]:
+        fail(f"Canonical mismatch/duplication on {url}: {canonicals}")
+    alternates = {}
+    for a in parser.links:
+        if a.get("rel", "").lower() == "alternate" and a.get("hreflang"):
+            code = a["hreflang"]
+            if code in alternates:
+                fail(f"Duplicated hreflang {code} on {url}")
+            alternates[code] = a.get("href")
+    if alternates != sitemap[url]:
+        fail(f"HTML vs sitemap hreflang mismatch on {url}: {alternates}, expected {sitemap[url]}")
+    headers_lower = {k.lower():v.lower() for k,v in headers.items()}
+    # Staging must remain noindex until explicitly approved.
+    robots_header = headers_lower.get("x-robots-tag", "")
+    if "noindex" not in robots_header and not any("noindex" in x.lower() for x in parser.robots):
+        fail(f"Staging noindex missing on {url}")
+    return url
+
+def check_head_request(url):
+    status, target, headers, _ = fetch(url, method="HEAD")
+    if status != 200 or target != url:
+        fail(f"HEAD response bad: {url}: {status} -> {target}")
+    return url
+
+if __name__ == "__main__":
+    status, target, headers, body = fetch(SITEMAP)
+    if status != 200 or target != SITEMAP:
+        fail(f"Sitemap inaccessible: {status} {target}")
+    root = ET.fromstring(body)
+    sitemap = {}
+    for node in root.findall("s:url", NS):
+        loc_node = node.find("s:loc", NS)
+        if loc_node is None or not loc_node.text:
+            fail("Sitemap URL has no <loc>")
+        loc = loc_node.text.strip()
+        if loc in sitemap:
+            fail(f"Duplicate loc {loc}")
+        if not loc.startswith(HOST + "/"):
+            fail(f"External/unexpected canonical {loc}")
+        alts = {}
+        for item in node.findall("x:link", NS):
+            code = item.attrib.get("hreflang")
+            href = item.attrib.get("href")
+            if not code or not href or code in alts:
+                fail(f"Invalid/duplicate alternate on {loc}")
+            alts[code] = href
+        if not alts:
+            fail(f"Missing hreflang on {loc}")
+        sitemap[loc] = alts
+    if len(sitemap) != EXPECTED_PAGES:
+        fail(f"Sitemap has {len(sitemap)} URLs; expected {EXPECTED_PAGES}")
+
+    # Cross-check published XML for self, reciprocal tags and no invented URLs.
+    for loc, alts in sitemap.items():
+        if loc not in alts.values():
+            fail(f"Missing self-referencing hreflang for {loc}")
+        for code, href in alts.items():
+            if href not in sitemap:
+                fail(f"Alternate URL absent from sitemap: {loc} {code} {href}")
+            if sitemap[href] != alts:
+                fail(f"Non-reciprocal hreflang: {loc} -> {href}")
+
+    # HEAD checks provide full routing coverage without downloading 94 pages.
+    problems = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+        futures = {pool.submit(check_head_request, url):url for url in sitemap}
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()
+            except Exception as exc:
+                problems.append(str(exc))
+    if problems:
+        fail(f"{len(problems)} URLs failed live HEAD checks:\n" + "\n".join(problems[:24]))
+
+    for path in SAMPLE:
+        url = HOST + path
+        if url not in sitemap:
+            fail(f"Sample URL missing from inventory: {url}")
+        check_head(url)
+
+    print(f"Live international SEO PASS: {len(sitemap)} actual HTTP 200 pages, "
+          f"{len(SAMPLE)} HTML/canonical/hreflang checks, reciprocal XML sitemap, and staging noindex.")
