@@ -50,7 +50,7 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
 </div></section>
 <?php if($slug==='contact'):?>
 <section class="eu-section" id="eu-contact-form"><div class="eu-container eu-contact-layout">
-<div><span class="eu-kicker"><?php echo esc_html($nav[4]);?></span><h2><?php echo esc_html($ui[6]);?></h2><p><?php echo esc_html($ui[16]);?></p><p><a href="mailto:hello@mrseo.tech">hello@mrseo.tech</a></p></div>
+<div><span class="eu-kicker"><?php echo esc_html($nav[4]);?></span><h2><?php echo esc_html($ui[6]);?></h2><p><?php echo esc_html($ui[15]);?></p><p><a href="mailto:hello@mrseo.tech">hello@mrseo.tech</a></p></div>
 <div class="eu-form-panel">
 <?php $status=isset($_GET['message_status'])?sanitize_key(wp_unslash($_GET['message_status'])):'';if(in_array($status,array('sent','invalid','error'),true)){$msg=array('sent'=>$ui[12],'invalid'=>$ui[13],'error'=>$ui[14]);echo '<p class="eu-message-status" role="status">'.esc_html($msg[$status]).'</p>';}?>
 <form action="<?php echo esc_url(admin_url('admin-post.php'));?>" method="post">
@@ -84,7 +84,7 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
 <?php foreach($page['faq'] as $faq):?><details><summary><?php echo esc_html($faq[0]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($faq[1]);?></p></details><?php endforeach;?>
 </div></div></section>
 <?php endif;?>
-<section class="eu-cta"><div class="eu-container"><span class="eu-kicker"><?php echo esc_html($ui[1]);?></span><h2><?php echo esc_html($ui[6]);?></h2><p><?php echo esc_html($ui[17]);?></p><a class="eu-button" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($nav[5]);?> ↗</a></div></section>
+<section class="eu-cta"><div class="eu-container"><span class="eu-kicker"><?php echo esc_html($ui[1]);?></span><h2><?php echo esc_html($ui[6]);?></h2><p><?php echo esc_html($ui[16]);?></p><a class="eu-button" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($nav[5]);?> ↗</a></div></section>
 <?php endif;?>
 <?php endif;?>
 <?php get_footer('eu');?>
