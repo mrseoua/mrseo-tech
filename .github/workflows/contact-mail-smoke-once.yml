@@ -1,0 +1,85 @@
+name: One-time contact form smoke test
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: read
+
+jobs:
+  submit-test-enquiry:
+    if: github.head_ref == 'chatgpt/contact-mail-smoke-20261103'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Submit one harmless test enquiry via live public contact form
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import http.cookiejar
+          import urllib.request
+          import urllib.parse
+          import urllib.error
+          from html.parser import HTMLParser
+
+          class FormParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.fields = {}
+              def handle_starttag(self, tag, attrs):
+                  if tag == 'input':
+                      data = dict(attrs)
+                      if data.get('name') in ('mrseo_nonce','action','mrseo_lang'):
+                          self.fields[data['name']] = data.get('value','')
+
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+
+          url='https://mrseo.tech/contact/'
+          opener=urllib.request.build_opener(
+              urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()),
+              NoRedirect()
+          )
+          with opener.open(urllib.request.Request(url,headers={'User-Agent':'MrSeoTech QA form smoke test/1.0'}),timeout=20) as r:
+              page=r.read().decode('utf-8','replace')
+              print('Contact page HTTP:',r.status)
+          parser=FormParser()
+          parser.feed(page)
+          if not parser.fields.get('mrseo_nonce') or parser.fields.get('action') != 'mrseo_contact':
+              raise RuntimeError('Expected WordPress contact form and nonce not found; did not submit')
+          form={
+              'action':'mrseo_contact',
+              'mrseo_nonce':parser.fields['mrseo_nonce'],
+              'mrseo_lang':parser.fields.get('mrseo_lang','uk'),
+              'contact_name':'MrSeo QA Test',
+              'contact_email':'qa-test@example.com',
+              'contact_site':'https://example.com/',
+              'contact_message':'TEST ONLY - automatic verification of MrSeo.tech contact form mail dispatch on 2026-11-03. Not a real client enquiry.',
+              'contact_company_extra':'',
+          }
+          request=urllib.request.Request(
+              'https://mrseo.tech/wp-admin/admin-post.php',
+              data=urllib.parse.urlencode(form).encode(),
+              headers={'Content-Type':'application/x-www-form-urlencoded',
+                       'Referer':url,
+                       'User-Agent':'MrSeoTech QA form smoke test/1.0'},
+              method='POST',
+          )
+          try:
+              with opener.open(request,timeout=25) as r:
+                  status, location=r.status, r.headers.get('Location','')
+          except urllib.error.HTTPError as e:
+              status, location=e.code, e.headers.get('Location','')
+              if status not in (301,302,303,307,308):
+                  raise
+          parsed=urllib.parse.urlsplit(location)
+          qs=urllib.parse.parse_qs(parsed.query)
+          delivery_status=qs.get('message_status',['missing'])[0]
+          print('WordPress handler HTTP:',status)
+          print('WordPress redirect path:',parsed.path)
+          print('WordPress mail submission status:',delivery_status)
+          if delivery_status != 'sent':
+              raise RuntimeError('Contact handler did not report wp_mail success')
+          print('PASS: WP contact handler accepted message; inbox delivery MUST be checked separately.')
+          PY
