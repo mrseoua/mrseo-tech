@@ -37,7 +37,7 @@ function mrseo_assets(){
  $motion_slugs=array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','service-websites','performance-max','about','portfolio','contact');
  if(mrseo_locale()==='ru')$motion_slugs[]='horoshop';
  if(in_array(mrseo_slug(),$motion_slugs,true)){
-  wp_enqueue_style('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.css',array('mrseo-style'),'1.0.0');
+  wp_enqueue_style('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.css',array('mrseo-style'),'1.0.1');
   wp_enqueue_script('mrseo-motion-scenes',get_template_directory_uri().'/assets/motion-scenes.js',array(),'1.0.0',true);
  }
  // Ukrainian premium service visual system. Horoshop uses its own interactive hero.
@@ -58,7 +58,7 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
  }
  if(mrseo_slug()==='web-development'){
-  wp_enqueue_style('mrseo-development',get_template_directory_uri().'/assets/development.css',array('mrseo-international'),'1.0.0');
+  wp_enqueue_style('mrseo-development',get_template_directory_uri().'/assets/development.css',array('mrseo-international'),'1.0.1');
  }
  if(in_array(mrseo_slug(),array('seo','seo-audit','google-ads','performance-max','analytics','ecommerce-seo','horoshop','service-websites'),true)){
   wp_enqueue_style('mrseo-customer-journeys',get_template_directory_uri().'/assets/customer-journeys.css',array('mrseo-style'),'1.0.2');
