@@ -18,6 +18,12 @@ function mrseo_render_language_dropdown($slug = null, $current = null, $placemen
         'en' => array('short' => 'EN', 'name' => 'English (UK)'),
         'pl' => array('short' => 'PL', 'name' => 'Polski'),
         'de' => array('short' => 'DE', 'name' => 'Deutsch'),
+        'fr' => array('short' => 'FR', 'name' => 'Français'),
+        'it' => array('short' => 'IT', 'name' => 'Italiano'),
+        'es' => array('short' => 'ES', 'name' => 'Español'),
+        'nl' => array('short' => 'NL', 'name' => 'Nederlands'),
+        'ro' => array('short' => 'RO', 'name' => 'Română'),
+        'cs' => array('short' => 'CS', 'name' => 'Čeština'),
     );
     if (!isset($languages[$current])) $current = 'uk';
 
@@ -27,6 +33,12 @@ function mrseo_render_language_dropdown($slug = null, $current = null, $placemen
         'en' => 'Change language',
         'pl' => 'Zmień język',
         'de' => 'Sprache ändern',
+        'fr' => 'Changer de langue',
+        'it' => 'Cambia lingua',
+        'es' => 'Cambiar idioma',
+        'nl' => 'Taal wijzigen',
+        'ro' => 'Schimbă limba',
+        'cs' => 'Změnit jazyk',
     );
     $switch_label = $switch_labels[$current];
     $placement_class = $placement === 'footer' ? ' mrseo-language-dropdown--footer' : '';
