@@ -142,7 +142,7 @@ function mrseo_handle_contact() {
  if(get_transient($rate_key)){wp_safe_redirect(add_query_arg('message_status','error',$redirect));exit;}
  set_transient($rate_key,1,90);
  $body="Имя: $name\nEmail: $email\nСайт: $site\n\n$message";
- $ok=wp_mail(get_option('admin_email'),'Заявка MrSeo.tech',$body,array('Reply-To: '.$email));
+ $ok=wp_mail('hello@mrseo.tech','Заявка MrSeo.tech',$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));
  wp_safe_redirect(add_query_arg('message_status',$ok?'sent':'error',$redirect));exit;
 }
 add_action('admin_post_nopriv_mrseo_contact','mrseo_handle_contact');
