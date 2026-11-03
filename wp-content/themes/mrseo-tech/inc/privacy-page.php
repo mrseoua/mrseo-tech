@@ -24,7 +24,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Як обробляються повідомлення",
-        "Дані з форми передаються електронною поштою на службову адресу адміністратора сайту. Хостинг і постачальники електронної пошти можуть технічно обробляти ці дані при наданні послуг."
+        "Повідомлення з форми надходять на hello@mrseo.tech і пересилаються до робочої скриньки UKR.NET для відповіді. Постачальники хостингу та електронної пошти технічно обробляють дані під час надання послуг."
       ],
       [
         "Як довго зберігаються дані",
@@ -36,7 +36,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Як зв’язатися",
-        "З питань конфіденційності звертайтеся через контактну форму MrSeo.tech. Повні реквізити відповідальної юридичної особи мають бути підтверджені до відкритого запуску сайту."
+        "З питань персональних даних пишіть на hello@mrseo.tech. Дані відповідального оператора будуть опубліковані до відкритого запуску сайту."
       ]
     ],
     "cta": "Зв’язатися з нами",
@@ -58,7 +58,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Как обрабатываются сообщения",
-        "Сведения из формы отправляются по электронной почте на служебный адрес администратора сайта. Хостинг и поставщики почтовых услуг могут технически обрабатывать данные при предоставлении сервиса."
+        "Сообщения из формы поступают на hello@mrseo.tech и пересылаются в рабочий ящик UKR.NET для ответа. Поставщики хостинга и почтовых услуг технически обрабатывают данные при предоставлении сервиса."
       ],
       [
         "Срок хранения",
@@ -70,7 +70,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Как связаться",
-        "По вопросам персональных данных обращайтесь через контактную форму MrSeo.tech. Полные реквизиты ответственного юридического лица требуется подтвердить до публичного запуска."
+        "По вопросам персональных данных пишите на hello@mrseo.tech. Сведения об ответственном операторе будут опубликованы до публичного запуска."
       ]
     ],
     "cta": "Связаться с нами",
@@ -92,7 +92,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "How messages are handled",
-        "Form messages are emailed to the website administrator's configured address. Website hosting and email service providers may technically process data while delivering these services."
+        "Form messages are sent to hello@mrseo.tech and forwarded to a UKR.NET work mailbox for a response. Hosting and email service providers technically process data when delivering these services."
       ],
       [
         "How long information is kept",
@@ -104,7 +104,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Contact for privacy questions",
-        "Contact MrSeo.tech through our contact form. The full legal identity and details of the responsible operator must be confirmed before public launch."
+        "For privacy requests, email hello@mrseo.tech. The responsible operator's verified legal identity and contact details will be published before public launch."
       ]
     ],
     "cta": "Get in touch",
@@ -126,7 +126,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Jak przetwarzamy wiadomości",
-        "Wiadomości z formularza są przesyłane pocztą elektroniczną na adres administratora witryny. Dostawcy hostingu i poczty mogą technicznie przetwarzać te dane, świadcząc usługi."
+        "Wiadomości z formularza trafiają na hello@mrseo.tech i są przekazywane do służbowej skrzynki UKR.NET w celu udzielenia odpowiedzi. Dostawcy hostingu i poczty przetwarzają dane technicznie podczas świadczenia usług."
       ],
       [
         "Jak długo przechowujemy dane",
@@ -138,7 +138,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Kontakt w sprawie danych",
-        "W sprawach prywatności skontaktuj się z MrSeo.tech przez formularz. Pełne dane podmiotu odpowiedzialnego wymagają potwierdzenia przed publicznym uruchomieniem witryny."
+        "W sprawach prywatności napisz na hello@mrseo.tech. Zweryfikowane dane podmiotu odpowiedzialnego zostaną opublikowane przed publicznym uruchomieniem witryny."
       ]
     ],
     "cta": "Skontaktuj się",
@@ -160,7 +160,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Verarbeitung der Nachrichten",
-        "Formularnachrichten werden per E-Mail an die konfigurierte Administratoradresse der Website gesendet. Hosting- und E-Mail-Dienstleister können die Daten technisch im Rahmen ihrer Leistungen verarbeiten."
+        "Formularnachrichten werden an hello@mrseo.tech gesendet und zur Beantwortung an ein geschäftliches UKR.NET-Postfach weitergeleitet. Hosting- und E-Mail-Dienstleister verarbeiten die Daten technisch im Rahmen ihrer Leistungen."
       ],
       [
         "Speicherdauer",
@@ -172,7 +172,7 @@ function mrseo_privacy_copy($locale=null) {
       ],
       [
         "Kontakt zum Datenschutz",
-        "Kontaktieren Sie MrSeo.tech über das Kontaktformular. Die vollständigen Angaben des verantwortlichen Rechtsträgers müssen vor dem öffentlichen Start bestätigt werden."
+        "Bei Datenschutzanfragen schreiben Sie an hello@mrseo.tech. Die geprüften Angaben des Verantwortlichen werden vor dem öffentlichen Start veröffentlicht."
       ]
     ],
     "cta": "Kontakt aufnehmen",
