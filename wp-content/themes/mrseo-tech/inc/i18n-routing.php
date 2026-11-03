@@ -8,6 +8,7 @@ function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_P
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
  // When switching languages, prefer a real editorial equivalent, not a
  // merely related parent service. No fabricated regional URLs.
  if($lang!==mrseo_locale() && function_exists('mrseo_i18n_matching_slug')){

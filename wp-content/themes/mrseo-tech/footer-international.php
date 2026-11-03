@@ -17,6 +17,7 @@
    <a href="<?php echo esc_url(mrseo_url('about'));?>"><?php echo esc_html($mrseo_nav['about']);?></a>
    <a href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($mrseo_nav['portfolio']);?></a>
    <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($mrseo_nav['contact']);?></a>
+   <?php mrseo_privacy_footer_link();?>
   </nav>
   <div class="intl-footer-contact">
    <?php mrseo_render_contact_channels('international');?>
