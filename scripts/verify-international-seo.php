@@ -164,5 +164,33 @@ assert_seo(mrseo_url('tworzenie-stron-internetowych','en') === 'https://mrseo.te
 $_SERVER['REQUEST_URI'] = '/de/unknown-service/';
 assert_seo(mrseo_i18n_current_entry() === null, 'Invented URL became indexable');
 
+// New EU markets may list only six real pages each; reject invented services.
+foreach (array('fr','it','es','nl','ro','cs') as $locale) {
+    $market=mrseo_eu_market($locale);
+    assert_seo($market!==null, "EU market missing: $locale");
+    foreach (mrseo_eu_slugs() as $slug) {
+        $_SERVER['REQUEST_URI']='/' . $locale . '/' . ($slug===''?'':$slug.'/');
+        assert_seo(mrseo_eu_route(), "EU route not registered: $locale/$slug");
+        $p=mrseo_eu_page($locale,$slug);
+        assert_seo($p && !empty($p['title']) && !empty($p['lead']),
+            "EU content incomplete: $locale/$slug");
+        $entry=mrseo_i18n_current_entry();
+        assert_seo($entry && $entry['language']===$locale && $entry['slug']===$slug,
+            "EU SEO entry missing: $locale/$slug");
+        if($slug==='privacy'){
+            $privacy=mrseo_privacy_copy($locale);
+            assert_seo(!empty($privacy['title']) && count($privacy['sections'])>=5,
+                "EU privacy text missing: $locale");
+        }
+        if($slug==='contact'){
+            assert_seo(mrseo_url('contact',$locale)===$entry['loc'],
+                "EU contact redirect broken: $locale");
+        }
+    }
+    $_SERVER['REQUEST_URI']='/'.$locale.'/horoshop/';
+    assert_seo(!mrseo_eu_route() && mrseo_i18n_current_entry()===null,
+        "Invented Horoshop EU route: $locale");
+}
+
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";
