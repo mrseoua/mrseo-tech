@@ -39,7 +39,7 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
-      - name: Run international SEO pre-indexing audit (99 routes)
+      - name: Run international SEO pre-indexing audit (135 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
@@ -314,8 +314,34 @@ jobs:
           assert 'width:252px;max-width:calc(100vw - 24px)' in lang_css
           assert '.mrseo-language-option-name{flex:1 1 auto;min-width:0;white-space:normal;overflow-wrap:anywhere}' in lang_css
           assert '.mrseo-language-selected{flex:0 0 auto;margin-left:auto' in lang_css
-          assert "language-dropdown.css',array('mrseo-style'),'1.0.1'" in functions
+          assert "language-dropdown.css',array('mrseo-style'),'1.0.2'" in functions
           assert lang_css.count('{') == lang_css.count('}')
+
+          # Additional staged European languages must have actual page copy,
+          # not shallow fallbacks or invented hreflang URLs.
+          eu_source=(root/'inc/eu-content.php').read_text()
+          eu_match=re.search(r"<<<'MRSEO_EU_JSON'\n(.*?)\nMRSEO_EU_JSON;",eu_source,re.S)
+          assert eu_match, 'Missing six-market European localization data'
+          eu_data=json.loads(eu_match.group(1))
+          assert set(eu_data)=={'fr','it','es','nl','ro','cs'}
+          eu_slugs={'','seo','google-ads','web-development','contact','privacy'}
+          for loc,market in eu_data.items():
+              assert set(market['pages'])==eu_slugs,(loc,'Incomplete EU pages')
+              assert len(market['ui'])==17 and len(market['nav'])==7
+              assert len({page['title'] for page in market['pages'].values()})==6
+              for slug in eu_slugs:
+                  p=market['pages'][slug]
+                  assert p['title'] and p['description'] and p['headline'] and p['lead'],(loc,slug)
+                  if slug in ('seo','google-ads','web-development'):
+                      assert len(p['problems'])==3 and len(p['outcomes'])==3 and len(p['faq'])>=1
+          eu_style=(root/'assets/eu-expansion.css').read_text()
+          assert eu_style.count('{')==eu_style.count('}')
+          assert '.eu-orbit-scene' in eu_style and '@media(max-width:540px)' in eu_style
+          eu_router=(root/'inc/eu-routing.php').read_text()
+          assert "mrseo_eu_rules_v1" in eu_router
+          assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
+          assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
+          assert "X-Robots-Tag: noindex, nofollow" in functions
 
           assert 'function mrseo_private_concept_route()' in functions
           assert "array('orbit-lab', 'orbit-light')" in functions
