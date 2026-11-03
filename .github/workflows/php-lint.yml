@@ -321,10 +321,13 @@ jobs:
           assert "array('orbit-lab', 'orbit-light')" in functions
           assert "inc/international-seo.php" in functions
           assert 'mrseo_i18n_inventory()' in (root/'inc/international-sitemap.php').read_text()
-          # Ukrainian virtual URLs must not become 404 after a deployment.
-          assert 'service-websites|horoshop' in routes
-          assert 'mrseo_i18n_rules_v13' in routes
-          assert "mrseo_locale()==='uk'" in routes
+          # Ensure both UA virtual routes are registered before indexing.
+          ua_routes=(root/'inc/ua-virtual-routes.php').read_text()
+          assert "mrseo_ua_virtual_routes_v1" in ua_routes
+          assert "'mrseo_service=service-websites'" in ua_routes
+          assert "'mrseo_service=horoshop'" in ua_routes
+          assert "'service-websites' || $slug === 'horoshop'" in ua_routes
+          assert "inc/ua-virtual-routes.php" in functions
           print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
 
           print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
