@@ -36,7 +36,12 @@ const routes = [
   ['/de/seo/', 'core'],
   ['/de/web-development/', 'core'],
   ['/de/contact/', 'core'],
-  ['/contact/', 'core']
+  ['/contact/', 'core'],
+  ['/privacy/', 'core'],
+  ['/ru/privacy/', 'core'],
+  ['/en/privacy/', 'core'],
+  ['/pl/privacy/', 'core'],
+  ['/de/privacy/', 'core']
 ];
 
 fs.mkdirSync('visual-report/screenshots', {recursive:true});
@@ -90,7 +95,10 @@ for(const [route,kind] of routes){
           htmlLang:document.documentElement.lang,
           noindex:document.querySelector('meta[name="robots"]')?.content||'',
           links:document.querySelectorAll('a[href]').length,
-          heroGutter:(()=>{const c=document.querySelector('.pl-svc .pl-svc-hero-copy');return c?Math.round(c.getBoundingClientRect().left):null})()
+          heroGutter:(()=>{const c=document.querySelector('.pl-svc .pl-svc-hero-copy');return c?Math.round(c.getBoundingClientRect().left):null})(),
+          privacyFooter:!!document.querySelector('footer a[href*="/privacy/"]'),
+          privacyForm:!!document.querySelector('form a[href*="/privacy/"]'),
+          ukPolishLinks:[...document.querySelectorAll('main a[href]')].filter(a=>new URL(a.href).origin===location.origin&&new URL(a.href).pathname.startsWith('/pl/')).map(a=>a.href).slice(0,6)
         };
       });
       if(record.status!==200)record.issues.push('HTTP '+record.status);
@@ -100,6 +108,11 @@ for(const [route,kind] of routes){
       if(record.checks.mains!==1)record.issues.push('MAIN LANDMARK count '+record.checks.mains);
       if(record.checks.canonical!==1)record.issues.push('Canonical count '+record.checks.canonical);
       if(record.checks.heroGutter!==null && record.checks.heroGutter<12)record.issues.push('HERO GUTTER too small: '+record.checks.heroGutter+'px');
+      if(!record.checks.privacyFooter)record.issues.push('PRIVACY LINK missing in footer');
+      if(route.includes('/contact/')||route==='/contact/'){
+        if(!record.checks.privacyForm)record.issues.push('PRIVACY INFO missing beside form');
+      }
+      if(route.startsWith('/en/')&&route!=='/en/'&&record.checks.ukPolishLinks?.length)record.issues.push('UK ARTICLE links unexpectedly lead to PL: '+record.checks.ukPolishLinks.join(', '));
       if(record.checks.rightOverflow.length)
          record.issues.push('Visible text/controls outside viewport '+JSON.stringify(record.checks.rightOverflow.slice(0,3)));
       if(record.checks.brokenImages.length)record.issues.push('Broken images '+record.checks.brokenImages.slice(0,2));
@@ -173,3 +186,4 @@ for(const r of records){
 fs.writeFileSync('visual-report/README.md',lines.join('\n')+'\n');
 console.log('AUDIT TOTAL: routes='+pages+' viewport_checks='+records.length+' warnings='+failing.length+' screenshots='+fs.readdirSync('visual-report/screenshots').length);
 if(failing.length)console.log('Review visual-report/results.json; no production files were modified.');
+if(failing.length) process.exitCode=1;
