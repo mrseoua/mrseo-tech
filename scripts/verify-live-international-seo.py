@@ -152,7 +152,9 @@ if __name__ == "__main__":
         fail(f"{len(problems)} URLs failed live HEAD checks:\n" + "\n".join(problems[:24]))
 
     # These routes are deliberately not available as translated public services.
-    for path in ("/en/horoshop/", "/pl/horoshop/", "/de/horoshop/", "/en/not-a-real-service/"):
+    for path in ("/en/horoshop/", "/pl/horoshop/", "/de/horoshop/", "/en/not-a-real-service/",
+                 "/fr/horoshop/", "/it/horoshop/", "/es/horoshop/", "/nl/horoshop/",
+                 "/ro/horoshop/", "/cs/horoshop/", "/fr/not-a-real-service/"):
         try:
             code, final, _, _ = fetch(HOST + path, method="HEAD")
             fail(f"Unavailable service unexpectedly returns HTTP {code}: {final}")
