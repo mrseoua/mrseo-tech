@@ -64,7 +64,7 @@ for(const [route,kind] of routes){
         const doc=document.documentElement, viewport=innerWidth;
         const right=[...document.querySelectorAll('header a,header button,header summary,main h1,main h2,main p,main a,main button,main input,main textarea,footer a')].filter(rectOK).filter(el=>{
           const r=el.getBoundingClientRect();
-          return r.right>viewport+3 || r.left< -3;
+          return r.right>viewport+3 && r.left<viewport && !el.closest('.contact-trap');
         }).slice(0,12).map(el=>({
           tag:el.tagName.toLowerCase(),
           className:String(el.className).slice(0,70),
@@ -89,7 +89,8 @@ for(const [route,kind] of routes){
           hreflangs:document.querySelectorAll('link[rel="alternate"][hreflang]').length,
           htmlLang:document.documentElement.lang,
           noindex:document.querySelector('meta[name="robots"]')?.content||'',
-          links:document.querySelectorAll('a[href]').length
+          links:document.querySelectorAll('a[href]').length,
+          heroGutter:(()=>{const c=document.querySelector('.pl-svc .pl-svc-hero-copy');return c?Math.round(c.getBoundingClientRect().left):null})()
         };
       });
       if(record.status!==200)record.issues.push('HTTP '+record.status);
@@ -98,6 +99,7 @@ for(const [route,kind] of routes){
       if(record.checks.h1Count!==1)record.issues.push('Visible H1 count '+record.checks.h1Count);
       if(record.checks.mains!==1)record.issues.push('MAIN LANDMARK count '+record.checks.mains);
       if(record.checks.canonical!==1)record.issues.push('Canonical count '+record.checks.canonical);
+      if(record.checks.heroGutter!==null && record.checks.heroGutter<12)record.issues.push('HERO GUTTER too small: '+record.checks.heroGutter+'px');
       if(record.checks.rightOverflow.length)
          record.issues.push('Visible text/controls outside viewport '+JSON.stringify(record.checks.rightOverflow.slice(0,3)));
       if(record.checks.brokenImages.length)record.issues.push('Broken images '+record.checks.brokenImages.slice(0,2));
@@ -113,12 +115,38 @@ for(const [route,kind] of routes){
           });
           record.checks.langDropdown=drop;
           if(drop.right>drop.viewport+2||drop.left< -2)record.issues.push('LANGUAGE DROPDOWN overflows viewport '+JSON.stringify(drop));
+          await page.locator('header .mrseo-language-dropdown').first().evaluate(el=>el.open=false);
+        }
+      }
+      if(viewport!=='desktop'){
+        const hamburger=page.locator('header .menu-toggle, header .intl-mobile-menu summary').first();
+        if(await hamburger.count() && await hamburger.isVisible()){
+          await hamburger.click({timeout:5000});
+          const opened=await page.evaluate(()=>document.querySelector('header .nav-links')?.classList.contains('open') || Boolean(document.querySelector('header .intl-mobile-menu')?.open));
+          record.checks.mobileMenuOpened=opened;
+          if(!opened)record.issues.push('MOBILE NAVIGATION did not open');
+          await hamburger.click({timeout:5000});
+        }
+      }
+      if(viewport==='desktop' && kind==='home'){
+        const services=page.locator('header button.services-menu-toggle').first();
+        if(await services.count()){
+          await services.click({timeout:5000});
+          record.checks.megaExpanded=await services.getAttribute('aria-expanded');
+          if(record.checks.megaExpanded!=='true')record.issues.push('SERVICES MEGA MENU did not open');
+          const menuShot=path.join('visual-report','screenshots','menu-'+(route.replaceAll('/','-')||'home')+'.png');
+          await page.screenshot({path:menuShot,fullPage:false,timeout:16000});
+          await page.keyboard.press('Escape');
         }
       }
       if(kind==='home'||['/en/website-design/','/pl/tworzenie-stron-internetowych/','/de/seo/','/horoshop/','/ru/seo/'].includes(route)){
         const clean=route.replaceAll('/','-')||'root';
         const target=path.join('visual-report','screenshots',(clean==='-'?'home':clean)+'-'+viewport+'.png');
         await page.screenshot({path:target,fullPage:false,timeout:16000});
+        if(viewport==='mobile' && ['/', '/ru/', '/en/', '/pl/', '/de/', '/en/website-design/', '/pl/tworzenie-stron-internetowych/'].includes(route)){
+          const full=path.join('visual-report','screenshots',(clean==='-'?'home':clean)+'-'+viewport+'-full.png');
+          await page.screenshot({path:full,fullPage:true,timeout:35000});
+        }
       }
     }catch(error){
       record.issues.push('AUDIT ERROR '+String(error?.message||error).slice(0,260));
