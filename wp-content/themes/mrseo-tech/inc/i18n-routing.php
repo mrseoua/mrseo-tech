@@ -8,13 +8,20 @@ function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_P
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ // When switching languages, prefer a real editorial equivalent, not a
+ // merely related parent service. No fabricated regional URLs.
+ if($lang!==mrseo_locale() && function_exists('mrseo_i18n_matching_slug')){
+  $equivalent=mrseo_i18n_matching_slug(mrseo_locale(),$slug,$lang);
+  if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
+ }
  // UK-only routes switch to real parent services in other languages.
  if($lang!=='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)){
   $slug=mrseo_uk_market_parent($slug,$lang);
  }
 
  // Country-only Polish offers link to relevant existing pages when switching languages.
- if($lang!=='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)){
+ if($lang!=='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)
+    && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true))){
   $slug=mrseo_pl_service_parent($slug,$lang);
  }
  // Existing service entrypoints must lead to real Poland-specific service pages.
@@ -66,13 +73,7 @@ if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
 add_filter('template_include','mrseo_router',99);
 add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;if(in_array(mrseo_locale(),array('pl','de'),true)){$p=mrseo_int_page();return $p['title']??$title;}$slug=mrseo_slug();if(!$slug)return mrseo_locale()==='en'?'Website Design, SEO & Google Ads for UK Businesses | MrSeo.tech':'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='orbit-lab')return 'Orbit Lab — Private Concept | MrSeo.tech';if($slug==='orbit-light')return 'Orbital Growth Light — Concept 02 | MrSeo.tech';if($slug==='seo')return mrseo_t('SEO-просування сайтів у Google — замовити SEO','SEO-продвижение сайтов в Google — заказать SEO','SEO Services & Website Optimization').' | MrSeo.tech';if($slug==='about')return mrseo_t('Про нас — команда з 10-річним досвідом','О нас — команда с 10-летним опытом','About — a team with 10 years of experience').' | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';if($slug==='horoshop')return mrseo_t('SEO для Хорошоп — просування та розвиток магазину','SEO для Хорошоп — продвижение и развитие магазина','Horoshop SEO').' | MrSeo.tech';if($slug==='web-development')return mrseo_dev_page()['title'];if($slug==='service-websites')return mrseo_t('Створення та просування сайтів послуг','Создание и продвижение сайтов услуг','Service Website SEO & Development').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
-add_action('wp_head',function(){if(!mrseo_valid_route())return;$slug=mrseo_slug();$valid=array('','seo','seo-audit','ecommerce-seo','service-websites','horoshop','web-development','google-ads','performance-max','analytics','about','contact','portfolio');if(!in_array($slug,$valid,true)||mrseo_is_case())return;$path=$slug;$langs=$slug==='horoshop'?array('uk','ru'):array('uk','ru','en');
- if(in_array($slug,mrseo_int_pages(),true))$langs=array_merge($langs,array('pl','de'));
- foreach($langs as $l){
-  $codes=mrseo_int_locales();
-  $hreflang=$codes[$l]??$l;
-  echo '<link rel="alternate" hreflang="'.esc_attr($hreflang).'" href="'.esc_url(mrseo_url($path,$l)).'">'."\n";
- }echo '<link rel="alternate" hreflang="x-default" href="'.esc_url(mrseo_url($path,$slug==='horoshop'?'uk':'en')).'">'."\n";echo '<link rel="canonical" href="'.esc_url(mrseo_url($path)).'">'."\n";},2);
+// Canonical and hreflang are owned by inc/international-seo.php.
 add_action('init',function(){
  add_rewrite_rule('^portfolio/([^/]+)/?$','index.php?mrseo_service=portfolio&mrseo_case=$matches[1]','top');
  add_rewrite_rule('^(ru|en)/portfolio/([^/]+)/?$','index.php?mrseo_lang=$matches[1]&mrseo_service=portfolio&mrseo_case=$matches[2]','top');

@@ -25,8 +25,7 @@ add_action('wp_head',function(){
  if(!mrseo_pl_service_route())return;
  $page=mrseo_pl_service_page();
  echo '<meta name="description" content="'.esc_attr($page['description']).'">'."\n";
- echo '<link rel="canonical" href="'.esc_url(mrseo_url(mrseo_slug(),'pl')).'">'."\n";
- echo '<link rel="alternate" hreflang="pl-PL" href="'.esc_url(mrseo_url(mrseo_slug(),'pl')).'">'."\n";
+ // One canonical and reciprocal hreflang set is rendered by international-seo.php.
 },3);
 add_action('init',function(){
  if(get_option('mrseo_pl_service_rules_v1')!=='ready'){
