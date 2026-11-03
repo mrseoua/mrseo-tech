@@ -1,0 +1,31 @@
+name: Read-only responsive browser audit
+on:
+  push:
+    branches:
+      - audit/visual-functional-20261103
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser tooling
+        run: |
+          npm install --no-save --no-package-lock playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Inspect live desktop and mobile pages (read-only)
+        run: node scripts/audit-visual-readonly.mjs
+      - name: Upload review report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mrseo-responsive-review
+          path: visual-report/
+          if-no-files-found: warn
+          retention-days: 7
