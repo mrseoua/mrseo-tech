@@ -43,6 +43,9 @@ jobs:
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
+      - name: Check read-only live SEO probe syntax (no production requests in PR CI)
+        run: |
+          python3 -m py_compile scripts/verify-live-international-seo.py
       - name: Check Earth module syntax
         run: |
           node --input-type=module --check < wp-content/themes/mrseo-tech/assets/orbit-earth-three.js
@@ -314,6 +317,10 @@ jobs:
           assert "language-dropdown.css',array('mrseo-style'),'1.0.1'" in functions
           assert lang_css.count('{') == lang_css.count('}')
 
+          assert 'function mrseo_private_concept_route()' in functions
+          assert "array('orbit-lab', 'orbit-light')" in functions
+          assert "inc/international-seo.php" in functions
+          assert 'mrseo_i18n_inventory()' in (root/'inc/international-sitemap.php').read_text()
           print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
 
           print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
