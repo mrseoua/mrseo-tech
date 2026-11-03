@@ -299,6 +299,17 @@ jobs:
           assert "X-Robots-Tag: noindex, nofollow" in functions
           assert '$nodes=array_slice($nodes,0,6)' in home, 'Do not change the Earth renderer'
           assert (root/'assets/uk-market.css').read_text().count('{')==(root/'assets/uk-market.css').read_text().count('}')
+          # Language menu regression: UK label stays within dropdown, including small screens.
+          lang_php=(root/'inc/language-dropdown.php').read_text()
+          lang_css=(root/'assets/language-dropdown.css').read_text()
+          assert "'English (UK)'" in lang_php
+          assert "'English (United Kingdom)'" not in lang_php
+          assert 'width:252px;max-width:calc(100vw - 24px)' in lang_css
+          assert '.mrseo-language-option-name{flex:1 1 auto;min-width:0;white-space:normal;overflow-wrap:anywhere}' in lang_css
+          assert '.mrseo-language-selected{flex:0 0 auto;margin-left:auto' in lang_css
+          assert "language-dropdown.css',array('mrseo-style'),'1.0.1'" in functions
+          assert lang_css.count('{') == lang_css.count('}')
+
           print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
 
           print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
