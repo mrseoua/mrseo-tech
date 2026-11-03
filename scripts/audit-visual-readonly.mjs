@@ -47,8 +47,9 @@ const routes = [
 fs.mkdirSync('visual-report/screenshots', {recursive:true});
 const records=[], critical=[];
 const browser=await chromium.launch({headless:true, args:['--no-sandbox']});
-for(const [route,kind] of routes){
-  const viewports=kind==='home'?['desktop','mobile','narrow']:['desktop','mobile'];
+const checkedRoutes=process.env.MRSEO_FOCUSED_ROUTE?routes.filter(x=>x[0]===process.env.MRSEO_FOCUSED_ROUTE):routes;
+for(const [route,kind] of checkedRoutes){
+  const viewports=kind==='home'||process.env.MRSEO_FOCUSED_ROUTE?['desktop','mobile','narrow']:['desktop','mobile'];
   for(const viewport of viewports){
     const page=await browser.newPage({viewport:widths[viewport],deviceScaleFactor:1,reducedMotion:'reduce',userAgent:'MrSeoInternationalPrelaunchAudit/1.0',extraHTTPHeaders:{Accept:'text/html,application/xml;q=0.9,*/*;q=0.8'}});
     const record={route,viewport,status:0,errors:[],requests:[],issues:[],checks:{}};
@@ -173,7 +174,7 @@ for(const [route,kind] of routes){
 await browser.close();
 fs.writeFileSync('visual-report/results.json',JSON.stringify(records,null,2));
 const failing=records.filter(x=>x.issues.length);
-const pages=routes.length;
+const pages=checkedRoutes.length;
 const lines=['# MrSeo.tech read-only responsive audit',
 '','**Main source:** Public WordPress website (no site changes or form submissions).',
 '','**Pages:** '+pages+'; **viewport checks:** '+records.length+'; **checks with warnings:** '+failing.length,
