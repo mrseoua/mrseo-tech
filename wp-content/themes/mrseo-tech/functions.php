@@ -147,6 +147,28 @@ add_action('admin_post_nopriv_mrseo_contact','mrseo_handle_contact');
 add_action('admin_post_mrseo_contact','mrseo_handle_contact');
 
 /**
+ * Permanent noindex for internal design concepts. This remains ACTIVE after
+ * global staging noindex is removed during an approved public launch.
+ * Never list these concept routes in the international XML sitemap.
+ */
+function mrseo_private_concept_route() {
+    return in_array(mrseo_slug(), array('orbit-lab', 'orbit-light'), true);
+}
+add_filter('wp_robots', function($robots) {
+    if (mrseo_private_concept_route()) {
+        $robots['noindex'] = true;
+        $robots['nofollow'] = true;
+        unset($robots['index'], $robots['follow']);
+    }
+    return $robots;
+}, 90);
+add_action('send_headers', function() {
+    if (!is_admin() && mrseo_private_concept_route()) {
+        header('X-Robots-Tag: noindex, nofollow', true);
+    }
+}, 90);
+
+/**
  * Staging protection. Remove only during an explicitly approved launch.
  * This applies regardless of the WordPress "discourage search engines" setting.
  */
