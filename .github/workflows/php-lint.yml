@@ -39,6 +39,10 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
+      - name: Run international SEO pre-indexing audit (94 routes)
+        run: |
+          php -l scripts/verify-international-seo.php
+          php -d display_errors=1 scripts/verify-international-seo.php
       - name: Check Earth module syntax
         run: |
           node --input-type=module --check < wp-content/themes/mrseo-tech/assets/orbit-earth-three.js
