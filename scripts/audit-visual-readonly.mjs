@@ -45,7 +45,7 @@ const browser=await chromium.launch({headless:true, args:['--no-sandbox']});
 for(const [route,kind] of routes){
   const viewports=kind==='home'?['desktop','mobile','narrow']:['desktop','mobile'];
   for(const viewport of viewports){
-    const page=await browser.newPage({viewport:widths[viewport],deviceScaleFactor:1,reducedMotion:'reduce'});
+    const page=await browser.newPage({viewport:widths[viewport],deviceScaleFactor:1,reducedMotion:'reduce',userAgent:'MrSeoInternationalPrelaunchAudit/1.0',extraHTTPHeaders:{Accept:'text/html,application/xml;q=0.9,*/*;q=0.8'}});
     const record={route,viewport,status:0,errors:[],requests:[],issues:[],checks:{}};
     page.on('pageerror',error=>record.errors.push(String(error.message).slice(0,170)));
     page.on('requestfailed',request=>{
