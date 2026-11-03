@@ -77,6 +77,22 @@ function mrseo_i18n_page_groups() {
 }
 
 /**
+ * Exact translation matching for the language selector. A service in another
+ * market is a true alternate only when it belongs to the same SEO group.
+ */
+function mrseo_i18n_matching_slug($from_language, $from_slug, $to_language) {
+    if ($from_language === $to_language) return $from_slug;
+    foreach (mrseo_i18n_page_groups() as $group) {
+        if (isset($group['pages'][$from_language])
+            && $group['pages'][$from_language] === $from_slug
+            && array_key_exists($to_language, $group['pages'])) {
+            return $group['pages'][$to_language];
+        }
+    }
+    return null;
+}
+
+/**
  * One canonical and one reciprocal alternate set for each completed route.
  * The language-selector homepage is the only x-default: the other service
  * pages do not have a neutral-language counterpart.
