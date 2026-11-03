@@ -63,11 +63,8 @@ add_action('wp_head',function(){
  if(!mrseo_uk_market_route())return;
  $slug=mrseo_slug();$page=mrseo_uk_market_page();
  echo '<meta name="description" content="'.esc_attr($page['desc']).'">'."\n";
- if(in_array($slug,mrseo_uk_market_new_slugs(),true)){
-  $url=mrseo_url($slug,'en');
-  echo '<link rel="canonical" href="'.esc_url($url).'">'."\n";
-  echo '<link rel="alternate" hreflang="en-GB" href="'.esc_url($url).'">'."\n";
- }
+ // One canonical and reciprocal hreflang set is rendered by international-seo.php.
+
 },3);
 add_action('init',function(){
  if(get_option('mrseo_uk_market_rules_v1')!=='ready'){

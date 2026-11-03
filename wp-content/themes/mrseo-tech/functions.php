@@ -9,6 +9,7 @@ require_once get_template_directory() . '/inc/mega-menu.php';
 require_once get_template_directory() . '/inc/new-service-routes.php';
 require_once get_template_directory() . '/inc/pl-service-routing.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
+require_once get_template_directory() . '/inc/international-seo.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
 require_once get_template_directory() . '/inc/motion-scenes.php';
 function mrseo_setup() {

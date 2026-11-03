@@ -54,11 +54,8 @@ add_action('wp_head',function(){
  $slug=mrseo_slug();$copy=mrseo_new_service_copy();
  $desc=wp_trim_words($copy['lead'],25,'…');
  echo '<meta name="description" content="'.esc_attr($desc).'">'."\n";
- foreach(array('uk','ru') as $l){
-  echo '<link rel="alternate" hreflang="'.$l.'" href="'.esc_url(mrseo_url($slug,$l)).'">'."\n";
- }
- echo '<link rel="alternate" hreflang="x-default" href="'.esc_url(mrseo_url($slug,'uk')).'">'."\n";
- echo '<link rel="canonical" href="'.esc_url(mrseo_url($slug)).'">'."\n";
+ // Canonical/hreflang are emitted by the shared international SEO registry.
+
 },4);
 add_action('init',function(){
  if(get_option('mrseo_new_service_rules_v1')!=='ready'){

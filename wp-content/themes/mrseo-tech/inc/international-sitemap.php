@@ -5,44 +5,8 @@ if(!defined('ABSPATH'))exit;
  * Note: staging noindex remains active; do not submit this sitemap until launch.
  */
 function mrseo_localized_sitemap_paths(){
- $common=mrseo_int_pages();
- $languages=array('uk','ru','en','pl','de');
- $entries=array();
- foreach($common as $slug){
-  $alternates=array();
-  foreach($languages as $language){
-   $hreflang=mrseo_int_locales()[$language]??$language;
-   $alternates[$hreflang]=mrseo_url($slug,$language);
-  }
-  foreach($languages as $language){
-   $entries[]=array('loc'=>mrseo_url($slug,$language),'alternates'=>$alternates,'default'=>mrseo_url($slug,'en'));
-  }
- }
- foreach(array('service-websites','performance-max') as $slug){
-  $alternates=array();
-  foreach(array('uk','ru','en') as $language)$alternates[($language==='en'?'en-GB':$language)]=mrseo_url($slug,$language);
-  foreach(array('uk','ru','en') as $language)$entries[]=array('loc'=>mrseo_url($slug,$language),'alternates'=>$alternates,'default'=>mrseo_url($slug,'en'));
- }
- $shopAlternates=array('uk'=>mrseo_url('horoshop','uk'),'ru'=>mrseo_url('horoshop','ru'));
- foreach(array('uk','ru') as $language)$entries[]=array('loc'=>mrseo_url('horoshop',$language),'alternates'=>$shopAlternates,'default'=>mrseo_url('horoshop','uk'));
- // Staged, fully written UA/RU standalone service pages (no incomplete language variants).
- foreach(mrseo_new_service_slugs() as $slug){
-  $alternates=array('uk'=>mrseo_url($slug,'uk'),'ru'=>mrseo_url($slug,'ru'));
-  foreach(array('uk','ru') as $language){
-   $entries[]=array('loc'=>mrseo_url($slug,$language),'alternates'=>$alternates,'default'=>mrseo_url($slug,'uk'));
-  }
- }
- // UK-only services: self-referential en-GB hreflang, no fabricated translated pages.
- foreach(mrseo_uk_market_new_slugs() as $slug){
-  $url=mrseo_url($slug,'en');
-  $entries[]=array('loc'=>$url,'alternates'=>array('en-GB'=>$url),'default'=>$url);
- }
- // Finished Poland-only commercial pages — do not advertise untranslated equivalents.
- foreach(mrseo_pl_service_slugs() as $slug){
-  $url=mrseo_url($slug,'pl');
-  $entries[]=array('loc'=>$url,'alternates'=>array('pl-PL'=>$url),'default'=>$url);
- }
- return $entries;
+    // Same exact URLs and reciprocal alternatives as the HTML head.
+    return mrseo_i18n_inventory();
 }
 add_action('init',function(){
  add_rewrite_rule('^mrseo-locales-sitemap\\.xml$','index.php?mrseo_locales_sitemap=1','top');
@@ -63,7 +27,9 @@ add_action('template_redirect',function(){
   foreach($entry['alternates'] as $locale=>$url){
    echo '  <xhtml:link rel="alternate" hreflang="'.$esc($locale).'" href="'.$esc($url).'" />'."\n";
   }
-  echo '  <xhtml:link rel="alternate" hreflang="x-default" href="'.$esc($entry['default']).'" />'."\n";
+  if (!empty($entry['default'])) {
+   echo '  <xhtml:link rel="alternate" hreflang="x-default" href="'.$esc($entry['default']).'" />'."\n";
+  }
   echo ' </url>'."\n";
  }
  echo '</urlset>';
