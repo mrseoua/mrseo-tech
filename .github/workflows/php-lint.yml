@@ -321,6 +321,19 @@ jobs:
           assert "array('orbit-lab', 'orbit-light')" in functions
           assert "inc/international-seo.php" in functions
           assert 'mrseo_i18n_inventory()' in (root/'inc/international-sitemap.php').read_text()
+          # Previously live-broken Ukrainian virtual pages must be declared as
+          # real rewrite targets and bypass WP's no-post 404 logic.
+          assert "add_rewrite_rule('^(service-websites|horoshop)/?
+
+          print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
+
+          print('11 localized motion scenes × 5 languages; 3D Earth only on homepages; 5 development pages and noindex verified')
+          PY
+" in routes
+          assert "mrseo_i18n_rules_v13" in routes
+          assert "mrseo_locale()==='uk'&&in_array($slug,array('service-websites','horoshop'),true)" in routes
+          assert ("'pages'=>array('uk'=>'horoshop','ru'=>'horoshop')" in (root/'inc/international-seo.php').read_text()
+                  or "'pages'=>array('uk'=>'horoshop','ru'=>'horoshop'))" in (root/'inc/international-seo.php').read_text())
           print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
 
           print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
