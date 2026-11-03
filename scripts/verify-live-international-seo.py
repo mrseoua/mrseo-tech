@@ -91,6 +91,14 @@ def check_head_request(url):
     return url
 
 if __name__ == "__main__":
+    # Indexing must not be defeated by a blanket robots.txt disallow.
+    robots_status, robots_target, _, robots_bytes = fetch(HOST + "/robots.txt")
+    if robots_status != 200:
+        fail(f"robots.txt did not return 200: {robots_status}")
+    robots_text = robots_bytes.decode("utf-8", "replace")
+    if any(line.strip().lower() == "disallow: /"
+           for line in robots_text.splitlines()):
+        fail("robots.txt contains a full-site Disallow: /")
     status, target, headers, body = fetch(SITEMAP)
     if status != 200 or target != SITEMAP:
         fail(f"Sitemap inaccessible: {status} {target}")
@@ -139,6 +147,15 @@ if __name__ == "__main__":
                 problems.append(str(exc))
     if problems:
         fail(f"{len(problems)} URLs failed live HEAD checks:\n" + "\n".join(problems[:24]))
+
+    # These routes are deliberately not available as translated public services.
+    for path in ("/en/horoshop/", "/pl/horoshop/", "/de/horoshop/", "/en/not-a-real-service/"):
+        try:
+            code, final, _, _ = fetch(HOST + path, method="HEAD")
+            fail(f"Unavailable service unexpectedly returns HTTP {code}: {final}")
+        except HTTPError as error:
+            if error.code != 404:
+                fail(f"Expected 404 for {path}, got {error.code}")
 
     for path in SAMPLE:
         url = HOST + path
