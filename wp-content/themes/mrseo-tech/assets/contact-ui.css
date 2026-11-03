@@ -62,3 +62,8 @@
  .mrseo-mobile-contact-bar .mrseo-contact-popover>summary,.mrseo-mobile-call{font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){.mrseo-contact-popover>summary,.mrseo-contact-ui-links a{transition:none}}
+
+/* Transparent, unobtrusive contact-form data notice in every locale. */
+.mrseo-privacy-notice{margin:14px 0 18px;color:#616963;font-size:13px;line-height:1.65}
+.mrseo-privacy-notice a{color:#a54938!important;text-decoration:underline;text-underline-offset:3px;font-weight:750}
+.mrseo-privacy-notice a:focus-visible{outline:2px solid #ad4e40;outline-offset:3px}

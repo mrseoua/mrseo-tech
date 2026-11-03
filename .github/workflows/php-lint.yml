@@ -39,7 +39,7 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
-      - name: Run international SEO pre-indexing audit (94 routes)
+      - name: Run international SEO pre-indexing audit (99 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
@@ -328,6 +328,33 @@ jobs:
           assert "'mrseo_service=horoshop'" in ua_routes
           assert "'service-websites' || $slug === 'horoshop'" in ua_routes
           assert "inc/ua-virtual-routes.php" in functions
+          # Correct UK funnels, restored semantic landmarks and contact-data disclosures.
+          uk_template=(root/'uk-market-landing.php').read_text()
+          uk_style=(root/'assets/uk-market.css').read_text()
+          assert "mrseo_url('contact','pl')" not in uk_template
+          assert "mrseo_url('','pl')" not in uk_template
+          assert "mrseo_url($item[0],'pl')" not in uk_template
+          assert ".pl-svc .intl-wrap{width:min(calc(100% - 64px),1370px)" in uk_style
+          assert ".pl-svc .intl-wrap{width:calc(100% - 36px)" in uk_style
+          assert '<main class="orbit-lab">' not in home
+          assert '<div class="orbit-lab">' in home
+          assert "if(mrseo_locale()==='pl')$service_urls[6]='tworzenie-stron-internetowych'" in home
+          assert 'mrseo_satellite_labels' in home
+          privacy=(root/'inc/privacy-page.php').read_text()
+          match_privacy=re.search(r"<<<'MRSEO_PRIVACY_TRANSLATIONS'\n(.*?)\nMRSEO_PRIVACY_TRANSLATIONS;",privacy,re.S)
+          assert match_privacy
+          privacy_data=json.loads(match_privacy.group(1))
+          assert set(privacy_data)=={'uk','ru','en','pl','de'}
+          for loc,copy in privacy_data.items():
+              assert len(copy['sections'])==6 and copy['form'] and copy['title']
+          assert "require_once get_template_directory() . '/inc/privacy-page.php'" in functions
+          assert "group'=>'privacy'" in (root/'inc/international-seo.php').read_text()
+          assert "mrseo_privacy_footer_link()" in (root/'footer.php').read_text()
+          assert "mrseo_privacy_footer_link()" in (root/'footer-international.php').read_text()
+          assert "mrseo_privacy_form_notice()" in (root/'contact-localized.php').read_text()
+          assert "mrseo_privacy_form_notice()" in (root/'international-landing.php').read_text()
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+
           print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
 
           print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
