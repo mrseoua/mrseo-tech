@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 94
+EXPECTED_PAGES = 99
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"

@@ -40,6 +40,8 @@ function mrseo_i18n_page_groups() {
         $groups[] = array('group' => 'shared:' . ($slug === '' ? 'home' : $slug), 'pages' => $pages);
     }
 
+    $groups[] = array('group'=>'privacy','pages'=>array(
+        'uk'=>'privacy','ru'=>'privacy','en'=>'privacy','pl'=>'privacy','de'=>'privacy'));
     foreach (array('service-websites', 'performance-max') as $slug) {
         $groups[] = array('group' => 'three:' . $slug,
             'pages' => array('uk'=>$slug, 'ru'=>$slug, 'en'=>$slug));

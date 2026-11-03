@@ -47,7 +47,7 @@ get_header('international');
     <div class="intl-field"><label for="intl-site"><?php echo esc_html($mrseo_common['formSite']);?></label><input id="intl-site" type="url" name="contact_site" maxlength="300" inputmode="url" placeholder="https://"></div>
     <div class="intl-field"><label for="intl-message"><?php echo esc_html($mrseo_common['formMessage']);?> *</label><textarea id="intl-message" name="contact_message" required minlength="10" maxlength="3000" rows="5"></textarea></div>
     <div class="contact-trap"><label for="intl-extra" class="screen-reader-text">Extra</label><input id="intl-extra" name="contact_company_extra" tabindex="-1" autocomplete="off"></div>
-    <p class="intl-form-hint"><?php echo esc_html($mrseo_common['formPrivacy']);?></p>
+    <p class="intl-form-hint"><?php echo esc_html($mrseo_common['formPrivacy']);?></p><?php mrseo_privacy_form_notice();?>
     <button type="submit" class="intl-button"><?php echo esc_html($mrseo_common['formSubmit']);?></button>
    </form>
   </div>

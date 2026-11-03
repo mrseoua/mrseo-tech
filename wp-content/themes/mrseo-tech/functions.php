@@ -11,6 +11,7 @@ require_once get_template_directory() . '/inc/new-service-routes.php';
 require_once get_template_directory() . '/inc/pl-service-routing.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/international-seo.php';
+require_once get_template_directory() . '/inc/privacy-page.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
 require_once get_template_directory() . '/inc/motion-scenes.php';
 function mrseo_setup() {
@@ -24,7 +25,7 @@ function mrseo_assets(){
  wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
  if(function_exists('mrseo_uk_market_route') && mrseo_uk_market_route()){
   wp_enqueue_style('mrseo-uk-market-base',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
-  wp_enqueue_style('mrseo-uk-market',get_template_directory_uri().'/assets/uk-market.css',array('mrseo-uk-market-base'),'1.0.0');
+  wp_enqueue_style('mrseo-uk-market',get_template_directory_uri().'/assets/uk-market.css',array('mrseo-uk-market-base'),'1.1.0');
  }
  if(function_exists('mrseo_pl_service_route') && mrseo_pl_service_route()){
   wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
@@ -86,7 +87,7 @@ function mrseo_assets(){
  // After theme/intl footer styles: fix the old .footer .container flex layout and normalize full-width footer.
  wp_enqueue_style('mrseo-footer-layout-premium',get_template_directory_uri().'/assets/footer-layout-premium.css',array('mrseo-footer-contact-channels'),'1.0.0');
  wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.3',true);
- wp_enqueue_style('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.css',array('mrseo-footer-layout-premium'),'1.0.2');
+ wp_enqueue_style('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.css',array('mrseo-footer-layout-premium'),'1.0.3');
  wp_enqueue_script('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.js',array(),'1.0.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');

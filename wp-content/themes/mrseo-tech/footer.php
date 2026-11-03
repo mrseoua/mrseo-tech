@@ -26,6 +26,7 @@
 <a href="<?php echo esc_url(mrseo_url('about'));?>"><?php echo esc_html(mrseo_t('Про нас','О нас','About'));?></a>
 <a href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html(mrseo_t('Портфоліо','Портфолио','Portfolio'));?></a>
 <a href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Контакти','Контакты','Contact'));?></a>
+<?php mrseo_privacy_footer_link();?>
 </div>
 <div class="mrseo-footer-col mrseo-footer-contact"><h2><?php echo esc_html(mrseo_t('Зв’язок','Связаться','Get in touch'));?></h2>
 <?php mrseo_render_contact_channels();?>

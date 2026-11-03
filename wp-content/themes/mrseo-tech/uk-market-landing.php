@@ -11,11 +11,11 @@ $pl_group=(strpos($pl_slug,'shop')!==false||$pl_slug==='ecommerce-seo')?'commerc
  <section class="pl-svc-hero" aria-labelledby="pl-title">
   <div class="intl-wrap pl-svc-hero-grid">
    <div class="pl-svc-hero-copy">
-    <nav class="pl-svc-crumb" aria-label="Breadcrumb"><a href="<?php echo esc_url(mrseo_url('','pl'));?>">Home</a><span aria-hidden="true">/</span><span><?php echo esc_html($pl_page['kicker']);?></span></nav>
+    <nav class="pl-svc-crumb" aria-label="Breadcrumb"><a href="<?php echo esc_url(mrseo_url('','en'));?>">Home</a><span aria-hidden="true">/</span><span><?php echo esc_html($pl_page['kicker']);?></span></nav>
     <div class="intl-kicker"><?php echo esc_html($pl_page['kicker']);?></div>
     <h1 id="pl-title"><?php echo esc_html($pl_page['hero'][0]);?> <em><?php echo esc_html($pl_page['hero'][1]);?></em></h1>
     <p><?php echo esc_html($pl_page['lead']);?></p>
-    <div class="pl-svc-hero-actions"><a class="intl-button" href="<?php echo esc_url(mrseo_url('contact','pl'));?>"><?php echo esc_html($pl_page['cta']);?> <span aria-hidden="true">↗</span></a><a class="pl-svc-text-link" href="#pl-needs">See how we help <span aria-hidden="true">↓</span></a></div>
+    <div class="pl-svc-hero-actions"><a class="intl-button" href="<?php echo esc_url(mrseo_url('contact','en'));?>"><?php echo esc_html($pl_page['cta']);?> <span aria-hidden="true">↗</span></a><a class="pl-svc-text-link" href="#pl-needs">See how we help <span aria-hidden="true">↓</span></a></div>
     <div class="pl-svc-hero-note">We agree the business goal and scope first. No untestable promises.</div>
    </div>
    <div class="pl-svc-art">
@@ -50,7 +50,7 @@ $pl_group=(strpos($pl_slug,'shop')!==false||$pl_slug==='ecommerce-seo')?'commerc
   </div>
  </section>
  <section class="pl-svc-example" aria-labelledby="pl-example-title"><div class="intl-wrap pl-svc-example-grid">
-  <div><div class="intl-kicker"><?php echo esc_html($pl_page['example'][0]);?></div><h2 id="pl-example-title">From the challenge <em>to practical work.</em></h2><p>Illustrative steps only, not actual client results or a performance guarantee.</p><a class="pl-svc-text-link" href="<?php echo esc_url(mrseo_url('contact','pl'));?>">Tell us about your situation ↗</a></div>
+  <div><div class="intl-kicker"><?php echo esc_html($pl_page['example'][0]);?></div><h2 id="pl-example-title">From the challenge <em>to practical work.</em></h2><p>Illustrative steps only, not actual client results or a performance guarantee.</p><a class="pl-svc-text-link" href="<?php echo esc_url(mrseo_url('contact','en'));?>">Tell us about your situation ↗</a></div>
   <div class="pl-svc-case">
    <?php for($i=1;$i<=3;$i++):?>
     <div><small><?php echo esc_html(array('','SITUATION','OUR WORK','VERIFICATION')[$i]);?></small><p><?php echo esc_html($pl_page['example'][$i]);?></p></div>
@@ -75,11 +75,11 @@ $pl_group=(strpos($pl_slug,'shop')!==false||$pl_slug==='ecommerce-seo')?'commerc
  </div></section>
  <section class="pl-svc-related" aria-labelledby="pl-related-title"><div class="intl-wrap">
   <div class="intl-kicker">RELATED SERVICES</div><h2 id="pl-related-title">What else can help?</h2>
-  <div class="pl-svc-related-grid"><?php foreach($pl_page['related'] as $item):?><a href="<?php echo esc_url(mrseo_url($item[0],'pl'));?>"><strong><?php echo esc_html($item[1]);?></strong><span><?php echo esc_html($item[2]);?></span><b aria-hidden="true">↗</b></a><?php endforeach;?></div>
+  <div class="pl-svc-related-grid"><?php foreach($pl_page['related'] as $item):?><a href="<?php echo esc_url(mrseo_url($item[0],'en'));?>"><strong><?php echo esc_html($item[1]);?></strong><span><?php echo esc_html($item[2]);?></span><b aria-hidden="true">↗</b></a><?php endforeach;?></div>
  </div></section>
  <section class="intl-final pl-svc-final"><div class="intl-wrap intl-final-grid">
   <div><div class="intl-kicker">MRSEO.TECH / NEXT STEP</div><h2>Tell us what you'd like to build or improve.</h2><p>A brief description and your current website (if any) are enough. We'll discuss scope, constraints and useful next steps before making a proposal.</p></div>
-  <a class="intl-final-link" href="<?php echo esc_url(mrseo_url('contact','pl'));?>"><?php echo esc_html($pl_page['cta']);?> ↗</a>
+  <a class="intl-final-link" href="<?php echo esc_url(mrseo_url('contact','en'));?>"><?php echo esc_html($pl_page['cta']);?> ↗</a>
  </div></section>
 </div>
 <?php get_footer();?>
