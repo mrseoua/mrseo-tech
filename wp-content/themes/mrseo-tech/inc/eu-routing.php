@@ -13,7 +13,7 @@ function mrseo_eu_route() {
 
 add_action('init',function(){
     add_rewrite_rule('^(fr|it|es|nl|ro|cs)/?$','index.php?mrseo_lang=$matches[1]','top');
-    add_rewrite_rule('^(fr|it|es|nl|ro|cs)/(seo|seo-audit|ecommerce-seo|google-ads|analytics|web-development|website-design|online-shop-development|about|portfolio|contact|privacy)/?,
+    add_rewrite_rule('^(fr|it|es|nl|ro|cs)/(seo|seo-audit|ecommerce-seo|google-ads|analytics|web-development|website-design|online-shop-development|about|portfolio|contact|privacy)/?$',
         'index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
 },12);
 
@@ -38,46 +38,7 @@ add_action('wp_head',function(){
 add_action('wp_enqueue_scripts',function(){
     if(!mrseo_eu_route())return;
     wp_enqueue_style('mrseo-eu-expansion',get_template_directory_uri().'/assets/eu-expansion.css',
-        array('mrseo-language-dropdown'),'1.0.2');
-    if(mrseo_slug()==='')wp_enqueue_script('mrseo-eu-earth',get_template_directory_uri().'/assets/orbit-earth-three.js',array(),'5.0.0',true);
-},110);
-// The Earth renderer uses import.meta and must execute as an ES module.
-add_filter('script_loader_tag',function($tag,$handle){
-    if($handle!=='mrseo-eu-earth')return $tag;
-    return str_replace('<script ','<script type="module" ',$tag);
-},10,2);
-add_action('init',function(){
-    if(get_option('mrseo_eu_rules_v1')!=='ready'){
-        flush_rewrite_rules(false);
-        update_option('mrseo_eu_rules_v1','ready',false);
-    }
-},42);
-,
-        'index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
-},12);
-
-add_filter('pre_handle_404',function($pre){
-    return mrseo_eu_route()?true:$pre;
-},130);
-add_filter('redirect_canonical',function($canonical){
-    return mrseo_eu_route()?false:$canonical;
-},130);
-add_filter('template_include',function($template){
-    return mrseo_eu_route()?get_template_directory().'/eu-localized.php':$template;
-},180);
-add_filter('pre_get_document_title',function($title){
-    $page=mrseo_eu_route()?mrseo_eu_page():null;
-    return $page?$page['title'].' | MrSeo.tech':$title;
-},140);
-add_action('wp_head',function(){
-    if(!mrseo_eu_route() || mrseo_slug()==='privacy')return;
-    $page=mrseo_eu_page();
-    if($page)echo '<meta name="description" content="'.esc_attr($page['description']).'">'."\n";
-},5);
-add_action('wp_enqueue_scripts',function(){
-    if(!mrseo_eu_route())return;
-    wp_enqueue_style('mrseo-eu-expansion',get_template_directory_uri().'/assets/eu-expansion.css',
-        array('mrseo-language-dropdown'),'1.0.2');
+        array('mrseo-language-dropdown'),'1.0.3');
     if(mrseo_slug()==='')wp_enqueue_script('mrseo-eu-earth',get_template_directory_uri().'/assets/orbit-earth-three.js',array(),'5.0.0',true);
 },110);
 // The Earth renderer uses import.meta and must execute as an ES module.
