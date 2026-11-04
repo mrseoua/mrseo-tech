@@ -49,6 +49,9 @@ jobs:
       - name: Check Earth module syntax
         run: |
           node --input-type=module --check < wp-content/themes/mrseo-tech/assets/orbit-earth-three.js
+      - name: Check EU browser QA script syntax
+        run: node --check scripts/verify-live-eu-responsive.cjs
+
       - name: Check motion-scenes JavaScript syntax
         run: |
           node --check wp-content/themes/mrseo-tech/assets/motion-scenes.js
