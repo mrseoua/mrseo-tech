@@ -33,7 +33,7 @@
   "pages": {
     "": {
       "title": "SEO, Google Ads och webbutveckling för företag i Sverige",
-      "description": "SEO, Google Ads och webbutveckling för företag i Sverige. Om besökarna inte blir kunder räcker det sällan med mer trafik. Vi undersöker synlighet, annonsering, köpdata och arbetsflöden för att se var probl",
+      "description": "SEO, Google Ads och webbutveckling för företag i Sverige. Om besökarna inte blir kunder räcker det sällan med mer trafik.",
       "eyebrow": "MRSEO.TECH",
       "headline": "Webbplatsen finns. <em>Men var är kunderna?</em>",
       "lead": "Om besökarna inte blir kunder räcker det sällan med mer trafik. Vi undersöker synlighet, annonsering, köpdata och arbetsflöden för att se var problemet faktiskt uppstår.",
@@ -87,7 +87,7 @@
     },
     "seo": {
       "title": "SEO-tjänster för tillväxt och synlighet i sökningar",
-      "description": "SEO-tjänster för tillväxt och synlighet i sökningar. Vi börjar med de sökningar som är viktiga för verksamheten. Därefter undersöker vi struktur, länkar och innehåll för att se varför rätt sidor inte når r",
+      "description": "SEO-tjänster för tillväxt och synlighet i sökningar. Vi börjar med de sökningar som är viktiga för verksamheten.",
       "eyebrow": "SEO",
       "headline": "Är dina viktigaste sidor <em>svåra att hitta?</em>",
       "lead": "Vi börjar med de sökningar som är viktiga för verksamheten. Därefter undersöker vi struktur, länkar och innehåll för att se varför rätt sidor inte når rätt kunder.",
@@ -141,8 +141,8 @@
     },
     "seo-audit": {
       "title": "Teknisk SEO-granskning: indexering och webbplatsstruktur",
-      "description": "Teknisk SEO-granskning: indexering och webbplatsstruktur. En teknisk granskning ska visa vilka URL:er som påverkas och varför. Vi kontrollerar indexering, kanoniska adresser, crawl och mobil prestanda inna",
-      "eyebrow": "SEO / AUDIT",
+      "description": "Teknisk SEO-granskning: indexering och webbplatsstruktur. En teknisk granskning ska visa vilka URL:er som påverkas och varför.",
+      "eyebrow": "TEKNISK SEO-GRANSKNING",
       "headline": "En automatisk poäng <em>är ingen färdig SEO-åtgärd.</em>",
       "lead": "En teknisk granskning ska visa vilka URL:er som påverkas och varför. Vi kontrollerar indexering, kanoniska adresser, crawl och mobil prestanda innan arbetet prioriteras.",
       "problems": [
@@ -195,8 +195,8 @@
     },
     "ecommerce-seo": {
       "title": "SEO för webbutiker: kategorier, filter och produkter",
-      "description": "SEO för webbutiker: kategorier, filter och produkter. Webbutikens kategorier, filter och produktvarianter måste fungera för både människor och sökmotorer. Vi granskar den faktiska konfigurationen för exemp",
-      "eyebrow": "ECOMMERCE / SEO",
+      "description": "SEO för webbutiker: kategorier, filter och produkter. Webbutikens kategorier, filter och produktvarianter måste fungera för både människor och sökmotorer.",
+      "eyebrow": "SEO FÖR WEBBUTIKER",
       "headline": "Tusentals produkter. <em>Hur många hittar köparna?</em>",
       "lead": "Webbutikens kategorier, filter och produktvarianter måste fungera för både människor och sökmotorer. Vi granskar den faktiska konfigurationen för exempelvis Shopify eller WooCommerce.",
       "problems": [
@@ -249,8 +249,8 @@
     },
     "google-ads": {
       "title": "Google Ads-granskning för e-handel och Shopping",
-      "description": "Google Ads-granskning för e-handel och Shopping. Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt. Vi granskar konverteringar, produktflöden och hur annonseringskostnader fördelas.",
-      "eyebrow": "GOOGLE / ADS",
+      "description": "Google Ads-granskning för e-handel och Shopping. Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt.",
+      "eyebrow": "GOOGLE ADS",
       "headline": "Annonser kostar pengar. <em>Vad leder de till?</em>",
       "lead": "Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt. Vi granskar konverteringar, produktflöden och hur annonseringskostnader fördelas.",
       "problems": [
@@ -303,8 +303,8 @@
     },
     "analytics": {
       "title": "GA4-granskning och tillförlitlig konverteringsmätning",
-      "description": "GA4-granskning och tillförlitlig konverteringsmätning. Om ett köp registreras två gånger blir affärsbesluten fel. Vi jämför GA4, Google Ads och verkliga order samt förklarar vilka skillnader som kan bero p",
-      "eyebrow": "ANALYTICS",
+      "description": "GA4-granskning och tillförlitlig konverteringsmätning. Om ett köp registreras två gånger blir affärsbesluten fel.",
+      "eyebrow": "GA4-ANALYS",
       "headline": "Det finns rapporter. <em>Men vilka siffror går att lita på?</em>",
       "lead": "Om ett köp registreras två gånger blir affärsbesluten fel. Vi jämför GA4, Google Ads och verkliga order samt förklarar vilka skillnader som kan bero på attribuering.",
       "problems": [
@@ -357,8 +357,8 @@
     },
     "web-development": {
       "title": "Webbutveckling, CRM och API-integrationer",
-      "description": "Webbutveckling, CRM och API-integrationer. Vi undersöker hur webbplats, CRM och verksamhetssystem delar data innan vi bygger ny kod. Målet är ett tydligt arbetssätt som går att underhålla och testa.",
-      "eyebrow": "WEB / DEVELOPMENT",
+      "description": "Webbutveckling, CRM och API-integrationer. Vi undersöker hur webbplats, CRM och verksamhetssystem delar data innan vi bygger ny kod.",
+      "eyebrow": "WEBBUTVECKLING",
       "headline": "Tekniken ska <em>minska det manuella arbetet.</em>",
       "lead": "Vi undersöker hur webbplats, CRM och verksamhetssystem delar data innan vi bygger ny kod. Målet är ett tydligt arbetssätt som går att underhålla och testa.",
       "problems": [
@@ -411,8 +411,8 @@
     },
     "website-design": {
       "title": "Skapa företagswebbplats med tydliga kundflöden",
-      "description": "Skapa företagswebbplats med tydliga kundflöden. Vi skapar företagswebbplatser som förklarar tjänster och gör det enkelt att ta kontakt. Struktur, tillgänglighet och mobila formulär är viktigare än enbart v",
-      "eyebrow": "WEBSITE / DESIGN",
+      "description": "Skapa företagswebbplats med tydliga kundflöden. Vi skapar företagswebbplatser som förklarar tjänster och gör det enkelt att ta kontakt.",
+      "eyebrow": "SKAPA WEBBPLATS",
       "headline": "En webbplats ska <em>leda besökaren rätt.</em>",
       "lead": "Vi skapar företagswebbplatser som förklarar tjänster och gör det enkelt att ta kontakt. Struktur, tillgänglighet och mobila formulär är viktigare än enbart visuella effekter.",
       "problems": [
@@ -465,8 +465,8 @@
     },
     "online-shop-development": {
       "title": "Utveckla webbutik med betalningar och integrationer",
-      "description": "Utveckla webbutik med betalningar och integrationer. Ett e-handelsprojekt måste hantera produktdata, varianter, kassa, betalningar och orderflöden. Vi väljer teknik efter verksamhetens behov, inte efter et",
-      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "description": "Utveckla webbutik med betalningar och integrationer. Ett e-handelsprojekt måste hantera produktdata, varianter, kassa, betalningar och orderflöden.",
+      "eyebrow": "UTVECKLA WEBBUTIK",
       "headline": "Webbutiken ska sälja. <em>Och fungera i vardagen.</em>",
       "lead": "Ett e-handelsprojekt måste hantera produktdata, varianter, kassa, betalningar och orderflöden. Vi väljer teknik efter verksamhetens behov, inte efter ett standardsystem.",
       "problems": [
@@ -519,8 +519,8 @@
     },
     "about": {
       "title": "Om MrSeo.tech — team för SEO och utveckling",
-      "description": "Om MrSeo.tech — team för SEO och utveckling. Vi är ett mindre team med tio års erfarenhet av SEO, Google Ads och webbutveckling. Vi arbetar på distans från Ukraina och utgår från mätbara problem snarare än",
-      "eyebrow": "ABOUT",
+      "description": "Om MrSeo.tech — team för SEO och utveckling. Vi är ett mindre team med tio års erfarenhet av SEO, Google Ads och webbutveckling.",
+      "eyebrow": "OM OSS",
       "headline": "Ett mindre team. <em>Ett tydligt ansvar.</em>",
       "lead": "Vi är ett mindre team med tio års erfarenhet av SEO, Google Ads och webbutveckling. Vi arbetar på distans från Ukraina och utgår från mätbara problem snarare än generella paket.",
       "problems": [
@@ -573,8 +573,8 @@
     },
     "portfolio": {
       "title": "Projekt och erfarenheter från MrSeo.tech",
-      "description": "Projekt och erfarenheter från MrSeo.tech. Vi visar offentliga webbplatser ur vår portfölj för att beskriva vilka typer av uppdrag vi arbetar med. Vi utger dem inte för att vara svenska kundcase och delar i",
-      "eyebrow": "PORTFOLIO",
+      "description": "Projekt och erfarenheter från MrSeo.tech. Vi visar offentliga webbplatser ur vår portfölj för att beskriva vilka typer av uppdrag vi arbetar med.",
+      "eyebrow": "PROJEKT",
       "headline": "Verkliga projekt. <em>Inga påhittade siffror.</em>",
       "lead": "Vi visar offentliga webbplatser ur vår portfölj för att beskriva vilka typer av uppdrag vi arbetar med. Vi utger dem inte för att vara svenska kundcase och delar inte konfidentiell statistik.",
       "problems": [
@@ -627,8 +627,8 @@
     },
     "contact": {
       "title": "Kontakta oss om din webbplats eller webbutik",
-      "description": "Kontakta oss om din webbplats eller webbutik. Ange webbplatsens adress, marknaden du riktar dig till och vad som inte fungerar. En kort konkret beskrivning räcker för att börja bedöma problemet.",
-      "eyebrow": "CONTACT",
+      "description": "Kontakta oss om din webbplats eller webbutik. Ange webbplatsens adress, marknaden du riktar dig till och vad som inte fungerar.",
+      "eyebrow": "KONTAKT",
       "headline": "Vad hindrar <em>nästa kundförfrågan?</em>",
       "lead": "Ange webbplatsens adress, marknaden du riktar dig till och vad som inte fungerar. En kort konkret beskrivning räcker för att börja bedöma problemet. Berätta vilken e-handelsplattform du använder, vilken marknad du riktar dig till och ge ett exempel på problemet. Skicka inga lösenord.",
       "problems": [],
@@ -638,7 +638,7 @@
     "privacy": {
       "title": "Integritet och behandling av kontaktuppgifter",
       "description": "Så använder MrSeo.tech uppgifterna i kontaktformuläret.",
-      "eyebrow": "PRIVACY",
+      "eyebrow": "INTEGRITET",
       "headline": "Integritet och kontaktförfrågningar",
       "lead": "Så använder MrSeo.tech uppgifterna i kontaktformuläret.",
       "problems": [],
