@@ -19,7 +19,7 @@
 <?php if(in_array(mrseo_locale(),array('uk','ru'),true)):?><a href="<?php echo esc_url(mrseo_url('horoshop'));?>"><?php echo esc_html(mrseo_t('Магазини на Хорошоп','Магазины на Хорошоп','Horoshop'));?></a><?php endif;?>
 <a href="<?php echo esc_url(mrseo_url('seo-audit'));?>"><?php echo esc_html($mrseo_eu_footer_labels['seo-audit'] ?? (mrseo_locale()==='pl'?'Audyt SEO':(mrseo_locale()==='de'?'Technisches SEO-Audit':'Technical SEO')));?></a>
 <a href="<?php echo esc_url(mrseo_url('web-development'));?>"><?php echo esc_html(mrseo_t('Веброзробка','Веб-разработка','Web Development'));?></a>
-<?php if(!in_array(mrseo_locale(),array('pl','de'),true)):?>
+<?php if(mrseo_locale()!=='de'): // Poland has its own real website-creation route. ?>
 <a href="<?php echo esc_url(mrseo_url($mrseo_eu_footer_labels ? 'website-design' : 'service-websites'));?>"><?php echo esc_html($mrseo_eu_footer_labels['website-design'] ?? mrseo_t('Створення сайтів','Создание сайтов','Website Creation'));?></a>
 <?php endif;?>
 </div>
