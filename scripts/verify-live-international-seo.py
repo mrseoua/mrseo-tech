@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 99
+EXPECTED_PAGES = 135
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -26,7 +26,10 @@ SAMPLE = [
     "/en/merchant-center-help/", "/ru/merchant-center/",
     "/en/wordpress-care/", "/pl/opieka-wordpress/",
     "/online-store-development/", "/pl/tworzenie-sklepow-internetowych/",
-    "/en/online-shop-development/"
+    "/en/online-shop-development/",
+    "/fr/", "/it/", "/es/", "/nl/", "/ro/", "/cs/",
+    "/fr/seo/", "/it/google-ads/", "/es/web-development/",
+    "/nl/contact/", "/ro/privacy/", "/cs/seo/"
 ]
 
 def fetch(url, method="GET", timeout=16):
@@ -149,7 +152,9 @@ if __name__ == "__main__":
         fail(f"{len(problems)} URLs failed live HEAD checks:\n" + "\n".join(problems[:24]))
 
     # These routes are deliberately not available as translated public services.
-    for path in ("/en/horoshop/", "/pl/horoshop/", "/de/horoshop/", "/en/not-a-real-service/"):
+    for path in ("/en/horoshop/", "/pl/horoshop/", "/de/horoshop/", "/en/not-a-real-service/",
+                 "/fr/horoshop/", "/it/horoshop/", "/es/horoshop/", "/nl/horoshop/",
+                 "/ro/horoshop/", "/cs/horoshop/", "/fr/not-a-real-service/"):
         try:
             code, final, _, _ = fetch(HOST + path, method="HEAD")
             fail(f"Unavailable service unexpectedly returns HTTP {code}: {final}")

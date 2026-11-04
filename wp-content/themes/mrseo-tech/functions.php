@@ -12,6 +12,7 @@ require_once get_template_directory() . '/inc/pl-service-routing.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/international-seo.php';
 require_once get_template_directory() . '/inc/privacy-page.php';
+require_once get_template_directory() . '/inc/eu-routing.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
 require_once get_template_directory() . '/inc/motion-scenes.php';
 function mrseo_setup() {
@@ -81,7 +82,7 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-ru-premium',get_template_directory_uri().'/assets/ru-premium.css',array('mrseo-ukseo-pilot'),'1.0.1');
  }
  // Shared compact language dropdown, loaded after both header variants' styles.
- wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.1');
+ wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.1.0');
  wp_enqueue_style('mrseo-footer-contact-channels',get_template_directory_uri().'/assets/footer-contact-channels.css',array('mrseo-style'),'1.0.0');
  // After theme/intl footer styles: fix the old .footer .container flex layout and normalize full-width footer.
@@ -129,7 +130,7 @@ add_action('wp_head','mrseo_meta_description',1);
 /** Simple contact form handler; mail delivery depends on server configuration. */
 function mrseo_handle_contact() {
  $post_lang=sanitize_key(wp_unslash($_POST['mrseo_lang']??'uk'));
- $redirect=mrseo_url('contact',in_array($post_lang,array('uk','ru','en','pl','de'),true)?$post_lang:'uk');
+ $redirect=mrseo_url('contact',in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs'),true)?$post_lang:'uk');
  if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {wp_safe_redirect(add_query_arg('message_status','invalid',$redirect));exit;}
  if(!empty($_POST['contact_company_extra'])) {wp_safe_redirect($redirect);exit;}
  $name=mb_substr(sanitize_text_field(wp_unslash($_POST['contact_name']??'')),0,90);
@@ -141,8 +142,10 @@ function mrseo_handle_contact() {
  $rate_key='mrseo_form_'.md5($ip);
  if(get_transient($rate_key)){wp_safe_redirect(add_query_arg('message_status','error',$redirect));exit;}
  set_transient($rate_key,1,90);
- $body="Имя: $name\nEmail: $email\nСайт: $site\n\n$message";
- $ok=wp_mail('hello@mrseo.tech','Заявка MrSeo.tech',$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));
+ $mail_locale=in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs'),true)?strtoupper($post_lang):'UK';
+ $body="Язык заявки: $mail_locale\nСтраница: $redirect\nИмя: $name\nEmail: $email\nСайт: $site\n\n$message";
+ $subject='Заявка MrSeo.tech ['.$mail_locale.']';
+ $ok=wp_mail('hello@mrseo.tech',$subject,$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));
  wp_safe_redirect(add_query_arg('message_status',$ok?'sent':'error',$redirect));exit;
 }
 add_action('admin_post_nopriv_mrseo_contact','mrseo_handle_contact');

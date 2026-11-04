@@ -4,8 +4,8 @@ require_once __DIR__.'/languages.php';
 require_once __DIR__.'/international-content.php';
 require_once __DIR__.'/international-home-copy.php';
 require_once __DIR__.'/uk-market-home-copy.php';
-function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$s);return in_array($a[0]??'',array('ru','en','pl','de'),true)?$a[0]:'uk';}
-function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de'),true))array_shift($a);return sanitize_title($a[0]??'');}
+function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$s);return in_array($a[0]??'',array('ru','en','pl','de','fr','it','es','nl','ro','cs'),true)?$a[0]:'uk';}
+function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de','fr','it','es','nl','ro','cs'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
@@ -14,6 +14,13 @@ function mrseo_url($slug='',$lang=null){
  if($lang!==mrseo_locale() && function_exists('mrseo_i18n_matching_slug')){
   $equivalent=mrseo_i18n_matching_slug(mrseo_locale(),$slug,$lang);
   if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
+ }
+ // New market URLs may only point to actually completed pages.
+ if(in_array($lang,array('fr','it','es','nl','ro','cs'),true) && !in_array($slug,array('','seo','google-ads','web-development','contact','privacy'),true)){
+  if(in_array($slug,array('seo-audit','ecommerce-seo'),true))$slug='seo';
+  elseif(in_array($slug,array('performance-max','google-shopping','merchant-center'),true))$slug='google-ads';
+  elseif(in_array($slug,array('service-websites','online-store-development','website-design','wordpress-care'),true))$slug='web-development';
+  else $slug='';
  }
  // UK-only routes switch to real parent services in other languages.
  if($lang!=='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)){

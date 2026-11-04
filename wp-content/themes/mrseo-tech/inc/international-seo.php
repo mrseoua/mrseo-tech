@@ -11,7 +11,7 @@
 if (!defined('ABSPATH')) exit;
 
 function mrseo_i18n_locale_codes() {
-    return array('uk' => 'uk-UA', 'ru' => 'ru', 'en' => 'en-GB', 'pl' => 'pl-PL', 'de' => 'de-DE');
+    return array('uk' => 'uk-UA', 'ru' => 'ru', 'en' => 'en-GB', 'pl' => 'pl-PL', 'de' => 'de-DE', 'fr' => 'fr-FR', 'it' => 'it-IT', 'es' => 'es-ES', 'nl' => 'nl-NL', 'ro' => 'ro-RO', 'cs' => 'cs-CZ');
 }
 
 function mrseo_i18n_exact_url($language, $slug) {
@@ -37,11 +37,13 @@ function mrseo_i18n_page_groups() {
     foreach (mrseo_int_pages() as $slug) {
         $pages = array();
         foreach (array('uk','ru','en','pl','de') as $lang) $pages[$lang] = $slug;
+        if(in_array($slug,array('','seo','google-ads','web-development','contact'),true))
+            foreach(array('fr','it','es','nl','ro','cs') as $lang)$pages[$lang]=$slug;
         $groups[] = array('group' => 'shared:' . ($slug === '' ? 'home' : $slug), 'pages' => $pages);
     }
 
     $groups[] = array('group'=>'privacy','pages'=>array(
-        'uk'=>'privacy','ru'=>'privacy','en'=>'privacy','pl'=>'privacy','de'=>'privacy'));
+        'uk'=>'privacy','ru'=>'privacy','en'=>'privacy','pl'=>'privacy','de'=>'privacy','fr'=>'privacy','it'=>'privacy','es'=>'privacy','nl'=>'privacy','ro'=>'privacy','cs'=>'privacy'));
     foreach (array('service-websites', 'performance-max') as $slug) {
         $groups[] = array('group' => 'three:' . $slug,
             'pages' => array('uk'=>$slug, 'ru'=>$slug, 'en'=>$slug));
