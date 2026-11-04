@@ -356,10 +356,13 @@ jobs:
           # floating title + three rows with different colours.
           eu_scenes=(root/'inc/eu-service-visuals.php').read_text()
           eu_scenes_css=(root/'assets/eu-service-scenes.css').read_text()
-          for visual_slug in ('seo','seo-audit','ecommerce-seo','google-ads',
-                              'analytics','web-development','website-design','online-shop-development'):
-              assert "($slug === '"+visual_slug+"')" in eu_scenes, ('Missing distinct service scene',visual_slug)
-              assert '.eu-viz--'+visual_slug.replace('-','') not in eu_scenes_css or len(eu_scenes_css)>1000
+          scene_names={'seo':'seo','seo-audit':'audit','ecommerce-seo':'commerce',
+                       'google-ads':'ads','analytics':'analytics','web-development':'development',
+                       'website-design':'website','online-shop-development':'shop'}
+          for visual_slug,scene_name in scene_names.items():
+              assert "($slug === '"+visual_slug+"')" in eu_scenes, ('Missing service hero',visual_slug)
+              assert 'eu-viz--'+scene_name in eu_scenes, ('Missing distinct scene markup',visual_slug)
+              assert '.eu-viz--'+scene_name in eu_scenes_css, ('Missing visual stylesheet',visual_slug)
           assert 'eu-service-visuals.php' in (root/'eu-localized.php').read_text()
           assert 'mrseo-eu-service-scenes' in (root/'inc/eu-routing.php').read_text()
           assert 'prefers-reduced-motion' in eu_scenes_css
