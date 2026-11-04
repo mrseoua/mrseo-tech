@@ -64,6 +64,17 @@ async function audit(browser,viewport,lang,slug){
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
     satellites:node?.querySelectorAll('.eu-satellite').length||0,
+    satelliteDestinations:[...node?.querySelectorAll('.eu-satellite')||[]].map(a=>new URL(a.href).pathname),
+    earthCanvasReady:!!(node?.classList.contains('lab-webgl-ready')&&earth?.querySelector('.lab-webgl-canvas')),
+    earthStaticTexture:!!earth&&getComputedStyle(earth).backgroundImage.includes('earth-day.jpg'),
+    ownLanguageLinks:[...document.querySelectorAll('a[href]')].map(a=>{
+      try{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.startsWith('/'+lang+'/')?u.pathname:null}catch{return null}
+    }).filter(Boolean),
+    formAction:document.querySelector('form[action*="admin-post.php"]')?.action||null,
+    formMethod:document.querySelector('form[action*="admin-post.php"]')?.method||null,
+    formActionName:document.querySelector('input[name="action"]')?.value||null,
+    hasPrivacyNotice:!!document.querySelector('.mrseo-privacy-notice'),
+    nonceValue:document.querySelector('input[name="mrseo_nonce"]')?.value||'',
     portfolio:!!document.querySelector('a[href$="/'+lang+'/portfolio/"]'),
     privacyLink:!!document.querySelector('a[href*="/'+lang+'/privacy/"]'),
     bodyClass:body.className
@@ -82,9 +93,25 @@ async function audit(browser,viewport,lang,slug){
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
   if(slug===''&&(!c.core||c.satellites!==6||!c.coreDimensions?.w))item.errors.push('Earth core or satellites missing');
+  if(slug===''){
+    const required=['seo','ecommerce-seo','google-ads','analytics','web-development','website-design'].map(s=>'/'+lang+'/'+s+'/');
+    if(required.some(s=>!c.satelliteDestinations.includes(s)))item.errors.push('Satellite link missing or not localized');
+    if(!c.earthCanvasReady&&!c.earthStaticTexture)item.errors.push('Neither WebGL/Canvas Earth nor Earth texture fallback is visible');
+    if(!c.earthCanvasReady&&c.earthStaticTexture)item.warnings.push('Canvas Earth unavailable, textured fallback active');
+  }
+  const allowedPaths=new Set(slugs.map(s=>'/'+lang+'/'+(s?s+'/':'')));
+  const badLinks=c.ownLanguageLinks.filter(path=>!allowedPaths.has(path));
+  if(badLinks.length)item.errors.push('Broken localized internal links: '+JSON.stringify([...new Set(badLinks)].slice(0,5)));
+  if(slug===''){
+    const missing=[...allowedPaths].filter(p=>!c.ownLanguageLinks.includes(p)&&p!==('/'+lang+'/'));
+    if(missing.length)item.errors.push('EU homepage does not link to all 13 services/sections: '+missing.join(', '));
+  }
   if(!['contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
-  if(slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
+  if(slug==='contact'&&(c.form!==lang||!c.nonce||!c.nonceValue))item.errors.push('Contact form language or nonce missing');
+  if(slug==='contact'&&(!c.formAction?.endsWith('/wp-admin/admin-post.php')||c.formMethod!=='post'||c.formActionName!=='mrseo_contact'||!c.hasPrivacyNotice)){
+    item.errors.push('Contact form action or privacy notice invalid');
+  }
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   if(viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
