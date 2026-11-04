@@ -7,7 +7,8 @@
 if (!defined('ABSPATH')) exit;
 
 function mrseo_eu_orbit_copy($locale, $english) {
-    static $control_copy=null;
+    static $control_copy=null,$localized_maps=array();
+    if(isset($localized_maps[$locale]))return $localized_maps[$locale][$english]??$english;
     if (!function_exists('mrseo_eu_market')) return $english;
     $market=mrseo_eu_market($locale);
     if (!$market) return $english;
@@ -105,6 +106,7 @@ MRSEO_EU_ORBIT_CONTROLS
     );
     // Fail closed to the original English value for an unforeseen new source
     // phrase; never fabricate locale output or rewrite existing UA/RU copy.
+    $localized_maps[$locale]=$map;
     return $map[$english]??$english;
 }
 
