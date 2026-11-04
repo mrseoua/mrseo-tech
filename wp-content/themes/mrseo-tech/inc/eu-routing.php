@@ -41,7 +41,7 @@ add_action('wp_head',function(){
 add_action('wp_enqueue_scripts',function(){
     if(!mrseo_eu_route())return;
     wp_enqueue_style('mrseo-eu-expansion',get_template_directory_uri().'/assets/eu-expansion.css',
-        array('mrseo-language-dropdown'),'1.0.3');
+        array('mrseo-language-dropdown'),'1.0.4');
     // orbit-lab.php owns the single module instance of the original Earth.
 },110);
 add_action('init',function(){
