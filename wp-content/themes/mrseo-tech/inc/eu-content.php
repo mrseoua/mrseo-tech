@@ -309,7 +309,8 @@ function mrseo_eu_all(){
       "heading": "Un audit adapté aux boutiques françaises",
       "description": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
       "cta": "Décrire mon problème",
-      "brief": "Précisez la plateforme, les catégories concernées et le résultat souhaité. N’envoyez aucun mot de passe."
+      "brief": "Précisez la plateforme, les catégories concernées et le résultat souhaité. N’envoyez aucun mot de passe.",
+      "portfolioLabel": "Voir des projets (en anglais)"
     }
   },
   "it": {
@@ -613,7 +614,8 @@ function mrseo_eu_all(){
       "heading": "Prima il problema del negozio, poi il servizio",
       "description": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
       "cta": "Descrivi il problema",
-      "brief": "Indica piattaforma, numero approssimativo di prodotti e difficoltà principale. Non condividere credenziali."
+      "brief": "Indica piattaforma, numero approssimativo di prodotti e difficoltà principale. Non condividere credenziali.",
+      "portfolioLabel": "Guarda i progetti (in inglese)"
     }
   },
   "es": {
@@ -917,7 +919,8 @@ function mrseo_eu_all(){
       "heading": "Ecommerce: primero medir, después invertir",
       "description": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
       "cta": "Contar qué falla en mi tienda",
-      "brief": "Indica plataforma, mercado de venta, URL y un ejemplo concreto. No compartas contraseñas."
+      "brief": "Indica plataforma, mercado de venta, URL y un ejemplo concreto. No compartas contraseñas.",
+      "portfolioLabel": "Ver proyectos (en inglés)"
     }
   },
   "nl": {
@@ -1221,7 +1224,8 @@ function mrseo_eu_all(){
       "heading": "Betrouwbare data voor Nederlandse webshops",
       "description": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
       "cta": "Toon mijn webshopprobleem",
-      "brief": "Vermeld je platform, belangrijkste markt en het verschil tussen GA4, Ads en bestellingen. Deel nooit wachtwoorden."
+      "brief": "Vermeld je platform, belangrijkste markt en het verschil tussen GA4, Ads en bestellingen. Deel nooit wachtwoorden.",
+      "portfolioLabel": "Bekijk projecten (Engels)"
     }
   },
   "ro": {
@@ -1525,7 +1529,8 @@ function mrseo_eu_all(){
       "heading": "Pentru magazine online care vor comenzi măsurabile",
       "description": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
       "cta": "Descrie problema magazinului",
-      "brief": "Indică platforma, numărul aproximativ de produse și ce nu corespunde între comenzi și rapoarte. Nu trimite parole."
+      "brief": "Indică platforma, numărul aproximativ de produse și ce nu corespunde între comenzi și rapoarte. Nu trimite parole.",
+      "portfolioLabel": "Vezi proiecte (în engleză)"
     }
   },
   "cs": {
@@ -1829,7 +1834,8 @@ function mrseo_eu_all(){
       "heading": "PPC a SEO audit pro české e-shopy",
       "description": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
       "cta": "Popsat problém e-shopu",
-      "brief": "Uveďte e-shopové řešení, reklamní kanály a konkrétní problém. Neposílejte přihlašovací údaje."
+      "brief": "Uveďte e-shopové řešení, reklamní kanály a konkrétní problém. Neposílejte přihlašovací údaje.",
+      "portfolioLabel": "Ukázky projektů (anglicky)"
     }
   }
 }
