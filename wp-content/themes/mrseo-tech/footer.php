@@ -9,17 +9,18 @@
 </div>
 <a class="mrseo-footer-cta" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити вашу задачу','Обсудить вашу задачу','Discuss your challenge'));?> <span>↗</span></a>
 </div>
+<?php $mrseo_eu_footer_labels=(function_exists("mrseo_eu_markets") && isset(mrseo_eu_markets()[mrseo_locale()])) ? mrseo_eu_service_labels(mrseo_locale()) : array(); ?>
 <div class="mrseo-footer-top">
 <div class="mrseo-footer-col"><h2><?php echo esc_html(mrseo_t('Напрями','Направления','Expertise'));?></h2>
 <a href="<?php echo esc_url(mrseo_url('seo'));?>">SEO</a>
 <a href="<?php echo esc_url(mrseo_url('google-ads'));?>">Google Ads</a>
-<a href="<?php echo esc_url(mrseo_url('analytics'));?>"><?php echo esc_html(mrseo_locale()==='pl'?'Analityka':(mrseo_locale()==='de'?'Webanalyse':'Analytics'));?></a>
+<a href="<?php echo esc_url(mrseo_url('analytics'));?>"><?php echo esc_html($mrseo_eu_footer_labels['analytics'] ?? (mrseo_locale()==='pl'?'Analityka':(mrseo_locale()==='de'?'Webanalyse':'Analytics')));?></a>
 <a href="<?php echo esc_url(mrseo_url('ecommerce-seo'));?>"><?php echo esc_html(mrseo_t('SEO інтернет-магазинів','SEO интернет-магазинов','E-commerce SEO'));?></a>
 <?php if(in_array(mrseo_locale(),array('uk','ru'),true)):?><a href="<?php echo esc_url(mrseo_url('horoshop'));?>"><?php echo esc_html(mrseo_t('Магазини на Хорошоп','Магазины на Хорошоп','Horoshop'));?></a><?php endif;?>
-<a href="<?php echo esc_url(mrseo_url('seo-audit'));?>"><?php echo esc_html(mrseo_locale()==='pl'?'Audyt SEO':(mrseo_locale()==='de'?'Technisches SEO-Audit':'Technical SEO'));?></a>
+<a href="<?php echo esc_url(mrseo_url('seo-audit'));?>"><?php echo esc_html($mrseo_eu_footer_labels['seo-audit'] ?? (mrseo_locale()==='pl'?'Audyt SEO':(mrseo_locale()==='de'?'Technisches SEO-Audit':'Technical SEO')));?></a>
 <a href="<?php echo esc_url(mrseo_url('web-development'));?>"><?php echo esc_html(mrseo_t('Веброзробка','Веб-разработка','Web Development'));?></a>
-<?php if(!in_array(mrseo_locale(),array('pl','de'),true)):?>
-<a href="<?php echo esc_url(mrseo_url('service-websites'));?>"><?php echo esc_html(mrseo_t('Створення сайтів','Создание сайтов','Website Creation'));?></a>
+<?php if(mrseo_locale()!=='de'): // Poland has its own real website-creation route. ?>
+<a href="<?php echo esc_url(mrseo_url($mrseo_eu_footer_labels ? 'website-design' : 'service-websites'));?>"><?php echo esc_html($mrseo_eu_footer_labels['website-design'] ?? mrseo_t('Створення сайтів','Создание сайтов','Website Creation'));?></a>
 <?php endif;?>
 </div>
 <div class="mrseo-footer-col"><h2><?php echo esc_html(mrseo_t('Компанія','Компания','Company'));?></h2>

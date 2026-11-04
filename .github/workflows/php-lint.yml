@@ -10,6 +10,11 @@ on:
 permissions:
   contents: read
 
+# New PR commits supersede earlier checks. Avoid queueing obsolete builds.
+concurrency:
+  group: international-php-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint-php:
     runs-on: ubuntu-latest
@@ -115,7 +120,7 @@ jobs:
               assert len(copy['sections']['commerce']['topics'])==2
               assert len(copy['sections']['dev']['topics'])==3
               assert len(copy['sections']['data']['topics'])==3
-          assert 'orbit-earth-three.js?v=5' in home, 'Shared real Earth renderer must remain'
+          assert 'orbit-earth-three.js?v=6' in home, 'Shared real Earth renderer must remain'
           dev_php=(root/'inc/development-content.php').read_text()
           dev_match=re.search(r"<<<'MRSEO_DEV_DATA'\n(.*?)\nMRSEO_DEV_DATA;",dev_php,re.S)
           assert dev_match, 'Missing Web Development data'
@@ -155,7 +160,7 @@ jobs:
           assert 'mrseo_render_motion_scene' in motion
           assert (root/'assets/motion-scenes.css').read_text().count('{')==(root/'assets/motion-scenes.css').read_text().count('}')
           assert 'mrseo-motion-scenes' in functions
-          assert 'orbit-earth-three.js?v=5' in home, '3D Earth remains only on the homepage'
+          assert 'orbit-earth-three.js?v=6' in home, '3D Earth remains only on the homepage'
           assert "X-Robots-Tag: noindex, nofollow" in functions, 'Do not disable staging noindex'
           # Verify every commercial new service has original UA/RU copy and a reachable route.
           new_pages={}
@@ -253,8 +258,8 @@ jobs:
           pl_routes=(root/'inc/pl-service-routing.php').read_text()
           pl_template=(root/'pl-service-landing.php').read_text()
           pl_css=(root/'assets/pl-services.css').read_text()
-          assert "get_header('international')" in pl_template
-          assert "get_footer('international')" in pl_template
+          assert "get_header();" in pl_template
+          assert "get_footer();" in pl_template
           assert '<main' not in pl_template, 'Avoid nested main landmark'
           assert 'mrseo_pl_service_route()' in pl_routes
           assert "'pl' => 'pl-PL'" in (root/'inc/international-seo.php').read_text()
@@ -347,8 +352,29 @@ jobs:
                   assert p['title'] and p['description'] and p['headline'] and p['lead'],(loc,slug)
                   if slug in ('seo','google-ads','web-development'):
                       assert len(p['problems'])==3 and len(p['outcomes'])==3 and len(p['faq'])>=1
+          # The EU service hero must be subject-specific, not the old generic
+          # floating title + three rows with different colours.
+          eu_scenes=(root/'inc/eu-service-visuals.php').read_text()
+          eu_scenes_css=(root/'assets/eu-service-scenes.css').read_text()
+          scene_names={'seo':'seo','seo-audit':'audit','ecommerce-seo':'commerce',
+                       'google-ads':'ads','analytics':'analytics','web-development':'development',
+                       'website-design':'website','online-shop-development':'shop'}
+          for visual_slug,scene_name in scene_names.items():
+              assert "($slug === '"+visual_slug+"')" in eu_scenes, ('Missing service hero',visual_slug)
+              assert 'eu-viz--'+scene_name in eu_scenes, ('Missing distinct scene markup',visual_slug)
+              assert '.eu-viz--'+scene_name in eu_scenes_css, ('Missing visual stylesheet',visual_slug)
+          assert 'eu-service-visuals.php' in (root/'eu-localized.php').read_text()
+          assert 'mrseo-eu-service-scenes' in (root/'inc/eu-routing.php').read_text()
+          assert 'prefers-reduced-motion' in eu_scenes_css
           eu_template=(root/'eu-localized.php').read_text()
           assert 'eu-market-offer' in eu_template and "['offer']['items']" in eu_template
+          assert 'eu-hero--contact' in eu_template and 'eu-hero-contact' in eu_template
+          assert "include get_template_directory().'/inc/eu-contact-form.php'" in eu_template
+          contact_form=(root/'inc/eu-contact-form.php').read_text()
+          for required in ('wp_nonce_field','mrseo_lang','contact_name','contact_email','contact_site',
+                           'contact_message','contact_company_extra','mrseo_privacy_form_notice'):
+              assert required in contact_form, ('EU contact field missing',required)
+          assert 'eu-hero--contact .eu-hero-grid' in (root/'assets/eu-expansion.css').read_text()
           assert "'#eu-contact-form':mrseo_url('contact')" in eu_template
           assert "mrseo_url('portfolio')" in eu_template
           assert "mrseo_eu_portfolio_categories" in eu_template
@@ -401,7 +427,48 @@ jobs:
           eu_markets=(root/'inc/eu-content.php').read_text()
           assert "foreach(array('pt','sv','da','fi','hu','sk','el','bg','hr') as $language)" in eu_markets
           assert 'mrseo_eu_additional_slugs' in (root/'inc/eu-complete-services.php').read_text()
-          assert 'eu-nav-services' in (root/'header-eu.php').read_text()
+          # One real header/menu/footer is used on all 20 routes, including EU pages.
+          assert 'get_header();' in eu_template and 'get_footer();' in eu_template
+          for unified_template in ('international-landing.php','development-landing.php',
+                                   'pl-service-landing.php','privacy-localized.php'):
+              source=(root/unified_template).read_text()
+              assert 'get_header();' in source and 'get_footer();' in source, (unified_template,'Different header/footer still used')
+          assert "if($l==='pl'||$l==='de')return mrseo_int_home_copy($l,$en);" in (root/'inc/i18n-routing.php').read_text()
+          assert 'mrseo-international mrseo-locale-' in (root/'header.php').read_text()
+
+          assert "get_header('eu')" not in eu_template and "get_footer('eu')" not in eu_template
+          assert 'mrseo_render_mega_menu()' in (root/'header.php').read_text()
+          assert 'mrseo-eu-' in (root/'header.php').read_text()
+          assert "function mrseo_eu_orbit_copy(" in (root/'inc/eu-orbit-copy.php').read_text()
+          eu_orbit_copy=(root/'inc/eu-orbit-copy.php').read_text()
+          footer=(root/'footer.php').read_text()
+          # EU website creation is a separate live route, not a web-development alias.
+          assert "mrseo_url($mrseo_eu_footer_labels ? 'website-design' : 'service-websites')" in footer
+          assert "$mrseo_eu_footer_labels['website-design']" in footer
+          assert "$mrseo_eu_footer_labels['analytics']" in footer
+          assert "$mrseo_eu_footer_labels['seo-audit']" in footer
+          contact_ui=(root/'inc/contact-ui.php').read_text()
+          for locale in ('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'):
+              assert "'"+locale+"' => array('call'=>" in contact_ui, ('Missing localized floating contact',locale)
+          assert "return $data[mrseo_locale()] ?? $data['en'];" in contact_ui
+          for required in ("'Back to homepage'=>$controls[6]", "'Open menu'=>$controls[7]", "'Main navigation'=>$controls[8]"):
+              assert required in eu_orbit_copy
+          assert "function mrseo_eu_premium_mega_copy(" in (root/'inc/eu-orbit-copy.php').read_text()
+          assert "return mrseo_eu_premium_mega_copy(mrseo_locale())" in mega_file
+          assert "mrseo_eu_orbit_copy($l,$en)" in routes
+          assert "get_template_directory().(mrseo_slug()===''?'/orbit-lab.php':'/eu-localized.php')" in (root/'inc/eu-routing.php').read_text()
+          # All 15 additional market homepages use the EXACT shared master;
+          # their standalone, light EU interior design stylesheet must not
+          # override the approved orbit/typography colours on the homepage.
+          eu_router_content=(root/'inc/eu-routing.php').read_text()
+          assert "if(mrseo_slug()==='')return;" in eu_router_content, 'Legacy EU landing CSS must never load on home'
+          assert "wp_enqueue_style('mrseo-eu-expansion'" in eu_router_content, 'EU service styles must remain available'
+          assert "'/orbit-lab.php':'/eu-localized.php'" in eu_router_content, 'Unified EU homepage route missing'
+          assert 'orbit-earth-three.js?v=6' in home and 'orbit-scene.css?v=7' in home
+
+          assert 'mrseo_eu_service_labels(mrseo_locale())' in home
+          assert "isset(mrseo_eu_markets()[mrseo_locale()])" in home
+          assert "$service_urls[6]='website-design'" in home
           eu_style=(root/'assets/eu-expansion.css').read_text()
           assert eu_style.count('{')==eu_style.count('}')
           assert '.eu-orbit-scene' in eu_style and '@media(max-width:540px)' in eu_style
@@ -409,7 +476,9 @@ jobs:
           assert '.eu-nav-services-panel' in eu_style and '.eu-portfolio-grid' in eu_style
           eu_router=(root/'inc/eu-routing.php').read_text()
           assert "mrseo_eu_rules_v3" in eu_router
-          assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
+          assert 'mrseo_eu_route()' in eu_router
+          assert "wp_enqueue_script('mrseo-eu-earth'" not in eu_router, 'One master must own the globe'
+          assert "orbit-earth-three.js?v=6" in home, 'Original Earth module must be preserved'
           assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
           assert "Язык заявки: $mail_locale" in functions
           assert "Заявка MrSeo.tech ['.$mail_locale.']" in functions

@@ -183,3 +183,23 @@
 @media(max-width:790px){.mrseo-eu .eu-portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.mrseo-eu .eu-portfolio-grid{grid-template-columns:1fr}.mrseo-eu .eu-project-card{min-height:120px}}
 @media(prefers-reduced-motion:reduce){.mrseo-eu .eu-project-card{transition:none!important}}
+
+/* CRO: show the actual localized lead form in the first contact-page viewport.
+   Replaces the unrelated dark service scene, keeping the existing handler and privacy note. */
+.mrseo-eu .eu-hero--contact{padding-top:clamp(36px,5vw,78px);padding-bottom:clamp(48px,6vw,86px)}
+.mrseo-eu .eu-hero--contact .eu-hero-grid{align-items:start;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr)}
+.mrseo-eu .eu-hero--contact .eu-hero-copy{padding-top:clamp(10px,2vw,35px)}
+.mrseo-eu .eu-hero-contact{min-width:0;width:100%}
+.mrseo-eu .eu-hero-contact .eu-form-panel{padding:clamp(22px,3vw,38px);box-shadow:0 19px 55px #34271d16;background:#fffdf9}
+.mrseo-eu .eu-hero-contact .eu-form-panel form{gap:7px}
+.mrseo-eu .eu-hero-contact .eu-form-panel input{min-height:46px}
+.mrseo-eu .eu-hero-contact .eu-form-panel textarea{min-height:115px}
+.mrseo-eu .eu-hero-contact .eu-form-panel label{margin-top:6px}
+.mrseo-eu .eu-hero-contact .eu-form-panel .eu-button{margin-top:10px}
+.mrseo-eu .eu-contact-assurance{padding:42px 0 70px;background:#f8f5ee;border-top:1px solid #e0d8ce}
+.mrseo-eu .eu-contact-assurance-inner{display:flex;justify-content:space-between;align-items:center;gap:28px}
+.mrseo-eu .eu-contact-assurance h2{font-size:clamp(27px,3vw,37px);margin:12px 0}
+.mrseo-eu .eu-contact-assurance p{font-size:15px;line-height:1.65;color:#56625a;margin:0}
+.mrseo-eu .eu-contact-assurance .eu-text-link{flex:none}
+@media(max-width:1120px){.mrseo-eu .eu-hero--contact .eu-hero-grid{grid-template-columns:1fr;gap:28px}.mrseo-eu .eu-hero--contact .eu-hero-copy{padding-top:0}.mrseo-eu .eu-hero-contact{max-width:750px}}
+@media(max-width:650px){.mrseo-eu .eu-hero--contact{padding-top:46px;padding-bottom:48px}.mrseo-eu .eu-hero-contact .eu-form-panel{padding:20px}.mrseo-eu .eu-contact-assurance{padding:37px 0 50px}.mrseo-eu .eu-contact-assurance-inner{display:block}.mrseo-eu .eu-contact-assurance .eu-text-link{display:inline-block;margin-top:15px}}

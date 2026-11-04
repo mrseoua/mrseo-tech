@@ -2,6 +2,8 @@
 (async()=>{'use strict';
 const root=document.querySelector('.orbit-lab')||document.querySelector('.intl-scene'),core=root?.querySelector('.lab-core, .intl-earth-core');if(!core)return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+const compact=matchMedia('(max-width: 950px)');
+// Respect mobile GPU and battery budgets without removing the rotating Earth.
 // Software sphere is also available in browsers that disable WebGL.
 async function renderCanvasEarth(){
  const image=new Image();image.src=new URL('./earth-day.jpg',import.meta.url).href;
@@ -14,7 +16,7 @@ async function renderCanvasEarth(){
  core.prepend(canvas);
  let size=0,points=[],frameData,angle=0.15,raf=0,last=0,visible=true;
  function resize(){
-  size=Math.max(160,Math.min(480,Math.round(core.clientWidth*Math.min(devicePixelRatio||1,2))));
+  size=Math.max(144,Math.min(compact.matches?256:360,Math.round(core.clientWidth*Math.min(devicePixelRatio||1,compact.matches?1:1.5))));
   canvas.width=canvas.height=size;frameData=context.createImageData(size,size);points=[];
   const radius=size*.4464;
   for(let y=0;y<size;y++)for(let x=0;x<size;x++){
@@ -38,7 +40,7 @@ async function renderCanvasEarth(){
   }
   context.putImageData(frameData,0,0);
  }
- function frame(now){raf=0;if(document.hidden||!visible)return;if(!last||now-last>=100){const dt=last?Math.min((now-last)/1000,.2):0;last=now;angle+=dt*.065;draw()}if(!reduced.matches&&!root.classList.contains('lab-paused'))raf=requestAnimationFrame(frame)}
+ function frame(now){raf=0;if(document.hidden||!visible)return;if(!last||now-last>=(compact.matches?180:120)){const dt=last?Math.min((now-last)/1000,.25):0;last=now;angle+=dt*.065;draw()}if(!reduced.matches&&!root.classList.contains('lab-paused'))raf=requestAnimationFrame(frame)}
  function start(){if(!raf&&visible&&!document.hidden){last=0;raf=requestAnimationFrame(frame)}}
  function stop(){cancelAnimationFrame(raf);raf=0;last=0}
  new ResizeObserver(resize).observe(core);
@@ -53,7 +55,7 @@ try{
  THREE=await import('https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js');
  renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
 }catch(error){console.warn('Earth: using Canvas fallback',error);renderCanvasEarth();return}
-renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setClearColor(0,0);renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,compact.matches?1.25:1.75));renderer.setClearColor(0,0);renderer.outputColorSpace=THREE.SRGBColorSpace;
 const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1.12,1.12,1.12,-1.12,.1,20);camera.position.z=4;
 scene.add(new THREE.AmbientLight(0x9ec5ed,1.15));
 const sun=new THREE.DirectionalLight(0xfff5e6,2.2);sun.position.set(-3,2.5,4);scene.add(sun);
@@ -71,8 +73,14 @@ const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(1.035,64,48),new THREE.
 const canvas=renderer.domElement;canvas.className='lab-webgl-canvas';canvas.setAttribute('aria-hidden','true');core.prepend(canvas);
 let raf=0,last=0,inView=true,lost=false;
 function render(){if(!lost)renderer.render(scene,camera)}
-function resize(){const w=core.clientWidth,h=core.clientHeight;if(!w||!h)return;renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setSize(w,h,false);const aspect=w/h;camera.left=-1.12*aspect;camera.right=1.12*aspect;camera.updateProjectionMatrix();render()}
-function frame(now){raf=0;if(!inView||document.hidden||lost)return;const dt=last?Math.min((now-last)/1000,.05):0;last=now;if(!reduced.matches&&!root.classList.contains('lab-paused'))earth.rotation.y+=dt*.065;render();if(!reduced.matches&&!root.classList.contains('lab-paused'))raf=requestAnimationFrame(frame)}
+function resize(){const w=core.clientWidth,h=core.clientHeight;if(!w||!h)return;renderer.setPixelRatio(Math.min(devicePixelRatio||1,compact.matches?1.25:1.75));renderer.setSize(w,h,false);const aspect=w/h;camera.left=-1.12*aspect;camera.right=1.12*aspect;camera.updateProjectionMatrix();render()}
+function frame(now){
+ raf=0;if(!inView||document.hidden||lost)return;
+ if(!reduced.matches&&!root.classList.contains('lab-paused')&&(!last||now-last>=(compact.matches?66:40))){
+  const dt=last?Math.min((now-last)/1000,.15):0;last=now;earth.rotation.y+=dt*.065;render();
+ }
+ if(!reduced.matches&&!root.classList.contains('lab-paused'))raf=requestAnimationFrame(frame);
+}
 function start(){if(!raf&&inView&&!document.hidden&&!lost){last=0;raf=requestAnimationFrame(frame)}}
 function stop(){cancelAnimationFrame(raf);raf=0;last=0}
 new ResizeObserver(resize).observe(core);

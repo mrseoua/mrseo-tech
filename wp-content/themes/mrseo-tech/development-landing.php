@@ -11,7 +11,7 @@ $dev_nav=array(
  'pl'=>array('SEO','SEO sklepów','Google Ads','Analityka','Audyt SEO','Aplikacje i integracje'),
  'de'=>array('SEO','Onlineshop SEO','Google Ads','Webanalyse','SEO-Audit','Webentwicklung')
 );
-get_header($is_int_dev?'international':null);
+get_header();
 ?>
 <div class="dev-scope<?php echo $dev_locale==='uk'?' dev-scope-uk':'';?>">
 <section class="dev-hero" aria-labelledby="dev-title">
@@ -93,4 +93,4 @@ get_header($is_int_dev?'international':null);
  <a class="dev-button" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($dev['labels']['cta']);?> ↗</a>
 </div></section>
 </div>
-<?php get_footer($is_int_dev?'international':null);?>
+<?php get_footer();?>

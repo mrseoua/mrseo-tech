@@ -24,7 +24,9 @@ add_filter('redirect_canonical',function($canonical){
     return mrseo_eu_route()?false:$canonical;
 },130);
 add_filter('template_include',function($template){
-    return mrseo_eu_route()?get_template_directory().'/eu-localized.php':$template;
+    if(!mrseo_eu_route())return $template;
+    // Every market homepage uses the EXACT current orbit-lab master template.
+    return get_template_directory().(mrseo_slug()===''?'/orbit-lab.php':'/eu-localized.php');
 },180);
 add_filter('pre_get_document_title',function($title){
     $page=mrseo_eu_route()?mrseo_eu_page():null;
@@ -38,15 +40,20 @@ add_action('wp_head',function(){
 },5);
 add_action('wp_enqueue_scripts',function(){
     if(!mrseo_eu_route())return;
+    // The homepage is rendered by the same orbit-lab.php as UA/RU/EN/PL/DE.
+    // Never load the legacy EU landing stylesheet there: its global heading,
+    // background and link rules alter the approved shared homepage styling.
+    // The market-specific CSS remains scoped to EU interior pages only.
+    if(mrseo_slug()==='')return;
     wp_enqueue_style('mrseo-eu-expansion',get_template_directory_uri().'/assets/eu-expansion.css',
-        array('mrseo-language-dropdown'),'1.0.3');
-    if(mrseo_slug()==='')wp_enqueue_script('mrseo-eu-earth',get_template_directory_uri().'/assets/orbit-earth-three.js',array(),'5.0.0',true);
+        array('mrseo-language-dropdown'),'1.0.4');
+    // Only real service pages load their subject-specific, mobile-ready hero scene.
+    if(in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'),true)){
+        wp_enqueue_style('mrseo-eu-service-scenes',get_template_directory_uri().'/assets/eu-service-scenes.css',
+            array('mrseo-eu-expansion'),'1.0.0');
+    }
+    // orbit-lab.php owns the single module instance of the original Earth.
 },110);
-// The Earth renderer uses import.meta and must execute as an ES module.
-add_filter('script_loader_tag',function($tag,$handle){
-    if($handle!=='mrseo-eu-earth')return $tag;
-    return str_replace('<script ','<script type="module" ',$tag);
-},10,2);
 add_action('init',function(){
     if(get_option('mrseo_eu_rules_v3')!=='ready'){
         flush_rewrite_rules(false);

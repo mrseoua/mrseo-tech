@@ -1,0 +1,100 @@
+name: Pre-merge WordPress browser preview
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'wp-content/themes/mrseo-tech/**'
+      - 'scripts/verify-live-eu-responsive.cjs'
+      - '.github/workflows/wp-premerge-preview.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mrseo-wp-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  wp-browser-preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: test_root
+          MYSQL_DATABASE: mrseo_ci
+          MYSQL_USER: mrseo_ci
+          MYSQL_PASSWORD: local_ci_only
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -ptest_root"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up PHP and WordPress requirements
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mysqli, pdo_mysql, mbstring, intl, zip
+          tools: none
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated WordPress and activate this PR's theme
+        run: |
+          set -euo pipefail
+          curl -fsSL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /tmp/wp-cli.phar
+          php /tmp/wp-cli.phar core download --path="$GITHUB_WORKSPACE/preview-wp" --allow-root --quiet
+          php /tmp/wp-cli.phar config create --path="$GITHUB_WORKSPACE/preview-wp" --dbname=mrseo_ci --dbuser=mrseo_ci --dbpass=local_ci_only --dbhost=127.0.0.1:3306 --skip-check --allow-root --quiet
+          php /tmp/wp-cli.phar core install --path="$GITHUB_WORKSPACE/preview-wp" --url=http://127.0.0.1:8080 --title="MrSeo CI preview" --admin_user=preview --admin_password=preview_ci_only --admin_email=preview@example.com --skip-email --allow-root --quiet
+          cp -a wp-content/themes/mrseo-tech "$GITHUB_WORKSPACE/preview-wp/wp-content/themes/"
+          php /tmp/wp-cli.phar theme activate mrseo-tech --path="$GITHUB_WORKSPACE/preview-wp" --allow-root
+          php /tmp/wp-cli.phar option update blog_public 0 --path="$GITHUB_WORKSPACE/preview-wp" --allow-root
+          php /tmp/wp-cli.phar rewrite structure '/%postname%/' --path="$GITHUB_WORKSPACE/preview-wp" --allow-root
+          # In production the default-language SEO page exists in WordPress;
+          # provision the same page in a fresh isolated CI installation.
+          php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=seo --post_title='SEO' --allow-root --quiet
+          cat > "$GITHUB_WORKSPACE/preview-wp/router.php" <<'PHP'
+          <?php
+          $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+          if ($path !== '/' && is_file(__DIR__ . $path)) return false;
+          require __DIR__ . '/index.php';
+          PHP
+          php -S 127.0.0.1:8080 -t "$GITHUB_WORKSPACE/preview-wp" "$GITHUB_WORKSPACE/preview-wp/router.php" > /tmp/mrseo-preview-server.log 2>&1 &
+          for i in $(seq 1 45); do
+            if curl -fsS http://127.0.0.1:8080/fr/ -o /tmp/preview-fr.html; then break; fi
+            sleep 2
+          done
+          test -s /tmp/preview-fr.html
+          grep -q 'orbit-lab' /tmp/preview-fr.html
+      - name: Install Chromium and Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Browser smoke test all 20 locales (isolated site, no public deployment)
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_AUDIT_QUICK: '1'
+          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
+        run: node scripts/verify-live-eu-responsive.cjs
+      - name: Publish diagnostics and screenshots as CI artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: premerge-wp-preview-${{ matrix.shard }}
+          path: |
+            shots/eu-*.jpg
+            shots/eu-diagnostics.json
+            /tmp/mrseo-preview-server.log
+          if-no-files-found: warn
+          retention-days: 7
