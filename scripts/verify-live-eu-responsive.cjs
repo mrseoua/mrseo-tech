@@ -70,7 +70,7 @@ async function audit(browser,viewport,lang,slug){
     ownLanguageLinks:[...document.querySelectorAll('a[href]')].map(a=>{
       try{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.startsWith('/'+lang+'/')?u.pathname:null}catch{return null}
     }).filter(Boolean),
-    formAction:document.querySelector('form[action*="admin-post.php"]')?.action||null,
+    formAction:document.querySelector('form[action*="admin-post.php"]')?.getAttribute('action')||null,
     formMethod:document.querySelector('form[action*="admin-post.php"]')?.method||null,
     formActionName:document.querySelector('input[name="action"]')?.value||null,
     hasPrivacyNotice:!!document.querySelector('.mrseo-privacy-notice'),
