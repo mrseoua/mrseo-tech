@@ -43,9 +43,17 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
 </div>
 </div>
 <?php else:?>
-<div class="eu-service-scene" aria-hidden="true"><span class="eu-scene-top"><?php echo esc_html($ui[2]);?></span>
-<div class="eu-scene-core"><?php echo esc_html($slug==='seo'?'SEO':($slug==='google-ads'?'ADS':($slug==='web-development'?'API':'↗')));?></div>
+<div class="eu-service-scene eu-service-scene-<?php echo esc_attr($slug);?>" aria-hidden="true">
+<div class="eu-scene-halo"></div>
+<span class="eu-scene-top"><?php echo esc_html($ui[2]);?></span>
+<div class="eu-scene-core"><?php echo esc_html($slug==='seo'?'SEO':($slug==='google-ads'?'ADS':($slug==='web-development'?'API':'↗')));?><span class="eu-scene-pulse"></span></div>
+<div class="eu-scene-rows">
 <?php foreach(array_slice($page['problems'],0,3) as $i=>$item):?><div class="eu-scene-row"><span>0<?php echo esc_html($i+1);?></span><strong><?php echo esc_html($item[0]);?></strong><span class="eu-tick">↗</span></div><?php endforeach;?>
+</div>
+<div class="eu-scene-footer">
+ <span class="eu-scene-status"><i></i><?php echo esc_html($ui[3]);?></span>
+ <span class="eu-scene-progress"><i></i></span>
+</div>
 </div>
 <?php endif;?>
 </div></section>
