@@ -280,7 +280,7 @@ function mrseo_eu_all(){
         "faq": []
       },
       "privacy": {
-        "title": "Confidentialité et demandes de contact | MrSeo.tech",
+        "title": "Confidentialité et demandes de contact",
         "description": "Comment sont utilisées les informations transmises via le formulaire MrSeo.tech.",
         "eyebrow": "Confidentialité",
         "headline": "Confidentialité et demandes de contact",
@@ -401,7 +401,7 @@ function mrseo_eu_all(){
         }
       },
       "seo": {
-        "title": "Audit SEO per e-commerce: categorie, filtri e index",
+        "title": "Audit SEO per e-commerce: categorie, filtri e indicizzazione",
         "description": "SEO per categorie, filtri, pagine prodotto e servizi: controlli tecnici e un piano di implementazione verificabile.",
         "eyebrow": "SEO / ORGANICO",
         "headline": "Le pagine giuste <em>non compaiono su Google?</em>",
@@ -585,7 +585,7 @@ function mrseo_eu_all(){
         "faq": []
       },
       "privacy": {
-        "title": "Privacy e richieste di contatto | MrSeo.tech",
+        "title": "Privacy e richieste di contatto",
         "description": "Come utilizziamo i dati inviati tramite il modulo di MrSeo.tech.",
         "eyebrow": "Privacy",
         "headline": "Privacy e richieste di contatto",
@@ -890,7 +890,7 @@ function mrseo_eu_all(){
         "faq": []
       },
       "privacy": {
-        "title": "Privacidad y consultas de contacto | MrSeo.tech",
+        "title": "Privacidad y consultas de contacto",
         "description": "Uso de los datos enviados a través del formulario de MrSeo.tech.",
         "eyebrow": "Privacidad",
         "headline": "Privacidad y consultas de contacto",
@@ -1195,7 +1195,7 @@ function mrseo_eu_all(){
         "faq": []
       },
       "privacy": {
-        "title": "Privacy en contactaanvragen | MrSeo.tech",
+        "title": "Privacy en contactaanvragen",
         "description": "Hoe MrSeo.tech gegevens uit het contactformulier gebruikt.",
         "eyebrow": "Privacy",
         "headline": "Privacy en contactaanvragen",
@@ -1500,7 +1500,7 @@ function mrseo_eu_all(){
         "faq": []
       },
       "privacy": {
-        "title": "Confidențialitate și solicitări de contact | MrSeo.tech",
+        "title": "Confidențialitate și solicitări de contact",
         "description": "Cum folosim informațiile trimise prin formularul MrSeo.tech.",
         "eyebrow": "Confidențialitate",
         "headline": "Confidențialitate și solicitări de contact",
@@ -1805,7 +1805,7 @@ function mrseo_eu_all(){
         "faq": []
       },
       "privacy": {
-        "title": "Soukromí a kontaktní poptávky | MrSeo.tech",
+        "title": "Soukromí a kontaktní poptávky",
         "description": "Jak MrSeo.tech nakládá s údaji zaslanými kontaktním formulářem.",
         "eyebrow": "Soukromí",
         "headline": "Soukromí a kontaktní poptávky",
