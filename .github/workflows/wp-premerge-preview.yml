@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2]
+        shard: [0, 1, 2, 3]
     services:
       mysql:
         image: mysql:8.0
@@ -78,7 +78,7 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
-      - name: Browser smoke test all 15 EU locales (isolated site, no public deployment)
+      - name: Browser smoke test all 20 locales (isolated site, no public deployment)
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
           MRSEO_AUDIT_QUICK: '1'
