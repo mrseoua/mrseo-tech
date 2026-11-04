@@ -91,7 +91,8 @@ async function audit(browser,viewport,lang,slug){
   }
   if(slug===''&&viewport.name==='narrow'){
    const sel=page.locator('.mrseo-language-trigger');
-   await sel.click({timeout:4000});
+   await sel.focus();
+   await page.keyboard.press('Enter');
    await page.waitForTimeout(150);
    const visible=await page.locator('.mrseo-language-options').evaluate(x=>{
     const r=x.getBoundingClientRect();return r.width>180&&r.left>=-2&&r.right<=innerWidth+2&&r.top<innerHeight;
