@@ -33,7 +33,7 @@
   "pages": {
     "": {
       "title": "SEO, Google Ads og webudvikling til virksomheder i Danmark",
-      "description": "SEO, Google Ads og webudvikling til virksomheder i Danmark. Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer. Vi undersøger søgninger, brugeroplevelse, konverter",
+      "description": "SEO, Google Ads og webudvikling til virksomheder i Danmark. Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer.",
       "eyebrow": "MRSEO.TECH",
       "headline": "Hjemmesiden er klar. <em>Men kommer kunderne?</em>",
       "lead": "Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer. Vi undersøger søgninger, brugeroplevelse, konverteringsdata og besværlige arbejdsgange.",
@@ -87,7 +87,7 @@
     },
     "seo": {
       "title": "SEO for virksomheder og webshops",
-      "description": "SEO for virksomheder og webshops. Vi ser på, hvilke søgninger virksomheden bør kunne besvare. Derefter gennemgår vi hjemmesidens struktur, links og indhold for at finde årsagen til manglende synlighed.",
+      "description": "SEO for virksomheder og webshops. Vi ser på, hvilke søgninger virksomheden bør kunne besvare.",
       "eyebrow": "SEO",
       "headline": "Er de vigtigste sider <em>svære at finde?</em>",
       "lead": "Vi ser på, hvilke søgninger virksomheden bør kunne besvare. Derefter gennemgår vi hjemmesidens struktur, links og indhold for at finde årsagen til manglende synlighed.",
@@ -141,8 +141,8 @@
     },
     "seo-audit": {
       "title": "Teknisk SEO-analyse: indeksering og duplikerede sider",
-      "description": "Teknisk SEO-analyse: indeksering og duplikerede sider. En teknisk analyse bør vise de URL'er og problemer, som påvirker sitet. Vi undersøger crawl, indeksering, kanoniske adresser og mobil hastighed med en",
-      "eyebrow": "SEO / AUDIT",
+      "description": "Teknisk SEO-analyse: indeksering og duplikerede sider. En teknisk analyse bør vise de URL'er og problemer, som påvirker sitet.",
+      "eyebrow": "TEKNISK SEO-ANALYSE",
       "headline": "Et automatisk SEO-tal <em>er ikke en løsning.</em>",
       "lead": "En teknisk analyse bør vise de URL'er og problemer, som påvirker sitet. Vi undersøger crawl, indeksering, kanoniske adresser og mobil hastighed med en praktisk prioritering.",
       "problems": [
@@ -195,8 +195,8 @@
     },
     "ecommerce-seo": {
       "title": "SEO til webshops: kategorier, filtre og produkter",
-      "description": "SEO til webshops: kategorier, filtre og produkter. En webshop skal have gennemskuelige kategorier, filtre og produktvarianter. Vi undersøger den aktuelle opsætning på eksempelvis Shopify eller WooCommerce ",
-      "eyebrow": "ECOMMERCE / SEO",
+      "description": "SEO til webshops: kategorier, filtre og produkter. En webshop skal have gennemskuelige kategorier, filtre og produktvarianter.",
+      "eyebrow": "SEO TIL WEBSHOPS",
       "headline": "Mange produkter. <em>Hvem finder dem i Google?</em>",
       "lead": "En webshop skal have gennemskuelige kategorier, filtre og produktvarianter. Vi undersøger den aktuelle opsætning på eksempelvis Shopify eller WooCommerce før forslag til ændringer.",
       "problems": [
@@ -249,8 +249,8 @@
     },
     "google-ads": {
       "title": "Google Ads-gennemgang for webshops og Shopping",
-      "description": "Google Ads-gennemgang for webshops og Shopping. Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres. Vi undersøger måling, søgetermer og Shopping-produktdata med fokus på reel f",
-      "eyebrow": "GOOGLE / ADS",
+      "description": "Google Ads-gennemgang for webshops og Shopping. Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres.",
+      "eyebrow": "GOOGLE ADS",
       "headline": "Annoncebudgettet bruges. <em>Hvad giver det tilbage?</em>",
       "lead": "Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres. Vi undersøger måling, søgetermer og Shopping-produktdata med fokus på reel forretningsværdi.",
       "problems": [
@@ -303,8 +303,8 @@
     },
     "analytics": {
       "title": "GA4 og gennemgang af konverteringssporing",
-      "description": "GA4 og gennemgang af konverteringssporing. Fejl i purchase-hændelser og ordrebeløb kan skabe et falsk billede af annonceeffektiviteten. Vi sammenholder GA4 og Google Ads med faktiske ordrer og forståelige ",
-      "eyebrow": "ANALYTICS",
+      "description": "GA4 og gennemgang af konverteringssporing. Fejl i purchase-hændelser og ordrebeløb kan skabe et falsk billede af annonceeffektiviteten.",
+      "eyebrow": "GA4-ANALYSE",
       "headline": "Der er tal i rapporten. <em>Men er de pålidelige?</em>",
       "lead": "Fejl i purchase-hændelser og ordrebeløb kan skabe et falsk billede af annonceeffektiviteten. Vi sammenholder GA4 og Google Ads med faktiske ordrer og forståelige definitioner.",
       "problems": [
@@ -357,8 +357,8 @@
     },
     "web-development": {
       "title": "Webudvikling, CRM og API-integrationer",
-      "description": "Webudvikling, CRM og API-integrationer. Webapplikationer og API-integrationer skal løse konkrete problemer. Vi kortlægger datastrømme og tekniske begrænsninger før vi beslutter, om ny kode eller en enklere",
-      "eyebrow": "WEB / DEVELOPMENT",
+      "description": "Webudvikling, CRM og API-integrationer. Webapplikationer og API-integrationer skal løse konkrete problemer.",
+      "eyebrow": "WEBUDVIKLING",
       "headline": "Teknologi bør <em>spare medarbejderne tid.</em>",
       "lead": "Webapplikationer og API-integrationer skal løse konkrete problemer. Vi kortlægger datastrømme og tekniske begrænsninger før vi beslutter, om ny kode eller en enklere integration er bedst.",
       "problems": [
@@ -411,8 +411,8 @@
     },
     "website-design": {
       "title": "Professionel hjemmeside til virksomheder",
-      "description": "Professionel hjemmeside til virksomheder. Vi bygger hjemmesider, der forklarer virksomhedens ydelser og hjælper besøgende videre til en forespørgsel. Struktur og mobil læsbarhed kommer før dekorative effek",
-      "eyebrow": "WEBSITE / DESIGN",
+      "description": "Professionel hjemmeside til virksomheder. Vi bygger hjemmesider, der forklarer virksomhedens ydelser og hjælper besøgende videre til en forespørgsel.",
+      "eyebrow": "HJEMMESIDER",
       "headline": "Et flot website er godt. <em>Et klart budskab er bedre.</em>",
       "lead": "Vi bygger hjemmesider, der forklarer virksomhedens ydelser og hjælper besøgende videre til en forespørgsel. Struktur og mobil læsbarhed kommer før dekorative effekter.",
       "problems": [
@@ -465,8 +465,8 @@
     },
     "online-shop-development": {
       "title": "Udvikling af webshop med betaling og integrationer",
-      "description": "Udvikling af webshop med betaling og integrationer. En webshop består også af produktdata, varianter, betaling, levering og ordrebehandling. Vi designer de sammenhængende processer før en platform vælges.",
-      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "description": "Udvikling af webshop med betaling og integrationer. En webshop består også af produktdata, varianter, betaling, levering og ordrebehandling.",
+      "eyebrow": "WEBSHOPUDVIKLING",
       "headline": "En webshop skal sælge. <em>Og være enkel at drive.</em>",
       "lead": "En webshop består også af produktdata, varianter, betaling, levering og ordrebehandling. Vi designer de sammenhængende processer før en platform vælges.",
       "problems": [
@@ -519,8 +519,8 @@
     },
     "about": {
       "title": "Om MrSeo.tech — et mindre team af specialister",
-      "description": "Om MrSeo.tech — et mindre team af specialister. Vi er et mindre team med ti års erfaring inden for SEO, Google Ads og webudvikling. Vi arbejder på afstand fra Ukraine og starter med at forstå problemet fre",
-      "eyebrow": "ABOUT",
+      "description": "Om MrSeo.tech — et mindre team af specialister. Vi er et mindre team med ti års erfaring inden for SEO, Google Ads og webudvikling.",
+      "eyebrow": "OM OS",
       "headline": "Et lille team. <em>En tydelig arbejdsmetode.</em>",
       "lead": "Vi er et mindre team med ti års erfaring inden for SEO, Google Ads og webudvikling. Vi arbejder på afstand fra Ukraine og starter med at forstå problemet frem for at sælge faste pakker.",
       "problems": [
@@ -573,8 +573,8 @@
     },
     "portfolio": {
       "title": "Projekter og erfaring fra MrSeo.tech",
-      "description": "Projekter og erfaring fra MrSeo.tech. Vi viser websites fra vores offentlige portefølje som eksempler på arbejdsområder. Vi påstår ikke, at de er danske kunder, og deler ikke private resultater uden tillad",
-      "eyebrow": "PORTFOLIO",
+      "description": "Projekter og erfaring fra MrSeo.tech. Vi viser websites fra vores offentlige portefølje som eksempler på arbejdsområder.",
+      "eyebrow": "PROJEKTER",
       "headline": "Offentlige projekter. <em>Ingen opdigtede resultater.</em>",
       "lead": "Vi viser websites fra vores offentlige portefølje som eksempler på arbejdsområder. Vi påstår ikke, at de er danske kunder, og deler ikke private resultater uden tilladelse.",
       "problems": [
@@ -627,8 +627,8 @@
     },
     "contact": {
       "title": "Kontakt os om dit website eller webshopprojekt",
-      "description": "Kontakt os om dit website eller webshopprojekt. Send webadressen, målmarkedet og et konkret eksempel på problemet. En kort beskrivelse er tilstrækkelig til en første vurdering.",
-      "eyebrow": "CONTACT",
+      "description": "Kontakt os om dit website eller webshopprojekt. Send webadressen, målmarkedet og et konkret eksempel på problemet.",
+      "eyebrow": "KONTAKT",
       "headline": "Hvad forhindrer <em>flere relevante henvendelser?</em>",
       "lead": "Send webadressen, målmarkedet og et konkret eksempel på problemet. En kort beskrivelse er tilstrækkelig til en første vurdering. Fortæl os, hvilket system din webshop bruger, hvilket marked du sælger på, og hvad der ikke fungerer. Send ingen adgangskoder.",
       "problems": [],
@@ -638,7 +638,7 @@
     "privacy": {
       "title": "Privatliv og behandling af kontaktoplysninger",
       "description": "Sådan behandler MrSeo.tech oplysninger fra kontaktformularen.",
-      "eyebrow": "PRIVACY",
+      "eyebrow": "PRIVATLIV",
       "headline": "Privatliv og kontaktforespørgsler",
       "lead": "Sådan behandler MrSeo.tech oplysninger fra kontaktformularen.",
       "problems": [],
