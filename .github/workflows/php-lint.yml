@@ -426,6 +426,10 @@ jobs:
           assert "$mrseo_eu_footer_labels['website-design']" in footer
           assert "$mrseo_eu_footer_labels['analytics']" in footer
           assert "$mrseo_eu_footer_labels['seo-audit']" in footer
+          contact_ui=(root/'inc/contact-ui.php').read_text()
+          for locale in ('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'):
+              assert "'"+locale+"' => array('call'=>" in contact_ui, ('Missing localized floating contact',locale)
+          assert "return $data[mrseo_locale()] ?? $data['en'];" in contact_ui
           for required in ("'Back to homepage'=>$controls[6]", "'Open menu'=>$controls[7]", "'Main navigation'=>$controls[8]"):
               assert required in eu_orbit_copy
           assert "function mrseo_eu_premium_mega_copy(" in (root/'inc/eu-orbit-copy.php').read_text()
