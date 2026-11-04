@@ -33,7 +33,7 @@
   "pages": {
     "": {
       "title": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak",
-      "description": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak. Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás. Megvizsgáljuk a keresési láthatóságot, a konverziómérést és",
+      "description": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak. Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás.",
       "eyebrow": "MRSEO.TECH",
       "headline": "Van weboldala. <em>De érkeznek új ügyfelek?</em>",
       "lead": "Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás. Megvizsgáljuk a keresési láthatóságot, a konverziómérést és a kézi folyamatokat.",
@@ -87,7 +87,7 @@
     },
     "seo": {
       "title": "SEO szolgáltatások vállalkozásoknak és webáruházaknak",
-      "description": "SEO szolgáltatások vállalkozásoknak és webáruházaknak. A keresőoptimalizálás alapja a valós vásárlói kereslet és az azt kiszolgáló weboldal. Átnézzük a kategóriák, belső linkek és tartalmak működését, miel",
+      "description": "SEO szolgáltatások vállalkozásoknak és webáruházaknak. A keresőoptimalizálás alapja a valós vásárlói kereslet és az azt kiszolgáló weboldal.",
       "eyebrow": "SEO",
       "headline": "A fontos oldalak <em>nem találhatók a keresőben?</em>",
       "lead": "A keresőoptimalizálás alapja a valós vásárlói kereslet és az azt kiszolgáló weboldal. Átnézzük a kategóriák, belső linkek és tartalmak működését, mielőtt több szöveg készülne.",
@@ -141,8 +141,8 @@
     },
     "seo-audit": {
       "title": "Technikai SEO audit: indexelés, feltérképezés, duplikációk",
-      "description": "Technikai SEO audit: indexelés, feltérképezés, duplikációk. A technikai SEO audit konkrét URL-ekhez köti az indexelési, feltérképezési és duplikációs problémákat. A javításokat üzleti jelentőség és megvaló",
-      "eyebrow": "SEO / AUDIT",
+      "description": "Technikai SEO audit: indexelés, feltérképezés, duplikációk. A technikai SEO audit konkrét URL-ekhez köti az indexelési, feltérképezési és duplikációs problémákat.",
+      "eyebrow": "TECHNIKAI SEO AUDIT",
       "headline": "Egy SEO pontszám <em>nem javítja meg a weboldalt.</em>",
       "lead": "A technikai SEO audit konkrét URL-ekhez köti az indexelési, feltérképezési és duplikációs problémákat. A javításokat üzleti jelentőség és megvalósíthatóság szerint rangsoroljuk.",
       "problems": [
@@ -195,8 +195,8 @@
     },
     "ecommerce-seo": {
       "title": "Webáruház SEO: kategóriák, szűrők és termékoldalak",
-      "description": "Webáruház SEO: kategóriák, szűrők és termékoldalak. Egy Shoprenter, UNAS vagy WooCommerce webáruház kategóriáinak és szűrőinek jól kell működniük. A tényleges beállítást vizsgáljuk, és nem állítunk hivatal",
-      "eyebrow": "ECOMMERCE / SEO",
+      "description": "Webáruház SEO: kategóriák, szűrők és termékoldalak. Egy Shoprenter, UNAS vagy WooCommerce webáruház kategóriáinak és szűrőinek jól kell működniük.",
+      "eyebrow": "WEBÁRUHÁZ SEO",
       "headline": "Sok termék van. <em>De megtalálják a vásárlók?</em>",
       "lead": "Egy Shoprenter, UNAS vagy WooCommerce webáruház kategóriáinak és szűrőinek jól kell működniük. A tényleges beállítást vizsgáljuk, és nem állítunk hivatalos partnerséget.",
       "problems": [
@@ -249,8 +249,8 @@
     },
     "google-ads": {
       "title": "Google Ads és Shopping kampányok auditálása",
-      "description": "Google Ads és Shopping kampányok auditálása. A kampányok optimalizálása előtt a konverziókat kell ellenőrizni. Ezt követően vizsgáljuk a keresési kifejezéseket, a Shopping-termékeket és a költés üzleti ért",
-      "eyebrow": "GOOGLE / ADS",
+      "description": "Google Ads és Shopping kampányok auditálása. A kampányok optimalizálása előtt a konverziókat kell ellenőrizni.",
+      "eyebrow": "GOOGLE ADS",
       "headline": "Költ a hirdetésre. <em>Milyen rendeléseket hoz?</em>",
       "lead": "A kampányok optimalizálása előtt a konverziókat kell ellenőrizni. Ezt követően vizsgáljuk a keresési kifejezéseket, a Shopping-termékeket és a költés üzleti értékét.",
       "problems": [
@@ -303,8 +303,8 @@
     },
     "analytics": {
       "title": "GA4 elemzés és konverziómérés ellenőrzése",
-      "description": "GA4 elemzés és konverziómérés ellenőrzése. Egy duplán mért rendelés félrevezetheti a hirdetési rendszereket. Megvizsgáljuk a purchase eseményt, a transaction_id értékeket és az eltérő hozzárendelési modell",
-      "eyebrow": "ANALYTICS",
+      "description": "GA4 elemzés és konverziómérés ellenőrzése. Egy duplán mért rendelés félrevezetheti a hirdetési rendszereket.",
+      "eyebrow": "GA4 ELEMZÉS",
       "headline": "Vannak riportok. <em>De helyesek a számok?</em>",
       "lead": "Egy duplán mért rendelés félrevezetheti a hirdetési rendszereket. Megvizsgáljuk a purchase eseményt, a transaction_id értékeket és az eltérő hozzárendelési modelleket.",
       "problems": [
@@ -357,8 +357,8 @@
     },
     "web-development": {
       "title": "Egyedi webfejlesztés, CRM és API-integrációk",
-      "description": "Egyedi webfejlesztés, CRM és API-integrációk. Egyedi webalkalmazásokat és API-integrációkat üzleti folyamatokhoz készítünk. Előbb feltérképezzük az adatmozgást és a biztonsági korlátokat, csak utána kezdőd",
-      "eyebrow": "WEB / DEVELOPMENT",
+      "description": "Egyedi webfejlesztés, CRM és API-integrációk. Egyedi webalkalmazásokat és API-integrációkat üzleti folyamatokhoz készítünk.",
+      "eyebrow": "EGYEDI WEBFEJLESZTÉS",
       "headline": "A szoftvernek <em>munkát kell megtakarítania.</em>",
       "lead": "Egyedi webalkalmazásokat és API-integrációkat üzleti folyamatokhoz készítünk. Előbb feltérképezzük az adatmozgást és a biztonsági korlátokat, csak utána kezdődik a fejlesztés.",
       "problems": [
@@ -411,8 +411,8 @@
     },
     "website-design": {
       "title": "Üzleti weboldalak tervezése és készítése",
-      "description": "Üzleti weboldalak tervezése és készítése. Olyan vállalati oldalakat tervezünk, amelyek világosan bemutatják a szolgáltatásokat és megkönnyítik a megkeresést. A mobilos olvashatóság és a tartalom logikája a",
-      "eyebrow": "WEBSITE / DESIGN",
+      "description": "Üzleti weboldalak tervezése és készítése. Olyan vállalati oldalakat tervezünk, amelyek világosan bemutatják a szolgáltatásokat és megkönnyítik a megkeresést.",
+      "eyebrow": "WEBOLDALKÉSZÍTÉS",
       "headline": "Egy jó weboldal <em>segíti a kapcsolatfelvételt.</em>",
       "lead": "Olyan vállalati oldalakat tervezünk, amelyek világosan bemutatják a szolgáltatásokat és megkönnyítik a megkeresést. A mobilos olvashatóság és a tartalom logikája az első.",
       "problems": [
@@ -465,8 +465,8 @@
     },
     "online-shop-development": {
       "title": "Webáruház készítése és rendszerintegráció",
-      "description": "Webáruház készítése és rendszerintegráció. A webshop megvalósítása termékadatokat, fizetést, kiszállítást és rendeléskezelést is jelent. A platformot és az integrációkat a tényleges üzleti működéshez válas",
-      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "description": "Webáruház készítése és rendszerintegráció. A webshop megvalósítása termékadatokat, fizetést, kiszállítást és rendeléskezelést is jelent.",
+      "eyebrow": "WEBÁRUHÁZ KÉSZÍTÉS",
       "headline": "A webáruháznak eladnia kell. <em>És könnyen kezelhetőnek lennie.</em>",
       "lead": "A webshop megvalósítása termékadatokat, fizetést, kiszállítást és rendeléskezelést is jelent. A platformot és az integrációkat a tényleges üzleti működéshez választjuk.",
       "problems": [
@@ -519,8 +519,8 @@
     },
     "about": {
       "title": "Rólunk — a MrSeo.tech SEO és fejlesztői csapata",
-      "description": "Rólunk — a MrSeo.tech SEO és fejlesztői csapata. Kis szakértői csapatunk tízéves tapasztalattal dolgozik SEO, Google Ads és webfejlesztési feladatokon. Ukrajnából, távolról működünk, és az ügyfél problémáj",
-      "eyebrow": "ABOUT",
+      "description": "Rólunk — a MrSeo.tech SEO és fejlesztői csapata. Kis szakértői csapatunk tízéves tapasztalattal dolgozik SEO, Google Ads és webfejlesztési feladatokon.",
+      "eyebrow": "RÓLUNK",
       "headline": "Kis csapat. <em>Világos felelősség.</em>",
       "lead": "Kis szakértői csapatunk tízéves tapasztalattal dolgozik SEO, Google Ads és webfejlesztési feladatokon. Ukrajnából, távolról működünk, és az ügyfél problémájával kezdünk.",
       "problems": [
@@ -573,8 +573,8 @@
     },
     "portfolio": {
       "title": "Projektjeink és referenciáink",
-      "description": "Projektjeink és referenciáink. Nyilvános portfóliónkból különböző iparágak webhelyeit mutatjuk be. Nem állítjuk, hogy magyar ügyfelek, és nem közlünk bizalmas eredményeket engedély nélkül.",
-      "eyebrow": "PORTFOLIO",
+      "description": "Projektjeink és referenciáink. Nyilvános portfóliónkból különböző iparágak webhelyeit mutatjuk be.",
+      "eyebrow": "PROJEKTEK",
       "headline": "Valódi oldalak. <em>Kitalált számok nélkül.</em>",
       "lead": "Nyilvános portfóliónkból különböző iparágak webhelyeit mutatjuk be. Nem állítjuk, hogy magyar ügyfelek, és nem közlünk bizalmas eredményeket engedély nélkül.",
       "problems": [
@@ -627,8 +627,8 @@
     },
     "contact": {
       "title": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban",
-      "description": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban. Küldje el weboldala címét, a célpiacot és egy konkrét példát a hibára. Rövid leírás is elegendő a kiinduló helyzet felméréséhez.",
-      "eyebrow": "CONTACT",
+      "description": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban. Küldje el weboldala címét, a célpiacot és egy konkrét példát a hibára.",
+      "eyebrow": "KAPCSOLAT",
       "headline": "Mi akadályozza <em>az új ügyfelek érkezését?</em>",
       "lead": "Küldje el weboldala címét, a célpiacot és egy konkrét példát a hibára. Rövid leírás is elegendő a kiinduló helyzet felméréséhez. Írja meg a webáruház platformját, a célpiacot és a konkrét hibát. Ne osszon meg jelszavakat.",
       "problems": [],
@@ -638,7 +638,7 @@
     "privacy": {
       "title": "Adatvédelem és a kapcsolati adatok kezelése",
       "description": "Így kezeljük a MrSeo.tech kapcsolatfelvételi űrlapján elküldött adatokat.",
-      "eyebrow": "PRIVACY",
+      "eyebrow": "ADATVÉDELEM",
       "headline": "Adatvédelem és kapcsolatfelvétel",
       "lead": "Így kezeljük a MrSeo.tech kapcsolatfelvételi űrlapján elküldött adatokat.",
       "problems": [],
