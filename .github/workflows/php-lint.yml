@@ -39,7 +39,7 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
-      - name: Run international SEO pre-indexing audit (135 routes)
+      - name: Run international SEO pre-indexing audit (177 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
@@ -350,13 +350,30 @@ jobs:
           eu_template=(root/'eu-localized.php').read_text()
           assert 'eu-market-offer' in eu_template and "['offer']['items']" in eu_template
           assert "'#eu-contact-form':mrseo_url('contact')" in eu_template
-          assert "mrseo_i18n_exact_url('en','portfolio')" in eu_template
+          assert "mrseo_url('portfolio')" in eu_template
+          assert "mrseo_eu_portfolio_categories" in eu_template
           eu_footer=(root/'footer-eu.php').read_text()
-          assert "mrseo_i18n_exact_url('en','portfolio')" in eu_footer
+          assert "mrseo_url('portfolio')" in eu_footer
+          # Every new market has seven additional fully written services, in addition to six pilot pages.
+          expected_extra={'seo-audit','ecommerce-seo','analytics','website-design','online-shop-development','about','portfolio'}
+          for loc in eu_data:
+              local_file=root/'locales'/f'{loc}-services.json'
+              assert local_file.is_file(), (loc,'Missing service translation file')
+              extra=json.loads(local_file.read_text())
+              assert set(extra)==expected_extra,(loc,'Incomplete localized service coverage')
+              for slug,page in extra.items():
+                  assert len(page['title'])>20 and len(page['description'])>35
+                  assert page['headline'] and len(page['lead'])>90
+                  assert len(page['problems'])==3 and len(page['outcomes'])==3
+                  assert len(page['faq'])>=2 and len(page['offer']['items'])==3
+                  assert len({x['title'] for x in page['offer']['items']})==3
+          assert 'mrseo_eu_additional_slugs' in (root/'inc/eu-complete-services.php').read_text()
+          assert 'eu-nav-services' in (root/'header-eu.php').read_text()
           eu_style=(root/'assets/eu-expansion.css').read_text()
           assert eu_style.count('{')==eu_style.count('}')
           assert '.eu-orbit-scene' in eu_style and '@media(max-width:540px)' in eu_style
           assert '.eu-offer-grid' in eu_style and '.eu-market-heading' in eu_style
+          assert '.eu-nav-services-panel' in eu_style and '.eu-portfolio-grid' in eu_style
           eu_router=(root/'inc/eu-routing.php').read_text()
           assert "mrseo_eu_rules_v1" in eu_router
           assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
