@@ -152,3 +152,34 @@
 @keyframes eu-flow-progress{from{transform:translateX(-120%)}to{transform:translateX(350%)}}
 @media(max-width:540px){.mrseo-eu .eu-service-scene .eu-scene-footer{margin-top:4px}.mrseo-eu .eu-scene-status{font-size:9px;line-height:1.4}.mrseo-eu .eu-scene-core{font-size:clamp(50px,14vw,67px)}}
 @media(prefers-reduced-motion:reduce){.mrseo-eu .eu-scene-halo,.mrseo-eu .eu-scene-core,.mrseo-eu .eu-scene-row,.mrseo-eu .eu-scene-progress i{animation:none!important}.mrseo-eu .eu-scene-row{transform:none}}
+
+/* Complete localized service navigation. */
+.mrseo-eu .eu-nav-services{position:relative;flex:none}
+.mrseo-eu .eu-nav-services>summary{list-style:none;display:flex;align-items:center;gap:7px;cursor:pointer;font-size:14px;font-weight:740;color:#28332c;white-space:nowrap;min-height:44px}
+.mrseo-eu .eu-nav-services>summary::-webkit-details-marker{display:none}
+.mrseo-eu .eu-nav-services>summary span{font-size:19px;color:#b65340}
+.mrseo-eu .eu-nav-services-panel{position:absolute;right:-4px;top:calc(100% + 11px);width:min(510px,calc(100vw - 34px));max-height:min(74vh,590px);overflow-y:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:14px;background:#fffcf6;border:1px solid #e0d8ce;border-radius:17px;box-shadow:0 23px 55px #18261b29;z-index:1100}
+.mrseo-eu .eu-nav-services-panel a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;white-space:normal;font-size:14px;line-height:1.45;min-height:47px;padding:12px 11px;border-radius:9px;color:#2a342c}
+.mrseo-eu .eu-nav-services-panel a:hover,.mrseo-eu .eu-nav-services-panel a[aria-current=page]{background:#f1eae0;color:#9e4938}
+.mrseo-eu .eu-nav-services-panel a span{color:#ae5947;font-weight:800}
+.mrseo-eu .eu-mobile-menu nav{max-height:min(73vh,610px);overflow-y:auto;overscroll-behavior:contain}
+.mrseo-eu .eu-mobile-menu nav a[aria-current=page]{color:#a84b3b;background:#f4e8de;border-radius:8px}
+.mrseo-eu .eu-nav-services summary:focus-visible,.mrseo-eu .eu-mobile-menu summary:focus-visible{outline:3px solid #b45342;outline-offset:3px}
+/* The same real portfolio domains are reused across locales, without invented local case metrics. */
+.mrseo-eu .eu-portfolio-list{background:#fffcf7}
+.mrseo-eu .eu-portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mrseo-eu .eu-project-card{display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-width:0;min-height:145px;padding:24px;border-radius:15px;border:1px solid #e1d8c9;background:linear-gradient(145deg,#faf6ef,#f3eee5);transition:transform .2s ease,border-color .2s ease}
+.mrseo-eu .eu-project-card:hover{transform:translateY(-3px);border-color:#be7161}
+.mrseo-eu .eu-project-card span{color:#985445;font-size:11px;font-weight:860;letter-spacing:.09em}
+.mrseo-eu .eu-project-card strong{color:#26332c;font-size:clamp(16px,1.75vw,22px);line-height:1.25;overflow-wrap:anywhere}
+.mrseo-eu .eu-project-card i{align-self:flex-end;color:#b85a47;font-size:22px;font-style:normal}
+.mrseo-eu .eu-service-scene-seo-audit,.mrseo-eu .eu-service-scene-analytics{background:radial-gradient(circle at 67% 8%,#30617b,#162a31 70%)}
+.mrseo-eu .eu-service-scene-ecommerce-seo,.mrseo-eu .eu-service-scene-online-shop-development{background:radial-gradient(circle at 67% 8%,#456345,#182a27 70%)}
+.mrseo-eu .eu-service-scene-website-design,.mrseo-eu .eu-service-scene-about,.mrseo-eu .eu-service-scene-portfolio{background:radial-gradient(circle at 67% 8%,#66524e,#30282a 70%)}
+.mrseo-eu .eu-service-scene-seo-audit .eu-scene-row,.mrseo-eu .eu-service-scene-analytics .eu-scene-row{border-left:3px solid #8abfe0}
+.mrseo-eu .eu-service-scene-ecommerce-seo .eu-scene-row,.mrseo-eu .eu-service-scene-online-shop-development .eu-scene-row{border-left:3px solid #a7c9a1}
+.mrseo-eu .eu-service-scene-website-design .eu-scene-row,.mrseo-eu .eu-service-scene-about .eu-scene-row,.mrseo-eu .eu-service-scene-portfolio .eu-scene-row{border-left:3px solid #e4b8a4}
+@media(max-width:1120px){.mrseo-eu .eu-nav-services-panel{right:0}}
+@media(max-width:790px){.mrseo-eu .eu-portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.mrseo-eu .eu-portfolio-grid{grid-template-columns:1fr}.mrseo-eu .eu-project-card{min-height:120px}}
+@media(prefers-reduced-motion:reduce){.mrseo-eu .eu-project-card{transition:none!important}}
