@@ -2,6 +2,11 @@ name: EU staged pages responsive browser audit
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/eu-responsive-live.yml'
+      - 'scripts/verify-live-eu-responsive.cjs'
   workflow_run:
     workflows:
       - Deploy WordPress theme
@@ -14,7 +19,7 @@ permissions:
 jobs:
   eu-visual:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
