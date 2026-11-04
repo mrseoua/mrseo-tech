@@ -38,7 +38,7 @@ add_action('wp_head',function(){
 add_action('wp_enqueue_scripts',function(){
     if(!mrseo_eu_route())return;
     wp_enqueue_style('mrseo-eu-expansion',get_template_directory_uri().'/assets/eu-expansion.css',
-        array('mrseo-language-dropdown'),'1.0.3');
+        array('mrseo-language-dropdown'),'1.0.4');
     if(mrseo_slug()==='')wp_enqueue_script('mrseo-eu-earth',get_template_directory_uri().'/assets/orbit-earth-three.js',array(),'5.0.0',true);
 },110);
 // The Earth renderer uses import.meta and must execute as an ES module.

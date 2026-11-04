@@ -349,6 +349,15 @@ jobs:
                       assert len(p['problems'])==3 and len(p['outcomes'])==3 and len(p['faq'])>=1
           eu_template=(root/'eu-localized.php').read_text()
           assert 'eu-market-offer' in eu_template and "['offer']['items']" in eu_template
+          assert "include get_template_directory().'/inc/eu-contact-form.php'" in eu_template
+          assert 'eu-hero--contact' in eu_template and 'id="eu-contact-form"' in eu_template
+          assert 'eu-contact-assurance' in eu_template
+          eu_form=(root/'inc/eu-contact-form.php').read_text()
+          for required in ('wp_nonce_field','mrseo_lang','contact_name','contact_email','contact_site',
+                           'contact_message','contact_company_extra','mrseo_privacy_form_notice'):
+              assert required in eu_form, ('EU form field/notice missing',required)
+          assert (root/'inc/eu-contact-form.php').is_file()
+          assert "mrseo_eu_route()" in (root/'inc/eu-routing.php').read_text()
           assert "'#eu-contact-form':mrseo_url('contact')" in eu_template
           assert "mrseo_url('portfolio')" in eu_template
           assert "mrseo_eu_portfolio_categories" in eu_template
@@ -374,6 +383,12 @@ jobs:
           assert '.eu-orbit-scene' in eu_style and '@media(max-width:540px)' in eu_style
           assert '.eu-offer-grid' in eu_style and '.eu-market-heading' in eu_style
           assert '.eu-nav-services-panel' in eu_style and '.eu-portfolio-grid' in eu_style
+          assert '.eu-hero-contact .eu-form-panel' in eu_style and '.eu-hero--contact' in eu_style
+          assert "url('./earth-day.jpg')" in eu_style, 'No visual Earth fallback in EU styles'
+          eu_browser=pathlib.Path('scripts/verify-live-eu-responsive.cjs').read_text()
+          assert 'earthCanvasReady' in eu_browser and 'earthStaticTexture' in eu_browser
+          assert 'satelliteDestinations' in eu_browser and 'ownLanguageLinks' in eu_browser
+          assert 'MRSEO_TEST_INVALID_FORMS' in eu_browser and 'invalid-email' in eu_browser
           eu_router=(root/'inc/eu-routing.php').read_text()
           assert "mrseo_eu_rules_v2" in eu_router
           assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router

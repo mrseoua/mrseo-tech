@@ -2,6 +2,13 @@ name: EU staged pages responsive browser audit
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/verify-live-eu-responsive.cjs'
+      - 'wp-content/themes/mrseo-tech/assets/eu-expansion.css'
+      - 'wp-content/themes/mrseo-tech/inc/eu-routing.php'
+      - '.github/workflows/eu-responsive-live.yml'
   push:
     branches: [main]
     paths:
@@ -15,6 +22,11 @@ on:
 
 permissions:
   contents: read
+
+# Avoid overlapping expensive Chromium suites when several PR commits are pushed.
+concurrency:
+  group: eu-browser-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   eu-visual:
@@ -33,6 +45,8 @@ jobs:
       - name: Audit all six EU languages on desktop and mobile
         env:
           MRSEO_TEST_ORIGIN: https://mrseo.tech
+          MRSEO_QA_FOCUSED: ${{ github.event_name == 'pull_request' && '1' || '0' }}
+          MRSEO_TEST_INVALID_FORMS: ${{ github.event_name == 'pull_request' && '1' || '0' }}
         run: node scripts/verify-live-eu-responsive.cjs
       - name: Upload screenshots and detailed diagnostics
         if: always()
