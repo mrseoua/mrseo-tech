@@ -20,8 +20,9 @@ get_header('eu');
 <span class="eu-kicker"><?php echo esc_html($page['eyebrow']);?> · MRSEO.TECH</span>
 <h1><?php echo wp_kses($page['headline'],array('em'=>array()));?></h1>
 <p><?php echo esc_html($page['lead']);?></p>
-<div class="eu-actions"><a class="eu-button" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($nav[5]);?> <span aria-hidden="true">↗</span></a>
-<?php if($slug!=='seo'):?><a class="eu-text-link" href="<?php echo esc_url(mrseo_url('seo'));?>"><?php echo esc_html($nav[1]);?> ↗</a><?php endif;?></div>
+<div class="eu-actions">
+<a class="eu-button" href="<?php echo esc_url($slug==='contact'?'#eu-contact-form':mrseo_url('contact'));?>"><?php echo esc_html($slug==='contact'?$ui[11]:$nav[5]);?> <span aria-hidden="true">↗</span></a>
+<?php if($slug!=='contact'):?><a class="eu-text-link" href="<?php echo esc_url(mrseo_i18n_exact_url('en','portfolio'));?>" lang="en"><?php echo esc_html($eu['market']['portfolioLabel']);?> ↗</a><?php endif;?></div>
 <div class="eu-proof"><span class="eu-proof-dot"></span><?php echo esc_html($ui[1]);?></div>
 </div>
 <?php if($is_home):?>
