@@ -44,7 +44,8 @@ async function audit(browser,viewport,lang,slug){
    console.log('FAIL '+viewport.name+' '+lang+'/'+slug+' HTTP '+item.status);
    return;
   }
-  await page.locator('body').waitFor({timeout:8000});
+  // page.goto(waitUntil: 'domcontentloaded') has already established the body;
+  // an extra body visibility wait can stall behind software-WebGL rendering.
   try{await page.evaluate(()=>document.fonts.ready)}catch(_){}
   await page.waitForTimeout(slug===''?1400:250);
   item.check=await page.evaluate(({lang,slug,width,coreShard})=>{
@@ -62,7 +63,7 @@ async function audit(browser,viewport,lang,slug){
     internalWidth:document.documentElement.scrollWidth,
     clientWidth:document.documentElement.clientWidth,
     viewport:innerWidth,
-    hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
+    hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.ukseo-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
