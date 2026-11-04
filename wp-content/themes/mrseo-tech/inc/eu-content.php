@@ -954,7 +954,7 @@ function mrseo_eu_all(){
     ],
     "pages": {
       "": {
-        "title": "SEO, Google Ads en webontwikkeling voor Nederlandse bedrijven",
+        "title": "Webshop SEO, Google Ads (SEA) en webontwikkeling Nederland",
         "description": "Technische SEO, Shopping, conversiemeting en webontwikkeling gericht op echte knelpunten van bedrijven.",
         "eyebrow": "VERKEER / LEADS / TECHNIEK",
         "headline": "Een website is er. <em>Maar waar blijven de aanvragen?</em>",
@@ -986,10 +986,29 @@ function mrseo_eu_all(){
             "Hebben jullie een kantoor in Nederland?",
             "Nee. We werken op afstand en spreken bereikbaarheid en werktaal vooraf af."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Eerst vaststellen waar geld en tijd verloren gaan",
+          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "items": [
+            {
+              "title": "SEO-structuur",
+              "detail": "Bekijken of collecties, categorieën en producten zichtbaar zijn voor koopgerichte zoekopdrachten."
+            },
+            {
+              "title": "SEA en meting",
+              "detail": "Vergelijken of Google Ads en GA4 overeenkomen met echte orders."
+            },
+            {
+              "title": "Operationele koppelingen",
+              "detail": "Achterhalen waar orders, klanten of voorraad nog handmatig worden verwerkt."
+            }
+          ],
+          "cta": "Toon mijn webshopprobleem"
+        }
       },
       "seo": {
-        "title": "Technische SEO en webshop SEO in Nederland",
+        "title": "Technische webshop SEO-audit: categorieën en indexering",
         "description": "SEO-audit van indexering, collecties, filters, productpagina's en commerciële zoekintentie.",
         "eyebrow": "SEO / WEBWINKELS",
         "headline": "Zijn de juiste pagina's <em>onvindbaar?</em>",
@@ -1020,11 +1039,34 @@ function mrseo_eu_all(){
           [
             "Garanderen jullie topposities?",
             "Nee. We garanderen geen rankings, maar leggen uit welke aanpassingen meetbaar zijn."
+          ],
+          [
+            "Is de audit geschikt voor WooCommerce en Shopify?",
+            "Dat hangt af van de inrichting. We beoordelen eerst de URL- en catalogusstructuur voordat we wijzigingen adviseren."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Een technische audit voor je webshop",
+          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "items": [
+            {
+              "title": "Indexeerbare pagina’s",
+              "detail": "Onderzoeken van filters, canonical-tags, paginering en interne links."
+            },
+            {
+              "title": "Zoekintentie",
+              "detail": "Controleren of belangrijke categorieën aansluiten op Nederlandse zoekopdrachten."
+            },
+            {
+              "title": "Prioriteitenlijst",
+              "detail": "Vastleggen welke URL’s aandacht vragen en hoe verbeteringen gecontroleerd worden."
+            }
+          ],
+          "cta": "Toon mijn webshopprobleem"
+        }
       },
       "google-ads": {
-        "title": "Google Ads, Shopping en conversiemeting in Nederland",
+        "title": "SEA / Google Ads-audit: Shopping en conversiemeting",
         "description": "Audit van advertentiekosten, productfeeds, PMax en betrouwbare aankoop- of leadmeting.",
         "eyebrow": "ADS / METING",
         "headline": "Je betaalt voor klikken. <em>Wat leveren ze op?</em>",
@@ -1055,11 +1097,34 @@ function mrseo_eu_all(){
           [
             "Kunnen jullie ROAS garanderen?",
             "Nee. Zonder marge- en ordergegevens is een rendementsgarantie misleidend."
+          ],
+          [
+            "Is een SEA-audit hetzelfde als maandelijks beheer?",
+            "Nee. De audit is afgebakend; doorlopend beheer vraagt een aparte afspraak en beoordeling van het budget."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "SEA beoordelen op betekenisvolle orders",
+          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "items": [
+            {
+              "title": "Conversies",
+              "detail": "Controleren van purchase, order-ID, primaire conversies en taggedrag bij toestemming."
+            },
+            {
+              "title": "Productfeed",
+              "detail": "Vergelijken van Merchant Center met webshopprijzen, voorraad en attributen."
+            },
+            {
+              "title": "Kosten per productgroep",
+              "detail": "Controleren waar budget wordt uitgegeven zonder bevestigde commerciële waarde."
+            }
+          ],
+          "cta": "Toon mijn webshopprobleem"
+        }
       },
       "web-development": {
-        "title": "WordPress, webapplicaties en API-integraties op maat",
+        "title": "Webapplicaties, API-koppelingen en WordPress op maat",
         "description": "Websites, webshops, dashboards, CRM-koppelingen en automatisering voor efficiëntere processen.",
         "eyebrow": "WEBONTWIKKELING / AUTOMATISERING",
         "headline": "Moet je team <em>steeds dezelfde handelingen doen?</em>",
@@ -1090,15 +1155,38 @@ function mrseo_eu_all(){
           [
             "Maken jullie SaaS of CRM-systemen?",
             "We kunnen scope, integraties en haalbaarheid van een webapplicatie onderzoeken."
+          ],
+          [
+            "Moet alles opnieuw gebouwd worden?",
+            "Niet per se. We beoordelen eerst of een bestaande koppeling aangepast kan worden."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Automatisering die onderhoudbaar blijft",
+          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "items": [
+            {
+              "title": "Proceskaart",
+              "detail": "Vastleggen van verbindingen tussen webshop, CRM en voorraad."
+            },
+            {
+              "title": "API en veiligheid",
+              "detail": "Beoordelen van toegangsrechten, beperkingen en foutafhandeling."
+            },
+            {
+              "title": "Gefaseerde uitvoering",
+              "detail": "Opleveren volgens testgevallen en afspraken over onderhoud."
+            }
+          ],
+          "cta": "Toon mijn webshopprobleem"
+        }
       },
       "contact": {
         "title": "Contact MrSeo.tech voor SEO, advertenties of ontwikkeling",
         "description": "Beschrijf je website, doelmarkt en belangrijkste knelpunt voor een gerichte eerste beoordeling.",
         "eyebrow": "CONTACT / VRAAG",
         "headline": "Wat houdt <em>je bedrijf tegen?</em>",
-        "lead": "Vertel wat niet werkt. Een URL en een concreet voorbeeld helpen meer dan een lange briefing.",
+        "lead": "Vertel wat niet werkt. Een URL en een concreet voorbeeld helpen meer dan een lange briefing. Vermeld je platform, belangrijkste markt en het verschil tussen GA4, Ads en bestellingen. Deel nooit wachtwoorden.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -1128,7 +1216,13 @@ function mrseo_eu_all(){
       "Rechten en contact",
       "Je kunt waar toepasselijk inzage, correctie of verwijdering vragen via hello@mrseo.tech. De geverifieerde identiteit van de verantwoordelijke wordt vóór de publieke lancering vermeld.",
       "Met dit formulier verstrek je gegevens zodat we kunnen antwoorden. Details:"
-    ]
+    ],
+    "market": {
+      "heading": "Betrouwbare data voor Nederlandse webshops",
+      "description": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+      "cta": "Toon mijn webshopprobleem",
+      "brief": "Vermeld je platform, belangrijkste markt en het verschil tussen GA4, Ads en bestellingen. Deel nooit wachtwoorden."
+    }
   },
   "ro": {
     "code": "ro-RO",
@@ -1164,7 +1258,7 @@ function mrseo_eu_all(){
     ],
     "pages": {
       "": {
-        "title": "SEO, Google Ads și dezvoltare web pentru companii din România",
+        "title": "Audit SEO, Google Ads și dezvoltare web pentru România",
         "description": "Optimizare SEO, audit Google Ads, măsurarea conversiilor și dezvoltare web pornind de la probleme reale.",
         "eyebrow": "CLIENȚI / CĂUTARE / TEHNOLOGIE",
         "headline": "Ai un site. <em>Dar unde sunt clienții?</em>",
@@ -1196,10 +1290,29 @@ function mrseo_eu_all(){
             "Aveți birou în România?",
             "Nu. Colaborăm de la distanță și stabilim comunicarea înainte de proiect."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Unde verificăm pierderile comerciale",
+          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "items": [
+            {
+              "title": "Vizibilitatea catalogului",
+              "detail": "Verificăm dacă paginile de categorie pot fi descoperite pentru căutări de cumpărare."
+            },
+            {
+              "title": "Reclame și comenzi",
+              "detail": "Confruntăm GA4 și Google Ads cu comenzile efective."
+            },
+            {
+              "title": "Operațiuni manuale",
+              "detail": "Analizăm transferul de date între magazin, gestiune și canalele de vânzare."
+            }
+          ],
+          "cta": "Descrie problema magazinului"
+        }
       },
       "seo": {
-        "title": "Servicii SEO tehnic și SEO pentru magazine online în România",
+        "title": "Audit SEO magazin online: categorii, filtre și indexare",
         "description": "Audit de indexare, categorii, filtre, linkuri interne și pagini comerciale cu recomandări prioritizate.",
         "eyebrow": "SEO / MAGAZINE ONLINE",
         "headline": "Paginile importante <em>nu apar în Google?</em>",
@@ -1230,11 +1343,34 @@ function mrseo_eu_all(){
           [
             "Promiteți poziția întâi?",
             "Nu. Pozițiile nu pot fi garantate; lucrăm cu schimbări și rezultate verificabile."
+          ],
+          [
+            "Lucrați cu MerchantPro sau Gomag?",
+            "Putem analiza structura tehnică a magazinului folosit. Nu susținem că suntem parteneri oficiali ai acestor platforme."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Audit SEO adaptat structurii magazinului",
+          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "items": [
+            {
+              "title": "URL-uri și indexare",
+              "detail": "Controlăm sitemap, canonical, filtre și legăturile interne."
+            },
+            {
+              "title": "Cerere comercială",
+              "detail": "Separăm paginile cu valoare de combinațiile duplicate de produse."
+            },
+            {
+              "title": "Plan de remediere",
+              "detail": "Identificăm erorile pe URL-uri și pașii de validare după implementare."
+            }
+          ],
+          "cta": "Descrie problema magazinului"
+        }
       },
       "google-ads": {
-        "title": "Administrare și audit Google Ads în România",
+        "title": "Audit Google Ads și Merchant Center pentru e-commerce",
         "description": "Google Ads Search, Shopping, Performance Max, Merchant Center și urmărirea conversiilor reale.",
         "eyebrow": "RECLAME / EFICIENȚĂ",
         "headline": "Reclamele consumă buget. <em>Ce vânzări aduc?</em>",
@@ -1265,11 +1401,34 @@ function mrseo_eu_all(){
           [
             "Garantați ROAS?",
             "Nu. Rentabilitatea depinde de marjă, prețuri, ofertă și măsurare."
+          ],
+          [
+            "Puteți verifica Shopping și Performance Max?",
+            "Da, dacă există acces autorizat la date și campanii. Definim mai întâi scopul auditului."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Verificăm semnalele înainte să creștem bugetul",
+          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "items": [
+            {
+              "title": "Valoarea conversiilor",
+              "detail": "Comparăm purchase, transaction_id și veniturile din GA4 cu comenzile reale."
+            },
+            {
+              "title": "Feed și disponibilitate",
+              "detail": "Verificăm datele Merchant Center față de prețuri, stoc și paginile produselor."
+            },
+            {
+              "title": "Buget pe categorii",
+              "detail": "Analizăm cheltuieli fără valoare măsurată și marjele când sunt disponibile."
+            }
+          ],
+          "cta": "Descrie problema magazinului"
+        }
       },
       "web-development": {
-        "title": "Dezvoltare site-uri, CRM, integrare API și automatizări",
+        "title": "Dezvoltare web, CRM și automatizări prin API",
         "description": "WordPress, magazine online, aplicații web, CRM și dashboard-uri adaptate fluxurilor de lucru.",
         "eyebrow": "DEZVOLTARE / AUTOMATIZARE",
         "headline": "Software-ul ar trebui <em>să reducă munca manuală.</em>",
@@ -1300,15 +1459,38 @@ function mrseo_eu_all(){
           [
             "Puteți dezvolta un SaaS?",
             "Putem analiza fezabilitatea, arhitectura și funcționalitățile înainte de estimarea implementării."
+          ],
+          [
+            "Se poate conecta magazinul la sistemul de gestiune?",
+            "Evaluăm posibilitatea doar după ce vedem API-ul, datele și restricțiile platformei."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Reducem operațiunile repetitive",
+          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "items": [
+            {
+              "title": "Traseul comenzilor",
+              "detail": "Documentăm schimbul de date dintre magazin, ERP și alte canale folosite efectiv."
+            },
+            {
+              "title": "Posibilități API",
+              "detail": "Verificăm limite tehnice, autorizare și tratarea erorilor."
+            },
+            {
+              "title": "Pilot verificabil",
+              "detail": "Definim teste de sincronizare și reguli de mentenanță."
+            }
+          ],
+          "cta": "Descrie problema magazinului"
+        }
       },
       "contact": {
         "title": "Contact MrSeo.tech: SEO, Google Ads și dezvoltare",
         "description": "Trimite adresa site-ului, piața vizată și problema de rezolvat; răspundem prin e-mail.",
         "eyebrow": "CONTACT / PROIECT",
         "headline": "Ce împiedică <em>creșterea afacerii?</em>",
-        "lead": "Nu ai nevoie de un brief perfect. Spune-ne ce rezultat lipsește și care este site-ul tău.",
+        "lead": "Nu ai nevoie de un brief perfect. Spune-ne ce rezultat lipsește și care este site-ul tău. Indică platforma, numărul aproximativ de produse și ce nu corespunde între comenzi și rapoarte. Nu trimite parole.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -1338,7 +1520,13 @@ function mrseo_eu_all(){
       "Drepturi și contact",
       "Poți solicita acces, corectare sau ștergere, în limitele legii, la hello@mrseo.tech. Identitatea juridică verificată a operatorului va fi publicată înainte de lansare.",
       "Prin trimiterea formularului, oferi date pentru a primi un răspuns. Detalii:"
-    ]
+    ],
+    "market": {
+      "heading": "Pentru magazine online care vor comenzi măsurabile",
+      "description": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+      "cta": "Descrie problema magazinului",
+      "brief": "Indică platforma, numărul aproximativ de produse și ce nu corespunde între comenzi și rapoarte. Nu trimite parole."
+    }
   },
   "cs": {
     "code": "cs-CZ",
@@ -1374,7 +1562,7 @@ function mrseo_eu_all(){
     ],
     "pages": {
       "": {
-        "title": "SEO, Google Ads a vývoj webu pro firmy v Česku",
+        "title": "SEO audit e-shopu, PPC a vývoj webu pro Česko",
         "description": "Technické SEO, měření konverzí, správa kampaní a vývoj webových nástrojů pro konkrétní obchodní problémy.",
         "eyebrow": "VIDITELNOST / POPTÁVKY / DATA",
         "headline": "Web máte. <em>A kde jsou poptávky?</em>",
@@ -1406,10 +1594,29 @@ function mrseo_eu_all(){
             "Máte pobočku v Česku?",
             "Ne. Pracujeme vzdáleně a předem dohodneme komunikaci i rozsah."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Co může brzdit vaše objednávky",
+          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "items": [
+            {
+              "title": "Kategorie a indexace",
+              "detail": "Zkontrolovat, zda důležité stránky odpovídají českým nákupním dotazům."
+            },
+            {
+              "title": "Reklamní výkon",
+              "detail": "Porovnat objednávky se záznamy v Google Ads a případně Skliku nebo Heurece."
+            },
+            {
+              "title": "Přenos dat",
+              "detail": "Zjistit, kde se informace mezi e-shopem a účetnictvím zbytečně přepisují."
+            }
+          ],
+          "cta": "Popsat problém e-shopu"
+        }
       },
       "seo": {
-        "title": "Technické SEO a SEO e-shopů pro české firmy",
+        "title": "SEO audit e-shopu: Shoptet, indexace a kategorie",
         "description": "Audit indexace, kategorií, filtrů, interního prolinkování a obchodních vstupních stránek.",
         "eyebrow": "SEO / VYHLEDÁVÁNÍ",
         "headline": "Důležité stránky <em>Google nenachází?</em>",
@@ -1440,11 +1647,34 @@ function mrseo_eu_all(){
           [
             "Garantujete první místo?",
             "Ne. Pozice ve vyhledávání nelze spolehlivě slíbit."
+          ],
+          [
+            "Hodí se audit i pro Shoptet?",
+            "Ano, můžeme prověřit indexaci, URL a kategorizační strukturu. Konkrétní změny závisí na dostupných nastaveních."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "SEO audit s konkrétními URL",
+          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "items": [
+            {
+              "title": "Technické nastavení",
+              "detail": "Prověřit sitemapu, filtry, canonical a interní odkazy."
+            },
+            {
+              "title": "Kategorie a dotazy",
+              "detail": "Zaměřit se na relevantní hledání produktů v Česku."
+            },
+            {
+              "title": "Pořadí oprav",
+              "detail": "Připravit seznam priorit s postupem následné kontroly."
+            }
+          ],
+          "cta": "Popsat problém e-shopu"
+        }
       },
       "google-ads": {
-        "title": "Google Ads a Shopping: audit a optimalizace pro české firmy",
+        "title": "PPC audit e-shopu: Google Ads, Sklik a měření",
         "description": "Kampaně ve vyhledávání, Shopping, Performance Max, Merchant Center a přesné měření konverzí.",
         "eyebrow": "GOOGLE ADS / MĚŘENÍ",
         "headline": "Rozpočet se utrácí. <em>Co přináší firmě?</em>",
@@ -1475,11 +1705,34 @@ function mrseo_eu_all(){
           [
             "Slibujete konkrétní PNO či ROAS?",
             "Ne. Výsledek závisí na marži, trhu i kvalitě dat."
+          ],
+          [
+            "Pracujete také se Sklikem a Heurekou?",
+            "Při celkové diagnostice je můžeme zohlednit, pokud jsou relevantní a máme data. Samostatná správa vyžaduje další dohodu."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "PPC posuzujeme podle objednávek",
+          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "items": [
+            {
+              "title": "Konverze a GA4",
+              "detail": "Prověřit události nákupu, jejich hodnoty a duplicity."
+            },
+            {
+              "title": "Produktové kampaně",
+              "detail": "Přezkoumat Merchant Center a podle potřeby feedy pro Heureku či Zboží.cz."
+            },
+            {
+              "title": "Oddělení kanálů",
+              "detail": "Nesčítat stejnou zakázku jako nezávislý výsledek Google Ads a Skliku."
+            }
+          ],
+          "cta": "Popsat problém e-shopu"
+        }
       },
       "web-development": {
-        "title": "Tvorba webů, WordPress, CRM a API integrace",
+        "title": "Tvorba webových aplikací, CRM a API integrace",
         "description": "Weby, e-shopy, interní nástroje, SaaS, automatizace a propojení systémů pro efektivnější provoz.",
         "eyebrow": "VÝVOJ / PROCESY",
         "headline": "Technologie má práci <em>zjednodušovat.</em>",
@@ -1510,15 +1763,38 @@ function mrseo_eu_all(){
           [
             "Vyvíjíte i SaaS aplikace?",
             "Můžeme posoudit proveditelnost SaaS nebo CRM a navrhnout realistický rozsah."
+          ],
+          [
+            "Je možné propojit e-shop s účetnictvím?",
+            "Nejdříve zjistíme možnosti API, datový model a řešení výpadků."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Konečně méně ručních úkonů",
+          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "items": [
+            {
+              "title": "Průběh objednávky",
+              "detail": "Zmapovat přenos dat z e-shopu do skladového či účetního systému."
+            },
+            {
+              "title": "Možnosti rozhraní",
+              "detail": "Prověřit API, oprávnění a limity stávajícího řešení."
+            },
+            {
+              "title": "Postupné nasazení",
+              "detail": "Vymezit pilot a ověřit chybové scénáře."
+            }
+          ],
+          "cta": "Popsat problém e-shopu"
+        }
       },
       "contact": {
         "title": "Kontakt MrSeo.tech: SEO, Google Ads a vývoj webu",
         "description": "Popište web, cílový trh a problém, který potřebujete vyřešit.",
         "eyebrow": "KONTAKT / POPTÁVKA",
         "headline": "Co brání <em>růstu vaší firmy?</em>",
-        "lead": "Pošlete adresu webu a konkrétní příklad nefungujícího procesu. Začneme tím, co lze ověřit.",
+        "lead": "Pošlete adresu webu a konkrétní příklad nefungujícího procesu. Začneme tím, co lze ověřit. Uveďte e-shopové řešení, reklamní kanály a konkrétní problém. Neposílejte přihlašovací údaje.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -1548,7 +1824,13 @@ function mrseo_eu_all(){
       "Práva a kontakt",
       "Podle příslušných zákonů můžete požádat o přístup, opravu nebo výmaz na hello@mrseo.tech. Ověřená právní identita správce bude uvedena před spuštěním.",
       "Odesláním formuláře předáváte údaje za účelem odpovědi. Podrobnosti:"
-    ]
+    ],
+    "market": {
+      "heading": "PPC a SEO audit pro české e-shopy",
+      "description": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+      "cta": "Popsat problém e-shopu",
+      "brief": "Uveďte e-shopové řešení, reklamní kanály a konkrétní problém. Neposílejte přihlašovací údaje."
+    }
   }
 }
 MRSEO_EU_JSON;
