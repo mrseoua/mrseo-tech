@@ -375,7 +375,7 @@ jobs:
           assert '.eu-offer-grid' in eu_style and '.eu-market-heading' in eu_style
           assert '.eu-nav-services-panel' in eu_style and '.eu-portfolio-grid' in eu_style
           assert "url('./earth-day.jpg')" in eu_style, 'No visual Earth fallback in EU styles'
-          eu_browser=(Path('scripts/verify-live-eu-responsive.cjs')).read_text()
+          eu_browser=pathlib.Path('scripts/verify-live-eu-responsive.cjs').read_text()
           assert 'earthCanvasReady' in eu_browser and 'earthStaticTexture' in eu_browser
           assert 'satelliteDestinations' in eu_browser and 'ownLanguageLinks' in eu_browser
           assert 'MRSEO_TEST_INVALID_FORMS' in eu_browser and 'invalid-email' in eu_browser
