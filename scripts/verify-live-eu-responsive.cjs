@@ -13,7 +13,7 @@ const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 // homepage/service/contact/privacy paths in all 15 markets before publication.
 const slugs=coreShard?['','seo','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
-const sizes=[{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
+const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
 const urlOf=(l,s)=>HOST+'/'+(l==='uk'?'':l+'/')+(s?s+'/':'');
 async function audit(browser,viewport,lang,slug){
@@ -67,6 +67,19 @@ async function audit(browser,viewport,lang,slug){
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
+    heroEdge:(()=>{
+      const el=document.querySelector('#main > .orbit-lab');
+      if(!el)return null;
+      const rect=el.getBoundingClientRect();
+      return {left:Math.round(rect.left),right:Math.round(rect.right),width:Math.round(rect.width)};
+    })(),
+    heroPanel:(()=>{
+      const el=document.querySelector('#main > .orbit-lab > .lab-shell');
+      if(!el)return null;
+      const computed=getComputedStyle(el);
+      return {background:computed.backgroundColor,radius:computed.borderTopLeftRadius,
+        overflow:computed.overflowX,shadow:computed.boxShadow};
+    })(),
     orbitStylesheet:!!document.querySelector('link[href*="orbit-scene.css"]'),
     legacyEuStylesheet:!!document.querySelector('link[href*="eu-expansion.css"]'),
     sharedHomepageVisual:!!document.querySelector('.orbit-lab .lab-shell .lab-visual .lab-core')&&!!document.querySelector('.orbit-lab .lab-connectors #lab-spokes'),
@@ -109,6 +122,17 @@ async function audit(browser,viewport,lang,slug){
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
   if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
   if(slug===''&&!c.orbitCanvas&&!c.orbitStaticTexture)item.errors.push('No real 3D globe or Earth texture fallback');
+  if(slug===''){
+    // Regression guard: all 20 locale homepages must physically reach both
+    // viewport edges, not merely use the same template within a narrow wrapper.
+    const edge=c.heroEdge;
+    if(!edge||Math.abs(edge.left)>2||edge.right<c.viewport-2||edge.width<c.viewport-3)
+      item.errors.push('Homepage has visible side gutters: '+JSON.stringify(edge)+' viewport='+c.viewport);
+    const panel=c.heroPanel;
+    if(!panel||!['transparent','rgba(0, 0, 0, 0)'].includes(panel.background)||
+       panel.radius!=='0px'||panel.shadow!=='none'||panel.overflow!=='visible')
+      item.errors.push('Homepage has inherited dark rounded 1700px panel: '+JSON.stringify(panel));
+  }
   if(slug===''&&(!c.orbitStylesheet||!c.sharedHomepageVisual))item.errors.push('Not using the exact approved shared 3D homepage visual');
   if(slug===''&&!coreShard&&c.legacyEuStylesheet)item.errors.push('EU landing stylesheet leaked onto unified homepage');
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
@@ -120,7 +144,7 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
-  if(viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
+  if((viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
   }
   if(slug===''&&viewport.name==='narrow'){
@@ -175,6 +199,7 @@ async function audit(browser,viewport,lang,slug){
    try{
     const selectedSlugs=coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs);
     for(const slug of selectedSlugs){
+     if(viewport.name==='wide'&&slug!=='')continue;
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug))continue;
      await audit(browser,viewport,lang,slug);
     }
