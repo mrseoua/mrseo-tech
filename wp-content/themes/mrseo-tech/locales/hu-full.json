@@ -545,7 +545,12 @@
         "Indokolt prioritások",
         "Ellenőrizhető munka"
       ],
-      "faq": [],
+      "faq": [
+        [
+          "Van irodájuk Magyarországon?",
+          "Nincs. Ukrajnából, távolról dolgozunk. A kommunikációt és a feladatokat előre egyeztetjük."
+        ]
+      ],
       "offer": {
         "title": "A tények ellenőrzése → Eredmények visszamérése",
         "intro": "Kis szakértői csapatunk tízéves tapasztalattal dolgozik SEO, Google Ads és webfejlesztési feladatokon. Ukrajnából, távolról működünk, és az ügyfél problémájával kezdünk.",
