@@ -61,6 +61,9 @@ jobs:
           php /tmp/wp-cli.phar theme activate mrseo-tech --path="$GITHUB_WORKSPACE/preview-wp" --allow-root
           php /tmp/wp-cli.phar option update blog_public 0 --path="$GITHUB_WORKSPACE/preview-wp" --allow-root
           php /tmp/wp-cli.phar rewrite structure '/%postname%/' --path="$GITHUB_WORKSPACE/preview-wp" --allow-root
+          # In production the default-language SEO page exists in WordPress;
+          # provision the same page in a fresh isolated CI installation.
+          php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=seo --post_title='SEO' --allow-root --quiet
           cat > "$GITHUB_WORKSPACE/preview-wp/router.php" <<'PHP'
           <?php
           $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
