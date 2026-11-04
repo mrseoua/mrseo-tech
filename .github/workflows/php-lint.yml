@@ -375,7 +375,7 @@ jobs:
           assert '.eu-offer-grid' in eu_style and '.eu-market-heading' in eu_style
           assert '.eu-nav-services-panel' in eu_style and '.eu-portfolio-grid' in eu_style
           eu_router=(root/'inc/eu-routing.php').read_text()
-          assert "mrseo_eu_rules_v1" in eu_router
+          assert "mrseo_eu_rules_v2" in eu_router
           assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
           assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
           assert "Язык заявки: $mail_locale" in functions
