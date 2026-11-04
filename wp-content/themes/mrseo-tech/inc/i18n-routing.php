@@ -16,7 +16,7 @@ function mrseo_url($slug='',$lang=null){
   if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
  }
  // New market URLs may only point to actually completed pages.
- if(in_array($lang,array('fr','it','es','nl','ro','cs'),true) && !in_array($slug,array('','seo','google-ads','web-development','contact','privacy'),true)){
+ if(in_array($lang,array('fr','it','es','nl','ro','cs'),true) && !in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'),true)){
   if(in_array($slug,array('seo-audit','ecommerce-seo'),true))$slug='seo';
   elseif(in_array($slug,array('performance-max','google-shopping','merchant-center'),true))$slug='google-ads';
   elseif(in_array($slug,array('service-websites','online-store-development','website-design','wordpress-care'),true))$slug='web-development';
