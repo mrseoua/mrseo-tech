@@ -1,0 +1,408 @@
+{
+  "seo-audit": {
+    "title": "Audit SEO technique en France : erreurs et plan d’action",
+    "description": "Audit technique d’indexation, crawl, canoniques et performance web avec priorités par URL.",
+    "eyebrow": "SEO / AUDIT TECHNIQUE",
+    "headline": "Votre site est en ligne. <em>Google voit-il les bonnes pages ?</em>",
+    "lead": "Un audit utile ne s’arrête pas à une note de performance. Nous cherchons les erreurs qui empêchent les bonnes pages d’être découvertes, indexées ou comprises.",
+    "problems": [
+      [
+        "Pages exclues",
+        "Des directives, redirections ou chemins de crawl bloquent des pages importantes.",
+        "Examiner des échantillons d’URL et leurs statuts d’indexation."
+      ],
+      [
+        "Doublons et facettes",
+        "Les versions proches se concurrencent ou créent une exploration inutile.",
+        "Contrôler canonicals, paramètres, navigation et maillage."
+      ],
+      [
+        "Lenteur ressentie",
+        "Le chargement mobile peut rendre la consultation difficile.",
+        "Distinguer problèmes serveur, ressources lourdes et interface."
+      ]
+    ],
+    "outcomes": [
+      "Liste de problèmes avec URL vérifiables",
+      "Priorités par impact et complexité",
+      "Critères pour valider les corrections"
+    ],
+    "faq": [
+      [
+        "L’audit corrige-t-il directement le site ?",
+        "L’audit identifie les problèmes et les priorités. L’implémentation est définie séparément."
+      ],
+      [
+        "Faut-il donner un accès administrateur ?",
+        "Pour une première évaluation, une URL suffit. Les accès, s’ils deviennent nécessaires, seront convenus de manière sécurisée."
+      ]
+    ],
+    "offer": {
+      "title": "Du diagnostic à une correction contrôlable",
+      "intro": "Un audit utile ne s’arrête pas à une note de performance. Nous cherchons les erreurs qui empêchent les bonnes pages d’être découvertes, indexées ou comprises.",
+      "items": [
+        {
+          "title": "Exploration ciblée",
+          "detail": "Examiner codes HTTP, plan de site, robots, canonicals et liens internes."
+        },
+        {
+          "title": "Analyse de l’impact",
+          "detail": "Relier les erreurs aux pages importantes pour l’activité."
+        },
+        {
+          "title": "Validation",
+          "detail": "Prévoir les vérifications après correction, pas seulement un rapport PDF."
+        }
+      ],
+      "cta": "Parler de mon projet"
+    }
+  },
+  "ecommerce-seo": {
+    "title": "SEO e-commerce en France : catégories, produits et filtres",
+    "description": "SEO pour boutiques PrestaShop, Shopify ou WooCommerce : architecture des catégories, facettes et fiches produits.",
+    "eyebrow": "SEO / BOUTIQUES EN LIGNE",
+    "headline": "Votre catalogue contient des produits. <em>Mais sont-ils trouvables ?</em>",
+    "lead": "Sur un site marchand, la structure du catalogue est souvent aussi importante que les descriptions. Nous étudions les catégories, les facettes et le chemin vers l’achat.",
+    "problems": [
+      [
+        "Catégories invisibles",
+        "Les pages qui couvrent les recherches d’achat ne sont pas suffisamment accessibles.",
+        "Vérifier taxonomie, navigation et pages prioritaires."
+      ],
+      [
+        "Filtres sans stratégie",
+        "Les combinaisons de paramètres créent des centaines de variations inutiles.",
+        "Choisir les facettes à indexer ou à limiter."
+      ],
+      [
+        "Fiches produits répétées",
+        "Variantes et données de produit peuvent provoquer des doublons.",
+        "Contrôler modèles de pages et liens entre produits."
+      ]
+    ],
+    "outcomes": [
+      "Cartographie de la structure du catalogue",
+      "Priorités de catégories et facettes",
+      "Plan de déploiement sans promettre de classement"
+    ],
+    "faq": [
+      [
+        "Travaillez-vous sur PrestaShop ?",
+        "Nous pouvons analyser sa structure, sans revendiquer de certification ou partenariat officiel."
+      ],
+      [
+        "Faut-il réécrire toutes les fiches produits ?",
+        "Pas nécessairement. Le diagnostic peut révéler un problème d’indexation ou d’architecture prioritaire."
+      ]
+    ],
+    "offer": {
+      "title": "Un catalogue pensé pour la recherche",
+      "intro": "Sur un site marchand, la structure du catalogue est souvent aussi importante que les descriptions. Nous étudions les catégories, les facettes et le chemin vers l’achat.",
+      "items": [
+        {
+          "title": "Structure",
+          "detail": "Faire correspondre catégories et pages d’entrée aux intentions d’achat."
+        },
+        {
+          "title": "Technique",
+          "detail": "Traiter pagination, facettes, liens internes et canoniques."
+        },
+        {
+          "title": "Mesure",
+          "detail": "Observer les impressions des pages importantes et les commandes, lorsque les données le permettent."
+        }
+      ],
+      "cta": "Parler de mon projet"
+    }
+  },
+  "analytics": {
+    "title": "Audit GA4 et suivi des conversions pour e-commerce en France",
+    "description": "GA4, Google Ads et suivi des achats : cohérence des événements, valeurs et décisions marketing.",
+    "eyebrow": "ANALYSE / DONNÉES",
+    "headline": "Des tableaux de bord partout. <em>Mais quelle donnée croire ?</em>",
+    "lead": "Les rapports ne sont utiles que si les événements sont définis correctement. Nous cherchons d’abord les écarts entre commandes, demandes et conversions annoncées.",
+    "problems": [
+      [
+        "Achats comptés plusieurs fois",
+        "Des événements mal déclenchés faussent le chiffre d’affaires attribué.",
+        "Vérifier transaction_id, purchase et déduplication."
+      ],
+      [
+        "Données contradictoires",
+        "Google Ads et GA4 mesurent parfois des périmètres ou modèles différents.",
+        "Comparer les définitions avant de conclure à une erreur."
+      ],
+      [
+        "Consentement et tags",
+        "Le comportement des balises doit correspondre au choix des visiteurs.",
+        "Contrôler le fonctionnement technique sans se substituer à un conseil juridique."
+      ]
+    ],
+    "outcomes": [
+      "Carte des événements et de leurs sources",
+      "Anomalies reproductibles avec exemples",
+      "Plan de tests pour fiabiliser la mesure"
+    ],
+    "faq": [
+      [
+        "GA4 doit-il correspondre exactement aux commandes ?",
+        "Pas toujours. Les définitions, la fenêtre d’attribution et le consentement peuvent expliquer les écarts."
+      ],
+      [
+        "Incluez-vous une validation juridique des cookies ?",
+        "Non. Nous pouvons auditer l’intégration technique; le volet juridique requiert un spécialiste compétent."
+      ]
+    ],
+    "offer": {
+      "title": "Passer de rapports à des décisions fiables",
+      "intro": "Les rapports ne sont utiles que si les événements sont définis correctement. Nous cherchons d’abord les écarts entre commandes, demandes et conversions annoncées.",
+      "items": [
+        {
+          "title": "Définir la conversion",
+          "detail": "Distinguer vente, demande et simple interaction."
+        },
+        {
+          "title": "Réconcilier les sources",
+          "detail": "Comparer commandes, GA4, Google Ads et systèmes internes."
+        },
+        {
+          "title": "Surveiller les anomalies",
+          "detail": "Prévoir des tests et des contrôles lors des changements du site."
+        }
+      ],
+      "cta": "Parler de mon projet"
+    }
+  },
+  "website-design": {
+    "title": "Création de sites web professionnels pour entreprises en France",
+    "description": "Création de sites de services et vitrines conçus pour présenter l’offre et recueillir des demandes qualifiées.",
+    "eyebrow": "CRÉATION / SITES INTERNET",
+    "headline": "Un beau site, c’est bien. <em>Un parcours clair, c’est mieux.</em>",
+    "lead": "Nous concevons des sites qui expliquent l’offre, guident le visiteur et facilitent le contact. Le projet commence par les objectifs de l’entreprise, pas par un thème graphique.",
+    "problems": [
+      [
+        "Offre difficile à comprendre",
+        "Le visiteur ne distingue pas les services et les bénéfices.",
+        "Structurer les pages autour des besoins réels."
+      ],
+      [
+        "Expérience mobile faible",
+        "Texte trop petit ou parcours de contact laborieux.",
+        "Définir une interface adaptée aux petits écrans."
+      ],
+      [
+        "Site pénible à administrer",
+        "Chaque changement dépend d’un prestataire ou d’un assemblage fragile.",
+        "Choisir une structure maintenable et documentée."
+      ]
+    ],
+    "outcomes": [
+      "Arborescence et contenus à produire",
+      "Design responsive et formulaire fonctionnel",
+      "Socle technique et transfert organisés"
+    ],
+    "faq": [
+      [
+        "Travaillez-vous avec WordPress ?",
+        "Oui, lorsque ce choix correspond aux besoins et à la maintenance prévue."
+      ],
+      [
+        "Le référencement est-il inclus ?",
+        "Nous prévoyons des fondations SEO techniques; une stratégie de croissance SEO complète reste une mission distincte."
+      ]
+    ],
+    "offer": {
+      "title": "Créer un site utile avant d’ajouter des effets",
+      "intro": "Nous concevons des sites qui expliquent l’offre, guident le visiteur et facilitent le contact. Le projet commence par les objectifs de l’entreprise, pas par un thème graphique.",
+      "items": [
+        {
+          "title": "Parcours",
+          "detail": "Définir les pages, questions des visiteurs et actions attendues."
+        },
+        {
+          "title": "Design et développement",
+          "detail": "Construire une interface lisible et rapide sur mobile."
+        },
+        {
+          "title": "Publication contrôlée",
+          "detail": "Vérifier les formulaires, liens, balises et maintenance."
+        }
+      ],
+      "cta": "Parler de mon projet"
+    }
+  },
+  "online-shop-development": {
+    "title": "Création et développement de boutique en ligne en France",
+    "description": "Boutiques en ligne : catalogue, filtres, paiement, commandes, SEO technique et intégrations selon le projet.",
+    "eyebrow": "DÉVELOPPEMENT / E-COMMERCE",
+    "headline": "Votre boutique doit vendre. <em>Et rester simple à gérer.</em>",
+    "lead": "Créer une boutique ne se limite pas à afficher des produits. Nous évaluons les opérations du catalogue au traitement des commandes, les données et les contraintes de maintenance.",
+    "problems": [
+      [
+        "Catalogue compliqué",
+        "Produits, variantes et attributs ne suivent pas une structure cohérente.",
+        "Définir un modèle de données et des filtres utiles."
+      ],
+      [
+        "Parcours d’achat frustrant",
+        "La fiche produit, le panier ou le paiement créent de l’abandon.",
+        "Identifier les points de friction mesurables."
+      ],
+      [
+        "Stocks synchronisés à la main",
+        "Les équipes copient des informations entre outils.",
+        "Étudier intégrations CRM, ERP et flux de données."
+      ]
+    ],
+    "outcomes": [
+      "Périmètre fonctionnel et technique",
+      "Architecture du catalogue et parcours d’achat",
+      "Tests de commande, maintenance et évolutivité"
+    ],
+    "faq": [
+      [
+        "Pouvez-vous migrer une boutique existante ?",
+        "Une migration doit être évaluée séparément : données, URL, redirections et continuité des commandes."
+      ],
+      [
+        "Choisissez-vous la plateforme à notre place ?",
+        "Nous comparons les contraintes et recommandons une solution adaptée plutôt qu’une plateforme systématique."
+      ]
+    ],
+    "offer": {
+      "title": "Du catalogue aux commandes fiables",
+      "intro": "Créer une boutique ne se limite pas à afficher des produits. Nous évaluons les opérations du catalogue au traitement des commandes, les données et les contraintes de maintenance.",
+      "items": [
+        {
+          "title": "Conception",
+          "detail": "Définir produits, variantes, filtres et chemin de commande."
+        },
+        {
+          "title": "Intégration",
+          "detail": "Vérifier paiement, livraison et éventuels connecteurs métier."
+        },
+        {
+          "title": "Recette",
+          "detail": "Tester les scénarios d’achat, erreurs et tâches d’administration."
+        }
+      ],
+      "cta": "Parler de mon projet"
+    }
+  },
+  "about": {
+    "title": "À propos de MrSeo.tech : équipe SEO et développement",
+    "description": "Petite équipe avec dix années d’expérience, SEO, publicité Google et solutions techniques orientées problèmes.",
+    "eyebrow": "MRSEO.TECH / L’ÉQUIPE",
+    "headline": "Une petite équipe. <em>Des problèmes concrets à résoudre.</em>",
+    "lead": "Nous réunissons l’analyse SEO, la publicité et le développement pour éviter les réponses automatiques. Nous travaillons à distance depuis l’Ukraine, avec un périmètre et une communication définis avant chaque mission.",
+    "problems": [
+      [
+        "Le bon problème n’est pas identifié",
+        "Le canal SEO ou Ads est parfois accusé à tort d’une baisse de ventes.",
+        "Vérifier données et parcours avant de proposer un service."
+      ],
+      [
+        "Trop d’intermédiaires",
+        "Le client ne sait pas qui répond de la technique et des chiffres.",
+        "Clarifier responsabilités, décisions et livrables."
+      ],
+      [
+        "Promesses impossibles à vérifier",
+        "Des garanties de classement remplacent une méthode de travail.",
+        "Définir hypothèses et critères observables."
+      ]
+    ],
+    "outcomes": [
+      "Échange direct sur le périmètre",
+      "Priorités expliquées sans promesse magique",
+      "Collaboration à distance documentée"
+    ],
+    "faq": [
+      [
+        "Avez-vous un bureau en France ?",
+        "Non. L’équipe travaille à distance depuis l’Ukraine."
+      ],
+      [
+        "Parlez-vous français couramment ?",
+        "La langue de communication opérationnelle est convenue avant chaque projet."
+      ]
+    ],
+    "offer": {
+      "title": "Comment nous abordons un projet",
+      "intro": "Nous réunissons l’analyse SEO, la publicité et le développement pour éviter les réponses automatiques. Nous travaillons à distance depuis l’Ukraine, avec un périmètre et une communication définis avant chaque mission.",
+      "items": [
+        {
+          "title": "Comprendre",
+          "detail": "Recueillir l’objectif, les contraintes et les données disponibles."
+        },
+        {
+          "title": "Diagnostiquer",
+          "detail": "Identifier ce qui bloque concrètement une amélioration."
+        },
+        {
+          "title": "Agir et vérifier",
+          "detail": "Valider le plan et la mesure avant une prestation suivie."
+        }
+      ],
+      "cta": "Parler de mon projet"
+    }
+  },
+  "portfolio": {
+    "title": "Projets et expériences de MrSeo.tech",
+    "description": "Exemples de sites et secteurs publiquement associés au portefeuille MrSeo.tech, sans chiffres confidentiels inventés.",
+    "eyebrow": "MRSEO.TECH / PROJETS",
+    "headline": "Des secteurs différents. <em>Des défis à examiner.</em>",
+    "lead": "Nous montrons des sites issus de notre portefeuille public pour illustrer les contextes dans lesquels nous intervenons. Ils ne constituent pas des études de cas françaises, ni des promesses de résultat.",
+    "problems": [
+      [
+        "Catalogues automobiles",
+        "De grandes structures de produits exigent une navigation et des données cohérentes.",
+        "Découvrir des exemples de sites commerciaux."
+      ],
+      [
+        "Mode et accessoires",
+        "La présentation des produits et la mesure des ventes ont un rôle central.",
+        "Voir la variété des interfaces e-commerce."
+      ],
+      [
+        "Services et santé",
+        "La confiance, les pages de service et le contact déterminent le parcours.",
+        "Examiner la structure des sites de service."
+      ]
+    ],
+    "outcomes": [
+      "Exemples publics de domaines",
+      "Diversité de situations techniques",
+      "Confidentialité des résultats clients respectée"
+    ],
+    "faq": [
+      [
+        "Les résultats chiffrés sont-ils publiés ?",
+        "Nous ne divulguons pas de données confidentielles sans accord explicite."
+      ],
+      [
+        "S’agit-il de références françaises ?",
+        "Non. Les sites montrés appartiennent à notre portefeuille public international."
+      ]
+    ],
+    "offer": {
+      "title": "Voir les contextes de nos projets",
+      "intro": "Nous montrons des sites issus de notre portefeuille public pour illustrer les contextes dans lesquels nous intervenons. Ils ne constituent pas des études de cas françaises, ni des promesses de résultat.",
+      "items": [
+        {
+          "title": "E-commerce",
+          "detail": "Catalogue, filtres, pages et recherche de produits."
+        },
+        {
+          "title": "Publicité et données",
+          "detail": "Mesure des actions commerciales et intégration d’outils."
+        },
+        {
+          "title": "Sites de service",
+          "detail": "Lisibilité, crédibilité et gestion des demandes."
+        }
+      ],
+      "cta": "Parler de mon projet"
+    }
+  }
+}
