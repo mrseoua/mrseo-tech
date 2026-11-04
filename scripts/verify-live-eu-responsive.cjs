@@ -7,7 +7,10 @@ const allLocales=['fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','e
 const shard=process.env.MRSEO_LOCALE_SHARD===undefined?-1:Number(process.env.MRSEO_LOCALE_SHARD);
 const locales=allLocales.filter((_,index)=>shard<0||index%3===shard);
 if(!Number.isInteger(shard)||shard>2)throw Error('Invalid locale shard');
-const slugs=['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'];
+const quick=process.env.MRSEO_AUDIT_QUICK==='1';
+// A full live crawl is 435+ browser views; isolated PR preview checks the critical
+// homepage/service/contact/privacy paths in all 15 markets before publication.
+const slugs=quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
 const urlOf=(l,s)=>HOST+'/'+l+'/'+(s?s+'/':'');
