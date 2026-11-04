@@ -5,6 +5,7 @@
  * The homepage, international routing and robots policy remain unchanged.
  */
 if (!defined('ABSPATH')) exit;
+require_once get_template_directory().'/inc/ua-seo-visuals.php';
 get_header();
 ?>
 <div class="ukseo" id="main-content">
@@ -57,6 +58,8 @@ get_header();
   </div>
  </section>
 
+ <?php mrseo_render_ua_seo_visual('journey'); ?>
+
  <section class="ukseo-decision" aria-labelledby="ukseo-decision-title">
   <div class="container ukseo-decision-layout">
    <div class="ukseo-decision-copy">
@@ -89,6 +92,8 @@ get_header();
    </ol>
   </div>
  </section>
+
+ <?php mrseo_render_ua_seo_visual('priorities'); ?>
 
  <section class="ukseo-delivery" aria-labelledby="ukseo-delivery-title">
   <div class="container ukseo-delivery-grid">
