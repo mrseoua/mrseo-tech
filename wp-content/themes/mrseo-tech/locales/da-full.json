@@ -545,7 +545,12 @@
         "Forståelige prioriteter",
         "Kontrol af de udførte ændringer"
       ],
-      "faq": [],
+      "faq": [
+        [
+          "Har I et kontor i Danmark?",
+          "Nej. Vi arbejder på afstand fra Ukraine og aftaler samarbejdets rammer og sprog inden start."
+        ]
+      ],
       "offer": {
         "title": "Undersøg eksisterende data → Kontrollér effekten",
         "intro": "Vi er et mindre team med ti års erfaring inden for SEO, Google Ads og webudvikling. Vi arbejder på afstand fra Ukraine og starter med at forstå problemet frem for at sælge faste pakker.",
