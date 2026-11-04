@@ -1,0 +1,408 @@
+{
+  "seo-audit": {
+    "title": "Technische SEO-audit: indexering, crawl en fouten",
+    "description": "Technische SEO-audit voor Nederlandse websites: indexeerbaarheid, canonicals, crawl en mobiele prestaties.",
+    "eyebrow": "SEO / TECHNISCHE AUDIT",
+    "headline": "Je website is online. <em>Maar ziet Google de juiste pagina's?</em>",
+    "lead": "Een technische SEO-audit moet oorzaken kunnen aanwijzen. We onderzoeken URL-patronen, interne links en geïndexeerde pagina's voordat we een verbetertraject voorstellen.",
+    "problems": [
+      [
+        "Belangrijke pagina's ontbreken",
+        "Indexeringsinstellingen of slechte interne links verhinderen ontdekking.",
+        "Controleer sitemap, statuscodes en Search Console."
+      ],
+      [
+        "Dubbele URL's",
+        "Filters en parameters maken onnodige varianten.",
+        "Analyseer canonicals, facetten en paginering."
+      ],
+      [
+        "Problemen op mobiel",
+        "Zware onderdelen kunnen het gebruik frustreren.",
+        "Maak onderscheid tussen server- en interfaceproblemen."
+      ]
+    ],
+    "outcomes": [
+      "Controleerbare voorbeelden per URL",
+      "Prioriteiten op basis van impact",
+      "Plan voor controle na implementatie"
+    ],
+    "faq": [
+      [
+        "Worden alle technische fouten meteen opgelost?",
+        "Een audit onderzoekt en prioriteert; uitvoering wordt apart overeengekomen."
+      ],
+      [
+        "Hebben jullie directe toegang nodig?",
+        "Voor een eerste beoordeling volstaat een openbare URL. Eventuele toegangsrechten regelen we veilig."
+      ]
+    ],
+    "offer": {
+      "title": "Van diagnose naar uitvoerbare acties",
+      "intro": "Een technische SEO-audit moet oorzaken kunnen aanwijzen. We onderzoeken URL-patronen, interne links en geïndexeerde pagina's voordat we een verbetertraject voorstellen.",
+      "items": [
+        {
+          "title": "Crawlen",
+          "detail": "Onderzoek interne links, HTTP, sitemap en canonicals."
+        },
+        {
+          "title": "Prioriteren",
+          "detail": "Koppel gevonden fouten aan belangrijke pagina's."
+        },
+        {
+          "title": "Controleren",
+          "detail": "Bepaal wat na een wijziging opnieuw gemeten moet worden."
+        }
+      ],
+      "cta": "Bespreek mijn website"
+    }
+  },
+  "ecommerce-seo": {
+    "title": "Webshop SEO: categorieën, filters en producten",
+    "description": "SEO voor webshops: categorie-architectuur, faceted navigation, productvarianten en commerciële zoekintentie.",
+    "eyebrow": "SEO / WEBSHOPS",
+    "headline": "Een grote catalogus. <em>Maar worden producten gevonden?</em>",
+    "lead": "Webshops verliezen vindbaarheid door filters, dubbele varianten en onduidelijke categorieën. We onderzoeken de structuur voor WooCommerce, Shopify of andere systemen zonder onterechte partnerclaims.",
+    "problems": [
+      [
+        "Collecties zonder bereik",
+        "Categoriepagina's passen niet bij relevante zoekopdrachten.",
+        "Onderzoek categorieën en interne linkstructuur."
+      ],
+      [
+        "Dubbele filterpagina's",
+        "Parameters creëren veel verschillende URL's voor dezelfde inhoud.",
+        "Scheid nuttige landingspagina's van technische varianten."
+      ],
+      [
+        "Losse producten",
+        "Productpagina's zijn moeilijk bereikbaar vanuit categorieën.",
+        "Controleer productattributen en kruimelpaden."
+      ]
+    ],
+    "outcomes": [
+      "Structuuranalyse van de webshop",
+      "Prioriteiten voor categorieën en filters",
+      "Meetbare controles op vindbaarheid"
+    ],
+    "faq": [
+      [
+        "Zijn jullie gespecialiseerd in Shopify?",
+        "We kunnen de structuur onderzoeken, maar claimen geen officiële Shopify-partnerstatus."
+      ],
+      [
+        "Moeten alle productteksten opnieuw?",
+        "Niet automatisch; techniek en structuur kunnen belangrijker zijn."
+      ]
+    ],
+    "offer": {
+      "title": "SEO die de catalogus begrijpelijk maakt",
+      "intro": "Webshops verliezen vindbaarheid door filters, dubbele varianten en onduidelijke categorieën. We onderzoeken de structuur voor WooCommerce, Shopify of andere systemen zonder onterechte partnerclaims.",
+      "items": [
+        {
+          "title": "Zoekvraag",
+          "detail": "Koppel Nederlandse koopgerichte termen aan categorieën."
+        },
+        {
+          "title": "Structuur",
+          "detail": "Beheer URL's, filters en interne links."
+        },
+        {
+          "title": "Resultaat",
+          "detail": "Meet indexering en relevante bestellingen waar data beschikbaar zijn."
+        }
+      ],
+      "cta": "Bespreek mijn website"
+    }
+  },
+  "analytics": {
+    "title": "GA4 en conversiemeting voor webshops",
+    "description": "Analytics-audit van aankoopgebeurtenissen, transaction_id, Google Ads en ordergegevens.",
+    "eyebrow": "ANALYTICS / GA4",
+    "headline": "Veel dashboards. <em>Welke cijfers kloppen?</em>",
+    "lead": "Als purchase-events dubbel worden geregistreerd of omzet anders wordt toegerekend, zijn advertentiebeslissingen misleidend. We controleren de meetdefinities en het pad van bestelling naar rapport.",
+    "problems": [
+      [
+        "Dubbele orders",
+        "Herhaalde gebeurtenissen verhogen gemeten omzet kunstmatig.",
+        "Onderzoek unieke transactienummers en purchase-events."
+      ],
+      [
+        "Verschillende opbrengsten",
+        "GA4 en Google Ads gebruiken soms andere attributie.",
+        "Vergelijk definities en orderdata voordat je conclusies trekt."
+      ],
+      [
+        "Onduidelijke toestemming",
+        "Taggedrag moet aansluiten op de keuzes van bezoekers.",
+        "Onderzoek technische instellingen en verwijs juridisch advies door."
+      ]
+    ],
+    "outcomes": [
+      "Overzicht van meetgebeurtenissen",
+      "Reproduceerbare afwijkingen",
+      "Testplan voor toekomstige wijzigingen"
+    ],
+    "faq": [
+      [
+        "Moeten de cijfers in GA4 en Ads gelijk zijn?",
+        "Nee. Verschillen in attributie en toestemming zijn mogelijk."
+      ],
+      [
+        "Controleren jullie de AVG juridisch?",
+        "Nee. Wij beoordelen de technische meetopzet; juridische validatie ligt bij een bevoegde adviseur."
+      ]
+    ],
+    "offer": {
+      "title": "Eerst vertrouwen in de meting",
+      "intro": "Als purchase-events dubbel worden geregistreerd of omzet anders wordt toegerekend, zijn advertentiebeslissingen misleidend. We controleren de meetdefinities en het pad van bestelling naar rapport.",
+      "items": [
+        {
+          "title": "Definiëren",
+          "detail": "Leg vast wat een aankoop of gekwalificeerde lead is."
+        },
+        {
+          "title": "Vergelijken",
+          "detail": "Leg Ads, GA4 en orderoverzichten naast elkaar."
+        },
+        {
+          "title": "Bewaken",
+          "detail": "Plan controles na updates en nieuwe campagnes."
+        }
+      ],
+      "cta": "Bespreek mijn website"
+    }
+  },
+  "website-design": {
+    "title": "Website laten maken voor bedrijven en dienstverleners",
+    "description": "Webdesign en WordPress-ontwikkeling met duidelijke dienstenpagina's, mobiel gebruik en contactformulieren.",
+    "eyebrow": "WEBDESIGN / WEBSITE LATEN MAKEN",
+    "headline": "Een mooie website is goed. <em>Een duidelijke route naar contact beter.</em>",
+    "lead": "We bouwen websites die uitleggen wat een bedrijf doet en bezoekers een logische volgende stap bieden. Het ontwerp begint bij de dienstverlening en de vragen van klanten.",
+    "problems": [
+      [
+        "Onduidelijk aanbod",
+        "Bezoekers begrijpen niet welk probleem het bedrijf oplost.",
+        "Bouw een heldere pagina-indeling op basis van de diensten."
+      ],
+      [
+        "Lastig op mobiel",
+        "Kleine teksten en onhandige menu's bemoeilijken een aanvraag.",
+        "Test leesbaarheid, knoppen en formulieren."
+      ],
+      [
+        "Moeilijk beheer",
+        "Aanpassingen vragen telkens technische noodgrepen.",
+        "Kies onderhoudbare componenten en documentatie."
+      ]
+    ],
+    "outcomes": [
+      "Pagina- en contentstructuur",
+      "Responsive ontwerp en werkend contactformulier",
+      "Technische oplevering en onderhoudsafspraken"
+    ],
+    "faq": [
+      [
+        "Bouwen jullie ook met WordPress?",
+        "Ja, als de technische eisen en het onderhoud daarbij passen."
+      ],
+      [
+        "Is SEO inbegrepen?",
+        "Technische SEO-basis is onderdeel van de aanpak; doorlopende SEO vraagt een aparte opdracht."
+      ]
+    ],
+    "offer": {
+      "title": "Van bezoekersvraag naar website",
+      "intro": "We bouwen websites die uitleggen wat een bedrijf doet en bezoekers een logische volgende stap bieden. Het ontwerp begint bij de dienstverlening en de vragen van klanten.",
+      "items": [
+        {
+          "title": "Structuur",
+          "detail": "Bepaal de belangrijkste pagina's en vragen."
+        },
+        {
+          "title": "Ontwerp",
+          "detail": "Ontwikkel een begrijpelijke ervaring op elk scherm."
+        },
+        {
+          "title": "Oplevering",
+          "detail": "Test formulieren, links en mobiele weergave."
+        }
+      ],
+      "cta": "Bespreek mijn website"
+    }
+  },
+  "online-shop-development": {
+    "title": "Webshop laten maken met betrouwbare koppelingen",
+    "description": "Webshopontwikkeling: catalogus, winkelwagen, betalingen, voorraad, API-koppelingen en beheer.",
+    "eyebrow": "WEBSHOP / ONTWIKKELING",
+    "headline": "Een webshop moet verkopen. <em>En werk uit handen nemen.</em>",
+    "lead": "Een webshopproject gaat verder dan de voorkant. We onderzoeken producten, bestellen, betalen en de gegevensuitwisseling met systemen die dagelijks nodig zijn.",
+    "problems": [
+      [
+        "Onhandelbare productgegevens",
+        "Varianten, filters en voorraden missen een vaste logica.",
+        "Ontwerp categorieën en productattributen."
+      ],
+      [
+        "Veel stappen in checkout",
+        "Overbodige handelingen zorgen voor uitval.",
+        "Test het koopproces op verschillende apparaten."
+      ],
+      [
+        "Dubbele administratie",
+        "Bestellingen worden tussen systemen overgetypt.",
+        "Beoordeel beschikbare API-koppelingen."
+      ]
+    ],
+    "outcomes": [
+      "Afgebakende scope en platformkeuze",
+      "Catalogus en bestelproces getest",
+      "Afhandeling van fouten en onderhoud"
+    ],
+    "faq": [
+      [
+        "Is een bestaande webshop te migreren?",
+        "Dat vraagt een aparte beoordeling van data, URL's, redirects en de bedrijfscontinuïteit."
+      ],
+      [
+        "Welk platform raden jullie aan?",
+        "Dat hangt af van assortiment, team, integraties en onderhoud."
+      ]
+    ],
+    "offer": {
+      "title": "Een webshop die ook achter de schermen werkt",
+      "intro": "Een webshopproject gaat verder dan de voorkant. We onderzoeken producten, bestellen, betalen en de gegevensuitwisseling met systemen die dagelijks nodig zijn.",
+      "items": [
+        {
+          "title": "Producten",
+          "detail": "Definieer catalogus, varianten en filters."
+        },
+        {
+          "title": "Betalen",
+          "detail": "Controleer checkout en orderverwerking."
+        },
+        {
+          "title": "Integratie",
+          "detail": "Test synchronisatie met CRM, magazijn of boekhouding."
+        }
+      ],
+      "cta": "Bespreek mijn website"
+    }
+  },
+  "about": {
+    "title": "Over MrSeo.tech: SEO, Google Ads en webontwikkeling",
+    "description": "Een klein team met tien jaar ervaring in SEO, advertentieanalyse en webontwikkeling op afstand.",
+    "eyebrow": "MRSEO.TECH / OVER ONS",
+    "headline": "Geen grote organisatie. <em>Wel een helder plan.</em>",
+    "lead": "We werken vanuit Oekraïne op afstand met bedrijven en proberen eerst de oorzaak van een probleem vast te stellen. SEO, advertising en technologie worden pas ingezet als de aanpak onderbouwd is.",
+    "problems": [
+      [
+        "De verkeerde oplossing",
+        "Meer verkeer is niet altijd de beste reactie op minder omzet.",
+        "Bekijk zoekintentie, conversies en techniek samen."
+      ],
+      [
+        "Onheldere verantwoordelijkheden",
+        "Werk en beslissingen verdwijnen in lange overdrachten.",
+        "Spreek taken, contact en goedkeuring af."
+      ],
+      [
+        "Loze garanties",
+        "Rankingbeloftes vervangen een meetbaar verbeterproces.",
+        "Werk met hypotheses en controlepunten."
+      ]
+    ],
+    "outcomes": [
+      "Direct contact en duidelijke scope",
+      "Transparante stappen",
+      "Werk dat controleerbaar blijft"
+    ],
+    "faq": [
+      [
+        "Hebben jullie een kantoor in Nederland?",
+        "Nee, we werken op afstand vanuit Oekraïne."
+      ],
+      [
+        "Kan de communicatie in het Engels?",
+        "Werktaal en beschikbaarheid spreken we vóór de opdracht af."
+      ]
+    ],
+    "offer": {
+      "title": "Onze werkwijze",
+      "intro": "We werken vanuit Oekraïne op afstand met bedrijven en proberen eerst de oorzaak van een probleem vast te stellen. SEO, advertising en technologie worden pas ingezet als de aanpak onderbouwd is.",
+      "items": [
+        {
+          "title": "Begrijpen",
+          "detail": "Bepaal het zakelijke probleem."
+        },
+        {
+          "title": "Onderzoeken",
+          "detail": "Controleer oorzaken en beperkingen."
+        },
+        {
+          "title": "Uitvoeren",
+          "detail": "Spreek acties en verificatie af."
+        }
+      ],
+      "cta": "Bespreek mijn website"
+    }
+  },
+  "portfolio": {
+    "title": "Projecten en ervaring van MrSeo.tech",
+    "description": "Openbaar portfolio met websites uit verschillende branches; zonder verzonnen Nederlandse cases of geheime statistieken.",
+    "eyebrow": "MRSEO.TECH / PROJECTEN",
+    "headline": "Verschillende branches. <em>Dezelfde behoefte aan duidelijkheid.</em>",
+    "lead": "Hier tonen we publiek bekende websites uit ons portfolio als voorbeelden van sectoren en technische omgevingen. We claimen niet dat dit Nederlandse klanten of aantoonbare groeicijfers zijn.",
+    "problems": [
+      [
+        "Autoproducten",
+        "Grote productcatalogi vragen om een slimme informatiearchitectuur.",
+        "Bekijk voorbeelden van webshops."
+      ],
+      [
+        "Mode en accessoires",
+        "Productvarianten en presentatie verschillen per assortiment.",
+        "Verken branches met veel productdetail."
+      ],
+      [
+        "Dienstverleners",
+        "Heldere uitleg en vertrouwen maken de contactroute belangrijk.",
+        "Bekijk voorbeelden van dienstensites."
+      ]
+    ],
+    "outcomes": [
+      "Openbare websitevoorbeelden",
+      "Verschillende bedrijfscontexten",
+      "Respect voor vertrouwelijke klantdata"
+    ],
+    "faq": [
+      [
+        "Zijn dit Nederlandse projecten?",
+        "Nee. Het zijn publieke voorbeelden van het internationale portfolio."
+      ],
+      [
+        "Waar staan de resultaatcijfers?",
+        "Vertrouwelijke klantcijfers publiceren we alleen met toestemming."
+      ]
+    ],
+    "offer": {
+      "title": "Bekijk de omgevingen waarin we werken",
+      "intro": "Hier tonen we publiek bekende websites uit ons portfolio als voorbeelden van sectoren en technische omgevingen. We claimen niet dat dit Nederlandse klanten of aantoonbare groeicijfers zijn.",
+      "items": [
+        {
+          "title": "Catalogi",
+          "detail": "Categorieën, filters en producten."
+        },
+        {
+          "title": "Metingen",
+          "detail": "Conversies en advertentiegegevens."
+        },
+        {
+          "title": "Diensten",
+          "detail": "Informatie en klantvragen."
+        }
+      ],
+      "cta": "Bespreek mijn website"
+    }
+  }
+}
