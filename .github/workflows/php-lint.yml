@@ -470,6 +470,9 @@ jobs:
           orbit_styles=(root/'assets/orbit-scene.css').read_text()
           assert '#main > .orbit-lab{' in orbit_styles, 'Full-bleed homepage selector missing'
           assert 'body:has(#main > .orbit-lab) #main{' in orbit_styles, 'Constrained main wrapper not reset'
+          assert '#main > .orbit-lab>.lab-shell{' in orbit_styles, 'Inherited dark panel not isolated'
+          assert 'border-radius:0!important' in orbit_styles and 'overflow:visible!important' in orbit_styles
+          assert 'background:transparent!important' in orbit_styles, 'Orbital shell still has inherited dark panel'
           assert 'main.orbit-lab{' not in orbit_styles, 'Obsolete selector silently exposes side gutters'
 
 
