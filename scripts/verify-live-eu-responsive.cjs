@@ -153,17 +153,21 @@ async function audit(browser,viewport,lang,slug){
 }
 (async()=>{
  await fs.mkdir('shots',{recursive:true});
- const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage','--enable-webgl','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
- try{
-  for(const viewport of sizes){
-   for(const lang of locales){
+ const launchOptions={headless:true,args:['--disable-dev-shm-usage','--enable-webgl','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']};
+ // Reset Chromium (including its software WebGL state) between locales/viewport
+ // profiles. A single long-lived browser can accumulate GPU load over 165 views
+ // and produce sporadic interaction timeouts unrelated to the actual page.
+ for(const viewport of sizes){
+  for(const lang of locales){
+   const browser=await chromium.launch(launchOptions);
+   try{
     for(const slug of slugs){
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug))continue;
      await audit(browser,viewport,lang,slug);
     }
-   }
+   }finally{await browser.close()}
   }
- }finally{await browser.close()}
+ }
  const errors=results.filter(x=>x.errors.length);
  const summary={checked:results.length,failed:errors.length,success:results.length-errors.length,errors:errors.map(x=>({url:x.url,viewport:x.viewport,errors:x.errors})),results};
  await fs.writeFile('shots/eu-diagnostics.json',JSON.stringify(summary,null,2));
