@@ -73,6 +73,13 @@ async function audit(browser,viewport,lang,slug){
       const rect=el.getBoundingClientRect();
       return {left:Math.round(rect.left),right:Math.round(rect.right),width:Math.round(rect.width)};
     })(),
+    heroPanel:(()=>{
+      const el=document.querySelector('#main > .orbit-lab > .lab-shell');
+      if(!el)return null;
+      const computed=getComputedStyle(el);
+      return {background:computed.backgroundColor,radius:computed.borderTopLeftRadius,
+        overflow:computed.overflowX,shadow:computed.boxShadow};
+    })(),
     orbitStylesheet:!!document.querySelector('link[href*="orbit-scene.css"]'),
     legacyEuStylesheet:!!document.querySelector('link[href*="eu-expansion.css"]'),
     sharedHomepageVisual:!!document.querySelector('.orbit-lab .lab-shell .lab-visual .lab-core')&&!!document.querySelector('.orbit-lab .lab-connectors #lab-spokes'),
@@ -121,6 +128,10 @@ async function audit(browser,viewport,lang,slug){
     const edge=c.heroEdge;
     if(!edge||Math.abs(edge.left)>2||edge.right<c.viewport-2||edge.width<c.viewport-3)
       item.errors.push('Homepage has visible side gutters: '+JSON.stringify(edge)+' viewport='+c.viewport);
+    const panel=c.heroPanel;
+    if(!panel||!['transparent','rgba(0, 0, 0, 0)'].includes(panel.background)||
+       panel.radius!=='0px'||panel.shadow!=='none'||panel.overflow!=='visible')
+      item.errors.push('Homepage has inherited dark rounded 1700px panel: '+JSON.stringify(panel));
   }
   if(slug===''&&(!c.orbitStylesheet||!c.sharedHomepageVisual))item.errors.push('Not using the exact approved shared 3D homepage visual');
   if(slug===''&&!coreShard&&c.legacyEuStylesheet)item.errors.push('EU landing stylesheet leaked onto unified homepage');
