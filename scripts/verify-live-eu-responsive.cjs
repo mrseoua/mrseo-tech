@@ -12,6 +12,7 @@ const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 // A full live crawl is 435+ browser views; isolated PR preview checks the critical
 // homepage/service/contact/privacy paths in all 15 markets before publication.
 const slugs=coreShard?['']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
+const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
 const urlOf=(l,s)=>HOST+'/'+(l==='uk'?'':l+'/')+(s?s+'/':'');
@@ -73,6 +74,8 @@ async function audit(browser,viewport,lang,slug){
     contactHeroForm:!!document.querySelector('.eu-hero-contact form[action*="admin-post.php"]'),
     contactPrivacyNotice:!!document.querySelector('.eu-hero-contact .mrseo-privacy-notice'),
     contactDecorativeScene:!!document.querySelector('.eu-service-scene-contact'),
+    bespokeHeroArt:!!document.querySelector('.eu-service-scene .eu-viz--'+slug),
+    bespokeHeroStyles:!!document.querySelector('link[href*="eu-service-scenes.css"]'),
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
     serviceMenuItems:document.querySelectorAll('.mrseo-mega .mrseo-mega-item[href]').length,
@@ -103,7 +106,8 @@ async function audit(browser,viewport,lang,slug){
   if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
   if(slug===''&&!c.orbitCanvas&&!c.orbitStaticTexture)item.errors.push('No real 3D globe or Earth texture fallback');
   if(slug===''&&!c.clientBand)item.errors.push('Homepage public client band missing');
-  if(!coreShard&&!['','contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
+  if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
+  if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
   if(slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
   if(slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
@@ -162,7 +166,8 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    for(const slug of slugs){
+    const selectedSlugs=quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs;
+    for(const slug of selectedSlugs){
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug))continue;
      await audit(browser,viewport,lang,slug);
     }
