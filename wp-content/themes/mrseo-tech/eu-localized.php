@@ -22,7 +22,7 @@ get_header('eu');
 <p><?php echo esc_html($page['lead']);?></p>
 <div class="eu-actions">
 <a class="eu-button" href="<?php echo esc_url($slug==='contact'?'#eu-contact-form':mrseo_url('contact'));?>"><?php echo esc_html($slug==='contact'?$ui[11]:$nav[5]);?> <span aria-hidden="true">↗</span></a>
-<?php if($slug!=='contact'):?><a class="eu-text-link" href="<?php echo esc_url(mrseo_i18n_exact_url('en','portfolio'));?>" lang="en"><?php echo esc_html($eu['market']['portfolioLabel']);?> ↗</a><?php endif;?></div>
+<?php if($slug!=='contact'&&$slug!=='portfolio'):?><a class="eu-text-link" href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html(mrseo_eu_service_labels($lang)['portfolio']);?> ↗</a><?php endif;?></div>
 <div class="eu-proof"><span class="eu-proof-dot"></span><?php echo esc_html($ui[1]);?></div>
 </div>
 <?php if($is_home):?>
@@ -34,10 +34,14 @@ get_header('eu');
 <div class="intl-earth-core eu-earth-core" aria-hidden="true"><span>MrSeo<span>↗</span></span></div>
 <div class="eu-satellites">
 <?php
+$market_labels=mrseo_eu_service_labels($lang);
 $sats=array(
-array($nav[1],mrseo_url('seo')),array('SEO audit',mrseo_url('seo').'#eu-checks'),
-array($nav[2],mrseo_url('google-ads')),array('GA4 / Analytics',mrseo_url('google-ads').'#eu-checks'),
-array($nav[3],mrseo_url('web-development')),array('CRM / API',mrseo_url('web-development').'#eu-checks')
+array($market_labels['seo'],mrseo_url('seo')),
+array($market_labels['ecommerce-seo'],mrseo_url('ecommerce-seo')),
+array($market_labels['google-ads'],mrseo_url('google-ads')),
+array($market_labels['analytics'],mrseo_url('analytics')),
+array($market_labels['web-development'],mrseo_url('web-development')),
+array($market_labels['website-design'],mrseo_url('website-design'))
 );
 foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_attr($i+1);?>" href="<?php echo esc_url($sat[1]);?>"><span class="eu-sat-dot"></span><?php echo esc_html($sat[0]);?></a><?php endforeach;?>
 </div>
@@ -46,7 +50,7 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
 <div class="eu-service-scene eu-service-scene-<?php echo esc_attr($slug);?>" aria-hidden="true">
 <div class="eu-scene-halo"></div>
 <span class="eu-scene-top"><?php echo esc_html($ui[2]);?></span>
-<div class="eu-scene-core"><?php echo esc_html($slug==='seo'?'SEO':($slug==='google-ads'?'ADS':($slug==='web-development'?'API':'↗')));?><span class="eu-scene-pulse"></span></div>
+<div class="eu-scene-core"><?php echo esc_html(array('seo'=>'SEO','seo-audit'=>'AUDIT','ecommerce-seo'=>'SHOP','google-ads'=>'ADS','analytics'=>'GA4','web-development'=>'API','website-design'=>'WEB','online-shop-development'=>'STORE','about'=>'TEAM','portfolio'=>'WORK')[$slug]??'↗');?><span class="eu-scene-pulse"></span></div>
 <div class="eu-scene-rows">
 <?php foreach(array_slice($page['problems'],0,3) as $i=>$item):?><div class="eu-scene-row"><span>0<?php echo esc_html($i+1);?></span><strong><?php echo esc_html($item[0]);?></strong><span class="eu-tick">↗</span></div><?php endforeach;?>
 </div>
@@ -98,6 +102,30 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
   </div>
  </div>
 </section>
+<?php endif;?>
+<?php if($slug==='portfolio'):?>
+<?php
+require_once get_template_directory().'/inc/portfolio-data.php';
+$eu_portfolio=mrseo_portfolio_items();
+$eu_groups=array(
+'auto'=>array('avtomoda.com.ua','applus.parts','turboparts.ua'),
+'fashion'=>array('armonelli.com.ua','valizy.com.ua','dressetogether.com.ua'),
+'home'=>array('luxurylinens.ua','bedstore.com.ua','garden-house.in.ua'),
+'electronics'=>array('kiwismart.ua','powerlux.com.ua'),
+'medical'=>array('urolog.kr.ua')
+);
+$eu_sectors=mrseo_eu_portfolio_categories($lang);
+?>
+<section class="eu-section eu-portfolio-list"><div class="eu-container"><div class="eu-section-head">
+<span class="eu-kicker">MRSEO.TECH / <?php echo esc_html(mrseo_eu_service_labels($lang)['portfolio']);?></span>
+<h2><?php echo esc_html($page['offer']['title']);?></h2></div>
+<div class="eu-portfolio-grid">
+<?php foreach($eu_groups as $sector=>$domains):foreach($domains as $domain):if(!in_array($domain,$eu_portfolio[$sector]??array(),true))continue;?>
+<a class="eu-project-card" href="<?php echo esc_url('https://'.$domain.'/');?>" target="_blank" rel="noopener noreferrer">
+<span><?php echo esc_html($eu_sectors[$sector]??$sector);?></span><strong><?php echo esc_html($domain);?></strong><i aria-hidden="true">↗</i>
+</a>
+<?php endforeach;endforeach;?>
+</div></div></section>
 <?php endif;?>
 <?php if(!empty($page['outcomes'])):?>
 <section class="eu-section eu-outcomes"><div class="eu-container eu-outcomes-grid"><div><span class="eu-kicker">MRSEO.TECH / <?php echo esc_html($ui[4]);?></span><h2><?php echo esc_html($ui[4]);?></h2></div>
