@@ -258,8 +258,8 @@ jobs:
           pl_routes=(root/'inc/pl-service-routing.php').read_text()
           pl_template=(root/'pl-service-landing.php').read_text()
           pl_css=(root/'assets/pl-services.css').read_text()
-          assert "get_header('international')" in pl_template
-          assert "get_footer('international')" in pl_template
+          assert "get_header();" in pl_template
+          assert "get_footer();" in pl_template
           assert '<main' not in pl_template, 'Avoid nested main landmark'
           assert 'mrseo_pl_service_route()' in pl_routes
           assert "'pl' => 'pl-PL'" in (root/'inc/international-seo.php').read_text()
@@ -429,6 +429,13 @@ jobs:
           assert 'mrseo_eu_additional_slugs' in (root/'inc/eu-complete-services.php').read_text()
           # One real header/menu/footer is used on all 20 routes, including EU pages.
           assert 'get_header();' in eu_template and 'get_footer();' in eu_template
+          for unified_template in ('international-landing.php','development-landing.php',
+                                   'pl-service-landing.php','privacy-localized.php'):
+              source=(root/unified_template).read_text()
+              assert 'get_header();' in source and 'get_footer();' in source, (unified_template,'Different header/footer still used')
+          assert "if($l==='pl'||$l==='de')return mrseo_int_home_copy($l,$en);" in (root/'inc/i18n-routing.php').read_text()
+          assert 'mrseo-international mrseo-locale-' in (root/'header.php').read_text()
+
           assert "get_header('eu')" not in eu_template and "get_footer('eu')" not in eu_template
           assert 'mrseo_render_mega_menu()' in (root/'header.php').read_text()
           assert 'mrseo-eu-' in (root/'header.php').read_text()
