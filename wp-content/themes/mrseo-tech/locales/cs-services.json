@@ -1,0 +1,408 @@
+{
+  "seo-audit": {
+    "title": "Technický SEO audit webu: indexace, crawl a duplicity",
+    "description": "Audit indexace, kanonických URL, procházení webu a mobilních problémů s jasnými prioritami.",
+    "eyebrow": "SEO / TECHNICKÝ AUDIT",
+    "headline": "Web funguje. <em>Google ale vidí správné stránky?</em>",
+    "lead": "Technický audit má ukázat konkrétní příčiny problémů, ne jen automatické skóre. Zaměříme se na URL, které mají pro firmu skutečný význam.",
+    "problems": [
+      [
+        "Stránky mimo index",
+        "Nastavení, přesměrování nebo odkazy brání nalezení důležitých URL.",
+        "Prověřit stavy stránek, sitemapu a Search Console."
+      ],
+      [
+        "Duplicitní obsah",
+        "Parametry a filtry vytvářejí mnoho variant stejných stránek.",
+        "Zhodnotit canonical, filtry a stránkování."
+      ],
+      [
+        "Problémy na mobilu",
+        "Pomalé načítání nebo obtížné ovládání komplikuje návštěvu.",
+        "Oddělit technické příčiny od chyb rozhraní."
+      ]
+    ],
+    "outcomes": [
+      "Konkrétní problémy na URL",
+      "Prioritní seznam oprav",
+      "Ověření po provedení změn"
+    ],
+    "faq": [
+      [
+        "Provádíte v auditu i opravy?",
+        "Audit a implementace mají vlastní rozsah; předem je oddělíme."
+      ],
+      [
+        "Musíme poskytnout přístupy?",
+        "Pro první posouzení často stačí veřejná URL. Další přístupy se řeší bezpečně až po dohodě."
+      ]
+    ],
+    "offer": {
+      "title": "Od technické chyby k měřitelnému řešení",
+      "intro": "Technický audit má ukázat konkrétní příčiny problémů, ne jen automatické skóre. Zaměříme se na URL, které mají pro firmu skutečný význam.",
+      "items": [
+        {
+          "title": "Kontrola",
+          "detail": "Prověřit HTTP stavy, odkazy, sitemapu a canonical."
+        },
+        {
+          "title": "Priority",
+          "detail": "Propojit závady s důležitými kategoriemi a službami."
+        },
+        {
+          "title": "Ověření",
+          "detail": "Připravit kontrolní test po nasazení."
+        }
+      ],
+      "cta": "Probrat můj projekt"
+    }
+  },
+  "ecommerce-seo": {
+    "title": "SEO pro e-shopy: kategorie, filtry a produkty",
+    "description": "SEO audit e-shopu na Shoptetu a dalších platformách: URL struktura, kategorií, filtrů a produktů.",
+    "eyebrow": "SEO / E-SHOPY",
+    "headline": "E-shop má zboží. <em>Najdou ho zákazníci ve vyhledávání?</em>",
+    "lead": "E-shopy často ztrácejí viditelnost kvůli nevhodným kategoriím, duplicitním filtrům a slabému internímu prolinkování. Prověřujeme aktuální nastavení platformy bez tvrzení o oficiálním partnerství.",
+    "problems": [
+      [
+        "Neviditelné kategorie",
+        "Důležité vstupní stránky neodpovídají českému hledání.",
+        "Zkontrolovat strukturu kategorií a odkazy."
+      ],
+      [
+        "Filtry tvoří duplicity",
+        "Parametry vytvářejí stránky bez vlastní hodnoty.",
+        "Rozlišit užitečné a technické filtraci URL."
+      ],
+      [
+        "Produkty bez návaznosti",
+        "Varianty a produktové stránky jsou hůře dostupné.",
+        "Prověřit produktové šablony a navigaci."
+      ]
+    ],
+    "outcomes": [
+      "Mapa kategorií a priorit",
+      "Doporučení k filtrům a URL",
+      "Postup ověření indexace a objednávek"
+    ],
+    "faq": [
+      [
+        "Pomůžete i se Shoptetem?",
+        "Můžeme posoudit indexaci a dostupná nastavení, ale netvrdíme, že jsme oficiálním partnerem."
+      ],
+      [
+        "Je nutné přepisovat celý katalog?",
+        "Ne nutně. Problém může souviset se strukturou, ne s délkou textů."
+      ]
+    ],
+    "offer": {
+      "title": "Zaměření na důležité kategorie",
+      "intro": "E-shopy často ztrácejí viditelnost kvůli nevhodným kategoriím, duplicitním filtrům a slabému internímu prolinkování. Prověřujeme aktuální nastavení platformy bez tvrzení o oficiálním partnerství.",
+      "items": [
+        {
+          "title": "Vyhledávání",
+          "detail": "Přiřadit české nákupní dotazy kategoriím."
+        },
+        {
+          "title": "Technika",
+          "detail": "Zhodnotit canonical, filtraci a vnitřní odkazy."
+        },
+        {
+          "title": "Kontrola",
+          "detail": "Prověřit změny v indexaci a návštěvnosti."
+        }
+      ],
+      "cta": "Probrat můj projekt"
+    }
+  },
+  "analytics": {
+    "title": "GA4 analytika a správné měření konverzí e-shopu",
+    "description": "Audit nákupních událostí, transaction_id, Google Ads a rozdílů mezi reporty a skutečnými objednávkami.",
+    "eyebrow": "ANALYTIKA / GA4",
+    "headline": "Data sbíráte. <em>Ale rozhodujete podle správných dat?</em>",
+    "lead": "Nesprávné nebo duplicitní konverze mohou zkreslit optimalizaci PPC kampaní. Nejprve ověříme, co měření skutečně znamená a zda odpovídá objednávkám.",
+    "problems": [
+      [
+        "Duplicitní nákupy",
+        "Opakované události nadhodnocují objednávky a hodnotu konverzí.",
+        "Zkontrolovat purchase a identifikátory transakcí."
+      ],
+      [
+        "Různá čísla",
+        "GA4, Google Ads a e-shop mohou používat jiná pravidla atribuce.",
+        "Porovnat odpovídající definice a období."
+      ],
+      [
+        "Souhlas a tagy",
+        "Chování měření musí respektovat nastavení návštěvníka.",
+        "Prověřit technické nastavení, právní posouzení nechat odborníkům."
+      ]
+    ],
+    "outcomes": [
+      "Mapa měřených událostí",
+      "Konkrétní nesrovnalosti",
+      "Testovací postup po úpravách"
+    ],
+    "faq": [
+      [
+        "Musí GA4 vždy přesně souhlasit s Google Ads?",
+        "Ne. Atribuce a podmínky měření se mohou lišit."
+      ],
+      [
+        "Zajišťujete právní soulad cookies?",
+        "Kontrolujeme technické chování; právní soulad musí posoudit příslušný odborník."
+      ]
+    ],
+    "offer": {
+      "title": "Spolehlivá data pro rozhodování",
+      "intro": "Nesprávné nebo duplicitní konverze mohou zkreslit optimalizaci PPC kampaní. Nejprve ověříme, co měření skutečně znamená a zda odpovídá objednávkám.",
+      "items": [
+        {
+          "title": "Definice",
+          "detail": "Ujasnit, co je objednávka a hodnotná poptávka."
+        },
+        {
+          "title": "Srovnání",
+          "detail": "Porovnat objednávky s GA4, Ads a případně dalšími kanály."
+        },
+        {
+          "title": "Dohled",
+          "detail": "Navrhnout kontrolu po změnách na webu."
+        }
+      ],
+      "cta": "Probrat můj projekt"
+    }
+  },
+  "website-design": {
+    "title": "Tvorba webových stránek pro firmy a služby",
+    "description": "Firemní a prezentační weby s jasnými službami, responzivním designem a funkčními formuláři.",
+    "eyebrow": "TVORBA / WEBOVÉ STRÁNKY",
+    "headline": "Web má dobře vypadat. <em>A především pomáhat zákazníkům.</em>",
+    "lead": "Navrhujeme stránky, které vysvětlí nabídku a zjednoduší poptávku. Začínáme cílem firmy, strukturou informací a otázkami návštěvníků, ne hotovou šablonou.",
+    "problems": [
+      [
+        "Nabídka je nepřehledná",
+        "Návštěvník nerozumí rozdílům mezi službami.",
+        "Připravit logickou strukturu stránek."
+      ],
+      [
+        "Mobilní verze zklamává",
+        "Malé texty a složité ovládání brání kontaktu.",
+        "Navrhnout čitelné ovládání pro menší obrazovky."
+      ],
+      [
+        "Úpravy jsou náročné",
+        "Křehký systém komplikuje běžnou správu.",
+        "Zvolit udržovatelné komponenty a dokumentaci."
+      ]
+    ],
+    "outcomes": [
+      "Struktura webu a obsahový plán",
+      "Responzivní rozhraní a formuláře",
+      "Testování a předání k údržbě"
+    ],
+    "faq": [
+      [
+        "Používáte WordPress?",
+        "Ano, pokud odpovídá požadavkům na bezpečnost a správu."
+      ],
+      [
+        "Je SEO součástí tvorby webu?",
+        "Technické základy ano; dlouhodobá SEO strategie je samostatná práce."
+      ]
+    ],
+    "offer": {
+      "title": "Od struktury k fungujícímu webu",
+      "intro": "Navrhujeme stránky, které vysvětlí nabídku a zjednoduší poptávku. Začínáme cílem firmy, strukturou informací a otázkami návštěvníků, ne hotovou šablonou.",
+      "items": [
+        {
+          "title": "Návrh",
+          "detail": "Určit hlavní stránky, obsah a cíle."
+        },
+        {
+          "title": "Vývoj",
+          "detail": "Připravit rychlý a srozumitelný web."
+        },
+        {
+          "title": "Testování",
+          "detail": "Prověřit formuláře, odkazy a mobilní zobrazení."
+        }
+      ],
+      "cta": "Probrat můj projekt"
+    }
+  },
+  "online-shop-development": {
+    "title": "Tvorba e-shopu a integrace na míru",
+    "description": "Vývoj internetových obchodů: katalog, nákupní proces, platby, objednávky a API propojení.",
+    "eyebrow": "TVORBA / E-SHOP",
+    "headline": "E-shop musí prodávat. <em>A neměl by přidávat ruční práci.</em>",
+    "lead": "Při tvorbě e-shopu řešíme také správu katalogu, variant, zásob, objednávek a propojení na účetnictví. Platformu vybíráme podle reálných požadavků.",
+    "problems": [
+      [
+        "Katalog není přehledný",
+        "Kategorie a varianty nemají konzistentní strukturu.",
+        "Navrhnout atributy, filtry a data produktů."
+      ],
+      [
+        "Nákup je příliš složitý",
+        "Košík a platba obsahují zbytečné překážky.",
+        "Otestovat běžné nákupní scénáře."
+      ],
+      [
+        "Objednávky se přepisují",
+        "E-shop a interní systémy si automaticky nevyměňují data.",
+        "Prověřit dostupná API a synchronizaci."
+      ]
+    ],
+    "outcomes": [
+      "Technické zadání a výběr řešení",
+      "Otestovaný nákupní proces",
+      "Plán provozu a napojení systémů"
+    ],
+    "faq": [
+      [
+        "Lze migrovat stávající e-shop?",
+        "Migraci posoudíme samostatně kvůli datům, URL, přesměrování a kontinuitě."
+      ],
+      [
+        "Znamená to automaticky Shoptet?",
+        "Ne. Posoudíme požadavky a možnosti jednotlivých řešení."
+      ]
+    ],
+    "offer": {
+      "title": "Prodejní a provozní část dohromady",
+      "intro": "Při tvorbě e-shopu řešíme také správu katalogu, variant, zásob, objednávek a propojení na účetnictví. Platformu vybíráme podle reálných požadavků.",
+      "items": [
+        {
+          "title": "Produkty",
+          "detail": "Vymezit strukturu katalogu a variant."
+        },
+        {
+          "title": "Nákup",
+          "detail": "Prověřit košík, platby a dopravu."
+        },
+        {
+          "title": "Automatizace",
+          "detail": "Otestovat napojení na další firemní systémy."
+        }
+      ],
+      "cta": "Probrat můj projekt"
+    }
+  },
+  "about": {
+    "title": "O nás: SEO, PPC a vývoj webu | MrSeo.tech",
+    "description": "Malý tým s desetiletou zkušeností v SEO, Google Ads a vývoji webových řešení.",
+    "eyebrow": "MRSEO.TECH / O NÁS",
+    "headline": "Menší tým. <em>Jasný postup a ověřitelné kroky.</em>",
+    "lead": "Pracujeme vzdáleně z Ukrajiny a spojujeme zkušenosti s vyhledáváním, reklamou a technickým vývojem. Nejprve hledáme příčinu problému a teprve poté vhodnou službu.",
+    "problems": [
+      [
+        "Špatně určená příčina",
+        "Pokles poptávek nemusí způsobovat jen SEO nebo reklama.",
+        "Prověřit celý průchod zákazníka."
+      ],
+      [
+        "Nejasné odpovědnosti",
+        "Nikdo neví, kdo schvaluje a kontroluje změny.",
+        "Dohodnout role, výstupy a komunikaci."
+      ],
+      [
+        "Neověřitelné sliby",
+        "Garance pozic nenahrazují měřitelnou práci.",
+        "Stanovit kontrolní body a limity."
+      ]
+    ],
+    "outcomes": [
+      "Přímá komunikace",
+      "Přehledný rozsah spolupráce",
+      "Rozhodnutí opřená o data"
+    ],
+    "faq": [
+      [
+        "Máte kancelář v Česku?",
+        "Ne. Spolupracujeme na dálku z Ukrajiny."
+      ],
+      [
+        "Lze komunikovat česky?",
+        "Pracovní jazyk a dostupnost dohodneme před zahájením projektu."
+      ]
+    ],
+    "offer": {
+      "title": "Jak postupujeme",
+      "intro": "Pracujeme vzdáleně z Ukrajiny a spojujeme zkušenosti s vyhledáváním, reklamou a technickým vývojem. Nejprve hledáme příčinu problému a teprve poté vhodnou službu.",
+      "items": [
+        {
+          "title": "Zadání",
+          "detail": "Zjistit skutečný obchodní problém."
+        },
+        {
+          "title": "Diagnostika",
+          "detail": "Ověřit příčiny a dostupná data."
+        },
+        {
+          "title": "Ověření",
+          "detail": "Dohodnout kroky a způsob kontroly."
+        }
+      ],
+      "cta": "Probrat můj projekt"
+    }
+  },
+  "portfolio": {
+    "title": "Projekty a zkušenosti MrSeo.tech",
+    "description": "Veřejné příklady webů z portfolia bez vymyšlených českých referencí a výsledků.",
+    "eyebrow": "MRSEO.TECH / PROJEKTY",
+    "headline": "Různé obory. <em>Konkrétní technické výzvy.</em>",
+    "lead": "Ukazujeme weby z veřejného portfolia jako příklady oborů a technických kontextů. Nevydáváme je za české klienty ani nesdělujeme důvěrná čísla.",
+    "problems": [
+      [
+        "Autodoplňky",
+        "Velké katalogy potřebují logickou navigaci.",
+        "Prohlédnout veřejné ukázky e-shopů."
+      ],
+      [
+        "Móda a doplňky",
+        "Varianty produktů vyžadují srozumitelnou prezentaci.",
+        "Prozkoumat další typy obchodů."
+      ],
+      [
+        "Odborné služby",
+        "Důvěra a jasné informace vedou ke kontaktu.",
+        "Podívat se na ukázky služeb."
+      ]
+    ],
+    "outcomes": [
+      "Veřejné příklady webů",
+      "Různé oborové zkušenosti",
+      "Ochrana důvěrných dat"
+    ],
+    "faq": [
+      [
+        "Jde o české klienty?",
+        "Ukázky nevydáváme za české projekty bez potvrzení."
+      ],
+      [
+        "Proč neuvádíte všechny výsledky?",
+        "Důvěrná data a výsledky uvádíme jen se souhlasem zákazníků."
+      ]
+    ],
+    "offer": {
+      "title": "Ukázky z různých prostředí",
+      "intro": "Ukazujeme weby z veřejného portfolia jako příklady oborů a technických kontextů. Nevydáváme je za české klienty ani nesdělujeme důvěrná čísla.",
+      "items": [
+        {
+          "title": "E-shopy",
+          "detail": "Kategorie, filtry a produkty."
+        },
+        {
+          "title": "Měření",
+          "detail": "Analytika a konverzní data."
+        },
+        {
+          "title": "Služby",
+          "detail": "Informace, důvěra a poptávka."
+        }
+      ],
+      "cta": "Probrat můj projekt"
+    }
+  }
+}
