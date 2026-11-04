@@ -47,8 +47,8 @@ add_filter('script_loader_tag',function($tag,$handle){
     return str_replace('<script ','<script type="module" ',$tag);
 },10,2);
 add_action('init',function(){
-    if(get_option('mrseo_eu_rules_v1')!=='ready'){
+    if(get_option('mrseo_eu_rules_v2')!=='ready'){
         flush_rewrite_rules(false);
-        update_option('mrseo_eu_rules_v1','ready',false);
+        update_option('mrseo_eu_rules_v2','ready',false);
     }
 },42);
