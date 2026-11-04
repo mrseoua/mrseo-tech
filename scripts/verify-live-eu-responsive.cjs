@@ -4,13 +4,23 @@ const fs=require('node:fs/promises');
 const {chromium}=require('playwright');
 const HOST=(process.env.MRSEO_TEST_ORIGIN||'https://mrseo.tech').replace(/\/$/,'');
 const locales=['fr','it','es','nl','ro','cs'];
-const slugs=['','seo','google-ads','web-development','contact','privacy'];
+const slugs=['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
 const urlOf=(l,s)=>HOST+'/'+l+'/'+(s?s+'/':'');
 async function audit(browser,viewport,lang,slug){
  const url=urlOf(lang,slug);
- const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,ignoreHTTPSErrors:false});
+ const mobile=viewport.name!=='desktop';
+ const browserUA=mobile
+  ? 'Mozilla/5.0 (Linux; Android 15; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36'
+  : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36';
+ const context=await browser.newContext({
+  viewport:{width:viewport.width,height:viewport.height},
+  deviceScaleFactor:mobile?2:1,
+  isMobile:mobile,hasTouch:mobile,
+  userAgent:browserUA,locale:({fr:'fr-FR',it:'it-IT',es:'es-ES',nl:'nl-NL',ro:'ro-RO',cs:'cs-CZ'})[lang],
+  ignoreHTTPSErrors:false
+ });
  const page=await context.newPage();
  const item={lang,slug:slug||'home',viewport:viewport.name,url,errors:[],warnings:[]};
  page.on('pageerror',e=>item.errors.push('JS: '+String(e.message).slice(0,175)));
@@ -18,7 +28,14 @@ async function audit(browser,viewport,lang,slug){
  try{
   response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});
   item.status=response?.status()||null;
-  if(item.status!==200)item.errors.push('HTTP '+item.status);
+  if(item.status!==200){
+   item.errors.push('HTTP '+item.status);
+   item.errors.push('Content type '+(response?.headers()['content-type']||'unknown'));
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'-error.jpg',type:'jpeg',quality:68,fullPage:false}).catch(()=>{});
+   results.push(item);
+   console.log('FAIL '+viewport.name+' '+lang+'/'+slug+' HTTP '+item.status);
+   return;
+  }
   await page.locator('body').waitFor({timeout:8000});
   try{await page.evaluate(()=>document.fonts.ready)}catch(_){}
   await page.waitForTimeout(slug===''?1400:250);
@@ -42,10 +59,12 @@ async function audit(browser,viewport,lang,slug){
     form:document.querySelector('form[action*="admin-post.php"]')?.querySelector('input[name=mrseo_lang]')?.value||null,
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
+    serviceMenuItems:document.querySelectorAll('.eu-nav-services-panel a').length,
+    portfolioCards:document.querySelectorAll('.eu-project-card').length,
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
     satellites:node?.querySelectorAll('.eu-satellite').length||0,
-    portfolio:!!document.querySelector('a[href*="/en/portfolio/"]'),
+    portfolio:!!document.querySelector('a[href$="/'+lang+'/portfolio/"]'),
     privacyLink:!!document.querySelector('a[href*="/'+lang+'/privacy/"]'),
     bodyClass:body.className
    };
@@ -59,10 +78,12 @@ async function audit(browser,viewport,lang,slug){
   if(!c.robots.toLowerCase().includes('noindex')&&!String(response.headers()['x-robots-tag']).includes('noindex'))item.errors.push('Staging noindex missing');
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==11)item.errors.push('Language options '+c.menuItems);
+  if(c.serviceMenuItems!==11)item.errors.push('Services dropdown '+c.serviceMenuItems);
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
   if(slug===''&&(!c.core||c.satellites!==6||!c.coreDimensions?.w))item.errors.push('Earth core or satellites missing');
-  if(['','seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
+  if(!['contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
+  if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
   if(slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   if(viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
@@ -70,7 +91,7 @@ async function audit(browser,viewport,lang,slug){
   }
   if(slug===''&&viewport.name==='narrow'){
    const sel=page.locator('.mrseo-language-trigger');
-   await sel.click();
+   await sel.click({timeout:4000});
    await page.waitForTimeout(150);
    const visible=await page.locator('.mrseo-language-options').evaluate(x=>{
     const r=x.getBoundingClientRect();return r.width>180&&r.left>=-2&&r.right<=innerWidth+2&&r.top<innerHeight;
