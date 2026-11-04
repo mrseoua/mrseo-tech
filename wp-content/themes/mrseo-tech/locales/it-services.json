@@ -1,0 +1,408 @@
+{
+  "seo-audit": {
+    "title": "Audit SEO tecnico: indicizzazione, duplicati e prestazioni",
+    "description": "Analisi tecnica delle URL, crawl, canonical e pagine importanti con interventi ordinati per priorità.",
+    "eyebrow": "SEO / AUDIT TECNICO",
+    "headline": "Google può raggiungere <em>le pagine più importanti?</em>",
+    "lead": "Un audit SEO deve mostrare errori riproducibili e non soltanto punteggi automatici. Partiamo dalle URL che dovrebbero generare domanda commerciale.",
+    "problems": [
+      [
+        "Pagine non indicizzate",
+        "Direttive, link interni o problemi di scansione nascondono contenuti importanti.",
+        "Verificare Search Console, status delle URL e sitemap."
+      ],
+      [
+        "Contenuti duplicati",
+        "Parametri e filtri moltiplicano pagine simili.",
+        "Analizzare canonical, paginazione e navigazione."
+      ],
+      [
+        "Esperienza mobile debole",
+        "Elementi pesanti o instabili compromettono la fruizione.",
+        "Distinguere cause di caricamento e problemi di interfaccia."
+      ]
+    ],
+    "outcomes": [
+      "Errori con esempi URL concreti",
+      "Priorità basate sull’impatto",
+      "Controlli per verificare le modifiche"
+    ],
+    "faq": [
+      [
+        "L’audit comprende la correzione degli errori?",
+        "Diagnosi e implementazione sono attività distinte; il perimetro viene concordato prima."
+      ],
+      [
+        "Servono le password del sito?",
+        "Per una prima valutazione basta l’URL. Eventuali accessi si concordano in modo sicuro."
+      ]
+    ],
+    "offer": {
+      "title": "Dall’errore tecnico al piano di lavoro",
+      "intro": "Un audit SEO deve mostrare errori riproducibili e non soltanto punteggi automatici. Partiamo dalle URL che dovrebbero generare domanda commerciale.",
+      "items": [
+        {
+          "title": "Scansione",
+          "detail": "Controllare URL, sitemap, canonical e collegamenti interni."
+        },
+        {
+          "title": "Priorità",
+          "detail": "Valutare quali problemi coinvolgono pagine utili al business."
+        },
+        {
+          "title": "Conferma",
+          "detail": "Definire la verifica dopo l’intervento."
+        }
+      ],
+      "cta": "Parliamo del tuo progetto"
+    }
+  },
+  "ecommerce-seo": {
+    "title": "SEO per e-commerce: categorie, filtri e prodotti",
+    "description": "SEO ecommerce per WooCommerce, Shopify, PrestaShop e altri sistemi con cataloghi complessi.",
+    "eyebrow": "SEO / NEGOZI ONLINE",
+    "headline": "Migliaia di prodotti. <em>Quali trovano i clienti?</em>",
+    "lead": "Nei negozi online molte opportunità si perdono tra filtri non gestiti, varianti e categorie poco accessibili. Prima di creare nuovi testi, analizziamo la struttura.",
+    "problems": [
+      [
+        "Categorie invisibili",
+        "Le pagine chiave non corrispondono alle ricerche commerciali.",
+        "Rivedere tassonomia e link interni."
+      ],
+      [
+        "Filtri duplicati",
+        "I parametri generano troppe versioni della stessa pagina.",
+        "Definire quali filtri hanno valore organico."
+      ],
+      [
+        "Schede poco utili",
+        "Varianti e dati incompleti complicano ricerca e scelta.",
+        "Controllare struttura prodotto e disponibilità."
+      ]
+    ],
+    "outcomes": [
+      "Mappa delle categorie prioritarie",
+      "Piano di gestione filtri e varianti",
+      "KPI di visibilità e acquisto da verificare"
+    ],
+    "faq": [
+      [
+        "Lavorate su WooCommerce?",
+        "Possiamo analizzarne la struttura in base al progetto e agli accessi disponibili."
+      ],
+      [
+        "Bisogna riscrivere tutte le descrizioni?",
+        "Non necessariamente. Il problema principale può essere tecnico o strutturale."
+      ]
+    ],
+    "offer": {
+      "title": "Rendere il catalogo comprensibile",
+      "intro": "Nei negozi online molte opportunità si perdono tra filtri non gestiti, varianti e categorie poco accessibili. Prima di creare nuovi testi, analizziamo la struttura.",
+      "items": [
+        {
+          "title": "Domanda",
+          "detail": "Identificare le ricerche di prodotti e categorie utili."
+        },
+        {
+          "title": "Struttura",
+          "detail": "Rivedere tassonomia, URL, paginazione e canonical."
+        },
+        {
+          "title": "Verifica",
+          "detail": "Misurare l’indicizzazione e la qualità del traffico commerciale."
+        }
+      ],
+      "cta": "Parliamo del tuo progetto"
+    }
+  },
+  "analytics": {
+    "title": "Analisi GA4 e tracciamento delle conversioni",
+    "description": "Controllo di eventi purchase, valori, attribuzione e coerenza tra Google Ads e ordini reali.",
+    "eyebrow": "DATI / CONVERSIONI",
+    "headline": "I report sono pieni. <em>Ma i numeri sono affidabili?</em>",
+    "lead": "Un conteggio scorretto degli acquisti può spingere gli algoritmi verso risultati inesistenti. Verifichiamo ciò che ogni evento rappresenta prima di suggerire ottimizzazioni.",
+    "problems": [
+      [
+        "Acquisti duplicati",
+        "Eventi ripetuti e transaction_id incoerenti gonfiano i risultati.",
+        "Confrontare eventi e identificativi d’ordine."
+      ],
+      [
+        "GA4 diverso da Ads",
+        "Modelli e finestre di attribuzione possono spiegare gli scarti.",
+        "Definire le differenze prima di chiamarle errori."
+      ],
+      [
+        "Tag non controllati",
+        "Il consenso può cambiare la disponibilità dei dati.",
+        "Verificare l’implementazione tecnica senza fare consulenza legale."
+      ]
+    ],
+    "outcomes": [
+      "Inventario degli eventi",
+      "Anomalie verificabili",
+      "Piano di test per il monitoraggio"
+    ],
+    "faq": [
+      [
+        "Dovrebbero coincidere sempre GA4 e Google Ads?",
+        "No: attribuzione e ambito dei dati differiscono. Occorre confrontare metriche compatibili."
+      ],
+      [
+        "Fate consulenza GDPR?",
+        "No, verifichiamo il funzionamento tecnico; la conformità legale richiede uno specialista."
+      ]
+    ],
+    "offer": {
+      "title": "Misurare ciò che conta",
+      "intro": "Un conteggio scorretto degli acquisti può spingere gli algoritmi verso risultati inesistenti. Verifichiamo ciò che ogni evento rappresenta prima di suggerire ottimizzazioni.",
+      "items": [
+        {
+          "title": "Definizioni",
+          "detail": "Separare visualizzazioni, contatti e ordini."
+        },
+        {
+          "title": "Riconciliazione",
+          "detail": "Confrontare Ads, GA4 e dati di vendita."
+        },
+        {
+          "title": "Controllo",
+          "detail": "Prevedere test per aggiornamenti e modifiche del sito."
+        }
+      ],
+      "cta": "Parliamo del tuo progetto"
+    }
+  },
+  "website-design": {
+    "title": "Realizzazione siti web per aziende e professionisti",
+    "description": "Siti di servizi e vetrine con navigazione chiara, design responsive e richieste di contatto funzionanti.",
+    "eyebrow": "CREAZIONE / SITI WEB",
+    "headline": "Non serve soltanto un sito. <em>Serve un percorso chiaro.</em>",
+    "lead": "Il progetto parte da ciò che l’utente deve capire e fare: scegliere un servizio, fidarsi dell’azienda e inviare una richiesta. La grafica supporta questo percorso.",
+    "problems": [
+      [
+        "Servizi confusi",
+        "Le pagine non rispondono alle domande di chi cerca.",
+        "Progettare una struttura centrata sull’offerta."
+      ],
+      [
+        "Mobile difficile",
+        "Testi piccoli e pulsanti poco accessibili ostacolano il contatto.",
+        "Definire interfacce chiare su schermi stretti."
+      ],
+      [
+        "Modifiche complicate",
+        "Una struttura fragile rende costosa ogni evoluzione.",
+        "Scegliere tecnologie e manutenzione adeguate."
+      ]
+    ],
+    "outcomes": [
+      "Architettura e contenuti da definire",
+      "Design e sviluppo responsive",
+      "Test di moduli, link e manutenzione"
+    ],
+    "faq": [
+      [
+        "Potete usare WordPress?",
+        "Sì, quando soddisfa gli obiettivi, la gestione e i vincoli di sicurezza."
+      ],
+      [
+        "SEO incluso nel sito?",
+        "Prevediamo le basi tecniche; un lavoro SEO continuativo va definito separatamente."
+      ]
+    ],
+    "offer": {
+      "title": "Dall’idea alla pubblicazione",
+      "intro": "Il progetto parte da ciò che l’utente deve capire e fare: scegliere un servizio, fidarsi dell’azienda e inviare una richiesta. La grafica supporta questo percorso.",
+      "items": [
+        {
+          "title": "Strategia",
+          "detail": "Individuare pubblico, pagine e azioni attese."
+        },
+        {
+          "title": "Realizzazione",
+          "detail": "Creare componenti accessibili e facili da aggiornare."
+        },
+        {
+          "title": "Collaudo",
+          "detail": "Verificare moduli, mobile e qualità tecnica."
+        }
+      ],
+      "cta": "Parliamo del tuo progetto"
+    }
+  },
+  "online-shop-development": {
+    "title": "Sviluppo negozi online ed e-commerce su misura",
+    "description": "Creazione di shop online, cataloghi, flussi di acquisto, integrazioni API e automazione degli ordini.",
+    "eyebrow": "SVILUPPO / E-COMMERCE",
+    "headline": "Uno shop deve vendere. <em>E farsi gestire senza fatica.</em>",
+    "lead": "Una piattaforma di vendita comprende catalogo, disponibilità, pagamento, consegna e gestione ordini. Definiamo il flusso completo prima di sviluppare.",
+    "problems": [
+      [
+        "Catalogo disordinato",
+        "Attributi e varianti non formano una struttura coerente.",
+        "Progettare dati, filtri e categorie."
+      ],
+      [
+        "Checkout complicato",
+        "Passaggi inutili possono ostacolare il pagamento.",
+        "Verificare scenari reali di acquisto."
+      ],
+      [
+        "Operazioni manuali",
+        "Gli ordini devono essere copiati in altri sistemi.",
+        "Studiare integrazioni CRM, ERP e magazzino."
+      ]
+    ],
+    "outcomes": [
+      "Requisiti e scelta di piattaforma",
+      "Catalogo e checkout verificabili",
+      "Test ordini e piano di manutenzione"
+    ],
+    "faq": [
+      [
+        "Si può migrare uno shop esistente?",
+        "Serve uno studio specifico per dati, URL, redirect e continuità degli ordini."
+      ],
+      [
+        "Quale piattaforma scegliete?",
+        "La scelta dipende da catalogo, integrazioni e processi. Non proponiamo una tecnologia a prescindere."
+      ]
+    ],
+    "offer": {
+      "title": "Progettare l’intero ciclo di acquisto",
+      "intro": "Una piattaforma di vendita comprende catalogo, disponibilità, pagamento, consegna e gestione ordini. Definiamo il flusso completo prima di sviluppare.",
+      "items": [
+        {
+          "title": "Catalogo",
+          "detail": "Definire prodotti, varianti e ricerca."
+        },
+        {
+          "title": "Checkout",
+          "detail": "Verificare pagamento, spedizione e flussi informativi."
+        },
+        {
+          "title": "Gestione",
+          "detail": "Testare ordini e sincronizzazione con altri sistemi."
+        }
+      ],
+      "cta": "Parliamo del tuo progetto"
+    }
+  },
+  "about": {
+    "title": "Chi siamo: il team SEO e sviluppo di MrSeo.tech",
+    "description": "Piccolo team con dieci anni di esperienza in SEO, Google Ads e sviluppo di soluzioni web.",
+    "eyebrow": "MRSEO.TECH / TEAM",
+    "headline": "Un team piccolo. <em>Responsabilità chiare.</em>",
+    "lead": "Lavoriamo dall’Ucraina con clienti a distanza, cercando prima il problema da risolvere. Il nostro approccio unisce analisi, pubblicità e sviluppo senza promettere posizioni garantite.",
+    "problems": [
+      [
+        "Problema non definito",
+        "La crescita viene affidata a un solo canale senza un’analisi.",
+        "Verificare obiettivo, dati e limiti."
+      ],
+      [
+        "Troppe promesse",
+        "Gli obiettivi vaghi non hanno criteri di verifica.",
+        "Concordare risultati osservabili."
+      ],
+      [
+        "Lavoro poco trasparente",
+        "Il cliente non conosce priorità e responsabilità.",
+        "Descrivere passaggi e consegne."
+      ]
+    ],
+    "outcomes": [
+      "Contatto diretto",
+      "Metodo basato su dati e limiti reali",
+      "Comunicazione e responsabilità concordate"
+    ],
+    "faq": [
+      [
+        "Avete un ufficio in Italia?",
+        "No. Lavoriamo a distanza dall’Ucraina."
+      ],
+      [
+        "Parlate italiano durante le riunioni?",
+        "La lingua di lavoro viene concordata prima del progetto."
+      ]
+    ],
+    "offer": {
+      "title": "Come lavoriamo",
+      "intro": "Lavoriamo dall’Ucraina con clienti a distanza, cercando prima il problema da risolvere. Il nostro approccio unisce analisi, pubblicità e sviluppo senza promettere posizioni garantite.",
+      "items": [
+        {
+          "title": "Capire",
+          "detail": "Definire il problema e le informazioni disponibili."
+        },
+        {
+          "title": "Valutare",
+          "detail": "Separare ipotesi e fatti verificabili."
+        },
+        {
+          "title": "Intervenire",
+          "detail": "Concordare il piano e controllarne gli effetti."
+        }
+      ],
+      "cta": "Parliamo del tuo progetto"
+    }
+  },
+  "portfolio": {
+    "title": "Progetti ed esperienze di MrSeo.tech",
+    "description": "Selezione pubblica di siti di diversi settori; nessun risultato riservato o caso italiano inventato.",
+    "eyebrow": "MRSEO.TECH / PROGETTI",
+    "headline": "Esperienze concrete. <em>Senza numeri inventati.</em>",
+    "lead": "Mostriamo i siti presenti nel nostro portfolio pubblico come esempi di settori e contesti tecnici. Non sono presentati come clienti italiani né come garanzia di risultati.",
+    "problems": [
+      [
+        "Cataloghi e ricambi",
+        "Strutture complesse richiedono categorie e filtri gestiti con cura.",
+        "Esaminare esempi di e-commerce."
+      ],
+      [
+        "Moda e accessori",
+        "Prodotti e varianti richiedono una ricerca intuitiva.",
+        "Vedere differenti tipologie di negozi."
+      ],
+      [
+        "Siti di servizi",
+        "Informazioni chiare e contatto diretto sono importanti.",
+        "Esplorare esempi di pagine di servizio."
+      ]
+    ],
+    "outcomes": [
+      "Siti pubblici del portfolio",
+      "Settori di lavoro differenti",
+      "Rispetto della riservatezza"
+    ],
+    "faq": [
+      [
+        "Pubblicate i dati dei clienti?",
+        "Non condividiamo risultati o informazioni riservate senza autorizzazione."
+      ],
+      [
+        "Sono casi studio italiani?",
+        "No, sono esempi del portfolio pubblico, senza attribuzione geografica inventata."
+      ]
+    ],
+    "offer": {
+      "title": "Esplora i contesti di progetto",
+      "intro": "Mostriamo i siti presenti nel nostro portfolio pubblico come esempi di settori e contesti tecnici. Non sono presentati come clienti italiani né come garanzia di risultati.",
+      "items": [
+        {
+          "title": "Negozi online",
+          "detail": "Cataloghi, prodotti e pagine."
+        },
+        {
+          "title": "Misurazione",
+          "detail": "Raccolta dati e analisi delle conversioni."
+        },
+        {
+          "title": "Servizi",
+          "detail": "Pagine informative e richieste commerciali."
+        }
+      ],
+      "cta": "Parliamo del tuo progetto"
+    }
+  }
+}
