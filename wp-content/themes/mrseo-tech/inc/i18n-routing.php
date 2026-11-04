@@ -54,7 +54,7 @@ function mrseo_url($slug='',$lang=null){
 }
 function mrseo_t($uk,$ru,$en){
  $l=mrseo_locale();
- if(($l==='pl'||$l==='de') && mrseo_slug()==='')return mrseo_int_home_copy($l,$en);
+ if($l==='pl'||$l==='de')return mrseo_int_home_copy($l,$en);
  // One shared visual template; localized texts are read from the existing
  // approved market content, never from a duplicate visual template.
  if(function_exists('mrseo_eu_markets') && isset(mrseo_eu_markets()[$l])){
