@@ -26,7 +26,26 @@ function mrseo_render_contact_channels($placement = 'footer') {
         'pl' => array('title' => 'Zadzwoń lub napisz', 'phone' => 'Telefon kontaktowy', 'write' => 'Napisz do nas'),
         'de' => array('title' => 'Anrufen oder schreiben', 'phone' => 'Telefon', 'write' => 'Nachricht senden'),
     );
-    $copy = $labels[$lang] ?? $labels['uk'];
+    if(function_exists('mrseo_eu_markets')&&isset(mrseo_eu_markets()[$lang])){
+      $labels=array_merge($labels,array(
+        'fr' => array('title' => 'Appelez-nous ou écrivez-nous', 'phone' => 'Téléphone professionnel', 'write' => 'Écrivez-nous'),
+        'it' => array('title' => 'Chiamaci o scrivici', 'phone' => 'Telefono di lavoro', 'write' => 'Scrivici'),
+        'es' => array('title' => 'Llámanos o escríbenos', 'phone' => 'Teléfono de contacto', 'write' => 'Escríbenos'),
+        'nl' => array('title' => 'Bel of stuur een bericht', 'phone' => 'Zakelijk telefoonnummer', 'write' => 'Stuur een bericht'),
+        'ro' => array('title' => 'Sunați-ne sau scrieți-ne', 'phone' => 'Telefon de contact', 'write' => 'Scrieți-ne'),
+        'cs' => array('title' => 'Zavolejte nebo napište', 'phone' => 'Pracovní telefon', 'write' => 'Napište nám'),
+        'pt' => array('title' => 'Ligue-nos ou escreva-nos', 'phone' => 'Telefone de contacto', 'write' => 'Envie-nos uma mensagem'),
+        'sv' => array('title' => 'Ring eller skriv till oss', 'phone' => 'Företagstelefon', 'write' => 'Skriv till oss'),
+        'da' => array('title' => 'Ring eller skriv til os', 'phone' => 'Telefonnummer', 'write' => 'Skriv til os'),
+        'fi' => array('title' => 'Soita tai lähetä viesti', 'phone' => 'Työpuhelin', 'write' => 'Lähetä viesti'),
+        'hu' => array('title' => 'Hívjon vagy írjon nekünk', 'phone' => 'Üzleti telefonszám', 'write' => 'Írjon nekünk'),
+        'sk' => array('title' => 'Zavolajte alebo napíšte', 'phone' => 'Pracovný telefón', 'write' => 'Napíšte nám'),
+        'el' => array('title' => 'Καλέστε ή στείλτε μήνυμα', 'phone' => 'Τηλέφωνο επικοινωνίας', 'write' => 'Στείλτε μήνυμα'),
+        'bg' => array('title' => 'Обадете се или ни пишете', 'phone' => 'Телефон за връзка', 'write' => 'Пишете ни'),
+        'hr' => array('title' => 'Nazovite ili pošaljite poruku', 'phone' => 'Poslovni telefon', 'write' => 'Pošaljite poruku')
+      ));
+    }
+    $copy = $labels[$lang] ?? $labels['en'];
     $channels = mrseo_contact_details();
     $phone_display = $channels['phone_display'];
     $place = $placement === 'international' ? ' mrseo-contact-channels--international' : '';
