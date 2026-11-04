@@ -24,7 +24,7 @@ $scene_problem = static function ($index) use ($page) {
   <div class="eu-viz-side-label"><span class="eu-viz-status-dot"></span> SEARCH CONSOLE · SEO</div>
 </div>
 <?php elseif ($slug === 'seo-audit'): ?>
-<div class="eu-viz eu-viz--audit">
+<div class="eu-viz eu-viz--audit eu-viz--seo-audit">
   <div class="eu-viz-frame-head"><span>CRAWL / URL</span><span>TECHNICAL SEO</span></div>
   <div class="eu-viz-crawl">
     <svg viewBox="0 0 600 235" preserveAspectRatio="none" aria-hidden="true">
@@ -40,7 +40,7 @@ $scene_problem = static function ($index) use ($page) {
   <div class="eu-viz-diagnostic"><span class="eu-viz-status-dot"></span><strong><?php echo $scene_problem(0); ?></strong><span>→</span><strong><?php echo $scene_problem(1); ?></strong></div>
 </div>
 <?php elseif ($slug === 'ecommerce-seo'): ?>
-<div class="eu-viz eu-viz--commerce">
+<div class="eu-viz eu-viz--commerce eu-viz--ecommerce-seo">
   <div class="eu-viz-frame-head"><span>CATALOG / SEO</span><span>INDEX</span></div>
   <div class="eu-viz-catalog">
     <div class="eu-viz-filters"><b></b><i></i><i></i><i></i><i></i><i></i><span>SEO</span></div>
@@ -53,7 +53,7 @@ $scene_problem = static function ($index) use ($page) {
   <div class="eu-viz-caption"><span class="eu-viz-status-dot"></span><?php echo $scene_problem(0); ?></div>
 </div>
 <?php elseif ($slug === 'google-ads'): ?>
-<div class="eu-viz eu-viz--ads">
+<div class="eu-viz eu-viz--ads eu-viz--google-ads">
   <div class="eu-viz-frame-head"><span>GOOGLE ADS</span><span>CONVERSION FLOW</span></div>
   <div class="eu-viz-ads-flow">
     <div class="eu-viz-ads-stage"><span class="eu-viz-ads-symbol">◎</span><strong>ADS</strong><i></i><i></i><i></i></div>
@@ -79,7 +79,7 @@ $scene_problem = static function ($index) use ($page) {
   <div class="eu-viz-caption"><span class="eu-viz-status-dot"></span><?php echo $scene_problem(0); ?></div>
 </div>
 <?php elseif ($slug === 'web-development'): ?>
-<div class="eu-viz eu-viz--development">
+<div class="eu-viz eu-viz--development eu-viz--web-development">
   <div class="eu-viz-frame-head"><span>SAAS / CRM / API</span><span>INTEGRATIONS</span></div>
   <div class="eu-viz-dev-network">
     <svg viewBox="0 0 560 235" preserveAspectRatio="none" aria-hidden="true">
@@ -94,7 +94,7 @@ $scene_problem = static function ($index) use ($page) {
   <div class="eu-viz-caption"><span class="eu-viz-status-dot"></span><?php echo $scene_problem(0); ?></div>
 </div>
 <?php elseif ($slug === 'website-design'): ?>
-<div class="eu-viz eu-viz--website">
+<div class="eu-viz eu-viz--website eu-viz--website-design">
   <div class="eu-viz-frame-head"><span>WIREFRAME</span><span>DESIGN / BUILD</span></div>
   <div class="eu-viz-webflow">
     <div class="eu-viz-wireframe"><div class="eu-viz-tab-dots"><i></i><i></i><i></i></div><div class="eu-viz-wire-hero"><b></b><i></i><i></i></div><div class="eu-viz-wire-grid"><i></i><i></i><i></i></div></div>
@@ -104,7 +104,7 @@ $scene_problem = static function ($index) use ($page) {
   <div class="eu-viz-caption"><span class="eu-viz-status-dot"></span><?php echo $scene_problem(0); ?></div>
 </div>
 <?php elseif ($slug === 'online-shop-development'): ?>
-<div class="eu-viz eu-viz--shop">
+<div class="eu-viz eu-viz--shop eu-viz--online-shop-development">
   <div class="eu-viz-frame-head"><span>ECOMMERCE / BUILD</span><span>SKU → ORDER</span></div>
   <div class="eu-viz-shop-shell">
     <div class="eu-viz-shop-top"><i></i><i></i><b>▣</b></div>
