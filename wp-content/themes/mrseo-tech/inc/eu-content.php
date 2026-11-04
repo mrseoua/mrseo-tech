@@ -42,7 +42,7 @@ function mrseo_eu_all(){
     ],
     "pages": {
       "": {
-        "title": "Agence SEO, Google Ads et développement web pour les entreprises en France",
+        "title": "SEO e-commerce, Google Ads et développement web en France",
         "description": "Votre site a des visiteurs sans demandes ? Nous analysons SEO, Google Ads, suivi des conversions et développement pour résoudre le vrai blocage.",
         "eyebrow": "UN SITE. DES RÉSULTATS MESURABLES.",
         "headline": "Votre site existe. <em>Mais où sont les clients ?</em>",
@@ -74,10 +74,29 @@ function mrseo_eu_all(){
             "Avez-vous un bureau en France ?",
             "Non. Nous travaillons à distance et convenons des échanges et du périmètre avant de commencer."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Où chercher la cause ?",
+          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "items": [
+            {
+              "title": "Pages et catégories",
+              "detail": "Repérer les URL invisibles et les recherches commerciales auxquelles elles devraient répondre."
+            },
+            {
+              "title": "Campagnes et ventes",
+              "detail": "Comparer les achats réels, le suivi GA4 et les résultats déclarés par Google Ads."
+            },
+            {
+              "title": "Systèmes déconnectés",
+              "detail": "Rechercher les saisies manuelles entre boutique, stock et CRM."
+            }
+          ],
+          "cta": "Décrire mon problème"
+        }
       },
       "seo": {
-        "title": "Référencement SEO technique et e-commerce en France",
+        "title": "Audit SEO e-commerce : catégories, facettes et indexation",
         "description": "Diagnostic d’indexation, architecture, catégories et pages de service : du constat aux corrections SEO prioritaires.",
         "eyebrow": "SEO / VISIBILITÉ",
         "headline": "Vos pages importantes <em>restent invisibles ?</em>",
@@ -108,11 +127,34 @@ function mrseo_eu_all(){
           [
             "Garantissez-vous la première position ?",
             "Non. Nous définissons les changements et les indicateurs contrôlables, sans promettre une position."
+          ],
+          [
+            "Travaillez-vous seulement sur PrestaShop ?",
+            "Non. L’audit dépend du site réel : PrestaShop, Shopify, WooCommerce ou autre système. Nous ne revendiquons pas de partenariat officiel."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Audit SEO e-commerce : ce que nous vérifions",
+          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "items": [
+            {
+              "title": "Exploration et facettes",
+              "detail": "Examiner les catégories, les URL à facettes, la pagination et les canoniques."
+            },
+            {
+              "title": "Intention d’achat",
+              "detail": "Relier les pages prioritaires aux recherches pertinentes pour le marché français."
+            },
+            {
+              "title": "Corrections vérifiables",
+              "detail": "Documenter les URL en cause, la priorité et la méthode de validation."
+            }
+          ],
+          "cta": "Décrire mon problème"
+        }
       },
       "google-ads": {
-        "title": "Gestion Google Ads et mesure des conversions en France",
+        "title": "Audit Google Ads, Shopping et conversions e-commerce",
         "description": "Audit Google Ads, campagnes Search et Shopping, qualité du tracking et dépenses sans retour mesurable.",
         "eyebrow": "PUBLICITÉ / GOOGLE ADS",
         "headline": "Le budget part. <em>Mais qu’apporte-t-il ?</em>",
@@ -143,11 +185,34 @@ function mrseo_eu_all(){
           [
             "Pouvez-vous garantir un ROAS ?",
             "Non. Les performances dépendent des marges, du marché et de la qualité des données."
+          ],
+          [
+            "La conformité aux cookies est-elle comprise ?",
+            "Nous examinons les aspects techniques du suivi ; votre conseil juridique doit valider la conformité de la collecte du consentement."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Évaluer l’efficacité des campagnes",
+          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "items": [
+            {
+              "title": "Qualité des conversions",
+              "detail": "Contrôler GA4, les valeurs de commande et le déclenchement des balises selon le consentement."
+            },
+            {
+              "title": "Shopping et Merchant Center",
+              "detail": "Comparer les prix, stocks et attributs du flux aux pages produits."
+            },
+            {
+              "title": "Budget et marges",
+              "detail": "Examiner les produits et requêtes coûteux au regard des ventes réellement mesurées."
+            }
+          ],
+          "cta": "Décrire mon problème"
+        }
       },
       "web-development": {
-        "title": "Développement de sites et d’outils web sur mesure",
+        "title": "Développement web, CRM et intégrations API en France",
         "description": "Développement WordPress, boutiques, CRM, automatisations, API et interfaces internes adaptés aux processus réels.",
         "eyebrow": "DÉVELOPPEMENT / WEB",
         "headline": "Votre équipe contourne <em>les limites de ses outils ?</em>",
@@ -178,15 +243,38 @@ function mrseo_eu_all(){
           [
             "Créez-vous des applications SaaS ?",
             "Nous pouvons étudier la faisabilité d’un produit SaaS, CRM ou tableau de bord et définir son périmètre."
+          ],
+          [
+            "Une intégration suffit-elle sans refaire le site ?",
+            "Souvent, la question mérite d’être étudiée. Nous examinons les API et les risques avant de proposer un développement."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Développement utile, sans refonte systématique",
+          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "items": [
+            {
+              "title": "Processus métier",
+              "detail": "Décrire comment commandes, ERP, CRM et catalogue échangent les données."
+            },
+            {
+              "title": "Faisabilité API",
+              "detail": "Vérifier l’accès technique, les contraintes de sécurité et les risques pour l’existant."
+            },
+            {
+              "title": "Livraison par étapes",
+              "detail": "Définir un premier module testable, son acceptation et sa maintenance."
+            }
+          ],
+          "cta": "Décrire mon problème"
+        }
       },
       "contact": {
         "title": "Contacter MrSeo.tech : SEO, Google Ads et développement",
         "description": "Parlez-nous de votre site et du problème à résoudre. Un premier diagnostic commence par des faits, pas un forfait.",
         "eyebrow": "CONTACT / PROJET",
         "headline": "Quel obstacle <em>ralentit votre activité ?</em>",
-        "lead": "Envoyez l’adresse de votre site, le marché visé et ce qui ne fonctionne pas. Nous répondons par e-mail après avoir étudié la demande.",
+        "lead": "Envoyez l’adresse de votre site, le marché visé et ce qui ne fonctionne pas. Nous répondons par e-mail après avoir étudié la demande. Précisez la plateforme, les catégories concernées et le résultat souhaité. N’envoyez aucun mot de passe.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -216,7 +304,13 @@ function mrseo_eu_all(){
       "Droits et contact",
       "Vous pouvez demander l’accès, la correction ou la suppression des données selon le droit applicable. Écrivez à hello@mrseo.tech. L’identité juridique du responsable sera publiée après vérification.",
       "En envoyant ce formulaire, vous transmettez des données pour recevoir une réponse. Détails :"
-    ]
+    ],
+    "market": {
+      "heading": "Un audit adapté aux boutiques françaises",
+      "description": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+      "cta": "Décrire mon problème",
+      "brief": "Précisez la plateforme, les catégories concernées et le résultat souhaité. N’envoyez aucun mot de passe."
+    }
   },
   "it": {
     "code": "it-IT",
@@ -252,7 +346,7 @@ function mrseo_eu_all(){
     ],
     "pages": {
       "": {
-        "title": "SEO, Google Ads e sviluppo web per aziende italiane",
+        "title": "Consulenza SEO, Google Ads e sviluppo web in Italia",
         "description": "MrSeo.tech aiuta ad affrontare scarsa visibilità, campagne costose, tracciamenti incoerenti e limiti tecnici del sito.",
         "eyebrow": "SITO WEB / CLIENTI / RISULTATI",
         "headline": "Il sito c’è. <em>Ma i clienti arrivano?</em>",
@@ -284,10 +378,29 @@ function mrseo_eu_all(){
             "Avete una sede in Italia?",
             "No. Lavoriamo a distanza, concordando tempi, lingua e obiettivi prima di avviare il progetto."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Da dove inizia il miglioramento ?",
+          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "items": [
+            {
+              "title": "Catalogo organico",
+              "detail": "Individuare le categorie importanti che non intercettano domande commerciali."
+            },
+            {
+              "title": "Acquisti misurati",
+              "detail": "Confrontare ordini, valori e conversioni riportate dai sistemi pubblicitari."
+            },
+            {
+              "title": "Lavoro ripetitivo",
+              "detail": "Valutare passaggi manuali tra negozio, magazzino e amministrazione."
+            }
+          ],
+          "cta": "Descrivi il problema"
+        }
       },
       "seo": {
-        "title": "Consulenza SEO tecnica ed e-commerce per siti italiani",
+        "title": "Audit SEO per e-commerce: categorie, filtri e index",
         "description": "SEO per categorie, filtri, pagine prodotto e servizi: controlli tecnici e un piano di implementazione verificabile.",
         "eyebrow": "SEO / ORGANICO",
         "headline": "Le pagine giuste <em>non compaiono su Google?</em>",
@@ -318,11 +431,34 @@ function mrseo_eu_all(){
           [
             "Promettete un primo posto su Google?",
             "No: i posizionamenti non sono garantibili. Verifichiamo interventi e segnali osservabili."
+          ],
+          [
+            "L’audit include anche le correzioni ?",
+            "Il documento di audit e le attività di implementazione sono servizi distinti; ambito e costi vanno concordati prima."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Controlli SEO utili al tuo e-commerce",
+          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "items": [
+            {
+              "title": "Struttura e URL",
+              "detail": "Analizzare categorie, filtri, canonical e paginazione senza creare pagine duplicate."
+            },
+            {
+              "title": "Domanda commerciale",
+              "detail": "Dare priorità alle pagine legate alle ricerche con intenzione di acquisto."
+            },
+            {
+              "title": "Piano operativo",
+              "detail": "Fornire esempi, cause e una sequenza di correzioni verificabili."
+            }
+          ],
+          "cta": "Descrivi il problema"
+        }
       },
       "google-ads": {
-        "title": "Google Ads e Shopping: audit e gestione per aziende italiane",
+        "title": "Audit Google Ads e Shopping: misurazione e feed prodotti",
         "description": "Analisi Google Ads, conversioni GA4, campagne Shopping e qualità dei dati Merchant Center.",
         "eyebrow": "GOOGLE ADS / EFFICIENZA",
         "headline": "Investi in annunci. <em>Qual è il ritorno reale?</em>",
@@ -353,11 +489,34 @@ function mrseo_eu_all(){
           [
             "Garantite un risultato economico?",
             "Non garantiamo vendite o ROAS: dipendono anche dal sito, dai prezzi e dal mercato."
+          ],
+          [
+            "Il budget media è incluso ?",
+            "No. La spesa pubblicitaria è distinta dal costo dell’analisi o della gestione."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Il controllo della spesa parte dai dati",
+          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "items": [
+            {
+              "title": "Ordini e conversioni",
+              "detail": "Verificare purchase, transaction_id, GA4 e conversioni principali di Ads."
+            },
+            {
+              "title": "Qualità del feed",
+              "detail": "Controllare disponibilità, prezzo e informazioni di Merchant Center."
+            },
+            {
+              "title": "Categorie e marginalità",
+              "detail": "Distinguere prodotti con vendite misurate da quelli che assorbono budget."
+            }
+          ],
+          "cta": "Descrivi il problema"
+        }
       },
       "web-development": {
-        "title": "Sviluppo web, WordPress, CRM e automazioni su misura",
+        "title": "Sviluppo web su misura, CRM e integrazioni API",
         "description": "Realizziamo siti, negozi online, dashboard, integrazioni API e strumenti operativi quando risolvono un problema concreto.",
         "eyebrow": "SVILUPPO / AUTOMAZIONE",
         "headline": "Il software dovrebbe <em>semplificare il lavoro.</em>",
@@ -388,15 +547,38 @@ function mrseo_eu_all(){
           [
             "Costruite anche prodotti SaaS?",
             "Possiamo progettare applicazioni SaaS e CRM dopo aver chiarito ambito, costi e responsabilità."
+          ],
+          [
+            "Possiamo collegare il gestionale al negozio ?",
+            "Dipende dalle API e dalla qualità dei dati. Prima esaminiamo la fattibilità tecnica."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Automazioni che riducono gli errori",
+          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "items": [
+            {
+              "title": "Analisi dei flussi",
+              "detail": "Mappare ordini, CRM, magazzino e strumenti gestionali."
+            },
+            {
+              "title": "Integrazioni esistenti",
+              "detail": "Valutare API, plugin e vincoli della piattaforma in uso."
+            },
+            {
+              "title": "Verifica delle consegne",
+              "detail": "Prevedere controlli sulle sincronizzazioni e una gestione dei fallimenti."
+            }
+          ],
+          "cta": "Descrivi il problema"
+        }
       },
       "contact": {
         "title": "Contatta MrSeo.tech per SEO, Ads o sviluppo web",
         "description": "Descrivi il sito e l’ostacolo che vuoi risolvere. Rispondiamo dopo aver esaminato la richiesta.",
         "eyebrow": "CONTATTO / PROGETTO",
         "headline": "Cosa sta frenando <em>la tua attività?</em>",
-        "lead": "Inserisci l’URL, il Paese di riferimento e un breve esempio di ciò che non funziona. Non inviare credenziali o dati riservati.",
+        "lead": "Inserisci l’URL, il Paese di riferimento e un breve esempio di ciò che non funziona. Non inviare credenziali o dati riservati. Indica piattaforma, numero approssimativo di prodotti e difficoltà principale. Non condividere credenziali.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -426,7 +608,13 @@ function mrseo_eu_all(){
       "Diritti e contatto",
       "In base alla legge applicabile puoi chiedere accesso, rettifica o cancellazione scrivendo a hello@mrseo.tech. L’identità giuridica del titolare sarà pubblicata dopo la verifica.",
       "Inviando il modulo, fornisci i dati per ricevere risposta. Dettagli:"
-    ]
+    ],
+    "market": {
+      "heading": "Prima il problema del negozio, poi il servizio",
+      "description": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+      "cta": "Descrivi il problema",
+      "brief": "Indica piattaforma, numero approssimativo di prodotti e difficoltà principale. Non condividere credenziali."
+    }
   },
   "es": {
     "code": "es-ES",
@@ -462,7 +650,7 @@ function mrseo_eu_all(){
     ],
     "pages": {
       "": {
-        "title": "Agencia SEO, Google Ads y desarrollo web para empresas en España",
+        "title": "SEO ecommerce, Google Ads y desarrollo web en España",
         "description": "SEO técnico, anuncios, medición y desarrollo para resolver obstáculos reales de captación de clientes.",
         "eyebrow": "SEO / ADS / TECNOLOGÍA",
         "headline": "Tienes web. <em>¿Pero llegan clientes?</em>",
@@ -494,10 +682,29 @@ function mrseo_eu_all(){
             "¿Tenéis oficina en España?",
             "No. Prestamos servicios a distancia y acordamos la comunicación antes del proyecto."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Detectamos dónde se pierde la oportunidad",
+          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "items": [
+            {
+              "title": "Categorías sin búsquedas",
+              "detail": "Comprobar páginas que deberían responder a una intención de compra."
+            },
+            {
+              "title": "Presupuesto mal medido",
+              "detail": "Contrastar los datos de GA4 y Ads con pedidos y solicitudes reales."
+            },
+            {
+              "title": "Procesos desconectados",
+              "detail": "Localizar tareas manuales entre tienda, inventario y CRM."
+            }
+          ],
+          "cta": "Contar qué falla en mi tienda"
+        }
       },
       "seo": {
-        "title": "SEO técnico y posicionamiento para empresas en España",
+        "title": "Auditoría SEO ecommerce: categorías, filtros e indexación",
         "description": "Auditoría SEO de indexación, categorías, arquitectura, contenidos y enlaces internos orientados a búsquedas comerciales.",
         "eyebrow": "SEO / BÚSQUEDAS",
         "headline": "¿Google ignora <em>tus páginas importantes?</em>",
@@ -528,11 +735,34 @@ function mrseo_eu_all(){
           [
             "¿Garantizáis aparecer primero?",
             "No. Podemos definir y verificar mejoras, pero las posiciones dependen de los buscadores."
+          ],
+          [
+            "¿Trabajáis con tiendas PrestaShop y WooCommerce?",
+            "Se pueden evaluar sus problemas de indexación y estructura. Antes de intervenir revisamos la configuración real."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Qué se revisa en una auditoría ecommerce",
+          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "items": [
+            {
+              "title": "Rastreo",
+              "detail": "Evaluar URL, paginación, canonical, filtros y enlaces internos."
+            },
+            {
+              "title": "Búsquedas comerciales",
+              "detail": "Relacionar las páginas relevantes con las consultas de compra en España."
+            },
+            {
+              "title": "Plan de mejoras",
+              "detail": "Entregar incidencias concretas por URL con prioridad y método de comprobación."
+            }
+          ],
+          "cta": "Contar qué falla en mi tienda"
+        }
       },
       "google-ads": {
-        "title": "Gestión y auditoría de Google Ads para empresas en España",
+        "title": "Auditoría Google Ads, Shopping y conversiones de venta",
         "description": "Campañas de búsqueda, Shopping y Performance Max con medición real de solicitudes y ventas.",
         "eyebrow": "GOOGLE ADS / CONVERSIONES",
         "headline": "¿Pagas por clics <em>sin saber qué venden?</em>",
@@ -563,11 +793,34 @@ function mrseo_eu_all(){
           [
             "¿Garantizáis un ROAS específico?",
             "No. Para analizar rentabilidad hacen falta márgenes, ventas y datos fiables."
+          ],
+          [
+            "¿Incluye Performance Max y Merchant Center?",
+            "Si forman parte del negocio, pueden entrar en el diagnóstico. Acordaremos los límites y accesos antes del trabajo."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Optimizar sin perder de vista los pedidos",
+          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "items": [
+            {
+              "title": "Eventos y duplicidades",
+              "detail": "Revisar purchase, valor, objetivos principales y eventos repetidos."
+            },
+            {
+              "title": "Feed y catálogo",
+              "detail": "Contrastar Merchant Center con precios, stock y fichas reales."
+            },
+            {
+              "title": "Gasto y margen",
+              "detail": "Analizar consultas y productos según costes y resultados comerciales disponibles."
+            }
+          ],
+          "cta": "Contar qué falla en mi tienda"
+        }
       },
       "web-development": {
-        "title": "Desarrollo web, WordPress, CRM e integraciones a medida",
+        "title": "Desarrollo web a medida, CRM y automatización",
         "description": "Webs y tiendas online, automatización, API, paneles y soluciones SaaS para procesos de negocio.",
         "eyebrow": "DESARROLLO / SISTEMAS",
         "headline": "¿La tecnología de tu empresa <em>te hace perder tiempo?</em>",
@@ -598,15 +851,38 @@ function mrseo_eu_all(){
           [
             "¿Podéis desarrollar SaaS?",
             "Podemos estudiar su viabilidad y construir un alcance técnico antes de presupuestar."
+          ],
+          [
+            "¿Es necesario rehacer la tienda?",
+            "No siempre. Primero evaluamos si una mejora puntual o integración resuelve el problema."
           ]
-        ]
+        ],
+        "offer": {
+          "title": "Una integración antes que una reforma innecesaria",
+          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "items": [
+            {
+              "title": "Operaciones",
+              "detail": "Entender el recorrido de pedidos, ERP y CRM."
+            },
+            {
+              "title": "Viabilidad",
+              "detail": "Evaluar API, plugins y riesgos de la infraestructura actual."
+            },
+            {
+              "title": "Entrega controlada",
+              "detail": "Definir un piloto con pruebas, seguridad y mantenimiento."
+            }
+          ],
+          "cta": "Contar qué falla en mi tienda"
+        }
       },
       "contact": {
         "title": "Contacto para SEO, Google Ads y desarrollo | MrSeo.tech",
         "description": "Cuéntanos cuál es el principal obstáculo de tu web o negocio y en qué mercado trabajas.",
         "eyebrow": "CONTACTO / SOLUCIÓN",
         "headline": "¿Qué está impidiendo <em>que crezca tu negocio?</em>",
-        "lead": "Comparte la dirección de la web, el país de destino y el síntoma que te preocupa. Evaluaremos el punto de partida.",
+        "lead": "Comparte la dirección de la web, el país de destino y el síntoma que te preocupa. Evaluaremos el punto de partida. Indica plataforma, mercado de venta, URL y un ejemplo concreto. No compartas contraseñas.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -636,7 +912,13 @@ function mrseo_eu_all(){
       "Derechos y contacto",
       "Puedes solicitar acceso, rectificación o supresión, según la ley aplicable, en hello@mrseo.tech. Publicaremos la identidad legal del responsable tras su verificación.",
       "Al enviar el formulario, facilitas datos para recibir respuesta. Detalles:"
-    ]
+    ],
+    "market": {
+      "heading": "Ecommerce: primero medir, después invertir",
+      "description": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+      "cta": "Contar qué falla en mi tienda",
+      "brief": "Indica plataforma, mercado de venta, URL y un ejemplo concreto. No compartas contraseñas."
+    }
   },
   "nl": {
     "code": "nl-NL",
