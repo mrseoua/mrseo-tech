@@ -3,7 +3,7 @@ if(!defined('ABSPATH')) exit;
 $lang=mrseo_locale();$slug=mrseo_slug();$eu=mrseo_eu_market($lang);$page=mrseo_eu_page($lang,$slug);
 if(!$eu||!$page){status_header(404);include get_404_template();return;}
 $ui=$eu['ui'];$nav=$eu['nav'];$is_home=$slug==='';
-get_header('eu');
+get_header();
 ?>
 <?php if($slug==='privacy'):?>
 <section class="eu-legal eu-section"><div class="eu-container eu-legal-narrow">
@@ -139,4 +139,4 @@ $eu_sectors=mrseo_eu_portfolio_categories($lang);
 <section class="eu-cta"><div class="eu-container"><span class="eu-kicker"><?php echo esc_html($ui[1]);?></span><h2><?php echo esc_html($ui[6]);?></h2><p><?php echo esc_html($ui[16]);?></p><a class="eu-button" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($nav[5]);?> ↗</a></div></section>
 <?php endif;?>
 <?php endif;?>
-<?php get_footer('eu');?>
+<?php get_footer();?>
