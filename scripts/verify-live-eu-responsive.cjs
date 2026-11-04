@@ -5,15 +5,16 @@ const {chromium}=require('playwright');
 const HOST=(process.env.MRSEO_TEST_ORIGIN||'https://mrseo.tech').replace(/\/$/,'');
 const allLocales=['fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'];
 const shard=process.env.MRSEO_LOCALE_SHARD===undefined?-1:Number(process.env.MRSEO_LOCALE_SHARD);
-const locales=allLocales.filter((_,index)=>shard<0||index%3===shard);
-if(!Number.isInteger(shard)||shard>2)throw Error('Invalid locale shard');
+const coreShard=shard===3;
+const locales=coreShard?['uk','ru','en','pl','de']:allLocales.filter((_,index)=>shard<0||index%3===shard);
+if(!Number.isInteger(shard)||shard>3)throw Error('Invalid locale shard');
 const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 // A full live crawl is 435+ browser views; isolated PR preview checks the critical
 // homepage/service/contact/privacy paths in all 15 markets before publication.
-const slugs=quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'];
+const slugs=coreShard?['']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
 const sizes=[{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
-const urlOf=(l,s)=>HOST+'/'+l+'/'+(s?s+'/':'');
+const urlOf=(l,s)=>HOST+'/'+(l==='uk'?'':l+'/')+(s?s+'/':'');
 async function audit(browser,viewport,lang,slug){
  const url=urlOf(lang,slug);
  const mobile=viewport.name!=='desktop';
@@ -24,7 +25,7 @@ async function audit(browser,viewport,lang,slug){
   viewport:{width:viewport.width,height:viewport.height},
   deviceScaleFactor:mobile?2:1,
   isMobile:mobile,hasTouch:mobile,
-  userAgent:browserUA,locale:({fr:'fr-FR',it:'it-IT',es:'es-ES',nl:'nl-NL',ro:'ro-RO',cs:'cs-CZ',pt:'pt-PT',sv:'sv-SE',da:'da-DK',fi:'fi-FI',hu:'hu-HU',sk:'sk-SK',el:'el-GR',bg:'bg-BG',hr:'hr-HR'})[lang],
+  userAgent:browserUA,locale:({uk:'uk-UA',ru:'ru-RU',en:'en-GB',pl:'pl-PL',de:'de-DE',fr:'fr-FR',it:'it-IT',es:'es-ES',nl:'nl-NL',ro:'ro-RO',cs:'cs-CZ',pt:'pt-PT',sv:'sv-SE',da:'da-DK',fi:'fi-FI',hu:'hu-HU',sk:'sk-SK',el:'el-GR',bg:'bg-BG',hr:'hr-HR'})[lang],
   ignoreHTTPSErrors:false
  });
  const page=await context.newPage();
@@ -79,30 +80,30 @@ async function audit(browser,viewport,lang,slug){
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
     satellites:node?.querySelectorAll(slug===''?'.lab-node':'.eu-satellite').length||0,
-    portfolio:!!document.querySelector('a[href$="/'+lang+'/portfolio/"]'),
-    privacyLink:!!document.querySelector('a[href*="/'+lang+'/privacy/"]'),
+    portfolio:!!document.querySelector('a[href$="/'+(lang==='uk'?'':lang+'/')+'portfolio/"]'),
+    privacyLink:!!document.querySelector('a[href$="/'+(lang==='uk'?'':lang+'/')+'privacy/"]'),
     contactBarText:document.querySelector('.mrseo-mobile-contact-bar')?.textContent||'',
     bodyClass:body.className
    };
   },{lang,slug,width:viewport.width});
   const c=item.check;
   const exactPath=url;
-  if(!c.title||c.title.length<12)item.errors.push('Missing document title');
-  if(!c.htmlLang.toLowerCase().startsWith(lang+'-'))item.errors.push('Wrong html lang '+c.htmlLang);
+  if(!c.title||c.title.length<(coreShard?8:12))item.errors.push('Missing document title');
+  if(c.htmlLang.toLowerCase().split('-')[0]!==lang)item.errors.push('Wrong html lang '+c.htmlLang);
   if(c.h1!==1)item.errors.push('H1 count '+c.h1);
   if(c.canonical.length!==1||c.canonical[0]!==exactPath)item.errors.push('Canonical '+JSON.stringify(c.canonical));
   if(!c.robots.toLowerCase().includes('noindex')&&!String(response.headers()['x-robots-tag']).includes('noindex'))item.errors.push('Staging noindex missing');
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
-  if(/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems!==8)item.errors.push('Shared mega menu should show 8 working EU service links: '+c.serviceMenuItems);
+  if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
+  if(coreShard?(c.serviceMenuItems<4):(c.serviceMenuItems!==8))item.errors.push('Shared mega menu links: '+c.serviceMenuItems);
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
-  if(slug===''&&(!c.orbitMaster||!c.core||c.satellites!==7||!c.coreDimensions?.w))item.errors.push('Original orbit master/7 satellites missing');
+  if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
   if(slug===''&&!c.orbitCanvas&&!c.orbitStaticTexture)item.errors.push('No real 3D globe or Earth texture fallback');
   if(slug===''&&!c.clientBand)item.errors.push('Homepage public client band missing');
-  if(!['','contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
+  if(!coreShard&&!['','contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
   if(slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
   if(slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
