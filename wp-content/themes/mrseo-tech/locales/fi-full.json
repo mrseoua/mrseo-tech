@@ -1,0 +1,686 @@
+{
+  "code": "fi-FI",
+  "name": "Suomi",
+  "country": "Finland",
+  "nav": [
+    "Palvelut",
+    "Hakukoneoptimointi",
+    "Google Ads",
+    "Verkkokehitys",
+    "Yhteystiedot",
+    "Kerro projektistasi",
+    "Tietosuoja"
+  ],
+  "ui": [
+    "Kävijät eivät automaattisesti tarkoita uusia asiakkaita.",
+    "Selvitämme ongelman ennen ratkaisun ehdottamista.",
+    "Mitä tarkistamme",
+    "Miten etenemme",
+    "Mitä saat",
+    "Usein kysytyt kysymykset",
+    "Ota yhteyttä",
+    "Nimi",
+    "Sähköpostiosoite",
+    "Verkkosivusto (valinnainen)",
+    "Kuvaile ongelma",
+    "Lähetä yhteydenotto",
+    "Viesti on välitetty lähetettäväksi. Vastaamme sähköpostitse.",
+    "Tarkista pakolliset kentät.",
+    "Viestin lähetys epäonnistui. Yritä uudelleen.",
+    "Älä lähetä salasanoja tai luottamuksellisia käyttöoikeuksia.",
+    "Toimimme etänä Ukrainasta. Sovimme työkielen ja projektin rajauksen ennen aloitusta."
+  ],
+  "pages": {
+    "": {
+      "title": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa",
+      "description": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa. Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta. Tutkimme löydettävyyden, ostotapahtumien mittauksen ja manuaali",
+      "eyebrow": "MRSEO.TECH",
+      "headline": "Verkkosivusto on olemassa. <em>Mutta tuleeko asiakkaita?</em>",
+      "lead": "Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta. Tutkimme löydettävyyden, ostotapahtumien mittauksen ja manuaaliset työvaiheet ennen ehdotuksia.",
+      "problems": [
+        [
+          "Kävijöitä mutta ei yhteydenottoja",
+          "Sivut eivät välttämättä vastaa asiakkaiden hakutarpeeseen.",
+          "Tutkia hakuaikeen ja yhteydenottopolun yhteyttä."
+        ],
+        [
+          "Mainosbudjetti ilman selvää tulosta",
+          "Raportoidut ostot voivat poiketa todellisista tilauksista.",
+          "Verrata Google Adsia, GA4:ää ja tilausdataa."
+        ],
+        [
+          "Manuaaliset tietosiirrot",
+          "Verkkokauppa ja toiminnanohjausjärjestelmä eivät keskustele.",
+          "Arvioida API-integraation toteutettavuutta."
+        ]
+      ],
+      "outcomes": [
+        "Todennettavat ongelmat",
+        "Priorisoitu toimenpidelista",
+        "Mittarit muutosten seurantaan"
+      ],
+      "faq": [
+        [
+          "Onko teillä toimisto Suomessa?",
+          "Ei. Työskentelemme etänä Ukrainasta ja sovimme viestintäkielen ennen projektia."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta. Tutkimme löydettävyyden, ostotapahtumien mittauksen ja manuaaliset työvaiheet ennen ehdotuksia.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Tutkia hakuaikeen ja yhteydenottopolun yhteyttä."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Verrata Google Adsia, GA4:ää ja tilausdataa."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Arvioida API-integraation toteutettavuutta."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "seo": {
+      "title": "Hakukoneoptimointi yrityksille ja verkkokaupoille",
+      "description": "Hakukoneoptimointi yrityksille ja verkkokaupoille. Hakukoneoptimointi alkaa asiakkaiden tarpeista ja niihin vastaavista sivuista. Tarkistamme sivustorakenteen, sisäiset linkit ja sisällön ennen uusien teks",
+      "eyebrow": "SEO",
+      "headline": "Löytyvätkö tärkeimmät sivut <em>oikeilla hauilla?</em>",
+      "lead": "Hakukoneoptimointi alkaa asiakkaiden tarpeista ja niihin vastaavista sivuista. Tarkistamme sivustorakenteen, sisäiset linkit ja sisällön ennen uusien tekstien suunnittelua.",
+      "problems": [
+        [
+          "Tärkeitä sivuja ei näy",
+          "Hakukone ei löydä olennaisia kategoria- tai palvelusivuja.",
+          "Tarkistaa indeksointi ja sisäinen linkitys."
+        ],
+        [
+          "Rakenne on epäselvä",
+          "Sivut eivät vastaa suomalaisia kaupallisia hakuja.",
+          "Yhdistää tärkeät hakutarkoitukset oikeisiin sivuihin."
+        ],
+        [
+          "Liikenne ei tuo kauppaa",
+          "Kävijä ei ymmärrä palvelua tai seuraavaa askelta.",
+          "Arvioida aloitussivut ja toimintakehotteet."
+        ]
+      ],
+      "outcomes": [
+        "Kaupallisten sivujen kartoitus",
+        "Tekniset ja sisällölliset prioriteetit",
+        "Hakuliikenteen laadun seuranta"
+      ],
+      "faq": [
+        [
+          "Takaatteko ykkössijan Googlessa?",
+          "Emme. Hakusijoituksia ei voi taata; keskitymme todennettaviin muutoksiin."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Hakukoneoptimointi alkaa asiakkaiden tarpeista ja niihin vastaavista sivuista. Tarkistamme sivustorakenteen, sisäiset linkit ja sisällön ennen uusien tekstien suunnittelua.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Tarkistaa indeksointi ja sisäinen linkitys."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Yhdistää tärkeät hakutarkoitukset oikeisiin sivuihin."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Arvioida aloitussivut ja toimintakehotteet."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "seo-audit": {
+      "title": "Tekninen SEO-auditointi: indeksointi ja sivuston rakenne",
+      "description": "Tekninen SEO-auditointi: indeksointi ja sivuston rakenne. Tekninen auditointi osoittaa, mitkä URL-osoitteet ovat ongelmallisia ja miksi. Tutkimme indeksoinnin, canonical-merkinnät, sivuston indeksointia tu",
+      "eyebrow": "SEO / AUDIT",
+      "headline": "Automaattinen SEO-pistemäärä <em>ei vielä korjaa sivustoa.</em>",
+      "lead": "Tekninen auditointi osoittaa, mitkä URL-osoitteet ovat ongelmallisia ja miksi. Tutkimme indeksoinnin, canonical-merkinnät, sivuston indeksointia tukevat linkit ja mobiilikäytön.",
+      "problems": [
+        [
+          "Sivut puuttuvat indeksistä",
+          "HTTP-virheet tai asetukset voivat sulkea tärkeää sisältöä pois.",
+          "Tarkistaa sivukartta ja URL-kohtaiset tiedot."
+        ],
+        [
+          "Suodattimet luovat kopioita",
+          "Parametrit muodostavat keskenään kilpailevia osoitteita.",
+          "Arvioida kanonisointi ja sivutus."
+        ],
+        [
+          "Mobiili latautuu hitaasti",
+          "Raskaat resurssit heikentävät sivun käytettävyyttä.",
+          "Erottaa palvelin- ja käyttöliittymäongelmat."
+        ]
+      ],
+      "outcomes": [
+        "Virheet esimerkki-URL:ien avulla",
+        "Toteutusjärjestys vaikutuksen mukaan",
+        "Tarkistukset korjausten jälkeen"
+      ],
+      "faq": [
+        [
+          "Korjaatteko kaikki virheet auditoinnissa?",
+          "Auditointi ja varsinainen toteutus sovitaan erillisinä työvaiheina."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Tekninen auditointi osoittaa, mitkä URL-osoitteet ovat ongelmallisia ja miksi. Tutkimme indeksoinnin, canonical-merkinnät, sivuston indeksointia tukevat linkit ja mobiilikäytön.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Tarkistaa sivukartta ja URL-kohtaiset tiedot."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Arvioida kanonisointi ja sivutus."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Erottaa palvelin- ja käyttöliittymäongelmat."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "ecommerce-seo": {
+      "title": "Verkkokaupan SEO: kategoriat, suodattimet ja tuotteet",
+      "description": "Verkkokaupan SEO: kategoriat, suodattimet ja tuotteet. Verkkokaupan löydettävyys riippuu kategorioista, suodattimista ja tuotemuunnelmista. Tutkimme esimerkiksi Shopify- tai WooCommerce-kaupan todellisen t",
+      "eyebrow": "ECOMMERCE / SEO",
+      "headline": "Tuotteita on paljon. <em>Löytävätkö ostajat ne?</em>",
+      "lead": "Verkkokaupan löydettävyys riippuu kategorioista, suodattimista ja tuotemuunnelmista. Tutkimme esimerkiksi Shopify- tai WooCommerce-kaupan todellisen toteutuksen väittämättä olevamme virallinen kumppani.",
+      "problems": [
+        [
+          "Kategoriat eivät näy",
+          "Kaupan tärkeät sivut eivät vastaa ostohakuja.",
+          "Tarkistaa kategoriapuut ja sisäiset linkit."
+        ],
+        [
+          "Suodattimet lisäävät kopioita",
+          "Yhdistelmät luovat turhia URL-versioita.",
+          "Erottaa hyödylliset suodatussivut teknisistä variaatioista."
+        ],
+        [
+          "Tuotteet jäävät irrallisiksi",
+          "Muunnelmat ja attribuutit hankaloittavat navigointia.",
+          "Arvioida tuotemallit ja murupolut."
+        ]
+      ],
+      "outcomes": [
+        "Katalogin rakenteen analyysi",
+        "Suodattimien indeksointisuunnitelma",
+        "Tärkeiden kategorioiden seurantatapa"
+      ],
+      "faq": [
+        [
+          "Pitääkö kaikki tuotekuvaukset kirjoittaa uudestaan?",
+          "Ei välttämättä. Ensin selvitetään rakenteen ja indeksoinnin ongelmat."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Verkkokaupan löydettävyys riippuu kategorioista, suodattimista ja tuotemuunnelmista. Tutkimme esimerkiksi Shopify- tai WooCommerce-kaupan todellisen toteutuksen väittämättä olevamme virallinen kumppani.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Tarkistaa kategoriapuut ja sisäiset linkit."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Erottaa hyödylliset suodatussivut teknisistä variaatioista."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Arvioida tuotemallit ja murupolut."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "google-ads": {
+      "title": "Google Ads -auditointi verkkokaupalle",
+      "description": "Google Ads -auditointi verkkokaupalle. Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia. Sen jälkeen arvioimme hakutermit, Shopping-tuotteet ja mittauksen suhteen liiketoimi",
+      "eyebrow": "GOOGLE / ADS",
+      "headline": "Mainonta maksaa. <em>Mitä ostoksia se tuottaa?</em>",
+      "lead": "Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia. Sen jälkeen arvioimme hakutermit, Shopping-tuotteet ja mittauksen suhteen liiketoiminnan katteisiin.",
+      "problems": [
+        [
+          "Konversiot ovat virheellisiä",
+          "Ostotapahtuma saattaa kirjautua kahdesti.",
+          "Verrata tilausnumeroita ja GA4-tapahtumia."
+        ],
+        [
+          "Tuotteet kuluttavat budjettia",
+          "Jotkin tuoteryhmät voivat maksaa ilman vahvistettua myyntiä.",
+          "Tarkastella kustannuksia tuotekategorioittain."
+        ],
+        [
+          "Tuotesyöte ei täsmää",
+          "Merchant Centerin hinta tai saatavuus voi poiketa kaupasta.",
+          "Verrata syötteen tiedot tuotesivuihin."
+        ]
+      ],
+      "outcomes": [
+        "Konversiomittauksen tarkistus",
+        "Kulusignaalien analyysi",
+        "Rajatut testattavat parannukset"
+      ],
+      "faq": [
+        [
+          "Voitteko taata tietyn ROAS-arvon?",
+          "Emme. Tulokseen vaikuttavat myös katteet, markkinat ja mittauksen luotettavuus."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia. Sen jälkeen arvioimme hakutermit, Shopping-tuotteet ja mittauksen suhteen liiketoiminnan katteisiin.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Verrata tilausnumeroita ja GA4-tapahtumia."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Tarkastella kustannuksia tuotekategorioittain."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Verrata syötteen tiedot tuotesivuihin."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "analytics": {
+      "title": "GA4-analytiikka ja konversioseurannan tarkistus",
+      "description": "GA4-analytiikka ja konversioseurannan tarkistus. Kahteen kertaan laskettu osto voi johtaa huonoihin mainontapäätöksiin. Tutkimme GA4:n purchase-tapahtumat, transaction_id-tunnisteet ja erilaisten attribuut",
+      "eyebrow": "ANALYTICS",
+      "headline": "Raportteja on paljon. <em>Voiko lukuihin luottaa?</em>",
+      "lead": "Kahteen kertaan laskettu osto voi johtaa huonoihin mainontapäätöksiin. Tutkimme GA4:n purchase-tapahtumat, transaction_id-tunnisteet ja erilaisten attribuutiomallien vaikutukset.",
+      "problems": [
+        [
+          "Sama tilaus kirjautuu useasti",
+          "Tapahtuman laukaisu voi toistua sivun latautuessa.",
+          "Tarkistaa yksilölliset transaktiotunnukset."
+        ],
+        [
+          "GA4 ja Google Ads eroavat",
+          "Aikaikkunat ja attribuutio eivät välttämättä ole samoja.",
+          "Verrata keskenään vastaavia mittareita."
+        ],
+        [
+          "Suostumuksen tekniset asetukset",
+          "Valitut evästeasetukset vaikuttavat tiedonkeruuseen.",
+          "Testata tagien toimintaa ja erottaa juridinen arviointi."
+        ]
+      ],
+      "outcomes": [
+        "Tapahtumien määrittelykartta",
+        "Toistettavat poikkeamat",
+        "Seurantatestit tuleviin päivityksiin"
+      ],
+      "faq": [
+        [
+          "Pitääkö GA4:n näyttää täsmälleen samat ostot kuin Ads?",
+          "Ei aina. Mittausperiaatteet, attribuutio ja suostumus vaikuttavat eroihin."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Kahteen kertaan laskettu osto voi johtaa huonoihin mainontapäätöksiin. Tutkimme GA4:n purchase-tapahtumat, transaction_id-tunnisteet ja erilaisten attribuutiomallien vaikutukset.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Tarkistaa yksilölliset transaktiotunnukset."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Verrata keskenään vastaavia mittareita."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Testata tagien toimintaa ja erottaa juridinen arviointi."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "web-development": {
+      "title": "Verkkokehitys, CRM ja API-integraatiot",
+      "description": "Verkkokehitys, CRM ja API-integraatiot. Kehitämme verkkosovelluksia ja integraatioita todellisiin liiketoiminnan tarpeisiin. Ensin selvitämme prosessit, käytettävissä olevat rajapinnat ja tietoturvariskit.",
+      "eyebrow": "WEB / DEVELOPMENT",
+      "headline": "Teknologian pitäisi <em>vähentää käsityötä.</em>",
+      "lead": "Kehitämme verkkosovelluksia ja integraatioita todellisiin liiketoiminnan tarpeisiin. Ensin selvitämme prosessit, käytettävissä olevat rajapinnat ja tietoturvariskit.",
+      "problems": [
+        [
+          "Tilaukset kopioidaan järjestelmien välillä",
+          "Verkkokauppa ei siirrä tietoja toiminnanohjaukseen.",
+          "Arvioida rajapinnat ja tietomallit."
+        ],
+        [
+          "Sivusto on vaikea päivittää",
+          "Vanha koodi tekee muutoksista riskialttiita.",
+          "Suunnitella asteittainen uudistaminen."
+        ],
+        [
+          "Raportointi on käsityötä",
+          "Tietoa kootaan useista tiedostoista.",
+          "Määritellä selkeä raportointinäkymä."
+        ]
+      ],
+      "outcomes": [
+        "Rajattu tekninen suunnitelma",
+        "Vaiheittainen toimitus",
+        "Testaus ja ylläpidon vastuut"
+      ],
+      "faq": [
+        [
+          "Voitteko kehittää SaaS-palvelun?",
+          "Voimme arvioida toteutettavuuden, arkkitehtuurin ja kustannukset ennen varsinaista kehitystä."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Kehitämme verkkosovelluksia ja integraatioita todellisiin liiketoiminnan tarpeisiin. Ensin selvitämme prosessit, käytettävissä olevat rajapinnat ja tietoturvariskit.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Arvioida rajapinnat ja tietomallit."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Suunnitella asteittainen uudistaminen."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Määritellä selkeä raportointinäkymä."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "website-design": {
+      "title": "Yrityksen verkkosivuston suunnittelu ja toteutus",
+      "description": "Yrityksen verkkosivuston suunnittelu ja toteutus. Suunnittelemme yrityssivustoja, joista palvelut löytyvät ja yhteydenotto on helppoa. Sisältörakenne ja mobiilikäytettävyys ratkaisevat enemmän kuin koriste",
+      "eyebrow": "WEBSITE / DESIGN",
+      "headline": "Hyvä verkkosivusto <em>ohjaa asiakkaan eteenpäin.</em>",
+      "lead": "Suunnittelemme yrityssivustoja, joista palvelut löytyvät ja yhteydenotto on helppoa. Sisältörakenne ja mobiilikäytettävyys ratkaisevat enemmän kuin koristeet.",
+      "problems": [
+        [
+          "Palvelut jäävät epäselviksi",
+          "Kävijä ei tunnista sopivaa ratkaisua.",
+          "Järjestää palvelusivut asiakastarpeiden mukaan."
+        ],
+        [
+          "Puhelimella on hankalaa",
+          "Pieni teksti ja painikkeet vaikeuttavat käyttöä.",
+          "Suunnitella luettava responsiivinen näkymä."
+        ],
+        [
+          "Sisältöä on vaikea päivittää",
+          "Tekninen rakenne sitoo jokaisen muutoksen kehittäjään.",
+          "Valita ylläpidettävät komponentit."
+        ]
+      ],
+      "outcomes": [
+        "Sivukartta ja sisältötarpeet",
+        "Mobiiliystävällinen toteutus",
+        "Testatut lomakkeet ja linkit"
+      ],
+      "faq": [
+        [
+          "Teettekö WordPress-sivustoja?",
+          "Kyllä, jos WordPress sopii tietoturvan ja ylläpidon vaatimuksiin."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Suunnittelemme yrityssivustoja, joista palvelut löytyvät ja yhteydenotto on helppoa. Sisältörakenne ja mobiilikäytettävyys ratkaisevat enemmän kuin koristeet.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Järjestää palvelusivut asiakastarpeiden mukaan."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Suunnitella luettava responsiivinen näkymä."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Valita ylläpidettävät komponentit."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "online-shop-development": {
+      "title": "Verkkokaupan kehitys ja järjestelmäintegraatiot",
+      "description": "Verkkokaupan kehitys ja järjestelmäintegraatiot. Verkkokauppa tarvitsee tuotteiden lisäksi maksut, toimitukset, varaston ja tilausten käsittelyn. Valitsemme alustan ja integraatiot todellisten prosessien p",
+      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "headline": "Verkkokaupan pitää myydä. <em>Ja toimia arjessa.</em>",
+      "lead": "Verkkokauppa tarvitsee tuotteiden lisäksi maksut, toimitukset, varaston ja tilausten käsittelyn. Valitsemme alustan ja integraatiot todellisten prosessien perusteella.",
+      "problems": [
+        [
+          "Tuotetiedot ovat epäyhtenäisiä",
+          "Muunnelmista ja attribuuteista puuttuu selkeä malli.",
+          "Suunnitella kategoriat ja tuoterakenne."
+        ],
+        [
+          "Ostopolku katkeaa",
+          "Kassa voi vaatia tarpeettomia vaiheita.",
+          "Testata ostaminen eri laitteilla."
+        ],
+        [
+          "Varasto päivittyy käsin",
+          "Myynti ja toiminnanohjaus eivät vaihda tietoja.",
+          "Selvittää API-yhteyksien mahdollisuudet."
+        ]
+      ],
+      "outcomes": [
+        "Toiminnalliset vaatimukset ja alustavalinta",
+        "Testattu ostotapahtuma",
+        "Integraatio- ja ylläpitosuunnitelma"
+      ],
+      "faq": [
+        [
+          "Voiko nykyisen verkkokaupan siirtää?",
+          "Siirto vaatii erillisen arvion datasta, URL-osoitteista, uudelleenohjauksista ja toimituskatkoista."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Verkkokauppa tarvitsee tuotteiden lisäksi maksut, toimitukset, varaston ja tilausten käsittelyn. Valitsemme alustan ja integraatiot todellisten prosessien perusteella.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Suunnitella kategoriat ja tuoterakenne."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Testata ostaminen eri laitteilla."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Selvittää API-yhteyksien mahdollisuudet."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "about": {
+      "title": "Tietoa MrSeo.tech-tiimistä ja toimintatavastamme",
+      "description": "Tietoa MrSeo.tech-tiimistä ja toimintatavastamme. Olemme pieni ammattilaistiimi, jolla on kymmenen vuoden kokemus SEO:sta, Google Adsista ja verkkokehityksestä. Toimimme etänä Ukrainasta ja määrittelemme o",
+      "eyebrow": "ABOUT",
+      "headline": "Pieni tiimi. <em>Selkeä toimintatapa.</em>",
+      "lead": "Olemme pieni ammattilaistiimi, jolla on kymmenen vuoden kokemus SEO:sta, Google Adsista ja verkkokehityksestä. Toimimme etänä Ukrainasta ja määrittelemme ongelman ennen palvelusuositusta.",
+      "problems": [
+        [
+          "Todellinen syy ratkaisee",
+          "Lisää mainontaa ei aina korjaa konversiota.",
+          "Tarkastella koko asiakaspolkua."
+        ],
+        [
+          "Vastuut sovitaan",
+          "Asiakkaan pitää tietää, kuka toteuttaa muutokset.",
+          "Määritellä vaiheet ja hyväksyntä."
+        ],
+        [
+          "Ei katteettomia lupauksia",
+          "Sijoitus- ja myyntitakuut ovat epäluotettavia.",
+          "Kuvata epävarmuudet ja seurantatapa."
+        ]
+      ],
+      "outcomes": [
+        "Suora yhteydenpito",
+        "Läpinäkyvät prioriteetit",
+        "Todennettavat työtulokset"
+      ],
+      "faq": [],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Olemme pieni ammattilaistiimi, jolla on kymmenen vuoden kokemus SEO:sta, Google Adsista ja verkkokehityksestä. Toimimme etänä Ukrainasta ja määrittelemme ongelman ennen palvelusuositusta.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Tarkastella koko asiakaspolkua."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Määritellä vaiheet ja hyväksyntä."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Kuvata epävarmuudet ja seurantatapa."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "portfolio": {
+      "title": "MrSeo.techin projektit ja toteutusesimerkit",
+      "description": "MrSeo.techin projektit ja toteutusesimerkit. Esittelemme julkisia sivustoja portfoliostamme eri toimialoilta. Emme väitä niiden olevan suomalaisia asiakkaita tai kerro luottamuksellisia tuloksia ilman lupa",
+      "eyebrow": "PORTFOLIO",
+      "headline": "Julkisia projekteja. <em>Ei keksittyjä tuloksia.</em>",
+      "lead": "Esittelemme julkisia sivustoja portfoliostamme eri toimialoilta. Emme väitä niiden olevan suomalaisia asiakkaita tai kerro luottamuksellisia tuloksia ilman lupaa.",
+      "problems": [
+        [
+          "Autoalan verkkokaupat",
+          "Laajat valikoimat tarvitsevat selkeät kategoriat.",
+          "Tutustua julkisiin tuoteluetteloihin."
+        ],
+        [
+          "Muoti ja tarvikkeet",
+          "Vaihtoehdot on esitettävä ymmärrettävästi.",
+          "Katsoa erilaisia verkkokaupparatkaisuja."
+        ],
+        [
+          "Asiantuntijapalvelut",
+          "Luottamus ja yhteydenotto ovat keskeisiä.",
+          "Tutustua palvelusivustojen esimerkkeihin."
+        ]
+      ],
+      "outcomes": [
+        "Julkiset verkkosivuesimerkit",
+        "Eri alojen työympäristöjä",
+        "Asiakastietojen luottamuksellisuus"
+      ],
+      "faq": [
+        [
+          "Ovatko esimerkit Suomesta?",
+          "Emme esitä sivustoja suomalaisina asiakkuuksina ilman vahvistusta."
+        ]
+      ],
+      "offer": {
+        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
+        "intro": "Esittelemme julkisia sivustoja portfoliostamme eri toimialoilta. Emme väitä niiden olevan suomalaisia asiakkaita tai kerro luottamuksellisia tuloksia ilman lupaa.",
+        "items": [
+          {
+            "title": "Selvitämme lähtötilanteen",
+            "detail": "Tutustua julkisiin tuoteluetteloihin."
+          },
+          {
+            "title": "Priorisoimme korjaukset",
+            "detail": "Katsoa erilaisia verkkokaupparatkaisuja."
+          },
+          {
+            "title": "Varmistamme vaikutukset",
+            "detail": "Tutustua palvelusivustojen esimerkkeihin."
+          }
+        ],
+        "cta": "Kerro verkkosivustosi ongelmasta"
+      }
+    },
+    "contact": {
+      "title": "Ota yhteyttä verkkosivustosi ongelmasta",
+      "description": "Ota yhteyttä verkkosivustosi ongelmasta. Lähetä sivustosi osoite, kohdemaa ja esimerkki ongelmasta. Lyhytkin kuvaus riittää alustavan arvion lähtökohdaksi.",
+      "eyebrow": "CONTACT",
+      "headline": "Mikä estää <em>uusien asiakkaiden saamista?</em>",
+      "lead": "Lähetä sivustosi osoite, kohdemaa ja esimerkki ongelmasta. Lyhytkin kuvaus riittää alustavan arvion lähtökohdaksi. Kerro käyttämäsi verkkokauppa-alusta, kohdemaa ja konkreettinen esimerkki ongelmasta. Älä lähetä salasanoja.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    },
+    "privacy": {
+      "title": "Tietosuoja ja yhteydenottotietojen käsittely",
+      "description": "Näin käsittelemme MrSeo.techin yhteydenottolomakkeen tietoja.",
+      "eyebrow": "PRIVACY",
+      "headline": "Tietosuoja ja yhteydenotot",
+      "lead": "Näin käsittelemme MrSeo.techin yhteydenottolomakkeen tietoja.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    }
+  },
+  "privacy": [
+    "Tietosuoja ja yhteydenotot",
+    "Näin käsittelemme MrSeo.techin yhteydenottolomakkeen tietoja.",
+    "Toimitettavat tiedot",
+    "Nimi, sähköpostiosoite, valinnainen verkkosivusto ja viesti. Väliaikaiset tekniset tiedot auttavat roskapostin torjunnassa.",
+    "Käyttötarkoitus",
+    "Käytämme tietoja yhteydenottoon vastaamiseen ja mahdollisen yhteistyön selvittämiseen pyydettäessä.",
+    "Viestin toimitus",
+    "Viesti lähetetään osoitteeseen hello@mrseo.tech ja edelleen työpostilaatikkoon UKR.NET-palvelussa. Hosting- ja sähköpostipalvelut osallistuvat tekniseen käsittelyyn.",
+    "Säilytys",
+    "Viestit säilytetään asian käsittelyn ja mahdollisten lakisääteisten velvoitteiden edellyttämän ajan. Tarkka säilytysaika määritellään ennen julkista julkaisua.",
+    "Oikeudet ja yhteystiedot",
+    "Sovellettavan lain mukaan voit pyytää tietojesi tarkastamista, oikaisua tai poistamista osoitteesta hello@mrseo.tech. Vahvistetun rekisterinpitäjän tiedot julkaistaan ennen avaamista.",
+    "Lähettämällä lomakkeen annat tiedot vastaamista varten. Lisätietoja:"
+  ],
+  "market": {
+    "heading": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa",
+    "description": "Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta. Tutkimme löydettävyyden, ostotapahtumien mittauksen ja manuaaliset työvaiheet ennen ehdotuksia.",
+    "cta": "Kerro verkkosivustosi ongelmasta",
+    "brief": "Kerro käyttämäsi verkkokauppa-alusta, kohdemaa ja konkreettinen esimerkki ongelmasta. Älä lähetä salasanoja.",
+    "portfolioLabel": "Projektit"
+  },
+  "serviceLabels": {
+    "seo": "Hakukoneoptimointi",
+    "seo-audit": "Tekninen SEO-auditointi",
+    "ecommerce-seo": "Verkkokaupan SEO",
+    "google-ads": "Google Ads",
+    "analytics": "GA4-analytiikka",
+    "web-development": "Räätälöity verkkokehitys",
+    "website-design": "Yrityssivuston toteutus",
+    "online-shop-development": "Verkkokaupan kehitys",
+    "about": "Meistä",
+    "portfolio": "Projektit",
+    "contact": "Yhteystiedot"
+  },
+  "portfolioCategories": {
+    "auto": "AUTOILU",
+    "fashion": "MUOTI",
+    "home": "KOTI",
+    "electronics": "ELEKTRONIIKKA",
+    "medical": "TERVEYS"
+  }
+}
