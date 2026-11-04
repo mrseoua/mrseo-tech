@@ -66,6 +66,9 @@ async function audit(browser,viewport,lang,slug){
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
+    orbitStylesheet:!!document.querySelector('link[href*="orbit-scene.css"]'),
+    legacyEuStylesheet:!!document.querySelector('link[href*="eu-expansion.css"]'),
+    sharedHomepageVisual:!!document.querySelector('.orbit-lab .lab-shell .lab-visual .lab-core')&&!!document.querySelector('.orbit-lab .lab-connectors #lab-spokes'),
     orbitCanvas:!!document.querySelector('.orbit-lab canvas.lab-webgl-canvas'),
     orbitStaticTexture:earth?getComputedStyle(earth,'::before').backgroundImage.includes('earth-day.jpg'):false,
     clientBand:!!document.querySelector('.client-band-home'),
@@ -105,6 +108,9 @@ async function audit(browser,viewport,lang,slug){
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
   if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
   if(slug===''&&!c.orbitCanvas&&!c.orbitStaticTexture)item.errors.push('No real 3D globe or Earth texture fallback');
+  if(slug===''&&(!c.orbitStylesheet||!c.sharedHomepageVisual))item.errors.push('Not using the exact approved shared 3D homepage visual');
+  if(slug===''&&!coreShard&&c.legacyEuStylesheet)item.errors.push('EU landing stylesheet leaked onto unified homepage');
+  if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
