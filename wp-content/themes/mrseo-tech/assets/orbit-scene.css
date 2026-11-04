@@ -134,8 +134,23 @@
 }
 
 /* Full-bleed hero — eliminate exposed side gutters even if a layout wrapper constrains main. */
-body:has(main.orbit-lab){background-color:#171d20!important;overflow-x:clip}
-main.orbit-lab{
+/* header.php renders <main id="main"><div class="orbit-lab">.
+   The previous main.orbit-lab selector never matched that real DOM, so its
+   full-bleed rules never ran and left the outer navy-coloured gutters visible.
+   These rules affect homepages only; they never touch service pages. */
+body:has(#main > .orbit-lab) #main{
+  display:block;
+  box-sizing:border-box;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:#171d20!important;
+}
+
+body:has(#main > .orbit-lab){background-color:#171d20!important;overflow-x:clip}
+#main > .orbit-lab{
   display:block;
   position:relative!important;
   box-sizing:border-box!important;
@@ -152,13 +167,13 @@ main.orbit-lab{
   background-image:none!important;
   box-shadow:none!important;
 }
-main.orbit-lab::before{
+#main > .orbit-lab::before{
   inset:0!important;
   border:0!important;
   background:radial-gradient(ellipse 58% 73% at 73% 47%,rgba(15,55,78,.22),transparent 75%),#171d20!important;
   opacity:1!important;
 }
-main.orbit-lab>.lab-shell{
+#main > .orbit-lab>.lab-shell{
   background-color:transparent!important;
   box-shadow:none!important;
   border-left:0!important;
