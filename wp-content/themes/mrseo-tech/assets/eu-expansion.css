@@ -105,3 +105,14 @@
 @media(max-width:790px){.mrseo-eu .eu-container{width:calc(100% - 36px)}.mrseo-eu .eu-header-inner{width:calc(100% - 28px);min-height:68px;gap:12px}.mrseo-eu .eu-nav{display:none}.mrseo-eu .eu-mobile-menu{display:block}.mrseo-eu .mrseo-language-dropdown{margin-left:auto}.mrseo-eu .eu-check-grid{grid-template-columns:1fr}.mrseo-eu .eu-outcomes-grid,.mrseo-eu .eu-faq-grid,.mrseo-eu .eu-contact-layout{grid-template-columns:1fr}.mrseo-eu .eu-hero{padding:56px 0 72px}.mrseo-eu .eu-hero h1{font-size:clamp(41px,9vw,68px)}}
 @media(max-width:540px){.mrseo-eu .eu-brand{font-size:23px}.mrseo-eu .eu-hero h1{font-size:clamp(38px,10vw,50px)}.mrseo-eu .eu-orbit-scene{height:auto;min-height:0;padding:30px 12px 19px;display:flex;flex-direction:column;align-items:center;gap:25px}.mrseo-eu .eu-orbit-ring,.mrseo-eu .eu-orbit-lines{display:none}.mrseo-eu .eu-earth-core{position:relative;top:auto;left:auto;transform:none;width:205px;height:205px;max-width:100%}.mrseo-eu .eu-satellites{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}.mrseo-eu .eu-satellite{position:static;max-width:none;min-height:49px;font-size:11px;padding:8px;transform:none!important}.mrseo-eu .eu-service-scene{padding:22px;min-height:390px}.mrseo-eu .eu-scene-core{font-size:56px}.mrseo-eu .eu-scene-row strong{font-size:12px}.mrseo-eu .eu-footer-layout{flex-direction:column}.mrseo-eu .eu-cta{padding:65px 0}}
 @media(prefers-reduced-motion:reduce){.mrseo-eu .eu-orbit-ring{animation:none}.mrseo-eu .eu-button,.mrseo-eu .eu-header-cta,.mrseo-eu .eu-satellite{transition:none}}
+
+/* Market-specific conversion-oriented audit scope — no fake certifications or results. */
+.mrseo-eu .eu-market-offer{background:#f4f0e9;border-top:1px solid #e1d9ce;border-bottom:1px solid #e1d9ce}
+.mrseo-eu .eu-market-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(28px,6vw,94px);align-items:end;margin-bottom:35px}
+.mrseo-eu .eu-market-heading h2{margin:14px 0 0}
+.mrseo-eu .eu-market-heading p{font-size:16px;line-height:1.75;color:#555f57;margin:0 0 21px}
+.mrseo-eu .eu-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.mrseo-eu .eu-offer-card{padding:27px 26px 30px;background:#fffdf8;border:1px solid #dcd4c8;border-radius:16px;min-width:0}
+.mrseo-eu .eu-offer-card h3{font-size:clamp(19px,1.8vw,25px);line-height:1.25;letter-spacing:-.035em;margin:16px 0 12px}
+.mrseo-eu .eu-offer-card p{font-size:15px;line-height:1.7;color:#58635a;margin:0}
+@media(max-width:790px){.mrseo-eu .eu-market-heading{grid-template-columns:1fr;gap:17px}.mrseo-eu .eu-offer-grid{grid-template-columns:1fr}.mrseo-eu .eu-offer-card{padding:23px 21px}.mrseo-eu .eu-market-heading p{font-size:16px}}
