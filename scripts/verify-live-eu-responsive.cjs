@@ -50,7 +50,7 @@ async function audit(browser,viewport,lang,slug){
    const body=document.body;
    const node=slug===''?document.querySelector('.orbit-lab .lab-visual'):document.querySelector('.eu-orbit-scene');
    const earth=slug===''?node?.querySelector('.lab-core'):node?.querySelector('.eu-earth-core');
-   const links=[...document.querySelectorAll('.mrseo-language-options a')].map(a=>({href:a.href,lang:a.lang}));
+   const links=[...document.querySelectorAll('header.site-header .mrseo-language-options a')].map(a=>({href:a.href,lang:a.lang}));
    return {
     title:document.title,
     htmlLang:document.documentElement.lang,
@@ -127,11 +127,11 @@ async function audit(browser,viewport,lang,slug){
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    await page.keyboard.press('Escape');
    await menu.click({timeout:4000});
-   const sel=page.locator('.mrseo-language-trigger');
+   const sel=page.locator('header.site-header .mrseo-language-trigger');
    await sel.focus();
    await page.keyboard.press('Enter');
    await page.waitForTimeout(150);
-   const visible=await page.locator('.mrseo-language-options').evaluate(x=>{
+   const visible=await page.locator('header.site-header .mrseo-language-options').evaluate(x=>{
     const r=x.getBoundingClientRect();return r.width>180&&r.left>=-2&&r.right<=innerWidth+2&&r.top<innerHeight;
    });
    if(!visible)item.errors.push('Language selector not visible in 360px');
