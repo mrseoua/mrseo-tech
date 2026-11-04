@@ -1,0 +1,862 @@
+{
+  "version": "wave2-draft-2026-11-04",
+  "status": "editorial_seed_only_not_routed_not_indexable",
+  "notes": "Native-speaker and commercial keyword verification required. Do not add these to language switcher or hreflang before 13 full pages are written and QA passes.",
+  "locales": {
+    "pt": {
+      "hreflang": "pt-PT",
+      "country": "Portugal",
+      "native_label": "Português",
+      "language_switch_label": "Alterar idioma",
+      "homepage_hook_draft": "O site existe. Mas onde estão os clientes?",
+      "primary_contact_cta": "Falar sobre o meu projeto",
+      "market_pain_examples": [
+        "Categorias e produtos que não aparecem nas pesquisas certas",
+        "Campanhas Google Ads com vendas mal atribuídas",
+        "Loja online sem ligação fiável ao ERP e ao CRM"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "WooCommerce",
+        "PrestaShop",
+        "Shopify"
+      ],
+      "local_keyword_seeds_unverified": [
+        "agência SEO",
+        "auditoria SEO técnica",
+        "SEO para lojas online",
+        "gestão Google Ads",
+        "análise GA4",
+        "desenvolvimento web à medida",
+        "criação de sites",
+        "criação de lojas online"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads e desenvolvimento web para empresas em Portugal",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "Serviços de SEO para empresas e comércio eletrónico",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Auditoria SEO técnica: indexação, rastreio e conteúdos duplicados",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "SEO para lojas online: categorias, filtros e produtos",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Auditoria Google Ads e Shopping para lojas online",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "Auditoria GA4 e acompanhamento de conversões",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Desenvolvimento web, CRM e integrações API à medida",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Criação de sites profissionais para empresas",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Criação de lojas online com integrações e pagamentos",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "Sobre a MrSeo.tech — equipa de SEO e desenvolvimento",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Projetos e experiência da MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Contacte-nos para analisar o seu projeto",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Privacidade e tratamento dos dados de contacto",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "sv": {
+      "hreflang": "sv-SE",
+      "country": "Sweden",
+      "native_label": "Svenska",
+      "language_switch_label": "Byt språk",
+      "homepage_hook_draft": "Du har en webbplats. Men ger den rätt förfrågningar?",
+      "primary_contact_cta": "Beskriv mitt problem",
+      "market_pain_examples": [
+        "Viktiga kategorier i webbutiken hittas inte i sökningar",
+        "Google Ads mäter inte verkliga köp på ett tillförlitligt sätt",
+        "Manuell orderhantering mellan webbutik och affärssystem"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "Shopify",
+        "WooCommerce",
+        "Google Merchant Center"
+      ],
+      "local_keyword_seeds_unverified": [
+        "SEO-byrå",
+        "teknisk SEO-analys",
+        "SEO för webbutiker",
+        "Google Ads-granskning",
+        "GA4 och konverteringsmätning",
+        "skräddarsydd webbutveckling",
+        "skapa företagswebbplats",
+        "utveckla webbutik"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads och webbutveckling för företag i Sverige",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "SEO-tjänster för tillväxt och synlighet i sökningar",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Teknisk SEO-granskning: indexering och webbplatsstruktur",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "SEO för webbutiker: kategorier, filter och produkter",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Google Ads-granskning för e-handel och Shopping",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "GA4-granskning och tillförlitlig konverteringsmätning",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Webbutveckling, CRM och API-integrationer",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Skapa företagswebbplats med tydliga kundflöden",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Utveckla webbutik med betalningar och integrationer",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "Om MrSeo.tech — team för SEO och utveckling",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Projekt och erfarenheter från MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Kontakta oss om din webbplats eller webbutik",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Integritet och behandling av kontaktuppgifter",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "da": {
+      "hreflang": "da-DK",
+      "country": "Denmark",
+      "native_label": "Dansk",
+      "language_switch_label": "Skift sprog",
+      "homepage_hook_draft": "Du har en hjemmeside. Men kommer de rigtige henvendelser?",
+      "primary_contact_cta": "Fortæl om mit projekt",
+      "market_pain_examples": [
+        "Vigtige kategorisider kan ikke findes via relevante søgninger",
+        "Google Ads tilskriver ikke køb og omsætning korrekt",
+        "Ordrer overføres manuelt mellem webshop og forretningssystemer"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "Shopify",
+        "WooCommerce",
+        "Google Merchant Center"
+      ],
+      "local_keyword_seeds_unverified": [
+        "SEO bureau",
+        "teknisk SEO-analyse",
+        "SEO til webshops",
+        "Google Ads gennemgang",
+        "GA4 konverteringssporing",
+        "specialudviklede webapplikationer",
+        "hjemmeside til virksomheder",
+        "udvikling af webshop"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads og webudvikling til virksomheder i Danmark",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "SEO for virksomheder og webshops",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Teknisk SEO-analyse: indeksering og duplikerede sider",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "SEO til webshops: kategorier, filtre og produkter",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Google Ads-gennemgang for webshops og Shopping",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "GA4 og gennemgang af konverteringssporing",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Webudvikling, CRM og API-integrationer",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Professionel hjemmeside til virksomheder",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Udvikling af webshop med betaling og integrationer",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "Om MrSeo.tech — et mindre team af specialister",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Projekter og erfaring fra MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Kontakt os om dit website eller webshopprojekt",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Privatliv og behandling af kontaktoplysninger",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "fi": {
+      "hreflang": "fi-FI",
+      "country": "Finland",
+      "native_label": "Suomi",
+      "language_switch_label": "Vaihda kieli",
+      "homepage_hook_draft": "Verkkosivusto on olemassa. Mutta tuleeko asiakkaita?",
+      "primary_contact_cta": "Kerro verkkosivustosi ongelmasta",
+      "market_pain_examples": [
+        "Verkkokaupan tärkeät tuoteryhmät eivät näy hauissa",
+        "Google Ads -raportit eivät vastaa todellisia ostoksia",
+        "Tilaustietoja siirretään käsin järjestelmien välillä"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "Shopify",
+        "WooCommerce",
+        "Google Merchant Center"
+      ],
+      "local_keyword_seeds_unverified": [
+        "hakukoneoptimointi",
+        "tekninen SEO-auditointi",
+        "verkkokaupan hakukoneoptimointi",
+        "Google Ads -auditointi",
+        "GA4-konversioseuranta",
+        "räätälöity verkkokehitys",
+        "kotisivujen suunnittelu",
+        "verkkokaupan kehitys"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "Hakukoneoptimointi yrityksille ja verkkokaupoille",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Tekninen SEO-auditointi: indeksointi ja sivuston rakenne",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "Verkkokaupan SEO: kategoriat, suodattimet ja tuotteet",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Google Ads -auditointi verkkokaupalle",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "GA4-analytiikka ja konversioseurannan tarkistus",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Verkkokehitys, CRM ja API-integraatiot",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Yrityksen verkkosivuston suunnittelu ja toteutus",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Verkkokaupan kehitys ja järjestelmäintegraatiot",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "Tietoa MrSeo.tech-tiimistä ja toimintatavastamme",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "MrSeo.techin projektit ja toteutusesimerkit",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Ota yhteyttä verkkosivustosi ongelmasta",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Tietosuoja ja yhteydenottotietojen käsittely",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "hu": {
+      "hreflang": "hu-HU",
+      "country": "Hungary",
+      "native_label": "Magyar",
+      "language_switch_label": "Nyelv váltása",
+      "homepage_hook_draft": "Van weboldala. De érkeznek új ügyfelek?",
+      "primary_contact_cta": "Írja le a problémát",
+      "market_pain_examples": [
+        "A fontos webáruházi kategóriák nem jelennek meg a keresésekben",
+        "A Google Ads konverziói nem egyeznek a tényleges rendelésekkel",
+        "A webáruház és az ügyviteli rendszer között kézi adatrögzítés történik"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "Shoprenter",
+        "UNAS",
+        "WooCommerce"
+      ],
+      "local_keyword_seeds_unverified": [
+        "SEO ügynökség",
+        "technikai SEO audit",
+        "webáruház SEO",
+        "Google Ads audit",
+        "GA4 konverziómérés",
+        "egyedi webfejlesztés",
+        "weboldalkészítés",
+        "webáruház készítés"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "SEO szolgáltatások vállalkozásoknak és webáruházaknak",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Technikai SEO audit: indexelés, feltérképezés, duplikációk",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "Webáruház SEO: kategóriák, szűrők és termékoldalak",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Google Ads és Shopping kampányok auditálása",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "GA4 elemzés és konverziómérés ellenőrzése",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Egyedi webfejlesztés, CRM és API-integrációk",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Üzleti weboldalak tervezése és készítése",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Webáruház készítése és rendszerintegráció",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "Rólunk — a MrSeo.tech SEO és fejlesztői csapata",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Projektjeink és referenciáink",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Adatvédelem és a kapcsolati adatok kezelése",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "sk": {
+      "hreflang": "sk-SK",
+      "country": "Slovakia",
+      "native_label": "Slovenčina",
+      "language_switch_label": "Zmeniť jazyk",
+      "homepage_hook_draft": "Web už máte. Prináša však zákazníkov?",
+      "primary_contact_cta": "Opísať problém webu",
+      "market_pain_examples": [
+        "Kategórie e-shopu sa nezobrazujú vo vhodných vyhľadávaniach",
+        "Google Ads nemeria skutočné nákupy správne",
+        "Údaje medzi e-shopom a účtovníctvom sa prepisujú ručne"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "Shoptet",
+        "Upgates",
+        "WooCommerce"
+      ],
+      "local_keyword_seeds_unverified": [
+        "SEO agentúra",
+        "technický SEO audit",
+        "SEO pre e-shopy",
+        "PPC audit",
+        "meranie konverzií GA4",
+        "vývoj webových aplikácií",
+        "tvorba webstránok",
+        "tvorba e-shopov"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads a vývoj webov pre firmy na Slovensku",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "SEO služby pre firmy a e-shopy",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Technický SEO audit: indexácia a duplicitné stránky",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "SEO pre e-shopy: kategórie, filtre a produkty",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "PPC audit a Google Ads pre e-shopy",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "GA4 analytika a kontrola merania konverzií",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Vývoj webových aplikácií, CRM a API integrácie",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Tvorba firemných webstránok",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Tvorba e-shopov s platbami a integráciami",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "O nás — malý tím odborníkov MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Projekty a skúsenosti MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Kontaktujte nás a opíšte svoj problém",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Ochrana súkromia a spracovanie kontaktných údajov",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "el": {
+      "hreflang": "el-GR",
+      "country": "Greece",
+      "native_label": "Ελληνικά",
+      "language_switch_label": "Αλλαγή γλώσσας",
+      "homepage_hook_draft": "Έχετε ιστοσελίδα. Φέρνει όμως νέους πελάτες;",
+      "primary_contact_cta": "Περιγράψτε το πρόβλημα",
+      "market_pain_examples": [
+        "Σημαντικές κατηγορίες προϊόντων δεν εμφανίζονται στις αναζητήσεις",
+        "Οι μετατροπές στο Google Ads δεν αντιστοιχούν στις πραγματικές παραγγελίες",
+        "Παραγγελίες και αποθέματα ενημερώνονται χειροκίνητα"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "WooCommerce",
+        "Shopify",
+        "Skroutz"
+      ],
+      "local_keyword_seeds_unverified": [
+        "υπηρεσίες SEO",
+        "τεχνικός έλεγχος SEO",
+        "SEO ηλεκτρονικού καταστήματος",
+        "έλεγχος Google Ads",
+        "παρακολούθηση μετατροπών GA4",
+        "ανάπτυξη εφαρμογών web",
+        "κατασκευή ιστοσελίδων",
+        "κατασκευή e-shop"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads και ανάπτυξη ιστοσελίδων στην Ελλάδα",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "Υπηρεσίες SEO για επιχειρήσεις και ηλεκτρονικά καταστήματα",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Τεχνικός έλεγχος SEO: ευρετηρίαση και διπλό περιεχόμενο",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "SEO για e-shop: κατηγορίες, φίλτρα και προϊόντα",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Έλεγχος Google Ads και Shopping για e-shop",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "Έλεγχος GA4 και παρακολούθησης μετατροπών",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Ανάπτυξη εφαρμογών web, CRM και διασύνδεση API",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Κατασκευή επαγγελματικών ιστοσελίδων",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Κατασκευή ηλεκτρονικού καταστήματος και διασυνδέσεις",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "Σχετικά με την ομάδα MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Έργα και εμπειρία της MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Επικοινωνία για το έργο σας",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Απόρρητο και επεξεργασία στοιχείων επικοινωνίας",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "bg": {
+      "hreflang": "bg-BG",
+      "country": "Bulgaria",
+      "native_label": "Български",
+      "language_switch_label": "Смяна на езика",
+      "homepage_hook_draft": "Имате сайт. Но носи ли той клиенти?",
+      "primary_contact_cta": "Опишете проблема със сайта",
+      "market_pain_examples": [
+        "Важните категории на онлайн магазина не се показват при търсене",
+        "Рекламните конверсии не съвпадат с действителните поръчки",
+        "Поръчки и наличности се прехвърлят ръчно между системите"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "CloudCart",
+        "WooCommerce",
+        "OpenCart"
+      ],
+      "local_keyword_seeds_unverified": [
+        "SEO услуги",
+        "технически SEO одит",
+        "SEO за онлайн магазини",
+        "одит на Google Ads",
+        "GA4 анализ",
+        "уеб разработка по поръчка",
+        "изработка на уебсайт",
+        "изработка на онлайн магазин"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads и уеб разработка за бизнеси в България",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "SEO услуги за сайтове и онлайн магазини",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Технически SEO одит: индексиране и дублирани страници",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "SEO за онлайн магазини: категории, филтри и продукти",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Одит на Google Ads и Shopping кампании",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "GA4 анализ и проверка на конверсиите",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Уеб разработка, CRM и API интеграции",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Изработка на фирмени уебсайтове",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Изработка на онлайн магазин и интеграции",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "За нас — екипът на MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Проекти и опит на MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Свържете се с нас за вашия проект",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Поверителност и обработка на данните от формата",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    },
+    "hr": {
+      "hreflang": "hr-HR",
+      "country": "Croatia",
+      "native_label": "Hrvatski",
+      "language_switch_label": "Promijeni jezik",
+      "homepage_hook_draft": "Web-stranica postoji. Ali donosi li nove klijente?",
+      "primary_contact_cta": "Opišite problem svojeg weba",
+      "market_pain_examples": [
+        "Važne kategorije proizvoda nisu vidljive na tražilicama",
+        "Google Ads konverzije ne odgovaraju stvarnim narudžbama",
+        "Podaci o narudžbama ručno se prebacuju u druge sustave"
+      ],
+      "platforms_to_evaluate_not_partner_claims": [
+        "WooCommerce",
+        "Shopify",
+        "Google Merchant Center"
+      ],
+      "local_keyword_seeds_unverified": [
+        "SEO usluge",
+        "tehnička SEO analiza",
+        "SEO za web-trgovine",
+        "Google Ads revizija",
+        "GA4 praćenje konverzija",
+        "razvoj web aplikacija",
+        "izrada web stranica",
+        "izrada web trgovina"
+      ],
+      "pages": {
+        "": {
+          "title_draft": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo": {
+          "title_draft": "SEO usluge za poslovne stranice i web-trgovine",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "seo-audit": {
+          "title_draft": "Tehnička SEO analiza: indeksiranje i struktura",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "ecommerce-seo": {
+          "title_draft": "SEO za web-trgovine: kategorije, filtri i proizvodi",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "google-ads": {
+          "title_draft": "Google Ads revizija za web-trgovine",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "analytics": {
+          "title_draft": "GA4 analitika i provjera praćenja konverzija",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "web-development": {
+          "title_draft": "Razvoj web aplikacija, CRM i API integracije",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "website-design": {
+          "title_draft": "Izrada poslovnih web stranica",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "online-shop-development": {
+          "title_draft": "Izrada web trgovina s integracijama",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "about": {
+          "title_draft": "O nama — mali tim stručnjaka MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "portfolio": {
+          "title_draft": "Projekti i iskustvo tima MrSeo.tech",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "contact": {
+          "title_draft": "Kontaktirajte nas i opišite svoj projekt",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        },
+        "privacy": {
+          "title_draft": "Privatnost i obrada podataka za kontakt",
+          "meta_description_draft": null,
+          "full_copy_reviewed": false
+        }
+      }
+    }
+  }
+}
