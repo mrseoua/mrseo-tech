@@ -23,6 +23,11 @@ on:
 permissions:
   contents: read
 
+# Avoid overlapping expensive Chromium suites when several PR commits are pushed.
+concurrency:
+  group: eu-browser-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   eu-visual:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
