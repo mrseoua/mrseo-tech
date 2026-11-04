@@ -66,6 +66,9 @@ async function audit(browser,viewport,lang,slug){
     clientBand:!!document.querySelector('.client-band-home'),
     marketOffers:document.querySelectorAll('.eu-offer-card').length,
     form:document.querySelector('form[action*="admin-post.php"]')?.querySelector('input[name=mrseo_lang]')?.value||null,
+    contactHeroForm:!!document.querySelector('.eu-hero-contact form[action*="admin-post.php"]'),
+    contactPrivacyNotice:!!document.querySelector('.eu-hero-contact .mrseo-privacy-notice'),
+    contactDecorativeScene:!!document.querySelector('.eu-service-scene-contact'),
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
     serviceMenuItems:document.querySelectorAll('.mrseo-mega .mrseo-mega-item[href]').length,
@@ -97,6 +100,8 @@ async function audit(browser,viewport,lang,slug){
   if(!['','contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
   if(slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
+  if(slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
+    item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   if(viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
