@@ -433,7 +433,7 @@
         ]
       ],
       "outcomes": [
-        "Sydlig och begriplig sidstruktur",
+        "Tydlig och begriplig sidstruktur",
         "Responsiv design och formulär",
         "Teknisk kontroll före publicering"
       ],
@@ -545,7 +545,12 @@
         "Tydliga prioriteringar",
         "Resultat som går att följa upp"
       ],
-      "faq": [],
+      "faq": [
+        [
+          "Har ni ett kontor i Sverige?",
+          "Nej. Vi arbetar på distans från Ukraina. Vi kommer överens om kommunikationen innan uppdraget startar."
+        ]
+      ],
       "offer": {
         "title": "Kartlägga nuläget → Följa upp resultaten",
         "intro": "Vi är ett mindre team med tio års erfarenhet av SEO, Google Ads och webbutveckling. Vi arbetar på distans från Ukraina och utgår från mätbara problem snarare än generella paket.",
