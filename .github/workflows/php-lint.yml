@@ -345,7 +345,7 @@ jobs:
                   if slug in ('seo','google-ads','web-development'):
                       assert len(p['problems'])==3 and len(p['outcomes'])==3 and len(p['faq'])>=1
           eu_template=(root/'eu-localized.php').read_text()
-          assert 'eu-market-offer' in eu_template and "offer['items']" in eu_template
+          assert 'eu-market-offer' in eu_template and "['offer']['items']" in eu_template
           assert "'#eu-contact-form':mrseo_url('contact')" in eu_template
           assert "mrseo_i18n_exact_url('en','portfolio')" in eu_template
           eu_footer=(root/'footer-eu.php').read_text()
