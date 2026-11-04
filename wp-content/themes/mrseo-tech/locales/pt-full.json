@@ -545,7 +545,12 @@
         "Problemas documentados",
         "Trabalho com limites definidos"
       ],
-      "faq": [],
+      "faq": [
+        [
+          "Trabalham presencialmente em Portugal?",
+          "Não. Trabalhamos remotamente a partir da Ucrânia. Definimos a comunicação e o âmbito antes de aceitar um projeto."
+        ]
+      ],
       "offer": {
         "title": "Diagnóstico por dados → Validação prática",
         "intro": "Somos uma pequena equipa de profissionais com dez anos de experiência em SEO, Google Ads e desenvolvimento. Trabalhamos remotamente a partir da Ucrânia e preferimos explicar a causa antes de propor um serviço.",
