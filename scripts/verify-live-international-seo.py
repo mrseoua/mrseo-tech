@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 177
+EXPECTED_PAGES = 294
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -31,7 +31,16 @@ SAMPLE = [
     "/fr/seo/", "/it/google-ads/", "/es/web-development/",
     "/nl/contact/", "/ro/privacy/", "/cs/seo/",
     "/fr/seo-audit/", "/it/ecommerce-seo/", "/es/analytics/", "/nl/website-design/",
-    "/ro/online-shop-development/", "/cs/about/", "/fr/portfolio/"
+    "/ro/online-shop-development/", "/cs/about/", "/fr/portfolio/",
+    "/pt/", "/pt/seo-audit/", "/pt/contact/",
+    "/sv/", "/sv/seo-audit/", "/sv/contact/",
+    "/da/", "/da/seo-audit/", "/da/contact/",
+    "/fi/", "/fi/seo-audit/", "/fi/contact/",
+    "/hu/", "/hu/seo-audit/", "/hu/contact/",
+    "/sk/", "/sk/seo-audit/", "/sk/contact/",
+    "/el/", "/el/seo-audit/", "/el/contact/",
+    "/bg/", "/bg/seo-audit/", "/bg/contact/",
+    "/hr/", "/hr/seo-audit/", "/hr/contact/"
 ]
 
 def fetch(url, method="GET", timeout=16):
@@ -156,7 +165,16 @@ if __name__ == "__main__":
     # These routes are deliberately not available as translated public services.
     for path in ("/en/horoshop/", "/pl/horoshop/", "/de/horoshop/", "/en/not-a-real-service/",
                  "/fr/horoshop/", "/it/horoshop/", "/es/horoshop/", "/nl/horoshop/",
-                 "/ro/horoshop/", "/cs/horoshop/", "/fr/not-a-real-service/"):
+                 "/ro/horoshop/", "/cs/horoshop/", "/fr/not-a-real-service/",
+    "/pt/horoshop/",
+    "/sv/horoshop/",
+    "/da/horoshop/",
+    "/fi/horoshop/",
+    "/hu/horoshop/",
+    "/sk/horoshop/",
+    "/el/horoshop/",
+    "/bg/horoshop/",
+    "/hr/horoshop/"):
         try:
             code, final, _, _ = fetch(HOST + path, method="HEAD")
             fail(f"Unavailable service unexpectedly returns HTTP {code}: {final}")

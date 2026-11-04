@@ -1,0 +1,691 @@
+{
+  "code": "hr-HR",
+  "name": "Hrvatski",
+  "country": "Croatia",
+  "nav": [
+    "Usluge",
+    "SEO",
+    "Google Ads",
+    "Web razvoj",
+    "Kontakt",
+    "Razgovarajmo o projektu",
+    "Privatnost"
+  ],
+  "ui": [
+    "Više posjeta ne znači nužno više kupaca.",
+    "Najprije utvrđujemo uzrok, zatim predlažemo uslugu.",
+    "Što provjeravamo",
+    "Kako radimo",
+    "Što dobivate",
+    "Česta pitanja",
+    "Pošaljite upit",
+    "Ime",
+    "E-pošta",
+    "Web-stranica (nije obavezno)",
+    "Opišite problem",
+    "Pošalji upit",
+    "Poruka je predana za slanje. Odgovorit ćemo e-poštom.",
+    "Provjerite obavezna polja.",
+    "Slanje nije uspjelo. Pokušajte ponovno.",
+    "Ne šaljite lozinke niti povjerljive pristupne podatke.",
+    "Radimo na daljinu iz Ukrajine. Jezik komunikacije i opseg dogovaramo prije početka."
+  ],
+  "pages": {
+    "": {
+      "title": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj",
+      "description": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj. Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje.",
+      "eyebrow": "MRSEO.TECH",
+      "headline": "Web-stranica postoji. <em>Ali donosi li nove klijente?</em>",
+      "lead": "Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje. Provjeravamo vidljivost, mjerenje kupnji i poslovne procese prije prijedloga rada.",
+      "problems": [
+        [
+          "Posjeti bez upita",
+          "Stranice ne odgovaraju dobro na potrebe kupaca.",
+          "Analizirati put od pretraživanja do kontakta."
+        ],
+        [
+          "Oglasi bez jasnog rezultata",
+          "Prijavljene konverzije možda nisu stvarne narudžbe.",
+          "Usporediti GA4, Google Ads i prodaju."
+        ],
+        [
+          "Ručni procesi",
+          "Web-trgovina i interni sustavi nisu povezani.",
+          "Provjeriti mogućnosti API integracije."
+        ]
+      ],
+      "outcomes": [
+        "Dokumentirane prepreke",
+        "Raspored korekcija po važnosti",
+        "Pokazatelji za provjeru rezultata"
+      ],
+      "faq": [
+        [
+          "Imate li ured u Hrvatskoj?",
+          "Ne. Radimo na daljinu iz Ukrajine, a jezik i način komunikacije dogovaramo prije suradnje."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje. Provjeravamo vidljivost, mjerenje kupnji i poslovne procese prije prijedloga rada.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Analizirati put od pretraživanja do kontakta."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Usporediti GA4, Google Ads i prodaju."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Provjeriti mogućnosti API integracije."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "seo": {
+      "title": "SEO usluge za poslovne stranice i web-trgovine",
+      "description": "SEO usluge za poslovne stranice i web-trgovine. SEO započinje razumijevanjem onoga što korisnici traže.",
+      "eyebrow": "SEO",
+      "headline": "Važne stranice <em>ne pojavljuju se u pretrazi?</em>",
+      "lead": "SEO započinje razumijevanjem onoga što korisnici traže. Analiziramo strukturu, interne poveznice i sadržaj prije nego predložimo dodatne tekstove.",
+      "problems": [
+        [
+          "Kategorije bez vidljivosti",
+          "Važne stranice nisu dostupne za relevantne upite.",
+          "Provjeriti indeksiranje i unutarnje poveznice."
+        ],
+        [
+          "Nejasna struktura",
+          "Kategorije ne prate kupovne namjere.",
+          "Povezati upite s odgovarajućim stranicama."
+        ],
+        [
+          "Promet bez kupnje",
+          "Posjetitelj ne nalazi jasan sljedeći korak.",
+          "Procijeniti ponudu i pozive na radnju."
+        ]
+      ],
+      "outcomes": [
+        "Karta važnih odredišnih stranica",
+        "Tehnički i sadržajni prioriteti",
+        "Praćenje korisnih upita"
+      ],
+      "faq": [
+        [
+          "Jamčite li prvo mjesto na Googleu?",
+          "Ne. Pozicije nije moguće jamčiti; predlažemo provjerljive izmjene."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "SEO započinje razumijevanjem onoga što korisnici traže. Analiziramo strukturu, interne poveznice i sadržaj prije nego predložimo dodatne tekstove.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Provjeriti indeksiranje i unutarnje poveznice."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Povezati upite s odgovarajućim stranicama."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Procijeniti ponudu i pozive na radnju."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "seo-audit": {
+      "title": "Tehnička SEO analiza: indeksiranje i struktura",
+      "description": "Tehnička SEO analiza: indeksiranje i struktura. SEO audit povezuje probleme indeksiranja i duplikata s konkretnim URL-ovima.",
+      "eyebrow": "TEHNIČKA SEO ANALIZA",
+      "headline": "Tehnička SEO analiza <em>mora pokazati stvarne pogreške.</em>",
+      "lead": "SEO audit povezuje probleme indeksiranja i duplikata s konkretnim URL-ovima. Provjeravamo crawl, canonical oznake i mobilnu izvedbu te određujemo prioritet popravaka.",
+      "problems": [
+        [
+          "Stranice nisu indeksirane",
+          "HTTP pogreške ili postavke mogu skrivati sadržaj.",
+          "Pregledati sitemap i uzorke URL-ova."
+        ],
+        [
+          "Dvostruke stranice filtara",
+          "Parametri stvaraju nepotrebne varijante.",
+          "Analizirati canonical i paginaciju."
+        ],
+        [
+          "Sporo mobilno učitavanje",
+          "Teški resursi otežavaju uporabu.",
+          "Razdvojiti probleme poslužitelja i dizajna."
+        ]
+      ],
+      "outcomes": [
+        "Primjeri reproducibilnih pogrešaka",
+        "Prioriteti prema utjecaju",
+        "Provjera nakon implementacije"
+      ],
+      "faq": [
+        [
+          "Uključuje li audit ispravke?",
+          "Analiza i provedba dogovaraju se odvojeno, s jasnim opsegom."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "SEO audit povezuje probleme indeksiranja i duplikata s konkretnim URL-ovima. Provjeravamo crawl, canonical oznake i mobilnu izvedbu te određujemo prioritet popravaka.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Pregledati sitemap i uzorke URL-ova."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Analizirati canonical i paginaciju."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Razdvojiti probleme poslužitelja i dizajna."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "ecommerce-seo": {
+      "title": "SEO za web-trgovine: kategorije, filtri i proizvodi",
+      "description": "SEO za web-trgovine: kategorije, filtri i proizvodi. Kategorije, filtri i varijante proizvoda određuju koliko je web-trgovina razumljiva tražilicama.",
+      "eyebrow": "SEO ZA WEB-TRGOVINE",
+      "headline": "Proizvodi su u trgovini. <em>Pronalaze li ih kupci?</em>",
+      "lead": "Kategorije, filtri i varijante proizvoda određuju koliko je web-trgovina razumljiva tražilicama. Provjeravamo stvarne postavke WooCommercea, Shopifyja ili druge platforme.",
+      "problems": [
+        [
+          "Kategorije se ne pronalaze",
+          "Stranice ne odgovaraju hrvatskim kupovnim pretragama.",
+          "Pregledati kategorije i interne poveznice."
+        ],
+        [
+          "Filtri stvaraju duplikate",
+          "Kombinacije parametara otvaraju velik broj nepotrebnih URL-ova.",
+          "Razdvojiti korisne i tehničke filter-stranice."
+        ],
+        [
+          "Proizvodi su izolirani",
+          "Varijante i atributi otežavaju navigaciju.",
+          "Provjeriti strukturu proizvoda."
+        ]
+      ],
+      "outcomes": [
+        "Bolja struktura kataloga",
+        "Plan za filtre i kategorije",
+        "Mjerenje vidljivosti proizvoda"
+      ],
+      "faq": [
+        [
+          "Radite li s WooCommerceom?",
+          "Možemo analizirati postojeću konfiguraciju, bez tvrdnje o službenom partnerstvu."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Kategorije, filtri i varijante proizvoda određuju koliko je web-trgovina razumljiva tražilicama. Provjeravamo stvarne postavke WooCommercea, Shopifyja ili druge platforme.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Pregledati kategorije i interne poveznice."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Razdvojiti korisne i tehničke filter-stranice."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Provjeriti strukturu proizvoda."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "google-ads": {
+      "title": "Google Ads revizija za web-trgovine",
+      "description": "Google Ads revizija za web-trgovine. Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi.",
+      "eyebrow": "GOOGLE ADS",
+      "headline": "Oglašavanje troši proračun. <em>Što stvarno donosi?</em>",
+      "lead": "Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi. Zatim analiziramo kampanje, Shopping proizvode i kvalitetu Merchant Center podataka.",
+      "problems": [
+        [
+          "Pogrešne konverzije",
+          "Dvostruki događaji kupnje mogu zavesti algoritam.",
+          "Usporediti ID narudžbi i GA4 događaje."
+        ],
+        [
+          "Trošak bez potvrđene vrijednosti",
+          "Određene kategorije mogu trošiti bez prodaje.",
+          "Pregledati trošak po proizvodnim skupinama."
+        ],
+        [
+          "Netočni podaci u feedu",
+          "Cijene ili zalihe ne odgovaraju web-stranici.",
+          "Provjeriti Merchant Center i proizvode."
+        ]
+      ],
+      "outcomes": [
+        "Kontrola signala za optimizaciju",
+        "Procjena spornih troškova",
+        "Mjerljivi testovi kampanja"
+      ],
+      "faq": [
+        [
+          "Možete li jamčiti ROAS?",
+          "Ne. Učinak ovisi o marži, tržištu i kvaliteti mjerenja."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi. Zatim analiziramo kampanje, Shopping proizvode i kvalitetu Merchant Center podataka.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Usporediti ID narudžbi i GA4 događaje."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Pregledati trošak po proizvodnim skupinama."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Provjeriti Merchant Center i proizvode."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "analytics": {
+      "title": "GA4 analitika i provjera praćenja konverzija",
+      "description": "GA4 analitika i provjera praćenja konverzija. Dvostruko evidentirana kupnja može iskriviti odluke o oglašavanju.",
+      "eyebrow": "GA4 ANALITIKA",
+      "headline": "Postoje izvještaji. <em>Jesu li brojevi pouzdani?</em>",
+      "lead": "Dvostruko evidentirana kupnja može iskriviti odluke o oglašavanju. Provjeravamo GA4 purchase događaje, transaction_id i razlike između atribucijskih modela.",
+      "problems": [
+        [
+          "Kupnje se broje dvaput",
+          "Isti događaj može se pokrenuti više puta.",
+          "Provjeriti identifikatore transakcija."
+        ],
+        [
+          "GA4 i Ads se razlikuju",
+          "Vremenski prozori i modeli pripisivanja nisu jednaki.",
+          "Usporediti usporedive metrike."
+        ],
+        [
+          "Privola i oznake",
+          "Postavke pristanka utječu na prikupljanje podataka.",
+          "Testirati tehničko ponašanje bez pravnih zaključaka."
+        ]
+      ],
+      "outcomes": [
+        "Popis ključnih događaja",
+        "Dokumentirane razlike",
+        "Plan ponovnog testiranja"
+      ],
+      "faq": [
+        [
+          "Moraju li GA4 i Ads prikazivati iste rezultate?",
+          "Ne nužno. Atribucija i uvjeti mjerenja mogu se razlikovati."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Dvostruko evidentirana kupnja može iskriviti odluke o oglašavanju. Provjeravamo GA4 purchase događaje, transaction_id i razlike između atribucijskih modela.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Provjeriti identifikatore transakcija."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Usporediti usporedive metrike."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Testirati tehničko ponašanje bez pravnih zaključaka."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "web-development": {
+      "title": "Razvoj web aplikacija, CRM i API integracije",
+      "description": "Razvoj web aplikacija, CRM i API integracije. Razvijamo web-aplikacije i integracije za stvarne poslovne procese.",
+      "eyebrow": "RAZVOJ PO MJERI",
+      "headline": "Softver treba <em>smanjiti ručni posao.</em>",
+      "lead": "Razvijamo web-aplikacije i integracije za stvarne poslovne procese. Prije pisanja koda provjeravamo podatke, sigurnost i raspoložive API-je.",
+      "problems": [
+        [
+          "Narudžbe se prepisuju",
+          "Web-trgovina i ERP nisu povezani.",
+          "Procijeniti mogućnost sinkronizacije."
+        ],
+        [
+          "Web je težak za održavanje",
+          "Stare ovisnosti kompliciraju izmjene.",
+          "Planirati postupnu modernizaciju."
+        ],
+        [
+          "Izvještaji nastaju ručno",
+          "Podaci se prikupljaju iz više alata.",
+          "Definirati upravljačku ploču."
+        ]
+      ],
+      "outcomes": [
+        "Tehnički opis projekta",
+        "Isporuka po fazama",
+        "Plan testiranja i podrške"
+      ],
+      "faq": [
+        [
+          "Razvijate li SaaS proizvode?",
+          "Možemo procijeniti izvedivost i zahtjeve prije ugovaranja razvoja."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Razvijamo web-aplikacije i integracije za stvarne poslovne procese. Prije pisanja koda provjeravamo podatke, sigurnost i raspoložive API-je.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Procijeniti mogućnost sinkronizacije."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Planirati postupnu modernizaciju."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Definirati upravljačku ploču."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "website-design": {
+      "title": "Izrada poslovnih web stranica",
+      "description": "Izrada poslovnih web stranica. Izrađujemo poslovne web-stranice koje objašnjavaju usluge i olakšavaju slanje upita.",
+      "eyebrow": "IZRADA WEB-STRANICA",
+      "headline": "Dobra web-stranica <em>jasno vodi do kontakta.</em>",
+      "lead": "Izrađujemo poslovne web-stranice koje objašnjavaju usluge i olakšavaju slanje upita. Navigacija i iskustvo na telefonu važniji su od dekoracije.",
+      "problems": [
+        [
+          "Ponuda je nejasna",
+          "Posjetitelj ne prepoznaje rješenje svojeg problema.",
+          "Organizirati sadržaj prema potrebama."
+        ],
+        [
+          "Mobilna verzija je nezgodna",
+          "Sitna slova i komplicirani obrasci otežavaju upit.",
+          "Projektirati čitljivo sučelje."
+        ],
+        [
+          "Promjene su skupe",
+          "Svako ažuriranje traži programera.",
+          "Koristiti održive komponente."
+        ]
+      ],
+      "outcomes": [
+        "Struktura stranica i sadržaja",
+        "Prilagodljiv dizajn",
+        "Provjereni obrasci i poveznice"
+      ],
+      "faq": [
+        [
+          "Radite li u WordPressu?",
+          "Da, kada odgovara zahtjevima za sigurnost i održavanje."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Izrađujemo poslovne web-stranice koje objašnjavaju usluge i olakšavaju slanje upita. Navigacija i iskustvo na telefonu važniji su od dekoracije.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Organizirati sadržaj prema potrebama."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Projektirati čitljivo sučelje."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Koristiti održive komponente."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "online-shop-development": {
+      "title": "Izrada web trgovina s integracijama",
+      "description": "Izrada web trgovina s integracijama. Razvoj web-trgovine obuhvaća katalog, varijante, plaćanja, dostavu i obradu narudžbi.",
+      "eyebrow": "IZRADA WEB-TRGOVINA",
+      "headline": "Web-trgovina mora prodavati. <em>I biti jednostavna za vođenje.</em>",
+      "lead": "Razvoj web-trgovine obuhvaća katalog, varijante, plaćanja, dostavu i obradu narudžbi. Platformu biramo prema stvarnim procesima i potrebnim integracijama.",
+      "problems": [
+        [
+          "Katalog bez strukture",
+          "Atributi i varijante nisu uređeni.",
+          "Definirati kategorije i filtre."
+        ],
+        [
+          "Komplikirana kupnja",
+          "Suvišni koraci mogu smanjiti broj narudžbi.",
+          "Testirati košaricu i plaćanja."
+        ],
+        [
+          "Zalihe se ažuriraju ručno",
+          "Web-trgovina i skladište nisu sinkronizirani.",
+          "Provjeriti API povezivanje."
+        ]
+      ],
+      "outcomes": [
+        "Jasni funkcionalni zahtjevi",
+        "Testiran proces kupnje",
+        "Plan integracije i održavanja"
+      ],
+      "faq": [
+        [
+          "Može li se preseliti postojeća trgovina?",
+          "Migracija zahtijeva provjeru podataka, URL-ova i preusmjeravanja."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Razvoj web-trgovine obuhvaća katalog, varijante, plaćanja, dostavu i obradu narudžbi. Platformu biramo prema stvarnim procesima i potrebnim integracijama.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Definirati kategorije i filtre."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Testirati košaricu i plaćanja."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Provjeriti API povezivanje."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "about": {
+      "title": "O nama — mali tim stručnjaka MrSeo.tech",
+      "description": "O nama — mali tim stručnjaka MrSeo.tech. Mi smo mali tim stručnjaka s deset godina iskustva u SEO-u, Google Adsu i web razvoju.",
+      "eyebrow": "O NAMA",
+      "headline": "Mali tim. <em>Jasne odgovornosti.</em>",
+      "lead": "Mi smo mali tim stručnjaka s deset godina iskustva u SEO-u, Google Adsu i web razvoju. Radimo na daljinu iz Ukrajine i najprije analiziramo uzrok problema.",
+      "problems": [
+        [
+          "Prvo dijagnoza",
+          "Više prometa ne rješava uvijek manju prodaju.",
+          "Provjeriti put kupca."
+        ],
+        [
+          "Jasna podjela zadataka",
+          "Klijent treba znati tko provodi promjene.",
+          "Dogovoriti faze i odgovornosti."
+        ],
+        [
+          "Bez nerealnih jamstava",
+          "Obećanje prve pozicije nije metoda rada.",
+          "Definirati provjerljive korake."
+        ]
+      ],
+      "outcomes": [
+        "Izravna komunikacija",
+        "Razumljivi prioriteti",
+        "Rezultati koje se može provjeriti"
+      ],
+      "faq": [
+        [
+          "Imate li ured u Hrvatskoj?",
+          "Ne. Radimo na daljinu iz Ukrajine, uz unaprijed dogovoren opseg i način komunikacije."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Mi smo mali tim stručnjaka s deset godina iskustva u SEO-u, Google Adsu i web razvoju. Radimo na daljinu iz Ukrajine i najprije analiziramo uzrok problema.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Provjeriti put kupca."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Dogovoriti faze i odgovornosti."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Definirati provjerljive korake."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "portfolio": {
+      "title": "Projekti i iskustvo tima MrSeo.tech",
+      "description": "Projekti i iskustvo tima MrSeo.tech. Prikazujemo javne web-stranice iz portfelja kao primjere djelatnosti i tehničkih okruženja.",
+      "eyebrow": "PROJEKTI",
+      "headline": "Stvarni projekti. <em>Bez izmišljenih brojki.</em>",
+      "lead": "Prikazujemo javne web-stranice iz portfelja kao primjere djelatnosti i tehničkih okruženja. Ne predstavljamo ih kao hrvatske klijente i ne objavljujemo povjerljive rezultate bez dopuštenja.",
+      "problems": [
+        [
+          "Autooprema i katalozi",
+          "Veliki asortiman traži jasnu navigaciju.",
+          "Istražiti primjere e-trgovine."
+        ],
+        [
+          "Moda i dodaci",
+          "Varijante i prikaz proizvoda važni su za snalaženje.",
+          "Vidjeti različite vrste kataloga."
+        ],
+        [
+          "Stručne usluge",
+          "Povjerenje i kontakt važni su za posjetitelje.",
+          "Pogledati primjere uslužnih stranica."
+        ]
+      ],
+      "outcomes": [
+        "Javni stvarni domeni",
+        "Različiti poslovni konteksti",
+        "Čuvanje povjerljivosti"
+      ],
+      "faq": [
+        [
+          "Jesu li to hrvatski projekti?",
+          "Ne tvrdimo da su lokalni klijenti bez potvrde."
+        ]
+      ],
+      "offer": {
+        "title": "Provjera stanja → Provjera učinka",
+        "intro": "Prikazujemo javne web-stranice iz portfelja kao primjere djelatnosti i tehničkih okruženja. Ne predstavljamo ih kao hrvatske klijente i ne objavljujemo povjerljive rezultate bez dopuštenja.",
+        "items": [
+          {
+            "title": "Provjera stanja",
+            "detail": "Istražiti primjere e-trgovine."
+          },
+          {
+            "title": "Plan prioritetnih izmjena",
+            "detail": "Vidjeti različite vrste kataloga."
+          },
+          {
+            "title": "Provjera učinka",
+            "detail": "Pogledati primjere uslužnih stranica."
+          }
+        ],
+        "cta": "Opišite problem svojeg weba"
+      }
+    },
+    "contact": {
+      "title": "Kontaktirajte nas i opišite svoj projekt",
+      "description": "Kontaktirajte nas i opišite svoj projekt. Pošaljite adresu web-stranice, tržište i konkretan primjer problema.",
+      "eyebrow": "KONTAKT",
+      "headline": "Što sprječava <em>nove upite i narudžbe?</em>",
+      "lead": "Pošaljite adresu web-stranice, tržište i konkretan primjer problema. Nije potrebno dijeliti pristupne podatke. Navedite platformu web-trgovine, tržište i primjer poteškoće. Ne šaljite lozinke.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    },
+    "privacy": {
+      "title": "Privatnost i obrada podataka za kontakt",
+      "description": "Kako MrSeo.tech obrađuje podatke iz obrasca za kontakt.",
+      "eyebrow": "PRIVATNOST",
+      "headline": "Privatnost i kontaktni upiti",
+      "lead": "Kako MrSeo.tech obrađuje podatke iz obrasca za kontakt.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    }
+  },
+  "privacy": [
+    "Privatnost i kontaktni upiti",
+    "Kako MrSeo.tech obrađuje podatke iz obrasca za kontakt.",
+    "Podaci koje šaljete",
+    "Ime, adresa e-pošte, neobavezna web-stranica i poruka. Privremeni tehnički podaci pomažu u smanjenju neželjene pošte.",
+    "Svrha",
+    "Podatke koristimo za odgovor na upit i mogući razgovor o suradnji na vaš zahtjev.",
+    "Prosljeđivanje",
+    "Poruka se šalje na hello@mrseo.tech i prosljeđuje u poslovni sandučić UKR.NET. Hosting i pružatelji e-pošte tehnički sudjeluju u obradi.",
+    "Čuvanje",
+    "Korespondenciju čuvamo koliko je potrebno za odgovor i eventualne zakonske obveze. Točno razdoblje odredit će se prije javnog pokretanja.",
+    "Prava i kontakt",
+    "Prema primjenjivom pravu možete zatražiti pristup, ispravak ili brisanje na hello@mrseo.tech. Provjereni pravni podaci voditelja obrade bit će objavljeni prije pokretanja.",
+    "Slanjem obrasca dajete podatke kako bismo vam odgovorili. Pojedinosti:"
+  ],
+  "market": {
+    "heading": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj",
+    "description": "Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje. Provjeravamo vidljivost, mjerenje kupnji i poslovne procese prije prijedloga rada.",
+    "cta": "Opišite problem svojeg weba",
+    "brief": "Navedite platformu web-trgovine, tržište i primjer poteškoće. Ne šaljite lozinke.",
+    "portfolioLabel": "Projekti"
+  },
+  "serviceLabels": {
+    "seo": "SEO",
+    "seo-audit": "Tehnička SEO analiza",
+    "ecommerce-seo": "SEO za web-trgovine",
+    "google-ads": "Google Ads",
+    "analytics": "GA4 analitika",
+    "web-development": "Razvoj po mjeri",
+    "website-design": "Izrada web-stranica",
+    "online-shop-development": "Izrada web-trgovina",
+    "about": "O nama",
+    "portfolio": "Projekti",
+    "contact": "Kontakt"
+  },
+  "portfolioCategories": {
+    "auto": "AUTOMOBILI",
+    "fashion": "MODA",
+    "home": "DOM",
+    "electronics": "ELEKTRONIKA",
+    "medical": "ZDRAVLJE"
+  }
+}

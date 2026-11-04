@@ -11,7 +11,7 @@
 if (!defined('ABSPATH')) exit;
 
 function mrseo_i18n_locale_codes() {
-    return array('uk' => 'uk-UA', 'ru' => 'ru', 'en' => 'en-GB', 'pl' => 'pl-PL', 'de' => 'de-DE', 'fr' => 'fr-FR', 'it' => 'it-IT', 'es' => 'es-ES', 'nl' => 'nl-NL', 'ro' => 'ro-RO', 'cs' => 'cs-CZ');
+    return array('uk' => 'uk-UA', 'ru' => 'ru', 'en' => 'en-GB', 'pl' => 'pl-PL', 'de' => 'de-DE', 'fr' => 'fr-FR', 'it' => 'it-IT', 'es' => 'es-ES', 'nl' => 'nl-NL', 'ro' => 'ro-RO', 'cs' => 'cs-CZ', 'pt' => 'pt-PT', 'sv' => 'sv-SE', 'da' => 'da-DK', 'fi' => 'fi-FI', 'hu' => 'hu-HU', 'sk' => 'sk-SK', 'el' => 'el-GR', 'bg' => 'bg-BG', 'hr' => 'hr-HR');
 }
 
 function mrseo_i18n_exact_url($language, $slug) {
@@ -38,12 +38,12 @@ function mrseo_i18n_page_groups() {
         $pages = array();
         foreach (array('uk','ru','en','pl','de') as $lang) $pages[$lang] = $slug;
         if(in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','about','portfolio','contact'),true))
-            foreach(array('fr','it','es','nl','ro','cs') as $lang)$pages[$lang]=$slug;
+            foreach(array('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr') as $lang)$pages[$lang]=$slug;
         $groups[] = array('group' => 'shared:' . ($slug === '' ? 'home' : $slug), 'pages' => $pages);
     }
 
     $groups[] = array('group'=>'privacy','pages'=>array(
-        'uk'=>'privacy','ru'=>'privacy','en'=>'privacy','pl'=>'privacy','de'=>'privacy','fr'=>'privacy','it'=>'privacy','es'=>'privacy','nl'=>'privacy','ro'=>'privacy','cs'=>'privacy'));
+        'uk'=>'privacy','ru'=>'privacy','en'=>'privacy','pl'=>'privacy','de'=>'privacy','fr'=>'privacy','it'=>'privacy','es'=>'privacy','nl'=>'privacy','ro'=>'privacy','cs'=>'privacy','pt'=>'privacy','sv'=>'privacy','da'=>'privacy','fi'=>'privacy','hu'=>'privacy','sk'=>'privacy','el'=>'privacy','bg'=>'privacy','hr'=>'privacy'));
     foreach (array('service-websites', 'performance-max') as $slug) {
         $groups[] = array('group' => 'three:' . $slug,
             'pages' => array('uk'=>$slug, 'ru'=>$slug, 'en'=>$slug));
@@ -62,10 +62,10 @@ function mrseo_i18n_page_groups() {
     }
 
     $groups[] = array('group'=>'website-creation',
-        'pages'=>array('en'=>'website-design','pl'=>'tworzenie-stron-internetowych','fr'=>'website-design','it'=>'website-design','es'=>'website-design','nl'=>'website-design','ro'=>'website-design','cs'=>'website-design'));
+        'pages'=>array('en'=>'website-design','pl'=>'tworzenie-stron-internetowych','fr'=>'website-design','it'=>'website-design','es'=>'website-design','nl'=>'website-design','ro'=>'website-design','cs'=>'website-design','pt'=>'website-design','sv'=>'website-design','da'=>'website-design','fi'=>'website-design','hu'=>'website-design','sk'=>'website-design','el'=>'website-design','bg'=>'website-design','hr'=>'website-design'));
     $groups[] = array('group'=>'online-shop-creation',
         'pages'=>array('uk'=>'online-store-development','ru'=>'online-store-development',
-            'en'=>'online-shop-development','pl'=>'tworzenie-sklepow-internetowych','fr'=>'online-shop-development','it'=>'online-shop-development','es'=>'online-shop-development','nl'=>'online-shop-development','ro'=>'online-shop-development','cs'=>'online-shop-development'));
+            'en'=>'online-shop-development','pl'=>'tworzenie-sklepow-internetowych','fr'=>'online-shop-development','it'=>'online-shop-development','es'=>'online-shop-development','nl'=>'online-shop-development','ro'=>'online-shop-development','cs'=>'online-shop-development','pt'=>'online-shop-development','sv'=>'online-shop-development','da'=>'online-shop-development','fi'=>'online-shop-development','hu'=>'online-shop-development','sk'=>'online-shop-development','el'=>'online-shop-development','bg'=>'online-shop-development','hr'=>'online-shop-development'));
     $groups[] = array('group'=>'google-ads-audit',
         'pages'=>array('en'=>'google-ads-audit','pl'=>'audyt-google-ads'));
     $groups[] = array('group'=>'merchant-center-help',

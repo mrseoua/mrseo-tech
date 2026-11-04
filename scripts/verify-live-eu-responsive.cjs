@@ -1,9 +1,12 @@
-/* Browser QA for six staged EU languages after deployment. No form submits, no indexing changes. */
+/* Browser QA for fifteen staged EU market locales after deployment. No form submits, no indexing changes. */
 'use strict';
 const fs=require('node:fs/promises');
 const {chromium}=require('playwright');
 const HOST=(process.env.MRSEO_TEST_ORIGIN||'https://mrseo.tech').replace(/\/$/,'');
-const locales=['fr','it','es','nl','ro','cs'];
+const allLocales=['fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'];
+const shard=process.env.MRSEO_LOCALE_SHARD===undefined?-1:Number(process.env.MRSEO_LOCALE_SHARD);
+const locales=allLocales.filter((_,index)=>shard<0||index%3===shard);
+if(!Number.isInteger(shard)||shard>2)throw Error('Invalid locale shard');
 const slugs=['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -18,7 +21,7 @@ async function audit(browser,viewport,lang,slug){
   viewport:{width:viewport.width,height:viewport.height},
   deviceScaleFactor:mobile?2:1,
   isMobile:mobile,hasTouch:mobile,
-  userAgent:browserUA,locale:({fr:'fr-FR',it:'it-IT',es:'es-ES',nl:'nl-NL',ro:'ro-RO',cs:'cs-CZ'})[lang],
+  userAgent:browserUA,locale:({fr:'fr-FR',it:'it-IT',es:'es-ES',nl:'nl-NL',ro:'ro-RO',cs:'cs-CZ',pt:'pt-PT',sv:'sv-SE',da:'da-DK',fi:'fi-FI',hu:'hu-HU',sk:'sk-SK',el:'el-GR',bg:'bg-BG',hr:'hr-HR'})[lang],
   ignoreHTTPSErrors:false
  });
  const page=await context.newPage();
@@ -77,7 +80,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.canonical.length!==1||c.canonical[0]!==exactPath)item.errors.push('Canonical '+JSON.stringify(c.canonical));
   if(!c.robots.toLowerCase().includes('noindex')&&!String(response.headers()['x-robots-tag']).includes('noindex'))item.errors.push('Staging noindex missing');
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
-  if(c.menuItems!==11)item.errors.push('Language options '+c.menuItems);
+  if(c.menuItems!==20)item.errors.push('Language options '+c.menuItems);
   if(c.serviceMenuItems!==11)item.errors.push('Services dropdown '+c.serviceMenuItems);
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
@@ -121,6 +124,6 @@ async function audit(browser,viewport,lang,slug){
  const errors=results.filter(x=>x.errors.length);
  const summary={checked:results.length,failed:errors.length,success:results.length-errors.length,errors:errors.map(x=>({url:x.url,viewport:x.viewport,errors:x.errors})),results};
  await fs.writeFile('shots/eu-diagnostics.json',JSON.stringify(summary,null,2));
- console.log('EU AUDIT TOTAL: '+summary.checked+' views; failures='+summary.failed);
+ console.log('EU AUDIT TOTAL shard '+shard+': '+summary.checked+' views; failures='+summary.failed);
  if(errors.length)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exitCode=1});

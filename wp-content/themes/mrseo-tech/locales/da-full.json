@@ -1,0 +1,691 @@
+{
+  "code": "da-DK",
+  "name": "Dansk",
+  "country": "Denmark",
+  "nav": [
+    "Ydelser",
+    "SEO",
+    "Google Ads",
+    "Webudvikling",
+    "Kontakt",
+    "Lad os tale om projektet",
+    "Privatliv"
+  ],
+  "ui": [
+    "Flere besøgende giver ikke automatisk flere kunder.",
+    "Vi undersøger årsagen, før vi anbefaler en løsning.",
+    "Det undersøger vi",
+    "Så arbejder vi",
+    "Det får du",
+    "Ofte stillede spørgsmål",
+    "Skriv til os",
+    "Navn",
+    "E-mailadresse",
+    "Website (valgfrit)",
+    "Beskriv problemet",
+    "Send forespørgsel",
+    "Beskeden er afleveret til afsendelse. Vi svarer på e-mail.",
+    "Kontrollér de obligatoriske felter.",
+    "Afsendelsen mislykkedes. Prøv igen.",
+    "Send aldrig adgangskoder eller fortrolige loginoplysninger.",
+    "Vi arbejder på afstand fra Ukraine. Vi aftaler arbejdssprog og rammer inden start."
+  ],
+  "pages": {
+    "": {
+      "title": "SEO, Google Ads og webudvikling til virksomheder i Danmark",
+      "description": "SEO, Google Ads og webudvikling til virksomheder i Danmark. Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer.",
+      "eyebrow": "MRSEO.TECH",
+      "headline": "Hjemmesiden er klar. <em>Men kommer kunderne?</em>",
+      "lead": "Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer. Vi undersøger søgninger, brugeroplevelse, konverteringsdata og besværlige arbejdsgange.",
+      "problems": [
+        [
+          "Besøg uden henvendelser",
+          "Siderne kan ramme en forkert hensigt eller være uklare.",
+          "Analysere vejen fra søgning til kontakt."
+        ],
+        [
+          "Annoncer uden overblik",
+          "Målingen af køb er måske ikke retvisende.",
+          "Sammenholde GA4, Google Ads og ordrer."
+        ],
+        [
+          "Manuelle processer",
+          "Information flyttes mellem webshop, lager og CRM.",
+          "Undersøge integration og automatisering."
+        ]
+      ],
+      "outcomes": [
+        "Konkrete problemer frem for gæt",
+        "En prioriteret handlingsplan",
+        "Målbare kontrolpunkter"
+      ],
+      "faq": [
+        [
+          "Har I kontor i Danmark?",
+          "Nej, vi arbejder på afstand fra Ukraine. Vi aftaler kommunikationen inden et projekt begynder."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer. Vi undersøger søgninger, brugeroplevelse, konverteringsdata og besværlige arbejdsgange.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Analysere vejen fra søgning til kontakt."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Sammenholde GA4, Google Ads og ordrer."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Undersøge integration og automatisering."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "seo": {
+      "title": "SEO for virksomheder og webshops",
+      "description": "SEO for virksomheder og webshops. Vi ser på, hvilke søgninger virksomheden bør kunne besvare.",
+      "eyebrow": "SEO",
+      "headline": "Er de vigtigste sider <em>svære at finde?</em>",
+      "lead": "Vi ser på, hvilke søgninger virksomheden bør kunne besvare. Derefter gennemgår vi hjemmesidens struktur, links og indhold for at finde årsagen til manglende synlighed.",
+      "problems": [
+        [
+          "Kategorier mangler",
+          "Vigtige produktsider bliver ikke opdaget af søgemaskiner.",
+          "Gennemgå interne links og indeksering."
+        ],
+        [
+          "Utydelig opbygning",
+          "Sidehierarkiet svarer ikke til kundernes behov.",
+          "Koble kategorier til relevante søgehensigter."
+        ],
+        [
+          "Trafik uden forretning",
+          "Besøg lander på sider uden et tydeligt tilbud.",
+          "Vurdere indhold og kontaktmuligheder."
+        ]
+      ],
+      "outcomes": [
+        "Kort over de vigtigste sider",
+        "Prioriterede SEO-forbedringer",
+        "Opfølgning på relevante forespørgsler"
+      ],
+      "faq": [
+        [
+          "Garanterer I en førsteplads?",
+          "Nej. Placeringer kan ikke garanteres; vi beskriver og kontrollerer konkrete forbedringer."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Vi ser på, hvilke søgninger virksomheden bør kunne besvare. Derefter gennemgår vi hjemmesidens struktur, links og indhold for at finde årsagen til manglende synlighed.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Gennemgå interne links og indeksering."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Koble kategorier til relevante søgehensigter."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Vurdere indhold og kontaktmuligheder."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "seo-audit": {
+      "title": "Teknisk SEO-analyse: indeksering og duplikerede sider",
+      "description": "Teknisk SEO-analyse: indeksering og duplikerede sider. En teknisk analyse bør vise de URL'er og problemer, som påvirker sitet.",
+      "eyebrow": "TEKNISK SEO-ANALYSE",
+      "headline": "Et automatisk SEO-tal <em>er ikke en løsning.</em>",
+      "lead": "En teknisk analyse bør vise de URL'er og problemer, som påvirker sitet. Vi undersøger crawl, indeksering, kanoniske adresser og mobil hastighed med en praktisk prioritering.",
+      "problems": [
+        [
+          "Sider uden indeksering",
+          "HTTP-fejl eller direktiver kan skjule vigtig information.",
+          "Kontrollere sitemap og Search Console-data."
+        ],
+        [
+          "Filtre giver dubletter",
+          "Parametre skaber mange næsten ens URL'er.",
+          "Gennemgå facetter, pagination og canonical."
+        ],
+        [
+          "Langsom oplevelse",
+          "Tunge elementer kan gøre mobilen besværlig.",
+          "Skelne mellem tekniske og visuelle flaskehalse."
+        ]
+      ],
+      "outcomes": [
+        "Dokumenterede fejl med URL-eksempler",
+        "En liste med prioriterede ændringer",
+        "Kontrolmetode efter rettelser"
+      ],
+      "faq": [
+        [
+          "Løser analysen alle fejl automatisk?",
+          "Nej. Analyse og implementering aftales som separate leverancer."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "En teknisk analyse bør vise de URL'er og problemer, som påvirker sitet. Vi undersøger crawl, indeksering, kanoniske adresser og mobil hastighed med en praktisk prioritering.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Kontrollere sitemap og Search Console-data."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Gennemgå facetter, pagination og canonical."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Skelne mellem tekniske og visuelle flaskehalse."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "ecommerce-seo": {
+      "title": "SEO til webshops: kategorier, filtre og produkter",
+      "description": "SEO til webshops: kategorier, filtre og produkter. En webshop skal have gennemskuelige kategorier, filtre og produktvarianter.",
+      "eyebrow": "SEO TIL WEBSHOPS",
+      "headline": "Mange produkter. <em>Hvem finder dem i Google?</em>",
+      "lead": "En webshop skal have gennemskuelige kategorier, filtre og produktvarianter. Vi undersøger den aktuelle opsætning på eksempelvis Shopify eller WooCommerce før forslag til ændringer.",
+      "problems": [
+        [
+          "Kategorier uden søgetrafik",
+          "Vigtige landingssider passer ikke til danske købssøgninger.",
+          "Analysere kategorier og interne links."
+        ],
+        [
+          "Filtre skaber kopier",
+          "Kombinationer af parametre giver unødige sider.",
+          "Skelne mellem værdifulde og tekniske filter-URL'er."
+        ],
+        [
+          "Produktsider er isolerede",
+          "Varianter og attributter gør varerne svære at finde.",
+          "Kontrollere produktstruktur og navigation."
+        ]
+      ],
+      "outcomes": [
+        "Bedre struktur på varesortimentet",
+        "Klar plan for filtre og kategorier",
+        "Måling af de mest relevante sider"
+      ],
+      "faq": [
+        [
+          "Arbejder I kun med Shopify?",
+          "Nej. Vi undersøger den faktiske butik og hævder ingen officiel partnerstatus."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "En webshop skal have gennemskuelige kategorier, filtre og produktvarianter. Vi undersøger den aktuelle opsætning på eksempelvis Shopify eller WooCommerce før forslag til ændringer.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Analysere kategorier og interne links."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Skelne mellem værdifulde og tekniske filter-URL'er."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Kontrollere produktstruktur og navigation."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "google-ads": {
+      "title": "Google Ads-gennemgang for webshops og Shopping",
+      "description": "Google Ads-gennemgang for webshops og Shopping. Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres.",
+      "eyebrow": "GOOGLE ADS",
+      "headline": "Annoncebudgettet bruges. <em>Hvad giver det tilbage?</em>",
+      "lead": "Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres. Vi undersøger måling, søgetermer og Shopping-produktdata med fokus på reel forretningsværdi.",
+      "problems": [
+        [
+          "Forkerte konverteringer",
+          "Dobbelte hændelser kan styre budstrategien forkert.",
+          "Sammenligne transaktioner med GA4 og Ads."
+        ],
+        [
+          "Udgifter uden tydelig værdi",
+          "Produkter eller søgeord kan bruge budget uden salg.",
+          "Gennemgå omkostninger fordelt på sortiment."
+        ],
+        [
+          "Uens produktdata",
+          "Pris og lager i Merchant Center kan afvige fra siden.",
+          "Sammenligne feed og produktlandingssider."
+        ]
+      ],
+      "outcomes": [
+        "Kontrol af målegrundlaget",
+        "Mulige budgettab identificeret",
+        "Forslag til afgrænsede tests"
+      ],
+      "faq": [
+        [
+          "Garanterer I et bestemt ROAS-niveau?",
+          "Nej. Resultater afhænger også af priser, margin og marked."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres. Vi undersøger måling, søgetermer og Shopping-produktdata med fokus på reel forretningsværdi.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Sammenligne transaktioner med GA4 og Ads."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Gennemgå omkostninger fordelt på sortiment."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Sammenligne feed og produktlandingssider."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "analytics": {
+      "title": "GA4 og gennemgang af konverteringssporing",
+      "description": "GA4 og gennemgang af konverteringssporing. Fejl i purchase-hændelser og ordrebeløb kan skabe et falsk billede af annonceeffektiviteten.",
+      "eyebrow": "GA4-ANALYSE",
+      "headline": "Der er tal i rapporten. <em>Men er de pålidelige?</em>",
+      "lead": "Fejl i purchase-hændelser og ordrebeløb kan skabe et falsk billede af annonceeffektiviteten. Vi sammenholder GA4 og Google Ads med faktiske ordrer og forståelige definitioner.",
+      "problems": [
+        [
+          "Køb tælles flere gange",
+          "Samme ordre kan udløse flere konverteringer.",
+          "Undersøge transaktions-ID og udløsning af events."
+        ],
+        [
+          "Tallene passer ikke sammen",
+          "Attribueringsmodeller kan forklare noget af forskellen.",
+          "Sammenligne data med samme tidsperiode og begreb."
+        ],
+        [
+          "Samtykke og tags",
+          "Den besøgendes valg påvirker databehandlingen.",
+          "Kontrollere den tekniske opsætning og adskille juridisk rådgivning."
+        ]
+      ],
+      "outcomes": [
+        "Oversigt over konverteringshændelser",
+        "Dokumenterede måleafvigelser",
+        "Testplan til fremtidige ændringer"
+      ],
+      "faq": [
+        [
+          "Skal GA4 og Ads vise samme salgstal?",
+          "Nej, de bruger forskellige måleprincipper og attribueringsmodeller."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Fejl i purchase-hændelser og ordrebeløb kan skabe et falsk billede af annonceeffektiviteten. Vi sammenholder GA4 og Google Ads med faktiske ordrer og forståelige definitioner.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Undersøge transaktions-ID og udløsning af events."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Sammenligne data med samme tidsperiode og begreb."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Kontrollere den tekniske opsætning og adskille juridisk rådgivning."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "web-development": {
+      "title": "Webudvikling, CRM og API-integrationer",
+      "description": "Webudvikling, CRM og API-integrationer. Webapplikationer og API-integrationer skal løse konkrete problemer.",
+      "eyebrow": "WEBUDVIKLING",
+      "headline": "Teknologi bør <em>spare medarbejderne tid.</em>",
+      "lead": "Webapplikationer og API-integrationer skal løse konkrete problemer. Vi kortlægger datastrømme og tekniske begrænsninger før vi beslutter, om ny kode eller en enklere integration er bedst.",
+      "problems": [
+        [
+          "Ordrer indtastes flere steder",
+          "Webshop og administrationssystem er ikke forbundet.",
+          "Undersøge API'er og dataflow."
+        ],
+        [
+          "Sitet er vanskeligt at ændre",
+          "Gamle komponenter giver høj risiko ved opdatering.",
+          "Planlægge vedligeholdelse og modernisering."
+        ],
+        [
+          "Rapporter laves manuelt",
+          "Flere regneark samler data uden faste kontroller.",
+          "Definere et nyttigt dashboard."
+        ]
+      ],
+      "outcomes": [
+        "Teknisk projektbeskrivelse",
+        "Leverancer i mindre etaper",
+        "Test og vedligeholdelsesplan"
+      ],
+      "faq": [
+        [
+          "Kan I udvikle SaaS?",
+          "Vi kan undersøge behov, muligheder og sikkerhed før en egentlig udviklingsaftale."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Webapplikationer og API-integrationer skal løse konkrete problemer. Vi kortlægger datastrømme og tekniske begrænsninger før vi beslutter, om ny kode eller en enklere integration er bedst.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Undersøge API'er og dataflow."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Planlægge vedligeholdelse og modernisering."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Definere et nyttigt dashboard."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "website-design": {
+      "title": "Professionel hjemmeside til virksomheder",
+      "description": "Professionel hjemmeside til virksomheder. Vi bygger hjemmesider, der forklarer virksomhedens ydelser og hjælper besøgende videre til en forespørgsel.",
+      "eyebrow": "HJEMMESIDER",
+      "headline": "Et flot website er godt. <em>Et klart budskab er bedre.</em>",
+      "lead": "Vi bygger hjemmesider, der forklarer virksomhedens ydelser og hjælper besøgende videre til en forespørgsel. Struktur og mobil læsbarhed kommer før dekorative effekter.",
+      "problems": [
+        [
+          "Kunden forstår ikke tilbuddet",
+          "Siderne mangler klare forklaringer af tjenester.",
+          "Opbygge en logisk navigation og indhold."
+        ],
+        [
+          "Mobilen er besværlig",
+          "Små skrifttyper eller knapper gør kontakt svær.",
+          "Designe responsiv oplevelse og formularer."
+        ],
+        [
+          "Drift kræver for meget arbejde",
+          "Skrøbelige temaer gør almindelige ændringer dyre.",
+          "Vælge vedligeholdelsesvenlige komponenter."
+        ]
+      ],
+      "outcomes": [
+        "Plan for sider og indhold",
+        "Responsivt design med tydelig kontakt",
+        "Grundig test før levering"
+      ],
+      "faq": [
+        [
+          "Bruger I WordPress?",
+          "Ja, når det passer til virksomhedens krav om sikkerhed og administration."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Vi bygger hjemmesider, der forklarer virksomhedens ydelser og hjælper besøgende videre til en forespørgsel. Struktur og mobil læsbarhed kommer før dekorative effekter.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Opbygge en logisk navigation og indhold."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Designe responsiv oplevelse og formularer."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Vælge vedligeholdelsesvenlige komponenter."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "online-shop-development": {
+      "title": "Udvikling af webshop med betaling og integrationer",
+      "description": "Udvikling af webshop med betaling og integrationer. En webshop består også af produktdata, varianter, betaling, levering og ordrebehandling.",
+      "eyebrow": "WEBSHOPUDVIKLING",
+      "headline": "En webshop skal sælge. <em>Og være enkel at drive.</em>",
+      "lead": "En webshop består også af produktdata, varianter, betaling, levering og ordrebehandling. Vi designer de sammenhængende processer før en platform vælges.",
+      "problems": [
+        [
+          "Uoverskueligt sortiment",
+          "Produktvarianter og egenskaber mangler fælles struktur.",
+          "Planlægge kategorier og filtrering."
+        ],
+        [
+          "Mange skridt til køb",
+          "Kassen kan skabe unødvendigt frafald.",
+          "Teste indkøbskurv og betalingsforløb."
+        ],
+        [
+          "Lager opdateres i hånden",
+          "Ordrer synkroniseres ikke med virksomhedens system.",
+          "Vurdere API-forbindelser og fejlhåndtering."
+        ]
+      ],
+      "outcomes": [
+        "Klare krav til webshopplatformen",
+        "Afprøvet købs- og ordreforløb",
+        "Plan for integration og support"
+      ],
+      "faq": [
+        [
+          "Kan en eksisterende webshop flyttes?",
+          "En flytning skal undersøges med hensyn til data, URL'er, redirects og løbende ordrer."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "En webshop består også af produktdata, varianter, betaling, levering og ordrebehandling. Vi designer de sammenhængende processer før en platform vælges.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Planlægge kategorier og filtrering."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Teste indkøbskurv og betalingsforløb."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Vurdere API-forbindelser og fejlhåndtering."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "about": {
+      "title": "Om MrSeo.tech — et mindre team af specialister",
+      "description": "Om MrSeo.tech — et mindre team af specialister. Vi er et mindre team med ti års erfaring inden for SEO, Google Ads og webudvikling.",
+      "eyebrow": "OM OS",
+      "headline": "Et lille team. <em>En tydelig arbejdsmetode.</em>",
+      "lead": "Vi er et mindre team med ti års erfaring inden for SEO, Google Ads og webudvikling. Vi arbejder på afstand fra Ukraine og starter med at forstå problemet frem for at sælge faste pakker.",
+      "problems": [
+        [
+          "Årsagen skal findes",
+          "Mere trafik er ikke altid løsningen på færre ordrer.",
+          "Gennemgå kunderejsen og målingen."
+        ],
+        [
+          "Klare aftaler",
+          "Det skal være tydeligt, hvem der gør hvad.",
+          "Beskrive ansvar, milepæle og leverancer."
+        ],
+        [
+          "Ingen tomme løfter",
+          "Garanterede placeringer erstatter ikke dokumenteret arbejde.",
+          "Aftale indikatorer og begrænsninger."
+        ]
+      ],
+      "outcomes": [
+        "Direkte dialog",
+        "Forståelige prioriteter",
+        "Kontrol af de udførte ændringer"
+      ],
+      "faq": [
+        [
+          "Har I et kontor i Danmark?",
+          "Nej. Vi arbejder på afstand fra Ukraine og aftaler samarbejdets rammer og sprog inden start."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Vi er et mindre team med ti års erfaring inden for SEO, Google Ads og webudvikling. Vi arbejder på afstand fra Ukraine og starter med at forstå problemet frem for at sælge faste pakker.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Gennemgå kunderejsen og målingen."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Beskrive ansvar, milepæle og leverancer."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Aftale indikatorer og begrænsninger."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "portfolio": {
+      "title": "Projekter og erfaring fra MrSeo.tech",
+      "description": "Projekter og erfaring fra MrSeo.tech. Vi viser websites fra vores offentlige portefølje som eksempler på arbejdsområder.",
+      "eyebrow": "PROJEKTER",
+      "headline": "Offentlige projekter. <em>Ingen opdigtede resultater.</em>",
+      "lead": "Vi viser websites fra vores offentlige portefølje som eksempler på arbejdsområder. Vi påstår ikke, at de er danske kunder, og deler ikke private resultater uden tilladelse.",
+      "problems": [
+        [
+          "Biludstyr og kataloger",
+          "Mange varer kræver god navigation.",
+          "Se eksempler på butikker med store sortimenter."
+        ],
+        [
+          "Mode og tilbehør",
+          "Produktvarianter skal præsenteres klart.",
+          "Udforsk forskellige typer webshops."
+        ],
+        [
+          "Specialiserede tjenester",
+          "Tillid og kontakt er vigtige dele af oplevelsen.",
+          "Se eksempler på servicesider."
+        ]
+      ],
+      "outcomes": [
+        "Reelle offentlige domæner",
+        "Erfaring fra forskellige brancher",
+        "Beskyttelse af kundedata"
+      ],
+      "faq": [
+        [
+          "Er det danske projekter?",
+          "Nej. Vi viser eksempler fra en international offentlig portefølje."
+        ]
+      ],
+      "offer": {
+        "title": "Undersøg eksisterende data → Kontrollér effekten",
+        "intro": "Vi viser websites fra vores offentlige portefølje som eksempler på arbejdsområder. Vi påstår ikke, at de er danske kunder, og deler ikke private resultater uden tilladelse.",
+        "items": [
+          {
+            "title": "Undersøg eksisterende data",
+            "detail": "Se eksempler på butikker med store sortimenter."
+          },
+          {
+            "title": "Vælg indsats efter betydning",
+            "detail": "Udforsk forskellige typer webshops."
+          },
+          {
+            "title": "Kontrollér effekten",
+            "detail": "Se eksempler på servicesider."
+          }
+        ],
+        "cta": "Fortæl om mit projekt"
+      }
+    },
+    "contact": {
+      "title": "Kontakt os om dit website eller webshopprojekt",
+      "description": "Kontakt os om dit website eller webshopprojekt. Send webadressen, målmarkedet og et konkret eksempel på problemet.",
+      "eyebrow": "KONTAKT",
+      "headline": "Hvad forhindrer <em>flere relevante henvendelser?</em>",
+      "lead": "Send webadressen, målmarkedet og et konkret eksempel på problemet. En kort beskrivelse er tilstrækkelig til en første vurdering. Fortæl os, hvilket system din webshop bruger, hvilket marked du sælger på, og hvad der ikke fungerer. Send ingen adgangskoder.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    },
+    "privacy": {
+      "title": "Privatliv og behandling af kontaktoplysninger",
+      "description": "Sådan behandler MrSeo.tech oplysninger fra kontaktformularen.",
+      "eyebrow": "PRIVATLIV",
+      "headline": "Privatliv og kontaktforespørgsler",
+      "lead": "Sådan behandler MrSeo.tech oplysninger fra kontaktformularen.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    }
+  },
+  "privacy": [
+    "Privatliv og kontaktforespørgsler",
+    "Sådan behandler MrSeo.tech oplysninger fra kontaktformularen.",
+    "Indsendte oplysninger",
+    "Navn, e-mailadresse, eventuel webadresse og besked. Midlertidige tekniske data hjælper med at begrænse spam.",
+    "Formål",
+    "Vi bruger oplysningerne til at besvare din henvendelse og eventuelt drøfte et samarbejde.",
+    "Videresendelse",
+    "Din besked sendes til hello@mrseo.tech og videresendes til en arbejdsindbakke hos UKR.NET. Hosting- og e-mailudbydere behandler oplysningerne teknisk.",
+    "Opbevaring",
+    "Korrespondance opbevares så længe, det er nødvendigt for henvendelsen og eventuelle lovkrav. Den præcise periode fastlægges før offentlig lancering.",
+    "Rettigheder og kontakt",
+    "Du kan efter gældende regler bede om indsigt, rettelse eller sletning på hello@mrseo.tech. Den juridiske dataansvarlige offentliggøres, når identiteten er verificeret.",
+    "Når du sender formularen, giver du oplysninger for at modtage et svar. Detaljer:"
+  ],
+  "market": {
+    "heading": "SEO, Google Ads og webudvikling til virksomheder i Danmark",
+    "description": "Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer. Vi undersøger søgninger, brugeroplevelse, konverteringsdata og besværlige arbejdsgange.",
+    "cta": "Fortæl om mit projekt",
+    "brief": "Fortæl os, hvilket system din webshop bruger, hvilket marked du sælger på, og hvad der ikke fungerer. Send ingen adgangskoder.",
+    "portfolioLabel": "Projekter"
+  },
+  "serviceLabels": {
+    "seo": "SEO",
+    "seo-audit": "Teknisk SEO-analyse",
+    "ecommerce-seo": "SEO til webshops",
+    "google-ads": "Google Ads",
+    "analytics": "GA4-analyse",
+    "web-development": "Webudvikling",
+    "website-design": "Hjemmesider",
+    "online-shop-development": "Webshopudvikling",
+    "about": "Om os",
+    "portfolio": "Projekter",
+    "contact": "Kontakt"
+  },
+  "portfolioCategories": {
+    "auto": "BILER",
+    "fashion": "MODE",
+    "home": "BOLIG",
+    "electronics": "ELEKTRONIK",
+    "medical": "SUNDHED"
+  }
+}

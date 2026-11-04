@@ -1,8 +1,8 @@
 <?php
-/** Staging-only draft of six fully separate European language sets. */
+/** Staging international pages for fifteen additional EU market locales. */
 if(!defined('ABSPATH')) exit;
 require_once __DIR__.'/eu-complete-services.php';
-function mrseo_eu_markets(){return array('fr'=>'fr-FR','it'=>'it-IT','es'=>'es-ES','nl'=>'nl-NL','ro'=>'ro-RO','cs'=>'cs-CZ');}
+function mrseo_eu_markets(){return array('fr'=>'fr-FR','it'=>'it-IT','es'=>'es-ES','nl'=>'nl-NL','ro'=>'ro-RO','cs'=>'cs-CZ','pt'=>'pt-PT','sv'=>'sv-SE','da'=>'da-DK','fi'=>'fi-FI','hu'=>'hu-HU','sk'=>'sk-SK','el'=>'el-GR','bg'=>'bg-BG','hr'=>'hr-HR');}
 function mrseo_eu_slugs(){return array_merge(array('','seo','google-ads','web-development','contact','privacy'),mrseo_eu_additional_slugs());}
 function mrseo_eu_all(){
  static $data=null;
@@ -1841,7 +1841,16 @@ function mrseo_eu_all(){
   }
 }
 MRSEO_EU_JSON;
- return $data=json_decode($json,true,512,JSON_THROW_ON_ERROR);
+ $data=json_decode($json,true,512,JSON_THROW_ON_ERROR);
+ foreach(array('pt','sv','da','fi','hu','sk','el','bg','hr') as $language){
+   $file=__DIR__.'/../locales/'.$language.'-full.json';
+   if(!is_readable($file))throw new RuntimeException('Market translation missing: '.$language);
+   $market=json_decode(file_get_contents($file),true,512,JSON_THROW_ON_ERROR);
+   if(!is_array($market)||!isset($market['pages'])||count($market['pages'])!==13)
+      throw new RuntimeException('Incomplete market translation: '.$language);
+   $data[$language]=$market;
+ }
+ return $data;
 }
 function mrseo_eu_market($lang=null){
  $lang=$lang?:mrseo_locale();

@@ -24,6 +24,15 @@ function mrseo_render_language_dropdown($slug = null, $current = null, $placemen
         'nl' => array('short' => 'NL', 'name' => 'Nederlands'),
         'ro' => array('short' => 'RO', 'name' => 'Română'),
         'cs' => array('short' => 'CS', 'name' => 'Čeština'),
+        'pt' => array('short' => 'PT', 'name' => 'Português'),
+        'sv' => array('short' => 'SV', 'name' => 'Svenska'),
+        'da' => array('short' => 'DA', 'name' => 'Dansk'),
+        'fi' => array('short' => 'FI', 'name' => 'Suomi'),
+        'hu' => array('short' => 'HU', 'name' => 'Magyar'),
+        'sk' => array('short' => 'SK', 'name' => 'Slovenčina'),
+        'el' => array('short' => 'EL', 'name' => 'Ελληνικά'),
+        'bg' => array('short' => 'BG', 'name' => 'Български'),
+        'hr' => array('short' => 'HR', 'name' => 'Hrvatski'),
     );
     if (!isset($languages[$current])) $current = 'uk';
 
@@ -39,6 +48,15 @@ function mrseo_render_language_dropdown($slug = null, $current = null, $placemen
         'nl' => 'Taal wijzigen',
         'ro' => 'Schimbă limba',
         'cs' => 'Změnit jazyk',
+        'pt' => 'Alterar idioma',
+        'sv' => 'Byt språk',
+        'da' => 'Skift sprog',
+        'fi' => 'Vaihda kieli',
+        'hu' => 'Nyelv váltása',
+        'sk' => 'Zmeniť jazyk',
+        'el' => 'Αλλαγή γλώσσας',
+        'bg' => 'Смяна на езика',
+        'hr' => 'Promijeni jezik',
     );
     $switch_label = $switch_labels[$current];
     $placement_class = $placement === 'footer' ? ' mrseo-language-dropdown--footer' : '';

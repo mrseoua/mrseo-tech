@@ -6,7 +6,7 @@ function mrseo_eu_additional_slugs(){
 }
 function mrseo_eu_additional_pages($language){
  static $cache=array();
- if(!in_array($language,array('fr','it','es','nl','ro','cs'),true))return array();
+ if(!in_array($language,array('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true))return array();
  if(isset($cache[$language]))return $cache[$language];
  $path=__DIR__.'/../locales/'.$language.'-services.json';
  if(!is_file($path))return array();
@@ -25,7 +25,7 @@ function mrseo_eu_service_labels($lang=null){
  'ro'=>array('seo'=>'SEO','seo-audit'=>'Audit SEO tehnic','ecommerce-seo'=>'SEO magazin online','google-ads'=>'Google Ads','analytics'=>'Analiză GA4','web-development'=>'Dezvoltare personalizată','website-design'=>'Creare website','online-shop-development'=>'Dezvoltare magazin','about'=>'Despre noi','portfolio'=>'Proiecte','contact'=>'Contact'),
  'cs'=>array('seo'=>'SEO','seo-audit'=>'Technický SEO audit','ecommerce-seo'=>'SEO pro e-shopy','google-ads'=>'Google Ads / PPC','analytics'=>'GA4 analytika','web-development'=>'Vývoj na míru','website-design'=>'Tvorba webových stránek','online-shop-development'=>'Tvorba e-shopu','about'=>'O nás','portfolio'=>'Projekty','contact'=>'Kontakt')
  );
- return $all[$lang]??array();
+ return $all[$lang]??(function_exists('mrseo_eu_market')?(mrseo_eu_market($lang)['serviceLabels']??array()):array());
 }
 function mrseo_eu_portfolio_categories($lang=null){
  $lang=$lang?:mrseo_locale();
@@ -37,5 +37,5 @@ function mrseo_eu_portfolio_categories($lang=null){
  'ro'=>array('auto'=>'AUTO','fashion'=>'MODĂ','home'=>'CASĂ','electronics'=>'ELECTRONICE','medical'=>'SĂNĂTATE'),
  'cs'=>array('auto'=>'AUTO','fashion'=>'MÓDA','home'=>'BYDLENÍ','electronics'=>'ELEKTRONIKA','medical'=>'ZDRAVÍ')
  );
- return $all[$lang]??array();
+ return $all[$lang]??(function_exists('mrseo_eu_market')?(mrseo_eu_market($lang)['portfolioCategories']??array()):array());
 }

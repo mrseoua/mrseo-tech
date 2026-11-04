@@ -39,7 +39,7 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
-      - name: Run international SEO pre-indexing audit (177 routes)
+      - name: Run international SEO pre-indexing audit (294 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
@@ -367,6 +367,39 @@ jobs:
                   assert len(page['problems'])==3 and len(page['outcomes'])==3
                   assert len(page['faq'])>=2 and len(page['offer']['items'])==3
                   assert len({x['title'] for x in page['offer']['items']})==3
+          # The next nine markets have real JSON copy for all thirteen pages.
+          new_locales={'pt':'pt-PT','sv':'sv-SE','da':'da-DK','fi':'fi-FI','hu':'hu-HU',
+                       'sk':'sk-SK','el':'el-GR','bg':'bg-BG','hr':'hr-HR'}
+          completed_slugs={'','seo','seo-audit','ecommerce-seo','google-ads','analytics',
+                           'web-development','website-design','online-shop-development',
+                           'about','portfolio','contact','privacy'}
+          new_titles=set()
+          for language,hreflang in new_locales.items():
+              entry=json.loads((root/'locales'/f'{language}-full.json').read_text())
+              assert entry['code']==hreflang,(language,'Wrong locale code')
+              assert entry['name'] and entry['country'] and entry['market']['brief']
+              assert len(entry['ui'])==17 and len(entry['nav'])==7 and len(entry['privacy'])==13
+              assert set(entry['pages'])==completed_slugs,(language,'Incomplete 13-page locale')
+              assert set(entry['serviceLabels'])=={'seo','seo-audit','ecommerce-seo',
+                       'google-ads','analytics','web-development','website-design',
+                       'online-shop-development','about','portfolio','contact'}
+              assert set(entry['portfolioCategories'])=={'auto','fashion','home','electronics','medical'}
+              assert len({p['title'] for p in entry['pages'].values()})==13,(language,'Duplicate titles')
+              for slug,p in entry['pages'].items():
+                  assert len(p['title'])>=18 and len(p['description'])>=35 and p['lead']
+                  assert len(p['headline'])>=20
+                  assert (language,p['title']) not in new_titles
+                  new_titles.add((language,p['title']))
+                  if slug not in ('contact','privacy'):
+                      assert len(p['problems'])==3 and len(p['outcomes'])==3
+                      assert len(p['offer']['items'])==3 and p['offer']['cta']
+                      assert p['faq']
+                      assert all(len(problem)==3 and all(problem) for problem in p['problems'])
+                  else:
+                      assert not p['problems'] and not p['outcomes']
+              assert entry['market']['brief'] in entry['pages']['contact']['lead']
+          eu_markets=(root/'inc/eu-content.php').read_text()
+          assert "foreach(array('pt','sv','da','fi','hu','sk','el','bg','hr') as $language)" in eu_markets
           assert 'mrseo_eu_additional_slugs' in (root/'inc/eu-complete-services.php').read_text()
           assert 'eu-nav-services' in (root/'header-eu.php').read_text()
           eu_style=(root/'assets/eu-expansion.css').read_text()
@@ -375,7 +408,7 @@ jobs:
           assert '.eu-offer-grid' in eu_style and '.eu-market-heading' in eu_style
           assert '.eu-nav-services-panel' in eu_style and '.eu-portfolio-grid' in eu_style
           eu_router=(root/'inc/eu-routing.php').read_text()
-          assert "mrseo_eu_rules_v2" in eu_router
+          assert "mrseo_eu_rules_v3" in eu_router
           assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
           assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
           assert "Язык заявки: $mail_locale" in functions
