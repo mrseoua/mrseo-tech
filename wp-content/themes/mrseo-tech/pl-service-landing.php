@@ -4,7 +4,7 @@ if(!defined('ABSPATH'))exit;
 $pl_slug=mrseo_slug();
 $pl_page=mrseo_pl_service_page($pl_slug);
 if(mrseo_locale()!=='pl'||!$pl_page){status_header(404);include get_404_template();return;}
-get_header('international');
+get_header();
 $pl_group=strpos($pl_slug,'sklepow')!==false?'commerce':(in_array($pl_slug,array('audyt-google-ads','google-shopping'),true)?'ads':($pl_slug==='problemy-merchant-center'?'merchant':($pl_slug==='opieka-wordpress'?'support':'web')));
 ?>
 <div class="pl-svc pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>">
@@ -82,4 +82,4 @@ $pl_group=strpos($pl_slug,'sklepow')!==false?'commerce':(in_array($pl_slug,array
   <a class="intl-final-link" href="<?php echo esc_url(mrseo_url('contact','pl'));?>"><?php echo esc_html($pl_page['cta']);?> ↗</a>
  </div></section>
 </div>
-<?php get_footer('international');?>
+<?php get_footer();?>
