@@ -12,8 +12,8 @@ function mrseo_eu_route() {
 }
 
 add_action('init',function(){
-    add_rewrite_rule('^(fr|it|es|nl|ro|cs)/?$','index.php?mrseo_lang=$matches[1]','top');
-    add_rewrite_rule('^(fr|it|es|nl|ro|cs)/(seo|seo-audit|ecommerce-seo|google-ads|analytics|web-development|website-design|online-shop-development|about|portfolio|contact|privacy)/?$',
+    add_rewrite_rule('^(fr|it|es|nl|ro|cs|pt|sv|da|fi|hu|sk|el|bg|hr)/?$','index.php?mrseo_lang=$matches[1]','top');
+    add_rewrite_rule('^(fr|it|es|nl|ro|cs|pt|sv|da|fi|hu|sk|el|bg|hr)/(seo|seo-audit|ecommerce-seo|google-ads|analytics|web-development|website-design|online-shop-development|about|portfolio|contact|privacy)/?$',
         'index.php?mrseo_lang=$matches[1]&mrseo_service=$matches[2]','top');
 },12);
 
@@ -47,8 +47,8 @@ add_filter('script_loader_tag',function($tag,$handle){
     return str_replace('<script ','<script type="module" ',$tag);
 },10,2);
 add_action('init',function(){
-    if(get_option('mrseo_eu_rules_v2')!=='ready'){
+    if(get_option('mrseo_eu_rules_v3')!=='ready'){
         flush_rewrite_rules(false);
-        update_option('mrseo_eu_rules_v2','ready',false);
+        update_option('mrseo_eu_rules_v3','ready',false);
     }
 },42);
