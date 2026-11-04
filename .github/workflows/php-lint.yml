@@ -352,6 +352,17 @@ jobs:
                   assert p['title'] and p['description'] and p['headline'] and p['lead'],(loc,slug)
                   if slug in ('seo','google-ads','web-development'):
                       assert len(p['problems'])==3 and len(p['outcomes'])==3 and len(p['faq'])>=1
+          # The EU service hero must be subject-specific, not the old generic
+          # floating title + three rows with different colours.
+          eu_scenes=(root/'inc/eu-service-visuals.php').read_text()
+          eu_scenes_css=(root/'assets/eu-service-scenes.css').read_text()
+          for visual_slug in ('seo','seo-audit','ecommerce-seo','google-ads',
+                              'analytics','web-development','website-design','online-shop-development'):
+              assert "($slug === '"+visual_slug+"')" in eu_scenes, ('Missing distinct service scene',visual_slug)
+              assert '.eu-viz--'+visual_slug.replace('-','') not in eu_scenes_css or len(eu_scenes_css)>1000
+          assert 'eu-service-visuals.php' in (root/'eu-localized.php').read_text()
+          assert 'mrseo-eu-service-scenes' in (root/'inc/eu-routing.php').read_text()
+          assert 'prefers-reduced-motion' in eu_scenes_css
           eu_template=(root/'eu-localized.php').read_text()
           assert 'eu-market-offer' in eu_template and "['offer']['items']" in eu_template
           assert 'eu-hero--contact' in eu_template and 'eu-hero-contact' in eu_template
