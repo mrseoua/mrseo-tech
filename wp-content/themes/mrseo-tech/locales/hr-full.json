@@ -33,7 +33,7 @@
   "pages": {
     "": {
       "title": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj",
-      "description": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj. Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje. Provjeravamo vidljivost, mjerenje kupnji i poslovne procese pr",
+      "description": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj. Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje.",
       "eyebrow": "MRSEO.TECH",
       "headline": "Web-stranica postoji. <em>Ali donosi li nove klijente?</em>",
       "lead": "Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje. Provjeravamo vidljivost, mjerenje kupnji i poslovne procese prije prijedloga rada.",
@@ -87,7 +87,7 @@
     },
     "seo": {
       "title": "SEO usluge za poslovne stranice i web-trgovine",
-      "description": "SEO usluge za poslovne stranice i web-trgovine. SEO započinje razumijevanjem onoga što korisnici traže. Analiziramo strukturu, interne poveznice i sadržaj prije nego predložimo dodatne tekstove.",
+      "description": "SEO usluge za poslovne stranice i web-trgovine. SEO započinje razumijevanjem onoga što korisnici traže.",
       "eyebrow": "SEO",
       "headline": "Važne stranice <em>ne pojavljuju se u pretrazi?</em>",
       "lead": "SEO započinje razumijevanjem onoga što korisnici traže. Analiziramo strukturu, interne poveznice i sadržaj prije nego predložimo dodatne tekstove.",
@@ -141,8 +141,8 @@
     },
     "seo-audit": {
       "title": "Tehnička SEO analiza: indeksiranje i struktura",
-      "description": "Tehnička SEO analiza: indeksiranje i struktura. SEO audit povezuje probleme indeksiranja i duplikata s konkretnim URL-ovima. Provjeravamo crawl, canonical oznake i mobilnu izvedbu te određujemo prioritet p",
-      "eyebrow": "SEO / AUDIT",
+      "description": "Tehnička SEO analiza: indeksiranje i struktura. SEO audit povezuje probleme indeksiranja i duplikata s konkretnim URL-ovima.",
+      "eyebrow": "TEHNIČKA SEO ANALIZA",
       "headline": "Tehnička SEO analiza <em>mora pokazati stvarne pogreške.</em>",
       "lead": "SEO audit povezuje probleme indeksiranja i duplikata s konkretnim URL-ovima. Provjeravamo crawl, canonical oznake i mobilnu izvedbu te određujemo prioritet popravaka.",
       "problems": [
@@ -195,8 +195,8 @@
     },
     "ecommerce-seo": {
       "title": "SEO za web-trgovine: kategorije, filtri i proizvodi",
-      "description": "SEO za web-trgovine: kategorije, filtri i proizvodi. Kategorije, filtri i varijante proizvoda određuju koliko je web-trgovina razumljiva tražilicama. Provjeravamo stvarne postavke WooCommercea, Shopifyja i",
-      "eyebrow": "ECOMMERCE / SEO",
+      "description": "SEO za web-trgovine: kategorije, filtri i proizvodi. Kategorije, filtri i varijante proizvoda određuju koliko je web-trgovina razumljiva tražilicama.",
+      "eyebrow": "SEO ZA WEB-TRGOVINE",
       "headline": "Proizvodi su u trgovini. <em>Pronalaze li ih kupci?</em>",
       "lead": "Kategorije, filtri i varijante proizvoda određuju koliko je web-trgovina razumljiva tražilicama. Provjeravamo stvarne postavke WooCommercea, Shopifyja ili druge platforme.",
       "problems": [
@@ -249,8 +249,8 @@
     },
     "google-ads": {
       "title": "Google Ads revizija za web-trgovine",
-      "description": "Google Ads revizija za web-trgovine. Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi. Zatim analiziramo kampanje, Shopping proizvode i kvalitetu Merchant Center podataka.",
-      "eyebrow": "GOOGLE / ADS",
+      "description": "Google Ads revizija za web-trgovine. Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi.",
+      "eyebrow": "GOOGLE ADS",
       "headline": "Oglašavanje troši proračun. <em>Što stvarno donosi?</em>",
       "lead": "Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi. Zatim analiziramo kampanje, Shopping proizvode i kvalitetu Merchant Center podataka.",
       "problems": [
@@ -303,8 +303,8 @@
     },
     "analytics": {
       "title": "GA4 analitika i provjera praćenja konverzija",
-      "description": "GA4 analitika i provjera praćenja konverzija. Dvostruko evidentirana kupnja može iskriviti odluke o oglašavanju. Provjeravamo GA4 purchase događaje, transaction_id i razlike između atribucijskih modela.",
-      "eyebrow": "ANALYTICS",
+      "description": "GA4 analitika i provjera praćenja konverzija. Dvostruko evidentirana kupnja može iskriviti odluke o oglašavanju.",
+      "eyebrow": "GA4 ANALITIKA",
       "headline": "Postoje izvještaji. <em>Jesu li brojevi pouzdani?</em>",
       "lead": "Dvostruko evidentirana kupnja može iskriviti odluke o oglašavanju. Provjeravamo GA4 purchase događaje, transaction_id i razlike između atribucijskih modela.",
       "problems": [
@@ -357,8 +357,8 @@
     },
     "web-development": {
       "title": "Razvoj web aplikacija, CRM i API integracije",
-      "description": "Razvoj web aplikacija, CRM i API integracije. Razvijamo web-aplikacije i integracije za stvarne poslovne procese. Prije pisanja koda provjeravamo podatke, sigurnost i raspoložive API-je.",
-      "eyebrow": "WEB / DEVELOPMENT",
+      "description": "Razvoj web aplikacija, CRM i API integracije. Razvijamo web-aplikacije i integracije za stvarne poslovne procese.",
+      "eyebrow": "RAZVOJ PO MJERI",
       "headline": "Softver treba <em>smanjiti ručni posao.</em>",
       "lead": "Razvijamo web-aplikacije i integracije za stvarne poslovne procese. Prije pisanja koda provjeravamo podatke, sigurnost i raspoložive API-je.",
       "problems": [
@@ -411,8 +411,8 @@
     },
     "website-design": {
       "title": "Izrada poslovnih web stranica",
-      "description": "Izrada poslovnih web stranica. Izrađujemo poslovne web-stranice koje objašnjavaju usluge i olakšavaju slanje upita. Navigacija i iskustvo na telefonu važniji su od dekoracije.",
-      "eyebrow": "WEBSITE / DESIGN",
+      "description": "Izrada poslovnih web stranica. Izrađujemo poslovne web-stranice koje objašnjavaju usluge i olakšavaju slanje upita.",
+      "eyebrow": "IZRADA WEB-STRANICA",
       "headline": "Dobra web-stranica <em>jasno vodi do kontakta.</em>",
       "lead": "Izrađujemo poslovne web-stranice koje objašnjavaju usluge i olakšavaju slanje upita. Navigacija i iskustvo na telefonu važniji su od dekoracije.",
       "problems": [
@@ -465,8 +465,8 @@
     },
     "online-shop-development": {
       "title": "Izrada web trgovina s integracijama",
-      "description": "Izrada web trgovina s integracijama. Razvoj web-trgovine obuhvaća katalog, varijante, plaćanja, dostavu i obradu narudžbi. Platformu biramo prema stvarnim procesima i potrebnim integracijama.",
-      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "description": "Izrada web trgovina s integracijama. Razvoj web-trgovine obuhvaća katalog, varijante, plaćanja, dostavu i obradu narudžbi.",
+      "eyebrow": "IZRADA WEB-TRGOVINA",
       "headline": "Web-trgovina mora prodavati. <em>I biti jednostavna za vođenje.</em>",
       "lead": "Razvoj web-trgovine obuhvaća katalog, varijante, plaćanja, dostavu i obradu narudžbi. Platformu biramo prema stvarnim procesima i potrebnim integracijama.",
       "problems": [
@@ -519,8 +519,8 @@
     },
     "about": {
       "title": "O nama — mali tim stručnjaka MrSeo.tech",
-      "description": "O nama — mali tim stručnjaka MrSeo.tech. Mi smo mali tim stručnjaka s deset godina iskustva u SEO-u, Google Adsu i web razvoju. Radimo na daljinu iz Ukrajine i najprije analiziramo uzrok problema.",
-      "eyebrow": "ABOUT",
+      "description": "O nama — mali tim stručnjaka MrSeo.tech. Mi smo mali tim stručnjaka s deset godina iskustva u SEO-u, Google Adsu i web razvoju.",
+      "eyebrow": "O NAMA",
       "headline": "Mali tim. <em>Jasne odgovornosti.</em>",
       "lead": "Mi smo mali tim stručnjaka s deset godina iskustva u SEO-u, Google Adsu i web razvoju. Radimo na daljinu iz Ukrajine i najprije analiziramo uzrok problema.",
       "problems": [
@@ -573,8 +573,8 @@
     },
     "portfolio": {
       "title": "Projekti i iskustvo tima MrSeo.tech",
-      "description": "Projekti i iskustvo tima MrSeo.tech. Prikazujemo javne web-stranice iz portfelja kao primjere djelatnosti i tehničkih okruženja. Ne predstavljamo ih kao hrvatske klijente i ne objavljujemo povjerljive rezu",
-      "eyebrow": "PORTFOLIO",
+      "description": "Projekti i iskustvo tima MrSeo.tech. Prikazujemo javne web-stranice iz portfelja kao primjere djelatnosti i tehničkih okruženja.",
+      "eyebrow": "PROJEKTI",
       "headline": "Stvarni projekti. <em>Bez izmišljenih brojki.</em>",
       "lead": "Prikazujemo javne web-stranice iz portfelja kao primjere djelatnosti i tehničkih okruženja. Ne predstavljamo ih kao hrvatske klijente i ne objavljujemo povjerljive rezultate bez dopuštenja.",
       "problems": [
@@ -627,8 +627,8 @@
     },
     "contact": {
       "title": "Kontaktirajte nas i opišite svoj projekt",
-      "description": "Kontaktirajte nas i opišite svoj projekt. Pošaljite adresu web-stranice, tržište i konkretan primjer problema. Nije potrebno dijeliti pristupne podatke.",
-      "eyebrow": "CONTACT",
+      "description": "Kontaktirajte nas i opišite svoj projekt. Pošaljite adresu web-stranice, tržište i konkretan primjer problema.",
+      "eyebrow": "KONTAKT",
       "headline": "Što sprječava <em>nove upite i narudžbe?</em>",
       "lead": "Pošaljite adresu web-stranice, tržište i konkretan primjer problema. Nije potrebno dijeliti pristupne podatke. Navedite platformu web-trgovine, tržište i primjer poteškoće. Ne šaljite lozinke.",
       "problems": [],
@@ -638,7 +638,7 @@
     "privacy": {
       "title": "Privatnost i obrada podataka za kontakt",
       "description": "Kako MrSeo.tech obrađuje podatke iz obrasca za kontakt.",
-      "eyebrow": "PRIVACY",
+      "eyebrow": "PRIVATNOST",
       "headline": "Privatnost i kontaktni upiti",
       "lead": "Kako MrSeo.tech obrađuje podatke iz obrasca za kontakt.",
       "problems": [],
