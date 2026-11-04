@@ -28,7 +28,8 @@ add_filter('template_include',function($template){
 },180);
 add_filter('pre_get_document_title',function($title){
     $page=mrseo_eu_route()?mrseo_eu_page():null;
-    return $page?$page['title'].' | MrSeo.tech':$title;
+    if(!$page)return $title;
+    return stripos($page['title'],'MrSeo.tech')!==false?$page['title']:$page['title'].' | MrSeo.tech';
 },140);
 add_action('wp_head',function(){
     if(!mrseo_eu_route() || mrseo_slug()==='privacy')return;
