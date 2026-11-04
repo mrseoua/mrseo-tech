@@ -55,6 +55,12 @@ function mrseo_url($slug='',$lang=null){
 function mrseo_t($uk,$ru,$en){
  $l=mrseo_locale();
  if(($l==='pl'||$l==='de') && mrseo_slug()==='')return mrseo_int_home_copy($l,$en);
+ // One shared visual template; localized texts are read from the existing
+ // approved market content, never from a duplicate visual template.
+ if(function_exists('mrseo_eu_markets') && isset(mrseo_eu_markets()[$l])){
+  require_once __DIR__.'/eu-orbit-copy.php';
+  return mrseo_eu_orbit_copy($l,$en);
+ }
  return $l==='uk'?$uk:($l==='ru'?$ru:($l==='en'?mrseo_uk_home_copy($en):$en));
 }
 function mrseo_translation($slug){$all=mrseo_translation_drafts();$l=mrseo_locale();return $all[$l][$slug]??array('','','',array());}
