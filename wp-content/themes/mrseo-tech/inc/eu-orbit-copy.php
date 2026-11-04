@@ -18,7 +18,7 @@ MRSEO_EU_ORBIT_CONTROLS
 , true, 512, JSON_THROW_ON_ERROR);
     }
     $controls=$control_copy[$locale]??$control_copy['fr'];
-    $pages=$market['pages'];
+    $pages=array_merge(function_exists('mrseo_eu_additional_pages')?mrseo_eu_additional_pages($locale):array(),$market['pages']);
     $labels=mrseo_eu_service_labels($locale);
     $ui=$market['ui'];
     $nav=$market['nav'];
@@ -49,12 +49,12 @@ MRSEO_EU_ORBIT_CONTROLS
         'Business websites and online stores'=>$outcome('website-design'),
         'Horoshop stores'=>'Horoshop',
         'Projects in our portfolio'=>$link('portfolio'),
-        'EXPERIENCE ACROSS INDUSTRIES'=>mb_strtoupper($link('portfolio'),'UTF-8'),
+        'EXPERIENCE ACROSS INDUSTRIES'=>function_exists('mb_strtoupper')?mb_strtoupper($link('portfolio'),'UTF-8'):strtoupper($link('portfolio')),
         'Projects we have worked with'=>$title('portfolio'),
         'Explore the portfolio'=>$link('portfolio'),
         'Website names from our portfolio'=>$lead('portfolio'),
         'Our business growth approach'=>$ui[3],
-        'FROM CHALLENGE TO SOLUTION'=>mb_strtoupper($ui[3],'UTF-8'),
+        'FROM CHALLENGE TO SOLUTION'=>function_exists('mb_strtoupper')?mb_strtoupper($ui[3],'UTF-8'):strtoupper($ui[3]),
         'Your website should drive business, not just exist.'=>$ui[0],
         'When a website struggles to generate enquiries, the bottleneck may be site architecture, organic visibility, paid acquisition or measurement. We diagnose constraints and prioritize improvements that support business goals.'=>$lead(''),
         'SEO & technical foundations'=>$link('seo'),
@@ -116,7 +116,7 @@ function mrseo_eu_premium_mega_copy($locale){
  $market=mrseo_eu_market($locale);
  if(!$market)return null;
  $labels=mrseo_eu_service_labels($locale);
- $pages=$market['pages'];
+ $pages=array_merge(function_exists('mrseo_eu_additional_pages')?mrseo_eu_additional_pages($locale):array(),$market['pages']);
  $problem=function($slug,$i=0)use($pages){
   return $pages[$slug]['problems'][$i][0]??'';
  };
