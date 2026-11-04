@@ -51,13 +51,18 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
 </div>
 </div>
 <?php else:?>
-<div class="eu-service-scene eu-service-scene-<?php echo esc_attr($slug);?>" aria-hidden="true">
+<?php $mrseo_is_service_illustration=in_array($slug,array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'),true);?>
+<div class="eu-service-scene eu-service-scene-<?php echo esc_attr($slug);?><?php echo $mrseo_is_service_illustration?' eu-scene-illustrated':'';?>" aria-hidden="true">
 <div class="eu-scene-halo"></div>
 <span class="eu-scene-top"><?php echo esc_html($ui[2]);?></span>
-<div class="eu-scene-core"><?php echo esc_html(array('seo'=>'SEO','seo-audit'=>'AUDIT','ecommerce-seo'=>'SHOP','google-ads'=>'ADS','analytics'=>'GA4','web-development'=>'API','website-design'=>'WEB','online-shop-development'=>'STORE','about'=>'TEAM','portfolio'=>'WORK')[$slug]??'↗');?><span class="eu-scene-pulse"></span></div>
+<?php if($mrseo_is_service_illustration):?>
+<?php include get_template_directory().'/inc/eu-service-visuals.php';?>
+<?php else:?>
+<div class="eu-scene-core"><?php echo esc_html(array('about'=>'TEAM','portfolio'=>'WORK')[$slug]??'↗');?><span class="eu-scene-pulse"></span></div>
 <div class="eu-scene-rows">
 <?php foreach(array_slice($page['problems'],0,3) as $i=>$item):?><div class="eu-scene-row"><span>0<?php echo esc_html($i+1);?></span><strong><?php echo esc_html($item[0]);?></strong><span class="eu-tick">↗</span></div><?php endforeach;?>
 </div>
+<?php endif;?>
 <div class="eu-scene-footer">
  <span class="eu-scene-status"><i></i><?php echo esc_html($ui[3]);?></span>
  <span class="eu-scene-progress"><i></i></span>
