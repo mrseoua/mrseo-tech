@@ -349,6 +349,13 @@ jobs:
                       assert len(p['problems'])==3 and len(p['outcomes'])==3 and len(p['faq'])>=1
           eu_template=(root/'eu-localized.php').read_text()
           assert 'eu-market-offer' in eu_template and "['offer']['items']" in eu_template
+          assert 'eu-hero--contact' in eu_template and 'eu-hero-contact' in eu_template
+          assert "include get_template_directory().'/inc/eu-contact-form.php'" in eu_template
+          contact_form=(root/'inc/eu-contact-form.php').read_text()
+          for required in ('wp_nonce_field','mrseo_lang','contact_name','contact_email','contact_site',
+                           'contact_message','contact_company_extra','mrseo_privacy_form_notice'):
+              assert required in contact_form, ('EU contact field missing',required)
+          assert 'eu-hero--contact .eu-hero-grid' in (root/'assets/eu-expansion.css').read_text()
           assert "'#eu-contact-form':mrseo_url('contact')" in eu_template
           assert "mrseo_url('portfolio')" in eu_template
           assert "mrseo_eu_portfolio_categories" in eu_template
