@@ -334,6 +334,10 @@ function mrseo_mega_menu_copy() {
 MRSEO_MEGA_DATA;
         $copy = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
     }
+    if(function_exists('mrseo_eu_markets') && isset(mrseo_eu_markets()[mrseo_locale()])){
+        require_once __DIR__.'/eu-orbit-copy.php';
+        return mrseo_eu_premium_mega_copy(mrseo_locale());
+    }
     return $copy[mrseo_locale()] ?? $copy['uk'];
 }
 function mrseo_mega_menu_icon($key) {
@@ -364,9 +368,22 @@ function mrseo_render_mega_menu($in_mobile_panel = false) {
        'dev' => array('web-development','service-websites'),
        'data' => array('analytics')
     );
-    $valid = in_array($locale, array('pl','de'), true)
+    $eu_market=function_exists('mrseo_eu_markets') && isset(mrseo_eu_markets()[$locale]);
+    if($eu_market){
+       // Same five visual columns; point only to fully authored pages.
+       $section_links=array(
+         'seo'=>array('seo','seo-audit'),
+         'ads'=>array('google-ads'),
+         'commerce'=>array('ecommerce-seo','online-shop-development'),
+         'dev'=>array('web-development','website-design'),
+         'data'=>array('analytics')
+       );
+    }
+    $valid=$eu_market ? mrseo_eu_slugs() : (
+       in_array($locale, array('pl','de'), true)
        ? mrseo_int_pages()
-       : array('seo','seo-audit','google-ads','performance-max','ecommerce-seo','horoshop','web-development','service-websites','analytics');
+       : array('seo','seo-audit','google-ads','performance-max','ecommerce-seo','horoshop','web-development','service-websites','analytics')
+    );
     echo '<div class="mrseo-mega'.($in_mobile_panel ? ' mrseo-mega--mobile-panel' : '').'">';
     echo '<div class="mrseo-mega-grid">';
     foreach ($section_links as $key => $slugs) {
