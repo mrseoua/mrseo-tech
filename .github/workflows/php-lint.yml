@@ -419,6 +419,15 @@ jobs:
           assert 'mrseo_render_mega_menu()' in (root/'header.php').read_text()
           assert 'mrseo-eu-' in (root/'header.php').read_text()
           assert "function mrseo_eu_orbit_copy(" in (root/'inc/eu-orbit-copy.php').read_text()
+          eu_orbit_copy=(root/'inc/eu-orbit-copy.php').read_text()
+          footer=(root/'footer.php').read_text()
+          # EU website creation is a separate live route, not a web-development alias.
+          assert "mrseo_url($mrseo_eu_footer_labels ? 'website-design' : 'service-websites')" in footer
+          assert "$mrseo_eu_footer_labels['website-design']" in footer
+          assert "$mrseo_eu_footer_labels['analytics']" in footer
+          assert "$mrseo_eu_footer_labels['seo-audit']" in footer
+          for required in ("'Back to homepage'=>$controls[6]", "'Open menu'=>$controls[7]", "'Main navigation'=>$controls[8]"):
+              assert required in eu_orbit_copy
           assert "function mrseo_eu_premium_mega_copy(" in (root/'inc/eu-orbit-copy.php').read_text()
           assert "return mrseo_eu_premium_mega_copy(mrseo_locale())" in mega_file
           assert "mrseo_eu_orbit_copy($l,$en)" in routes
