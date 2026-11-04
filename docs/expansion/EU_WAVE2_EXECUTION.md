@@ -1,7 +1,7 @@
 # MrSeo.tech — European language wave 2 (editorial staging)
 
-Date: **2026-11-04**. Status: **EDITORIAL BRIEFS ONLY, NOT WEBSITE PAGES**.
-Do not merge unreviewed content into live routing, do not include these URLs in the sitemap, do not turn indexing on.
+Date: **2026-11-04**. Status: **all 117 page drafts authored, routes/SEO integration prepared, pre-publication QA required**.
+The full authored market copy is in nine `wp-content/themes/mrseo-tech/locales/{code}-full.json` files. Automated PHP and international SEO checks must pass before merge; `noindex,nofollow` remains in both robots meta and HTTP headers. Native editorial proofreading has not been completed and must not be claimed.
 
 ## Why this work exists
 
@@ -29,7 +29,7 @@ Six more EU official languages would remain for a subsequent editorial gate: Est
 
 `EU_WAVE2_LOCALIZATION_SEEDS.json` contains **117 separately titled commercial page briefs**: nine languages × thirteen established page types, native-language CTA drafts, market pain examples, terminology and possible technologies to investigate.
 
-These are **not** full, approved translated pages. Meta descriptions are intentionally `null`, and `full_copy_reviewed` is `false`. Do not fabricate claims that 117 pages are authored, deployed or indexable.
+These `SEEDS` are historical planning inputs, not the rendered pages. The 117 full AI-authored drafts are now in nine `*-full.json` files with market-specific headlines, sections, FAQs, SEO descriptions, form labels and privacy notices. **They are not native-speaker certified or legally finalized.** The initial seed flags remain `false` until actual editorial approval.
 
 ## Exact page parity required for each locale
 
@@ -47,12 +47,12 @@ Before changing PHP routing, homepage language switcher or XML sitemap for a loc
 2. Verify terms with country-specific SERPs and reliable keyword sources (volumes/KD/CPC currently unverified), distinguishing SEO/audit/ads/web development intents.
 3. Reuse the verified genuine portfolio only; do not fabricate performance metrics, local client references, partner certifications or countries of residence.
 4. Translate contact labels, validation errors, privacy notice, 11+ language navigation, and accessibility labels. State the team works remotely from Ukraine and arrange actual communication language case by case.
-5. Expand PHP whitelist, rewrite rules, `mrseo_locale()`, `mrseo_slug()`, `mrseo_url()`, selector, form language allowlist, exact-match canonical/hreflang, sitemap and 404 coverage **atomically from a single committed locale**. When nine languages become real, the inventory target is `177 + 9*13 = 294` URLs. Don't set this target before complete pages exist.
+5. PHP whitelist, rewrite rules, `mrseo_locale()`, `mrseo_slug()`, `mrseo_url()`, selector, form language allowlist, exact-match canonical/hreflang and sitemap were updated together. Once deployed, the SEO inventory must contain **294** real URL entries, with no invented Horoshop translations.
 6. QA PHP 8.4 lint, stage HTTP 200/404, 1440/390/360 responsive screenshots, fonts for Greek/Cyrillic, 3D Earth fallback, menu accessibility, form validation and verified email delivery.
 7. Keep both global noindex layers, don't merge/publish before owner approval. Final indexation follows FOP registration, truthful identity and GDPR/privacy check.
 
 ## Technical improvement before another large language rollout
 
-The current theme uses repeated hard-coded six-language lists in `inc/eu-content.php`, `inc/eu-routing.php`, `inc/i18n-routing.php`, `inc/international-seo.php`, `inc/language-dropdown.php` and the contact handler. Before adding nine more, consolidate the locale registry into one source to avoid missing `hreflang` on one page, a dead dropdown URL or an unlabelled submission. This refactor needs standalone regression tests and approval.
+The current theme has multiple locale lists across `inc/eu-content.php`, `inc/eu-routing.php`, `inc/i18n-routing.php`, `inc/international-seo.php`, `inc/language-dropdown.php` and the contact handler. All lists have been expanded to twenty languages and are guarded by international regression tests. A consolidated single-source locale registry would still reduce future maintenance risk and should be considered before a third expansion wave.
 
 **Acquisition caution:** Thirty-page thin multilingual launches will not produce organic leads while `noindex` is on. Even after indexing, language presence alone doesn't prove intent alignment, native quality or a viable sales funnel. Prefer a complete, credible service page to mass placeholder URLs.
