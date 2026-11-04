@@ -113,6 +113,22 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('Contact form action or privacy notice invalid');
   }
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
+  // Six invalid-input POSTs are safe: validation rejects malformed emails before wp_mail.
+  // This checks the actual handler and the language-specific error redirect without sending messages.
+  if(slug==='contact'&&viewport.name==='desktop'&&process.env.MRSEO_TEST_INVALID_FORMS==='1'&&c.nonceValue){
+    try{
+      const response=await page.request.post(HOST+'/wp-admin/admin-post.php',{
+        maxRedirects:0,
+        form:{action:'mrseo_contact',mrseo_lang:lang,mrseo_nonce:c.nonceValue,
+          contact_name:'EU QA Invalid Check',contact_email:'invalid-email',
+          contact_message:'This is deliberately invalid and must not be emailed'}
+      });
+      const expected=HOST+'/'+lang+'/contact/?message_status=invalid';
+      const destination=response.headers()['location']||'';
+      if(![301,302,303].includes(response.status())||destination!==expected)
+        item.errors.push('Invalid-input form handler: HTTP '+response.status()+' -> '+destination);
+    }catch(e){item.errors.push('Invalid-input handler request failed: '+String(e).slice(0,200))}
+  }
   if(viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
   }
@@ -140,6 +156,7 @@ async function audit(browser,viewport,lang,slug){
    for(const lang of locales){
     for(const slug of slugs){
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug))continue;
+     if(process.env.MRSEO_QA_FOCUSED==='1'&&!['','contact','privacy'].includes(slug))continue;
      await audit(browser,viewport,lang,slug);
     }
    }
