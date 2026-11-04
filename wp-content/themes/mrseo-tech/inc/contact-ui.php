@@ -9,8 +9,23 @@ function mrseo_contact_ui_copy() {
         'en' => array('call'=>'Call us','message'=>'Message','write'=>'Message us','channels'=>'Contact us','choice'=>'Choose how to get in touch','direct'=>'Contact us directly','instead'=>'Prefer a call or a quick message? Reach us here.'),
         'pl' => array('call'=>'Zadzwoń','message'=>'Napisz','write'=>'Napisz do nas','channels'=>'Kontakt z nami','choice'=>'Wybierz sposób kontaktu','direct'=>'Skontaktuj się bezpośrednio','instead'=>'Możesz zadzwonić lub napisać przez komunikator.'),
         'de' => array('call'=>'Anrufen','message'=>'Schreiben','write'=>'Nachricht senden','channels'=>'Kontakt aufnehmen','choice'=>'Kontaktweg auswählen','direct'=>'Direkt Kontakt aufnehmen','instead'=>'Rufen Sie uns an oder schreiben Sie uns.'),
+        'fr' => array('call'=>'Appeler','message'=>'Écrire','write'=>'Écrivez-nous','channels'=>'Contactez-nous','choice'=>'Choisissez un moyen de nous joindre','direct'=>'Contactez-nous directement','instead'=>'Vous pouvez nous appeler ou nous envoyer un message.'),
+        'it' => array('call'=>'Chiama','message'=>'Scrivi','write'=>'Scrivici','channels'=>'Contattaci','choice'=>'Scegli come contattarci','direct'=>'Contattaci direttamente','instead'=>'Puoi chiamarci o inviarci un messaggio.'),
+        'es' => array('call'=>'Llamar','message'=>'Escribir','write'=>'Escríbenos','channels'=>'Contacta con nosotros','choice'=>'Elige cómo contactar','direct'=>'Contacta directamente','instead'=>'Puedes llamarnos o enviarnos un mensaje.'),
+        'nl' => array('call'=>'Bellen','message'=>'Bericht','write'=>'Stuur ons een bericht','channels'=>'Contact opnemen','choice'=>'Kies hoe je contact wilt opnemen','direct'=>'Neem direct contact op','instead'=>'Je kunt bellen of een bericht sturen.'),
+        'ro' => array('call'=>'Sună','message'=>'Scrie','write'=>'Scrie-ne','channels'=>'Contactează-ne','choice'=>'Alege cum ne contactezi','direct'=>'Contactează-ne direct','instead'=>'Ne poți suna sau trimite un mesaj.'),
+        'cs' => array('call'=>'Zavolat','message'=>'Napsat','write'=>'Napište nám','channels'=>'Kontaktujte nás','choice'=>'Vyberte způsob kontaktu','direct'=>'Kontaktujte nás přímo','instead'=>'Můžete zavolat nebo napsat zprávu.'),
+        'pt' => array('call'=>'Ligar','message'=>'Escrever','write'=>'Envie-nos uma mensagem','channels'=>'Contacte-nos','choice'=>'Escolha como entrar em contacto','direct'=>'Contacte-nos diretamente','instead'=>'Pode ligar ou enviar uma mensagem.'),
+        'sv' => array('call'=>'Ring','message'=>'Skriv','write'=>'Skriv till oss','channels'=>'Kontakta oss','choice'=>'Välj hur du vill kontakta oss','direct'=>'Kontakta oss direkt','instead'=>'Du kan ringa eller skicka ett meddelande.'),
+        'da' => array('call'=>'Ring','message'=>'Skriv','write'=>'Skriv til os','channels'=>'Kontakt os','choice'=>'Vælg hvordan du vil kontakte os','direct'=>'Kontakt os direkte','instead'=>'Du kan ringe eller sende en besked.'),
+        'fi' => array('call'=>'Soita','message'=>'Viesti','write'=>'Lähetä viesti','channels'=>'Ota yhteyttä','choice'=>'Valitse yhteydenottotapa','direct'=>'Ota suoraan yhteyttä','instead'=>'Voit soittaa tai lähettää viestin.'),
+        'hu' => array('call'=>'Hívás','message'=>'Üzenet','write'=>'Írjon nekünk','channels'=>'Kapcsolatfelvétel','choice'=>'Válassza ki a kapcsolatfelvétel módját','direct'=>'Lépjen velünk közvetlenül kapcsolatba','instead'=>'Hívjon minket vagy írjon üzenetet.'),
+        'sk' => array('call'=>'Zavolať','message'=>'Napísať','write'=>'Napíšte nám','channels'=>'Kontaktujte nás','choice'=>'Vyberte spôsob kontaktu','direct'=>'Kontaktujte nás priamo','instead'=>'Môžete zavolať alebo napísať správu.'),
+        'el' => array('call'=>'Κλήση','message'=>'Μήνυμα','write'=>'Στείλτε μας μήνυμα','channels'=>'Επικοινωνήστε μαζί μας','choice'=>'Επιλέξτε τρόπο επικοινωνίας','direct'=>'Επικοινωνήστε απευθείας μαζί μας','instead'=>'Καλέστε μας ή στείλτε μήνυμα.'),
+        'bg' => array('call'=>'Обаждане','message'=>'Съобщение','write'=>'Пишете ни','channels'=>'Свържете се с нас','choice'=>'Изберете начин за връзка','direct'=>'Свържете се директно с нас','instead'=>'Можете да се обадите или да изпратите съобщение.'),
+        'hr' => array('call'=>'Nazovi','message'=>'Poruka','write'=>'Pošaljite nam poruku','channels'=>'Kontaktirajte nas','choice'=>'Odaberite način kontakta','direct'=>'Kontaktirajte nas izravno','instead'=>'Možete nazvati ili poslati poruku.'),
     );
-    return $data[mrseo_locale()] ?? $data['uk'];
+    return $data[mrseo_locale()] ?? $data['en'];
 }
 function mrseo_contact_ui_icon($name) {
     $paths = array(
