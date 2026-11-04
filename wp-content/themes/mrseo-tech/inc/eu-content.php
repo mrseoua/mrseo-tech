@@ -1,8 +1,9 @@
 <?php
 /** Staging-only draft of six fully separate European language sets. */
 if(!defined('ABSPATH')) exit;
+require_once __DIR__.'/eu-complete-services.php';
 function mrseo_eu_markets(){return array('fr'=>'fr-FR','it'=>'it-IT','es'=>'es-ES','nl'=>'nl-NL','ro'=>'ro-RO','cs'=>'cs-CZ');}
-function mrseo_eu_slugs(){return array('','seo','google-ads','web-development','contact','privacy');}
+function mrseo_eu_slugs(){return array_merge(array('','seo','google-ads','web-development','contact','privacy'),mrseo_eu_additional_slugs());}
 function mrseo_eu_all(){
  static $data=null;
  if($data!==null)return $data;
@@ -1849,7 +1850,7 @@ function mrseo_eu_market($lang=null){
 function mrseo_eu_page($lang=null,$slug=null){
  $locale=mrseo_eu_market($lang);
  $slug=$slug===null?mrseo_slug():$slug;
- return $locale['pages'][$slug]??null;
+ return $locale['pages'][$slug]??mrseo_eu_additional_pages($lang?:mrseo_locale())[$slug]??null;
 }
 function mrseo_eu_privacy_copy($lang=null){
  $locale=mrseo_eu_market($lang);
