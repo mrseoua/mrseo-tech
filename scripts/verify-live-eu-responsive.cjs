@@ -45,8 +45,8 @@ async function audit(browser,viewport,lang,slug){
   item.check=await page.evaluate(({lang,slug,width})=>{
    const canonical=[...document.querySelectorAll('link[rel=canonical]')].map(x=>x.href);
    const body=document.body;
-   const node=document.querySelector('.eu-orbit-scene');
-   const earth=node?.querySelector('.eu-earth-core');
+   const node=slug===''?document.querySelector('.orbit-lab .lab-visual'):document.querySelector('.eu-orbit-scene');
+   const earth=slug===''?node?.querySelector('.lab-core'):node?.querySelector('.eu-earth-core');
    const links=[...document.querySelectorAll('.mrseo-language-options a')].map(a=>({href:a.href,lang:a.lang}));
    return {
     title:document.title,
@@ -57,16 +57,22 @@ async function audit(browser,viewport,lang,slug){
     internalWidth:document.documentElement.scrollWidth,
     clientWidth:document.documentElement.clientWidth,
     viewport:innerWidth,
-    hero:!!document.querySelector('.eu-hero'),
+    hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':'.eu-hero'),
+    sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
+    sharedFooter:!!document.querySelector('footer.mrseo-footer'),
+    orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
+    orbitCanvas:!!document.querySelector('.orbit-lab canvas.lab-webgl-canvas'),
+    orbitStaticTexture:earth?getComputedStyle(earth,'::before').backgroundImage.includes('earth-day.jpg'):false,
+    clientBand:!!document.querySelector('.client-band-home'),
     marketOffers:document.querySelectorAll('.eu-offer-card').length,
     form:document.querySelector('form[action*="admin-post.php"]')?.querySelector('input[name=mrseo_lang]')?.value||null,
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
-    serviceMenuItems:document.querySelectorAll('.eu-nav-services-panel a').length,
+    serviceMenuItems:document.querySelectorAll('.mrseo-mega .mrseo-mega-item[href]').length,
     portfolioCards:document.querySelectorAll('.eu-project-card').length,
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
-    satellites:node?.querySelectorAll('.eu-satellite').length||0,
+    satellites:node?.querySelectorAll(slug===''?'.lab-node':'.eu-satellite').length||0,
     portfolio:!!document.querySelector('a[href$="/'+lang+'/portfolio/"]'),
     privacyLink:!!document.querySelector('a[href*="/'+lang+'/privacy/"]'),
     bodyClass:body.className
@@ -81,11 +87,14 @@ async function audit(browser,viewport,lang,slug){
   if(!c.robots.toLowerCase().includes('noindex')&&!String(response.headers()['x-robots-tag']).includes('noindex'))item.errors.push('Staging noindex missing');
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Language options '+c.menuItems);
-  if(c.serviceMenuItems!==11)item.errors.push('Services dropdown '+c.serviceMenuItems);
+  if(c.serviceMenuItems!==8)item.errors.push('Shared mega menu should show 8 working EU service links: '+c.serviceMenuItems);
+  if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
-  if(slug===''&&(!c.core||c.satellites!==6||!c.coreDimensions?.w))item.errors.push('Earth core or satellites missing');
-  if(!['contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
+  if(slug===''&&(!c.orbitMaster||!c.core||c.satellites!==7||!c.coreDimensions?.w))item.errors.push('Original orbit master/7 satellites missing');
+  if(slug===''&&!c.orbitCanvas&&!c.orbitStaticTexture)item.errors.push('No real 3D globe or Earth texture fallback');
+  if(slug===''&&!c.clientBand)item.errors.push('Homepage public client band missing');
+  if(!['','contact','privacy'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
   if(slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
