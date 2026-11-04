@@ -457,6 +457,15 @@ jobs:
           assert "return mrseo_eu_premium_mega_copy(mrseo_locale())" in mega_file
           assert "mrseo_eu_orbit_copy($l,$en)" in routes
           assert "get_template_directory().(mrseo_slug()===''?'/orbit-lab.php':'/eu-localized.php')" in (root/'inc/eu-routing.php').read_text()
+          # All 15 additional market homepages use the EXACT shared master;
+          # their standalone, light EU interior design stylesheet must not
+          # override the approved orbit/typography colours on the homepage.
+          eu_router_content=(root/'inc/eu-routing.php').read_text()
+          assert "if(mrseo_slug()==='')return;" in eu_router_content, 'Legacy EU landing CSS must never load on home'
+          assert "wp_enqueue_style('mrseo-eu-expansion'" in eu_router_content, 'EU service styles must remain available'
+          assert "'/orbit-lab.php':'/eu-localized.php'" in eu_router_content, 'Unified EU homepage route missing'
+          assert 'orbit-earth-three.js?v=6' in home and 'orbit-scene.css?v=7' in home
+
           assert 'mrseo_eu_service_labels(mrseo_locale())' in home
           assert "isset(mrseo_eu_markets()[mrseo_locale()])" in home
           assert "$service_urls[6]='website-design'" in home
