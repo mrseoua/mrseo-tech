@@ -358,6 +358,9 @@ jobs:
           assert "mrseo_eu_rules_v1" in eu_router
           assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
           assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
+          assert "Язык заявки: $mail_locale" in functions
+          assert "Заявка MrSeo.tech ['.$mail_locale.']" in functions
+          assert "wp_mail('hello@mrseo.tech',$subject" in functions
           assert "X-Robots-Tag: noindex, nofollow" in functions
 
           assert 'function mrseo_private_concept_route()' in functions
