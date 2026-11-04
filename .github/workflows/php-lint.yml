@@ -401,7 +401,19 @@ jobs:
           eu_markets=(root/'inc/eu-content.php').read_text()
           assert "foreach(array('pt','sv','da','fi','hu','sk','el','bg','hr') as $language)" in eu_markets
           assert 'mrseo_eu_additional_slugs' in (root/'inc/eu-complete-services.php').read_text()
-          assert 'eu-nav-services' in (root/'header-eu.php').read_text()
+          # One real header/menu/footer is used on all 20 routes, including EU pages.
+          assert 'get_header();' in eu_template and 'get_footer();' in eu_template
+          assert "get_header('eu')" not in eu_template and "get_footer('eu')" not in eu_template
+          assert 'mrseo_render_mega_menu()' in (root/'header.php').read_text()
+          assert 'mrseo-eu-' in (root/'header.php').read_text()
+          assert "function mrseo_eu_orbit_copy(" in (root/'inc/eu-orbit-copy.php').read_text()
+          assert "function mrseo_eu_premium_mega_copy(" in (root/'inc/eu-orbit-copy.php').read_text()
+          assert "return mrseo_eu_premium_mega_copy(mrseo_locale())" in mega_file
+          assert "mrseo_eu_orbit_copy($l,$en)" in routes
+          assert "get_template_directory().(mrseo_slug()===''?'/orbit-lab.php':'/eu-localized.php')" in (root/'inc/eu-routing.php').read_text()
+          assert 'mrseo_eu_service_labels(mrseo_locale())' in home
+          assert "isset(mrseo_eu_markets()[mrseo_locale()])" in home
+          assert "$service_urls[6]='website-design'" in home
           eu_style=(root/'assets/eu-expansion.css').read_text()
           assert eu_style.count('{')==eu_style.count('}')
           assert '.eu-orbit-scene' in eu_style and '@media(max-width:540px)' in eu_style
@@ -409,7 +421,9 @@ jobs:
           assert '.eu-nav-services-panel' in eu_style and '.eu-portfolio-grid' in eu_style
           eu_router=(root/'inc/eu-routing.php').read_text()
           assert "mrseo_eu_rules_v3" in eu_router
-          assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
+          assert 'mrseo_eu_route()' in eu_router
+          assert "wp_enqueue_script('mrseo-eu-earth'" not in eu_router, 'One master must own the globe'
+          assert "orbit-earth-three.js?v=5" in home, 'Original Earth module must be preserved'
           assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
           assert "Язык заявки: $mail_locale" in functions
           assert "Заявка MrSeo.tech ['.$mail_locale.']" in functions
