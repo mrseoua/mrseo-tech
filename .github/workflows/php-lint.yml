@@ -329,14 +329,31 @@ jobs:
               assert set(market['pages'])==eu_slugs,(loc,'Incomplete EU pages')
               assert len(market['ui'])==17 and len(market['nav'])==7
               assert len({page['title'] for page in market['pages'].values()})==6
+              assert market['market']['portfolioLabel'],(loc,'Missing trustworthy portfolio link')
+              assert market['market']['brief'] in market['pages']['contact']['lead'],(loc,'Contact guidance missing')
+              assert not market['pages']['privacy']['title'].endswith(' | MrSeo.tech'),(loc,'Duplicate site title')
+              offer_slugs={'','seo','google-ads','web-development'}
+              assert {slug for slug,page in market['pages'].items() if page.get('offer')}==offer_slugs,(loc,'Unexpected offer coverage')
+              for offer_slug in offer_slugs:
+                  offer=market['pages'][offer_slug]['offer']
+                  assert offer['title'] and offer['intro'] and offer['cta'],(loc,offer_slug,'Blank offer')
+                  assert len(offer['items'])==3,(loc,offer_slug,'Incomplete diagnostic steps')
+                  assert all(item['title'] and len(item['detail'])>35 for item in offer['items']),(loc,offer_slug,'Thin diagnostic detail')
               for slug in eu_slugs:
                   p=market['pages'][slug]
                   assert p['title'] and p['description'] and p['headline'] and p['lead'],(loc,slug)
                   if slug in ('seo','google-ads','web-development'):
                       assert len(p['problems'])==3 and len(p['outcomes'])==3 and len(p['faq'])>=1
+          eu_template=(root/'eu-localized.php').read_text()
+          assert 'eu-market-offer' in eu_template and "offer['items']" in eu_template
+          assert "'#eu-contact-form':mrseo_url('contact')" in eu_template
+          assert "mrseo_i18n_exact_url('en','portfolio')" in eu_template
+          eu_footer=(root/'footer-eu.php').read_text()
+          assert "mrseo_i18n_exact_url('en','portfolio')" in eu_footer
           eu_style=(root/'assets/eu-expansion.css').read_text()
           assert eu_style.count('{')==eu_style.count('}')
           assert '.eu-orbit-scene' in eu_style and '@media(max-width:540px)' in eu_style
+          assert '.eu-offer-grid' in eu_style and '.eu-market-heading' in eu_style
           eu_router=(root/'inc/eu-routing.php').read_text()
           assert "mrseo_eu_rules_v1" in eu_router
           assert "script_loader_tag" in eu_router and 'mrseo_eu_route()' in eu_router
