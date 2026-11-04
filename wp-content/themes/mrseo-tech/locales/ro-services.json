@@ -1,0 +1,408 @@
+{
+  "seo-audit": {
+    "title": "Audit SEO tehnic: indexare, crawl și probleme concrete",
+    "description": "Verificarea URL-urilor, erorilor de indexare, paginilor duplicate și performanței mobile.",
+    "eyebrow": "SEO / AUDIT TEHNIC",
+    "headline": "Site-ul este online. <em>Google vede paginile importante?</em>",
+    "lead": "Un audit SEO tehnic trebuie să identifice cauze verificabile. Începem cu paginile care ar trebui să aducă cereri, nu cu scoruri generale fără context.",
+    "problems": [
+      [
+        "Pagini neindexate",
+        "Blocaje, redirecționări sau linkuri interne afectează accesibilitatea.",
+        "Verificăm statusuri, sitemap și Search Console."
+      ],
+      [
+        "URL-uri duplicate",
+        "Filtrele și parametrii multiplică pagini similare.",
+        "Analizăm canonical, parametri și paginare."
+      ],
+      [
+        "Probleme pe mobil",
+        "Resursele grele sau interfața complică navigarea.",
+        "Identificăm cauzele de încărcare și utilizare."
+      ]
+    ],
+    "outcomes": [
+      "Exemple concrete de URL-uri problematice",
+      "Plan de remediere prioritizat",
+      "Metode de verificare după implementare"
+    ],
+    "faq": [
+      [
+        "Auditul include și corectarea problemelor?",
+        "Diagnosticul și implementarea sunt servicii diferite; stabilim separat responsabilitățile."
+      ],
+      [
+        "Aveți nevoie de acces la admin?",
+        "Pentru analiza inițială ajunge adresa site-ului. Accesul ulterior se stabilește în mod securizat."
+      ]
+    ],
+    "offer": {
+      "title": "De la eroare la rezolvare",
+      "intro": "Un audit SEO tehnic trebuie să identifice cauze verificabile. Începem cu paginile care ar trebui să aducă cereri, nu cu scoruri generale fără context.",
+      "items": [
+        {
+          "title": "Scanare",
+          "detail": "Controlăm răspunsuri HTTP, sitemap, canonical și linkuri."
+        },
+        {
+          "title": "Prioritate",
+          "detail": "Legăm problemele de paginile cu valoare comercială."
+        },
+        {
+          "title": "Validare",
+          "detail": "Stabilim teste după implementarea corecțiilor."
+        }
+      ],
+      "cta": "Discută proiectul meu"
+    }
+  },
+  "ecommerce-seo": {
+    "title": "SEO pentru magazine online: categorii, filtre și produse",
+    "description": "Optimizarea structurii magazinelor MerchantPro, Gomag, WooCommerce și a altor platforme după analiza reală.",
+    "eyebrow": "SEO / MAGAZINE ONLINE",
+    "headline": "Produsele sunt în magazin. <em>Dar apar în căutările de cumpărare?</em>",
+    "lead": "Un catalog mare poate genera pagini duplicate sau categorii greu de descoperit. Verificăm structura, intențiile de căutare și filtrele înainte de a recomanda texte suplimentare.",
+    "problems": [
+      [
+        "Categorii cu vizibilitate slabă",
+        "Structura nu corespunde cererii comerciale.",
+        "Analizăm taxonomia și linkurile interne."
+      ],
+      [
+        "Filtre care dublează pagini",
+        "Parametrii generează URL-uri fără cerere distinctă.",
+        "Alegem filtrele utile pentru indexare."
+      ],
+      [
+        "Produse greu de găsit",
+        "Variante și informații de produs nu sunt conectate clar.",
+        "Verificăm paginile și navigarea."
+      ]
+    ],
+    "outcomes": [
+      "Structură a catalogului analizată",
+      "Priorități pe categorii și filtre",
+      "Plan de implementare și măsurare"
+    ],
+    "faq": [
+      [
+        "Sunteți partener oficial MerchantPro sau Gomag?",
+        "Nu revendicăm un astfel de statut. Putem evalua limitările platformei folosite efectiv."
+      ],
+      [
+        "Trebuie rescrise toate descrierile?",
+        "Nu. Problemele tehnice și structura pot fi mai importante decât volumul de text."
+      ]
+    ],
+    "offer": {
+      "title": "Un catalog organizat pentru căutare",
+      "intro": "Un catalog mare poate genera pagini duplicate sau categorii greu de descoperit. Verificăm structura, intențiile de căutare și filtrele înainte de a recomanda texte suplimentare.",
+      "items": [
+        {
+          "title": "Cerere",
+          "detail": "Identificăm categorii care răspund căutărilor din România."
+        },
+        {
+          "title": "Tehnic",
+          "detail": "Verificăm URL-uri, paginare, canonical și filtre."
+        },
+        {
+          "title": "Impact",
+          "detail": "Urmărim indexarea și comenzile măsurate unde datele permit."
+        }
+      ],
+      "cta": "Discută proiectul meu"
+    }
+  },
+  "analytics": {
+    "title": "Audit GA4 și măsurarea conversiilor pentru magazine",
+    "description": "Verificarea evenimentelor purchase, transaction_id, Google Ads și a diferențelor față de comenzile reale.",
+    "eyebrow": "ANALITICĂ / GA4",
+    "headline": "Ai rapoarte. <em>Dar ai încredere în cifre?</em>",
+    "lead": "Un eveniment purchase duplicat poate induce în eroare optimizarea campaniilor. Definim ce este o comandă reală, apoi comparăm sursele de date.",
+    "problems": [
+      [
+        "Comenzi numărate de două ori",
+        "Evenimentele duplicate supraestimează vânzările.",
+        "Verificăm ID-urile tranzacțiilor și evenimentele purchase."
+      ],
+      [
+        "GA4 și Google Ads diferă",
+        "Modelele de atribuire și perioada de raportare pot varia.",
+        "Comparăm indicatori cu definiții compatibile."
+      ],
+      [
+        "Etichete și consimțământ",
+        "Colectarea trebuie să respecte setările tehnice corespunzătoare.",
+        "Verificăm implementarea; consultanța juridică este separată."
+      ]
+    ],
+    "outcomes": [
+      "Hartă a evenimentelor urmărite",
+      "Erori reproductibile",
+      "Plan de testare a conversiilor"
+    ],
+    "faq": [
+      [
+        "Trebuie să coincidă exact rapoartele?",
+        "Nu întotdeauna. Atribuirea și filtrele pot explica diferențe legitime."
+      ],
+      [
+        "Asigurați conformitatea GDPR?",
+        "Verificăm partea tehnică; validarea juridică trebuie făcută de specialiști."
+      ]
+    ],
+    "offer": {
+      "title": "Măsurarea rezultatelor reale",
+      "intro": "Un eveniment purchase duplicat poate induce în eroare optimizarea campaniilor. Definim ce este o comandă reală, apoi comparăm sursele de date.",
+      "items": [
+        {
+          "title": "Definire",
+          "detail": "Separăm vizitatori, cereri și achiziții."
+        },
+        {
+          "title": "Comparare",
+          "detail": "Punem alături GA4, Google Ads și comenzile."
+        },
+        {
+          "title": "Control",
+          "detail": "Stabilim teste pentru modificări viitoare."
+        }
+      ],
+      "cta": "Discută proiectul meu"
+    }
+  },
+  "website-design": {
+    "title": "Creare site web pentru companii și servicii",
+    "description": "Realizare site-uri de prezentare și servicii cu design adaptiv, pagini clare și formulare funcționale.",
+    "eyebrow": "CREARE / WEBSITE",
+    "headline": "Un site frumos nu este suficient. <em>Trebuie să ajute clientul.</em>",
+    "lead": "Construim site-uri pornind de la informațiile de care are nevoie vizitatorul: serviciile, avantajele și modul de contact. Designul trebuie să fie clar și ușor de administrat.",
+    "problems": [
+      [
+        "Servicii neclare",
+        "Vizitatorii nu înțeleg diferența dintre oferte.",
+        "Organizăm paginile în jurul nevoilor clienților."
+      ],
+      [
+        "Experiență mobilă slabă",
+        "Texte mici și formulare complicate reduc accesibilitatea.",
+        "Proiectăm interfețe ușor de folosit pe telefon."
+      ],
+      [
+        "Actualizări dificile",
+        "Structura tehnică face scumpe schimbările simple.",
+        "Alegem un sistem mentenabil și documentat."
+      ]
+    ],
+    "outcomes": [
+      "Structură de pagini și conținut",
+      "Design responsive și formulare verificate",
+      "Predare și întreținere planificate"
+    ],
+    "faq": [
+      [
+        "Lucrați cu WordPress?",
+        "Da, atunci când este potrivit pentru cerințe și întreținere."
+      ],
+      [
+        "SEO este inclus?",
+        "Asigurăm bazele tehnice; promovarea SEO continuă se stabilește separat."
+      ]
+    ],
+    "offer": {
+      "title": "De la idee la site utilizabil",
+      "intro": "Construim site-uri pornind de la informațiile de care are nevoie vizitatorul: serviciile, avantajele și modul de contact. Designul trebuie să fie clar și ușor de administrat.",
+      "items": [
+        {
+          "title": "Plan",
+          "detail": "Stabilim pagini, mesaje și acțiuni importante."
+        },
+        {
+          "title": "Implementare",
+          "detail": "Construim elemente clare și adaptabile."
+        },
+        {
+          "title": "Testare",
+          "detail": "Verificăm telefonul, formularele și linkurile."
+        }
+      ],
+      "cta": "Discută proiectul meu"
+    }
+  },
+  "online-shop-development": {
+    "title": "Dezvoltare magazine online și integrări e-commerce",
+    "description": "Magazine online cu catalog, coș, plăți, gestiunea comenzilor și integrări API adaptate.",
+    "eyebrow": "DEZVOLTARE / MAGAZIN ONLINE",
+    "headline": "Magazinul trebuie să vândă. <em>Și să fie simplu de administrat.</em>",
+    "lead": "Un proiect e-commerce include fluxul complet dintre produse și comandă: variante, stocuri, plată, livrare și sisteme interne. Evaluăm aceste fluxuri înainte să alegem platforma.",
+    "problems": [
+      [
+        "Catalog greu de gestionat",
+        "Atributele și variantele nu au o structură coerentă.",
+        "Definim categorii, filtre și model de date."
+      ],
+      [
+        "Proces de cumpărare greoi",
+        "Pașii inutili din coș pot descuraja comenzile.",
+        "Testăm trasee reale de achiziție."
+      ],
+      [
+        "Date introduse manual",
+        "Comenzile trebuie copiate în gestiune sau ERP.",
+        "Analizăm integrarea prin API."
+      ]
+    ],
+    "outcomes": [
+      "Cerințe și alegere de platformă",
+      "Fluxul de comandă testat",
+      "Plan de operare și mentenanță"
+    ],
+    "faq": [
+      [
+        "Puteți migra un magazin existent?",
+        "Migrările se evaluează separat pentru date, URL-uri, redirecturi și continuitate."
+      ],
+      [
+        "Alegeți automat MerchantPro sau Gomag?",
+        "Nu. Platforma se alege în funcție de catalog, procese și posibilitățile de integrare."
+      ]
+    ],
+    "offer": {
+      "title": "Mai mult decât designul magazinului",
+      "intro": "Un proiect e-commerce include fluxul complet dintre produse și comandă: variante, stocuri, plată, livrare și sisteme interne. Evaluăm aceste fluxuri înainte să alegem platforma.",
+      "items": [
+        {
+          "title": "Catalog",
+          "detail": "Definim produse și variante."
+        },
+        {
+          "title": "Comandă",
+          "detail": "Verificăm plată, livrare și confirmări."
+        },
+        {
+          "title": "Integrare",
+          "detail": "Testăm sincronizarea datelor cu sistemele folosite."
+        }
+      ],
+      "cta": "Discută proiectul meu"
+    }
+  },
+  "about": {
+    "title": "Despre MrSeo.tech: echipă de SEO și dezvoltare",
+    "description": "O echipă mică, cu zece ani de experiență în SEO, Google Ads, analiză și dezvoltare web.",
+    "eyebrow": "MRSEO.TECH / ECHIPA",
+    "headline": "Echipă mică. <em>Probleme reale rezolvate sistematic.</em>",
+    "lead": "Lucrăm de la distanță din Ucraina și analizăm ce împiedică rezultatele afacerii înainte de a recomanda servicii. Nu promitem poziții garantate sau rezultate neverificabile.",
+    "problems": [
+      [
+        "Cauza reală nu este clară",
+        "Mai multe reclame nu rezolvă întotdeauna o problemă de conversie.",
+        "Analizăm scopul și datele disponibile."
+      ],
+      [
+        "Responsabilități împărțite",
+        "Clientul nu știe cine aprobă și verifică modificările.",
+        "Stabilim etapele și rolurile."
+      ],
+      [
+        "Promisiuni vagi",
+        "Succesul nu poate fi evaluat fără criterii clare.",
+        "Propunem indicatori și verificări."
+      ]
+    ],
+    "outcomes": [
+      "Comunicare directă",
+      "Priorități explicate",
+      "Colaborare documentată de la distanță"
+    ],
+    "faq": [
+      [
+        "Aveți sediu în România?",
+        "Nu. Lucrăm la distanță din Ucraina."
+      ],
+      [
+        "Puteți comunica în română?",
+        "Limba de lucru și disponibilitatea se stabilesc înainte de proiect."
+      ]
+    ],
+    "offer": {
+      "title": "Cum abordăm proiectele",
+      "intro": "Lucrăm de la distanță din Ucraina și analizăm ce împiedică rezultatele afacerii înainte de a recomanda servicii. Nu promitem poziții garantate sau rezultate neverificabile.",
+      "items": [
+        {
+          "title": "Înțelegere",
+          "detail": "Clarificăm scopul și restricțiile."
+        },
+        {
+          "title": "Diagnostic",
+          "detail": "Identificăm probleme demonstrabile."
+        },
+        {
+          "title": "Implementare",
+          "detail": "Aprobăm soluția și modul de măsurare."
+        }
+      ],
+      "cta": "Discută proiectul meu"
+    }
+  },
+  "portfolio": {
+    "title": "Proiecte și experiență MrSeo.tech",
+    "description": "Exemple de site-uri din portofoliul public, fără rezultate confidențiale inventate sau clienți români presupuşi.",
+    "eyebrow": "MRSEO.TECH / PROIECTE",
+    "headline": "Domenii diferite. <em>Abordare adaptată problemei.</em>",
+    "lead": "Prezentăm site-uri publice din portofoliul nostru pentru a arăta contextul proiectelor. Nu pretindem că sunt clienți români sau că anumite cifre au fost obținute fără dovezi.",
+    "problems": [
+      [
+        "Catalog auto",
+        "Numeroase categorii și produse cer navigare coerentă.",
+        "Vezi exemple de magazine cu multe produse."
+      ],
+      [
+        "Modă și accesorii",
+        "Variantele și disponibilitatea afectează prezentarea.",
+        "Explorează magazine din alte nișe."
+      ],
+      [
+        "Site-uri de servicii",
+        "Încrederea și contactul sunt esențiale.",
+        "Vezi exemple de pagini de servicii."
+      ]
+    ],
+    "outcomes": [
+      "Domenii publice din portofoliu",
+      "Diversitate de proiecte",
+      "Respectarea confidențialității"
+    ],
+    "faq": [
+      [
+        "Sunt proiecte din România?",
+        "Nu prezentăm exemplele ca proiecte locale dacă nu există o confirmare."
+      ],
+      [
+        "Publicați rezultatele clienților?",
+        "Doar cu aprobarea lor expresă."
+      ]
+    ],
+    "offer": {
+      "title": "Tipuri de proiecte",
+      "intro": "Prezentăm site-uri publice din portofoliul nostru pentru a arăta contextul proiectelor. Nu pretindem că sunt clienți români sau că anumite cifre au fost obținute fără dovezi.",
+      "items": [
+        {
+          "title": "E-commerce",
+          "detail": "Categorii, produse și filtre."
+        },
+        {
+          "title": "Analitică",
+          "detail": "Măsurare și verificarea conversiilor."
+        },
+        {
+          "title": "Servicii",
+          "detail": "Prezentare clară și contact."
+        }
+      ],
+      "cta": "Discută proiectul meu"
+    }
+  }
+}
