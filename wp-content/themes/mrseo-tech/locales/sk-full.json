@@ -33,7 +33,7 @@
   "pages": {
     "": {
       "title": "SEO, Google Ads a vývoj webov pre firmy na Slovensku",
-      "description": "SEO, Google Ads a vývoj webov pre firmy na Slovensku. Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti. Skontrolujeme vyhľadávanie, meranie, stránku aj procesy v e",
+      "description": "SEO, Google Ads a vývoj webov pre firmy na Slovensku. Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti.",
       "eyebrow": "MRSEO.TECH",
       "headline": "Web už máte. <em>Prináša však zákazníkov?</em>",
       "lead": "Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti. Skontrolujeme vyhľadávanie, meranie, stránku aj procesy v e-shope.",
@@ -87,7 +87,7 @@
     },
     "seo": {
       "title": "SEO služby pre firmy a e-shopy",
-      "description": "SEO služby pre firmy a e-shopy. SEO začína pochopením toho, čo zákazníci skutočne hľadajú. Overíme dostupnosť stránok, ich štruktúru a prelinkovanie skôr, než odporučíme ďalší obsah.",
+      "description": "SEO služby pre firmy a e-shopy. SEO začína pochopením toho, čo zákazníci skutočne hľadajú.",
       "eyebrow": "SEO",
       "headline": "Dôležité stránky <em>vo vyhľadávaní chýbajú?</em>",
       "lead": "SEO začína pochopením toho, čo zákazníci skutočne hľadajú. Overíme dostupnosť stránok, ich štruktúru a prelinkovanie skôr, než odporučíme ďalší obsah.",
@@ -141,8 +141,8 @@
     },
     "seo-audit": {
       "title": "Technický SEO audit: indexácia a duplicitné stránky",
-      "description": "Technický SEO audit: indexácia a duplicitné stránky. Technický audit kontroluje indexáciu, canonical, filtre a vnútorné odkazy. Výstupom majú byť konkrétne URL a odporúčania, ktorých opravu vieme overiť.",
-      "eyebrow": "SEO / AUDIT",
+      "description": "Technický SEO audit: indexácia a duplicitné stránky. Technický audit kontroluje indexáciu, canonical, filtre a vnútorné odkazy.",
+      "eyebrow": "TECHNICKÝ SEO AUDIT",
       "headline": "SEO audit má ukázať <em>skutočné chyby.</em>",
       "lead": "Technický audit kontroluje indexáciu, canonical, filtre a vnútorné odkazy. Výstupom majú byť konkrétne URL a odporúčania, ktorých opravu vieme overiť.",
       "problems": [
@@ -195,8 +195,8 @@
     },
     "ecommerce-seo": {
       "title": "SEO pre e-shopy: kategórie, filtre a produkty",
-      "description": "SEO pre e-shopy: kategórie, filtre a produkty. Shoptet, Upgates aj WooCommerce majú vlastné možnosti práce s kategóriami a filtrami. Skúmame konkrétny systém bez tvrdení o oficiálnom partnerstve.",
-      "eyebrow": "ECOMMERCE / SEO",
+      "description": "SEO pre e-shopy: kategórie, filtre a produkty. Shoptet, Upgates aj WooCommerce majú vlastné možnosti práce s kategóriami a filtrami.",
+      "eyebrow": "SEO PRE E-SHOPY",
       "headline": "E-shop má produkty. <em>Vedia ich zákazníci nájsť?</em>",
       "lead": "Shoptet, Upgates aj WooCommerce majú vlastné možnosti práce s kategóriami a filtrami. Skúmame konkrétny systém bez tvrdení o oficiálnom partnerstve.",
       "problems": [
@@ -249,8 +249,8 @@
     },
     "google-ads": {
       "title": "PPC audit a Google Ads pre e-shopy",
-      "description": "PPC audit a Google Ads pre e-shopy. Pri hodnotení Google Ads a PPC začíname dátami. Overíme konverzie a objednávky, následne vyhodnotíme kampane, produktové skupiny a náklady.",
-      "eyebrow": "GOOGLE / ADS",
+      "description": "PPC audit a Google Ads pre e-shopy. Pri hodnotení Google Ads a PPC začíname dátami.",
+      "eyebrow": "GOOGLE ADS / PPC",
       "headline": "Rozpočet sa míňa. <em>Čo z neho e-shop má?</em>",
       "lead": "Pri hodnotení Google Ads a PPC začíname dátami. Overíme konverzie a objednávky, následne vyhodnotíme kampane, produktové skupiny a náklady.",
       "problems": [
@@ -303,8 +303,8 @@
     },
     "analytics": {
       "title": "GA4 analytika a kontrola merania konverzií",
-      "description": "GA4 analytika a kontrola merania konverzií. Chybné purchase udalosti a hodnoty objednávok môžu viesť k nesprávnym rozhodnutiam. Porovnáme GA4, Google Ads a skutočné predaje, pričom zohľadníme rozdiely atri",
-      "eyebrow": "ANALYTICS",
+      "description": "GA4 analytika a kontrola merania konverzií. Chybné purchase udalosti a hodnoty objednávok môžu viesť k nesprávnym rozhodnutiam.",
+      "eyebrow": "GA4 ANALYTIKA",
       "headline": "Meriate konverzie. <em>Meriate ich správne?</em>",
       "lead": "Chybné purchase udalosti a hodnoty objednávok môžu viesť k nesprávnym rozhodnutiam. Porovnáme GA4, Google Ads a skutočné predaje, pričom zohľadníme rozdiely atribúcie.",
       "problems": [
@@ -357,8 +357,8 @@
     },
     "web-development": {
       "title": "Vývoj webových aplikácií, CRM a API integrácie",
-      "description": "Vývoj webových aplikácií, CRM a API integrácie. Webové aplikácie, CRM a API integrácie navrhujeme podľa skutočnej prevádzky. Najprv posúdime procesy, bezpečnosť, dostupné rozhrania a možnosti údržby.",
-      "eyebrow": "WEB / DEVELOPMENT",
+      "description": "Vývoj webových aplikácií, CRM a API integrácie. Webové aplikácie, CRM a API integrácie navrhujeme podľa skutočnej prevádzky.",
+      "eyebrow": "VÝVOJ NA MIERU",
       "headline": "Softvér má <em>ušetriť ručnú prácu.</em>",
       "lead": "Webové aplikácie, CRM a API integrácie navrhujeme podľa skutočnej prevádzky. Najprv posúdime procesy, bezpečnosť, dostupné rozhrania a možnosti údržby.",
       "problems": [
@@ -411,8 +411,8 @@
     },
     "website-design": {
       "title": "Tvorba firemných webstránok",
-      "description": "Tvorba firemných webstránok. Tvoríme firemné stránky, ktoré vysvetľujú služby a uľahčujú kontakt. Začíname štruktúrou obsahu a mobilným používaním, nie hotovou grafickou šablónou.",
-      "eyebrow": "WEBSITE / DESIGN",
+      "description": "Tvorba firemných webstránok. Tvoríme firemné stránky, ktoré vysvetľujú služby a uľahčujú kontakt.",
+      "eyebrow": "TVORBA WEBSTRÁNOK",
       "headline": "Web má vyzerať dobre. <em>A byť zrozumiteľný.</em>",
       "lead": "Tvoríme firemné stránky, ktoré vysvetľujú služby a uľahčujú kontakt. Začíname štruktúrou obsahu a mobilným používaním, nie hotovou grafickou šablónou.",
       "problems": [
@@ -465,8 +465,8 @@
     },
     "online-shop-development": {
       "title": "Tvorba e-shopov s platbami a integráciami",
-      "description": "Tvorba e-shopov s platbami a integráciami. Vývoj e-shopu zahŕňa katalóg, platby, dopravu a spracovanie objednávok. Platformu vyberáme podľa potrieb, dát a požadovaných integrácií.",
-      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "description": "Tvorba e-shopov s platbami a integráciami. Vývoj e-shopu zahŕňa katalóg, platby, dopravu a spracovanie objednávok.",
+      "eyebrow": "TVORBA E-SHOPOV",
       "headline": "E-shop má predávať. <em>A nemá zvyšovať administratívu.</em>",
       "lead": "Vývoj e-shopu zahŕňa katalóg, platby, dopravu a spracovanie objednávok. Platformu vyberáme podľa potrieb, dát a požadovaných integrácií.",
       "problems": [
@@ -519,8 +519,8 @@
     },
     "about": {
       "title": "O nás — malý tím odborníkov MrSeo.tech",
-      "description": "O nás — malý tím odborníkov MrSeo.tech. Sme menší tím odborníkov s desaťročnou praxou v SEO, Google Ads a vývoji webu. Pracujeme na diaľku z Ukrajiny a uprednostňujeme merateľnú diagnostiku pred prázdnymi ",
-      "eyebrow": "ABOUT",
+      "description": "O nás — malý tím odborníkov MrSeo.tech. Sme menší tím odborníkov s desaťročnou praxou v SEO, Google Ads a vývoji webu.",
+      "eyebrow": "O NÁS",
       "headline": "Menší tím. <em>Jasný postup.</em>",
       "lead": "Sme menší tím odborníkov s desaťročnou praxou v SEO, Google Ads a vývoji webu. Pracujeme na diaľku z Ukrajiny a uprednostňujeme merateľnú diagnostiku pred prázdnymi sľubmi.",
       "problems": [
@@ -573,8 +573,8 @@
     },
     "portfolio": {
       "title": "Projekty a skúsenosti MrSeo.tech",
-      "description": "Projekty a skúsenosti MrSeo.tech. Zobrazujeme verejné weby z portfólia ako príklady odvetví a technických úloh. Nevydávame ich automaticky za slovenské zákazky ani nezverejňujeme dôverné čísla.",
-      "eyebrow": "PORTFOLIO",
+      "description": "Projekty a skúsenosti MrSeo.tech. Zobrazujeme verejné weby z portfólia ako príklady odvetví a technických úloh.",
+      "eyebrow": "PROJEKTY",
       "headline": "Skutočné projekty. <em>Bez vymyslených čísel.</em>",
       "lead": "Zobrazujeme verejné weby z portfólia ako príklady odvetví a technických úloh. Nevydávame ich automaticky za slovenské zákazky ani nezverejňujeme dôverné čísla.",
       "problems": [
@@ -627,8 +627,8 @@
     },
     "contact": {
       "title": "Kontaktujte nás a opíšte svoj problém",
-      "description": "Kontaktujte nás a opíšte svoj problém. Pošlite adresu stránky, cieľový trh a konkrétny problém. Nie je potrebné pripravovať rozsiahle zadanie ani poskytovať prihlasovacie údaje.",
-      "eyebrow": "CONTACT",
+      "description": "Kontaktujte nás a opíšte svoj problém. Pošlite adresu stránky, cieľový trh a konkrétny problém.",
+      "eyebrow": "KONTAKT",
       "headline": "Čo bráni <em>novým zákazníckym dopytom?</em>",
       "lead": "Pošlite adresu stránky, cieľový trh a konkrétny problém. Nie je potrebné pripravovať rozsiahle zadanie ani poskytovať prihlasovacie údaje. Uveďte platformu e-shopu, používané reklamné systémy a konkrétny problém. Neposielajte prihlasovacie heslá.",
       "problems": [],
@@ -638,7 +638,7 @@
     "privacy": {
       "title": "Ochrana súkromia a spracovanie kontaktných údajov",
       "description": "Ako MrSeo.tech spracúva údaje odoslané kontaktným formulárom.",
-      "eyebrow": "PRIVACY",
+      "eyebrow": "OCHRANA SÚKROMIA",
       "headline": "Súkromie a kontaktné dopyty",
       "lead": "Ako MrSeo.tech spracúva údaje odoslané kontaktným formulárom.",
       "problems": [],
