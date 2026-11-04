@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (177 URLs)
+ * - all completed pages are represented exactly once (294 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -56,7 +56,7 @@ $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
 assert_seo(count($groups) === 29, 'Expected 29 editorial equivalence groups');
-assert_seo(count($inventory) === 177, 'Expected 177 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($inventory) === 294, 'Expected 294 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
     'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs()),
@@ -70,6 +70,15 @@ $expected = [
     'nl' => mrseo_eu_slugs(),
     'ro' => mrseo_eu_slugs(),
     'cs' => mrseo_eu_slugs(),
+    'pt' => mrseo_eu_slugs(),
+    'sv' => mrseo_eu_slugs(),
+    'da' => mrseo_eu_slugs(),
+    'fi' => mrseo_eu_slugs(),
+    'hu' => mrseo_eu_slugs(),
+    'sk' => mrseo_eu_slugs(),
+    'el' => mrseo_eu_slugs(),
+    'bg' => mrseo_eu_slugs(),
+    'hr' => mrseo_eu_slugs(),
 ];
 foreach ($expected as $lang => $slugs) {
     $expected[$lang] = array_values(array_unique($slugs));
@@ -96,7 +105,7 @@ foreach ($inventory as $entry) {
         $home_count++;
     }
 }
-assert_seo(count($seen) === 177 && $home_count === 11, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 294 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -165,7 +174,7 @@ $_SERVER['REQUEST_URI'] = '/de/unknown-service/';
 assert_seo(mrseo_i18n_current_entry() === null, 'Invented URL became indexable');
 
 // New EU markets may list only six real pages each; reject invented services.
-foreach (array('fr','it','es','nl','ro','cs') as $locale) {
+foreach (array('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr') as $locale) {
     $market=mrseo_eu_market($locale);
     assert_seo($market!==null, "EU market missing: $locale");
     foreach (mrseo_eu_slugs() as $slug) {
