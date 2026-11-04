@@ -10,6 +10,11 @@ on:
 permissions:
   contents: read
 
+# New PR commits supersede earlier checks. Avoid queueing obsolete builds.
+concurrency:
+  group: international-php-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint-php:
     runs-on: ubuntu-latest
