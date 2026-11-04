@@ -107,3 +107,35 @@ MRSEO_EU_ORBIT_CONTROLS
     // phrase; never fabricate locale output or rewrite existing UA/RU copy.
     return $map[$english]??$english;
 }
+
+/**
+ * 5-column premium mega-menu is the SAME component as UA/RU.
+ * Only its texts and exact internal URLs differ by market.
+ */
+function mrseo_eu_premium_mega_copy($locale){
+ $market=mrseo_eu_market($locale);
+ if(!$market)return null;
+ $labels=mrseo_eu_service_labels($locale);
+ $pages=$market['pages'];
+ $problem=function($slug,$i=0)use($pages){
+  return $pages[$slug]['problems'][$i][0]??'';
+ };
+ $groups=array(
+  'seo'=>array('title'=>$labels['seo'],'lead'=>$pages['seo']['lead'],'topics'=>array($problem('seo-audit'),$problem('seo'))),
+  'ads'=>array('title'=>$labels['google-ads'],'lead'=>$pages['google-ads']['lead'],'topics'=>array($problem('google-ads'),$problem('google-ads',1))),
+  'commerce'=>array('title'=>$labels['ecommerce-seo'],'lead'=>$pages['ecommerce-seo']['lead'],'topics'=>array($problem('ecommerce-seo'),$problem('online-shop-development'))),
+  'dev'=>array('title'=>$labels['web-development'],'lead'=>$pages['web-development']['lead'],'topics'=>array($problem('web-development'),$problem('web-development',1),$problem('website-design'))),
+  'data'=>array('title'=>$labels['analytics'],'lead'=>$pages['analytics']['lead'],'topics'=>array($problem('analytics'),$problem('analytics',1),$problem('analytics',2)))
+ );
+ return array(
+  'intro'=>$market['nav'][0],
+  'headline'=>$market['ui'][1],
+  'summary'=>$pages['']['lead'],
+  'more'=>$market['ui'][2],
+  'ctaHeading'=>$market['nav'][5],
+  'ctaText'=>$pages['contact']['lead'],
+  'cta'=>$market['nav'][5],
+  'sections'=>$groups,
+  'links'=>$labels
+ );
+}
