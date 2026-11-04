@@ -28,7 +28,7 @@ async function audit(browser,viewport,lang,slug){
   ignoreHTTPSErrors:false
  });
  const page=await context.newPage();
- const item={lang,slug:slug||'home',viewport:viewport.name,url,errors:[],warnings:[]};
+ const item={lang,slug:slug||'home',viewport:viewport.name,url,errors:[],warnings:[],stage:'navigate'};
  page.on('pageerror',e=>item.errors.push('JS: '+String(e.message).slice(0,175)));
  let response;
  try{
@@ -81,6 +81,7 @@ async function audit(browser,viewport,lang,slug){
     satellites:node?.querySelectorAll(slug===''?'.lab-node':'.eu-satellite').length||0,
     portfolio:!!document.querySelector('a[href$="/'+lang+'/portfolio/"]'),
     privacyLink:!!document.querySelector('a[href*="/'+lang+'/privacy/"]'),
+    contactBarText:document.querySelector('.mrseo-mobile-contact-bar')?.textContent||'',
     bodyClass:body.className
    };
   },{lang,slug,width:viewport.width});
@@ -92,7 +93,8 @@ async function audit(browser,viewport,lang,slug){
   if(c.canonical.length!==1||c.canonical[0]!==exactPath)item.errors.push('Canonical '+JSON.stringify(c.canonical));
   if(!c.robots.toLowerCase().includes('noindex')&&!String(response.headers()['x-robots-tag']).includes('noindex'))item.errors.push('Staging noindex missing');
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
-  if(c.menuItems!==20)item.errors.push('Language options '+c.menuItems);
+  if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
+  if(/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
   if(c.serviceMenuItems!==8)item.errors.push('Shared mega menu should show 8 working EU service links: '+c.serviceMenuItems);
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
@@ -112,10 +114,12 @@ async function audit(browser,viewport,lang,slug){
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
    const menu=page.locator('header.site-header .menu-toggle');
+   item.stage='open main menu';
    await menu.click({timeout:4000});
    if(await menu.getAttribute('aria-expanded')!=='true')
       item.errors.push('Global mobile menu cannot open');
    const services=page.locator('header.site-header .services-menu-toggle');
+   item.stage='open service menu';
    await services.click({timeout:4000});
    if(await services.getAttribute('aria-expanded')!=='true')
       item.errors.push('Shared service dropdown cannot open');
@@ -125,8 +129,10 @@ async function audit(browser,viewport,lang,slug){
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
+   item.stage='close service/menu';
    await page.keyboard.press('Escape');
    await menu.click({timeout:4000});
+   item.stage='language dropdown';
    const sel=page.locator('header.site-header .mrseo-language-trigger');
    await sel.focus();
    await page.keyboard.press('Enter');
@@ -137,7 +143,10 @@ async function audit(browser,viewport,lang,slug){
    if(!visible)item.errors.push('Language selector not visible in 360px');
    await page.screenshot({path:'shots/eu-'+lang+'-language-menu.jpg',type:'jpeg',quality:75,fullPage:false});
   }
- }catch(e){item.errors.push('Browser '+String(e).slice(0,350))}
+ }catch(e){
+   item.errors.push('Browser stage='+item.stage+' '+String(e).slice(0,1100));
+   if(slug===''&&viewport.name==='narrow')await page.screenshot({path:'shots/eu-'+lang+'-failed-mobile-nav.jpg',type:'jpeg',quality:70,fullPage:false}).catch(()=>{});
+ }
  finally{await context.close()}
  results.push(item);
  console.log((item.errors.length?'FAIL':'PASS')+' '+viewport.name+' '+lang+'/'+(slug||'')+' '+(item.errors.join(' | ')||''));
