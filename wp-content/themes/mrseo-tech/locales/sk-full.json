@@ -1,0 +1,686 @@
+{
+  "code": "sk-SK",
+  "name": "Slovenčina",
+  "country": "Slovakia",
+  "nav": [
+    "Služby",
+    "SEO",
+    "Google Ads",
+    "Vývoj webu",
+    "Kontakt",
+    "Porozprávať sa o projekte",
+    "Ochrana súkromia"
+  ],
+  "ui": [
+    "Návštevnosť automaticky neznamená viac zákazníkov.",
+    "Najprv hľadáme príčinu, až potom navrhujeme službu.",
+    "Čo preverujeme",
+    "Ako postupujeme",
+    "Čo získate",
+    "Časté otázky",
+    "Napíšte nám",
+    "Meno",
+    "E-mailová adresa",
+    "Web (nepovinné)",
+    "Opíšte problém",
+    "Odoslať dopyt",
+    "Správa bola odovzdaná na odoslanie. Odpovieme e-mailom.",
+    "Skontrolujte povinné polia.",
+    "Odoslanie zlyhalo. Skúste to znova.",
+    "Neposielajte heslá ani dôverné prístupové údaje.",
+    "Pracujeme na diaľku z Ukrajiny. Jazyk spolupráce a rozsah dohodneme vopred."
+  ],
+  "pages": {
+    "": {
+      "title": "SEO, Google Ads a vývoj webov pre firmy na Slovensku",
+      "description": "SEO, Google Ads a vývoj webov pre firmy na Slovensku. Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti. Skontrolujeme vyhľadávanie, meranie, stránku aj procesy v e",
+      "eyebrow": "MRSEO.TECH",
+      "headline": "Web už máte. <em>Prináša však zákazníkov?</em>",
+      "lead": "Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti. Skontrolujeme vyhľadávanie, meranie, stránku aj procesy v e-shope.",
+      "problems": [
+        [
+          "Návštevy bez dopytov",
+          "Obsah nemusí odpovedať na otázky kupujúcich.",
+          "Preveriť cestu od vyhľadávania po kontakt."
+        ],
+        [
+          "PPC bez jasnej návratnosti",
+          "Systémy možno nepočítajú skutočné objednávky.",
+          "Porovnať GA4, Google Ads a predaje."
+        ],
+        [
+          "Ručné spracovanie",
+          "Informácie sa prepisujú medzi e-shopom a účtovníctvom.",
+          "Posúdiť možnosti API integrácie."
+        ]
+      ],
+      "outcomes": [
+        "Konkrétne identifikované prekážky",
+        "Opravy zoradené podľa priority",
+        "Postup kontroly výsledkov"
+      ],
+      "faq": [
+        [
+          "Máte kanceláriu na Slovensku?",
+          "Nie. Pracujeme na diaľku z Ukrajiny a komunikáciu dohodneme pred projektom."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti. Skontrolujeme vyhľadávanie, meranie, stránku aj procesy v e-shope.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Preveriť cestu od vyhľadávania po kontakt."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Porovnať GA4, Google Ads a predaje."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Posúdiť možnosti API integrácie."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "seo": {
+      "title": "SEO služby pre firmy a e-shopy",
+      "description": "SEO služby pre firmy a e-shopy. SEO začína pochopením toho, čo zákazníci skutočne hľadajú. Overíme dostupnosť stránok, ich štruktúru a prelinkovanie skôr, než odporučíme ďalší obsah.",
+      "eyebrow": "SEO",
+      "headline": "Dôležité stránky <em>vo vyhľadávaní chýbajú?</em>",
+      "lead": "SEO začína pochopením toho, čo zákazníci skutočne hľadajú. Overíme dostupnosť stránok, ich štruktúru a prelinkovanie skôr, než odporučíme ďalší obsah.",
+      "problems": [
+        [
+          "Kategórie bez viditeľnosti",
+          "E-shopové stránky sa nedostávajú k relevantnému vyhľadávaniu.",
+          "Skontrolovať indexáciu a odkazy."
+        ],
+        [
+          "Nesprávna štruktúra",
+          "Kategórie nie sú rozdelené podľa nákupného zámeru.",
+          "Prehodnotiť informačnú architektúru."
+        ],
+        [
+          "Návštevnosť bez objednávok",
+          "Stránky nenasmerujú návštevníka k vhodnej ponuke.",
+          "Posúdiť obsah a výzvy na akciu."
+        ]
+      ],
+      "outcomes": [
+        "Mapa dôležitých kategórií",
+        "Technické a obsahové priority",
+        "Sledovanie indexácie a dopytov"
+      ],
+      "faq": [
+        [
+          "Garantujete prvú pozíciu?",
+          "Nie. Poradie vo vyhľadávači sa nedá spoľahlivo zaručiť."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "SEO začína pochopením toho, čo zákazníci skutočne hľadajú. Overíme dostupnosť stránok, ich štruktúru a prelinkovanie skôr, než odporučíme ďalší obsah.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Skontrolovať indexáciu a odkazy."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Prehodnotiť informačnú architektúru."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Posúdiť obsah a výzvy na akciu."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "seo-audit": {
+      "title": "Technický SEO audit: indexácia a duplicitné stránky",
+      "description": "Technický SEO audit: indexácia a duplicitné stránky. Technický audit kontroluje indexáciu, canonical, filtre a vnútorné odkazy. Výstupom majú byť konkrétne URL a odporúčania, ktorých opravu vieme overiť.",
+      "eyebrow": "SEO / AUDIT",
+      "headline": "SEO audit má ukázať <em>skutočné chyby.</em>",
+      "lead": "Technický audit kontroluje indexáciu, canonical, filtre a vnútorné odkazy. Výstupom majú byť konkrétne URL a odporúčania, ktorých opravu vieme overiť.",
+      "problems": [
+        [
+          "Stránky mimo indexu",
+          "Technické nastavenia bránia zobrazeniu dôležitých URL.",
+          "Overiť sitemapu a Search Console."
+        ],
+        [
+          "Duplicitné filtre",
+          "Parametre vytvárajú množstvo podobných stránok.",
+          "Analyzovať canonical a stránkovanie."
+        ],
+        [
+          "Problémy na mobile",
+          "Načítanie alebo ovládanie môže byť komplikované.",
+          "Rozlíšiť serverové chyby a chyby rozhrania."
+        ]
+      ],
+      "outcomes": [
+        "Technické chyby s príkladmi URL",
+        "Poradie opatrení podľa dopadu",
+        "Kontrola po nasadení"
+      ],
+      "faq": [
+        [
+          "Je implementácia súčasťou auditu?",
+          "Audit a vykonanie úprav sú oddelené služby s dohodnutým rozsahom."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Technický audit kontroluje indexáciu, canonical, filtre a vnútorné odkazy. Výstupom majú byť konkrétne URL a odporúčania, ktorých opravu vieme overiť.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Overiť sitemapu a Search Console."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Analyzovať canonical a stránkovanie."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Rozlíšiť serverové chyby a chyby rozhrania."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "ecommerce-seo": {
+      "title": "SEO pre e-shopy: kategórie, filtre a produkty",
+      "description": "SEO pre e-shopy: kategórie, filtre a produkty. Shoptet, Upgates aj WooCommerce majú vlastné možnosti práce s kategóriami a filtrami. Skúmame konkrétny systém bez tvrdení o oficiálnom partnerstve.",
+      "eyebrow": "ECOMMERCE / SEO",
+      "headline": "E-shop má produkty. <em>Vedia ich zákazníci nájsť?</em>",
+      "lead": "Shoptet, Upgates aj WooCommerce majú vlastné možnosti práce s kategóriami a filtrami. Skúmame konkrétny systém bez tvrdení o oficiálnom partnerstve.",
+      "problems": [
+        [
+          "Slabé kategórie",
+          "Dôležité produkty nie sú priradené k vhodným stránkam.",
+          "Zhodnotiť kategórie a interné odkazy."
+        ],
+        [
+          "Duplicitné filtrované URL",
+          "Kombinácie parametrov vytvárajú zbytočný obsah.",
+          "Oddeliť indexovateľné filtre od technických variantov."
+        ],
+        [
+          "Izolované produkty",
+          "Varianty a navigácia sťažujú objavovanie tovaru.",
+          "Kontrolovať šablóny a produktové prepojenia."
+        ]
+      ],
+      "outcomes": [
+        "Lepšie usporiadaný katalóg",
+        "Plán pre filtre a kategórie",
+        "Merateľné ciele pre dôležité stránky"
+      ],
+      "faq": [
+        [
+          "Robíte SEO pre Shoptet?",
+          "Môžeme posúdiť jeho dostupné nastavenia; netvrdíme, že sme oficiálnym partnerom."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Shoptet, Upgates aj WooCommerce majú vlastné možnosti práce s kategóriami a filtrami. Skúmame konkrétny systém bez tvrdení o oficiálnom partnerstve.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Zhodnotiť kategórie a interné odkazy."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Oddeliť indexovateľné filtre od technických variantov."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Kontrolovať šablóny a produktové prepojenia."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "google-ads": {
+      "title": "PPC audit a Google Ads pre e-shopy",
+      "description": "PPC audit a Google Ads pre e-shopy. Pri hodnotení Google Ads a PPC začíname dátami. Overíme konverzie a objednávky, následne vyhodnotíme kampane, produktové skupiny a náklady.",
+      "eyebrow": "GOOGLE / ADS",
+      "headline": "Rozpočet sa míňa. <em>Čo z neho e-shop má?</em>",
+      "lead": "Pri hodnotení Google Ads a PPC začíname dátami. Overíme konverzie a objednávky, následne vyhodnotíme kampane, produktové skupiny a náklady.",
+      "problems": [
+        [
+          "Nesprávne konverzie",
+          "Duplicity môžu zavádzať automatické ponuky.",
+          "Porovnať GA4, Ads a skutočné objednávky."
+        ],
+        [
+          "Neefektívne produkty",
+          "Časť sortimentu môže spotrebovať rozpočet bez predaja.",
+          "Rozdeliť výsledky podľa produktov a marží."
+        ],
+        [
+          "Neaktuálne údaje vo feede",
+          "Merchant Center môže zobrazovať inú cenu či dostupnosť.",
+          "Skontrolovať synchronizáciu a produktové stránky."
+        ]
+      ],
+      "outcomes": [
+        "Kontrola merania reklamy",
+        "Identifikácia nejasných výdavkov",
+        "Návrh merateľných testov"
+      ],
+      "faq": [
+        [
+          "Viete garantovať ROAS?",
+          "Nie. Rentabilita závisí aj od ceny, marže a trhu."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Pri hodnotení Google Ads a PPC začíname dátami. Overíme konverzie a objednávky, následne vyhodnotíme kampane, produktové skupiny a náklady.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Porovnať GA4, Ads a skutočné objednávky."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Rozdeliť výsledky podľa produktov a marží."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Skontrolovať synchronizáciu a produktové stránky."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "analytics": {
+      "title": "GA4 analytika a kontrola merania konverzií",
+      "description": "GA4 analytika a kontrola merania konverzií. Chybné purchase udalosti a hodnoty objednávok môžu viesť k nesprávnym rozhodnutiam. Porovnáme GA4, Google Ads a skutočné predaje, pričom zohľadníme rozdiely atri",
+      "eyebrow": "ANALYTICS",
+      "headline": "Meriate konverzie. <em>Meriate ich správne?</em>",
+      "lead": "Chybné purchase udalosti a hodnoty objednávok môžu viesť k nesprávnym rozhodnutiam. Porovnáme GA4, Google Ads a skutočné predaje, pričom zohľadníme rozdiely atribúcie.",
+      "problems": [
+        [
+          "Duplicitné nákupy",
+          "Rovnaká objednávka sa môže započítať viackrát.",
+          "Skontrolovať transaction_id a aktiváciu udalostí."
+        ],
+        [
+          "Rozdielne výsledky",
+          "GA4 a Ads používajú rozdielne modely pripisovania.",
+          "Porovnávať kompatibilné metriky."
+        ],
+        [
+          "Súhlas a značky",
+          "Súhlas návštevníka mení dostupnosť niektorých dát.",
+          "Overiť technické spúšťanie bez právnych záverov."
+        ]
+      ],
+      "outcomes": [
+        "Mapa konverzných udalostí",
+        "Preukázateľné nezrovnalosti",
+        "Plán kontroly po zmenách"
+      ],
+      "faq": [
+        [
+          "Musia sa čísla GA4 a Ads zhodovať?",
+          "Nie. Atribúcia a meracie podmienky môžu byť rozdielne."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Chybné purchase udalosti a hodnoty objednávok môžu viesť k nesprávnym rozhodnutiam. Porovnáme GA4, Google Ads a skutočné predaje, pričom zohľadníme rozdiely atribúcie.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Skontrolovať transaction_id a aktiváciu udalostí."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Porovnávať kompatibilné metriky."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Overiť technické spúšťanie bez právnych záverov."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "web-development": {
+      "title": "Vývoj webových aplikácií, CRM a API integrácie",
+      "description": "Vývoj webových aplikácií, CRM a API integrácie. Webové aplikácie, CRM a API integrácie navrhujeme podľa skutočnej prevádzky. Najprv posúdime procesy, bezpečnosť, dostupné rozhrania a možnosti údržby.",
+      "eyebrow": "WEB / DEVELOPMENT",
+      "headline": "Softvér má <em>ušetriť ručnú prácu.</em>",
+      "lead": "Webové aplikácie, CRM a API integrácie navrhujeme podľa skutočnej prevádzky. Najprv posúdime procesy, bezpečnosť, dostupné rozhrania a možnosti údržby.",
+      "problems": [
+        [
+          "Prepisovanie objednávok",
+          "E-shop neposiela údaje spoľahlivo do účtovníctva.",
+          "Zmapovať dátové toky a API."
+        ],
+        [
+          "Náročná údržba",
+          "Krehké doplnky spomaľujú vývoj.",
+          "Navrhnúť postupnú modernizáciu."
+        ],
+        [
+          "Ručné reporty",
+          "Údaje sa spájajú z viacerých súborov.",
+          "Pripraviť funkčný dashboard."
+        ]
+      ],
+      "outcomes": [
+        "Jednoznačné technické zadanie",
+        "Postupná implementácia",
+        "Testy a podpora"
+      ],
+      "faq": [
+        [
+          "Vytvárate aj SaaS aplikácie?",
+          "Môžeme overiť realizovateľnosť a pripraviť reálny rozsah."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Webové aplikácie, CRM a API integrácie navrhujeme podľa skutočnej prevádzky. Najprv posúdime procesy, bezpečnosť, dostupné rozhrania a možnosti údržby.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Zmapovať dátové toky a API."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Navrhnúť postupnú modernizáciu."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Pripraviť funkčný dashboard."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "website-design": {
+      "title": "Tvorba firemných webstránok",
+      "description": "Tvorba firemných webstránok. Tvoríme firemné stránky, ktoré vysvetľujú služby a uľahčujú kontakt. Začíname štruktúrou obsahu a mobilným používaním, nie hotovou grafickou šablónou.",
+      "eyebrow": "WEBSITE / DESIGN",
+      "headline": "Web má vyzerať dobre. <em>A byť zrozumiteľný.</em>",
+      "lead": "Tvoríme firemné stránky, ktoré vysvetľujú služby a uľahčujú kontakt. Začíname štruktúrou obsahu a mobilným používaním, nie hotovou grafickou šablónou.",
+      "problems": [
+        [
+          "Nejasné služby",
+          "Zákazník nerozumie ponuke.",
+          "Rozvrhnúť obsah podľa potrieb klienta."
+        ],
+        [
+          "Nepraktický mobil",
+          "Malé písmo a komplikované formuláre zdržujú.",
+          "Otestovať čitateľnosť a tlačidlá."
+        ],
+        [
+          "Zložité zmeny",
+          "Aj jednoduchá aktualizácia vyžaduje zásah vývojára.",
+          "Použiť udržiavateľnú architektúru."
+        ]
+      ],
+      "outcomes": [
+        "Logická štruktúra stránok",
+        "Responzívne rozhranie",
+        "Funkčné formuláre a testy"
+      ],
+      "faq": [
+        [
+          "Používate WordPress?",
+          "Áno, ak spĺňa požiadavky na bezpečnosť a správu."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Tvoríme firemné stránky, ktoré vysvetľujú služby a uľahčujú kontakt. Začíname štruktúrou obsahu a mobilným používaním, nie hotovou grafickou šablónou.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Rozvrhnúť obsah podľa potrieb klienta."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Otestovať čitateľnosť a tlačidlá."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Použiť udržiavateľnú architektúru."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "online-shop-development": {
+      "title": "Tvorba e-shopov s platbami a integráciami",
+      "description": "Tvorba e-shopov s platbami a integráciami. Vývoj e-shopu zahŕňa katalóg, platby, dopravu a spracovanie objednávok. Platformu vyberáme podľa potrieb, dát a požadovaných integrácií.",
+      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "headline": "E-shop má predávať. <em>A nemá zvyšovať administratívu.</em>",
+      "lead": "Vývoj e-shopu zahŕňa katalóg, platby, dopravu a spracovanie objednávok. Platformu vyberáme podľa potrieb, dát a požadovaných integrácií.",
+      "problems": [
+        [
+          "Neusporiadané produkty",
+          "Varianty a atribúty nemajú jasné pravidlá.",
+          "Navrhnúť dátový model a kategórie."
+        ],
+        [
+          "Nákup komplikujú kroky navyše",
+          "Košík môže zbytočne znižovať dokončenie objednávky.",
+          "Testovať platobné scenáre."
+        ],
+        [
+          "Sklad bez synchronizácie",
+          "Zásoby sa aktualizujú ručne.",
+          "Posúdiť API prepojenie a spracovanie chýb."
+        ]
+      ],
+      "outcomes": [
+        "Funkčný rozsah a výber platformy",
+        "Otestovaný nákupný proces",
+        "Plán prevádzky a integrácií"
+      ],
+      "faq": [
+        [
+          "Dá sa presunúť existujúci e-shop?",
+          "Migrácia vyžaduje samostatné posúdenie dát, URL a neprerušenia predaja."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Vývoj e-shopu zahŕňa katalóg, platby, dopravu a spracovanie objednávok. Platformu vyberáme podľa potrieb, dát a požadovaných integrácií.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Navrhnúť dátový model a kategórie."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Testovať platobné scenáre."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Posúdiť API prepojenie a spracovanie chýb."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "about": {
+      "title": "O nás — malý tím odborníkov MrSeo.tech",
+      "description": "O nás — malý tím odborníkov MrSeo.tech. Sme menší tím odborníkov s desaťročnou praxou v SEO, Google Ads a vývoji webu. Pracujeme na diaľku z Ukrajiny a uprednostňujeme merateľnú diagnostiku pred prázdnymi ",
+      "eyebrow": "ABOUT",
+      "headline": "Menší tím. <em>Jasný postup.</em>",
+      "lead": "Sme menší tím odborníkov s desaťročnou praxou v SEO, Google Ads a vývoji webu. Pracujeme na diaľku z Ukrajiny a uprednostňujeme merateľnú diagnostiku pred prázdnymi sľubmi.",
+      "problems": [
+        [
+          "Najprv príčina",
+          "Viac reklamy nemusí riešiť problém s nákupom.",
+          "Preveriť cestu zákazníka."
+        ],
+        [
+          "Transparentné úlohy",
+          "Klient má vedieť, čo sa vykonáva.",
+          "Dohodnúť zodpovednosť a výstupy."
+        ],
+        [
+          "Bez zaručených pozícií",
+          "Reálne výsledky nemožno automaticky prisľúbiť.",
+          "Stanoviť kritériá kontroly."
+        ]
+      ],
+      "outcomes": [
+        "Priama komunikácia",
+        "Zdôvodnené priority",
+        "Overiteľné pracovné kroky"
+      ],
+      "faq": [],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Sme menší tím odborníkov s desaťročnou praxou v SEO, Google Ads a vývoji webu. Pracujeme na diaľku z Ukrajiny a uprednostňujeme merateľnú diagnostiku pred prázdnymi sľubmi.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Preveriť cestu zákazníka."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Dohodnúť zodpovednosť a výstupy."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Stanoviť kritériá kontroly."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "portfolio": {
+      "title": "Projekty a skúsenosti MrSeo.tech",
+      "description": "Projekty a skúsenosti MrSeo.tech. Zobrazujeme verejné weby z portfólia ako príklady odvetví a technických úloh. Nevydávame ich automaticky za slovenské zákazky ani nezverejňujeme dôverné čísla.",
+      "eyebrow": "PORTFOLIO",
+      "headline": "Skutočné projekty. <em>Bez vymyslených čísel.</em>",
+      "lead": "Zobrazujeme verejné weby z portfólia ako príklady odvetví a technických úloh. Nevydávame ich automaticky za slovenské zákazky ani nezverejňujeme dôverné čísla.",
+      "problems": [
+        [
+          "Autodoplnky",
+          "Veľké katalógy vyžadujú prehľadné filtrovanie.",
+          "Pozrieť príklady internetových obchodov."
+        ],
+        [
+          "Móda a doplnky",
+          "Rozdielne varianty potrebujú jasnú prezentáciu.",
+          "Preskúmať rozličné obchody."
+        ],
+        [
+          "Odborné služby",
+          "Zrozumiteľnosť a dôvera pomáhajú kontaktu.",
+          "Vidieť príklady služieb."
+        ]
+      ],
+      "outcomes": [
+        "Verejné príklady domén",
+        "Rôzne odvetvia",
+        "Ochrana údajov klientov"
+      ],
+      "faq": [
+        [
+          "Sú to slovenské projekty?",
+          "Nie sú označené ako slovenské referencie bez potvrdenia."
+        ]
+      ],
+      "offer": {
+        "title": "Analýza skutočného stavu → Overenie zmien",
+        "intro": "Zobrazujeme verejné weby z portfólia ako príklady odvetví a technických úloh. Nevydávame ich automaticky za slovenské zákazky ani nezverejňujeme dôverné čísla.",
+        "items": [
+          {
+            "title": "Analýza skutočného stavu",
+            "detail": "Pozrieť príklady internetových obchodov."
+          },
+          {
+            "title": "Prioritný plán úprav",
+            "detail": "Preskúmať rozličné obchody."
+          },
+          {
+            "title": "Overenie zmien",
+            "detail": "Vidieť príklady služieb."
+          }
+        ],
+        "cta": "Opísať problém webu"
+      }
+    },
+    "contact": {
+      "title": "Kontaktujte nás a opíšte svoj problém",
+      "description": "Kontaktujte nás a opíšte svoj problém. Pošlite adresu stránky, cieľový trh a konkrétny problém. Nie je potrebné pripravovať rozsiahle zadanie ani poskytovať prihlasovacie údaje.",
+      "eyebrow": "CONTACT",
+      "headline": "Čo bráni <em>novým zákazníckym dopytom?</em>",
+      "lead": "Pošlite adresu stránky, cieľový trh a konkrétny problém. Nie je potrebné pripravovať rozsiahle zadanie ani poskytovať prihlasovacie údaje. Uveďte platformu e-shopu, používané reklamné systémy a konkrétny problém. Neposielajte prihlasovacie heslá.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    },
+    "privacy": {
+      "title": "Ochrana súkromia a spracovanie kontaktných údajov",
+      "description": "Ako MrSeo.tech spracúva údaje odoslané kontaktným formulárom.",
+      "eyebrow": "PRIVACY",
+      "headline": "Súkromie a kontaktné dopyty",
+      "lead": "Ako MrSeo.tech spracúva údaje odoslané kontaktným formulárom.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    }
+  },
+  "privacy": [
+    "Súkromie a kontaktné dopyty",
+    "Ako MrSeo.tech spracúva údaje odoslané kontaktným formulárom.",
+    "Poskytnuté údaje",
+    "Meno, e-mail, voliteľná webová stránka a správa. Dočasné technické údaje pomáhajú obmedzovať spam.",
+    "Účel",
+    "Údaje používame na odpoveď na dopyt a prípadnú komunikáciu o spolupráci.",
+    "Doručenie",
+    "Správa sa odosiela na hello@mrseo.tech a následne do pracovnej schránky UKR.NET. Hosting a poskytovatelia e-mailu údaje technicky spracúvajú.",
+    "Uchovávanie",
+    "Korešpondenciu uchovávame počas obdobia potrebného na vybavenie žiadosti a splnenie zákonných povinností. Presnú lehotu stanovíme pred verejným spustením.",
+    "Práva a kontakt",
+    "Podľa príslušného práva môžete požiadať o prístup, opravu alebo vymazanie na hello@mrseo.tech. Overená právna identita prevádzkovateľa bude uvedená pred spustením.",
+    "Odoslaním formulára poskytujete údaje na účely odpovede. Podrobnosti:"
+  ],
+  "market": {
+    "heading": "SEO, Google Ads a vývoj webov pre firmy na Slovensku",
+    "description": "Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti. Skontrolujeme vyhľadávanie, meranie, stránku aj procesy v e-shope.",
+    "cta": "Opísať problém webu",
+    "brief": "Uveďte platformu e-shopu, používané reklamné systémy a konkrétny problém. Neposielajte prihlasovacie heslá.",
+    "portfolioLabel": "Projekty"
+  },
+  "serviceLabels": {
+    "seo": "SEO",
+    "seo-audit": "Technický SEO audit",
+    "ecommerce-seo": "SEO pre e-shopy",
+    "google-ads": "Google Ads / PPC",
+    "analytics": "GA4 analytika",
+    "web-development": "Vývoj na mieru",
+    "website-design": "Tvorba webstránok",
+    "online-shop-development": "Tvorba e-shopov",
+    "about": "O nás",
+    "portfolio": "Projekty",
+    "contact": "Kontakt"
+  },
+  "portfolioCategories": {
+    "auto": "AUTO",
+    "fashion": "MÓDA",
+    "home": "BÝVANIE",
+    "electronics": "ELEKTRONIKA",
+    "medical": "ZDRAVIE"
+  }
+}
