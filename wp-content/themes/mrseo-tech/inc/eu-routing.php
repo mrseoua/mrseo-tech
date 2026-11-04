@@ -40,6 +40,11 @@ add_action('wp_head',function(){
 },5);
 add_action('wp_enqueue_scripts',function(){
     if(!mrseo_eu_route())return;
+    // The homepage is rendered by the same orbit-lab.php as UA/RU/EN/PL/DE.
+    // Never load the legacy EU landing stylesheet there: its global heading,
+    // background and link rules alter the approved shared homepage styling.
+    // The market-specific CSS remains scoped to EU interior pages only.
+    if(mrseo_slug()==='')return;
     wp_enqueue_style('mrseo-eu-expansion',get_template_directory_uri().'/assets/eu-expansion.css',
         array('mrseo-language-dropdown'),'1.0.4');
     // Only real service pages load their subject-specific, mobile-ready hero scene.
