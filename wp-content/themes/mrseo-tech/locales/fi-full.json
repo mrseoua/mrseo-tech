@@ -545,7 +545,12 @@
         "Läpinäkyvät prioriteetit",
         "Todennettavat työtulokset"
       ],
-      "faq": [],
+      "faq": [
+        [
+          "Onko teillä toimisto Suomessa?",
+          "Ei. Työskentelemme etänä Ukrainasta. Sovimme viestinnän ja vastuut etukäteen."
+        ]
+      ],
       "offer": {
         "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
         "intro": "Olemme pieni ammattilaistiimi, jolla on kymmenen vuoden kokemus SEO:sta, Google Adsista ja verkkokehityksestä. Toimimme etänä Ukrainasta ja määrittelemme ongelman ennen palvelusuositusta.",
