@@ -13,7 +13,7 @@ const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 // homepage/service/contact/privacy paths in all 15 markets before publication.
 const slugs=coreShard?['','seo','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
-const sizes=[{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
+const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
 const urlOf=(l,s)=>HOST+'/'+(l==='uk'?'':l+'/')+(s?s+'/':'');
 async function audit(browser,viewport,lang,slug){
@@ -133,7 +133,7 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
-  if(viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
+  if((viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
   }
   if(slug===''&&viewport.name==='narrow'){
@@ -188,6 +188,7 @@ async function audit(browser,viewport,lang,slug){
    try{
     const selectedSlugs=coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs);
     for(const slug of selectedSlugs){
+     if(viewport.name==='wide'&&slug!=='')continue;
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug))continue;
      await audit(browser,viewport,lang,slug);
     }
