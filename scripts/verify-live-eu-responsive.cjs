@@ -18,7 +18,7 @@ async function audit(browser,viewport,lang,slug){
   viewport:{width:viewport.width,height:viewport.height},
   deviceScaleFactor:mobile?2:1,
   isMobile:mobile,hasTouch:mobile,
-  userAgent:browserUA,locale:lang+'-'+lang.toUpperCase(),
+  userAgent:browserUA,locale:({fr:'fr-FR',it:'it-IT',es:'es-ES',nl:'nl-NL',ro:'ro-RO',cs:'cs-CZ'})[lang],
   ignoreHTTPSErrors:false
  });
  const page=await context.newPage();
