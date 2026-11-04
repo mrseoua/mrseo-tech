@@ -15,7 +15,7 @@ get_header();
 <a class="eu-button" href="mailto:hello@mrseo.tech">hello@mrseo.tech ↗</a>
 </div></section>
 <?php else:?>
-<section class="eu-hero"><div class="eu-container eu-hero-grid">
+<section class="eu-hero<?php echo $slug==='contact'?' eu-hero--contact':'';?>"><div class="eu-container eu-hero-grid">
 <div class="eu-hero-copy">
 <span class="eu-kicker"><?php echo esc_html($page['eyebrow']);?> · MRSEO.TECH</span>
 <h1><?php echo wp_kses($page['headline'],array('em'=>array()));?></h1>
@@ -25,7 +25,11 @@ get_header();
 <?php if($slug!=='contact'&&$slug!=='portfolio'):?><a class="eu-text-link" href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html(mrseo_eu_service_labels($lang)['portfolio']);?> ↗</a><?php endif;?></div>
 <div class="eu-proof"><span class="eu-proof-dot"></span><?php echo esc_html($ui[1]);?></div>
 </div>
-<?php if($is_home):?>
+<?php if($slug==='contact'):?>
+<div class="eu-hero-contact" id="eu-contact-form">
+  <?php include get_template_directory().'/inc/eu-contact-form.php';?>
+</div>
+<?php elseif($is_home):?>
 <div class="intl-scene eu-orbit-scene" aria-label="<?php echo esc_attr($ui[0]);?>">
 <div class="eu-orbit-ring eu-orbit-ring-one"></div><div class="eu-orbit-ring eu-orbit-ring-two"></div>
 <svg class="eu-orbit-lines" viewBox="0 0 600 490" preserveAspectRatio="none" aria-hidden="true">
@@ -62,21 +66,11 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
 <?php endif;?>
 </div></section>
 <?php if($slug==='contact'):?>
-<section class="eu-section" id="eu-contact-form"><div class="eu-container eu-contact-layout">
-<div><span class="eu-kicker"><?php echo esc_html($nav[4]);?></span><h2><?php echo esc_html($ui[6]);?></h2><p><?php echo esc_html($ui[15]);?></p><p><a href="mailto:hello@mrseo.tech">hello@mrseo.tech</a></p></div>
-<div class="eu-form-panel">
-<?php $status=isset($_GET['message_status'])?sanitize_key(wp_unslash($_GET['message_status'])):'';if(in_array($status,array('sent','invalid','error'),true)){$msg=array('sent'=>$ui[12],'invalid'=>$ui[13],'error'=>$ui[14]);echo '<p class="eu-message-status" role="status">'.esc_html($msg[$status]).'</p>';}?>
-<form action="<?php echo esc_url(admin_url('admin-post.php'));?>" method="post">
-<input type="hidden" name="action" value="mrseo_contact"><?php wp_nonce_field('mrseo_contact_submit','mrseo_nonce');?>
-<input type="hidden" name="mrseo_lang" value="<?php echo esc_attr($lang);?>">
-<label for="eu-name"><?php echo esc_html($ui[7]);?> *</label><input id="eu-name" name="contact_name" autocomplete="name" maxlength="90" required>
-<label for="eu-email"><?php echo esc_html($ui[8]);?> *</label><input id="eu-email" name="contact_email" type="email" maxlength="180" autocomplete="email" required>
-<label for="eu-site"><?php echo esc_html($ui[9]);?></label><input id="eu-site" name="contact_site" type="url" maxlength="300">
-<label for="eu-text"><?php echo esc_html($ui[10]);?> *</label><textarea id="eu-text" name="contact_message" minlength="10" maxlength="3000" rows="6" required></textarea>
-<div class="eu-trap" aria-hidden="true"><input name="contact_company_extra" autocomplete="off" tabindex="-1"></div>
-<?php mrseo_privacy_form_notice();?>
-<button class="eu-button" type="submit"><?php echo esc_html($ui[11]);?></button>
-</form></div></div></section>
+<section class="eu-contact-assurance"><div class="eu-container eu-contact-assurance-inner">
+  <div><span class="eu-kicker"><?php echo esc_html($nav[4]);?></span><h2><?php echo esc_html($ui[6]);?></h2>
+    <p><?php echo esc_html($ui[15]);?></p></div>
+  <a href="mailto:hello@mrseo.tech" class="eu-text-link">hello@mrseo.tech ↗</a>
+</div></section>
 <?php else:?>
 <?php if(!empty($page['problems'])):?>
 <section class="eu-section eu-problems" id="eu-checks"><div class="eu-container">
