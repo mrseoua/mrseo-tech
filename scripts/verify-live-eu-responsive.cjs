@@ -74,6 +74,9 @@ async function audit(browser,viewport,lang,slug){
     formMethod:document.querySelector('form[action*="admin-post.php"]')?.method||null,
     formActionName:document.querySelector('input[name="action"]')?.value||null,
     hasPrivacyNotice:!!document.querySelector('.mrseo-privacy-notice'),
+    heroContactForm:!!document.querySelector('.eu-hero-contact form[action*="admin-post.php"]'),
+    heroContactTop:Math.round(document.querySelector('.eu-hero-contact')?.getBoundingClientRect().top??-1),
+    decorativeContactScene:!!document.querySelector('.eu-service-scene-contact'),
     nonceValue:document.querySelector('input[name="mrseo_nonce"]')?.value||'',
     portfolio:!!document.querySelector('a[href$="/'+lang+'/portfolio/"]'),
     privacyLink:!!document.querySelector('a[href*="/'+lang+'/privacy/"]'),
@@ -111,6 +114,13 @@ async function audit(browser,viewport,lang,slug){
   if(slug==='contact'&&(c.form!==lang||!c.nonce||!c.nonceValue))item.errors.push('Contact form language or nonce missing');
   if(slug==='contact'&&(!c.formAction?.endsWith('/wp-admin/admin-post.php')||c.formMethod!=='post'||c.formActionName!=='mrseo_contact'||!c.hasPrivacyNotice)){
     item.errors.push('Contact form action or privacy notice invalid');
+  }
+  // This expectation applies only AFTER deployment; PR browser runs inspect the previous production template.
+  if(slug==='contact'&&process.env.MRSEO_QA_FOCUSED!=='1'&&(!c.heroContactForm||c.decorativeContactScene)){
+    item.errors.push('Contact form is hidden below a decorative hero instead of being shown first');
+  }
+  if(slug==='contact'&&process.env.MRSEO_QA_FOCUSED!=='1'&&c.heroContactTop>viewport.height){
+    item.warnings.push('Contact form begins below the initial viewport');
   }
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   // Six invalid-input POSTs are safe: validation rejects malformed emails before wp_mail.
