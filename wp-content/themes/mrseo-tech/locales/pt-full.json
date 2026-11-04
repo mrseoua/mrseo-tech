@@ -33,7 +33,7 @@
   "pages": {
     "": {
       "title": "SEO, Google Ads e desenvolvimento web para empresas em Portugal",
-      "description": "SEO, Google Ads e desenvolvimento web para empresas em Portugal. Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios. Verificamos a descoberta dos produtos, as páginas comerci",
+      "description": "SEO, Google Ads e desenvolvimento web para empresas em Portugal. Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios.",
       "eyebrow": "MRSEO.TECH",
       "headline": "O site existe. <em>Mas onde estão os clientes?</em>",
       "lead": "Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios. Verificamos a descoberta dos produtos, as páginas comerciais, a medição das compras e os processos que fazem perder tempo.",
@@ -87,7 +87,7 @@
     },
     "seo": {
       "title": "Serviços de SEO para empresas e comércio eletrónico",
-      "description": "Serviços de SEO para empresas e comércio eletrónico. O SEO útil começa por perceber quais as páginas que deviam responder às pesquisas comerciais em Portugal. Avaliamos estrutura, links internos e conteúdo",
+      "description": "Serviços de SEO para empresas e comércio eletrónico. O SEO útil começa por perceber quais as páginas que deviam responder às pesquisas comerciais em Portugal.",
       "eyebrow": "SEO",
       "headline": "As páginas certas <em>não aparecem nas pesquisas?</em>",
       "lead": "O SEO útil começa por perceber quais as páginas que deviam responder às pesquisas comerciais em Portugal. Avaliamos estrutura, links internos e conteúdo antes de recomendar a produção de mais textos.",
@@ -141,8 +141,8 @@
     },
     "seo-audit": {
       "title": "Auditoria SEO técnica: indexação, rastreio e conteúdos duplicados",
-      "description": "Auditoria SEO técnica: indexação, rastreio e conteúdos duplicados. A auditoria procura a origem dos bloqueios de rastreio, indexação e duplicação. O resultado deve apontar URLs concretos, explicar o impact",
-      "eyebrow": "SEO / AUDIT",
+      "description": "Auditoria SEO técnica: indexação, rastreio e conteúdos duplicados. A auditoria procura a origem dos bloqueios de rastreio, indexação e duplicação.",
+      "eyebrow": "AUDITORIA SEO",
       "headline": "Um relatório automático <em>não resolve os erros do site.</em>",
       "lead": "A auditoria procura a origem dos bloqueios de rastreio, indexação e duplicação. O resultado deve apontar URLs concretos, explicar o impacto e permitir verificar se a correção foi aplicada.",
       "problems": [
@@ -195,8 +195,8 @@
     },
     "ecommerce-seo": {
       "title": "SEO para lojas online: categorias, filtros e produtos",
-      "description": "SEO para lojas online: categorias, filtros e produtos. Uma loja em WooCommerce, PrestaShop ou Shopify precisa de categorias, filtros e páginas de produto bem estruturados. Verificamos a configuração existe",
-      "eyebrow": "ECOMMERCE / SEO",
+      "description": "SEO para lojas online: categorias, filtros e produtos. Uma loja em WooCommerce, PrestaShop ou Shopify precisa de categorias, filtros e páginas de produto bem estruturados.",
+      "eyebrow": "SEO PARA LOJAS ONLINE",
       "headline": "Milhares de produtos. <em>Quantos são encontrados?</em>",
       "lead": "Uma loja em WooCommerce, PrestaShop ou Shopify precisa de categorias, filtros e páginas de produto bem estruturados. Verificamos a configuração existente e não afirmamos qualquer parceria oficial com estas plataformas.",
       "problems": [
@@ -249,8 +249,8 @@
     },
     "google-ads": {
       "title": "Auditoria Google Ads e Shopping para lojas online",
-      "description": "Auditoria Google Ads e Shopping para lojas online. Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição. Depois analisamos campanhas de Pesquisa, Shopping e Performance Ma",
-      "eyebrow": "GOOGLE / ADS",
+      "description": "Auditoria Google Ads e Shopping para lojas online. Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição.",
+      "eyebrow": "GOOGLE ADS",
       "headline": "Paga por cliques. <em>Que vendas está a medir?</em>",
       "lead": "Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição. Depois analisamos campanhas de Pesquisa, Shopping e Performance Max de acordo com os objetivos e margens reais.",
       "problems": [
@@ -303,8 +303,8 @@
     },
     "analytics": {
       "title": "Auditoria GA4 e acompanhamento de conversões",
-      "description": "Auditoria GA4 e acompanhamento de conversões. Uma compra duplicada ou um valor de encomenda incorreto altera as decisões de publicidade. Verificamos eventos GA4, identificadores de transação e diferenças d",
-      "eyebrow": "ANALYTICS",
+      "description": "Auditoria GA4 e acompanhamento de conversões. Uma compra duplicada ou um valor de encomenda incorreto altera as decisões de publicidade.",
+      "eyebrow": "ANÁLISE GA4",
       "headline": "Tem relatórios. <em>Mas pode confiar nos números?</em>",
       "lead": "Uma compra duplicada ou um valor de encomenda incorreto altera as decisões de publicidade. Verificamos eventos GA4, identificadores de transação e diferenças de atribuição com os pedidos reais.",
       "problems": [
@@ -357,8 +357,8 @@
     },
     "web-development": {
       "title": "Desenvolvimento web, CRM e integrações API à medida",
-      "description": "Desenvolvimento web, CRM e integrações API à medida. Desenvolvemos ferramentas web e integrações quando resolvem problemas reais da empresa. Antes de programar, analisamos processos, dados, APIs disponívei",
-      "eyebrow": "WEB / DEVELOPMENT",
+      "description": "Desenvolvimento web, CRM e integrações API à medida. Desenvolvemos ferramentas web e integrações quando resolvem problemas reais da empresa.",
+      "eyebrow": "DESENVOLVIMENTO À MEDIDA",
       "headline": "A tecnologia deveria <em>reduzir o trabalho manual.</em>",
       "lead": "Desenvolvemos ferramentas web e integrações quando resolvem problemas reais da empresa. Antes de programar, analisamos processos, dados, APIs disponíveis, segurança e manutenção.",
       "problems": [
@@ -411,8 +411,8 @@
     },
     "website-design": {
       "title": "Criação de sites profissionais para empresas",
-      "description": "Criação de sites profissionais para empresas. Criamos sites de serviços que explicam a oferta, respondem às dúvidas e facilitam o contacto. A estrutura das páginas e a experiência móvel são definidas antes",
-      "eyebrow": "WEBSITE / DESIGN",
+      "description": "Criação de sites profissionais para empresas. Criamos sites de serviços que explicam a oferta, respondem às dúvidas e facilitam o contacto.",
+      "eyebrow": "CRIAÇÃO DE SITES",
       "headline": "Um site bonito ajuda. <em>Um percurso claro converte melhor.</em>",
       "lead": "Criamos sites de serviços que explicam a oferta, respondem às dúvidas e facilitam o contacto. A estrutura das páginas e a experiência móvel são definidas antes dos efeitos visuais.",
       "problems": [
@@ -465,8 +465,8 @@
     },
     "online-shop-development": {
       "title": "Criação de lojas online com integrações e pagamentos",
-      "description": "Criação de lojas online com integrações e pagamentos. Uma loja online exige mais do que um catálogo visual: variantes, pagamentos, transporte, encomendas e gestão de stock. Definimos a plataforma segundo o",
-      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "description": "Criação de lojas online com integrações e pagamentos. Uma loja online exige mais do que um catálogo visual: variantes, pagamentos, transporte, encomendas e gestão de stock.",
+      "eyebrow": "LOJAS ONLINE",
       "headline": "Uma loja deve vender. <em>E ser simples de gerir.</em>",
       "lead": "Uma loja online exige mais do que um catálogo visual: variantes, pagamentos, transporte, encomendas e gestão de stock. Definimos a plataforma segundo os processos reais.",
       "problems": [
@@ -519,8 +519,8 @@
     },
     "about": {
       "title": "Sobre a MrSeo.tech — equipa de SEO e desenvolvimento",
-      "description": "Sobre a MrSeo.tech — equipa de SEO e desenvolvimento. Somos uma pequena equipa de profissionais com dez anos de experiência em SEO, Google Ads e desenvolvimento. Trabalhamos remotamente a partir da Ucrânia",
-      "eyebrow": "ABOUT",
+      "description": "Sobre a MrSeo.tech — equipa de SEO e desenvolvimento. Somos uma pequena equipa de profissionais com dez anos de experiência em SEO, Google Ads e desenvolvimento.",
+      "eyebrow": "SOBRE NÓS",
       "headline": "Uma equipa pequena. <em>Responsabilidades claras.</em>",
       "lead": "Somos uma pequena equipa de profissionais com dez anos de experiência em SEO, Google Ads e desenvolvimento. Trabalhamos remotamente a partir da Ucrânia e preferimos explicar a causa antes de propor um serviço.",
       "problems": [
@@ -573,8 +573,8 @@
     },
     "portfolio": {
       "title": "Projetos e experiência da MrSeo.tech",
-      "description": "Projetos e experiência da MrSeo.tech. Apresentamos sites do nosso portefólio público para ilustrar diferentes áreas de trabalho. Não os descrevemos como clientes portugueses nem divulgamos métricas confide",
-      "eyebrow": "PORTFOLIO",
+      "description": "Projetos e experiência da MrSeo.tech. Apresentamos sites do nosso portefólio público para ilustrar diferentes áreas de trabalho.",
+      "eyebrow": "PROJETOS",
       "headline": "Projetos reais. <em>Sem resultados inventados.</em>",
       "lead": "Apresentamos sites do nosso portefólio público para ilustrar diferentes áreas de trabalho. Não os descrevemos como clientes portugueses nem divulgamos métricas confidenciais sem autorização.",
       "problems": [
@@ -627,8 +627,8 @@
     },
     "contact": {
       "title": "Contacte-nos para analisar o seu projeto",
-      "description": "Contacte-nos para analisar o seu projeto. Diga-nos o endereço do site, o mercado pretendido e um exemplo concreto do que não funciona. Não precisa de enviar acessos nem de preparar um documento complexo.",
-      "eyebrow": "CONTACT",
+      "description": "Contacte-nos para analisar o seu projeto. Diga-nos o endereço do site, o mercado pretendido e um exemplo concreto do que não funciona.",
+      "eyebrow": "CONTACTOS",
       "headline": "Qual é o problema <em>que impede novos pedidos?</em>",
       "lead": "Diga-nos o endereço do site, o mercado pretendido e um exemplo concreto do que não funciona. Não precisa de enviar acessos nem de preparar um documento complexo. Indique a plataforma, o país de venda e um exemplo concreto do problema. Não partilhe palavras-passe.",
       "problems": [],
@@ -638,7 +638,7 @@
     "privacy": {
       "title": "Privacidade e tratamento dos dados de contacto",
       "description": "Como tratamos os dados enviados pelo formulário da MrSeo.tech.",
-      "eyebrow": "PRIVACY",
+      "eyebrow": "PRIVACIDADE",
       "headline": "Privacidade e pedidos de contacto",
       "lead": "Como tratamos os dados enviados pelo formulário da MrSeo.tech.",
       "problems": [],
