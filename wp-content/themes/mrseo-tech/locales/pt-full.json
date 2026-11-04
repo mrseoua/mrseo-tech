@@ -1,0 +1,686 @@
+{
+  "code": "pt-PT",
+  "name": "Português",
+  "country": "Portugal",
+  "nav": [
+    "Serviços",
+    "SEO",
+    "Google Ads",
+    "Desenvolvimento web",
+    "Contactos",
+    "Falar sobre o projeto",
+    "Privacidade"
+  ],
+  "ui": [
+    "Mais visitas não significam necessariamente mais clientes.",
+    "Identificamos a causa antes de recomendar um serviço.",
+    "O que verificamos",
+    "Como intervimos",
+    "O que recebe",
+    "Perguntas frequentes",
+    "Conte-nos o problema",
+    "O seu nome",
+    "E-mail",
+    "Site (opcional)",
+    "Descreva o problema",
+    "Enviar pedido",
+    "Pedido encaminhado para envio. Responderemos por e-mail.",
+    "Verifique os campos obrigatórios.",
+    "Não foi possível enviar. Tente novamente.",
+    "Não envie palavras-passe nem dados de acesso confidenciais.",
+    "Trabalhamos remotamente a partir da Ucrânia. A língua de trabalho é acordada antes do projeto."
+  ],
+  "pages": {
+    "": {
+      "title": "SEO, Google Ads e desenvolvimento web para empresas em Portugal",
+      "description": "SEO, Google Ads e desenvolvimento web para empresas em Portugal. Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios. Verificamos a descoberta dos produtos, as páginas comerci",
+      "eyebrow": "MRSEO.TECH",
+      "headline": "O site existe. <em>Mas onde estão os clientes?</em>",
+      "lead": "Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios. Verificamos a descoberta dos produtos, as páginas comerciais, a medição das compras e os processos que fazem perder tempo.",
+      "problems": [
+        [
+          "Visitas sem pedidos",
+          "As páginas podem responder à pesquisa errada ou dificultar o contacto.",
+          "Analisar a intenção de compra e o percurso até ao formulário."
+        ],
+        [
+          "Orçamento sem retorno claro",
+          "Os dados de conversão podem não refletir as encomendas reais.",
+          "Confrontar Google Ads, GA4 e vendas."
+        ],
+        [
+          "Operações manuais",
+          "O catálogo e o sistema de gestão podem estar desligados.",
+          "Avaliar integrações API e tarefas repetitivas."
+        ]
+      ],
+      "outcomes": [
+        "Problemas explicados com exemplos reais",
+        "Plano de trabalho organizado por prioridade",
+        "Métricas para verificar as alterações"
+      ],
+      "faq": [
+        [
+          "Têm escritório em Portugal?",
+          "Não. A equipa trabalha remotamente a partir da Ucrânia; combinamos a língua e a comunicação antes do início."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios. Verificamos a descoberta dos produtos, as páginas comerciais, a medição das compras e os processos que fazem perder tempo.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Analisar a intenção de compra e o percurso até ao formulário."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Confrontar Google Ads, GA4 e vendas."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Avaliar integrações API e tarefas repetitivas."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "seo": {
+      "title": "Serviços de SEO para empresas e comércio eletrónico",
+      "description": "Serviços de SEO para empresas e comércio eletrónico. O SEO útil começa por perceber quais as páginas que deviam responder às pesquisas comerciais em Portugal. Avaliamos estrutura, links internos e conteúdo",
+      "eyebrow": "SEO",
+      "headline": "As páginas certas <em>não aparecem nas pesquisas?</em>",
+      "lead": "O SEO útil começa por perceber quais as páginas que deviam responder às pesquisas comerciais em Portugal. Avaliamos estrutura, links internos e conteúdo antes de recomendar a produção de mais textos.",
+      "problems": [
+        [
+          "Categorias invisíveis",
+          "Páginas comerciais importantes não são descobertas ou indexadas.",
+          "Verificar ligações internas e cobertura do Google."
+        ],
+        [
+          "Estrutura pouco clara",
+          "Produtos e serviços estão organizados sem refletir a procura.",
+          "Relacionar categorias com intenções de pesquisa."
+        ],
+        [
+          "Visitas sem valor",
+          "O tráfego pode chegar a páginas sem uma proposta convincente.",
+          "Rever a informação e os passos para pedir orçamento."
+        ]
+      ],
+      "outcomes": [
+        "Mapeamento de páginas comerciais",
+        "Prioridades técnicas e editoriais",
+        "Indicadores de visibilidade e pedidos"
+      ],
+      "faq": [
+        [
+          "Garantem a primeira posição?",
+          "Não. As posições dependem dos motores de pesquisa; propomos ações verificáveis, sem garantias de ranking."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "O SEO útil começa por perceber quais as páginas que deviam responder às pesquisas comerciais em Portugal. Avaliamos estrutura, links internos e conteúdo antes de recomendar a produção de mais textos.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Verificar ligações internas e cobertura do Google."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Relacionar categorias com intenções de pesquisa."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Rever a informação e os passos para pedir orçamento."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "seo-audit": {
+      "title": "Auditoria SEO técnica: indexação, rastreio e conteúdos duplicados",
+      "description": "Auditoria SEO técnica: indexação, rastreio e conteúdos duplicados. A auditoria procura a origem dos bloqueios de rastreio, indexação e duplicação. O resultado deve apontar URLs concretos, explicar o impact",
+      "eyebrow": "SEO / AUDIT",
+      "headline": "Um relatório automático <em>não resolve os erros do site.</em>",
+      "lead": "A auditoria procura a origem dos bloqueios de rastreio, indexação e duplicação. O resultado deve apontar URLs concretos, explicar o impacto e permitir verificar se a correção foi aplicada.",
+      "problems": [
+        [
+          "URL fora do índice",
+          "Erros HTTP, diretivas ou canonicals podem excluir páginas úteis.",
+          "Inspecionar amostras de URLs e relatórios de cobertura."
+        ],
+        [
+          "Filtros duplicados",
+          "Parâmetros podem criar centenas de páginas semelhantes.",
+          "Avaliar facetas, paginação e canonicalização."
+        ],
+        [
+          "Experiência móvel fraca",
+          "Ficheiros pesados e elementos instáveis afetam a utilização.",
+          "Separar problemas de desempenho e de interface."
+        ]
+      ],
+      "outcomes": [
+        "Exemplos de erros reproduzíveis",
+        "Lista de ações por impacto",
+        "Verificação após implementação"
+      ],
+      "faq": [
+        [
+          "A auditoria inclui as correções?",
+          "A análise e a implementação são trabalhos distintos; definimos o âmbito antes de começar."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "A auditoria procura a origem dos bloqueios de rastreio, indexação e duplicação. O resultado deve apontar URLs concretos, explicar o impacto e permitir verificar se a correção foi aplicada.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Inspecionar amostras de URLs e relatórios de cobertura."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Avaliar facetas, paginação e canonicalização."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Separar problemas de desempenho e de interface."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "ecommerce-seo": {
+      "title": "SEO para lojas online: categorias, filtros e produtos",
+      "description": "SEO para lojas online: categorias, filtros e produtos. Uma loja em WooCommerce, PrestaShop ou Shopify precisa de categorias, filtros e páginas de produto bem estruturados. Verificamos a configuração existe",
+      "eyebrow": "ECOMMERCE / SEO",
+      "headline": "Milhares de produtos. <em>Quantos são encontrados?</em>",
+      "lead": "Uma loja em WooCommerce, PrestaShop ou Shopify precisa de categorias, filtros e páginas de produto bem estruturados. Verificamos a configuração existente e não afirmamos qualquer parceria oficial com estas plataformas.",
+      "problems": [
+        [
+          "Categorias pouco visíveis",
+          "O catálogo não corresponde às pesquisas de quem quer comprar.",
+          "Reorganizar categorias e ligações prioritárias."
+        ],
+        [
+          "Facetas sem estratégia",
+          "Os filtros criam URLs duplicados e dispersam os sinais de pesquisa.",
+          "Separar páginas úteis de combinações técnicas."
+        ],
+        [
+          "Produtos difíceis de encontrar",
+          "Variantes e informação incompleta confundem a navegação.",
+          "Verificar modelos de produto e navegação."
+        ]
+      ],
+      "outcomes": [
+        "Estrutura de catálogo mais clara",
+        "Prioridades de filtros e categorias",
+        "Plano de medição de páginas comerciais"
+      ],
+      "faq": [
+        [
+          "É necessário reescrever todos os produtos?",
+          "Não necessariamente. Primeiro avaliamos a estrutura técnica e as necessidades de informação."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Uma loja em WooCommerce, PrestaShop ou Shopify precisa de categorias, filtros e páginas de produto bem estruturados. Verificamos a configuração existente e não afirmamos qualquer parceria oficial com estas plataformas.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Reorganizar categorias e ligações prioritárias."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Separar páginas úteis de combinações técnicas."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Verificar modelos de produto e navegação."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "google-ads": {
+      "title": "Auditoria Google Ads e Shopping para lojas online",
+      "description": "Auditoria Google Ads e Shopping para lojas online. Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição. Depois analisamos campanhas de Pesquisa, Shopping e Performance Ma",
+      "eyebrow": "GOOGLE / ADS",
+      "headline": "Paga por cliques. <em>Que vendas está a medir?</em>",
+      "lead": "Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição. Depois analisamos campanhas de Pesquisa, Shopping e Performance Max de acordo com os objetivos e margens reais.",
+      "problems": [
+        [
+          "Conversões incorretas",
+          "Eventos repetidos podem fazer parecer rentável uma campanha que não o é.",
+          "Comparar compras com transações GA4 e Google Ads."
+        ],
+        [
+          "Produtos que gastam sem vender",
+          "Grupos de produtos podem consumir orçamento sem valor comprovado.",
+          "Analisar custos por categoria e SKU."
+        ],
+        [
+          "Feed inconsistente",
+          "Preços ou disponibilidade no Merchant Center podem divergir da loja.",
+          "Conferir atributos e páginas de produto."
+        ]
+      ],
+      "outcomes": [
+        "Diagnóstico dos eventos principais",
+        "Despesas que merecem investigação",
+        "Hipóteses de otimização mensuráveis"
+      ],
+      "faq": [
+        [
+          "Garantem um ROAS?",
+          "Não. O retorno depende das margens, do mercado, da oferta e da medição correta."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição. Depois analisamos campanhas de Pesquisa, Shopping e Performance Max de acordo com os objetivos e margens reais.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Comparar compras com transações GA4 e Google Ads."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Analisar custos por categoria e SKU."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Conferir atributos e páginas de produto."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "analytics": {
+      "title": "Auditoria GA4 e acompanhamento de conversões",
+      "description": "Auditoria GA4 e acompanhamento de conversões. Uma compra duplicada ou um valor de encomenda incorreto altera as decisões de publicidade. Verificamos eventos GA4, identificadores de transação e diferenças d",
+      "eyebrow": "ANALYTICS",
+      "headline": "Tem relatórios. <em>Mas pode confiar nos números?</em>",
+      "lead": "Uma compra duplicada ou um valor de encomenda incorreto altera as decisões de publicidade. Verificamos eventos GA4, identificadores de transação e diferenças de atribuição com os pedidos reais.",
+      "problems": [
+        [
+          "Compras duplicadas",
+          "O evento purchase pode disparar mais do que uma vez.",
+          "Verificar transaction_id e regras de recolha."
+        ],
+        [
+          "GA4 e Ads não coincidem",
+          "Janelas e modelos de atribuição podem explicar parte da diferença.",
+          "Comparar métricas equivalentes e encomendas."
+        ],
+        [
+          "Etiquetas sem controlo",
+          "O consentimento influencia a recolha de dados.",
+          "Avaliar a integração técnica e encaminhar a avaliação jurídica."
+        ]
+      ],
+      "outcomes": [
+        "Inventário dos eventos de conversão",
+        "Anomalias com exemplos concretos",
+        "Plano de testes de recolha de dados"
+      ],
+      "faq": [
+        [
+          "GA4 deve mostrar exatamente as mesmas vendas de Ads?",
+          "Não. A atribuição e as condições de recolha são diferentes; analisamos as diferenças compatíveis."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Uma compra duplicada ou um valor de encomenda incorreto altera as decisões de publicidade. Verificamos eventos GA4, identificadores de transação e diferenças de atribuição com os pedidos reais.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Verificar transaction_id e regras de recolha."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Comparar métricas equivalentes e encomendas."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Avaliar a integração técnica e encaminhar a avaliação jurídica."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "web-development": {
+      "title": "Desenvolvimento web, CRM e integrações API à medida",
+      "description": "Desenvolvimento web, CRM e integrações API à medida. Desenvolvemos ferramentas web e integrações quando resolvem problemas reais da empresa. Antes de programar, analisamos processos, dados, APIs disponívei",
+      "eyebrow": "WEB / DEVELOPMENT",
+      "headline": "A tecnologia deveria <em>reduzir o trabalho manual.</em>",
+      "lead": "Desenvolvemos ferramentas web e integrações quando resolvem problemas reais da empresa. Antes de programar, analisamos processos, dados, APIs disponíveis, segurança e manutenção.",
+      "problems": [
+        [
+          "Sistemas desligados",
+          "As encomendas são copiadas entre loja, CRM e ERP.",
+          "Mapear os dados e avaliar uma integração."
+        ],
+        [
+          "Aplicações difíceis de manter",
+          "Dependências antigas tornam cada alteração arriscada.",
+          "Rever arquitetura e necessidades de modernização."
+        ],
+        [
+          "Relatórios manuais",
+          "As equipas combinam ficheiros de vários sistemas.",
+          "Definir um painel e um fluxo de dados fiáveis."
+        ]
+      ],
+      "outcomes": [
+        "Âmbito funcional e técnico claro",
+        "Etapas de implementação verificáveis",
+        "Critérios de manutenção e aceitação"
+      ],
+      "faq": [
+        [
+          "Fazem aplicações SaaS?",
+          "Podemos avaliar a viabilidade e definir requisitos, segurança e custos antes de desenvolver."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Desenvolvemos ferramentas web e integrações quando resolvem problemas reais da empresa. Antes de programar, analisamos processos, dados, APIs disponíveis, segurança e manutenção.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Mapear os dados e avaliar uma integração."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Rever arquitetura e necessidades de modernização."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Definir um painel e um fluxo de dados fiáveis."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "website-design": {
+      "title": "Criação de sites profissionais para empresas",
+      "description": "Criação de sites profissionais para empresas. Criamos sites de serviços que explicam a oferta, respondem às dúvidas e facilitam o contacto. A estrutura das páginas e a experiência móvel são definidas antes",
+      "eyebrow": "WEBSITE / DESIGN",
+      "headline": "Um site bonito ajuda. <em>Um percurso claro converte melhor.</em>",
+      "lead": "Criamos sites de serviços que explicam a oferta, respondem às dúvidas e facilitam o contacto. A estrutura das páginas e a experiência móvel são definidas antes dos efeitos visuais.",
+      "problems": [
+        [
+          "Oferta pouco compreensível",
+          "O visitante não percebe as diferenças entre os serviços.",
+          "Organizar as páginas pelas necessidades do cliente."
+        ],
+        [
+          "Mobile difícil de usar",
+          "Textos pequenos e botões confusos dificultam pedidos.",
+          "Desenhar um percurso responsivo e legível."
+        ],
+        [
+          "Atualizações complicadas",
+          "Uma estrutura frágil obriga a trabalho técnico para tudo.",
+          "Escolher componentes fáceis de manter."
+        ]
+      ],
+      "outcomes": [
+        "Arquitetura e conteúdos planeados",
+        "Design adaptado ao telemóvel",
+        "Formulários e ligações testados"
+      ],
+      "faq": [
+        [
+          "Podem trabalhar com WordPress?",
+          "Sim, quando corresponde aos requisitos de gestão, segurança e manutenção do projeto."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Criamos sites de serviços que explicam a oferta, respondem às dúvidas e facilitam o contacto. A estrutura das páginas e a experiência móvel são definidas antes dos efeitos visuais.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Organizar as páginas pelas necessidades do cliente."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Desenhar um percurso responsivo e legível."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Escolher componentes fáceis de manter."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "online-shop-development": {
+      "title": "Criação de lojas online com integrações e pagamentos",
+      "description": "Criação de lojas online com integrações e pagamentos. Uma loja online exige mais do que um catálogo visual: variantes, pagamentos, transporte, encomendas e gestão de stock. Definimos a plataforma segundo o",
+      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "headline": "Uma loja deve vender. <em>E ser simples de gerir.</em>",
+      "lead": "Uma loja online exige mais do que um catálogo visual: variantes, pagamentos, transporte, encomendas e gestão de stock. Definimos a plataforma segundo os processos reais.",
+      "problems": [
+        [
+          "Catálogo desorganizado",
+          "Atributos e variações não têm uma lógica consistente.",
+          "Definir categorias, filtros e dados de produto."
+        ],
+        [
+          "Checkout complicado",
+          "Passos desnecessários podem impedir a compra.",
+          "Testar o carrinho e os métodos de pagamento."
+        ],
+        [
+          "Stock atualizado à mão",
+          "A loja e o software de gestão não comunicam.",
+          "Avaliar API e sincronização de encomendas."
+        ]
+      ],
+      "outcomes": [
+        "Requisitos e escolha de plataforma",
+        "Fluxo de compra testado",
+        "Plano de manutenção e integrações"
+      ],
+      "faq": [
+        [
+          "É possível migrar uma loja existente?",
+          "É necessário avaliar dados, URLs, redirecionamentos e continuidade das encomendas."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Uma loja online exige mais do que um catálogo visual: variantes, pagamentos, transporte, encomendas e gestão de stock. Definimos a plataforma segundo os processos reais.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Definir categorias, filtros e dados de produto."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Testar o carrinho e os métodos de pagamento."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Avaliar API e sincronização de encomendas."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "about": {
+      "title": "Sobre a MrSeo.tech — equipa de SEO e desenvolvimento",
+      "description": "Sobre a MrSeo.tech — equipa de SEO e desenvolvimento. Somos uma pequena equipa de profissionais com dez anos de experiência em SEO, Google Ads e desenvolvimento. Trabalhamos remotamente a partir da Ucrânia",
+      "eyebrow": "ABOUT",
+      "headline": "Uma equipa pequena. <em>Responsabilidades claras.</em>",
+      "lead": "Somos uma pequena equipa de profissionais com dez anos de experiência em SEO, Google Ads e desenvolvimento. Trabalhamos remotamente a partir da Ucrânia e preferimos explicar a causa antes de propor um serviço.",
+      "problems": [
+        [
+          "Diagnóstico antes da proposta",
+          "Nem todas as perdas de vendas são problemas de publicidade.",
+          "Analisar o percurso do cliente e os dados."
+        ],
+        [
+          "Trabalho com prioridades",
+          "O cliente deve saber o que será corrigido primeiro.",
+          "Definir etapas e responsabilidades."
+        ],
+        [
+          "Sem promessas mágicas",
+          "Posições ou vendas garantidas não são uma base séria.",
+          "Explicar hipóteses e critérios de verificação."
+        ]
+      ],
+      "outcomes": [
+        "Comunicação direta",
+        "Problemas documentados",
+        "Trabalho com limites definidos"
+      ],
+      "faq": [],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Somos uma pequena equipa de profissionais com dez anos de experiência em SEO, Google Ads e desenvolvimento. Trabalhamos remotamente a partir da Ucrânia e preferimos explicar a causa antes de propor um serviço.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Analisar o percurso do cliente e os dados."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Definir etapas e responsabilidades."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Explicar hipóteses e critérios de verificação."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "portfolio": {
+      "title": "Projetos e experiência da MrSeo.tech",
+      "description": "Projetos e experiência da MrSeo.tech. Apresentamos sites do nosso portefólio público para ilustrar diferentes áreas de trabalho. Não os descrevemos como clientes portugueses nem divulgamos métricas confide",
+      "eyebrow": "PORTFOLIO",
+      "headline": "Projetos reais. <em>Sem resultados inventados.</em>",
+      "lead": "Apresentamos sites do nosso portefólio público para ilustrar diferentes áreas de trabalho. Não os descrevemos como clientes portugueses nem divulgamos métricas confidenciais sem autorização.",
+      "problems": [
+        [
+          "Catálogos automóveis",
+          "Grandes quantidades de produtos exigem categorias e filtros claros.",
+          "Consultar exemplos de lojas de peças e acessórios."
+        ],
+        [
+          "Moda e acessórios",
+          "As variantes precisam de uma apresentação compreensível.",
+          "Ver projetos com diferentes tipos de catálogo."
+        ],
+        [
+          "Sites de serviços",
+          "Informação, confiança e contacto têm funções essenciais.",
+          "Examinar exemplos públicos de páginas de serviços."
+        ]
+      ],
+      "outcomes": [
+        "Domínios reais disponíveis ao público",
+        "Diversidade de contextos de trabalho",
+        "Respeito pelos dados dos clientes"
+      ],
+      "faq": [
+        [
+          "São projetos em Portugal?",
+          "Não afirmamos isso. São exemplos do portefólio público, sem localização inventada."
+        ]
+      ],
+      "offer": {
+        "title": "Diagnóstico por dados → Validação prática",
+        "intro": "Apresentamos sites do nosso portefólio público para ilustrar diferentes áreas de trabalho. Não os descrevemos como clientes portugueses nem divulgamos métricas confidenciais sem autorização.",
+        "items": [
+          {
+            "title": "Diagnóstico por dados",
+            "detail": "Consultar exemplos de lojas de peças e acessórios."
+          },
+          {
+            "title": "Correções prioritárias",
+            "detail": "Ver projetos com diferentes tipos de catálogo."
+          },
+          {
+            "title": "Validação prática",
+            "detail": "Examinar exemplos públicos de páginas de serviços."
+          }
+        ],
+        "cta": "Falar sobre o meu projeto"
+      }
+    },
+    "contact": {
+      "title": "Contacte-nos para analisar o seu projeto",
+      "description": "Contacte-nos para analisar o seu projeto. Diga-nos o endereço do site, o mercado pretendido e um exemplo concreto do que não funciona. Não precisa de enviar acessos nem de preparar um documento complexo.",
+      "eyebrow": "CONTACT",
+      "headline": "Qual é o problema <em>que impede novos pedidos?</em>",
+      "lead": "Diga-nos o endereço do site, o mercado pretendido e um exemplo concreto do que não funciona. Não precisa de enviar acessos nem de preparar um documento complexo. Indique a plataforma, o país de venda e um exemplo concreto do problema. Não partilhe palavras-passe.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    },
+    "privacy": {
+      "title": "Privacidade e tratamento dos dados de contacto",
+      "description": "Como tratamos os dados enviados pelo formulário da MrSeo.tech.",
+      "eyebrow": "PRIVACY",
+      "headline": "Privacidade e pedidos de contacto",
+      "lead": "Como tratamos os dados enviados pelo formulário da MrSeo.tech.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    }
+  },
+  "privacy": [
+    "Privacidade e pedidos de contacto",
+    "Como tratamos os dados enviados pelo formulário da MrSeo.tech.",
+    "Dados fornecidos",
+    "Nome, endereço de e-mail, site opcional e mensagem. Dados técnicos temporários ajudam a limitar spam.",
+    "Finalidade",
+    "Usamos os dados para responder à pergunta e discutir uma eventual colaboração, se solicitada.",
+    "Encaminhamento",
+    "O pedido chega a hello@mrseo.tech e é reencaminhado para uma caixa de correio profissional UKR.NET. O alojamento e os fornecedores de e-mail participam tecnicamente na entrega.",
+    "Conservação",
+    "A correspondência é guardada pelo período necessário ao pedido e a eventuais obrigações legais. O prazo exato será definido antes da abertura pública.",
+    "Direitos e contacto",
+    "Pode solicitar acesso, retificação ou eliminação dos dados, nos termos da lei aplicável, escrevendo para hello@mrseo.tech. A identidade jurídica do responsável será publicada após verificação.",
+    "Ao enviar o formulário, fornece dados para que possamos responder. Detalhes:"
+  ],
+  "market": {
+    "heading": "SEO, Google Ads e desenvolvimento web para empresas em Portugal",
+    "description": "Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios. Verificamos a descoberta dos produtos, as páginas comerciais, a medição das compras e os processos que fazem perder tempo.",
+    "cta": "Falar sobre o meu projeto",
+    "brief": "Indique a plataforma, o país de venda e um exemplo concreto do problema. Não partilhe palavras-passe.",
+    "portfolioLabel": "Projetos"
+  },
+  "serviceLabels": {
+    "seo": "SEO",
+    "seo-audit": "Auditoria SEO",
+    "ecommerce-seo": "SEO para lojas online",
+    "google-ads": "Google Ads",
+    "analytics": "Análise GA4",
+    "web-development": "Desenvolvimento à medida",
+    "website-design": "Criação de sites",
+    "online-shop-development": "Lojas online",
+    "about": "Sobre nós",
+    "portfolio": "Projetos",
+    "contact": "Contactos"
+  },
+  "portfolioCategories": {
+    "auto": "AUTOMÓVEL",
+    "fashion": "MODA",
+    "home": "CASA",
+    "electronics": "ELETRÓNICA",
+    "medical": "SAÚDE"
+  }
+}
