@@ -33,7 +33,7 @@
   "pages": {
     "": {
       "title": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa",
-      "description": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa. Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta. Tutkimme löydettävyyden, ostotapahtumien mittauksen ja manuaali",
+      "description": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa. Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta.",
       "eyebrow": "MRSEO.TECH",
       "headline": "Verkkosivusto on olemassa. <em>Mutta tuleeko asiakkaita?</em>",
       "lead": "Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta. Tutkimme löydettävyyden, ostotapahtumien mittauksen ja manuaaliset työvaiheet ennen ehdotuksia.",
@@ -87,8 +87,8 @@
     },
     "seo": {
       "title": "Hakukoneoptimointi yrityksille ja verkkokaupoille",
-      "description": "Hakukoneoptimointi yrityksille ja verkkokaupoille. Hakukoneoptimointi alkaa asiakkaiden tarpeista ja niihin vastaavista sivuista. Tarkistamme sivustorakenteen, sisäiset linkit ja sisällön ennen uusien teks",
-      "eyebrow": "SEO",
+      "description": "Hakukoneoptimointi yrityksille ja verkkokaupoille. Hakukoneoptimointi alkaa asiakkaiden tarpeista ja niihin vastaavista sivuista.",
+      "eyebrow": "HAKUKONEOPTIMOINTI",
       "headline": "Löytyvätkö tärkeimmät sivut <em>oikeilla hauilla?</em>",
       "lead": "Hakukoneoptimointi alkaa asiakkaiden tarpeista ja niihin vastaavista sivuista. Tarkistamme sivustorakenteen, sisäiset linkit ja sisällön ennen uusien tekstien suunnittelua.",
       "problems": [
@@ -141,8 +141,8 @@
     },
     "seo-audit": {
       "title": "Tekninen SEO-auditointi: indeksointi ja sivuston rakenne",
-      "description": "Tekninen SEO-auditointi: indeksointi ja sivuston rakenne. Tekninen auditointi osoittaa, mitkä URL-osoitteet ovat ongelmallisia ja miksi. Tutkimme indeksoinnin, canonical-merkinnät, sivuston indeksointia tu",
-      "eyebrow": "SEO / AUDIT",
+      "description": "Tekninen SEO-auditointi: indeksointi ja sivuston rakenne. Tekninen auditointi osoittaa, mitkä URL-osoitteet ovat ongelmallisia ja miksi.",
+      "eyebrow": "TEKNINEN SEO-AUDITOINTI",
       "headline": "Automaattinen SEO-pistemäärä <em>ei vielä korjaa sivustoa.</em>",
       "lead": "Tekninen auditointi osoittaa, mitkä URL-osoitteet ovat ongelmallisia ja miksi. Tutkimme indeksoinnin, canonical-merkinnät, sivuston indeksointia tukevat linkit ja mobiilikäytön.",
       "problems": [
@@ -195,8 +195,8 @@
     },
     "ecommerce-seo": {
       "title": "Verkkokaupan SEO: kategoriat, suodattimet ja tuotteet",
-      "description": "Verkkokaupan SEO: kategoriat, suodattimet ja tuotteet. Verkkokaupan löydettävyys riippuu kategorioista, suodattimista ja tuotemuunnelmista. Tutkimme esimerkiksi Shopify- tai WooCommerce-kaupan todellisen t",
-      "eyebrow": "ECOMMERCE / SEO",
+      "description": "Verkkokaupan SEO: kategoriat, suodattimet ja tuotteet. Verkkokaupan löydettävyys riippuu kategorioista, suodattimista ja tuotemuunnelmista.",
+      "eyebrow": "VERKKOKAUPAN SEO",
       "headline": "Tuotteita on paljon. <em>Löytävätkö ostajat ne?</em>",
       "lead": "Verkkokaupan löydettävyys riippuu kategorioista, suodattimista ja tuotemuunnelmista. Tutkimme esimerkiksi Shopify- tai WooCommerce-kaupan todellisen toteutuksen väittämättä olevamme virallinen kumppani.",
       "problems": [
@@ -249,8 +249,8 @@
     },
     "google-ads": {
       "title": "Google Ads -auditointi verkkokaupalle",
-      "description": "Google Ads -auditointi verkkokaupalle. Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia. Sen jälkeen arvioimme hakutermit, Shopping-tuotteet ja mittauksen suhteen liiketoimi",
-      "eyebrow": "GOOGLE / ADS",
+      "description": "Google Ads -auditointi verkkokaupalle. Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia.",
+      "eyebrow": "GOOGLE ADS",
       "headline": "Mainonta maksaa. <em>Mitä ostoksia se tuottaa?</em>",
       "lead": "Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia. Sen jälkeen arvioimme hakutermit, Shopping-tuotteet ja mittauksen suhteen liiketoiminnan katteisiin.",
       "problems": [
@@ -303,8 +303,8 @@
     },
     "analytics": {
       "title": "GA4-analytiikka ja konversioseurannan tarkistus",
-      "description": "GA4-analytiikka ja konversioseurannan tarkistus. Kahteen kertaan laskettu osto voi johtaa huonoihin mainontapäätöksiin. Tutkimme GA4:n purchase-tapahtumat, transaction_id-tunnisteet ja erilaisten attribuut",
-      "eyebrow": "ANALYTICS",
+      "description": "GA4-analytiikka ja konversioseurannan tarkistus. Kahteen kertaan laskettu osto voi johtaa huonoihin mainontapäätöksiin.",
+      "eyebrow": "GA4-ANALYTIIKKA",
       "headline": "Raportteja on paljon. <em>Voiko lukuihin luottaa?</em>",
       "lead": "Kahteen kertaan laskettu osto voi johtaa huonoihin mainontapäätöksiin. Tutkimme GA4:n purchase-tapahtumat, transaction_id-tunnisteet ja erilaisten attribuutiomallien vaikutukset.",
       "problems": [
@@ -357,8 +357,8 @@
     },
     "web-development": {
       "title": "Verkkokehitys, CRM ja API-integraatiot",
-      "description": "Verkkokehitys, CRM ja API-integraatiot. Kehitämme verkkosovelluksia ja integraatioita todellisiin liiketoiminnan tarpeisiin. Ensin selvitämme prosessit, käytettävissä olevat rajapinnat ja tietoturvariskit.",
-      "eyebrow": "WEB / DEVELOPMENT",
+      "description": "Verkkokehitys, CRM ja API-integraatiot. Kehitämme verkkosovelluksia ja integraatioita todellisiin liiketoiminnan tarpeisiin.",
+      "eyebrow": "RÄÄTÄLÖITY VERKKOKEHITYS",
       "headline": "Teknologian pitäisi <em>vähentää käsityötä.</em>",
       "lead": "Kehitämme verkkosovelluksia ja integraatioita todellisiin liiketoiminnan tarpeisiin. Ensin selvitämme prosessit, käytettävissä olevat rajapinnat ja tietoturvariskit.",
       "problems": [
@@ -411,8 +411,8 @@
     },
     "website-design": {
       "title": "Yrityksen verkkosivuston suunnittelu ja toteutus",
-      "description": "Yrityksen verkkosivuston suunnittelu ja toteutus. Suunnittelemme yrityssivustoja, joista palvelut löytyvät ja yhteydenotto on helppoa. Sisältörakenne ja mobiilikäytettävyys ratkaisevat enemmän kuin koriste",
-      "eyebrow": "WEBSITE / DESIGN",
+      "description": "Yrityksen verkkosivuston suunnittelu ja toteutus. Suunnittelemme yrityssivustoja, joista palvelut löytyvät ja yhteydenotto on helppoa.",
+      "eyebrow": "YRITYSSIVUSTON TOTEUTUS",
       "headline": "Hyvä verkkosivusto <em>ohjaa asiakkaan eteenpäin.</em>",
       "lead": "Suunnittelemme yrityssivustoja, joista palvelut löytyvät ja yhteydenotto on helppoa. Sisältörakenne ja mobiilikäytettävyys ratkaisevat enemmän kuin koristeet.",
       "problems": [
@@ -465,8 +465,8 @@
     },
     "online-shop-development": {
       "title": "Verkkokaupan kehitys ja järjestelmäintegraatiot",
-      "description": "Verkkokaupan kehitys ja järjestelmäintegraatiot. Verkkokauppa tarvitsee tuotteiden lisäksi maksut, toimitukset, varaston ja tilausten käsittelyn. Valitsemme alustan ja integraatiot todellisten prosessien p",
-      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "description": "Verkkokaupan kehitys ja järjestelmäintegraatiot. Verkkokauppa tarvitsee tuotteiden lisäksi maksut, toimitukset, varaston ja tilausten käsittelyn.",
+      "eyebrow": "VERKKOKAUPAN KEHITYS",
       "headline": "Verkkokaupan pitää myydä. <em>Ja toimia arjessa.</em>",
       "lead": "Verkkokauppa tarvitsee tuotteiden lisäksi maksut, toimitukset, varaston ja tilausten käsittelyn. Valitsemme alustan ja integraatiot todellisten prosessien perusteella.",
       "problems": [
@@ -519,8 +519,8 @@
     },
     "about": {
       "title": "Tietoa MrSeo.tech-tiimistä ja toimintatavastamme",
-      "description": "Tietoa MrSeo.tech-tiimistä ja toimintatavastamme. Olemme pieni ammattilaistiimi, jolla on kymmenen vuoden kokemus SEO:sta, Google Adsista ja verkkokehityksestä. Toimimme etänä Ukrainasta ja määrittelemme o",
-      "eyebrow": "ABOUT",
+      "description": "Tietoa MrSeo.tech-tiimistä ja toimintatavastamme. Olemme pieni ammattilaistiimi, jolla on kymmenen vuoden kokemus SEO:sta, Google Adsista ja verkkokehityksestä.",
+      "eyebrow": "MEISTÄ",
       "headline": "Pieni tiimi. <em>Selkeä toimintatapa.</em>",
       "lead": "Olemme pieni ammattilaistiimi, jolla on kymmenen vuoden kokemus SEO:sta, Google Adsista ja verkkokehityksestä. Toimimme etänä Ukrainasta ja määrittelemme ongelman ennen palvelusuositusta.",
       "problems": [
@@ -573,8 +573,8 @@
     },
     "portfolio": {
       "title": "MrSeo.techin projektit ja toteutusesimerkit",
-      "description": "MrSeo.techin projektit ja toteutusesimerkit. Esittelemme julkisia sivustoja portfoliostamme eri toimialoilta. Emme väitä niiden olevan suomalaisia asiakkaita tai kerro luottamuksellisia tuloksia ilman lupa",
-      "eyebrow": "PORTFOLIO",
+      "description": "MrSeo.techin projektit ja toteutusesimerkit. Esittelemme julkisia sivustoja portfoliostamme eri toimialoilta.",
+      "eyebrow": "PROJEKTIT",
       "headline": "Julkisia projekteja. <em>Ei keksittyjä tuloksia.</em>",
       "lead": "Esittelemme julkisia sivustoja portfoliostamme eri toimialoilta. Emme väitä niiden olevan suomalaisia asiakkaita tai kerro luottamuksellisia tuloksia ilman lupaa.",
       "problems": [
@@ -627,8 +627,8 @@
     },
     "contact": {
       "title": "Ota yhteyttä verkkosivustosi ongelmasta",
-      "description": "Ota yhteyttä verkkosivustosi ongelmasta. Lähetä sivustosi osoite, kohdemaa ja esimerkki ongelmasta. Lyhytkin kuvaus riittää alustavan arvion lähtökohdaksi.",
-      "eyebrow": "CONTACT",
+      "description": "Ota yhteyttä verkkosivustosi ongelmasta. Lähetä sivustosi osoite, kohdemaa ja esimerkki ongelmasta.",
+      "eyebrow": "YHTEYSTIEDOT",
       "headline": "Mikä estää <em>uusien asiakkaiden saamista?</em>",
       "lead": "Lähetä sivustosi osoite, kohdemaa ja esimerkki ongelmasta. Lyhytkin kuvaus riittää alustavan arvion lähtökohdaksi. Kerro käyttämäsi verkkokauppa-alusta, kohdemaa ja konkreettinen esimerkki ongelmasta. Älä lähetä salasanoja.",
       "problems": [],
@@ -638,7 +638,7 @@
     "privacy": {
       "title": "Tietosuoja ja yhteydenottotietojen käsittely",
       "description": "Näin käsittelemme MrSeo.techin yhteydenottolomakkeen tietoja.",
-      "eyebrow": "PRIVACY",
+      "eyebrow": "TIETOSUOJA",
       "headline": "Tietosuoja ja yhteydenotot",
       "lead": "Näin käsittelemme MrSeo.techin yhteydenottolomakkeen tietoja.",
       "problems": [],
