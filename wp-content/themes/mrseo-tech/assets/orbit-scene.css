@@ -174,10 +174,13 @@ body:has(#main > .orbit-lab){background-color:#171d20!important;overflow-x:clip}
   opacity:1!important;
 }
 #main > .orbit-lab>.lab-shell{
-  background-color:transparent!important;
+  /* The global .lab-shell is an unrelated dark rounded 1700px panel.
+     Remove its inherited background and clipping from the ORBITAL homepage. */
+  background:transparent!important;
   box-shadow:none!important;
-  border-left:0!important;
-  border-right:0!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:visible!important;
 }
 
 /* UA/RU have eight services: four balanced mobile rows. EN keeps the last of seven full-width. */
