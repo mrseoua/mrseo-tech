@@ -20,6 +20,12 @@
 
 **Note on competitive prices:** examples reflect individual competitor websites, may change, and are not national averages. Do not publish a European rate card solely based on these examples.
 
+## Communication feasibility: a separate acquisition constraint
+
+[EF English Proficiency Index 2025](https://www.ef.com/wwen/epi/) ranks **Netherlands #1, Romania #11, Czechia #23, Spain #36, France #38 and Italy #59** of 123 tested markets. This is a self-selected English-test population, not a census of business buyers and **not** a conversion or sales probability measure. Still, it changes the operations hypothesis: *Netherlands + Romania* can be considered the first **English-email sales feasibility pilot**, while *Czechia + Romania* is the first **niche e-commerce problem pilot**. These are different tests; neither proves easiest lead acquisition.
+
+Never assume the agency can speak and sell in all six languages just because pages exist. The first response should be made in the prospect's language only if a qualified human or verified translation workflow can maintain accurate commercial communication; otherwise agree to English in advance. For France/Italy/Spain prioritize native-written inbound replies and proof of domain expertise before buying traffic.
+
 ## Priority hypothesis (not a validated ROI projection)
 
 1. **Pilot 1 — CZ / RO:** narrow e-shop SEO and Google Ads conversion-data audits. Smaller regional markets but concrete platform-specific problems and easier narrow positioning. Challenge: Czech also expects Sklik, Seznam Shopping Ads, Heureka; Romanian prospects may expect eMAG/Gomag/MerchantPro knowledge. Never sell hands-on channel/platform management before ability is verified.
