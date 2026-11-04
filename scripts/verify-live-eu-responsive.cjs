@@ -10,7 +10,17 @@ const results=[];
 const urlOf=(l,s)=>HOST+'/'+l+'/'+(s?s+'/':'');
 async function audit(browser,viewport,lang,slug){
  const url=urlOf(lang,slug);
- const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,ignoreHTTPSErrors:false});
+ const mobile=viewport.name!=='desktop';
+ const browserUA=mobile
+  ? 'Mozilla/5.0 (Linux; Android 15; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36'
+  : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36';
+ const context=await browser.newContext({
+  viewport:{width:viewport.width,height:viewport.height},
+  deviceScaleFactor:mobile?2:1,
+  isMobile:mobile,hasTouch:mobile,
+  userAgent:browserUA,locale:lang+'-'+lang.toUpperCase(),
+  ignoreHTTPSErrors:false
+ });
  const page=await context.newPage();
  const item={lang,slug:slug||'home',viewport:viewport.name,url,errors:[],warnings:[]};
  page.on('pageerror',e=>item.errors.push('JS: '+String(e.message).slice(0,175)));
@@ -18,7 +28,14 @@ async function audit(browser,viewport,lang,slug){
  try{
   response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});
   item.status=response?.status()||null;
-  if(item.status!==200)item.errors.push('HTTP '+item.status);
+  if(item.status!==200){
+   item.errors.push('HTTP '+item.status);
+   item.errors.push('Content type '+(response?.headers()['content-type']||'unknown'));
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'-error.jpg',type:'jpeg',quality:68,fullPage:false}).catch(()=>{});
+   results.push(item);
+   console.log('FAIL '+viewport.name+' '+lang+'/'+slug+' HTTP '+item.status);
+   return;
+  }
   await page.locator('body').waitFor({timeout:8000});
   try{await page.evaluate(()=>document.fonts.ready)}catch(_){}
   await page.waitForTimeout(slug===''?1400:250);
@@ -70,7 +87,7 @@ async function audit(browser,viewport,lang,slug){
   }
   if(slug===''&&viewport.name==='narrow'){
    const sel=page.locator('.mrseo-language-trigger');
-   await sel.click();
+   await sel.click({timeout:4000});
    await page.waitForTimeout(150);
    const visible=await page.locator('.mrseo-language-options').evaluate(x=>{
     const r=x.getBoundingClientRect();return r.width>180&&r.left>=-2&&r.right<=innerWidth+2&&r.top<innerHeight;
