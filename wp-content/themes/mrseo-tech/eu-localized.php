@@ -75,6 +75,21 @@ foreach($sats as $i=>$sat):?><a class="eu-satellite eu-satellite-<?php echo esc_
 <?php endforeach;?>
 </div></div></section>
 <?php endif;?>
+<?php if(!empty($page['offer'])):?>
+<section class="eu-section eu-market-offer" id="eu-diagnostic" aria-labelledby="eu-diagnostic-title">
+ <div class="eu-container">
+  <div class="eu-market-heading">
+   <div><span class="eu-kicker"><?php echo esc_html($page['eyebrow']);?> / MRSEO.TECH</span><h2 id="eu-diagnostic-title"><?php echo esc_html($page['offer']['title']);?></h2></div>
+   <div><p><?php echo esc_html($page['offer']['intro']);?></p><a class="eu-text-link" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($page['offer']['cta']);?> ↗</a></div>
+  </div>
+  <div class="eu-offer-grid">
+   <?php foreach($page['offer']['items'] as $i=>$step):?>
+   <article class="eu-offer-card"><span class="eu-index"><?php echo esc_html(sprintf('%02d',$i+1));?></span><h3><?php echo esc_html($step['title']);?></h3><p><?php echo esc_html($step['detail']);?></p></article>
+   <?php endforeach;?>
+  </div>
+ </div>
+</section>
+<?php endif;?>
 <?php if(!empty($page['outcomes'])):?>
 <section class="eu-section eu-outcomes"><div class="eu-container eu-outcomes-grid"><div><span class="eu-kicker">MRSEO.TECH / <?php echo esc_html($ui[4]);?></span><h2><?php echo esc_html($ui[4]);?></h2></div>
 <div><?php foreach($page['outcomes'] as $i=>$item):?><div class="eu-outcome"><span>0<?php echo esc_html($i+1);?></span><strong><?php echo esc_html($item);?></strong></div><?php endforeach;?></div></div></section>
