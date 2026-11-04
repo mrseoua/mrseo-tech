@@ -22,6 +22,10 @@ function mrseo_url($slug='',$lang=null){
   elseif(in_array($slug,array('service-websites','online-store-development','website-design','wordpress-care'),true))$slug='web-development';
   else $slug='';
  }
+ // A fully translated European route must not be downgraded by UK-only fallback aliases.
+ if(in_array($lang,array('fr','it','es','nl','ro','cs'),true) && in_array($slug,mrseo_eu_slugs(),true)){
+  return mrseo_i18n_exact_url($lang,$slug);
+ }
  // UK-only routes switch to real parent services in other languages.
  if($lang!=='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)){
   $slug=mrseo_uk_market_parent($slug,$lang);
