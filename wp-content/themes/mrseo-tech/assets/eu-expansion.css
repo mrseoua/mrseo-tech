@@ -35,7 +35,7 @@
 .mrseo-eu .eu-orbit-ring-two{inset:3% 4%;border-style:dashed;opacity:.5;animation-duration:78s;animation-direction:reverse}
 @keyframes eu-orbit-spin{to{transform:rotate(337deg) scaleY(.78)}}
 .mrseo-eu .eu-orbit-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.mrseo-eu .eu-earth-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40%;max-width:239px;aspect-ratio:1;border:2px solid #608d9c;border-radius:50%;background:radial-gradient(circle at 27% 20%,#718e9a,#355f65 38%,#101b2d 73%);box-shadow:inset -28px -18px 30px #080e18a8,0 0 42px #7cbfd641;overflow:hidden;display:grid;place-items:center}
+.mrseo-eu .eu-earth-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40%;max-width:239px;aspect-ratio:1;border:2px solid #608d9c;border-radius:50%;background-color:#163847;background-image:radial-gradient(circle at 27% 19%,#b6dbe539,#25414f25 43%,#050d1bb3 90%),url('./earth-day.jpg');background-position:center,51% 50%;background-size:cover,auto 100%;background-repeat:no-repeat;box-shadow:inset -28px -18px 30px #080e18a8,0 0 42px #7cbfd641;overflow:hidden;display:grid;place-items:center}
 .mrseo-eu .eu-earth-core>span{display:grid;place-items:center;gap:3px;color:#eef1ed;font-weight:850;font-size:25px;position:relative;z-index:1;text-shadow:0 2px 12px #071217}
 .mrseo-eu .eu-earth-core>span span{color:#efaa8b}
 .mrseo-eu .eu-earth-core .lab-webgl-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:50%;opacity:0;transition:opacity .5s}
