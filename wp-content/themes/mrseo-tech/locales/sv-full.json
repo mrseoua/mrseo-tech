@@ -1,0 +1,686 @@
+{
+  "code": "sv-SE",
+  "name": "Svenska",
+  "country": "Sweden",
+  "nav": [
+    "Tjänster",
+    "SEO",
+    "Google Ads",
+    "Webbutveckling",
+    "Kontakt",
+    "Berätta om projektet",
+    "Integritet"
+  ],
+  "ui": [
+    "Trafik är inte samma sak som nya kunder.",
+    "Vi undersöker orsaken innan vi rekommenderar en tjänst.",
+    "Det vi undersöker",
+    "Så arbetar vi",
+    "Det du får",
+    "Vanliga frågor",
+    "Kontakta oss",
+    "Namn",
+    "E-postadress",
+    "Webbplats (valfritt)",
+    "Beskriv problemet",
+    "Skicka förfrågan",
+    "Meddelandet har skickats vidare för leverans. Vi svarar via e-post.",
+    "Kontrollera de obligatoriska fälten.",
+    "Det gick inte att skicka. Försök igen.",
+    "Skicka inte lösenord eller känsliga inloggningsuppgifter.",
+    "Vi arbetar på distans från Ukraina. Vi kommer överens om arbetsspråk och omfattning i förväg."
+  ],
+  "pages": {
+    "": {
+      "title": "SEO, Google Ads och webbutveckling för företag i Sverige",
+      "description": "SEO, Google Ads och webbutveckling för företag i Sverige. Om besökarna inte blir kunder räcker det sällan med mer trafik. Vi undersöker synlighet, annonsering, köpdata och arbetsflöden för att se var probl",
+      "eyebrow": "MRSEO.TECH",
+      "headline": "Webbplatsen finns. <em>Men var är kunderna?</em>",
+      "lead": "Om besökarna inte blir kunder räcker det sällan med mer trafik. Vi undersöker synlighet, annonsering, köpdata och arbetsflöden för att se var problemet faktiskt uppstår.",
+      "problems": [
+        [
+          "Besök utan förfrågningar",
+          "Sidorna kanske inte svarar mot kundernas sökintention.",
+          "Analysera vägen från sökning till kontakt eller köp."
+        ],
+        [
+          "Annonser utan säkra siffror",
+          "Rapporterna kan visa konverteringar som inte motsvarar order.",
+          "Jämföra Google Ads, GA4 och verklig försäljning."
+        ],
+        [
+          "Manuella rutiner",
+          "Order och lagerinformation överförs mellan olika system.",
+          "Bedöma behovet av API-integrationer."
+        ]
+      ],
+      "outcomes": [
+        "En tydlig bild av hindren",
+        "En prioriterad handlingsplan",
+        "Mätpunkter att följa upp"
+      ],
+      "faq": [
+        [
+          "Har ni ett kontor i Sverige?",
+          "Nej. Vi arbetar på distans från Ukraina och kommer överens om kommunikation och arbetsspråk innan projektet börjar."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Om besökarna inte blir kunder räcker det sällan med mer trafik. Vi undersöker synlighet, annonsering, köpdata och arbetsflöden för att se var problemet faktiskt uppstår.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Analysera vägen från sökning till kontakt eller köp."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Jämföra Google Ads, GA4 och verklig försäljning."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Bedöma behovet av API-integrationer."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "seo": {
+      "title": "SEO-tjänster för tillväxt och synlighet i sökningar",
+      "description": "SEO-tjänster för tillväxt och synlighet i sökningar. Vi börjar med de sökningar som är viktiga för verksamheten. Därefter undersöker vi struktur, länkar och innehåll för att se varför rätt sidor inte når r",
+      "eyebrow": "SEO",
+      "headline": "Är dina viktigaste sidor <em>svåra att hitta?</em>",
+      "lead": "Vi börjar med de sökningar som är viktiga för verksamheten. Därefter undersöker vi struktur, länkar och innehåll för att se varför rätt sidor inte når rätt kunder.",
+      "problems": [
+        [
+          "Viktiga kategorier saknas",
+          "Webbutikens sidor hittas eller indexeras inte som förväntat.",
+          "Granska internlänkar och indexeringssignaler."
+        ],
+        [
+          "Fel informationsstruktur",
+          "Sidorna motsvarar inte kundernas frågor och köpbehov.",
+          "Kartlägga sökintention och kategorier."
+        ],
+        [
+          "Trafik utan affärsvärde",
+          "Besökare hamnar på sidor utan tydligt nästa steg.",
+          "Utvärdera sidinnehåll och konverteringsflöde."
+        ]
+      ],
+      "outcomes": [
+        "Kartläggning av viktiga landningssidor",
+        "Prioriterade SEO-förändringar",
+        "Uppföljning av relevant trafik"
+      ],
+      "faq": [
+        [
+          "Kan ni garantera förstaplatsen på Google?",
+          "Nej. Placeringar kan inte garanteras. Vi arbetar med förbättringar som går att kontrollera."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Vi börjar med de sökningar som är viktiga för verksamheten. Därefter undersöker vi struktur, länkar och innehåll för att se varför rätt sidor inte når rätt kunder.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Granska internlänkar och indexeringssignaler."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Kartlägga sökintention och kategorier."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Utvärdera sidinnehåll och konverteringsflöde."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "seo-audit": {
+      "title": "Teknisk SEO-granskning: indexering och webbplatsstruktur",
+      "description": "Teknisk SEO-granskning: indexering och webbplatsstruktur. En teknisk granskning ska visa vilka URL:er som påverkas och varför. Vi kontrollerar indexering, kanoniska adresser, crawl och mobil prestanda inna",
+      "eyebrow": "SEO / AUDIT",
+      "headline": "En automatisk poäng <em>är ingen färdig SEO-åtgärd.</em>",
+      "lead": "En teknisk granskning ska visa vilka URL:er som påverkas och varför. Vi kontrollerar indexering, kanoniska adresser, crawl och mobil prestanda innan arbetet prioriteras.",
+      "problems": [
+        [
+          "Sidor utanför index",
+          "Statuskoder eller direktiv hindrar sökmotorer från att hitta innehåll.",
+          "Kontrollera Search Console och utvalda URL:er."
+        ],
+        [
+          "Dubbla filter-URL:er",
+          "Varianter kan konkurrera med kategorisidorna.",
+          "Granska canonicals, parametrar och paginering."
+        ],
+        [
+          "Tung mobilupplevelse",
+          "Långsam laddning kan göra sidor svåra att använda.",
+          "Skilja serverproblem från gränssnittsproblem."
+        ]
+      ],
+      "outcomes": [
+        "Reproducerbara tekniska fel",
+        "Förslag i rätt ordning",
+        "Kontrollpunkter efter genomförande"
+      ],
+      "faq": [
+        [
+          "Innebär granskningen att ni åtgärdar felen?",
+          "Granskning och genomförande är separata uppdrag. Omfattningen bestäms tillsammans i förväg."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "En teknisk granskning ska visa vilka URL:er som påverkas och varför. Vi kontrollerar indexering, kanoniska adresser, crawl och mobil prestanda innan arbetet prioriteras.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Kontrollera Search Console och utvalda URL:er."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Granska canonicals, parametrar och paginering."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Skilja serverproblem från gränssnittsproblem."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "ecommerce-seo": {
+      "title": "SEO för webbutiker: kategorier, filter och produkter",
+      "description": "SEO för webbutiker: kategorier, filter och produkter. Webbutikens kategorier, filter och produktvarianter måste fungera för både människor och sökmotorer. Vi granskar den faktiska konfigurationen för exemp",
+      "eyebrow": "ECOMMERCE / SEO",
+      "headline": "Tusentals produkter. <em>Hur många hittar köparna?</em>",
+      "lead": "Webbutikens kategorier, filter och produktvarianter måste fungera för både människor och sökmotorer. Vi granskar den faktiska konfigurationen för exempelvis Shopify eller WooCommerce.",
+      "problems": [
+        [
+          "Kategorier utan synlighet",
+          "Sidorna matchar inte relevanta svenska köpfrågor.",
+          "Granska kategoriordning och interna länkar."
+        ],
+        [
+          "Filter skapar kopior",
+          "Parametrar leder till många likartade webbadresser.",
+          "Välja vilka filtersidor som har sökvärde."
+        ],
+        [
+          "Produkter saknar sammanhang",
+          "Varianter och attribut gör navigationen svår.",
+          "Kontrollera produktmallar och kategorilänkar."
+        ]
+      ],
+      "outcomes": [
+        "Tydligare katalogstruktur",
+        "Plan för filter och kategorier",
+        "Kontrollerbar sök- och köpdata"
+      ],
+      "faq": [
+        [
+          "Arbetar ni med Shopify?",
+          "Vi kan granska butikens struktur men påstår inte att vi har officiell partnerstatus."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Webbutikens kategorier, filter och produktvarianter måste fungera för både människor och sökmotorer. Vi granskar den faktiska konfigurationen för exempelvis Shopify eller WooCommerce.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Granska kategoriordning och interna länkar."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Välja vilka filtersidor som har sökvärde."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Kontrollera produktmallar och kategorilänkar."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "google-ads": {
+      "title": "Google Ads-granskning för e-handel och Shopping",
+      "description": "Google Ads-granskning för e-handel och Shopping. Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt. Vi granskar konverteringar, produktflöden och hur annonseringskostnader fördelas.",
+      "eyebrow": "GOOGLE / ADS",
+      "headline": "Annonser kostar pengar. <em>Vad leder de till?</em>",
+      "lead": "Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt. Vi granskar konverteringar, produktflöden och hur annonseringskostnader fördelas.",
+      "problems": [
+        [
+          "Felaktiga konverteringar",
+          "Dubbla köp kan påverka automatiska bud.",
+          "Jämföra ordernummer, GA4 och Google Ads."
+        ],
+        [
+          "Produkter utan lönsamhet",
+          "Shopping kan lägga pengar på produkter utan bekräftade köp.",
+          "Undersöka kostnader per produktkategori."
+        ],
+        [
+          "Problem i produktflödet",
+          "Pris eller lagersaldo kan avvika från butikens uppgifter.",
+          "Kontrollera Merchant Center och produktsidor."
+        ]
+      ],
+      "outcomes": [
+        "Granskning av konverteringsdata",
+        "Översikt över tveksam spend",
+        "Testbara optimeringshypoteser"
+      ],
+      "faq": [
+        [
+          "Kan ni garantera en viss ROAS?",
+          "Nej. Resultatet beror på marginaler, konkurrens och mätning, inte enbart kampanjinställningar."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt. Vi granskar konverteringar, produktflöden och hur annonseringskostnader fördelas.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Jämföra ordernummer, GA4 och Google Ads."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Undersöka kostnader per produktkategori."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Kontrollera Merchant Center och produktsidor."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "analytics": {
+      "title": "GA4-granskning och tillförlitlig konverteringsmätning",
+      "description": "GA4-granskning och tillförlitlig konverteringsmätning. Om ett köp registreras två gånger blir affärsbesluten fel. Vi jämför GA4, Google Ads och verkliga order samt förklarar vilka skillnader som kan bero p",
+      "eyebrow": "ANALYTICS",
+      "headline": "Det finns rapporter. <em>Men vilka siffror går att lita på?</em>",
+      "lead": "Om ett köp registreras två gånger blir affärsbesluten fel. Vi jämför GA4, Google Ads och verkliga order samt förklarar vilka skillnader som kan bero på attribuering.",
+      "problems": [
+        [
+          "Köp registreras flera gånger",
+          "Purchase-händelser kan upprepas efter omladdning.",
+          "Kontrollera transaktions-ID och händelselogik."
+        ],
+        [
+          "Rapporter visar olika intäkter",
+          "Mätmodeller och tidsfönster är inte alltid desamma.",
+          "Jämföra samma definitioner och perioder."
+        ],
+        [
+          "Samtycke och taggar",
+          "Besökarens val påverkar datainsamlingen.",
+          "Granska tekniskt beteende och hänvisa juridiska frågor vidare."
+        ]
+      ],
+      "outcomes": [
+        "Karta över viktiga händelser",
+        "Exempel på avvikande data",
+        "Plan för fortlöpande mätkontroll"
+      ],
+      "faq": [
+        [
+          "Måste GA4 och Google Ads visa samma köp?",
+          "Nej. Bland annat attribuering och samtycke kan förklara skillnaderna."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Om ett köp registreras två gånger blir affärsbesluten fel. Vi jämför GA4, Google Ads och verkliga order samt förklarar vilka skillnader som kan bero på attribuering.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Kontrollera transaktions-ID och händelselogik."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Jämföra samma definitioner och perioder."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Granska tekniskt beteende och hänvisa juridiska frågor vidare."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "web-development": {
+      "title": "Webbutveckling, CRM och API-integrationer",
+      "description": "Webbutveckling, CRM och API-integrationer. Vi undersöker hur webbplats, CRM och verksamhetssystem delar data innan vi bygger ny kod. Målet är ett tydligt arbetssätt som går att underhålla och testa.",
+      "eyebrow": "WEB / DEVELOPMENT",
+      "headline": "Tekniken ska <em>minska det manuella arbetet.</em>",
+      "lead": "Vi undersöker hur webbplats, CRM och verksamhetssystem delar data innan vi bygger ny kod. Målet är ett tydligt arbetssätt som går att underhålla och testa.",
+      "problems": [
+        [
+          "Order skrivs in igen",
+          "Webbutiken saknar en pålitlig koppling till affärssystemet.",
+          "Undersöka API:er och datakvalitet."
+        ],
+        [
+          "Förändringar är riskfyllda",
+          "Gammal kod och beroenden försvårar utveckling.",
+          "Planera modernisering utan onödiga ingrepp."
+        ],
+        [
+          "Rapporter görs för hand",
+          "Data samlas i filer från många verktyg.",
+          "Definiera en användbar dashboard och datakälla."
+        ]
+      ],
+      "outcomes": [
+        "Teknisk omfattning före utveckling",
+        "Genomförande i kontrollerbara steg",
+        "Tester och underhållsplan"
+      ],
+      "faq": [
+        [
+          "Utvecklar ni även SaaS?",
+          "Vi kan utreda genomförbarhet, krav och kostnader innan ett SaaS- eller CRM-projekt startas."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Vi undersöker hur webbplats, CRM och verksamhetssystem delar data innan vi bygger ny kod. Målet är ett tydligt arbetssätt som går att underhålla och testa.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Undersöka API:er och datakvalitet."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Planera modernisering utan onödiga ingrepp."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Definiera en användbar dashboard och datakälla."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "website-design": {
+      "title": "Skapa företagswebbplats med tydliga kundflöden",
+      "description": "Skapa företagswebbplats med tydliga kundflöden. Vi skapar företagswebbplatser som förklarar tjänster och gör det enkelt att ta kontakt. Struktur, tillgänglighet och mobila formulär är viktigare än enbart v",
+      "eyebrow": "WEBSITE / DESIGN",
+      "headline": "En webbplats ska <em>leda besökaren rätt.</em>",
+      "lead": "Vi skapar företagswebbplatser som förklarar tjänster och gör det enkelt att ta kontakt. Struktur, tillgänglighet och mobila formulär är viktigare än enbart visuella effekter.",
+      "problems": [
+        [
+          "Tjänsterna är otydliga",
+          "Besökaren vet inte vilken lösning företaget erbjuder.",
+          "Planera sidor utifrån kundfrågor."
+        ],
+        [
+          "Mobilnavigering är krånglig",
+          "Små texter och svåra knappar hindrar förfrågningar.",
+          "Utforma läsbara gränssnitt för små skärmar."
+        ],
+        [
+          "Svårt att uppdatera",
+          "Varje ändring kräver avancerade ingrepp.",
+          "Välja underhållbara komponenter och dokumentera."
+        ]
+      ],
+      "outcomes": [
+        "Sydlig och begriplig sidstruktur",
+        "Responsiv design och formulär",
+        "Teknisk kontroll före publicering"
+      ],
+      "faq": [
+        [
+          "Kan ni bygga med WordPress?",
+          "Ja, när det passar kraven på säkerhet och framtida förvaltning."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Vi skapar företagswebbplatser som förklarar tjänster och gör det enkelt att ta kontakt. Struktur, tillgänglighet och mobila formulär är viktigare än enbart visuella effekter.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Planera sidor utifrån kundfrågor."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Utforma läsbara gränssnitt för små skärmar."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Välja underhållbara komponenter och dokumentera."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "online-shop-development": {
+      "title": "Utveckla webbutik med betalningar och integrationer",
+      "description": "Utveckla webbutik med betalningar och integrationer. Ett e-handelsprojekt måste hantera produktdata, varianter, kassa, betalningar och orderflöden. Vi väljer teknik efter verksamhetens behov, inte efter et",
+      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "headline": "Webbutiken ska sälja. <em>Och fungera i vardagen.</em>",
+      "lead": "Ett e-handelsprojekt måste hantera produktdata, varianter, kassa, betalningar och orderflöden. Vi väljer teknik efter verksamhetens behov, inte efter ett standardsystem.",
+      "problems": [
+        [
+          "Produktdata saknar struktur",
+          "Attribut och varianter gör katalogen svår att hantera.",
+          "Definiera tydliga kategorier och produktfält."
+        ],
+        [
+          "Kassan skapar hinder",
+          "Extra steg kan göra det svårt att slutföra köpet.",
+          "Testa köpflödet på mobil och dator."
+        ],
+        [
+          "Lagersaldo uppdateras manuellt",
+          "Order- och lagersystem saknar kopplingar.",
+          "Bedöma integrationsmöjligheter och felhantering."
+        ]
+      ],
+      "outcomes": [
+        "Kravbild och plattformsval",
+        "Testat köp- och orderflöde",
+        "Plan för kopplingar och drift"
+      ],
+      "faq": [
+        [
+          "Går det att flytta en befintlig webbutik?",
+          "En migrering kräver separat analys av data, webbadresser, omdirigeringar och kontinuitet."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Ett e-handelsprojekt måste hantera produktdata, varianter, kassa, betalningar och orderflöden. Vi väljer teknik efter verksamhetens behov, inte efter ett standardsystem.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Definiera tydliga kategorier och produktfält."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Testa köpflödet på mobil och dator."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Bedöma integrationsmöjligheter och felhantering."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "about": {
+      "title": "Om MrSeo.tech — team för SEO och utveckling",
+      "description": "Om MrSeo.tech — team för SEO och utveckling. Vi är ett mindre team med tio års erfarenhet av SEO, Google Ads och webbutveckling. Vi arbetar på distans från Ukraina och utgår från mätbara problem snarare än",
+      "eyebrow": "ABOUT",
+      "headline": "Ett mindre team. <em>Ett tydligt ansvar.</em>",
+      "lead": "Vi är ett mindre team med tio års erfarenhet av SEO, Google Ads och webbutveckling. Vi arbetar på distans från Ukraina och utgår från mätbara problem snarare än generella paket.",
+      "problems": [
+        [
+          "Problemet först",
+          "Mer annonsering är inte alltid rätt svar.",
+          "Undersöka var i kundresan hindret finns."
+        ],
+        [
+          "Öppna prioriteringar",
+          "Det ska framgå vem som gör och godkänner vad.",
+          "Komma överens om ansvar och leveranser."
+        ],
+        [
+          "Inga magiska garantier",
+          "Löften om topplaceringar ersätter inte kvalitetsarbete.",
+          "Beskriva antaganden och uppföljning."
+        ]
+      ],
+      "outcomes": [
+        "Direkt kommunikation",
+        "Tydliga prioriteringar",
+        "Resultat som går att följa upp"
+      ],
+      "faq": [],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Vi är ett mindre team med tio års erfarenhet av SEO, Google Ads och webbutveckling. Vi arbetar på distans från Ukraina och utgår från mätbara problem snarare än generella paket.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Undersöka var i kundresan hindret finns."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Komma överens om ansvar och leveranser."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Beskriva antaganden och uppföljning."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "portfolio": {
+      "title": "Projekt och erfarenheter från MrSeo.tech",
+      "description": "Projekt och erfarenheter från MrSeo.tech. Vi visar offentliga webbplatser ur vår portfölj för att beskriva vilka typer av uppdrag vi arbetar med. Vi utger dem inte för att vara svenska kundcase och delar i",
+      "eyebrow": "PORTFOLIO",
+      "headline": "Verkliga projekt. <em>Inga påhittade siffror.</em>",
+      "lead": "Vi visar offentliga webbplatser ur vår portfölj för att beskriva vilka typer av uppdrag vi arbetar med. Vi utger dem inte för att vara svenska kundcase och delar inte konfidentiell statistik.",
+      "problems": [
+        [
+          "Bil- och reservdelskataloger",
+          "Många kategorier kräver tydlig navigering.",
+          "Se exempel på stora webbutiker."
+        ],
+        [
+          "Mode och accessoarer",
+          "Varianter och innehåll påverkar hur produkter hittas.",
+          "Utforska olika e-handelsupplägg."
+        ],
+        [
+          "Tjänsteföretag",
+          "Tydlig information och kontaktvägar skapar förtroende.",
+          "Granska exempel på tjänstewebbplatser."
+        ]
+      ],
+      "outcomes": [
+        "Offentliga exempel på domäner",
+        "Bredd i branscher och plattformar",
+        "Respekt för kundernas uppgifter"
+      ],
+      "faq": [
+        [
+          "Är exemplen svenska kunder?",
+          "Nej. Det här är offentliga exempel ur en internationell portfölj."
+        ]
+      ],
+      "offer": {
+        "title": "Kartlägga nuläget → Följa upp resultaten",
+        "intro": "Vi visar offentliga webbplatser ur vår portfölj för att beskriva vilka typer av uppdrag vi arbetar med. Vi utger dem inte för att vara svenska kundcase och delar inte konfidentiell statistik.",
+        "items": [
+          {
+            "title": "Kartlägga nuläget",
+            "detail": "Se exempel på stora webbutiker."
+          },
+          {
+            "title": "Prioritera insatser",
+            "detail": "Utforska olika e-handelsupplägg."
+          },
+          {
+            "title": "Följa upp resultaten",
+            "detail": "Granska exempel på tjänstewebbplatser."
+          }
+        ],
+        "cta": "Beskriv mitt problem"
+      }
+    },
+    "contact": {
+      "title": "Kontakta oss om din webbplats eller webbutik",
+      "description": "Kontakta oss om din webbplats eller webbutik. Ange webbplatsens adress, marknaden du riktar dig till och vad som inte fungerar. En kort konkret beskrivning räcker för att börja bedöma problemet.",
+      "eyebrow": "CONTACT",
+      "headline": "Vad hindrar <em>nästa kundförfrågan?</em>",
+      "lead": "Ange webbplatsens adress, marknaden du riktar dig till och vad som inte fungerar. En kort konkret beskrivning räcker för att börja bedöma problemet. Berätta vilken e-handelsplattform du använder, vilken marknad du riktar dig till och ge ett exempel på problemet. Skicka inga lösenord.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    },
+    "privacy": {
+      "title": "Integritet och behandling av kontaktuppgifter",
+      "description": "Så använder MrSeo.tech uppgifterna i kontaktformuläret.",
+      "eyebrow": "PRIVACY",
+      "headline": "Integritet och kontaktförfrågningar",
+      "lead": "Så använder MrSeo.tech uppgifterna i kontaktformuläret.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    }
+  },
+  "privacy": [
+    "Integritet och kontaktförfrågningar",
+    "Så använder MrSeo.tech uppgifterna i kontaktformuläret.",
+    "Uppgifter som lämnas",
+    "Namn, e-postadress, eventuell webbplats och meddelande. Tillfälliga tekniska uppgifter hjälper till att minska spam.",
+    "Syfte",
+    "Vi använder informationen för att besvara din fråga och, på begäran, diskutera ett eventuellt samarbete.",
+    "E-posthantering",
+    "Meddelandet skickas till hello@mrseo.tech och vidarebefordras till en arbetsbrevlåda hos UKR.NET. Webbhotell och e-postleverantörer hanterar uppgifterna tekniskt.",
+    "Lagring",
+    "Korrespondens sparas så länge det behövs för ärendet och eventuella rättsliga skyldigheter. En exakt lagringstid fastställs före offentlig lansering.",
+    "Rättigheter och kontakt",
+    "Du kan begära tillgång, rättelse eller radering enligt tillämplig lag via hello@mrseo.tech. Den verifierade juridiska personuppgiftsansvariga anges före lansering.",
+    "När du skickar formuläret lämnar du uppgifter så att vi kan svara. Läs mer:"
+  ],
+  "market": {
+    "heading": "SEO, Google Ads och webbutveckling för företag i Sverige",
+    "description": "Om besökarna inte blir kunder räcker det sällan med mer trafik. Vi undersöker synlighet, annonsering, köpdata och arbetsflöden för att se var problemet faktiskt uppstår.",
+    "cta": "Beskriv mitt problem",
+    "brief": "Berätta vilken e-handelsplattform du använder, vilken marknad du riktar dig till och ge ett exempel på problemet. Skicka inga lösenord.",
+    "portfolioLabel": "Projekt"
+  },
+  "serviceLabels": {
+    "seo": "SEO",
+    "seo-audit": "Teknisk SEO-granskning",
+    "ecommerce-seo": "SEO för webbutiker",
+    "google-ads": "Google Ads",
+    "analytics": "GA4-analys",
+    "web-development": "Webbutveckling",
+    "website-design": "Skapa webbplats",
+    "online-shop-development": "Utveckla webbutik",
+    "about": "Om oss",
+    "portfolio": "Projekt",
+    "contact": "Kontakt"
+  },
+  "portfolioCategories": {
+    "auto": "FORDON",
+    "fashion": "MODE",
+    "home": "HEM",
+    "electronics": "ELEKTRONIK",
+    "medical": "HÄLSA"
+  }
+}
