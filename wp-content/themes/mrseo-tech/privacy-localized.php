@@ -2,7 +2,7 @@
 if(!defined('ABSPATH'))exit;
 $privacy=mrseo_privacy_copy();
 $intl=in_array(mrseo_locale(),array('pl','de'),true);
-get_header($intl?'international':null);
+get_header();
 ?>
 <style>
 .mrseo-privacy-page{padding:clamp(55px,7vw,105px) 0 100px;background:#f7f5f0;color:#242725}
@@ -31,4 +31,4 @@ get_header($intl?'international':null);
   <a class="mrseo-privacy-contact" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($privacy['cta']);?> ↗</a>
  </div>
 </article>
-<?php get_footer($intl?'international':null);?>
+<?php get_footer();?>
