@@ -545,7 +545,12 @@
         "Zdôvodnené priority",
         "Overiteľné pracovné kroky"
       ],
-      "faq": [],
+      "faq": [
+        [
+          "Máte kanceláriu na Slovensku?",
+          "Nie. Pracujeme na diaľku z Ukrajiny. Komunikáciu a rozsah práce dohodneme pred začiatkom."
+        ]
+      ],
       "offer": {
         "title": "Analýza skutočného stavu → Overenie zmien",
         "intro": "Sme menší tím odborníkov s desaťročnou praxou v SEO, Google Ads a vývoji webu. Pracujeme na diaľku z Ukrajiny a uprednostňujeme merateľnú diagnostiku pred prázdnymi sľubmi.",
