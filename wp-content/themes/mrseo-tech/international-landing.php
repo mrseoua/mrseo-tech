@@ -6,7 +6,7 @@ $mrseo_ui=mrseo_int_ui($mrseo_lang);
 if(!$mrseo_page||!$mrseo_ui){status_header(404);include get_404_template();return;}
 $mrseo_common=$mrseo_ui['common'];$mrseo_nav=$mrseo_ui['nav'];
 $mrseo_is_home=$mrseo_slug==='';$mrseo_is_contact=$mrseo_slug==='contact';$mrseo_is_portfolio=$mrseo_slug==='portfolio';
-get_header('international');
+get_header();
 ?>
 <section class="intl-hero<?php if($mrseo_is_home):?> intl-hero-home<?php endif;?>">
  <div class="intl-wrap intl-hero-grid">
@@ -146,4 +146,4 @@ $mrseo_selected=array(
  </div>
 </section>
 <?php endif;?>
-<?php get_footer('international');?>
+<?php get_footer();?>
