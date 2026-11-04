@@ -77,7 +77,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Où chercher la cause ?",
-          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "intro": "Nous relions les symptômes commerciaux à une vérification précise : visibilité, mesure ou intégration.",
           "items": [
             {
               "title": "Pages et catégories",
@@ -135,7 +135,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Audit SEO e-commerce : ce que nous vérifions",
-          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "intro": "Le livrable cible les URL, catégories et facettes qui méritent réellement une correction.",
           "items": [
             {
               "title": "Exploration et facettes",
@@ -193,7 +193,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Évaluer l’efficacité des campagnes",
-          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "intro": "Nous vérifions ce que le compte mesure avant de recommander de nouvelles dépenses.",
           "items": [
             {
               "title": "Qualité des conversions",
@@ -251,7 +251,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Développement utile, sans refonte systématique",
-          "intro": "PrestaShop, Shopify et WooCommerce demandent des vérifications propres à la structure de chaque catalogue. Nous étudions la plateforme réellement utilisée avant de proposer une intervention.",
+          "intro": "Nous cherchons la modification la plus utile sans fragiliser les systèmes existants.",
           "items": [
             {
               "title": "Processus métier",
@@ -381,7 +381,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Da dove inizia il miglioramento ?",
-          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "intro": "Colleghiamo vendite e problemi tecnici prima di definire un servizio.",
           "items": [
             {
               "title": "Catalogo organico",
@@ -439,7 +439,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Controlli SEO utili al tuo e-commerce",
-          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "intro": "Partiamo dai problemi reali di scansione e dalla domanda delle categorie.",
           "items": [
             {
               "title": "Struttura e URL",
@@ -497,7 +497,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Il controllo della spesa parte dai dati",
-          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "intro": "Una conversione valida vale più di molti clic non attribuibili a un ordine.",
           "items": [
             {
               "title": "Ordini e conversioni",
@@ -555,7 +555,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Automazioni che riducono gli errori",
-          "intro": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
+          "intro": "Ogni integrazione parte dai dati e da un criterio di verifica concreto.",
           "items": [
             {
               "title": "Analisi dei flussi",
@@ -685,7 +685,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Detectamos dónde se pierde la oportunidad",
-          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "intro": "Un buen diagnóstico separa los problemas de tráfico, conversión y operación.",
           "items": [
             {
               "title": "Categorías sin búsquedas",
@@ -743,7 +743,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Qué se revisa en una auditoría ecommerce",
-          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "intro": "No hace falta crear más contenido si Google no rastrea bien las categorías clave.",
           "items": [
             {
               "title": "Rastreo",
@@ -801,7 +801,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Optimizar sin perder de vista los pedidos",
-          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "intro": "Antes de subir presupuesto hay que saber qué cuenta como compra real.",
           "items": [
             {
               "title": "Eventos y duplicidades",
@@ -859,7 +859,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Una integración antes que una reforma innecesaria",
-          "intro": "Revisamos tiendas como PrestaShop y WooCommerce, sus categorías, el seguimiento de compras y el flujo entre publicidad y pedido. Sin prometer resultados ni soporte oficial de plataforma.",
+          "intro": "Una integración útil debe reducir pasos sin romper el sistema actual.",
           "items": [
             {
               "title": "Operaciones",
@@ -989,7 +989,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Eerst vaststellen waar geld en tijd verloren gaan",
-          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "intro": "Eerst onderzoeken we waar je conversiepad of werkwijze hapert.",
           "items": [
             {
               "title": "SEO-structuur",
@@ -1047,7 +1047,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Een technische audit voor je webshop",
-          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "intro": "De audit wijst naar concrete URL’s, niet naar een lijst algemene SEO-tips.",
           "items": [
             {
               "title": "Indexeerbare pagina’s",
@@ -1105,7 +1105,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "SEA beoordelen op betekenisvolle orders",
-          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "intro": "Betrouwbare omzetmetingen gaan vóór extra advertentiebudget.",
           "items": [
             {
               "title": "Conversies",
@@ -1163,7 +1163,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Automatisering die onderhoudbaar blijft",
-          "intro": "We onderzoeken je bestaande webshop en beoordelen welke onderdelen van WooCommerce, Shopify of een ander platform echt de oorzaak zijn. Geen pakket of platformcertificering zonder bewijs.",
+          "intro": "Een goede koppeling voorkomt nieuw handwerk en laat fouten zien.",
           "items": [
             {
               "title": "Proceskaart",
@@ -1293,7 +1293,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Unde verificăm pierderile comerciale",
-          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "intro": "Separăm problemele de trafic, măsurare și operațiuni înainte de a recomanda soluții.",
           "items": [
             {
               "title": "Vizibilitatea catalogului",
@@ -1351,7 +1351,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Audit SEO adaptat structurii magazinului",
-          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "intro": "Ne concentrăm pe URL-uri și categorii care pot aduce cereri comerciale.",
           "items": [
             {
               "title": "URL-uri și indexare",
@@ -1409,7 +1409,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Verificăm semnalele înainte să creștem bugetul",
-          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "intro": "Măsurarea corectă a comenzilor este condiția unei optimizări responsabile.",
           "items": [
             {
               "title": "Valoarea conversiilor",
@@ -1467,7 +1467,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Reducem operațiunile repetitive",
-          "intro": "În România analizăm și contextul tehnic al magazinului, de exemplu MerchantPro, Gomag sau WooCommerce, fără a pretinde parteneriate oficiale. Recomandările depind de platforma folosită și datele disponibile.",
+          "intro": "Integrarea trebuie să simplifice procese fără să creeze riscuri inutile.",
           "items": [
             {
               "title": "Traseul comenzilor",
@@ -1597,7 +1597,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Co může brzdit vaše objednávky",
-          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "intro": "Oddělujeme problém viditelnosti, měření a provozu, nikoli pouze obecný marketing.",
           "items": [
             {
               "title": "Kategorie a indexace",
@@ -1655,7 +1655,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "SEO audit s konkrétními URL",
-          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "intro": "Audit má ukázat konkrétní URL a priority, ne jen dlouhý seznam hlášení.",
           "items": [
             {
               "title": "Technické nastavení",
@@ -1713,7 +1713,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "PPC posuzujeme podle objednávek",
-          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "intro": "Google Ads a české PPC kanály hodnotíme samostatně podle skutečných objednávek.",
           "items": [
             {
               "title": "Konverze a GA4",
@@ -1771,7 +1771,7 @@ function mrseo_eu_all(){
         ],
         "offer": {
           "title": "Konečně méně ručních úkonů",
-          "intro": "U českých obchodů má smysl prověřit Shoptet, Heureku, Zboží.cz a Sklik, pokud je obchod skutečně používá. Nezaměňujeme je s Google Ads a netvrdíme, že jsme oficiálním partnerem těchto služeb.",
+          "intro": "Nové propojení má ušetřit práci a zároveň umožnit kontrolu chyb.",
           "items": [
             {
               "title": "Průběh objednávky",
