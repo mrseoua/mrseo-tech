@@ -47,7 +47,7 @@ async function audit(browser,viewport,lang,slug){
   await page.locator('body').waitFor({timeout:8000});
   try{await page.evaluate(()=>document.fonts.ready)}catch(_){}
   await page.waitForTimeout(slug===''?1400:250);
-  item.check=await page.evaluate(({lang,slug,width})=>{
+  item.check=await page.evaluate(({lang,slug,width,coreShard})=>{
    const canonical=[...document.querySelectorAll('link[rel=canonical]')].map(x=>x.href);
    const body=document.body;
    const node=slug===''?document.querySelector('.orbit-lab .lab-visual'):document.querySelector('.eu-orbit-scene');
@@ -91,7 +91,7 @@ async function audit(browser,viewport,lang,slug){
     contactBarText:document.querySelector('.mrseo-mobile-contact-bar')?.textContent||'',
     bodyClass:body.className
    };
-  },{lang,slug,width:viewport.width});
+  },{lang,slug,width:viewport.width,coreShard});
   const c=item.check;
   const exactPath=url;
   if(!c.title||c.title.length<(coreShard?8:12))item.errors.push('Missing document title');
