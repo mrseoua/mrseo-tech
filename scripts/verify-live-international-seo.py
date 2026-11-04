@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 135
+EXPECTED_PAGES = 177
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -29,7 +29,9 @@ SAMPLE = [
     "/en/online-shop-development/",
     "/fr/", "/it/", "/es/", "/nl/", "/ro/", "/cs/",
     "/fr/seo/", "/it/google-ads/", "/es/web-development/",
-    "/nl/contact/", "/ro/privacy/", "/cs/seo/"
+    "/nl/contact/", "/ro/privacy/", "/cs/seo/",
+    "/fr/seo-audit/", "/it/ecommerce-seo/", "/es/analytics/", "/nl/website-design/",
+    "/ro/online-shop-development/", "/cs/about/", "/fr/portfolio/"
 ]
 
 def fetch(url, method="GET", timeout=16):
