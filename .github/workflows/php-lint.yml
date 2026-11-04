@@ -120,7 +120,7 @@ jobs:
               assert len(copy['sections']['commerce']['topics'])==2
               assert len(copy['sections']['dev']['topics'])==3
               assert len(copy['sections']['data']['topics'])==3
-          assert 'orbit-earth-three.js?v=5' in home, 'Shared real Earth renderer must remain'
+          assert 'orbit-earth-three.js?v=6' in home, 'Shared real Earth renderer must remain'
           dev_php=(root/'inc/development-content.php').read_text()
           dev_match=re.search(r"<<<'MRSEO_DEV_DATA'\n(.*?)\nMRSEO_DEV_DATA;",dev_php,re.S)
           assert dev_match, 'Missing Web Development data'
@@ -160,7 +160,7 @@ jobs:
           assert 'mrseo_render_motion_scene' in motion
           assert (root/'assets/motion-scenes.css').read_text().count('{')==(root/'assets/motion-scenes.css').read_text().count('}')
           assert 'mrseo-motion-scenes' in functions
-          assert 'orbit-earth-three.js?v=5' in home, '3D Earth remains only on the homepage'
+          assert 'orbit-earth-three.js?v=6' in home, '3D Earth remains only on the homepage'
           assert "X-Robots-Tag: noindex, nofollow" in functions, 'Do not disable staging noindex'
           # Verify every commercial new service has original UA/RU copy and a reachable route.
           new_pages={}
@@ -448,7 +448,7 @@ jobs:
           assert "mrseo_eu_rules_v3" in eu_router
           assert 'mrseo_eu_route()' in eu_router
           assert "wp_enqueue_script('mrseo-eu-earth'" not in eu_router, 'One master must own the globe'
-          assert "orbit-earth-three.js?v=5" in home, 'Original Earth module must be preserved'
+          assert "orbit-earth-three.js?v=6" in home, 'Original Earth module must be preserved'
           assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
           assert "Язык заявки: $mail_locale" in functions
           assert "Заявка MrSeo.tech ['.$mail_locale.']" in functions
