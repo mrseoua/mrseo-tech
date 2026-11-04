@@ -107,6 +107,23 @@ async function audit(browser,viewport,lang,slug){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
   }
   if(slug===''&&viewport.name==='narrow'){
+   // Shared UA/RU mobile menu must be usable in every new language.
+   const menu=page.locator('header.site-header .menu-toggle');
+   await menu.click({timeout:4000});
+   if(await menu.getAttribute('aria-expanded')!=='true')
+      item.errors.push('Global mobile menu cannot open');
+   const services=page.locator('header.site-header .services-menu-toggle');
+   await services.click({timeout:4000});
+   if(await services.getAttribute('aria-expanded')!=='true')
+      item.errors.push('Shared service dropdown cannot open');
+   const good=await page.locator('.mrseo-mega-grid').evaluate(el=>{
+      const r=el.getBoundingClientRect();
+      return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;
+   });
+   if(!good)item.errors.push('Premium services menu overflows 360px viewport');
+   await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
+   await page.keyboard.press('Escape');
+   await menu.click({timeout:4000});
    const sel=page.locator('.mrseo-language-trigger');
    await sel.focus();
    await page.keyboard.press('Enter');
