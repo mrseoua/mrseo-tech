@@ -162,7 +162,7 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   if((lang==='uk'&&slug==='seo') || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
-   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&slug==='seo'});
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
