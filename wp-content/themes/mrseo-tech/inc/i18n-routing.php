@@ -16,11 +16,15 @@ function mrseo_url($slug='',$lang=null){
   if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
  }
  // New market URLs may only point to actually completed pages.
- if(in_array($lang,array('fr','it','es','nl','ro','cs'),true) && !in_array($slug,array('','seo','google-ads','web-development','contact','privacy'),true)){
+ if(in_array($lang,array('fr','it','es','nl','ro','cs'),true) && !in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'),true)){
   if(in_array($slug,array('seo-audit','ecommerce-seo'),true))$slug='seo';
   elseif(in_array($slug,array('performance-max','google-shopping','merchant-center'),true))$slug='google-ads';
   elseif(in_array($slug,array('service-websites','online-store-development','website-design','wordpress-care'),true))$slug='web-development';
   else $slug='';
+ }
+ // A fully translated European route must not be downgraded by UK-only fallback aliases.
+ if(in_array($lang,array('fr','it','es','nl','ro','cs'),true) && in_array($slug,mrseo_eu_slugs(),true)){
+  return mrseo_i18n_exact_url($lang,$slug);
  }
  // UK-only routes switch to real parent services in other languages.
  if($lang!=='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)){
