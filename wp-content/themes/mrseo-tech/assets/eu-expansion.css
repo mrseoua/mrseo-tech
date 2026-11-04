@@ -116,3 +116,39 @@
 .mrseo-eu .eu-offer-card h3{font-size:clamp(19px,1.8vw,25px);line-height:1.25;letter-spacing:-.035em;margin:16px 0 12px}
 .mrseo-eu .eu-offer-card p{font-size:15px;line-height:1.7;color:#58635a;margin:0}
 @media(max-width:790px){.mrseo-eu .eu-market-heading{grid-template-columns:1fr;gap:17px}.mrseo-eu .eu-offer-grid{grid-template-columns:1fr}.mrseo-eu .eu-offer-card{padding:23px 21px}.mrseo-eu .eu-market-heading p{font-size:16px}}
+
+/* Motion system: 3 distinct, lightweight conceptual service scenes.
+   Pure CSS transforms/opacity, all disabled for reduced-motion. */
+.mrseo-eu .eu-service-scene{position:relative;isolation:isolate}
+.mrseo-eu .eu-service-scene>.eu-scene-top,.mrseo-eu .eu-scene-core,.mrseo-eu .eu-scene-rows,.mrseo-eu .eu-scene-footer{position:relative;z-index:2}
+.mrseo-eu .eu-scene-halo{position:absolute;top:-25%;right:-17%;width:68%;height:83%;background:radial-gradient(closest-side,#6cb1a33b,transparent);filter:blur(16px);pointer-events:none;animation:eu-halo-breathe 12s ease-in-out infinite alternate;z-index:0}
+.mrseo-eu .eu-scene-core{position:relative;max-width:max-content;animation:eu-core-float 6s ease-in-out infinite}
+.mrseo-eu .eu-scene-pulse{display:inline-block;width:9px;height:9px;margin-left:16px;background:#ffc9a0;border-radius:99px;vertical-align:middle;box-shadow:0 0 12px #f7bd79}
+.mrseo-eu .eu-scene-rows{display:flex;flex-direction:column;gap:13px}
+.mrseo-eu .eu-scene-row{transition:border-color .35s ease,background .35s ease,transform .35s ease;animation:eu-row-focus 9s ease-in-out infinite}
+.mrseo-eu .eu-scene-row:nth-child(2){animation-delay:-3s}
+.mrseo-eu .eu-scene-row:nth-child(3){animation-delay:-6s}
+.mrseo-eu .eu-scene-footer{display:flex;align-items:center;justify-content:space-between;gap:17px;margin-top:auto;min-height:29px}
+.mrseo-eu .eu-scene-status{font-size:10px;font-weight:810;letter-spacing:.1em;text-transform:uppercase;color:#c1d7d0;display:flex;align-items:center;gap:8px}
+.mrseo-eu .eu-scene-status i{display:inline-block;width:7px;height:7px;border-radius:100%;background:#9de7b1;box-shadow:0 0 10px #83eeb1}
+.mrseo-eu .eu-scene-progress{display:block;width:104px;max-width:35%;height:3px;border-radius:99px;background:#cbd8d533;overflow:hidden}
+.mrseo-eu .eu-scene-progress i{display:block;width:46%;height:100%;border-radius:99px;background:#9edbc7;animation:eu-flow-progress 5.5s linear infinite}
+.mrseo-eu .eu-service-scene-seo{background:radial-gradient(circle at 70% 11%,#316b5c,#12262a 65%)}
+.mrseo-eu .eu-service-scene-seo .eu-scene-core{color:#cceada}
+.mrseo-eu .eu-service-scene-seo .eu-scene-row{border-left:3px solid #77c6ab}
+.mrseo-eu .eu-service-scene-google-ads{background:radial-gradient(circle at 65% 8%,#395776,#142531 68%)}
+.mrseo-eu .eu-service-scene-google-ads .eu-scene-core{color:#d4e8ff}
+.mrseo-eu .eu-service-scene-google-ads .eu-scene-halo{background:radial-gradient(closest-side,#539be24f,transparent)}
+.mrseo-eu .eu-service-scene-google-ads .eu-scene-row{border-left:3px solid #76b8ee}
+.mrseo-eu .eu-service-scene-google-ads .eu-scene-progress i{background:#90c5f3}
+.mrseo-eu .eu-service-scene-web-development{background:radial-gradient(circle at 69% 15%,#57465e,#20252e 72%)}
+.mrseo-eu .eu-service-scene-web-development .eu-scene-core{color:#e6daf1}
+.mrseo-eu .eu-service-scene-web-development .eu-scene-halo{background:radial-gradient(closest-side,#b484cc55,transparent)}
+.mrseo-eu .eu-service-scene-web-development .eu-scene-row{border-left:3px solid #bba2d4}
+.mrseo-eu .eu-service-scene-web-development .eu-scene-progress i{background:#c9b2dd}
+@keyframes eu-core-float{50%{transform:translateY(-7px)}}
+@keyframes eu-row-focus{12%,23%{transform:translateX(3px);background:#365050;border-color:#b2e2cd}}
+@keyframes eu-halo-breathe{to{opacity:.4;transform:scale(.85) translate(-5%,7%)}}
+@keyframes eu-flow-progress{from{transform:translateX(-120%)}to{transform:translateX(350%)}}
+@media(max-width:540px){.mrseo-eu .eu-service-scene .eu-scene-footer{margin-top:4px}.mrseo-eu .eu-scene-status{font-size:9px;line-height:1.4}.mrseo-eu .eu-scene-core{font-size:clamp(50px,14vw,67px)}}
+@media(prefers-reduced-motion:reduce){.mrseo-eu .eu-scene-halo,.mrseo-eu .eu-scene-core,.mrseo-eu .eu-scene-row,.mrseo-eu .eu-scene-progress i{animation:none!important}.mrseo-eu .eu-scene-row{transform:none}}
