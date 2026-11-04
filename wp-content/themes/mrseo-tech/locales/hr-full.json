@@ -545,7 +545,12 @@
         "Razumljivi prioriteti",
         "Rezultati koje se može provjeriti"
       ],
-      "faq": [],
+      "faq": [
+        [
+          "Imate li ured u Hrvatskoj?",
+          "Ne. Radimo na daljinu iz Ukrajine, uz unaprijed dogovoren opseg i način komunikacije."
+        ]
+      ],
       "offer": {
         "title": "Provjera stanja → Provjera učinka",
         "intro": "Mi smo mali tim stručnjaka s deset godina iskustva u SEO-u, Google Adsu i web razvoju. Radimo na daljinu iz Ukrajine i najprije analiziramo uzrok problema.",
