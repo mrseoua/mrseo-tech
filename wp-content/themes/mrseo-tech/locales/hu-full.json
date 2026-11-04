@@ -1,0 +1,686 @@
+{
+  "code": "hu-HU",
+  "name": "Magyar",
+  "country": "Hungary",
+  "nav": [
+    "Szolgáltatások",
+    "SEO",
+    "Google Ads",
+    "Webfejlesztés",
+    "Kapcsolat",
+    "Beszéljünk a projektről",
+    "Adatvédelem"
+  ],
+  "ui": [
+    "A látogatottság önmagában nem jelent több ügyfelet.",
+    "Először az okot vizsgáljuk, és csak utána javaslunk megoldást.",
+    "Mit ellenőrzünk",
+    "Hogyan dolgozunk",
+    "Mit kap az ügyfél",
+    "Gyakori kérdések",
+    "Írjon nekünk",
+    "Név",
+    "E-mail-cím",
+    "Weboldal (nem kötelező)",
+    "Írja le a problémát",
+    "Üzenet küldése",
+    "Az üzenetet továbbítottuk kézbesítésre. E-mailben válaszolunk.",
+    "Ellenőrizze a kötelező mezőket.",
+    "A küldés sikertelen. Próbálja újra.",
+    "Ne küldjön jelszavakat vagy bizalmas hozzáférési adatokat.",
+    "Távolról, Ukrajnából dolgozunk. A munkanyelvet és a feladatkört előre egyeztetjük."
+  ],
+  "pages": {
+    "": {
+      "title": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak",
+      "description": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak. Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás. Megvizsgáljuk a keresési láthatóságot, a konverziómérést és",
+      "eyebrow": "MRSEO.TECH",
+      "headline": "Van weboldala. <em>De érkeznek új ügyfelek?</em>",
+      "lead": "Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás. Megvizsgáljuk a keresési láthatóságot, a konverziómérést és a kézi folyamatokat.",
+      "problems": [
+        [
+          "Látogatók megkeresés nélkül",
+          "Az oldal nem a megfelelő keresési szándékra válaszol.",
+          "Átnézni az érkezési oldalak és az ajánlat kapcsolatát."
+        ],
+        [
+          "Reklámköltés világos megtérülés nélkül",
+          "A jelentésekben szereplő vásárlások eltérhetnek a valós rendelésektől.",
+          "Összevetni a GA4, Google Ads és rendelési adatokat."
+        ],
+        [
+          "Kézi adminisztráció",
+          "A webáruház, CRM és készletkezelő nincs összekötve.",
+          "Megvizsgálni az integrációk lehetőségét."
+        ]
+      ],
+      "outcomes": [
+        "Bizonyítható hibák listája",
+        "Feladatok fontossági sorrendben",
+        "Ellenőrizhető mérőszámok"
+      ],
+      "faq": [
+        [
+          "Van irodájuk Magyarországon?",
+          "Nincs. Ukrajnából, távolról dolgozunk, a kommunikáció módját előre egyeztetjük."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás. Megvizsgáljuk a keresési láthatóságot, a konverziómérést és a kézi folyamatokat.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Átnézni az érkezési oldalak és az ajánlat kapcsolatát."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Összevetni a GA4, Google Ads és rendelési adatokat."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Megvizsgálni az integrációk lehetőségét."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "seo": {
+      "title": "SEO szolgáltatások vállalkozásoknak és webáruházaknak",
+      "description": "SEO szolgáltatások vállalkozásoknak és webáruházaknak. A keresőoptimalizálás alapja a valós vásárlói kereslet és az azt kiszolgáló weboldal. Átnézzük a kategóriák, belső linkek és tartalmak működését, miel",
+      "eyebrow": "SEO",
+      "headline": "A fontos oldalak <em>nem találhatók a keresőben?</em>",
+      "lead": "A keresőoptimalizálás alapja a valós vásárlói kereslet és az azt kiszolgáló weboldal. Átnézzük a kategóriák, belső linkek és tartalmak működését, mielőtt több szöveg készülne.",
+      "problems": [
+        [
+          "Hiányzó kategóriaoldalak",
+          "A fontos oldalak nem jutnak be megfelelően az indexbe.",
+          "Ellenőrizni a feltérképezést és a hivatkozásokat."
+        ],
+        [
+          "Nem egyértelmű struktúra",
+          "A navigáció nem követi a magyar keresési igényeket.",
+          "Összekapcsolni a keresési szándékot a kategóriákkal."
+        ],
+        [
+          "Forgalom rendelés nélkül",
+          "Az oldal nem mutat egyértelmű vásárlási lehetőséget.",
+          "Értékelni a tartalmat és az ajánlatot."
+        ]
+      ],
+      "outcomes": [
+        "Kereslethez illeszkedő oldaltérkép",
+        "Technikai és tartalmi prioritások",
+        "Láthatósági és érdeklődési mutatók"
+      ],
+      "faq": [
+        [
+          "Garantálják az első helyet a Google-ben?",
+          "Nem. A helyezések nem garantálhatók; ellenőrizhető javításokat javaslunk."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "A keresőoptimalizálás alapja a valós vásárlói kereslet és az azt kiszolgáló weboldal. Átnézzük a kategóriák, belső linkek és tartalmak működését, mielőtt több szöveg készülne.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Ellenőrizni a feltérképezést és a hivatkozásokat."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Összekapcsolni a keresési szándékot a kategóriákkal."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Értékelni a tartalmat és az ajánlatot."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "seo-audit": {
+      "title": "Technikai SEO audit: indexelés, feltérképezés, duplikációk",
+      "description": "Technikai SEO audit: indexelés, feltérképezés, duplikációk. A technikai SEO audit konkrét URL-ekhez köti az indexelési, feltérképezési és duplikációs problémákat. A javításokat üzleti jelentőség és megvaló",
+      "eyebrow": "SEO / AUDIT",
+      "headline": "Egy SEO pontszám <em>nem javítja meg a weboldalt.</em>",
+      "lead": "A technikai SEO audit konkrét URL-ekhez köti az indexelési, feltérképezési és duplikációs problémákat. A javításokat üzleti jelentőség és megvalósíthatóság szerint rangsoroljuk.",
+      "problems": [
+        [
+          "Indexből kimaradt oldalak",
+          "Átirányítások vagy beállítások kizárhatnak értékes tartalmakat.",
+          "Átnézni a Search Console és URL-adatokat."
+        ],
+        [
+          "Duplikált szűrőoldalak",
+          "Paraméteres változatok egymással versenyeznek.",
+          "Vizsgálni a canonical jelölést és lapozást."
+        ],
+        [
+          "Lassú mobilos betöltés",
+          "Nehéz erőforrások nehezítik a használatot.",
+          "Elkülöníteni a szerver- és felülethibákat."
+        ]
+      ],
+      "outcomes": [
+        "Konkrét URL-hibák",
+        "Prioritás szerinti feladatlista",
+        "Javítás utáni ellenőrzési terv"
+      ],
+      "faq": [
+        [
+          "A SEO audit során minden hibát ki is javítanak?",
+          "Az elemzés és a végrehajtás külön feladat; a pontos terjedelmet előre egyeztetjük."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "A technikai SEO audit konkrét URL-ekhez köti az indexelési, feltérképezési és duplikációs problémákat. A javításokat üzleti jelentőség és megvalósíthatóság szerint rangsoroljuk.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Átnézni a Search Console és URL-adatokat."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Vizsgálni a canonical jelölést és lapozást."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Elkülöníteni a szerver- és felülethibákat."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "ecommerce-seo": {
+      "title": "Webáruház SEO: kategóriák, szűrők és termékoldalak",
+      "description": "Webáruház SEO: kategóriák, szűrők és termékoldalak. Egy Shoprenter, UNAS vagy WooCommerce webáruház kategóriáinak és szűrőinek jól kell működniük. A tényleges beállítást vizsgáljuk, és nem állítunk hivatal",
+      "eyebrow": "ECOMMERCE / SEO",
+      "headline": "Sok termék van. <em>De megtalálják a vásárlók?</em>",
+      "lead": "Egy Shoprenter, UNAS vagy WooCommerce webáruház kategóriáinak és szűrőinek jól kell működniük. A tényleges beállítást vizsgáljuk, és nem állítunk hivatalos partnerséget.",
+      "problems": [
+        [
+          "Gyenge kategórialáthatóság",
+          "A fontos oldalak nem követik a vásárlási kereséseket.",
+          "Értékelni a kategóriaszerkezetet és linkeket."
+        ],
+        [
+          "Sok felesleges URL",
+          "A szűrés rengeteg közel azonos oldalt hoz létre.",
+          "Elválasztani az értékes szűrőket a technikai változatoktól."
+        ],
+        [
+          "Nehezen elérhető termékek",
+          "A variációk és attribútumok összezavarják a navigációt.",
+          "Átnézni a termékoldal-sablonokat."
+        ]
+      ],
+      "outcomes": [
+        "Átláthatóbb termékstruktúra",
+        "Kategória- és szűrési prioritások",
+        "Keresési teljesítmény mérési terve"
+      ],
+      "faq": [
+        [
+          "Csak a Shoprenterrel foglalkoznak?",
+          "Nem. A használt rendszert és annak technikai korlátait vizsgáljuk."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "Egy Shoprenter, UNAS vagy WooCommerce webáruház kategóriáinak és szűrőinek jól kell működniük. A tényleges beállítást vizsgáljuk, és nem állítunk hivatalos partnerséget.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Értékelni a kategóriaszerkezetet és linkeket."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Elválasztani az értékes szűrőket a technikai változatoktól."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Átnézni a termékoldal-sablonokat."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "google-ads": {
+      "title": "Google Ads és Shopping kampányok auditálása",
+      "description": "Google Ads és Shopping kampányok auditálása. A kampányok optimalizálása előtt a konverziókat kell ellenőrizni. Ezt követően vizsgáljuk a keresési kifejezéseket, a Shopping-termékeket és a költés üzleti ért",
+      "eyebrow": "GOOGLE / ADS",
+      "headline": "Költ a hirdetésre. <em>Milyen rendeléseket hoz?</em>",
+      "lead": "A kampányok optimalizálása előtt a konverziókat kell ellenőrizni. Ezt követően vizsgáljuk a keresési kifejezéseket, a Shopping-termékeket és a költés üzleti értékét.",
+      "problems": [
+        [
+          "Hibás vásárlásmérés",
+          "A duplikált esemény rossz licitálási jelet adhat.",
+          "Összehasonlítani a valós rendeléseket a méréssel."
+        ],
+        [
+          "Költés eredmény nélkül",
+          "Egyes termékek felemésztik a keretet igazolt bevétel nélkül.",
+          "Elemezni a termékcsoportok költségét."
+        ],
+        [
+          "Eltérő feed-adatok",
+          "A Merchant Center ára vagy készlete eltérhet az oldaltól.",
+          "Ellenőrizni a termékadatokat és céloldalakat."
+        ]
+      ],
+      "outcomes": [
+        "Konverziómérési hibák feltárása",
+        "Kiadások termékszintű elemzése",
+        "Mérhető kampánytesztek"
+      ],
+      "faq": [
+        [
+          "Garantálják a ROAS-t?",
+          "Nem. A megtérülés függ a piaci helyzettől, az árréstől és a mérés pontosságától."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "A kampányok optimalizálása előtt a konverziókat kell ellenőrizni. Ezt követően vizsgáljuk a keresési kifejezéseket, a Shopping-termékeket és a költés üzleti értékét.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Összehasonlítani a valós rendeléseket a méréssel."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Elemezni a termékcsoportok költségét."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Ellenőrizni a termékadatokat és céloldalakat."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "analytics": {
+      "title": "GA4 elemzés és konverziómérés ellenőrzése",
+      "description": "GA4 elemzés és konverziómérés ellenőrzése. Egy duplán mért rendelés félrevezetheti a hirdetési rendszereket. Megvizsgáljuk a purchase eseményt, a transaction_id értékeket és az eltérő hozzárendelési modell",
+      "eyebrow": "ANALYTICS",
+      "headline": "Vannak riportok. <em>De helyesek a számok?</em>",
+      "lead": "Egy duplán mért rendelés félrevezetheti a hirdetési rendszereket. Megvizsgáljuk a purchase eseményt, a transaction_id értékeket és az eltérő hozzárendelési modelleket.",
+      "problems": [
+        [
+          "Duplázódó vásárlások",
+          "A konverziós esemény többször is aktiválódhat.",
+          "Ellenőrizni a tranzakcióazonosítókat."
+        ],
+        [
+          "Eltérő GA4 és Ads jelentések",
+          "Az attribúció és időablak nem feltétlenül egyezik.",
+          "Összevetni azonos jelentésű mutatókat."
+        ],
+        [
+          "Hozzájárulási beállítások",
+          "A felhasználói választás befolyásolja az adatgyűjtést.",
+          "Műszakilag ellenőrizni a címkéket és külön kezelni a jogi kérdéseket."
+        ]
+      ],
+      "outcomes": [
+        "Áttekinthető eseménytérkép",
+        "Reprodukálható eltérések",
+        "Folyamatos ellenőrzési terv"
+      ],
+      "faq": [
+        [
+          "A GA4 és a Google Ads számainak egyezniük kell?",
+          "Nem feltétlenül. A mérési és attribúciós szabályok különbözhetnek."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "Egy duplán mért rendelés félrevezetheti a hirdetési rendszereket. Megvizsgáljuk a purchase eseményt, a transaction_id értékeket és az eltérő hozzárendelési modelleket.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Ellenőrizni a tranzakcióazonosítókat."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Összevetni azonos jelentésű mutatókat."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Műszakilag ellenőrizni a címkéket és külön kezelni a jogi kérdéseket."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "web-development": {
+      "title": "Egyedi webfejlesztés, CRM és API-integrációk",
+      "description": "Egyedi webfejlesztés, CRM és API-integrációk. Egyedi webalkalmazásokat és API-integrációkat üzleti folyamatokhoz készítünk. Előbb feltérképezzük az adatmozgást és a biztonsági korlátokat, csak utána kezdőd",
+      "eyebrow": "WEB / DEVELOPMENT",
+      "headline": "A szoftvernek <em>munkát kell megtakarítania.</em>",
+      "lead": "Egyedi webalkalmazásokat és API-integrációkat üzleti folyamatokhoz készítünk. Előbb feltérképezzük az adatmozgást és a biztonsági korlátokat, csak utána kezdődik a fejlesztés.",
+      "problems": [
+        [
+          "Kézzel átmásolt rendelések",
+          "A webáruház és a vállalatirányítás nincs összekötve.",
+          "Ellenőrizni az API-t és az adatminőséget."
+        ],
+        [
+          "Nehezen karbantartható oldal",
+          "Régi függőségek lassítják a változtatást.",
+          "Megtervezni a fokozatos modernizációt."
+        ],
+        [
+          "Kézi kimutatáskészítés",
+          "Az adatok több rendszerből származnak.",
+          "Kialakítani egy hasznos dashboardot."
+        ]
+      ],
+      "outcomes": [
+        "Műszaki és funkcionális követelmények",
+        "Ütemezett fejlesztési lépések",
+        "Tesztelési és támogatási megállapodások"
+      ],
+      "faq": [
+        [
+          "SaaS rendszert is fejlesztenek?",
+          "Megvizsgálhatjuk a megvalósíthatóságot, az architektúrát és a költségeket."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "Egyedi webalkalmazásokat és API-integrációkat üzleti folyamatokhoz készítünk. Előbb feltérképezzük az adatmozgást és a biztonsági korlátokat, csak utána kezdődik a fejlesztés.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Ellenőrizni az API-t és az adatminőséget."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Megtervezni a fokozatos modernizációt."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Kialakítani egy hasznos dashboardot."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "website-design": {
+      "title": "Üzleti weboldalak tervezése és készítése",
+      "description": "Üzleti weboldalak tervezése és készítése. Olyan vállalati oldalakat tervezünk, amelyek világosan bemutatják a szolgáltatásokat és megkönnyítik a megkeresést. A mobilos olvashatóság és a tartalom logikája a",
+      "eyebrow": "WEBSITE / DESIGN",
+      "headline": "Egy jó weboldal <em>segíti a kapcsolatfelvételt.</em>",
+      "lead": "Olyan vállalati oldalakat tervezünk, amelyek világosan bemutatják a szolgáltatásokat és megkönnyítik a megkeresést. A mobilos olvashatóság és a tartalom logikája az első.",
+      "problems": [
+        [
+          "Zavaros szolgáltatások",
+          "A látogató nem látja, milyen problémára van megoldás.",
+          "Átgondolni az oldalszerkezetet."
+        ],
+        [
+          "Rossz mobilélmény",
+          "A kis betűk és gombok akadályozzák a kapcsolatfelvételt.",
+          "Reszponzív, olvasható felületet kialakítani."
+        ],
+        [
+          "Bonyolult frissítés",
+          "Minden apró változtatás fejlesztői segítséget igényel.",
+          "Karbantartható komponenseket választani."
+        ]
+      ],
+      "outcomes": [
+        "Oldaltérkép és tartalmi terv",
+        "Reszponzív kialakítás",
+        "Ellenőrzött űrlapok és linkek"
+      ],
+      "faq": [
+        [
+          "WordPress oldalt is készítenek?",
+          "Igen, ha megfelel a biztonsági és karbantartási elvárásoknak."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "Olyan vállalati oldalakat tervezünk, amelyek világosan bemutatják a szolgáltatásokat és megkönnyítik a megkeresést. A mobilos olvashatóság és a tartalom logikája az első.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Átgondolni az oldalszerkezetet."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Reszponzív, olvasható felületet kialakítani."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Karbantartható komponenseket választani."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "online-shop-development": {
+      "title": "Webáruház készítése és rendszerintegráció",
+      "description": "Webáruház készítése és rendszerintegráció. A webshop megvalósítása termékadatokat, fizetést, kiszállítást és rendeléskezelést is jelent. A platformot és az integrációkat a tényleges üzleti működéshez válas",
+      "eyebrow": "ONLINE / SHOP / DEVELOPMENT",
+      "headline": "A webáruháznak eladnia kell. <em>És könnyen kezelhetőnek lennie.</em>",
+      "lead": "A webshop megvalósítása termékadatokat, fizetést, kiszállítást és rendeléskezelést is jelent. A platformot és az integrációkat a tényleges üzleti működéshez választjuk.",
+      "problems": [
+        [
+          "Széttartó katalógus",
+          "A változatok és attribútumok nincsenek egységesítve.",
+          "Termékstruktúrát és szűrőket meghatározni."
+        ],
+        [
+          "Bonyolult fizetési folyamat",
+          "A felesleges lépések vásárlókat veszíthetnek.",
+          "Tesztelni a kosarat és fizetést."
+        ],
+        [
+          "Kézzel frissített készlet",
+          "Az áruház és a raktárprogram nem szinkronizál.",
+          "Megvizsgálni az adatkapcsolatot."
+        ]
+      ],
+      "outcomes": [
+        "Követelmények és platformválasztás",
+        "Tesztelt vásárlási folyamat",
+        "Integrációs és üzemeltetési terv"
+      ],
+      "faq": [
+        [
+          "Átvehető egy meglévő webáruház?",
+          "A migrációhoz külön fel kell mérni az adatokat, URL-eket és átirányításokat."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "A webshop megvalósítása termékadatokat, fizetést, kiszállítást és rendeléskezelést is jelent. A platformot és az integrációkat a tényleges üzleti működéshez választjuk.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Termékstruktúrát és szűrőket meghatározni."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Tesztelni a kosarat és fizetést."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Megvizsgálni az adatkapcsolatot."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "about": {
+      "title": "Rólunk — a MrSeo.tech SEO és fejlesztői csapata",
+      "description": "Rólunk — a MrSeo.tech SEO és fejlesztői csapata. Kis szakértői csapatunk tízéves tapasztalattal dolgozik SEO, Google Ads és webfejlesztési feladatokon. Ukrajnából, távolról működünk, és az ügyfél problémáj",
+      "eyebrow": "ABOUT",
+      "headline": "Kis csapat. <em>Világos felelősség.</em>",
+      "lead": "Kis szakértői csapatunk tízéves tapasztalattal dolgozik SEO, Google Ads és webfejlesztési feladatokon. Ukrajnából, távolról működünk, és az ügyfél problémájával kezdünk.",
+      "problems": [
+        [
+          "Először a kiváltó ok",
+          "A több hirdetés nem biztos, hogy javítja az eredményt.",
+          "Megvizsgálni a teljes ügyfélutat."
+        ],
+        [
+          "Átlátható feladatok",
+          "A megrendelőnek tudnia kell, ki miért felel.",
+          "Meghatározni a lépéseket és átadást."
+        ],
+        [
+          "Nincsenek csodagaranciák",
+          "Helyezésígéret helyett ellenőrzésre van szükség.",
+          "Mérési szempontokat egyeztetni."
+        ]
+      ],
+      "outcomes": [
+        "Közvetlen kommunikáció",
+        "Indokolt prioritások",
+        "Ellenőrizhető munka"
+      ],
+      "faq": [],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "Kis szakértői csapatunk tízéves tapasztalattal dolgozik SEO, Google Ads és webfejlesztési feladatokon. Ukrajnából, távolról működünk, és az ügyfél problémájával kezdünk.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Megvizsgálni a teljes ügyfélutat."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Meghatározni a lépéseket és átadást."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Mérési szempontokat egyeztetni."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "portfolio": {
+      "title": "Projektjeink és referenciáink",
+      "description": "Projektjeink és referenciáink. Nyilvános portfóliónkból különböző iparágak webhelyeit mutatjuk be. Nem állítjuk, hogy magyar ügyfelek, és nem közlünk bizalmas eredményeket engedély nélkül.",
+      "eyebrow": "PORTFOLIO",
+      "headline": "Valódi oldalak. <em>Kitalált számok nélkül.</em>",
+      "lead": "Nyilvános portfóliónkból különböző iparágak webhelyeit mutatjuk be. Nem állítjuk, hogy magyar ügyfelek, és nem közlünk bizalmas eredményeket engedély nélkül.",
+      "problems": [
+        [
+          "Autóalkatrész-katalógusok",
+          "A nagy választék átgondolt szűrést igényel.",
+          "Megtekinteni nyilvános webshopokat."
+        ],
+        [
+          "Divat és kiegészítők",
+          "A termékváltozatok világos bemutatása fontos.",
+          "Felfedezni eltérő termékkatalógusokat."
+        ],
+        [
+          "Szakmai szolgáltatások",
+          "A bizalom és a könnyű kapcsolatfelvétel alapvető.",
+          "Megnézni szolgáltatási oldalakat."
+        ]
+      ],
+      "outcomes": [
+        "Valós nyilvános domének",
+        "Eltérő piaci területek",
+        "Az ügyféladatok tisztelete"
+      ],
+      "faq": [
+        [
+          "Magyar ügyfeleket mutatnak be?",
+          "Nem állítunk helyi referenciát bizonyíték nélkül."
+        ]
+      ],
+      "offer": {
+        "title": "A tények ellenőrzése → Eredmények visszamérése",
+        "intro": "Nyilvános portfóliónkból különböző iparágak webhelyeit mutatjuk be. Nem állítjuk, hogy magyar ügyfelek, és nem közlünk bizalmas eredményeket engedély nélkül.",
+        "items": [
+          {
+            "title": "A tények ellenőrzése",
+            "detail": "Megtekinteni nyilvános webshopokat."
+          },
+          {
+            "title": "Feladatok rangsorolása",
+            "detail": "Felfedezni eltérő termékkatalógusokat."
+          },
+          {
+            "title": "Eredmények visszamérése",
+            "detail": "Megnézni szolgáltatási oldalakat."
+          }
+        ],
+        "cta": "Írja le a problémát"
+      }
+    },
+    "contact": {
+      "title": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban",
+      "description": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban. Küldje el weboldala címét, a célpiacot és egy konkrét példát a hibára. Rövid leírás is elegendő a kiinduló helyzet felméréséhez.",
+      "eyebrow": "CONTACT",
+      "headline": "Mi akadályozza <em>az új ügyfelek érkezését?</em>",
+      "lead": "Küldje el weboldala címét, a célpiacot és egy konkrét példát a hibára. Rövid leírás is elegendő a kiinduló helyzet felméréséhez. Írja meg a webáruház platformját, a célpiacot és a konkrét hibát. Ne osszon meg jelszavakat.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    },
+    "privacy": {
+      "title": "Adatvédelem és a kapcsolati adatok kezelése",
+      "description": "Így kezeljük a MrSeo.tech kapcsolatfelvételi űrlapján elküldött adatokat.",
+      "eyebrow": "PRIVACY",
+      "headline": "Adatvédelem és kapcsolatfelvétel",
+      "lead": "Így kezeljük a MrSeo.tech kapcsolatfelvételi űrlapján elküldött adatokat.",
+      "problems": [],
+      "outcomes": [],
+      "faq": []
+    }
+  },
+  "privacy": [
+    "Adatvédelem és kapcsolatfelvétel",
+    "Így kezeljük a MrSeo.tech kapcsolatfelvételi űrlapján elküldött adatokat.",
+    "Megadott adatok",
+    "Név, e-mail-cím, opcionális weboldal és üzenet. Ideiglenes technikai adatok segítenek a kéretlen üzenetek kiszűrésében.",
+    "Felhasználás célja",
+    "Az adatokat a megkeresés megválaszolására és kérés esetén az együttműködés egyeztetésére használjuk.",
+    "Továbbítás",
+    "A megkeresés a hello@mrseo.tech címre érkezik, majd a UKR.NET munkahelyi postafiókjába továbbítódik. A tárhely- és e-mail-szolgáltatók technikailag részt vesznek a feldolgozásban.",
+    "Megőrzés",
+    "A levelezést a megkeresés kezeléséhez és az esetleges jogi kötelezettségekhez szükséges ideig tároljuk. A pontos időtartamot a nyilvános indulás előtt rögzítjük.",
+    "Jogok és kapcsolat",
+    "A vonatkozó jog szerint hozzáférést, helyesbítést vagy törlést kérhet a hello@mrseo.tech címen. Az adatkezelő ellenőrzött jogi adatait az indulás előtt közzétesszük.",
+    "Az űrlap elküldésével adatokat ad meg a válaszadáshoz. Részletek:"
+  ],
+  "market": {
+    "heading": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak",
+    "description": "Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás. Megvizsgáljuk a keresési láthatóságot, a konverziómérést és a kézi folyamatokat.",
+    "cta": "Írja le a problémát",
+    "brief": "Írja meg a webáruház platformját, a célpiacot és a konkrét hibát. Ne osszon meg jelszavakat.",
+    "portfolioLabel": "Projektek"
+  },
+  "serviceLabels": {
+    "seo": "SEO",
+    "seo-audit": "Technikai SEO audit",
+    "ecommerce-seo": "Webáruház SEO",
+    "google-ads": "Google Ads",
+    "analytics": "GA4 elemzés",
+    "web-development": "Egyedi webfejlesztés",
+    "website-design": "Weboldalkészítés",
+    "online-shop-development": "Webáruház készítés",
+    "about": "Rólunk",
+    "portfolio": "Projektek",
+    "contact": "Kapcsolat"
+  },
+  "portfolioCategories": {
+    "auto": "AUTÓ",
+    "fashion": "DIVAT",
+    "home": "OTTHON",
+    "electronics": "ELEKTRONIKA",
+    "medical": "EGÉSZSÉG"
+  }
+}
