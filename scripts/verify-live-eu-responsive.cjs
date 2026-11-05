@@ -11,7 +11,7 @@ if(!Number.isInteger(shard)||shard>3)throw Error('Invalid locale shard');
 const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 // A full live crawl is 435+ browser views; isolated PR preview checks the critical
 // homepage/service/contact/privacy paths in all 15 markets before publication.
-const slugs=coreShard?['','seo','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
+const slugs=coreShard?['','seo','google-ads','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -93,6 +93,17 @@ async function audit(browser,viewport,lang,slug){
     contactDecorativeScene:!!document.querySelector('.eu-service-scene-contact'),
     bespokeHeroArt:!!document.querySelector('.eu-service-scene .eu-viz--'+slug),
     bespokeHeroStyles:!!document.querySelector('link[href*="eu-service-scenes.css"]'),
+    uaCommercialVisuals:(()=>{
+      const target=lang==='uk'&&['google-ads','web-development'].includes(slug);
+      const sections=target?[...document.querySelectorAll('.ua-sv')]:[];
+      const style=!!document.querySelector('link[href*="ua-commercial-visuals.css"]');
+      const roots=sections.map(e=>({id:e.querySelector('h2')?.id||'',width:Math.round(e.getBoundingClientRect().width),
+        left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right)}));
+      return {style,sections:sections.length,roots,headings:[...document.querySelectorAll('.ua-sv h2')].map(x=>x.textContent.trim()),
+        properOrder:sections.length===2&&!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING),
+        hiddenOnForeign:lang!=='uk'&&!document.querySelector('.ua-sv'),
+        goodGeometry:roots.length===2&&roots.every(r=>r.left>=-2&&r.right<=innerWidth+2&&r.width>250)};
+    })(),
     uaSeoVisuals:(()=>{
       if(lang!=='uk'||slug!=='seo')return null;
       const journey=document.querySelector('#ukseo-journey-title');
@@ -152,6 +163,14 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
+  if(lang==='uk'&&['google-ads','web-development'].includes(slug)){
+    const v=c.uaCommercialVisuals;
+    if(!v||!v.style||v.sections!==2||!v.properOrder||!v.goodGeometry||v.headings.length!==2)
+      item.errors.push('UA commercial story missing or out of viewport: '+JSON.stringify(v));
+  }
+  if(lang!=='uk'&&['google-ads','web-development'].includes(slug)&&
+     (!c.uaCommercialVisuals.hiddenOnForeign||c.uaCommercialVisuals.style))
+    item.errors.push('UA-only illustrations leaked onto foreign market page');
   if(lang==='uk'&&slug==='seo'){
     const v=c.uaSeoVisuals;
     if(!v||!v.css||!v.journey||!v.priorities||!v.board||v.stageCount!==3||!v.boundariesOK||!v.properOrder)
@@ -161,8 +180,8 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
-  if((lang==='uk'&&slug==='seo') || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
-   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&slug==='seo'});
+  if((lang==='uk'&&['seo','google-ads','web-development'].includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development'].includes(slug)});
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -216,8 +235,8 @@ async function audit(browser,viewport,lang,slug){
    try{
     const selectedSlugs=coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs);
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&slug==='seo'))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug))continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development'].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development'].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}
