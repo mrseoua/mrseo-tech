@@ -1,6 +1,7 @@
 <?php
 if(!defined('ABSPATH'))exit;
 $dev_locale=mrseo_locale();
+if($dev_locale==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
 $dev=mrseo_dev_page($dev_locale);
 if(!$dev){status_header(404);include get_404_template();return;}
 $is_int_dev=in_array($dev_locale,array('pl','de'),true);
@@ -49,6 +50,7 @@ get_header();
   </div>
  </div>
 </section>
+<?php if($dev_locale==='uk')mrseo_render_ua_commercial_visual('web-development','connections'); ?>
 <section class="dev-section dev-capabilities" id="dev-capabilities" aria-labelledby="dev-scope-title">
  <div class="dev-wrap">
   <div class="dev-section-heading"><div class="dev-eyebrow">02 / <?php echo esc_html($dev['labels']['scope']);?></div>
@@ -73,6 +75,7 @@ get_header();
   </div>
  </div>
 </section>
+<?php if($dev_locale==='uk')mrseo_render_ua_commercial_visual('web-development','build'); ?>
 <section class="dev-section dev-technical" aria-labelledby="dev-technical-title">
  <div class="dev-wrap"><div class="dev-section-heading"><div class="dev-eyebrow">04 / <?php echo esc_html($dev['labels']['check']);?></div><h2 id="dev-technical-title"><?php echo esc_html($dev['labels']['checkTitle']);?></h2></div>
   <div class="dev-check-grid">
