@@ -72,6 +72,12 @@ jobs:
           php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=analytics --post_title='analytics' --allow-root --quiet
           php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=service-websites --post_title='service-websites' --allow-root --quiet
           php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=horoshop --post_title='horoshop' --allow-root --quiet
+          # Remaining UA interior routes: fixtures mimic the public WordPress site.
+          php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=seo-audit --post_title='seo-audit' --allow-root --quiet
+          php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=performance-max --post_title='performance-max' --allow-root --quiet
+          php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=about --post_title='about' --allow-root --quiet
+          php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=portfolio --post_title='portfolio' --allow-root --quiet
+          php /tmp/wp-cli.phar post create --path="$GITHUB_WORKSPACE/preview-wp" --post_type=page --post_status=publish --post_name=contact --post_title='contact' --allow-root --quiet
           cat > "$GITHUB_WORKSPACE/preview-wp/router.php" <<'PHP'
           <?php
           $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
