@@ -1,5 +1,6 @@
 <?php
 if(!defined('ABSPATH'))exit;
+if(mrseo_locale()==='uk')require_once get_template_directory().'/inc/ua-final-interior-visuals.php';
 get_header();
 ?>
 <div class="about-page">
@@ -74,6 +75,7 @@ get_header();
       </div>
     </div>
   </section>
+  <?php if(mrseo_locale()==='uk')mrseo_render_ua_about_visual(); ?>
   <section class="about-fit" aria-labelledby="about-fit-heading">
     <div class="container">
       <div class="about-section-intro about-fit-heading">
