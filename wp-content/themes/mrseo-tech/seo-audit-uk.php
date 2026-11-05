@@ -4,6 +4,7 @@
  * Scope: /seo-audit/ only. Other routes retain existing templates.
  */
 if (!defined('ABSPATH')) exit;
+require_once get_template_directory().'/inc/ua-final-interior-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--audit" id="main-content">
@@ -61,6 +62,7 @@ get_header();
     </div>
   </section>
 
+  <?php mrseo_render_ua_final_service('seo-audit','journey'); ?>
   <section class="ukseo-decision ukaudit-diagnosis" aria-labelledby="ukaudit-diagnosis-title">
     <div class="container ukseo-decision-layout">
       <div class="ukseo-decision-copy">
@@ -98,6 +100,7 @@ get_header();
     </div>
   </section>
 
+  <?php mrseo_render_ua_final_service('seo-audit','plan'); ?>
   <section class="ukseo-delivery" aria-labelledby="ukaudit-deliver-title">
     <div class="container ukseo-delivery-grid">
       <div>
