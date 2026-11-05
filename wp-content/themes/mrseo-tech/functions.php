@@ -85,6 +85,13 @@ function mrseo_assets(){
   $ua_extra_deps=mrseo_slug()==='horoshop'?array('mrseo-ukseo-pilot','mrseo-horoshop-hero'):array('mrseo-ukseo-pilot');
   wp_enqueue_style('mrseo-uk-rest',get_template_directory_uri().'/assets/uk-service-rest.css',$ua_extra_deps,'1.0.0');
  }
+ // Eight premium illustrations on four Ukrainian service pages only.
+ // Enqueued after each page's existing base CSS to keep established layouts intact.
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('ecommerce-seo','analytics','service-websites','horoshop'),true)){
+  $ua4_deps=mrseo_slug()==='ecommerce-seo'?array('mrseo-ukcommerce'):array('mrseo-uk-rest');
+  wp_enqueue_style('mrseo-ua-four-service-visuals',
+   get_template_directory_uri().'/assets/ua-four-service-visuals.css',$ua4_deps,'1.0.0');
+ }
  if(in_array(mrseo_locale(),array('uk','ru'),true) && in_array(mrseo_slug(),array('about','portfolio','contact','web-development'),true)){
   $ua_polish_deps=mrseo_slug()==='about'?array('mrseo-about'):(mrseo_slug()==='web-development'?array('mrseo-development'):array('mrseo-style'));
   wp_enqueue_style('mrseo-uk-polish',get_template_directory_uri().'/assets/uk-interior-polish.css',$ua_polish_deps,'1.0.0');
