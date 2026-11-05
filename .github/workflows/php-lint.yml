@@ -533,6 +533,35 @@ jobs:
           assert "mrseo_privacy_form_notice()" in (root/'international-landing.php').read_text()
           assert "X-Robots-Tag: noindex, nofollow" in functions
 
+          # Four Ukraine-only service pages — eight specific illustrated scenes.
+          ua4_code=(root/'inc/ua-four-service-visuals.php').read_text()
+          ua4_css=(root/'assets/ua-four-service-visuals.css').read_text()
+          ecommerce_ua=(root/'ecommerce-uk.php').read_text()
+          uk_solution=(root/'uk-solution-page.php').read_text()
+          horoshop_ua=(root/'horoshop-uk.php').read_text()
+          for this_slug,template in (
+                  ('ecommerce-seo',ecommerce_ua),
+                  ('horoshop',horoshop_ua)):
+              for mode in ('journey','plan'):
+                  assert "mrseo_render_ua4_visual('"+this_slug+"','"+mode+"')" in template
+          for mode in ('journey','plan'):
+              assert "mrseo_render_ua4_visual($slug,'"+mode+"')" in uk_solution
+          assert "in_array($slug,array('analytics','service-websites'),true)" in uk_solution
+          assert "function mrseo_render_ua4_visual($slug,$variant)" in ua4_code
+          for slug in ('ecommerce-seo','analytics','service-websites','horoshop'):
+              assert "'"+slug+"'=>array(" in ua4_code, slug
+          assert "mrseo_locale()!=='uk'" in ua4_code
+          assert 'ua4-journey-card' in ua4_code and 'ua4-plan-step' in ua4_code
+          assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('ecommerce-seo','analytics','service-websites','horoshop'),true))" in functions
+          assert "wp_enqueue_style('mrseo-ua-four-service-visuals'" in functions
+          assert '.ua4-journey' in ua4_css and '.ua4-plan' in ua4_css
+          assert '@media(max-width:480px)' in ua4_css and 'prefers-reduced-motion' in ua4_css
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+          wp_ci=open('.github/workflows/wp-premerge-preview.yml',encoding='utf-8').read()
+          for slug in ('ecommerce-seo','analytics','service-websites','horoshop'):
+              assert '--post_name='+slug in wp_ci, ('Isolated CI page missing',slug)
+          assert 'uaFourSlugs=' in open('scripts/verify-live-eu-responsive.cjs',encoding='utf-8').read()
+
           # UA Google Ads and Web Development: four clear illustrative commercial scenes.
           commercial_php=(root/'inc/ua-commercial-visuals.php').read_text()
           commercial_css=(root/'assets/ua-commercial-visuals.css').read_text()

@@ -1,6 +1,7 @@
 <?php
 /** Ukrainian-only, problem-led SEO for online stores. Other languages unchanged. */
 if (!defined('ABSPATH')) exit;
+require_once get_template_directory().'/inc/ua-four-service-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--commerce" id="main-content">
@@ -77,6 +78,7 @@ get_header();
    ),JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_QUOT|JSON_HEX_APOS); ?></script>
   </div>
  </section>
+ <?php mrseo_render_ua4_visual('ecommerce-seo','journey'); ?>
  <section class="ukseo-work" aria-labelledby="ukcommerce-process-title">
   <div class="container">
    <div class="ukseo-section-head">
@@ -91,6 +93,7 @@ get_header();
    </ol>
   </div>
  </section>
+ <?php mrseo_render_ua4_visual('ecommerce-seo','plan'); ?>
  <section class="ukseo-delivery" aria-labelledby="ukcommerce-deliver-title">
   <div class="container ukseo-delivery-grid">
    <div><span class="ukseo-kicker">ЩО ОТРИМУЄ МАГАЗИН</span><h2 id="ukcommerce-deliver-title">Не просто SEO-тексти. <em>Керовану структуру під попит.</em></h2><p>Не кожному магазину потрібні нові сторінки. Іноді найкращий перший крок — виправити існуючі шаблони та індексацію.</p></div>

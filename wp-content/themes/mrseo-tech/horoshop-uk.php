@@ -1,6 +1,7 @@
 <?php
 /** Ukrainian-only Horoshop page with original partner hero kept verbatim. */
 if(!defined('ABSPATH'))exit;
+require_once get_template_directory().'/inc/ua-four-service-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--horoshop" id="main-content">
@@ -58,6 +59,7 @@ get_header();
   <article class="ukseo-problem-card"><div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div><h3>У Merchant Center виникають відхилення</h3><p>Ціна, наявність або атрибути у фіді не збігаються з тим, що бачить покупець у магазині.</p><div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Дані фіда, відповідність сторінкам товарів і діагностику Merchant.</strong></div></article>
  </div>
 </div></section>
+<?php mrseo_render_ua4_visual('horoshop','journey'); ?>
 <section class="ukseo-decision" aria-labelledby="ukhoroshop-choice-title"><div class="container ukseo-decision-layout">
  <div class="ukseo-decision-copy"><span class="ukseo-kicker">СПОЧАТКУ ПЕРЕВІРЯЄМО ОБМЕЖЕННЯ</span><h2 id="ukhoroshop-choice-title">Не пропонуємо рішення, <em>яке Хорошоп не дозволяє реалізувати.</em></h2>
   <p>Розділяємо задачі на ті, що можна виконати в адміністративній панелі, через доступні інтеграції або за участі підтримки платформи. Враховуємо ризики для вже індексованих сторінок.</p>
@@ -79,6 +81,7 @@ get_header();
   <li><div class="ukseo-step-index">04</div><div><h3>Перевіряємо наслідки</h3><p>Контролюємо важливі URL, помилки Merchant і вимірювання замовлень, де це стосується задачі.</p></div><strong>Результат: контроль якості та наступні рішення</strong></li>
  </ol>
 </div></section>
+<?php mrseo_render_ua4_visual('horoshop','plan'); ?>
 <section class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">
  <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p></div>
  <div class="ukseo-delivery-list">
