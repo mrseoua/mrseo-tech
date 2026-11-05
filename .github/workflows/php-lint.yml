@@ -544,6 +544,12 @@ jobs:
           assert ua_seo.index("mrseo_render_ua_seo_visual('priorities')") < ua_seo.index('ukseo-delivery')
           assert 'function mrseo_render_ua_seo_visual(' in ua_graphics
           assert 'ukseo-visual-journey' in ua_graphics and 'ukseo-visual-priority-board' in ua_graphics
+          assert 'ukseo-visual-priority-content' in ua_graphics
+          assert 'ukseo-visual-art--search' in ua_graphics and 'ukseo-visual-art--page' in ua_graphics
+          assert 'ukseo-visual-art--lead' in ua_graphics, 'Three distinct simple illustrations required'
+          assert 'ukseo-visual-priority-tasks' not in ua_graphics, 'Old crowded task dashboard must remain removed'
+          assert "'1.1.0'" in functions[functions.index("wp_enqueue_style('mrseo-ua-seo-visuals'"):][:180]
+
           assert '.ukseo .ukseo-visual-story' in ua_visual_css
           assert '@media(max-width:480px)' in ua_visual_css
           assert '@media(prefers-reduced-motion:reduce)' in ua_visual_css
