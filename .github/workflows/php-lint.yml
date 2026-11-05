@@ -555,7 +555,7 @@ jobs:
               assert 'function '+func+'(' in final_php
           for slug in ('seo-audit','performance-max'):
               assert "'"+slug+"'=>array(" in final_php
-          assert 'require_once get_template_directory().\\'/inc/ua-four-service-visuals.php\\'' in final_php
+          assert "require_once get_template_directory().'/inc/ua-four-service-visuals.php'" in final_php
           assert "in_array(mrseo_slug(),array('seo-audit','performance-max','about','portfolio','contact'),true)" in functions
           assert "wp_enqueue_style('mrseo-ua-final-interiors'" in functions
           assert '@media(max-width:480px)' in final_css
