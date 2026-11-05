@@ -547,8 +547,8 @@ jobs:
               assert "($service === '"+service+"' && $variant === '"+visual+"')" in commercial_php
           assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','journey')") < ua_ads.index('ukads-decision')
           assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','decisions')") < ua_ads.index('ukads-deliver')
-          assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('dev-capabilities')
-          assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','build')") < dev_markup.index('dev-technical')
+          assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('<section class="dev-section dev-capabilities"')
+          assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','build')") < dev_markup.index('<section class="dev-section dev-technical"')
           assert "if($dev_locale==='uk')require_once" in dev_markup
           assert "if(mrseo_locale()==='uk')require_once" in ua_ads
           assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('google-ads','web-development'),true))" in functions
