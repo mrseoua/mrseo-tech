@@ -1,0 +1,147 @@
+/* Final Ukrainian editorial sections. Loaded ONLY on UA /seo-audit/,
+/performance-max/, /about/, /portfolio/, /contact/.
+Never changes the 3D homepage, global menus, forms or foreign languages. */
+.ua4-plan-illustration--audit{
+ background:radial-gradient(circle at 45% 25%,#e2d3c39e,transparent 50%),
+ linear-gradient(145deg,#e7ebe6,#e9e4dc)}
+.ua4-plan-illustration--audit .ua4-plan-symbol{background:#617a73}
+.ua4-plan-illustration--pmax{
+ background:radial-gradient(circle at 47% 24%,#ecc7a0b0,transparent 51%),
+ linear-gradient(150deg,#f0e3d6,#e5e9e0)}
+.ua4-plan-illustration--pmax .ua4-plan-symbol{background:#b15d3d}
+
+/* Editorial band: distinct from service infographics, to avoid repetition. */
+.uaf-story{--uaf-text:#263029;--uaf-muted:#576259;--uaf-red:#b8533f;
+ background:#f5f0e9;color:var(--uaf-text);
+ padding:clamp(66px,7vw,108px) 0;border-block:1px solid #e0d7cc}
+.uaf-story *, .uaf-story *:before,.uaf-story *:after,
+.uaf-contact-guide *, .uaf-contact-guide *:before,.uaf-contact-guide *:after{box-sizing:border-box}
+.uaf-story--portfolio{background:#f1ece4}
+.uaf-eyebrow{display:block;font-size:13px;line-height:1.4;font-weight:840;
+ letter-spacing:.075em;color:#a44f3d;margin-bottom:14px}
+.uaf-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.7fr);
+ align-items:end;gap:clamp(22px,4vw,65px);margin-bottom:clamp(26px,4.5vw,45px)}
+.uaf-heading h2,.uaf-contact-guide-top h2{
+ margin:0;font-size:clamp(36px,4.4vw,61px);font-weight:830;
+ letter-spacing:-.055em;line-height:1.09;text-wrap:balance;color:#252f28}
+.uaf-heading h2 em,.uaf-contact-guide-top h2 em{font-style:normal;color:#b7513e}
+.uaf-heading>p{font-size:clamp(17px,1.5vw,19px);line-height:1.64;
+ font-weight:560;color:#59625a;margin:0 0 5px}
+.uaf-capability-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+ background:#fffefa;border:1px solid #ded6c9;border-radius:24px;
+ box-shadow:0 18px 43px #473b2a13;overflow:hidden}
+.uaf-network{position:relative;min-height:395px;padding:32px;display:grid;
+ place-items:center;overflow:hidden;
+ background:radial-gradient(circle at 50% 50%,#e5b5a25c,transparent 46%),linear-gradient(145deg,#e7e9e1,#f1e7da)}
+.uaf-network:before,.uaf-network:after{content:"";position:absolute;
+ border:2px dashed #c6b9a9;border-radius:50%;width:320px;height:320px;opacity:.72}
+.uaf-network:after{width:235px;height:235px;opacity:.46;transform:rotate(26deg)}
+.uaf-network-center{z-index:2;display:flex;flex-direction:column;align-items:center;
+ justify-content:center;gap:8px;text-align:center;width:190px;height:138px;
+ background:#fffdf9;border:1px solid #e4d0c0;border-radius:22px;
+ box-shadow:0 14px 30px #60473924}
+.uaf-network-center>span{font-size:13px;font-weight:800;letter-spacing:.035em;color:#a75843}
+.uaf-network-center strong{color:#293c30;font-size:23px;line-height:1.13;font-weight:840;max-width:145px}
+.uaf-network-satellite{position:absolute;z-index:3;display:grid;place-items:center;
+ min-width:105px;min-height:50px;padding:10px 15px;border:1px solid #ced7cb;
+ border-radius:13px;background:white;box-shadow:0 8px 16px #3c4b3716;
+ color:#355940;font-size:15px;font-weight:800}
+.uaf-network-satellite--seo{top:15%;left:9%}
+.uaf-network-satellite--ads{top:13%;right:7%;border-color:#ebc5ba;color:#a34e3e}
+.uaf-network-satellite--data{bottom:13%;left:11%}
+.uaf-network-satellite--dev{bottom:14%;right:8%;border-color:#ebc5ba;color:#a34e3e}
+.uaf-capability-copy{display:flex;flex-direction:column;align-items:flex-start;
+ justify-content:center;padding:clamp(29px,5vw,70px)}
+.uaf-capability-copy h3{font-size:clamp(30px,3vw,44px);letter-spacing:-.045em;
+ line-height:1.14;color:#263028;font-weight:830;margin:4px 0 18px}
+.uaf-capability-copy h3 em{color:#b8533e;font-style:normal}
+.uaf-capability-copy p{font-size:17px;font-weight:565;line-height:1.7;
+ color:#525e54;margin:0 0 22px}
+.uaf-capability-copy a{display:inline-flex;align-items:center;justify-content:space-between;
+ gap:22px;padding:0 0 7px;min-height:44px;
+ border-bottom:1px solid #c87967;color:#a04a39;text-decoration:none;
+ font-size:16px;font-weight:820}
+.uaf-capability-copy a:hover{color:#773524}
+.uaf-capability-copy a:focus-visible{outline:3px solid #bd644a;outline-offset:4px}
+
+/* Portfolio explanation: confident without invented performance statistics. */
+.uaf-evidence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.uaf-evidence-item{min-width:0;background:#fffefa;border:1px solid #e0d7c9;
+ border-radius:18px;padding:clamp(20px,2.5vw,30px);
+ box-shadow:0 14px 32px #59452b0d}
+.uaf-evidence-figure{width:100%;height:140px;display:flex;
+ align-items:center;justify-content:center;position:relative;
+ background:linear-gradient(140deg,#e7eee5,#f1e7df);border:1px solid #dce2d8;
+ border-radius:13px;overflow:hidden}
+.uaf-evidence-item:nth-child(2) .uaf-evidence-figure{background:linear-gradient(140deg,#ede1d7,#f2eee5)}
+.uaf-evidence-item:nth-child(3) .uaf-evidence-figure{background:linear-gradient(140deg,#e4eee5,#e8e9e3)}
+.uaf-evidence-figure>span{font-size:52px;line-height:1;letter-spacing:-.04em;
+ font-weight:820;color:#6a987a}
+.uaf-evidence-item:first-child .uaf-evidence-figure>span{font-size:43px;letter-spacing:-.075em}
+.uaf-evidence-item:nth-child(2) .uaf-evidence-figure>span{color:#c6765b}
+.uaf-evidence-figure b{position:absolute;top:18px;right:20px;
+ display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
+ background:#fff;border:1px solid #e1d9cd;color:#ae523e;font-size:19px}
+.uaf-evidence-item h3{font-size:clamp(23px,2vw,29px);font-weight:820;
+ line-height:1.2;letter-spacing:-.035em;color:#29332b;margin:20px 0 9px}
+.uaf-evidence-item p{font-size:16px;line-height:1.63;font-weight:570;
+ color:#58635a;margin:0}
+
+/* Contact: concise, no artificial hurdles before the actual form. */
+.uaf-contact-guide{color:#263129;background:#f7f3ed;
+ padding:clamp(46px,5.8vw,76px) 0;border-block:1px solid #e1d8cb}
+.uaf-contact-guide-top{display:grid;grid-template-columns:minmax(0,1fr);
+ gap:3px;margin-bottom:27px}
+.uaf-contact-guide-top h2{font-size:clamp(31px,3.2vw,46px);max-width:1050px}
+.uaf-contact-steps{list-style:none;margin:0;padding:0;display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.uaf-contact-steps li{display:grid;grid-template-columns:43px minmax(0,1fr);
+ gap:13px;align-items:start;min-width:0;
+ background:#fffefa;border:1px solid #e1d9ce;border-radius:15px;
+ padding:19px;box-shadow:0 9px 22px #543e2710}
+.uaf-contact-steps li>span{display:grid;place-items:center;width:40px;height:40px;
+ border-radius:50%;background:#f1e5dc;color:#a34c39;font-size:14px;font-weight:850}
+.uaf-contact-steps strong{display:block;color:#2b342e;
+ font-size:clamp(19px,1.8vw,23px);line-height:1.23;font-weight:820}
+.uaf-contact-steps p{font-size:15px;line-height:1.62;color:#59645a;font-weight:560;margin:7px 0 0}
+
+@media(max-width:900px){
+ .uaf-capability-card{grid-template-columns:minmax(0,1fr)}
+ .uaf-network{min-height:335px}
+ .uaf-capability-copy{padding:31px}
+ .uaf-evidence{gap:12px}
+}
+@media(max-width:780px){
+ .uaf-heading{grid-template-columns:minmax(0,1fr);gap:18px}
+ .uaf-heading>p{max-width:740px}
+ .uaf-evidence{grid-template-columns:minmax(0,1fr)}
+ .uaf-evidence-item{padding:20px}
+ .uaf-evidence-figure{height:110px}
+ .uaf-contact-steps{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:480px){
+ .uaf-story{padding:64px 0}
+ .uaf-heading h2{font-size:clamp(35px,9vw,43px)}
+ .uaf-heading>p{font-size:17px}
+ .uaf-network{min-height:320px;padding:18px}
+ .uaf-network:before{width:260px;height:260px}
+ .uaf-network:after{width:200px;height:200px}
+ .uaf-network-center{width:145px;height:115px;padding:12px}
+ .uaf-network-center strong{font-size:20px}
+ .uaf-network-center>span{font-size:11px}
+ .uaf-network-satellite{min-width:86px;min-height:44px;font-size:13px;padding:9px}
+ .uaf-network-satellite--seo{left:2%;top:10%}
+ .uaf-network-satellite--ads{right:2%;top:9%}
+ .uaf-network-satellite--data{left:2%;bottom:10%}
+ .uaf-network-satellite--dev{right:2%;bottom:10%}
+ .uaf-capability-copy{padding:25px}
+ .uaf-capability-copy h3{font-size:32px}
+ .uaf-capability-copy p{font-size:16px}
+ .uaf-contact-guide{padding:52px 0}
+ .uaf-contact-guide-top h2{font-size:clamp(30px,8vw,39px)}
+ .uaf-contact-steps li{padding:17px}
+ .uaf-contact-steps strong{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){
+ .uaf-story *, .uaf-contact-guide *{transition:none!important;animation:none!important}
+}

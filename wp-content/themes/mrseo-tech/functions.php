@@ -96,6 +96,19 @@ function mrseo_assets(){
   $ua_polish_deps=mrseo_slug()==='about'?array('mrseo-about'):(mrseo_slug()==='web-development'?array('mrseo-development'):array('mrseo-style'));
   wp_enqueue_style('mrseo-uk-polish',get_template_directory_uri().'/assets/uk-interior-polish.css',$ua_polish_deps,'1.0.0');
  }
+ // Final five Ukrainian interior pages: reuse the proven service infographic CSS
+ // on audit/PMax only; editorial layout CSS remains isolated to UA.
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('seo-audit','performance-max'),true)){
+  $ua_final_base=mrseo_slug()==='seo-audit'?'mrseo-ukaudit':'mrseo-uk-rest';
+  wp_enqueue_style('mrseo-ua-four-service-visuals',
+   get_template_directory_uri().'/assets/ua-four-service-visuals.css',array($ua_final_base),'1.0.0');
+ }
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('seo-audit','performance-max','about','portfolio','contact'),true)){
+  $ua_final_dep=in_array(mrseo_slug(),array('seo-audit','performance-max'),true)?
+   'mrseo-ua-four-service-visuals':'mrseo-uk-polish';
+  wp_enqueue_style('mrseo-ua-final-interiors',
+   get_template_directory_uri().'/assets/ua-final-interiors.css',array($ua_final_dep),'1.0.0');
+ }
  if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
   wp_enqueue_style('mrseo-ru-premium',get_template_directory_uri().'/assets/ru-premium.css',array('mrseo-ukseo-pilot'),'1.0.1');
  }
