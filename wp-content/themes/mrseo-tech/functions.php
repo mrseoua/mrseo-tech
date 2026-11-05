@@ -49,7 +49,7 @@ function mrseo_assets(){
  // Ukrainian SEO visual story pilot. Keep every other locale and homepage unchanged.
  if(mrseo_locale()==='uk' && mrseo_slug()==='seo'){
   wp_enqueue_style('mrseo-ua-seo-visuals',get_template_directory_uri().'/assets/ua-seo-visuals.css',
-   array('mrseo-ukseo-pilot'),'1.0.0');
+   array('mrseo-ukseo-pilot'),'1.1.0');
  }
  if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='seo-audit'){
   wp_enqueue_style('mrseo-ukaudit',get_template_directory_uri().'/assets/seo-audit-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
