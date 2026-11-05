@@ -5,6 +5,7 @@ require_once get_template_directory().'/inc/uk-solution-content.php';
 $slug=mrseo_slug();
 $page=mrseo_uk_solution_content($slug);
 if(!$page || mrseo_locale()!=='uk'){status_header(404);include get_404_template();return;}
+if(in_array($slug,array('analytics','service-websites'),true))require_once get_template_directory().'/inc/ua-four-service-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--solution ukseo--<?php echo esc_attr($slug);?>" id="main-content">
@@ -40,6 +41,7 @@ get_header();
    </article>
   <?php endforeach;?></div>
  </div></section>
+ <?php if(in_array($slug,array('analytics','service-websites'),true))mrseo_render_ua4_visual($slug,'journey'); ?>
  <section class="ukseo-decision" aria-labelledby="uksolution-decision-title"><div class="container ukseo-decision-layout">
   <div class="ukseo-decision-copy">
    <span class="ukseo-kicker"><?php echo esc_html($page['panelEyebrow']);?></span>
@@ -67,6 +69,7 @@ get_header();
    </li>
   <?php endforeach;?></ol>
  </div></section>
+ <?php if(in_array($slug,array('analytics','service-websites'),true))mrseo_render_ua4_visual($slug,'plan'); ?>
  <section class="ukseo-delivery" aria-labelledby="uksolution-deliver-title"><div class="container ukseo-delivery-grid">
   <div><span class="ukseo-kicker">ЩО ОТРИМУЄТЕ</span>
    <h2 id="uksolution-deliver-title"><?php echo esc_html($page['deliveryHeading'][0]);?> <em><?php echo esc_html($page['deliveryHeading'][1]);?></em></h2>
