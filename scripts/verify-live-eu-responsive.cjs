@@ -153,7 +153,7 @@ async function audit(browser,viewport,lang,slug){
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
     serviceMenuItems:document.querySelectorAll('.mrseo-mega .mrseo-mega-item[href]').length,
-    portfolioCards:document.querySelectorAll('.eu-project-card').length,
+    portfolioCards:document.querySelectorAll('.eu-project-card,.client-directory-card').length,
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
     satellites:node?.querySelectorAll(slug===''?'.lab-node':'.eu-satellite').length||0,
