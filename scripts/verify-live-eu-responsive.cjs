@@ -93,6 +93,18 @@ async function audit(browser,viewport,lang,slug){
     contactDecorativeScene:!!document.querySelector('.eu-service-scene-contact'),
     bespokeHeroArt:!!document.querySelector('.eu-service-scene .eu-viz--'+slug),
     bespokeHeroStyles:!!document.querySelector('link[href*="eu-service-scenes.css"]'),
+    uaSeoVisuals:(()=>{
+      if(lang!=='uk'||slug!=='seo')return null;
+      const journey=document.querySelector('#ukseo-journey-title');
+      const priorities=document.querySelector('#ukseo-priorities-title');
+      const stages=document.querySelectorAll('.ukseo-visual-journey > li');
+      const board=document.querySelector('.ukseo-visual-priority-board');
+      const css=!!document.querySelector('link[href*="ua-seo-visuals.css"]');
+      const rects=[journey,priorities,board].filter(Boolean).map(el=>el.getBoundingClientRect());
+      return {css,stageCount:stages.length,journey:!!journey,priorities:!!priorities,board:!!board,
+        boundariesOK:rects.length===3&&rects.every(r=>r.width>0&&r.left>=-2&&r.right<=innerWidth+2),
+        properOrder:!!journey&&!!priorities&&journey.compareDocumentPosition(priorities)&Node.DOCUMENT_POSITION_FOLLOWING};
+    })(),
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
     serviceMenuItems:document.querySelectorAll('.mrseo-mega .mrseo-mega-item[href]').length,
@@ -140,12 +152,17 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
+  if(lang==='uk'&&slug==='seo'){
+    const v=c.uaSeoVisuals;
+    if(!v||!v.css||!v.journey||!v.priorities||!v.board||v.stageCount!==3||!v.boundariesOK||!v.properOrder)
+      item.errors.push('Ukrainian SEO visual story or responsive geometry missing: '+JSON.stringify(v));
+  }
   if(!coreShard&&slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
-  if((viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
-   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
+  if((lang==='uk'&&slug==='seo') || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&slug==='seo'});
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -199,7 +216,7 @@ async function audit(browser,viewport,lang,slug){
    try{
     const selectedSlugs=coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs);
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!=='')continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&slug==='seo'))continue;
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug))continue;
      await audit(browser,viewport,lang,slug);
     }

@@ -533,6 +533,24 @@ jobs:
           assert "mrseo_privacy_form_notice()" in (root/'international-landing.php').read_text()
           assert "X-Robots-Tag: noindex, nofollow" in functions
 
+          # UA SEO: two proof-by-method illustrations, not fictitious case metrics.
+          ua_seo=(root/'seo-uk-pilot.php').read_text()
+          ua_graphics=(root/'inc/ua-seo-visuals.php').read_text()
+          ua_visual_css=(root/'assets/ua-seo-visuals.css').read_text()
+          assert "require_once get_template_directory().'/inc/ua-seo-visuals.php'" in ua_seo
+          assert "mrseo_render_ua_seo_visual('journey')" in ua_seo
+          assert "mrseo_render_ua_seo_visual('priorities')" in ua_seo
+          assert ua_seo.index("mrseo_render_ua_seo_visual('journey')") < ua_seo.index('ukseo-decision')
+          assert ua_seo.index("mrseo_render_ua_seo_visual('priorities')") < ua_seo.index('ukseo-delivery')
+          assert 'function mrseo_render_ua_seo_visual(' in ua_graphics
+          assert 'ukseo-visual-journey' in ua_graphics and 'ukseo-visual-priority-board' in ua_graphics
+          assert '.ukseo .ukseo-visual-story' in ua_visual_css
+          assert '@media(max-width:480px)' in ua_visual_css
+          assert '@media(prefers-reduced-motion:reduce)' in ua_visual_css
+          assert "if(mrseo_locale()==='uk' && mrseo_slug()==='seo')" in functions
+          assert "wp_enqueue_style('mrseo-ua-seo-visuals'" in functions
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+
           print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
 
           print('Six Poland-only commercial pages, routes, hreflang, local navigation and noindex verified')
