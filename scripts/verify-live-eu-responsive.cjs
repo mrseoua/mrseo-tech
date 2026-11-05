@@ -12,6 +12,7 @@ const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 // A full live crawl is 435+ browser views; isolated PR preview checks the critical
 // homepage/service/contact/privacy paths in all 15 markets before publication.
 const slugs=coreShard?['','seo','google-ads','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
+const uaFourSlugs=['ecommerce-seo','analytics','service-websites','horoshop'];
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -63,7 +64,7 @@ async function audit(browser,viewport,lang,slug){
     internalWidth:document.documentElement.scrollWidth,
     clientWidth:document.documentElement.clientWidth,
     viewport:innerWidth,
-    hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.ukseo-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
+    hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.ukseo-hero,.special-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
@@ -93,6 +94,20 @@ async function audit(browser,viewport,lang,slug){
     contactDecorativeScene:!!document.querySelector('.eu-service-scene-contact'),
     bespokeHeroArt:!!document.querySelector('.eu-service-scene .eu-viz--'+slug),
     bespokeHeroStyles:!!document.querySelector('link[href*="eu-service-scenes.css"]'),
+    uaFourScenes:(()=>{
+      const target=lang==='uk'&&['ecommerce-seo','analytics','service-websites','horoshop'].includes(slug);
+      const sections=[...document.querySelectorAll('.ua4-section')];
+      const style=!!document.querySelector('link[href*="ua-four-service-visuals.css"]');
+      const rects=sections.map(el=>{const r=el.getBoundingClientRect();
+        return {left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)}});
+      const headings=sections.map(el=>el.querySelector('h2')?.textContent.trim()||'');
+      const journeys=sections[0]?.querySelectorAll('.ua4-journey>li').length||0;
+      const planSteps=sections[1]?.querySelectorAll('.ua4-plan-step').length||0;
+      return {style,count:sections.length,headings,journeys,planSteps,
+        correctOrder:sections.length===2&&!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING),
+        geometry:rects.every(r=>r.left>=-2&&r.right<=innerWidth+2&&r.width>250),
+        leak:!target&&(sections.length>0||style)};
+    })(),
     uaCommercialVisuals:(()=>{
       const target=lang==='uk'&&['google-ads','web-development'].includes(slug);
       const sections=target?[...document.querySelectorAll('.ua-sv')]:[];
@@ -163,6 +178,14 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
+  if(lang==='uk'&&uaFourSlugs.includes(slug)){
+    const v=c.uaFourScenes;
+    if(!v||!v.style||v.count!==2||v.journeys!==3||v.planSteps!==3||
+        !v.correctOrder||!v.geometry||v.headings.some(h=>!h))
+      item.errors.push('UA four-service illustrated section missing/overflows: '+JSON.stringify(v));
+  }
+  if(lang!=='uk'&&c.uaFourScenes.leak)
+    item.errors.push('UA-only four-service scenes leaked into '+lang);
   if(lang==='uk'&&['google-ads','web-development'].includes(slug)){
     const v=c.uaCommercialVisuals;
     if(!v||!v.style||v.sections!==2||!v.properOrder||!v.goodGeometry||v.headings.length!==2)
@@ -180,8 +203,8 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
-  if((lang==='uk'&&['seo','google-ads','web-development'].includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
-   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development'].includes(slug)});
+  if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs].includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs].includes(slug)});
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -233,10 +256,10 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs);
+    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development'].includes(slug)))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development'].includes(slug)))continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development',...uaFourSlugs].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}
