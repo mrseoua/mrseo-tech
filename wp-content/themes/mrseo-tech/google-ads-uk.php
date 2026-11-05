@@ -1,6 +1,7 @@
 <?php
 /** Ukrainian-only premium Google Ads page. Other locales and services unchanged. */
 if (!defined('ABSPATH')) exit;
+if(mrseo_locale()==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--ads" id="main-content">
@@ -51,6 +52,7 @@ get_header();
    </div>
   </div>
  </section>
+ <?php if(mrseo_locale()==='uk')mrseo_render_ua_commercial_visual('google-ads','journey'); ?>
  <section class="ukseo-decision ukads-decision" aria-labelledby="ukads-decision-title">
   <div class="container ukseo-decision-layout">
    <div class="ukseo-decision-copy">
@@ -83,6 +85,7 @@ get_header();
    </ol>
   </div>
  </section>
+ <?php if(mrseo_locale()==='uk')mrseo_render_ua_commercial_visual('google-ads','decisions'); ?>
  <section class="ukseo-delivery" aria-labelledby="ukads-deliver-title">
   <div class="container ukseo-delivery-grid">
    <div><span class="ukseo-kicker">ЩО ОТРИМУЄ КЛІЄНТ</span><h2 id="ukads-deliver-title">Не обіцянку «дешевших кліків». <em>Контроль рекламних рішень.</em></h2><p>Не всі кампанії потрібно перезапускати, а не кожна зміна дає швидкий ефект. Визначаємо послідовність робіт із прийнятним ризиком.</p></div>

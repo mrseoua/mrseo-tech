@@ -533,6 +533,31 @@ jobs:
           assert "mrseo_privacy_form_notice()" in (root/'international-landing.php').read_text()
           assert "X-Robots-Tag: noindex, nofollow" in functions
 
+          # UA Google Ads and Web Development: four clear illustrative commercial scenes.
+          commercial_php=(root/'inc/ua-commercial-visuals.php').read_text()
+          commercial_css=(root/'assets/ua-commercial-visuals.css').read_text()
+          ua_ads=(root/'google-ads-uk.php').read_text()
+          dev_markup=(root/'development-landing.php').read_text()
+          for service,visual in (
+              ('google-ads','journey'),('google-ads','decisions'),
+              ('web-development','connections'),('web-development','build')):
+              call="mrseo_render_ua_commercial_visual('"+service+"','"+visual+"')"
+              template=ua_ads if service=='google-ads' else dev_markup
+              assert call in template, ('Missing Ukrainian service graphic',service,visual)
+              assert "($service === '"+service+"' && $variant === '"+visual+"')" in commercial_php
+          assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','journey')") < ua_ads.index('ukads-decision')
+          assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','decisions')") < ua_ads.index('ukads-deliver')
+          assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('<section class="dev-section dev-capabilities"')
+          assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','build')") < dev_markup.index('<section class="dev-section dev-technical"')
+          assert "if($dev_locale==='uk')require_once" in dev_markup
+          assert "if(mrseo_locale()==='uk')require_once" in ua_ads
+          assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('google-ads','web-development'),true))" in functions
+          assert "wp_enqueue_style('mrseo-ua-commercial-visuals'" in functions
+          assert '.ua-sv--ads-journey' in commercial_css and '.ua-sv--dev-build' in commercial_css
+          assert '@media(max-width:480px)' in commercial_css and 'prefers-reduced-motion' in commercial_css
+          assert 'mrseo_url(\'contact\')' in commercial_php
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+
           # UA SEO: two proof-by-method illustrations, not fictitious case metrics.
           ua_seo=(root/'seo-uk-pilot.php').read_text()
           ua_graphics=(root/'inc/ua-seo-visuals.php').read_text()

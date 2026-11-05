@@ -51,6 +51,12 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-ua-seo-visuals',get_template_directory_uri().'/assets/ua-seo-visuals.css',
    array('mrseo-ukseo-pilot'),'1.1.0');
  }
+ // Clear service illustrations are limited to the two Ukrainian pages.
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('google-ads','web-development'),true)){
+  $ua_visual_base=mrseo_slug()==='google-ads'?'mrseo-ukseo-pilot':'mrseo-development';
+  wp_enqueue_style('mrseo-ua-commercial-visuals',get_template_directory_uri().'/assets/ua-commercial-visuals.css',
+   array($ua_visual_base),'1.0.0');
+ }
  if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='seo-audit'){
   wp_enqueue_style('mrseo-ukaudit',get_template_directory_uri().'/assets/seo-audit-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
  }
