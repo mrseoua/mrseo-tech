@@ -1,116 +1,99 @@
 <?php
 /**
- * Ukrainian SEO service: two editorial visual explainers placed below the hero.
- * Diagrams are illustrative, not case studies, charts of actual results or
- * performance forecasts. No external assets, JS, personal data or tracking.
+ * Ukrainian SEO service — two calm, illustrated explanations.
+ * No invented client results, fake dashboards, remote assets or scripts.
  */
 if (!defined('ABSPATH')) exit;
 
 function mrseo_render_ua_seo_visual($variant) {
  if ($variant === 'journey') { ?>
- <section class="ukseo-visual-story ukseo-visual-story--journey" aria-labelledby="ukseo-journey-title">
-  <div class="container">
-   <header class="ukseo-visual-story-heading">
-    <div>
-     <span class="ukseo-kicker">ВІД ПОШУКУ ДО ЗВЕРНЕННЯ</span>
-     <h2 id="ukseo-journey-title">Людина має знайти <em>не просто сайт, а відповідь.</em></h2>
-    </div>
-    <p>Працюємо з усім маршрутом: від потреби клієнта до сторінки, яка пояснює пропозицію і веде до зрозумілої дії.</p>
-   </header>
-
-   <ol class="ukseo-visual-journey" aria-label="Схематичний шлях клієнта від пошуку до звернення">
-    <li class="ukseo-visual-stage ukseo-visual-stage--search">
-     <div class="ukseo-visual-stage-label"><b>01</b><span>ПОШУКОВИЙ ПОПИТ</span></div>
-     <div class="ukseo-visual-browser">
-      <div class="ukseo-visual-browser-bar"><span class="ukseo-visual-dots" aria-hidden="true"><i></i><i></i><i></i></span><small>ПОШУК</small></div>
-      <div class="ukseo-visual-search-line"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.7" cy="10.7" r="6.2"/><path d="m15.5 15.5 5.1 5.1"/></svg><span>Потрібна конкретна послуга</span></div>
-      <div class="ukseo-visual-serp">
-       <span class="ukseo-visual-serp-tag">ВІДПОВІДЬ НА ЗАПИТ</span>
-       <strong>Сторінка потрібної послуги</strong>
-       <small>Відповідність наміру · зрозуміла пропозиція</small>
-      </div>
-      <div class="ukseo-visual-serp ukseo-visual-serp--muted" aria-hidden="true"><i></i><i></i></div>
-     </div>
-     <p>Знаходимо запити, за якими бізнесу справді важливо бути видимим.</p>
-    </li>
-    <li class="ukseo-visual-stage ukseo-visual-stage--site">
-     <div class="ukseo-visual-stage-label"><b>02</b><span>ПОСАДКОВА СТОРІНКА</span></div>
-     <div class="ukseo-visual-browser">
-      <div class="ukseo-visual-browser-bar"><span class="ukseo-visual-dots" aria-hidden="true"><i></i><i></i><i></i></span><small>СТОРІНКА</small></div>
-      <div class="ukseo-visual-site-header"><span>ВАША ПОСЛУГА</span><span aria-hidden="true">☰</span></div>
-      <div class="ukseo-visual-site-hero">
-       <strong>Чітко про те, що потрібно клієнту</strong>
-       <small>Умови · Переваги · Довіра</small>
-       <span class="ukseo-visual-site-cta">Дізнатись умови <span aria-hidden="true">↗</span></span>
-      </div>
-      <div class="ukseo-visual-site-tiles" aria-hidden="true"><i></i><i></i><i></i></div>
-     </div>
-     <p>Покращуємо структуру й зміст, щоб сторінка відповідала наміру, а не просто містила ключові слова.</p>
-    </li>
-    <li class="ukseo-visual-stage ukseo-visual-stage--lead">
-     <div class="ukseo-visual-stage-label"><b>03</b><span>ПІДТВЕРДЖЕНА ДІЯ</span></div>
-     <div class="ukseo-visual-lead">
-      <div class="ukseo-visual-lead-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="7" y="5" width="18" height="22" rx="3"/><path d="M11 12h10M11 17h10M11 22h6"/></svg></div>
-      <span class="ukseo-visual-lead-kicker">ЦІЛЬОВА ДІЯ</span>
-      <strong>Заявка, дзвінок або замовлення</strong>
-      <div class="ukseo-visual-lead-signal"><span class="ukseo-visual-led" aria-hidden="true"></span>Подію можна перевірити</div>
-      <div class="ukseo-visual-lead-meter" aria-hidden="true"><i></i><i></i><i></i></div>
-     </div>
-     <p>Відділяємо покази й кліки від звернень, які мають значення для бізнесу.</p>
-    </li>
-   </ol>
-   <div class="ukseo-visual-disclaimer"><span aria-hidden="true">◎</span> Це схема логіки роботи, а не реальні дані клієнта чи обіцянка кількості звернень.</div>
+<section class="ukseo-visual-story ukseo-visual-story--journey" aria-labelledby="ukseo-journey-title">
+ <div class="container">
+  <div class="ukseo-visual-story-heading">
+   <div><span class="ukseo-kicker">ЯК ПРАЦЮЄ SEO</span><h2 id="ukseo-journey-title">Від пошуку до звернення. <em>Без зайвих складнощів.</em></h2></div>
+   <p>Допомагаємо людині знайти саме вашу пропозицію, зрозуміти її та зробити наступний крок.</p>
   </div>
- </section>
- <?php return; }
+  <ol class="ukseo-visual-journey" aria-label="Схематичний шлях від пошуку до звернення">
+   <li class="ukseo-visual-stage">
+    <span class="ukseo-visual-stage-label">01 / ПОШУК</span>
+    <div class="ukseo-visual-art ukseo-visual-art--search" aria-hidden="true">
+     <div class="ukseo-visual-search-bar">
+      <svg viewBox="0 0 24 24" focusable="false"><circle cx="10.5" cy="10.5" r="6.2"/><path d="m15 15 5.5 5.5"/></svg>
+      <span>Потрібна послуга</span>
+     </div>
+     <div class="ukseo-visual-search-result">
+      <span>ЗНАЙДЕНА ВІДПОВІДЬ</span>
+      <strong>Ваша послуга</strong>
+      <i></i><i></i>
+     </div>
+    </div>
+    <h3>Вас знаходять</h3>
+    <p>Працюємо із запитами ваших потенційних клієнтів.</p>
+   </li>
+   <li class="ukseo-visual-stage">
+    <span class="ukseo-visual-stage-label">02 / СТОРІНКА</span>
+    <div class="ukseo-visual-art ukseo-visual-art--page" aria-hidden="true">
+     <div class="ukseo-visual-page-bar"><i></i><i></i><i></i><span></span></div>
+     <div class="ukseo-visual-page-content">
+      <strong>Те, що шукав клієнт</strong>
+      <span class="ukseo-visual-page-line"></span><span class="ukseo-visual-page-line short"></span>
+      <span class="ukseo-visual-page-button">Дізнатися більше <b>↗</b></span>
+     </div>
+    </div>
+    <h3>Розуміють пропозицію</h3>
+    <p>Сторінка відповідає на запитання й допомагає обрати.</p>
+   </li>
+   <li class="ukseo-visual-stage">
+    <span class="ukseo-visual-stage-label">03 / ЗВЕРНЕННЯ</span>
+    <div class="ukseo-visual-art ukseo-visual-art--lead" aria-hidden="true">
+     <div class="ukseo-visual-lead-icon">
+      <svg viewBox="0 0 64 64" focusable="false"><rect x="11" y="15" width="42" height="34" rx="7"/><path d="m14 21 18 16 18-16"/></svg>
+      <span class="ukseo-visual-lead-check">✓</span>
+     </div>
+     <strong>Заявка надіслана</strong>
+     <span class="ukseo-visual-lead-caption">Приклад цільової дії</span>
+    </div>
+    <h3>Можуть звернутися</h3>
+    <p>Робимо шлях до заявки зрозумілим і перевірюваним.</p>
+   </li>
+  </ol>
+  <p class="ukseo-visual-disclaimer">Схема ілюструє підхід, а не результати конкретного проєкту.</p>
+ </div>
+</section>
+<?php return; }
 
  if ($variant === 'priorities') { ?>
- <section class="ukseo-visual-story ukseo-visual-story--priorities" aria-labelledby="ukseo-priorities-title">
-  <div class="container">
-   <header class="ukseo-visual-story-heading">
-    <div>
-     <span class="ukseo-kicker">ЯК ВИЗНАЧАЄМО ПРІОРИТЕТИ</span>
-     <h2 id="ukseo-priorities-title">Не всі зміни однаково важливі. <em>Починаємо з обґрунтованих.</em></h2>
-    </div>
-    <p>Красиві графіки не замінять рішення. Пояснюємо, що перевіряємо, чому це важливо для пошукового попиту і за якою ознакою приймемо роботу.</p>
-   </header>
-   <div class="ukseo-visual-priority-board">
-    <div class="ukseo-visual-priority-top">
-     <span><span class="ukseo-visual-led" aria-hidden="true"></span> КАРТА РІШЕНЬ / ПРИКЛАД</span>
-     <span>Проблема → дія → перевірка</span>
-    </div>
-    <div class="ukseo-visual-priority-layout">
-     <div class="ukseo-visual-priority-tasks">
-      <div class="ukseo-visual-task">
-       <div class="ukseo-visual-task-top"><span>01 / ТЕХНІЧНИЙ БАР'ЄР</span><span class="ukseo-visual-task-marker">ПЕРШИЙ КРОК</span></div>
-       <strong>Важлива сторінка недоступна для індексації</strong>
-       <p>Перевірити причину, усунути обмеження, проконтролювати доступність.</p>
-       <div class="ukseo-visual-task-trace"><span></span><span></span><span></span><span></span></div>
-      </div>
-      <div class="ukseo-visual-task">
-       <div class="ukseo-visual-task-top"><span>02 / ВТРАЧЕНИЙ ПОПИТ</span><span class="ukseo-visual-task-marker">ПІСЛЯ ОЦІНКИ</span></div>
-       <strong>Немає сторінки для важливого запиту</strong>
-       <p>Підтвердити попит, визначити посадкову сторінку, узгодити структуру.</p>
-       <div class="ukseo-visual-task-trace"><span></span><span></span><span></span><span></span></div>
-      </div>
-      <div class="ukseo-visual-task">
-       <div class="ukseo-visual-task-top"><span>03 / КОНТРОЛЬ ДІЇ</span><span class="ukseo-visual-task-marker">ПЕРЕВІРКА</span></div>
-       <strong>Звернення не вимірюється належним чином</strong>
-       <p>Перевірити подію, підтвердження відправлення та якість даних.</p>
-       <div class="ukseo-visual-task-trace"><span></span><span></span><span></span><span></span></div>
-      </div>
-     </div>
-     <aside class="ukseo-visual-priority-aside" aria-label="Критерії виконаної роботи">
-      <span class="ukseo-visual-aside-kicker">ЩО ВВАЖАЄМО РОБОТОЮ</span>
-      <div class="ukseo-visual-review-step"><span class="ukseo-visual-review-symbol">✓</span><div><strong>Причину підтверджено</strong><p>Не лише припущення, а перевірені сигнали.</p></div></div>
-      <div class="ukseo-visual-review-step"><span class="ukseo-visual-review-symbol">↗</span><div><strong>Зміну впроваджено</strong><p>Конкретна правка або погоджене завдання.</p></div></div>
-      <div class="ukseo-visual-review-step"><span class="ukseo-visual-review-symbol">◎</span><div><strong>Ефект перевіряємо</strong><p>Покази, кліки, індексація та звернення за потреби.</p></div></div>
-      <div class="ukseo-visual-review-foot">Рішення мають бути прозорими для бізнесу.</div>
-     </aside>
-    </div>
-   </div>
-   <div class="ukseo-visual-disclaimer"><span aria-hidden="true">◎</span> Показано приклад формату пріоритизації. Послідовність у реальному проєкті визначаємо після діагностики.</div>
+<section class="ukseo-visual-story ukseo-visual-story--priorities" aria-labelledby="ukseo-priorities-title">
+ <div class="container">
+  <div class="ukseo-visual-story-heading">
+   <div><span class="ukseo-kicker">ЩО ОТРИМУЄ БІЗНЕС</span><h2 id="ukseo-priorities-title">Не сотня зауважень. <em>Зрозумілий план дій.</em></h2></div>
+   <p>Ви знаєте, що заважає сайту, що робитимемо спочатку та як перевіримо зміни.</p>
   </div>
- </section>
- <?php }
+  <div class="ukseo-visual-priority-board">
+   <div class="ukseo-visual-priority-illustration" aria-hidden="true">
+    <div class="ukseo-visual-plan-sheet">
+     <div class="ukseo-visual-plan-header">
+      <span class="ukseo-visual-plan-mark">✳</span>
+      <span>ПЛАН ДЛЯ САЙТУ</span>
+     </div>
+     <div class="ukseo-visual-plan-row"><span>✓</span><i></i></div>
+     <div class="ukseo-visual-plan-row"><span>✓</span><i></i></div>
+     <div class="ukseo-visual-plan-row"><span>✓</span><i></i></div>
+    </div>
+    <div class="ukseo-visual-plan-flair"><svg viewBox="0 0 80 80" focusable="false"><circle cx="33" cy="33" r="18"/><path d="m47 47 20 20"/></svg></div>
+   </div>
+   <div class="ukseo-visual-priority-content">
+    <span class="ukseo-visual-priority-eyebrow">ТРИ РЕЧІ, ЯКІ БУДУТЬ ЗРОЗУМІЛІ</span>
+    <div class="ukseo-visual-priority-steps">
+     <div class="ukseo-visual-priority-step"><span class="ukseo-visual-step-num">01</span><div><strong>Де проблема</strong><p>Знаходимо причину, а не здогадуємося.</p></div></div>
+     <div class="ukseo-visual-priority-step"><span class="ukseo-visual-step-num">02</span><div><strong>Що виправимо</strong><p>Узгоджуємо найважливіші зміни.</p></div></div>
+     <div class="ukseo-visual-priority-step"><span class="ukseo-visual-step-num">03</span><div><strong>Як перевіримо</strong><p>Оцінюємо, що змінилося після роботи.</p></div></div>
+    </div>
+    <a class="ukseo-visual-priority-link" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити мій сайт <span aria-hidden="true">↗</span></a>
+   </div>
+  </div>
+  <p class="ukseo-visual-disclaimer">Ілюстрація процесу. Обсяг робіт визначаємо після перевірки сайту.</p>
+ </div>
+</section>
+<?php }
 }

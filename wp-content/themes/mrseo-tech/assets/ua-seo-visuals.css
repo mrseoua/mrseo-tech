@@ -1,126 +1,178 @@
-/* Ukraine-only SEO visual explainers, below the existing hero.
-   Scoped to .ukseo, no external assets/JS, no invented client results. */
-.ukseo .ukseo-visual-story{padding:clamp(78px,8.5vw,126px) 0;position:relative;overflow:hidden}
-.ukseo .ukseo-visual-story--journey{background:#eee9e0;border-top:1px solid #dcd5c9;border-bottom:1px solid #dcd5c9}
-.ukseo .ukseo-visual-story--priorities{background:#f8f5ef;border-top:1px solid #dfd8cd;border-bottom:1px solid #dfd8cd}
-.ukseo .ukseo-visual-story-heading{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.65fr);align-items:end;gap:clamp(24px,5vw,70px);margin-bottom:clamp(28px,4vw,49px)}
-.ukseo .ukseo-visual-story-heading h2{max-width:930px;margin:0}
-.ukseo .ukseo-visual-story-heading p{max-width:440px;font-size:18px;line-height:1.7;font-weight:560;color:#505b51;margin:0 0 5px}
-.ukseo .ukseo-visual-journey{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.5vw,24px);padding:0;margin:0;counter-reset:none}
-.ukseo .ukseo-visual-stage{position:relative;min-width:0;display:flex;flex-direction:column;gap:0;border:1px solid #d9d1c4;border-radius:18px;background:#fffdf8;padding:clamp(17px,2vw,26px);box-shadow:0 15px 35px #3c382b0b}
-.ukseo .ukseo-visual-stage--site{background:#f3f1ea}
-.ukseo .ukseo-visual-stage-label{min-height:34px;display:flex;align-items:center;gap:12px;padding-bottom:18px;color:#755c4d;font-size:12px;font-weight:850;letter-spacing:.075em}
-.ukseo .ukseo-visual-stage-label b{display:grid;place-items:center;width:32px;height:32px;flex:none;border:1px solid #cbb5a8;background:#f7ebe1;color:#ad553c;border-radius:50%;font-size:12px}
-.ukseo .ukseo-visual-stage-label span{line-height:1.35}
-.ukseo .ukseo-visual-stage>p{margin:19px 0 0;font-size:16px;line-height:1.64;font-weight:575;color:#576159}
-.ukseo .ukseo-visual-browser{height:265px;min-height:265px;display:flex;flex-direction:column;gap:0;border-radius:12px;border:1px solid #cdd5ce;background:white;box-shadow:0 10px 21px #1c35211a;overflow:hidden}
-.ukseo .ukseo-visual-browser-bar{display:flex;gap:8px;justify-content:space-between;align-items:center;height:32px;min-height:32px;padding:0 14px;border-bottom:1px solid #e4e7df;background:#f4f5f0}
-.ukseo .ukseo-visual-browser-bar small{color:#7c837d;font-size:10px;letter-spacing:.09em;font-weight:800}
-.ukseo .ukseo-visual-dots{display:flex;gap:5px}
-.ukseo .ukseo-visual-dots i{width:7px;height:7px;background:#c3cdc2;border-radius:50%}
-.ukseo .ukseo-visual-dots i:first-child{background:#d99680}
-.ukseo .ukseo-visual-search-line{display:flex;align-items:center;gap:9px;min-height:45px;border:1px solid #d5ded4;border-radius:25px;margin:14px 13px 11px;padding:0 13px;background:#fff}
-.ukseo .ukseo-visual-search-line svg{flex:0 0 18px;width:18px;height:18px;stroke:#7e9283;fill:none;stroke-width:1.9;stroke-linecap:round}
-.ukseo .ukseo-visual-search-line>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:640;color:#526358}
-.ukseo .ukseo-visual-serp{margin:0 13px 9px;background:#edf4ec;padding:12px 13px;border-radius:8px;border:1px solid #bddac1}
-.ukseo .ukseo-visual-serp-tag{display:block;font-size:10px;letter-spacing:.07em;color:#467353;font-weight:850;margin-bottom:7px}
-.ukseo .ukseo-visual-serp strong{display:block;font-size:15px;line-height:1.2;color:#244b37;font-weight:810;margin-bottom:5px}
-.ukseo .ukseo-visual-serp small{font-size:11px;line-height:1.4;color:#597463;font-weight:650}
-.ukseo .ukseo-visual-serp--muted{border:0;background:#f2f3f0;padding:9px 13px;margin-top:auto;margin-bottom:12px}
-.ukseo .ukseo-visual-serp--muted i{display:block;height:6px;border-radius:4px;background:#d4dcd4;width:78%}
-.ukseo .ukseo-visual-serp--muted i+i{margin-top:6px;width:51%}
-.ukseo .ukseo-visual-site-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 15px;color:#37483e;font-size:11px;font-weight:880;letter-spacing:.045em}
-.ukseo .ukseo-visual-site-header span:last-child{font-size:17px}
-.ukseo .ukseo-visual-site-hero{display:flex;flex-direction:column;align-items:flex-start;flex:1;background:linear-gradient(138deg,#eee8db,#e4e6db);padding:18px 15px}
-.ukseo .ukseo-visual-site-hero strong{font-size:18px;font-weight:850;line-height:1.18;letter-spacing:-.025em;max-width:210px}
-.ukseo .ukseo-visual-site-hero small{display:block;font-size:11px;line-height:1.4;color:#59665b;font-weight:700;margin-top:9px}
-.ukseo .ukseo-visual-site-cta{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:9px 12px;border-radius:30px;background:#c14c39;color:#fff;font-size:11px;font-weight:780;min-width:160px}
-.ukseo .ukseo-visual-site-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:11px 12px}
-.ukseo .ukseo-visual-site-tiles i{height:24px;border-radius:5px;background:#e5ebe3}
-.ukseo .ukseo-visual-site-tiles i:nth-child(2){background:#e8e0d5}
-.ukseo .ukseo-visual-lead{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;justify-content:center;height:265px;min-height:265px;border-radius:12px;background:radial-gradient(circle at 50% 12%,#426b5588,#22382c 75%),#22382c;border:1px solid #5b816c;color:#f3f4ec;box-shadow:0 10px 21px #223e2a24}
-.ukseo .ukseo-visual-lead-icon{display:grid;place-items:center;width:68px;height:68px;border:1px solid #b5d4b5;border-radius:18px;background:#afdfb01b}
-.ukseo .ukseo-visual-lead-icon svg{height:35px;width:35px;stroke:#c9e8cd;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.ukseo .ukseo-visual-lead-kicker{color:#c0d8bf;font-size:11px;letter-spacing:.1em;font-weight:850}
-.ukseo .ukseo-visual-lead strong{font-size:clamp(16px,1.3vw,19px);line-height:1.35;max-width:210px}
-.ukseo .ukseo-visual-lead-signal{display:flex;align-items:center;gap:8px;background:#e1f6e619;color:#e4f2e3;border-radius:20px;padding:8px 12px;font-size:12px;font-weight:750}
-.ukseo .ukseo-visual-led{display:inline-block;height:9px;width:9px;border-radius:50%;background:#9cdeaa;box-shadow:0 0 0 4px #a0e6af1c,0 0 15px #9cdeaa7a;flex:none;animation:ukseo-pulse 4s ease-in-out infinite}
-.ukseo .ukseo-visual-lead-meter{display:flex;justify-content:center;gap:7px;margin-top:2px}
-.ukseo .ukseo-visual-lead-meter i{height:4px;width:25px;border-radius:5px;background:#8fbfa0}
-.ukseo .ukseo-visual-lead-meter i:nth-child(2){background:#c9e0c4}
-.ukseo .ukseo-visual-lead-meter i:nth-child(3){background:#779e8a}
-.ukseo .ukseo-visual-stage:not(:last-child)::after{
- content:"↗";position:absolute;z-index:3;right:-17px;top:50%;display:grid;place-items:center;
- width:32px;height:32px;border-radius:50%;background:#c14c39;color:white;
- font-size:18px;font-weight:800;border:4px solid #eee9e0;transform:translateY(-50%);
- box-sizing:border-box;
+/* UA SEO / Clear editorial visuals — only /seo/. No mock performance metrics. */
+.ukseo .ukseo-visual-story{
+ --uv-paper:#f8f5ef;--uv-ink:#222922;--uv-muted:#566058;--uv-red:#bb503b;
+ padding:clamp(76px,7vw,112px) 0;
+ position:relative;overflow:clip;
 }
-.ukseo .ukseo-visual-disclaimer{display:flex;align-items:flex-start;gap:10px;margin:18px 0 0;color:#696b60;font-size:13px;font-weight:620;line-height:1.55}
-.ukseo .ukseo-visual-disclaimer>span{color:#b4543d;font-size:18px;line-height:1.1}
+.ukseo .ukseo-visual-story--journey{background:#f0ebe3;border-block:1px solid #ddd5c9}
+.ukseo .ukseo-visual-story--priorities{background:#faf7f1;border-block:1px solid #e3ddd1}
+.ukseo .ukseo-visual-story-heading{
+ display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.65fr);
+ align-items:end;gap:clamp(24px,5vw,72px);margin:0 0 clamp(26px,4.5vw,48px);
+}
+.ukseo .ukseo-visual-story-heading h2{max-width:840px;margin:0}
+.ukseo .ukseo-visual-story-heading p{
+ font-size:clamp(17px,1.5vw,19px);line-height:1.65;font-weight:570;
+ color:var(--uv-muted);margin:0 0 4px;max-width:430px;
+}
+/* A simple visual journey with readable illustrations and one takeaway per stage. */
+.ukseo .ukseo-visual-journey{
+ list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:clamp(14px,1.6vw,23px);margin:0;padding:0;
+}
+.ukseo .ukseo-visual-stage{
+ min-width:0;position:relative;background:#fffdf9;border:1px solid #ddd5c9;
+ border-radius:20px;padding:clamp(18px,2.4vw,29px);
+ box-shadow:0 13px 32px #4b3a250c;
+}
+.ukseo .ukseo-visual-stage:nth-child(2){background:#f8f5ee}
+.ukseo .ukseo-visual-stage-label{
+ display:block;font-size:13px;letter-spacing:.055em;font-weight:820;
+ color:#9d503c;margin:0 0 18px;line-height:1.3;
+}
+.ukseo .ukseo-visual-art{
+ position:relative;display:flex;flex-direction:column;
+ justify-content:center;min-width:0;height:224px;padding:22px;
+ background:#f1f1e9;border:1px solid #e0e3d9;border-radius:14px;overflow:hidden;
+}
+.ukseo .ukseo-visual-art--search{background:linear-gradient(155deg,#e8efe9,#f4f6f0)}
+.ukseo .ukseo-visual-search-bar{
+ display:flex;align-items:center;gap:12px;height:54px;padding:0 16px;
+ background:white;border:1px solid #c7d7c8;border-radius:30px;
+ box-shadow:0 8px 18px #234c3c16;
+}
+.ukseo .ukseo-visual-search-bar svg{flex:0 0 23px;width:23px;height:23px;fill:none;stroke:#73927d;stroke-width:2;stroke-linecap:round}
+.ukseo .ukseo-visual-search-bar span{font-size:15px;font-weight:720;color:#364d3e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ukseo .ukseo-visual-search-result{
+ display:flex;flex-direction:column;gap:9px;margin-top:13px;background:#fff;
+ border:1px solid #b5d0ba;border-left:4px solid #7cad86;border-radius:9px;
+ padding:16px;box-shadow:0 8px 18px #234c3c12;
+}
+.ukseo .ukseo-visual-search-result>span{font-size:12px;letter-spacing:.045em;color:#4d8460;font-weight:820}
+.ukseo .ukseo-visual-search-result strong{font-size:20px;color:#293a2e;font-weight:850;line-height:1.12}
+.ukseo .ukseo-visual-search-result i{display:block;height:5px;border-radius:6px;background:#dce7dc;width:88%}
+.ukseo .ukseo-visual-search-result i:last-child{width:62%}
+.ukseo .ukseo-visual-art--page{background:linear-gradient(160deg,#ebe7df,#e9e4da)}
+.ukseo .ukseo-visual-page-bar{height:32px;display:flex;align-items:center;gap:6px;padding:0 13px;background:#fff;border-radius:11px 11px 0 0;border:1px solid #dfd9cd;border-bottom:0}
+.ukseo .ukseo-visual-page-bar i{width:7px;height:7px;background:#d6d1c5;border-radius:50%}
+.ukseo .ukseo-visual-page-bar i:first-child{background:#c98670}
+.ukseo .ukseo-visual-page-bar>span{height:7px;width:30%;border-radius:5px;background:#e9ebe4;margin-left:auto}
+.ukseo .ukseo-visual-page-content{
+ display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:140px;
+ padding:18px;background:white;border:1px solid #dfd9cd;border-top:0;border-radius:0 0 11px 11px;
+ box-shadow:0 8px 18px #584c3214;
+}
+.ukseo .ukseo-visual-page-content>strong{font-size:20px;line-height:1.12;max-width:240px;font-weight:850;color:#343b33}
+.ukseo .ukseo-visual-page-line{display:block;height:5px;width:82%;border-radius:6px;background:#d9dfd4}
+.ukseo .ukseo-visual-page-line.short{width:58%}
+.ukseo .ukseo-visual-page-button{display:flex;align-items:center;gap:16px;margin-top:auto;background:var(--uv-red);color:#fff;padding:10px 15px;border-radius:25px;font-size:14px;line-height:1.3;font-weight:750}
+.ukseo .ukseo-visual-page-button b{font-size:18px;line-height:1}
+.ukseo .ukseo-visual-art--lead{
+ align-items:center;text-align:center;gap:10px;
+ background:radial-gradient(circle at 50% 22%,#476757,#24382d 78%);border-color:#426552;color:white;
+}
+.ukseo .ukseo-visual-lead-icon{position:relative;display:grid;place-items:center;width:82px;height:82px;border-radius:22px;border:1px solid #9dc7a9;background:#ffffff10;margin-bottom:4px}
+.ukseo .ukseo-visual-lead-icon>svg{width:49px;height:49px;stroke:#e2f1e4;stroke-width:2.3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ukseo .ukseo-visual-lead-check{
+ position:absolute;right:-9px;top:-9px;display:grid;place-items:center;width:28px;height:28px;
+ border-radius:50%;background:#bde5b9;border:3px solid #294334;color:#255536;font-size:16px;font-weight:900;
+}
+.ukseo .ukseo-visual-art--lead>strong{font-size:22px;font-weight:800;line-height:1.25;color:white}
+.ukseo .ukseo-visual-lead-caption{font-size:14px;color:#cde0d0;font-weight:630}
+.ukseo .ukseo-visual-stage h3{font-size:clamp(23px,2vw,29px);font-weight:820;line-height:1.23;letter-spacing:-.036em;margin:23px 0 10px;color:#262c27}
+.ukseo .ukseo-visual-stage>p{font-size:17px;font-weight:560;line-height:1.62;color:#515b52;margin:0;max-width:350px}
+.ukseo .ukseo-visual-stage:not(:last-child):after{
+ content:"→";position:absolute;z-index:2;right:-19px;top:47%;width:36px;height:36px;
+ display:grid;place-items:center;border-radius:50%;border:4px solid #f0ebe3;
+ background:#bd533c;color:white;font-size:20px;font-weight:800;line-height:1;
+}
+.ukseo .ukseo-visual-disclaimer{margin:18px 0 0;font-size:14px;line-height:1.6;font-weight:580;color:#666c62}
 
-/* Priority board is visually distinct: editorial strategy board instead of cards. */
-.ukseo .ukseo-visual-priority-board{overflow:hidden;background:#202923;border:1px solid #46574a;color:#f5f1e9;border-radius:19px;box-shadow:0 27px 62px #22291d28}
-.ukseo .ukseo-visual-priority-top{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid #4c594e;padding:17px clamp(18px,2.5vw,32px);color:#dfc6b8;font-size:12px;font-weight:850;letter-spacing:.075em;line-height:1.5}
-.ukseo .ukseo-visual-priority-top span:first-child{display:flex;gap:11px;align-items:center}
-.ukseo .ukseo-visual-priority-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.74fr);gap:0}
-.ukseo .ukseo-visual-priority-tasks{display:flex;flex-direction:column;gap:12px;padding:clamp(17px,2.5vw,32px);min-width:0}
-.ukseo .ukseo-visual-task{padding:17px 21px 18px;border:1px solid #637467;background:#2c3930;border-radius:12px;transition:transform .2s,background .2s}
-.ukseo .ukseo-visual-task:hover{transform:translateX(3px);background:#344437}
-.ukseo .ukseo-visual-task:first-child{background:#3b4032;border-color:#ab8066}
-.ukseo .ukseo-visual-task-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#e4c8b8;font-size:11px;font-weight:820;letter-spacing:.06em;line-height:1.4;margin-bottom:10px}
-.ukseo .ukseo-visual-task-marker{color:#f5ceac;border:1px solid #9b836a;background:#9b836a23;border-radius:20px;padding:5px 8px;text-align:right;letter-spacing:0;font-size:10px;white-space:nowrap}
-.ukseo .ukseo-visual-task strong{display:block;color:#fff8ee;font-size:clamp(18px,1.7vw,23px);font-weight:800;line-height:1.28;letter-spacing:-.025em}
-.ukseo .ukseo-visual-task p{font-size:14px;line-height:1.55;font-weight:590;color:#d4ded5;margin:10px 0 13px}
-.ukseo .ukseo-visual-task-trace{display:flex;align-items:center;gap:6px}
-.ukseo .ukseo-visual-task-trace span{height:4px;max-width:55px;flex:1;border-radius:4px;background:#718373}
-.ukseo .ukseo-visual-task-trace span:first-child{background:#d6a482}
-.ukseo .ukseo-visual-task-trace span:nth-child(2){background:#b3cbb5}
-.ukseo .ukseo-visual-priority-aside{position:relative;display:flex;flex-direction:column;gap:0;border-left:1px solid #4c594e;background:linear-gradient(155deg,#26362d,#1c2923);padding:clamp(21px,2.7vw,37px)}
-.ukseo .ukseo-visual-aside-kicker{font-size:12px;line-height:1.4;letter-spacing:.065em;color:#e3c4b0;font-weight:850;margin:0 0 23px}
-.ukseo .ukseo-visual-review-step{position:relative;display:flex;align-items:flex-start;gap:13px;padding:0 0 27px}
-.ukseo .ukseo-visual-review-step:not(:last-of-type)::after{content:"";position:absolute;top:36px;bottom:4px;left:17px;border-left:1px dashed #a0bbaa80}
-.ukseo .ukseo-visual-review-symbol{position:relative;display:grid;place-items:center;flex:0 0 36px;height:36px;border:1px solid #9eb7a2;background:#395343;border-radius:11px;color:#e2f9e6;font-size:18px;font-weight:800;z-index:1}
-.ukseo .ukseo-visual-review-step strong{display:block;color:#f8f4eb;font-size:16px;line-height:1.35;font-weight:780}
-.ukseo .ukseo-visual-review-step p{font-size:13px;color:#c6d1c5;line-height:1.65;font-weight:560;margin:6px 0 0}
-.ukseo .ukseo-visual-review-foot{margin-top:auto;border-top:1px solid #59705e;padding-top:18px;color:#d2dfd2;font-size:14px;font-weight:690;line-height:1.5}
-@keyframes ukseo-pulse{50%{box-shadow:0 0 0 7px #a0e6af0d,0 0 22px #9cdeaa9c}}
+/* The second illustration is intentionally different: one clean illustrated
+   work plan, rather than a second dashboard made of many tiny cards. */
+.ukseo .ukseo-visual-priority-board{
+ display:grid;grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);
+ border:1px solid #d8d1c4;border-radius:22px;background:#fffdf8;
+ box-shadow:0 22px 50px #453b2812;overflow:hidden;min-width:0;
+}
+.ukseo .ukseo-visual-priority-illustration{
+ position:relative;display:grid;place-items:center;min-height:442px;padding:42px;
+ background:radial-gradient(circle at 45% 30%,#f0cab685,transparent 46%),linear-gradient(155deg,#efe5dc,#e3e5dc);
+ overflow:hidden;
+}
+.ukseo .ukseo-visual-priority-illustration:before{
+ content:"";position:absolute;inset:12% 18%;border:2px dashed #d2b8a9;border-radius:50%;transform:scale(1.1);
+}
+.ukseo .ukseo-visual-plan-sheet{
+ position:relative;z-index:1;width:min(100%,330px);
+ padding:28px 27px 32px;border-radius:16px;background:white;
+ border:1px solid #e8dfd4;box-shadow:0 22px 43px #443c2b25;
+ transform:rotate(-3deg);
+}
+.ukseo .ukseo-visual-plan-header{display:flex;align-items:center;gap:13px;padding-bottom:22px;margin-bottom:8px;border-bottom:1px solid #e8e4dc;color:#4c574e;font-size:16px;font-weight:840;letter-spacing:.025em}
+.ukseo .ukseo-visual-plan-mark{font-size:31px;font-weight:600;color:#b95641;line-height:1}
+.ukseo .ukseo-visual-plan-row{height:57px;display:flex;align-items:center;gap:17px;border-bottom:1px solid #eeeae3}
+.ukseo .ukseo-visual-plan-row>span{display:grid;place-items:center;flex:none;width:29px;height:29px;border-radius:50%;background:#e7f1e8;color:#3d8760;font-size:18px;font-weight:850}
+.ukseo .ukseo-visual-plan-row>i{display:block;height:9px;flex:1;max-width:204px;border-radius:7px;background:#e1e6dd}
+.ukseo .ukseo-visual-plan-row:nth-child(3)>i{max-width:139px}
+.ukseo .ukseo-visual-plan-row:nth-child(4)>i{max-width:172px}
+.ukseo .ukseo-visual-plan-flair{position:absolute;z-index:2;bottom:16%;right:12%;width:83px;height:83px;background:#b95641;border:5px solid #efe3d8;border-radius:23px;display:grid;place-items:center;box-shadow:0 12px 22px #723c342e;transform:rotate(9deg)}
+.ukseo .ukseo-visual-plan-flair svg{height:43px;width:43px;fill:none;stroke:#fff6ec;stroke-width:3.5;stroke-linecap:round}
+.ukseo .ukseo-visual-priority-content{display:flex;flex-direction:column;justify-content:center;gap:25px;padding:clamp(28px,4.6vw,67px)}
+.ukseo .ukseo-visual-priority-eyebrow{font-size:13px;line-height:1.4;font-weight:860;letter-spacing:.06em;color:#a4513c}
+.ukseo .ukseo-visual-priority-steps{display:flex;flex-direction:column;gap:0}
+.ukseo .ukseo-visual-priority-step{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:start;gap:16px;padding:18px 0;border-bottom:1px solid #e7e2d8}
+.ukseo .ukseo-visual-priority-step:first-child{padding-top:0}
+.ukseo .ukseo-visual-step-num{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f3e6dd;color:#a65340;font-size:14px;font-weight:850}
+.ukseo .ukseo-visual-priority-step strong{display:block;color:#252d26;font-size:clamp(22px,1.9vw,28px);font-weight:820;letter-spacing:-.036em;line-height:1.2}
+.ukseo .ukseo-visual-priority-step p{color:#535d53;font-size:16px;line-height:1.6;font-weight:570;margin:8px 0 0}
+.ukseo .ukseo-visual-priority-link{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;align-self:flex-start;color:#9e4636;font-size:16px;font-weight:800;text-decoration:none;border-bottom:1px solid #ba6c54;padding:0 0 7px;min-height:44px}
+.ukseo .ukseo-visual-priority-link:hover{color:#6c2e23}
+.ukseo .ukseo-visual-priority-link:focus-visible{outline:3px solid #c65b43;outline-offset:5px}
 
-/* Tablet: diagrams may reflow, but never overflow the viewport. */
-@media(max-width:1040px){
- .ukseo .ukseo-visual-journey{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
- .ukseo .ukseo-visual-stage{padding:14px}
- .ukseo .ukseo-visual-stage-label{gap:8px;letter-spacing:.03em}
- .ukseo .ukseo-visual-browser{height:254px;min-height:254px}
- .ukseo .ukseo-visual-lead{height:254px;min-height:254px}
- .ukseo .ukseo-visual-priority-layout{grid-template-columns:minmax(0,1.35fr) minmax(240px,.8fr)}
+@media(max-width:1080px){
+ .ukseo .ukseo-visual-art{height:210px;padding:17px}
+ .ukseo .ukseo-visual-stage{padding:17px}
+ .ukseo .ukseo-visual-search-result{padding:12px}
+ .ukseo .ukseo-visual-search-result strong{font-size:18px}
+ .ukseo .ukseo-visual-priority-illustration{min-height:414px;padding:24px}
 }
 @media(max-width:780px){
- .ukseo .ukseo-visual-story-heading{grid-template-columns:minmax(0,1fr);gap:19px}
- .ukseo .ukseo-visual-story-heading p{max-width:660px}
- .ukseo .ukseo-visual-journey{grid-template-columns:minmax(0,1fr);gap:25px}
- .ukseo .ukseo-visual-stage{padding:22px;max-width:none}
- .ukseo .ukseo-visual-stage::after{content:"↓"!important;top:auto!important;bottom:-26px!important;left:calc(50% - 16px)!important;right:auto!important;transform:none!important}
- .ukseo .ukseo-visual-stage:last-child::after{display:none!important}
- .ukseo .ukseo-visual-browser,.ukseo .ukseo-visual-lead{height:255px;min-height:255px}
- .ukseo .ukseo-visual-priority-layout{grid-template-columns:minmax(0,1fr)}
- .ukseo .ukseo-visual-priority-aside{border-left:0;border-top:1px solid #4c594e}
- .ukseo .ukseo-visual-priority-top{align-items:flex-start;flex-direction:column;gap:4px}
- .ukseo .ukseo-visual-review-step{padding-bottom:23px}
+ .ukseo .ukseo-visual-story-heading{grid-template-columns:1fr;gap:18px}
+ .ukseo .ukseo-visual-story-heading p{max-width:650px}
+ .ukseo .ukseo-visual-journey{grid-template-columns:1fr;gap:26px}
+ .ukseo .ukseo-visual-stage{padding:23px}
+ .ukseo .ukseo-visual-stage:not(:last-child):after{content:"↓";right:auto;left:calc(50% - 18px);top:auto;bottom:-28px}
+ .ukseo .ukseo-visual-art{height:225px;max-width:100%}
+ .ukseo .ukseo-visual-priority-board{grid-template-columns:1fr}
+ .ukseo .ukseo-visual-priority-illustration{min-height:310px;padding:30px}
+ .ukseo .ukseo-visual-plan-sheet{max-width:280px;padding:18px 24px}
+ .ukseo .ukseo-visual-plan-row{height:46px}
+ .ukseo .ukseo-visual-plan-flair{width:65px;height:65px;bottom:12%;right:20%}
+ .ukseo .ukseo-visual-plan-flair svg{width:31px;height:31px}
+ .ukseo .ukseo-visual-priority-content{padding:32px}
 }
 @media(max-width:480px){
- .ukseo .ukseo-visual-story{padding:72px 0}
+ .ukseo .ukseo-visual-story{padding:68px 0}
  .ukseo .ukseo-visual-story-heading p{font-size:17px}
- .ukseo .ukseo-visual-stage{padding:16px;border-radius:15px}
- .ukseo .ukseo-visual-stage>p{font-size:15px}
- .ukseo .ukseo-visual-priority-top{font-size:11px}
- .ukseo .ukseo-visual-task{padding:16px}
- .ukseo .ukseo-visual-task-top{align-items:flex-start;flex-wrap:wrap;gap:7px}
- .ukseo .ukseo-visual-task strong{font-size:19px}
- .ukseo .ukseo-visual-priority-aside{padding:22px}
- .ukseo .ukseo-visual-disclaimer{font-size:12px}
+ .ukseo .ukseo-visual-stage{padding:18px;border-radius:17px}
+ .ukseo .ukseo-visual-art{height:220px;padding:16px}
+ .ukseo .ukseo-visual-stage>p{font-size:16px}
+ .ukseo .ukseo-visual-stage h3{font-size:25px}
+ .ukseo .ukseo-visual-search-bar{padding:0 12px}
+ .ukseo .ukseo-visual-search-bar span{font-size:14px}
+ .ukseo .ukseo-visual-search-result{padding:12px}
+ .ukseo .ukseo-visual-page-content{padding:16px}
+ .ukseo .ukseo-visual-priority-illustration{min-height:278px;padding:24px}
+ .ukseo .ukseo-visual-plan-sheet{max-width:240px;padding:16px 20px}
+ .ukseo .ukseo-visual-plan-header{font-size:14px;padding-bottom:15px}
+ .ukseo .ukseo-visual-plan-mark{font-size:25px}
+ .ukseo .ukseo-visual-priority-content{padding:27px 22px}
+ .ukseo .ukseo-visual-priority-step{grid-template-columns:39px minmax(0,1fr);gap:13px}
+ .ukseo .ukseo-visual-step-num{height:36px;width:36px}
+ .ukseo .ukseo-visual-priority-step strong{font-size:23px}
+ .ukseo .ukseo-visual-priority-link{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){
- .ukseo .ukseo-visual-led{animation:none}
- .ukseo .ukseo-visual-task{transition:none}
- .ukseo .ukseo-visual-task:hover{transform:none}
+ .ukseo .ukseo-visual-priority-link{transition:none}
 }
