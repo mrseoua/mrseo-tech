@@ -93,7 +93,7 @@ function mrseo_assets(){
  }
  // Illustrated services retain their own existing graphics.
  // Ecommerce SEO now uses its interactive catalog laboratory instead of both extra scenes.
- if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('analytics','service-websites','horoshop'),true)){
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('analytics','service-websites'),true)){
   wp_enqueue_style('mrseo-ua-four-service-visuals',
    get_template_directory_uri().'/assets/ua-four-service-visuals.css',array('mrseo-uk-rest'),'1.0.0');
  }
@@ -126,6 +126,21 @@ function mrseo_assets(){
   );
   wp_enqueue_style('mrseo-ua-seo-compact',get_template_directory_uri().'/assets/ua-seo-compact.css',
    array($ua_seo_compact_deps[mrseo_slug()]),'1.0.0');
+ }
+ // Existing UA service pages have reduced narrative repetition and page-scoped typography.
+ if(mrseo_locale()==='uk'){
+  $ua_compact_slug=mrseo_slug();
+  $ua_compact_dep=null;
+  if(in_array($ua_compact_slug,array('performance-max','analytics','service-websites'),true))
+   $ua_compact_dep='mrseo-uk-rest';
+  elseif($ua_compact_slug==='horoshop')$ua_compact_dep='mrseo-horoshop-hero';
+  elseif($ua_compact_slug==='web-development')$ua_compact_dep='mrseo-development';
+  elseif(function_exists('mrseo_new_service_route') && mrseo_new_service_route())
+   $ua_compact_dep='mrseo-new-services';
+  if($ua_compact_dep){
+   wp_enqueue_style('mrseo-ua-services-compact',get_template_directory_uri().'/assets/ua-services-compact.css',
+    array($ua_compact_dep),'1.0.0');
+  }
  }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
