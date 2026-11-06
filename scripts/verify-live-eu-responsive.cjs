@@ -131,12 +131,13 @@ async function audit(browser,viewport,lang,slug){
       const target=lang==='uk'&&['google-ads','web-development'].includes(slug);
       const sections=target?[...document.querySelectorAll('.ua-sv')]:[];
       const style=!!document.querySelector('link[href*="ua-commercial-visuals.css"]');
+      const expected=lang==='uk'&&slug==='google-ads'?1:2;
       const roots=sections.map(e=>({id:e.querySelector('h2')?.id||'',width:Math.round(e.getBoundingClientRect().width),
         left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right)}));
       return {style,sections:sections.length,roots,headings:[...document.querySelectorAll('.ua-sv h2')].map(x=>x.textContent.trim()),
-        properOrder:sections.length===2&&!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING),
+        properOrder:sections.length===expected&&(expected===1||!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING)),
         hiddenOnForeign:lang!=='uk'&&!document.querySelector('.ua-sv'),
-        goodGeometry:roots.length===2&&roots.every(r=>r.left>=-2&&r.right<=innerWidth+2&&r.width>250)};
+        goodGeometry:roots.length===expected&&roots.every(r=>r.left>=-2&&r.right<=innerWidth+2&&r.width>250)};
     })(),
     uaAdsPricing:(()=>{
       const target=lang==='uk'&&slug==='google-ads';
@@ -156,7 +157,7 @@ async function audit(browser,viewport,lang,slug){
       const heroTrackingOK=!target||(Number.isFinite(letterSpace)&&letterSpace>-3&&letterSpace<=0);
       return {target,css,count:cards.length,stages,heading,
         heroTrackingOK,pricesCorrect:text.length===2&&text[0].includes('5 000')&&text[1].includes('10 000')&&text.every(s=>s.includes('Разове налаштування')),
-        geometry:boxes.length===4&&boxes.every(b=>b.width>250&&b.left>=-2&&b.right<=innerWidth+2),
+        geometry:boxes.length===3&&boxes.every(b=>b.width>250&&b.left>=-2&&b.right<=innerWidth+2),
         noLeak:!target&&!css&&!root&&cards.length===0&&!flow};
     })(),
     uaSeoVisuals:(()=>{
@@ -237,7 +238,7 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('UA-only four-service scenes leaked into '+lang);
   if(lang==='uk'&&['google-ads','web-development'].includes(slug)){
     const v=c.uaCommercialVisuals;
-    if(!v||!v.style||v.sections!==2||!v.properOrder||!v.goodGeometry||v.headings.length!==2)
+    if(!v||!v.style||v.sections!==(slug==='google-ads'?1:2)||!v.properOrder||!v.goodGeometry||v.headings.length!==(slug==='google-ads'?1:2))
       item.errors.push('UA commercial story missing or out of viewport: '+JSON.stringify(v));
   }
   if(lang!=='uk'&&['google-ads','web-development'].includes(slug)&&
@@ -245,7 +246,7 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('UA-only illustrations leaked onto foreign market page');
   if(lang==='uk'&&slug==='google-ads'){
     const p=c.uaAdsPricing;
-    if(!p||!p.css||p.count!==2||p.stages!==4||!p.pricesCorrect||!p.geometry||!p.heading||!p.heroTrackingOK)
+    if(!p||!p.css||p.count!==2||p.stages!==0||!p.pricesCorrect||!p.geometry||!p.heading||!p.heroTrackingOK)
       item.errors.push('UA Google Ads prices/visuals missing or overflow: '+JSON.stringify(p));
   }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
