@@ -112,6 +112,10 @@ function mrseo_assets(){
  if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
   wp_enqueue_style('mrseo-ru-premium',get_template_directory_uri().'/assets/ru-premium.css',array('mrseo-ukseo-pilot'),'1.0.1');
  }
+ // Reuse approved illustration styling only for the four matching Russian routes.
+ if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('ecommerce-seo','analytics','service-websites','horoshop'),true)){
+  wp_enqueue_style('mrseo-ru-four-service-visuals',get_template_directory_uri().'/assets/ua-four-service-visuals.css',array('mrseo-ru-premium'),'1.0.0');
+ }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.1.0');
