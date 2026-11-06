@@ -1,0 +1,373 @@
+/*
+ * MrSeo.tech — only the Ukrainian /google-ads/ post-hero redesign.
+ * No hero or home page selectors. CSS3D where useful, motion-safe and responsive.
+ */
+.ukseo--ads .ukseo-cases{padding:clamp(64px,6.6vw,94px) 0}
+.ukseo--ads .ukseo-cases .ukseo-section-head{margin-bottom:28px}
+.ukseo--ads .ukseo-problem-card{
+ min-height:315px;position:relative;isolation:isolate;overflow:hidden;
+ border-color:#d8d2c8;box-shadow:0 17px 35px #3429230d;
+ transition:transform .35s ease,box-shadow .35s ease;
+}
+.ukseo--ads .ukseo-problem-card:before{
+ content:"";position:absolute;top:-70px;right:-68px;width:170px;height:170px;
+ border:1px solid #b99e8f66;border-radius:35px;transform:rotate(-18deg) skewY(9deg);
+ background:linear-gradient(135deg,#eadad15e,#ffffff10);
+ pointer-events:none;animation:ukads-ring-float 12s ease-in-out infinite;
+}
+.ukseo--ads .ukseo-problem-card:nth-child(2):before{transform:rotate(16deg);animation-delay:-4s}
+.ukseo--ads .ukseo-problem-card:nth-child(3):before{animation-delay:-7s}
+.ukseo--ads .ukseo-problem-card:hover{
+ transform:translateY(-5px);box-shadow:0 25px 42px #34292316;
+}
+.ukseo--ads .ukseo-card-number{margin-bottom:28px;position:relative;z-index:1}
+.ukseo--ads .ukseo-card-number span{
+ display:grid;place-items:center;width:47px;height:47px;border-radius:15px;
+ border:1px solid #cfb3a2;background:#f2e4dc;color:#a95241;
+ box-shadow:4px 6px 0 #e0cbbd85;transform:rotate(-10deg);
+}
+.ukseo--ads .ukseo-problem-card h3{position:relative;z-index:1;font-size:clamp(24px,2.1vw,30px)}
+.ukseo--ads .ukseo-problem-card>p{font-size:16px;line-height:1.52;position:relative;z-index:1;margin-bottom:20px}
+.ukseo--ads .ukseo-card-diagnosis{position:relative;z-index:1;padding-top:13px}
+.ukseo--ads .ukseo-card-diagnosis strong{font-size:15px;line-height:1.45}
+.ukseo--ads .ua-sv--ads-journey{padding:clamp(58px,5.8vw,82px) 0}
+.ukseo--ads .ua-sv--ads-journey .ua-sv-heading{margin-bottom:29px}
+.ukseo--ads .ua-sv--ads-journey .ua-sv-art{height:210px}
+.ukseo--ads .ua-sv--ads-journey .ua-sv-step h3{margin-top:18px}
+.ukseo--ads .ua-sv--ads-journey .ua-sv-note{margin-top:14px}
+
+/* Price area is a functional commercial explanation, not a dark SaaS dashboard. */
+.ukseo--ads .ukads-pricing{
+ position:relative;overflow:hidden;padding:clamp(74px,7vw,106px) 0;
+ background:radial-gradient(ellipse at 13% 1%,#e4c4b45e,transparent 46%),
+ linear-gradient(150deg,#faf6ed,#eae7df 87%);
+ border-block:1px solid #e0d6ca;
+}
+.ukseo--ads .ukads-pricing:before{
+ content:"";position:absolute;z-index:0;left:-120px;bottom:13%;width:290px;height:290px;
+ border:1px solid #bb8c7961;border-radius:50%;pointer-events:none;
+ box-shadow:0 0 0 48px #c69d8e16,0 0 0 96px #c69d8e10;
+ transform:rotateX(55deg);
+}
+.ukseo--ads .ukads-pricing>.container{position:relative;z-index:1}
+.ukseo--ads .ukads-pricing-heading{margin-bottom:36px}
+.ukseo--ads .ukads-pricing .ukseo-section-head h2{max-width:770px}
+.ukseo--ads .ukads-price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;perspective:1600px}
+.ukseo--ads .ukads-price-card{
+ position:relative;isolation:isolate;min-width:0;display:flex;flex-direction:column;
+ padding:clamp(23px,3vw,44px);overflow:hidden;border-radius:26px;
+ background:linear-gradient(150deg,#fffefa,#f5f2eb 80%);border:1px solid #d9cec0;
+ box-shadow:0 22px 48px #45392b21,0 2px 0 #ffffffba inset;
+ transition:transform .38s cubic-bezier(.18,.68,.26,1),box-shadow .38s ease;
+}
+.ukseo--ads .ukads-price-card--commerce{
+ background:linear-gradient(152deg,#f3f3ea,#e6e9de 85%);border-color:#b8c4b5;
+}
+.ukseo--ads .ukads-price-card:hover{
+ transform:translateY(-7px) rotateX(1deg);
+ box-shadow:0 31px 62px #45392b29;
+}
+.ukseo--ads .ukads-price-top{
+ display:flex;align-items:center;justify-content:space-between;gap:14px;
+ font-weight:850;font-size:12px;line-height:1.45;letter-spacing:.1em;color:#94513f;
+}
+.ukseo--ads .ukads-price-top span:last-child{
+ display:grid;place-items:center;width:32px;height:32px;border:1px solid #c6a693;
+ border-radius:50%;font-size:19px;font-weight:700;letter-spacing:0;color:#a04b3a;
+}
+.ukseo--ads .ukads-price-glyph{
+ position:relative;isolation:isolate;height:170px;margin:15px -9px 12px;
+ display:flex;align-items:center;justify-content:center;
+ perspective:780px;transform-style:preserve-3d;
+}
+.ukseo--ads .ukads-price-glyph:before{
+ content:"";position:absolute;left:50%;top:50%;width:250px;height:136px;
+ border:1px dashed #c6957d88;border-radius:50%;
+ transform:translate(-50%,-50%) rotateX(66deg);animation:ukads-orbit 25s linear infinite;
+}
+.ukseo--ads .ukads-price-glyph:after{
+ content:"";position:absolute;z-index:-1;left:50%;top:60%;width:205px;height:70px;
+ transform:translate(-50%,-50%);border-radius:50%;
+ background:#c1b4a742;filter:blur(20px);
+}
+.ukseo--ads .ukads-price-planet{
+ position:relative;z-index:2;display:grid;place-items:center;width:112px;height:100px;
+ border-radius:26px;background:linear-gradient(150deg,#fdf7ee,#d7ded2);
+ border:1px solid #b6c1b1;color:#a34d3a;font-size:62px;font-weight:720;
+ line-height:1;box-shadow:11px 14px 0 #a2b2a258,19px 26px 28px #3c493a39;
+ transform:rotateY(-15deg) rotateX(12deg);
+ animation:ukads-glyph-float 8.5s ease-in-out infinite;
+}
+.ukseo--ads .ukads-price-planet--commerce{
+ color:#3f6b52;background:linear-gradient(145deg,#f2eee4,#c3d4c5);
+ border-color:#9bb59e;animation-delay:-4s;
+}
+.ukseo--ads .ukads-price-chip{
+ position:absolute;z-index:3;display:block;border:1px solid #dacaba;
+ border-radius:13px;background:#fffdfaeb;box-shadow:0 12px 22px #473f352a;
+ padding:10px 13px;font-size:14px;font-weight:790;white-space:nowrap;
+ color:#28382d;animation:ukads-chip-float 7s ease-in-out infinite;
+}
+.ukseo--ads .ukads-price-chip--one{top:22px;left:8%;transform:rotate(-6deg)}
+.ukseo--ads .ukads-price-chip--two{right:6%;bottom:20px;animation-delay:-3.2s}
+.ukseo--ads .ukads-price-path{
+ position:absolute;z-index:1;height:3px;width:67%;top:55%;
+ background:linear-gradient(90deg,#bc684e,#e2b9a0,#658f76);border-radius:5px;
+ box-shadow:0 4px 11px #9e8b7544;transform:rotate(-8deg);
+}
+.ukseo--ads .ukads-price-card h3{
+ font-size:clamp(30px,3.15vw,46px);line-height:1.07;letter-spacing:-.053em;
+ margin:8px 0 12px;color:#29342c;font-weight:840;
+}
+.ukseo--ads .ukads-price-lead{
+ font-size:17px;line-height:1.58;font-weight:560;color:#566359;min-height:54px;
+ margin:0 0 18px;max-width:490px;
+}
+.ukseo--ads .ukads-price-cost{
+ display:flex;flex-direction:column;align-items:flex-start;gap:7px;
+ padding:18px 0 16px;border-top:1px solid #d9d5ca;
+}
+.ukseo--ads .ukads-price-cost>span{
+ color:#94503d;font-size:12px;font-weight:850;letter-spacing:.07em;
+}
+.ukseo--ads .ukads-price-cost strong{
+ color:#222d27;font-size:clamp(45px,4.6vw,68px);font-weight:850;
+ line-height:1;letter-spacing:-.065em;white-space:nowrap;font-variant-numeric:tabular-nums;
+}
+.ukseo--ads .ukads-price-cost small{
+ color:#536156;font-size:clamp(16px,1.8vw,22px);font-weight:750;letter-spacing:-.02em;
+}
+.ukseo--ads .ukads-price-setup{
+ display:flex;justify-content:space-between;gap:9px;align-items:baseline;flex-wrap:wrap;
+ font-size:15px;line-height:1.45;color:#556055;font-weight:650;
+ padding-bottom:17px;border-bottom:1px solid #d9d5ca;
+}
+.ukseo--ads .ukads-price-setup strong{color:#a34d3a;font-size:17px;font-weight:830;white-space:nowrap}
+.ukseo--ads .ukads-price-card ul{
+ list-style:none;padding:17px 0 0;margin:0 0 25px;
+ display:flex;flex-direction:column;gap:12px;
+}
+.ukseo--ads .ukads-price-card li{
+ display:flex;align-items:flex-start;gap:11px;
+ color:#36453a;font-size:16px;line-height:1.47;font-weight:620;
+}
+.ukseo--ads .ukads-price-card li:before{
+ content:"✓";font-size:13px;font-weight:900;
+ flex:0 0 21px;display:grid;place-items:center;margin-top:2px;
+ width:21px;height:21px;border-radius:50%;background:#e1e9dc;color:#466c50;
+}
+.ukseo--ads .ukads-price-link{
+ display:flex;align-items:center;justify-content:space-between;gap:15px;
+ min-height:52px;margin-top:auto;padding:13px 19px;border-radius:30px;
+ color:#fff;background:#29372e;text-decoration:none;font-size:16px;font-weight:790;
+ transition:background .2s,transform .2s;
+}
+.ukseo--ads .ukads-price-link span{font-size:21px;line-height:1}
+.ukseo--ads .ukads-price-link:hover{background:#af523e;transform:translateY(-2px)}
+.ukseo--ads .ukads-pricing-footer{
+ display:flex;align-items:center;gap:24px;margin:29px 0 0;
+ padding:21px 25px;background:#fffaf0cb;border:1px solid #dbd5c9;
+ border-radius:19px;box-shadow:0 10px 21px #5343330c;
+}
+.ukseo--ads .ukads-budget-coin{
+ flex:0 0 65px;display:grid;place-items:center;width:65px;height:65px;
+ border:1px solid #e6c3ad;border-radius:50%;background:#f7e7da;
+ box-shadow:6px 7px 0 #b37c5a42;
+ animation:ukads-coin-float 8s ease-in-out infinite;
+}
+.ukseo--ads .ukads-budget-coin span{font-size:35px;font-weight:780;color:#a9513f}
+.ukseo--ads .ukads-pricing-footer strong{
+ display:block;color:#27382c;font-size:18px;line-height:1.4;font-weight:830;
+}
+.ukseo--ads .ukads-pricing-footer p{
+ color:#566158;margin:6px 0 0;font-size:15px;line-height:1.56;font-weight:570;
+}
+
+/* Four distinct floating platforms turn the process into a visible progression. */
+.ukseo--ads .ukseo-work.ukads-decision{
+ background:#f8f6f0;padding:clamp(62px,6.4vw,96px) 0 clamp(35px,4.5vw,66px);
+}
+.ukseo--ads .ukads-steps li{
+ grid-template-columns:58px minmax(0,1.15fr) minmax(150px,.62fr);
+ gap:18px;padding:20px 5px;
+}
+.ukseo--ads .ukads-steps h3{font-size:clamp(22px,2.2vw,28px);margin-bottom:4px}
+.ukseo--ads .ukads-steps p{font-size:16px;line-height:1.48}
+.ukseo--ads .ukads-steps li>strong{font-size:15px;line-height:1.48}
+.ukseo--ads .ukads-flow-plate{
+ --flow-ink:#2b3b30;
+ position:relative;isolation:isolate;display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;
+ min-height:268px;align-items:center;padding:37px clamp(20px,3.5vw,52px);
+ margin-top:36px;overflow:hidden;perspective:900px;
+ border-radius:24px;border:1px solid #c3c9bd;
+ background:radial-gradient(ellipse at 48% 24%,#e9d2bfaa,transparent 61%),
+ linear-gradient(155deg,#e2e9df,#f0ede4);
+}
+.ukseo--ads .ukads-flow-plate:before{
+ content:"";position:absolute;inset:0;opacity:.46;
+ background-image:linear-gradient(#8ba19428 1px,transparent 1px),linear-gradient(90deg,#8ba19428 1px,transparent 1px);
+ background-size:33px 33px;pointer-events:none;
+}
+.ukseo--ads .ukads-flow-track{
+ position:absolute;z-index:1;left:10%;right:10%;top:50%;height:3px;
+ background:linear-gradient(90deg,#b25c44,#e0b398,#6c987c);
+ transform:translateY(-50%);box-shadow:0 5px 8px #3c4a3766;
+}
+.ukseo--ads .ukads-flow-node{
+ position:relative;z-index:2;min-width:0;display:flex;flex-direction:column;gap:10px;
+ justify-content:space-between;min-height:158px;
+ border-radius:16px;padding:18px 15px;color:var(--flow-ink);
+ background:linear-gradient(152deg,#fffefa,#eaece5);
+ border:1px solid #b6c5b7;box-shadow:8px 14px 0 #8d9e8a66,12px 21px 27px #3f4f3b37;
+ transform:rotateX(8deg) rotateY(-8deg) translateZ(15px);
+ animation:ukads-step-rise 8s ease-in-out infinite;
+}
+.ukseo--ads .ukads-flow-node:nth-child(3){animation-delay:-2s}
+.ukseo--ads .ukads-flow-node:nth-child(4){animation-delay:-4s}
+.ukseo--ads .ukads-flow-node:nth-child(5){animation-delay:-6s}
+.ukseo--ads .ukads-flow-node>span{
+ color:#ad5945;font-size:12px;font-weight:850;letter-spacing:.08em;
+}
+.ukseo--ads .ukads-flow-node strong{
+ font-size:clamp(19px,2.2vw,30px);line-height:1.14;font-weight:840;letter-spacing:-.04em;
+}
+.ukseo--ads .ukads-flow-node b{
+ align-self:flex-end;font-size:30px;font-weight:590;color:#a54d39;line-height:1;
+}
+.ukseo--ads .ua-sv--ads-decisions{padding:clamp(58px,5.8vw,85px) 0}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-heading{margin-bottom:25px}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-spotlight-art{min-height:375px}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-note{margin-top:14px}
+.ukseo--ads .ukseo-delivery.ukads-deliver{padding:clamp(69px,6.7vw,96px) 0 clamp(30px,3vw,48px)}
+.ukseo--ads .ukads-deliver .ukseo-delivery-list>div{padding:20px 0}
+.ukseo--ads .ukads-deliver .ukseo-delivery-list h3{font-size:clamp(23px,2.4vw,31px)}
+.ukseo--ads .ukads-deliver .ukseo-delivery-list p{font-size:16px}
+.ukseo--ads .ua3-scene--deliverables{min-height:370px}
+.ukseo--ads .ua3-scene--deliverables .ua3-art{min-height:370px}
+.ukseo--ads .ua3-scene--deliverables .ua3-copy{padding-top:31px;padding-bottom:31px}
+.ukseo--ads .ua3-scene--deliverables .ua3-copy h3{font-size:clamp(29px,3vw,40px)}
+.ukseo--ads .ua3-scene--deliverables .ua3-copy p{font-size:16px;line-height:1.56}
+.ukseo--ads .ukseo-faq{padding:clamp(68px,6.6vw,98px) 0}
+.ukseo--ads .ukseo-faq-grid>div:first-child{position:relative;min-height:240px}
+.ukseo--ads .ukseo-faq-grid>div:first-child:after{
+ content:"";position:absolute;left:35px;bottom:0;width:105px;height:105px;
+ border-radius:28px;background:linear-gradient(135deg,#f5dfce,#cfdfd3);
+ box-shadow:11px 12px 0 #b7c6b68f,19px 24px 22px #4a534531;
+ border:1px solid #cbb9aa;transform:rotateX(16deg) rotateY(-23deg) rotateZ(8deg);
+ animation:ukads-glyph-float 9s ease-in-out infinite;
+}
+.ukseo--ads .ukseo-faq-grid>div:first-child:before{
+ content:"?";position:absolute;z-index:1;left:67px;bottom:19px;
+ font-size:68px;font-weight:830;color:#ac5742;line-height:1;
+ pointer-events:none;
+}
+.ukseo--ads .ukseo-faq-items details>p{font-size:16px;line-height:1.6}
+.ukseo--ads .ukseo-faq-items summary{min-height:74px}
+.ukseo--ads .ukseo-final.ukads-final{padding:clamp(63px,6vw,93px) 0}
+.ukseo--ads .ukads-final-action{
+ display:flex;flex-direction:column;align-items:center;gap:29px;flex:none;
+}
+.ukseo--ads .ukads-final-seal{
+ width:163px;height:130px;border-radius:24px;
+ display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+ padding:16px 17px;gap:5px 8px;text-align:center;
+ border:1px solid #d9bfab;background:linear-gradient(130deg,#fff5e9,#d8e0d4);
+ box-shadow:9px 12px 0 #7f947e69,17px 22px 30px #081f0d3b;
+ transform:rotate(-5deg) rotateY(-8deg);
+ animation:ukads-coin-float 8s ease-in-out infinite;
+}
+.ukseo--ads .ukads-final-seal span{font-size:12px;font-weight:850;letter-spacing:.05em;color:#3d5946}
+.ukseo--ads .ukads-final-seal strong{color:#a54c3c;font-size:27px}
+.ukseo--ads .ukads-final-seal i{flex:0 0 100%;font-size:36px;color:#5a8965;font-style:normal;line-height:1}
+@keyframes ukads-ring-float{
+ 0%,100%{translate:0 0;opacity:.7}50%{translate:-8px 12px;opacity:1}
+}
+@keyframes ukads-orbit{
+ to{transform:translate(-50%,-50%) rotateX(66deg) rotate(360deg)}
+}
+@keyframes ukads-glyph-float{
+ 0%,100%{transform:translateY(4px) rotateY(-15deg) rotateX(12deg)}
+ 50%{transform:translateY(-8px) rotateY(8deg) rotateX(4deg)}
+}
+@keyframes ukads-chip-float{
+ 0%,100%{translate:0 4px}50%{translate:0 -9px}
+}
+@keyframes ukads-coin-float{
+ 0%,100%{translate:0 4px;rotate:-3deg}50%{translate:0 -9px;rotate:2deg}
+}
+@keyframes ukads-step-rise{
+ 0%,100%{transform:translateY(4px) rotateX(8deg) rotateY(-8deg) translateZ(15px)}
+ 50%{transform:translateY(-9px) rotateX(-2deg) rotateY(5deg) translateZ(26px)}
+}
+@media(max-width:950px){
+ .ukseo--ads .ukads-price-card{padding:26px}
+ .ukseo--ads .ukads-price-card h3{font-size:34px}
+ .ukseo--ads .ukads-price-chip--one{left:0}
+ .ukseo--ads .ukads-price-chip--two{right:0}
+ .ukseo--ads .ukads-steps li{grid-template-columns:46px minmax(0,1fr)}
+ .ukseo--ads .ukads-steps li>strong{grid-column:2}
+}
+@media(max-width:780px){
+ .ukseo--ads .ukseo-problem-card{min-height:0}
+ .ukseo--ads .ukads-price-grid{grid-template-columns:1fr;gap:18px}
+ .ukseo--ads .ukads-price-card{padding:31px;max-width:680px;width:100%;margin-inline:auto}
+ .ukseo--ads .ukads-price-glyph{height:160px}
+ .ukseo--ads .ukads-price-cost strong{font-size:58px}
+ .ukseo--ads .ukads-price-lead{min-height:0}
+ .ukseo--ads .ukads-flow-plate{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;min-height:0;padding:30px}
+ .ukseo--ads .ukads-flow-track{display:none}
+ .ukseo--ads .ukads-flow-node{min-height:134px}
+ .ukseo--ads .ukads-deliver .ukseo-delivery-grid{gap:25px}
+ .ukseo--ads .ua3-scene--deliverables .ua3-art{min-height:340px}
+ .ukseo--ads .ukseo-faq-grid>div:first-child{min-height:0;padding-bottom:0}
+ .ukseo--ads .ukseo-faq-grid>div:first-child:after,.ukseo--ads .ukseo-faq-grid>div:first-child:before{display:none}
+ .ukseo--ads .ukads-final-action{flex-direction:row;align-items:center}
+ .ukseo--ads .ukads-final-seal{width:110px;height:98px;gap:4px;padding:11px;flex:none}
+ .ukseo--ads .ukads-final-seal span{font-size:10px}
+ .ukseo--ads .ukads-final-seal strong{font-size:20px}
+ .ukseo--ads .ukads-final-seal i{font-size:24px}
+}
+@media(max-width:480px){
+ .ukseo--ads .ukseo-cases{padding:65px 0}
+ .ukseo--ads .ukseo-card-number{margin-bottom:19px}
+ .ukseo--ads .ukseo-problem-card{padding:23px}
+ .ukseo--ads .ua-sv--ads-journey{padding:60px 0}
+ .ukseo--ads .ukads-pricing{padding:66px 0}
+ .ukseo--ads .ukads-pricing-heading{margin-bottom:26px}
+ .ukseo--ads .ukads-price-card{padding:22px;border-radius:20px}
+ .ukseo--ads .ukads-price-glyph{height:132px;margin:11px -8px 8px}
+ .ukseo--ads .ukads-price-planet{width:93px;height:86px;font-size:53px}
+ .ukseo--ads .ukads-price-chip{font-size:12px;padding:8px 9px}
+ .ukseo--ads .ukads-price-chip--one{top:12px}
+ .ukseo--ads .ukads-price-chip--two{bottom:8px}
+ .ukseo--ads .ukads-price-card h3{font-size:32px}
+ .ukseo--ads .ukads-price-lead{font-size:16px}
+ .ukseo--ads .ukads-price-cost strong{font-size:clamp(39px,10.5vw,49px)}
+ .ukseo--ads .ukads-price-cost small{font-size:16px}
+ .ukseo--ads .ukads-price-setup{font-size:14px}
+ .ukseo--ads .ukads-price-card li{font-size:15px}
+ .ukseo--ads .ukads-price-link{font-size:15px}
+ .ukseo--ads .ukads-pricing-footer{padding:17px 16px;align-items:flex-start;gap:14px}
+ .ukseo--ads .ukads-pricing-footer strong{font-size:16px}
+ .ukseo--ads .ukads-pricing-footer p{font-size:14px}
+ .ukseo--ads .ukads-budget-coin{width:47px;height:47px;flex-basis:47px}
+ .ukseo--ads .ukads-budget-coin span{font-size:27px}
+ .ukseo--ads .ukads-flow-plate{padding:23px 16px;gap:16px}
+ .ukseo--ads .ukads-flow-node{padding:13px 11px;min-height:123px;box-shadow:5px 8px 0 #8d9e8a66,8px 14px 20px #3f4f3b2f}
+ .ukseo--ads .ukads-flow-node strong{font-size:20px}
+ .ukseo--ads .ukads-flow-node b{font-size:25px}
+ .ukseo--ads .ukads-final-action{align-items:stretch;flex-direction:column;gap:22px;width:100%}
+ .ukseo--ads .ukads-final-seal{align-self:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo--ads .ukads-pricing *,
+ .ukseo--ads .ukads-flow-plate *,
+ .ukseo--ads .ukads-final-action *,
+ .ukseo--ads .ukseo-problem-card:before{
+  animation:none!important;transition:none!important;
+ }
+ .ukseo--ads .ukads-price-card:hover,
+ .ukseo--ads .ukseo-problem-card:hover,
+ .ukseo--ads .ukads-price-link:hover{transform:none!important}
+}
