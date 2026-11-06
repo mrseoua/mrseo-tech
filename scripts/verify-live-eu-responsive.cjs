@@ -115,7 +115,8 @@ async function audit(browser,viewport,lang,slug){
         noLeak:!target&&!stylesheet&&sections.length===0};
     })(),
     uaFourScenes:(()=>{
-      const target=(lang==='uk'||lang==='ru')&&['ecommerce-seo','analytics','service-websites','horoshop'].includes(slug);
+      const target=(lang==='uk'&&['ecommerce-seo','analytics','service-websites','horoshop','seo-audit','performance-max'].includes(slug))||
+        (lang==='ru'&&['ecommerce-seo','analytics','service-websites','horoshop'].includes(slug));
       const sections=[...document.querySelectorAll('.ua4-section')];
       const style=!!document.querySelector('link[href*="ua-four-service-visuals.css"]');
       const rects=sections.map(el=>{const r=el.getBoundingClientRect();
