@@ -4,6 +4,7 @@
  * Every offered capability is visible; links are used only for existing pages.
  */
 if (!defined('ABSPATH')) exit;
+require_once __DIR__.'/mega-menu-trial.php';
 
 function mrseo_mega_menu_copy() {
     static $copy = null;
@@ -345,12 +346,16 @@ function mrseo_mega_menu_icon($key) {
        'seo' => '<circle cx="10.6" cy="10.6" r="6.6"/><path d="m15.5 15.5 5.2 5.2"/>',
        'ads' => '<path d="m3 11 13-6v14L3 13z"/><path d="m7 14 2 5h4l-3-6"/><path d="M19 9c1.5 1.2 1.5 4.8 0 6"/>',
        'commerce' => '<path d="M2.5 4h2l2.3 10.5h11.7l2.2-7.7H5.1"/><circle cx="8.2" cy="19" r="1.4"/><circle cx="17.5" cy="19" r="1.4"/>',
+       'sites' => '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01M8 14h8M12 11v6"/>',
        'dev' => '<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-5 18"/>',
        'data' => '<path d="M3 20V12h4v8M10 20V8h4v12M17 20V4h4v16M2 21h20"/>'
     );
     return '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'.($paths[$key] ?? $paths['seo']).'</svg>';
 }
 function mrseo_render_mega_menu($in_mobile_panel = false) {
+    // Reversible navigation preview; the legacy renderer below stays untouched for rollback.
+    mrseo_render_mega_menu_trial($in_mobile_panel);
+    return;
     if(mrseo_locale()==='en' && function_exists('mrseo_render_uk_market_menu')){
         mrseo_render_uk_market_menu($in_mobile_panel);return;
     }
