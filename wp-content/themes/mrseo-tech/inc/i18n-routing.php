@@ -9,6 +9,12 @@ function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/'
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
+ if($lang==='uk' && mrseo_locale()==='uk' && function_exists('mrseo_ua_website_slugs')
+    && in_array($slug,mrseo_ua_website_slugs(),true)){
+  // These are genuine Ukrainian pages even when an EN-only slug shares its spelling.
+  return home_url('/'.$slug.'/');
+ }
+
  // When switching languages, prefer a real editorial equivalent, not a
  // merely related parent service. No fabricated regional URLs.
  if($lang!==mrseo_locale() && function_exists('mrseo_i18n_matching_slug')){
