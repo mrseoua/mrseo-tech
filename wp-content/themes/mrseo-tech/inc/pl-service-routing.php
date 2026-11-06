@@ -36,6 +36,7 @@ add_action('init',function(){
 
 /** Dedicated six-column Polish menu: 3+3 in approved responsive grid. */
 function mrseo_render_pl_mega_menu($mobile=false){
+ if(function_exists('mrseo_render_mega_menu_trial')){mrseo_render_mega_menu_trial($mobile);return;}
  $sections=array(
   array('key'=>'dev','heading'=>'Strony internetowe','items'=>array(
    array('tworzenie-stron-internetowych','Tworzenie stron dla firm'),
