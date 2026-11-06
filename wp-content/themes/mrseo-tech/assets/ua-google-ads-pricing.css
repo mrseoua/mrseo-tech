@@ -411,3 +411,57 @@
  }
  .ukseo--ads h2{letter-spacing:-.017em;line-height:1.17}
 }
+
+
+/* UA Ads 2026-11-06: calm, shorter commercial page.
+   Keep hero animation, animated tariff glyphs and one budget-decision scene;
+   remove excessive vertical whitespace. Scope to this page only. */
+.ukseo--ads .ukseo-hero{padding:37px 0 62px}
+.ukseo--ads .ukseo-crumbs{margin-bottom:34px}
+.ukseo--ads .ukseo-hero-copy h1{
+ font-size:clamp(45px,5vw,74px);
+ margin-bottom:21px;
+ letter-spacing:-.02em;
+ line-height:1.11;
+}
+.ukseo--ads .ukseo-hero-lead{line-height:1.56;max-width:555px}
+.ukseo--ads .ukseo-actions{margin-top:25px}
+.ukseo--ads .ukseo-hero-foot{margin-top:16px}
+.ukseo--ads .ukseo-cases{padding:clamp(50px,5vw,72px) 0}
+.ukseo--ads .ukseo-cases .ukseo-section-head{margin-bottom:24px}
+.ukseo--ads .ukseo-problem-card{
+ min-height:0;
+ padding:clamp(23px,2.3vw,30px);
+}
+.ukseo--ads .ukseo-card-number{margin-bottom:23px}
+.ukseo--ads .ukseo-problem-card h3{font-size:clamp(22px,2.05vw,29px);line-height:1.2}
+.ukseo--ads .ukseo-problem-card>p{margin-bottom:0;line-height:1.5}
+.ukseo--ads .ukads-pricing{padding:clamp(55px,5.7vw,78px) 0}
+.ukseo--ads .ukads-pricing-heading{margin-bottom:24px}
+.ukseo--ads .ukads-price-card{padding:clamp(23px,2.65vw,34px)}
+.ukseo--ads .ukads-price-card ul{gap:9px;margin-bottom:19px}
+.ukseo--ads .ukads-pricing-footer{margin-top:20px}
+.ukseo--ads .ua-sv--ads-decisions{padding:clamp(44px,4.7vw,67px) 0}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-spotlight-art{min-height:320px}
+.ukseo--ads .ukseo-faq{padding-block:clamp(55px,5.5vw,80px)}
+.ukseo--ads .ukseo-faq-items summary{min-height:62px}
+.ukseo--ads .ukseo-final.ukads-final{padding:clamp(55px,5.4vw,76px) 0}
+.ukseo--ads .ukads-final-action{gap:0}
+@media(max-width:950px){
+ .ukseo--ads .ukseo-hero{padding:30px 0 53px}
+ .ukseo--ads .ukseo-cases{padding:53px 0}
+ .ukseo--ads .ukseo-problem-card{min-height:0}
+}
+@media(max-width:480px){
+ .ukseo--ads .ukseo-hero-copy h1{
+  font-size:clamp(36px,9.5vw,46px);
+  letter-spacing:-.008em;
+  line-height:1.14;
+ }
+ .ukseo--ads .ukseo-crumbs{margin-bottom:24px}
+ .ukseo--ads .ukseo-card-number{margin-bottom:16px}
+ .ukseo--ads .ukseo-problem-card{padding:22px}
+ .ukseo--ads .ukads-pricing{padding:51px 0}
+ .ukseo--ads .ua-sv--ads-decisions{padding:48px 0}
+ .ukseo--ads .ukseo-faq{padding-block:48px}
+}
