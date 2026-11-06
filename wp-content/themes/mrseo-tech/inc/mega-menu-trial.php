@@ -80,7 +80,16 @@ function mrseo_trial_menu_native($locale) {
 }
 
 function mrseo_trial_menu_route_map($locale) {
- if(in_array($locale,array('uk','ru'),true)){
+ if($locale==='uk'){
+  return array(
+   'seo'=>array(null,'ecommerce-seo',null,null,'seo-audit'),
+   'ads'=>array('google-ads','performance-max',null,null,'merchant-center'),
+   'commerce'=>array('online-store-development','horoshop',null,'catalog-automation',null),
+   'sites'=>array('local-business-websites','service-websites','landing-pages','corporate-websites','website-redesign'),
+   'dev'=>array(null,'api-integrations',null,'web-development','web-applications')
+  );
+ }
+ if($locale==='ru'){
   return array(
    'seo'=>array(null,'ecommerce-seo',null,null,'seo-audit'),
    'ads'=>array('google-ads','performance-max',null,null,'merchant-center'),
@@ -121,6 +130,8 @@ function mrseo_trial_menu_route_map($locale) {
 
 function mrseo_trial_menu_valid($slug,$locale) {
  if(!$slug)return false;
+ if($locale==='uk' && function_exists('mrseo_ua_website_slugs')
+     && in_array($slug,mrseo_ua_website_slugs(),true))return true;
  if(in_array($locale,array('uk','ru'),true)){
   if(in_array($slug,array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','horoshop','web-development','service-websites','analytics'),true))return true;
   return function_exists('mrseo_new_service_copy') && (bool)mrseo_new_service_copy($slug,$locale);
