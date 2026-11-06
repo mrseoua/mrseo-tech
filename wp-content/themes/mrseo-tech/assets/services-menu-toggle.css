@@ -218,8 +218,8 @@
 }
 .mrseo-mega--trial .mrseo-mega-bottom{padding:20px 32px 22px!important}
 @media(min-width:951px){
- .site-header .nav-dropdown>.nav-submenu:has(.mrseo-mega--trial),
- .intl-header .intl-dropdown>.intl-dropdown-menu:has(.mrseo-mega--trial){
+ .site-header .nav-dropdown>.nav-submenu,
+ .intl-header .intl-dropdown>.intl-dropdown-menu{
   width:min(1250px,calc(100vw - 44px))!important;
  }
 }
