@@ -9,6 +9,16 @@ function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/'
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
+
+ // New Ukrainian-only website creation pages have no translated equivalent yet.
+ // When changing languages, lead to an actual broad service page rather than 404.
+ if($lang!=='uk' && function_exists('mrseo_ua_website_slugs') && in_array($slug,mrseo_ua_website_slugs(),true)){
+  if($lang==='pl')$slug='tworzenie-stron-internetowych';
+  elseif($lang==='de')$slug='web-development';
+  elseif($lang==='ru')$slug='service-websites';
+  else $slug='website-design';
+ }
+
  // When switching languages, prefer a real editorial equivalent, not a
  // merely related parent service. No fabricated regional URLs.
  if($lang!==mrseo_locale() && function_exists('mrseo_i18n_matching_slug')){
