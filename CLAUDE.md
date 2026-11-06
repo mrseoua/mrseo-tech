@@ -70,7 +70,7 @@ Traffic recovery, migrations, indexing problems and other technical subtopics be
 4. **Аудит Google Ads** — Бюджет витрачається, але незрозуміло, що приносить результат.
 5. **Google Merchant Center** — Товари відхилені, є помилки у фіді або заблоковано акаунт.
 
-Merchant Center troubleshooting can be a standalone urgent service. Ads conversion setup/GA4 belongs inside appropriate service scopes; avoid separate top-level Analytics. **Nothing in this taxonomy has been deployed yet.** The next owner discussion is about E-commerce and Web Development menu sections.
+Merchant Center troubleshooting can be a standalone urgent service. Ads conversion setup/GA4 belongs inside appropriate service scopes; avoid separate top-level Analytics. **Nothing in this taxonomy has been deployed yet.** E-commerce and Website Creation have since been approved; **the next owner discussion is Web Development**.
 
 ### Approved E-commerce mega-menu category (owner, 2026-11-06)
 
@@ -85,6 +85,22 @@ The **Інтернет-магазини** category has five agreed service desti
 Intro: «Створюємо, покращуємо та автоматизуємо магазини, щоб ними було зручно користуватися, керувати й продавати».
 
 SEO for online shops belongs in SEO, Shopping/PMax belongs in Ads; **don't duplicate top-level navigation destinations**. Horoshop only UA/RU. Avoid claiming loss-free migration; frame SEO/data preservation as a risk-controlled process. Avoid promises of CRO improvements without validated data. General SaaS, CRM and API development belong in **Web Development**, which is the next discussion. This is an approved future taxonomy; **do not publish a new menu or create missing URLs without explicit owner instruction**.
+
+### Approved Website Creation menu category (owner, 2026-11-06)
+
+**Створення сайтів** is an independent fifth *business capability area*, with four other top-level areas SEO, Google Ads, E-commerce and Web Development. It is the **fourth category approved so far**; Web Development subtopics are still to be finalized. Position Website Creation for small local businesses, professional services, landing pages, corporate sites and redesigns, distinct from online stores and CRM/SaaS/API web applications.
+
+Approved UA introduction: «Створюємо сучасні сайти, які викликають довіру та допомагають перетворювати відвідувачів на клієнтів».
+
+Five approved menu entries and client problem text:
+
+1. **Сайти для локального бізнесу** — Потрібен невеликий сайт, щоб клієнти у вашому місті знаходили вас і зверталися.
+2. **Сайти послуг** — Ваші послуги складно представити онлайн, а потенційним клієнтам бракує інформації для звернення.
+3. **Лендінги для реклами** — Запускаєте рекламу й потрібна сторінка, яка зрозуміло представляє пропозицію та збирає заявки.
+4. **Корпоративні сайти** — Компанії потрібен професійний сайт із послугами, проєктами та інформацією про бізнес.
+5. **Редизайн та оновлення сайтів** — Сайт застарів, незручний на телефоні або не викликає довіри у відвідувачів.
+
+Local-business sites and service-business sites partially overlap; **do not create SEO-cannibalizing near-duplicate landing pages**. Keep approved menu labels but distinguish intent and page content when implementing. Small-site service offers should have clear scope and revision limits. Not yet live: owner is approving taxonomy step-by-step; no code/menu/homepage/locales/noindex changes until separately approved.
 
 ## Priority work
 
