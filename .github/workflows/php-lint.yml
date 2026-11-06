@@ -544,8 +544,8 @@ jobs:
           assert "mrseo_render_ua_final_service('seo-audit','plan')" in seo_audit
           assert "mrseo_render_ua_final_service('seo-audit','journey')" not in seo_audit
           assert 'ukaudit-problems' in seo_audit and 'ukaudit-faq-title' in seo_audit
-          for scene in ('journey','plan'):
-              assert "mrseo_render_ua_final_service($slug,'"+scene+"')" in pmax_template
+          assert "mrseo_render_ua_final_service($slug,'plan')" in pmax_template
+          assert "mrseo_render_ua_final_service($slug,'journey')" not in pmax_template
           for named_func,template in (
                   ('mrseo_render_ua_about_visual()',about_template),
                   ('mrseo_render_ua_portfolio_visual()',portfolio_template),
