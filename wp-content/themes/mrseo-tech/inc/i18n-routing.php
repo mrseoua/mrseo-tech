@@ -23,7 +23,7 @@ function mrseo_url($slug='',$lang=null){
  }
  // New Ukrainian-only service pages have no foreign-language copies yet.
  // Language selector must lead to an existing broader service, never a 404.
- if($lang!=='uk' && function_exists('mrseo_ua_website_slugs')
+ if($lang!=='uk' && function_exists('mrseo_ua_website_route') && mrseo_ua_website_route()
      && in_array($slug,mrseo_ua_website_slugs(),true)){
   $service=mrseo_ua_website_data($slug);
   $group=$service['group']??'Створення сайтів';
