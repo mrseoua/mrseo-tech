@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (294 URLs)
+ * - all completed pages are represented exactly once (298 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -42,6 +42,7 @@ function wp_trim_words($text, $num_words = 55, $more = '…') {
 }
 
 require_once $root . '/inc/i18n-routing.php';
+require_once $root . '/inc/ua-website-services.php';
 require_once $root . '/inc/new-service-routes.php';
 require_once $root . '/inc/pl-service-routing.php';
 require_once $root . '/inc/uk-market-routing.php';
@@ -55,11 +56,11 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 29, 'Expected 29 editorial equivalence groups');
-assert_seo(count($inventory) === 294, 'Expected 294 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($groups) === 33, 'Expected 33 editorial equivalence groups');
+assert_seo(count($inventory) === 298, 'Expected 298 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
-    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs()),
+    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs()),
     'ru' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs()),
     'en' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','privacy'], mrseo_uk_market_new_slugs()),
     'pl' => array_merge(mrseo_int_pages(), ['privacy'],mrseo_pl_service_slugs()),
@@ -98,14 +99,14 @@ foreach ($inventory as $entry) {
     $url_groups[$url] = $entry['group'];
     assert_seo(isset($entry['alternates'][$codes[$lang]]) &&
         $entry['alternates'][$codes[$lang]] === $url, "Missing self hreflang on $url");
-    assert_seo(count($entry['alternates']) >= 2, "Missing counterpart hreflang on $url");
+    assert_seo(count($entry['alternates']) >= (str_starts_with($entry['group'],'ua-website:')?1:2), "Invalid hreflang on $url");
     if ($entry['default'] !== null) {
         assert_seo($entry['group'] === 'shared:home' &&
             $entry['default'] === 'https://mrseo.tech/', "Incorrect x-default on $url");
         $home_count++;
     }
 }
-assert_seo(count($seen) === 294 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 298 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
