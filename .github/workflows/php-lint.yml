@@ -596,36 +596,36 @@ jobs:
               assert '--post_name='+slug in wp_ci, ('Isolated CI page missing',slug)
           assert 'uaFourSlugs=' in open('scripts/verify-live-eu-responsive.cjs',encoding='utf-8').read()
 
-          # UA Google Ads and Web Development: four clear illustrative commercial scenes.
+          # UA Google Ads: one strong animation, no repeated story blocks.
           commercial_php=(root/'inc/ua-commercial-visuals.php').read_text()
           commercial_css=(root/'assets/ua-commercial-visuals.css').read_text()
           ua_ads=(root/'google-ads-uk.php').read_text()
           dev_markup=(root/'development-landing.php').read_text()
           for service,visual in (
-              ('google-ads','journey'),('google-ads','decisions'),
+              ('google-ads','decisions'),
               ('web-development','connections'),('web-development','build')):
               call="mrseo_render_ua_commercial_visual('"+service+"','"+visual+"')"
               template=ua_ads if service=='google-ads' else dev_markup
               assert call in template, ('Missing Ukrainian service graphic',service,visual)
               assert "($service === '"+service+"' && $variant === '"+visual+"')" in commercial_php
-          assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','journey')") < ua_ads.index('ukads-decision')
-          assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','decisions')") < ua_ads.index('ukads-deliver')
-          # One-page UA Google Ads pricing/conciseness pilot. Hero unchanged by design.
+          assert "mrseo_render_ua_commercial_visual('google-ads','journey')" not in ua_ads
+          assert 'ukads-flow-plate' not in ua_ads and 'ukads-deliver' not in ua_ads
+          assert 'mrseo_ua_ads_depth_scene' not in ua_ads
           pricing_css=(root/'assets/ua-google-ads-pricing.css').read_text()
-          assert ua_ads.count('<h1 ') == 1, 'Google Ads must retain one hero H1'
-          assert ua_ads.count('class="ukads-price-card ') == 2, 'Exactly two clear price packages expected'
-          assert all(x in ua_ads for x in ('5 000','10 000','5 900','9 500','ukads-pricing',
-              'ukads-flow-plate','ukads-problems','ukads-faq-title','ukads-final-title')), 'UA pricing or shortened narrative missing'
-          assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','journey')") < ua_ads.index('id="ukads-pricing"')
-          assert ua_ads.index('id="ukads-pricing"') < ua_ads.index('id="ukads-process-title"')
-          assert ua_ads.index('id="ukads-process-title"') < ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','decisions')")
+          assert ua_ads.count('<h1 ')==1, 'Google Ads must have exactly one hero H1'
+          assert ua_ads.count('class="ukads-price-card ')==2, 'Exactly two price packages expected'
+          assert all(x in ua_ads for x in ('5 000','10 000','5 900','9 500',
+              'ukads-pricing','ukads-problems','ukads-faq-title','ukads-final-title')), 'UA tariffs or conversion narrative missing'
+          assert ua_ads.index('id="ukads-problems"') < ua_ads.index('id="ukads-pricing"') < ua_ads.index(
+              "mrseo_render_ua_commercial_visual('google-ads','decisions')") < ua_ads.index('id="ukads-faq-title"') < ua_ads.index('id="ukads-final-title"')
           assert 'ЩОМІСЯЦЯ ЗА ВЕДЕННЯ ВІД' in ua_ads and ua_ads.count('Разове налаштування')==2
           assert '.ukseo--ads .ukseo-hero-copy h1' in pricing_css and 'letter-spacing:-.024em' in pricing_css
           assert 'font-size:clamp(37px,9.75vw,50px)' in pricing_css
           assert '.ukseo--ads .ukads-price-grid' in pricing_css
+          assert 'UA Ads 2026-11-06: calm, shorter commercial page' in pricing_css
           assert '@media(max-width:480px)' in pricing_css and '@media(prefers-reduced-motion:reduce)' in pricing_css
           assert "wp_enqueue_style('mrseo-ua-ads-pricing'" in functions
-
+          assert "wp_enqueue_style('mrseo-ua-ads-3d'" not in functions
           assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('<section class="dev-section dev-capabilities"')
           assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','build')") < dev_markup.index('<section class="dev-section dev-technical"')
           assert "if($dev_locale==='uk')require_once" in dev_markup
