@@ -16,6 +16,9 @@ if(!$p){
  return;
 }
 $kind=$p['scene'];
+require_once get_template_directory().'/inc/ua-service-scenes.php';
+$category=$p['group']??'Створення сайтів';
+$foot=$p['foot']??'Дизайн · Мобільна версія · Зручний зв’язок';
 get_header();
 ?>
 <div class="ukseo uws-page uws-page--<?php echo esc_attr($kind); ?>" id="main-content">
@@ -25,7 +28,7 @@ get_header();
     <nav class="ukseo-crumbs" aria-label="Навігація">
      <a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a>
      <span aria-hidden="true">/</span>
-     <span>Створення сайтів</span>
+     <span><?php echo esc_html($category); ?></span>
      <span aria-hidden="true">/</span>
      <span><?php echo esc_html($p['title']); ?></span>
     </nav>
@@ -36,7 +39,7 @@ get_header();
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>"><?php echo esc_html($p['button']); ?> <span aria-hidden="true">↗</span></a>
      <a class="ukseo-text-link" href="#uws-pains">Знайома ситуація? <span aria-hidden="true">↓</span></a>
     </div>
-    <p class="ukseo-hero-foot">Дизайн · Мобільна версія · Зручний зв’язок</p>
+    <p class="ukseo-hero-foot"><?php echo esc_html($foot); ?></p>
    </div>
    <div class="ukseo-hero-art">
     <div class="uws-demo uws-demo--<?php echo esc_attr($kind); ?>" role="img" aria-label="<?php echo esc_attr($p['scenelabel']); ?>">
@@ -66,22 +69,24 @@ get_header();
        <div class="uws-corporate-hero"><small>ПРОФЕСІЙНА КОМАНДА</small><strong>Ваша експертиза<br>в центрі уваги.</strong><i></i></div>
        <div class="uws-corporate-cards"><span>Послуги ↗</span><span>Проєкти ↗</span><span>Контакти ↗</span></div>
       </div>
-     <?php else: ?>
+     <?php elseif($kind==='redesign'): ?>
       <div class="uws-demo-body uws-redesign" aria-hidden="true">
        <div class="uws-redesign-before"><small>ДО</small><div class="uws-redesign-old"><i></i><i></i><i></i><i></i></div></div>
        <div class="uws-redesign-divider"><span>→</span></div>
        <div class="uws-redesign-after"><small>ПІСЛЯ</small><div class="uws-redesign-new"><i></i><strong>Зрозумілий сайт</strong><span>Послуги · Довіра · Заявка</span><b>Зв’язатися ↗</b></div></div>
       </div>
+     <?php else: ?>
+      <?php mrseo_render_ua_service_scene($kind); ?>
      <?php endif; ?>
      <div class="uws-demo-foot" aria-hidden="true"><span>Принцип дизайну, не приклад клієнтського сайту</span><span>✳</span></div>
     </div>
-    <div class="ukseo-visual-caption"><span class="ukseo-visual-caption-mark">01 / <?php echo esc_html($p['title']); ?></span><span>Сайт під конкретну задачу</span></div>
+    <div class="ukseo-visual-caption"><span class="ukseo-visual-caption-mark">01 / <?php echo esc_html($p['title']); ?></span><span>Рішення під конкретну задачу</span></div>
    </div>
   </div>
  </section>
  <section class="ukseo-cases uws-pains" id="uws-pains" aria-labelledby="uws-pain-title">
   <div class="container">
-   <div class="ukseo-section-head"><div><span class="ukseo-kicker">ЗНАЙОМІ ПРОБЛЕМИ?</span><h2 id="uws-pain-title">Що заважає <em>вашим клієнтам?</em></h2></div></div>
+   <div class="ukseo-section-head"><div><span class="ukseo-kicker">ЗНАЙОМІ ПРОБЛЕМИ?</span><h2 id="uws-pain-title">Що заважає <em>отримувати результат?</em></h2></div></div>
    <div class="ukseo-problem-grid">
     <?php foreach($p['pains'] as $i=>$pain): ?>
     <article class="ukseo-problem-card">
@@ -103,8 +108,8 @@ get_header();
      echo esc_html($parts[0]);
      if(isset($parts[1]))echo ' <em>'.esc_html(str_replace('</em>','',$parts[1])).'</em>';
     ?></h2>
-    <p>Починаємо з задачі бізнесу й погоджуємо обсяг робіт. Зайвих сторінок і функцій не нав’язуємо.</p>
-    <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити структуру сайту <span aria-hidden="true">↗</span></a>
+    <p>Спочатку визначаємо проблему, потім погоджуємо конкретні зміни. Не нав’язуємо зайвих робіт.</p>
+    <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити рішення <span aria-hidden="true">↗</span></a>
    </div>
    <div class="uws-solution-list">
     <?php foreach($p['benefits'] as $i=>$benefit): ?>
