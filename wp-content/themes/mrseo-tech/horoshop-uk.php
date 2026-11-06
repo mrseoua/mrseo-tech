@@ -1,7 +1,6 @@
 <?php
 /** Ukrainian-only Horoshop page with original partner hero kept verbatim. */
 if(!defined('ABSPATH'))exit;
-require_once get_template_directory().'/inc/ua-four-service-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--horoshop" id="main-content">
@@ -48,40 +47,17 @@ get_header();
  </div>
 </section>
 </section>
-<section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-title"><div class="container">
+<section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
  <div class="ukseo-section-head">
-  <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-title">Не кожну проблему Хорошоп вирішує звичайне SEO.</h2></div>
-  <p>Магазин може втрачати покупців через каталог, товарний фід або недоступні в налаштуваннях зміни. Починаємо з перевірки конкретних можливостей платформи.</p>
+  <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-problem-title">Магазин на Хорошоп є. <em>А що заважає продажам?</em></h2></div>
+  <p>Перевіряємо категорії, фільтри та товарний фід — із урахуванням можливостей Хорошоп.</p>
  </div>
  <div class="ukseo-problem-grid">
-  <article class="ukseo-problem-card"><div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div><h3>Потрібна структура під реальний попит</h3><p>Категорії, бренди й властивості товарів не завжди збігаються з тим, як покупці шукають товари.</p><div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Існуючі категорії, SEO-сторінки фільтрів, навігацію та шаблони платформи.</strong></div></article>
-  <article class="ukseo-problem-card"><div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div><h3>Каталог індексується не так, як потрібно</h3><p>Параметри фільтрів, недоступні товари або неузгоджені адреси створюють зайві технічні сценарії.</p><div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Доступні на Хорошоп налаштування індексації, canonical, URL і карти сайту.</strong></div></article>
-  <article class="ukseo-problem-card"><div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div><h3>У Merchant Center виникають відхилення</h3><p>Ціна, наявність або атрибути у фіді не збігаються з тим, що бачить покупець у магазині.</p><div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Дані фіда, відповідність сторінкам товарів і діагностику Merchant.</strong></div></article>
+  <article class="ukseo-problem-card"><div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div><h3>Категорій не видно в Google</h3><p>Категорії, бренди й властивості товарів не завжди збігаються з тим, як покупці шукають товари.</p></article>
+  <article class="ukseo-problem-card"><div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div><h3>Фільтри заважають індексації</h3><p>Параметри фільтрів, недоступні товари або неузгоджені адреси створюють зайві технічні сценарії.</p></article>
+  <article class="ukseo-problem-card"><div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div><h3>Merchant Center відхиляє товари</h3><p>Ціна, наявність або атрибути у фіді не збігаються з тим, що бачить покупець у магазині.</p></article>
  </div>
 </div></section>
-<?php mrseo_render_ua4_visual('horoshop','journey'); ?>
-<section class="ukseo-decision" aria-labelledby="ukhoroshop-choice-title"><div class="container ukseo-decision-layout">
- <div class="ukseo-decision-copy"><span class="ukseo-kicker">СПОЧАТКУ ПЕРЕВІРЯЄМО ОБМЕЖЕННЯ</span><h2 id="ukhoroshop-choice-title">Не пропонуємо рішення, <em>яке Хорошоп не дозволяє реалізувати.</em></h2>
-  <p>Розділяємо задачі на ті, що можна виконати в адміністративній панелі, через доступні інтеграції або за участі підтримки платформи. Враховуємо ризики для вже індексованих сторінок.</p>
-  <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('ecommerce-seo'));?>">Як працюємо з SEO великих каталогів <span aria-hidden="true">↗</span></a>
- </div>
- <div class="ukseo-spec"><div class="ukseo-spec-top"><span>ПРИКЛАД РОБОЧОГО ПЛАНУ</span><span aria-hidden="true">✳</span></div>
-  <div class="ukseo-spec-row"><small>ЗНАХІДКА</small><strong>Потрібна SEO-сторінка для товарної властивості, яку покупці активно шукають.</strong></div>
-  <div class="ukseo-spec-row"><small>ДОСТУПНИЙ ШЛЯХ</small><strong>Перевірити SEO-фільтри, шаблони метаданих та навігацію Хорошоп.</strong></div>
-  <div class="ukseo-spec-row"><small>ПЕРЕВІРКА</small><strong>Після впровадження перевірити URL, canonical, посилання та подальші покази в Search Console.</strong></div>
-  <div class="ukseo-spec-foot">Схематичний приклад, без даних конкретного магазину.</div>
- </div>
-</div></section>
-<section class="ukseo-work" aria-labelledby="ukhoroshop-work-title"><div class="container">
- <div class="ukseo-section-head"><div><span class="ukseo-kicker">ЯК ПРАЦЮЄМО З ХОРОШОП</span><h2 id="ukhoroshop-work-title">Під конкретну задачу магазину.</h2></div><p>Створення магазину, SEO й реклама можуть бути окремими напрямами. Не нав'язуємо весь комплекс там, де достатньо одного виправлення.</p></div>
- <ol class="ukseo-steps">
-  <li><div class="ukseo-step-index">01</div><div><h3>Визначаємо проблему та можливості платформи</h3><p>Аналізуємо каталог, важливі товари, поточні налаштування, індексацію й товарні дані.</p></div><strong>Результат: підтверджені причини та обмеження</strong></li>
-  <li><div class="ukseo-step-index">02</div><div><h3>Узгоджуємо обсяг змін</h3><p>Вирішуємо, чи потрібні SEO-сторінки, зміни у фіді, запуск реклами чи переробка структури.</p></div><strong>Результат: план із пріоритетами й ризиками</strong></li>
-  <li><div class="ukseo-step-index">03</div><div><h3>Впроваджуємо доступне рішення</h3><p>Використовуємо можливості адміністративної панелі, доступні інтеграції й перевірювані налаштування.</p></div><strong>Результат: конкретні зміни в магазині</strong></li>
-  <li><div class="ukseo-step-index">04</div><div><h3>Перевіряємо наслідки</h3><p>Контролюємо важливі URL, помилки Merchant і вимірювання замовлень, де це стосується задачі.</p></div><strong>Результат: контроль якості та наступні рішення</strong></li>
- </ol>
-</div></section>
-<?php mrseo_render_ua4_visual('horoshop','plan'); ?>
 <section class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">
  <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p></div>
  <div class="ukseo-delivery-list">

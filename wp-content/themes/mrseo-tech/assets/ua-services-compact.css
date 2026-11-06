@@ -1,0 +1,88 @@
+/*
+ * Existing Ukrainian services: lean editorial rhythm and legible mobile headings.
+ * No homepage, RU, or other international pages are affected.
+ */
+.ukseo--solution .ukseo-hero,
+.ns-page--compact .ukseo-hero{padding:clamp(30px,3.9vw,53px) 0 clamp(49px,5.4vw,73px)}
+.ukseo--solution .ukseo-crumbs,
+.ns-page--compact .ukseo-crumbs{margin-bottom:clamp(21px,3vw,34px)}
+.ukseo--solution .ukseo-hero-copy h1,
+.ns-page--compact .ukseo-hero-copy h1{
+ font-size:clamp(42px,4.9vw,71px);line-height:1.115;letter-spacing:-.024em;
+ overflow-wrap:break-word;margin-bottom:20px;
+}
+.ukseo--solution .ukseo-hero-copy h1 em,
+.ns-page--compact .ukseo-hero-copy h1 em{letter-spacing:-.014em;line-height:1.13}
+.ukseo--solution .ukseo-hero-lead,
+.ns-page--compact .ukseo-hero-lead{max-width:590px;line-height:1.57}
+.ukseo--solution .ukseo-actions,
+.ns-page--compact .ukseo-actions{margin-top:25px}
+.ukseo--solution .ukseo-hero-foot,
+.ns-page--compact .ukseo-hero-foot{margin-top:17px}
+.ukseo--solution .ukseo-cases,
+.ukseo--horoshop .ukseo-cases,
+.ns-page--compact .ukseo-cases{padding:clamp(50px,5.3vw,75px) 0}
+.ukseo--solution .ukseo-cases .ukseo-section-head,
+.ukseo--horoshop .ukseo-cases .ukseo-section-head,
+.ns-page--compact .ukseo-cases .ukseo-section-head{margin-bottom:23px}
+.ukseo--solution .ukseo-problem-card,
+.ukseo--horoshop .ukseo-problem-card,
+.ns-page--compact .ukseo-problem-card{
+ min-height:0;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;
+}
+.ukseo--solution .ukseo-card-number,
+.ukseo--horoshop .ukseo-card-number,
+.ns-page--compact .ukseo-card-number{margin-bottom:24px}
+.ukseo--solution .ukseo-problem-card h3,
+.ukseo--horoshop .ukseo-problem-card h3,
+.ns-page--compact .ukseo-problem-card h3{font-size:clamp(21px,2.1vw,27px);line-height:1.23;letter-spacing:-.018em}
+.ukseo--solution .ukseo-problem-card>p,
+.ukseo--horoshop .ukseo-problem-card>p,
+.ns-page--compact .ukseo-problem-card>p{margin-bottom:0;font-size:16px;line-height:1.5}
+.ukseo--solution .ua4-section,
+.ukseo--solution .ukseo-delivery,
+.ukseo--horoshop .ukseo-delivery,
+.ns-page--compact .ukseo-delivery{padding-block:clamp(54px,5.7vw,79px)}
+.ukseo--solution .ukseo-faq,
+.ukseo--horoshop .ukseo-faq,
+.ns-page--compact .ukseo-faq{padding:clamp(53px,5.3vw,76px) 0}
+.ukseo--solution .ukseo-faq-items summary,
+.ukseo--horoshop .ukseo-faq-items summary,
+.ns-page--compact .ukseo-faq-items summary{min-height:63px}
+.ukseo--solution .ukseo-final,
+.ukseo--horoshop .ukseo-final,
+.ns-page--compact .ukseo-final{padding:clamp(57px,6vw,82px) 0}
+.ns-page--compact .ns-related{padding-block:clamp(33px,4vw,57px)}
+.ns-page--compact .ns-related-head{margin-bottom:17px}
+.dev-scope-uk .dev-hero{padding-block:clamp(48px,5.6vw,78px)}
+.dev-scope-uk .dev-hero h1{font-size:clamp(44px,5vw,72px);letter-spacing:-.025em;line-height:1.14}
+.dev-scope-uk .dev-section,
+.dev-scope-uk .dev-outcomes,
+.dev-scope-uk .dev-cta{padding-block:clamp(52px,5.4vw,78px)}
+.dev-scope-uk .dev-diagnosis .dev-sticky-copy>p{line-height:1.55}
+.dev-scope-uk .dev-cap{padding:clamp(19px,2vw,28px)}
+.dev-scope-uk .dev-cap p{line-height:1.52}
+@media(max-width:950px){
+ .ukseo--solution .ukseo-hero,
+ .ns-page--compact .ukseo-hero{padding:28px 0 52px}
+ .dev-scope-uk .dev-hero{padding-block:34px 53px}
+}
+@media(max-width:480px){
+ .ukseo--solution .ukseo-hero-copy h1,
+ .ns-page--compact .ukseo-hero-copy h1,
+ .dev-scope-uk .dev-hero h1{font-size:clamp(36px,9.3vw,47px);line-height:1.14;letter-spacing:-.009em}
+ .ukseo--solution .ukseo-hero-copy h1 em,
+ .ns-page--compact .ukseo-hero-copy h1 em{letter-spacing:-.005em}
+ .ukseo--solution .ukseo-problem-card,
+ .ukseo--horoshop .ukseo-problem-card,
+ .ns-page--compact .ukseo-problem-card{padding:21px}
+ .ukseo--solution .ukseo-card-number,
+ .ukseo--horoshop .ukseo-card-number,
+ .ns-page--compact .ukseo-card-number{margin-bottom:17px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo--solution .ukseo-problem-card,
+ .ukseo--horoshop .ukseo-problem-card,
+ .ns-page--compact .ukseo-problem-card,
+ .dev-scope-uk .dev-cap{transition:none}
+}

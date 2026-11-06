@@ -1,7 +1,6 @@
 <?php
 /** Ukrainian-only, problem-led SEO for online stores. Other languages unchanged. */
 if (!defined('ABSPATH')) exit;
-require_once get_template_directory().'/inc/ua-four-service-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--commerce" id="main-content">
@@ -10,8 +9,8 @@ get_header();
    <div class="ukseo-hero-copy">
     <nav class="ukseo-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>SEO для інтернет-магазинів</span></nav>
     <div class="ukseo-kicker">SEO ДЛЯ ІНТЕРНЕТ-МАГАЗИНІВ</div>
-    <h1 id="ukcommerce-title">Товари є. <em>Чому покупці знаходять їх у конкурентів?</em></h1>
-    <p class="ukseo-hero-lead">Тисячі товарів не гарантують покупців із Google. Перевіряємо, як пошук бачить категорії, фільтри й картки товарів. Знаходимо втрачений попит і будуємо структуру, у якій корисні сторінки можна знайти, а технічні дублікати не заважають.</p>
+    <h1 id="ukcommerce-title">Товари є. <em>А покупці знаходять конкурентів?</em></h1>
+    <p class="ukseo-hero-lead">Перевіряємо, чому категорії та товари не отримують потрібних переходів із Google. Виправляємо структуру каталогу, фільтри й технічні дублікати.</p>
     <div class="ukseo-actions">
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Розібрати SEO мого магазину <span aria-hidden="true">↗</span></a>
      <a class="ukseo-text-link" href="#ukcommerce-problems">Де втрачаються покупці <span aria-hidden="true">↓</span></a>
@@ -28,26 +27,23 @@ get_header();
   <div class="container">
    <div class="ukseo-section-head">
     <div><span class="ukseo-kicker">НЕСПРАВНОСТІ КАТАЛОГУ</span><h2 id="ukcommerce-problems-title">Асортимент великий. А де губиться попит?</h2></div>
-    <p>У каталозі проблема часто не в кількості товарів, а в тому, які сторінки існують, як вони пов'язані та що Google може обійти й проіндексувати.</p>
+    <p>Перевіримо, які сторінки покупці шукають, але не знаходять.</p>
    </div>
    <div class="ukseo-problem-grid">
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div>
-     <h3>Категорії не отримують потрібних показів</h3>
+     <h3>Категорії майже не видно в Google</h3>
      <p>Попит на товари є, але сторінка категорії не відповідає запиту або схована глибоко в структурі.</p>
-     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Структуру категорій, попит, внутрішні посилання та доступність URL.</strong></div>
     </article>
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div>
-     <h3>Фільтри створюють тисячі зайвих адрес</h3>
+     <h3>Фільтри створюють дублікати</h3>
      <p>Сортування та параметри множать дублікати, а важливим сторінкам бракує уваги та зрозумілих сигналів.</p>
-     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Комбінації фільтрів, canonical, правила індексації та sitemap.</strong></div>
     </article>
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div>
-     <h3>Покупці шукають товар за моделлю — сторінки немає</h3>
+     <h3>Покупці шукають модель, а сторінки немає</h3>
      <p>Запити з брендом, моделлю та характеристиками не мають відповідної корисної посадкової сторінки.</p>
-     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Пошукові наміри, наявні сторінки та можливості платформи.</strong></div>
     </article>
    </div>
   </div>
@@ -78,22 +74,6 @@ get_header();
    ),JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_QUOT|JSON_HEX_APOS); ?></script>
   </div>
  </section>
- <?php mrseo_render_ua4_visual('ecommerce-seo','journey'); ?>
- <section class="ukseo-work" aria-labelledby="ukcommerce-process-title">
-  <div class="container">
-   <div class="ukseo-section-head">
-    <div><span class="ukseo-kicker">ПОСЛІДОВНІСТЬ РОБОТИ</span><h2 id="ukcommerce-process-title">Не створюємо тисячі сторінок навмання.</h2></div>
-    <p>Спочатку визначаємо сторінки, які можуть відповідати реальному попиту. Потім погоджуємо зміни в межах можливостей платформи.</p>
-   </div>
-   <ol class="ukseo-steps">
-    <li><div class="ukseo-step-index">01</div><div><h3>Знаходимо купівельний попит</h3><p>Групуємо запити за категоріями, брендами, моделями та характеристиками, зіставляємо їх із наявними URL.</p></div><strong>Результат: карта запитів і посадкових сторінок</strong></li>
-    <li><div class="ukseo-step-index">02</div><div><h3>Перевіряємо індексацію каталогу</h3><p>Аналізуємо фільтри, дублікати, canonical, пагінацію, sitemap і зв’язки між сторінками.</p></div><strong>Результат: правила для цінних і технічних URL</strong></li>
-    <li><div class="ukseo-step-index">03</div><div><h3>Впроваджуємо потрібні зміни</h3><p>Уточнюємо структуру, навігацію, шаблони категорій, картки товарів і перелінкування.</p></div><strong>Результат: узгоджені зміни або технічні завдання</strong></li>
-    <li><div class="ukseo-step-index">04</div><div><h3>Перевіряємо, що зміни працюють</h3><p>Оцінюємо доступність URL, покази, кліки на пріоритетні сторінки й цільові дії.</p></div><strong>Результат: контроль впроваджень і наступні пріоритети</strong></li>
-   </ol>
-  </div>
- </section>
- <?php mrseo_render_ua4_visual('ecommerce-seo','plan'); ?>
  <section class="ukseo-delivery" aria-labelledby="ukcommerce-deliver-title">
   <div class="container ukseo-delivery-grid">
    <div><span class="ukseo-kicker">ЩО ОТРИМУЄ МАГАЗИН</span><h2 id="ukcommerce-deliver-title">Не просто SEO-тексти. <em>Керовану структуру під попит.</em></h2><p>Не кожному магазину потрібні нові сторінки. Іноді найкращий перший крок — виправити існуючі шаблони та індексацію.</p></div>

@@ -31,7 +31,7 @@ $copy=$ru?array(
 );
 get_header();
 ?>
-<div class="ukseo ns-page ns-page--<?php echo esc_attr($slug);?>" data-service-group="<?php echo esc_attr($group);?>">
+<div class="ukseo ns-page ns-page--<?php echo esc_attr($slug);?><?php echo !$ru?' ns-page--compact':'';?>" data-service-group="<?php echo esc_attr($group);?>">
  <section class="ukseo-hero ns-hero" aria-labelledby="ns-title">
  <div class="container ukseo-hero-grid">
   <div class="ukseo-hero-copy">
@@ -72,11 +72,12 @@ get_header();
   <div class="ukseo-problem-grid"><?php foreach($page['problems'] as $i=>$problem):?>
    <article class="ukseo-problem-card"><div class="ukseo-card-number"><?php echo esc_html(sprintf('%02d',$i+1));?><span aria-hidden="true">↗</span></div>
     <h3><?php echo esc_html($problem[0]);?></h3><p><?php echo esc_html($problem[1]);?></p>
-    <div class="ukseo-card-diagnosis"><span><?php echo esc_html($copy['diagnosis']);?></span><strong><?php echo esc_html($problem[2]);?></strong></div>
+    <?php if($ru): ?><div class="ukseo-card-diagnosis"><span><?php echo esc_html($copy['diagnosis']);?></span><strong><?php echo esc_html($problem[2]);?></strong></div><?php endif; ?>
    </article>
   <?php endforeach;?></div>
  </div></section>
- <section class="ukseo-decision" aria-labelledby="ns-example-title"><div class="container ukseo-decision-layout">
+ <?php if($ru): ?>
+<section class="ukseo-decision" aria-labelledby="ns-example-title"><div class="container ukseo-decision-layout">
   <div class="ukseo-decision-copy"><span class="ukseo-kicker"><?php echo esc_html($copy['example']);?></span>
    <h2 id="ns-example-title"><?php if($serviceUx):?><?php echo esc_html($serviceUx['exampleTitle'][0]);?> <em><?php echo esc_html($serviceUx['exampleTitle'][1]);?></em><?php else:?><?php echo esc_html($ru?'Не угадать причину.':'Не вгадати причину.');?> <em><?php echo esc_html($ru?'А проверить гипотезу.':'А перевірити гіпотезу.');?></em><?php endif;?></h2>
    <?php if(!$serviceUx):?><p><?php echo esc_html($copy['scenario']);?></p><?php endif;?>
@@ -96,17 +97,20 @@ get_header();
    <li><div class="ukseo-step-index"><?php echo esc_html(sprintf('%02d',$i+1));?></div><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div><strong><?php echo esc_html($i<3 ? $page['outcomes'][$i] : ($ru?'Проверка после внедрения':'Перевірка після впровадження'));?></strong></li>
   <?php endforeach;?></ol>
  </div></section>
- <section class="ukseo-delivery" aria-labelledby="ns-outcomes-title"><div class="container ukseo-delivery-grid">
+ <?php endif; ?>
+<section class="ukseo-delivery" aria-labelledby="ns-outcomes-title"><div class="container ukseo-delivery-grid">
   <div><span class="ukseo-kicker"><?php echo esc_html($copy['outcomes']);?></span><h2 id="ns-outcomes-title"><?php echo esc_html($serviceUx['deliveryTitle']??$copy['outcomesTitle']);?></h2><p><?php echo esc_html($serviceUx['deliveryLead']??($ru?'Состав работ зависит от исходной системы и подтверждённых ограничений.':'Обсяг робіт залежить від вихідної системи та підтверджених обмежень.'));?></p></div>
   <div class="ukseo-delivery-list"><?php foreach($page['outcomes'] as $i=>$outcome):?>
    <div><span aria-hidden="true"><?php echo esc_html(sprintf('%02d',$i+1));?></span><div><h3><?php echo esc_html($outcome);?></h3><p><?php echo esc_html($editorial['outcomes'][$i]??($ru?'Конкретный результат по согласованным критериям.':'Конкретний результат за погодженими критеріями.'));?></p></div></div>
   <?php endforeach;?></div>
  </div></section>
- <section class="ukseo-proof" aria-labelledby="ns-limits-title"><div class="container ukseo-proof-layout">
+ <?php if($ru): ?>
+<section class="ukseo-proof" aria-labelledby="ns-limits-title"><div class="container ukseo-proof-layout">
   <div><span class="ukseo-kicker"><?php echo esc_html($copy['limitations']);?></span><h2 id="ns-limits-title"><?php echo esc_html($copy['limitationsTitle']);?></h2></div>
   <div><p><?php echo esc_html($page['risk']);?></p><a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($ru?'Смотреть портфолио':'Переглянути портфоліо');?> <span aria-hidden="true">↗</span></a></div>
  </div></section>
- <section class="ukseo-faq" aria-labelledby="ns-faq-title"><div class="container ukseo-faq-grid">
+ <?php endif; ?>
+<section class="ukseo-faq" aria-labelledby="ns-faq-title"><div class="container ukseo-faq-grid">
   <div><span class="ukseo-kicker"><?php echo esc_html($copy['faqLabel']);?></span><h2 id="ns-faq-title"><?php echo esc_html($copy['faqTitle']);?></h2></div>
   <div class="ukseo-faq-items"><?php foreach($page['faq'] as $pair):?><details><summary><?php echo esc_html($pair[0]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($pair[1]);?></p></details><?php endforeach;?></div>
  </div></section>

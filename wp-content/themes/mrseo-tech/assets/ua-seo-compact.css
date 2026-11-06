@@ -1,0 +1,91 @@
+/*
+ * Compact Ukrainian SEO service pilot.
+ * Three existing routes only: /seo/, /seo-audit/, /ecommerce-seo/.
+ * Do not touch the homepage, other languages or other services.
+ */
+.ukseo--seo .ukseo-hero,
+.ukseo--audit .ukseo-hero,
+.ukseo--commerce .ukseo-hero{padding:clamp(30px,3.8vw,52px) 0 clamp(50px,5vw,73px)}
+.ukseo--seo .ukseo-crumbs,
+.ukseo--audit .ukseo-crumbs,
+.ukseo--commerce .ukseo-crumbs{margin-bottom:clamp(21px,3vw,34px)}
+.ukseo--seo .ukseo-hero-copy h1,
+.ukseo--audit .ukseo-hero-copy h1,
+.ukseo--commerce .ukseo-hero-copy h1{
+ font-size:clamp(43px,5vw,72px);line-height:1.12;letter-spacing:-.025em;
+ margin-bottom:18px;overflow-wrap:break-word;
+}
+.ukseo--seo .ukseo-hero-copy h1 em,
+.ukseo--audit .ukseo-hero-copy h1 em,
+.ukseo--commerce .ukseo-hero-copy h1 em{line-height:1.13;letter-spacing:-.015em}
+.ukseo--seo .ukseo-hero-lead,
+.ukseo--audit .ukseo-hero-lead,
+.ukseo--commerce .ukseo-hero-lead{max-width:590px;line-height:1.57}
+.ukseo--seo .ukseo-actions,
+.ukseo--audit .ukseo-actions,
+.ukseo--commerce .ukseo-actions{margin-top:24px}
+.ukseo--seo .ukseo-hero-foot,
+.ukseo--audit .ukseo-hero-foot,
+.ukseo--commerce .ukseo-hero-foot{margin-top:17px}
+.ukseo--seo .ukseo-cases,
+.ukseo--audit .ukseo-cases,
+.ukseo--commerce .ukseo-cases{padding:clamp(50px,5.4vw,73px) 0}
+.ukseo--seo .ukseo-cases .ukseo-section-head,
+.ukseo--audit .ukseo-cases .ukseo-section-head,
+.ukseo--commerce .ukseo-cases .ukseo-section-head{margin-bottom:24px}
+.ukseo--seo .ukseo-problem-card,
+.ukseo--audit .ukseo-problem-card,
+.ukseo--commerce .ukseo-problem-card{
+ padding:clamp(22px,2.5vw,31px);min-height:0;display:flex;flex-direction:column;
+}
+.ukseo--seo .ukseo-card-number,
+.ukseo--audit .ukseo-card-number,
+.ukseo--commerce .ukseo-card-number{margin-bottom:25px}
+.ukseo--seo .ukseo-problem-card h3,
+.ukseo--audit .ukseo-problem-card h3,
+.ukseo--commerce .ukseo-problem-card h3{
+ font-size:clamp(20px,2.15vw,28px);line-height:1.22;letter-spacing:-.018em;
+}
+.ukseo--seo .ukseo-problem-card>p,
+.ukseo--audit .ukseo-problem-card>p,
+.ukseo--commerce .ukseo-problem-card>p{margin-bottom:0;line-height:1.55}
+.ukseo--seo .ukseo-visual-story--priorities{padding-block:clamp(53px,5.8vw,79px)}
+.ukseo--audit .ua4-section--plan{padding-block:clamp(55px,6vw,83px)}
+.ukseo--commerce .ec-lab{padding-block:clamp(56px,6vw,84px)}
+.ukseo--audit .ukseo-delivery,
+.ukseo--commerce .ukseo-delivery{padding:clamp(53px,5.8vw,79px) 0}
+.ukseo--seo .ukseo-faq,
+.ukseo--audit .ukseo-faq,
+.ukseo--commerce .ukseo-faq{padding:clamp(52px,5.4vw,76px) 0}
+.ukseo--seo .ukseo-faq-items summary,
+.ukseo--audit .ukseo-faq-items summary,
+.ukseo--commerce .ukseo-faq-items summary{min-height:62px}
+.ukseo--seo .ukseo-final,
+.ukseo--audit .ukseo-final,
+.ukseo--commerce .ukseo-final{padding:clamp(56px,5.8vw,78px) 0}
+@media(max-width:950px){
+ .ukseo--seo .ukseo-hero,
+ .ukseo--audit .ukseo-hero,
+ .ukseo--commerce .ukseo-hero{padding:28px 0 53px}
+}
+@media(max-width:480px){
+ .ukseo--seo .ukseo-hero-copy h1,
+ .ukseo--audit .ukseo-hero-copy h1,
+ .ukseo--commerce .ukseo-hero-copy h1{
+  font-size:clamp(36px,9.5vw,47px);letter-spacing:-.009em;line-height:1.14;
+ }
+ .ukseo--seo .ukseo-hero-copy h1 em,
+ .ukseo--audit .ukseo-hero-copy h1 em,
+ .ukseo--commerce .ukseo-hero-copy h1 em{letter-spacing:-.005em}
+ .ukseo--seo .ukseo-problem-card,
+ .ukseo--audit .ukseo-problem-card,
+ .ukseo--commerce .ukseo-problem-card{padding:21px}
+ .ukseo--seo .ukseo-card-number,
+ .ukseo--audit .ukseo-card-number,
+ .ukseo--commerce .ukseo-card-number{margin-bottom:17px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo--seo .ukseo-problem-card,
+ .ukseo--audit .ukseo-problem-card,
+ .ukseo--commerce .ukseo-problem-card{transition:none}
+}
