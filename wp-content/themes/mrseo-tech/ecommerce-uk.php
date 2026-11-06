@@ -1,7 +1,6 @@
 <?php
 /** Ukrainian-only, problem-led SEO for online stores. Other languages unchanged. */
 if (!defined('ABSPATH')) exit;
-require_once get_template_directory().'/inc/ua-four-service-visuals.php';
 get_header();
 ?>
 <div class="ukseo ukseo--commerce" id="main-content">
