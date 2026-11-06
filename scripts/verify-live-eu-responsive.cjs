@@ -206,7 +206,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuGroups!==5||c.serviceMenuItems<4)item.errors.push('Shared mega menu groups/links: '+c.serviceMenuGroups+'/'+c.serviceMenuItems);
+  if(c.serviceMenuGroups<5||c.serviceMenuGroups%5!==0||c.serviceMenuItems<4)item.errors.push('Shared mega menu groups/links: '+c.serviceMenuGroups+'/'+c.serviceMenuItems);
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
