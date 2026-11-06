@@ -64,7 +64,7 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-ukcommerce',get_template_directory_uri().'/assets/ecommerce-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
  }
  if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='google-ads'){
-  wp_enqueue_style('mrseo-ukads',get_template_directory_uri().'/assets/google-ads-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
+  wp_enqueue_style('mrseo-ukads',get_template_directory_uri().'/assets/google-ads-uk.css',array('mrseo-ukseo-pilot'),'1.0.1');
  }
  // UA Google Ads demonstration: only post-hero 3D scenes, without homepage changes.
  if(mrseo_locale()==='uk' && mrseo_slug()==='google-ads'){
