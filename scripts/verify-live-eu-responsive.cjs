@@ -149,7 +149,7 @@ async function audit(browser,viewport,lang,slug){
         const a=el.getBoundingClientRect();
         return {left:Math.round(a.left),right:Math.round(a.right),width:Math.round(a.width)};
       });
-      const text=cards.map(el=>el.textContent.replace(/\\s+/g,' ').trim());
+      const text=cards.map(el=>el.textContent.replace(/\s+/g,' ').trim());
       const heading=root?.querySelector('h2')?.textContent.trim()||'';
       return {target,css,count:cards.length,stages,heading,
         pricesCorrect:text.length===2&&text[0].includes('7 900')&&text[1].includes('12 900'),
