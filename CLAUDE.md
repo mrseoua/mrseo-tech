@@ -52,6 +52,18 @@ GitHub is the handoff surface; neither agent sees the other agent's ongoing conv
 9. Wait for human review/approval before merging. Do not auto-merge or enable auto-deploy on unreviewed changes.
 10. ChatGPT can review the Claude PR via the connected GitHub repository and provide architecture/SEO/content feedback. Claude can also review ChatGPT branches. Neither agent is an automatic reviewer without a deliberately configured trigger.
 
+## Approved navigation taxonomy — owner decision 2026-11-06
+
+**SEO mega-menu (Ukrainian reference): exactly five final top-level SEO destinations**, with this business-problem language:
+
+1. **Локальне SEO** — Клієнти поруч не знаходять вас у Google та на Картах.
+2. **SEO інтернет-магазинів** — Товари й категорії не приводять достатньо покупців.
+3. **SEO сайтів послуг** — Сайт є, але він не приносить заявок.
+4. **Міжнародне SEO** — Виходите на нові ринки, але клієнти там вас не знаходять.
+5. **SEO-аудит** — Не знаєте, чому сайт не зростає або втрачає позиції.
+
+Traffic recovery, migrations, indexing problems and other technical subtopics belong **inside their relevant service pages**, not as more primary SEO-menu entries. Audit is a diagnostic product, not a synonym for ongoing SEO. Owner also chose **not to display Analytics as its own top-level menu group**: GA4 and conversion measurement belong with SEO/Ads, while dashboards/integrations must not be deleted from the site. This section documents an approved future information architecture; **do not implement or deploy it without a separate request**. Preserve existing destinations and localized links; never link to nonexistent pages. Next discussion is Google Ads menu categories.
+
 ## Priority work
 
 1. Make existing service visuals **beautiful, coherent and unique** while preserving the high-quality homepage Earth.
