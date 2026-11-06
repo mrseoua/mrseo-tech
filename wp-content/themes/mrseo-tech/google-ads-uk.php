@@ -2,6 +2,7 @@
 /** Ukrainian-only premium Google Ads page. Other locales and services unchanged. */
 if (!defined('ABSPATH')) exit;
 if(mrseo_locale()==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
+require_once get_template_directory().'/inc/ua-google-ads-3d.php';
 get_header();
 ?>
 <div class="ukseo ukseo--ads" id="main-content">
@@ -71,6 +72,7 @@ get_header();
    </div>
   </div>
  </section>
+ <?php mrseo_ua_ads_depth_scene('economy'); ?>
  <section class="ukseo-work" aria-labelledby="ukads-process-title">
   <div class="container">
    <div class="ukseo-section-head">
@@ -96,12 +98,14 @@ get_header();
    </div>
   </div>
  </section>
+ <?php mrseo_ua_ads_depth_scene('deliverables'); ?>
  <section class="ukseo-proof" aria-labelledby="ukads-experience-title">
   <div class="container ukseo-proof-layout">
    <div><span class="ukseo-kicker">ПРОЗОРІСТЬ</span><h2 id="ukads-experience-title">Рішення мають бути зрозумілими. <em>Навіть коли алгоритм складний.</em></h2></div>
    <div><p>Пояснюємо, які дані перевіряли, що пропонуємо змінити та за яким критерієм оцінюємо результат. Окремо працюємо з товарними кампаніями та Performance Max — без удаваної точності там, де платформа обмежує деталізацію.</p><a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('performance-max')); ?>">Як працюємо з Performance Max <span aria-hidden="true">↗</span></a></div>
   </div>
  </section>
+ <?php mrseo_ua_ads_depth_scene('control'); ?>
  <section class="ukseo-faq" aria-labelledby="ukads-faq-title">
   <div class="container ukseo-faq-grid">
    <div><span class="ukseo-kicker">ПЕРЕД ПОЧАТКОМ</span><h2 id="ukads-faq-title">Питання про Google Ads.</h2><p>Без обіцянок гарантованої окупності.</p></div>
@@ -112,6 +116,7 @@ get_header();
    </div>
   </div>
  </section>
+ <?php mrseo_ua_ads_depth_scene('start'); ?>
  <section class="ukseo-final" aria-labelledby="ukads-final-title">
   <div class="container ukseo-final-grid">
    <div><span class="ukseo-kicker">ПЕРШИЙ КРОК</span><h2 id="ukads-final-title">Реклама вже працює? <em>Перевірмо, на що йдуть гроші.</em></h2><p>Опишіть ситуацію, залиште адресу сайту та розкажіть, які результати викликають питання. Почнемо з перевірки сигналів і головних обмежень.</p></div>
