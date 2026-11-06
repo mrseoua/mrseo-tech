@@ -138,6 +138,24 @@ async function audit(browser,viewport,lang,slug){
         hiddenOnForeign:lang!=='uk'&&!document.querySelector('.ua-sv'),
         goodGeometry:roots.length===2&&roots.every(r=>r.left>=-2&&r.right<=innerWidth+2&&r.width>250)};
     })(),
+    uaAdsPricing:(()=>{
+      const target=lang==='uk'&&slug==='google-ads';
+      const root=document.querySelector('#ukads-pricing');
+      const cards=[...document.querySelectorAll('.ukads-price-card')];
+      const css=!!document.querySelector('link[href*="ua-google-ads-pricing.css"]');
+      const flow=document.querySelector('.ukads-flow-plate');
+      const stages=flow?.querySelectorAll('.ukads-flow-node').length||0;
+      const boxes=[root,flow,...cards].filter(Boolean).map(el=>{
+        const a=el.getBoundingClientRect();
+        return {left:Math.round(a.left),right:Math.round(a.right),width:Math.round(a.width)};
+      });
+      const text=cards.map(el=>el.textContent.replace(/\\s+/g,' ').trim());
+      const heading=root?.querySelector('h2')?.textContent.trim()||'';
+      return {target,css,count:cards.length,stages,heading,
+        pricesCorrect:text.length===2&&text[0].includes('7 900')&&text[1].includes('12 900'),
+        geometry:boxes.length===4&&boxes.every(b=>b.width>250&&b.left>=-2&&b.right<=innerWidth+2),
+        noLeak:!target&&!css&&!root&&cards.length===0&&!flow};
+    })(),
     uaSeoVisuals:(()=>{
       if(lang!=='uk'||slug!=='seo')return null;
       const journey=document.querySelector('#ukseo-journey-title');
@@ -222,6 +240,13 @@ async function audit(browser,viewport,lang,slug){
   if(lang!=='uk'&&['google-ads','web-development'].includes(slug)&&
      (!c.uaCommercialVisuals.hiddenOnForeign||c.uaCommercialVisuals.style))
     item.errors.push('UA-only illustrations leaked onto foreign market page');
+  if(lang==='uk'&&slug==='google-ads'){
+    const p=c.uaAdsPricing;
+    if(!p||!p.css||p.count!==2||p.stages!==4||!p.pricesCorrect||!p.geometry||!p.heading)
+      item.errors.push('UA Google Ads prices/visuals missing or overflow: '+JSON.stringify(p));
+  }
+  if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
+    item.errors.push('Ukrainian Google Ads pricing leaked onto other pages');
   if(lang==='uk'&&slug==='seo'){
     const v=c.uaSeoVisuals;
     if(!v||!v.css||!v.journey||!v.priorities||!v.board||v.stageCount!==3||!v.boundariesOK||!v.properOrder)
