@@ -91,12 +91,11 @@ function mrseo_assets(){
   $ua_extra_deps=mrseo_slug()==='horoshop'?array('mrseo-ukseo-pilot','mrseo-horoshop-hero'):array('mrseo-ukseo-pilot');
   wp_enqueue_style('mrseo-uk-rest',get_template_directory_uri().'/assets/uk-service-rest.css',$ua_extra_deps,'1.0.0');
  }
- // Eight premium illustrations on four Ukrainian service pages only.
- // Enqueued after each page's existing base CSS to keep established layouts intact.
- if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('ecommerce-seo','analytics','service-websites','horoshop'),true)){
-  $ua4_deps=mrseo_slug()==='ecommerce-seo'?array('mrseo-ukcommerce'):array('mrseo-uk-rest');
+ // Illustrated services retain their own existing graphics.
+ // Ecommerce SEO now uses its interactive catalog laboratory instead of both extra scenes.
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('analytics','service-websites','horoshop'),true)){
   wp_enqueue_style('mrseo-ua-four-service-visuals',
-   get_template_directory_uri().'/assets/ua-four-service-visuals.css',$ua4_deps,'1.0.0');
+   get_template_directory_uri().'/assets/ua-four-service-visuals.css',array('mrseo-uk-rest'),'1.0.0');
  }
  if(in_array(mrseo_locale(),array('uk','ru'),true) && in_array(mrseo_slug(),array('about','portfolio','contact','web-development'),true)){
   $ua_polish_deps=mrseo_slug()==='about'?array('mrseo-about'):(mrseo_slug()==='web-development'?array('mrseo-development'):array('mrseo-style'));
@@ -117,6 +116,16 @@ function mrseo_assets(){
  }
  if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
   wp_enqueue_style('mrseo-ru-premium',get_template_directory_uri().'/assets/ru-premium.css',array('mrseo-ukseo-pilot'),'1.0.1');
+ }
+ // Compact, conversion-first Ukrainian SEO pages: use existing themed motion, less clutter.
+ if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo'),true)){
+  $ua_seo_compact_deps=array(
+   'seo'=>'mrseo-ua-seo-visuals',
+   'seo-audit'=>'mrseo-ua-final-interiors',
+   'ecommerce-seo'=>'mrseo-ukcommerce'
+  );
+  wp_enqueue_style('mrseo-ua-seo-compact',get_template_directory_uri().'/assets/ua-seo-compact.css',
+   array($ua_seo_compact_deps[mrseo_slug()]),'1.0.0');
  }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
