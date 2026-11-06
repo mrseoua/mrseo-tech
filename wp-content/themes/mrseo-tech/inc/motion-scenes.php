@@ -100,7 +100,7 @@ function mrseo_render_motion_scene($slug,$locale=null){
   <?php break;
   case 'performance-max':?>
    <div class="ms-pmax-hub"><div class="ms-pmax-core">PMax<span>↗</span></div>
-    <span class="ms-pmax-node ms-pmax-node-a">FEED</span><span class="ms-pmax-node ms-pmax-node-b">SEARCH</span><span class="ms-pmax-node ms-pmax-node-c">SHOPPING</span><div class="ms-pmax-ring"></div><div class="ms-pmax-ring ms-pmax-ring-two"></div>
+    <span class="ms-pmax-node ms-pmax-node-a"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ФІД':'FEED');?></span><span class="ms-pmax-node ms-pmax-node-b"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ПОШУК':'SEARCH');?></span><span class="ms-pmax-node ms-pmax-node-c"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ТОВАРИ':'SHOPPING');?></span><div class="ms-pmax-ring"></div><div class="ms-pmax-ring ms-pmax-ring-two"></div>
    </div><div class="ms-pmax-bottom"><span><?php echo esc_html($steps[0]);?></span><i></i><span><?php echo esc_html($steps[2]);?></span></div>
   <?php break;
   case 'horoshop':?>
@@ -115,10 +115,10 @@ function mrseo_render_motion_scene($slug,$locale=null){
   <?php break;
   case 'about':?>
    <div class="ms-about-center"><span><?php echo esc_html($copy['name']);?></span><strong>10</strong><small><?php echo esc_html(array('uk'=>'РОКІВ','ru'=>'ЛЕТ','en'=>'YEARS','pl'=>'LAT','de'=>'JAHRE')[$locale?:mrseo_locale()]??'YEARS');?></small></div>
-   <div class="ms-about-card ms-about-card-a">SEO <b>↗</b></div><div class="ms-about-card ms-about-card-b">GOOGLE ADS <b>↗</b></div><div class="ms-about-card ms-about-card-c">ENGINEERING <b>↗</b></div>
+   <div class="ms-about-card ms-about-card-a">SEO <b>↗</b></div><div class="ms-about-card ms-about-card-b">GOOGLE ADS <b>↗</b></div><div class="ms-about-card ms-about-card-c"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'РОЗРОБКА':'ENGINEERING');?> <b>↗</b></div>
   <?php break;
   case 'portfolio':?>
-   <div class="ms-portfolio-rows"><?php foreach(array('avtomoda.com.ua','armonelli.com.ua','powerlux.com.ua','urolog.kr.ua','turboparts.ua','welltex.ua') as $i=>$domain):?><div class="ms-portfolio-item"><small><?php echo esc_html(sprintf('%02d',$i+1));?></small><strong><?php echo esc_html($domain);?></strong><span>↗</span></div><?php endforeach;?></div><span class="ms-portfolio-badge">MRSEO / PORTFOLIO</span>
+   <div class="ms-portfolio-rows"><?php foreach(array('avtomoda.com.ua','armonelli.com.ua','powerlux.com.ua','urolog.kr.ua','turboparts.ua','welltex.ua') as $i=>$domain):?><div class="ms-portfolio-item"><small><?php echo esc_html(sprintf('%02d',$i+1));?></small><strong><?php echo esc_html($domain);?></strong><span>↗</span></div><?php endforeach;?></div><span class="ms-portfolio-badge">MRSEO / <?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ПРОЄКТИ':'PORTFOLIO');?></span>
   <?php break;
   case 'contact':?>
    <div class="ms-contact-flow"><?php foreach($steps as $i=>$step):?><div class="ms-contact-tile ms-contact-tile-<?php echo esc_attr($i);?>"><span>0<?php echo esc_html($i+1);?> /</span><strong><?php echo esc_html($step);?></strong><i><?php echo $i===2?'✓':'';?></i></div><?php endforeach;?></div><div class="ms-contact-arrow"></div>
