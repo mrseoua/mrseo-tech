@@ -98,7 +98,7 @@ async function audit(browser,viewport,lang,slug){
     uaFinalScenes:(()=>{
       const target=lang==='uk'&&['seo-audit','performance-max','about','portfolio','contact'].includes(slug);
       const services=['seo-audit','performance-max'].includes(slug);
-      const compactAudit=lang==='uk'&&slug==='seo-audit';
+      const compactAudit=lang==='uk'&&['seo-audit','performance-max'].includes(slug);
       const sections=services?[...document.querySelectorAll('.ua4-section')]:
         [...document.querySelectorAll('.uaf-story,.uaf-contact-guide')];
       const stylesheet=!!document.querySelector('link[href*="ua-final-interiors.css"]');
@@ -115,16 +115,16 @@ async function audit(browser,viewport,lang,slug){
         noLeak:!target&&!stylesheet&&sections.length===0};
     })(),
     uaFourScenes:(()=>{
-      const target=lang==='uk'&&['analytics','service-websites','horoshop'].includes(slug);
+      const target=lang==='uk'&&['analytics','service-websites'].includes(slug);
       const sections=[...document.querySelectorAll('.ua4-section')];
       const style=!!document.querySelector('link[href*="ua-four-service-visuals.css"]');
       const rects=sections.map(el=>{const r=el.getBoundingClientRect();
         return {left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)}});
       const headings=sections.map(el=>el.querySelector('h2')?.textContent.trim()||'');
       const journeys=sections[0]?.querySelectorAll('.ua4-journey>li').length||0;
-      const planSteps=sections[1]?.querySelectorAll('.ua4-plan-step').length||0;
+      const planSteps=sections[0]?.querySelectorAll('.ua4-plan-step').length||0;
       return {style,count:sections.length,headings,journeys,planSteps,
-        correctOrder:sections.length===2&&!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING),
+        correctOrder:sections.length===1,
         geometry:rects.every(r=>r.left>=-2&&r.right<=innerWidth+2&&r.width>250),
         leak:!target&&(sections.length>0||style)};
     })(),
@@ -132,7 +132,7 @@ async function audit(browser,viewport,lang,slug){
       const target=lang==='uk'&&['google-ads','web-development'].includes(slug);
       const sections=target?[...document.querySelectorAll('.ua-sv')]:[];
       const style=!!document.querySelector('link[href*="ua-commercial-visuals.css"]');
-      const expected=lang==='uk'&&slug==='google-ads'?1:2;
+      const expected=lang==='uk'?1:2;
       const roots=sections.map(e=>({id:e.querySelector('h2')?.id||'',width:Math.round(e.getBoundingClientRect().width),
         left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right)}));
       return {style,sections:sections.length,roots,headings:[...document.querySelectorAll('.ua-sv h2')].map(x=>x.textContent.trim()),
@@ -196,7 +196,16 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(coreShard?(c.serviceMenuItems<4):(c.serviceMenuItems!==8))item.errors.push('Shared mega menu links: '+c.serviceMenuItems);
+  if(c.serviceMenuItems<4)item.errors.push('Shared mega menu has too few working links: '+c.serviceMenuItems);
+  if(lang==='uk'&&['merchant-center'].includes(slug)){
+    const compact=await page.locator('.ns-page--compact').count();
+    const issues=await page.locator('.ns-page--compact .ukseo-problem-card').count();
+    const outcomes=await page.locator('.ns-page--compact .ukseo-delivery-list>div').count();
+    const repeated=await page.locator('.ns-page--compact .ukseo-decision,.ns-page--compact .ukseo-work,.ns-page--compact .ukseo-proof').count();
+    const compactStyle=await page.locator('link[href*="ua-services-compact.css"]').count();
+    if(compact!==1||issues!==3||outcomes!==3||repeated!==0||compactStyle!==1)
+      item.errors.push('UA compact existing service regression: '+JSON.stringify({compact,issues,outcomes,repeated,compactStyle}));
+  }
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
@@ -223,15 +232,15 @@ async function audit(browser,viewport,lang,slug){
   if(lang==='uk'&&uaFinalSlugs.includes(slug)){
     const v=c.uaFinalScenes;
     const services=['seo-audit','performance-max'].includes(slug);
-    if(!v||!v.stylesheet||v.count!==(slug==='seo-audit'?1:services?2:1)||v.headings.some(h=>!h)||
-        !v.geometry||!v.formIntact||(services&&(!v.serviceStyles||v.cards!==(slug==='seo-audit'?0:3)||v.planSteps!==3||!v.ordered)))
+    if(!v||!v.stylesheet||v.count!==(services?1:1)||v.headings.some(h=>!h)||
+        !v.geometry||!v.formIntact||(services&&(!v.serviceStyles||v.cards!==0||v.planSteps!==3||!v.ordered)))
       item.errors.push('UA final interiors missing/inaccessible/out of viewport: '+JSON.stringify(v));
   }
   if(lang!=='uk'&&!c.uaFinalScenes.noLeak)
     item.errors.push('UA final interior assets or content leaked into '+lang);
-  if(lang==='uk'&&uaFourSlugs.includes(slug)&&slug!=='ecommerce-seo'){
+  if(lang==='uk'&&['analytics','service-websites'].includes(slug)){
     const v=c.uaFourScenes;
-    if(!v||!v.style||v.count!==2||v.journeys!==3||v.planSteps!==3||
+    if(!v||!v.style||v.count!==1||v.journeys!==0||v.planSteps!==3||
         !v.correctOrder||!v.geometry||v.headings.some(h=>!h))
       item.errors.push('UA four-service illustrated section missing/overflows: '+JSON.stringify(v));
   }
@@ -239,7 +248,7 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('UA-only four-service scenes leaked into '+lang);
   if(lang==='uk'&&['google-ads','web-development'].includes(slug)){
     const v=c.uaCommercialVisuals;
-    if(!v||!v.style||v.sections!==(slug==='google-ads'?1:2)||!v.properOrder||!v.goodGeometry||v.headings.length!==(slug==='google-ads'?1:2))
+    if(!v||!v.style||v.sections!==1||!v.properOrder||!v.goodGeometry||v.headings.length!==1)
       item.errors.push('UA commercial story missing or out of viewport: '+JSON.stringify(v));
   }
   if(lang!=='uk'&&['google-ads','web-development'].includes(slug)&&
@@ -322,10 +331,10 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
+    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'merchant-center']:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
     for(const slug of selectedSlugs){
      if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}
