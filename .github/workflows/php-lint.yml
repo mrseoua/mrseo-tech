@@ -59,7 +59,8 @@ jobs:
           paths=('local-business-websites','landing-pages','corporate-websites','website-redesign')
           assert all('"'+s+'": {' in src for s in paths)
           assert all("'"+s+"'" in menu for s in paths)
-          assert all("uws-demo--"+s in template for s in ()) # scene variants are dynamic
+          assert all("$kind==='"+s+"'" in template for s in ('local','landing','corporate'))
+          assert 'uws-redesign' in template
           assert 'function mrseo_ua_website_route()' in src
           assert 'function mrseo_ua_website_slugs()' in src
           assert 'mrseo_ua_website_route()' in functions
