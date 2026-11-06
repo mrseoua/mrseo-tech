@@ -14,6 +14,7 @@ const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 const slugs=coreShard?['','seo','google-ads','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
 const uaFourSlugs=['ecommerce-seo','analytics','service-websites','horoshop'];
 const uaFinalSlugs=['seo-audit','performance-max','about','portfolio','contact'];
+const uaWebsiteSlugs=['local-business-websites','landing-pages','corporate-websites','website-redesign'];
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -175,6 +176,16 @@ async function audit(browser,viewport,lang,slug){
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
     serviceMenuItems:document.querySelectorAll('.mrseo-mega .mrseo-mega-item[href]').length,
+    serviceMenuGroups:document.querySelectorAll('.mrseo-mega .mrseo-mega-group').length,
+    uaWebsitePilot:(()=>{
+      const page=document.querySelector('.uws-page');
+      const scene=page?.querySelector('.uws-demo');
+      const style=!!document.querySelector('link[href*="ua-websites.css"]');
+      const r=scene?.getBoundingClientRect();
+      return {page:!!page,scene:!!scene,style,pains:page?.querySelectorAll('.uws-pains .ukseo-problem-card').length||0,
+        faq:page?.querySelectorAll('.uws-faq details').length||0,related:page?.querySelectorAll('.uws-related a[href]').length||0,
+        geometry:!!r&&r.width>250&&r.left>=-2&&r.right<=innerWidth+2};
+    })(),
     portfolioCards:document.querySelectorAll('.eu-project-card,.client-directory-card').length,
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
@@ -195,7 +206,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(coreShard?(c.serviceMenuItems<4):(c.serviceMenuItems!==8))item.errors.push('Shared mega menu links: '+c.serviceMenuItems);
+  if(c.serviceMenuGroups!==5||c.serviceMenuItems<4)item.errors.push('Shared mega menu groups/links: '+c.serviceMenuGroups+'/'+c.serviceMenuItems);
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
@@ -236,6 +247,12 @@ async function audit(browser,viewport,lang,slug){
   }
   if(lang!=='uk'&&c.uaFourScenes.leak)
     item.errors.push('UA-only four-service scenes leaked into '+lang);
+  if(lang==='uk'&&uaWebsiteSlugs.includes(slug)){
+    const u=c.uaWebsitePilot;
+    if(!u.page||!u.scene||!u.style||u.pains!==3||u.faq!==3||u.related!==2||!u.geometry)
+      item.errors.push('UA Website Creation missing or overflow: '+JSON.stringify(u));
+  }
+  if(lang!=='uk'&&(c.uaWebsitePilot.page||c.uaWebsitePilot.style))item.errors.push('Ukrainian Website Creation assets leaked to '+lang);
   if(lang==='uk'&&['google-ads','web-development'].includes(slug)){
     const v=c.uaCommercialVisuals;
     if(!v||!v.style||v.sections!==(slug==='google-ads'?1:2)||!v.properOrder||!v.goodGeometry||v.headings.length!==(slug==='google-ads'?1:2))
@@ -316,10 +333,10 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
+    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,...uaWebsiteSlugs]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,...uaWebsiteSlugs].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,...uaWebsiteSlugs].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}
