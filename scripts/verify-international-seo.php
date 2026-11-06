@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (294 URLs)
+ * - all completed pages are represented exactly once (307 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -42,6 +42,7 @@ function wp_trim_words($text, $num_words = 55, $more = '…') {
 }
 
 require_once $root . '/inc/i18n-routing.php';
+require_once $root . '/inc/ua-website-services.php';
 require_once $root . '/inc/new-service-routes.php';
 require_once $root . '/inc/pl-service-routing.php';
 require_once $root . '/inc/uk-market-routing.php';
@@ -55,11 +56,11 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 29, 'Expected 29 editorial equivalence groups');
-assert_seo(count($inventory) === 294, 'Expected 294 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($groups) === 42, 'Expected 42 editorial equivalence groups');
+assert_seo(count($inventory) === 307, 'Expected 307 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
-    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs()),
+    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs()),
     'ru' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs()),
     'en' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','privacy'], mrseo_uk_market_new_slugs()),
     'pl' => array_merge(mrseo_int_pages(), ['privacy'],mrseo_pl_service_slugs()),
@@ -98,14 +99,14 @@ foreach ($inventory as $entry) {
     $url_groups[$url] = $entry['group'];
     assert_seo(isset($entry['alternates'][$codes[$lang]]) &&
         $entry['alternates'][$codes[$lang]] === $url, "Missing self hreflang on $url");
-    assert_seo(count($entry['alternates']) >= 2, "Missing counterpart hreflang on $url");
+    assert_seo(count($entry['alternates']) >= (str_starts_with($entry['group'],'ua-service:')?1:2), "Invalid hreflang on $url");
     if ($entry['default'] !== null) {
         assert_seo($entry['group'] === 'shared:home' &&
             $entry['default'] === 'https://mrseo.tech/', "Incorrect x-default on $url");
         $home_count++;
     }
 }
-assert_seo(count($seen) === 294 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 307 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -162,6 +163,21 @@ foreach ($inventory as $entry) {
 // Sitemap and HTML derive from the identical registry.
 assert_seo(mrseo_localized_sitemap_paths() === $inventory,
     'Sitemap and page-head registry do not match');
+
+// All 13 UA-only services must be accessible, self canonical and avoid fake alternates.
+foreach(mrseo_ua_website_slugs() as $slug){
+ $page=mrseo_ua_website_data($slug);
+ assert_seo($page!==null&&isset($page['title'],$page['headline'],$page['lead']),'Missing Ukrainian service copy '.$slug);
+ $_SERVER['REQUEST_URI']='/'.$slug.'/';
+ $entry=mrseo_i18n_current_entry();
+ assert_seo($entry!==null&&$entry['group']==='ua-service:'.$slug,'Missing UA-only canonical for '.$slug);
+ assert_seo(count($entry['alternates'])===1,'Fabricated foreign-language alternate for '.$slug);
+ foreach(array_keys($codes) as $language){
+  if($language==='uk')continue;
+  $dest=mrseo_url($slug,$language);
+  assert_seo($dest!=='https://mrseo.tech/'.$language.'/'.$slug.'/','Missing foreign-language route should use a real parent: '.$language.'/'.$slug);
+ }
+}
 
 // UK and Polish 'google-shopping' are real pages, not Google Ads fallbacks.
 $_SERVER['REQUEST_URI'] = '/en/google-shopping/';
