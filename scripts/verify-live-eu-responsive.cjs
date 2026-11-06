@@ -122,6 +122,19 @@ async function audit(browser,viewport,lang,slug){
       const perspective=art?getComputedStyle(art).perspective:'none';
       return {css,art:!!art,perspective};
     })(),
+    uaAnalyticsScene:(()=>{
+      if(lang!=='uk'||slug!=='analytics')return null;
+      const root=document.querySelector('.ms-scene-analytics .ms-observe');
+      const nodes=[...document.querySelectorAll('.ms-scene-analytics .ms-observe-node')];
+      const rail=!!document.querySelector('.ms-scene-analytics .ms-observe-rail');
+      const tags=[...document.querySelectorAll('.ms-scene-analytics .ms-observe-footer span')].map(el=>el.textContent.trim());
+      const stage=document.querySelector('.ms-scene-analytics .ms-stage')?.getBoundingClientRect();
+      const inside=!!stage&&nodes.every(el=>{
+        const box=el.getBoundingClientRect();
+        return box.width>60&&box.height>30&&box.left>=stage.left-22&&box.right<=stage.right+22;
+      });
+      return {rendered:!!root,steps:nodes.length,rail,tags,inside};
+    })(),
     uaFourScenes:(()=>{
       const target=lang==='uk'&&['ecommerce-seo','analytics','service-websites','horoshop'].includes(slug);
       const sections=[...document.querySelectorAll('.ua4-section')];
@@ -206,6 +219,8 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
+  if(c.uaAnalyticsScene&&(!c.uaAnalyticsScene.rendered||c.uaAnalyticsScene.steps!==3||!c.uaAnalyticsScene.rail||c.uaAnalyticsScene.tags.length!==3||!c.uaAnalyticsScene.inside))
+    item.errors.push('Ukrainian analytics measurement scene missing/clipped: '+JSON.stringify(c.uaAnalyticsScene));
   if(c.uaDepth&&(!c.uaDepth.css||!c.uaDepth.art||c.uaDepth.perspective==='none'))
     item.errors.push('Ukrainian 3D illustration/perspective missing: '+JSON.stringify(c.uaDepth));
   if(lang==='uk'&&uaFinalSlugs.includes(slug)){
