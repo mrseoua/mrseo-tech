@@ -18,7 +18,7 @@ function mrseo_render_motion_scene($slug,$locale=null){
  ?>
  <div class="ms-scene ms-scene-<?php echo esc_attr($slug);?>" data-ms-scene="<?php echo esc_attr($slug);?>" data-ms-active="0" aria-label="<?php echo esc_attr($copy['name']);?>">
   <div class="ms-top"><span class="ms-top-mark"><i></i> MRSEO / <?php echo esc_html($copy['name']);?></span><span class="ms-signal" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <div class="ms-stage" aria-hidden="true">
+  <div class="ms-stage<?php echo ($slug==='analytics' && ($locale?:mrseo_locale())==='uk')?' ms-stage--ua-analytics':'';?>" aria-hidden="true">
   <?php switch($slug):
   case 'seo':?>
    <div class="ms-search-box"><span class="ms-search-glass">⌕</span><span><?php echo esc_html($steps[0]);?></span><i></i></div>
@@ -43,17 +43,53 @@ function mrseo_render_motion_scene($slug,$locale=null){
    <div class="ms-ads-measure"><span><?php echo esc_html($steps[1]);?></span><i></i><span><?php echo esc_html($steps[2]);?></span><b>✓</b></div>
   <?php break;
   case 'analytics':?>
+   <?php if(($locale?:mrseo_locale())==='uk'):?>
+   <!-- A purpose-built measurement pipeline, not a generic dashboard chart.
+        All values are illustrative labels, not real client measurements. -->
+   <div class="ms-observe">
+    <div class="ms-observe-top"><span>ГА4 / ШЛЯХ ПОДІЇ</span><span>● ПЕРЕВІРКА ДАНИХ</span></div>
+    <div class="ms-observe-grid">
+     <div class="ms-observe-node ms-observe-node--event ms-select-0">
+      <span class="ms-observe-step">01 / САЙТ</span><strong>Подія</strong><span class="ms-observe-detail">purchase</span><b class="ms-observe-symbol" aria-hidden="true">↗</b>
+     </div>
+     <div class="ms-observe-node ms-observe-node--verify ms-select-1">
+      <span class="ms-observe-step">02 / КОНТРОЛЬ</span><strong>Перевірка</strong><span class="ms-observe-detail">Без дублів</span><b class="ms-observe-symbol" aria-hidden="true">✓</b>
+     </div>
+     <div class="ms-observe-node ms-observe-node--decision ms-select-2">
+      <span class="ms-observe-step">03 / БІЗНЕС</span><strong>Рішення</strong><span class="ms-observe-detail">Зрозумілий звіт</span><b class="ms-observe-symbol" aria-hidden="true">◈</b>
+     </div>
+    </div>
+    <div class="ms-observe-rail" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="ms-observe-footer"><span>GA4</span><i aria-hidden="true"></i><span>GOOGLE ADS</span><i aria-hidden="true"></i><span>ЗАМОВЛЕННЯ</span></div>
+   </div>
+   <?php else:?>
    <div class="ms-data-head"><span>GA4 / <?php echo esc_html($copy['name']);?></span><span class="ms-data-live">● <?php echo esc_html($tabs[0]);?></span></div>
    <svg class="ms-data-path" viewBox="0 0 500 145" preserveAspectRatio="none"><path d="M5 118 C105 118 92 52 175 70 S300 118 352 43 S420 27 495 14" fill="none" stroke="#c97769" stroke-width="4" stroke-linecap="round" class="ms-data-draw"/><path d="M5 118 C105 118 92 52 175 70 S300 118 352 43 S420 27 495 14" fill="none" stroke="#c97769" stroke-width="2" stroke-dasharray="3 12" class="ms-data-dash"/></svg>
    <div class="ms-data-events"><?php foreach($steps as $i=>$step):?><div class="ms-data-event ms-select-<?php echo esc_attr($i);?>"><i></i><span><?php echo esc_html($step);?></span><b>✓</b></div><?php endforeach;?></div>
    <div class="ms-data-check"><span>event_name</span><strong>purchase</strong><i>✓</i></div>
+   <?php endif;?>
   <?php break;
   case 'web-development':?>
+   <?php if(($locale?:mrseo_locale())==='uk'):?>
+   <div class="ms-dev-schema ms-dev-schema--uk">
+    <div class="ms-dev-node ms-dev-node-a"><small>01 / КОРИСТУВАЧ</small><strong>Кабінет</strong><span>Заявки та доступ</span></div>
+    <div class="ms-dev-node ms-dev-node-b"><small>02 / ІНТЕГРАЦІЯ</small><strong>API</strong><span>Обмін даними</span></div>
+    <div class="ms-dev-node ms-dev-node-c"><small>03 / ПРОЦЕСИ</small><strong>CRM</strong><span>Статуси й облік</span></div>
+    <div class="ms-dev-wire ms-dev-wire-a"></div><div class="ms-dev-wire ms-dev-wire-b"></div><div class="ms-dev-pulse ms-dev-pulse-a"></div><div class="ms-dev-pulse ms-dev-pulse-b"></div>
+   </div>
+   <div class="ms-dev-code ms-dev-code--uk">
+    <strong class="ms-dev-code-kicker">СХЕМА ОБМІНУ ДАНИМИ</strong>
+    <div class="ms-dev-flow"><span>Кабінет</span><b aria-hidden="true">→</b><span>API</span><b aria-hidden="true">→</b><span>CRM</span></div>
+    <span class="ms-dev-code-caption"><b aria-hidden="true">●</b> Перевірка передачі й обробки помилок</span>
+   </div>
+   <?php else:?>
    <div class="ms-dev-schema"><div class="ms-dev-node ms-dev-node-a"><small>01 /</small><strong><?php echo esc_html($steps[0]);?></strong><span>UI / ACCESS</span></div>
    <div class="ms-dev-node ms-dev-node-b"><small>02 /</small><strong>API</strong><span>DATA FLOW</span></div>
    <div class="ms-dev-node ms-dev-node-c"><small>03 /</small><strong>CRM</strong><span>WORKFLOW</span></div>
    <div class="ms-dev-wire ms-dev-wire-a"></div><div class="ms-dev-wire ms-dev-wire-b"></div><div class="ms-dev-pulse ms-dev-pulse-a"></div><div class="ms-dev-pulse ms-dev-pulse-b"></div></div>
    <div class="ms-dev-code"><span><em>const</em> process = <b>{</b></span><span>&nbsp;&nbsp;sync: <strong>'verified'</strong>,</span><span>&nbsp;&nbsp;errors: <strong>'monitored'</strong></span><span><b>};</b><i></i></span></div>
+
+   <?php endif;?>
   <?php break;
   case 'service-websites':?>
    <div class="ms-web-screen"><div class="ms-web-toolbar"><i></i><i></i><i></i><span><?php echo esc_html($copy['name']);?></span></div>
@@ -64,7 +100,7 @@ function mrseo_render_motion_scene($slug,$locale=null){
   <?php break;
   case 'performance-max':?>
    <div class="ms-pmax-hub"><div class="ms-pmax-core">PMax<span>↗</span></div>
-    <span class="ms-pmax-node ms-pmax-node-a">FEED</span><span class="ms-pmax-node ms-pmax-node-b">SEARCH</span><span class="ms-pmax-node ms-pmax-node-c">SHOPPING</span><div class="ms-pmax-ring"></div><div class="ms-pmax-ring ms-pmax-ring-two"></div>
+    <span class="ms-pmax-node ms-pmax-node-a"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ФІД':'FEED');?></span><span class="ms-pmax-node ms-pmax-node-b"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ПОШУК':'SEARCH');?></span><span class="ms-pmax-node ms-pmax-node-c"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ТОВАРИ':'SHOPPING');?></span><div class="ms-pmax-ring"></div><div class="ms-pmax-ring ms-pmax-ring-two"></div>
    </div><div class="ms-pmax-bottom"><span><?php echo esc_html($steps[0]);?></span><i></i><span><?php echo esc_html($steps[2]);?></span></div>
   <?php break;
   case 'horoshop':?>
@@ -79,10 +115,10 @@ function mrseo_render_motion_scene($slug,$locale=null){
   <?php break;
   case 'about':?>
    <div class="ms-about-center"><span><?php echo esc_html($copy['name']);?></span><strong>10</strong><small><?php echo esc_html(array('uk'=>'РОКІВ','ru'=>'ЛЕТ','en'=>'YEARS','pl'=>'LAT','de'=>'JAHRE')[$locale?:mrseo_locale()]??'YEARS');?></small></div>
-   <div class="ms-about-card ms-about-card-a">SEO <b>↗</b></div><div class="ms-about-card ms-about-card-b">GOOGLE ADS <b>↗</b></div><div class="ms-about-card ms-about-card-c">ENGINEERING <b>↗</b></div>
+   <div class="ms-about-card ms-about-card-a">SEO <b>↗</b></div><div class="ms-about-card ms-about-card-b">GOOGLE ADS <b>↗</b></div><div class="ms-about-card ms-about-card-c"><?php echo esc_html(($locale?:mrseo_locale())==='uk'?'РОЗРОБКА':'ENGINEERING');?> <b>↗</b></div>
   <?php break;
   case 'portfolio':?>
-   <div class="ms-portfolio-rows"><?php foreach(array('avtomoda.com.ua','armonelli.com.ua','powerlux.com.ua','urolog.kr.ua','turboparts.ua','welltex.ua') as $i=>$domain):?><div class="ms-portfolio-item"><small><?php echo esc_html(sprintf('%02d',$i+1));?></small><strong><?php echo esc_html($domain);?></strong><span>↗</span></div><?php endforeach;?></div><span class="ms-portfolio-badge">MRSEO / PORTFOLIO</span>
+   <div class="ms-portfolio-rows"><?php foreach(array('avtomoda.com.ua','armonelli.com.ua','powerlux.com.ua','urolog.kr.ua','turboparts.ua','welltex.ua') as $i=>$domain):?><div class="ms-portfolio-item"><small><?php echo esc_html(sprintf('%02d',$i+1));?></small><strong><?php echo esc_html($domain);?></strong><span>↗</span></div><?php endforeach;?></div><span class="ms-portfolio-badge">MRSEO / <?php echo esc_html(($locale?:mrseo_locale())==='uk'?'ПРОЄКТИ':'PORTFOLIO');?></span>
   <?php break;
   case 'contact':?>
    <div class="ms-contact-flow"><?php foreach($steps as $i=>$step):?><div class="ms-contact-tile ms-contact-tile-<?php echo esc_attr($i);?>"><span>0<?php echo esc_html($i+1);?> /</span><strong><?php echo esc_html($step);?></strong><i><?php echo $i===2?'✓':'';?></i></div><?php endforeach;?></div><div class="ms-contact-arrow"></div>

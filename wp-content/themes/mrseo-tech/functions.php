@@ -112,6 +112,14 @@ function mrseo_assets(){
  if(mrseo_locale()==='ru' && in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'),true)){
   wp_enqueue_style('mrseo-ru-premium',get_template_directory_uri().'/assets/ru-premium.css',array('mrseo-ukseo-pilot'),'1.0.1');
  }
+ // Ukrainian interior 3D depth is CSS-only, scoped to service/internal pages;
+ // the homepage WebGL Earth and all non-Ukrainian locales remain unchanged.
+ $mrseo_ua_visual_slugs=array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development',
+  'service-websites','horoshop','performance-max','about','portfolio','contact');
+ $mrseo_ua_is_new_service=function_exists('mrseo_new_service_slugs') && in_array(mrseo_slug(),mrseo_new_service_slugs(),true);
+ if(mrseo_locale()==='uk' && (in_array(mrseo_slug(),$mrseo_ua_visual_slugs,true)||$mrseo_ua_is_new_service)){
+  wp_enqueue_style('mrseo-ua-3d-motion',get_template_directory_uri().'/assets/ua-3d-motion.css',array('mrseo-style'),'1.0.1');
+ }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.1.0');

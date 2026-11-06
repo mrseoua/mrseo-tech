@@ -14,6 +14,7 @@ const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 const slugs=coreShard?['','seo','google-ads','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
 const uaFourSlugs=['ecommerce-seo','analytics','service-websites','horoshop'];
 const uaFinalSlugs=['seo-audit','performance-max','about','portfolio','contact'];
+const uaDepthSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','service-websites','horoshop','performance-max','about','portfolio','contact','website-audit','api-integrations'];
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -113,6 +114,27 @@ async function audit(browser,viewport,lang,slug){
             !!document.querySelector('form[action*="admin-post.php"] textarea[name="contact_message"]'):true,
         noLeak:!target&&!stylesheet&&sections.length===0};
     })(),
+    uaDepth:(()=>{
+      const target=lang==='uk'&&['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','service-websites','horoshop','performance-max','about','portfolio','contact','website-audit','api-integrations'].includes(slug);
+      if(!target)return null;
+      const css=!!document.querySelector('link[href*="ua-3d-motion.css"]');
+      const art=document.querySelector('.ukseo-visual-art,.ua4-art,.ua-sv-art,.ua-sv-dev-diagram,.uaf-network,.uaf-evidence-figure,.uaf-contact-steps,.ns-scene');
+      const perspective=art?getComputedStyle(art).perspective:'none';
+      return {css,art:!!art,perspective};
+    })(),
+    uaAnalyticsScene:(()=>{
+      if(lang!=='uk'||slug!=='analytics')return null;
+      const root=document.querySelector('.ms-scene-analytics .ms-observe');
+      const nodes=[...document.querySelectorAll('.ms-scene-analytics .ms-observe-node')];
+      const rail=!!document.querySelector('.ms-scene-analytics .ms-observe-rail');
+      const tags=[...document.querySelectorAll('.ms-scene-analytics .ms-observe-footer span')].map(el=>el.textContent.trim());
+      const stage=document.querySelector('.ms-scene-analytics .ms-stage')?.getBoundingClientRect();
+      const inside=!!stage&&nodes.every(el=>{
+        const box=el.getBoundingClientRect();
+        return box.width>60&&box.height>30&&box.left>=stage.left-22&&box.right<=stage.right+22;
+      });
+      return {rendered:!!root,steps:nodes.length,rail,tags,inside};
+    })(),
     uaFourScenes:(()=>{
       const target=lang==='uk'&&['ecommerce-seo','analytics','service-websites','horoshop'].includes(slug);
       const sections=[...document.querySelectorAll('.ua4-section')];
@@ -197,6 +219,10 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
+  if(c.uaAnalyticsScene&&(!c.uaAnalyticsScene.rendered||c.uaAnalyticsScene.steps!==3||!c.uaAnalyticsScene.rail||c.uaAnalyticsScene.tags.length!==3||!c.uaAnalyticsScene.inside))
+    item.errors.push('Ukrainian analytics measurement scene missing/clipped: '+JSON.stringify(c.uaAnalyticsScene));
+  if(c.uaDepth&&(!c.uaDepth.css||!c.uaDepth.art||c.uaDepth.perspective==='none'))
+    item.errors.push('Ukrainian 3D illustration/perspective missing: '+JSON.stringify(c.uaDepth));
   if(lang==='uk'&&uaFinalSlugs.includes(slug)){
     const v=c.uaFinalScenes;
     const services=['seo-audit','performance-max'].includes(slug);
@@ -287,10 +313,10 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
+    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'website-audit','api-integrations']:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'website-audit','api-integrations'].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'website-audit','api-integrations'].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}
