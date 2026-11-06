@@ -3,6 +3,7 @@
 if (!defined('ABSPATH')) exit;
 require_once get_template_directory().'/inc/ru-premium-content.php';
 require_once get_template_directory().'/inc/service-editorial.php';
+require_once get_template_directory().'/inc/ru-service-visuals.php';
 $slug=mrseo_slug();
 $page=mrseo_ru_premium_content($slug);
 $story=mrseo_customer_journey_copy($slug,'ru');
@@ -56,6 +57,7 @@ get_header();
    </div>
   </div>
  </section>
+ <?php mrseo_render_ru4_visual($slug,'journey'); ?>
  <section class="ukseo-decision" aria-labelledby="ru-decision-title">
   <div class="container ukseo-decision-layout">
    <div class="ukseo-decision-copy">
@@ -79,6 +81,7 @@ get_header();
    <?php endforeach;?></ol>
   </div>
  </section>
+ <?php mrseo_render_ru4_visual($slug,'plan'); ?>
  <section class="ukseo-delivery" aria-labelledby="ru-delivery-title">
   <div class="container ukseo-delivery-grid">
    <div><span class="ukseo-kicker">ЧТО ПОЛУЧАЕТ БИЗНЕС</span><h2 id="ru-delivery-title"><?php echo esc_html($page['deliveryHeading'][0]); ?> <em><?php echo esc_html($page['deliveryHeading'][1]); ?></em></h2><p><?php echo esc_html($page['deliveryLead']); ?></p></div>
