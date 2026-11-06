@@ -44,7 +44,34 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
-      - name: Run international SEO pre-indexing audit (294 routes)
+      - name: Ukrainian Website Creation content and routing guards
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          root=Path('wp-content/themes/mrseo-tech')
+          src=(root/'inc/ua-website-services.php').read_text()
+          menu=(root/'inc/mega-menu-trial.php').read_text()
+          template=(root/'ua-website-landing.php').read_text()
+          assets=(root/'assets/ua-websites.css').read_text()
+          functions=(root/'functions.php').read_text()
+          seo=(root/'inc/international-seo.php').read_text()
+          paths=('local-business-websites','landing-pages','corporate-websites','website-redesign')
+          assert all('"'+s+'": {' in src for s in paths)
+          assert all("'"+s+"'" in menu for s in paths)
+          assert all("uws-demo--"+s in template for s in ()) # scene variants are dynamic
+          assert 'function mrseo_ua_website_route()' in src
+          assert 'function mrseo_ua_website_slugs()' in src
+          assert 'mrseo_ua_website_route()' in functions
+          assert 'mrseo-ua-websites' in functions
+          assert 'ua-website:' in seo and "pages'=>array('uk'=>$slug)" in seo
+          assert 'prefers-reduced-motion:reduce' in assets
+          assert template.count('<h1 ')==1 and template.count("mrseo_url('contact')")>=2
+          assert all(s in src for s in ('local','landing','corporate','redesign'))
+          assert "mrseo_ua_website_route()?get_template_directory().'/ua-website-landing.php'" in src
+          print('UA Website Creation: 4 real routes, safe canonical, shared premium shell and 4 scenes.')
+          PY
+      - name: Run international SEO pre-indexing audit (298 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
