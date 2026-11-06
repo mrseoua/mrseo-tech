@@ -28,7 +28,7 @@ Warm ivory / cream backgrounds, graphite / black typography, restrained muted re
 
 ## Languages and SEO
 
-- Five languages: Ukrainian `/` (default), Russian `/ru/`, English `/en/`, Polish `/pl/`, German `/de/`.
+- Twenty language versions: Ukrainian `/` (default), RU `/ru/`, EN `/en/`, PL `/pl/`, DE `/de/`, plus 15 additional EU languages (FR, IT, ES, NL, RO, CS, PT, SV, DA, FI, HU, SK, EL, BG, HR). Preserve every existing route and language switch.
 - PL/DE pages have market-specific content and SEO; never make automatic literal duplicate translations.
 - Preserve page URLs, anchors, links, hreflang, self-canonicals, metadata, XML sitemap, localized contact forms and working internal navigation.
 - `/horoshop/` and `/ru/horoshop/` exist; do not introduce `/en/horoshop/`, `/pl/horoshop/`, or `/de/horoshop/`.
@@ -36,6 +36,7 @@ Warm ivory / cream backgrounds, graphite / black typography, restrained muted re
 - No fabricated ROI, growth percentages, ranking promises, client testimonials, offices, credentials, results, or case studies.
 - Emphasize **client business problem → diagnosis → concrete solution → verified deliverable**, not lists of vague buzzwords.
 - Web Development (SaaS, CRM, client portals, API integrations, automation) and Website Creation are intentionally separate services.
+- Ukrainian Website Creation pages can be released first as independent **UA-only** service routes; never generate missing RU/EN/PL/DE/EU pages just to satisfy a link. Link foreign-language selectors to the closest real completed service, and do not add fake hreflang alternates.
 
 ## Collaboration protocol: Claude + ChatGPT + owner
 
