@@ -66,6 +66,11 @@ function mrseo_assets(){
  if(in_array(mrseo_locale(),array('uk','ru'),true) && mrseo_slug()==='google-ads'){
   wp_enqueue_style('mrseo-ukads',get_template_directory_uri().'/assets/google-ads-uk.css',array('mrseo-ukseo-pilot'),'1.0.0');
  }
+ // UA Google Ads demonstration: only post-hero 3D scenes, without homepage changes.
+ if(mrseo_locale()==='uk' && mrseo_slug()==='google-ads'){
+  wp_enqueue_style('mrseo-ua-ads-3d',get_template_directory_uri().'/assets/ua-google-ads-3d.css',
+   array('mrseo-ukads','mrseo-ua-commercial-visuals'),'1.0.0');
+ }
  if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'||(function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
  }
