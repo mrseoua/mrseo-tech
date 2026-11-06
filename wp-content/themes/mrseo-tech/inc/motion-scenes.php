@@ -49,11 +49,26 @@ function mrseo_render_motion_scene($slug,$locale=null){
    <div class="ms-data-check"><span>event_name</span><strong>purchase</strong><i>✓</i></div>
   <?php break;
   case 'web-development':?>
+   <?php if(($locale?:mrseo_locale())==='uk'):?>
+   <div class="ms-dev-schema ms-dev-schema--uk">
+    <div class="ms-dev-node ms-dev-node-a"><small>01 / КОРИСТУВАЧ</small><strong>Кабінет</strong><span>Заявки та доступ</span></div>
+    <div class="ms-dev-node ms-dev-node-b"><small>02 / ІНТЕГРАЦІЯ</small><strong>API</strong><span>Обмін даними</span></div>
+    <div class="ms-dev-node ms-dev-node-c"><small>03 / ПРОЦЕСИ</small><strong>CRM</strong><span>Статуси й облік</span></div>
+    <div class="ms-dev-wire ms-dev-wire-a"></div><div class="ms-dev-wire ms-dev-wire-b"></div><div class="ms-dev-pulse ms-dev-pulse-a"></div><div class="ms-dev-pulse ms-dev-pulse-b"></div>
+   </div>
+   <div class="ms-dev-code ms-dev-code--uk">
+    <strong class="ms-dev-code-kicker">СХЕМА ОБМІНУ ДАНИМИ</strong>
+    <div class="ms-dev-flow"><span>Кабінет</span><b aria-hidden="true">→</b><span>API</span><b aria-hidden="true">→</b><span>CRM</span></div>
+    <span class="ms-dev-code-caption"><b aria-hidden="true">●</b> Перевірка передачі й обробки помилок</span>
+   </div>
+   <?php else:?>
    <div class="ms-dev-schema"><div class="ms-dev-node ms-dev-node-a"><small>01 /</small><strong><?php echo esc_html($steps[0]);?></strong><span>UI / ACCESS</span></div>
    <div class="ms-dev-node ms-dev-node-b"><small>02 /</small><strong>API</strong><span>DATA FLOW</span></div>
    <div class="ms-dev-node ms-dev-node-c"><small>03 /</small><strong>CRM</strong><span>WORKFLOW</span></div>
    <div class="ms-dev-wire ms-dev-wire-a"></div><div class="ms-dev-wire ms-dev-wire-b"></div><div class="ms-dev-pulse ms-dev-pulse-a"></div><div class="ms-dev-pulse ms-dev-pulse-b"></div></div>
    <div class="ms-dev-code"><span><em>const</em> process = <b>{</b></span><span>&nbsp;&nbsp;sync: <strong>'verified'</strong>,</span><span>&nbsp;&nbsp;errors: <strong>'monitored'</strong></span><span><b>};</b><i></i></span></div>
+
+   <?php endif;?>
   <?php break;
   case 'service-websites':?>
    <div class="ms-web-screen"><div class="ms-web-toolbar"><i></i><i></i><i></i><span><?php echo esc_html($copy['name']);?></span></div>
