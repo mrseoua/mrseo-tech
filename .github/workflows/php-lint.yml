@@ -44,7 +44,52 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
-      - name: Run international SEO pre-indexing audit (294 routes)
+      - name: Verify all 13 UA-only service landings and 25 real menu links
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          root=Path('wp-content/themes/mrseo-tech')
+          source=(root/'inc/ua-website-services.php').read_text()
+          extra=(root/'inc/ua-additional-services.php').read_text()
+          menu=(root/'inc/mega-menu-trial.php').read_text()
+          page=(root/'ua-website-landing.php').read_text()
+          scenes=(root/'inc/ua-service-scenes.php').read_text()
+          css=(root/'assets/ua-websites.css').read_text()
+          scenes_css=(root/'assets/ua-additional-scenes.css').read_text()
+          functions=(root/'functions.php').read_text()
+          core=re.search(r"MRSEO_UA_WEBSITES'\n([\s\S]*?)\nMRSEO_UA_WEBSITES;",source)
+          secondary=re.search(r"MRSEO_UA_ADDITIONAL_JSON'\n([\s\S]*?)\nMRSEO_UA_ADDITIONAL_JSON;",extra)
+          assert core and secondary,'Missing locale data'
+          data={**json.loads(core.group(1)),**json.loads(secondary.group(1))}
+          assert len(data)==13,('Wrong page count',list(data))
+          scenes_list=[p['scene'] for p in data.values()]
+          assert len(set(scenes_list))==13
+          for slug,entry in data.items():
+            assert len(entry['headline'])==2 and entry['lead'] and entry['ctaTitle']
+            assert len(entry['pains'])==3 and len(entry['benefits'])==3 and len(entry['faq'])==3
+            assert len(entry['related'])==2
+            assert all(len(v)==2 for v in entry['pains']+entry['benefits']+entry['faq'])
+            assert all(x[0]!=slug for x in entry['related'])
+          for label in ('SEO','Google Ads','Інтернет-магазини','Створення сайтів','Веброзробка'):
+            assert label in menu
+          nav=menu[menu.index("if($locale==='uk'){"):menu.index("if($locale==='ru'){")]
+          assert nav.count("'=>array(")==5
+          assert all("'"+slug+"'" in nav for slug in data)
+          assert "in_array($slug,mrseo_ua_website_slugs(),true)" in menu
+          assert "mrseo_ua_website_route()?" in source
+          assert "mrseo_render_ua_service_scene($kind)" in page
+          assert "function mrseo_render_ua_service_scene($kind)" in scenes
+          assert ".uws-demo" in css and ".uws-scene--tech" in scenes_css
+          assert "prefers-reduced-motion:reduce" in css and "prefers-reduced-motion:reduce" in scenes_css
+          assert "wp_enqueue_style('mrseo-ua-websites'" in functions
+          assert "wp_enqueue_style('mrseo-ua-additional-scenes'" in functions
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+          assert page.count('<h1 ')==1
+          print('13 original UA pages, five menu pillars, four scene families, 20 locales and noindex verified')
+          PY
+
+      - name: Run international SEO pre-indexing audit (307 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
