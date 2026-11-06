@@ -203,3 +203,137 @@
   transition:none!important;
  }
 }
+
+/* UA Web Development hero: readable, genuine system-to-system visual narrative.
+   Restrict all treatment to the Ukrainian stylesheet and this one service scene. */
+@keyframes mrseoDevHeroDepth{
+  0%,100%{transform:translate3d(0,3px,18px) rotateY(-2deg)}
+  50%{transform:translate3d(0,-5px,26px) rotateY(2deg)}
+}
+.ms-scene-web-development .ms-dev-schema--uk{
+  perspective:1050px;
+  transform-style:preserve-3d;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+  min-height:111px;
+  padding:13px;
+  gap:9px;
+  border-color:#c6bfb3;
+  background:linear-gradient(150deg,#fffefa,#ebe8df);
+  animation:mrseoDevHeroDepth 7.6s ease-in-out infinite;
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node-b{animation-delay:-2.6s}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node-c{animation-delay:-5.1s}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small{
+  color:#9b4e3b;
+  font-size:11px;
+  font-weight:860;
+  letter-spacing:.035em;
+  line-height:1.25;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node strong{
+  color:#27342e;
+  font-size:clamp(18px,1.6vw,23px);
+  letter-spacing:-.045em;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span{
+  color:#47594d;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:0;
+}
+.ms-scene-web-development[data-ms-active="0"] .ms-dev-schema--uk .ms-dev-node-a,
+.ms-scene-web-development[data-ms-active="1"] .ms-dev-schema--uk .ms-dev-node-c,
+.ms-scene-web-development[data-ms-active="2"] .ms-dev-schema--uk .ms-dev-node-b{
+  border-color:#c77c64;
+  box-shadow:0 0 0 2px #ce8d7133,0 15px 30px #0004;
+}
+.ms-scene-web-development .ms-dev-code--uk{
+  left:11%;
+  right:11%;
+  bottom:14px;
+  min-height:102px;
+  gap:9px;
+  padding:13px 16px;
+  border-color:#708279;
+  background:linear-gradient(145deg,#142221,#1c2926);
+  font-family:inherit;
+}
+.ms-scene-web-development .ms-dev-code-kicker{
+  font-size:11px;
+  font-weight:840;
+  line-height:1.25;
+  letter-spacing:.075em;
+  color:#e8b8a3;
+}
+.ms-scene-web-development .ms-dev-flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,.68fr) auto minmax(0,.68fr);
+  gap:8px;
+  align-items:center;
+}
+.ms-scene-web-development .ms-dev-flow span{
+  display:block;
+  padding:6px 9px;
+  border:1px solid #879e91;
+  border-radius:7px;
+  background:#293a34;
+  color:#fbf6ee;
+  font-size:13px;
+  font-weight:770;
+  line-height:1.25;
+  text-align:center;
+  white-space:nowrap;
+}
+.ms-scene-web-development .ms-dev-flow b{color:#e8ae94;font-size:17px;font-weight:700}
+.ms-scene-web-development .ms-dev-code-caption{
+  display:block;
+  color:#d1ded0;
+  font-size:11px;
+  font-weight:680;
+  line-height:1.4;
+}
+.ms-scene-web-development .ms-dev-code-caption b{color:#b2d8bb;font-size:13px}
+@media(max-width:600px){
+ .ms-scene-web-development .ms-dev-schema--uk{top:11px;height:126px}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+   min-height:100px;
+   padding:7px;
+   gap:6px;
+ }
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small{font-size:10px;letter-spacing:0}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node strong{font-size:15px}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span{font-size:11px}
+ .ms-scene-web-development .ms-dev-code--uk{
+   bottom:9px;
+   left:4%;
+   right:4%;
+   min-height:90px;
+   padding:9px 11px;
+   gap:6px;
+ }
+ .ms-scene-web-development .ms-dev-code-kicker{font-size:11px}
+ .ms-scene-web-development .ms-dev-flow{gap:4px}
+ .ms-scene-web-development .ms-dev-flow span{font-size:11px;padding:5px 3px}
+ .ms-scene-web-development .ms-dev-flow b{font-size:13px}
+ .ms-scene-web-development .ms-dev-code-caption{font-size:11px}
+}
+@media(max-width:360px){
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+   min-height:100px;
+   gap:5px;
+   padding:6px;
+ }
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small{font-size:9px}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span{font-size:10.5px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+   animation:none!important;
+   will-change:auto;
+   transform:none;
+ }
+}
