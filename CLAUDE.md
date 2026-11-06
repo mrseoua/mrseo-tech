@@ -62,7 +62,15 @@ GitHub is the handoff surface; neither agent sees the other agent's ongoing conv
 4. **Міжнародне SEO** — Виходите на нові ринки, але клієнти там вас не знаходять.
 5. **SEO-аудит** — Не знаєте, чому сайт не зростає або втрачає позиції.
 
-Traffic recovery, migrations, indexing problems and other technical subtopics belong **inside their relevant service pages**, not as more primary SEO-menu entries. Audit is a diagnostic product, not a synonym for ongoing SEO. Owner also chose **not to display Analytics as its own top-level menu group**: GA4 and conversion measurement belong with SEO/Ads, while dashboards/integrations must not be deleted from the site. This section documents an approved future information architecture; **do not implement or deploy it without a separate request**. Preserve existing destinations and localized links; never link to nonexistent pages. Next discussion is Google Ads menu categories.
+Traffic recovery, migrations, indexing problems and other technical subtopics belong **inside their relevant service pages**, not as more primary SEO-menu entries. Audit is a diagnostic product, not a synonym for ongoing SEO. Owner also chose **not to display Analytics as its own top-level menu group**: GA4 and conversion measurement belong with SEO/Ads, while dashboards/integrations must not be deleted from the site. This section documents an approved future information architecture; **do not implement or deploy it without a separate request**. Preserve existing destinations and localized links; never link to nonexistent pages. The **Google Ads group is also approved**, with exactly five entries and customer-problem descriptions (Ukrainian reference):
+
+1. **Пошукова реклама Google** — Клієнти шукають ваші послуги, але звертаються до конкурентів.
+2. **Google Shopping та Performance Max** — Товари рекламуються, але продажів недостатньо або реклама не окупається.
+3. **Google Ads для локального бізнесу** — Потрібно більше дзвінків і заявок від клієнтів у вашому місті.
+4. **Аудит Google Ads** — Бюджет витрачається, але незрозуміло, що приносить результат.
+5. **Google Merchant Center** — Товари відхилені, є помилки у фіді або заблоковано акаунт.
+
+Merchant Center troubleshooting can be a standalone urgent service. Ads conversion setup/GA4 belongs inside appropriate service scopes; avoid separate top-level Analytics. **Nothing in this taxonomy has been deployed yet.** The next owner discussion is about E-commerce and Web Development menu sections.
 
 ## Priority work
 
