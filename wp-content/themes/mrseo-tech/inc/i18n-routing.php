@@ -15,6 +15,31 @@ function mrseo_url($slug='',$lang=null){
   $equivalent=mrseo_i18n_matching_slug(mrseo_locale(),$slug,$lang);
   if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
  }
+ // New Ukrainian-only service pages have no foreign-language copies yet.
+ // Language selector must lead to an existing broader service, never a 404.
+ if($lang!=='uk' && function_exists('mrseo_ua_website_slugs')
+     && in_array($slug,mrseo_ua_website_slugs(),true)){
+  $service=mrseo_ua_website_data($slug);
+  $group=$service['group']??'Створення сайтів';
+  if($lang==='ru'){
+   $parents=array('SEO'=>'seo','Google Ads'=>'google-ads',
+    'Інтернет-магазини'=>'online-store-development',
+    'Веброзробка'=>'web-development','Створення сайтів'=>'service-websites');
+  }elseif($lang==='pl'){
+   $parents=array('SEO'=>'seo','Google Ads'=>'google-ads',
+    'Інтернет-магазини'=>'tworzenie-sklepow-internetowych',
+    'Веброзробка'=>'web-development','Створення сайтів'=>'tworzenie-stron-internetowych');
+  }elseif($lang==='de'){
+   $parents=array('SEO'=>'seo','Google Ads'=>'google-ads',
+    'Інтернет-магазини'=>'web-development',
+    'Веброзробка'=>'web-development','Створення сайтів'=>'web-development');
+  }else{
+   $parents=array('SEO'=>'seo','Google Ads'=>'google-ads',
+    'Інтернет-магазини'=>'online-shop-development',
+    'Веброзробка'=>'web-development','Створення сайтів'=>'website-design');
+  }
+  $slug=$parents[$group]??'';
+ }
  // New market URLs may only point to actually completed pages.
  if(in_array($lang,array('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true) && !in_array($slug,array('','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy'),true)){
   if(in_array($slug,array('seo-audit','ecommerce-seo'),true))$slug='seo';
