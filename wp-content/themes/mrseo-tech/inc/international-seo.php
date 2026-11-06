@@ -44,6 +44,15 @@ function mrseo_i18n_page_groups() {
 
     $groups[] = array('group'=>'privacy','pages'=>array(
         'uk'=>'privacy','ru'=>'privacy','en'=>'privacy','pl'=>'privacy','de'=>'privacy','fr'=>'privacy','it'=>'privacy','es'=>'privacy','nl'=>'privacy','ro'=>'privacy','cs'=>'privacy','pt'=>'privacy','sv'=>'privacy','da'=>'privacy','fi'=>'privacy','hu'=>'privacy','sk'=>'privacy','el'=>'privacy','bg'=>'privacy','hr'=>'privacy'));
+    // Separate Ukrainian-only service pages are real routes, but do not
+    // claim that broad foreign-market pages are exact translations.
+    if (function_exists('mrseo_ua_website_slugs')) {
+        foreach (mrseo_ua_website_slugs() as $slug) {
+            $groups[] = array('group'=>'ua-website:' . $slug,
+                'pages'=>array('uk'=>$slug));
+        }
+    }
+
     foreach (array('service-websites', 'performance-max') as $slug) {
         $groups[] = array('group' => 'three:' . $slug,
             'pages' => array('uk'=>$slug, 'ru'=>$slug, 'en'=>$slug));
