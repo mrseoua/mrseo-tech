@@ -579,17 +579,19 @@ jobs:
           assert 'class="ec-lab ec-lab-v3 ukcommerce-lab"' in ecommerce_ua
           assert 'id="ec-explanations"' in ecommerce_ua
           assert all(k in ecommerce_ua for k in ('ukcommerce-problems','ukcommerce-deliver-title','ukcommerce-faq-title'))
-          for mode in ('journey','plan'):
-              assert "mrseo_render_ua4_visual('horoshop','"+mode+"')" in horoshop_ua
-          for mode in ('journey','plan'):
-              assert "mrseo_render_ua4_visual($slug,'"+mode+"')" in uk_solution
+          assert "mrseo_render_ua4_visual('horoshop'," not in horoshop_ua
+          assert 'hs-showcase' in horoshop_ua and 'horoshop-partner-active.svg' in horoshop_ua
+          assert "mrseo_render_ua4_visual($slug,'plan')" in uk_solution
+          assert "mrseo_render_ua4_visual($slug,'journey')" not in uk_solution
+          assert "mrseo_render_ua_final_service($slug,'plan')" in uk_solution
+          assert "mrseo_render_ua_final_service($slug,'journey')" not in uk_solution
           assert "in_array($slug,array('analytics','service-websites'),true)" in uk_solution
           assert "function mrseo_render_ua4_visual($slug,$variant)" in ua4_code
           for slug in ('ecommerce-seo','analytics','service-websites','horoshop'):
               assert "'"+slug+"'=>array(" in ua4_code, slug
           assert "mrseo_locale()!=='uk'" in ua4_code
           assert 'ua4-journey-card' in ua4_code and 'ua4-plan-step' in ua4_code
-          assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('analytics','service-websites','horoshop'),true))" in functions
+          assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('analytics','service-websites'),true))" in functions
           assert "wp_enqueue_style('mrseo-ua-four-service-visuals'" in functions
           assert '.ua4-journey' in ua4_css and '.ua4-plan' in ua4_css
           assert '@media(max-width:480px)' in ua4_css and 'prefers-reduced-motion' in ua4_css
@@ -606,7 +608,7 @@ jobs:
           dev_markup=(root/'development-landing.php').read_text()
           for service,visual in (
               ('google-ads','decisions'),
-              ('web-development','connections'),('web-development','build')):
+              ('web-development','connections')):
               call="mrseo_render_ua_commercial_visual('"+service+"','"+visual+"')"
               template=ua_ads if service=='google-ads' else dev_markup
               assert call in template, ('Missing Ukrainian service graphic',service,visual)
@@ -630,7 +632,19 @@ jobs:
           assert "wp_enqueue_style('mrseo-ua-ads-pricing'" in functions
           assert "wp_enqueue_style('mrseo-ua-ads-3d'" not in functions
           assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('<section class="dev-section dev-capabilities"')
-          assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','build')") < dev_markup.index('<section class="dev-section dev-technical"')
+          ns_template=(root/'new-service-landing.php').read_text()
+          assert "if($ru):" in ns_template and "ns-page--compact" in ns_template
+          assert ns_template.count("<?php if($ru): ?>")>=3, 'Russian long-form template must be unchanged'
+          assert "mrseo-ua-services-compact" in functions
+          compact_services_css=(root/'assets/ua-services-compact.css').read_text()
+          assert ".ukseo--solution .ukseo-hero-copy h1" in compact_services_css
+          assert ".ns-page--compact .ukseo-problem-card" in compact_services_css
+          assert ".dev-scope-uk .dev-hero h1" in compact_services_css
+          assert "prefers-reduced-motion:reduce" in compact_services_css
+          assert "X-Robots-Tag: noindex, nofollow" in functions
+          assert "mrseo_render_ua_commercial_visual('web-development','build')" not in dev_markup
+          assert "if($dev_locale!=='uk')" in dev_markup
+          assert "mrseo_render_ua_commercial_visual('web-development','connections')" in dev_markup
           assert "if($dev_locale==='uk')require_once" in dev_markup
           assert "if(mrseo_locale()==='uk')require_once" in ua_ads
           assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('google-ads','web-development'),true))" in functions
