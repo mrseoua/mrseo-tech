@@ -71,6 +71,11 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-ua-ads-3d',get_template_directory_uri().'/assets/ua-google-ads-3d.css',
    array('mrseo-ukads','mrseo-ua-commercial-visuals'),'1.0.0');
  }
+ // Ukrainian Google Ads price packages and shorter post-hero layout; no home styling.
+ if(mrseo_locale()==='uk' && mrseo_slug()==='google-ads'){
+  wp_enqueue_style('mrseo-ua-ads-pricing',get_template_directory_uri().'/assets/ua-google-ads-pricing.css',
+   array('mrseo-ua-ads-3d'),'1.0.0');
+ }
  if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'||(function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
  }
