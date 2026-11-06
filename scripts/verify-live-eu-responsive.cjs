@@ -151,8 +151,11 @@ async function audit(browser,viewport,lang,slug){
       });
       const text=cards.map(el=>el.textContent.replace(/\s+/g,' ').trim());
       const heading=root?.querySelector('h2')?.textContent.trim()||'';
+      const hero=document.querySelector('.ukseo--ads .ukseo-hero-copy h1');
+      const letterSpace=hero?parseFloat(getComputedStyle(hero).letterSpacing):NaN;
+      const heroTrackingOK=!target||(Number.isFinite(letterSpace)&&letterSpace>-3&&letterSpace<=0);
       return {target,css,count:cards.length,stages,heading,
-        pricesCorrect:text.length===2&&text[0].includes('7 900')&&text[1].includes('12 900'),
+        heroTrackingOK,pricesCorrect:text.length===2&&text[0].includes('5 000')&&text[1].includes('10 000')&&text.every(s=>s.includes('Разове налаштування')),
         geometry:boxes.length===4&&boxes.every(b=>b.width>250&&b.left>=-2&&b.right<=innerWidth+2),
         noLeak:!target&&!css&&!root&&cards.length===0&&!flow};
     })(),
@@ -242,7 +245,7 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('UA-only illustrations leaked onto foreign market page');
   if(lang==='uk'&&slug==='google-ads'){
     const p=c.uaAdsPricing;
-    if(!p||!p.css||p.count!==2||p.stages!==4||!p.pricesCorrect||!p.geometry||!p.heading)
+    if(!p||!p.css||p.count!==2||p.stages!==4||!p.pricesCorrect||!p.geometry||!p.heading||!p.heroTrackingOK)
       item.errors.push('UA Google Ads prices/visuals missing or overflow: '+JSON.stringify(p));
   }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
