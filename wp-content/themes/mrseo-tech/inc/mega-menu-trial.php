@@ -61,8 +61,9 @@ MRSEO_TRIAL_NAV_JSON;
 function mrseo_trial_menu_native($locale) {
  $copy=mrseo_trial_menu_translations();
  if(isset($copy[$locale]))return $copy[$locale];
- // Fifteen additional EU markets: use existing curated native-language
- // service labels and editorial problems; never fall back to English.
+ // Fifteen additional EU markets: load the existing native-language adapter.
+ // The legacy renderer loaded this lazily; the trial renderer must do so itself.
+ require_once __DIR__.'/eu-orbit-copy.php';
  if(!function_exists('mrseo_eu_service_labels') || !function_exists('mrseo_eu_premium_mega_copy'))return $copy['uk'];
  $labels=mrseo_eu_service_labels($locale);
  $native=mrseo_eu_premium_mega_copy($locale);
