@@ -18,7 +18,7 @@ function mrseo_render_motion_scene($slug,$locale=null){
  ?>
  <div class="ms-scene ms-scene-<?php echo esc_attr($slug);?>" data-ms-scene="<?php echo esc_attr($slug);?>" data-ms-active="0" aria-label="<?php echo esc_attr($copy['name']);?>">
   <div class="ms-top"><span class="ms-top-mark"><i></i> MRSEO / <?php echo esc_html($copy['name']);?></span><span class="ms-signal" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <div class="ms-stage" aria-hidden="true">
+  <div class="ms-stage<?php echo ($slug==='analytics' && ($locale?:mrseo_locale())==='uk')?' ms-stage--ua-analytics':'';?>" aria-hidden="true">
   <?php switch($slug):
   case 'seo':?>
    <div class="ms-search-box"><span class="ms-search-glass">⌕</span><span><?php echo esc_html($steps[0]);?></span><i></i></div>
