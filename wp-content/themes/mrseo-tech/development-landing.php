@@ -66,6 +66,7 @@ get_header();
   </div>
  </div>
 </section>
+<?php if($dev_locale!=='uk'): ?>
 <section class="dev-section dev-workflow" aria-labelledby="dev-workflow-title">
  <div class="dev-wrap"><div class="dev-section-heading"><div class="dev-eyebrow">03 / <?php echo esc_html($dev['labels']['process']);?></div><h2 id="dev-workflow-title"><?php echo esc_html($dev['labels']['processTitle']);?></h2></div>
   <div class="dev-workflow-grid">
@@ -75,7 +76,6 @@ get_header();
   </div>
  </div>
 </section>
-<?php if($dev_locale==='uk')mrseo_render_ua_commercial_visual('web-development','build'); ?>
 <section class="dev-section dev-technical" aria-labelledby="dev-technical-title">
  <div class="dev-wrap"><div class="dev-section-heading"><div class="dev-eyebrow">04 / <?php echo esc_html($dev['labels']['check']);?></div><h2 id="dev-technical-title"><?php echo esc_html($dev['labels']['checkTitle']);?></h2></div>
   <div class="dev-check-grid">
@@ -83,12 +83,13 @@ get_header();
   </div>
  </div>
 </section>
+<?php endif; ?>
 <section class="dev-outcomes" aria-labelledby="dev-outcomes-title"><div class="dev-wrap dev-outcomes-grid">
- <div><div class="dev-eyebrow">05 / <?php echo esc_html($dev['labels']['deliverablesTag']);?></div><h2 id="dev-outcomes-title"><?php echo esc_html($dev['labels']['results']);?></h2></div>
+ <div><div class="dev-eyebrow"><?php echo $dev_locale==='uk'?'03 / ':'05 / ';?><?php echo esc_html($dev['labels']['deliverablesTag']);?></div><h2 id="dev-outcomes-title"><?php echo esc_html($dev['labels']['results']);?></h2></div>
  <div><?php foreach($dev['outcomes'] as $i=>$outcome):?><div class="dev-outcome"><span><?php echo esc_html(sprintf('%02d',$i+1));?></span><strong><?php echo esc_html($outcome);?></strong></div><?php endforeach;?></div>
 </div></section>
 <section class="dev-section dev-faq" aria-labelledby="dev-faq-title"><div class="dev-wrap dev-faq-grid">
- <div><div class="dev-eyebrow">06 / FAQ</div><h2 id="dev-faq-title"><?php echo esc_html($dev['labels']['faq']);?></h2></div>
+ <div><div class="dev-eyebrow"><?php echo $dev_locale==='uk'?'04 / FAQ':'06 / FAQ';?></div><h2 id="dev-faq-title"><?php echo esc_html($dev['labels']['faq']);?></h2></div>
  <div><?php foreach($dev['faq'] as $entry):?><details><summary><?php echo esc_html($entry[0]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($entry[1]);?></p></details><?php endforeach;?></div>
 </div></section>
 <section class="dev-cta"><div class="dev-wrap"><div class="dev-eyebrow">MRSEO.TECH / <?php echo esc_html($dev['labels']['nextTag']);?></div>
