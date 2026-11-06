@@ -541,8 +541,10 @@ jobs:
           about_template=(root/'about-localized.php').read_text()
           portfolio_template=(root/'portfolio-localized.php').read_text()
           contact_template=(root/'contact-localized.php').read_text()
+          assert "mrseo_render_ua_final_service('seo-audit','plan')" in seo_audit
+          assert "mrseo_render_ua_final_service('seo-audit','journey')" not in seo_audit
+          assert 'ukaudit-problems' in seo_audit and 'ukaudit-faq-title' in seo_audit
           for scene in ('journey','plan'):
-              assert "mrseo_render_ua_final_service('seo-audit','"+scene+"')" in seo_audit
               assert "mrseo_render_ua_final_service($slug,'"+scene+"')" in pmax_template
           for named_func,template in (
                   ('mrseo_render_ua_about_visual()',about_template),
@@ -573,11 +575,12 @@ jobs:
           ecommerce_ua=(root/'ecommerce-uk.php').read_text()
           uk_solution=(root/'uk-solution-page.php').read_text()
           horoshop_ua=(root/'horoshop-uk.php').read_text()
-          for this_slug,template in (
-                  ('ecommerce-seo',ecommerce_ua),
-                  ('horoshop',horoshop_ua)):
-              for mode in ('journey','plan'):
-                  assert "mrseo_render_ua4_visual('"+this_slug+"','"+mode+"')" in template
+          assert "mrseo_render_ua4_visual('ecommerce-seo'," not in ecommerce_ua
+          assert 'class="ec-lab ec-lab-v3 ukcommerce-lab"' in ecommerce_ua
+          assert 'id="ec-explanations"' in ecommerce_ua
+          assert all(k in ecommerce_ua for k in ('ukcommerce-problems','ukcommerce-deliver-title','ukcommerce-faq-title'))
+          for mode in ('journey','plan'):
+              assert "mrseo_render_ua4_visual('horoshop','"+mode+"')" in horoshop_ua
           for mode in ('journey','plan'):
               assert "mrseo_render_ua4_visual($slug,'"+mode+"')" in uk_solution
           assert "in_array($slug,array('analytics','service-websites'),true)" in uk_solution
@@ -586,7 +589,7 @@ jobs:
               assert "'"+slug+"'=>array(" in ua4_code, slug
           assert "mrseo_locale()!=='uk'" in ua4_code
           assert 'ua4-journey-card' in ua4_code and 'ua4-plan-step' in ua4_code
-          assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('ecommerce-seo','analytics','service-websites','horoshop'),true))" in functions
+          assert "if(mrseo_locale()==='uk' && in_array(mrseo_slug(),array('analytics','service-websites','horoshop'),true))" in functions
           assert "wp_enqueue_style('mrseo-ua-four-service-visuals'" in functions
           assert '.ua4-journey' in ua4_css and '.ua4-plan' in ua4_css
           assert '@media(max-width:480px)' in ua4_css and 'prefers-reduced-motion' in ua4_css
@@ -642,10 +645,11 @@ jobs:
           ua_graphics=(root/'inc/ua-seo-visuals.php').read_text()
           ua_visual_css=(root/'assets/ua-seo-visuals.css').read_text()
           assert "require_once get_template_directory().'/inc/ua-seo-visuals.php'" in ua_seo
-          assert "mrseo_render_ua_seo_visual('journey')" in ua_seo
+          assert "mrseo_render_ua_seo_visual('journey')" not in ua_seo
           assert "mrseo_render_ua_seo_visual('priorities')" in ua_seo
-          assert ua_seo.index("mrseo_render_ua_seo_visual('journey')") < ua_seo.index('ukseo-decision')
-          assert ua_seo.index("mrseo_render_ua_seo_visual('priorities')") < ua_seo.index('ukseo-delivery')
+          assert ua_seo.index('ukseo-cases') < ua_seo.index("mrseo_render_ua_seo_visual('priorities')") < ua_seo.index('ukseo-faq')
+          assert 'ukseo-work' not in ua_seo and 'ukseo-delivery' not in ua_seo
+          assert ua_seo.count('<h1 ')==1 and 'ukseo--seo' in ua_seo
           assert 'function mrseo_render_ua_seo_visual(' in ua_graphics
           assert 'ukseo-visual-journey' in ua_graphics and 'ukseo-visual-priority-board' in ua_graphics
           assert 'ukseo-visual-priority-content' in ua_graphics
@@ -659,6 +663,13 @@ jobs:
           assert '@media(prefers-reduced-motion:reduce)' in ua_visual_css
           assert "if(mrseo_locale()==='uk' && mrseo_slug()==='seo')" in functions
           assert "wp_enqueue_style('mrseo-ua-seo-visuals'" in functions
+          compact_css=(root/'assets/ua-seo-compact.css').read_text()
+          assert ".ukseo--seo .ukseo-hero-copy h1" in compact_css
+          assert ".ukseo--audit .ukseo-hero-copy h1" in compact_css
+          assert ".ukseo--commerce .ukseo-hero-copy h1" in compact_css
+          assert "prefers-reduced-motion:reduce" in compact_css
+          assert "wp_enqueue_style('mrseo-ua-seo-compact'" in functions
+          assert ecommerce_ua.count('<h1 ')==1 and seo_audit.count('<h1 ')==1
           assert "X-Robots-Tag: noindex, nofollow" in functions
 
           print('13 UK-focused /en/ commercial pages, en-GB localization, homepage copy, routing and noindex verified')
