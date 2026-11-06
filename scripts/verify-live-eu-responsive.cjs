@@ -232,7 +232,7 @@ async function audit(browser,viewport,lang,slug){
   if(lang==='uk'&&uaFinalSlugs.includes(slug)){
     const v=c.uaFinalScenes;
     const services=['seo-audit','performance-max'].includes(slug);
-    if(!v||!v.stylesheet||v.count!==(services?1:1)||v.headings.some(h=>!h)||
+    if(!v||!v.stylesheet||v.count!==1||v.headings.some(h=>!h)||
         !v.geometry||!v.formIntact||(services&&(!v.serviceStyles||v.cards!==0||v.planSteps!==3||!v.ordered)))
       item.errors.push('UA final interiors missing/inaccessible/out of viewport: '+JSON.stringify(v));
   }
@@ -261,6 +261,12 @@ async function audit(browser,viewport,lang,slug){
   }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
     item.errors.push('Ukrainian Google Ads pricing leaked onto other pages');
+  if(lang==='uk'&&slug==='horoshop'){
+    const partner=await page.locator('.hs-authentic-logo img,.hs-official-badge').count();
+    const switchers=await page.locator('.hs-switcher button').count();
+    if(partner!==2||switchers!==3||c.uaFourScenes.count!==0||c.uaFourScenes.style)
+      item.errors.push('Horoshop official interactive hero or compact layout failed');
+  }
   if(lang==='uk'&&slug==='ecommerce-seo'){
     const lab=await page.locator('#ukcommerce-lab .ec-tabs button').count();
     if(lab!==3||c.uaFourScenes.count!==0||c.uaFourScenes.style)
