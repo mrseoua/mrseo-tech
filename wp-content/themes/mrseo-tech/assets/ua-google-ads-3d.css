@@ -1,0 +1,344 @@
+/*
+ * MrSeo.tech — Google Ads UKRAINIAN internal page, post-hero illustrations only.
+ * Layered CSS 3D perspective; no external assets / JS / WebGL.
+ * Does not style the homepage, hero, other routes or other locales.
+ */
+.ukseo--ads .ua3-wrap{padding-top:0;padding-bottom:clamp(40px,5vw,75px)}
+.ukseo--ads .ua3-scene,
+.ukseo--ads .ua3-scene *{box-sizing:border-box}
+.ukseo--ads .ua3-scene{
+ --ua3-ink:#222e28;--ua3-accent:#ab513e;--ua3-muted:#526056;
+ position:relative;isolation:isolate;display:grid;
+ grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+ align-items:stretch;min-height:420px;overflow:hidden;
+ border:1px solid #dbd3c6;border-radius:28px;
+ background:linear-gradient(125deg,#fffaf2,#e9e5dc 78%,#e5e9e1);
+ box-shadow:0 26px 64px #3a30241a;
+}
+.ukseo--ads .ua3-copy{
+ position:relative;z-index:2;display:flex;flex-direction:column;
+ align-items:flex-start;justify-content:center;min-width:0;
+ padding:clamp(28px,4.5vw,68px) clamp(27px,4vw,59px);
+}
+.ukseo--ads .ua3-eyebrow{
+ display:block;margin-bottom:19px;color:#99503f;
+ font-size:12px;font-weight:860;letter-spacing:.095em;line-height:1.5;
+}
+.ukseo--ads .ua3-copy h3{
+ color:var(--ua3-ink);font-size:clamp(30px,3.1vw,47px);
+ font-weight:840;letter-spacing:-.05em;line-height:1.11;margin:0 0 22px;
+ text-wrap:balance;
+}
+.ukseo--ads .ua3-copy p{
+ font-size:clamp(16px,1.4vw,18px);font-weight:560;line-height:1.7;
+ color:var(--ua3-muted);margin:0 0 28px;max-width:510px;
+}
+.ukseo--ads .ua3-note{
+ display:block;max-width:440px;color:#697268;border-top:1px solid #ccc9be;
+ padding-top:13px;font-size:13px;font-weight:610;line-height:1.5;
+}
+.ukseo--ads .ua3-art{
+ position:relative;isolation:isolate;min-width:0;min-height:400px;
+ perspective:950px;transform-style:preserve-3d;overflow:hidden;
+ background:radial-gradient(ellipse at 62% 44%,#f9f5e8 0%,#ede6d9 63%,#e6ded1);
+}
+.ukseo--ads .ua3-art:before{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.42;
+ background-image:linear-gradient(#948b7928 1px,transparent 1px),linear-gradient(90deg,#948b7928 1px,transparent 1px);
+ background-size:37px 37px;
+ mask-image:radial-gradient(circle at 50% 50%,#000,transparent 76%);
+}
+@keyframes ua3-float-a{
+ 0%,100%{transform:translate3d(0,7px,27px) rotateX(7deg) rotateY(-9deg)}
+ 50%{transform:translate3d(0,-10px,48px) rotateX(-2deg) rotateY(6deg)}
+}
+@keyframes ua3-float-b{
+ 0%,100%{transform:translate3d(0,-6px,20px) rotateX(-5deg) rotateY(8deg)}
+ 50%{transform:translate3d(0,10px,40px) rotateX(4deg) rotateY(-5deg)}
+}
+@keyframes ua3-slow-orbit{to{transform:translate(-50%,-50%) rotateX(66deg) rotateZ(360deg)}}
+@keyframes ua3-pulse{0%,100%{opacity:.45;transform:scale(.85)}50%{opacity:1;transform:scale(1.12)}}
+@keyframes ua3-scan{0%{transform:translateX(-130%)}100%{transform:translateX(300%)}}
+@keyframes ua3-dossier-a{
+ 0%,100%{transform:translate3d(0,6px,20px) rotate(-13deg) rotateY(-12deg)}
+ 50%{transform:translate3d(0,-9px,35px) rotate(-10deg) rotateY(-4deg)}
+}
+@keyframes ua3-dossier-b{
+ 0%,100%{transform:translate3d(0,-5px,39px) rotate(0deg) rotateY(-4deg)}
+ 50%{transform:translate3d(0,9px,56px) rotate(3deg) rotateY(6deg)}
+}
+@keyframes ua3-dossier-c{
+ 0%,100%{transform:translate3d(0,7px,22px) rotate(12deg) rotateY(11deg)}
+ 50%{transform:translate3d(0,-8px,40px) rotate(9deg) rotateY(2deg)}
+}
+
+/* Profit lens: actual dimensions of profit, not a fake KPI dashboard. */
+.ukseo--ads .ua3-scene--economy .ua3-art{
+ background:radial-gradient(circle at 58% 40%,#f4efe4,#dfe6db 75%);
+}
+.ukseo--ads .ua3-horizon{
+ position:absolute;width:82%;height:46%;left:9%;bottom:-6%;
+ border:1px solid #b4b9aa;border-radius:50%;
+ transform:rotateX(65deg);box-shadow:0 0 0 21px #ffffff29,0 0 0 44px #aebcb228;
+}
+.ukseo--ads .ua3-finance{
+ position:absolute;z-index:2;display:flex;flex-direction:column;gap:9px;
+ width:33%;min-width:0;min-height:118px;
+ padding:21px 15px 16px;border:1px solid #c6c8b8;border-radius:16px;
+ background:linear-gradient(155deg,#fffefa,#e6e8df);
+ box-shadow:0 17px 28px #35423232,inset 0 2px #fff;
+ animation:ua3-float-a 8.2s ease-in-out infinite;
+ backface-visibility:hidden;
+}
+.ukseo--ads .ua3-finance>span{
+ color:#98543e;font-size:11px;font-weight:860;letter-spacing:.055em;line-height:1.3;
+}
+.ukseo--ads .ua3-finance strong{
+ color:#28342e;font-size:clamp(16px,1.6vw,22px);line-height:1.2;letter-spacing:-.03em;
+ font-weight:850;overflow-wrap:anywhere;
+}
+.ukseo--ads .ua3-finance-signal{
+ margin-top:auto;display:block;height:5px;width:65%;border-radius:3px;
+ background:linear-gradient(90deg,#a35140,#dab2a0,#a7c6b4);
+}
+.ukseo--ads .ua3-finance--income{left:11%;top:14%;animation-delay:-1s}
+.ukseo--ads .ua3-finance--cost{right:10%;top:10%;animation-name:ua3-float-b;animation-delay:-3s}
+.ukseo--ads .ua3-finance--return{left:33%;bottom:12%;animation-delay:-5.2s}
+.ukseo--ads .ua3-finance--return .ua3-finance-signal{width:85%}
+.ukseo--ads .ua3-finance-core{
+ position:absolute;z-index:4;left:50%;top:47%;transform:translate(-50%,-50%);
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ gap:6px;width:170px;height:135px;border-radius:50%;
+ color:#f9f3e9;background:linear-gradient(160deg,#354b40,#222d28);
+ border:1px solid #788b79;box-shadow:0 19px 39px #26362770,0 0 0 13px #d9e0d363;
+}
+.ukseo--ads .ua3-finance-core span{color:#d7b7a0;font-size:11px;font-weight:800;letter-spacing:.055em}
+.ukseo--ads .ua3-finance-core strong{font-size:26px;font-weight:840;letter-spacing:-.04em}
+.ukseo--ads .ua3-finance-core b{color:#edaf8f;font-size:24px;line-height:1}
+.ukseo--ads .ua3-orbit{
+ position:absolute;top:48%;left:50%;width:85%;height:70%;border:1px dashed #b36c5280;
+ border-radius:50%;transform:translate(-50%,-50%) rotateX(66deg);
+ animation:ua3-slow-orbit 36s linear infinite;pointer-events:none;
+}
+.ukseo--ads .ua3-orbit--two{width:65%;height:85%;animation-direction:reverse;animation-duration:52s;border-color:#a1b4a8}
+
+/* Delivery: depth-sorted printed artifacts, restrained 3D shadows. */
+.ukseo--ads .ua3-scene--deliverables{
+ background:linear-gradient(120deg,#faf6ee,#e7ebe3);
+}
+.ukseo--ads .ua3-art--deliverables{
+ background:radial-gradient(circle at 50% 40%,#f3e5d6,#dce6de 76%);
+}
+.ukseo--ads .ua3-dossier-grid{
+ position:absolute;inset:8%;border-radius:50%;
+ border:1px dashed #c0b4a3;transform:rotateX(67deg);
+}
+.ukseo--ads .ua3-sheet{
+ position:absolute;z-index:2;top:22%;width:35%;min-height:222px;
+ padding:21px 15px;border:1px solid #d9cbbc;border-radius:14px;
+ background:linear-gradient(145deg,#fffefa,#f0ebdf);
+ box-shadow:0 20px 37px #39423638,0 2px 1px #fff inset;
+ display:flex;flex-direction:column;gap:11px;backface-visibility:hidden;
+}
+.ukseo--ads .ua3-sheet>span{
+ color:#92533d;font-size:11px;font-weight:850;letter-spacing:.045em;line-height:1.35;
+}
+.ukseo--ads .ua3-sheet strong{min-height:55px;color:#293830;font-size:19px;font-weight:840;line-height:1.18}
+.ukseo--ads .ua3-sheet i{display:block;height:6px;width:90%;border-radius:5px;background:#d8ddd5}
+.ukseo--ads .ua3-sheet i:nth-of-type(2){width:67%}
+.ukseo--ads .ua3-sheet i:nth-of-type(3){width:78%}
+.ukseo--ads .ua3-sheet b{
+ display:grid;place-items:center;margin-top:auto;align-self:flex-end;
+ border-radius:50%;width:30px;height:30px;background:#edd7c8;color:#a24e3d;
+ font-size:18px;
+}
+.ukseo--ads .ua3-sheet--left{left:3%;animation:ua3-dossier-a 9s ease-in-out infinite}
+.ukseo--ads .ua3-sheet--center{left:33%;z-index:4;top:13%;animation:ua3-dossier-b 8s ease-in-out infinite;animation-delay:-2.5s}
+.ukseo--ads .ua3-sheet--right{right:3%;animation:ua3-dossier-c 9.7s ease-in-out infinite;animation-delay:-5s}
+.ukseo--ads .ua3-dossier-stamp{
+ position:absolute;z-index:5;bottom:12%;left:50%;transform:translateX(-50%);
+ border:1px solid #ad6853;background:#fff9efd9;color:#8f4433;
+ border-radius:28px;box-shadow:0 8px 23px #38453218;
+ padding:11px 17px;font-size:12px;font-weight:850;letter-spacing:.05em;white-space:nowrap;
+}
+
+/* Verification: independent radar with true revolving circular layers. */
+.ukseo--ads .ua3-scene--control{
+ border-color:#37443c;background:#f4f1e8;
+}
+.ukseo--ads .ua3-art--control{
+ background:radial-gradient(ellipse at 53% 45%,#46544a,#24342b 72%);
+}
+.ukseo--ads .ua3-art--control:before{opacity:.2;background-size:46px 46px}
+.ukseo--ads .ua3-radar-back{
+ position:absolute;left:13%;top:7%;width:74%;aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle,transparent 37%,#e4bf9c22 38%,transparent 40%,
+ transparent 65%,#dce5cf22 66%,transparent 67%);
+ box-shadow:0 0 0 1px #afc2aa45 inset;
+ transform:rotateX(24deg);
+}
+.ukseo--ads .ua3-radar-ring{
+ position:absolute;z-index:1;left:50%;top:50%;width:67%;aspect-ratio:1;
+ border:2px solid #d7c4ac7d;border-radius:50%;
+ transform:translate(-50%,-50%) rotateX(65deg);
+ animation:ua3-slow-orbit 27s linear infinite;
+}
+.ukseo--ads .ua3-radar-ring--two{
+ width:89%;border-style:dashed;border-color:#adc5b48c;
+ animation-duration:38s;animation-direction:reverse;
+}
+.ukseo--ads .ua3-radar-center{
+ position:absolute;z-index:4;left:50%;top:51%;transform:translate(-50%,-50%);
+ display:flex;flex-direction:column;justify-content:center;align-items:center;
+ width:174px;height:174px;border-radius:50%;color:#f4f0e8;
+ background:radial-gradient(circle at 30% 23%,#576d5d,#1f2e27);
+ border:1px solid #a5b6a1;box-shadow:0 18px 39px #0d1a1499,0 0 0 10px #ebefdd18;
+}
+.ukseo--ads .ua3-radar-center span{font-size:12px;color:#deb8a2;letter-spacing:.08em;font-weight:850}
+.ukseo--ads .ua3-radar-center strong{font-size:29px;font-weight:850;letter-spacing:-.04em}
+.ukseo--ads .ua3-radar-center b{font-size:28px;color:#b6d7b8}
+.ukseo--ads .ua3-radar-tag{
+ position:absolute;z-index:5;min-width:146px;display:flex;align-items:center;gap:9px;
+ border:1px solid #d5d6c9;border-radius:14px;background:#fffdf6;
+ box-shadow:0 11px 23px #0005;padding:12px 14px;color:#28392f;
+ animation:ua3-float-b 7s ease-in-out infinite;
+}
+.ukseo--ads .ua3-radar-tag small{font-size:12px;font-weight:850;color:#a75640}
+.ukseo--ads .ua3-radar-tag strong{font-size:17px;font-weight:820}
+.ukseo--ads .ua3-radar-tag--one{left:6%;top:12%}
+.ukseo--ads .ua3-radar-tag--two{right:5%;top:22%;animation-name:ua3-float-a;animation-delay:-2s}
+.ukseo--ads .ua3-radar-tag--three{left:18%;bottom:12%;animation-delay:-4s}
+
+/* Safe changes: floating audit console and anchored approval seal. */
+.ukseo--ads .ua3-art--start{
+ background:radial-gradient(circle at 57% 29%,#f7e9dc,#e5e7df 73%);
+}
+.ukseo--ads .ua3-safety-back{
+ position:absolute;top:12%;left:13%;right:13%;bottom:12%;
+ background:#bbcabb;border:1px solid #a4b6a4;border-radius:20px;
+ transform:translate(13px,14px) rotate(5deg);box-shadow:0 16px 30px #36463624;
+}
+.ukseo--ads .ua3-safety-window{
+ position:absolute;z-index:3;top:9%;left:11%;width:76%;max-width:470px;min-height:285px;
+ border-radius:17px;overflow:hidden;border:1px solid #8a9c8e;
+ background:#faf9f4;color:#23382d;box-shadow:0 20px 42px #33463850;
+ transform:rotate(-5deg) rotateY(7deg);
+ animation:ua3-float-b 9s ease-in-out infinite;
+}
+.ukseo--ads .ua3-safety-toolbar{
+ display:flex;align-items:center;gap:6px;padding:14px 16px;
+ background:#23372b;color:#eee8de;
+}
+.ukseo--ads .ua3-safety-toolbar i{
+ display:block;width:8px;height:8px;border-radius:50%;background:#b9b8a2;
+}
+.ukseo--ads .ua3-safety-toolbar i:first-child{background:#dca18b}
+.ukseo--ads .ua3-safety-toolbar span{
+ margin-left:auto;font-size:11px;letter-spacing:.045em;font-weight:850;
+}
+.ukseo--ads .ua3-safety-row{
+ display:flex;align-items:center;justify-content:space-between;
+ border-bottom:1px solid #e1e3d9;gap:12px;padding:16px 22px;
+ font-size:16px;font-weight:740;line-height:1.35;
+}
+.ukseo--ads .ua3-safety-row b{color:#528b64;font-size:19px}
+.ukseo--ads .ua3-safety-bottom{
+ display:flex;align-items:center;justify-content:center;gap:15px;
+ padding:16px 12px;font-size:12px;font-weight:850;letter-spacing:.04em;
+}
+.ukseo--ads .ua3-safety-bottom span{color:#95624e}
+.ukseo--ads .ua3-safety-bottom i{font-size:21px;color:#b9573f;font-style:normal}
+.ukseo--ads .ua3-safety-bottom strong{color:#375c47}
+.ukseo--ads .ua3-safety-seal{
+ position:absolute;z-index:5;right:5%;bottom:8%;display:flex;flex-direction:column;
+ align-items:center;justify-content:center;width:132px;height:132px;border-radius:50%;
+ border:3px solid #b56e51;color:#863e2e;background:#fff8ed;
+ box-shadow:0 12px 29px #67453849;transform:rotate(8deg);
+ animation:ua3-float-a 7s ease-in-out infinite;
+}
+.ukseo--ads .ua3-safety-seal span{font-size:11px;font-weight:850;letter-spacing:.06em}
+.ukseo--ads .ua3-safety-seal strong{font-size:21px;letter-spacing:-.035em}
+.ukseo--ads .ua3-safety-seal b{font-size:26px;line-height:1;color:#6c9873}
+
+/* More depth for two existing post-hero illustrations on this page only. */
+.ukseo--ads .ua-sv--ads-journey .ua-sv-art{perspective:1000px;transform-style:preserve-3d}
+.ukseo--ads .ua-sv--ads-journey .ua-sv-ad-card{
+ animation:ua3-float-a 8.3s ease-in-out infinite;
+}
+.ukseo--ads .ua-sv--ads-journey .ua-sv-site-window{
+ animation:ua3-float-b 9s ease-in-out infinite;
+}
+.ukseo--ads .ua-sv--ads-journey .ua-sv-success-icon{
+ animation:ua3-float-a 7.1s ease-in-out infinite;
+}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-budget-circle{
+ animation:ua3-float-b 8.5s ease-in-out infinite;
+}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-budget-branches span{
+ animation:ua3-float-a 8s ease-in-out infinite;
+}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-budget-branches span:nth-child(2){animation-delay:-2.5s}
+.ukseo--ads .ua-sv--ads-decisions .ua-sv-budget-branches span:nth-child(3){animation-delay:-5s}
+
+@media(max-width:900px){
+ .ukseo--ads .ua3-scene{grid-template-columns:1fr;min-height:0}
+ .ukseo--ads .ua3-copy{padding:31px 30px 24px}
+ .ukseo--ads .ua3-art{min-height:370px}
+ .ukseo--ads .ua3-copy h3{font-size:clamp(29px,4.5vw,43px)}
+}
+@media(max-width:500px){
+ .ukseo--ads .ua3-wrap{padding-bottom:40px}
+ .ukseo--ads .ua3-scene{border-radius:22px}
+ .ukseo--ads .ua3-copy{padding:27px 21px 20px}
+ .ukseo--ads .ua3-eyebrow{font-size:12px;margin-bottom:12px}
+ .ukseo--ads .ua3-copy h3{font-size:clamp(28px,7.7vw,38px);margin-bottom:15px}
+ .ukseo--ads .ua3-copy p{font-size:16px;margin-bottom:18px;line-height:1.62}
+ .ukseo--ads .ua3-note{font-size:13px}
+ .ukseo--ads .ua3-art{min-height:302px;perspective:1200px}
+ .ukseo--ads .ua3-finance{min-height:90px;width:39%;padding:11px 9px;gap:5px}
+ .ukseo--ads .ua3-finance>span{font-size:10px}
+ .ukseo--ads .ua3-finance strong{font-size:15px}
+ .ukseo--ads .ua3-finance--income{left:3%;top:9%}
+ .ukseo--ads .ua3-finance--cost{right:3%;top:8%}
+ .ukseo--ads .ua3-finance--return{left:29%;bottom:6%;width:43%}
+ .ukseo--ads .ua3-finance-core{width:124px;height:105px;top:47%;box-shadow:0 12px 25px #26362760,0 0 0 7px #d9e0d363}
+ .ukseo--ads .ua3-finance-core span{font-size:9px}
+ .ukseo--ads .ua3-finance-core strong{font-size:20px}
+ .ukseo--ads .ua3-finance-core b{font-size:19px}
+ .ukseo--ads .ua3-sheet{min-height:175px;width:41%;padding:12px 8px;gap:7px;top:24%;border-radius:11px}
+ .ukseo--ads .ua3-sheet>span{font-size:9.5px}
+ .ukseo--ads .ua3-sheet strong{font-size:13px;min-height:44px}
+ .ukseo--ads .ua3-sheet i{height:5px}
+ .ukseo--ads .ua3-sheet b{width:26px;height:26px;font-size:16px}
+ .ukseo--ads .ua3-sheet--left{left:1%}
+ .ukseo--ads .ua3-sheet--center{left:29%;top:15%}
+ .ukseo--ads .ua3-sheet--right{right:1%}
+ .ukseo--ads .ua3-dossier-stamp{bottom:5%;font-size:10px;padding:8px 11px}
+ .ukseo--ads .ua3-radar-center{height:126px;width:126px}
+ .ukseo--ads .ua3-radar-center span{font-size:10px}
+ .ukseo--ads .ua3-radar-center strong{font-size:23px}
+ .ukseo--ads .ua3-radar-tag{padding:8px 9px;min-width:112px;gap:5px}
+ .ukseo--ads .ua3-radar-tag small{font-size:10px}
+ .ukseo--ads .ua3-radar-tag strong{font-size:14px}
+ .ukseo--ads .ua3-radar-tag--one{left:3%;top:7%}
+ .ukseo--ads .ua3-radar-tag--two{right:2%;top:16%}
+ .ukseo--ads .ua3-radar-tag--three{left:7%;bottom:6%}
+ .ukseo--ads .ua3-safety-window{top:7%;left:4%;width:87%;min-height:0}
+ .ukseo--ads .ua3-safety-toolbar{padding:11px 10px}
+ .ukseo--ads .ua3-safety-toolbar span{font-size:10px}
+ .ukseo--ads .ua3-safety-row{padding:13px 14px;font-size:13px}
+ .ukseo--ads .ua3-safety-bottom{padding:12px 6px;font-size:11px;gap:7px}
+ .ukseo--ads .ua3-safety-seal{width:93px;height:93px;right:3%;bottom:3%}
+ .ukseo--ads .ua3-safety-seal span{font-size:9px}
+ .ukseo--ads .ua3-safety-seal strong{font-size:15px}
+ .ukseo--ads .ua3-safety-seal b{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo--ads .ua3-scene *,
+ .ukseo--ads .ua3-scene *:before,
+ .ukseo--ads .ua3-scene *:after,
+ .ukseo--ads .ua-sv--ads-journey .ua-sv-art *,
+ .ukseo--ads .ua-sv--ads-decisions .ua-sv-spotlight-art *{
+  animation:none!important;transition:none!important;
+ }
+}
