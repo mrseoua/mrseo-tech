@@ -4,9 +4,10 @@
  * Pure Ukrainian content; no fake pricing, made-up outcomes or other market URLs.
  */
 if (!defined('ABSPATH')) exit;
+require_once __DIR__.'/ua-additional-services.php';
 
 function mrseo_ua_website_slugs() {
- return array('local-business-websites','landing-pages','corporate-websites','website-redesign');
+ return array_keys(mrseo_ua_website_data());
 }
 function mrseo_ua_website_data($slug=null){
  static $pages=null;
@@ -284,6 +285,7 @@ function mrseo_ua_website_data($slug=null){
 }
 MRSEO_UA_WEBSITES;
   $pages=json_decode($raw,true,512,JSON_THROW_ON_ERROR);
+  $pages=array_merge($pages,mrseo_ua_additional_service_data());
  }
  return $slug===null?$pages:($pages[$slug]??null);
 }
