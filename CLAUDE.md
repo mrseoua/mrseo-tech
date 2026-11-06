@@ -72,6 +72,20 @@ Traffic recovery, migrations, indexing problems and other technical subtopics be
 
 Merchant Center troubleshooting can be a standalone urgent service. Ads conversion setup/GA4 belongs inside appropriate service scopes; avoid separate top-level Analytics. **Nothing in this taxonomy has been deployed yet.** The next owner discussion is about E-commerce and Web Development menu sections.
 
+### Approved E-commerce mega-menu category (owner, 2026-11-06)
+
+The **Інтернет-магазини** category has five agreed service destinations, with Ukrainian customer-problem descriptions:
+
+1. **Створення інтернет-магазинів** — Хочете продавати онлайн, але не маєте зручного та сучасного магазину.
+2. **Інтернет-магазини на Хорошоп** — Потрібен готовий до продажів магазин на Хорошоп із правильно налаштованим каталогом, оплатою та доставкою.
+3. **Збільшення конверсії магазину** — Відвідувачі заходять, переглядають товари, але мало хто оформлює замовлення.
+4. **Автоматизація інтернет-магазину** — Товари, залишки, ціни й замовлення доводиться оновлювати вручну. Системи не працюють разом.
+5. **Модернізація та перенесення магазину** — Магазин застарів, працює повільно або потрібен переїзд на іншу платформу без втрати важливих даних і пошукового трафіку.
+
+Intro: «Створюємо, покращуємо та автоматизуємо магазини, щоб ними було зручно користуватися, керувати й продавати».
+
+SEO for online shops belongs in SEO, Shopping/PMax belongs in Ads; **don't duplicate top-level navigation destinations**. Horoshop only UA/RU. Avoid claiming loss-free migration; frame SEO/data preservation as a risk-controlled process. Avoid promises of CRO improvements without validated data. General SaaS, CRM and API development belong in **Web Development**, which is the next discussion. This is an approved future taxonomy; **do not publish a new menu or create missing URLs without explicit owner instruction**.
+
 ## Priority work
 
 1. Make existing service visuals **beautiful, coherent and unique** while preserving the high-quality homepage Earth.
