@@ -610,6 +610,19 @@ jobs:
               assert "($service === '"+service+"' && $variant === '"+visual+"')" in commercial_php
           assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','journey')") < ua_ads.index('ukads-decision')
           assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','decisions')") < ua_ads.index('ukads-deliver')
+          # One-page UA Google Ads pricing/conciseness pilot. Hero unchanged by design.
+          pricing_css=(root/'assets/ua-google-ads-pricing.css').read_text()
+          assert ua_ads.count('<h1 ') == 1, 'Google Ads must retain one hero H1'
+          assert ua_ads.count('class="ukads-price-card ') == 2, 'Exactly two clear price packages expected'
+          assert all(x in ua_ads for x in ('7 900','12 900','5 900','9 500','ukads-pricing',
+              'ukads-flow-plate','ukads-problems','ukads-faq-title','ukads-final-title')), 'UA pricing or shortened narrative missing'
+          assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','journey')") < ua_ads.index('id="ukads-pricing"')
+          assert ua_ads.index('id="ukads-pricing"') < ua_ads.index('id="ukads-process-title"')
+          assert ua_ads.index('id="ukads-process-title"') < ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','decisions')")
+          assert '.ukseo--ads .ukads-price-grid' in pricing_css
+          assert '@media(max-width:480px)' in pricing_css and '@media(prefers-reduced-motion:reduce)' in pricing_css
+          assert "wp_enqueue_style('mrseo-ua-ads-pricing'" in functions
+
           assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('<section class="dev-section dev-capabilities"')
           assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','build')") < dev_markup.index('<section class="dev-section dev-technical"')
           assert "if($dev_locale==='uk')require_once" in dev_markup
