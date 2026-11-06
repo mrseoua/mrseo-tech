@@ -161,3 +161,86 @@
 @media(prefers-reduced-motion:reduce){
  .services-menu-toggle::after,.services-menu-chevron{transition:none!important}
 }
+
+
+/* Reversible five-pillar agency menu pilot — only the menu, never the Earth. */
+.mrseo-mega--trial .mrseo-mega-grid{
+ grid-template-columns:repeat(5,minmax(0,1fr));gap:0;
+ padding:27px 15px 25px;
+}
+.mrseo-mega--trial .mrseo-mega-group{
+ min-width:0;padding:2px 17px 4px 18px;
+ border-left:1px solid #e9e2d9;
+}
+.mrseo-mega--trial .mrseo-mega-group:first-child{border-left:0}
+.mrseo-mega--trial .mrseo-mega-group h3{
+ align-items:flex-start;gap:9px;margin:0 0 11px;
+ font-size:16px;line-height:1.25;letter-spacing:-.018em;
+}
+.mrseo-mega--trial .mrseo-mega-group h3 svg{
+ width:18px;height:18px;color:#a65340;margin-top:1px;
+}
+.site-header .nav-submenu .mrseo-mega--trial a.mrseo-mega-heading-link,
+.intl-header .intl-dropdown-menu .mrseo-mega--trial a.mrseo-mega-heading-link,
+.intl-header .intl-mobile-panel .mrseo-mega--trial a.mrseo-mega-heading-link{
+ display:inline!important;max-width:100%;padding:0!important;margin:0!important;
+ border:0!important;border-radius:0!important;font:inherit!important;
+ color:#252b26!important;line-height:inherit!important;white-space:normal!important;
+ overflow-wrap:break-word;text-decoration:none!important;background:transparent!important;
+}
+.site-header .nav-submenu .mrseo-mega--trial a.mrseo-mega-heading-link:hover,
+.intl-header .intl-dropdown-menu .mrseo-mega--trial a.mrseo-mega-heading-link:hover{
+ color:#a94938!important;
+}
+.mrseo-mega--trial .mrseo-mega-lead{
+ min-height:55px;margin:0 0 13px;padding:0;
+ color:#656a62;font-size:12.5px;font-weight:520;line-height:1.48;
+}
+.mrseo-mega--trial .mrseo-mega-items{
+ gap:4px;
+}
+.site-header .nav-submenu .mrseo-mega--trial .mrseo-mega-items .mrseo-mega-item,
+.intl-header .intl-dropdown-menu .mrseo-mega--trial .mrseo-mega-items .mrseo-mega-item,
+.intl-header .intl-mobile-panel .mrseo-mega--trial .mrseo-mega-items .mrseo-mega-item{
+ padding:9px 8px 9px 9px!important;min-height:38px;
+ font-size:14px!important;line-height:1.42!important;
+ border-radius:7px!important;overflow-wrap:break-word!important;
+}
+.site-header .nav-submenu .mrseo-mega--trial .mrseo-mega-items a.mrseo-mega-item,
+.intl-header .intl-dropdown-menu .mrseo-mega--trial .mrseo-mega-items a.mrseo-mega-item,
+.intl-header .intl-mobile-panel .mrseo-mega--trial .mrseo-mega-items a.mrseo-mega-item{
+ font-weight:700!important;color:#292f2b!important;
+}
+.site-header .nav-submenu .mrseo-mega--trial .mrseo-mega-items .mrseo-mega-item--planned,
+.intl-header .intl-dropdown-menu .mrseo-mega--trial .mrseo-mega-items .mrseo-mega-item--planned,
+.intl-header .intl-mobile-panel .mrseo-mega--trial .mrseo-mega-items .mrseo-mega-item--planned{
+ color:#646961!important;font-weight:570!important;cursor:default;
+}
+.mrseo-mega--trial .mrseo-mega-bottom{padding:20px 32px 22px!important}
+@media(min-width:951px){
+ .site-header .nav-dropdown>.nav-submenu:has(.mrseo-mega--trial),
+ .intl-header .intl-dropdown>.intl-dropdown-menu:has(.mrseo-mega--trial){
+  width:min(1250px,calc(100vw - 44px))!important;
+ }
+}
+@media(min-width:951px) and (max-width:1210px){
+ .mrseo-mega--trial .mrseo-mega-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:25px 0}
+ .mrseo-mega--trial .mrseo-mega-group:nth-child(4){border-left:0}
+ .mrseo-mega--trial .mrseo-mega-lead{min-height:0}
+}
+@media(max-width:950px){
+ .mrseo-mega--trial .mrseo-mega-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 0;padding:18px 11px}
+ .mrseo-mega--trial .mrseo-mega-group{padding:12px 15px;border-left:0;border-top:1px solid #e9e2d9}
+ .mrseo-mega--trial .mrseo-mega-group:nth-child(-n+2){border-top:0}
+ .mrseo-mega--trial .mrseo-mega-lead{min-height:0;margin-bottom:8px}
+ .mrseo-mega--trial .mrseo-mega-bottom{padding:19px 17px!important}
+}
+@media(max-width:620px){
+ .mrseo-mega--trial .mrseo-mega-grid{grid-template-columns:1fr;gap:0;padding:7px 8px}
+ .mrseo-mega--trial .mrseo-mega-group,
+ .mrseo-mega--trial .mrseo-mega-group:nth-child(2){border-top:1px solid #e9e2d9}
+ .mrseo-mega--trial .mrseo-mega-group:first-child{border-top:0}
+ .mrseo-mega--trial .mrseo-mega-group h3{font-size:17px}
+ .mrseo-mega--trial .mrseo-mega-lead{font-size:13px}
+ .mrseo-mega--trial .mrseo-mega-bottom{gap:13px!important}
+}
