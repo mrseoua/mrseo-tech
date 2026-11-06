@@ -497,21 +497,22 @@
   box-shadow:0 0 0 2px #e6a4896b,0 17px 34px #030a0866;
 }
 @media(max-width:640px){
- .ms-scene-analytics .ms-observe{padding:8px 5px 10px}
- .ms-scene-analytics .ms-observe-top{padding-bottom:8px;font-size:10px}
+ .ms-scene-analytics .ms-stage--ua-analytics{min-height:310px}
+ .ms-scene-analytics .ms-observe{padding:10px 5px 12px}
+ .ms-scene-analytics .ms-observe-top{padding-bottom:10px;font-size:12px}
  .ms-scene-analytics .ms-observe-grid{
   display:flex;flex-direction:column;gap:8px;justify-content:center;
  }
  .ms-scene-analytics .ms-observe-node,
  .ms-scene-analytics .ms-observe-node--verify{
-  width:100%;flex:1;min-height:0;max-height:69px;margin:0;
+  width:100%;flex:1;min-height:65px;max-height:none;margin:0;
   padding:9px 47px 9px 13px;
   animation:none;
   transform:none;
  }
- .ms-scene-analytics .ms-observe-step{font-size:10px}
+ .ms-scene-analytics .ms-observe-step{font-size:11px}
  .ms-scene-analytics .ms-observe-node strong{font-size:17px;margin:2px 0 0}
- .ms-scene-analytics .ms-observe-detail{font-size:11px;margin-top:2px}
+ .ms-scene-analytics .ms-observe-detail{font-size:12px;margin-top:2px}
  .ms-scene-analytics .ms-observe-symbol{
   right:10px;top:calc(50% - 14px);
  }
