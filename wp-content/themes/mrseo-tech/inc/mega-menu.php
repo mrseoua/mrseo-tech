@@ -4,6 +4,7 @@
  * Every offered capability is visible; links are used only for existing pages.
  */
 if (!defined('ABSPATH')) exit;
+require_once __DIR__.'/mega-menu-trial.php';
 
 function mrseo_mega_menu_copy() {
     static $copy = null;
@@ -351,6 +352,9 @@ function mrseo_mega_menu_icon($key) {
     return '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'.($paths[$key] ?? $paths['seo']).'</svg>';
 }
 function mrseo_render_mega_menu($in_mobile_panel = false) {
+    // Reversible navigation preview; the legacy renderer below stays untouched for rollback.
+    mrseo_render_mega_menu_trial($in_mobile_panel);
+    return;
     if(mrseo_locale()==='en' && function_exists('mrseo_render_uk_market_menu')){
         mrseo_render_uk_market_menu($in_mobile_panel);return;
     }
