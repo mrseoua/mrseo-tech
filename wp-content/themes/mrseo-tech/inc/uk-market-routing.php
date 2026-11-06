@@ -73,6 +73,7 @@ add_action('init',function(){
 },36);
 /** UK-first navigation: real pages only, separate site creation from improvement work. */
 function mrseo_render_uk_market_menu($mobile=false){
+ if(function_exists('mrseo_render_mega_menu_trial')){mrseo_render_mega_menu_trial($mobile);return;}
  $groups=array(
  ['dev','Websites',[['website-design','Website design & development'],['service-websites','Service business websites'],['wordpress-care','WordPress maintenance']]],
  ['commerce','Online shops',[['online-shop-development','Ecommerce website development'],['ecommerce-seo','Ecommerce SEO'],['google-shopping','Google Shopping']]],
