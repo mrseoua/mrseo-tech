@@ -47,9 +47,9 @@ get_header();
  </div>
 </section>
 </section>
-<section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-title"><div class="container">
+<section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
  <div class="ukseo-section-head">
-  <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-title">Магазин на Хорошоп є. <em>А що заважає продажам?</em></h2></div>
+  <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-problem-title">Магазин на Хорошоп є. <em>А що заважає продажам?</em></h2></div>
   <p>Перевіряємо категорії, фільтри та товарний фід — із урахуванням можливостей Хорошоп.</p>
  </div>
  <div class="ukseo-problem-grid">
