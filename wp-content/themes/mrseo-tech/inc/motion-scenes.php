@@ -43,10 +43,31 @@ function mrseo_render_motion_scene($slug,$locale=null){
    <div class="ms-ads-measure"><span><?php echo esc_html($steps[1]);?></span><i></i><span><?php echo esc_html($steps[2]);?></span><b>✓</b></div>
   <?php break;
   case 'analytics':?>
+   <?php if(($locale?:mrseo_locale())==='uk'):?>
+   <!-- A purpose-built measurement pipeline, not a generic dashboard chart.
+        All values are illustrative labels, not real client measurements. -->
+   <div class="ms-observe">
+    <div class="ms-observe-top"><span>ГА4 / ШЛЯХ ПОДІЇ</span><span>● ПЕРЕВІРКА ДАНИХ</span></div>
+    <div class="ms-observe-grid">
+     <div class="ms-observe-node ms-observe-node--event ms-select-0">
+      <span class="ms-observe-step">01 / САЙТ</span><strong>Подія</strong><span class="ms-observe-detail">purchase</span><b class="ms-observe-symbol" aria-hidden="true">↗</b>
+     </div>
+     <div class="ms-observe-node ms-observe-node--verify ms-select-1">
+      <span class="ms-observe-step">02 / КОНТРОЛЬ</span><strong>Перевірка</strong><span class="ms-observe-detail">Без дублів</span><b class="ms-observe-symbol" aria-hidden="true">✓</b>
+     </div>
+     <div class="ms-observe-node ms-observe-node--decision ms-select-2">
+      <span class="ms-observe-step">03 / БІЗНЕС</span><strong>Рішення</strong><span class="ms-observe-detail">Зрозумілий звіт</span><b class="ms-observe-symbol" aria-hidden="true">◈</b>
+     </div>
+    </div>
+    <div class="ms-observe-rail" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="ms-observe-footer"><span>GA4</span><i aria-hidden="true"></i><span>GOOGLE ADS</span><i aria-hidden="true"></i><span>ЗАМОВЛЕННЯ</span></div>
+   </div>
+   <?php else:?>
    <div class="ms-data-head"><span>GA4 / <?php echo esc_html($copy['name']);?></span><span class="ms-data-live">● <?php echo esc_html($tabs[0]);?></span></div>
    <svg class="ms-data-path" viewBox="0 0 500 145" preserveAspectRatio="none"><path d="M5 118 C105 118 92 52 175 70 S300 118 352 43 S420 27 495 14" fill="none" stroke="#c97769" stroke-width="4" stroke-linecap="round" class="ms-data-draw"/><path d="M5 118 C105 118 92 52 175 70 S300 118 352 43 S420 27 495 14" fill="none" stroke="#c97769" stroke-width="2" stroke-dasharray="3 12" class="ms-data-dash"/></svg>
    <div class="ms-data-events"><?php foreach($steps as $i=>$step):?><div class="ms-data-event ms-select-<?php echo esc_attr($i);?>"><i></i><span><?php echo esc_html($step);?></span><b>✓</b></div><?php endforeach;?></div>
    <div class="ms-data-check"><span>event_name</span><strong>purchase</strong><i>✓</i></div>
+   <?php endif;?>
   <?php break;
   case 'web-development':?>
    <?php if(($locale?:mrseo_locale())==='uk'):?>
