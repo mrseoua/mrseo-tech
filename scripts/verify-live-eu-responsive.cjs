@@ -98,6 +98,7 @@ async function audit(browser,viewport,lang,slug){
     uaFinalScenes:(()=>{
       const target=lang==='uk'&&['seo-audit','performance-max','about','portfolio','contact'].includes(slug);
       const services=['seo-audit','performance-max'].includes(slug);
+      const compactAudit=lang==='uk'&&slug==='seo-audit';
       const sections=services?[...document.querySelectorAll('.ua4-section')]:
         [...document.querySelectorAll('.uaf-story,.uaf-contact-guide')];
       const stylesheet=!!document.querySelector('link[href*="ua-final-interiors.css"]');
@@ -105,16 +106,16 @@ async function audit(browser,viewport,lang,slug){
       const boxRects=sections.map(el=>{const r=el.getBoundingClientRect();return {w:r.width,left:r.left,right:r.right}});
       return {target,stylesheet,serviceStyles,count:sections.length,
         headings:sections.map(el=>el.querySelector('h2[id]')?.textContent.trim()||''),
-        cards:services?sections[0]?.querySelectorAll('.ua4-journey-card').length||0:0,
-        planSteps:services?sections[1]?.querySelectorAll('.ua4-plan-step').length||0:0,
-        ordered:sections.length===2&&!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING),
+        cards:services&&!compactAudit?sections[0]?.querySelectorAll('.ua4-journey-card').length||0:0,
+        planSteps:services?(compactAudit?sections[0]:sections[1])?.querySelectorAll('.ua4-plan-step').length||0:0,
+        ordered:sections.length===1||(sections.length===2&&!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING)),
         geometry:boxRects.length>0&&boxRects.every(r=>r.w>250&&r.left>=-2&&r.right<=innerWidth+2),
         formIntact:slug==='contact'?!!document.querySelector('form[action*="admin-post.php"] input[name="mrseo_nonce"]')&&
             !!document.querySelector('form[action*="admin-post.php"] textarea[name="contact_message"]'):true,
         noLeak:!target&&!stylesheet&&sections.length===0};
     })(),
     uaFourScenes:(()=>{
-      const target=lang==='uk'&&['ecommerce-seo','analytics','service-websites','horoshop'].includes(slug);
+      const target=lang==='uk'&&['analytics','service-websites','horoshop'].includes(slug);
       const sections=[...document.querySelectorAll('.ua4-section')];
       const style=!!document.querySelector('link[href*="ua-four-service-visuals.css"]');
       const rects=sections.map(el=>{const r=el.getBoundingClientRect();
@@ -167,9 +168,9 @@ async function audit(browser,viewport,lang,slug){
       const stages=document.querySelectorAll('.ukseo-visual-journey > li');
       const board=document.querySelector('.ukseo-visual-priority-board');
       const css=!!document.querySelector('link[href*="ua-seo-visuals.css"]');
-      const rects=[journey,priorities,board].filter(Boolean).map(el=>el.getBoundingClientRect());
+      const rects=[priorities,board].filter(Boolean).map(el=>el.getBoundingClientRect());
       return {css,stageCount:stages.length,journey:!!journey,priorities:!!priorities,board:!!board,
-        boundariesOK:rects.length===3&&rects.every(r=>r.width>0&&r.left>=-2&&r.right<=innerWidth+2),
+        boundariesOK:rects.length===2&&rects.every(r=>r.width>0&&r.left>=-2&&r.right<=innerWidth+2),
         properOrder:!!journey&&!!priorities&&journey.compareDocumentPosition(priorities)&Node.DOCUMENT_POSITION_FOLLOWING};
     })(),
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
@@ -222,13 +223,13 @@ async function audit(browser,viewport,lang,slug){
   if(lang==='uk'&&uaFinalSlugs.includes(slug)){
     const v=c.uaFinalScenes;
     const services=['seo-audit','performance-max'].includes(slug);
-    if(!v||!v.stylesheet||v.count!==(services?2:1)||v.headings.some(h=>!h)||
-        !v.geometry||!v.formIntact||(services&&(!v.serviceStyles||v.cards!==3||v.planSteps!==3||!v.ordered)))
+    if(!v||!v.stylesheet||v.count!==(slug==='seo-audit'?1:services?2:1)||v.headings.some(h=>!h)||
+        !v.geometry||!v.formIntact||(services&&(!v.serviceStyles||v.cards!==(slug==='seo-audit'?0:3)||v.planSteps!==3||!v.ordered)))
       item.errors.push('UA final interiors missing/inaccessible/out of viewport: '+JSON.stringify(v));
   }
   if(lang!=='uk'&&!c.uaFinalScenes.noLeak)
     item.errors.push('UA final interior assets or content leaked into '+lang);
-  if(lang==='uk'&&uaFourSlugs.includes(slug)){
+  if(lang==='uk'&&uaFourSlugs.includes(slug)&&slug!=='ecommerce-seo'){
     const v=c.uaFourScenes;
     if(!v||!v.style||v.count!==2||v.journeys!==3||v.planSteps!==3||
         !v.correctOrder||!v.geometry||v.headings.some(h=>!h))
@@ -251,9 +252,14 @@ async function audit(browser,viewport,lang,slug){
   }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
     item.errors.push('Ukrainian Google Ads pricing leaked onto other pages');
+  if(lang==='uk'&&slug==='ecommerce-seo'){
+    const lab=await page.locator('#ukcommerce-lab .ec-tabs button').count();
+    if(lab!==3||c.uaFourScenes.count!==0||c.uaFourScenes.style)
+      item.errors.push('Compact ecommerce catalog lab or redundant scenes failed: tabs='+lab);
+  }
   if(lang==='uk'&&slug==='seo'){
     const v=c.uaSeoVisuals;
-    if(!v||!v.css||!v.journey||!v.priorities||!v.board||v.stageCount!==3||!v.boundariesOK||!v.properOrder)
+    if(!v||!v.css||v.journey||!v.priorities||!v.board||v.stageCount!==0||!v.boundariesOK)
       item.errors.push('Ukrainian SEO visual story or responsive geometry missing: '+JSON.stringify(v));
   }
   if(!coreShard&&slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
