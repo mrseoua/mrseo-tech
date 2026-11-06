@@ -80,7 +80,17 @@ function mrseo_trial_menu_native($locale) {
 }
 
 function mrseo_trial_menu_route_map($locale) {
- if(in_array($locale,array('uk','ru'),true)){
+ // 25 Ukrainian menu options now have a real, independent landing page.
+ if($locale==='uk'){
+  return array(
+   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+   'ads'=>array('google-ads','performance-max','local-google-ads','google-ads-audit','merchant-center'),
+   'commerce'=>array('online-store-development','horoshop','store-conversion','catalog-automation','store-migration'),
+   'sites'=>array('local-business-websites','service-websites','landing-pages','corporate-websites','website-redesign'),
+   'dev'=>array('website-maintenance','api-integrations','website-speed-security','web-development','web-applications')
+  );
+ }
+ if($locale==='ru'){
   return array(
    'seo'=>array(null,'ecommerce-seo',null,null,'seo-audit'),
    'ads'=>array('google-ads','performance-max',null,null,'merchant-center'),
@@ -121,6 +131,8 @@ function mrseo_trial_menu_route_map($locale) {
 
 function mrseo_trial_menu_valid($slug,$locale) {
  if(!$slug)return false;
+ if($locale==='uk' && function_exists('mrseo_ua_website_slugs')
+    && in_array($slug,mrseo_ua_website_slugs(),true))return true;
  if(in_array($locale,array('uk','ru'),true)){
   if(in_array($slug,array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','horoshop','web-development','service-websites','analytics'),true))return true;
   return function_exists('mrseo_new_service_copy') && (bool)mrseo_new_service_copy($slug,$locale);
