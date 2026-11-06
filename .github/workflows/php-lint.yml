@@ -614,11 +614,14 @@ jobs:
           pricing_css=(root/'assets/ua-google-ads-pricing.css').read_text()
           assert ua_ads.count('<h1 ') == 1, 'Google Ads must retain one hero H1'
           assert ua_ads.count('class="ukads-price-card ') == 2, 'Exactly two clear price packages expected'
-          assert all(x in ua_ads for x in ('7 900','12 900','5 900','9 500','ukads-pricing',
+          assert all(x in ua_ads for x in ('5 000','10 000','5 900','9 500','ukads-pricing',
               'ukads-flow-plate','ukads-problems','ukads-faq-title','ukads-final-title')), 'UA pricing or shortened narrative missing'
           assert ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','journey')") < ua_ads.index('id="ukads-pricing"')
           assert ua_ads.index('id="ukads-pricing"') < ua_ads.index('id="ukads-process-title"')
           assert ua_ads.index('id="ukads-process-title"') < ua_ads.index("mrseo_render_ua_commercial_visual('google-ads','decisions')")
+          assert 'ЩОМІСЯЦЯ ЗА ВЕДЕННЯ ВІД' in ua_ads and ua_ads.count('Разове налаштування')==2
+          assert '.ukseo--ads .ukseo-hero-copy h1' in pricing_css and 'letter-spacing:-.024em' in pricing_css
+          assert 'font-size:clamp(37px,9.75vw,50px)' in pricing_css
           assert '.ukseo--ads .ukads-price-grid' in pricing_css
           assert '@media(max-width:480px)' in pricing_css and '@media(prefers-reduced-motion:reduce)' in pricing_css
           assert "wp_enqueue_style('mrseo-ua-ads-pricing'" in functions

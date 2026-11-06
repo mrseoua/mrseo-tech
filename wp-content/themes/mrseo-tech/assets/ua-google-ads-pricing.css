@@ -371,3 +371,43 @@
  .ukseo--ads .ukseo-problem-card:hover,
  .ukseo--ads .ukads-price-link:hover{transform:none!important}
 }
+
+
+/*
+ * UA Google Ads readability refinement — fix excessive negative tracking from
+ * shared hero styles, without changing the approved hero markup or other pages.
+ */
+.ukseo--ads .ukseo-hero-copy h1{
+ letter-spacing:-.024em;
+ line-height:1.12;
+}
+.ukseo--ads .ukseo-hero-copy h1 em{
+ letter-spacing:-.012em;
+ line-height:1.12;
+}
+.ukseo--ads h2{
+ letter-spacing:-.026em;
+ line-height:1.14;
+}
+.ukseo--ads .ukseo-problem-card h3,
+.ukseo--ads .ukseo-steps h3,
+.ukseo--ads .ukseo-delivery-list h3{
+ letter-spacing:-.017em;
+ line-height:1.22;
+}
+.ukseo--ads .ukads-price-card h3{
+ letter-spacing:-.019em;
+ line-height:1.15;
+}
+@media(max-width:480px){
+ .ukseo--ads .ukseo-hero-copy h1{
+  font-size:clamp(37px,9.75vw,50px);
+  letter-spacing:-.01em;
+  line-height:1.14;
+ }
+ .ukseo--ads .ukseo-hero-copy h1 em{
+  letter-spacing:-.004em;
+  line-height:1.14;
+ }
+ .ukseo--ads h2{letter-spacing:-.017em;line-height:1.17}
+}

@@ -28,27 +28,27 @@ get_header();
  <section class="ukseo-cases" id="ukads-problems" aria-labelledby="ukads-problems-title">
   <div class="container">
    <div class="ukseo-section-head">
-    <div><span class="ukseo-kicker">ДЕ БІЗНЕС ВТРАЧАЄ ГРОШІ</span><h2 id="ukads-problems-title">Три проблеми, які не видно за кількістю кліків.</h2></div>
-    <p>Знаходимо причину, а не просто змінюємо налаштування рекламного кабінету.</p>
+    <div><span class="ukseo-kicker">ДЕ БІЗНЕС ВТРАЧАЄ ГРОШІ</span><h2 id="ukads-problems-title">Чому реклама витрачає гроші, але не дає потрібного результату?</h2></div>
+    <p>Показуємо, де губляться заявки, які кампанії витрачають зайві гроші та що варто виправити.</p>
    </div>
    <div class="ukseo-problem-grid">
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">01 <span aria-hidden="true">◎</span></div>
      <h3>Дані не збігаються</h3>
-     <p>У Google Ads є продажі, а в магазині чи CRM — інші цифри.</p>
-     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Конверсії, дублікати та суми замовлень.</strong></div>
+     <p>Рекламний кабінет показує заявки або покупки, яких ви не бачите у своїх замовленнях.</p>
+     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Чи правильно рахуються заявки, покупки та їхня вартість.</strong></div>
     </article>
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div>
      <h3>Бюджет іде не туди</h3>
-     <p>Кампанії приносять дохід, але маржа товарів або вартість заявки не підходять бізнесу.</p>
-     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Витрати, пріоритети й економіку продажів.</strong></div>
+     <p>Продажі є, але після витрат на рекламу й товар прибутку може майже не залишитися.</p>
+     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Які товари й запити приносять продажі, а які лише витрачають бюджет.</strong></div>
     </article>
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">03 <span aria-hidden="true">◇</span></div>
      <h3>Зміни без системи</h3>
-     <p>Кампанії постійно коригують, але ніхто не може пояснити, що саме спрацювало.</p>
-     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Історію змін та критерії оцінки.</strong></div>
+     <p>Рекламу часто переналаштовують, але не перевіряють, чи допомогла попередня зміна.</p>
+     <div class="ukseo-card-diagnosis"><span>Перевіряємо</span><strong>Що змінювали, навіщо та як вимірювали результат.</strong></div>
     </article>
    </div>
   </div>
@@ -57,8 +57,8 @@ get_header();
  <section class="ukads-pricing" id="ukads-pricing" aria-labelledby="ukads-pricing-title">
   <div class="container">
    <div class="ukseo-section-head ukads-pricing-heading">
-    <div><span class="ukseo-kicker">ВАРТІСТЬ GOOGLE ADS</span><h2 id="ukads-pricing-title">Зрозумілі умови. <em>Без прихованого рекламного бюджету.</em></h2></div>
-    <p>Дві стартові пропозиції. Оплата нашої роботи й витрати на рекламу в Google — різні платежі.</p>
+    <div><span class="ukseo-kicker">ВАРТІСТЬ GOOGLE ADS</span><h2 id="ukads-pricing-title">Скільки коштує <em>налаштування та ведення реклами?</em></h2></div>
+    <p>Ви платите нам за налаштування й ведення. Бюджет на кліки та покази поповнюєте у Google окремо.</p>
    </div>
    <div class="ukads-price-grid">
     <article class="ukads-price-card ukads-price-card--search">
@@ -70,13 +70,13 @@ get_header();
       <span class="ukads-price-path"></span>
      </div>
      <h3>Google Ads Start</h3>
-     <p class="ukads-price-lead">Для послуг, локального бізнесу та невеликих рекламних кампаній.</p>
-     <div class="ukads-price-cost"><span>ВЕДЕННЯ ВІД</span><strong>7 900 <small>₴/міс.</small></strong></div>
-     <div class="ukads-price-setup">Налаштування окремо — <strong>від 5 900 ₴</strong></div>
+     <p class="ukads-price-lead">Для компаній, яким потрібні заявки або дзвінки з пошуку Google.</p>
+     <div class="ukads-price-cost"><span>ЩОМІСЯЦЯ ЗА ВЕДЕННЯ ВІД</span><strong>5 000 <small>₴/міс.</small></strong></div>
+     <div class="ukads-price-setup">Разове налаштування — <strong>від 5 900 ₴</strong></div>
      <ul>
-      <li>Перевірка конверсій і поточного акаунта</li>
-      <li>Ведення пошукових кампаній</li>
-      <li>Контроль витрат і рекомендації щодо сайту</li>
+      <li>Перевіряємо, чи правильно рахуються заявки</li>
+      <li>Налаштовуємо й ведемо рекламу в пошуку Google</li>
+      <li>Стежимо за витратами й підказуємо, що поліпшити на сайті</li>
      </ul>
      <a href="<?php echo esc_url(mrseo_url('contact'));?>" class="ukads-price-link">Обговорити рекламу <span aria-hidden="true">↗</span></a>
     </article>
@@ -89,20 +89,20 @@ get_header();
       <span class="ukads-price-path"></span>
      </div>
      <h3>Shopping + PMax</h3>
-     <p class="ukads-price-lead">Для товарних кампаній, Merchant Center і Performance Max.</p>
-     <div class="ukads-price-cost"><span>ВЕДЕННЯ ВІД</span><strong>12 900 <small>₴/міс.</small></strong></div>
-     <div class="ukads-price-setup">Налаштування окремо — <strong>від 9 500 ₴</strong></div>
+     <p class="ukads-price-lead">Для магазинів, які хочуть рекламувати товари в Google й розуміти, які з них продаються.</p>
+     <div class="ukads-price-cost"><span>ЩОМІСЯЦЯ ЗА ВЕДЕННЯ ВІД</span><strong>10 000 <small>₴/міс.</small></strong></div>
+     <div class="ukads-price-setup">Разове налаштування — <strong>від 9 500 ₴</strong></div>
      <ul>
-      <li>Перевірка фіда, товарів і конверсій</li>
-      <li>Керування Shopping та Performance Max</li>
-      <li>Пріоритети асортименту й контроль ефективності</li>
+      <li>Перевіряємо товари, ціни та облік замовлень</li>
+      <li>Ведемо товарну рекламу Shopping і Performance Max</li>
+      <li>Показуємо, які товари варто рекламувати активніше</li>
      </ul>
      <a href="<?php echo esc_url(mrseo_url('contact'));?>" class="ukads-price-link">Обговорити магазин <span aria-hidden="true">↗</span></a>
     </article>
    </div>
    <div class="ukads-pricing-footer">
     <div class="ukads-budget-coin" aria-hidden="true"><span>₴</span></div>
-    <div><strong>Рекламний бюджет оплачується безпосередньо Google.</strong><p>Ціни наведено як стартові. Точна пропозиція залежить від кількості кампаній, цілей і складності робіт. Що входить у ведення — погоджуємо до початку.</p></div>
+    <div><strong>Гроші на рекламу оплачуються окремо — безпосередньо Google.</strong><p>Ведення — щомісячна оплата. Налаштування — разовий платіж. Точна ціна залежить від кількості кампаній та обсягу роботи. Перелік робіт погоджуємо до старту.</p></div>
    </div>
   </div>
  </section>
@@ -110,13 +110,13 @@ get_header();
   <div class="container">
    <div class="ukseo-section-head">
     <div><span class="ukseo-kicker">ЯК МИ ПРАЦЮЄМО</span><h2 id="ukads-process-title">Спочатку перевірка. <em>Потім рішення.</em></h2></div>
-    <p>Чотири короткі етапи — кожен зі зрозумілим результатом.</p>
+    <p>Ви розумієте, що ми перевіряємо, змінюємо і як оцінюємо результат.</p>
    </div>
    <ol class="ukseo-steps ukads-steps">
-    <li><div class="ukseo-step-index">01</div><div><h3>Визначаємо ціль</h3><p>Які заявки, продажі та витрати мають сенс для бізнесу.</p></div><strong>Критерії ефективності</strong></li>
-    <li><div class="ukseo-step-index">02</div><div><h3>Перевіряємо дані</h3><p>Зіставляємо Ads, GA4 і доступні замовлення.</p></div><strong>Причини розбіжностей</strong></li>
-    <li><div class="ukseo-step-index">03</div><div><h3>Плануємо зміни</h3><p>Визначаємо, що виправити й протестувати спочатку.</p></div><strong>Пріоритетний план</strong></li>
-    <li><div class="ukseo-step-index">04</div><div><h3>Контролюємо ефект</h3><p>Перевіряємо результат з урахуванням затримок конверсій.</p></div><strong>Наступне рішення</strong></li>
+    <li><div class="ukseo-step-index">01</div><div><h3>Визначаємо ціль</h3><p>Домовляємося, скільки можна витрачати на заявку або продаж.</p></div><strong>Зрозуміла ціль і допустимі витрати</strong></li>
+    <li><div class="ukseo-step-index">02</div><div><h3>Перевіряємо дані</h3><p>Перевіряємо, чи всі заявки й покупки правильно відображаються у звітах.</p></div><strong>Зрозуміло, де помилки в даних</strong></li>
+    <li><div class="ukseo-step-index">03</div><div><h3>Плануємо зміни</h3><p>Обираємо кампанії, запити й товари, які потребують змін.</p></div><strong>План конкретних змін</strong></li>
+    <li><div class="ukseo-step-index">04</div><div><h3>Контролюємо ефект</h3><p>Дивимося, як змінилися заявки, продажі й витрати після наших дій.</p></div><strong>Пояснення результату й наступний крок</strong></li>
    </ol>
    <div class="ukads-flow-plate" aria-hidden="true">
     <div class="ukads-flow-track"></div>
@@ -130,11 +130,11 @@ get_header();
  <?php mrseo_render_ua_commercial_visual('google-ads','decisions'); ?>
  <section class="ukseo-delivery ukads-deliver" aria-labelledby="ukads-deliver-title">
   <div class="container ukseo-delivery-grid">
-   <div><span class="ukseo-kicker">ЩО ОТРИМУЄТЕ</span><h2 id="ukads-deliver-title">Не перелік правок. <em>Зрозумілу систему рішень.</em></h2><p>Показуємо, що знайшли, що змінюємо й за якими даними перевірятимемо ефект.</p></div>
+   <div><span class="ukseo-kicker">ЩО ОТРИМУЄТЕ</span><h2 id="ukads-deliver-title">Ви бачите, <em>за що платите і що змінюється.</em></h2><p>Замість незрозумілих звітів — пояснення проблем, план дій і перевірка результату.</p></div>
    <div class="ukseo-delivery-list">
-    <div><span aria-hidden="true">01</span><div><h3>Діагностика</h3><p>Що заважає рекламі працювати ефективно.</p></div></div>
-    <div><span aria-hidden="true">02</span><div><h3>План дій</h3><p>Що змінити насамперед і чому.</p></div></div>
-    <div><span aria-hidden="true">03</span><div><h3>Прозорий контроль</h3><p>Як оцінюємо результати та наступні кроки.</p></div></div>
+    <div><span aria-hidden="true">01</span><div><h3>Діагностика</h3><p>Де втрачаються заявки або рекламні гроші.</p></div></div>
+    <div><span aria-hidden="true">02</span><div><h3>План дій</h3><p>Що саме виправляємо, в якій послідовності та навіщо.</p></div></div>
+    <div><span aria-hidden="true">03</span><div><h3>Прозорий контроль</h3><p>Які заявки й продажі отримано та що робимо далі.</p></div></div>
    </div>
   </div>
  </section>
@@ -144,14 +144,14 @@ get_header();
    <div><span class="ukseo-kicker">КОРОТКО ПРО ВАЖЛИВЕ</span><h2 id="ukads-faq-title">Перед початком роботи.</h2><p>Три відповіді без маркетингових обіцянок.</p></div>
    <div class="ukseo-faq-items">
     <details><summary>Чи треба перезапускати рекламу?<span aria-hidden="true">+</span></summary><p>Не обов’язково. Спочатку перевіряємо діючі кампанії та історію змін. Перезапуск пропонуємо лише за потреби.</p></details>
-    <details><summary>ROAS означає прибуток?<span aria-hidden="true">+</span></summary><p>Ні. ROAS співвідносить цінність конверсій із витратами на рекламу, але не враховує автоматично собівартість, доставку та повернення.</p></details>
-    <details><summary>Що потрібно для старту?<span aria-hidden="true">+</span></summary><p>Адреса сайту, цілі бізнесу та погоджені доступи до рекламного кабінету й аналітики. Паролі через форму не надсилайте.</p></details>
+    <details><summary>Як зрозуміти, чи реклама приносить прибуток?<span aria-hidden="true">+</span></summary><p>Дивимося не тільки на продажі й витрати на рекламу. Важливо також врахувати собівартість товару, доставку та повернення. Показник ROAS у Google Ads сам по собі не дорівнює чистому прибутку.</p></details>
+    <details><summary>Що потрібно для старту?<span aria-hidden="true">+</span></summary><p>Адреса вашого сайту й короткий опис задачі. Для перевірки реклами згодом попросимо доступ до Google Ads та аналітики. Паролі нам надсилати не потрібно.</p></details>
    </div>
   </div>
  </section>
  <section class="ukseo-final ukads-final" aria-labelledby="ukads-final-title">
   <div class="container ukseo-final-grid">
-   <div><span class="ukseo-kicker">НАСТУПНИЙ КРОК</span><h2 id="ukads-final-title">Реклама вже працює? <em>Знайдімо, де губляться гроші.</em></h2><p>Надішліть адресу сайту й коротко опишіть ситуацію. Почнемо з того, що потрібно перевірити.</p></div>
+   <div><span class="ukseo-kicker">НАСТУПНИЙ КРОК</span><h2 id="ukads-final-title">Реклама вже працює? <em>Знайдімо, де губляться гроші.</em></h2><p>Надішліть адресу сайту та розкажіть, що не влаштовує в рекламі. Пояснимо, з чого почати.</p></div>
    <div class="ukads-final-action">
     <div class="ukads-final-seal" aria-hidden="true"><span>АНАЛІЗ</span><strong>→</strong><span>РІШЕННЯ</span><i>✓</i></div>
     <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити рекламу <span aria-hidden="true">↗</span></a>
