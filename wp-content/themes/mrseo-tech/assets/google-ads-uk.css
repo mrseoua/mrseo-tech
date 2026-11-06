@@ -30,3 +30,13 @@
  .ukseo--ads .ukseo-spec-row strong{font-size:16px}
  .ukads-signal{font-size:12px}
 }
+
+/* UA Google Ads only: align the moving hero illustration a little higher.
+   Desktop screenshot review: scene was visually low against the large H1.
+   Keep mobile flow untouched; no change to the scene itself or homepage. */
+@media(min-width:1081px){
+ .ukseo--ads .ukseo-hero-art{position:relative;top:-46px}
+}
+@media(min-width:781px) and (max-width:1080px){
+ .ukseo--ads .ukseo-hero-art{position:relative;top:-24px}
+}
