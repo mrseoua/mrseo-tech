@@ -15,8 +15,8 @@ get_header();
           <a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>Технічний SEO-аудит</span>
         </nav>
         <div class="ukseo-kicker">ТЕХНІЧНИЙ SEO-АУДИТ</div>
-        <h1 id="ukaudit-title">Сайт відкривається. <em>А що насправді бачить Google?</em></h1>
-        <p class="ukseo-hero-lead">Трафік упав після оновлення? Важливі сторінки не потрапляють у пошук? Каталог створює сотні схожих URL? Замість загального списку помилок знаходимо конкретні причини, показуємо проблемні адреси та визначаємо, що потрібно виправити насамперед.</p>
+        <h1 id="ukaudit-title">Сайт працює. <em>А Google не бачить важливі сторінки?</em></h1>
+        <p class="ukseo-hero-lead">Зникли переходи, сторінки не індексуються або каталог створює дублікати? Перевіримо конкретні URL й покажемо, що виправити насамперед.</p>
         <div class="ukseo-actions">
           <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити аудит сайту <span aria-hidden="true">↗</span></a>
           <a class="ukseo-text-link" href="#ukaudit-problems">Які проблеми перевіряємо <span aria-hidden="true">↓</span></a>
@@ -37,66 +37,25 @@ get_header();
     <div class="container">
       <div class="ukseo-section-head">
         <div><span class="ukseo-kicker">СИМПТОМИ, ЯКІ ВАРТО ПЕРЕВІРИТИ</span><h2 id="ukaudit-problems-title">Що відбувається з вашим сайтом?</h2></div>
-        <p>Ці симптоми можуть мати різні причини. Аудит потрібен, щоб підтвердити їх на конкретних сторінках, а не будувати припущення.</p>
+        <p>Не здогадуємося — перевіряємо причини на реальних сторінках.</p>
       </div>
       <div class="ukseo-problem-grid">
         <article class="ukseo-problem-card">
           <div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div>
-          <h3>Після оновлення зникли переходи</h3>
+          <h3>Після змін упав трафік</h3>
           <p>Змінили дизайн, структуру чи платформу — і Google почав показувати важливі сторінки рідше.</p>
-          <div class="ukseo-card-diagnosis"><span>Шукаємо причину</span><strong>Редиректи, HTTP-статуси, зміни URL, canonical, доступність сторінок.</strong></div>
         </article>
         <article class="ukseo-problem-card">
           <div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div>
-          <h3>Google пропускає важливі сторінки</h3>
+          <h3>Google не бачить важливі сторінки</h3>
           <p>Категорії або послуги існують, але не індексуються чи не отримують очікуваних показів.</p>
-          <div class="ukseo-card-diagnosis"><span>Шукаємо причину</span><strong>Правила індексації, внутрішні посилання, sitemap, технічні сигнали й зміст.</strong></div>
         </article>
         <article class="ukseo-problem-card">
           <div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div>
-          <h3>Дублі забирають увагу від потрібних URL</h3>
+          <h3>Фільтри створюють сотні дублів</h3>
           <p>Фільтри, сортування й параметри генерують технічні сторінки, які важко контролювати.</p>
-          <div class="ukseo-card-diagnosis"><span>Шукаємо причину</span><strong>Шаблони адрес, канонікали, параметри, перелінкування та XML-карти.</strong></div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <?php mrseo_render_ua_final_service('seo-audit','journey'); ?>
-  <section class="ukseo-decision ukaudit-diagnosis" aria-labelledby="ukaudit-diagnosis-title">
-    <div class="container ukseo-decision-layout">
-      <div class="ukseo-decision-copy">
-        <span class="ukseo-kicker">ВИСНОВОК, А НЕ ЧЕКЛІСТ</span>
-        <h2 id="ukaudit-diagnosis-title">Не кожну помилку треба виправляти. <em>Важливо знайти ту, що шкодить бізнесу.</em></h2>
-        <p>Пріоритет визначаємо за масштабом проблеми, цінністю сторінок, ризиком і складністю виправлення. Розробнику потрібне зрозуміле завдання, а вам — аргументи, чому воно важливе.</p>
-        <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('seo')); ?>">Чим аудит відрізняється від SEO-просування <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="ukseo-spec ukaudit-report" aria-label="Приклад результату технічного аудиту">
-        <div class="ukseo-spec-top"><span>ПРИКЛАД ЗАДАЧІ ПІСЛЯ АУДИТУ</span><span aria-hidden="true">✳</span></div>
-        <div class="ukaudit-report-header">
-          <span class="ukaudit-report-tag">URL / INDEXABILITY</span>
-          <strong>Некорисні URL сортування потрапляють до індексації</strong>
-        </div>
-        <div class="ukseo-spec-row"><small>ДЕ ЗНАЙШЛИ</small><strong>Шаблон адрес категорій з параметрами сортування</strong></div>
-        <div class="ukseo-spec-row"><small>ЩО ЗМІНИТИ</small><strong>Уточнити правила індексації, canonical та внутрішніх посилань для цього шаблону</strong></div>
-        <div class="ukseo-spec-row"><small>ЯК ПРИЙНЯТИ РОБОТУ</small><strong>Перевірити приклади URL, XML-карту, HTML-сигнали та подальшу динаміку у Search Console</strong></div>
-        <div class="ukseo-spec-foot">Умовний приклад формату завдання. Не результат аудиту реального клієнта.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ukseo-work" aria-labelledby="ukaudit-process-title">
-    <div class="container">
-      <div class="ukseo-section-head">
-        <div><span class="ukseo-kicker">ЯК ПРОХОДИТЬ ДІАГНОСТИКА</span><h2 id="ukaudit-process-title">Від симптомів — до завдань для виправлення.</h2></div>
-        <p>Мета аудиту — дати команді план, який можна впровадити та перевірити. Сам аудит не означає автоматичного внесення змін.</p>
-      </div>
-      <ol class="ukseo-steps">
-        <li><div class="ukseo-step-index">01</div><div><h3>Визначаємо важливі сторінки</h3><p>Уточнюємо бізнес-цілі, пріоритетні розділи, історію змін і симптоми, які потрібно перевірити.</p></div><strong>Результат: обсяг аудиту та пріоритетні сценарії</strong></li>
-        <li><div class="ukseo-step-index">02</div><div><h3>Перевіряємо сайт і сигнали Google</h3><p>Аналізуємо сканування, відповіді сервера, індексацію, внутрішні зв’язки, шаблони й доступні дані Search Console.</p></div><strong>Результат: підтверджені знахідки з прикладами URL</strong></li>
-        <li><div class="ukseo-step-index">03</div><div><h3>Відокремлюємо ризики від дрібниць</h3><p>Оцінюємо можливий вплив проблеми, масштаб, залежності та порядок усунення.</p></div><strong>Результат: черга завдань із пріоритетами</strong></li>
-        <li><div class="ukseo-step-index">04</div><div><h3>Передаємо план і критерії перевірки</h3><p>Пояснюємо, що має змінитися після виправлення та як перевірити роботу розробника.</p></div><strong>Результат: технічні завдання та план повторної перевірки</strong></li>
-      </ol>
     </div>
   </section>
 
