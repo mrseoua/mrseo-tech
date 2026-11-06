@@ -1,0 +1,202 @@
+/*
+ * MrSeo.tech UA visual depth — CSS 3D, no WebGL contexts or external assets.
+ * Scope: Ukrainian interior pages ONLY. Homepage Earth remains untouched.
+ * Every animation moves illustration layers, never paragraphs/controls.
+ */
+@keyframes mrseoDepthFloatA {
+  0%,100% {transform:translate3d(0,5px,20px) rotateX(5deg) rotateY(-7deg)}
+  50% {transform:translate3d(0,-7px,30px) rotateX(1deg) rotateY(5deg)}
+}
+@keyframes mrseoDepthFloatB {
+  0%,100% {transform:translate3d(0,-3px,14px) rotateX(-3deg) rotateY(6deg)}
+  50% {transform:translate3d(0,6px,25px) rotateX(4deg) rotateY(-5deg)}
+}
+@keyframes mrseoDepthPlan {
+  0%,100% {transform:translate3d(0,4px,22px) rotateX(5deg) rotateY(-8deg) rotateZ(-3deg)}
+  50% {transform:translate3d(0,-8px,35px) rotateX(-2deg) rotateY(6deg) rotateZ(0deg)}
+}
+@keyframes mrseoDepthAccent {
+  0%,100% {transform:translate3d(0,-3px,42px) rotateX(7deg) rotateY(-9deg) rotateZ(6deg)}
+  50% {transform:translate3d(0,7px,52px) rotateX(-4deg) rotateY(7deg) rotateZ(12deg)}
+}
+@keyframes mrseoDepthPulse {
+  0%,100% {transform:translate3d(0,2px,12px) scale(.98)}
+  50% {transform:translate3d(0,-6px,28px) scale(1.04)}
+}
+@keyframes mrseoDepthOrbit {
+  0% {transform:perspective(950px) rotateX(62deg) rotateZ(-12deg)}
+  100% {transform:perspective(950px) rotateX(62deg) rotateZ(348deg)}
+}
+@keyframes mrseoDepthBar {
+  0%,100% {transform:scaleY(.83) translateZ(8px)}
+  50% {transform:scaleY(1) translateZ(19px)}
+}
+
+/* SEO: SERP window and conversion scene, with legible floating surfaces. */
+.ukseo .ukseo-visual-art,
+.ukseo .ukseo-visual-priority-illustration,
+.ua4-art,
+.ua4-plan-illustration,
+.ua-sv-art,
+.ua-sv-spotlight-art,
+.ua-sv-dev-diagram {
+  perspective:920px;
+  transform-style:preserve-3d;
+}
+.ukseo .ukseo-visual-search-bar,
+.ukseo .ukseo-visual-page-content,
+.ua4-search-input {
+  animation:mrseoDepthFloatB 7s ease-in-out infinite;
+}
+.ukseo .ukseo-visual-search-result,
+.ua4-search-result,
+.ua4-webpage {
+  animation:mrseoDepthFloatA 7.7s ease-in-out infinite;
+}
+.ukseo .ukseo-visual-lead-icon,
+.ua4-mail-icon,
+.ua4-event-target,
+.ua4-verify-ring {
+  animation:mrseoDepthPulse 5.4s ease-in-out infinite;
+}
+.ukseo .ukseo-visual-plan-sheet,
+.ua4-plan-sheet {
+  animation:mrseoDepthPlan 8.2s ease-in-out infinite;
+  backface-visibility:hidden;
+}
+.ukseo .ukseo-visual-plan-flair,
+.ua4-plan-symbol {
+  animation:mrseoDepthAccent 6.3s ease-in-out infinite;
+}
+
+/* E-commerce, analytics, sites, Horoshop, SEO audit and PMax: distinct panels. */
+.ua4-art .ua4-store-ui,
+.ua4-art .ua4-report-card {
+  animation:mrseoDepthFloatA 7.8s ease-in-out infinite;
+  backface-visibility:hidden;
+}
+.ua4-art--filters .ua4-store-ui,
+.ua4-art--feed .ua4-store-ui {
+  animation-name:mrseoDepthFloatB;
+}
+.ua4-report-bars i {
+  transform-origin:center bottom;
+  animation:mrseoDepthBar 3.8s ease-in-out infinite;
+}
+.ua4-report-bars i:nth-child(2n){animation-delay:-1.8s}
+.ua4-report-bars i:nth-child(3n){animation-delay:-2.7s}
+.ua4-art--checkout .ua4-checkout-mark {
+  animation:mrseoDepthPulse 5s ease-in-out infinite;
+}
+/* Slight phase changes make the services feel distinct, not like cloned widgets. */
+.ua4-section--analytics .ua4-report-card{animation-duration:9.2s}
+.ua4-section--ecommerce-seo .ua4-store-ui{animation-duration:7.1s}
+.ua4-section--service-websites .ua4-webpage{animation-duration:8.5s}
+.ua4-section--horoshop .ua4-store-ui{animation-duration:6.9s}
+.ua4-section--seo-audit .ua4-store-ui{animation-duration:8.3s}
+.ua4-section--performance-max .ua4-store-ui{animation-duration:7.9s}
+
+/* Ads: moving ad preview and budget allocation as dimensional objects. */
+.ua-sv-ad-card,.ua-sv-site-window{
+  animation:mrseoDepthFloatA 7.5s ease-in-out infinite;
+  backface-visibility:hidden;
+}
+.ua-sv-site-window{animation-name:mrseoDepthFloatB;animation-duration:8.4s}
+.ua-sv-success-icon,
+.ua-sv-budget-circle{animation:mrseoDepthPulse 6.2s ease-in-out infinite}
+.ua-sv-budget-branches span:nth-child(1){animation:mrseoDepthFloatB 7.1s ease-in-out infinite}
+.ua-sv-budget-branches span:nth-child(2){animation:mrseoDepthFloatA 7.7s ease-in-out infinite}
+.ua-sv-budget-branches span:nth-child(3){animation:mrseoDepthFloatB 8.4s ease-in-out infinite}
+
+/* Web development: independent SaaS / API / CRM layers and wireframe build. */
+.ua-sv-dev-node{
+  animation:mrseoDepthFloatA 8s ease-in-out infinite;
+}
+.ua-sv-dev-node--api{animation-name:mrseoDepthFloatB;animation-delay:-2s}
+.ua-sv-dev-node--crm{animation-delay:-4s}
+.ua-sv-wireframe{animation:mrseoDepthFloatB 8.8s ease-in-out infinite}
+.ua-sv-finished{animation:mrseoDepthFloatA 7.9s ease-in-out infinite}
+
+/* Twelve specialized Ukrainian services: animate themed 3D hero components. */
+.ns-page .ns-scene{perspective:1000px;transform-style:preserve-3d}
+.ns-page .ns-audit-wave,
+.ns-page .ns-product-preview,
+.ns-page .ns-commerce-preview,
+.ns-page .ns-dev-preview,
+.ns-page .ns-data-preview {
+  transform-style:preserve-3d;
+  animation:mrseoDepthFloatA 9s ease-in-out infinite;
+}
+.ns-page[data-service-group="audit"] .ns-audit-wave{animation-duration:7.5s}
+.ns-page[data-service-group="ads"] .ns-product-preview{animation-duration:8.1s}
+.ns-page[data-service-group="commerce"] .ns-commerce-preview{animation-name:mrseoDepthFloatB;animation-duration:9s}
+.ns-page[data-service-group="dev"] .ns-dev-preview{animation-name:mrseoDepthFloatB;animation-duration:8.4s}
+.ns-page[data-service-group="data"] .ns-data-preview{animation-duration:9.3s}
+.ns-page .ns-scene-node{
+  box-shadow:0 14px 23px #090f0d24;
+}
+.ns-page .ns-scene-node:nth-child(1){transform:translateZ(17px)}
+.ns-page .ns-scene-node:nth-child(3){transform:translateZ(29px)}
+.ns-page .ns-scene-node:nth-child(5){transform:translateZ(17px)}
+
+/* About: dimensional expertise network, without moving the readable hero text. */
+.about-page .about-experience{perspective:1000px;transform-style:preserve-3d}
+.about-page .about-experience-ring-one{animation:mrseoDepthOrbit 30s linear infinite}
+.about-page .about-experience-ring-two{animation:mrseoDepthOrbit 38s linear infinite reverse}
+.about-page .uaf-network{perspective:950px;transform-style:preserve-3d}
+.about-page .uaf-network-center{animation:mrseoDepthPulse 9s ease-in-out infinite}
+.about-page .uaf-network-satellite{animation:mrseoDepthFloatA 8s ease-in-out infinite}
+.about-page .uaf-network-satellite--ads,
+.about-page .uaf-network-satellite--dev{animation-name:mrseoDepthFloatB}
+.about-page .uaf-network-satellite--data{animation-delay:-3.5s}
+
+/* Portfolio: animated illustrative evidence, never distort client names/logos. */
+.portfolio-hero .portfolio-stats-editorial .portfolio-stat{
+  transform-style:preserve-3d;
+  perspective:800px;
+}
+.uaf-evidence-figure{perspective:750px;transform-style:preserve-3d}
+.uaf-evidence-figure>span{animation:mrseoDepthFloatA 7.9s ease-in-out infinite}
+.uaf-evidence-item:nth-child(2) .uaf-evidence-figure>span{animation-name:mrseoDepthFloatB}
+.uaf-evidence-item:nth-child(3) .uaf-evidence-figure>span{animation-delay:-3s}
+
+/* Contact: approachable dimensional workflow, keep form and buttons stationary. */
+.uaf-contact-guide .uaf-contact-steps{perspective:900px}
+.uaf-contact-steps li>span{animation:mrseoDepthFloatB 6.8s ease-in-out infinite}
+.uaf-contact-steps li:nth-child(2)>span{animation-name:mrseoDepthFloatA;animation-delay:-2s}
+.uaf-contact-steps li:nth-child(3)>span{animation-delay:-4s}
+.contact-visual{perspective:900px;transform-style:preserve-3d}
+.contact-visual-point.one{animation:mrseoDepthPulse 6.5s ease-in-out infinite}
+.contact-visual-point.two{animation:mrseoDepthPulse 8s ease-in-out infinite reverse}
+
+/* Keep phone layouts readable; no animation on links, copy, forms or logos. */
+@media(max-width:640px){
+ .ns-page .ns-scene{perspective:1400px}
+ .ns-page .ns-audit-wave,
+ .ns-page .ns-product-preview,
+ .ns-page .ns-commerce-preview,
+ .ns-page .ns-dev-preview,
+ .ns-page .ns-data-preview{
+   animation:none;
+   transform:translateZ(0);
+ }
+ .ua4-art,.ua-sv-art,.ukseo .ukseo-visual-art{perspective:1300px}
+ .ua4-report-bars i{animation:none}
+ .about-page .about-experience-ring-one,
+ .about-page .about-experience-ring-two{animation-duration:45s}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo .ukseo-visual-art *,
+ .ukseo .ukseo-visual-priority-illustration *,
+ .ua4-section *,
+ .ua-sv *,
+ .ns-page .ns-scene *,
+ .about-page .about-experience-ring,
+ .about-page .uaf-network *,
+ .uaf-evidence-figure *,
+ .uaf-contact-steps li>span,
+ .contact-visual-point {
+  animation:none!important;
+  transition:none!important;
+ }
+}
