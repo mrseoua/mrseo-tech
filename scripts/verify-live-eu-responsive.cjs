@@ -14,6 +14,7 @@ const quick=process.env.MRSEO_AUDIT_QUICK==='1';
 const slugs=coreShard?['','seo','google-ads','web-development','privacy']:(quick?['','seo','contact','privacy']:['','seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development','about','portfolio','contact','privacy']);
 const uaFourSlugs=['ecommerce-seo','analytics','service-websites','horoshop'];
 const uaFinalSlugs=['seo-audit','performance-max','about','portfolio','contact'];
+const uaNewSlugs=['local-business-websites','landing-pages','corporate-websites','website-redesign','local-seo','service-business-seo','international-seo','local-google-ads','google-ads-audit','store-conversion','store-migration','website-maintenance','website-speed-security'];
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -176,6 +177,16 @@ async function audit(browser,viewport,lang,slug){
     nonce:!!document.querySelector('input[name=mrseo_nonce]'),
     menuItems:links.length,
     serviceMenuItems:document.querySelectorAll('.mrseo-mega .mrseo-mega-item[href]').length,
+    uaNewPages:(()=>{
+      const root=document.querySelector('.uws-page');
+      const scene=root?.querySelector('.uws-demo');
+      const rect=scene?.getBoundingClientRect();
+      return {page:!!root,scene:!!scene,css:!!document.querySelector('link[href*="ua-websites.css"]'),
+        pains:root?.querySelectorAll('.uws-pains .ukseo-problem-card').length||0,
+        faq:root?.querySelectorAll('.uws-faq details').length||0,
+        related:root?.querySelectorAll('.uws-related a[href]').length||0,
+        geometry:!!rect&&rect.width>240&&rect.left>=-2&&rect.right<=innerWidth+2};
+    })(),
     portfolioCards:document.querySelectorAll('.eu-project-card,.client-directory-card').length,
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
@@ -196,7 +207,13 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<4)item.errors.push('Shared mega menu has too few working links: '+c.serviceMenuItems);
+  if(c.serviceMenuItems<(lang==='uk'?25:4))item.errors.push('Shared mega menu has too few working links: '+c.serviceMenuItems);
+  if(lang==='uk'&&uaNewSlugs.includes(slug)){
+    const u=c.uaNewPages;
+    if(!u.page||!u.scene||!u.css||u.pains!==3||u.faq!==3||u.related!==2||!u.geometry)
+      item.errors.push('Ukrainian new service route/geometry missing: '+JSON.stringify(u));
+  }
+  if(lang!=='uk'&&(c.uaNewPages.page||c.uaNewPages.css))item.errors.push('New UA-only page leaked to '+lang);
   if(lang==='uk'&&['merchant-center'].includes(slug)){
     const compact=await page.locator('.ns-page--compact').count();
     const issues=await page.locator('.ns-page--compact .ukseo-problem-card').count();
@@ -281,8 +298,8 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
-  if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
-   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,'seo-audit','performance-max','about','contact'].includes(slug)});
+  if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,'seo-audit','performance-max','about','contact','local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)});
   }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
@@ -337,10 +354,10 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'merchant-center']:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
+    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'merchant-center',...uaNewSlugs]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...uaFourSlugs,...uaFinalSlugs].includes(slug)))continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}
