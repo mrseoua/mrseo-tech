@@ -118,7 +118,7 @@ function mrseo_assets(){
   'service-websites','horoshop','performance-max','about','portfolio','contact');
  $mrseo_ua_is_new_service=function_exists('mrseo_new_service_slugs') && in_array(mrseo_slug(),mrseo_new_service_slugs(),true);
  if(mrseo_locale()==='uk' && (in_array(mrseo_slug(),$mrseo_ua_visual_slugs,true)||$mrseo_ua_is_new_service)){
-  wp_enqueue_style('mrseo-ua-3d-motion',get_template_directory_uri().'/assets/ua-3d-motion.css',array('mrseo-style'),'1.0.0');
+  wp_enqueue_style('mrseo-ua-3d-motion',get_template_directory_uri().'/assets/ua-3d-motion.css',array('mrseo-style'),'1.0.1');
  }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
