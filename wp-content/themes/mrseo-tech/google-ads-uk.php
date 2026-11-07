@@ -11,7 +11,7 @@ get_header();
     <nav class="ukseo-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>Google Ads</span></nav>
     <div class="ukseo-kicker">НАЛАШТУВАННЯ ТА ВЕДЕННЯ GOOGLE ADS</div>
     <h1 id="ukads-title">Реклама витрачає гроші. <em>А заявок і продажів мало?</em></h1>
-    <p class="ukseo-hero-lead">Знаходимо, куди йде бюджет: зайві кліки, невдалі кампанії чи помилки в обліку заявок. Показуємо, що варто виправити.</p>
+    <p class="ukseo-hero-lead">Перевіримо, за які пошукові фрази списуються гроші, чи правильно рахуються заявки та які кампанії витрачають бюджет без зрозумілого результату.</p>
     <div class="ukseo-actions">
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити мою рекламу <span aria-hidden="true">↗</span></a>
      <a class="ukseo-text-link" href="#ukads-problems">Упізнати свою проблему <span aria-hidden="true">↓</span></a>
@@ -33,7 +33,7 @@ get_header();
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div>
      <h3>Кліки є. Заявок немає.</h3>
-     <p>Люди заходять на сайт, але не телефонують і не залишають заявки.</p>
+     <p>Бюджет витрачається на переходи, а дзвінків і форм із сайту майже немає.</p>
     </article>
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">02 <span aria-hidden="true">₴</span></div>
@@ -43,7 +43,7 @@ get_header();
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">03 <span aria-hidden="true">◎</span></div>
      <h3>Звіти не збігаються.</h3>
-     <p>Google показує конверсії, яких немає у ваших реальних замовленнях.</p>
+     <p>Google рахує продажі, а в магазині цих замовлень немає або їх менше.</p>
     </article>
    </div>
   </div>

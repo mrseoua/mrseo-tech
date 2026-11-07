@@ -8,10 +8,10 @@ get_header();
 <section class="special-hero special-hero-horoshop" aria-labelledby="horoshop-title">
  <div class="container hs-hero-layout">
   <div class="hs-hero-copy">
-   <div class="eyebrow"><?php echo esc_html(mrseo_t('SEO ТА РОЗВИТОК МАГАЗИНІВ НА ХОРОШОП','SEO И РАЗВИТИЕ МАГАЗИНОВ НА ХОРОШОП','HOROSHOP SEO'));?></div>
-   <h1 id="horoshop-title"><?php echo wp_kses_post(mrseo_t('SEO для Хорошоп.<br><em>Ваш магазин може більше.</em>','SEO для Хорошоп.<br><em>Ваш магазин может больше.</em>','Horoshop SEO. Your store can do more.'));?></h1>
+   <div class="eyebrow"><?php echo esc_html(mrseo_t('СТВОРЕННЯ, SEO ТА РЕКЛАМА МАГАЗИНІВ НА ХОРОШОП','SEO И РАЗВИТИЕ МАГАЗИНОВ НА ХОРОШОП','HOROSHOP SEO'));?></div>
+   <h1 id="horoshop-title"><?php echo wp_kses_post(mrseo_t('Магазин на Хорошоп.<br><em>Що заважає отримувати замовлення?</em>','SEO для Хорошоп.<br><em>Ваш магазин может больше.</em>','Horoshop SEO. Your store can do more.'));?></h1>
    <p><?php echo esc_html(mrseo_t(
-    'Категорії не знаходять у Google? Фільтри заважають індексації? Merchant Center відхиляє товари? Знаходимо причину, підбираємо рішення в межах можливостей Хорошоп і перевіряємо результат.',
+    'Допомагаємо створити магазин на Хорошоп або поліпшити наявний. Якщо товари не видно в Google, фільтри створюють зайві сторінки чи Merchant Center відхиляє товари — перевіримо причину й покажемо доступні рішення.',
     'Категории не находят в Google? Фильтры мешают индексации? Merchant Center отклоняет товары? Находим причину, предлагаем решение с учётом возможностей Хорошоп и проверяем результат.',
     'We find and fix catalog, indexing and shopping feed issues.'
    ));?></p>
@@ -49,7 +49,7 @@ get_header();
 </section>
 <section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
  <div class="ukseo-section-head">
-  <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-problem-title">Магазин на Хорошоп є. <em>А що заважає продажам?</em></h2></div>
+  <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-problem-title">Що саме заважає <em>клієнту знайти й купити товар?</em></h2></div>
   <p>Перевіряємо категорії, фільтри та товарний фід — із урахуванням можливостей Хорошоп.</p>
  </div>
  <div class="ukseo-problem-grid">

@@ -28,13 +28,15 @@ Warm ivory / cream backgrounds, graphite / black typography, restrained muted re
 
 ## Languages and SEO
 
-- Five languages: Ukrainian `/` (default), Russian `/ru/`, English `/en/`, Polish `/pl/`, German `/de/`.
+- Twenty languages: Ukrainian `/` (default), Russian `/ru/`, English `/en/`, Polish `/pl/`, German `/de/`; also French, Italian, Spanish, Dutch, Romanian, Czech, Portuguese, Swedish, Danish, Finnish, Hungarian, Slovak, Greek, Bulgarian, Croatian. Preserve existing routes and genuine (not invented) hreflang equivalents.
 - PL/DE pages have market-specific content and SEO; never make automatic literal duplicate translations.
 - Preserve page URLs, anchors, links, hreflang, self-canonicals, metadata, XML sitemap, localized contact forms and working internal navigation.
 - `/horoshop/` and `/ru/horoshop/` exist; do not introduce `/en/horoshop/`, `/pl/horoshop/`, or `/de/horoshop/`.
 - **CRITICAL: Global WordPress `noindex, nofollow` is intentionally enabled. Never turn indexing on, change robots policy or submit a sitemap without the owner's explicit approval.**
 - No fabricated ROI, growth percentages, ranking promises, client testimonials, offices, credentials, results, or case studies.
 - Emphasize **client business problem → diagnosis → concrete solution → verified deliverable**, not lists of vague buzzwords.
+- **UA commercial copy rule:** A non-expert must understand each page without knowing SEO, Google Ads or developer jargon. Give one recognisable situation (e.g., Merchant rejected a product, a purchase is counted twice, an order never reaches the CRM), what we check/change in normal words, and one concrete, scoped output (fixed form, verified feed, list of problematic URLs, working integration). Explain unavoidable technical terms in the same sentence. Do not pad with methodology, repeated generic promises or unverified results. Keep 3 concise problem cards, 3 action cards, compact FAQ and a single clear result. Preserve service intent: an audit reports findings; implementation is separate unless specifically included.
+
 - Web Development (SaaS, CRM, client portals, API integrations, automation) and Website Creation are intentionally separate services.
 
 ## Collaboration protocol: Claude + ChatGPT + owner

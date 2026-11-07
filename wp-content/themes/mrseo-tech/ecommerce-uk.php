@@ -10,7 +10,7 @@ get_header();
     <nav class="ukseo-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>SEO для інтернет-магазинів</span></nav>
     <div class="ukseo-kicker">SEO ДЛЯ ІНТЕРНЕТ-МАГАЗИНІВ</div>
     <h1 id="ukcommerce-title">Товари є. <em>А покупці знаходять конкурентів?</em></h1>
-    <p class="ukseo-hero-lead">Перевіряємо, чому категорії та товари не отримують потрібних переходів із Google. Виправляємо структуру каталогу, фільтри й технічні дублікати.</p>
+    <p class="ukseo-hero-lead">Перевіримо, чи знаходить Google ваші категорії та товари. Покажемо, яких сторінок бракує покупцям, де фільтри створюють зайві копії та що потрібно виправити в каталозі.</p>
     <div class="ukseo-actions">
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Розібрати SEO мого магазину <span aria-hidden="true">↗</span></a>
      <a class="ukseo-text-link" href="#ukcommerce-problems">Де втрачаються покупці <span aria-hidden="true">↓</span></a>
@@ -76,7 +76,7 @@ get_header();
  </section>
  <section class="ukseo-delivery" aria-labelledby="ukcommerce-deliver-title">
   <div class="container ukseo-delivery-grid">
-   <div><span class="ukseo-kicker">ЩО ОТРИМУЄ МАГАЗИН</span><h2 id="ukcommerce-deliver-title">Не просто SEO-тексти. <em>Керовану структуру під попит.</em></h2><p>Не кожному магазину потрібні нові сторінки. Іноді найкращий перший крок — виправити існуючі шаблони та індексацію.</p></div>
+   <div><span class="ukseo-kicker">ЩО ОТРИМУЄ МАГАЗИН</span><h2 id="ukcommerce-deliver-title">Не просто SEO-тексти. <em>Зрозумілий план для категорій і товарів.</em></h2><p>Покажемо конкретні категорії та товари, які потрібно поліпшити, і пояснимо, які зайві сторінки не варто відкривати для Google.</p></div>
    <div class="ukseo-delivery-list">
     <div><span aria-hidden="true">01</span><div><h3>Карту пріоритетних сторінок</h3><p>Які категорії, бренди та фільтри справді варто розвивати.</p></div></div>
     <div><span aria-hidden="true">02</span><div><h3>Зрозумілі правила індексації</h3><p>Які URL потрібні в пошуку, а які слід контролювати технічно.</p></div></div>

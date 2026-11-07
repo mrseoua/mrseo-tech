@@ -15,7 +15,7 @@ get_header();
     <nav class="ukseo-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>SEO-просування</span></nav>
     <p class="ukseo-kicker"><span aria-hidden="true"></span> SEO-ПРОСУВАННЯ САЙТІВ</p>
     <h1 id="ukseo-title">Клієнти шукають у Google. <em>А знаходять конкурентів?</em></h1>
-    <p class="ukseo-hero-lead">Перевіряємо, чому ваші сторінки не отримують потрібних переходів і звернень. Починаємо з проблем індексації, структури та змісту, які заважають клієнтам знайти вас.</p>
+    <p class="ukseo-hero-lead">Перевіримо, які сторінки Google не показує, які послуги шукають клієнти та чому люди не переходять на ваш сайт. Складемо план виправлень і погодимо, що змінювати першочергово.</p>
     <div class="ukseo-actions">
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Розібрати проблему мого сайту <span aria-hidden="true">↗</span></a>
      <a class="ukseo-text-link" href="#ukseo-cases">З чого почнемо <span aria-hidden="true">↓</span></a>
@@ -39,7 +39,7 @@ get_header();
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div>
      <h3>Важливі сторінки не знаходять у Google</h3>
-     <p>Послуга чи категорія існує, але майже не отримує показів у Google.</p>
+     <p>Послуга є на сайті, але люди майже не бачать її сторінку серед результатів Google.</p>
     </article>
     <article class="ukseo-problem-card">
      <div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div>
