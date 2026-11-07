@@ -98,6 +98,8 @@ jobs:
           assert "in_array($slug,mrseo_ua_website_slugs(),true)" in menu
           assert "mrseo_ua_website_route()?" in source
           assert "mrseo_render_ua_service_scene($kind)" in page
+          assert '<nav class="uws-related"' not in page, 'White related strip remains in UA template'
+          assert '.uws-related' not in css, 'Unused related strip CSS remains in UA styles'
           assert "function mrseo_render_ua_service_scene($kind)" in scenes
           assert ".uws-demo" in css and ".uws-scene--tech" in scenes_css
           assert "prefers-reduced-motion:reduce" in css and "prefers-reduced-motion:reduce" in scenes_css
@@ -276,6 +278,7 @@ jobs:
               assert not re.search(r'</main>',html), ('Nested closing main remains',page)
           assert 'mrseo_ua_service_ux($slug,$lang)' in new_template
           assert 'ns-related-card' in new_template and 'ns-related-grid' in new_styles
+          assert "if($ru && $serviceUx && !empty($serviceUx['related']))" in new_template, 'Related cards must stay on RU only'
           assert 'font-size:14px;line-height:1.4' in new_styles, 'Readable mobile scene labels missing'
           assert "require_once __DIR__.'/ua-service-ux.php';" in ns_routes
           # Russian quality parity: distinct service offers without touching the UA reference.
