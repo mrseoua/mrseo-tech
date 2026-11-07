@@ -71,6 +71,25 @@ jobs:
             assert len(entry['related'])==2
             assert all(len(v)==2 for v in entry['pains']+entry['benefits']+entry['faq'])
             assert all(x[0]!=slug for x in entry['related'])
+            assert 80<=len(entry['lead'])<=300,('Unclear or excessive lead',slug)
+            assert len(entry.get('result',''))>=70,('Missing tangible customer deliverable',slug)
+            assert len(entry['result'])<=225,('Deliverable too wordy',slug)
+          assert len({x['lead'] for x in data.values()})==13,'Duplicated landing leads'
+          assert len({x['result'] for x in data.values()})==13,'Duplicated service results'
+          assert 'esc_html($p[\'result\'])' in page,'Visible result line missing from template'
+          assert '.uws-result' in css,'Result not styled'
+          for part in (1,2,3):
+            raw=(root/('inc/new-service-copy-part'+str(part)+'.php')).read_text()
+            match=re.search(r"<<<'MRSEO_NEW_SERVICE_P"+str(part)+r"'\n([\s\S]*?)\nMRSEO_NEW_SERVICE_P"+str(part)+r";",raw)
+            assert match,('Missing microservice data',part)
+            micros=json.loads(match.group(1))
+            assert len(micros)==4
+            for slug,record in micros.items():
+              assert 75<=len(record['uk']['lead'])<=300,('Unclear microservice lead',slug)
+              assert len(record['uk']['outcomes'])==3,('Missing outcomes',slug)
+              assert all(len(v)>26 for v in record['uk']['outcomes']),('Vague outcome',slug)
+              assert record['ru']['lead'],('Russian localization accidentally removed',slug)
+
           for label in ('SEO','Google Ads','Інтернет-магазини','Створення сайтів','Веброзробка'):
             assert label in menu
           nav=menu[menu.index("if($locale==='uk'){"):menu.index("if($locale==='ru'){")]
