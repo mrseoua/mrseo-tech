@@ -165,3 +165,10 @@
  .uws-page .uws-demo *, .uws-page .ukseo-problem-card{animation:none!important;transition:none!important}
  .uws-page .ukseo-problem-card:hover{transform:none}
 }
+
+
+/* One concrete deliverable per service instead of an extra generic explanation. */
+.uws-result{margin:22px 0 25px;padding:18px 20px;border-left:3px solid #ad604b;background:#f7f3eb;border-radius:0 12px 12px 0}
+.uws-result>span{display:block;margin-bottom:9px;font-size:11px;letter-spacing:.09em;color:#995341;font-weight:850}
+.uws-result>p{font-size:clamp(16px,1.35vw,18px);line-height:1.52;color:#2c3b32;font-weight:680;margin:0}
+@media(max-width:620px){.uws-result{margin:18px 0 23px;padding:16px}}
