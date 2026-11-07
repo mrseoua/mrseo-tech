@@ -16,7 +16,7 @@ get_header();
         </nav>
         <div class="ukseo-kicker">ТЕХНІЧНИЙ SEO-АУДИТ</div>
         <h1 id="ukaudit-title">Сайт працює. <em>А Google не бачить важливі сторінки?</em></h1>
-        <p class="ukseo-hero-lead">Зникли переходи, сторінки не індексуються або каталог створює дублікати? Перевіримо конкретні URL й покажемо, що виправити насамперед.</p>
+        <p class="ukseo-hero-lead">Після оновлення сайту впали переходи з Google або важливі сторінки зникли з пошуку? Перевіримо конкретні адреси, налаштування й зміни та пояснимо, що саме виправляти.</p>
         <div class="ukseo-actions">
           <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити аудит сайту <span aria-hidden="true">↗</span></a>
           <a class="ukseo-text-link" href="#ukaudit-problems">Які проблеми перевіряємо <span aria-hidden="true">↓</span></a>
@@ -70,7 +70,7 @@ get_header();
       <div class="ukseo-delivery-list">
         <div><span aria-hidden="true">01</span><div><h3>Проблеми з доказами</h3><p>Приклади URL, очікувана й фактична поведінка, пояснення ризиків.</p></div></div>
         <div><span aria-hidden="true">02</span><div><h3>Пріоритети для команди</h3><p>Порядок виправлень із врахуванням бізнес-цінності, масштабу та складності.</p></div></div>
-        <div><span aria-hidden="true">03</span><div><h3>Критерії приймання</h3><p>Як розробнику перевірити зміну та за якими сигналами контролювати її після релізу.</p></div></div>
+        <div><span aria-hidden="true">03</span><div><h3>Як перевірити виправлення</h3><p>Що саме має змінитися на сторінці та як перевірити результат після оновлення.</p></div></div>
       </div>
     </div>
   </section>
