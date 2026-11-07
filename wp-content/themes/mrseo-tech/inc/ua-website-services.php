@@ -70,7 +70,7 @@ function mrseo_ua_website_data($slug=null){
     ],
     "related": [
       [
-        "seo",
+        "local-seo",
         "Локальне SEO та просування"
       ],
       [
@@ -278,7 +278,7 @@ function mrseo_ua_website_data($slug=null){
         "Технічний SEO-аудит"
       ],
       [
-        "web-development",
+        "website-maintenance",
         "Підтримка та доопрацювання"
       ]
     ],
