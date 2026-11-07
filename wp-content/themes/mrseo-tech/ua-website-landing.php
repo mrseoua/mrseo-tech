@@ -108,7 +108,10 @@ get_header();
      echo esc_html($parts[0]);
      if(isset($parts[1]))echo ' <em>'.esc_html(str_replace('</em>','',$parts[1])).'</em>';
     ?></h2>
-    <p>Спочатку визначаємо проблему, потім погоджуємо конкретні зміни. Не нав’язуємо зайвих робіт.</p>
+    <div class="uws-result" aria-label="Що ви отримаєте">
+     <span>ЩО ВИ ОТРИМАЄТЕ</span>
+     <p><?php echo esc_html($p['result']); ?></p>
+    </div>
     <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити рішення <span aria-hidden="true">↗</span></a>
    </div>
    <div class="uws-solution-list">
