@@ -131,11 +131,6 @@
 .uws-final{padding:clamp(57px,6vw,86px) 0}
 .uws-final .ukseo-final-grid{align-items:center}
 .uws-final .ukseo-final-grid>div{max-width:810px}
-.uws-related{background:#fcfaf6;border-top:1px solid #ded8ce;padding:22px 0}
-.uws-related>.container{display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px}
-.uws-related>.container>span{font-size:11px;letter-spacing:.1em;font-weight:850;color:#965342}
-.uws-related a{font-size:14px;font-weight:770;line-height:1.5;color:#334239;text-decoration:underline;text-underline-offset:4px}
-.uws-related a:hover{color:#b45340}
 @keyframes uws-float-search{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-6px) rotate(0)}}
 @keyframes uws-float-result{0%,100%{translate:0 2px}50%{translate:0 -8px}}
 @keyframes uws-landing-hover{0%,100%{transform:translateY(2px) rotate(-2deg)}50%{transform:translateY(-8px) rotate(1deg)}}
