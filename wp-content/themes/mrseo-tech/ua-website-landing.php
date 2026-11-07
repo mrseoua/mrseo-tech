@@ -141,12 +141,5 @@ get_header();
    <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити проєкт <span aria-hidden="true">↗</span></a>
   </div>
  </section>
- <nav class="uws-related" aria-label="Суміжні послуги">
-  <div class="container"><span>МОЖЕ БУТИ КОРИСНО</span>
-   <?php foreach($p['related'] as $related): ?>
-    <a href="<?php echo esc_url(mrseo_url($related[0])); ?>"><?php echo esc_html($related[1]); ?> <span aria-hidden="true">↗</span></a>
-   <?php endforeach; ?>
-  </div>
- </nav>
 </div>
 <?php get_footer(); ?>

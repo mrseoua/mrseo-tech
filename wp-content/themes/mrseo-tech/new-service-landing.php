@@ -114,7 +114,7 @@ get_header();
   <div><span class="ukseo-kicker"><?php echo esc_html($copy['faqLabel']);?></span><h2 id="ns-faq-title"><?php echo esc_html($copy['faqTitle']);?></h2></div>
   <div class="ukseo-faq-items"><?php foreach($page['faq'] as $pair):?><details><summary><?php echo esc_html($pair[0]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($pair[1]);?></p></details><?php endforeach;?></div>
  </div></section>
- <?php if($serviceUx && !empty($serviceUx['related'])):?>
+ <?php if($ru && $serviceUx && !empty($serviceUx['related'])):?>
  <nav class="ns-related" aria-label="<?php echo esc_attr($ru?'Связанные услуги':'Пов’язані послуги');?>">
   <div class="container">
    <div class="ns-related-head"><span class="ukseo-kicker"><?php echo esc_html($ru?'ПОДБИРАЕМ ПОД ЗАДАЧУ':'ЗАЛЕЖНО ВІД ЗАДАЧІ');?></span><h2><?php echo esc_html($ru?'Что ещё может помочь?':'Що ще може допомогти?');?></h2></div>
