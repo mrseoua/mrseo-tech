@@ -184,7 +184,7 @@ async function audit(browser,viewport,lang,slug){
       return {page:!!root,scene:!!scene,css:!!document.querySelector('link[href*="ua-websites.css"]'),
         pains:root?.querySelectorAll('.uws-pains .ukseo-problem-card').length||0,
         faq:root?.querySelectorAll('.uws-faq details').length||0,
-        related:root?.querySelectorAll('.uws-related a[href]').length||0,
+        unwantedRelated:root?.querySelectorAll('.uws-related,.ns-related').length||0,
         geometry:!!rect&&rect.width>240&&rect.left>=-2&&rect.right<=innerWidth+2};
     })(),
     portfolioCards:document.querySelectorAll('.eu-project-card,.client-directory-card').length,
@@ -210,11 +210,14 @@ async function audit(browser,viewport,lang,slug){
   if(c.serviceMenuItems<(lang==='uk'?25:4))item.errors.push('Shared mega menu has too few working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)){
     const u=c.uaNewPages;
-    if(!u.page||!u.scene||!u.css||u.pains!==3||u.faq!==3||u.related!==2||!u.geometry)
+    if(!u.page||!u.scene||!u.css||u.pains!==3||u.faq!==3||u.unwantedRelated!==0||!u.geometry)
       item.errors.push('Ukrainian new service route/geometry missing: '+JSON.stringify(u));
   }
   if(lang!=='uk'&&(c.uaNewPages.page||c.uaNewPages.css))item.errors.push('New UA-only page leaked to '+lang);
   if(lang==='uk'&&['merchant-center'].includes(slug)){
+    const unrelated=await page.locator('.ns-related').count();
+    if(unrelated!==0)item.errors.push('Redundant Ukrainian related-services panel still visible');
+
     const compact=await page.locator('.ns-page--compact').count();
     const issues=await page.locator('.ns-page--compact .ukseo-problem-card').count();
     const outcomes=await page.locator('.ns-page--compact .ukseo-delivery-list>div').count();
