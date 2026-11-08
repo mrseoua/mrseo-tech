@@ -69,6 +69,8 @@ async function audit(browser,viewport,lang,slug){
     hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
+    footerLinkLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(x=>x.textContent.trim()),
+    uaDepthStylesheet:!!document.querySelector('link[href*="ua-3d-motion.css"]'),
     orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
     heroEdge:(()=>{
       const el=document.querySelector('#main > .orbit-lab');
@@ -227,6 +229,13 @@ async function audit(browser,viewport,lang,slug){
       item.errors.push('UA compact existing service regression: '+JSON.stringify({compact,issues,outcomes,repeated,compactStyle}));
   }
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
+  if(lang==='uk'&&(!c.footerLinkLabels.includes('Аналітика')||!c.footerLinkLabels.includes('SEO-аудит')||
+      c.footerLinkLabels.includes('Analytics')||c.footerLinkLabels.includes('Technical SEO')))
+    item.errors.push('Ukrainian footer contains untranslated service names');
+  if(lang==='uk'&&slug!==''&&slug!=='privacy'&&!c.uaDepthStylesheet)
+    item.errors.push('Ukrainian interior 3D stylesheet missing');
+  if(lang!=='uk'&&c.uaDepthStylesheet)
+    item.errors.push('Ukrainian 3D stylesheet leaked to another locale');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
   if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
