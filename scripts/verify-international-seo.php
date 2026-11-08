@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (307 URLs)
+ * - all completed pages are represented exactly once (320 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -43,6 +43,7 @@ function wp_trim_words($text, $num_words = 55, $more = '…') {
 
 require_once $root . '/inc/i18n-routing.php';
 require_once $root . '/inc/ua-website-services.php';
+require_once $root . '/inc/ru-website-services.php';
 require_once $root . '/inc/new-service-routes.php';
 require_once $root . '/inc/pl-service-routing.php';
 require_once $root . '/inc/uk-market-routing.php';
@@ -57,11 +58,11 @@ $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
 assert_seo(count($groups) === 42, 'Expected 42 editorial equivalence groups');
-assert_seo(count($inventory) === 307, 'Expected 307 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($inventory) === 320, 'Expected 320 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
     'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs()),
-    'ru' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs()),
+    'ru' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ru_website_slugs()),
     'en' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','privacy'], mrseo_uk_market_new_slugs()),
     'pl' => array_merge(mrseo_int_pages(), ['privacy'],mrseo_pl_service_slugs()),
     'de' => array_merge(mrseo_int_pages(),['privacy']),
@@ -99,14 +100,14 @@ foreach ($inventory as $entry) {
     $url_groups[$url] = $entry['group'];
     assert_seo(isset($entry['alternates'][$codes[$lang]]) &&
         $entry['alternates'][$codes[$lang]] === $url, "Missing self hreflang on $url");
-    assert_seo(count($entry['alternates']) >= (str_starts_with($entry['group'],'ua-service:')?1:2), "Invalid hreflang on $url");
+    assert_seo(count($entry['alternates']) >= 2, "Invalid hreflang on $url");
     if ($entry['default'] !== null) {
         assert_seo($entry['group'] === 'shared:home' &&
             $entry['default'] === 'https://mrseo.tech/', "Incorrect x-default on $url");
         $home_count++;
     }
 }
-assert_seo(count($seen) === 307 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 320 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -164,18 +165,35 @@ foreach ($inventory as $entry) {
 assert_seo(mrseo_localized_sitemap_paths() === $inventory,
     'Sitemap and page-head registry do not match');
 
-// All 13 UA-only services must be accessible, self canonical and avoid fake alternates.
+// Thirteen genuinely translated RU/UA service pages. No invented third-language routes.
+assert_seo(mrseo_ua_website_slugs()===mrseo_ru_website_slugs(),
+ 'Russian and Ukrainian completed service inventories differ');
 foreach(mrseo_ua_website_slugs() as $slug){
- $page=mrseo_ua_website_data($slug);
- assert_seo($page!==null&&isset($page['title'],$page['headline'],$page['lead']),'Missing Ukrainian service copy '.$slug);
- $_SERVER['REQUEST_URI']='/'.$slug.'/';
- $entry=mrseo_i18n_current_entry();
- assert_seo($entry!==null&&$entry['group']==='ua-service:'.$slug,'Missing UA-only canonical for '.$slug);
- assert_seo(count($entry['alternates'])===1,'Fabricated foreign-language alternate for '.$slug);
+ $ua=mrseo_ua_website_data($slug);
+ $ru=mrseo_ru_website_data($slug);
+ assert_seo($ua&&$ru&&isset($ua['title'],$ru['title'],$ua['headline'],$ru['headline']),
+  'Missing full original localized content '.$slug);
+ assert_seo($ua['lead']!==$ru['lead'],'Untranslated Russian lead '.$slug);
+ foreach(array('uk','ru') as $language){
+  $_SERVER['REQUEST_URI']=mrseo_i18n_exact_url($language,$slug);
+  $entry=mrseo_i18n_current_entry();
+  assert_seo($entry&&$entry['group']==='ua-service:'.$slug,'Missing exact canonical '.$language.'/'.$slug);
+  assert_seo($entry['alternates']===array(
+   'uk-UA'=>'https://mrseo.tech/'.$slug.'/','ru'=>'https://mrseo.tech/ru/'.$slug.'/'
+  ), 'Wrong genuine RU/UA hreflang set '.$slug);
+  $other=$language==='uk'?'ru':'uk';
+  assert_seo(mrseo_url($slug,$other)===mrseo_i18n_exact_url($other,$slug),
+    'Language selector cannot reach true RU/UA counterpart '.$slug);
+ }
+ // Third languages have no completed individual copies; use a real parent page.
+ $_SERVER['REQUEST_URI']='/ru/'.$slug.'/';
  foreach(array_keys($codes) as $language){
-  if($language==='uk')continue;
+  if($language==='uk'||$language==='ru')continue;
   $dest=mrseo_url($slug,$language);
-  assert_seo($dest!=='https://mrseo.tech/'.$language.'/'.$slug.'/','Missing foreign-language route should use a real parent: '.$language.'/'.$slug);
+  assert_seo($dest!=='https://mrseo.tech/'.$language.'/'.$slug.'/',
+    'Invented market alternate '.$language.'/'.$slug);
+  assert_seo(str_starts_with($dest,'https://mrseo.tech/'.$language.'/'),
+    'Language selector points outside its target locale '.$language.'/'.$slug);
  }
 }
 
