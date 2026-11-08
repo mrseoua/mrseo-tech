@@ -605,3 +605,18 @@
   animation:none!important;transform:none!important;
  }
 }
+
+
+/* Final phone-size text floor for the two purpose-built UA hero diagrams. */
+@media(max-width:640px){
+ .ms-scene-analytics .ms-observe-step,
+ .ms-scene-analytics .ms-observe-footer,
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small,
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span,
+ .ms-scene-web-development .ms-dev-flow span,
+ .ms-scene-web-development .ms-dev-code-kicker,
+ .ms-scene-web-development .ms-dev-code-caption{
+  font-size:12px;line-height:1.4;letter-spacing:0;
+ }
+ .ms-scene-analytics .ms-observe-footer{white-space:normal}
+}
