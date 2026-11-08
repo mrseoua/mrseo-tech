@@ -177,6 +177,19 @@ function mrseo_meta_description(){
   return;
  }
  if(!mrseo_valid_route())return;
+ // RU service pages have distinct business intents; avoid cross-service SEO overlap.
+ if(mrseo_locale()==='ru'){
+  $ruDescriptions=array(
+   'service-websites'=>'Создание сайтов услуг для бизнеса: понятные страницы, адаптивный дизайн и проверенные формы заявок. SEO-продвижение готового сайта согласуем отдельно.',
+   'google-ads'=>'Настройка и регулярное ведение Google Ads: поисковая и товарная реклама, контроль запросов, бюджета и реальных заявок. Разовый аудит — отдельная работа.',
+   'analytics'=>'Маркетинговая аналитика: связываем рекламные расходы, обращения и заказы в понятный отчёт по каналам. Исправление событий GA4 — отдельная услуга.'
+  );
+  $ruSlug=mrseo_slug();
+  if(isset($ruDescriptions[$ruSlug])){
+   echo '<meta name="description" content="'.esc_attr($ruDescriptions[$ruSlug]).'">'."\n";
+   return;
+  }
+ }
  // Ukrainian commercial intents must not reuse generic cross-service descriptions.
  if(mrseo_locale()==='uk'){
   $uaIntentDescriptions=array(
