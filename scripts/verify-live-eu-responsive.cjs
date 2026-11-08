@@ -15,6 +15,10 @@ const slugs=coreShard?['','seo','google-ads','web-development','privacy']:(quick
 const uaFourSlugs=['ecommerce-seo','analytics','service-websites','horoshop'];
 const uaFinalSlugs=['seo-audit','performance-max','about','portfolio','contact'];
 const uaNewSlugs=['local-business-websites','landing-pages','corporate-websites','website-redesign','local-seo','service-business-seo','international-seo','local-google-ads','google-ads-audit','store-conversion','store-migration','website-maintenance','website-speed-security'];
+// All existing compact RU services: core 8 plus 12 genuinely routed specialist pages.
+const ruCoreSlugs=['seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop'];
+const ruSpecialistSlugs=['website-audit','traffic-recovery','google-shopping','merchant-center','online-store-development','catalog-automation','web-applications','api-integrations','custom-functionality','ga4-conversions','business-dashboards','reporting-automation'];
+const ruPilotSlugs=[...ruCoreSlugs,...ruSpecialistSlugs];
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -69,6 +73,21 @@ async function audit(browser,viewport,lang,slug){
     hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
+    footerLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(a=>a.textContent.trim()),
+    ruCompact:(()=>{
+      const root=document.querySelector('.ru-premium,.ns-page--compact');
+      const core=!!root?.classList.contains('ru-premium');
+      return {
+        core, micro:!!root&&!core,
+        css:!!document.querySelector('link[href*="ru-services-compact.css"]'),
+        problems:root?.querySelectorAll('.ukseo-cases .ukseo-problem-card').length||0,
+        outcomes:root?.querySelectorAll('.ukseo-delivery-list>div').length||0,
+        faq:root?.querySelectorAll('.ukseo-faq-items details').length||0,
+        scenes:root?.querySelectorAll(core?'.ms-scene':'.ns-scene').length||0,
+        redundant:root?.querySelectorAll('.ukseo-decision,.ukseo-work,.ukseo-proof,.ns-related').length||0,
+        contact:!!root?.querySelector('a[href$="/ru/contact/"]')
+      };
+    })(),
     orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
     heroEdge:(()=>{
       const el=document.querySelector('#main > .orbit-lab');
@@ -227,6 +246,17 @@ async function audit(browser,viewport,lang,slug){
       item.errors.push('UA compact existing service regression: '+JSON.stringify({compact,issues,outcomes,repeated,compactStyle}));
   }
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
+  if(lang==='ru'&&ruPilotSlugs.includes(slug)){
+    const q=c.ruCompact;
+    if(!q||!q.css||q.core!==ruCoreSlugs.includes(slug)||q.micro!==ruSpecialistSlugs.includes(slug)||
+       q.problems!==3||q.outcomes!==3||q.faq<2||q.scenes!==1||q.redundant!==0||!q.contact)
+      item.errors.push('RU compact service regression '+slug+': '+JSON.stringify(q));
+    if(!c.footerLabels.includes('Аналитика')||!c.footerLabels.includes('SEO-аудит')||
+       c.footerLabels.includes('Analytics')||c.footerLabels.includes('Technical SEO'))
+      item.errors.push('RU footer navigation has untranslated service labels');
+  }
+  if(lang!=='ru'&&c.ruCompact.css)
+    item.errors.push('RU compact CSS leaked to '+lang);
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
   if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
@@ -357,10 +387,10 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'merchant-center',...uaNewSlugs]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs));
+    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'merchant-center',...uaNewSlugs]:(coreShard&&lang==='ru'?[...new Set([...slugs,...ruPilotSlugs])]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs)));
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs].includes(slug)))continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug))&&!(lang==='ru'&&['seo','google-ads','analytics','service-websites','horoshop'].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs].includes(slug))&&!(lang==='ru'&&ruPilotSlugs.includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}
