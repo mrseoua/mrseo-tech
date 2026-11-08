@@ -1,0 +1,622 @@
+/*
+ * MrSeo.tech UA visual depth — CSS 3D, no WebGL contexts or external assets.
+ * Scope: Ukrainian interior pages ONLY. Homepage Earth remains untouched.
+ * Every animation moves illustration layers, never paragraphs/controls.
+ */
+@keyframes mrseoDepthFloatA {
+  0%,100% {transform:translate3d(0,5px,20px) rotateX(5deg) rotateY(-7deg)}
+  50% {transform:translate3d(0,-7px,30px) rotateX(1deg) rotateY(5deg)}
+}
+@keyframes mrseoDepthFloatB {
+  0%,100% {transform:translate3d(0,-3px,14px) rotateX(-3deg) rotateY(6deg)}
+  50% {transform:translate3d(0,6px,25px) rotateX(4deg) rotateY(-5deg)}
+}
+@keyframes mrseoDepthPlan {
+  0%,100% {transform:translate3d(0,4px,22px) rotateX(5deg) rotateY(-8deg) rotateZ(-3deg)}
+  50% {transform:translate3d(0,-8px,35px) rotateX(-2deg) rotateY(6deg) rotateZ(0deg)}
+}
+@keyframes mrseoDepthAccent {
+  0%,100% {transform:translate3d(0,-3px,42px) rotateX(7deg) rotateY(-9deg) rotateZ(6deg)}
+  50% {transform:translate3d(0,7px,52px) rotateX(-4deg) rotateY(7deg) rotateZ(12deg)}
+}
+@keyframes mrseoDepthPulse {
+  0%,100% {transform:translate3d(0,2px,12px) scale(.98)}
+  50% {transform:translate3d(0,-6px,28px) scale(1.04)}
+}
+@keyframes mrseoDepthOrbit {
+  0% {transform:perspective(950px) rotateX(62deg) rotateZ(-12deg)}
+  100% {transform:perspective(950px) rotateX(62deg) rotateZ(348deg)}
+}
+@keyframes mrseoDepthMobile {
+  0%,100% {transform:translate3d(0,2px,8px) rotateY(-2deg)}
+  50% {transform:translate3d(0,-4px,13px) rotateY(2deg)}
+}
+@keyframes mrseoDepthBar {
+  0%,100% {transform:scaleY(.83) translateZ(8px)}
+  50% {transform:scaleY(1) translateZ(19px)}
+}
+
+/* SEO: SERP window and conversion scene, with legible floating surfaces. */
+.ukseo .ukseo-visual-art,
+.ukseo .ukseo-visual-priority-illustration,
+.ua4-art,
+.ua4-plan-illustration,
+.ua-sv-art,
+.ua-sv-spotlight-art,
+.ua-sv-dev-diagram {
+  perspective:920px;
+  transform-style:preserve-3d;
+}
+.ukseo .ukseo-visual-search-bar,
+.ukseo .ukseo-visual-page-content,
+.ua4-search-input {
+  animation:mrseoDepthFloatB 7s ease-in-out infinite;
+}
+.ukseo .ukseo-visual-search-result,
+.ua4-search-result,
+.ua4-webpage {
+  animation:mrseoDepthFloatA 7.7s ease-in-out infinite;
+}
+.ukseo .ukseo-visual-lead-icon,
+.ua4-mail-icon,
+.ua4-event-target,
+.ua4-verify-ring {
+  animation:mrseoDepthPulse 5.4s ease-in-out infinite;
+}
+.ukseo .ukseo-visual-plan-sheet,
+.ua4-plan-sheet {
+  animation:mrseoDepthPlan 8.2s ease-in-out infinite;
+  backface-visibility:hidden;
+}
+.ukseo .ukseo-visual-plan-flair,
+.ua4-plan-symbol {
+  animation:mrseoDepthAccent 6.3s ease-in-out infinite;
+}
+
+/* E-commerce, analytics, sites, Horoshop, SEO audit and PMax: distinct panels. */
+.ua4-art .ua4-store-ui,
+.ua4-art .ua4-report-card {
+  animation:mrseoDepthFloatA 7.8s ease-in-out infinite;
+  backface-visibility:hidden;
+}
+.ua4-art--filters .ua4-store-ui,
+.ua4-art--feed .ua4-store-ui {
+  animation-name:mrseoDepthFloatB;
+}
+.ua4-report-bars i {
+  transform-origin:center bottom;
+  animation:mrseoDepthBar 3.8s ease-in-out infinite;
+}
+.ua4-report-bars i:nth-child(2n){animation-delay:-1.8s}
+.ua4-report-bars i:nth-child(3n){animation-delay:-2.7s}
+.ua4-art--checkout .ua4-checkout-mark {
+  animation:mrseoDepthPulse 5s ease-in-out infinite;
+}
+/* Slight phase changes make the services feel distinct, not like cloned widgets. */
+.ua4-section--analytics .ua4-report-card{animation-duration:9.2s}
+.ua4-section--ecommerce-seo .ua4-store-ui{animation-duration:7.1s}
+.ua4-section--service-websites .ua4-webpage{animation-duration:8.5s}
+.ua4-section--horoshop .ua4-store-ui{animation-duration:6.9s}
+.ua4-section--seo-audit .ua4-store-ui{animation-duration:8.3s}
+.ua4-section--performance-max .ua4-store-ui{animation-duration:7.9s}
+
+/* Ads: moving ad preview and budget allocation as dimensional objects. */
+.ua-sv-ad-card,.ua-sv-site-window{
+  animation:mrseoDepthFloatA 7.5s ease-in-out infinite;
+  backface-visibility:hidden;
+}
+.ua-sv-site-window{animation-name:mrseoDepthFloatB;animation-duration:8.4s}
+.ua-sv-success-icon,
+.ua-sv-budget-circle{animation:mrseoDepthPulse 6.2s ease-in-out infinite}
+.ua-sv-budget-branches span:nth-child(1){animation:mrseoDepthFloatB 7.1s ease-in-out infinite}
+.ua-sv-budget-branches span:nth-child(2){animation:mrseoDepthFloatA 7.7s ease-in-out infinite}
+.ua-sv-budget-branches span:nth-child(3){animation:mrseoDepthFloatB 8.4s ease-in-out infinite}
+
+/* Web development: independent SaaS / API / CRM layers and wireframe build. */
+.ua-sv-dev-node{
+  animation:mrseoDepthFloatA 8s ease-in-out infinite;
+}
+.ua-sv-dev-node--api{animation-name:mrseoDepthFloatB;animation-delay:-2s}
+.ua-sv-dev-node--crm{animation-delay:-4s}
+.ua-sv-wireframe{animation:mrseoDepthFloatB 8.8s ease-in-out infinite}
+.ua-sv-finished{animation:mrseoDepthFloatA 7.9s ease-in-out infinite}
+
+/* Twelve specialized Ukrainian services: animate themed 3D hero components. */
+.ns-page .ns-scene{perspective:1000px;transform-style:preserve-3d}
+.ns-page .ns-audit-wave,
+.ns-page .ns-product-preview,
+.ns-page .ns-commerce-preview,
+.ns-page .ns-dev-preview,
+.ns-page .ns-data-preview {
+  transform-style:preserve-3d;
+  animation:mrseoDepthFloatA 9s ease-in-out infinite;
+}
+.ns-page[data-service-group="audit"] .ns-audit-wave{animation-duration:7.5s}
+.ns-page[data-service-group="ads"] .ns-product-preview{animation-duration:8.1s}
+.ns-page[data-service-group="commerce"] .ns-commerce-preview{animation-name:mrseoDepthFloatB;animation-duration:9s}
+.ns-page[data-service-group="dev"] .ns-dev-preview{animation-name:mrseoDepthFloatB;animation-duration:8.4s}
+.ns-page[data-service-group="data"] .ns-data-preview{animation-duration:9.3s}
+.ns-page .ns-scene-node{
+  box-shadow:0 14px 23px #090f0d24;
+}
+.ns-page .ns-scene-node:nth-child(1){transform:translateZ(17px)}
+.ns-page .ns-scene-node:nth-child(3){transform:translateZ(29px)}
+.ns-page .ns-scene-node:nth-child(5){transform:translateZ(17px)}
+
+/* About: dimensional expertise network, without moving the readable hero text. */
+.about-page .about-experience{perspective:1000px;transform-style:preserve-3d}
+.about-page .about-experience-ring-one{animation:mrseoDepthOrbit 30s linear infinite}
+.about-page .about-experience-ring-two{animation:mrseoDepthOrbit 38s linear infinite reverse}
+.about-page .uaf-network{perspective:950px;transform-style:preserve-3d}
+.about-page .uaf-network-center{animation:mrseoDepthPulse 9s ease-in-out infinite}
+.about-page .uaf-network-satellite{animation:mrseoDepthFloatA 8s ease-in-out infinite}
+.about-page .uaf-network-satellite--ads,
+.about-page .uaf-network-satellite--dev{animation-name:mrseoDepthFloatB}
+.about-page .uaf-network-satellite--data{animation-delay:-3.5s}
+
+/* Portfolio: animated illustrative evidence, never distort client names/logos. */
+.portfolio-hero .portfolio-stats-editorial .portfolio-stat{
+  transform-style:preserve-3d;
+  perspective:800px;
+}
+.uaf-evidence-figure{perspective:750px;transform-style:preserve-3d}
+.uaf-evidence-figure>span{animation:mrseoDepthFloatA 7.9s ease-in-out infinite}
+.uaf-evidence-item:nth-child(2) .uaf-evidence-figure>span{animation-name:mrseoDepthFloatB}
+.uaf-evidence-item:nth-child(3) .uaf-evidence-figure>span{animation-delay:-3s}
+
+/* Contact: approachable dimensional workflow, keep form and buttons stationary. */
+.uaf-contact-guide .uaf-contact-steps{perspective:900px}
+.uaf-contact-steps li>span{animation:mrseoDepthFloatB 6.8s ease-in-out infinite}
+.uaf-contact-steps li:nth-child(2)>span{animation-name:mrseoDepthFloatA;animation-delay:-2s}
+.uaf-contact-steps li:nth-child(3)>span{animation-delay:-4s}
+.contact-visual{perspective:900px;transform-style:preserve-3d}
+.contact-visual-point.one{animation:mrseoDepthPulse 6.5s ease-in-out infinite}
+.contact-visual-point.two{animation:mrseoDepthPulse 8s ease-in-out infinite reverse}
+
+/* Keep phone layouts readable; no animation on links, copy, forms or logos. */
+@media(max-width:640px){
+ .ns-page .ns-scene{perspective:1400px}
+ .ns-page .ns-audit-wave,
+ .ns-page .ns-product-preview,
+ .ns-page .ns-commerce-preview,
+ .ns-page .ns-dev-preview,
+ .ns-page .ns-data-preview{
+   animation:mrseoDepthMobile 9s ease-in-out infinite;
+ }
+ .ua4-art,.ua-sv-art,.ukseo .ukseo-visual-art{perspective:1300px}
+ .ua4-report-bars i{animation:none}
+ .about-page .about-experience-ring-one,
+ .about-page .about-experience-ring-two{animation-duration:45s}
+}
+@media(prefers-reduced-motion:reduce){
+ .ukseo .ukseo-visual-art *,
+ .ukseo .ukseo-visual-priority-illustration *,
+ .ua4-section *,
+ .ua-sv *,
+ .ns-page .ns-scene *,
+ .about-page .about-experience-ring,
+ .about-page .uaf-network *,
+ .uaf-evidence-figure *,
+ .uaf-contact-steps li>span,
+ .contact-visual-point {
+  animation:none!important;
+  transition:none!important;
+ }
+}
+
+/* UA Web Development hero: readable, genuine system-to-system visual narrative.
+   Restrict all treatment to the Ukrainian stylesheet and this one service scene. */
+@keyframes mrseoDevHeroDepth{
+  0%,100%{transform:translate3d(0,3px,18px) rotateY(-2deg)}
+  50%{transform:translate3d(0,-5px,26px) rotateY(2deg)}
+}
+.ms-scene-web-development .ms-dev-schema--uk{
+  perspective:1050px;
+  transform-style:preserve-3d;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+  min-height:111px;
+  padding:13px;
+  gap:9px;
+  border-color:#c6bfb3;
+  background:linear-gradient(150deg,#fffefa,#ebe8df);
+  animation:mrseoDevHeroDepth 7.6s ease-in-out infinite;
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node-b{animation-delay:-2.6s}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node-c{animation-delay:-5.1s}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small{
+  color:#9b4e3b;
+  font-size:11px;
+  font-weight:860;
+  letter-spacing:.035em;
+  line-height:1.25;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node strong{
+  color:#27342e;
+  font-size:clamp(18px,1.6vw,23px);
+  letter-spacing:-.045em;
+}
+.ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span{
+  color:#47594d;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:0;
+}
+.ms-scene-web-development[data-ms-active="0"] .ms-dev-schema--uk .ms-dev-node-a,
+.ms-scene-web-development[data-ms-active="1"] .ms-dev-schema--uk .ms-dev-node-c,
+.ms-scene-web-development[data-ms-active="2"] .ms-dev-schema--uk .ms-dev-node-b{
+  border-color:#c77c64;
+  box-shadow:0 0 0 2px #ce8d7133,0 15px 30px #0004;
+}
+.ms-scene-web-development .ms-dev-code--uk{
+  left:11%;
+  right:11%;
+  bottom:14px;
+  min-height:102px;
+  gap:9px;
+  padding:13px 16px;
+  border-color:#708279;
+  background:linear-gradient(145deg,#142221,#1c2926);
+  font-family:inherit;
+}
+.ms-scene-web-development .ms-dev-code-kicker{
+  font-size:11px;
+  font-weight:840;
+  line-height:1.25;
+  letter-spacing:.075em;
+  color:#e8b8a3;
+}
+.ms-scene-web-development .ms-dev-flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,.68fr) auto minmax(0,.68fr);
+  gap:8px;
+  align-items:center;
+}
+.ms-scene-web-development .ms-dev-flow span{
+  display:block;
+  padding:6px 9px;
+  border:1px solid #879e91;
+  border-radius:7px;
+  background:#293a34;
+  color:#fbf6ee;
+  font-size:13px;
+  font-weight:770;
+  line-height:1.25;
+  text-align:center;
+  white-space:nowrap;
+}
+.ms-scene-web-development .ms-dev-flow b{color:#e8ae94;font-size:17px;font-weight:700}
+.ms-scene-web-development .ms-dev-code-caption{
+  display:block;
+  color:#d1ded0;
+  font-size:11px;
+  font-weight:680;
+  line-height:1.4;
+}
+.ms-scene-web-development .ms-dev-code-caption b{color:#b2d8bb;font-size:13px}
+@media(max-width:600px){
+ .ms-scene-web-development .ms-dev-schema--uk{top:11px;height:126px}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+   min-height:100px;
+   padding:7px;
+   gap:6px;
+ }
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small{font-size:10px;letter-spacing:0}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node strong{font-size:15px}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span{font-size:11px}
+ .ms-scene-web-development .ms-dev-code--uk{
+   bottom:9px;
+   left:4%;
+   right:4%;
+   min-height:90px;
+   padding:9px 11px;
+   gap:6px;
+ }
+ .ms-scene-web-development .ms-dev-code-kicker{font-size:11px}
+ .ms-scene-web-development .ms-dev-flow{gap:4px}
+ .ms-scene-web-development .ms-dev-flow span{font-size:11px;padding:5px 3px}
+ .ms-scene-web-development .ms-dev-flow b{font-size:13px}
+ .ms-scene-web-development .ms-dev-code-caption{font-size:11px}
+}
+@media(max-width:360px){
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+   min-height:100px;
+   gap:5px;
+   padding:6px;
+ }
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small{font-size:9px}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span{font-size:10.5px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node{
+   animation:none!important;
+   will-change:auto;
+   transform:none;
+ }
+}
+
+
+/* Ukrainian analytics hero — three distinct measurement surfaces, linked by a
+   flowing signal. The existing tab controls focus each stage of the data path. */
+@keyframes mrseoObserveSignal{
+  0%{transform:translate3d(-18%,0,0);opacity:0}
+  12%{opacity:1}
+  84%{opacity:1}
+  100%{transform:translate3d(405%,0,0);opacity:0}
+}
+@keyframes mrseoObserveDepth{
+  0%,100%{transform:translate3d(0,3px,14px) rotateY(-5deg) rotateX(3deg)}
+  50%{transform:translate3d(0,-7px,28px) rotateY(3deg) rotateX(-2deg)}
+}
+.ms-scene-analytics .ms-observe{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  padding:13px 10px 13px;
+  perspective:950px;
+  transform-style:preserve-3d;
+}
+.ms-scene-analytics .ms-observe-top{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  padding:1px 4px 13px;
+  font-size:11px;
+  font-weight:840;
+  letter-spacing:.075em;
+  line-height:1.4;
+  color:#d8e2d9;
+}
+.ms-scene-analytics .ms-observe-top span:last-child{color:#e4af98}
+.ms-scene-analytics .ms-observe-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+  align-items:center;
+  flex:1;
+  min-height:0;
+  perspective:950px;
+}
+.ms-scene-analytics .ms-observe-node{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  position:relative;
+  min-width:0;
+  min-height:138px;
+  padding:20px 15px;
+  border:1px solid #b9c9b9;
+  border-radius:15px;
+  background:linear-gradient(152deg,#fffef8,#e3ebe1);
+  box-shadow:0 13px 25px #020b0a5e, inset 0 1px 0 #fff;
+  color:#2b3931;
+  animation:mrseoObserveDepth 8s ease-in-out infinite;
+  backface-visibility:hidden;
+}
+.ms-scene-analytics .ms-observe-node--verify{
+  margin-top:26px;
+  animation-delay:-2.7s;
+  border-color:#d6ad9d;
+  background:linear-gradient(150deg,#fff9f1,#ebded2);
+}
+.ms-scene-analytics .ms-observe-node--decision{
+  animation-delay:-5.3s;
+  border-color:#a5c6b5;
+}
+.ms-scene-analytics .ms-observe-step{
+  color:#97513f;
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.055em;
+  line-height:1.35;
+}
+.ms-scene-analytics .ms-observe-node strong{
+  display:block;
+  font-size:clamp(19px,1.8vw,27px);
+  font-weight:860;
+  line-height:1.16;
+  letter-spacing:-.04em;
+  margin-top:14px;
+  overflow-wrap:anywhere;
+}
+.ms-scene-analytics .ms-observe-detail{
+  display:block;
+  margin-top:7px;
+  color:#516558;
+  font-size:13px;
+  font-weight:690;
+  line-height:1.3;
+}
+.ms-scene-analytics .ms-observe-symbol{
+  position:absolute;
+  display:grid;
+  place-items:center;
+  right:12px;
+  top:12px;
+  width:28px;
+  height:28px;
+  border-radius:9px;
+  color:#ac5840;
+  background:#f4e7dd;
+  font-size:19px;
+  line-height:1;
+}
+.ms-scene-analytics .ms-observe-rail{
+  position:absolute;
+  left:14%;
+  right:14%;
+  top:55%;
+  height:3px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#e6ac92,#cadbbf,#e6ac92);
+  box-shadow:0 0 17px #ecc4a78c;
+}
+.ms-scene-analytics .ms-observe-rail i{
+  display:block;
+  position:absolute;
+  height:10px;
+  width:10px;
+  top:-3.5px;
+  left:0;
+  border:2px solid #fff7ea;
+  background:#bd654e;
+  border-radius:50%;
+  box-shadow:0 0 0 5px #c67d5245;
+  animation:mrseoObserveSignal 7.5s linear infinite;
+}
+.ms-scene-analytics .ms-observe-rail i:nth-child(2){animation-delay:-2.5s}
+.ms-scene-analytics .ms-observe-rail i:nth-child(3){animation-delay:-5s}
+.ms-scene-analytics .ms-observe-footer{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding-top:17px;
+  color:#dbe7dc;
+  font-size:11px;
+  letter-spacing:.07em;
+  font-weight:820;
+  white-space:nowrap;
+}
+.ms-scene-analytics .ms-observe-footer i{
+  width:23px;
+  height:1px;
+  background:#b8a99a;
+}
+.ms-scene-analytics[data-ms-active="0"] .ms-observe-node--event,
+.ms-scene-analytics[data-ms-active="1"] .ms-observe-node--verify,
+.ms-scene-analytics[data-ms-active="2"] .ms-observe-node--decision{
+  border-color:#d88665;
+  box-shadow:0 0 0 2px #e6a4896b,0 17px 34px #030a0866;
+}
+@media(max-width:640px){
+ .ms-scene-analytics .ms-stage--ua-analytics{min-height:310px}
+ .ms-scene-analytics .ms-observe{padding:10px 5px 12px}
+ .ms-scene-analytics .ms-observe-top{padding-bottom:10px;font-size:12px}
+ .ms-scene-analytics .ms-observe-grid{
+  display:flex;flex-direction:column;gap:8px;justify-content:center;
+ }
+ .ms-scene-analytics .ms-observe-node,
+ .ms-scene-analytics .ms-observe-node--verify{
+  width:100%;flex:1;min-height:65px;max-height:none;margin:0;
+  padding:9px 47px 9px 13px;
+  animation:none;
+  transform:none;
+ }
+ .ms-scene-analytics .ms-observe-step{font-size:11px}
+ .ms-scene-analytics .ms-observe-node strong{font-size:17px;margin:2px 0 0}
+ .ms-scene-analytics .ms-observe-detail{font-size:12px;margin-top:2px}
+ .ms-scene-analytics .ms-observe-symbol{
+  right:10px;top:calc(50% - 14px);
+ }
+ .ms-scene-analytics .ms-observe-rail{
+  width:3px;height:66%;left:16px;top:18%;right:auto;
+  background:linear-gradient(#e5a891,#dce4d6,#e5a891);
+ }
+ .ms-scene-analytics .ms-observe-rail i{display:none}
+ .ms-scene-analytics .ms-observe-footer{
+  flex:none;padding-top:8px;gap:6px;font-size:10px;
+ }
+ .ms-scene-analytics .ms-observe-footer i{width:10px}
+}
+/* Keep the illustration lively without moving or shrinking essential copy.
+   Small-screen annotations must not become 9–12 px miniature labels. */
+@media(max-width:640px){
+ .ukseo .ukseo-visual-search-result,
+ .ukseo .ukseo-visual-plan-sheet,
+ .ua4-art .ua4-store-ui,
+ .ua4-art .ua4-report-card,
+ .ua4-art .ua4-webpage,
+ .ua4-plan-sheet,
+ .ua-sv-ad-card,
+ .ua-sv-site-window,
+ .ua-sv-dev-node,
+ .ua-sv-wireframe,
+ .ua-sv-finished,
+ .uaf-network-satellite,
+ .uaf-evidence-figure>span{
+  animation-name:mrseoDepthMobile;
+ }
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small{font-size:11px}
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span{font-size:12px}
+ .ms-scene-web-development .ms-dev-code-caption{font-size:12px}
+}
+@media(max-width:480px){
+ .ua4-disclaimer,
+ .ua-sv-note{font-size:14px;line-height:1.65}
+ .uaf-contact-steps p{font-size:16px;line-height:1.65}
+ .uaf-network-center>span{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ms-scene-analytics .ms-observe-node,
+ .ms-scene-analytics .ms-observe-rail i{
+  animation:none!important;transition:none!important;transform:none!important;
+ }
+}
+
+
+/* All 13 newer Ukrainian services use their own search, ads, store or tech
+   illustrations. Give illustration layers depth, never move text or buttons. */
+.uws-page .uws-demo{perspective:1050px;transform-style:preserve-3d}
+.uws-page .uws-demo-body,.uws-page .uws-scene{transform-style:preserve-3d}
+.uws-page .uws-local-result,.uws-page .uws-landing-lines,
+.uws-page .uws-corporate-hero,.uws-page .uws-redesign-new,
+.uws-page .uws-scene-search,.uws-page .uws-scene-ads-bars,
+.uws-page .uws-scene-tech-rings{transform-style:preserve-3d;backface-visibility:hidden}
+.uws-page .uws-scene-results>div:nth-child(2),
+.uws-page .uws-scene-flow-step:nth-child(2){animation-delay:-2.4s}
+.uws-page .uws-scene-results>div:nth-child(3),
+.uws-page .uws-scene-flow-step:nth-child(3){animation-delay:-4.8s}
+.uws-page .uws-local-pin,.uws-page .uws-redesign-divider span,
+.uws-page .uws-scene-magnify,.uws-page .uws-scene-tech-rings span{
+  animation:mrseoDepthAccent 7s ease-in-out infinite;
+}
+/* Readable mobile labels: no nine-pixel disclaimers or navigation in UA art. */
+@media(max-width:620px){
+ .uws-page .uws-demo-top,.uws-page .uws-demo-top strong,
+ .uws-page .uws-demo-foot,.uws-page .uws-local-result small,
+ .uws-page .uws-landing-tag,.uws-page .uws-corporate-hero small,
+ .uws-page .uws-redesign-before small,.uws-page .uws-redesign-after small,
+ .uws-page .uws-redesign-new span,.uws-page .uws-redesign-new b,
+ .uws-page .uws-scene-top>span:first-child,.uws-page .uws-scene-kicker,
+ .uws-page .uws-scene-flow-step span,.uws-page .uws-scene-flow-step b{
+  font-size:12px;line-height:1.42;letter-spacing:.01em;
+ }
+ .uws-page .uws-corporate-bar{flex-wrap:wrap;row-gap:4px}
+ .uws-page .uws-corporate-bar span{font-size:12px;line-height:1.4;flex-basis:100%;white-space:normal}
+ .uws-page .uws-scene-ads-bars>div{font-size:12px}
+ .uws-page .uws-scene-flow-step{gap:8px;min-height:112px}
+ .uws-page .uws-redesign-old,.uws-page .uws-redesign-new{min-height:200px}
+ .uws-page .uws-local-pin,.uws-page .uws-redesign-divider span,
+ .uws-page .uws-scene-magnify,.uws-page .uws-scene-tech-rings span{
+  animation-name:mrseoDepthMobile;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .uws-page .uws-local-pin,.uws-page .uws-redesign-divider span,
+ .uws-page .uws-scene-magnify,.uws-page .uws-scene-tech-rings span{
+  animation:none!important;transform:none!important;
+ }
+}
+
+
+/* Final phone-size text floor for the two purpose-built UA hero diagrams. */
+@media(max-width:640px){
+ .ms-scene-analytics .ms-observe-step,
+ .ms-scene-analytics .ms-observe-footer,
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node small,
+ .ms-scene-web-development .ms-dev-schema--uk .ms-dev-node>span,
+ .ms-scene-web-development .ms-dev-flow span,
+ .ms-scene-web-development .ms-dev-code-kicker,
+ .ms-scene-web-development .ms-dev-code-caption{
+  font-size:12px;line-height:1.4;letter-spacing:0;
+ }
+ .ms-scene-analytics .ms-observe-footer{white-space:normal}
+}

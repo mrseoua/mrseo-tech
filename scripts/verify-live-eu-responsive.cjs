@@ -69,6 +69,8 @@ async function audit(browser,viewport,lang,slug){
     hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
+    footerLinkLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(x=>x.textContent.trim()),
+    uaDepthStylesheet:!!document.querySelector('link[href*="ua-3d-motion.css"]'),
     orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
     heroEdge:(()=>{
       const el=document.querySelector('#main > .orbit-lab');
@@ -227,6 +229,13 @@ async function audit(browser,viewport,lang,slug){
       item.errors.push('UA compact existing service regression: '+JSON.stringify({compact,issues,outcomes,repeated,compactStyle}));
   }
   if(!c.sharedHeader||!c.sharedFooter)item.errors.push('Global header or footer missing');
+  if(lang==='uk'&&(!c.footerLinkLabels.includes('Аналітика')||!c.footerLinkLabels.includes('SEO-аудит')||
+      c.footerLinkLabels.includes('Analytics')||c.footerLinkLabels.includes('Technical SEO')))
+    item.errors.push('Ukrainian footer contains untranslated service names');
+  if(lang==='uk'&&slug!==''&&slug!=='privacy'&&!c.uaDepthStylesheet)
+    item.errors.push('Ukrainian interior 3D stylesheet missing');
+  if(lang!=='uk'&&c.uaDepthStylesheet)
+    item.errors.push('Ukrainian 3D stylesheet leaked to another locale');
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
   if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
@@ -302,7 +311,26 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
-   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,'seo-audit','performance-max','about','contact','local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)});
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
+  }
+  // Independently capture page middle and bottom; Chromium's very tall
+  // fullPage screenshot sometimes repeats the first ~8200px instead.
+  if(lang==='uk'&&slug!==''&&slug!=='privacy'&&
+      (viewport.name==='mobile'||viewport.name==='narrow'||['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug))){
+    const height=await page.evaluate(()=>Math.max(document.body.scrollHeight,document.documentElement.scrollHeight));
+    const maxScroll=Math.max(0,height-viewport.height);
+    const positions=[Math.round(maxScroll/3),Math.round(maxScroll*2/3),maxScroll];
+    const shotBase='shots/eu-'+lang+'-'+slug+'-'+viewport.name;
+    let last=0;
+    for(let index=0;index<positions.length;index++){
+      const y=positions[index];
+      if(y<=0||y===last)continue;
+      last=y;
+      await page.evaluate(pos=>window.scrollTo(0,pos),y);
+      await page.waitForTimeout(120);
+      await page.screenshot({path:shotBase+'-section-'+(index+1)+'.jpg',type:'jpeg',quality:75,fullPage:false});
+    }
+    await page.evaluate(()=>window.scrollTo(0,0));
   }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
