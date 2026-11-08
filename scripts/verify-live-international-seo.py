@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 294
+EXPECTED_PAGES = 320
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -42,6 +42,23 @@ SAMPLE = [
     "/bg/", "/bg/seo-audit/", "/bg/contact/",
     "/hr/", "/hr/seo-audit/", "/hr/contact/"
 ]
+# Every approved Ukrainian service now has an actual Russian counterpart.
+PAIRED_RU_SLUGS = (
+    "local-business-websites", "landing-pages", "corporate-websites", "website-redesign",
+    "local-seo", "service-business-seo", "international-seo", "local-google-ads",
+    "google-ads-audit", "store-conversion", "store-migration",
+    "website-maintenance", "website-speed-security",
+)
+SAMPLE.extend("/" + slug + "/" for slug in PAIRED_RU_SLUGS)
+SAMPLE.extend("/ru/" + slug + "/" for slug in PAIRED_RU_SLUGS)
+
+def assert_paired_ru_pages(sitemap):
+    for slug in PAIRED_RU_SLUGS:
+        ua = HOST + "/" + slug + "/"
+        ru = HOST + "/ru/" + slug + "/"
+        expected = {"uk-UA": ua, "ru": ru}
+        if sitemap.get(ua) != expected or sitemap.get(ru) != expected:
+            fail(f"RU/UA real hreflang counterpart missing or invented: {slug}")
 
 def fetch(url, method="GET", timeout=16):
     req = Request(url, method=method,
@@ -140,6 +157,8 @@ if __name__ == "__main__":
     if len(sitemap) != EXPECTED_PAGES:
         fail(f"Sitemap has {len(sitemap)} URLs; expected {EXPECTED_PAGES}")
 
+    assert_paired_ru_pages(sitemap)
+
     # Cross-check published XML for self, reciprocal tags and no invented URLs.
     for loc, alts in sitemap.items():
         if loc not in alts.values():
@@ -150,7 +169,7 @@ if __name__ == "__main__":
             if sitemap[href] != alts:
                 fail(f"Non-reciprocal hreflang: {loc} -> {href}")
 
-    # HEAD checks provide full routing coverage without downloading 94 pages.
+    # HEAD checks provide full routing coverage without downloading 320 full HTML pages.
     problems = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         futures = {pool.submit(check_head_request, url):url for url in sitemap}
