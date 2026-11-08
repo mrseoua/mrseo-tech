@@ -44,6 +44,8 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
+      - name: Verify en-GB client-intent copy and no boilerplate
+        run: python3 scripts/verify-en-gb-pilot.py
       - name: Verify all 13 UA-only service landings and 25 real menu links
         run: |
           python3 - <<'PY'
