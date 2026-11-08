@@ -302,7 +302,26 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
-   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,'seo-audit','performance-max','about','contact','local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)});
+   await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:false});
+  }
+  // Independently capture page middle and bottom; Chromium's very tall
+  // fullPage screenshot sometimes repeats the first ~8200px instead.
+  if(lang==='uk'&&slug!==''&&slug!=='privacy'&&
+      (viewport.name==='mobile'||viewport.name==='narrow'||['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug))){
+    const height=await page.evaluate(()=>Math.max(document.body.scrollHeight,document.documentElement.scrollHeight));
+    const maxScroll=Math.max(0,height-viewport.height);
+    const positions=[Math.round(maxScroll/3),Math.round(maxScroll*2/3),maxScroll];
+    const shotBase='shots/eu-'+lang+'-'+slug+'-'+viewport.name;
+    let last=0;
+    for(let index=0;index<positions.length;index++){
+      const y=positions[index];
+      if(y<=0||y===last)continue;
+      last=y;
+      await page.evaluate(pos=>window.scrollTo(0,pos),y);
+      await page.waitForTimeout(120);
+      await page.screenshot({path:shotBase+'-section-'+(index+1)+'.jpg',type:'jpeg',quality:75,fullPage:false});
+    }
+    await page.evaluate(()=>window.scrollTo(0,0));
   }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
