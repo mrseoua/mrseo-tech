@@ -67,8 +67,8 @@ function mrseo_uk_core_data(){
     "example": [
       "ILLUSTRATIVE SCENARIO",
       "A service firm has visits but few relevant enquiries. We review the search terms, its landing pages and actual enquiry paths.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "We map actual searches to useful service pages and identify unclear offers or missing local pages.",
+      "After agreed changes, we review priority page visibility and relevant enquiry signals."
     ],
     "faq": [
       [
@@ -104,7 +104,7 @@ function mrseo_uk_core_data(){
     ],
     "cta": "Discuss SEO",
     "intro": "Organic search needs useful pages, not just SEO reports.",
-    "introText": "We investigate search demand, technical barriers and service pages before recommending SEO work. Every change should have a purpose and a way to check it."
+    "introText": "If a key service page cannot appear in Google, we check that URL, its offer and how customers reach it before recommending extra content."
   },
   "seo-audit": {
     "title": "Technical SEO Audit for UK Websites | MrSeo.tech",
@@ -168,8 +168,8 @@ function mrseo_uk_core_data(){
     "example": [
       "ILLUSTRATIVE SCENARIO",
       "A retailer's indexed filter pages outnumber useful categories. We examine canonical rules and links, then retest selected URLs.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "We sample category and filtered URLs, inspect canonical rules and record patterns that waste crawling.",
+      "The client receives affected URL examples, priority fixes and steps to recheck after implementation."
     ],
     "faq": [
       [
@@ -205,7 +205,7 @@ function mrseo_uk_core_data(){
     ],
     "cta": "Request an SEO audit",
     "intro": "An audit should produce a plan, not a pile of alerts.",
-    "introText": "We check crawling, indexing, redirects and page templates, separating confirmed barriers from low-impact scanner warnings."
+    "introText": "We show precise affected URLs and the reason for each finding. The audit produces evidence and a fix list, not unrequested implementation."
   },
   "ecommerce-seo": {
     "title": "Ecommerce SEO for UK Online Shops | MrSeo.tech",
@@ -370,8 +370,8 @@ function mrseo_uk_core_data(){
     "example": [
       "ILLUSTRATIVE SCENARIO",
       "A local trades business receives clicks but few qualified calls. We check search terms, landing pages and tracked call events.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "We review actual search terms and test call tracking to distinguish useful enquiries from irrelevant clicks.",
+      "Approved targeting changes are documented and compared with subsequent genuine enquiries."
     ],
     "faq": [
       [
@@ -407,7 +407,7 @@ function mrseo_uk_core_data(){
     ],
     "cta": "Discuss PPC",
     "intro": "Good PPC decisions need more than clicks and impressions.",
-    "introText": "We plan campaigns around qualified enquiries or real orders, review tracking quality and manage changes against agreed business goals."
+    "introText": "Before changing bids, we check the searches behind clicks and whether tracked calls or form events represent genuine enquiries."
   },
   "performance-max": {
     "title": "Performance Max Campaign Support UK | MrSeo.tech",
@@ -572,8 +572,8 @@ function mrseo_uk_core_data(){
     "example": [
       "ILLUSTRATIVE SCENARIO",
       "Ads shows more purchases than the shop. We investigate duplicate events, transaction identifiers and attribution differences.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "We place a test order and compare its transaction ID and value in the shop, GA4 and Google Ads.",
+      "We document duplicated or delayed events, verify agreed fixes and explain remaining attribution differences."
     ],
     "faq": [
       [
@@ -609,7 +609,7 @@ function mrseo_uk_core_data(){
     ],
     "cta": "Check my analytics",
     "intro": "Reliable tracking comes before meaningful dashboards.",
-    "introText": "We check how actions are captured and whether Google Ads, GA4 and business systems are describing the same outcomes."
+    "introText": "A dashboard cannot correct duplicate purchases. We test the real form and checkout actions, then explain which figures can be trusted."
   },
   "service-websites": {
     "title": "Lead Generation Websites for UK Service Firms | MrSeo.tech",
