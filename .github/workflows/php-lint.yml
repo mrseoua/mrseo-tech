@@ -148,7 +148,7 @@ jobs:
           assert all(price in management for price in ('5 000','10 000','5 900','9 500'))
           assert 'разову перевірку' in audit['lead'] and 'ведення реклами — окремо' in audit['result']
           assert 'Витрати на рекламу є.' in analytics['headline'] and 'заявки та замовлення' in analytics['lead']
-          assert 'Налаштування подій GA4' in analytics['lead']
+          assert 'налаштування подій GA4' in analytics['lead']
           assert 'Налаштування GA4 та конверсій'==ga4['title']
           assert 'не про маркетингові звіти' in ux['ga4-conversions']['hero']
           for slug in ('service-business-seo','google-ads-audit'):
