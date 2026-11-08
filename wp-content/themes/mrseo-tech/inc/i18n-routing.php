@@ -9,6 +9,11 @@ function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/'
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
+ // A real Russian page always wins over UK-only slug fallbacks. In particular,
+ // google-ads-audit exists independently on /ru/ and must not become /ru/google-ads/.
+ if($lang==='ru' && function_exists('mrseo_ru_website_slugs')
+     && in_array($slug,mrseo_ru_website_slugs(),true))
+  return mrseo_i18n_exact_url('ru',$slug);
  if($lang==='uk' && mrseo_locale()==='uk' && function_exists('mrseo_ua_website_slugs')
     && in_array($slug,mrseo_ua_website_slugs(),true)){
   // These are genuine Ukrainian pages even when an EN-only slug shares its spelling.
