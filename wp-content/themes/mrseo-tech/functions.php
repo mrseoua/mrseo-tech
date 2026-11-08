@@ -151,6 +151,15 @@ function mrseo_assets(){
     array($ua_compact_dep),'1.0.0');
   }
  }
+ // Premium CSS3D is Ukrainian-interior only. Homepage / 3D Earth stays untouched.
+ $mrseo_ua_depth_slugs=array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development',
+  'service-websites','horoshop','performance-max','about','portfolio','contact');
+ $mrseo_ua_depth_special=function_exists('mrseo_new_service_route') && mrseo_new_service_route();
+ $mrseo_ua_depth_sites=function_exists('mrseo_ua_website_route') && mrseo_ua_website_route();
+ if(mrseo_locale()==='uk' && (in_array(mrseo_slug(),$mrseo_ua_depth_slugs,true)||$mrseo_ua_depth_special||$mrseo_ua_depth_sites)){
+  wp_enqueue_style('mrseo-ua-3d-motion',get_template_directory_uri().'/assets/ua-3d-motion.css',
+   array('mrseo-style'),'1.2.0');
+ }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.2.0');
