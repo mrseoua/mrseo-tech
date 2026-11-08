@@ -119,50 +119,50 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Valuable pages are not indexed",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "An important URL may have a noindex directive, an incorrect canonical or a broken redirect.",
+        "Document the affected page, the evidence and the likely indexing barrier."
       ],
       [
         "Filters generate unnecessary URLs",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Filter combinations can generate hundreds of similar pages while useful category pages remain hard to find.",
+        "Sample filter URLs and identify which patterns need canonical or indexation rules."
       ],
       [
         "A migration has broken search visibility",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "A redesign may send old pages to the wrong destination or leave important links broken.",
+        "Compare representative old and new URLs and list redirect, canonical and linking faults."
       ]
     ],
     "process": [
       [
         "Agree templates to inspect",
-        "Establish the commercial goal and current constraints."
+        "Agree the site sections and representative URLs the audit must cover."
       ],
       [
         "Crawl and compare evidence",
-        "Review the relevant accounts, pages and settings."
+        "Inspect crawl and indexing evidence alongside actual page templates."
       ],
       [
         "Identify technical root causes",
-        "Agree changes that can be safely implemented."
+        "Separate confirmed technical blockers from low-impact tool warnings."
       ],
       [
         "Prioritise and verify fixes",
-        "Validate the outcome and document next steps."
+        "Deliver a prioritised report and recheck checklist; implementation is scoped separately."
       ]
     ],
     "outcomes": [
       [
         "Evidence-led findings",
-        "A clearly defined deliverable for the agreed scope."
+        "Findings with example URLs, observed evidence and clear priorities."
       ],
       [
         "Clear developer tasks",
-        "Recommendations grounded in the review."
+        "Developer-ready instructions describing the intended behaviour."
       ],
       [
         "A rechecking plan",
-        "A way to check the work and identify limitations."
+        "A checklist for verifying corrections after they are implemented."
       ]
     ],
     "example": [
@@ -523,50 +523,50 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Leads are counted more than once",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "One submitted form may trigger a conversion twice, or trigger before an enquiry is sent.",
+        "Perform test submissions and check when the lead event actually fires."
       ],
       [
         "Order values don't match sales records",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Refunds, transaction identifiers or conversion settings may explain different totals.",
+        "Compare sample orders and values in the shop, GA4 and advertising reports."
       ],
       [
         "Reports cannot explain commercial results",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Clicks and leads appear in different reports without a clear route to actual orders.",
+        "Define useful outcomes and link marketing costs with verifiable enquiries or sales."
       ]
     ],
     "process": [
       [
         "Define meaningful outcomes",
-        "Establish the commercial goal and current constraints."
+        "Agree what counts as a lead, confirmed order and meaningful business result."
       ],
       [
         "Test site and advertising tags",
-        "Review the relevant accounts, pages and settings."
+        "Test the real form and purchase journey while checking GA4 and tag events."
       ],
       [
         "Fix verified tracking faults",
-        "Agree changes that can be safely implemented."
+        "Correct verified measurement faults within the agreed technical scope."
       ],
       [
         "Reconcile and report limitations",
-        "Validate the outcome and document next steps."
+        "Explain remaining reporting differences and define a usable business report."
       ]
     ],
     "outcomes": [
       [
         "Clear event definitions",
-        "A clearly defined deliverable for the agreed scope."
+        "A clear map of events and the business actions they represent."
       ],
       [
         "Verified tracking improvements",
-        "Recommendations grounded in the review."
+        "Recorded tests of key events, values and duplicate firing."
       ],
       [
         "Usable business reporting",
-        "A way to check the work and identify limitations."
+        "A report outline linking spend to verified leads or orders, with limitations."
       ]
     ],
     "example": [
