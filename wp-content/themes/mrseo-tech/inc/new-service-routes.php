@@ -52,7 +52,7 @@ add_filter('body_class',function($classes){
 add_action('wp_head',function(){
  if(!mrseo_new_service_route())return;
  $slug=mrseo_slug();$copy=mrseo_new_service_copy();
- $desc=wp_trim_words($copy['lead'],25,'…');
+ $desc=$copy['description']??wp_trim_words($copy['lead'],25,'…');
  echo '<meta name="description" content="'.esc_attr($desc).'">'."\n";
  // Canonical/hreflang are emitted by the shared international SEO registry.
 

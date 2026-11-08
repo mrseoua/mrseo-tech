@@ -110,6 +110,62 @@ jobs:
           print('13 original UA pages, five menu pillars, four scene families, 20 locales and noindex verified')
           PY
 
+      - name: Verify six Ukrainian commercial search intents stay distinct
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          root=Path('wp-content/themes/mrseo-tech')
+          def load(path,mark):
+              source=(root/path).read_text()
+              match=re.search(r"<<<'"+re.escape(mark)+r"'\n([\s\S]*?)\n"+re.escape(mark)+r";",source)
+              assert match,('Missing content',path)
+              return json.loads(match.group(1))
+          solutions=load('inc/uk-solution-content.php','MRSEO_UK_SOLUTIONS')
+          extra=load('inc/ua-additional-services.php','MRSEO_UA_ADDITIONAL_JSON')
+          micros=load('inc/new-service-copy-part3.php','MRSEO_NEW_SERVICE_P3')
+          ux=load('inc/ua-service-ux.php','MRSEO_UA_UX')
+          dev=solutions['service-websites']
+          seo=extra['service-business-seo']
+          management=(root/'google-ads-uk.php').read_text()
+          audit=extra['google-ads-audit']
+          analytics=solutions['analytics']
+          ga4=micros['ga4-conversions']['uk']
+          titles=[
+              'Створення сайтів послуг для бізнесу',
+              seo['title'],
+              'Налаштування та ведення Google Ads',
+              audit['title'],
+              'Маркетингова аналітика',
+              ga4['title']
+          ]
+          assert len(set(titles))==6, 'Duplicate service title'
+          assert all(len(item['headline'])==2 for item in (dev,seo,audit,analytics))
+          assert len(ga4['head'])==2 and management.count('<h1 ')==1
+          assert 'Створюємо нові сайти' in dev['lead'] and 'SEO-просування погоджуємо окремо' in dev['lead']
+          assert 'Просуваємо вже створені сайти' in seo['lead'] and 'Новий сайт' in seo['lead']
+          assert 'Налаштуємо й вестимемо рекламу.' in management
+          assert all(price in management for price in ('5 000','10 000','5 900','9 500'))
+          assert 'разову перевірку' in audit['lead'] and 'ведення реклами — окремо' in audit['result']
+          assert 'Витрати на рекламу є.' in analytics['headline'] and 'заявки та замовлення' in analytics['lead']
+          assert 'налаштування подій GA4' in analytics['lead']
+          assert 'Налаштування GA4 та конверсій'==ga4['title']
+          assert 'не про маркетингові звіти' in ux['ga4-conversions']['hero']
+          for slug in ('service-business-seo','google-ads-audit'):
+              assert len(extra[slug]['description'])>=90
+          assert len(ga4['description'])>=90
+          assert (root/'inc/ua-website-services.php').read_text().count("$p['description']")>=1
+          assert "$copy['description']" in (root/'inc/new-service-routes.php').read_text()
+          routing=(root/'inc/i18n-routing.php').read_text()
+          for slug in ('service-websites','google-ads','analytics'):
+              assert "'"+slug+"'=>" in routing,('Missing distinct title',slug)
+              assert "'"+slug+"'=>" in (root/'functions.php').read_text(),('Missing distinct description',slug)
+          visual=(root/'inc/ua-four-service-visuals.php').read_text()
+          assert "'artTitle'=>'Витрати та продажі'" in visual
+          assert "X-Robots-Tag: noindex, nofollow" in (root/'functions.php').read_text()
+          print('Six UA service intents, metadata, prices, scoped offers and unchanged noindex OK')
+          PY
+
       - name: Run international SEO pre-indexing audit (307 routes)
         run: |
           php -l scripts/verify-international-seo.php

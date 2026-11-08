@@ -319,7 +319,7 @@ add_filter('pre_get_document_title',function($title){
 add_action('wp_head',function(){
  if(!mrseo_ua_website_route())return;
  $p=mrseo_ua_website_data(mrseo_slug());
- if($p) echo '<meta name="description" content="'.esc_attr(wp_trim_words($p['lead'],26,'…')).'">'."\n";
+ if($p) echo '<meta name="description" content="'.esc_attr(($p['description']??wp_trim_words($p['lead'],26,'…'))).'">'."\n";
  // Canonical and (when available) true alternates are managed by international-seo.php.
 },4);
 add_action('init',function(){

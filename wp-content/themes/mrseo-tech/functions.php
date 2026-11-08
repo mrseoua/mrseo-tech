@@ -169,6 +169,19 @@ function mrseo_meta_description(){
   return;
  }
  if(!mrseo_valid_route())return;
+ // Ukrainian commercial intents must not reuse generic cross-service descriptions.
+ if(mrseo_locale()==='uk'){
+  $uaIntentDescriptions=array(
+   'service-websites'=>'Створюємо сайти послуг для бізнесу: структура, адаптивний дизайн, контакти та робочі форми заявок. SEO-просування готового сайту — окремо.',
+   'google-ads'=>'Налаштування та ведення Google Ads: запускаємо пошукові й товарні кампанії, контролюємо запити, витрати та заявки. Разовий аудит — окрема послуга.',
+   'analytics'=>'Маркетингова аналітика: зводимо рекламні витрати, заявки й замовлення у звіт за каналами. Налаштування подій GA4 — окремо.'
+  );
+  $uaSlug=mrseo_slug();
+  if(isset($uaIntentDescriptions[$uaSlug])){
+   echo '<meta name="description" content="'.esc_attr($uaIntentDescriptions[$uaSlug]).'">'."\n";
+   return;
+  }
+ }
  if(mrseo_slug()==='web-development'){
   $dev=mrseo_dev_page();
   if($dev)echo '<meta name="description" content="'.esc_attr($dev['description']).'">'."\n";
