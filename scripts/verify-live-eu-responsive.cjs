@@ -349,6 +349,24 @@ async function audit(browser,viewport,lang,slug){
   if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (lang==='ru'&&ruNewSlugs.includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,'seo-audit','performance-max','about','contact','local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)});
   }
+  // Independent screenshots of middle and footer; Chromium fullPage can repeat
+  // the top on long pages. Cover five distinct RU service scene families.
+  if(lang==='ru'&&ruNewSlugs.includes(slug)&&viewport.name==='mobile'&&
+     ['landing-pages','local-seo','google-ads-audit','store-conversion','website-maintenance'].includes(slug)){
+    const h=await page.evaluate(()=>Math.max(document.body.scrollHeight,document.documentElement.scrollHeight));
+    const maxY=Math.max(0,h-viewport.height);
+    const positions=[Math.round(maxY*.56),maxY];
+    let prior=-1;
+    for(let i=0;i<positions.length;i++){
+      const y=positions[i];
+      if(y===prior)continue;
+      prior=y;
+      await page.evaluate(pos=>window.scrollTo(0,pos),y);
+      await page.waitForTimeout(130);
+      await page.screenshot({path:'shots/ru-'+slug+'-mobile-section-'+(i+1)+'.jpg',type:'jpeg',quality:76,fullPage:false});
+    }
+    await page.evaluate(()=>window.scrollTo(0,0));
+  }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
   }
