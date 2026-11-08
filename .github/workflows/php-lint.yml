@@ -101,10 +101,10 @@ jobs:
           assert all("'"+slug+"'" in nav for slug in data)
           assert "in_array($slug,mrseo_ua_website_slugs(),true)" in menu
           assert "mrseo_ua_website_route()?" in source
-          assert "mrseo_render_ua_service_scene($kind)" in page
+          assert "mrseo_render_ua_service_scene($kind,$ru?'ru':'uk')" in page, 'Approved UA scene keeps explicit Ukrainian default and real Russian labels'
           assert '<nav class="uws-related"' not in page, 'White related strip remains in UA template'
           assert '.uws-related' not in css, 'Unused related strip CSS remains in UA styles'
-          assert "function mrseo_render_ua_service_scene($kind)" in scenes
+          assert "function mrseo_render_ua_service_scene($kind,$locale='uk')" in scenes, 'Scene renderer must keep Ukrainian as its default locale'
           assert ".uws-demo" in css and ".uws-scene--tech" in scenes_css
           assert "prefers-reduced-motion:reduce" in css and "prefers-reduced-motion:reduce" in scenes_css
           assert "wp_enqueue_style('mrseo-ua-websites'" in functions
