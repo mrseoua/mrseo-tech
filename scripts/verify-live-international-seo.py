@@ -13,10 +13,20 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 294
+EXPECTED_PAGES = 307
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
+
+# Ukrainian-only pages have no corresponding foreign-language URL. Confirm that
+# each remains self-canonical, is noindexed, and has only a self hreflang.
+UA_ONLY_ROUTES = [
+    "/local-business-websites/", "/landing-pages/", "/corporate-websites/",
+    "/website-redesign/", "/local-seo/", "/service-business-seo/",
+    "/international-seo/", "/local-google-ads/", "/google-ads-audit/",
+    "/store-conversion/", "/store-migration/", "/website-maintenance/",
+    "/website-speed-security/",
+]
 SAMPLE = [
     "/", "/ru/", "/en/", "/pl/", "/de/",
     "/seo/", "/ru/seo/", "/en/seo/", "/pl/seo/", "/de/seo/",
@@ -42,6 +52,7 @@ SAMPLE = [
     "/bg/", "/bg/seo-audit/", "/bg/contact/",
     "/hr/", "/hr/seo-audit/", "/hr/contact/"
 ]
+SAMPLE.extend(UA_ONLY_ROUTES)
 
 def fetch(url, method="GET", timeout=16):
     req = Request(url, method=method,
@@ -140,6 +151,12 @@ if __name__ == "__main__":
     if len(sitemap) != EXPECTED_PAGES:
         fail(f"Sitemap has {len(sitemap)} URLs; expected {EXPECTED_PAGES}")
 
+    # Ukrainian-only landings must not claim untranslated equivalents.
+    for path in UA_ONLY_ROUTES:
+        url = HOST + path
+        if sitemap.get(url) != {"uk-UA": url}:
+            fail(f"Ukrainian-only route has missing/fabricated hreflang: {url}: {sitemap.get(url)}")
+
     # Cross-check published XML for self, reciprocal tags and no invented URLs.
     for loc, alts in sitemap.items():
         if loc not in alts.values():
@@ -150,7 +167,7 @@ if __name__ == "__main__":
             if sitemap[href] != alts:
                 fail(f"Non-reciprocal hreflang: {loc} -> {href}")
 
-    # HEAD checks provide full routing coverage without downloading 94 pages.
+    # HEAD checks cover every registered URL without downloading all HTML bodies.
     problems = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         futures = {pool.submit(check_head_request, url):url for url in sitemap}
