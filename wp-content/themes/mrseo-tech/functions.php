@@ -151,6 +151,14 @@ function mrseo_assets(){
     array($ua_compact_dep),'1.0.0');
   }
  }
+ // Approved compact service rhythm — RU interior services only. Keep the Earth intact.
+ $ru_core_slugs=array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop');
+ if(mrseo_locale()==='ru' && (in_array(mrseo_slug(),$ru_core_slugs,true)
+   || (function_exists('mrseo_new_service_route') && mrseo_new_service_route()))){
+  $ru_compact_base=in_array(mrseo_slug(),$ru_core_slugs,true)?'mrseo-ru-premium':'mrseo-new-services';
+  wp_enqueue_style('mrseo-ru-services-compact',get_template_directory_uri().'/assets/ru-services-compact.css',
+   array($ru_compact_base),'1.0.0');
+ }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.2.0');
