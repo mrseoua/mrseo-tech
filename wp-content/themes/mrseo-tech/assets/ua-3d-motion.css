@@ -560,3 +560,48 @@
   animation:none!important;transition:none!important;transform:none!important;
  }
 }
+
+
+/* All 13 newer Ukrainian services use their own search, ads, store or tech
+   illustrations. Give illustration layers depth, never move text or buttons. */
+.uws-page .uws-demo{perspective:1050px;transform-style:preserve-3d}
+.uws-page .uws-demo-body,.uws-page .uws-scene{transform-style:preserve-3d}
+.uws-page .uws-local-result,.uws-page .uws-landing-lines,
+.uws-page .uws-corporate-hero,.uws-page .uws-redesign-new,
+.uws-page .uws-scene-search,.uws-page .uws-scene-ads-bars,
+.uws-page .uws-scene-tech-rings{transform-style:preserve-3d;backface-visibility:hidden}
+.uws-page .uws-scene-results>div:nth-child(2),
+.uws-page .uws-scene-flow-step:nth-child(2){animation-delay:-2.4s}
+.uws-page .uws-scene-results>div:nth-child(3),
+.uws-page .uws-scene-flow-step:nth-child(3){animation-delay:-4.8s}
+.uws-page .uws-local-pin,.uws-page .uws-redesign-divider span,
+.uws-page .uws-scene-magnify,.uws-page .uws-scene-tech-rings span{
+  animation:mrseoDepthAccent 7s ease-in-out infinite;
+}
+/* Readable mobile labels: no nine-pixel disclaimers or navigation in UA art. */
+@media(max-width:620px){
+ .uws-page .uws-demo-top,.uws-page .uws-demo-top strong,
+ .uws-page .uws-demo-foot,.uws-page .uws-local-result small,
+ .uws-page .uws-landing-tag,.uws-page .uws-corporate-hero small,
+ .uws-page .uws-redesign-before small,.uws-page .uws-redesign-after small,
+ .uws-page .uws-redesign-new span,.uws-page .uws-redesign-new b,
+ .uws-page .uws-scene-top>span:first-child,.uws-page .uws-scene-kicker,
+ .uws-page .uws-scene-flow-step span,.uws-page .uws-scene-flow-step b{
+  font-size:12px;line-height:1.42;letter-spacing:.01em;
+ }
+ .uws-page .uws-corporate-bar{flex-wrap:wrap;row-gap:4px}
+ .uws-page .uws-corporate-bar span{font-size:12px;line-height:1.4;flex-basis:100%;white-space:normal}
+ .uws-page .uws-scene-ads-bars>div{font-size:12px}
+ .uws-page .uws-scene-flow-step{gap:8px;min-height:112px}
+ .uws-page .uws-redesign-old,.uws-page .uws-redesign-new{min-height:200px}
+ .uws-page .uws-local-pin,.uws-page .uws-redesign-divider span,
+ .uws-page .uws-scene-magnify,.uws-page .uws-scene-tech-rings span{
+  animation-name:mrseoDepthMobile;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .uws-page .uws-local-pin,.uws-page .uws-redesign-divider span,
+ .uws-page .uws-scene-magnify,.uws-page .uws-scene-tech-rings span{
+  animation:none!important;transform:none!important;
+ }
+}
