@@ -18,50 +18,50 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Important pages are not indexed",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "A key service page may be blocked, redirected or pointing to the wrong canonical URL.",
+        "Check the affected URLs against Search Console, page settings and internal links before agreeing fixes."
       ],
       [
         "The website attracts the wrong searches",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Visitors arrive from searches that do not match the service or area you cover.",
+        "Compare real search queries with the pages they reach and identify which service pages need improving."
       ],
       [
         "SEO activity has no clear priorities",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Tasks pile up without any link to the pages and enquiries that matter.",
+        "Rank work by customer demand and impact, and agree what will be checked after each change."
       ]
     ],
     "process": [
       [
         "Review demand and site data",
-        "Establish the commercial goal and current constraints."
+        "Review real search queries, priority services and available enquiry data."
       ],
       [
         "Check technical accessibility",
-        "Review the relevant accounts, pages and settings."
+        "Inspect the affected page templates, indexing rules and internal links."
       ],
       [
         "Map useful landing pages",
-        "Agree changes that can be safely implemented."
+        "Match valuable searches to useful pages and agree the changes required."
       ],
       [
         "Test and review improvements",
-        "Validate the outcome and document next steps."
+        "Check completed changes against relevant visibility and enquiry signals."
       ]
     ],
     "outcomes": [
       [
         "Prioritised SEO plan",
-        "A clearly defined deliverable for the agreed scope."
+        "A page-by-page priority list explaining what needs attention and why."
       ],
       [
         "Developer-ready technical tasks",
-        "Recommendations grounded in the review."
+        "Specific URL, template and internal-linking tasks for implementation."
       ],
       [
         "Clear visibility and enquiry reporting",
-        "A way to check the work and identify limitations."
+        "Defined measures for checking search visibility and useful enquiries."
       ]
     ],
     "example": [
@@ -321,50 +321,50 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Clicks arrive but no enquiries follow",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "People click an advert but the offer or contact form does not answer their needs.",
+        "Compare search terms, advert messages and landing pages; remove irrelevant traffic where justified."
       ],
       [
         "Conversions don't match real orders",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "A single form or purchase may be counted twice, or the reported amount may be wrong.",
+        "Run test enquiries or orders and compare them with the conversions recorded in Google Ads."
       ],
       [
         "Budgets lack commercial priorities",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Spend can drift towards broad searches or low-value products.",
+        "Review costs against genuine enquiries and orders, then agree budget priorities."
       ]
     ],
     "process": [
       [
         "Agree lead or sales objectives",
-        "Establish the commercial goal and current constraints."
+        "Agree the valuable enquiry or confirmed sale and the available budget."
       ],
       [
         "Check conversion measurement",
-        "Review the relevant accounts, pages and settings."
+        "Test conversion events and correct verified tracking faults in scope."
       ],
       [
         "Structure and launch campaigns",
-        "Agree changes that can be safely implemented."
+        "Set up relevant campaigns, adverts, targeting and landing-page links."
       ],
       [
         "Review queries, spend and results",
-        "Validate the outcome and document next steps."
+        "Review actual searches, spend and outcomes, documenting changes."
       ]
     ],
     "outcomes": [
       [
         "Clear campaign structure",
-        "A clearly defined deliverable for the agreed scope."
+        "A campaign structure and targeting plan linked to the agreed business goal."
       ],
       [
         "More credible conversion data",
-        "Recommendations grounded in the review."
+        "Tested key conversions with any remaining tracking gaps documented."
       ],
       [
         "Transparent optimisation decisions",
-        "A way to check the work and identify limitations."
+        "A practical review of spend, enquiries or orders and next actions."
       ]
     ],
     "example": [
