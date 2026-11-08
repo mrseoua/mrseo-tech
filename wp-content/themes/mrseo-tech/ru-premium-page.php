@@ -56,40 +56,13 @@ get_header();
    </div>
   </div>
  </section>
- <section class="ukseo-decision" aria-labelledby="ru-decision-title">
-  <div class="container ukseo-decision-layout">
-   <div class="ukseo-decision-copy">
-    <span class="ukseo-kicker">ПОКАЗЫВАЕМ ЛОГИКУ РЕШЕНИЯ</span>
-    <h2 id="ru-decision-title"><?php echo esc_html($page['decisionHeading'][0]); ?> <em><?php echo esc_html($page['decisionHeading'][1]); ?></em></h2>
-    <p><?php echo esc_html($page['decisionLead']); ?></p>
-    <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url($page['related'][1])); ?>"><?php echo esc_html($page['related'][0]); ?> <span aria-hidden="true">↗</span></a>
-   </div>
-   <div class="ukseo-spec" aria-label="Иллюстрация подхода">
-    <div class="ukseo-spec-top"><span>ПРИМЕР РАБОЧЕЙ ЗАДАЧИ</span><span aria-hidden="true">✳</span></div>
-    <?php foreach(array('ПРОБЛЕМА','РЕШЕНИЕ','КАК ПРОВЕРИТЬ') as $i=>$title):?><div class="ukseo-spec-row"><small><?php echo esc_html($title); ?></small><strong><?php echo esc_html($page['example'][$i]); ?></strong></div><?php endforeach;?>
-    <div class="ukseo-spec-foot">Пример методики, а не результат или данные конкретного клиента.</div>
-   </div>
-  </div>
- </section>
- <section class="ukseo-work" aria-labelledby="ru-process-title">
-  <div class="container">
-   <div class="ukseo-section-head"><div><span class="ukseo-kicker">ПОНЯТНЫЙ ПЛАН РАБОТЫ</span><h2 id="ru-process-title"><?php echo esc_html($page['processHeading']); ?></h2></div><p>На каждом этапе — конкретное действие и результат, который можно проверить.</p></div>
-   <ol class="ukseo-steps"><?php foreach($page['steps'] as $i=>$step):?>
-    <li><div class="ukseo-step-index"><?php echo esc_html(sprintf('%02d',$i+1)); ?></div><div><h3><?php echo esc_html($step[0]); ?></h3><p><?php echo esc_html($step[1]); ?></p></div><strong><?php echo esc_html($step[2]); ?></strong></li>
-   <?php endforeach;?></ol>
-  </div>
- </section>
  <section class="ukseo-delivery" aria-labelledby="ru-delivery-title">
   <div class="container ukseo-delivery-grid">
-   <div><span class="ukseo-kicker">ЧТО ПОЛУЧАЕТ БИЗНЕС</span><h2 id="ru-delivery-title"><?php echo esc_html($page['deliveryHeading'][0]); ?> <em><?php echo esc_html($page['deliveryHeading'][1]); ?></em></h2><p><?php echo esc_html($page['deliveryLead']); ?></p></div>
+   <div><span class="ukseo-kicker">ЧТО ПОЛУЧАЕТ БИЗНЕС</span><h2 id="ru-delivery-title"><?php echo esc_html($page['deliveryHeading'][0]); ?> <em><?php echo esc_html($page['deliveryHeading'][1]); ?></em></h2><p><?php echo esc_html($page['deliveryLead']); ?></p><div class="ru-compact-next"><a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url($page['related'][1])); ?>"><?php echo esc_html($page['related'][0]); ?> <span aria-hidden="true">↗</span></a><a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('portfolio')); ?>">Посмотреть проекты <span aria-hidden="true">↗</span></a></div></div>
    <div class="ukseo-delivery-list"><?php foreach($page['deliveries'] as $i=>$item):?>
     <div><span aria-hidden="true"><?php echo esc_html(sprintf('%02d',$i+1)); ?></span><div><h3><?php echo esc_html($item[0]); ?></h3><p><?php echo esc_html($item[1]); ?></p></div></div>
    <?php endforeach;?></div>
   </div>
- </section>
- <section class="ukseo-proof" aria-labelledby="ru-proof-title">
-  <div class="container ukseo-proof-layout"><div><span class="ukseo-kicker">ПРОЗРАЧНОСТЬ ВМЕСТО ОБЕЩАНИЙ</span><h2 id="ru-proof-title"><?php echo esc_html($page['proofHeading'][0]); ?> <em><?php echo esc_html($page['proofHeading'][1]); ?></em></h2></div>
-   <div><p><?php echo esc_html($page['proofText']); ?></p><a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('portfolio')); ?>">Посмотреть проекты из портфолио <span aria-hidden="true">↗</span></a></div></div>
  </section>
  <?php if($faq):?>
  <section class="ukseo-faq" aria-labelledby="ru-faq-title"><div class="container ukseo-faq-grid"><div><span class="ukseo-kicker">ПЕРЕД СОТРУДНИЧЕСТВОМ</span><h2 id="ru-faq-title"><?php echo esc_html($page['faqHeading']); ?></h2><p>Ограничения и возможности — без сложных обещаний.</p></div><div class="ukseo-faq-items"><?php foreach($faq as $qa):?>
