@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check live SEO audit Python syntax
+        run: python3 -m py_compile scripts/verify-live-international-seo.py
       - name: Check PHP syntax across the theme
         run: |
           find wp-content/themes/mrseo-tech -type f -name '*.php' -print0 \
