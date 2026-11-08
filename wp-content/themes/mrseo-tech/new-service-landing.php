@@ -31,7 +31,7 @@ $copy=$ru?array(
 );
 get_header();
 ?>
-<div class="ukseo ns-page ns-page--<?php echo esc_attr($slug);?><?php echo !$ru?' ns-page--compact':'';?>" data-service-group="<?php echo esc_attr($group);?>">
+<div class="ukseo ns-page ns-page--compact ns-page--<?php echo esc_attr($slug);?>" data-service-group="<?php echo esc_attr($group);?>">
  <section class="ukseo-hero ns-hero" aria-labelledby="ns-title">
  <div class="container ukseo-hero-grid">
   <div class="ukseo-hero-copy">
@@ -76,60 +76,16 @@ get_header();
    </article>
   <?php endforeach;?></div>
  </div></section>
- <?php if($ru): ?>
-<section class="ukseo-decision" aria-labelledby="ns-example-title"><div class="container ukseo-decision-layout">
-  <div class="ukseo-decision-copy"><span class="ukseo-kicker"><?php echo esc_html($copy['example']);?></span>
-   <h2 id="ns-example-title"><?php if($serviceUx):?><?php echo esc_html($serviceUx['exampleTitle'][0]);?> <em><?php echo esc_html($serviceUx['exampleTitle'][1]);?></em><?php else:?><?php echo esc_html($ru?'Не угадать причину.':'Не вгадати причину.');?> <em><?php echo esc_html($ru?'А проверить гипотезу.':'А перевірити гіпотезу.');?></em><?php endif;?></h2>
-   <?php if(!$serviceUx):?><p><?php echo esc_html($copy['scenario']);?></p><?php endif;?>
-   <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url($page['related']));?>"><?php echo esc_html($copy['related']);?> <span aria-hidden="true">↗</span></a>
-  </div>
-  <div class="ukseo-spec" aria-label="<?php echo esc_attr($copy['example']);?>">
-   <div class="ukseo-spec-top"><span><?php echo esc_html($copy['example']);?></span><span aria-hidden="true">✳</span></div>
-   <?php foreach($page['example'] as $line):$parts=explode(': ',$line,2);?>
-    <div class="ukseo-spec-row"><small><?php echo esc_html($parts[0]);?></small><strong><?php echo esc_html($parts[1]??$line);?></strong></div>
-   <?php endforeach;?>
-   <div class="ukseo-spec-foot"><?php echo esc_html($copy['scenario']);?></div>
-  </div>
- </div></section>
- <section class="ukseo-work" aria-labelledby="ns-process-title"><div class="container">
-  <div class="ukseo-section-head"><div><span class="ukseo-kicker"><?php echo esc_html($copy['process']);?></span><h2 id="ns-process-title"><?php echo esc_html($editorial['process']??$copy['processTitle']);?></h2></div><p><?php echo esc_html($serviceUx['processLead']??$copy['processLead']);?></p></div>
-  <ol class="ukseo-steps"><?php foreach($page['steps'] as $i=>$step):?>
-   <li><div class="ukseo-step-index"><?php echo esc_html(sprintf('%02d',$i+1));?></div><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div><strong><?php echo esc_html($i<3 ? $page['outcomes'][$i] : ($ru?'Проверка после внедрения':'Перевірка після впровадження'));?></strong></li>
-  <?php endforeach;?></ol>
- </div></section>
- <?php endif; ?>
 <section class="ukseo-delivery" aria-labelledby="ns-outcomes-title"><div class="container ukseo-delivery-grid">
   <div><span class="ukseo-kicker"><?php echo esc_html($copy['outcomes']);?></span><h2 id="ns-outcomes-title"><?php echo esc_html($serviceUx['deliveryTitle']??$copy['outcomesTitle']);?></h2><p><?php echo esc_html($serviceUx['deliveryLead']??($ru?'Состав работ зависит от исходной системы и подтверждённых ограничений.':'Обсяг робіт залежить від вихідної системи та підтверджених обмежень.'));?></p></div>
   <div class="ukseo-delivery-list"><?php foreach($page['outcomes'] as $i=>$outcome):?>
    <div><span aria-hidden="true"><?php echo esc_html(sprintf('%02d',$i+1));?></span><div><h3><?php echo esc_html($outcome);?></h3><p><?php echo esc_html($editorial['outcomes'][$i]??($ru?'Конкретный результат по согласованным критериям.':'Конкретний результат за погодженими критеріями.'));?></p></div></div>
   <?php endforeach;?></div>
  </div></section>
- <?php if($ru): ?>
-<section class="ukseo-proof" aria-labelledby="ns-limits-title"><div class="container ukseo-proof-layout">
-  <div><span class="ukseo-kicker"><?php echo esc_html($copy['limitations']);?></span><h2 id="ns-limits-title"><?php echo esc_html($copy['limitationsTitle']);?></h2></div>
-  <div><p><?php echo esc_html($page['risk']);?></p><a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($ru?'Смотреть портфолио':'Переглянути портфоліо');?> <span aria-hidden="true">↗</span></a></div>
- </div></section>
- <?php endif; ?>
 <section class="ukseo-faq" aria-labelledby="ns-faq-title"><div class="container ukseo-faq-grid">
   <div><span class="ukseo-kicker"><?php echo esc_html($copy['faqLabel']);?></span><h2 id="ns-faq-title"><?php echo esc_html($copy['faqTitle']);?></h2></div>
   <div class="ukseo-faq-items"><?php foreach($page['faq'] as $pair):?><details><summary><?php echo esc_html($pair[0]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($pair[1]);?></p></details><?php endforeach;?></div>
  </div></section>
- <?php if($ru && $serviceUx && !empty($serviceUx['related'])):?>
- <nav class="ns-related" aria-label="<?php echo esc_attr($ru?'Связанные услуги':'Пов’язані послуги');?>">
-  <div class="container">
-   <div class="ns-related-head"><span class="ukseo-kicker"><?php echo esc_html($ru?'ПОДБИРАЕМ ПОД ЗАДАЧУ':'ЗАЛЕЖНО ВІД ЗАДАЧІ');?></span><h2><?php echo esc_html($ru?'Что ещё может помочь?':'Що ще може допомогти?');?></h2></div>
-   <div class="ns-related-grid">
-   <?php foreach($serviceUx['related'] as $link):?>
-    <a class="ns-related-card" href="<?php echo esc_url(mrseo_url($link[0]));?>">
-     <strong><?php echo esc_html($link[1]);?></strong>
-     <span><?php echo esc_html($link[2]);?></span>
-     <b aria-hidden="true">↗</b>
-    </a>
-   <?php endforeach;?>
-   </div>
-  </div>
- </nav>
- <?php endif;?>
  <section class="ukseo-final" aria-labelledby="ns-final-title"><div class="container ukseo-final-grid">
   <div><span class="ukseo-kicker"><?php echo esc_html($copy['footer']);?></span><h2 id="ns-final-title"><?php echo esc_html($serviceUx['finalTitle']??$copy['finalTitle']);?></h2><p><?php echo esc_html($serviceUx['finalLead']??$copy['finalLead']);?></p></div>
   <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($page['cta']);?> <span aria-hidden="true">↗</span></a>
