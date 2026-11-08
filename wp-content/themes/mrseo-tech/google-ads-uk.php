@@ -10,8 +10,8 @@ get_header();
    <div class="ukseo-hero-copy">
     <nav class="ukseo-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>Google Ads</span></nav>
     <div class="ukseo-kicker">НАЛАШТУВАННЯ ТА ВЕДЕННЯ GOOGLE ADS</div>
-    <h1 id="ukads-title">Реклама витрачає гроші. <em>А заявок і продажів мало?</em></h1>
-    <p class="ukseo-hero-lead">Перевіримо, за які пошукові фрази списуються гроші, чи правильно рахуються заявки та які кампанії витрачають бюджет без зрозумілого результату.</p>
+    <h1 id="ukads-title">Потрібні заявки з Google? <em>Налаштуємо й вестимемо рекламу.</em></h1>
+    <p class="ukseo-hero-lead">Запускаємо й регулярно ведемо Google Ads: налаштовуємо пошукову та товарну рекламу, контролюємо запити, витрати й облік заявок. Якщо потрібна лише перевірка наявних кампаній без ведення — це окрема послуга аудиту.</p>
     <div class="ukseo-actions">
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити мою рекламу <span aria-hidden="true">↗</span></a>
      <a class="ukseo-text-link" href="#ukads-problems">Упізнати свою проблему <span aria-hidden="true">↓</span></a>
@@ -113,7 +113,7 @@ get_header();
  </section>
  <section class="ukseo-final ukads-final" aria-labelledby="ukads-final-title">
   <div class="container ukseo-final-grid">
-   <div><span class="ukseo-kicker">ОБГОВОРІМО ВАШУ РЕКЛАМУ</span><h2 id="ukads-final-title">Бюджет витрачається. <em>З’ясуймо, що заважає результату.</em></h2><p>Надішліть адресу сайту та коротко опишіть проблему. Почнемо з неї.</p></div>
+   <div><span class="ukseo-kicker">ОБГОВОРІМО ВАШУ РЕКЛАМУ</span><h2 id="ukads-final-title">Потрібна керована реклама? <em>Почнімо з ваших цілей.</em></h2><p>Надішліть сайт, основні послуги чи товари та ціль реклами. Узгодимо налаштування й формат подальшого ведення.</p></div>
    <div class="ukads-final-action">
     <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити рекламу <span aria-hidden="true">↗</span></a>
    </div>
