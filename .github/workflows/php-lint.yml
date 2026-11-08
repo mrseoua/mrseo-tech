@@ -44,6 +44,8 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
+      - name: Verify RU compact service coverage and distinct client intents
+        run: python3 scripts/verify-ru-compact.py
       - name: Verify all 13 UA-only service landings and 25 real menu links
         run: |
           python3 - <<'PY'
@@ -333,8 +335,8 @@ jobs:
               assert not re.search(r'<main\\b',html), ('Nested main landmark remains',page)
               assert not re.search(r'</main>',html), ('Nested closing main remains',page)
           assert 'mrseo_ua_service_ux($slug,$lang)' in new_template
-          assert 'ns-related-card' in new_template and 'ns-related-grid' in new_styles
-          assert "if($ru && $serviceUx && !empty($serviceUx['related']))" in new_template, 'Related cards must stay on RU only'
+          assert '<nav class="ns-related"' not in new_template, 'No RU/UA extra related strip after final CTA'
+          assert 'ukseo-decision' not in new_template and 'ukseo-work' not in new_template and 'ukseo-proof' not in new_template, 'Russian specialist services must stay concise'
           assert 'font-size:14px;line-height:1.4' in new_styles, 'Readable mobile scene labels missing'
           assert "require_once __DIR__.'/ua-service-ux.php';" in ns_routes
           # Russian quality parity: distinct service offers without touching the UA reference.
@@ -757,7 +759,7 @@ jobs:
           assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('<section class="dev-section dev-capabilities"')
           ns_template=(root/'new-service-landing.php').read_text()
           assert "if($ru):" in ns_template and "ns-page--compact" in ns_template
-          assert ns_template.count("<?php if($ru): ?>")>=3, 'Russian long-form template must be unchanged'
+          assert ns_template.count("<?php if($ru): ?>")==1, 'Only the specific RU problem diagnosis should remain'
           assert "mrseo-ua-services-compact" in functions
           compact_services_css=(root/'assets/ua-services-compact.css').read_text()
           assert ".ukseo--solution .ukseo-hero-copy h1" in compact_services_css
