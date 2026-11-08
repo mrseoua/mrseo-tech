@@ -54,6 +54,56 @@ GitHub is the handoff surface; neither agent sees the other agent's ongoing conv
 9. Wait for human review/approval before merging. Do not auto-merge or enable auto-deploy on unreviewed changes.
 10. ChatGPT can review the Claude PR via the connected GitHub repository and provide architecture/SEO/content feedback. Claude can also review ChatGPT branches. Neither agent is an automatic reviewer without a deliberately configured trigger.
 
+## Approved navigation taxonomy — owner decision 2026-11-06
+
+**SEO mega-menu (Ukrainian reference): exactly five final top-level SEO destinations**, with this business-problem language:
+
+1. **Локальне SEO** — Клієнти поруч не знаходять вас у Google та на Картах.
+2. **SEO інтернет-магазинів** — Товари й категорії не приводять достатньо покупців.
+3. **SEO сайтів послуг** — Сайт є, але він не приносить заявок.
+4. **Міжнародне SEO** — Виходите на нові ринки, але клієнти там вас не знаходять.
+5. **SEO-аудит** — Не знаєте, чому сайт не зростає або втрачає позиції.
+
+Traffic recovery, migrations, indexing problems and other technical subtopics belong **inside their relevant service pages**, not as more primary SEO-menu entries. Audit is a diagnostic product, not a synonym for ongoing SEO. Owner also chose **not to display Analytics as its own top-level menu group**: GA4 and conversion measurement belong with SEO/Ads, while dashboards/integrations must not be deleted from the site. This section documents an approved future information architecture; **do not implement or deploy it without a separate request**. Preserve existing destinations and localized links; never link to nonexistent pages. The **Google Ads group is also approved**, with exactly five entries and customer-problem descriptions (Ukrainian reference):
+
+1. **Пошукова реклама Google** — Клієнти шукають ваші послуги, але звертаються до конкурентів.
+2. **Google Shopping та Performance Max** — Товари рекламуються, але продажів недостатньо або реклама не окупається.
+3. **Google Ads для локального бізнесу** — Потрібно більше дзвінків і заявок від клієнтів у вашому місті.
+4. **Аудит Google Ads** — Бюджет витрачається, але незрозуміло, що приносить результат.
+5. **Google Merchant Center** — Товари відхилені, є помилки у фіді або заблоковано акаунт.
+
+Merchant Center troubleshooting can be a standalone urgent service. Ads conversion setup/GA4 belongs inside appropriate service scopes; avoid separate top-level Analytics. **Nothing in this taxonomy has been deployed yet.** E-commerce and Website Creation have since been approved; **the next owner discussion is Web Development**.
+
+### Approved E-commerce mega-menu category (owner, 2026-11-06)
+
+The **Інтернет-магазини** category has five agreed service destinations, with Ukrainian customer-problem descriptions:
+
+1. **Створення інтернет-магазинів** — Хочете продавати онлайн, але не маєте зручного та сучасного магазину.
+2. **Інтернет-магазини на Хорошоп** — Потрібен готовий до продажів магазин на Хорошоп із правильно налаштованим каталогом, оплатою та доставкою.
+3. **Збільшення конверсії магазину** — Відвідувачі заходять, переглядають товари, але мало хто оформлює замовлення.
+4. **Автоматизація інтернет-магазину** — Товари, залишки, ціни й замовлення доводиться оновлювати вручну. Системи не працюють разом.
+5. **Модернізація та перенесення магазину** — Магазин застарів, працює повільно або потрібен переїзд на іншу платформу без втрати важливих даних і пошукового трафіку.
+
+Intro: «Створюємо, покращуємо та автоматизуємо магазини, щоб ними було зручно користуватися, керувати й продавати».
+
+SEO for online shops belongs in SEO, Shopping/PMax belongs in Ads; **don't duplicate top-level navigation destinations**. Horoshop only UA/RU. Avoid claiming loss-free migration; frame SEO/data preservation as a risk-controlled process. Avoid promises of CRO improvements without validated data. General SaaS, CRM and API development belong in **Web Development**, which is the next discussion. This is an approved future taxonomy; **do not publish a new menu or create missing URLs without explicit owner instruction**.
+
+### Approved Website Creation menu category (owner, 2026-11-06)
+
+**Створення сайтів** is an independent fifth *business capability area*, with four other top-level areas SEO, Google Ads, E-commerce and Web Development. It is the **fourth category approved so far**; Web Development subtopics are still to be finalized. Position Website Creation for small local businesses, professional services, landing pages, corporate sites and redesigns, distinct from online stores and CRM/SaaS/API web applications.
+
+Approved UA introduction: «Створюємо сучасні сайти, які викликають довіру та допомагають перетворювати відвідувачів на клієнтів».
+
+Five approved menu entries and client problem text:
+
+1. **Сайти для локального бізнесу** — Потрібен невеликий сайт, щоб клієнти у вашому місті знаходили вас і зверталися.
+2. **Сайти послуг** — Ваші послуги складно представити онлайн, а потенційним клієнтам бракує інформації для звернення.
+3. **Лендінги для реклами** — Запускаєте рекламу й потрібна сторінка, яка зрозуміло представляє пропозицію та збирає заявки.
+4. **Корпоративні сайти** — Компанії потрібен професійний сайт із послугами, проєктами та інформацією про бізнес.
+5. **Редизайн та оновлення сайтів** — Сайт застарів, незручний на телефоні або не викликає довіри у відвідувачів.
+
+Local-business sites and service-business sites partially overlap; **do not create SEO-cannibalizing near-duplicate landing pages**. Keep approved menu labels but distinguish intent and page content when implementing. Small-site service offers should have clear scope and revision limits. Not yet live: owner is approving taxonomy step-by-step; no code/menu/homepage/locales/noindex changes until separately approved.
+
 ## Priority work
 
 1. Make existing service visuals **beautiful, coherent and unique** while preserving the high-quality homepage Earth.
