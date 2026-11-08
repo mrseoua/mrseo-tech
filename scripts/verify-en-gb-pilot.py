@@ -34,6 +34,10 @@ for slug in pilot:
     assert len(page["process"]) == 4 and all(len(p) == 2 for p in page["process"])
     assert len(page["outcomes"]) == 3 and all(len(p) == 2 for p in page["outcomes"])
     assert len(page["faq"]) >= 3 and page["cta"]
+    assert page["introText"] != page["lead"], f"Duplicated introductory text in {slug}"
+    assert len(page["example"]) == 4, f"Scenario structure changed in {slug}"
+    assert "We inspect the relevant pages, systems and source data." not in page["example"]
+    assert "We check specific changes and their effect against the agreed goal." not in page["example"]
     body = json.dumps([page["problems"], page["process"], page["outcomes"]])
     for generic in boilerplate:
         assert generic not in body, f"Generic content remains in {slug}: {generic}"
