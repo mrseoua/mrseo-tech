@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 320
+EXPECTED_PAGES = 336
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -49,6 +49,16 @@ PAIRED_RU_SLUGS = (
     "google-ads-audit", "store-conversion", "store-migration",
     "website-maintenance", "website-speed-security",
 )
+UK_NEW_SLUGS = (
+    "local-business-websites", "landing-pages", "corporate-websites", "website-redesign",
+    "local-seo", "service-business-seo", "international-seo", "local-google-ads",
+    "store-conversion", "store-migration", "website-speed-security",
+    "woocommerce-shopify-stores", "catalog-automation", "api-integrations",
+    "web-applications", "ga4-conversions",
+)
+UK_ONLY = {"woocommerce-shopify-stores", "catalog-automation",
+           "api-integrations", "web-applications"}
+SAMPLE.extend("/en/" + slug + "/" for slug in UK_NEW_SLUGS)
 SAMPLE.extend("/" + slug + "/" for slug in PAIRED_RU_SLUGS)
 SAMPLE.extend("/ru/" + slug + "/" for slug in PAIRED_RU_SLUGS)
 
@@ -57,6 +67,8 @@ def assert_paired_ru_pages(sitemap):
         ua = HOST + "/" + slug + "/"
         ru = HOST + "/ru/" + slug + "/"
         expected = {"uk-UA": ua, "ru": ru}
+        if slug in UK_NEW_SLUGS:
+            expected["en-GB"] = HOST + "/en/" + slug + "/"
         if sitemap.get(ua) != expected or sitemap.get(ru) != expected:
             fail(f"RU/UA real hreflang counterpart missing or invented: {slug}")
 
@@ -158,6 +170,24 @@ if __name__ == "__main__":
         fail(f"Sitemap has {len(sitemap)} URLs; expected {EXPECTED_PAGES}")
 
     assert_paired_ru_pages(sitemap)
+    for slug in UK_NEW_SLUGS:
+        uk_url = HOST + "/en/" + slug + "/"
+        if slug in UK_ONLY:
+            if sitemap.get(uk_url) != {"en-GB": uk_url}:
+                fail(f"Invented alternate for UK-only page: {slug}")
+        elif slug == "ga4-conversions":
+            pairs = {"uk-UA": HOST + "/ga4-conversions/",
+                     "ru": HOST + "/ru/ga4-conversions/",
+                     "en-GB": uk_url}
+            if any(sitemap.get(href) != pairs for href in pairs.values()):
+                fail("GA4-conversions is not a real reciprocal UK/UA/RU equivalent")
+        else:
+            expected = {"uk-UA": HOST + "/" + slug + "/",
+                        "ru": HOST + "/ru/" + slug + "/",
+                        "en-GB": uk_url}
+            if sitemap.get(uk_url) != expected:
+                fail(f"Unpaired real UK service: {slug}")
+
 
     # Cross-check published XML for self, reciprocal tags and no invented URLs.
     for loc, alts in sitemap.items():
@@ -169,7 +199,7 @@ if __name__ == "__main__":
             if sitemap[href] != alts:
                 fail(f"Non-reciprocal hreflang: {loc} -> {href}")
 
-    # HEAD checks provide full routing coverage without downloading 320 full HTML pages.
+    # HEAD checks provide full routing coverage without downloading 336 full HTML pages.
     problems = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         futures = {pool.submit(check_head_request, url):url for url in sitemap}
