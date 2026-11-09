@@ -356,7 +356,7 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
   },
   "ga4-conversions": {
     "title": "GA4 Conversion Tracking and Event Setup",
-    "kicker": "GOOGLE ANALYTICS 4 · CONVERSIONS",
+    "kicker": "GA4 · CONVERSION TRACKING",
     "scene": "ga4-conversions",
     "headline": [
       "A form is submitted or an order is placed.",
