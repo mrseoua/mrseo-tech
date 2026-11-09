@@ -52,6 +52,10 @@ function mrseo_i18n_page_groups() {
             if(function_exists('mrseo_ru_website_slugs')
                 && in_array($slug,mrseo_ru_website_slugs(),true))
                 $pages['ru']=$slug;
+            // UK is an alternate only if the original UK page is genuinely complete.
+            if(function_exists('mrseo_en_gb_slugs')
+                && in_array($slug,mrseo_en_gb_slugs(),true))
+                $pages['en']=$slug;
             $groups[]=array('group'=>'ua-service:'.$slug,'pages'=>$pages);
         }
     }
@@ -69,8 +73,10 @@ function mrseo_i18n_page_groups() {
     $cross_market = array('google-shopping', 'merchant-center', 'online-store-development');
     foreach (mrseo_new_service_slugs() as $slug) {
         if (in_array($slug, $cross_market, true)) continue;
-        $groups[] = array('group'=>'ua-ru:' . $slug,
-            'pages'=>array('uk'=>$slug,'ru'=>$slug));
+        $pages=array('uk'=>$slug,'ru'=>$slug);
+        if(function_exists('mrseo_en_gb_slugs')
+            && in_array($slug,mrseo_en_gb_slugs(),true))$pages['en']=$slug;
+        $groups[] = array('group'=>'ua-ru:' . $slug,'pages'=>$pages);
     }
 
     $groups[] = array('group'=>'website-creation',
@@ -89,6 +95,11 @@ function mrseo_i18n_page_groups() {
     $groups[] = array('group'=>'wordpress-maintenance',
         'pages'=>array('en'=>'wordpress-care','pl'=>'opieka-wordpress'));
 
+    // Four UK-specific offers have their own pages, not fictional translations.
+    foreach(array('woocommerce-shopify-stores','catalog-automation','api-integrations','web-applications') as $slug){
+        if(function_exists('mrseo_en_gb_slugs') && in_array($slug,mrseo_en_gb_slugs(),true))
+            $groups[]=array('group'=>'en-gb-only:'.$slug,'pages'=>array('en'=>$slug));
+    }
     return $groups;
 }
 
