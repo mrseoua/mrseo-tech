@@ -74,4 +74,15 @@ assert "X-Robots-Tag: noindex, nofollow" in functions
 style=(root/"assets/ru-website-scenes.css").read_text()
 assert "@media(max-width:620px)" in style and "prefers-reduced-motion:reduce" in style
 assert ".orbit" not in style
+motion=(root/"assets/ru-premium-motion.css").read_text()
+assert "@media(prefers-reduced-motion:reduce)" in motion
+assert ".ru-premium" in motion and ".ns-page--compact" in motion and ".uws-page" in motion
+assert ".ms-scene-web-development" in motion and ".ms-scene-analytics" in motion
+assert ".orbit-lab" not in motion and ".lab-core" not in motion
+assert "mrseo-ru-premium-motion" in functions
+scenecopy=(root/"inc/motion-scenes-copy.php").read_text()
+assert "Эффективность маркетинга" in scenecopy
+assert "Подтверждённые заказы" in scenecopy
+scenephp=(root/"inc/motion-scenes.php").read_text()
+assert "РАСХОДЫ · ЗАЯВКИ · ПРОДАЖИ" in scenephp
 print("RU 13-page content + menu + visual parity PASS: 13 distinct services, 25 live menu items, locale-scoped scenes")
