@@ -108,11 +108,11 @@ function mrseo_trial_menu_route_map($locale) {
   'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
  );
  if($locale==='pl')return array(
-  'seo'=>array('local-seo','ecommerce-seo','service-business-seo',null,'seo-audit'),
-  'ads'=>array('google-ads','google-shopping',null,'audyt-google-ads','problemy-merchant-center'),
-  'commerce'=>array('tworzenie-sklepow-internetowych',null,null,'catalog-automation',null),
-  'sites'=>array('tworzenie-stron-internetowych',null,'landing-pages',null,null),
-  'dev'=>array('opieka-wordpress','api-integrations',null,'web-development',null)
+  'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+  'ads'=>array('google-ads','google-shopping','local-google-ads','audyt-google-ads','problemy-merchant-center'),
+  'commerce'=>array('tworzenie-sklepow-internetowych','sklepy-woocommerce-shopify','store-conversion','catalog-automation','store-migration'),
+  'sites'=>array('tworzenie-stron-internetowych','service-websites','landing-pages','corporate-websites','website-redesign'),
+  'dev'=>array('opieka-wordpress','api-integrations','website-speed-security','web-development','web-applications')
  );
  if($locale==='de')return array(
   'seo'=>array('seo','ecommerce-seo',null,null,'seo-audit'),
