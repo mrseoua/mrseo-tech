@@ -75,3 +75,17 @@
  .pl-svc--en-gb-compact .pl-svc-scene:after,
  .uws-page .uws-demo *{animation:none!important;transition:none!important}
 }
+
+/* UK-specific hand-off between business reporting and technical GA4 implementation. */
+.pl-svc--en-gb-compact .pl-svc-technical-link,
+.uws-page .uws-en-gb-sibling{
+ font-size:16px;line-height:1.6;color:#3d4b49;margin:22px auto 0;
+}
+.pl-svc--en-gb-compact .pl-svc-technical-link a,
+.uws-page .uws-en-gb-sibling a{
+ color:#9d4036;font-weight:750;text-decoration:underline;text-underline-offset:4px;
+}
+.pl-svc--en-gb-compact .pl-svc-technical-link a:focus-visible,
+.uws-page .uws-en-gb-sibling a:focus-visible{
+ outline:2px solid #9d4036;outline-offset:3px;border-radius:3px
+}
