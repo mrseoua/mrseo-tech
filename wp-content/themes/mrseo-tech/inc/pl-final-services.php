@@ -6,7 +6,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
 {
   "international-seo": {
     "title": "SEO międzynarodowe dla firm i sklepów | MrSeo.tech",
-    "description": "Planujemy widoczność na wybranych rynkach: od badania lokalnych zapytań, przez strukturę języków i adresów URL, po techniczne wskazówki dla hreflang i indeksowania. Wiele jęz",
+    "description": "Planujemy widoczność na wybranych rynkach: od badania lokalnych zapytań, przez strukturę języków i adresów URL, po techniczne wskazówki dla hreflang i.",
     "kicker": "SEO MIĘDZYNARODOWE",
     "hero": [
       "Firma sprzedaje za granicę,",
@@ -14,7 +14,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Planujemy widoczność na wybranych rynkach: od badania lokalnych zapytań, przez strukturę języków i adresów URL, po techniczne wskazówki dla hreflang i indeksowania.",
     "intro": "Wiele języków nie oznacza automatycznie widoczności na wielu rynkach.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Użytkownik z Polski trafia na wersję angielską lub inną niż oczekiwana. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Wyniki pokazują zły język",
@@ -84,17 +84,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Tak. Wdrażamy wyłącznie ukończone, rzeczywiście dostępne wersje."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Tak. Wdrażamy wyłącznie ukończone, rzeczywiście dostępne wersje. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
         "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "Pozycjonowanie SEO",
+        "Podstawowa widoczność i analiza rynku"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "service-business-seo",
+        "SEO firm usługowych",
+        "Rozwój treści dla konkretnych usług"
       ]
     ],
     "visual": [
@@ -106,7 +106,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "local-google-ads": {
     "title": "Google Ads dla firm lokalnych | MrSeo.tech",
-    "description": "Pomagamy ograniczyć niepotrzebne kliknięcia, dopasować kampanię do rzeczywistego zasięgu usług i mierzyć wartościowe połączenia oraz zapytania. W reklamie lokalnej liczą się ",
+    "description": "Pomagamy ograniczyć niepotrzebne kliknięcia, dopasować kampanię do rzeczywistego zasięgu usług i mierzyć wartościowe połączenia oraz zapytania. W reklamie.",
     "kicker": "GOOGLE ADS DLA FIRM LOKALNYCH",
     "hero": [
       "Reklama działa w całym regionie,",
@@ -114,7 +114,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Pomagamy ograniczyć niepotrzebne kliknięcia, dopasować kampanię do rzeczywistego zasięgu usług i mierzyć wartościowe połączenia oraz zapytania.",
     "intro": "W reklamie lokalnej liczą się zasięg, pilność potrzeby i dostępny kontakt.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Budżet może trafiać do osób, którym firma nie może wykonać usługi. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Kliknięcia spoza obszaru obsługi",
@@ -184,17 +184,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Nie. Wynik zależy również od konkurencji, oferty i obsługi kontaktów."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Nie. Wynik zależy również od konkurencji, oferty i obsługi kontaktów. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "google-ads",
+        "Kampanie Google Ads",
+        "Pełny zakres prowadzenia reklam"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "landing-pages",
+        "Landing page do reklam",
+        "Skuteczna strona docelowa"
       ]
     ],
     "visual": [
@@ -206,7 +206,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "sklepy-woocommerce-shopify": {
     "title": "Sklepy WooCommerce i Shopify w Polsce | MrSeo.tech",
-    "description": "Projektujemy sklepy na WooCommerce i Shopify tam, gdzie platforma odpowiada katalogowi, płatnościom, logistyce i kosztom utrzymania. Porównujemy ograniczenia przed wyborem. P",
+    "description": "Projektujemy sklepy na WooCommerce i Shopify tam, gdzie platforma odpowiada katalogowi, płatnościom, logistyce i kosztom utrzymania. Porównujemy.",
     "kicker": "SKLEPY WOOCOMMERCE I SHOPIFY",
     "hero": [
       "WooCommerce czy Shopify?",
@@ -214,7 +214,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Projektujemy sklepy na WooCommerce i Shopify tam, gdzie platforma odpowiada katalogowi, płatnościom, logistyce i kosztom utrzymania. Porównujemy ograniczenia przed wyborem.",
     "intro": "Platforma to narzędzie, a nie gwarancja sprzedaży.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Aktualizacje i konflikty utrudniają stabilne zakupy. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Sklep ma zbyt wiele przypadkowych wtyczek",
@@ -284,17 +284,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Takie wdrożenie wymaga osobnego planu danych, adresów i testów."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Takie wdrożenie wymaga osobnego planu danych, adresów i testów. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "store-migration",
+        "Migracja sklepu",
+        "Przenoszenie danych i adresów"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "store-conversion",
+        "Konwersja sklepu",
+        "Usprawnienie zakupów"
       ]
     ],
     "visual": [
@@ -306,7 +306,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "store-conversion": {
     "title": "Optymalizacja konwersji e-commerce | MrSeo.tech",
-    "description": "Analizujemy drogę od wejścia na kategorię do opłacenia zamówienia. Sprawdzamy przeszkody w filtrach, kartach produktów, koszyku i pomiarze — bez udawanych wyników A/B. Sam wz",
+    "description": "Analizujemy drogę od wejścia na kategorię do opłacenia zamówienia. Sprawdzamy przeszkody w filtrach, kartach produktów, koszyku i pomiarze — bez udawanych.",
     "kicker": "OPTYMALIZACJA KONWERSJI SKLEPU",
     "hero": [
       "Klienci oglądają produkty,",
@@ -314,7 +314,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Analizujemy drogę od wejścia na kategorię do opłacenia zamówienia. Sprawdzamy przeszkody w filtrach, kartach produktów, koszyku i pomiarze — bez udawanych wyników A/B.",
     "intro": "Sam wzrost ruchu nie usuwa problemów w procesie zakupowym.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Kategorie i filtry nie odpowiadają sposobowi wyboru produktu. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Produkty trudno znaleźć",
@@ -384,17 +384,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Użyteczność można badać przy małej próbie, ale ilościowy test A/B wymaga odpowiednich danych."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Użyteczność można badać przy małej próbie, ale ilościowy test A/B wymaga odpowiednich danych. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "ecommerce-seo",
+        "SEO sklepów",
+        "Widoczność kategorii i produktów"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "sklepy-woocommerce-shopify",
+        "WooCommerce i Shopify",
+        "Rozwój platformy"
       ]
     ],
     "visual": [
@@ -406,7 +406,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "store-migration": {
     "title": "Migracja sklepu internetowego bez utraty ważnych adresów | MrSeo.tech",
-    "description": "Planujemy przeniesienie katalogu, wariantów, zamówień i ważnych adresów URL z uwzględnieniem ograniczeń obu platform. Zmianę dzielimy na testowane etapy. Najdroższe błędy mig",
+    "description": "Planujemy przeniesienie katalogu, wariantów, zamówień i ważnych adresów URL z uwzględnieniem ograniczeń obu platform. Zmianę dzielimy na testowane etapy..",
     "kicker": "MIGRACJA I PRZEBUDOWA SKLEPU",
     "hero": [
       "Sklep wymaga przeprowadzki,",
@@ -414,7 +414,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Planujemy przeniesienie katalogu, wariantów, zamówień i ważnych adresów URL z uwzględnieniem ograniczeń obu platform. Zmianę dzielimy na testowane etapy.",
     "intro": "Najdroższe błędy migracji ujawniają się często po uruchomieniu.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Linki z Google i reklam mogą kierować do błędów 404. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Po zmianie platformy znikają adresy produktów",
@@ -484,17 +484,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Zakres zależy od eksportu źródła, zgód i możliwości importu nowego systemu."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Zakres zależy od eksportu źródła, zgód i możliwości importu nowego systemu. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "tworzenie-sklepow-internetowych",
+        "Tworzenie sklepów",
+        "Budowa i architektura e-commerce"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "website-speed-security",
+        "Wydajność i bezpieczeństwo",
+        "Kontrola techniczna sklepu"
       ]
     ],
     "visual": [
@@ -506,7 +506,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "service-websites": {
     "title": "Strony internetowe dla firm usługowych | MrSeo.tech",
-    "description": "Projektujemy strony dla firm usługowych z osobnymi ofertami, konkretnymi odpowiedziami na pytania i łatwą drogą do rozmowy. Budowa nowej strony to osobny zakres od SEO istnie",
+    "description": "Projektujemy strony dla firm usługowych z osobnymi ofertami, konkretnymi odpowiedziami na pytania i łatwą drogą do rozmowy. Budowa nowej strony to osobny.",
     "kicker": "STRONY INTERNETOWE DLA FIRM USŁUGOWYCH",
     "hero": [
       "Twoje usługi są wartościowe,",
@@ -514,7 +514,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Projektujemy strony dla firm usługowych z osobnymi ofertami, konkretnymi odpowiedziami na pytania i łatwą drogą do rozmowy. Budowa nowej strony to osobny zakres od SEO istniejącego serwisu.",
     "intro": "Klient chce wiedzieć, co obejmuje usługa, dla kogo jest i jak się skontaktować.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Trudno porównać warianty i zrozumieć zakres. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Usługi są wrzucone do jednego akapitu",
@@ -584,17 +584,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Podstawy techniczne tak, stałe pozycjonowanie ustalamy oddzielnie."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Podstawy techniczne tak, stałe pozycjonowanie ustalamy oddzielnie. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "service-business-seo",
+        "SEO stron usługowych",
+        "Promocja istniejących usług"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "landing-pages",
+        "Landing page",
+        "Kampanie dla jednej usługi"
       ]
     ],
     "visual": [
@@ -606,7 +606,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "corporate-websites": {
     "title": "Strony firmowe i korporacyjne | MrSeo.tech",
-    "description": "Tworzymy uporządkowane strony firmowe: od prezentacji zespołu i usług po obszary działalności, materiały dla partnerów i wielojęzyczną strukturę, jeśli jest potrzebna. Serwis",
+    "description": "Tworzymy uporządkowane strony firmowe: od prezentacji zespołu i usług po obszary działalności, materiały dla partnerów i wielojęzyczną strukturę, jeśli.",
     "kicker": "STRONY FIRMOWE I KORPORACYJNE",
     "hero": [
       "Firma się rozwija,",
@@ -614,7 +614,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Tworzymy uporządkowane strony firmowe: od prezentacji zespołu i usług po obszary działalności, materiały dla partnerów i wielojęzyczną strukturę, jeśli jest potrzebna.",
     "intro": "Serwis firmowy powinien jasno prezentować biznes i ułatwiać właściwy kontakt.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Klienci, kandydaci i partnerzy nie znajdują właściwych informacji. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Różni odbiorcy widzą tę samą chaotyczną ofertę",
@@ -684,17 +684,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Nie zawsze. Technologię dobieramy do złożoności i zespołu."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Nie zawsze. Technologię dobieramy do złożoności i zespołu. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "website-redesign",
+        "Redesign stron",
+        "Modernizacja obecnej witryny"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "international-seo",
+        "SEO międzynarodowe",
+        "Wersje językowe i rynki"
       ]
     ],
     "visual": [
@@ -706,7 +706,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "website-redesign": {
     "title": "Redesign i przebudowa strony internetowej | MrSeo.tech",
-    "description": "Odświeżamy wygląd i sposób korzystania z serwisu, uwzględniając działające adresy, widoczność w Google, analitykę, formularze i potrzeby mobilnych użytkowników. Redesign to z",
+    "description": "Odświeżamy wygląd i sposób korzystania z serwisu, uwzględniając działające adresy, widoczność w Google, analitykę, formularze i potrzeby mobilnych.",
     "kicker": "REDESIGN I MODERNIZACJA STRON",
     "hero": [
       "Strona wygląda przestarzale,",
@@ -714,7 +714,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Odświeżamy wygląd i sposób korzystania z serwisu, uwzględniając działające adresy, widoczność w Google, analitykę, formularze i potrzeby mobilnych użytkowników.",
     "intro": "Redesign to zmiana doświadczenia klienta, nie tylko kolorów.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Małe napisy i nachodzące elementy utrudniają kontakt. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Na telefonie trudno czytać ofertę",
@@ -784,17 +784,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Prace można prowadzić na kopii testowej, a przełączenie osobno zaplanować."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Prace można prowadzić na kopii testowej, a przełączenie osobno zaplanować. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "website-speed-security",
+        "Wydajność strony",
+        "Stabilność i szybkość po zmianach"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "service-websites",
+        "Strony usługowe",
+        "Czytelna oferta i kontakt"
       ]
     ],
     "visual": [
@@ -806,7 +806,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "website-speed-security": {
     "title": "Szybkość i bezpieczeństwo strony WWW | MrSeo.tech",
-    "description": "Diagnozujemy przyczyny spowolnień i ryzyka techniczne: zasoby strony, błędy skryptów, aktualizacje, uprawnienia i kopie zapasowe. Zmiany poprzedzamy planem testów. Szybkość i",
+    "description": "Diagnozujemy przyczyny spowolnień i ryzyka techniczne: zasoby strony, błędy skryptów, aktualizacje, uprawnienia i kopie zapasowe. Zmiany poprzedzamy planem.",
     "kicker": "SZYBKOŚĆ I BEZPIECZEŃSTWO STRON",
     "hero": [
       "Strona ładuje się długo,",
@@ -814,7 +814,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Diagnozujemy przyczyny spowolnień i ryzyka techniczne: zasoby strony, błędy skryptów, aktualizacje, uprawnienia i kopie zapasowe. Zmiany poprzedzamy planem testów.",
     "intro": "Szybkość i bezpieczeństwo wymagają pomiaru oraz kontroli zmian.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Duże obrazy, czcionki lub skrypty mogą blokować renderowanie. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Pierwszy ekran pojawia się z opóźnieniem",
@@ -884,17 +884,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Ryzyko ograniczamy kopią, testowaniem i możliwością wycofania."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Ryzyko ograniczamy kopią, testowaniem i możliwością wycofania. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "opieka-wordpress",
+        "Opieka WordPress",
+        "Utrzymanie i aktualizacje"
       ],
       [
-        "web-development",
-        "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "website-redesign",
+        "Modernizacja strony",
+        "Przebudowa i testy UX"
       ]
     ],
     "visual": [
@@ -906,7 +906,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
   },
   "web-applications": {
     "title": "Tworzenie aplikacji webowych i MVP | MrSeo.tech",
-    "description": "Projektujemy aplikacje webowe, portale i prototypy MVP dopasowane do realnego procesu firmy. Zaczynamy od najważniejszego scenariusza, uprawnień i integracji zamiast budować ",
+    "description": "Projektujemy aplikacje webowe, portale i prototypy MVP dopasowane do realnego procesu firmy. Zaczynamy od najważniejszego scenariusza, uprawnień i.",
     "kicker": "APLIKACJE WEBOWE I MVP",
     "hero": [
       "Excel i ręczne procesy",
@@ -914,7 +914,7 @@ return json_decode(<<<'MRSEO_PL_FINAL'
     ],
     "lead": "Projektujemy aplikacje webowe, portale i prototypy MVP dopasowane do realnego procesu firmy. Zaczynamy od najważniejszego scenariusza, uprawnień i integracji zamiast budować zbędne funkcje.",
     "intro": "Dobre MVP rozwiązuje jeden ważny problem i pozwala sprawdzić użyteczność.",
-    "introText": "Przed rozpoczęciem ustalamy, co trzeba zmienić, jakie dane są dostępne i jak niezależnie zweryfikować rezultat.",
+    "introText": "Dane się rozjeżdżają, a status pracy jest niejasny. Następnie ustalamy zakres niezbędnych zmian i sposób sprawdzenia rezultatów.",
     "problems": [
       [
         "Zespół pracuje na kilku arkuszach",
@@ -984,17 +984,17 @@ return json_decode(<<<'MRSEO_PL_FINAL'
         "Projektujemy architekturę adekwatną do znanych planów, bez obietnicy nieograniczonej skalowalności."
       ]
     ],
-    "risk": "Zakres, koszt i warunki odbioru ustalamy przed rozpoczęciem. Nie obiecujemy gwarantowanych pozycji, liczby klientów ani wyników finansowych.",
+    "risk": "Projektujemy architekturę adekwatną do znanych planów, bez obietnicy nieograniczonej skalowalności. Zakres i warunki odbioru ustalamy przed rozpoczęciem prac.",
     "related": [
       [
-        "seo",
-        "SEO i widoczność w Google",
-        "Ustalenie potrzeb i priorytetów wyszukiwania"
+        "api-integrations",
+        "Integracje API",
+        "Łączenie danych i procesów"
       ],
       [
         "web-development",
         "Web development",
-        "Realizacja zmian technicznych i integracji"
+        "Architektura i niestandardowe rozwiązania"
       ]
     ],
     "visual": [
