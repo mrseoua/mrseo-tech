@@ -44,7 +44,11 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
-      - name: Verify all 13 UA-only service landings and 25 real menu links
+      - name: Verify RU compact service coverage and distinct client intents
+        run: python3 scripts/verify-ru-compact.py
+      - name: Verify thirteen RU counterpart pages and 25 functioning service links
+        run: python3 scripts/verify-ru-new-services.py
+      - name: Verify 13 approved Ukrainian service landings and service menu
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -97,10 +101,10 @@ jobs:
           assert all("'"+slug+"'" in nav for slug in data)
           assert "in_array($slug,mrseo_ua_website_slugs(),true)" in menu
           assert "mrseo_ua_website_route()?" in source
-          assert "mrseo_render_ua_service_scene($kind)" in page
+          assert "mrseo_render_ua_service_scene($kind,$ru?'ru':'uk')" in page, 'Approved UA scene keeps explicit Ukrainian default and real Russian labels'
           assert '<nav class="uws-related"' not in page, 'White related strip remains in UA template'
           assert '.uws-related' not in css, 'Unused related strip CSS remains in UA styles'
-          assert "function mrseo_render_ua_service_scene($kind)" in scenes
+          assert "function mrseo_render_ua_service_scene($kind,$locale='uk')" in scenes, 'Scene renderer must keep Ukrainian as its default locale'
           assert ".uws-demo" in css and ".uws-scene--tech" in scenes_css
           assert "prefers-reduced-motion:reduce" in css and "prefers-reduced-motion:reduce" in scenes_css
           assert "wp_enqueue_style('mrseo-ua-websites'" in functions
@@ -166,7 +170,7 @@ jobs:
           print('Six UA service intents, metadata, prices, scoped offers and unchanged noindex OK')
           PY
 
-      - name: Run international SEO pre-indexing audit (307 routes)
+      - name: Run international SEO pre-indexing audit (320 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
@@ -333,8 +337,8 @@ jobs:
               assert not re.search(r'<main\\b',html), ('Nested main landmark remains',page)
               assert not re.search(r'</main>',html), ('Nested closing main remains',page)
           assert 'mrseo_ua_service_ux($slug,$lang)' in new_template
-          assert 'ns-related-card' in new_template and 'ns-related-grid' in new_styles
-          assert "if($ru && $serviceUx && !empty($serviceUx['related']))" in new_template, 'Related cards must stay on RU only'
+          assert '<nav class="ns-related"' not in new_template, 'No RU/UA extra related strip after final CTA'
+          assert 'ukseo-decision' not in new_template and 'ukseo-work' not in new_template and 'ukseo-proof' not in new_template, 'Russian specialist services must stay concise'
           assert 'font-size:14px;line-height:1.4' in new_styles, 'Readable mobile scene labels missing'
           assert "require_once __DIR__.'/ua-service-ux.php';" in ns_routes
           # Russian quality parity: distinct service offers without touching the UA reference.
@@ -355,8 +359,8 @@ jobs:
           assert "require_once __DIR__.'/ru-service-ux.php';" in ns_routes
           assert "mrseo_ru_service_ux($slug,$lang)" in new_template
           assert "$lang==='uk'?mrseo_ua_service_ux($slug,$lang)" in new_template
-          assert "Связанные услуги" in new_template
-          assert "Что ещё может помочь?" in new_template
+          assert "Связанные услуги" not in new_template, 'RU related strip should be removed'
+          assert "Что ещё может помочь?" not in new_template, 'Avoid a second generic CTA on RU'
           assert (root/'assets/new-services.css').read_text().count('{')==(root/'assets/new-services.css').read_text().count('}')
           assert "X-Robots-Tag: noindex, nofollow" in functions
           # Six genuine Poland-only offers, localized content, routes, navigation and SEO.
@@ -757,7 +761,7 @@ jobs:
           assert dev_markup.index("mrseo_render_ua_commercial_visual('web-development','connections')") < dev_markup.index('<section class="dev-section dev-capabilities"')
           ns_template=(root/'new-service-landing.php').read_text()
           assert "if($ru):" in ns_template and "ns-page--compact" in ns_template
-          assert ns_template.count("<?php if($ru): ?>")>=3, 'Russian long-form template must be unchanged'
+          assert ns_template.count("<?php if($ru): ?>")==1, 'Only the specific RU problem diagnosis should remain'
           assert "mrseo-ua-services-compact" in functions
           compact_services_css=(root/'assets/ua-services-compact.css').read_text()
           assert ".ukseo--solution .ukseo-hero-copy h1" in compact_services_css

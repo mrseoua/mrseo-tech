@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/inc/site-pages.php';
 require_once get_template_directory() . '/inc/i18n-routing.php';
 require_once get_template_directory() . '/inc/ua-website-services.php';
+require_once get_template_directory() . '/inc/ru-website-services.php';
 require_once get_template_directory() . '/inc/ua-virtual-routes.php';
 require_once get_template_directory() . '/inc/language-dropdown.php';
 require_once get_template_directory() . '/inc/contact-channels.php';
@@ -32,13 +33,18 @@ function mrseo_assets(){
  if(function_exists('mrseo_pl_service_route') && mrseo_pl_service_route()){
   wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
  }
- if(function_exists('mrseo_ua_website_route') && mrseo_ua_website_route()){
+ if((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
+    || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())){
   wp_enqueue_style('mrseo-ua-websites-base',get_template_directory_uri().'/assets/seo-uk-pilot.css',
    array('mrseo-style'),'1.0.2');
   wp_enqueue_style('mrseo-ua-websites',get_template_directory_uri().'/assets/ua-websites.css',
    array('mrseo-ua-websites-base'),'1.0.0');
   wp_enqueue_style('mrseo-ua-additional-scenes',get_template_directory_uri().'/assets/ua-additional-scenes.css',
    array('mrseo-ua-websites'),'1.0.0');
+  if(function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())
+   wp_enqueue_style('mrseo-ru-website-scenes',
+     get_template_directory_uri().'/assets/ru-website-scenes.css',
+     array('mrseo-ua-additional-scenes'),'1.0.0');
  }
  if(function_exists('mrseo_new_service_route') && mrseo_new_service_route()){
   wp_enqueue_style('mrseo-ukseo-new-base',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-style'),'1.0.2');
@@ -151,6 +157,21 @@ function mrseo_assets(){
     array($ua_compact_dep),'1.0.0');
   }
  }
+ // Approved compact service rhythm — RU interior services only. Keep the Earth intact.
+ $ru_core_slugs=array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics','service-websites','horoshop');
+ if(mrseo_locale()==='ru' && (in_array(mrseo_slug(),$ru_core_slugs,true)
+   || (function_exists('mrseo_new_service_route') && mrseo_new_service_route()))){
+  $ru_compact_base=in_array(mrseo_slug(),$ru_core_slugs,true)?'mrseo-ru-premium':'mrseo-new-services';
+  wp_enqueue_style('mrseo-ru-services-compact',get_template_directory_uri().'/assets/ru-services-compact.css',
+   array($ru_compact_base),'1.0.0');
+ }
+ // The approved UA premium motion direction also applies to RU interiors,
+ // but never to the homepage Earth or another language. Pure CSS, no WebGL.
+ if(mrseo_locale()==='ru' && mrseo_slug()!=='' && mrseo_slug()!=='privacy'){
+  wp_enqueue_style('mrseo-ru-premium-motion',
+   get_template_directory_uri().'/assets/ru-premium-motion.css',
+   array('mrseo-style'),'1.0.0');
+ }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.2.0');
@@ -169,6 +190,19 @@ function mrseo_meta_description(){
   return;
  }
  if(!mrseo_valid_route())return;
+ // RU service pages have distinct business intents; avoid cross-service SEO overlap.
+ if(mrseo_locale()==='ru'){
+  $ruDescriptions=array(
+   'service-websites'=>'Создание сайтов услуг для бизнеса: понятные страницы, адаптивный дизайн и проверенные формы заявок. SEO-продвижение готового сайта согласуем отдельно.',
+   'google-ads'=>'Настройка и регулярное ведение Google Ads: поисковая и товарная реклама, контроль запросов, бюджета и реальных заявок. Разовый аудит — отдельная работа.',
+   'analytics'=>'Маркетинговая аналитика: связываем рекламные расходы, обращения и заказы в понятный отчёт по каналам. Исправление событий GA4 — отдельная услуга.'
+  );
+  $ruSlug=mrseo_slug();
+  if(isset($ruDescriptions[$ruSlug])){
+   echo '<meta name="description" content="'.esc_attr($ruDescriptions[$ruSlug]).'">'."\n";
+   return;
+  }
+ }
  // Ukrainian commercial intents must not reuse generic cross-service descriptions.
  if(mrseo_locale()==='uk'){
   $uaIntentDescriptions=array(

@@ -9,6 +9,11 @@ function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/'
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
+ // A real Russian page always wins over UK-only slug fallbacks. In particular,
+ // google-ads-audit exists independently on /ru/ and must not become /ru/google-ads/.
+ if($lang==='ru' && function_exists('mrseo_ru_website_slugs')
+     && in_array($slug,mrseo_ru_website_slugs(),true))
+  return mrseo_i18n_exact_url('ru',$slug);
  if($lang==='uk' && mrseo_locale()==='uk' && function_exists('mrseo_ua_website_slugs')
     && in_array($slug,mrseo_ua_website_slugs(),true)){
   // These are genuine Ukrainian pages even when an EN-only slug shares its spelling.
@@ -21,10 +26,13 @@ function mrseo_url($slug='',$lang=null){
   $equivalent=mrseo_i18n_matching_slug(mrseo_locale(),$slug,$lang);
   if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
  }
- // New Ukrainian-only service pages have no foreign-language copies yet.
- // Language selector must lead to an existing broader service, never a 404.
- if($lang!=='uk' && function_exists('mrseo_ua_website_route') && mrseo_ua_website_route()
-     && in_array($slug,mrseo_ua_website_slugs(),true)){
+ // Completed UA/RU services are exact counterparts. For any third language
+ // without a finished matching page, the selector goes to a REAL parent URL.
+ if(!in_array($lang,array('uk','ru'),true)
+     && function_exists('mrseo_ua_website_slugs')
+     && in_array($slug,mrseo_ua_website_slugs(),true)
+     && ((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
+      || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route()))){
   $service=mrseo_ua_website_data($slug);
   $group=$service['group']??'Створення сайтів';
   if($lang==='ru'){
@@ -121,7 +129,15 @@ if($slug==='about')return get_template_directory().'/about-localized.php';
 if($slug==='contact')return get_template_directory().'/contact-localized.php';
 return get_template_directory().'/service-localized.php';}
 add_filter('template_include','mrseo_router',99);
-add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;if(mrseo_locale()==='uk'){$uaTitles=array('service-websites'=>'Створення сайтів послуг для бізнесу | MrSeo.tech','google-ads'=>'Налаштування та ведення Google Ads | MrSeo.tech','analytics'=>'Маркетингова аналітика: витрати й продажі | MrSeo.tech');$uaSlug=mrseo_slug();if(isset($uaTitles[$uaSlug]))return $uaTitles[$uaSlug];}if(in_array(mrseo_locale(),array('pl','de'),true)){$p=mrseo_int_page();return $p['title']??$title;}$slug=mrseo_slug();if(!$slug)return mrseo_locale()==='en'?'Website Design, SEO & Google Ads for UK Businesses | MrSeo.tech':'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='orbit-lab')return 'Orbit Lab — Private Concept | MrSeo.tech';if($slug==='orbit-light')return 'Orbital Growth Light — Concept 02 | MrSeo.tech';if($slug==='seo')return mrseo_t('SEO-просування сайтів у Google — замовити SEO','SEO-продвижение сайтов в Google — заказать SEO','SEO Services & Website Optimization').' | MrSeo.tech';if($slug==='about')return mrseo_t('Про нас — команда з 10-річним досвідом','О нас — команда с 10-летним опытом','About — a team with 10 years of experience').' | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';if($slug==='horoshop')return mrseo_t('SEO для Хорошоп — просування та розвиток магазину','SEO для Хорошоп — продвижение и развитие магазина','Horoshop SEO').' | MrSeo.tech';if($slug==='web-development')return mrseo_dev_page()['title'];if($slug==='service-websites')return mrseo_t('Створення та просування сайтів послуг','Создание и продвижение сайтов услуг','Service Website SEO & Development').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
+add_filter('pre_get_document_title',function($title){if(!mrseo_valid_route())return $title;if(mrseo_locale()==='ru'){
+ $ruTitles=array(
+  'service-websites'=>'Создание сайтов услуг для бизнеса | MrSeo.tech',
+  'google-ads'=>'Настройка и ведение Google Ads | MrSeo.tech',
+  'analytics'=>'Маркетинговая аналитика: расходы, заявки и продажи | MrSeo.tech'
+ );
+ $ruSlug=mrseo_slug();
+ if(isset($ruTitles[$ruSlug]))return $ruTitles[$ruSlug];
+}if(mrseo_locale()==='uk'){$uaTitles=array('service-websites'=>'Створення сайтів послуг для бізнесу | MrSeo.tech','google-ads'=>'Налаштування та ведення Google Ads | MrSeo.tech','analytics'=>'Маркетингова аналітика: витрати й продажі | MrSeo.tech');$uaSlug=mrseo_slug();if(isset($uaTitles[$uaSlug]))return $uaTitles[$uaSlug];}if(in_array(mrseo_locale(),array('pl','de'),true)){$p=mrseo_int_page();return $p['title']??$title;}$slug=mrseo_slug();if(!$slug)return mrseo_locale()==='en'?'Website Design, SEO & Google Ads for UK Businesses | MrSeo.tech':'MrSeo.tech';if(mrseo_is_case())return '404 | MrSeo.tech';if($slug==='orbit-lab')return 'Orbit Lab — Private Concept | MrSeo.tech';if($slug==='orbit-light')return 'Orbital Growth Light — Concept 02 | MrSeo.tech';if($slug==='seo')return mrseo_t('SEO-просування сайтів у Google — замовити SEO','SEO-продвижение сайтов в Google — заказать SEO','SEO Services & Website Optimization').' | MrSeo.tech';if($slug==='about')return mrseo_t('Про нас — команда з 10-річним досвідом','О нас — команда с 10-летним опытом','About — a team with 10 years of experience').' | MrSeo.tech';if($slug==='portfolio')return mrseo_t('Портфоліо','Портфолио','Portfolio').' | MrSeo.tech';if($slug==='horoshop')return mrseo_t('SEO для Хорошоп — просування та розвиток магазину','SEO для Хорошоп — продвижение и развитие магазина','Horoshop SEO').' | MrSeo.tech';if($slug==='web-development')return mrseo_dev_page()['title'];if($slug==='service-websites')return mrseo_t('Створення та просування сайтів послуг','Создание и продвижение сайтов услуг','Service Website SEO & Development').' | MrSeo.tech';$d=mrseo_translation($slug);return $d[0].' | MrSeo.tech';},20);
 // Canonical and hreflang are owned by inc/international-seo.php.
 add_action('init',function(){
  add_rewrite_rule('^portfolio/([^/]+)/?$','index.php?mrseo_service=portfolio&mrseo_case=$matches[1]','top');

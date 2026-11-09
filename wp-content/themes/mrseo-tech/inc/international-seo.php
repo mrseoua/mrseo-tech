@@ -44,12 +44,15 @@ function mrseo_i18n_page_groups() {
 
     $groups[] = array('group'=>'privacy','pages'=>array(
         'uk'=>'privacy','ru'=>'privacy','en'=>'privacy','pl'=>'privacy','de'=>'privacy','fr'=>'privacy','it'=>'privacy','es'=>'privacy','nl'=>'privacy','ro'=>'privacy','cs'=>'privacy','pt'=>'privacy','sv'=>'privacy','da'=>'privacy','fi'=>'privacy','hu'=>'privacy','sk'=>'privacy','el'=>'privacy','bg'=>'privacy','hr'=>'privacy'));
-    // 13 newly finished Ukrainian-only client-intent pages.
-    // Self canonical; no fictitious translated equivalents in 19 other markets.
+    // Thirteen verified UA/RU service pairs, no fabricated other translations.
+    // These pages exist as original editorial landings in BOTH locales.
     if(function_exists('mrseo_ua_website_slugs')){
         foreach(mrseo_ua_website_slugs() as $slug){
-            $groups[]=array('group'=>'ua-service:'.$slug,
-                'pages'=>array('uk'=>$slug));
+            $pages=array('uk'=>$slug);
+            if(function_exists('mrseo_ru_website_slugs')
+                && in_array($slug,mrseo_ru_website_slugs(),true))
+                $pages['ru']=$slug;
+            $groups[]=array('group'=>'ua-service:'.$slug,'pages'=>$pages);
         }
     }
 
