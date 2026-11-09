@@ -72,7 +72,7 @@ function mrseo_en_gb_part1(){
     ],
     "foot": "Services · Location · Enquiries",
     "description": "Local business website design for UK service providers: clear services, real opening hours, mobile contact options and working enquiry forms.",
-    "button": "Need a stronger local presence",
+    "button": "Plan my local website",
     "scenelabel": "Illustrative websites for local businesses in the uk workflow, not real client data"
   },
   "landing-pages": {
@@ -142,7 +142,7 @@ function mrseo_en_gb_part1(){
     ],
     "foot": "Offer · Trust · Enquiry",
     "description": "PPC landing pages for UK Google Ads campaigns: clear offers, mobile-first layouts, tested enquiry forms and optional conversion measurement.",
-    "button": "Getting clicks but few useful enquiries",
+    "button": "Discuss a landing page",
     "scenelabel": "Illustrative ppc landing pages for uk campaigns workflow, not real client data"
   },
   "corporate-websites": {
@@ -212,7 +212,7 @@ function mrseo_en_gb_part1(){
     ],
     "foot": "Business · Expertise · Contact",
     "description": "Corporate website design for UK companies: clear services, genuine company information, mobile navigation and easy content management.",
-    "button": "Does your website undersell the company",
+    "button": "Discuss a corporate website",
     "scenelabel": "Illustrative corporate website design for uk companies workflow, not real client data"
   },
   "website-redesign": {
@@ -282,7 +282,7 @@ function mrseo_en_gb_part1(){
     ],
     "foot": "Clarity · Mobile · Continuity",
     "description": "Website redesign for UK businesses: improve mobile layouts, navigation and enquiry forms while controlling URL and search migration risks.",
-    "button": "Ready to improve an ageing website",
+    "button": "Review my existing website",
     "scenelabel": "Illustrative website redesign and modernisation workflow, not real client data"
   },
   "local-seo": {
@@ -352,7 +352,7 @@ function mrseo_en_gb_part1(){
     ],
     "foot": "Area · Search · Contact",
     "description": "Local SEO for UK businesses: relevant service searches, Google Business Profile checks, accurate locations and better routes to enquiries.",
-    "button": "Want more relevant local enquiries",
+    "button": "Review local visibility",
     "scenelabel": "Illustrative local seo for uk service businesses workflow, not real client data"
   }
 }
