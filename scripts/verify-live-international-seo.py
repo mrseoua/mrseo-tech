@@ -68,8 +68,14 @@ def assert_paired_ru_pages(sitemap):
         ua = HOST + "/" + slug + "/"
         ru = HOST + "/ru/" + slug + "/"
         expected = {"uk-UA": ua, "ru": ru}
-        if slug in UK_NEW_SLUGS:
+        if slug in UK_NEW_SLUGS or slug == "google-ads-audit":
             expected["en-GB"] = HOST + "/en/" + slug + "/"
+        if slug == "google-ads-audit":
+            expected["pl-PL"] = HOST + "/pl/audyt-google-ads/"
+            if sitemap.get(HOST + "/en/google-ads-audit/") != expected:
+                fail("UK Ads audit not reciprocal with UA/RU/PL")
+            if sitemap.get(HOST + "/pl/audyt-google-ads/") != expected:
+                fail("PL Ads audit not reciprocal with UA/RU/UK")
         if sitemap.get(ua) != expected or sitemap.get(ru) != expected:
             fail(f"RU/UA real hreflang counterpart missing or invented: {slug}")
 
