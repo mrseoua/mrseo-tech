@@ -89,7 +89,9 @@ function mrseo_url($slug='',$lang=null){
  // Existing service entrypoints must lead to real Poland-specific service pages.
  if($lang==='pl'){
   $pl_aliases=array('service-websites'=>'tworzenie-stron-internetowych','online-store-development'=>'tworzenie-sklepow-internetowych','merchant-center'=>'problemy-merchant-center');
-  if(isset($pl_aliases[$slug]))$slug=$pl_aliases[$slug];
+  if(isset($pl_aliases[$slug])
+      && !(function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)))
+      $slug=$pl_aliases[$slug];
  }
  // New pages have original UA/RU copy; other languages use a relevant completed parent page.
  if(function_exists('mrseo_new_service_parent_slugs') && !in_array($lang,array('uk','ru'),true)){
