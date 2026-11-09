@@ -28,9 +28,9 @@ add_action('wp_head',function(){
  // One canonical and reciprocal hreflang set is rendered by international-seo.php.
 },3);
 add_action('init',function(){
- if(get_option('mrseo_pl_service_rules_v1')!=='ready'){
+ if(get_option('mrseo_pl_service_rules_v2')!=='ready'){
   flush_rewrite_rules(false);
-  update_option('mrseo_pl_service_rules_v1','ready',false);
+  update_option('mrseo_pl_service_rules_v2','ready',false);
  }
 },35);
 
