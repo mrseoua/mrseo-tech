@@ -59,7 +59,7 @@ assert "mrseo_ru_website_slugs()" in menu
 
 tmpl = (root / "ua-website-landing.php").read_text()
 assert "mrseo_ru_website_route()" in tmpl and "mrseo_ru_website_data(mrseo_slug())" in tmpl
-assert "mrseo_render_ua_service_scene($kind,$ru?'ru':'uk')" in tmpl
+assert "mrseo_render_ua_service_scene($kind,$tr('uk','ru','en'))" in tmpl
 assert tmpl.count("<h1 ") == 1 and tmpl.count("class=\"ukseo-final uws-final\"") == 1
 assert "<nav class=\"uws-related\"" not in tmpl and "wp_trim_words" not in tmpl
 scenes = (root / "inc/ua-service-scenes.php").read_text()

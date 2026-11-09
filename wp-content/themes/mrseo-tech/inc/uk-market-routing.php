@@ -31,7 +31,7 @@ function mrseo_uk_market_parent($slug,$to){
  $ukru=array(
  'website-design'=>'service-websites',
  'online-shop-development'=>'online-store-development',
- 'google-ads-audit'=>'google-ads',
+ 'google-ads-audit'=>'google-ads-audit',
  'merchant-center-help'=>'merchant-center',
  'google-shopping'=>'google-shopping',
  'wordpress-care'=>'web-development'

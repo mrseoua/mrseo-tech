@@ -18,57 +18,57 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Important pages are not indexed",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "A key service page may be blocked, redirected or pointing to the wrong canonical URL.",
+        "Check the affected URLs against Search Console, page settings and internal links before agreeing fixes."
       ],
       [
         "The website attracts the wrong searches",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Visitors arrive from searches that do not match the service or area you cover.",
+        "Compare real search queries with the pages they reach and identify which service pages need improving."
       ],
       [
         "SEO activity has no clear priorities",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Tasks pile up without any link to the pages and enquiries that matter.",
+        "Rank work by customer demand and impact, and agree what will be checked after each change."
       ]
     ],
     "process": [
       [
         "Review demand and site data",
-        "Establish the commercial goal and current constraints."
+        "Review real search queries, priority services and available enquiry data."
       ],
       [
         "Check technical accessibility",
-        "Review the relevant accounts, pages and settings."
+        "Inspect the affected page templates, indexing rules and internal links."
       ],
       [
         "Map useful landing pages",
-        "Agree changes that can be safely implemented."
+        "Match valuable searches to useful pages and agree the changes required."
       ],
       [
         "Test and review improvements",
-        "Validate the outcome and document next steps."
+        "Check completed changes against relevant visibility and enquiry signals."
       ]
     ],
     "outcomes": [
       [
         "Prioritised SEO plan",
-        "A clearly defined deliverable for the agreed scope."
+        "A page-by-page priority list explaining what needs attention and why."
       ],
       [
         "Developer-ready technical tasks",
-        "Recommendations grounded in the review."
+        "Specific URL, template and internal-linking tasks for implementation."
       ],
       [
         "Clear visibility and enquiry reporting",
-        "A way to check the work and identify limitations."
+        "Defined measures for checking search visibility and useful enquiries."
       ]
     ],
     "example": [
       "ILLUSTRATIVE SCENARIO",
       "A service firm has visits but few relevant enquiries. We review the search terms, its landing pages and actual enquiry paths.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "We map actual searches to useful service pages and identify unclear offers or missing local pages.",
+      "After agreed changes, we review priority page visibility and relevant enquiry signals."
     ],
     "faq": [
       [
@@ -104,7 +104,7 @@ function mrseo_uk_core_data(){
     ],
     "cta": "Discuss SEO",
     "intro": "Organic search needs useful pages, not just SEO reports.",
-    "introText": "We investigate search demand, technical barriers and service pages before recommending SEO work. Every change should have a purpose and a way to check it."
+    "introText": "If a key service page cannot appear in Google, we check that URL, its offer and how customers reach it before recommending extra content."
   },
   "seo-audit": {
     "title": "Technical SEO Audit for UK Websites | MrSeo.tech",
@@ -119,57 +119,57 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Valuable pages are not indexed",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "An important URL may have a noindex directive, an incorrect canonical or a broken redirect.",
+        "Document the affected page, the evidence and the likely indexing barrier."
       ],
       [
         "Filters generate unnecessary URLs",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Filter combinations can generate hundreds of similar pages while useful category pages remain hard to find.",
+        "Sample filter URLs and identify which patterns need canonical or indexation rules."
       ],
       [
         "A migration has broken search visibility",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "A redesign may send old pages to the wrong destination or leave important links broken.",
+        "Compare representative old and new URLs and list redirect, canonical and linking faults."
       ]
     ],
     "process": [
       [
         "Agree templates to inspect",
-        "Establish the commercial goal and current constraints."
+        "Agree the site sections and representative URLs the audit must cover."
       ],
       [
         "Crawl and compare evidence",
-        "Review the relevant accounts, pages and settings."
+        "Inspect crawl and indexing evidence alongside actual page templates."
       ],
       [
         "Identify technical root causes",
-        "Agree changes that can be safely implemented."
+        "Separate confirmed technical blockers from low-impact tool warnings."
       ],
       [
         "Prioritise and verify fixes",
-        "Validate the outcome and document next steps."
+        "Deliver a prioritised report and recheck checklist; implementation is scoped separately."
       ]
     ],
     "outcomes": [
       [
         "Evidence-led findings",
-        "A clearly defined deliverable for the agreed scope."
+        "Findings with example URLs, observed evidence and clear priorities."
       ],
       [
         "Clear developer tasks",
-        "Recommendations grounded in the review."
+        "Developer-ready instructions describing the intended behaviour."
       ],
       [
         "A rechecking plan",
-        "A way to check the work and identify limitations."
+        "A checklist for verifying corrections after they are implemented."
       ]
     ],
     "example": [
       "ILLUSTRATIVE SCENARIO",
       "A retailer's indexed filter pages outnumber useful categories. We examine canonical rules and links, then retest selected URLs.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "We sample category and filtered URLs, inspect canonical rules and record patterns that waste crawling.",
+      "The client receives affected URL examples, priority fixes and steps to recheck after implementation."
     ],
     "faq": [
       [
@@ -205,7 +205,7 @@ function mrseo_uk_core_data(){
     ],
     "cta": "Request an SEO audit",
     "intro": "An audit should produce a plan, not a pile of alerts.",
-    "introText": "We check crawling, indexing, redirects and page templates, separating confirmed barriers from low-impact scanner warnings."
+    "introText": "We show precise affected URLs and the reason for each finding. The audit produces evidence and a fix list, not unrequested implementation."
   },
   "ecommerce-seo": {
     "title": "Ecommerce SEO for UK Online Shops | MrSeo.tech",
@@ -220,57 +220,57 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Product categories have poor visibility",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "Useful buying searches have no appropriate category page, or relevant categories are hard to reach.",
+        "Map buying terms to clear categories and meaningful internal links."
       ],
       [
         "Filters create duplicate URLs",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Many combinations generate near-identical pages with little additional value.",
+        "Identify which filters merit landing pages and which need consolidation."
       ],
       [
         "Variants and products disappear from search",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Product URLs may have conflicting canonicals, stock data or internal links.",
+        "Check representative variants and document page-level fixes."
       ]
     ],
     "process": [
       [
         "Research product search demand",
-        "Establish the commercial goal and current constraints."
+        "Compare actual buying queries with category and catalogue structure."
       ],
       [
         "Map category and filter architecture",
-        "Review the relevant accounts, pages and settings."
+        "Inspect selected filter patterns, canonicals and internal links."
       ],
       [
         "Improve indexation and linking",
-        "Agree changes that can be safely implemented."
+        "Prioritise specific page-template and URL-pattern corrections."
       ],
       [
         "Review commercial search performance",
-        "Validate the outcome and document next steps."
+        "Check relevant category visibility and available order signals."
       ]
     ],
     "outcomes": [
       [
         "A search-led catalogue map",
-        "A clearly defined deliverable for the agreed scope."
+        "A category and filter landing-page plan tied to buying demand."
       ],
       [
         "Technical indexing priorities",
-        "Recommendations grounded in the review."
+        "A developer-ready list of affected URLs, canonicals and linking changes."
       ],
       [
         "Transparent measurement",
-        "A way to check the work and identify limitations."
+        "Defined checks for useful search visibility and product enquiries or orders."
       ]
     ],
     "example": [
       "ILLUSTRATIVE SCENARIO",
-      "A shop has thousands of faceted URLs but weak category visibility. We identify valuable page types and unnecessary duplicates.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "A shop has thousands of faceted URLs but weak category visibility.",
+      "We inspect representative filters, category links and canonical behaviour.",
+      "We deliver prioritised page-pattern corrections and a verification checklist."
     ],
     "faq": [
       [
@@ -321,57 +321,57 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Clicks arrive but no enquiries follow",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "People click an advert but the offer or contact form does not answer their needs.",
+        "Compare search terms, advert messages and landing pages; remove irrelevant traffic where justified."
       ],
       [
         "Conversions don't match real orders",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "A single form or purchase may be counted twice, or the reported amount may be wrong.",
+        "Run test enquiries or orders and compare them with the conversions recorded in Google Ads."
       ],
       [
         "Budgets lack commercial priorities",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Spend can drift towards broad searches or low-value products.",
+        "Review costs against genuine enquiries and orders, then agree budget priorities."
       ]
     ],
     "process": [
       [
         "Agree lead or sales objectives",
-        "Establish the commercial goal and current constraints."
+        "Agree the valuable enquiry or confirmed sale and the available budget."
       ],
       [
         "Check conversion measurement",
-        "Review the relevant accounts, pages and settings."
+        "Test conversion events and correct verified tracking faults in scope."
       ],
       [
         "Structure and launch campaigns",
-        "Agree changes that can be safely implemented."
+        "Set up relevant campaigns, adverts, targeting and landing-page links."
       ],
       [
         "Review queries, spend and results",
-        "Validate the outcome and document next steps."
+        "Review actual searches, spend and outcomes, documenting changes."
       ]
     ],
     "outcomes": [
       [
         "Clear campaign structure",
-        "A clearly defined deliverable for the agreed scope."
+        "A campaign structure and targeting plan linked to the agreed business goal."
       ],
       [
         "More credible conversion data",
-        "Recommendations grounded in the review."
+        "Tested key conversions with any remaining tracking gaps documented."
       ],
       [
         "Transparent optimisation decisions",
-        "A way to check the work and identify limitations."
+        "A practical review of spend, enquiries or orders and next actions."
       ]
     ],
     "example": [
       "ILLUSTRATIVE SCENARIO",
       "A local trades business receives clicks but few qualified calls. We check search terms, landing pages and tracked call events.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "We review actual search terms and test call tracking to distinguish useful enquiries from irrelevant clicks.",
+      "Approved targeting changes are documented and compared with subsequent genuine enquiries."
     ],
     "faq": [
       [
@@ -407,7 +407,7 @@ function mrseo_uk_core_data(){
     ],
     "cta": "Discuss PPC",
     "intro": "Good PPC decisions need more than clicks and impressions.",
-    "introText": "We plan campaigns around qualified enquiries or real orders, review tracking quality and manage changes against agreed business goals."
+    "introText": "Before changing bids, we check the searches behind clicks and whether tracked calls or form events represent genuine enquiries."
   },
   "performance-max": {
     "title": "Performance Max Campaign Support UK | MrSeo.tech",
@@ -422,57 +422,57 @@ function mrseo_uk_core_data(){
     "problems": [
       [
         "Revenue in Ads differs from orders",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "Purchase values may be duplicated or differ because of attribution.",
+        "Compare sample order IDs and values with the campaign records before changing targets."
       ],
       [
         "Product groups have different margins",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Reported revenue may conceal major differences in commercial value.",
+        "Review product economics and available feed attributes before recommending grouping."
       ],
       [
         "Frequent changes hide what's working",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Campaign targets and budgets change before earlier effects can be assessed.",
+        "Document recent changes and agree fewer measurable experiments."
       ]
     ],
     "process": [
       [
         "Verify purchase events",
-        "Establish the commercial goal and current constraints."
+        "Check sample transaction identifiers, values and duplicate behaviour."
       ],
       [
         "Review product feeds",
-        "Review the relevant accounts, pages and settings."
+        "Inspect product eligibility, stock and the attributes used in campaigns."
       ],
       [
         "Assess grouping and goals",
-        "Agree changes that can be safely implemented."
+        "Compare catalogue economics and conversion quality with the campaign setup."
       ],
       [
         "Run measurable tests",
-        "Validate the outcome and document next steps."
+        "Agree controlled changes and evaluate them after enough data is available."
       ]
     ],
     "outcomes": [
       [
-        "Measurement corrections",
-        "A clearly defined deliverable for the agreed scope."
+        "Measurement priorities",
+        "A documented list of purchase discrepancies and agreed checks."
       ],
       [
         "Product feed priorities",
-        "Recommendations grounded in the review."
+        "Specific eligible-product and feed-quality improvements."
       ],
       [
-        "A controlled test plan",
-        "A way to check the work and identify limitations."
+        "A controlled testing plan",
+        "Change dates, evaluation measures and known data limitations."
       ]
     ],
     "example": [
       "ILLUSTRATIVE SCENARIO",
-      "Campaign revenue rises without a matching change in orders. We inspect transaction tracking and conversion imports before testing bids.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "Ads revenue increases without a matching rise in confirmed orders.",
+      "We compare sample orders, product data and recent target changes.",
+      "We identify tracking issues and agree a controlled campaign test."
     ],
     "faq": [
       [
@@ -511,69 +511,69 @@ function mrseo_uk_core_data(){
     "introText": "We inspect product eligibility, purchase values and campaign structure before changing an automated bidding strategy."
   },
   "analytics": {
-    "title": "GA4 & Conversion Tracking for UK Businesses | MrSeo.tech",
-    "desc": "GA4 and Google Tag Manager support: audit enquiry tracking, purchases, duplicated conversions and business reporting for UK companies.",
-    "kicker": "GA4 & MARKETING ANALYTICS",
+    "title": "Marketing Analytics and Reporting for UK Businesses | MrSeo.tech",
+    "desc": "Marketing analytics for UK businesses: connect advertising spend, useful enquiries and confirmed orders, with reporting limitations explained.",
+    "kicker": "MARKETING ANALYTICS · UK",
     "hero": [
-      "Your reports have plenty of figures.",
-      "Can you trust them?"
+      "You know what the adverts cost.",
+      "Which channels bring real business?"
     ],
-    "lead": "We check how actions are captured and whether Google Ads, GA4 and business systems are describing the same outcomes.",
-    "focus": "Reliable tracking comes before meaningful dashboards.",
+    "lead": "Clicks alone don't tell you which channels produce useful enquiries or completed orders. We bring the available figures together, explain discrepancies and make reporting understandable. Fixing GA4 events is a separate technical service.",
+    "focus": "Connect marketing spend to useful commercial outcomes, not just event counts.",
     "problems": [
       [
-        "Leads are counted more than once",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "Ad spend is visible, but outcomes are not",
+        "Channels report clicks and form submissions without a clear link to real enquiries or orders.",
+        "Agree business outcomes and compare available campaign costs with verified leads and sales."
       ],
       [
-        "Order values don't match sales records",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Marketing reports disagree",
+        "Google Ads, GA4 and shop records may count conversions differently.",
+        "Reconcile sample records and explain what can reliably be compared."
       ],
       [
-        "Reports cannot explain commercial results",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Dashboards create more questions",
+        "Teams see figures without knowing which decisions the data supports.",
+        "Design a small report that distinguishes useful results from uncertain measures."
       ]
     ],
     "process": [
       [
-        "Define meaningful outcomes",
-        "Establish the commercial goal and current constraints."
+        "Agree business definitions",
+        "Define useful enquiries, confirmed orders and which sources can support them."
       ],
       [
-        "Test site and advertising tags",
-        "Review the relevant accounts, pages and settings."
+        "Compare available data",
+        "Review channel costs, reporting rules and available business records."
       ],
       [
-        "Fix verified tracking faults",
-        "Agree changes that can be safely implemented."
+        "Build a readable view",
+        "Show costs and relevant outcomes by channel, with explicit limitations."
       ],
       [
-        "Reconcile and report limitations",
-        "Validate the outcome and document next steps."
+        "Record what is missing",
+        "List tracking faults that require a separately agreed GA4 implementation."
       ]
     ],
     "outcomes": [
       [
-        "Clear event definitions",
-        "A clearly defined deliverable for the agreed scope."
+        "Defined commercial measures",
+        "A clear map of meaningful outcomes and their source records."
       ],
       [
-        "Verified tracking improvements",
-        "Recommendations grounded in the review."
+        "Channel-level reporting",
+        "A usable summary of spending, enquiries and confirmed orders."
       ],
       [
-        "Usable business reporting",
-        "A way to check the work and identify limitations."
+        "Known measurement limitations",
+        "An explanation of discrepancies and next tracking priorities."
       ]
     ],
     "example": [
       "ILLUSTRATIVE SCENARIO",
-      "Ads shows more purchases than the shop. We investigate duplicate events, transaction identifiers and attribution differences.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "Paid clicks rise but completed orders do not.",
+      "We compare campaign costs, incoming enquiries and shop records where available.",
+      "We define a report and explain gaps that make exact attribution impossible."
     ],
     "faq": [
       [
@@ -589,92 +589,92 @@ function mrseo_uk_core_data(){
         "Yes, after agreeing useful metrics."
       ]
     ],
-    "risk": "We respect user consent and do not promise 100% measurement coverage.",
+    "risk": "Reporting accuracy depends on source data, customer consent and attribution differences. We do not promise complete coverage.",
     "related": [
       [
-        "google-ads-audit",
-        "PPC audit",
-        "Assess campaigns using validated data"
+        "ga4-conversions",
+        "GA4 conversion tracking",
+        "Verify and fix website events"
       ],
       [
-        "seo",
-        "SEO services",
-        "Understand organic customer journeys"
+        "google-ads",
+        "Google Ads management",
+        "Make campaign decisions from useful data"
       ]
     ],
     "visual": [
-      "EVENTS",
-      "CHECKS",
-      "DECISIONS"
+      "Ad spend",
+      "Enquiries",
+      "Orders"
     ],
-    "cta": "Check my analytics",
-    "intro": "Reliable tracking comes before meaningful dashboards.",
-    "introText": "We check how actions are captured and whether Google Ads, GA4 and business systems are describing the same outcomes."
+    "cta": "Discuss marketing reporting",
+    "intro": "What do your marketing figures actually tell you?",
+    "introText": "Begin with the business question, then choose data that can answer it."
   },
   "service-websites": {
-    "title": "Lead Generation Websites for UK Service Firms | MrSeo.tech",
-    "desc": "Improve service websites for UK businesses: clearer offers, helpful service pages, mobile enquiry forms and conversion-focused structure.",
-    "kicker": "SERVICE BUSINESS WEBSITES",
+    "title": "Websites for UK Service Businesses | MrSeo.tech",
+    "desc": "New websites for UK service businesses: clear pages, mobile-first design, reliable enquiry forms and SEO-ready foundations.",
+    "kicker": "SERVICE BUSINESS WEBSITE DESIGN",
     "hero": [
-      "Visitors reach your service pages.",
-      "What stops them getting in touch?"
+      "Need a new website for your services?",
+      "Help customers understand and enquire."
     ],
-    "lead": "We improve the enquiry journey for professional services and trades, from clear offers to easier mobile forms and relevant landing pages.",
-    "focus": "A service website should make the next step obvious.",
+    "lead": "We design and build new websites for service providers. Visitors should quickly understand what you offer, where you operate and how to contact you. Improving the SEO of an existing website is a separate service.",
+    "focus": "A useful new service website makes the offer and next step clear.",
     "problems": [
       [
-        "Different services are hidden on one page",
-        "Identify what the available evidence shows.",
-        "We document causes before suggesting changes."
+        "There is no clear place to explain your services",
+        "Customers piece together details from social profiles or separate listings.",
+        "Agree a useful page structure and real contact details before building."
       ],
       [
-        "Contact is difficult on mobile",
-        "Check how this affects the customer journey.",
-        "We align the response with the real search or buying intent."
+        "Getting in touch is difficult on mobile",
+        "Small links, confusing forms or buried telephone numbers discourage enquiries.",
+        "Build readable service pages and test tap-to-call and form submission."
       ],
       [
-        "Advertising sends visitors to irrelevant pages",
-        "Agree a testable correction or next step.",
-        "We set measurable priorities, not unsupported guarantees."
+        "Different services are buried together",
+        "One generic page fails to answer customers' distinct questions.",
+        "Create separate, helpful pages for the important services and locations."
       ]
     ],
     "process": [
       [
-        "Review actual enquiries",
-        "Establish the commercial goal and current constraints."
+        "Define the website's job",
+        "Agree priority services, audiences and genuine coverage areas."
       ],
       [
-        "Map service offers",
-        "Review the relevant accounts, pages and settings."
+        "Plan clear pages",
+        "Map service offers, practical information and enquiry points."
       ],
       [
-        "Improve pages and forms",
-        "Agree changes that can be safely implemented."
+        "Design and build",
+        "Create mobile-friendly pages and a manageable content system."
       ],
       [
-        "Test enquiries and measure",
-        "Validate the outcome and document next steps."
+        "Verify the enquiry journey",
+        "Check links, forms, responsive layouts and a real test submission."
       ]
     ],
     "outcomes": [
       [
-        "Clearer service propositions",
-        "A clearly defined deliverable for the agreed scope."
+        "A new website for your services",
+        "Agreed pages and navigation that explain the business offer."
       ],
       [
-        "Simpler contact journey",
-        "Recommendations grounded in the review."
+        "Reliable ways to enquire",
+        "Tested contact controls and mobile-friendly forms."
       ],
       [
-        "A plan for further SEO and PPC",
-        "A way to check the work and identify limitations."
+        "A sound search foundation",
+        "Useful URL structure ready for separately scoped SEO work."
       ]
     ],
     "example": [
       "ILLUSTRATIVE SCENARIO",
-      "A trades website lists every service on one generic page. We organise the key offers and test whether enquiries reach the right team.",
-      "We inspect the relevant pages, systems and source data.",
-      "We check specific changes and their effect against the agreed goal."
+      "A service company needs to explain several offers and accept enquiries from mobile visitors.",
+      "We create focused service pages and a straightforward contact form.",
+      "We test the site navigation and delivery of a sample enquiry."
     ],
     "faq": [
       [
@@ -690,27 +690,27 @@ function mrseo_uk_core_data(){
         "No. Demand and competition matter."
       ]
     ],
-    "risk": "Improved usability cannot guarantee more enquiries without suitable demand.",
+    "risk": "A better website can make enquiries easier; it cannot guarantee a particular number of leads or search rankings.",
     "related": [
       [
-        "website-design",
-        "Website design",
-        "Create or redesign a site"
+        "service-business-seo",
+        "SEO for existing service websites",
+        "Improve the search performance of a site you already have"
       ],
       [
-        "seo",
-        "SEO services",
-        "Help customers discover your services"
+        "website-design",
+        "Business website design",
+        "Plan a broader website build"
       ]
     ],
     "visual": [
-      "SERVICES",
-      "TRUST",
-      "ENQUIRY"
+      "Service pages",
+      "Mobile contact",
+      "Test enquiry"
     ],
-    "cta": "Improve my website",
-    "intro": "A service website should make the next step obvious.",
-    "introText": "We improve the enquiry journey for professional services and trades, from clear offers to easier mobile forms and relevant landing pages."
+    "cta": "Discuss a new service website",
+    "intro": "Can a potential customer understand your offer quickly?",
+    "introText": "Make the service and the next step obvious before adding extra features."
   }
 }
 MRSEO_UK_CORE;

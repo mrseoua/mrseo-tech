@@ -20,6 +20,13 @@ const ruCoreSlugs=['seo','seo-audit','ecommerce-seo','google-ads','performance-m
 const ruSpecialistSlugs=['website-audit','traffic-recovery','google-shopping','merchant-center','online-store-development','catalog-automation','web-applications','api-integrations','custom-functionality','ga4-conversions','business-dashboards','reporting-automation'];
 const ruPilotSlugs=[...ruCoreSlugs,...ruSpecialistSlugs];
 const ruNewSlugs=uaNewSlugs;
+const enGbNewSlugs=['local-business-websites','landing-pages','corporate-websites','website-redesign',
+ 'local-seo','service-business-seo','international-seo','local-google-ads',
+ 'store-conversion','store-migration','website-speed-security','woocommerce-shopify-stores',
+ 'catalog-automation','api-integrations','web-applications','ga4-conversions'];
+const enGbExisting=['seo','seo-audit','ecommerce-seo','google-ads','performance-max','analytics',
+ 'service-websites','website-design','online-shop-development','google-ads-audit',
+ 'merchant-center-help','google-shopping','wordpress-care'];
 const sceneSlugs=['seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'];
 const sizes=[{name:'desktop',width:1440,height:900},{name:'wide',width:1920,height:1080},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}];
 const results=[];
@@ -75,6 +82,25 @@ async function audit(browser,viewport,lang,slug){
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     footerLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(a=>a.textContent.trim()),
+    enGbStyles:!!document.querySelector('link[href*="en-gb-interiors.css"]'),
+    enGbScenesCss:!!document.querySelector('link[href*="en-gb-scenes.css"]'),
+    enGbPages:(()=>{
+      const old=document.querySelector('.pl-svc--en-gb-compact');
+      const newer=document.querySelector('.uws-page');
+      const scene=newer?.querySelector('.uws-demo');
+      const rect=scene?.getBoundingClientRect();
+      return {
+        existing:!!old,newPage:!!newer,
+        oldScene:!!old?.querySelector('.pl-svc-scene'),
+        pains:old?.querySelectorAll('.pl-svc-need').length||newer?.querySelectorAll('.uws-pains .ukseo-problem-card').length||0,
+        outcomes:old?.querySelectorAll('.pl-svc-outcome-list>div').length||newer?.querySelectorAll('.uws-solution-list>div').length||0,
+        faq:old?.querySelectorAll('.pl-svc-faq-items details').length||newer?.querySelectorAll('.uws-faq details').length||0,
+        unnecessary:old?.querySelectorAll('.pl-svc-process,.pl-svc-example,.pl-svc-limits,.pl-svc-related').length||0,
+        actualUK:!!newer&&!(/[А-Яа-яІіЇїЄєҐґ]/.test(scene?.textContent||'')),
+        heroGeometry:!!newer?!!rect&&rect.width>240&&rect.left>=-2&&rect.right<=innerWidth+2:true,
+        contact:!!document.querySelector('a[href$="/en/contact/"]')
+      };
+    })(),
     ruNewStyles:!!document.querySelector('link[href*="ru-website-scenes.css"]'),
     ruMotionStyles:!!document.querySelector('link[href*="ru-premium-motion.css"]'),
     ruAnalyticsPanel:document.querySelector('.ms-scene-analytics .ms-data-head')?.textContent.trim()||'',
@@ -234,7 +260,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<(['uk','ru'].includes(lang)?25:4))
+  if(c.serviceMenuItems<(['uk','ru','en'].includes(lang)?25:4))
     item.errors.push('Shared mega menu has too few real working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)){
     const u=c.uaNewPages;
@@ -247,8 +273,24 @@ async function audit(browser,viewport,lang,slug){
        u.pains!==3||u.faq!==3||u.unwantedRelated!==0||!u.geometry)
       item.errors.push('Russian scene/copy/geometry failed '+slug+': '+JSON.stringify(u));
   }
-  if(!['uk','ru'].includes(lang)&&(c.uaNewPages.page||c.uaNewPages.css))
-    item.errors.push('UA/RU-only new service page leaked to '+lang);
+  if(!['uk','ru','en'].includes(lang)&&(c.uaNewPages.page||c.uaNewPages.css))
+    item.errors.push('UA/RU/UK-only new service page leaked to '+lang);
+  if(lang==='en'&&slug!==''&&slug!=='privacy'&&!c.enGbStyles)
+    item.errors.push('UK premium interior stylesheet missing');
+  if(lang!=='en'&&(c.enGbStyles||c.enGbScenesCss))
+    item.errors.push('UK-only interior stylesheet leaked to '+lang);
+  if(lang==='en'&&enGbNewSlugs.includes(slug)){
+    const u=c.enGbPages;
+    if(!u.newPage||!u.actualUK||!u.heroGeometry||!u.contact||!c.enGbScenesCss||
+       u.pains!==3||u.outcomes!==3||u.faq!==3)
+      item.errors.push('UK service/scene/copy failed '+slug+': '+JSON.stringify(u));
+  }
+  if(lang==='en'&&enGbExisting.includes(slug)){
+    const u=c.enGbPages;
+    if(!u.existing||!u.oldScene||!u.contact||u.unnecessary!==0||
+       u.pains!==3||u.outcomes!==3||u.faq!==3)
+      item.errors.push('UK compact commercial page failed '+slug+': '+JSON.stringify(u));
+  }
   if(lang!=='ru'&&c.ruNewStyles)
     item.errors.push('Russian scene stylesheet leaked to '+lang);
   if(lang==='ru' && slug!=='' && slug!=='privacy' && !c.ruMotionStyles)
@@ -357,7 +399,7 @@ async function audit(browser,viewport,lang,slug){
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
     item.errors.push('Shared first-screen contact form/privacy notice or absent decorative scene regression');
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
-  if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (lang==='ru'&&ruNewSlugs.includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
+  if((lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (lang==='ru'&&ruNewSlugs.includes(slug)) || (lang==='en'&&enGbNewSlugs.includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,'seo-audit','performance-max','about','contact','local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)});
   }
   // Independent screenshots of middle and footer; Chromium fullPage can repeat
@@ -431,10 +473,10 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'merchant-center',...uaNewSlugs]:(coreShard&&lang==='ru'?[...new Set([...slugs,...ruPilotSlugs,...ruNewSlugs])]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs)));
+    const selectedSlugs=coreShard&&lang==='uk'?[...slugs,...uaFourSlugs,...uaFinalSlugs,'merchant-center',...uaNewSlugs]:(coreShard&&lang==='ru'?[...new Set([...slugs,...ruPilotSlugs,...ruNewSlugs])]:(coreShard&&lang==='en'?[...new Set([...slugs,...enGbExisting,...enGbNewSlugs,'about','portfolio','contact'])]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs))));
     for(const slug of selectedSlugs){
-     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug))&&!(lang==='ru'&&['seo','google-ads','analytics','service-websites','horoshop','landing-pages','google-ads-audit','website-maintenance'].includes(slug)))continue;
-     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs].includes(slug))&&!(lang==='ru'&&[...ruPilotSlugs,...ruNewSlugs].includes(slug)))continue;
+     if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug))&&!(lang==='ru'&&['seo','google-ads','analytics','service-websites','horoshop','landing-pages','google-ads-audit','website-maintenance'].includes(slug))&&!(lang==='en'&&['seo','analytics','service-websites','website-design','landing-pages','store-conversion','api-integrations'].includes(slug)))continue;
+     if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs].includes(slug))&&!(lang==='ru'&&[...ruPilotSlugs,...ruNewSlugs].includes(slug))&&!(lang==='en'&&[...enGbExisting,...enGbNewSlugs].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);
     }
    }finally{await browser.close()}

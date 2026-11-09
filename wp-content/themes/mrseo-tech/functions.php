@@ -4,6 +4,7 @@ require_once get_template_directory() . '/inc/site-pages.php';
 require_once get_template_directory() . '/inc/i18n-routing.php';
 require_once get_template_directory() . '/inc/ua-website-services.php';
 require_once get_template_directory() . '/inc/ru-website-services.php';
+require_once get_template_directory() . '/inc/en-gb-services.php';
 require_once get_template_directory() . '/inc/ua-virtual-routes.php';
 require_once get_template_directory() . '/inc/language-dropdown.php';
 require_once get_template_directory() . '/inc/contact-channels.php';
@@ -34,13 +35,18 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
  }
  if((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
-    || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())){
+    || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())
+    || (function_exists('mrseo_en_gb_route') && mrseo_en_gb_route())){
   wp_enqueue_style('mrseo-ua-websites-base',get_template_directory_uri().'/assets/seo-uk-pilot.css',
    array('mrseo-style'),'1.0.2');
   wp_enqueue_style('mrseo-ua-websites',get_template_directory_uri().'/assets/ua-websites.css',
    array('mrseo-ua-websites-base'),'1.0.0');
   wp_enqueue_style('mrseo-ua-additional-scenes',get_template_directory_uri().'/assets/ua-additional-scenes.css',
    array('mrseo-ua-websites'),'1.0.0');
+  if(function_exists('mrseo_en_gb_route') && mrseo_en_gb_route())
+   wp_enqueue_style('mrseo-en-gb-website-scenes',
+     get_template_directory_uri().'/assets/en-gb-scenes.css',
+     array('mrseo-ua-additional-scenes'),'1.0.0');
   if(function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())
    wp_enqueue_style('mrseo-ru-website-scenes',
      get_template_directory_uri().'/assets/ru-website-scenes.css',
@@ -172,6 +178,11 @@ function mrseo_assets(){
    get_template_directory_uri().'/assets/ru-premium-motion.css',
    array('mrseo-style'),'1.0.0');
  }
+ // British interior polish only; approved homepage Earth and all other locales untouched.
+ if(mrseo_locale()==='en' && mrseo_slug()!=='' && mrseo_slug()!=='privacy'){
+  wp_enqueue_style('mrseo-en-gb-interior',
+   get_template_directory_uri().'/assets/en-gb-interiors.css',array('mrseo-style'),'1.0.0');
+ }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.2.0');
@@ -184,7 +195,10 @@ function mrseo_assets(){
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
- if(mrseo_locale()==='en' && function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())return;
+ // UK original service routes render their own single page-specific meta description.
+ if(mrseo_locale()==='en' &&
+   ((function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())
+    || (function_exists('mrseo_en_gb_route') && mrseo_en_gb_route())))return;
  if(mrseo_locale()==='en' && mrseo_slug()===''){
   echo '<meta name="description" content="'.esc_attr('Website design, online shops, SEO, PPC and bespoke development for UK businesses. Build something new or improve your existing website with MrSeo.tech.').'">'."\n";
   return;

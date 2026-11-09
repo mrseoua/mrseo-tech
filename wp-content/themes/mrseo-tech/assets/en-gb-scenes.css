@@ -1,0 +1,30 @@
+/* UK service illustrations only. Preserve Ukrainian and Russian accepted markup. */
+.uws-page .uws-demo-top strong{overflow-wrap:anywhere;min-width:0}
+.uws-page .uws-corporate-bar{flex-wrap:wrap;gap:7px;align-items:flex-start}
+.uws-page .uws-corporate-bar span{white-space:normal;overflow-wrap:break-word}
+.uws-page .uws-landing-action{white-space:normal}
+.uws-page .uws-scene-flow-step b,.uws-page .uws-scene-tech-states span{overflow-wrap:break-word}
+.uws-page .uws-scene--shop-platforms .uws-scene-commerce-track span:nth-child(2){background:#bf7569}
+.uws-page .uws-scene--catalog-automation .uws-scene-commerce-track span:nth-child(3){background:#69828a}
+.uws-page .uws-scene--api-integrations .uws-scene-tech-rings span{background:#c8816a}
+.uws-page .uws-scene--web-applications .uws-scene-tech-screen{outline:1px solid #9bafa94a;outline-offset:-8px}
+@media(max-width:620px){
+ .uws-page .uws-demo-top,.uws-page .uws-demo-top strong,
+ .uws-page .uws-demo-foot,.uws-page .uws-scene-top,
+ .uws-page .uws-scene-kicker,.uws-page .uws-scene-flow-step span,
+ .uws-page .uws-corporate-bar span,.uws-page .uws-local-result small,
+ .uws-page .uws-redesign-before small,.uws-page .uws-redesign-after small,
+ .uws-page .uws-redesign-new span,.uws-page .uws-redesign-new b,
+ .uws-page .uws-landing-tag,.uws-page .uws-demo-mini-actions span{
+  font-size:12px;line-height:1.42;letter-spacing:0
+ }
+ .uws-page .uws-scene-headline{overflow-wrap:break-word}
+ .uws-page .uws-landing-action{font-size:14px}
+ .uws-page .uws-corporate-bar span{flex-basis:100%}
+ .uws-page .uws-demo-foot{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){
+ .uws-page .uws-demo *, .uws-page .uws-scene *{
+  animation:none!important;transition:none!important
+ }
+}

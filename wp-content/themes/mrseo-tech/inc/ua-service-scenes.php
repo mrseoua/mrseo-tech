@@ -29,11 +29,28 @@ function mrseo_render_ua_service_scene($kind,$locale='uk'){
   'maintenance'=>array('СЕРВИС','ПОДДЕРЖКА САЙТА','От ошибки к исправлению','Диагностика','Безопасное исправление','Проверка'),
   'speed-security'=>array('ЗАЩИТА','СКОРОСТЬ И БЕЗОПАСНОСТЬ','Удобнее для клиента','Загрузка','Безопасность','Доступность')
  );
+ // British labels and four UK-only platform/integration scenes. Existing UA/RU are unchanged.
+ if($locale==='en')$presets=array(
+  'local-seo'=>array('LOCAL','SEARCH NEAR YOU','Services in your area','Relevant search','Business details','Call / directions'),
+  'service-seo'=>array('SEO','SERVICE SEARCH','A customer needs a service','Useful landing page','Clear offer','Enquiry'),
+  'international-seo'=>array('GLOBAL','INTERNATIONAL SEARCH','Real demand in each market','United Kingdom · GB','Germany · DE','France · FR'),
+  'local-ads'=>array('PPC','LOCAL GOOGLE ADS','Relevant local customers','Service area','Search terms','Useful enquiries'),
+  'ads-audit'=>array('AUDIT','GOOGLE ADS REVIEW','Where does the spend go?','Search terms / costs','Conversion checks','Priority report'),
+  'store-conversion'=>array('SHOP','CUSTOMER JOURNEY','From product to purchase','Product choice','Basket','Checkout'),
+  'store-migration'=>array('MOVE','STORE MIGRATION','Protect what already works','Catalogue','URLs and redirects','Test purchase'),
+  'maintenance'=>array('CARE','SITE MAINTENANCE','From problem to fix','Diagnose','Controlled change','Verify'),
+  'speed-security'=>array('SPEED','PERFORMANCE AND SECURITY','Make the site easier to use','Loading','Security','Accessibility'),
+  'shop-platforms'=>array('STORE','PLATFORM CHOICE','Fit the shop to the business','WooCommerce','Shopify','Test checkout'),
+  'catalog-automation'=>array('DATA','PRODUCT AUTOMATION','Keep product details aligned','Supplier data','Price and stock','Published feed'),
+  'api-integrations'=>array('API','BUSINESS INTEGRATION','One reliable data flow','Website','CRM / service','Verified record'),
+  'web-applications'=>array('APP','WEB APPLICATION MVP','One task working well','User role','Working screen','Tested task'),
+  'ga4-conversions'=>array('GA4','EVENT VERIFICATION','A conversion that counts','Real enquiry','Correct event','Verified data')
+ );
  if(!isset($presets[$kind]))return;
  $v=$presets[$kind];
  $type=in_array($kind,array('local-seo','service-seo','international-seo'),true)?'search':
   (in_array($kind,array('local-ads','ads-audit'),true)?'ads':
-  (in_array($kind,array('store-conversion','store-migration'),true)?'commerce':'tech'));
+  (in_array($kind,array('store-conversion','store-migration','shop-platforms','catalog-automation'),true)?'commerce':'tech'));
  ?>
  <div class="uws-demo-body uws-scene uws-scene--<?php echo esc_attr($kind); ?> uws-scene--<?php echo esc_attr($type); ?>" aria-hidden="true">
   <div class="uws-scene-top"><span><?php echo esc_html($v[0]); ?></span><span class="uws-scene-led"><i></i><i></i><i></i></span></div>

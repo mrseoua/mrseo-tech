@@ -26,6 +26,14 @@ function mrseo_url($slug='',$lang=null){
   $equivalent=mrseo_i18n_matching_slug(mrseo_locale(),$slug,$lang);
   if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
  }
+ // UK-only offers have a genuine language selector destination on other markets.
+ // First prefer reciprocal hreflang groups (handled above). Otherwise use an
+ // existing related service, not a fabricated translation.
+ if($lang!=='en' && mrseo_locale()==='en'
+     && function_exists('mrseo_en_gb_slugs')
+     && in_array($slug,mrseo_en_gb_slugs(),true)){
+  return mrseo_i18n_exact_url($lang,mrseo_en_gb_parent($slug,$lang));
+ }
  // Completed UA/RU services are exact counterparts. For any third language
  // without a finished matching page, the selector goes to a REAL parent URL.
  if(!in_array($lang,array('uk','ru'),true)

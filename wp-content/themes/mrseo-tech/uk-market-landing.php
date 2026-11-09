@@ -5,9 +5,14 @@ $pl_slug=mrseo_slug();
 $pl_page=mrseo_uk_market_page($pl_slug);
 if(mrseo_locale()!=='en'||!$pl_page){status_header(404);include get_404_template();return;}
 get_header();
-$pl_group=(strpos($pl_slug,'shop')!==false||$pl_slug==='ecommerce-seo')?'commerce':(in_array($pl_slug,array('google-ads-audit','google-shopping'),true)?'ads':($pl_slug==='merchant-center-help'?'merchant':($pl_slug==='wordpress-care'?'support':'web')));
+$pl_group=in_array($pl_slug,array('ecommerce-seo','online-shop-development','google-shopping'),true)?'commerce':(
+ in_array($pl_slug,array('google-ads','google-ads-audit','performance-max'),true)?'ads':(
+ in_array($pl_slug,array('seo','seo-audit'),true)?'seo':(
+ $pl_slug==='analytics'?'data':(
+ $pl_slug==='merchant-center-help'?'merchant':(
+ $pl_slug==='wordpress-care'?'support':'web')))));
 ?>
-<div class="pl-svc pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>">
+<div class="pl-svc pl-svc--en-gb-compact pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>" id="main-content">
  <section class="pl-svc-hero" aria-labelledby="pl-title">
   <div class="intl-wrap pl-svc-hero-grid">
    <div class="pl-svc-hero-copy">
@@ -16,10 +21,10 @@ $pl_group=(strpos($pl_slug,'shop')!==false||$pl_slug==='ecommerce-seo')?'commerc
     <h1 id="pl-title"><?php echo esc_html($pl_page['hero'][0]);?> <em><?php echo esc_html($pl_page['hero'][1]);?></em></h1>
     <p><?php echo esc_html($pl_page['lead']);?></p>
     <div class="pl-svc-hero-actions"><a class="intl-button" href="<?php echo esc_url(mrseo_url('contact','en'));?>"><?php echo esc_html($pl_page['cta']);?> <span aria-hidden="true">↗</span></a><a class="pl-svc-text-link" href="#pl-needs">See how we help <span aria-hidden="true">↓</span></a></div>
-    <div class="pl-svc-hero-note">We agree the business goal and scope first. No untestable promises.</div>
+    <div class="pl-svc-hero-note">A defined scope, useful deliverables and no promises we cannot substantiate.</div>
    </div>
    <div class="pl-svc-art">
-    <div class="pl-svc-scene" role="img" aria-label="<?php echo esc_attr(implode(' – ',$pl_page['visual']));?>">
+    <div class="pl-svc-scene pl-svc-scene--<?php echo esc_attr($pl_slug); ?>" role="img" aria-label="<?php echo esc_attr(implode(' – ',$pl_page['visual']));?>">
      <div class="pl-svc-scene-head"><span class="pl-svc-light"></span><span>MRSEO.TECH / <?php echo esc_html($pl_page['kicker']);?></span><span aria-hidden="true">✳</span></div>
      <div class="pl-svc-scene-mark" aria-hidden="true">
       <?php if($pl_group==='web'):?><div class="pl-svc-browser"><div><i></i><i></i><i></i></div><b></b><p></p><p></p><a></a></div>
@@ -49,33 +54,19 @@ $pl_group=(strpos($pl_slug,'shop')!==false||$pl_slug==='ecommerce-seo')?'commerc
    </div>
   </div>
  </section>
- <section class="pl-svc-example" aria-labelledby="pl-example-title"><div class="intl-wrap pl-svc-example-grid">
-  <div><div class="intl-kicker"><?php echo esc_html($pl_page['example'][0]);?></div><h2 id="pl-example-title">From the challenge <em>to practical work.</em></h2><p>Illustrative steps only, not actual client results or a performance guarantee.</p><a class="pl-svc-text-link" href="<?php echo esc_url(mrseo_url('contact','en'));?>">Tell us about your situation ↗</a></div>
-  <div class="pl-svc-case">
-   <?php for($i=1;$i<=3;$i++):?>
-    <div><small><?php echo esc_html(array('','SITUATION','OUR WORK','VERIFICATION')[$i]);?></small><p><?php echo esc_html($pl_page['example'][$i]);?></p></div>
-   <?php endfor;?>
-  </div>
- </div></section>
- <section class="pl-svc-process" aria-labelledby="pl-process-title"><div class="intl-wrap">
-  <div class="pl-svc-section-head"><div><div class="intl-kicker">HOW WE WORK</div><h2 id="pl-process-title">From discovery to a verifiable result.</h2></div><p>Clear responsibilities, controlled steps and work you can check.</p></div>
-  <ol class="pl-svc-process-list"><?php foreach($pl_page['process'] as $i=>$step):?><li><span>0<?php echo esc_html($i+1);?></span><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div></li><?php endforeach;?></ol>
- </div></section>
  <section class="pl-svc-outcomes" aria-labelledby="pl-outcomes-title"><div class="intl-wrap pl-svc-outcomes-grid">
-  <div><div class="intl-kicker">WHAT YOU RECEIVE</div><h2 id="pl-outcomes-title">Practical deliverables, clearly defined.</h2><p>Exact deliverables are agreed in the proposal. Here are our key priorities.</p></div>
+  <div><div class="intl-kicker">WHAT YOU RECEIVE</div><h2 id="pl-outcomes-title">What you can <em>actually check.</em></h2><p><?php echo esc_html($pl_page['risk']); ?></p></div>
   <div class="pl-svc-outcome-list"><?php foreach($pl_page['outcomes'] as $i=>$item):?><div><span>0<?php echo esc_html($i+1);?></span><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></div><?php endforeach;?></div>
- </div></section>
- <section class="pl-svc-limits" aria-labelledby="pl-limits-title"><div class="intl-wrap pl-svc-limits-grid">
-  <div><div class="intl-kicker">NO EMPTY GUARANTEES</div><h2 id="pl-limits-title">What should you know before starting?</h2></div>
-  <p><?php echo esc_html($pl_page['risk']);?></p>
- </div></section>
+ </div>
+ <?php if($pl_slug==='analytics'):?>
+ <p class="intl-wrap pl-svc-technical-link">Need to fix conversion events rather than interpret reports?
+  <a href="<?php echo esc_url(mrseo_url('ga4-conversions','en'));?>">Explore GA4 conversion tracking <span aria-hidden="true">↗</span></a>
+ </p>
+ <?php endif;?>
+ </section>
  <section class="pl-svc-faq" aria-labelledby="pl-faq-title"><div class="intl-wrap pl-svc-faq-grid">
   <div><div class="intl-kicker">COMMON QUESTIONS</div><h2 id="pl-faq-title">Before we work together.</h2></div>
   <div class="pl-svc-faq-items"><?php foreach($pl_page['faq'] as $row):?><details><summary><?php echo esc_html($row[0]);?> <span aria-hidden="true">+</span></summary><p><?php echo esc_html($row[1]);?></p></details><?php endforeach;?></div>
- </div></section>
- <section class="pl-svc-related" aria-labelledby="pl-related-title"><div class="intl-wrap">
-  <div class="intl-kicker">RELATED SERVICES</div><h2 id="pl-related-title">What else can help?</h2>
-  <div class="pl-svc-related-grid"><?php foreach($pl_page['related'] as $item):?><a href="<?php echo esc_url(mrseo_url($item[0],'en'));?>"><strong><?php echo esc_html($item[1]);?></strong><span><?php echo esc_html($item[2]);?></span><b aria-hidden="true">↗</b></a><?php endforeach;?></div>
  </div></section>
  <section class="intl-final pl-svc-final"><div class="intl-wrap intl-final-grid">
   <div><div class="intl-kicker">MRSEO.TECH / NEXT STEP</div><h2>Tell us what you'd like to build or improve.</h2><p>A brief description and your current website (if any) are enough. We'll discuss scope, constraints and useful next steps before making a proposal.</p></div>
