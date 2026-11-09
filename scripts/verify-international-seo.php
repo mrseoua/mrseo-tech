@@ -58,7 +58,7 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 43, 'Expected 43 editorial equivalence groups');
+assert_seo(count($groups) === 42, 'Expected 42 editorial equivalence groups');
 assert_seo(count($inventory) === 336, 'Expected 336 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
