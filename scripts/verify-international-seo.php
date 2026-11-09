@@ -186,10 +186,12 @@ foreach(mrseo_ua_website_slugs() as $slug){
    'ru'=>'https://mrseo.tech/ru/'.$slug.'/');
   if(in_array($slug,mrseo_en_gb_slugs(),true) || $slug==='google-ads-audit')
    $expectedAlternates['en-GB']='https://mrseo.tech/en/'.$slug.'/';
+  if(in_array($slug,mrseo_pl_service_slugs(),true))
+   $expectedAlternates['pl-PL']='https://mrseo.tech/pl/'.$slug.'/';
   if($slug==='google-ads-audit')
    $expectedAlternates['pl-PL']='https://mrseo.tech/pl/audyt-google-ads/';
   assert_seo($entry['alternates']===$expectedAlternates,
-    'Wrong genuine UA/RU/UK hreflang set '.$slug);
+    'Wrong genuine international hreflang set '.$slug);
   $other=$language==='uk'?'ru':'uk';
   assert_seo(mrseo_url($slug,$other)===mrseo_i18n_exact_url($other,$slug),
     'Language selector cannot reach true RU/UA counterpart '.$slug);
@@ -202,6 +204,9 @@ foreach(mrseo_ua_website_slugs() as $slug){
   if($language==='en'&&(in_array($slug,mrseo_en_gb_slugs(),true)||$slug==='google-ads-audit'))
    assert_seo($dest==='https://mrseo.tech/en/'.$slug.'/',
     'Completed UK equivalent is not accessible '.$slug);
+  elseif($language==='pl' && (in_array($slug,mrseo_pl_service_slugs(),true)||$slug==='google-ads-audit'))
+   assert_seo($dest==='https://mrseo.tech/pl/'.($slug==='google-ads-audit'?'audyt-google-ads':$slug).'/',
+    'Completed Polish equivalent is not accessible '.$slug);
   else
    assert_seo($dest!=='https://mrseo.tech/'.$language.'/'.$slug.'/',
     'Invented market alternate '.$language.'/'.$slug);
@@ -231,18 +236,21 @@ foreach(mrseo_en_gb_slugs() as $slug){
 foreach(array('woocommerce-shopify-stores') as $slug){
  $_SERVER['REQUEST_URI']='/en/'.$slug.'/';
  $entry=mrseo_i18n_current_entry();
- assert_seo($entry['group']==='en-gb-only:'.$slug && count($entry['alternates'])===1,
-   'Invented cross-language equivalents for UK-only '.$slug);
+ assert_seo($entry['group']==='platform:woocommerce-shopify' &&
+   $entry['alternates']===array('en-GB'=>'https://mrseo.tech/en/'.$slug.'/',
+    'pl-PL'=>'https://mrseo.tech/pl/sklepy-woocommerce-shopify/'),
+   'Missing genuine UK/Poland platform-store equivalents '.$slug);
 }
 // Existing UA/RU microservices now genuinely match UK: do not treat as UK-only.
 foreach(array('catalog-automation','api-integrations','web-applications','ga4-conversions') as $slug){
  $_SERVER['REQUEST_URI']='/en/'.$slug.'/';
  $entry=mrseo_i18n_current_entry();
  assert_seo($entry && $entry['group']==='ua-ru:'.$slug &&
-   $entry['alternates']===array('uk-UA'=>'https://mrseo.tech/'.$slug.'/',
+   $entry['alternates']===array_merge(array('uk-UA'=>'https://mrseo.tech/'.$slug.'/',
    'ru'=>'https://mrseo.tech/ru/'.$slug.'/',
    'en-GB'=>'https://mrseo.tech/en/'.$slug.'/'),
-   'Missing true UA/RU/UK microservice match '.$slug);
+   in_array($slug,mrseo_pl_service_slugs(),true)?array('pl-PL'=>'https://mrseo.tech/pl/'.$slug.'/'):array()),
+   'Missing true international microservice match '.$slug);
 }
 // UK and Polish 'google-shopping' are real pages, not Google Ads fallbacks.
 $_SERVER['REQUEST_URI'] = '/en/google-shopping/';
