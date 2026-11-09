@@ -40,9 +40,8 @@
  animation-name:mrseoRuDepthB;
  animation-delay:-2.2s;
 }
-.ru-premium .ms-scene .ms-ads-target,
-.ru-premium .ms-scene .ms-pmax-core,
-.ru-premium .ms-scene .ms-web-mobile,
+/* Do not animate the centered ad/PMax cores: their translate(-50%,-50%)
+   positioning would be overwritten by a CSS keyframe transform. */
 .ru-premium .ms-scene .ms-data-check{
  animation:mrseoRuDepthPulse 6.5s ease-in-out infinite;
 }
