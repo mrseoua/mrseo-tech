@@ -26,6 +26,8 @@ jobs:
         run: find wp-content/themes/mrseo-tech -type f -name '*.php' -print0 | xargs -0 -n1 php -l
       - name: British content and real service destinations
         run: python3 scripts/verify-en-gb-parity.py
+      - name: Polish commercial landings and 25 real menu links
+        run: python3 scripts/verify-pl-complete.py
       - name: Ukrainian and Russian regression tests
         run: |
           python3 scripts/verify-ru-compact.py
