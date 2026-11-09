@@ -353,6 +353,79 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     "description": "Bespoke web applications and MVPs for UK businesses: roles, portals, workflows, integrations and tested practical functionality.",
     "button": "Discuss bespoke web applications and mvp development",
     "scenelabel": "Illustrative bespoke web applications and mvp development workflow, not client performance data"
+  },
+  "ga4-conversions": {
+    "title": "GA4 Conversion Tracking and Event Setup",
+    "kicker": "GOOGLE ANALYTICS 4 · CONVERSIONS",
+    "scene": "ga4-conversions",
+    "headline": [
+      "A form is submitted or an order is placed.",
+      "Does GA4 record it correctly?"
+    ],
+    "lead": "Reliable marketing reports need trustworthy events. We test the actual enquiry or checkout journey, inspect GA4 and Google Tag Manager, identify duplicates and fix confirmed measurement faults within an agreed scope.",
+    "pains": [
+      [
+        "One enquiry is counted more than once",
+        "A tag may fire on both a button click and a confirmed submission.",
+        "Test the event and define the real success state before changing it."
+      ],
+      [
+        "Order totals differ from the shop",
+        "Missing IDs, incorrect values, currency settings or duplicates can distort purchase events.",
+        "Compare real test orders with GA4 and Google Ads records."
+      ],
+      [
+        "Data disappears at the important step",
+        "Consent or checkout behaviour can prevent events being recorded in some circumstances.",
+        "Document the actual gap and choose an appropriate compliant measurement approach."
+      ]
+    ],
+    "sectionTitle": "Test the real action. <em>Record it accurately where possible.</em>",
+    "benefits": [
+      [
+        "Define valuable conversions",
+        "Agree which forms, purchases and business actions should generate each event."
+      ],
+      [
+        "Inspect and correct event implementation",
+        "Review tags, identifiers, amounts and firing conditions in the agreed setup."
+      ],
+      [
+        "Verify on the actual site",
+        "Perform controlled test actions, check duplicates and document any known limits."
+      ]
+    ],
+    "result": "Tested GA4 conversion events for agreed forms or purchases, with documented values, duplicate checks and remaining limitations.",
+    "faq": [
+      [
+        "Is this the same as a marketing dashboard?",
+        "No. This service fixes the underlying event measurement. Business reporting and channel analysis are separate."
+      ],
+      [
+        "Can tracking cover every visitor?",
+        "No. Consent choices, browsers and technical constraints can limit measurement."
+      ],
+      [
+        "Can Google Ads use these events?",
+        "Where appropriate, we review import settings and the agreed conversion actions."
+      ]
+    ],
+    "ctaTitle": "Not confident in GA4 conversions? <em>Check a real action.</em>",
+    "ctaLead": "Tell us which form or checkout event is uncertain and what reports currently disagree.",
+    "related": [
+      [
+        "analytics",
+        "Marketing analytics"
+      ],
+      [
+        "google-ads",
+        "Google Ads management"
+      ]
+    ],
+    "foot": "Event · Value · Verification",
+    "description": "GA4 conversion tracking for UK businesses: test lead and purchase events, identify duplicates, verify transaction values and document limits.",
+    "button": "Review GA4 conversion tracking",
+    "scenelabel": "Illustrative GA4 event verification journey, not real client data"
   }
 }
 MRSEO_GB_PART3;
