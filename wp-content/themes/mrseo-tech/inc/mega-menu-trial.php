@@ -108,11 +108,11 @@ function mrseo_trial_menu_route_map($locale) {
   'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
  );
  if($locale==='pl')return array(
-  'seo'=>array(null,'ecommerce-seo',null,null,'seo-audit'),
+  'seo'=>array('local-seo','ecommerce-seo','service-business-seo',null,'seo-audit'),
   'ads'=>array('google-ads','google-shopping',null,'audyt-google-ads','problemy-merchant-center'),
-  'commerce'=>array('tworzenie-sklepow-internetowych',null,null,null,null),
-  'sites'=>array('tworzenie-stron-internetowych',null,null,null,null),
-  'dev'=>array('opieka-wordpress',null,null,'web-development',null)
+  'commerce'=>array('tworzenie-sklepow-internetowych',null,null,'catalog-automation',null),
+  'sites'=>array('tworzenie-stron-internetowych',null,'landing-pages',null,null),
+  'dev'=>array('opieka-wordpress','api-integrations',null,'web-development',null)
  );
  if($locale==='de')return array(
   'seo'=>array('seo','ecommerce-seo',null,null,'seo-audit'),
