@@ -57,7 +57,13 @@ $pl_group=in_array($pl_slug,array('ecommerce-seo','online-shop-development','goo
  <section class="pl-svc-outcomes" aria-labelledby="pl-outcomes-title"><div class="intl-wrap pl-svc-outcomes-grid">
   <div><div class="intl-kicker">WHAT YOU RECEIVE</div><h2 id="pl-outcomes-title">What you can <em>actually check.</em></h2><p><?php echo esc_html($pl_page['risk']); ?></p></div>
   <div class="pl-svc-outcome-list"><?php foreach($pl_page['outcomes'] as $i=>$item):?><div><span>0<?php echo esc_html($i+1);?></span><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></div><?php endforeach;?></div>
- </div></section>
+ </div>
+ <?php if($pl_slug==='analytics'):?>
+ <p class="intl-wrap pl-svc-technical-link">Need to fix conversion events rather than interpret reports?
+  <a href="<?php echo esc_url(mrseo_url('ga4-conversions','en'));?>">Explore GA4 conversion tracking <span aria-hidden="true">↗</span></a>
+ </p>
+ <?php endif;?>
+ </section>
  <section class="pl-svc-faq" aria-labelledby="pl-faq-title"><div class="intl-wrap pl-svc-faq-grid">
   <div><div class="intl-kicker">COMMON QUESTIONS</div><h2 id="pl-faq-title">Before we work together.</h2></div>
   <div class="pl-svc-faq-items"><?php foreach($pl_page['faq'] as $row):?><details><summary><?php echo esc_html($row[0]);?> <span aria-hidden="true">+</span></summary><p><?php echo esc_html($row[1]);?></p></details><?php endforeach;?></div>
