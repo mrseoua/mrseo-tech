@@ -71,7 +71,7 @@ function mrseo_en_gb_part2(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Existing site · Search · Enquiries",
     "description": "SEO for existing UK service websites: commercial search intent, page structure, indexing and clearer routes to relevant enquiries.",
-    "button": "Discuss seo for service businesses in the uk",
+    "button": "Review my service SEO",
     "scenelabel": "Illustrative process for seo for service businesses in the uk, not client performance data"
   },
   "international-seo": {
@@ -141,7 +141,7 @@ function mrseo_en_gb_part2(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Markets · Language · Search",
     "description": "International SEO for UK businesses: market demand, accurate hreflang, localised service pages and technical indexation checks.",
-    "button": "Discuss international seo",
+    "button": "Discuss target markets",
     "scenelabel": "Illustrative process for international seo for uk businesses, not client performance data"
   },
   "local-google-ads": {
@@ -211,7 +211,7 @@ function mrseo_en_gb_part2(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Locations · Search terms · Leads",
     "description": "Google Ads for local UK businesses: postcode and service-area targeting, relevant searches, call and form measurement, and spend reviews.",
-    "button": "Discuss google ads for local uk businesses",
+    "button": "Discuss local PPC",
     "scenelabel": "Illustrative process for google ads for local uk businesses, not client performance data"
   },
   "store-conversion": {
@@ -281,7 +281,7 @@ function mrseo_en_gb_part2(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Products · Basket · Checkout",
     "description": "E-commerce conversion optimisation for UK shops: product pages, basket, delivery, checkout and verified mobile purchase journeys.",
-    "button": "Discuss e-commerce conversion optimisation",
+    "button": "Review my checkout",
     "scenelabel": "Illustrative process for e-commerce conversion optimisation, not client performance data"
   },
   "store-migration": {
@@ -351,7 +351,7 @@ function mrseo_en_gb_part2(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Catalogue · URLs · Orders",
     "description": "E-commerce migration for UK shops: assess platforms, plan catalogue and order transfer, preserve important URLs and test checkout.",
-    "button": "Discuss online store migration and modernisation",
+    "button": "Plan a store migration",
     "scenelabel": "Illustrative process for online store migration and modernisation, not client performance data"
   }
 }
