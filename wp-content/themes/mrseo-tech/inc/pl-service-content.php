@@ -1,5 +1,6 @@
 <?php
 if(!defined('ABSPATH'))exit;
+require_once __DIR__.'/pl-next-services.php';
 /** Polish-first original commercial landing content; country-specific without fake case claims. */
 function mrseo_pl_service_data(){
  static $pages=null;
@@ -632,7 +633,7 @@ function mrseo_pl_service_data(){
   }
 }
 MRSEO_PL_SERVICES;
-  $pages=json_decode($json,true,512,JSON_THROW_ON_ERROR);
+  $pages=array_merge(json_decode($json,true,512,JSON_THROW_ON_ERROR),mrseo_pl_next_service_data());
  }
  return $pages;
 }
