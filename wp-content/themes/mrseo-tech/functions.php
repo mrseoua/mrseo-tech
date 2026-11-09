@@ -165,6 +165,13 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-ru-services-compact',get_template_directory_uri().'/assets/ru-services-compact.css',
    array($ru_compact_base),'1.0.0');
  }
+ // The approved UA premium motion direction also applies to RU interiors,
+ // but never to the homepage Earth or another language. Pure CSS, no WebGL.
+ if(mrseo_locale()==='ru' && mrseo_slug()!=='' && mrseo_slug()!=='privacy'){
+  wp_enqueue_style('mrseo-ru-premium-motion',
+   get_template_directory_uri().'/assets/ru-premium-motion.css',
+   array('mrseo-style'),'1.0.0');
+ }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.2.0');
