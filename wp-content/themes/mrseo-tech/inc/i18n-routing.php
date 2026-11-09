@@ -80,7 +80,8 @@ function mrseo_url($slug='',$lang=null){
 
  // Country-only Polish offers link to relevant existing pages when switching languages.
  if($lang!=='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)
-    && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true))){
+    && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true))
+    && !($lang==='en' && function_exists('mrseo_en_gb_slugs') && in_array($slug,mrseo_en_gb_slugs(),true))){
   $slug=mrseo_pl_service_parent($slug,$lang);
  }
  // Existing service entrypoints must lead to real Poland-specific service pages.
