@@ -9,6 +9,8 @@ on:
       - 'scripts/verify-*.py'
       - 'scripts/verify-*.php'
       - 'scripts/verify-*.cjs'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
