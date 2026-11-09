@@ -56,6 +56,9 @@ function mrseo_i18n_page_groups() {
             if(function_exists('mrseo_en_gb_slugs')
                 && in_array($slug,mrseo_en_gb_slugs(),true))
                 $pages['en']=$slug;
+            // A Polish URL is an alternate only after its complete original page exists.
+            if(function_exists('mrseo_pl_service_slugs')
+                && in_array($slug,mrseo_pl_service_slugs(),true))$pages['pl']=$slug;
             // UK + Poland have complete standalone Ads-audit pages, same service intent.
             if($slug==='google-ads-audit'){
                 $pages['en']='google-ads-audit';
@@ -81,6 +84,8 @@ function mrseo_i18n_page_groups() {
         $pages=array('uk'=>$slug,'ru'=>$slug);
         if(function_exists('mrseo_en_gb_slugs')
             && in_array($slug,mrseo_en_gb_slugs(),true))$pages['en']=$slug;
+        if(function_exists('mrseo_pl_service_slugs')
+            && in_array($slug,mrseo_pl_service_slugs(),true))$pages['pl']=$slug;
         $groups[] = array('group'=>'ua-ru:' . $slug,'pages'=>$pages);
     }
 
