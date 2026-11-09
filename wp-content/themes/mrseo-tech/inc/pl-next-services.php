@@ -9,8 +9,8 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     "description": "Weryfikujemy widoczność usług w lokalnych wynikach, profil firmy, zgodność danych kontaktowych i strony dla obsługiwanych miejscowości. Nie obiecujemy.",
     "kicker": "SEO LOKALNE I WIDOCZNOŚĆ W MAPACH GOOGLE",
     "hero": [
-      "Gdy firma jest blisko, ale klienci jej nie znajdują",
-      "SEO lokalne i widoczność w Mapach Google"
+      "Klienci są blisko.",
+      "Dlaczego nie widzą Twojej firmy?"
     ],
     "lead": "Weryfikujemy widoczność usług w lokalnych wynikach, profil firmy, zgodność danych kontaktowych i strony dla obsługiwanych miejscowości. Nie obiecujemy pozycji w mapach.",
     "intro": "Wyszukiwania lokalne powinny prowadzić do właściwej usługi",
@@ -109,8 +109,8 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     "description": "Sprawdzamy, czy najważniejsze usługi mają właściwe strony, odpowiadają na pytania klientów i prowadzą do kontaktu. Najpierw ustalamy, czego szukają.",
     "kicker": "SEO DLA FIRM USŁUGOWYCH",
     "hero": [
-      "Masz ofertę usług, ale Google pokazuje inne firmy",
-      "SEO dla firm usługowych"
+      "Klienci szukają Twoich usług.",
+      "Dlaczego trafiają do konkurencji?"
     ],
     "lead": "Sprawdzamy, czy najważniejsze usługi mają właściwe strony, odpowiadają na pytania klientów i prowadzą do kontaktu. Najpierw ustalamy, czego szukają potencjalni klienci.",
     "intro": "Jedna strona o wszystkich usługach to często za mało",
@@ -209,8 +209,8 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     "description": "Projektujemy konkretną stronę dopasowaną do intencji reklamy: z jasną ofertą, czytelnym kontaktem i pomiarem zgłoszeń. Nie dokładamy sekcji tylko po to, by.",
     "kicker": "LANDING PAGE POD REKLAMĘ",
     "hero": [
-      "Kliknięcia są, a formularz pozostaje pusty?",
-      "Landing page pod reklamę"
+      "Kliknięcia z reklamy są.",
+      "Dlaczego formularz milczy?"
     ],
     "lead": "Projektujemy konkretną stronę dopasowaną do intencji reklamy: z jasną ofertą, czytelnym kontaktem i pomiarem zgłoszeń. Nie dokładamy sekcji tylko po to, by strona wyglądała na dłuższą.",
     "intro": "Ruch reklamowy potrzebuje odpowiedniej strony docelowej",
@@ -309,8 +309,8 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     "description": "Łączymy źródła danych o produktach z katalogiem sklepu, żeby ograniczyć ręczne poprawki i ryzyko sprzedaży niedostępnego towaru. Zakres integracji zależy od.",
     "kicker": "AUTOMATYZACJA E-COMMERCE",
     "hero": [
-      "Ceny i stany w sklepie wciąż aktualizujesz ręcznie?",
-      "Automatyzacja e-commerce"
+      "Ceny i stany się rozjeżdżają.",
+      "Nie przepisuj danych ręcznie."
     ],
     "lead": "Łączymy źródła danych o produktach z katalogiem sklepu, żeby ograniczyć ręczne poprawki i ryzyko sprzedaży niedostępnego towaru. Zakres integracji zależy od możliwości używanego systemu.",
     "intro": "Produkt nie powinien znikać między arkuszem a zamówieniem",
@@ -409,8 +409,8 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     "description": "Projektujemy połączenia sklepu, formularzy, CRM i systemów operacyjnych, aby dane trafiały do właściwego miejsca. Najpierw sprawdzamy dostęp i ograniczenia.",
     "kicker": "INTEGRACJE API I AUTOMATYZACJA",
     "hero": [
-      "Systemy nie rozmawiają ze sobą, a zespół kopiuje dane?",
-      "Integracje API i automatyzacja"
+      "Systemy nie rozmawiają ze sobą.",
+      "Dane giną między formularzem a CRM."
     ],
     "lead": "Projektujemy połączenia sklepu, formularzy, CRM i systemów operacyjnych, aby dane trafiały do właściwego miejsca. Najpierw sprawdzamy dostęp i ograniczenia obu stron.",
     "intro": "Integracja ma ograniczać ręczną pracę, nie tworzyć nowe błędy",
