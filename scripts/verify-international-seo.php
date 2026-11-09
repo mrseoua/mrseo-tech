@@ -58,7 +58,7 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 46, 'Expected 46 editorial equivalence groups');
+assert_seo(count($groups) === 43, 'Expected 43 editorial equivalence groups');
 assert_seo(count($inventory) === 336, 'Expected 336 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
@@ -208,7 +208,7 @@ foreach(mrseo_ua_website_slugs() as $slug){
  }
 }
 
-// Sixteen actual new UK services: twelve true paired URLs and four UK-only offers.
+// Sixteen actual new UK services: fifteen genuine UA/RU equivalents and one UK-specific offer.
 assert_seo(count(mrseo_en_gb_slugs())===16,'Expected 16 genuinely distinct new UK services');
 foreach(mrseo_en_gb_slugs() as $slug){
  $_SERVER['REQUEST_URI']='/en/'.$slug.'/';
@@ -226,11 +226,21 @@ foreach(mrseo_en_gb_slugs() as $slug){
     'Missing valid parent for UK service '.$slug.' -> '.$locale);
  }
 }
-foreach(array('woocommerce-shopify-stores','catalog-automation','api-integrations','web-applications') as $slug){
+foreach(array('woocommerce-shopify-stores') as $slug){
  $_SERVER['REQUEST_URI']='/en/'.$slug.'/';
  $entry=mrseo_i18n_current_entry();
  assert_seo($entry['group']==='en-gb-only:'.$slug && count($entry['alternates'])===1,
    'Invented cross-language equivalents for UK-only '.$slug);
+}
+// Existing UA/RU microservices now genuinely match UK: do not treat as UK-only.
+foreach(array('catalog-automation','api-integrations','web-applications','ga4-conversions') as $slug){
+ $_SERVER['REQUEST_URI']='/en/'.$slug.'/';
+ $entry=mrseo_i18n_current_entry();
+ assert_seo($entry && $entry['group']==='ua-ru:'.$slug &&
+   $entry['alternates']===array('uk-UA'=>'https://mrseo.tech/'.$slug.'/',
+   'ru'=>'https://mrseo.tech/ru/'.$slug.'/',
+   'en-GB'=>'https://mrseo.tech/en/'.$slug.'/'),
+   'Missing true UA/RU/UK microservice match '.$slug);
 }
 // UK and Polish 'google-shopping' are real pages, not Google Ads fallbacks.
 $_SERVER['REQUEST_URI'] = '/en/google-shopping/';
