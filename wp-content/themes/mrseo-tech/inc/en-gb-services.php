@@ -6,7 +6,17 @@ require_once __DIR__.'/en-gb-services-part2.php';
 require_once __DIR__.'/en-gb-services-part3.php';
 function mrseo_en_gb_data($slug=null){
  static $data=null;
- if($data===null)$data=array_merge(mrseo_en_gb_part1(),mrseo_en_gb_part2(),mrseo_en_gb_part3());
+ if($data===null){
+  $data=array_merge(mrseo_en_gb_part1(),mrseo_en_gb_part2(),mrseo_en_gb_part3());
+  foreach($data as $slug=>&$page){
+   $page['group']=in_array($slug,array('local-seo','service-business-seo','international-seo'),true)?'SEO':(
+    $slug==='local-google-ads'?'Google Ads':(
+    in_array($slug,array('store-conversion','store-migration','woocommerce-shopify-stores','catalog-automation'),true)?'E-commerce':(
+    $slug==='ga4-conversions'?'Analytics':(
+    in_array($slug,array('website-speed-security','api-integrations','web-applications'),true)?'Web development':'Website design'))));
+  }
+  unset($page);
+ }
  return $slug===null?$data:($data[$slug]??null);
 }
 function mrseo_en_gb_slugs(){return array_keys(mrseo_en_gb_data());}
