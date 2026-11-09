@@ -56,6 +56,11 @@ function mrseo_i18n_page_groups() {
             if(function_exists('mrseo_en_gb_slugs')
                 && in_array($slug,mrseo_en_gb_slugs(),true))
                 $pages['en']=$slug;
+            // UK + Poland have complete standalone Ads-audit pages, same service intent.
+            if($slug==='google-ads-audit'){
+                $pages['en']='google-ads-audit';
+                $pages['pl']='audyt-google-ads';
+            }
             $groups[]=array('group'=>'ua-service:'.$slug,'pages'=>$pages);
         }
     }
@@ -84,8 +89,6 @@ function mrseo_i18n_page_groups() {
     $groups[] = array('group'=>'online-shop-creation',
         'pages'=>array('uk'=>'online-store-development','ru'=>'online-store-development',
             'en'=>'online-shop-development','pl'=>'tworzenie-sklepow-internetowych','fr'=>'online-shop-development','it'=>'online-shop-development','es'=>'online-shop-development','nl'=>'online-shop-development','ro'=>'online-shop-development','cs'=>'online-shop-development','pt'=>'online-shop-development','sv'=>'online-shop-development','da'=>'online-shop-development','fi'=>'online-shop-development','hu'=>'online-shop-development','sk'=>'online-shop-development','el'=>'online-shop-development','bg'=>'online-shop-development','hr'=>'online-shop-development'));
-    $groups[] = array('group'=>'google-ads-audit',
-        'pages'=>array('en'=>'google-ads-audit','pl'=>'audyt-google-ads'));
     $groups[] = array('group'=>'merchant-center-help',
         'pages'=>array('uk'=>'merchant-center','ru'=>'merchant-center',
             'en'=>'merchant-center-help','pl'=>'problemy-merchant-center'));
