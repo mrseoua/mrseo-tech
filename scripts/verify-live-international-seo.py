@@ -183,11 +183,11 @@ if __name__ == "__main__":
             if sitemap.get(uk_url) != {"en-GB": uk_url}:
                 fail(f"Invented alternate for UK-only page: {slug}")
         elif slug in UK_MICRO:
-            pairs = {"uk-UA": HOST + "/ga4-conversions/",
-                     "ru": HOST + "/ru/ga4-conversions/",
+            pairs = {"uk-UA": HOST + "/" + slug + "/",
+                     "ru": HOST + "/ru/" + slug + "/",
                      "en-GB": uk_url}
             if any(sitemap.get(href) != pairs for href in pairs.values()):
-                fail("GA4-conversions is not a real reciprocal UK/UA/RU equivalent")
+                fail(f"{slug}: genuine UK/UA/RU service alternates are not reciprocal")
         else:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
