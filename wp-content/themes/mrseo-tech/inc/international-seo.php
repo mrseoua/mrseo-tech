@@ -95,11 +95,12 @@ function mrseo_i18n_page_groups() {
     $groups[] = array('group'=>'wordpress-maintenance',
         'pages'=>array('en'=>'wordpress-care','pl'=>'opieka-wordpress'));
 
-    // Four UK-specific offers have their own pages, not fictional translations.
-    foreach(array('woocommerce-shopify-stores','catalog-automation','api-integrations','web-applications') as $slug){
-        if(function_exists('mrseo_en_gb_slugs') && in_array($slug,mrseo_en_gb_slugs(),true))
-            $groups[]=array('group'=>'en-gb-only:'.$slug,'pages'=>array('en'=>$slug));
-    }
+    // UK platform-specific choice is a separate offer. Automation, API and
+    // web-application pages have genuine UA/RU counterparts in the microservice set.
+    if(function_exists('mrseo_en_gb_slugs')
+        && in_array('woocommerce-shopify-stores',mrseo_en_gb_slugs(),true))
+        $groups[]=array('group'=>'en-gb-only:woocommerce-shopify-stores',
+            'pages'=>array('en'=>'woocommerce-shopify-stores'));
     return $groups;
 }
 
