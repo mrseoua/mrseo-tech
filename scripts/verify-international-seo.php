@@ -184,8 +184,10 @@ foreach(mrseo_ua_website_slugs() as $slug){
   assert_seo($entry&&$entry['group']==='ua-service:'.$slug,'Missing exact canonical '.$language.'/'.$slug);
   $expectedAlternates=array('uk-UA'=>'https://mrseo.tech/'.$slug.'/',
    'ru'=>'https://mrseo.tech/ru/'.$slug.'/');
-  if(in_array($slug,mrseo_en_gb_slugs(),true))
+  if(in_array($slug,mrseo_en_gb_slugs(),true) || $slug==='google-ads-audit')
    $expectedAlternates['en-GB']='https://mrseo.tech/en/'.$slug.'/';
+  if($slug==='google-ads-audit')
+   $expectedAlternates['pl-PL']='https://mrseo.tech/pl/audyt-google-ads/';
   assert_seo($entry['alternates']===$expectedAlternates,
     'Wrong genuine UA/RU/UK hreflang set '.$slug);
   $other=$language==='uk'?'ru':'uk';
@@ -197,7 +199,7 @@ foreach(mrseo_ua_website_slugs() as $slug){
  foreach(array_keys($codes) as $language){
   if($language==='uk'||$language==='ru')continue;
   $dest=mrseo_url($slug,$language);
-  if($language==='en'&&in_array($slug,mrseo_en_gb_slugs(),true))
+  if($language==='en'&&(in_array($slug,mrseo_en_gb_slugs(),true)||$slug==='google-ads-audit'))
    assert_seo($dest==='https://mrseo.tech/en/'.$slug.'/',
     'Completed UK equivalent is not accessible '.$slug);
   else
