@@ -85,6 +85,11 @@ assert "pl-svc--en-gb-compact" in existing_tpl
 assert existing_tpl.count("<h1 ")==1
 assert all("pl-svc-"+x in existing_tpl for x in ("hero","needs","outcomes","faq","final"))
 assert not any("pl-svc-"+x in existing_tpl for x in ("example","process","limits","related"))
+assert "if($pl_slug==='analytics')" in existing_tpl
+assert "mrseo_url('ga4-conversions','en')" in existing_tpl
+assert "if($en && mrseo_slug()==='ga4-conversions')" in shared
+assert "mrseo_url('analytics','en')" in shared
+assert "mrseo-en-gb-interior" in text("functions.php")
 scene=text("inc/ua-service-scenes.php")
 assert "if($locale==='en')$presets=array(" in scene
 assert "'ga4-conversions'=>array(" in scene
