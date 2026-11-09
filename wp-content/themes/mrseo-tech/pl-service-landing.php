@@ -5,7 +5,7 @@ $pl_slug=mrseo_slug();
 $pl_page=mrseo_pl_service_page($pl_slug);
 if(mrseo_locale()!=='pl'||!$pl_page){status_header(404);include get_404_template();return;}
 get_header();
-$pl_group=strpos($pl_slug,'sklepow')!==false?'commerce':(in_array($pl_slug,array('audyt-google-ads','google-shopping'),true)?'ads':($pl_slug==='problemy-merchant-center'?'merchant':($pl_slug==='opieka-wordpress'?'support':'web')));
+$pl_group=in_array($pl_slug,array('tworzenie-sklepow-internetowych','catalog-automation'),true)?'commerce':(in_array($pl_slug,array('audyt-google-ads','google-shopping','landing-pages'),true)?'ads':($pl_slug==='problemy-merchant-center'?'merchant':(in_array($pl_slug,array('opieka-wordpress','api-integrations'),true)?'support':(in_array($pl_slug,array('local-seo','service-business-seo'),true)?'seo':'web'))));
 ?>
 <div class="pl-svc pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>">
  <section class="pl-svc-hero" aria-labelledby="pl-title">
@@ -23,6 +23,7 @@ $pl_group=strpos($pl_slug,'sklepow')!==false?'commerce':(in_array($pl_slug,array
      <div class="pl-svc-scene-head"><span class="pl-svc-light"></span><span>MRSEO.TECH / <?php echo esc_html($pl_page['kicker']);?></span><span aria-hidden="true">✳</span></div>
      <div class="pl-svc-scene-mark" aria-hidden="true">
       <?php if($pl_group==='web'):?><div class="pl-svc-browser"><div><i></i><i></i><i></i></div><b></b><p></p><p></p><a></a></div>
+      <?php elseif($pl_group==='seo'):?><div class="pl-svc-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <?php elseif($pl_group==='commerce'):?><div class="pl-svc-shop"><i></i><i></i><i></i></div>
       <?php elseif($pl_group==='merchant'):?><div class="pl-svc-merchant"><span>!</span><span>✓</span><span>✓</span></div>
       <?php elseif($pl_group==='support'):?><div class="pl-svc-support"><i></i><i></i><i></i><i></i><i></i></div>
