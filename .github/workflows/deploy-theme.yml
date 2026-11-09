@@ -1,4 +1,5 @@
 name: Deploy WordPress theme
+# Re-verify deployed theme checksum; on success, run the refreshed live SEO audit.
 
 on:
   workflow_dispatch:
