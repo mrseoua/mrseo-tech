@@ -48,6 +48,8 @@ jobs:
         run: python3 scripts/verify-ru-compact.py
       - name: Verify thirteen RU counterpart pages and 25 functioning service links
         run: python3 scripts/verify-ru-new-services.py
+      - name: Verify 29 British service pages and 25 working UK links
+        run: python3 scripts/verify-en-gb-parity.py
       - name: Verify 13 approved Ukrainian service landings and service menu
         run: |
           python3 - <<'PY'
@@ -101,7 +103,7 @@ jobs:
           assert all("'"+slug+"'" in nav for slug in data)
           assert "in_array($slug,mrseo_ua_website_slugs(),true)" in menu
           assert "mrseo_ua_website_route()?" in source
-          assert "mrseo_render_ua_service_scene($kind,$ru?'ru':'uk')" in page, 'Approved UA scene keeps explicit Ukrainian default and real Russian labels'
+          assert "mrseo_render_ua_service_scene($kind,$tr('uk','ru','en'))" in page, 'Approved UA/RU scene keeps its own locale with genuine British labels'
           assert '<nav class="uws-related"' not in page, 'White related strip remains in UA template'
           assert '.uws-related' not in css, 'Unused related strip CSS remains in UA styles'
           assert "function mrseo_render_ua_service_scene($kind,$locale='uk')" in scenes, 'Scene renderer must keep Ukrainian as its default locale'
@@ -170,7 +172,7 @@ jobs:
           print('Six UA service intents, metadata, prices, scoped offers and unchanged noindex OK')
           PY
 
-      - name: Run international SEO pre-indexing audit (320 routes)
+      - name: Run international SEO pre-indexing audit (336 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
@@ -413,7 +415,16 @@ jobs:
           assert len({x['title'] for x in uk_all.values()})==13
           assert len({tuple(x['hero']) for x in uk_all.values()})==13
           assert len({x['desc'] for x in uk_all.values()})==13
-          all_links=set(uk_all)|{'web-development','about','contact','portfolio'}
+          # Real UK specialist pages may be linked from existing UK commercial offers.
+          gb={}
+          for part in (1,2,3):
+              raw=(root/('inc/en-gb-services-part'+str(part)+'.php')).read_text()
+              marker='MRSEO_GB_PART'+str(part)
+              m=re.search(r"<<<'"+marker+r"'\n([\s\S]*?)\n"+marker+r";",raw)
+              assert m,('Missing original UK service data',part)
+              gb.update(json.loads(m.group(1)))
+          assert len(gb)==16
+          all_links=set(uk_all)|set(gb)|{'web-development','about','contact','portfolio'}
           for slug,entry in uk_all.items():
               for key in ('title','desc','lead','intro','introText','risk','cta','kicker'):
                   assert entry[key] and len(entry[key])>=8,(slug,key)
