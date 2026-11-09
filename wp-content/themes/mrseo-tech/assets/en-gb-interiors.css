@@ -1,0 +1,77 @@
+/* Premium UK-only interior design. Never enqueue on homepage Earth or other locales.
+   Approved visual language: warm ivory, graphite, restrained red, readable type. */
+@keyframes mrseoGbFloat{
+  0%,100%{transform:translate3d(0,2px,10px)}
+  50%{transform:translate3d(0,-6px,19px)}
+}
+@keyframes mrseoGbFloatAlt{
+  0%,100%{transform:translate3d(0,-2px,9px)}
+  50%{transform:translate3d(0,5px,17px)}
+}
+.pl-svc--en-gb-compact .pl-svc-hero{padding:clamp(43px,5vw,77px) 0 clamp(51px,5.5vw,84px);background:linear-gradient(146deg,#fbf8f2 0%,#f1eee7 100%)}
+.pl-svc--en-gb-compact .pl-svc-hero h1{font-size:clamp(42px,4.8vw,70px);line-height:1.1;letter-spacing:-.045em}
+.pl-svc--en-gb-compact .pl-svc-hero-copy>p{font-size:clamp(17px,1.4vw,20px);line-height:1.62}
+.pl-svc--en-gb-compact .pl-svc-scene{
+ background:linear-gradient(145deg,#30383b 0%,#1d292b 100%);
+ border-color:#526063;perspective:1050px;transform-style:preserve-3d;
+ box-shadow:0 22px 52px #2533352b
+}
+.pl-svc--en-gb-compact .pl-svc-scene:after{width:140px;height:140px;filter:blur(24px);background:#bd776126}
+.pl-svc--en-gb-compact .pl-svc-scene-steps{transform-style:preserve-3d}
+.pl-svc--en-gb-compact .pl-svc-scene-step{animation:mrseoGbFloat 7.5s ease-in-out infinite;box-shadow:0 9px 20px #050f141b}
+.pl-svc--en-gb-compact .pl-svc-scene-step:nth-of-type(even){animation-name:mrseoGbFloatAlt;animation-delay:-2.5s}
+.pl-svc--en-gb-compact .pl-svc-scene-head{font-size:12px;letter-spacing:.02em}
+.pl-svc--en-gb-compact .pl-svc-scene-end{font-size:12px;letter-spacing:.01em}
+.pl-svc--en-gb-compact .pl-svc-scene-step strong{font-size:clamp(13px,1.2vw,15px);line-height:1.38}
+.pl-svc--en-gb-compact .pl-svc-light{background:#bd7761}
+.pl-svc--en-gb-compact .pl-svc-needs,.pl-svc--en-gb-compact .pl-svc-outcomes,
+.pl-svc--en-gb-compact .pl-svc-faq{padding:clamp(50px,5vw,78px) 0}
+.pl-svc--en-gb-compact .pl-svc-need{min-height:0;padding:clamp(23px,2.2vw,30px)}
+.pl-svc--en-gb-compact .pl-svc-need-index{margin-bottom:20px}
+.pl-svc--en-gb-compact .pl-svc-need p{font-size:16px;line-height:1.55}
+.pl-svc--en-gb-compact .pl-svc-need-action strong{font-size:16px;line-height:1.5}
+.pl-svc--en-gb-compact .pl-svc-outcomes h2 em{color:#ae5549;font-style:normal}
+.pl-svc--en-gb-compact .pl-svc-outcomes-grid>div:first-child>p{font-size:15px;line-height:1.6}
+.pl-svc--en-gb-compact .pl-svc-final{background:#273032}
+.pl-svc--en-gb-compact .pl-svc-final h2{max-width:720px}
+/* Distinct visual language per intent: never repeat the homepage Earth. */
+.pl-svc--seo .pl-svc-bars i:nth-child(2),
+.pl-svc-seo-audit .pl-svc-bars i:nth-child(4){background:#d6a48a}
+.pl-svc--data .pl-svc-bars i:nth-child(3){background:#c4cfd0}
+.pl-svc--ads .pl-svc-bars i:nth-child(5){background:#bb7565}
+.pl-svc--commerce .pl-svc-shop i:nth-child(2){border-color:#d1a593}
+.pl-svc--merchant .pl-svc-merchant span:first-child{color:#d98b79}
+.pl-svc--support .pl-svc-support i:nth-child(2){background:#d1ad9c}
+.pl-svc--web .pl-svc-browser{filter:drop-shadow(0 13px 17px #08111655)}
+/* The fifteen new UK service illustrations reuse distinct, approved visual templates. */
+.uws-page .uws-demo{perspective:960px;transform-style:preserve-3d}
+.uws-page .uws-local-result,.uws-page .uws-corporate-hero,
+.uws-page .uws-landing-lines,.uws-page .uws-redesign-after,
+.uws-page .uws-scene-search,.uws-page .uws-scene-ads-bars,
+.uws-page .uws-scene-tech-screen,.uws-page .uws-scene-flow{
+ animation:mrseoGbFloat 8.8s ease-in-out infinite;transform-style:preserve-3d
+}
+.uws-page .uws-redesign-after,.uws-page .uws-scene-ads-bars{animation-name:mrseoGbFloatAlt}
+@media(max-width:780px){
+ .pl-svc--en-gb-compact .pl-svc-hero{padding:35px 0 53px}
+ .pl-svc--en-gb-compact .pl-svc-scene{min-height:360px}
+}
+@media(max-width:620px){
+ .pl-svc--en-gb-compact .pl-svc-hero h1{font-size:clamp(35px,9vw,47px);letter-spacing:-.02em;line-height:1.13}
+ .pl-svc--en-gb-compact .pl-svc-scene{min-height:345px;padding:17px}
+ .pl-svc--en-gb-compact .pl-svc-scene-head,.pl-svc--en-gb-compact .pl-svc-scene-end{font-size:12px;letter-spacing:0}
+ .pl-svc--en-gb-compact .pl-svc-scene-step{min-height:86px;padding:10px 8px;animation-name:mrseoGbFloatAlt}
+ .pl-svc--en-gb-compact .pl-svc-scene-step small{font-size:12px}
+ .pl-svc--en-gb-compact .pl-svc-scene-step strong{font-size:12px}
+ .pl-svc--en-gb-compact .pl-svc-need{padding:22px}
+ .pl-svc--en-gb-compact .pl-svc-need p{font-size:16px}
+ .uws-page .uws-local-result,.uws-page .uws-corporate-hero,
+ .uws-page .uws-landing-lines,.uws-page .uws-redesign-after,
+ .uws-page .uws-scene-search,.uws-page .uws-scene-ads-bars,
+ .uws-page .uws-scene-tech-screen,.uws-page .uws-scene-flow{animation:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .pl-svc--en-gb-compact .pl-svc-scene *,
+ .pl-svc--en-gb-compact .pl-svc-scene:after,
+ .uws-page .uws-demo *{animation:none!important;transition:none!important}
+}
