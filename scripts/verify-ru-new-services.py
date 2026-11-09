@@ -80,6 +80,7 @@ assert ".ru-premium" in motion and ".ns-page--compact" in motion and ".uws-page"
 assert ".ms-scene-web-development" in motion and ".ms-scene-analytics" in motion
 assert ".orbit-lab" not in motion and ".lab-core" not in motion
 assert "mrseo-ru-premium-motion" in functions
+assert "if(mrseo_locale()===\'ru\' && mrseo_slug()!==\'\' && mrseo_slug()!==\'privacy\')" in functions
 scenecopy=(root/"inc/motion-scenes-copy.php").read_text()
 assert "Эффективность маркетинга" in scenecopy
 assert "Подтверждённые заказы" in scenecopy
