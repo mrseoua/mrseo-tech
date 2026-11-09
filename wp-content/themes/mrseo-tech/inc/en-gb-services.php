@@ -8,12 +8,12 @@ function mrseo_en_gb_data($slug=null){
  static $data=null;
  if($data===null){
   $data=array_merge(mrseo_en_gb_part1(),mrseo_en_gb_part2(),mrseo_en_gb_part3());
-  foreach($data as $slug=>&$page){
-   $page['group']=in_array($slug,array('local-seo','service-business-seo','international-seo'),true)?'SEO':(
-    $slug==='local-google-ads'?'Google Ads':(
-    in_array($slug,array('store-conversion','store-migration','woocommerce-shopify-stores','catalog-automation'),true)?'E-commerce':(
-    $slug==='ga4-conversions'?'Analytics':(
-    in_array($slug,array('website-speed-security','api-integrations','web-applications'),true)?'Web development':'Website design'))));
+  foreach($data as $serviceSlug=>&$page){
+   $page['group']=in_array($serviceSlug,array('local-seo','service-business-seo','international-seo'),true)?'SEO':(
+    $serviceSlug==='local-google-ads'?'Google Ads':(
+    in_array($serviceSlug,array('store-conversion','store-migration','woocommerce-shopify-stores','catalog-automation'),true)?'E-commerce':(
+    $serviceSlug==='ga4-conversions'?'Analytics':(
+    in_array($serviceSlug,array('website-speed-security','api-integrations','web-applications'),true)?'Web development':'Website design'))));
   }
   unset($page);
  }
