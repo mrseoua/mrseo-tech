@@ -115,6 +115,11 @@ get_header();
      <span><?php echo esc_html($tr('ЩО ВИ ОТРИМАЄТЕ','ЧТО ВЫ ПОЛУЧИТЕ','WHAT YOU RECEIVE')); ?></span>
      <p><?php echo esc_html($p['result']); ?></p>
     </div>
+    <?php if($en && mrseo_slug()==='ga4-conversions'):?>
+    <p class="uws-en-gb-sibling">Need a commercial reporting view instead of technical event fixes?
+     <a href="<?php echo esc_url(mrseo_url('analytics','en')); ?>">Explore marketing analytics <span aria-hidden="true">↗</span></a>
+    </p>
+    <?php endif;?>
     <a class="ukseo-text-link" href="<?php echo esc_url(mrseo_url('contact')); ?>"><?php echo esc_html($tr('Обговорити рішення','Обсудить решение','Discuss the approach')); ?> <span aria-hidden="true">↗</span></a>
    </div>
    <div class="uws-solution-list">
