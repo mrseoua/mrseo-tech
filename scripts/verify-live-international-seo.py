@@ -56,8 +56,9 @@ UK_NEW_SLUGS = (
     "woocommerce-shopify-stores", "catalog-automation", "api-integrations",
     "web-applications", "ga4-conversions",
 )
-UK_ONLY = {"woocommerce-shopify-stores", "catalog-automation",
-           "api-integrations", "web-applications"}
+UK_ONLY = {"woocommerce-shopify-stores"}
+UK_MICRO = {"ga4-conversions", "catalog-automation",
+            "api-integrations", "web-applications"}
 SAMPLE.extend("/en/" + slug + "/" for slug in UK_NEW_SLUGS)
 SAMPLE.extend("/" + slug + "/" for slug in PAIRED_RU_SLUGS)
 SAMPLE.extend("/ru/" + slug + "/" for slug in PAIRED_RU_SLUGS)
@@ -175,7 +176,7 @@ if __name__ == "__main__":
         if slug in UK_ONLY:
             if sitemap.get(uk_url) != {"en-GB": uk_url}:
                 fail(f"Invented alternate for UK-only page: {slug}")
-        elif slug == "ga4-conversions":
+        elif slug in UK_MICRO:
             pairs = {"uk-UA": HOST + "/ga4-conversions/",
                      "ru": HOST + "/ru/ga4-conversions/",
                      "en-GB": uk_url}
