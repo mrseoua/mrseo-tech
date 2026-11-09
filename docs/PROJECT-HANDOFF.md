@@ -211,3 +211,11 @@
 - International SEO remains **336 real canonical URLs / 42 genuine intent groups**, 20 locales with self canonical, only legitimate hreflang equivalents. British menus 25/25 real destinations, 29 UK service landings (13 revised + 16 new). No invented British addresses/cases/guarantees. No additional language work done in this release.
 - The prior recurring recovery automation **`Automation_f5d6674958f88191ac6b744d2bf19ef3` was disabled** after deployment was confirmed, avoiding redundant/old-job reruns.
 - Open checks: deliver an optional real test contact-form submission on the live site with an approved recipient; external crawler cannot inspect due staging restrictions, but the GitHub Actions live tester can. A later EU responsive run may still be finishing; the verified premerge four-shard preview was green. Revisit branch protection after public visibility switch.
+
+
+### 9 ноября 2026 — Польша: пакет 1, пять оригинальных посадочных, только PR
+
+- После окончательно утверждённых UA/RU и опубликованной UK пользователь поручил ускорить следующий рынок; выбран PL `/pl/`. Нет изменений UA/RU/UK или главной 3D-Земли.
+- Отдельная ветка `chatgpt/pl-market-service-parity-20261109`: 5 оригинальных PL страниц `local-seo`, `service-business-seo`, `landing-pages`, `catalog-automation`, `api-integrations` на существующем безопасном шаблоне `pl-service-landing.php`. К каждой: коммерческая задача, 3 проблемы, 4 этапа, реальные артефакты, 3 FAQ, демонстрационный сценарий и CTA; без придуманного польского офиса, гарантий и кейсов.
+- Пять новых пунктов меню ведут к действительным PL маршрутам; прежние шесть PL страниц и другие локали не изменены. Реальные UA/RU/EN эквиваленты присоединены к существующим hreflang-группам; ожидаемый SEO inventory 341 URL / 42 группы. Сохраняется noindex/nofollow.
+- Пакет является **частичным, НЕ вся Польша**: следующие польские коммерческие страницы остаются без отдельных лендингов. CI и визуальный WordPress preview обязательны перед согласованием; никаких merge/deploy без прямого одобрения владельца. Продолжить с оставшимися пунктами меню без повторного обсуждения UA/RU.
