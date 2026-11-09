@@ -5,7 +5,7 @@ $pl_slug=mrseo_slug();
 $pl_page=mrseo_pl_service_page($pl_slug);
 if(mrseo_locale()!=='pl'||!$pl_page){status_header(404);include get_404_template();return;}
 get_header();
-$pl_group=in_array($pl_slug,array('tworzenie-sklepow-internetowych','catalog-automation'),true)?'commerce':(in_array($pl_slug,array('audyt-google-ads','google-shopping','landing-pages'),true)?'ads':($pl_slug==='problemy-merchant-center'?'merchant':(in_array($pl_slug,array('opieka-wordpress','api-integrations'),true)?'support':(in_array($pl_slug,array('local-seo','service-business-seo'),true)?'seo':'web'))));
+$pl_group=in_array($pl_slug,array('tworzenie-sklepow-internetowych','catalog-automation','sklepy-woocommerce-shopify','store-conversion','store-migration'),true)?'commerce':(in_array($pl_slug,array('audyt-google-ads','google-shopping','landing-pages','local-google-ads'),true)?'ads':($pl_slug==='problemy-merchant-center'?'merchant':(in_array($pl_slug,array('opieka-wordpress','api-integrations','website-speed-security'),true)?'support':(in_array($pl_slug,array('local-seo','service-business-seo','international-seo'),true)?'seo':'web'))));
 ?>
 <div class="pl-svc pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>">
  <section class="pl-svc-hero" aria-labelledby="pl-title">
