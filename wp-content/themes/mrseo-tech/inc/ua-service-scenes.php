@@ -43,7 +43,8 @@ function mrseo_render_ua_service_scene($kind,$locale='uk'){
   'shop-platforms'=>array('STORE','PLATFORM CHOICE','Fit the shop to the business','WooCommerce','Shopify','Test checkout'),
   'catalog-automation'=>array('DATA','PRODUCT AUTOMATION','Keep product details aligned','Supplier data','Price and stock','Published feed'),
   'api-integrations'=>array('API','BUSINESS INTEGRATION','One reliable data flow','Website','CRM / service','Verified record'),
-  'web-applications'=>array('APP','WEB APPLICATION MVP','One task working well','User role','Working screen','Tested task')
+  'web-applications'=>array('APP','WEB APPLICATION MVP','One task working well','User role','Working screen','Tested task'),
+  'ga4-conversions'=>array('GA4','EVENT VERIFICATION','A conversion that counts','Real enquiry','Correct event','Verified data')
  );
  if(!isset($presets[$kind]))return;
  $v=$presets[$kind];
