@@ -195,7 +195,10 @@ function mrseo_assets(){
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
 function mrseo_meta_description(){
- if(mrseo_locale()==='en' && function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())return;
+ // UK original service routes render their own single page-specific meta description.
+ if(mrseo_locale()==='en' &&
+   ((function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())
+    || (function_exists('mrseo_en_gb_route') && mrseo_en_gb_route())))return;
  if(mrseo_locale()==='en' && mrseo_slug()===''){
   echo '<meta name="description" content="'.esc_attr('Website design, online shops, SEO, PPC and bespoke development for UK businesses. Build something new or improve your existing website with MrSeo.tech.').'">'."\n";
   return;
