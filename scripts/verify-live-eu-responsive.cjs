@@ -76,6 +76,9 @@ async function audit(browser,viewport,lang,slug){
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     footerLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(a=>a.textContent.trim()),
     ruNewStyles:!!document.querySelector('link[href*="ru-website-scenes.css"]'),
+    ruMotionStyles:!!document.querySelector('link[href*="ru-premium-motion.css"]'),
+    ruAnalyticsPanel:document.querySelector('.ms-scene-analytics .ms-data-head')?.textContent.trim()||'',
+    ruAnalyticsCheck:document.querySelector('.ms-scene-analytics .ms-data-check')?.textContent.trim()||'',
     ruNewCall:!!document.querySelector('.uws-page a[href$="/ru/contact/"]'),
     ruSceneRussian:!!document.querySelector('.uws-page .uws-demo-foot')&&
       /Иллюстрация принципа/.test(document.querySelector('.uws-page .uws-demo-foot')?.textContent||''),
@@ -248,6 +251,14 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('UA/RU-only new service page leaked to '+lang);
   if(lang!=='ru'&&c.ruNewStyles)
     item.errors.push('Russian scene stylesheet leaked to '+lang);
+  if(lang==='ru' && slug!=='' && slug!=='privacy' && !c.ruMotionStyles)
+    item.errors.push('RU premium motion stylesheet absent on interior: '+slug);
+  if(lang!=='ru' && c.ruMotionStyles)
+    item.errors.push('RU premium motion stylesheet leaked to '+lang);
+  if(lang==='ru' && slug==='analytics' &&
+    (!c.ruAnalyticsPanel.includes('РАСХОДЫ')||!c.ruAnalyticsCheck.includes('Заказы')||
+      c.ruAnalyticsPanel.includes('GA4')))
+    item.errors.push('RU marketing analytics illustration still shows technical-only GA4 flow');
   if(lang==='uk'&&['merchant-center'].includes(slug)){
     const unrelated=await page.locator('.ns-related').count();
     if(unrelated!==0)item.errors.push('Redundant Ukrainian related-services panel still visible');
