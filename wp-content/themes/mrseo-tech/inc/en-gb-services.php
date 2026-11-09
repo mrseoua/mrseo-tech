@@ -20,6 +20,26 @@ function mrseo_en_gb_data($slug=null){
  return $slug===null?$data:($data[$slug]??null);
 }
 function mrseo_en_gb_slugs(){return array_keys(mrseo_en_gb_data());}
+/** Landing-page language switch fallback: always a REAL broader page, never an invented URL. */
+function mrseo_en_gb_parent($slug,$locale){
+ $sites=array('local-business-websites','landing-pages','corporate-websites','website-redesign');
+ $seo=array('local-seo','service-business-seo','international-seo');
+ $shops=array('store-conversion','store-migration','woocommerce-shopify-stores','catalog-automation');
+ if(in_array($locale,array('uk','ru'),true) &&
+    in_array($slug,array('catalog-automation','api-integrations','web-applications'),true))return $slug;
+ if(in_array($slug,$sites,true))
+  return in_array($locale,array('uk','ru'),true)?'service-websites':
+   ($locale==='pl'?'tworzenie-stron-internetowych':
+    ($locale==='de'?'web-development':'website-design'));
+ if(in_array($slug,$seo,true))return 'seo';
+ if($slug==='local-google-ads')return 'google-ads';
+ if(in_array($slug,$shops,true))
+  return in_array($locale,array('uk','ru'),true)?'online-store-development':
+   ($locale==='pl'?'tworzenie-sklepow-internetowych':
+    ($locale==='de'?'ecommerce-seo':'online-shop-development'));
+ if($slug==='ga4-conversions')return 'analytics';
+ return 'web-development';
+}
 function mrseo_en_gb_route(){
  if(mrseo_locale()!=='en')return false;
  $s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');
