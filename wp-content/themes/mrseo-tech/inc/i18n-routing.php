@@ -91,7 +91,7 @@ function mrseo_url($slug='',$lang=null){
  // New pages have original UA/RU copy; other languages use a relevant completed parent page.
  if(function_exists('mrseo_new_service_parent_slugs') && !in_array($lang,array('uk','ru'),true)){
   $new_parents=mrseo_new_service_parent_slugs();
-  if(isset($new_parents[$slug]) && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)) && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)))$slug=$new_parents[$slug];
+  if(isset($new_parents[$slug]) && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)) && !($lang==='en' && function_exists('mrseo_en_gb_slugs') && in_array($slug,mrseo_en_gb_slugs(),true)) && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)))$slug=$new_parents[$slug];
  }
  if($slug==='horoshop' && !in_array($lang,array('uk','ru'),true))$slug='ecommerce-seo';
  if(in_array($lang,array('pl','de'),true) && !in_array($slug,mrseo_int_pages(),true) && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true))){
