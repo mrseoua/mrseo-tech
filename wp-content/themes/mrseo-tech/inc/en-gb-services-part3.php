@@ -366,18 +366,15 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     "pains": [
       [
         "One enquiry is counted more than once",
-        "A tag may fire on both a button click and a confirmed submission.",
-        "Test the event and define the real success state before changing it."
+        "A tag may fire on both a button click and a confirmed submission. Test the event and define the real success state before changing it."
       ],
       [
         "Order totals differ from the shop",
-        "Missing IDs, incorrect values, currency settings or duplicates can distort purchase events.",
-        "Compare real test orders with GA4 and Google Ads records."
+        "Missing IDs, incorrect values, currency settings or duplicates can distort purchase events. Compare real test orders with GA4 and Google Ads records."
       ],
       [
         "Data disappears at the important step",
-        "Consent or checkout behaviour can prevent events being recorded in some circumstances.",
-        "Document the actual gap and choose an appropriate compliant measurement approach."
+        "Consent or checkout behaviour can prevent events being recorded in some circumstances. Document the actual gap and choose an appropriate compliant measurement approach."
       ]
     ],
     "sectionTitle": "Test the real action. <em>Record it accurately where possible.</em>",
