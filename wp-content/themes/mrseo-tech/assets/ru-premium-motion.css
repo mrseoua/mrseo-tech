@@ -1,0 +1,132 @@
+/* RU service visual depth. Mirrors the approved UA motion principles without
+   touching UA markup or homepage Earth. Loaded only on RU interior routes.
+   Animate illustration layers, never interactive controls or readable copy. */
+@keyframes mrseoRuDepthA{
+ 0%,100%{transform:translate3d(0,3px,15px) rotateX(3deg) rotateY(-3deg)}
+ 50%{transform:translate3d(0,-6px,26px) rotateX(-2deg) rotateY(4deg)}
+}
+@keyframes mrseoRuDepthB{
+ 0%,100%{transform:translate3d(0,-2px,14px) rotateX(-2deg) rotateY(3deg)}
+ 50%{transform:translate3d(0,5px,25px) rotateX(3deg) rotateY(-4deg)}
+}
+@keyframes mrseoRuDepthPulse{
+ 0%,100%{transform:translate3d(0,2px,12px) scale(.99)}
+ 50%{transform:translate3d(0,-4px,23px) scale(1.03)}
+}
+@keyframes mrseoRuDepthMobile{
+ 0%,100%{transform:translate3d(0,2px,7px)}
+ 50%{transform:translate3d(0,-3px,11px)}
+}
+@keyframes mrseoRuDataBar{
+ 0%,100%{transform:scaleY(.87)}
+ 50%{transform:scaleY(1)}
+}
+/* Eight RU core services: relevant pieces float independently, preserving scene chrome. */
+.ru-premium .ms-scene .ms-serp-row,
+.ru-premium .ms-scene .ms-audit-row,
+.ru-premium .ms-scene .ms-ads-card,
+.ru-premium .ms-scene .ms-product,
+.ru-premium .ms-scene .ms-web-screen,
+.ru-premium .ms-scene .ms-pmax-node,
+.ru-premium .ms-scene .ms-data-event{
+ animation:mrseoRuDepthA 7.6s ease-in-out infinite;
+ backface-visibility:hidden;
+}
+.ru-premium .ms-scene .ms-serp-row:nth-child(even),
+.ru-premium .ms-scene .ms-audit-row:nth-child(even),
+.ru-premium .ms-scene .ms-ads-card:nth-child(even),
+.ru-premium .ms-scene .ms-product:nth-child(even),
+.ru-premium .ms-scene .ms-data-event:nth-child(even){
+ animation-name:mrseoRuDepthB;
+ animation-delay:-2.2s;
+}
+.ru-premium .ms-scene .ms-ads-target,
+.ru-premium .ms-scene .ms-pmax-core,
+.ru-premium .ms-scene .ms-web-mobile,
+.ru-premium .ms-scene .ms-data-check{
+ animation:mrseoRuDepthPulse 6.5s ease-in-out infinite;
+}
+/* All twelve specialist pages keep their individual service diagrams. */
+.ns-page--compact .ns-scene{perspective:920px;transform-style:preserve-3d}
+.ns-page--compact .ns-audit-wave,
+.ns-page--compact .ns-product-preview,
+.ns-page--compact .ns-commerce-preview,
+.ns-page--compact .ns-dev-preview,
+.ns-page--compact .ns-data-preview{
+ animation:mrseoRuDepthA 8.8s ease-in-out infinite;
+ transform-style:preserve-3d
+}
+.ns-page--compact[data-service-group="ads"] .ns-product-preview,
+.ns-page--compact[data-service-group="dev"] .ns-dev-preview{animation-name:mrseoRuDepthB}
+.ns-page--compact .ns-scene-node{box-shadow:0 13px 26px #101a1c1f}
+/* Thirteen new RU pages reuse the approved UA diagrams with more visual depth. */
+.uws-page .uws-demo{perspective:950px;transform-style:preserve-3d}
+.uws-page .uws-local-result,
+.uws-page .uws-corporate-hero,
+.uws-page .uws-landing-lines,
+.uws-page .uws-redesign-after,
+.uws-page .uws-scene-search,
+.uws-page .uws-scene-ads-bars,
+.uws-page .uws-scene-tech-screen,
+.uws-page .uws-scene-flow{
+ animation:mrseoRuDepthA 8.8s ease-in-out infinite;
+ transform-style:preserve-3d
+}
+.uws-page .uws-local-result{animation-duration:8s}
+.uws-page .uws-landing-lines{animation-duration:9.1s}
+.uws-page .uws-redesign-after{animation-name:mrseoRuDepthB}
+.uws-page .uws-scene-ads-bars{animation-name:mrseoRuDepthB}
+.uws-page .uws-scene-tech-screen{animation-duration:9.4s}
+/* Full-stack/RU about, portfolio and contact illustrations: no text or form movement. */
+.ms-scene-web-development .ms-dev-schema{perspective:950px;transform-style:preserve-3d}
+.ms-scene-web-development .ms-dev-node{
+ animation:mrseoRuDepthA 8s ease-in-out infinite;
+ backface-visibility:hidden;
+}
+.ms-scene-web-development .ms-dev-node-b{animation-name:mrseoRuDepthB;animation-delay:-2s}
+.ms-scene-web-development .ms-dev-node-c{animation-delay:-4s}
+.ms-scene-analytics .ms-data-events{perspective:920px;transform-style:preserve-3d}
+.about-page .about-experience-ring{animation-duration:36s}
+.about-page .uaf-network-center{animation:mrseoRuDepthPulse 8s ease-in-out infinite}
+.portfolio-hero .portfolio-stats-editorial .portfolio-stat{perspective:800px}
+.contact-visual-point.one{animation:mrseoRuDepthPulse 6.5s ease-in-out infinite}
+.contact-visual-point.two{animation:mrseoRuDepthPulse 8s ease-in-out infinite reverse}
+/* Mobile: no 3D text distortions and readable captions. */
+@media(max-width:640px){
+ .ru-premium .ms-scene .ms-serp-row,
+ .ru-premium .ms-scene .ms-audit-row,
+ .ru-premium .ms-scene .ms-ads-card,
+ .ru-premium .ms-scene .ms-product,
+ .ru-premium .ms-scene .ms-web-screen,
+ .ru-premium .ms-scene .ms-pmax-node,
+ .ru-premium .ms-scene .ms-data-event,
+ .ns-page--compact .ns-audit-wave,
+ .ns-page--compact .ns-product-preview,
+ .ns-page--compact .ns-commerce-preview,
+ .ns-page--compact .ns-dev-preview,
+ .ns-page--compact .ns-data-preview,
+ .uws-page .uws-local-result,
+ .uws-page .uws-corporate-hero,
+ .uws-page .uws-landing-lines,
+ .uws-page .uws-redesign-after,
+ .uws-page .uws-scene-search,
+ .uws-page .uws-scene-ads-bars,
+ .uws-page .uws-scene-tech-screen,
+ .uws-page .uws-scene-flow{animation-name:mrseoRuDepthMobile}
+ .ms-scene-web-development .ms-dev-node{animation:none}
+ .ms-scene-web-development .ms-dev-node small,
+ .ms-scene-web-development .ms-dev-node>span{font-size:12px;line-height:1.35}
+ .ns-page--compact .ns-scene-top,
+ .ns-page--compact .ns-scene-node small{font-size:12px;line-height:1.35}
+}
+@media(prefers-reduced-motion:reduce){
+ .ru-premium .ms-scene *,
+ .ns-page--compact .ns-scene *,
+ .uws-page .uws-demo *,
+ .ms-scene-web-development .ms-dev-schema *,
+ .about-page .uaf-network *,
+ .contact-visual-point{
+  animation:none!important;
+  transition:none!important;
+ }
+}
