@@ -71,7 +71,7 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Load time · Protection · Access",
     "description": "Website speed, security and accessibility reviews for UK businesses: measured problems, safe fixes and tested key user journeys.",
-    "button": "Discuss website speed, security and accessibility",
+    "button": "Review website issues",
     "scenelabel": "Illustrative website speed, security and accessibility workflow, not client performance data"
   },
   "woocommerce-shopify-stores": {
@@ -141,7 +141,7 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Products · Platform · Checkout",
     "description": "WooCommerce and Shopify development for UK retailers: catalogue design, integrations, mobile checkout and verified store workflows.",
-    "button": "Discuss woocommerce and shopify store development",
+    "button": "Discuss an online shop",
     "scenelabel": "Illustrative woocommerce and shopify store development workflow, not client performance data"
   },
   "catalog-automation": {
@@ -211,7 +211,7 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Suppliers · Catalogue · Feed",
     "description": "E-commerce catalogue automation: supplier feeds, stock and price mapping, Merchant Center attributes and tested product updates.",
-    "button": "Discuss e-commerce catalogue automation",
+    "button": "Review catalogue updates",
     "scenelabel": "Illustrative e-commerce catalogue automation workflow, not client performance data"
   },
   "api-integrations": {
@@ -281,7 +281,7 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "API · CRM · Workflow",
     "description": "API integrations for UK businesses: connect websites, CRMs and order systems with verified data flows, controlled errors and handover.",
-    "button": "Discuss api integrations and business automation",
+    "button": "Discuss an API integration",
     "scenelabel": "Illustrative api integrations and business automation workflow, not client performance data"
   },
   "web-applications": {
@@ -351,7 +351,7 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Users · Workflow · MVP",
     "description": "Bespoke web applications and MVPs for UK businesses: roles, portals, workflows, integrations and tested practical functionality.",
-    "button": "Discuss bespoke web applications and mvp development",
+    "button": "Plan a web application",
     "scenelabel": "Illustrative bespoke web applications and mvp development workflow, not client performance data"
   },
   "ga4-conversions": {
@@ -424,7 +424,7 @@ function mrseo_en_gb_part3(){static $data=null;if($data!==null)return $data;
     ],
     "foot": "Event · Value · Verification",
     "description": "GA4 conversion tracking for UK businesses: test lead and purchase events, identify duplicates, verify transaction values and document limits.",
-    "button": "Review GA4 conversion tracking",
+    "button": "Review GA4 tracking",
     "scenelabel": "Illustrative GA4 event verification journey, not real client data"
   }
 }
