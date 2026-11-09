@@ -6,7 +6,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
 {
   "local-seo": {
     "title": "SEO lokalne dla firm | MrSeo.tech",
-    "description": "Weryfikujemy widoczność usług w lokalnych wynikach, profil firmy, zgodność danych kontaktowych i strony dla obsługiwanych miejscowości. Nie obiecujemy pozycji w mapach. Widoczność ",
+    "description": "Weryfikujemy widoczność usług w lokalnych wynikach, profil firmy, zgodność danych kontaktowych i strony dla obsługiwanych miejscowości. Nie obiecujemy.",
     "kicker": "SEO LOKALNE I WIDOCZNOŚĆ W MAPACH GOOGLE",
     "hero": [
       "Gdy firma jest blisko, ale klienci jej nie znajdują",
@@ -14,7 +14,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "lead": "Weryfikujemy widoczność usług w lokalnych wynikach, profil firmy, zgodność danych kontaktowych i strony dla obsługiwanych miejscowości. Nie obiecujemy pozycji w mapach.",
     "intro": "Wyszukiwania lokalne powinny prowadzić do właściwej usługi",
-    "introText": "Widoczność zależy od lokalizacji, konkurencji, wiarygodności profilu oraz jakości strony.",
+    "introText": "Firmę trzeba znaleźć na obszarze, na którym naprawdę działa. Sprawdzamy lokalne wyniki i możliwość kontaktu z telefonu.",
     "problems": [
       [
         "Firma nie pojawia się przy usłudze i mieście",
@@ -52,16 +52,16 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "outcomes": [
       [
-        "Mapa lokalnych zapytań i brakujących stron",
-        "Materiał do wdrożenia i niezależnej kontroli."
+        "Mapa lokalnych zapytań",
+        "Lista miast, usług i stron wymagających pracy."
       ],
       [
-        "Lista korekt profilu oraz danych firmy",
-        "Zakres działań opisany bez obietnic niepopartych danymi."
+        "Kontrola profilu firmy",
+        "Rozbieżności w kategoriach, godzinach i danych kontaktowych."
       ],
       [
-        "Kontrolna ścieżka od wyszukania do kontaktu",
-        "Sprawdzamy wynik na uzgodnionym scenariuszu."
+        "Sprawdzona droga do kontaktu",
+        "Test linków, telefonu i formularza na smartfonie."
       ]
     ],
     "example": [
@@ -84,17 +84,17 @@ return json_decode(<<<'MRSEO_PL_NEXT'
         "Profil firmy, strony usług, aktualność danych i dostępność kontaktu."
       ]
     ],
-    "risk": "Zakres, harmonogram i weryfikację ustalamy po analizie. Nie gwarantujemy pozycji w Google, liczby zapytań ani wzrostu sprzedaży.",
+    "risk": "Profil firmy, strony usług, aktualność danych i dostępność kontaktu. Zakres wdrożenia i sposób weryfikacji ustalamy w ofercie.",
     "related": [
       [
         "seo",
-        "SEO",
-        "Widoczność w Google"
+        "Pozycjonowanie stron",
+        "Szersza widoczność usług"
       ],
       [
-        "web-development",
-        "Web development",
-        "Zmiany techniczne i integracje"
+        "service-business-seo",
+        "SEO stron usługowych",
+        "Właściwa oferta na stronie"
       ]
     ],
     "visual": [
@@ -106,7 +106,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
   },
   "service-business-seo": {
     "title": "SEO stron usługowych | MrSeo.tech",
-    "description": "Sprawdzamy, czy najważniejsze usługi mają właściwe strony, odpowiadają na pytania klientów i prowadzą do kontaktu. Najpierw ustalamy, czego szukają potencjalni klienci. Klient posz",
+    "description": "Sprawdzamy, czy najważniejsze usługi mają właściwe strony, odpowiadają na pytania klientów i prowadzą do kontaktu. Najpierw ustalamy, czego szukają.",
     "kicker": "SEO DLA FIRM USŁUGOWYCH",
     "hero": [
       "Masz ofertę usług, ale Google pokazuje inne firmy",
@@ -114,7 +114,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "lead": "Sprawdzamy, czy najważniejsze usługi mają właściwe strony, odpowiadają na pytania klientów i prowadzą do kontaktu. Najpierw ustalamy, czego szukają potencjalni klienci.",
     "intro": "Jedna strona o wszystkich usługach to często za mało",
-    "introText": "Klient poszukuje konkretnego rozwiązania, nie ogólnej listy możliwości.",
+    "introText": "Struktura usług powinna odpowiadać na osobne pytania klientów, a nie powielać jedną ofertę na wielu podstronach.",
     "problems": [
       [
         "Usługi są ukryte na jednej podstronie",
@@ -152,16 +152,16 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "outcomes": [
       [
-        "Priorytetowa mapa usług i słów kluczowych",
-        "Materiał do wdrożenia i niezależnej kontroli."
+        "Mapa usług i intencji",
+        "Ważne frazy przypisane do właściwych adresów."
       ],
       [
-        "Lista zmian treści oraz linkowania",
-        "Zakres działań opisany bez obietnic niepopartych danymi."
+        "Backlog zmian SEO",
+        "Konkretne tytuły, opisy, linki i braki treści."
       ],
       [
-        "Kontrola formularzy i ważnych zapytań",
-        "Sprawdzamy wynik na uzgodnionym scenariuszu."
+        "Sprawdzona ścieżka zapytania",
+        "Kontrola formularza oraz ważnych wejść."
       ]
     ],
     "example": [
@@ -184,17 +184,17 @@ return json_decode(<<<'MRSEO_PL_NEXT'
         "Nie. Czas zależy od konkurencji, technicznego stanu strony i popytu."
       ]
     ],
-    "risk": "Zakres, harmonogram i weryfikację ustalamy po analizie. Nie gwarantujemy pozycji w Google, liczby zapytań ani wzrostu sprzedaży.",
+    "risk": "Nie. Czas zależy od konkurencji, technicznego stanu strony i popytu. Zakres wdrożenia i sposób weryfikacji ustalamy w ofercie.",
     "related": [
       [
-        "seo",
-        "SEO",
-        "Widoczność w Google"
+        "service-websites",
+        "Tworzenie stron usługowych",
+        "Nowa strona dla firmy"
       ],
       [
-        "web-development",
-        "Web development",
-        "Zmiany techniczne i integracje"
+        "local-seo",
+        "SEO lokalne",
+        "Widoczność w regionie"
       ]
     ],
     "visual": [
@@ -206,7 +206,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
   },
   "landing-pages": {
     "title": "Landing page pod kampanie Google Ads | MrSeo.tech",
-    "description": "Projektujemy konkretną stronę dopasowaną do intencji reklamy: z jasną ofertą, czytelnym kontaktem i pomiarem zgłoszeń. Nie dokładamy sekcji tylko po to, by strona wyglądała na dłuż",
+    "description": "Projektujemy konkretną stronę dopasowaną do intencji reklamy: z jasną ofertą, czytelnym kontaktem i pomiarem zgłoszeń. Nie dokładamy sekcji tylko po to, by.",
     "kicker": "LANDING PAGE POD REKLAMĘ",
     "hero": [
       "Kliknięcia są, a formularz pozostaje pusty?",
@@ -214,7 +214,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "lead": "Projektujemy konkretną stronę dopasowaną do intencji reklamy: z jasną ofertą, czytelnym kontaktem i pomiarem zgłoszeń. Nie dokładamy sekcji tylko po to, by strona wyglądała na dłuższą.",
     "intro": "Ruch reklamowy potrzebuje odpowiedniej strony docelowej",
-    "introText": "Skuteczność zależy od zgodności obietnicy reklamy, potrzeb klienta i formularza.",
+    "introText": "Reklama i strona docelowa muszą odpowiadać na to samo pytanie klienta; inaczej nawet dobre kliknięcia nie prowadzą do rozmowy.",
     "problems": [
       [
         "Reklama prowadzi na ogólną stronę",
@@ -252,16 +252,16 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "outcomes": [
       [
-        "Strona odpowiadająca na konkretną reklamę",
-        "Materiał do wdrożenia i niezależnej kontroli."
+        "Jeden czytelny komunikat",
+        "Strona zgodna z intencją konkretnej reklamy."
       ],
       [
-        "Prosty kontakt i wersja mobilna",
-        "Zakres działań opisany bez obietnic niepopartych danymi."
+        "Prosta ścieżka zgłoszenia",
+        "Widoczny formularz z testem wysyłki."
       ],
       [
-        "Specyfikacja oraz weryfikacja pomiaru zgłoszeń",
-        "Sprawdzamy wynik na uzgodnionym scenariuszu."
+        "Weryfikacja konwersji",
+        "Sprawdzony przepływ zdarzenia i rzeczywistej wiadomości."
       ]
     ],
     "example": [
@@ -284,17 +284,17 @@ return json_decode(<<<'MRSEO_PL_NEXT'
         "Nie. Wynik zależy także od oferty, źródła ruchu i cen."
       ]
     ],
-    "risk": "Zakres, harmonogram i weryfikację ustalamy po analizie. Nie gwarantujemy pozycji w Google, liczby zapytań ani wzrostu sprzedaży.",
+    "risk": "Nie. Wynik zależy także od oferty, źródła ruchu i cen. Zakres wdrożenia i sposób weryfikacji ustalamy w ofercie.",
     "related": [
       [
-        "seo",
-        "SEO",
-        "Widoczność w Google"
+        "google-ads",
+        "Google Ads",
+        "Prowadzenie kampanii"
       ],
       [
-        "web-development",
-        "Web development",
-        "Zmiany techniczne i integracje"
+        "local-google-ads",
+        "Reklamy lokalne",
+        "Kampanie dla regionu"
       ]
     ],
     "visual": [
@@ -306,7 +306,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
   },
   "catalog-automation": {
     "title": "Automatyzacja katalogu i stanów sklepu | MrSeo.tech",
-    "description": "Łączymy źródła danych o produktach z katalogiem sklepu, żeby ograniczyć ręczne poprawki i ryzyko sprzedaży niedostępnego towaru. Zakres integracji zależy od możliwości używanego sy",
+    "description": "Łączymy źródła danych o produktach z katalogiem sklepu, żeby ograniczyć ręczne poprawki i ryzyko sprzedaży niedostępnego towaru. Zakres integracji zależy od.",
     "kicker": "AUTOMATYZACJA E-COMMERCE",
     "hero": [
       "Ceny i stany w sklepie wciąż aktualizujesz ręcznie?",
@@ -314,7 +314,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "lead": "Łączymy źródła danych o produktach z katalogiem sklepu, żeby ograniczyć ręczne poprawki i ryzyko sprzedaży niedostępnego towaru. Zakres integracji zależy od możliwości używanego systemu.",
     "intro": "Produkt nie powinien znikać między arkuszem a zamówieniem",
-    "introText": "Zaczynamy od źródła danych, wyjątków i reguł konfliktu, nie od obietnicy pełnej automatyzacji.",
+    "introText": "Stan magazynowy i cena muszą być spójne niezależnie od liczby plików i systemów. Kluczowe są błędy importu oraz scenariusze odzyskania danych.",
     "problems": [
       [
         "Stan magazynowy różni się w dwóch systemach",
@@ -352,16 +352,16 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "outcomes": [
       [
-        "Mapa przepływu danych produktowych",
-        "Materiał do wdrożenia i niezależnej kontroli."
+        "Mapa źródeł danych",
+        "Źródła prawdy i identyfikatory produktów."
       ],
       [
-        "Reguły synchronizacji i sytuacji wyjątkowych",
-        "Zakres działań opisany bez obietnic niepopartych danymi."
+        "Reguły importu",
+        "Mapowanie pól i obsługa nieprawidłowych rekordów."
       ],
       [
-        "Testowy import z kontrolą zmian",
-        "Sprawdzamy wynik na uzgodnionym scenariuszu."
+        "Próba na wybranych SKU",
+        "Kontrola cen i stanów przed pełnym wdrożeniem."
       ]
     ],
     "example": [
@@ -384,17 +384,17 @@ return json_decode(<<<'MRSEO_PL_NEXT'
         "Plan odzyskania zależy od kopii, logów i możliwości systemu."
       ]
     ],
-    "risk": "Zakres, harmonogram i weryfikację ustalamy po analizie. Nie gwarantujemy pozycji w Google, liczby zapytań ani wzrostu sprzedaży.",
+    "risk": "Plan odzyskania zależy od kopii, logów i możliwości systemu. Zakres wdrożenia i sposób weryfikacji ustalamy w ofercie.",
     "related": [
       [
-        "seo",
-        "SEO",
-        "Widoczność w Google"
+        "tworzenie-sklepow-internetowych",
+        "Tworzenie sklepów",
+        "Katalog i proces zakupowy"
       ],
       [
-        "web-development",
-        "Web development",
-        "Zmiany techniczne i integracje"
+        "api-integrations",
+        "Integracje API",
+        "Synchronizacja systemów"
       ]
     ],
     "visual": [
@@ -406,7 +406,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
   },
   "api-integrations": {
     "title": "Integracje API, CRM i e-commerce | MrSeo.tech",
-    "description": "Projektujemy połączenia sklepu, formularzy, CRM i systemów operacyjnych, aby dane trafiały do właściwego miejsca. Najpierw sprawdzamy dostęp i ograniczenia obu stron. Najważniejsze",
+    "description": "Projektujemy połączenia sklepu, formularzy, CRM i systemów operacyjnych, aby dane trafiały do właściwego miejsca. Najpierw sprawdzamy dostęp i ograniczenia.",
     "kicker": "INTEGRACJE API I AUTOMATYZACJA",
     "hero": [
       "Systemy nie rozmawiają ze sobą, a zespół kopiuje dane?",
@@ -414,7 +414,7 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "lead": "Projektujemy połączenia sklepu, formularzy, CRM i systemów operacyjnych, aby dane trafiały do właściwego miejsca. Najpierw sprawdzamy dostęp i ograniczenia obu stron.",
     "intro": "Integracja ma ograniczać ręczną pracę, nie tworzyć nowe błędy",
-    "introText": "Najważniejsze są poprawne identyfikatory, uprawnienia, kolejki i sytuacje awaryjne.",
+    "introText": "Integracja jest użyteczna tylko wtedy, gdy poprawnie radzi sobie z opóźnieniami, błędami i ponawianiem operacji.",
     "problems": [
       [
         "Zapytania z formularza giną w skrzynce",
@@ -452,16 +452,16 @@ return json_decode(<<<'MRSEO_PL_NEXT'
     ],
     "outcomes": [
       [
-        "Mapa przepływu danych i zdarzeń",
-        "Materiał do wdrożenia i niezależnej kontroli."
+        "Schemat zdarzeń i danych",
+        "Kierunek przepływu, pola i odpowiedzialność."
       ],
       [
-        "Specyfikacja integracji i obsługi błędów",
-        "Zakres działań opisany bez obietnic niepopartych danymi."
+        "Obsługa błędów",
+        "Logi, ponawianie operacji i ochrona przed duplikacją."
       ],
       [
-        "Testy przekazania i deduplikacji",
-        "Sprawdzamy wynik na uzgodnionym scenariuszu."
+        "Test integracji",
+        "Potwierdzenie prawidłowego i błędnego scenariusza."
       ]
     ],
     "example": [
@@ -484,17 +484,17 @@ return json_decode(<<<'MRSEO_PL_NEXT'
         "Projekt obejmuje minimalne uprawnienia oraz ochronę danych; szczegóły ustalamy dla konkretnych systemów."
       ]
     ],
-    "risk": "Zakres, harmonogram i weryfikację ustalamy po analizie. Nie gwarantujemy pozycji w Google, liczby zapytań ani wzrostu sprzedaży.",
+    "risk": "Projekt obejmuje minimalne uprawnienia oraz ochronę danych; szczegóły ustalamy dla konkretnych systemów. Zakres wdrożenia i sposób weryfikacji ustalamy w ofercie.",
     "related": [
       [
-        "seo",
-        "SEO",
-        "Widoczność w Google"
+        "web-applications",
+        "Aplikacje webowe",
+        "Panele i procesy firmowe"
       ],
       [
-        "web-development",
-        "Web development",
-        "Zmiany techniczne i integracje"
+        "catalog-automation",
+        "Automatyzacja katalogu",
+        "Przepływ danych produktowych"
       ]
     ],
     "visual": [
