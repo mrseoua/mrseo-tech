@@ -43,10 +43,10 @@ function mrseo_render_motion_scene($slug,$locale=null){
    <div class="ms-ads-measure"><span><?php echo esc_html($steps[1]);?></span><i></i><span><?php echo esc_html($steps[2]);?></span><b>✓</b></div>
   <?php break;
   case 'analytics':?>
-   <div class="ms-data-head"><span>GA4 / <?php echo esc_html($copy['name']);?></span><span class="ms-data-live">● <?php echo esc_html($tabs[0]);?></span></div>
+   <div class="ms-data-head"><span><?php echo esc_html($locale==='ru'?'РАСХОДЫ · ЗАЯВКИ · ПРОДАЖИ':'GA4 / '.$copy['name']);?></span><span class="ms-data-live">● <?php echo esc_html($tabs[0]);?></span></div>
    <svg class="ms-data-path" viewBox="0 0 500 145" preserveAspectRatio="none"><path d="M5 118 C105 118 92 52 175 70 S300 118 352 43 S420 27 495 14" fill="none" stroke="#c97769" stroke-width="4" stroke-linecap="round" class="ms-data-draw"/><path d="M5 118 C105 118 92 52 175 70 S300 118 352 43 S420 27 495 14" fill="none" stroke="#c97769" stroke-width="2" stroke-dasharray="3 12" class="ms-data-dash"/></svg>
    <div class="ms-data-events"><?php foreach($steps as $i=>$step):?><div class="ms-data-event ms-select-<?php echo esc_attr($i);?>"><i></i><span><?php echo esc_html($step);?></span><b>✓</b></div><?php endforeach;?></div>
-   <div class="ms-data-check"><span>event_name</span><strong>purchase</strong><i>✓</i></div>
+   <div class="ms-data-check"><span><?php echo esc_html($locale==='ru'?'Сверка данных':'event_name');?></span><strong><?php echo esc_html($locale==='ru'?'Заказы':'purchase');?></strong><i>✓</i></div>
   <?php break;
   case 'web-development':?>
    <div class="ms-dev-schema"><div class="ms-dev-node ms-dev-node-a"><small>01 /</small><strong><?php echo esc_html($steps[0]);?></strong><span>UI / ACCESS</span></div>

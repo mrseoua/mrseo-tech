@@ -1,0 +1,33 @@
+/* Russian labels on the same approved UA diagram compositions. Loaded on RU 13 only. */
+.uws-page .uws-demo-top strong{overflow-wrap:anywhere;min-width:0}
+.uws-page .uws-scene-headline,.uws-page .uws-corporate-hero strong{overflow-wrap:break-word}
+.uws-page .uws-corporate-bar{align-items:flex-start;flex-wrap:wrap;row-gap:5px}
+.uws-page .uws-corporate-bar span{white-space:normal;overflow-wrap:break-word;line-height:1.35}
+.uws-page .uws-local-result strong{overflow-wrap:break-word}
+.uws-page .uws-scene-tech-states>span{overflow-wrap:break-word}
+@media(max-width:620px){
+ .uws-page .uws-demo-top,.uws-page .uws-demo-top strong,
+ .uws-page .uws-demo-foot,.uws-page .uws-scene-top,
+ .uws-page .uws-scene-kicker,.uws-page .uws-scene-flow-step span,
+ .uws-page .uws-corporate-bar span,.uws-page .uws-local-result small,
+ .uws-page .uws-redesign-before small,.uws-page .uws-redesign-after small,
+ .uws-page .uws-redesign-new span,.uws-page .uws-redesign-new b,
+ .uws-page .uws-landing-tag,.uws-page .uws-demo-mini-actions span{
+  font-size:12px;line-height:1.4;letter-spacing:.005em
+ }
+ .uws-page .uws-corporate-bar span{flex-basis:100%}
+ .uws-page .uws-scene-tech-states>span{font-size:12px}
+ .uws-page .uws-landing-action{font-size:14px}
+ .uws-page .uws-redesign-new{min-height:192px}
+ .uws-page .uws-redesign-old{min-height:192px}
+ .uws-page .uws-demo-foot{white-space:normal}
+}
+@media(max-width:380px){
+ .uws-page .uws-demo-top strong{font-size:12px}
+ .uws-page .uws-corporate-bar span{font-size:12px}
+ .uws-page .uws-scene-headline{font-size:clamp(21px,5.8vw,28px);line-height:1.18}
+}
+@media(prefers-reduced-motion:reduce){
+ .uws-page .uws-scene *,
+ .uws-page .uws-demo-body *{animation:none!important;transition:none!important}
+}

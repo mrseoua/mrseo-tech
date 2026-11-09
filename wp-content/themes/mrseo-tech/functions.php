@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/inc/site-pages.php';
 require_once get_template_directory() . '/inc/i18n-routing.php';
 require_once get_template_directory() . '/inc/ua-website-services.php';
+require_once get_template_directory() . '/inc/ru-website-services.php';
 require_once get_template_directory() . '/inc/ua-virtual-routes.php';
 require_once get_template_directory() . '/inc/language-dropdown.php';
 require_once get_template_directory() . '/inc/contact-channels.php';
@@ -32,13 +33,18 @@ function mrseo_assets(){
  if(function_exists('mrseo_pl_service_route') && mrseo_pl_service_route()){
   wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
  }
- if(function_exists('mrseo_ua_website_route') && mrseo_ua_website_route()){
+ if((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
+    || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())){
   wp_enqueue_style('mrseo-ua-websites-base',get_template_directory_uri().'/assets/seo-uk-pilot.css',
    array('mrseo-style'),'1.0.2');
   wp_enqueue_style('mrseo-ua-websites',get_template_directory_uri().'/assets/ua-websites.css',
    array('mrseo-ua-websites-base'),'1.0.0');
   wp_enqueue_style('mrseo-ua-additional-scenes',get_template_directory_uri().'/assets/ua-additional-scenes.css',
    array('mrseo-ua-websites'),'1.0.0');
+  if(function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())
+   wp_enqueue_style('mrseo-ru-website-scenes',
+     get_template_directory_uri().'/assets/ru-website-scenes.css',
+     array('mrseo-ua-additional-scenes'),'1.0.0');
  }
  if(function_exists('mrseo_new_service_route') && mrseo_new_service_route()){
   wp_enqueue_style('mrseo-ukseo-new-base',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-style'),'1.0.2');
@@ -158,6 +164,13 @@ function mrseo_assets(){
   $ru_compact_base=in_array(mrseo_slug(),$ru_core_slugs,true)?'mrseo-ru-premium':'mrseo-new-services';
   wp_enqueue_style('mrseo-ru-services-compact',get_template_directory_uri().'/assets/ru-services-compact.css',
    array($ru_compact_base),'1.0.0');
+ }
+ // The approved UA premium motion direction also applies to RU interiors,
+ // but never to the homepage Earth or another language. Pure CSS, no WebGL.
+ if(mrseo_locale()==='ru' && mrseo_slug()!=='' && mrseo_slug()!=='privacy'){
+  wp_enqueue_style('mrseo-ru-premium-motion',
+   get_template_directory_uri().'/assets/ru-premium-motion.css',
+   array('mrseo-style'),'1.0.0');
  }
  // Shared compact language dropdown, loaded after both header variants' styles.
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');

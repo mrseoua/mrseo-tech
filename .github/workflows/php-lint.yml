@@ -46,7 +46,9 @@ jobs:
           PHP
       - name: Verify RU compact service coverage and distinct client intents
         run: python3 scripts/verify-ru-compact.py
-      - name: Verify all 13 UA-only service landings and 25 real menu links
+      - name: Verify thirteen RU counterpart pages and 25 functioning service links
+        run: python3 scripts/verify-ru-new-services.py
+      - name: Verify 13 approved Ukrainian service landings and service menu
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -99,10 +101,10 @@ jobs:
           assert all("'"+slug+"'" in nav for slug in data)
           assert "in_array($slug,mrseo_ua_website_slugs(),true)" in menu
           assert "mrseo_ua_website_route()?" in source
-          assert "mrseo_render_ua_service_scene($kind)" in page
+          assert "mrseo_render_ua_service_scene($kind,$ru?'ru':'uk')" in page, 'Approved UA scene keeps explicit Ukrainian default and real Russian labels'
           assert '<nav class="uws-related"' not in page, 'White related strip remains in UA template'
           assert '.uws-related' not in css, 'Unused related strip CSS remains in UA styles'
-          assert "function mrseo_render_ua_service_scene($kind)" in scenes
+          assert "function mrseo_render_ua_service_scene($kind,$locale='uk')" in scenes, 'Scene renderer must keep Ukrainian as its default locale'
           assert ".uws-demo" in css and ".uws-scene--tech" in scenes_css
           assert "prefers-reduced-motion:reduce" in css and "prefers-reduced-motion:reduce" in scenes_css
           assert "wp_enqueue_style('mrseo-ua-websites'" in functions
@@ -168,7 +170,7 @@ jobs:
           print('Six UA service intents, metadata, prices, scoped offers and unchanged noindex OK')
           PY
 
-      - name: Run international SEO pre-indexing audit (307 routes)
+      - name: Run international SEO pre-indexing audit (320 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php

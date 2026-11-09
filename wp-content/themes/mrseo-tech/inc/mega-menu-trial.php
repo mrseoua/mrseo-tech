@@ -91,12 +91,13 @@ function mrseo_trial_menu_route_map($locale) {
   );
  }
  if($locale==='ru'){
+  // Each service below has a complete genuine RU landing page — no placeholder links.
   return array(
-   'seo'=>array(null,'ecommerce-seo',null,null,'seo-audit'),
-   'ads'=>array('google-ads','performance-max',null,null,'merchant-center'),
-   'commerce'=>array('online-store-development','horoshop',null,'catalog-automation',null),
-   'sites'=>array(null,'service-websites',null,null,null),
-   'dev'=>array(null,'api-integrations',null,'web-development','web-applications')
+   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+   'ads'=>array('google-ads','performance-max','local-google-ads','google-ads-audit','merchant-center'),
+   'commerce'=>array('online-store-development','horoshop','store-conversion','catalog-automation','store-migration'),
+   'sites'=>array('local-business-websites','service-websites','landing-pages','corporate-websites','website-redesign'),
+   'dev'=>array('website-maintenance','api-integrations','website-speed-security','web-development','web-applications')
   );
  }
  if($locale==='en')return array(
@@ -133,6 +134,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
  if(!$slug)return false;
  if($locale==='uk' && function_exists('mrseo_ua_website_slugs')
     && in_array($slug,mrseo_ua_website_slugs(),true))return true;
+ if($locale==='ru' && function_exists('mrseo_ru_website_slugs')
+    && in_array($slug,mrseo_ru_website_slugs(),true))return true;
  if(in_array($locale,array('uk','ru'),true)){
   if(in_array($slug,array('seo','seo-audit','ecommerce-seo','google-ads','performance-max','horoshop','web-development','service-websites','analytics'),true))return true;
   return function_exists('mrseo_new_service_copy') && (bool)mrseo_new_service_copy($slug,$locale);

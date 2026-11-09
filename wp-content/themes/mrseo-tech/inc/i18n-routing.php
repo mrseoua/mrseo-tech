@@ -9,6 +9,11 @@ function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/'
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
+ // A real Russian page always wins over UK-only slug fallbacks. In particular,
+ // google-ads-audit exists independently on /ru/ and must not become /ru/google-ads/.
+ if($lang==='ru' && function_exists('mrseo_ru_website_slugs')
+     && in_array($slug,mrseo_ru_website_slugs(),true))
+  return mrseo_i18n_exact_url('ru',$slug);
  if($lang==='uk' && mrseo_locale()==='uk' && function_exists('mrseo_ua_website_slugs')
     && in_array($slug,mrseo_ua_website_slugs(),true)){
   // These are genuine Ukrainian pages even when an EN-only slug shares its spelling.
@@ -21,10 +26,13 @@ function mrseo_url($slug='',$lang=null){
   $equivalent=mrseo_i18n_matching_slug(mrseo_locale(),$slug,$lang);
   if($equivalent!==null)return mrseo_i18n_exact_url($lang,$equivalent);
  }
- // New Ukrainian-only service pages have no foreign-language copies yet.
- // Language selector must lead to an existing broader service, never a 404.
- if($lang!=='uk' && function_exists('mrseo_ua_website_route') && mrseo_ua_website_route()
-     && in_array($slug,mrseo_ua_website_slugs(),true)){
+ // Completed UA/RU services are exact counterparts. For any third language
+ // without a finished matching page, the selector goes to a REAL parent URL.
+ if(!in_array($lang,array('uk','ru'),true)
+     && function_exists('mrseo_ua_website_slugs')
+     && in_array($slug,mrseo_ua_website_slugs(),true)
+     && ((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
+      || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route()))){
   $service=mrseo_ua_website_data($slug);
   $group=$service['group']??'Створення сайтів';
   if($lang==='ru'){
