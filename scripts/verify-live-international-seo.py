@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 336
+EXPECTED_PAGES = 351
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -21,6 +21,8 @@ SAMPLE = [
     "/", "/ru/", "/en/", "/pl/", "/de/",
     "/seo/", "/ru/seo/", "/en/seo/", "/pl/seo/", "/de/seo/",
     "/en/website-design/", "/pl/tworzenie-stron-internetowych/",
+    "/pl/local-seo/", "/pl/landing-pages/", "/pl/international-seo/",
+    "/pl/sklepy-woocommerce-shopify/", "/pl/web-applications/",
     "/en/google-shopping/", "/pl/google-shopping/", "/google-shopping/",
     "/ru/google-shopping/", "/pl/problemy-merchant-center/",
     "/en/merchant-center-help/", "/ru/merchant-center/",
@@ -206,7 +208,7 @@ if __name__ == "__main__":
             if sitemap[href] != alts:
                 fail(f"Non-reciprocal hreflang: {loc} -> {href}")
 
-    # HEAD checks provide full routing coverage without downloading 336 full HTML pages.
+    # HEAD checks provide full routing coverage without downloading 351 full HTML pages.
     problems = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         futures = {pool.submit(check_head_request, url):url for url in sitemap}

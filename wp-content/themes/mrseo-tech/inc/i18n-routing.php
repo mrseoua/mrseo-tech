@@ -80,13 +80,18 @@ function mrseo_url($slug='',$lang=null){
 
  // Country-only Polish offers link to relevant existing pages when switching languages.
  if($lang!=='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)
-    && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true))){
+    // A genuine completed alternate takes precedence over a Polish-only navigation fallback.
+    && !(function_exists('mrseo_i18n_matching_slug') && mrseo_i18n_matching_slug($lang,$slug,'pl')!==null)
+    && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true))
+    && !($lang==='en' && function_exists('mrseo_en_gb_slugs') && in_array($slug,mrseo_en_gb_slugs(),true))){
   $slug=mrseo_pl_service_parent($slug,$lang);
  }
  // Existing service entrypoints must lead to real Poland-specific service pages.
  if($lang==='pl'){
   $pl_aliases=array('service-websites'=>'tworzenie-stron-internetowych','online-store-development'=>'tworzenie-sklepow-internetowych','merchant-center'=>'problemy-merchant-center');
-  if(isset($pl_aliases[$slug]))$slug=$pl_aliases[$slug];
+  if(isset($pl_aliases[$slug])
+      && !(function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)))
+      $slug=$pl_aliases[$slug];
  }
  // New pages have original UA/RU copy; other languages use a relevant completed parent page.
  if(function_exists('mrseo_new_service_parent_slugs') && !in_array($lang,array('uk','ru'),true)){

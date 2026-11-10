@@ -1,0 +1,44 @@
+/* Polish service-specific diagrams: lightweight CSS 3D, no fake metrics, no JS. */
+.pl-svc-scene-mark:has(.pl-art){padding:7px 4px;min-height:216px}
+.pl-art{position:relative;isolation:isolate;width:100%;max-width:465px;min-height:214px;display:flex;align-items:center;justify-content:center;perspective:950px}
+.pl-art-orbit{position:absolute;pointer-events:none;border:1px solid #d9e5d14a;border-radius:50%;transform:rotateX(67deg) rotate(-25deg)}
+.pl-art-orbit--one{width:88%;height:180px}
+.pl-art-orbit--two{width:62%;height:124px;border-style:dashed;border-color:#f0b69770}
+.pl-art-symbol{position:absolute;z-index:0;top:3px;left:calc(50% - 23px);display:grid;place-items:center;width:46px;height:46px;background:#d9e5d0;color:#314b3a;font-size:24px;font-weight:900;border-radius:15px;border:1px solid #f5f6e8;box-shadow:0 13px 25px #0611093f;transform:rotate(-9deg)}
+.pl-art-chain{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:3px;width:100%;padding:50px 0 30px}
+.pl-art-node{min-width:0;min-height:108px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:13px;background:linear-gradient(155deg,#f6f3e9,#d6e2d1);color:#29372c;border:1px solid #e5e9db;border-radius:14px;padding:13px 11px;box-shadow:0 14px 24px #05130842;transform:rotateY(-11deg) rotateX(7deg);animation:pl-art-hover 4.2s ease-in-out infinite alternate}
+.pl-art-node--2{background:linear-gradient(140deg,#f6ecdf,#e7bdab);transform:translateY(-14px) rotateX(-7deg);animation-delay:-1.2s}
+.pl-art-node--3{transform:rotateY(11deg) rotateX(7deg);animation-delay:-2.1s}
+.pl-art-index{font-size:12px;font-weight:850;color:#9a5444}
+.pl-art-node strong{font-size:clamp(12px,1.06vw,15px);font-weight:850;line-height:1.3;overflow-wrap:anywhere}
+.pl-art-node i{display:block;width:61%;height:3px;border-radius:5px;background:#ab6e57}
+.pl-art-connector{flex:0 0 15px;height:2px;background:#e6b599;position:relative}
+.pl-art-connector b{position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-right:2px solid #e6b599;border-top:2px solid #e6b599;transform:rotate(45deg)}
+.pl-art-status{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10px;font-weight:750;letter-spacing:.09em;color:#d5e6d8}
+.pl-art-status i{display:inline-block;width:7px;height:7px;margin-right:5px;border-radius:50%;background:#b3d4ae}
+.pl-art--map .pl-art-orbit--one,.pl-art--target .pl-art-orbit--one{border:2px dashed #c6e5c399}
+.pl-art--map .pl-art-symbol,.pl-art--target .pl-art-symbol{border-radius:50%;background:#d8ead9}
+.pl-art--serp .pl-art-node,.pl-art--landing .pl-art-node,.pl-art--browser .pl-art-node{border-radius:7px 7px 15px 15px;border-top:7px solid #768f82}
+.pl-art--serp .pl-art-node--2,.pl-art--landing .pl-art-node--2{border-top-color:#b97462}
+.pl-art--flow .pl-art-chain,.pl-art--nodes .pl-art-chain,.pl-art--migration .pl-art-chain{transform:rotate(-5deg)}
+.pl-art--flow .pl-art-node--2,.pl-art--nodes .pl-art-node--2,.pl-art--migration .pl-art-node--2{border:2px solid #dda58e}
+.pl-art--globe .pl-art-symbol{border-radius:50%;width:62px;height:62px;left:calc(50% - 31px);font-size:33px}
+.pl-art--store .pl-art-node,.pl-art--checkout .pl-art-node{border-radius:15px 15px 5px 5px}
+.pl-art--store .pl-art-node:before,.pl-art--checkout .pl-art-node:before{content:"";display:block;height:20px;width:32px;background:#879e90;border-radius:5px}
+.pl-art--store .pl-art-node--2:before,.pl-art--checkout .pl-art-node--2:before{background:#b66d58}
+.pl-art--tree .pl-art-chain{align-items:flex-end}.pl-art--tree .pl-art-node--2{margin-bottom:24px}
+.pl-art--layers .pl-art-node--1{transform:rotate(-9deg)}.pl-art--layers .pl-art-node--3{transform:rotate(9deg)}
+.pl-art--shield .pl-art-symbol{clip-path:polygon(50% 0,95% 18%,87% 72%,50% 100%,13% 72%,5% 18%);border-radius:0;background:#e3eacb}
+.pl-art--app .pl-art-node{box-shadow:6px 8px 0 #71907c78,0 20px 28px #05130842}
+@keyframes pl-art-hover{to{translate:0 -6px}}
+@media(max-width:1100px){.pl-art-node{padding:10px 7px}.pl-art-chain{gap:1px}.pl-art-connector{flex-basis:10px}}
+@media(max-width:480px){.pl-svc-scene-mark:has(.pl-art){min-height:200px;padding:0}.pl-art{min-height:185px}.pl-art-chain{padding:43px 0 22px}.pl-art-node{min-height:91px;padding:9px 6px;gap:8px}.pl-art-node strong{font-size:12px}.pl-art-index{font-size:11px}.pl-art-connector{flex-basis:8px}.pl-art-symbol{top:0}.pl-art-status{font-size:9px}.pl-svc-scene-head{letter-spacing:.02em}}
+@media(prefers-reduced-motion:reduce){.pl-art-node{animation:none!important}.pl-art *{transition:none!important}}
+
+/* Poland-only legibility fixes; avoid changing the British pages that share base CSS. */
+.pl-svc-hero-note{font-size:15px;line-height:1.65;color:#4b554a}
+.pl-svc-crumb{font-size:14px}
+.pl-svc-need-action small,.pl-svc-case small{font-size:13px;letter-spacing:.045em}
+.pl-svc-scene-step strong{font-size:14px}
+@media(max-width:1040px){.pl-svc-scene-step strong{font-size:13px}}
+@media(max-width:480px){.pl-art-node strong{font-size:13px}.pl-svc-scene-step strong{font-size:14px}}

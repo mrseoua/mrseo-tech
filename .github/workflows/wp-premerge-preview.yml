@@ -101,6 +101,11 @@ jobs:
           MRSEO_AUDIT_QUICK: '1'
           MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
         run: node scripts/verify-live-eu-responsive.cjs
+      - name: Check all 25 Polish services on 360/390/1440 responsive WordPress
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
+        run: node scripts/verify-pl-browser.cjs
       - name: Publish diagnostics and screenshots as CI artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -109,6 +114,8 @@ jobs:
           path: |
             shots/eu-*.jpg
             shots/eu-diagnostics.json
+            shots/pl-*.jpg
+            shots/pl-diagnostics-*.json
             /tmp/mrseo-preview-server.log
           if-no-files-found: warn
           retention-days: 7

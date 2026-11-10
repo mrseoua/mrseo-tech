@@ -56,6 +56,9 @@ function mrseo_i18n_page_groups() {
             if(function_exists('mrseo_en_gb_slugs')
                 && in_array($slug,mrseo_en_gb_slugs(),true))
                 $pages['en']=$slug;
+            // A Polish URL is an alternate only after its complete original page exists.
+            if(function_exists('mrseo_pl_service_slugs')
+                && in_array($slug,mrseo_pl_service_slugs(),true))$pages['pl']=$slug;
             // UK + Poland have complete standalone Ads-audit pages, same service intent.
             if($slug==='google-ads-audit'){
                 $pages['en']='google-ads-audit';
@@ -66,8 +69,10 @@ function mrseo_i18n_page_groups() {
     }
 
     foreach (array('service-websites', 'performance-max') as $slug) {
-        $groups[] = array('group' => 'three:' . $slug,
-            'pages' => array('uk'=>$slug, 'ru'=>$slug, 'en'=>$slug));
+        $pages=array('uk'=>$slug,'ru'=>$slug,'en'=>$slug);
+        if($slug==='service-websites' && function_exists('mrseo_pl_service_slugs')
+            && in_array($slug,mrseo_pl_service_slugs(),true))$pages['pl']=$slug;
+        $groups[] = array('group' => 'three:' . $slug,'pages'=>$pages);
     }
 
     $groups[] = array('group'=>'horoshop',
@@ -81,6 +86,8 @@ function mrseo_i18n_page_groups() {
         $pages=array('uk'=>$slug,'ru'=>$slug);
         if(function_exists('mrseo_en_gb_slugs')
             && in_array($slug,mrseo_en_gb_slugs(),true))$pages['en']=$slug;
+        if(function_exists('mrseo_pl_service_slugs')
+            && in_array($slug,mrseo_pl_service_slugs(),true))$pages['pl']=$slug;
         $groups[] = array('group'=>'ua-ru:' . $slug,'pages'=>$pages);
     }
 
@@ -98,12 +105,16 @@ function mrseo_i18n_page_groups() {
     $groups[] = array('group'=>'wordpress-maintenance',
         'pages'=>array('en'=>'wordpress-care','pl'=>'opieka-wordpress'));
 
-    // UK platform-specific choice is a separate offer. Automation, API and
-    // web-application pages have genuine UA/RU counterparts in the microservice set.
+    // Platform-specific WooCommerce / Shopify service now has a genuine Polish counterpart.
+    // Automation, API and web applications share their genuine UA/RU/EN groups.
     if(function_exists('mrseo_en_gb_slugs')
-        && in_array('woocommerce-shopify-stores',mrseo_en_gb_slugs(),true))
-        $groups[]=array('group'=>'en-gb-only:woocommerce-shopify-stores',
-            'pages'=>array('en'=>'woocommerce-shopify-stores'));
+        && in_array('woocommerce-shopify-stores',mrseo_en_gb_slugs(),true)){
+        $pages=array('en'=>'woocommerce-shopify-stores');
+        if(function_exists('mrseo_pl_service_slugs')
+            && in_array('sklepy-woocommerce-shopify',mrseo_pl_service_slugs(),true))
+            $pages['pl']='sklepy-woocommerce-shopify';
+        $groups[]=array('group'=>'platform:woocommerce-shopify','pages'=>$pages);
+    }
     return $groups;
 }
 
