@@ -95,6 +95,11 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
+      - name: Verify all 25 German services and clickable DE menu in WordPress
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
+        run: node scripts/verify-de-browser.cjs
       - name: Browser smoke test all 20 locales (isolated site, no public deployment)
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
@@ -106,11 +111,6 @@ jobs:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
           MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
         run: node scripts/verify-pl-browser.cjs
-      - name: Verify all 25 German services and clickable DE menu in WordPress
-        env:
-          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
-          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
-        run: node scripts/verify-de-browser.cjs
       - name: Publish diagnostics and screenshots as CI artifacts
         if: always()
         uses: actions/upload-artifact@v4
