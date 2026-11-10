@@ -45,11 +45,11 @@ function mrseo_trial_menu_translations() {
   "bottom":["Nie widzisz odpowiedniej usługi?","Opisz potrzebę lub problem — zaproponujemy rozwiązanie.","Porozmawiajmy o projekcie"]
  },
  "de":{
-  "seo":["SEO & Suchmaschinenoptimierung","Damit Kunden Ihr Unternehmen bei Google finden.","Lokale SEO","SEO für Onlineshops","SEO für Dienstleister","Internationale SEO","SEO-Audit"],
-  "ads":["Google Ads","Anzeigen für relevante Anfragen potenzieller Kunden.","Google Suchanzeigen","Google Shopping & Performance Max","Google Ads für lokale Unternehmen","Google Ads Audit","Google Merchant Center"],
+  "seo":["SEO & Suchmaschinenoptimierung","Damit Kunden Ihr Unternehmen bei Google finden.","Lokales SEO","SEO für Onlineshops","SEO für Dienstleister","Internationales SEO","SEO-Audit"],
+  "ads":["Google Ads","Anzeigen für relevante Anfragen potenzieller Kunden.","Google Suchanzeigen","Google Shopping","Google Ads für lokale Unternehmen","Google Ads Audit","Google Merchant Center"],
   "commerce":["Onlineshops","Shops erstellen, verbessern und automatisieren.","Onlineshop-Erstellung","WooCommerce & Shopify","Conversion-Optimierung im Shop","Shop-Automatisierung","Shop-Relaunch & Migration"],
   "sites":["Website-Erstellung","Websites, die Vertrauen schaffen und Anfragen gewinnen.","Websites für lokale Unternehmen","Websites für Dienstleister","Landingpages für Anzeigen","Unternehmenswebsites","Website-Relaunch"],
-  "dev":["Webentwicklung","Technische Probleme lösen und Abläufe automatisieren.","Website-Wartung und Anpassungen","Integrationen & Automatisierung","Performance, Sicherheit & Barrierefreiheit","CRM & Kundenportale","Webanwendungen & MVP"],
+  "dev":["Webentwicklung","Technische Probleme lösen und Abläufe automatisieren.","Website-Wartung und Anpassungen","Integrationen & Automatisierung","Performance und Sicherheit","CRM & Kundenportale","Webanwendungen & MVP"],
   "bottom":["Sie finden Ihre Leistung nicht?","Beschreiben Sie Ihr Projekt oder Problem — wir klären die nächsten Schritte.","Projekt besprechen"]
  }
 }
