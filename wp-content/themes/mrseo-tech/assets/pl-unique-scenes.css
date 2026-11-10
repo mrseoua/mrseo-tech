@@ -34,3 +34,11 @@
 @media(max-width:1100px){.pl-art-node{padding:10px 7px}.pl-art-chain{gap:1px}.pl-art-connector{flex-basis:10px}}
 @media(max-width:480px){.pl-svc-scene-mark:has(.pl-art){min-height:200px;padding:0}.pl-art{min-height:185px}.pl-art-chain{padding:43px 0 22px}.pl-art-node{min-height:91px;padding:9px 6px;gap:8px}.pl-art-node strong{font-size:12px}.pl-art-index{font-size:11px}.pl-art-connector{flex-basis:8px}.pl-art-symbol{top:0}.pl-art-status{font-size:9px}.pl-svc-scene-head{letter-spacing:.02em}}
 @media(prefers-reduced-motion:reduce){.pl-art-node{animation:none!important}.pl-art *{transition:none!important}}
+
+/* Poland-only legibility fixes; avoid changing the British pages that share base CSS. */
+.pl-svc-hero-note{font-size:15px;line-height:1.65;color:#4b554a}
+.pl-svc-crumb{font-size:14px}
+.pl-svc-need-action small,.pl-svc-case small{font-size:13px;letter-spacing:.045em}
+.pl-svc-scene-step strong{font-size:14px}
+@media(max-width:1040px){.pl-svc-scene-step strong{font-size:13px}}
+@media(max-width:480px){.pl-art-node strong{font-size:13px}.pl-svc-scene-step strong{font-size:14px}}
