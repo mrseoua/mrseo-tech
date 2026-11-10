@@ -32,6 +32,7 @@ jobs:
           test -f wp-content/themes/mrseo-tech/front-page.php
           find wp-content/themes/mrseo-tech -name '*.php' -print0 | xargs -0 -n 1 php -l
           node --check wp-content/themes/mrseo-tech/assets/site.js
+          python3 -m py_compile scripts/verify-live-international-seo.py
           test -f wp-content/themes/mrseo-tech/ecommerce-landing.php
           test -f wp-content/themes/mrseo-tech/inc/service-editorial.php
           grep -q "X-Robots-Tag: noindex, nofollow" wp-content/themes/mrseo-tech/functions.php
