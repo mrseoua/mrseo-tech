@@ -8,11 +8,11 @@ if(mrseo_locale()!=='de'||!$pl_page){status_header(404);include get_404_template
 get_header();
 $pl_group=in_array($pl_slug,array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),true)?'commerce':(in_array($pl_slug,array('google-shopping','local-google-ads','google-ads-audit','merchant-center-help','landing-pages'),true)?'ads':(in_array($pl_slug,array('wordpress-care','api-integrations','website-speed-security'),true)?'support':(in_array($pl_slug,array('local-seo','service-business-seo','international-seo'),true)?'seo':'web')));
 ?>
-<div class="pl-svc pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>">
+<div class="pl-svc de-svc pl-svc--<?php echo esc_attr($pl_group);?> pl-svc-<?php echo esc_attr($pl_slug);?>">
  <section class="pl-svc-hero" aria-labelledby="pl-title">
   <div class="intl-wrap pl-svc-hero-grid">
    <div class="pl-svc-hero-copy">
-    <nav class="pl-svc-crumb" aria-label="Ścieżka nawigacji"><a href="<?php echo esc_url(mrseo_url('','de'));?>">Startseite</a><span aria-hidden="true">/</span><span><?php echo esc_html($pl_page['kicker']);?></span></nav>
+    <nav class="pl-svc-crumb" aria-label="Brotkrumennavigation"><a href="<?php echo esc_url(mrseo_url('','de'));?>">Startseite</a><span aria-hidden="true">/</span><span><?php echo esc_html($pl_page['kicker']);?></span></nav>
     <div class="intl-kicker"><?php echo esc_html($pl_page['kicker']);?></div>
     <h1 id="pl-title"><?php echo esc_html($pl_page['hero'][0]);?> <em><?php echo esc_html($pl_page['hero'][1]);?></em></h1>
     <p><?php echo esc_html($pl_page['lead']);?></p>
