@@ -46,7 +46,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Tester les appels et demandes sur mobile",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les pages ne reflètent pas les prestations proposées dans votre zone."
       ]
     ],
     "outcomes": [
@@ -67,43 +67,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les pages ne reflètent pas les prestations proposées dans votre zone.",
       "Nous rapprochons les requêtes ville + service de vos pages réelles.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Faut-il créer une page pour chaque ville ?",
-          "Seulement pour une zone réellement desservie et avec un contenu pertinent."
-        ],
-        [
-          "Garantissez-vous la première place dans Maps ?",
-          "Non. La position dépend notamment de la proximité, de la pertinence et de la concurrence."
-        ],
-        [
-          "Faut-il un bureau dans chaque ville ?",
-          "Nous ne créons pas de fausses implantations."
-        ]
+        "Faut-il créer une page pour chaque ville ?",
+        "Seulement pour une zone réellement desservie et avec un contenu pertinent."
       ],
       [
-        "RECHERCHE",
-        "LOCALITÉ",
-        "CONTACT"
+        "Garantissez-vous la première place dans Maps ?",
+        "Non. La position dépend notamment de la proximité, de la pertinence et de la concurrence."
       ],
-      "Étudier ma visibilité locale"
+      [
+        "Faut-il un bureau dans chaque ville ?",
+        "Nous ne créons pas de fausses implantations."
+      ]
     ],
-    "risk": "t Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Nous ne créons pas de fausses implantations. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
         "service-business-seo",
-        "Service Business Seo",
-        "Voir les prestations complémentaires"
+        "SEO pour prestataires",
+        "Pages de services distinctes"
       ],
       [
-        "seo",
-        "Seo",
-        "Voir les prestations complémentaires"
+        "local-google-ads",
+        "Google Ads local",
+        "Campagnes ciblées par zone"
       ]
-    ]
+    ],
+    "visual": [
+      "RECHERCHE",
+      "LOCALITÉ",
+      "CONTACT"
+    ],
+    "cta": "Étudier ma visibilité locale"
   },
   "service-business-seo": {
     "title": "SEO pour les entreprises de services | MrSeo.tech",
@@ -148,7 +146,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Contrôler les formulaires et objectifs de contact",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les besoins distincts des clients restent mal expliqués."
       ]
     ],
     "outcomes": [
@@ -169,43 +167,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les besoins distincts des clients restent mal expliqués.",
       "Nous établissons une architecture de pages par prestation.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Chaque service mérite-t-il une page ?",
-          "Uniquement si le besoin et le contenu sont suffisamment distincts."
-        ],
-        [
-          "Pouvez-vous améliorer les textes existants ?",
-          "Oui, en nous appuyant sur des informations métier confirmées."
-        ],
-        [
-          "Quand le référencement apportera-t-il des demandes ?",
-          "Aucun délai ne peut être garanti : la concurrence et le site comptent."
-        ]
+        "Chaque service mérite-t-il une page ?",
+        "Uniquement si le besoin et le contenu sont suffisamment distincts."
       ],
       [
-        "PRESTATION",
-        "PAGE SEO",
-        "DEVIS"
+        "Pouvez-vous améliorer les textes existants ?",
+        "Oui, en nous appuyant sur des informations métier confirmées."
       ],
-      "Structurer mes prestations"
+      [
+        "Quand le référencement apportera-t-il des demandes ?",
+        "Aucun délai ne peut être garanti : la concurrence et le site comptent."
+      ]
     ],
-    "risk": "t Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Aucun délai ne peut être garanti : la concurrence et le site comptent. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "local-seo",
-        "Local Seo",
-        "Voir les prestations complémentaires"
+        "service-websites",
+        "Sites pour prestataires",
+        "Présenter chaque prestation"
       ],
       [
-        "seo",
-        "Seo",
-        "Voir les prestations complémentaires"
+        "local-seo",
+        "SEO local",
+        "Visibilité dans les recherches de proximité"
       ]
-    ]
+    ],
+    "visual": [
+      "PRESTATION",
+      "PAGE SEO",
+      "DEVIS"
+    ],
+    "cta": "Structurer mes prestations"
   },
   "international-seo": {
     "title": "Référencement international | MrSeo.tech",
@@ -250,7 +246,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Tester les URL réelles après déploiement",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les pages équivalentes ne sont pas correctement liées."
       ]
     ],
     "outcomes": [
@@ -271,43 +267,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les pages équivalentes ne sont pas correctement liées.",
       "Nous auditons les annotations hreflang et leurs destinations.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Faut-il un nom de domaine par pays ?",
-          "Pas nécessairement : des répertoires peuvent fonctionner."
-        ],
-        [
-          "Une traduction automatique suffit-elle ?",
-          "Non si les termes, les services ou les attentes diffèrent."
-        ],
-        [
-          "Peut-on lancer les langues progressivement ?",
-          "Oui, en reliant seulement les versions réellement disponibles."
-        ]
+        "Faut-il un nom de domaine par pays ?",
+        "Pas nécessairement : des répertoires peuvent fonctionner."
       ],
       [
-        "PAYS",
-        "LANGUE",
-        "PAGE"
+        "Une traduction automatique suffit-elle ?",
+        "Non si les termes, les services ou les attentes diffèrent."
       ],
-      "Auditer mes marchés"
+      [
+        "Peut-on lancer les langues progressivement ?",
+        "Oui, en reliant seulement les versions réellement disponibles."
+      ]
     ],
-    "risk": "u Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Oui, en reliant seulement les versions réellement disponibles. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "local-seo",
-        "Local Seo",
-        "Voir les prestations complémentaires"
+        "seo",
+        "Référencement SEO",
+        "Analyse des intentions de recherche"
       ],
       [
-        "service-business-seo",
-        "Service Business Seo",
-        "Voir les prestations complémentaires"
+        "corporate-websites",
+        "Sites institutionnels",
+        "Présentation de l'entreprise"
       ]
-    ]
+    ],
+    "visual": [
+      "PAYS",
+      "LANGUE",
+      "PAGE"
+    ],
+    "cta": "Auditer mes marchés"
   },
   "google-shopping": {
     "title": "Publicité Google Shopping | MrSeo.tech",
@@ -352,7 +346,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Valider les références et le suivi des achats",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les attributs du flux ne correspondent pas aux règles applicables."
       ]
     ],
     "outcomes": [
@@ -373,43 +367,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les attributs du flux ne correspondent pas aux règles applicables.",
       "Nous relevons les codes d'erreur et les identifiants touchés.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Merchant Center est-il indispensable ?",
-          "Oui pour les annonces produit Shopping classiques."
-        ],
-        [
-          "Faut-il promouvoir tout le catalogue ?",
-          "Non, la sélection dépend aussi du stock et de la rentabilité."
-        ],
-        [
-          "Pouvez-vous garantir l'approbation des produits ?",
-          "Non, la décision finale revient à la plateforme."
-        ]
+        "Merchant Center est-il indispensable ?",
+        "Oui pour les annonces produit Shopping classiques."
       ],
       [
-        "FLUX",
-        "ARTICLE",
-        "ANNONCE"
+        "Faut-il promouvoir tout le catalogue ?",
+        "Non, la sélection dépend aussi du stock et de la rentabilité."
       ],
-      "Examiner mon flux produit"
+      [
+        "Pouvez-vous garantir l'approbation des produits ?",
+        "Non, la décision finale revient à la plateforme."
+      ]
     ],
-    "risk": "x Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Non, la décision finale revient à la plateforme. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "google-ads",
-        "Google Ads",
-        "Voir les prestations complémentaires"
+        "merchant-center-help",
+        "Merchant Center",
+        "Résoudre les refus de produits"
       ],
       [
-        "local-google-ads",
-        "Local Google Ads",
-        "Voir les prestations complémentaires"
+        "online-shop-development",
+        "Création de boutique",
+        "Catalogue et commande"
       ]
-    ]
+    ],
+    "visual": [
+      "FLUX",
+      "ARTICLE",
+      "ANNONCE"
+    ],
+    "cta": "Examiner mon flux produit"
   },
   "local-google-ads": {
     "title": "Google Ads pour les entreprises locales | MrSeo.tech",
@@ -454,7 +446,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Ajuster selon les demandes exploitables",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : le ciblage géographique dépasse la zone d'intervention."
       ]
     ],
     "outcomes": [
@@ -475,43 +467,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Le ciblage géographique dépasse la zone d'intervention.",
       "Nous étudions les paramètres et rapports de lieux.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Faut-il cibler toute la région ?",
-          "Seulement si l'entreprise peut réellement y intervenir."
-        ],
-        [
-          "Les appels peuvent-ils être suivis ?",
-          "Oui selon la configuration technique et les règles de confidentialité."
-        ],
-        [
-          "Un budget minimum garantit-il des clients ?",
-          "Non, les résultats dépendent aussi du marché et de l'offre."
-        ]
+        "Faut-il cibler toute la région ?",
+        "Seulement si l'entreprise peut réellement y intervenir."
       ],
       [
-        "ZONE",
-        "ANNONCE",
-        "APPEL"
+        "Les appels peuvent-ils être suivis ?",
+        "Oui selon la configuration technique et les règles de confidentialité."
       ],
-      "Vérifier mes annonces locales"
+      [
+        "Un budget minimum garantit-il des clients ?",
+        "Non, les résultats dépendent aussi du marché et de l'offre."
+      ]
     ],
-    "risk": "é Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Non, les résultats dépendent aussi du marché et de l'offre. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "google-ads",
-        "Google Ads",
-        "Voir les prestations complémentaires"
+        "landing-pages",
+        "Landing pages",
+        "Pages publicitaires et formulaires"
       ],
       [
-        "seo",
-        "Seo",
-        "Voir les prestations complémentaires"
+        "local-seo",
+        "SEO local",
+        "Visibilité dans les recherches de proximité"
       ]
-    ]
+    ],
+    "visual": [
+      "ZONE",
+      "ANNONCE",
+      "APPEL"
+    ],
+    "cta": "Vérifier mes annonces locales"
   },
   "google-ads-audit": {
     "title": "Audit de compte Google Ads | MrSeo.tech",
@@ -556,7 +546,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Prioriser les corrections et leurs risques",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les exclusions ou types de correspondance sont mal adaptés."
       ]
     ],
     "outcomes": [
@@ -577,43 +567,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les exclusions ou types de correspondance sont mal adaptés.",
       "Nous identifions les recherches coûteuses à écarter.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "L'audit inclut-il les corrections ?",
-          "Le périmètre de mise en œuvre est défini séparément."
-        ],
-        [
-          "Un accès en lecture suffit-il ?",
-          "Il est utile pour contrôler les réglages sans modifier les campagnes."
-        ],
-        [
-          "Garantissez-vous une baisse du coût par lead ?",
-          "Non, nous identifions des pistes et des erreurs mesurables."
-        ]
+        "L'audit inclut-il les corrections ?",
+        "Le périmètre de mise en œuvre est défini séparément."
       ],
       [
-        "COMPTE",
-        "AUDIT",
-        "ACTIONS"
+        "Un accès en lecture suffit-il ?",
+        "Il est utile pour contrôler les réglages sans modifier les campagnes."
       ],
-      "Faire auditer mon compte"
+      [
+        "Garantissez-vous une baisse du coût par lead ?",
+        "Non, nous identifions des pistes et des erreurs mesurables."
+      ]
     ],
-    "risk": "a Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Non, nous identifions des pistes et des erreurs mesurables. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
         "google-ads",
         "Google Ads",
-        "Voir les prestations complémentaires"
+        "Publicité et suivi des demandes"
       ],
       [
-        "local-google-ads",
-        "Local Google Ads",
-        "Voir les prestations complémentaires"
+        "landing-pages",
+        "Landing pages",
+        "Pages publicitaires et formulaires"
       ]
-    ]
+    ],
+    "visual": [
+      "COMPTE",
+      "AUDIT",
+      "ACTIONS"
+    ],
+    "cta": "Faire auditer mon compte"
   },
   "merchant-center-help": {
     "title": "Résoudre les problèmes Merchant Center | MrSeo.tech",
@@ -658,7 +646,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Vérifier l'état après traitement",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les champs envoyés ne respectent pas les exigences."
       ]
     ],
     "outcomes": [
@@ -679,43 +667,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les champs envoyés ne respectent pas les exigences.",
       "Nous classons les motifs par identifiant de produit.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Pouvez-vous lever toutes les suspensions ?",
-          "Non, la validation dépend des politiques et de la décision de Google."
-        ],
-        [
-          "Faut-il modifier le site ?",
-          "Certaines erreurs nécessitent de corriger la fiche ou le panier."
-        ],
-        [
-          "Merchant Center remplace-t-il Google Ads ?",
-          "Non, les flux et la gestion des campagnes sont deux volets distincts."
-        ]
+        "Pouvez-vous lever toutes les suspensions ?",
+        "Non, la validation dépend des politiques et de la décision de Google."
       ],
       [
-        "PRODUIT",
-        "ERREUR",
-        "CONTRÔLE"
+        "Faut-il modifier le site ?",
+        "Certaines erreurs nécessitent de corriger la fiche ou le panier."
       ],
-      "Analyser mes refus Merchant"
+      [
+        "Merchant Center remplace-t-il Google Ads ?",
+        "Non, les flux et la gestion des campagnes sont deux volets distincts."
+      ]
     ],
-    "risk": "n Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Non, les flux et la gestion des campagnes sont deux volets distincts. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "google-ads",
-        "Google Ads",
-        "Voir les prestations complémentaires"
+        "google-shopping",
+        "Google Shopping",
+        "Flux et campagnes produits"
       ],
       [
-        "local-google-ads",
-        "Local Google Ads",
-        "Voir les prestations complémentaires"
+        "catalog-automation",
+        "Automatisation du catalogue",
+        "Prix, stocks et flux"
       ]
-    ]
+    ],
+    "visual": [
+      "PRODUIT",
+      "ERREUR",
+      "CONTRÔLE"
+    ],
+    "cta": "Analyser mes refus Merchant"
   },
   "woocommerce-shopify-stores": {
     "title": "Boutiques WooCommerce et Shopify | MrSeo.tech",
@@ -760,7 +746,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Exécuter une commande de test complète",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : plugins et applications se multiplient sans architecture claire."
       ]
     ],
     "outcomes": [
@@ -781,43 +767,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Plugins et applications se multiplient sans architecture claire.",
       "Nous vérifions les fonctions indispensables et leurs dépendances.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Shopify est-il toujours plus simple ?",
-          "Pas lorsque le besoin exige de nombreuses adaptations."
-        ],
-        [
-          "WooCommerce coûte-t-il toujours moins cher ?",
-          "Non : maintenance, hébergement et modules entrent dans le calcul."
-        ],
-        [
-          "Peut-on conserver les produits d'un ancien site ?",
-          "Cela se prépare avec un mapping des données et variantes."
-        ]
+        "Shopify est-il toujours plus simple ?",
+        "Pas lorsque le besoin exige de nombreuses adaptations."
       ],
       [
-        "PLATEFORME",
-        "PANIER",
-        "COMMANDE"
+        "WooCommerce coûte-t-il toujours moins cher ?",
+        "Non : maintenance, hébergement et modules entrent dans le calcul."
       ],
-      "Comparer mes plateformes"
+      [
+        "Peut-on conserver les produits d'un ancien site ?",
+        "Cela se prépare avec un mapping des données et variantes."
+      ]
     ],
-    "risk": "o Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Cela se prépare avec un mapping des données et variantes. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
         "online-shop-development",
-        "Online Shop Development",
-        "Voir les prestations complémentaires"
+        "Création de boutique",
+        "Catalogue et commande"
       ],
       [
         "store-conversion",
-        "Store Conversion",
-        "Voir les prestations complémentaires"
+        "Conversion e-commerce",
+        "Réduire les freins à l'achat"
       ]
-    ]
+    ],
+    "visual": [
+      "PLATEFORME",
+      "PANIER",
+      "COMMANDE"
+    ],
+    "cta": "Comparer mes plateformes"
   },
   "store-conversion": {
     "title": "Optimisation des conversions e-commerce | MrSeo.tech",
@@ -862,7 +846,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Vérifier panier, paiement et événement purchase",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les filtres ou variantes ne correspondent pas aux besoins."
       ]
     ],
     "outcomes": [
@@ -883,43 +867,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les filtres ou variantes ne correspondent pas aux besoins.",
       "Nous testons des recherches et choix de référence.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Une hausse de conversion est-elle garantie ?",
-          "Non, l'effet doit être mesuré sur des données suffisantes."
-        ],
-        [
-          "Faut-il lancer des tests A/B ?",
-          "Seulement si le trafic et la qualité de mesure le permettent."
-        ],
-        [
-          "Doit-on changer de plateforme ?",
-          "Nous étudions d'abord les corrections possibles sur l'existant."
-        ]
+        "Une hausse de conversion est-elle garantie ?",
+        "Non, l'effet doit être mesuré sur des données suffisantes."
       ],
       [
-        "PRODUIT",
-        "PANIER",
-        "ACHAT"
+        "Faut-il lancer des tests A/B ?",
+        "Seulement si le trafic et la qualité de mesure le permettent."
       ],
-      "Analyser mes abandons"
+      [
+        "Doit-on changer de plateforme ?",
+        "Nous étudions d'abord les corrections possibles sur l'existant."
+      ]
     ],
-    "risk": "n Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Nous étudions d'abord les corrections possibles sur l'existant. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
         "online-shop-development",
-        "Online Shop Development",
-        "Voir les prestations complémentaires"
+        "Création de boutique",
+        "Catalogue et commande"
       ],
       [
-        "seo",
-        "Seo",
-        "Voir les prestations complémentaires"
+        "google-shopping",
+        "Google Shopping",
+        "Flux et campagnes produits"
       ]
-    ]
+    ],
+    "visual": [
+      "PRODUIT",
+      "PANIER",
+      "ACHAT"
+    ],
+    "cta": "Analyser mes abandons"
   },
   "catalog-automation": {
     "title": "Automatisation du catalogue produits | MrSeo.tech",
@@ -964,7 +946,7 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       ],
       [
         "Contrôler journaux, alertes et écarts",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les mises à jour et identifiants ne sont pas alignés."
       ]
     ],
     "outcomes": [
@@ -985,43 +967,41 @@ function mrseo_fr_service_part1(){return json_decode(<<<'MRSEO_FR_P1'
       "EXEMPLE DE SITUATION",
       "Les mises à jour et identifiants ne sont pas alignés.",
       "Nous identifions la source de référence et la fréquence adaptée.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Toutes les boutiques disposent-elles d'une API ?",
-          "Non, cela dépend de la plateforme et de son offre."
-        ],
-        [
-          "Les stocks sont-ils mis à jour en temps réel ?",
-          "Uniquement si l'architecture et les interfaces le permettent."
-        ],
-        [
-          "Peut-on annuler un import erroné ?",
-          "Cela dépend des sauvegardes et mécanismes de récupération prévus."
-        ]
+        "Toutes les boutiques disposent-elles d'une API ?",
+        "Non, cela dépend de la plateforme et de son offre."
       ],
       [
-        "SOURCE",
-        "SYNCHRO",
-        "CATALOGUE"
+        "Les stocks sont-ils mis à jour en temps réel ?",
+        "Uniquement si l'architecture et les interfaces le permettent."
       ],
-      "Automatiser mon catalogue"
+      [
+        "Peut-on annuler un import erroné ?",
+        "Cela dépend des sauvegardes et mécanismes de récupération prévus."
+      ]
     ],
-    "risk": "u Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Cela dépend des sauvegardes et mécanismes de récupération prévus. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "online-shop-development",
-        "Online Shop Development",
-        "Voir les prestations complémentaires"
+        "api-integrations",
+        "Intégrations API et CRM",
+        "Circulation des données"
       ],
       [
-        "store-conversion",
-        "Store Conversion",
-        "Voir les prestations complémentaires"
+        "online-shop-development",
+        "Création de boutique",
+        "Catalogue et commande"
       ]
-    ]
+    ],
+    "visual": [
+      "SOURCE",
+      "SYNCHRO",
+      "CATALOGUE"
+    ],
+    "cta": "Automatiser mon catalogue"
   }
 }
 MRSEO_FR_P1
