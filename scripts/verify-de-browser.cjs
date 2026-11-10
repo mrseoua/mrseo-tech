@@ -73,7 +73,7 @@ async function run(){
      assert(result.h1Text.length>15,`Empty/short German H1: ${url}`);
      assert(result.title.length>12,`Missing title: ${url}`);
      assert(result.canonical.endsWith('/de/'+slug+'/'),`Missing self canonical: ${url}, got ${result.canonical}`);
-     assert(/pl/i.test(result.lang),`Missing German document language: ${url}, got ${result.lang}`);
+     assert(/de/i.test(result.lang),`Missing German document language: ${url}, got ${result.lang}`);
      assert(/noindex/i.test(result.robots)||/noindex/i.test(response.headers()['x-robots-tag']||''),`Missing staging noindex: ${url}`);
      assert(result.outer<=result.inner+5,`Horizontal overflow ${url}: ${result.outer} > ${result.inner}`);
      if(!shared.has(slug)){
