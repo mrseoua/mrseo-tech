@@ -44,7 +44,7 @@ shared={"ecommerce-seo","seo-audit","google-ads","web-development","website-desi
 assert set(links)-set(pages)==shared,("Missing service",set(links)-set(pages))
 assert set(pages)<=set(links),("Orphaned service",set(pages)-set(links))
 assert "null" not in m.group(1) and "horoshop" not in m.group(1)
-nav_match=re.search(r"<<<'MRSEO_TRIAL_NAV_JSON'\\n([\\s\\S]*?)\\nMRSEO_TRIAL_NAV_JSON;",menu)
+nav_match=re.search(r"<<<'MRSEO_TRIAL_NAV_JSON'\n([\s\S]*?)\nMRSEO_TRIAL_NAV_JSON;",menu)
 assert nav_match,"Missing Italian mega-menu translations"
 nav=json.loads(nav_match.group(1))
 assert "it" in nav and all(len(nav["it"][x])==7 for x in ("seo","ads","commerce","sites","dev"))
