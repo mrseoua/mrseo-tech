@@ -46,7 +46,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Änderungsprotokoll und Rücknahme testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir prüfen ausgewählte SKU vor und nach dem Import und dokumentieren Abweichungen."
       ]
     ],
     "outcomes": [
@@ -67,7 +67,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Lieferant und Shop melden verschiedene Bestände.",
       "Wir definieren die maßgebliche Datenquelle und Aktualisierungsregeln.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Preisupdate wird korrekt übernommen, ohne eine andere Variante zu überschreiben."
     ],
     "faq": [
       [
@@ -86,14 +86,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Das hängt von Sicherungen, Protokollen und der Shopplattform ab. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "online-shop-development",
-        "Online Shop Development",
-        "Ergänzende Leistungen ansehen"
+        "api-integrations",
+        "API-Integrationen",
+        "CRM und Shopdaten sicher verbinden"
       ],
       [
-        "store-conversion",
-        "Store Conversion",
-        "Ergänzende Leistungen ansehen"
+        "online-shop-development",
+        "Onlineshop-Erstellung",
+        "Katalog und Checkout sauber planen"
       ]
     ],
     "visual": [
@@ -146,7 +146,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Umschaltung und Bestellfluss kontrollieren",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir testen die priorisierten 301-Weiterleitungen sowie Kauf und Bestellübertragung."
       ]
     ],
     "outcomes": [
@@ -167,7 +167,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Google und Kunden finden bisherige Artikel nicht mehr.",
       "Wir erstellen eine Mapping-Liste und 301-Weiterleitungen.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein alter Produktlink führt zur richtigen neuen Seite statt zu einem 404-Fehler."
     ],
     "faq": [
       [
@@ -187,13 +187,13 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "related": [
       [
         "online-shop-development",
-        "Online Shop Development",
-        "Ergänzende Leistungen ansehen"
+        "Onlineshop-Erstellung",
+        "Katalog und Checkout sauber planen"
       ],
       [
-        "store-conversion",
-        "Store Conversion",
-        "Ergänzende Leistungen ansehen"
+        "website-redesign",
+        "Website-Relaunch",
+        "Bestehende Seiten kontrolliert modernisieren"
       ]
     ],
     "visual": [
@@ -246,7 +246,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Formulare, Links und Technik abnehmen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir prüfen alle vereinbarten Seitentypen und senden eine echte Formular-Testnachricht."
       ]
     ],
     "outcomes": [
@@ -267,7 +267,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Die wichtigsten Leistungen stehen hinter vagen Werbesätzen.",
       "Wir entwickeln eine klare Informationsstruktur.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein mobiler Besucher versteht das Angebot und kann erfolgreich Kontakt aufnehmen."
     ],
     "faq": [
       [
@@ -287,13 +287,13 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "related": [
       [
         "service-websites",
-        "Service Websites",
-        "Ergänzende Leistungen ansehen"
+        "Websites für Dienstleister",
+        "Leistungsseiten für Kundenanfragen"
       ],
       [
-        "seo",
-        "Seo",
-        "Ergänzende Leistungen ansehen"
+        "landing-pages",
+        "Landingpages für Anzeigen",
+        "Passende Zielseiten für Werbung"
       ]
     ],
     "visual": [
@@ -346,7 +346,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Kontakt und technische Grundlagen testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir suchen jede Leistung in Navigation und interner Verlinkung und testen die Anfrage."
       ]
     ],
     "outcomes": [
@@ -367,7 +367,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Interessenten erkennen Unterschiede und Umfang nicht.",
       "Wir strukturieren einzelne Leistungsseiten.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Nutzer erreicht die spezifische Dienstleistung und versendet die passende Anfrage."
     ],
     "faq": [
       [
@@ -386,14 +386,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Kampagnenmanagement wird bei Bedarf separat vereinbart. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "website-design",
-        "Website Design",
-        "Ergänzende Leistungen ansehen"
+        "service-business-seo",
+        "SEO für Dienstleister",
+        "Dienstleistungen verständlich auffindbar machen"
       ],
       [
-        "seo",
-        "Seo",
-        "Ergänzende Leistungen ansehen"
+        "website-design",
+        "Website-Erstellung",
+        "Website mit klarer Nutzerführung bauen"
       ]
     ],
     "visual": [
@@ -446,7 +446,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Formular und Conversion-Tracking testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir senden eine Testanfrage und prüfen den Eingang sowie das definierte Conversion-Ereignis."
       ]
     ],
     "outcomes": [
@@ -467,7 +467,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Die beworbene Leistung ist nach dem Klick schwer zu erkennen.",
       "Wir stimmen Überschrift und Angebot auf die Kampagne ab.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Eine Anzeige führt auf die passende Zielseite und ein Lead erreicht die richtige Stelle."
     ],
     "faq": [
       [
@@ -486,14 +486,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Nein. Das Ergebnis hängt von Angebot, Traffic und Markt ab. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "website-design",
-        "Website Design",
-        "Ergänzende Leistungen ansehen"
+        "google-ads",
+        "Google Ads",
+        "Kampagnen und Kosten gezielt prüfen"
       ],
       [
-        "service-websites",
-        "Service Websites",
-        "Ergänzende Leistungen ansehen"
+        "local-google-ads",
+        "Lokale Google Ads",
+        "Anfragen aus dem Einsatzgebiet erreichen"
       ]
     ],
     "visual": [
@@ -546,7 +546,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Kontakt, Sprache und Mobilansicht prüfen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir prüfen Rollen, Navigationswege und die Erreichbarkeit aller relevanten Kontaktbereiche."
       ]
     ],
     "outcomes": [
@@ -567,7 +567,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Unterschiedliche Zielgruppen sehen dieselbe ungeordnete Navigation.",
       "Wir entwickeln getrennte Informationswege.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Partner findet seine Informationen und die verantwortliche Kontaktadresse."
     ],
     "faq": [
       [
@@ -587,13 +587,13 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "related": [
       [
         "website-design",
-        "Website Design",
-        "Ergänzende Leistungen ansehen"
+        "Website-Erstellung",
+        "Website mit klarer Nutzerführung bauen"
       ],
       [
-        "service-websites",
-        "Service Websites",
-        "Ergänzende Leistungen ansehen"
+        "international-seo",
+        "Internationales SEO",
+        "Sprachversionen und Länder sauber zuordnen"
       ]
     ],
     "visual": [
@@ -646,7 +646,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "URLs, Formulare und Tracking gegenprüfen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir vergleichen wichtige URLs, Mobilansichten und Formularzustellung vor und nach dem Umbau."
       ]
     ],
     "outcomes": [
@@ -667,7 +667,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Abstände, Schriftgrößen oder Elemente überlagern sich.",
       "Wir testen mobile Ansichten und wichtige Interaktionen.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Eine zuvor wichtige Leistungsseite bleibt über ihre URL oder eine korrekte Weiterleitung erreichbar."
     ],
     "faq": [
       [
@@ -686,14 +686,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Ein separater Testbereich ermöglicht meist eine kontrollierte Freigabe. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "website-design",
-        "Website Design",
-        "Ergänzende Leistungen ansehen"
+        "website-speed-security",
+        "Performance & Sicherheit",
+        "Ladezeiten und Zugriffsrisiken prüfen"
       ],
       [
-        "service-websites",
-        "Service Websites",
-        "Ergänzende Leistungen ansehen"
+        "website-design",
+        "Website-Erstellung",
+        "Website mit klarer Nutzerführung bauen"
       ]
     ],
     "visual": [
@@ -746,7 +746,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Website und Formulare anschließend testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir protokollieren geprüfte Updates und kontrollieren die wichtigsten Funktionen nach der Änderung."
       ]
     ],
     "outcomes": [
@@ -767,7 +767,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Theme und Plugins können sich gegenseitig beeinflussen.",
       "Wir testen Änderungen soweit möglich auf einer Testumgebung.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Nach einem Plugin-Update funktionieren Kontaktformular und zentrale Seiten weiterhin."
     ],
     "faq": [
       [
@@ -786,14 +786,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Der Umfang ist erst nach Analyse und Prüfung möglicher Sicherungen festlegbar. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Ergänzende Leistungen ansehen"
+        "website-speed-security",
+        "Performance & Sicherheit",
+        "Ladezeiten und Zugriffsrisiken prüfen"
       ],
       [
-        "api-integrations",
-        "Api Integrations",
-        "Ergänzende Leistungen ansehen"
+        "website-redesign",
+        "Website-Relaunch",
+        "Bestehende Seiten kontrolliert modernisieren"
       ]
     ],
     "visual": [
@@ -846,7 +846,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Testlead und Duplikatkontrolle durchführen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir prüfen einen Testdatensatz inklusive Fehlerantwort und Schutz vor doppelter Übertragung."
       ]
     ],
     "outcomes": [
@@ -867,7 +867,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Ein Formular zeigt Erfolg, aber der Lead fehlt im CRM.",
       "Wir prüfen API-Antworten und Fehlerprotokolle.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Formular-Lead erscheint genau einmal im CRM und ist anhand seiner ID auffindbar."
     ],
     "faq": [
       [
@@ -886,14 +886,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Mit minimalen Berechtigungen und einer datenschutzgerechten Ausgestaltung des konkreten Vorhabens. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Ergänzende Leistungen ansehen"
+        "catalog-automation",
+        "Katalogautomatisierung",
+        "Produktdaten kontrolliert synchronisieren"
       ],
       [
-        "seo",
-        "Seo",
-        "Ergänzende Leistungen ansehen"
+        "web-applications",
+        "Webanwendungen",
+        "Geschäftsprozesse in Anwendungen abbilden"
       ]
     ],
     "visual": [
@@ -946,7 +946,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Funktionen und Messwerte erneut prüfen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir vergleichen reale Ladeabläufe und prüfen Zugang, Sicherung sowie Formularfunktion."
       ]
     ],
     "outcomes": [
@@ -967,7 +967,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Wichtige Inhalte erscheinen erst spät.",
       "Wir messen Ressourcen und kritische Renderpfade.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein zuvor langsamer Seitentyp wird kontrolliert getestet, ohne den Bestellprozess zu beschädigen."
     ],
     "faq": [
       [
@@ -986,14 +986,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Deshalb sichern und testen wir relevante Änderungen vor dem Livegang. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Ergänzende Leistungen ansehen"
+        "wordpress-care",
+        "WordPress-Betreuung",
+        "Updates und Backups kontrollieren"
       ],
       [
-        "api-integrations",
-        "Api Integrations",
-        "Ergänzende Leistungen ansehen"
+        "website-redesign",
+        "Website-Relaunch",
+        "Bestehende Seiten kontrolliert modernisieren"
       ]
     ],
     "visual": [
@@ -1046,7 +1046,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       ],
       [
         "Zugriffe, Fehler und echte Nutzung testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir testen den vollständigen Nutzerprozess mit passenden Rollen und Fehlerfällen."
       ]
     ],
     "outcomes": [
@@ -1067,7 +1067,7 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
       "BEISPIELHAFTE SITUATION",
       "Teams arbeiten ohne gemeinsame aktuelle Daten.",
       "Wir entwerfen einen nachvollziehbaren gemeinsamen Workflow.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Teammitglied bearbeitet einen Vorgang, während fremde Rollen keinen Zugriff erhalten."
     ],
     "faq": [
       [
@@ -1086,14 +1086,14 @@ function mrseo_de_service_part2(){return json_decode(<<<'MRSEO_DE_P2'
     "risk": "Nein. Die Architektur richtet sich nach belegten Anforderungen und Wachstumsszenarien. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Ergänzende Leistungen ansehen"
+        "api-integrations",
+        "API-Integrationen",
+        "CRM und Shopdaten sicher verbinden"
       ],
       [
-        "api-integrations",
-        "Api Integrations",
-        "Ergänzende Leistungen ansehen"
+        "web-development",
+        "Individuelle Webentwicklung",
+        "Individuelle Prozesse technisch umsetzen"
       ]
     ],
     "visual": [
