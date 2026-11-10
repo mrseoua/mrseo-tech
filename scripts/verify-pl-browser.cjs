@@ -63,6 +63,32 @@ async function run(){
        if(custom.has(slug))assert(result.uniqueScene===1,`Missing original service-specific visual on ${url}`);
        assert(result.cta===1,`Missing contact CTA on ${url}`);
      }
+     // Regression for the screenshot bug: the live PL mega-menu once rendered
+     // missing destinations as inert <span> nodes. Check the actual rendered DOM.
+     if(slug==='local-seo' && (width===1440 || width===390)){
+       const mega=page.locator('.mrseo-mega--trial').first();
+       assert(await mega.count()===1,`Missing premium PL mega-menu: ${url}`);
+       const rendered=await mega.evaluate(node=>({
+         links:[...node.querySelectorAll('.mrseo-mega-items a.mrseo-mega-item')].map(a=>({label:a.textContent.trim(),href:a.getAttribute('href')})),
+         placeholders:[...node.querySelectorAll('.mrseo-mega-item--planned')].map(a=>a.textContent.trim())
+       }));
+       assert.equal(rendered.placeholders.length,0,`PL menu has inert service labels: ${rendered.placeholders.join(', ')}`);
+       assert.equal(rendered.links.length,25,`PL mega-menu has ${rendered.links.length} working links rather than 25`);
+       const expected=slugs.map(s=>'/pl/'+s+'/');
+       const destinations=rendered.links.map(item=>new URL(item.href,ORIGIN).pathname);
+       assert.equal(new Set(destinations).size,25,'Polish menu has duplicated destinations');
+       assert.deepEqual([...destinations].sort(),[...expected].sort(),'Polish menu destinations do not match the 25 completed pages');
+       if(width===1440){
+         // Click the real dropdown and then a previously inert item.
+         const toggle=page.locator('.services-menu-toggle').first();
+         await toggle.click();
+         const target=mega.locator('a.mrseo-mega-item[href$="/pl/international-seo/"]');
+         assert(await target.isVisible(),'Polish mega menu link is not visible after opening Services');
+         await target.click();
+         await page.waitForURL(/\\/pl\\/international-seo\\/$/);
+         assert.equal(await page.locator('h1').count(),1,'Clicked Polish menu link did not open a proper page');
+       }
+     }
      if(width===390 && ['local-seo','landing-pages','api-integrations','sklepy-woocommerce-shopify','store-migration','website-redesign','web-applications'].includes(slug)){
        await page.screenshot({path:path.join(shots,`pl-${slug}-390.jpg`),fullPage:true,type:'jpeg',quality:75});
      }
