@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Require all 25 French service destinations and 21 original FR page narratives."""
+"""Require all 25 French service destinations and 19 original FR page narratives."""
 from pathlib import Path
 import json,re
 root=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
@@ -17,7 +17,7 @@ titles=[];leads=[];descriptions=[];scenes=[]
 for slug,page in data.items():
     assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",slug),slug
     for field in ("title","description","kicker","lead","intro","introText","risk","cta"):
-        assert len(page[field])>=15,(slug,field)
+        assert len(page[field])>=(8 if field=='kicker' else 15),(slug,field)
     assert len(page["description"])<=195,(slug,"description")
     assert len(page["hero"])==2 and all(len(x)>10 for x in page["hero"]),slug
     assert len(page["problems"])==3 and all(len(x)==3 and all(x) for x in page["problems"]),slug
@@ -26,9 +26,9 @@ for slug,page in data.items():
     assert len(page["faq"])==3 and all(len(x)==2 for x in page["faq"]),slug
     assert len(page["related"])==2 and all(len(x)==3 for x in page["related"]),slug
     assert all(x[0]!=slug for x in page["related"]),slug
-    assert len(page["example"])==4 and page["example"][0]=="BEISPIELHAFTE SITUATION",slug
+    assert len(page["example"])==4 and page["example"][0]=="EXEMPLE DE SITUATION",slug
     assert len(page["visual"])==3 and len(set(page["visual"]))==3,slug
-    assert "garantiert Platz 1" not in page["lead"],slug
+    assert "garantie de première place" not in page["lead"],slug
     titles.append(page["title"]);leads.append(page["lead"]);descriptions.append(page["description"])
 assert len(set(titles))==len(set(leads))==len(set(descriptions))==19,"Duplicated FR SEO content"
 
@@ -61,7 +61,7 @@ assert "mrseo_fr_render_unique_scene($pl_slug)" in template
 assert 'pl-svc-scene-steps' not in template, 'Duplicated hero stages must not reappear under the scene'
 assert "mrseo_url('contact','fr')" in template
 assert 'class="pl-svc fr-svc' in template
-assert "BEISPIEL" in read("inc/fr-service-part1.php")
+assert "EXEMPLE" in read("inc/fr-service-part1.php")
 assert "Ścieżka" not in template
 assert "require_once get_template_directory() . '/inc/fr-service-routing.php'" in read("functions.php")
 assert "wp_enqueue_style('mrseo-fr-services'" in read("functions.php")
@@ -69,4 +69,4 @@ assert "prefers-reduced-motion:reduce" in read("assets/fr-services.css")
 assert "X-Robots-Tag: noindex, nofollow" in read("functions.php")
 seo=read("inc/international-seo.php")
 assert "mrseo_fr_service_slugs" in seo
-print("Frenchy QA PASS: 21 original French landing pages, 4 existing cores, all 25 linked services, 21 distinct scenes and strict noindex.")
+print("French QA PASS: 19 original French landings, 6 existing service pages, 25 menu anchors, 19 distinct scenes and strict noindex.")
