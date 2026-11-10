@@ -64,6 +64,16 @@ assert set(all_links) - set(data) == {"seo-audit", "ecommerce-seo", "google-ads"
 assert set(data) <= set(all_links), ("Unlinked Polish page", set(data)-set(all_links))
 assert "horoshop" not in found.group(1).lower()
 assert "mrseo_pl_service_slugs()" in menu
+# All 15 newly created pages have unique graphic presets, not one repeated generic scene.
+art=source("inc/pl-service-art.php")
+presets=re.findall(r"^  '([a-z0-9-]+)'=>array\('variant'=>'([^']+)'", art, re.M)
+new_slugs=set(extract("inc/pl-next-services.php", "MRSEO_PL_NEXT")) | set(extract("inc/pl-final-services.php", "MRSEO_PL_FINAL"))
+assert len(new_slugs)==15 and len(presets)==15, ("Missing unique scene presets",len(new_slugs),len(presets))
+assert {x[0] for x in presets}==new_slugs, "No unique scene for a Polish service"
+assert len({x[1] for x in presets})==15, "Repeated service graphic types"
+assert "mrseo_pl_render_unique_scene($pl_slug)" in source("pl-service-landing.php")
+assert "wp_enqueue_style('mrseo-pl-unique-scenes'" in source("functions.php")
+assert "prefers-reduced-motion:reduce" in source("assets/pl-unique-scenes.css")
 assert "mrseo_pl_service_rules_v2" in source("inc/pl-service-routing.php")
 assert "mrseo_pl_final_service_data()" in source("inc/pl-service-content.php")
 routing=source("inc/i18n-routing.php")
