@@ -25,7 +25,10 @@ async function run(){
       robots:document.querySelector('meta[name="robots"]')?.content||'',
       scroll:Math.max(document.body.scrollWidth,document.documentElement.scrollWidth),vw:innerWidth,
       problems:document.querySelectorAll('.pl-svc-need').length,faq:document.querySelectorAll('.pl-svc-faq-items details').length,
-      scene:document.querySelectorAll('.pl-art').length,cta:document.querySelectorAll('.pl-svc-hero-actions .intl-button').length
+      scene:document.querySelectorAll('.pl-art').length,cta:document.querySelectorAll('.pl-svc-hero-actions .intl-button').length,
+      styledScene:document.querySelector('.pl-svc-scene')?getComputedStyle(document.querySelector('.pl-svc-scene')).display:'',
+      styledGrid:document.querySelector('.pl-svc-hero-grid')?getComputedStyle(document.querySelector('.pl-svc-hero-grid')).display:'',
+      styledCards:document.querySelector('.pl-svc-need-grid')?getComputedStyle(document.querySelector('.pl-svc-need-grid')).display:''
      }));
      assert.equal(r.h1,1,`H1 ${slug}`);
      assert(r.h1Text.length>12,`short H1 ${slug}`);
@@ -41,6 +44,9 @@ async function run(){
       assert.equal(r.problems,3,`problems ${slug}`);
       assert(r.faq>=3,`FAQ ${slug}`);
       assert.equal(r.scene,1,`original scene ${slug}`);
+      assert.equal(r.styledScene,'flex',`Premium service CSS missing on ${slug}`);
+      assert.equal(r.styledGrid,'grid',`French hero grid not styled on ${slug}`);
+      assert.equal(r.styledCards,'grid',`French problem cards not styled on ${slug}`);
       assert.equal(r.cta,1,`contact CTA ${slug}`);
      }
      if(slug==='local-seo' && [390,1440].includes(width)){
