@@ -57,3 +57,14 @@
  .fr-svc .pl-svc-process-list li>div{min-width:0}
  .fr-svc .pl-svc-related-grid>a{min-width:0}
 }
+
+/* French long hero clauses: line breaking without clipping the content. */
+.fr-svc .pl-svc-hero h1 em{max-width:100%;overflow-wrap:anywhere;word-break:break-word;hyphens:auto}
+@media(max-width:480px){
+ .fr-svc .pl-svc-hero h1,.fr-svc .pl-svc-hero h1 em{
+  font-size:clamp(33px,9.4vw,46px);
+  letter-spacing:-.048em;
+  overflow-wrap:anywhere;
+  hyphens:auto;
+ }
+}
