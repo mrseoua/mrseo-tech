@@ -58,6 +58,7 @@ assert "mrseo_de_service_route()?" in routing
 template=read("de-service-landing.php")
 assert template.count('<h1 ')==1
 assert "mrseo_de_render_unique_scene($pl_slug)" in template
+assert 'pl-svc-scene-steps' not in template, 'Duplicated hero stages must not reappear under the scene'
 assert "mrseo_url('contact','de')" in template
 assert 'class="pl-svc de-svc' in template
 assert "BEISPIEL" in read("inc/de-service-part1.php")
