@@ -46,7 +46,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Kontaktweg auf Mobilgeräten testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir suchen mit ausgewählten lokalen Begriffen und prüfen den mobilen Kontaktweg."
       ]
     ],
     "outcomes": [
@@ -67,7 +67,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Die Leistung erscheint für wichtige lokale Anfragen nicht.",
       "Wir vergleichen lokale Suchergebnisse, Standorte und Leistungsseiten.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein konkreter Stadt- und Leistungsbegriff führt zur passenden Kontaktmöglichkeit."
     ],
     "faq": [
       [
@@ -87,13 +87,13 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "related": [
       [
         "service-business-seo",
-        "Service Business Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "SEO für Dienstleister",
+        "Dienstleistungen verständlich auffindbar machen"
       ],
       [
-        "seo",
-        "Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "local-google-ads",
+        "Lokale Google Ads",
+        "Anfragen aus dem Einsatzgebiet erreichen"
       ]
     ],
     "visual": [
@@ -146,7 +146,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Anfragewege prüfen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir prüfen, ob jede wichtige Leistung eine eindeutige Zielseite besitzt und erreichbar ist."
       ]
     ],
     "outcomes": [
@@ -167,7 +167,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Unterschiedliche Kundenbedürfnisse bleiben unbeantwortet.",
       "Wir erstellen eine nachvollziehbare Leistungsstruktur.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Die ausgewählte Dienstleistung lässt sich ohne Umwege über Navigation und Suche finden."
     ],
     "faq": [
       [
@@ -186,14 +186,14 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "risk": "Das hängt von Nachfrage, Konkurrenz und technischem Zustand ab. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "local-seo",
-        "Local Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "service-websites",
+        "Websites für Dienstleister",
+        "Leistungsseiten für Kundenanfragen"
       ],
       [
-        "seo",
-        "Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "local-seo",
+        "Lokales SEO",
+        "Reale Standorte in der Suche sichtbar machen"
       ]
     ],
     "visual": [
@@ -246,7 +246,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Live-Verknüpfungen nach dem Einbau kontrollieren",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir vergleichen echte URL-Paare, Canonical und hreflang in den veröffentlichten Sprachversionen."
       ]
     ],
     "outcomes": [
@@ -267,7 +267,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Google verweist Nutzer auf eine unpassende Landesversion.",
       "Wir prüfen hreflang, Canonical und erreichbare URLs.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Nutzer aus dem Zielmarkt erhält eine passende statt einer falschen Sprachseite."
     ],
     "faq": [
       [
@@ -286,14 +286,14 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "risk": "Ja. hreflang sollte nur auf tatsächlich fertige Zielseiten zeigen. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "local-seo",
-        "Local Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "seo",
+        "SEO-Beratung",
+        "Suchintentionen und Website-Struktur prüfen"
       ],
       [
-        "service-business-seo",
-        "Service Business Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "corporate-websites",
+        "Unternehmenswebsites",
+        "Angebot und Unternehmensbereiche ordnen"
       ]
     ],
     "visual": [
@@ -346,7 +346,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Testprodukte und Bestellungen kontrollieren",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir vergleichen ausgewählte Artikel-IDs, Preise und Bestände im Feed und auf der Shopseite."
       ]
     ],
     "outcomes": [
@@ -367,7 +367,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Produktdaten oder Website-Angaben erfüllen Anforderungen nicht.",
       "Wir untersuchen die konkreten Merchant-Diagnosen.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Testartikel ist korrekt angegeben und hat die erwartete Shopping-Eignung."
     ],
     "faq": [
       [
@@ -386,14 +386,14 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "risk": "Ja. Je nach Problem werden einzelne Produkte oder ganze Angebote eingeschränkt. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "google-ads",
-        "Google Ads",
-        "Passende ergänzende Leistungen ansehen"
+        "merchant-center-help",
+        "Merchant Center Hilfe",
+        "Produktablehnungen gezielt untersuchen"
       ],
       [
-        "local-google-ads",
-        "Local Google Ads",
-        "Passende ergänzende Leistungen ansehen"
+        "online-shop-development",
+        "Onlineshop-Erstellung",
+        "Katalog und Checkout sauber planen"
       ]
     ],
     "visual": [
@@ -446,7 +446,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Anfragen statt Klicks bewerten",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir prüfen regionale Suchanfragen und eine echte Anfrage im vereinbarten Zielgebiet."
       ]
     ],
     "outcomes": [
@@ -467,7 +467,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Das Zielgebiet entspricht nicht dem tatsächlichen Einsatzradius.",
       "Wir kontrollieren Standortoptionen und Suchbegriffe.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein lokaler Suchbegriff führt zur beworbenen Leistung und zum erreichbaren Kontakt."
     ],
     "faq": [
       [
@@ -486,14 +486,14 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "risk": "Eine konkrete Zahl oder Frist lässt sich nicht seriös garantieren. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "google-ads",
-        "Google Ads",
-        "Passende ergänzende Leistungen ansehen"
+        "landing-pages",
+        "Landingpages für Anzeigen",
+        "Passende Zielseiten für Werbung"
       ],
       [
-        "seo",
-        "Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "local-seo",
+        "Lokales SEO",
+        "Reale Standorte in der Suche sichtbar machen"
       ]
     ],
     "visual": [
@@ -546,7 +546,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Befunde nach Wirkung und Risiko priorisieren",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir liefern eine priorisierte Fehlerliste und prüfen stichprobenartig die Conversion-Auslösung."
       ]
     ],
     "outcomes": [
@@ -567,7 +567,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Anzeigenausrichtung und Ausschlüsse sind unklar.",
       "Wir prüfen Suchbegriffe, Standorte und Kampagneneinstellungen.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Eine Testanfrage wird im Bericht eindeutig von einem reinen Klick unterschieden."
     ],
     "faq": [
       [
@@ -588,12 +588,12 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       [
         "google-ads",
         "Google Ads",
-        "Passende ergänzende Leistungen ansehen"
+        "Kampagnen und Kosten gezielt prüfen"
       ],
       [
-        "local-google-ads",
-        "Local Google Ads",
-        "Passende ergänzende Leistungen ansehen"
+        "landing-pages",
+        "Landingpages für Anzeigen",
+        "Passende Zielseiten für Werbung"
       ]
     ],
     "visual": [
@@ -646,7 +646,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Erneute Verarbeitung und Artikelstatus prüfen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir kontrollieren den Status ausgewählter abgelehnter Artikel nach der erneuten Verarbeitung."
       ]
     ],
     "outcomes": [
@@ -667,7 +667,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Produktattribute, Bilder oder Angebotsdaten entsprechen nicht den Vorgaben.",
       "Wir dokumentieren die betroffenen IDs und Fehlertypen.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Für eine konkrete Artikel-ID sind Ursache und aktueller Prüfstatus dokumentiert."
     ],
     "faq": [
       [
@@ -686,14 +686,14 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "risk": "Nein. Merchant Center verwaltet Produktdaten; Google Ads steuert die Werbung. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "google-ads",
-        "Google Ads",
-        "Passende ergänzende Leistungen ansehen"
+        "google-shopping",
+        "Google Shopping",
+        "Produktanzeigen und Feed kontrollieren"
       ],
       [
-        "local-google-ads",
-        "Local Google Ads",
-        "Passende ergänzende Leistungen ansehen"
+        "catalog-automation",
+        "Katalogautomatisierung",
+        "Produktdaten kontrolliert synchronisieren"
       ]
     ],
     "visual": [
@@ -746,7 +746,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Testbestellungen und Rückmeldungen prüfen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir führen eine vollständige Testbestellung mit Zahlart, Versand und Bestätigung aus."
       ]
     ],
     "outcomes": [
@@ -767,7 +767,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Die Datenstruktur passt nicht zu Größen, Farben oder Sets.",
       "Wir skizzieren Varianten, Filter und Artikelzuordnung.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Produkt mit Variante kann bis zur Bestellbestätigung gekauft werden."
     ],
     "faq": [
       [
@@ -786,14 +786,14 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "risk": "Dafür ist eine eigene Migrationsplanung erforderlich. Umfang und Abnahmebedingungen werden vor Beginn schriftlich festgelegt.",
     "related": [
       [
-        "store-conversion",
-        "Store Conversion",
-        "Passende ergänzende Leistungen ansehen"
+        "woocommerce-shopify-stores",
+        "WooCommerce & Shopify",
+        "Shopplattform anhand der Anforderungen wählen"
       ],
       [
-        "seo",
-        "Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "store-migration",
+        "Shopmigration",
+        "Artikel und URLs sicher übertragen"
       ]
     ],
     "visual": [
@@ -846,7 +846,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Zahlung, Versand und Bestellung testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir vergleichen die gewählte Plattform mit dem vereinbarten Funktions- und Kostenplan."
       ]
     ],
     "outcomes": [
@@ -867,7 +867,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Abhängigkeiten können Updates und den Checkout stören.",
       "Wir prüfen notwendige Funktionen und Erweiterungen.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Checkout und benötigte Erweiterungen sind auf der ausgewählten Plattform getestet."
     ],
     "faq": [
       [
@@ -887,13 +887,13 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "related": [
       [
         "online-shop-development",
-        "Online Shop Development",
-        "Passende ergänzende Leistungen ansehen"
+        "Onlineshop-Erstellung",
+        "Katalog und Checkout sauber planen"
       ],
       [
         "store-conversion",
-        "Store Conversion",
-        "Passende ergänzende Leistungen ansehen"
+        "Conversion-Optimierung",
+        "Kaufhindernisse im Checkout erkennen"
       ]
     ],
     "visual": [
@@ -946,7 +946,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       ],
       [
         "Checkout und Kaufmessung erneut testen",
-        "Wir prüfen das Ergebnis anhand der vereinbarten Testschritte und dokumentieren offene Punkte."
+        "Wir testen den betroffenen Schritt und kontrollieren die Erfassung der Testbestellung."
       ]
     ],
     "outcomes": [
@@ -967,7 +967,7 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
       "BEISPIELHAFTE SITUATION",
       "Navigation und Filter passen nicht zur Produktauswahl.",
       "Wir testen typische Produktsuchen.",
-      "Wir überprüfen die Änderung mit dem passenden Testfall; dies ist kein behauptetes Kundenergebnis."
+      "Ein Smartphone-Nutzer sieht Versandkosten vor der Zahlung und erreicht die Bestätigung."
     ],
     "faq": [
       [
@@ -987,13 +987,13 @@ function mrseo_de_service_part1(){return json_decode(<<<'MRSEO_DE_P1'
     "related": [
       [
         "online-shop-development",
-        "Online Shop Development",
-        "Passende ergänzende Leistungen ansehen"
+        "Onlineshop-Erstellung",
+        "Katalog und Checkout sauber planen"
       ],
       [
-        "seo",
-        "Seo",
-        "Passende ergänzende Leistungen ansehen"
+        "google-shopping",
+        "Google Shopping",
+        "Produktanzeigen und Feed kontrollieren"
       ]
     ],
     "visual": [
