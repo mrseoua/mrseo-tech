@@ -33,6 +33,7 @@ function mrseo_assets(){
  }
  if(function_exists('mrseo_pl_service_route') && mrseo_pl_service_route()){
   wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
+  wp_enqueue_style('mrseo-pl-unique-scenes',get_template_directory_uri().'/assets/pl-unique-scenes.css',array('mrseo-pl-services'),'1.0.0');
  }
  if((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
     || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())
