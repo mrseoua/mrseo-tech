@@ -58,7 +58,14 @@ UK_NEW_SLUGS = (
     "woocommerce-shopify-stores", "catalog-automation", "api-integrations",
     "web-applications", "ga4-conversions",
 )
-UK_ONLY = {"woocommerce-shopify-stores"}
+# Only genuine original Polish landing pages join their UA/RU/UK equivalents.
+PL_MATCHED = {
+    "landing-pages", "corporate-websites", "website-redesign",
+    "local-seo", "service-business-seo", "international-seo", "local-google-ads",
+    "store-conversion", "store-migration", "website-speed-security",
+    "catalog-automation", "api-integrations", "web-applications",
+}
+UK_PLATFORM = {"woocommerce-shopify-stores": "sklepy-woocommerce-shopify"}
 UK_MICRO = {"ga4-conversions", "catalog-automation",
             "api-integrations", "web-applications"}
 SAMPLE.extend("/en/" + slug + "/" for slug in UK_NEW_SLUGS)
@@ -72,6 +79,8 @@ def assert_paired_ru_pages(sitemap):
         expected = {"uk-UA": ua, "ru": ru}
         if slug in UK_NEW_SLUGS or slug == "google-ads-audit":
             expected["en-GB"] = HOST + "/en/" + slug + "/"
+        if slug in PL_MATCHED:
+            expected["pl-PL"] = HOST + "/pl/" + slug + "/"
         if slug == "google-ads-audit":
             expected["pl-PL"] = HOST + "/pl/audyt-google-ads/"
             if sitemap.get(HOST + "/en/google-ads-audit/") != expected:
@@ -181,22 +190,36 @@ if __name__ == "__main__":
     assert_paired_ru_pages(sitemap)
     for slug in UK_NEW_SLUGS:
         uk_url = HOST + "/en/" + slug + "/"
-        if slug in UK_ONLY:
-            if sitemap.get(uk_url) != {"en-GB": uk_url}:
-                fail(f"Invented alternate for UK-only page: {slug}")
+        if slug in UK_PLATFORM:
+            expected = {"en-GB": uk_url,
+                        "pl-PL": HOST + "/pl/" + UK_PLATFORM[slug] + "/"}
         elif slug in UK_MICRO:
-            pairs = {"uk-UA": HOST + "/" + slug + "/",
-                     "ru": HOST + "/ru/" + slug + "/",
-                     "en-GB": uk_url}
-            if any(sitemap.get(href) != pairs for href in pairs.values()):
-                fail(f"{slug}: genuine UK/UA/RU service alternates are not reciprocal")
+            expected = {"uk-UA": HOST + "/" + slug + "/",
+                        "ru": HOST + "/ru/" + slug + "/",
+                        "en-GB": uk_url}
+            if slug in PL_MATCHED:
+                expected["pl-PL"] = HOST + "/pl/" + slug + "/"
         else:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
                         "en-GB": uk_url}
-            if sitemap.get(uk_url) != expected:
-                fail(f"Unpaired real UK service: {slug}")
+            if slug in PL_MATCHED:
+                expected["pl-PL"] = HOST + "/pl/" + slug + "/"
+        if any(sitemap.get(href) != expected for href in expected.values()):
+            fail(f"Unpaired real international service: {slug}")
 
+
+    # Standalone Poland-specific pages must be in the sitemap and must have
+    # truthful self or reciprocally matched hreflang, never a fabricated translation.
+    for slug in PL_MATCHED:
+        url = HOST + "/pl/" + slug + "/"
+        if url not in sitemap or sitemap[url].get("pl-PL") != url:
+            fail(f"Missing real Polish canonical: {slug}")
+    platform = HOST + "/pl/sklepy-woocommerce-shopify/"
+    expected_platform = {"en-GB": HOST + "/en/woocommerce-shopify-stores/",
+                         "pl-PL": platform}
+    if sitemap.get(platform) != expected_platform:
+        fail("PL WooCommerce and Shopify route not reciprocally matched")
 
     # Cross-check published XML for self, reciprocal tags and no invented URLs.
     for loc, alts in sitemap.items():
