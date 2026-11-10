@@ -68,3 +68,8 @@
   hyphens:auto;
  }
 }
+
+/* France-only content gutters: screenshots exposed flush-to-edge hero and section copy. */
+.fr-svc .intl-wrap{width:min(calc(100% - 64px),1370px);margin-inline:auto}
+@media(max-width:800px){.fr-svc .intl-wrap{width:calc(100% - 40px)}}
+@media(max-width:390px){.fr-svc .intl-wrap{width:calc(100% - 32px)}}
