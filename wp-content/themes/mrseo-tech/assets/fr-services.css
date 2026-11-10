@@ -46,3 +46,14 @@
 .fr-svc .pl-art--web-applications .pl-art-node--2{border-top:2px solid #8ba39a;transform:translateY(-7px) rotateX(-4deg)}
 @media(max-width:480px){.fr-svc .pl-svc-scene-mark:has(.pl-art){min-height:248px;padding:8px 0}.fr-svc .pl-art{min-height:218px}.fr-svc .pl-art-node strong{font-size:13px}.fr-svc .pl-svc-scene-step strong{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.fr-svc .pl-art-node{animation:none!important;transform:none!important}}
+
+/* Keep long French service and API terminology inside narrow 360px layouts. */
+.fr-svc,.fr-svc .intl-wrap,.fr-svc .pl-svc-hero-grid,.fr-svc .pl-svc-hero-copy,.fr-svc .pl-svc-art,.fr-svc .pl-svc-need,.fr-svc .pl-svc-related-grid>a{min-width:0;max-width:100%}
+.fr-svc h1,.fr-svc h2,.fr-svc h3,.fr-svc p,.fr-svc strong,.fr-svc summary,.fr-svc .pl-svc-need-action,.fr-svc .pl-svc-related-grid span{overflow-wrap:anywhere;hyphens:auto}
+.fr-svc .pl-art-chain,.fr-svc .pl-art-node{min-width:0;max-width:100%}
+.fr-svc .pl-svc-section-head,.fr-svc .pl-svc-example-grid,.fr-svc .pl-svc-outcomes-grid,.fr-svc .pl-svc-faq-grid,.fr-svc .pl-svc-limits-grid{min-width:0}
+@media(max-width:480px){
+ .fr-svc .pl-svc-process-list li{grid-template-columns:44px minmax(0,1fr)}
+ .fr-svc .pl-svc-process-list li>div{min-width:0}
+ .fr-svc .pl-svc-related-grid>a{min-width:0}
+}
