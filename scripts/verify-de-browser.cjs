@@ -60,12 +60,12 @@ async function run(){
         robots:document.querySelector('meta[name="robots"]')?.content||'',
         outer:Math.max(root.scrollWidth,body.scrollWidth),
         inner:window.innerWidth,
-        problems:document.querySelectorAll('.de-svc-need').length,
-        faq:document.querySelectorAll('.de-svc-faq-items details').length,
-        scene:document.querySelectorAll('.de-svc-scene').length,
-        uniqueScene:document.querySelectorAll('.de-art').length,
-        sceneVariant:document.querySelector('.de-art')?.className||'',
-        cta:document.querySelectorAll('.de-svc-hero-actions .intl-button').length,
+        problems:document.querySelectorAll('.pl-svc-need').length,
+        faq:document.querySelectorAll('.pl-svc-faq-items details').length,
+        scene:document.querySelectorAll('.pl-svc-scene').length,
+        uniqueScene:document.querySelectorAll('.pl-art').length,
+        sceneVariant:document.querySelector('.pl-art')?.className||'',
+        cta:document.querySelectorAll('.pl-svc-hero-actions .intl-button').length,
         menus:[...document.querySelectorAll('a[href*="/de/"]')].map(a=>a.getAttribute('href'))
        };
      });
