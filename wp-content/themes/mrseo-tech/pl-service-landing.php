@@ -1,6 +1,7 @@
 <?php
 /** Dedicated Polish-first commercial landing template (not an English or Ukrainian translation). */
 if(!defined('ABSPATH'))exit;
+require_once __DIR__.'/inc/pl-service-art.php';
 $pl_slug=mrseo_slug();
 $pl_page=mrseo_pl_service_page($pl_slug);
 if(mrseo_locale()!=='pl'||!$pl_page){status_header(404);include get_404_template();return;}
@@ -22,12 +23,14 @@ $pl_group=in_array($pl_slug,array('tworzenie-sklepow-internetowych','catalog-aut
     <div class="pl-svc-scene" role="img" aria-label="<?php echo esc_attr(implode(' – ',$pl_page['visual']));?>">
      <div class="pl-svc-scene-head"><span class="pl-svc-light"></span><span>MRSEO.TECH / <?php echo esc_html($pl_page['kicker']);?></span><span aria-hidden="true">✳</span></div>
      <div class="pl-svc-scene-mark" aria-hidden="true">
+      <?php if(!mrseo_pl_render_unique_scene($pl_slug)):?>
       <?php if($pl_group==='web'):?><div class="pl-svc-browser"><div><i></i><i></i><i></i></div><b></b><p></p><p></p><a></a></div>
       <?php elseif($pl_group==='seo'):?><div class="pl-svc-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <?php elseif($pl_group==='commerce'):?><div class="pl-svc-shop"><i></i><i></i><i></i></div>
       <?php elseif($pl_group==='merchant'):?><div class="pl-svc-merchant"><span>!</span><span>✓</span><span>✓</span></div>
       <?php elseif($pl_group==='support'):?><div class="pl-svc-support"><i></i><i></i><i></i><i></i><i></i></div>
       <?php else:?><div class="pl-svc-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><?php endif;?>
+      <?php endif;?>
      </div>
      <div class="pl-svc-scene-steps">
       <?php foreach($pl_page['visual'] as $i=>$name):?>
