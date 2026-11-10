@@ -14,6 +14,7 @@ const slugs=[
  'opieka-wordpress','api-integrations','website-speed-security','web-development','web-applications'
 ];
 const shared=new Set(['ecommerce-seo','seo-audit','google-ads','web-development']);
+const custom=new Set(['local-seo','service-business-seo','landing-pages','catalog-automation','api-integrations','international-seo','local-google-ads','sklepy-woocommerce-shopify','store-conversion','store-migration','service-websites','corporate-websites','website-redesign','website-speed-security','web-applications']);
 const selected=slugs.filter((_,i)=>i%4===shard);
 const shots=path.resolve('shots');fs.mkdirSync(shots,{recursive:true});
 const reports=[];
@@ -42,6 +43,8 @@ async function run(){
         problems:document.querySelectorAll('.pl-svc-need').length,
         faq:document.querySelectorAll('.pl-svc-faq-items details').length,
         scene:document.querySelectorAll('.pl-svc-scene').length,
+        uniqueScene:document.querySelectorAll('.pl-art').length,
+        sceneVariant:document.querySelector('.pl-art')?.className||'',
         cta:document.querySelectorAll('.pl-svc-hero-actions .intl-button').length,
         menus:[...document.querySelectorAll('a[href*="/pl/"]')].map(a=>a.getAttribute('href'))
        };
@@ -57,9 +60,10 @@ async function run(){
        assert(result.problems===3,`Missing three client problems on ${url}`);
        assert(result.faq>=3,`Missing three FAQs on ${url}`);
        assert(result.scene===1,`Missing themed scene on ${url}`);
+       if(custom.has(slug))assert(result.uniqueScene===1,`Missing original service-specific visual on ${url}`);
        assert(result.cta===1,`Missing contact CTA on ${url}`);
      }
-     if(width===390 && ['local-seo','sklepy-woocommerce-shopify','website-redesign','web-applications'].includes(slug)){
+     if(width===390 && ['local-seo','landing-pages','api-integrations','sklepy-woocommerce-shopify','store-migration','website-redesign','web-applications'].includes(slug)){
        await page.screenshot({path:path.join(shots,`pl-${slug}-390.jpg`),fullPage:true,type:'jpeg',quality:75});
      }
      if(width===1440 && ['local-seo','store-migration','web-applications'].includes(slug)){
