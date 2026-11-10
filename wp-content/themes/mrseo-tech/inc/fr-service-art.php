@@ -5,79 +5,174 @@ function mrseo_fr_scene_presets(){return json_decode(<<<'MRSEO_FR_ART'
 {
   "local-seo": {
     "variant": "local-seo",
-    "symbol": "⌖"
+    "symbol": "⌖",
+    "nodes": [
+      "RECHERCHE",
+      "LOCALITÉ",
+      "CONTACT"
+    ]
   },
   "service-business-seo": {
     "variant": "service-business-seo",
-    "symbol": "⌕"
+    "symbol": "⌕",
+    "nodes": [
+      "PRESTATION",
+      "PAGE SEO",
+      "DEVIS"
+    ]
   },
   "international-seo": {
     "variant": "international-seo",
-    "symbol": "◎"
+    "symbol": "◎",
+    "nodes": [
+      "PAYS",
+      "LANGUE",
+      "PAGE"
+    ]
   },
   "google-shopping": {
     "variant": "google-shopping",
-    "symbol": "▦"
+    "symbol": "▦",
+    "nodes": [
+      "FLUX",
+      "ARTICLE",
+      "ANNONCE"
+    ]
   },
   "local-google-ads": {
     "variant": "local-google-ads",
-    "symbol": "◉"
+    "symbol": "◉",
+    "nodes": [
+      "ZONE",
+      "ANNONCE",
+      "APPEL"
+    ]
   },
   "google-ads-audit": {
     "variant": "google-ads-audit",
-    "symbol": "▤"
+    "symbol": "▤",
+    "nodes": [
+      "COMPTE",
+      "AUDIT",
+      "ACTIONS"
+    ]
   },
   "merchant-center-help": {
     "variant": "merchant-center-help",
-    "symbol": "◈"
+    "symbol": "◈",
+    "nodes": [
+      "PRODUIT",
+      "ERREUR",
+      "CONTRÔLE"
+    ]
   },
   "woocommerce-shopify-stores": {
     "variant": "woocommerce-shopify-stores",
-    "symbol": "▣"
+    "symbol": "▣",
+    "nodes": [
+      "PLATEFORME",
+      "PANIER",
+      "COMMANDE"
+    ]
   },
   "store-conversion": {
     "variant": "store-conversion",
-    "symbol": "◍"
+    "symbol": "◍",
+    "nodes": [
+      "PRODUIT",
+      "PANIER",
+      "ACHAT"
+    ]
   },
   "catalog-automation": {
     "variant": "catalog-automation",
-    "symbol": "⇄"
+    "symbol": "⇄",
+    "nodes": [
+      "SOURCE",
+      "SYNCHRO",
+      "CATALOGUE"
+    ]
   },
   "store-migration": {
     "variant": "store-migration",
-    "symbol": "⇢"
+    "symbol": "⇢",
+    "nodes": [
+      "ANCIEN SITE",
+      "TRANSFERT",
+      "NOUVEAU SITE"
+    ]
   },
   "service-websites": {
     "variant": "service-websites",
-    "symbol": "▥"
+    "symbol": "▥",
+    "nodes": [
+      "SERVICE",
+      "PAGE",
+      "CONTACT"
+    ]
   },
   "landing-pages": {
     "variant": "landing-pages",
-    "symbol": "↗"
+    "symbol": "↗",
+    "nodes": [
+      "ANNONCE",
+      "OFFRE",
+      "DEMANDE"
+    ]
   },
   "corporate-websites": {
     "variant": "corporate-websites",
-    "symbol": "▧"
+    "symbol": "▧",
+    "nodes": [
+      "ENTREPRISE",
+      "RUBRIQUES",
+      "ÉCHANGES"
+    ]
   },
   "website-redesign": {
     "variant": "website-redesign",
-    "symbol": "⛨"
+    "symbol": "⛨",
+    "nodes": [
+      "AUDIT",
+      "REFONTE",
+      "RECETTE"
+    ]
   },
   "wordpress-care": {
     "variant": "wordpress-care",
-    "symbol": "{ }"
+    "symbol": "{ }",
+    "nodes": [
+      "SAUVEGARDE",
+      "MISE À JOUR",
+      "TEST"
+    ]
   },
   "api-integrations": {
     "variant": "api-integrations",
-    "symbol": "◈"
+    "symbol": "◈",
+    "nodes": [
+      "FORMULAIRE",
+      "API / CRM",
+      "RÉCEPTION"
+    ]
   },
   "website-speed-security": {
     "variant": "website-speed-security",
-    "symbol": "◇"
+    "symbol": "◇",
+    "nodes": [
+      "MESURE",
+      "CORRECTION",
+      "CONTRÔLE"
+    ]
   },
   "web-applications": {
     "variant": "web-applications",
-    "symbol": "▣"
+    "symbol": "▣",
+    "nodes": [
+      "PROCESSUS",
+      "APPLICATION",
+      "RÉSULTAT"
+    ]
   }
 }
 MRSEO_FR_ART
