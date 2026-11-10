@@ -32,12 +32,6 @@ $pl_group=in_array($pl_slug,array('online-shop-development','woocommerce-shopify
       <?php else:?><div class="pl-svc-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><?php endif;?>
       <?php endif;?>
      </div>
-     <div class="pl-svc-scene-steps">
-      <?php foreach($pl_page['visual'] as $i=>$name):?>
-       <div class="pl-svc-scene-step"><small><?php echo esc_html(sprintf('%02d',$i+1));?></small><strong><?php echo esc_html($name);?></strong></div>
-       <?php if($i<2):?><span class="pl-svc-step-arrow" aria-hidden="true">→</span><?php endif;?>
-      <?php endforeach;?>
-     </div>
      <div class="pl-svc-scene-end"><span>BEISPIEL / ABLAUF</span><span class="pl-svc-scene-beat" aria-hidden="true"><i></i><i></i><i></i></span></div>
     </div>
    </div>
