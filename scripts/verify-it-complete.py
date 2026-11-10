@@ -44,7 +44,9 @@ shared={"ecommerce-seo","seo-audit","google-ads","web-development","website-desi
 assert set(links)-set(pages)==shared,("Missing service",set(links)-set(pages))
 assert set(pages)<=set(links),("Orphaned service",set(pages)-set(links))
 assert "null" not in m.group(1) and "horoshop" not in m.group(1)
-nav=load("inc/mega-menu-trial.php","MRSEO_TRIAL_NAV_JSON")
+nav_match=re.search(r"<<<'MRSEO_TRIAL_NAV_JSON'\\n([\\s\\S]*?)\\nMRSEO_TRIAL_NAV_JSON;",menu)
+assert nav_match,"Missing Italian mega-menu translations"
+nav=json.loads(nav_match.group(1))
 assert "it" in nav and all(len(nav["it"][x])==7 for x in ("seo","ads","commerce","sites","dev"))
 scenes=load("inc/it-service-art.php","MRSEO_IT_ART")
 assert set(scenes)==set(pages) and len({x["variant"] for x in scenes.values()})==19
@@ -60,7 +62,7 @@ assert "if(mrseo_locale()!=='it'" in template
 assert "mrseo_it_service_rules_v1" in read("inc/it-service-routing.php")
 assert "require_once get_template_directory() . '/inc/it-service-routing.php'" in read("functions.php")
 assert "wp_enqueue_style('mrseo-it-services'" in read("functions.php")
-assert "mrseo_it_service_route() && mrseo_it_service_route()" in read("functions.php")
+assert "function_exists('mrseo_it_service_route') && mrseo_it_service_route()" in read("functions.php")
 assert "prefers-reduced-motion:reduce" in read("assets/it-services.css")
 assert "X-Robots-Tag: noindex, nofollow" in read("functions.php")
 assert "mrseo_it_service_slugs" in read("inc/international-seo.php")
