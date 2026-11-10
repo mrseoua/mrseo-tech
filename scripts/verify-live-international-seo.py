@@ -255,7 +255,8 @@ if __name__ == "__main__":
         if slug in UK_PLATFORM:
             expected = {"en-GB": uk_url,
                         "pl-PL": HOST + "/pl/" + UK_PLATFORM[slug] + "/",
-                        "de-DE": HOST + "/de/woocommerce-shopify-stores/"}
+                        "de-DE": HOST + "/de/woocommerce-shopify-stores/",
+                        "fr-FR": HOST + "/fr/woocommerce-shopify-stores/"}
         elif slug in UK_MICRO:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
