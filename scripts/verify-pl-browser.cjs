@@ -85,8 +85,9 @@ async function run(){
          const target=mega.locator('a.mrseo-mega-item[href$="/pl/international-seo/"]');
          assert(await target.isVisible(),'Polish mega menu link is not visible after opening Services');
          await target.click();
-         await page.waitForURL(/\\/pl\\/international-seo\\/$/);
+         await page.waitForURL(u=>u.pathname==='/pl/international-seo/');
          assert.equal(await page.locator('h1').count(),1,'Clicked Polish menu link did not open a proper page');
+         await page.goto(url,{waitUntil:'domcontentloaded'});
        }
      }
      if(width===390 && ['local-seo','landing-pages','api-integrations','sklepy-woocommerce-shopify','store-migration','website-redesign','web-applications'].includes(slug)){
