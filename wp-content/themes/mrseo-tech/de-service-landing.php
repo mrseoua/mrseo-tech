@@ -1,5 +1,5 @@
 <?php
-/** Dedicated Polish-first commercial landing template (not an English or Ukrainian translation). */
+/** Dedicated original German commercial landing template. */
 if(!defined('ABSPATH'))exit;
 require_once __DIR__.'/inc/de-service-art.php';
 $pl_slug=mrseo_slug();
