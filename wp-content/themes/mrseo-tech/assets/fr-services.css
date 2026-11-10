@@ -1,0 +1,48 @@
+/* Scoped French service scene styling. Do not alter established UA/RU/UK/PL/DE. */
+.fr-svc .pl-svc-scene{background:linear-gradient(148deg,#323a39,#172126);border-color:#4b5450}
+.fr-svc .pl-art{min-height:250px}
+.fr-svc .pl-svc-scene-mark:has(.pl-art){flex:1;min-height:292px;padding:22px 5px}
+.fr-svc .pl-art-node{border-color:#dbe1d7}
+.fr-svc .pl-art-status{font-size:10px}
+.fr-svc .pl-svc-hero-note,.fr-svc .pl-svc-crumb{font-size:15px;line-height:1.6}
+.fr-svc .pl-svc-need-action small{font-size:13px}
+.fr-svc .pl-art--local-seo .pl-art-symbol{background:#e3e7d7;border-radius:50%;transform:rotate(-12deg)}
+.fr-svc .pl-art--local-seo .pl-art-node--2{border-top:2px solid #8ba39a;transform:translateY(-7px) rotateX(-4deg)}
+.fr-svc .pl-art--service-business-seo .pl-art-symbol{background:#efddc8;border-radius:15px 4px 15px 4px;transform:rotate(-8deg)}
+.fr-svc .pl-art--service-business-seo .pl-art-node--2{border-top:3px solid #b66f62;transform:translateY(-8px) rotateX(4deg)}
+.fr-svc .pl-art--international-seo .pl-art-symbol{background:#dbe6df;border-radius:7px;transform:rotate(-4deg)}
+.fr-svc .pl-art--international-seo .pl-art-node--2{border-top:4px solid #8ba39a;transform:translateY(-9px) rotateX(-4deg)}
+.fr-svc .pl-art--google-shopping .pl-art-symbol{background:#e3e7d7;border-radius:4px 18px 4px 18px;transform:rotate(0deg)}
+.fr-svc .pl-art--google-shopping .pl-art-node--2{border-top:2px solid #b66f62;transform:translateY(-10px) rotateX(4deg)}
+.fr-svc .pl-art--local-google-ads .pl-art-symbol{background:#efddc8;border-radius:50%;transform:rotate(4deg)}
+.fr-svc .pl-art--local-google-ads .pl-art-node--2{border-top:3px solid #8ba39a;transform:translateY(-11px) rotateX(-4deg)}
+.fr-svc .pl-art--google-ads-audit .pl-art-symbol{background:#dbe6df;border-radius:15px 4px 15px 4px;transform:rotate(8deg)}
+.fr-svc .pl-art--google-ads-audit .pl-art-node--2{border-top:4px solid #b66f62;transform:translateY(-12px) rotateX(4deg)}
+.fr-svc .pl-art--merchant-center-help .pl-art-symbol{background:#e3e7d7;border-radius:7px;transform:rotate(12deg)}
+.fr-svc .pl-art--merchant-center-help .pl-art-node--2{border-top:2px solid #8ba39a;transform:translateY(-7px) rotateX(-4deg)}
+.fr-svc .pl-art--woocommerce-shopify-stores .pl-art-symbol{background:#efddc8;border-radius:4px 18px 4px 18px;transform:rotate(-12deg)}
+.fr-svc .pl-art--woocommerce-shopify-stores .pl-art-node--2{border-top:3px solid #b66f62;transform:translateY(-8px) rotateX(4deg)}
+.fr-svc .pl-art--store-conversion .pl-art-symbol{background:#dbe6df;border-radius:50%;transform:rotate(-8deg)}
+.fr-svc .pl-art--store-conversion .pl-art-node--2{border-top:4px solid #8ba39a;transform:translateY(-9px) rotateX(-4deg)}
+.fr-svc .pl-art--catalog-automation .pl-art-symbol{background:#e3e7d7;border-radius:15px 4px 15px 4px;transform:rotate(-4deg)}
+.fr-svc .pl-art--catalog-automation .pl-art-node--2{border-top:2px solid #b66f62;transform:translateY(-10px) rotateX(4deg)}
+.fr-svc .pl-art--store-migration .pl-art-symbol{background:#efddc8;border-radius:7px;transform:rotate(0deg)}
+.fr-svc .pl-art--store-migration .pl-art-node--2{border-top:3px solid #8ba39a;transform:translateY(-11px) rotateX(-4deg)}
+.fr-svc .pl-art--service-websites .pl-art-symbol{background:#dbe6df;border-radius:4px 18px 4px 18px;transform:rotate(4deg)}
+.fr-svc .pl-art--service-websites .pl-art-node--2{border-top:4px solid #b66f62;transform:translateY(-12px) rotateX(4deg)}
+.fr-svc .pl-art--landing-pages .pl-art-symbol{background:#e3e7d7;border-radius:50%;transform:rotate(8deg)}
+.fr-svc .pl-art--landing-pages .pl-art-node--2{border-top:2px solid #8ba39a;transform:translateY(-7px) rotateX(-4deg)}
+.fr-svc .pl-art--corporate-websites .pl-art-symbol{background:#efddc8;border-radius:15px 4px 15px 4px;transform:rotate(12deg)}
+.fr-svc .pl-art--corporate-websites .pl-art-node--2{border-top:3px solid #b66f62;transform:translateY(-8px) rotateX(4deg)}
+.fr-svc .pl-art--website-redesign .pl-art-symbol{background:#dbe6df;border-radius:7px;transform:rotate(-12deg)}
+.fr-svc .pl-art--website-redesign .pl-art-node--2{border-top:4px solid #8ba39a;transform:translateY(-9px) rotateX(-4deg)}
+.fr-svc .pl-art--wordpress-care .pl-art-symbol{background:#e3e7d7;border-radius:4px 18px 4px 18px;transform:rotate(-8deg)}
+.fr-svc .pl-art--wordpress-care .pl-art-node--2{border-top:2px solid #b66f62;transform:translateY(-10px) rotateX(4deg)}
+.fr-svc .pl-art--api-integrations .pl-art-symbol{background:#efddc8;border-radius:50%;transform:rotate(-4deg)}
+.fr-svc .pl-art--api-integrations .pl-art-node--2{border-top:3px solid #8ba39a;transform:translateY(-11px) rotateX(-4deg)}
+.fr-svc .pl-art--website-speed-security .pl-art-symbol{background:#dbe6df;border-radius:15px 4px 15px 4px;transform:rotate(0deg)}
+.fr-svc .pl-art--website-speed-security .pl-art-node--2{border-top:4px solid #b66f62;transform:translateY(-12px) rotateX(4deg)}
+.fr-svc .pl-art--web-applications .pl-art-symbol{background:#e3e7d7;border-radius:7px;transform:rotate(4deg)}
+.fr-svc .pl-art--web-applications .pl-art-node--2{border-top:2px solid #8ba39a;transform:translateY(-7px) rotateX(-4deg)}
+@media(max-width:480px){.fr-svc .pl-svc-scene-mark:has(.pl-art){min-height:248px;padding:8px 0}.fr-svc .pl-art{min-height:218px}.fr-svc .pl-art-node strong{font-size:13px}.fr-svc .pl-svc-scene-step strong{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.fr-svc .pl-art-node{animation:none!important;transform:none!important}}
