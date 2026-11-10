@@ -14,6 +14,11 @@ function mrseo_url($slug='',$lang=null){
  if($lang==='ru' && function_exists('mrseo_ru_website_slugs')
      && in_array($slug,mrseo_ru_website_slugs(),true))
   return mrseo_i18n_exact_url('ru',$slug);
+ // A completed German service must never be downgraded to a generic fallback.
+ if($lang==='de' && mrseo_locale()==='de'
+    && function_exists('mrseo_de_service_slugs')
+    && in_array($slug,mrseo_de_service_slugs(),true))
+  return mrseo_i18n_exact_url('de',$slug);
  if($lang==='uk' && mrseo_locale()==='uk' && function_exists('mrseo_ua_website_slugs')
     && in_array($slug,mrseo_ua_website_slugs(),true)){
   // These are genuine Ukrainian pages even when an EN-only slug shares its spelling.
@@ -99,7 +104,9 @@ function mrseo_url($slug='',$lang=null){
   if(isset($new_parents[$slug]) && !($lang==='en' && function_exists('mrseo_uk_market_new_slugs') && in_array($slug,mrseo_uk_market_new_slugs(),true)) && !($lang==='en' && function_exists('mrseo_en_gb_slugs') && in_array($slug,mrseo_en_gb_slugs(),true)) && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true)))$slug=$new_parents[$slug];
  }
  if($slug==='horoshop' && !in_array($lang,array('uk','ru'),true))$slug='ecommerce-seo';
- if(in_array($lang,array('pl','de'),true) && !in_array($slug,mrseo_int_pages(),true) && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true))){
+ if(in_array($lang,array('pl','de'),true) && !in_array($slug,mrseo_int_pages(),true)
+    && !($lang==='pl' && function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true))
+    && !($lang==='de' && function_exists('mrseo_de_service_slugs') && in_array($slug,mrseo_de_service_slugs(),true))){
   $slug=$slug==='performance-max'?'google-ads':($slug==='service-websites'?'seo':'');
  }
  return home_url('/'.($lang==='uk'?'':$lang.'/').($slug?$slug.'/':''));
