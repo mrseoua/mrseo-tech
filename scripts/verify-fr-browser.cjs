@@ -33,7 +33,10 @@ async function run(){
      assert(/fr/i.test(r.lang),`wrong html language ${slug}: ${r.lang}`);
      assert(r.canonical.endsWith('/fr/'+slug+'/'),`wrong canonical ${slug}: ${r.canonical}`);
      assert(/noindex/i.test(r.robots)||/noindex/i.test(response.headers()['x-robots-tag']||''),`index enabled ${slug}`);
-     assert(r.scroll<=r.vw+5,`horizontal overflow ${slug}: ${r.scroll} vs ${r.vw}`);
+     if(r.scroll>r.vw+5){
+      const offenders=await page.evaluate(()=>[...document.querySelectorAll('body *')].map(el=>({el,rect:el.getBoundingClientRect()})).filter(x=>x.rect.right>innerWidth+5||x.rect.left< -5).slice(0,10).map(x=>({tag:x.el.tagName,cls:String(x.el.className).slice(0,90),text:(x.el.textContent||'').trim().slice(0,55),left:Math.round(x.rect.left),right:Math.round(x.rect.right)})));
+      throw Error(`horizontal overflow ${slug}: ${r.scroll} vs ${r.vw}; offenders=${JSON.stringify(offenders)}`);
+     }
      if(!shared.has(slug)){
       assert.equal(r.problems,3,`problems ${slug}`);
       assert(r.faq>=3,`FAQ ${slug}`);
