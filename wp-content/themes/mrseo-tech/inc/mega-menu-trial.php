@@ -44,6 +44,14 @@ function mrseo_trial_menu_translations() {
   "dev":["Web development","Rozwiązujemy problemy techniczne i automatyzujemy pracę.","Opieka i rozbudowa stron","Integracje i automatyzacja","Szybkość, bezpieczeństwo i dostępność","CRM i panele klientów","Aplikacje webowe i MVP"],
   "bottom":["Nie widzisz odpowiedniej usługi?","Opisz potrzebę lub problem — zaproponujemy rozwiązanie.","Porozmawiajmy o projekcie"]
  },
+ "fr":{
+  "seo":["Référencement SEO","Des pages utiles pour répondre aux recherches de vos clients.","SEO local","SEO pour les boutiques en ligne","SEO des entreprises de services","SEO international","Audit SEO"],
+  "ads":["Google Ads","Des campagnes pour obtenir des contacts réellement pertinents.","Annonces sur le Réseau de Recherche","Google Shopping","Google Ads local","Audit Google Ads","Google Merchant Center"],
+  "commerce":["E-commerce","Création, optimisation et automatisation des boutiques.","Création de boutique en ligne","WooCommerce et Shopify","Optimisation des conversions","Automatisation du catalogue","Migration de boutique"],
+  "sites":["Création de sites","Des sites clairs qui inspirent confiance et facilitent les demandes.","Création de site professionnel","Sites pour prestataires","Landing pages publicitaires","Sites institutionnels","Refonte de site"],
+  "dev":["Développement web","Résoudre les problèmes techniques et simplifier les processus.","Maintenance WordPress","Intégrations et automatisation","Performance et sécurité","CRM et espaces clients","Applications web et MVP"],
+  "bottom":["Votre besoin ne figure pas ici ?","Expliquez votre problème : nous proposerons des pistes concrètes.","Parlons de votre projet"]
+ },
  "de":{
   "seo":["SEO & Suchmaschinenoptimierung","Damit Kunden Ihr Unternehmen bei Google finden.","Lokales SEO","SEO für Onlineshops","SEO für Dienstleister","Internationales SEO","SEO-Audit"],
   "ads":["Google Ads","Anzeigen für relevante Anfragen potenzieller Kunden.","Google Suchanzeigen","Google Shopping","Google Ads für lokale Unternehmen","Google Ads Audit","Google Merchant Center"],
@@ -114,6 +122,13 @@ function mrseo_trial_menu_route_map($locale) {
   'sites'=>array('tworzenie-stron-internetowych','service-websites','landing-pages','corporate-websites','website-redesign'),
   'dev'=>array('opieka-wordpress','api-integrations','website-speed-security','web-development','web-applications')
  );
+ if($locale==='fr')return array(
+  'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+  'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
+  'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
+  'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
+  'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
+ );
  if($locale==='de')return array(
   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
@@ -151,6 +166,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
  }
  if($locale==='de')return (function_exists('mrseo_de_service_slugs') && in_array($slug,mrseo_de_service_slugs(),true))
     || (function_exists('mrseo_int_pages') && in_array($slug,mrseo_int_pages(),true));
+ if($locale==='fr')return (function_exists('mrseo_fr_service_slugs') && in_array($slug,mrseo_fr_service_slugs(),true))
+    || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  return function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true);
 }
 
