@@ -106,7 +106,10 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-ua-ads-pricing',get_template_directory_uri().'/assets/ua-google-ads-pricing.css',
    array('mrseo-ua-commercial-visuals'),'1.0.2');
  }
- if(in_array(mrseo_locale(),array('pl','de'),true)||mrseo_slug()==='web-development'||(function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())){
+ if(in_array(mrseo_locale(),array('pl','de'),true)
+    || (function_exists('mrseo_fr_service_route') && mrseo_fr_service_route())
+    || mrseo_slug()==='web-development'
+    || (function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');
  }
  if(mrseo_slug()==='web-development'){
