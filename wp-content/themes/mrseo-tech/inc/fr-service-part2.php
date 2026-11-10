@@ -46,7 +46,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester redirections, commande et suivi",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : une nouvelle arborescence a remplacé les URL historiques."
       ]
     ],
     "outcomes": [
@@ -67,43 +67,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Une nouvelle arborescence a remplacé les URL historiques.",
       "Nous préparons une table des redirections vers les bonnes pages.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Peut-on conserver toutes les anciennes URL ?",
-          "Pas toujours ; les principales doivent avoir un équivalent pertinent."
-        ],
-        [
-          "Une interruption de service est-elle nécessaire ?",
-          "Elle dépend des plateformes et de la méthode de bascule."
-        ],
-        [
-          "Peut-on transférer l'historique de commandes ?",
-          "Il faut vérifier formats, droits d'accès et contraintes légales."
-        ]
+        "Peut-on conserver toutes les anciennes URL ?",
+        "Pas toujours ; les principales doivent avoir un équivalent pertinent."
       ],
       [
-        "ANCIEN SITE",
-        "TRANSFERT",
-        "NOUVEAU SITE"
+        "Une interruption de service est-elle nécessaire ?",
+        "Elle dépend des plateformes et de la méthode de bascule."
       ],
-      "Préparer ma migration"
+      [
+        "Peut-on transférer l'historique de commandes ?",
+        "Il faut vérifier formats, droits d'accès et contraintes légales."
+      ]
     ],
-    "risk": "r Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Il faut vérifier formats, droits d'accès et contraintes légales. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
         "online-shop-development",
-        "Online Shop Development",
-        "Voir les prestations complémentaires"
+        "Création de boutique",
+        "Catalogue et commande"
       ],
       [
-        "store-conversion",
-        "Store Conversion",
-        "Voir les prestations complémentaires"
+        "website-redesign",
+        "Refonte de site",
+        "Design et préservation des URL"
       ]
-    ]
+    ],
+    "visual": [
+      "ANCIEN SITE",
+      "TRANSFERT",
+      "NOUVEAU SITE"
+    ],
+    "cta": "Préparer ma migration"
   },
   "service-websites": {
     "title": "Sites web pour prestataires de services | MrSeo.tech",
@@ -148,7 +146,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester les demandes et la navigation mobile",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : le visiteur ne voit pas ce qui distingue chaque prestation."
       ]
     ],
     "outcomes": [
@@ -169,43 +167,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Le visiteur ne voit pas ce qui distingue chaque prestation.",
       "Nous séparons les besoins dans une navigation adaptée.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Faut-il une page par prestation ?",
-          "Oui seulement si les besoins et les contenus diffèrent réellement."
-        ],
-        [
-          "Peut-on enrichir le site plus tard ?",
-          "Nous prévoyons une structure évolutive selon les besoins connus."
-        ],
-        [
-          "Le référencement est-il inclus ?",
-          "Les bases techniques, oui ; une stratégie SEO continue est distincte."
-        ]
+        "Faut-il une page par prestation ?",
+        "Oui seulement si les besoins et les contenus diffèrent réellement."
       ],
       [
-        "SERVICE",
-        "PAGE",
-        "CONTACT"
+        "Peut-on enrichir le site plus tard ?",
+        "Nous prévoyons une structure évolutive selon les besoins connus."
       ],
-      "Concevoir mon site de services"
+      [
+        "Le référencement est-il inclus ?",
+        "Les bases techniques, oui ; une stratégie SEO continue est distincte."
+      ]
     ],
-    "risk": "o Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Les bases techniques, oui ; une stratégie SEO continue est distincte. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "website-design",
-        "Website Design",
-        "Voir les prestations complémentaires"
+        "service-business-seo",
+        "SEO pour prestataires",
+        "Pages de services distinctes"
       ],
       [
-        "seo",
-        "Seo",
-        "Voir les prestations complémentaires"
+        "website-design",
+        "Création de site",
+        "Conception et mise en ligne"
       ]
-    ]
+    ],
+    "visual": [
+      "SERVICE",
+      "PAGE",
+      "CONTACT"
+    ],
+    "cta": "Concevoir mon site de services"
   },
   "landing-pages": {
     "title": "Landing pages pour Google Ads | MrSeo.tech",
@@ -250,7 +246,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester la soumission et la conversion",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : le visiteur ne retrouve pas immédiatement l'offre."
       ]
     ],
     "outcomes": [
@@ -271,43 +267,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Le visiteur ne retrouve pas immédiatement l'offre.",
       "Nous alignons titre, contenu et intention de l'annonce.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Faut-il une autre adresse de domaine ?",
-          "Non, une URL adaptée sur le site actuel peut suffire."
-        ],
-        [
-          "Gérez-vous aussi les campagnes ?",
-          "La prestation Google Ads peut être prévue séparément."
-        ],
-        [
-          "Garantissez-vous un taux de conversion ?",
-          "Non, il dépend aussi de l'offre, du trafic et du marché."
-        ]
+        "Faut-il une autre adresse de domaine ?",
+        "Non, une URL adaptée sur le site actuel peut suffire."
       ],
       [
-        "ANNONCE",
-        "OFFRE",
-        "DEMANDE"
+        "Gérez-vous aussi les campagnes ?",
+        "La prestation Google Ads peut être prévue séparément."
       ],
-      "Améliorer ma landing page"
+      [
+        "Garantissez-vous un taux de conversion ?",
+        "Non, il dépend aussi de l'offre, du trafic et du marché."
+      ]
     ],
-    "risk": "m Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Non, il dépend aussi de l'offre, du trafic et du marché. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "website-design",
-        "Website Design",
-        "Voir les prestations complémentaires"
+        "google-ads",
+        "Google Ads",
+        "Publicité et suivi des demandes"
       ],
       [
-        "service-websites",
-        "Service Websites",
-        "Voir les prestations complémentaires"
+        "local-google-ads",
+        "Google Ads local",
+        "Campagnes ciblées par zone"
       ]
-    ]
+    ],
+    "visual": [
+      "ANNONCE",
+      "OFFRE",
+      "DEMANDE"
+    ],
+    "cta": "Améliorer ma landing page"
   },
   "corporate-websites": {
     "title": "Sites institutionnels et corporate | MrSeo.tech",
@@ -352,7 +346,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester navigation, accès et versions mobiles",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les visiteurs ne savent pas quel parcours emprunter."
       ]
     ],
     "outcomes": [
@@ -373,43 +367,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Les visiteurs ne savent pas quel parcours emprunter.",
       "Nous séparons les besoins et les rubriques utiles.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "WordPress convient-il à un site corporate ?",
-          "Souvent, selon les besoins de validation et d'intégration."
-        ],
-        [
-          "Peut-on reprendre les contenus existants ?",
-          "Après analyse éditoriale et mapping des anciennes adresses."
-        ],
-        [
-          "Un site multilingue demande-t-il des domaines distincts ?",
-          "Non, les répertoires sont une possibilité."
-        ]
+        "WordPress convient-il à un site corporate ?",
+        "Souvent, selon les besoins de validation et d'intégration."
       ],
       [
-        "ENTREPRISE",
-        "RUBRIQUES",
-        "ÉCHANGES"
+        "Peut-on reprendre les contenus existants ?",
+        "Après analyse éditoriale et mapping des anciennes adresses."
       ],
-      "Repenser mon site corporate"
+      [
+        "Un site multilingue demande-t-il des domaines distincts ?",
+        "Non, les répertoires sont une possibilité."
+      ]
     ],
-    "risk": "e Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Non, les répertoires sont une possibilité. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
         "website-design",
-        "Website Design",
-        "Voir les prestations complémentaires"
+        "Création de site",
+        "Conception et mise en ligne"
       ],
       [
-        "service-websites",
-        "Service Websites",
-        "Voir les prestations complémentaires"
+        "international-seo",
+        "SEO international",
+        "Architecture des versions pays"
       ]
-    ]
+    ],
+    "visual": [
+      "ENTREPRISE",
+      "RUBRIQUES",
+      "ÉCHANGES"
+    ],
+    "cta": "Repenser mon site corporate"
   },
   "website-redesign": {
     "title": "Refonte de site internet | MrSeo.tech",
@@ -454,7 +446,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester formulaires, liens et mesure",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : textes, espacements ou blocs se chevauchent."
       ]
     ],
     "outcomes": [
@@ -475,43 +467,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Textes, espacements ou blocs se chevauchent.",
       "Nous auditons les écrans et interactions prioritaires.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "La refonte nécessite-t-elle un nouveau CMS ?",
-          "Pas systématiquement : le besoin doit justifier le changement."
-        ],
-        [
-          "Peut-on éviter toute perte SEO ?",
-          "On réduit les risques avec un plan de migration, sans garantie absolue."
-        ],
-        [
-          "Peut-on travailler sur une copie ?",
-          "Oui, un environnement de test facilite la validation avant bascule."
-        ]
+        "La refonte nécessite-t-elle un nouveau CMS ?",
+        "Pas systématiquement : le besoin doit justifier le changement."
       ],
       [
-        "AUDIT",
-        "REFONTE",
-        "RECETTE"
+        "Peut-on éviter toute perte SEO ?",
+        "On réduit les risques avec un plan de migration, sans garantie absolue."
       ],
-      "Préparer ma refonte"
+      [
+        "Peut-on travailler sur une copie ?",
+        "Oui, un environnement de test facilite la validation avant bascule."
+      ]
     ],
-    "risk": "r Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Oui, un environnement de test facilite la validation avant bascule. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "website-design",
-        "Website Design",
-        "Voir les prestations complémentaires"
+        "website-speed-security",
+        "Performance et sécurité",
+        "Chargement et maintenance"
       ],
       [
-        "service-websites",
-        "Service Websites",
-        "Voir les prestations complémentaires"
+        "website-design",
+        "Création de site",
+        "Conception et mise en ligne"
       ]
-    ]
+    ],
+    "visual": [
+      "AUDIT",
+      "REFONTE",
+      "RECETTE"
+    ],
+    "cta": "Préparer ma refonte"
   },
   "wordpress-care": {
     "title": "Maintenance et évolution WordPress | MrSeo.tech",
@@ -556,7 +546,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester formulaires et pages critiques",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : les mises à jour peuvent provoquer des conflits."
       ]
     ],
     "outcomes": [
@@ -577,43 +567,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Les mises à jour peuvent provoquer des conflits.",
       "Nous testons les changements avant leur mise en production.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "La maintenance supprime-t-elle tout risque ?",
-          "Non, elle réduit les incidents prévisibles sans les éliminer."
-        ],
-        [
-          "Un site piraté peut-il être récupéré ?",
-          "Cela dépend de l'incident et des sauvegardes disponibles."
-        ],
-        [
-          "Incluez-vous l'hébergement ?",
-          "Seulement si cette prestation fait partie du périmètre convenu."
-        ]
+        "La maintenance supprime-t-elle tout risque ?",
+        "Non, elle réduit les incidents prévisibles sans les éliminer."
       ],
       [
-        "SAUVEGARDE",
-        "MISE À JOUR",
-        "TEST"
+        "Un site piraté peut-il être récupéré ?",
+        "Cela dépend de l'incident et des sauvegardes disponibles."
       ],
-      "Sécuriser mon WordPress"
+      [
+        "Incluez-vous l'hébergement ?",
+        "Seulement si cette prestation fait partie du périmètre convenu."
+      ]
     ],
-    "risk": "é Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Seulement si cette prestation fait partie du périmètre convenu. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Voir les prestations complémentaires"
+        "website-speed-security",
+        "Performance et sécurité",
+        "Chargement et maintenance"
       ],
       [
-        "api-integrations",
-        "Api Integrations",
-        "Voir les prestations complémentaires"
+        "website-redesign",
+        "Refonte de site",
+        "Design et préservation des URL"
       ]
-    ]
+    ],
+    "visual": [
+      "SAUVEGARDE",
+      "MISE À JOUR",
+      "TEST"
+    ],
+    "cta": "Sécuriser mon WordPress"
   },
   "api-integrations": {
     "title": "Intégrations API et CRM | MrSeo.tech",
@@ -658,7 +646,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester un lead et les cas de doublon",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : la soumission fonctionne mais l'API échoue."
       ]
     ],
     "outcomes": [
@@ -679,43 +667,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "La soumission fonctionne mais l'API échoue.",
       "Nous suivons les réponses et les journaux d'intégration.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Peut-on intégrer un système sans API ?",
-          "Nous étudions les options autorisées sans promettre d'accès inexistant."
-        ],
-        [
-          "Faut-il un serveur dédié ?",
-          "La réponse dépend du volume et du fonctionnement souhaité."
-        ],
-        [
-          "Comment protéger les données clients ?",
-          "Nous limitons les accès et définissons les protections adaptées au projet."
-        ]
+        "Peut-on intégrer un système sans API ?",
+        "Nous étudions les options autorisées sans promettre d'accès inexistant."
       ],
       [
-        "FORMULAIRE",
-        "API / CRM",
-        "RÉCEPTION"
+        "Faut-il un serveur dédié ?",
+        "La réponse dépend du volume et du fonctionnement souhaité."
       ],
-      "Étudier mon intégration"
+      [
+        "Comment protéger les données clients ?",
+        "Nous limitons les accès et définissons les protections adaptées au projet."
+      ]
     ],
-    "risk": "t Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Nous limitons les accès et définissons les protections adaptées au projet. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Voir les prestations complémentaires"
+        "catalog-automation",
+        "Automatisation du catalogue",
+        "Prix, stocks et flux"
       ],
       [
-        "seo",
-        "Seo",
-        "Voir les prestations complémentaires"
+        "web-applications",
+        "Applications web",
+        "Portails, outils métier et MVP"
       ]
-    ]
+    ],
+    "visual": [
+      "FORMULAIRE",
+      "API / CRM",
+      "RÉCEPTION"
+    ],
+    "cta": "Étudier mon intégration"
   },
   "website-speed-security": {
     "title": "Performance et sécurité de site web | MrSeo.tech",
@@ -760,7 +746,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Comparer les mesures et tester les fonctions",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : images, scripts ou polices retardent l'affichage."
       ]
     ],
     "outcomes": [
@@ -781,43 +767,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Images, scripts ou polices retardent l'affichage.",
       "Nous mesurons les ressources critiques sur les pages ciblées.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Garantissez-vous 100 sur PageSpeed ?",
-          "Non, l'expérience utilisateur prime sur un score isolé."
-        ],
-        [
-          "Faut-il supprimer toutes les extensions ?",
-          "Non, leur nécessité et leur qualité doivent être évaluées."
-        ],
-        [
-          "Une optimisation peut-elle casser le site ?",
-          "C'est pourquoi nous prévoyons sauvegarde et tests avant déploiement."
-        ]
+        "Garantissez-vous 100 sur PageSpeed ?",
+        "Non, l'expérience utilisateur prime sur un score isolé."
       ],
       [
-        "MESURE",
-        "CORRECTION",
-        "CONTRÔLE"
+        "Faut-il supprimer toutes les extensions ?",
+        "Non, leur nécessité et leur qualité doivent être évaluées."
       ],
-      "Examiner les performances"
+      [
+        "Une optimisation peut-elle casser le site ?",
+        "C'est pourquoi nous prévoyons sauvegarde et tests avant déploiement."
+      ]
     ],
-    "risk": "x Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "C'est pourquoi nous prévoyons sauvegarde et tests avant déploiement. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Voir les prestations complémentaires"
+        "wordpress-care",
+        "Maintenance WordPress",
+        "Sauvegardes et mises à jour"
       ],
       [
-        "api-integrations",
-        "Api Integrations",
-        "Voir les prestations complémentaires"
+        "website-redesign",
+        "Refonte de site",
+        "Design et préservation des URL"
       ]
-    ]
+    ],
+    "visual": [
+      "MESURE",
+      "CORRECTION",
+      "CONTRÔLE"
+    ],
+    "cta": "Examiner les performances"
   },
   "web-applications": {
     "title": "Applications web et MVP | MrSeo.tech",
@@ -862,7 +846,7 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       ],
       [
         "Tester droits, erreurs et usage réel",
-        "Nous contrôlons le résultat avec le scénario de recette convenu."
+        "À la recette, nous vérifions un parcours concret : tableurs et e-mails donnent des états contradictoires."
       ]
     ],
     "outcomes": [
@@ -883,43 +867,41 @@ function mrseo_fr_service_part2(){return json_decode(<<<'MRSEO_FR_P2'
       "EXEMPLE DE SITUATION",
       "Tableurs et e-mails donnent des états contradictoires.",
       "Nous modélisons un flux de travail commun.",
-      "Le résultat est vérifié lors de la recette : ce scénario n'est pas un résultat client revendiqué."
+      "Après correction, nous reproduisons ce scénario et contrôlons le résultat sans prétendre à une performance client non démontrée."
     ],
     "faq": [
       [
-        [
-          "Peut-on commencer avec peu de fonctions ?",
-          "Oui, si le parcours principal résout un vrai problème."
-        ],
-        [
-          "Peut-on connecter l'application au CRM ?",
-          "Selon les interfaces et autorisations disponibles."
-        ],
-        [
-          "Garantissez-vous une montée en charge illimitée ?",
-          "Non, l'architecture doit correspondre aux besoins démontrés."
-        ]
+        "Peut-on commencer avec peu de fonctions ?",
+        "Oui, si le parcours principal résout un vrai problème."
       ],
       [
-        "PROCESSUS",
-        "APPLICATION",
-        "RÉSULTAT"
+        "Peut-on connecter l'application au CRM ?",
+        "Selon les interfaces et autorisations disponibles."
       ],
-      "Parler de mon application"
+      [
+        "Garantissez-vous une montée en charge illimitée ?",
+        "Non, l'architecture doit correspondre aux besoins démontrés."
+      ]
     ],
-    "risk": "a Le périmètre et les modalités de recette sont fixés avant l'intervention.",
+    "risk": "Non, l'architecture doit correspondre aux besoins démontrés. Le périmètre, les conditions et les vérifications sont définis avant le démarrage.",
     "related": [
       [
-        "web-development",
-        "Web Development",
-        "Voir les prestations complémentaires"
+        "api-integrations",
+        "Intégrations API et CRM",
+        "Circulation des données"
       ],
       [
-        "api-integrations",
-        "Api Integrations",
-        "Voir les prestations complémentaires"
+        "web-development",
+        "Développement web",
+        "Interfaces et intégrations métier"
       ]
-    ]
+    ],
+    "visual": [
+      "PROCESSUS",
+      "APPLICATION",
+      "RÉSULTAT"
+    ],
+    "cta": "Parler de mon application"
   }
 }
 MRSEO_FR_P2
