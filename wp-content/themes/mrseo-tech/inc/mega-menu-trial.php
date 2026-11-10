@@ -115,11 +115,11 @@ function mrseo_trial_menu_route_map($locale) {
   'dev'=>array('opieka-wordpress','api-integrations','website-speed-security','web-development','web-applications')
  );
  if($locale==='de')return array(
-  'seo'=>array('seo','ecommerce-seo',null,null,'seo-audit'),
-  'ads'=>array('google-ads',null,null,null,null),
-  'commerce'=>array(null,null,null,null,null),
-  'sites'=>array(null,null,null,null,null),
-  'dev'=>array(null,null,null,'web-development',null)
+  'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+  'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
+  'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
+  'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
+  'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
  );
  return array(
   'seo'=>array('seo','ecommerce-seo','seo-audit'),
@@ -149,7 +149,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
   return (function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true))
     || (function_exists('mrseo_int_pages') && in_array($slug,mrseo_int_pages(),true));
  }
- if($locale==='de')return function_exists('mrseo_int_pages') && in_array($slug,mrseo_int_pages(),true);
+ if($locale==='de')return (function_exists('mrseo_de_service_slugs') && in_array($slug,mrseo_de_service_slugs(),true))
+    || (function_exists('mrseo_int_pages') && in_array($slug,mrseo_int_pages(),true));
  return function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true);
 }
 
@@ -160,14 +161,14 @@ function mrseo_trial_menu_parent($key,$locale){
   if(in_array($locale,array('uk','ru'),true))return 'online-store-development';
   if($locale==='en')return 'online-shop-development';
   if($locale==='pl')return 'tworzenie-sklepow-internetowych';
-  if($locale==='de')return null;
+  if($locale==='de')return 'online-shop-development';
   return 'online-shop-development';
  }
  if($key==='sites'){
   if(in_array($locale,array('uk','ru'),true))return 'service-websites';
   if($locale==='en')return 'website-design';
   if($locale==='pl')return 'tworzenie-stron-internetowych';
-  if($locale==='de')return null;
+  if($locale==='de')return 'website-design';
   return 'website-design';
  }
  return 'web-development';
