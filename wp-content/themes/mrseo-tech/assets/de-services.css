@@ -57,3 +57,8 @@
 .de-svc .pl-art--web-applications .pl-art-orbit--one{border-style:dashed}
 @media(max-width:480px){.de-svc .pl-svc-scene-mark:has(.pl-art){min-height:195px}.de-svc .pl-art-node strong{font-size:13px}.de-svc .pl-svc-scene-step strong{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.de-svc .pl-art-node{animation:none!important;transform:none!important}}
+
+/* The graphic itself already names all three stages. Never duplicate them below. */
+.de-svc .pl-svc-scene-mark:has(.pl-art){flex:1;min-height:292px;padding:22px 5px}
+.de-svc .pl-art{min-height:250px}
+@media(max-width:480px){.de-svc .pl-svc-scene-mark:has(.pl-art){min-height:250px;padding:9px 0}.de-svc .pl-art{min-height:220px}}
