@@ -12,6 +12,7 @@ require_once get_template_directory() . '/inc/contact-ui.php';
 require_once get_template_directory() . '/inc/mega-menu.php';
 require_once get_template_directory() . '/inc/new-service-routes.php';
 require_once get_template_directory() . '/inc/pl-service-routing.php';
+require_once get_template_directory() . '/inc/de-service-routing.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/international-seo.php';
 require_once get_template_directory() . '/inc/privacy-page.php';
@@ -34,6 +35,11 @@ function mrseo_assets(){
  if(function_exists('mrseo_pl_service_route') && mrseo_pl_service_route()){
   wp_enqueue_style('mrseo-pl-services',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
   wp_enqueue_style('mrseo-pl-unique-scenes',get_template_directory_uri().'/assets/pl-unique-scenes.css',array('mrseo-pl-services'),'1.0.0');
+ }
+ if(function_exists('mrseo_de_service_route') && mrseo_de_service_route()){
+  wp_enqueue_style('mrseo-de-services-base',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
+  wp_enqueue_style('mrseo-de-art-base',get_template_directory_uri().'/assets/pl-unique-scenes.css',array('mrseo-de-services-base'),'1.0.0');
+  wp_enqueue_style('mrseo-de-services',get_template_directory_uri().'/assets/de-services.css',array('mrseo-de-art-base'),'1.0.0');
  }
  if((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
     || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())

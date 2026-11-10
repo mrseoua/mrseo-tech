@@ -45,11 +45,11 @@ function mrseo_trial_menu_translations() {
   "bottom":["Nie widzisz odpowiedniej usługi?","Opisz potrzebę lub problem — zaproponujemy rozwiązanie.","Porozmawiajmy o projekcie"]
  },
  "de":{
-  "seo":["SEO & Suchmaschinenoptimierung","Damit Kunden Ihr Unternehmen bei Google finden.","Lokale SEO","SEO für Onlineshops","SEO für Dienstleister","Internationale SEO","SEO-Audit"],
-  "ads":["Google Ads","Anzeigen für relevante Anfragen potenzieller Kunden.","Google Suchanzeigen","Google Shopping & Performance Max","Google Ads für lokale Unternehmen","Google Ads Audit","Google Merchant Center"],
+  "seo":["SEO & Suchmaschinenoptimierung","Damit Kunden Ihr Unternehmen bei Google finden.","Lokales SEO","SEO für Onlineshops","SEO für Dienstleister","Internationales SEO","SEO-Audit"],
+  "ads":["Google Ads","Anzeigen für relevante Anfragen potenzieller Kunden.","Google Suchanzeigen","Google Shopping","Google Ads für lokale Unternehmen","Google Ads Audit","Google Merchant Center"],
   "commerce":["Onlineshops","Shops erstellen, verbessern und automatisieren.","Onlineshop-Erstellung","WooCommerce & Shopify","Conversion-Optimierung im Shop","Shop-Automatisierung","Shop-Relaunch & Migration"],
   "sites":["Website-Erstellung","Websites, die Vertrauen schaffen und Anfragen gewinnen.","Websites für lokale Unternehmen","Websites für Dienstleister","Landingpages für Anzeigen","Unternehmenswebsites","Website-Relaunch"],
-  "dev":["Webentwicklung","Technische Probleme lösen und Abläufe automatisieren.","Website-Wartung und Anpassungen","Integrationen & Automatisierung","Performance, Sicherheit & Barrierefreiheit","CRM & Kundenportale","Webanwendungen & MVP"],
+  "dev":["Webentwicklung","Technische Probleme lösen und Abläufe automatisieren.","Website-Wartung und Anpassungen","Integrationen & Automatisierung","Performance und Sicherheit","CRM & Kundenportale","Webanwendungen & MVP"],
   "bottom":["Sie finden Ihre Leistung nicht?","Beschreiben Sie Ihr Projekt oder Problem — wir klären die nächsten Schritte.","Projekt besprechen"]
  }
 }
@@ -115,11 +115,11 @@ function mrseo_trial_menu_route_map($locale) {
   'dev'=>array('opieka-wordpress','api-integrations','website-speed-security','web-development','web-applications')
  );
  if($locale==='de')return array(
-  'seo'=>array('seo','ecommerce-seo',null,null,'seo-audit'),
-  'ads'=>array('google-ads',null,null,null,null),
-  'commerce'=>array(null,null,null,null,null),
-  'sites'=>array(null,null,null,null,null),
-  'dev'=>array(null,null,null,'web-development',null)
+  'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+  'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
+  'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
+  'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
+  'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
  );
  return array(
   'seo'=>array('seo','ecommerce-seo','seo-audit'),
@@ -149,7 +149,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
   return (function_exists('mrseo_pl_service_slugs') && in_array($slug,mrseo_pl_service_slugs(),true))
     || (function_exists('mrseo_int_pages') && in_array($slug,mrseo_int_pages(),true));
  }
- if($locale==='de')return function_exists('mrseo_int_pages') && in_array($slug,mrseo_int_pages(),true);
+ if($locale==='de')return (function_exists('mrseo_de_service_slugs') && in_array($slug,mrseo_de_service_slugs(),true))
+    || (function_exists('mrseo_int_pages') && in_array($slug,mrseo_int_pages(),true));
  return function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true);
 }
 
@@ -160,14 +161,14 @@ function mrseo_trial_menu_parent($key,$locale){
   if(in_array($locale,array('uk','ru'),true))return 'online-store-development';
   if($locale==='en')return 'online-shop-development';
   if($locale==='pl')return 'tworzenie-sklepow-internetowych';
-  if($locale==='de')return null;
+  if($locale==='de')return 'online-shop-development';
   return 'online-shop-development';
  }
  if($key==='sites'){
   if(in_array($locale,array('uk','ru'),true))return 'service-websites';
   if($locale==='en')return 'website-design';
   if($locale==='pl')return 'tworzenie-stron-internetowych';
-  if($locale==='de')return null;
+  if($locale==='de')return 'website-design';
   return 'website-design';
  }
  return 'web-development';
