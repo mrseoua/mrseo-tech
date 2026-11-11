@@ -1,7 +1,7 @@
 <?php
 /** Dedicated original Romanian commercial landing template. */
 if(!defined('ABSPATH'))exit;
-require_once __DIR__.'/inc/nl-service-art.php';
+require_once __DIR__.'/inc/ro-service-art.php';
 $pl_slug=mrseo_slug();
 $pl_page=mrseo_ro_service_page($pl_slug);
 if(mrseo_locale()!=='ro'||!$pl_page){status_header(404);include get_404_template();return;}
