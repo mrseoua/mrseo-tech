@@ -115,6 +115,11 @@ jobs:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
           MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
         run: node scripts/verify-es-browser.cjs
+      - name: Verify 25 Dutch services, native menu, forms and responsive CSS in WordPress
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
+        run: node scripts/verify-nl-browser.cjs
       - name: Browser smoke test all 20 locales (isolated site, no public deployment)
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
