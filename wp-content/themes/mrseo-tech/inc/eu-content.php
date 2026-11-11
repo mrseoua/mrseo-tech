@@ -885,7 +885,7 @@ function mrseo_eu_all(){
         "description": "Cuéntanos cuál es el principal obstáculo de tu web o negocio y en qué mercado trabajas.",
         "eyebrow": "CONTACTO / SOLUCIÓN",
         "headline": "¿Qué está impidiendo <em>que crezca tu negocio?</em>",
-        "lead": "Indica la dirección de tu web, el mercado al que te diriges y qué problema quieres resolver. Si tienes una tienda, añade la plataforma y un ejemplo concreto. No compartas contraseñas ni otros accesos privados.",
+        "lead": "Cuéntanos qué problema tiene tu web y qué necesitas resolver. Indica plataforma, mercado de venta, URL y un ejemplo concreto. No compartas contraseñas.",
         "problems": [],
         "outcomes": [],
         "faq": []
