@@ -645,7 +645,7 @@ function mrseo_eu_all(){
       "Web (opcional)",
       "Describe el problema",
       "Enviar consulta",
-      "Mensaje enviado para su entrega. Responderemos por correo.",
+      "Tu mensaje se ha enviado. Te responderemos por correo electrónico.",
       "Revisa los campos obligatorios.",
       "No se pudo enviar. Inténtalo de nuevo.",
       "No envíes contraseñas ni accesos confidenciales.",
@@ -885,7 +885,7 @@ function mrseo_eu_all(){
         "description": "Cuéntanos cuál es el principal obstáculo de tu web o negocio y en qué mercado trabajas.",
         "eyebrow": "CONTACTO / SOLUCIÓN",
         "headline": "¿Qué está impidiendo <em>que crezca tu negocio?</em>",
-        "lead": "Comparte la dirección de la web, el país de destino y el síntoma que te preocupa. Evaluaremos el punto de partida. Indica plataforma, mercado de venta, URL y un ejemplo concreto. No compartas contraseñas.",
+        "lead": "Indica la dirección de tu web, el mercado al que te diriges y qué problema quieres resolver. Si tienes una tienda, añade la plataforma y un ejemplo concreto. No compartas contraseñas ni otros accesos privados.",
         "problems": [],
         "outcomes": [],
         "faq": []
