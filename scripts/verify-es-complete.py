@@ -71,6 +71,9 @@ assert "require_once get_template_directory() . '/inc/es-service-routing.php'" i
 assert "wp_enqueue_style('mrseo-es-services'" in read("functions.php")
 assert "function_exists('mrseo_es_service_route') && mrseo_es_service_route()" in read("functions.php")
 assert "prefers-reduced-motion:reduce" in read("assets/es-services.css")
+assert "mrseo-es-hero-contact" in read("functions.php")
+assert "IntersectionObserver" in read("assets/es-service-hero-contact.js")
+assert "mrseo-es-scene-visible" in read("assets/es-services.css")
 assert "X-Robots-Tag: noindex, nofollow" in read("functions.php")
 assert "mrseo_es_service_slugs" in read("inc/international-seo.php")
 existing_es=load("inc/eu-content.php","MRSEO_EU_JSON")["es"]
