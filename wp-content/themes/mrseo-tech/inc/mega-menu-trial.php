@@ -44,6 +44,14 @@ function mrseo_trial_menu_translations() {
   "dev":["Web development","Rozwiązujemy problemy techniczne i automatyzujemy pracę.","Opieka i rozbudowa stron","Integracje i automatyzacja","Szybkość, bezpieczeństwo i dostępność","CRM i panele klientów","Aplikacje webowe i MVP"],
   "bottom":["Nie widzisz odpowiedniej usługi?","Opisz potrzebę lub problem — zaproponujemy rozwiązanie.","Porozmawiajmy o projekcie"]
  },
+ "es":{
+  "seo":["Posicionamiento SEO","Ayudamos a que te encuentren quienes necesitan tus servicios.","SEO local","SEO para tiendas online","SEO para empresas de servicios","SEO internacional","Auditoría SEO"],
+  "ads":["Google Ads","Campañas para conseguir consultas útiles, no solo clics.","Anuncios en la Búsqueda de Google","Google Shopping y productos","Google Ads para negocios locales","Auditoría Google Ads","Google Merchant Center"],
+  "commerce":["Tiendas online","Creamos, mejoramos y automatizamos procesos de venta.","Creación de tiendas online","WooCommerce y Shopify","Optimización de conversión","Automatización del catálogo","Migración de tiendas online"],
+  "sites":["Diseño y creación web","Webs claras que generan confianza y facilitan el contacto.","Creación de páginas web","Webs para profesionales","Landing pages para anuncios","Páginas web corporativas","Rediseño y renovación web"],
+  "dev":["Desarrollo web","Soluciones técnicas que simplifican el trabajo diario.","Mantenimiento WordPress","Integraciones y automatización","Velocidad y seguridad","CRM y áreas de clientes","Aplicaciones web y MVP"],
+  "bottom":["¿No encuentras lo que necesitas?","Cuéntanos el problema y estudiaremos una solución concreta.","Hablemos de tu proyecto"]
+ },
  "it":{
   "seo":["Posizionamento SEO","Aiutiamo le persone a trovare la tua attività su Google.","SEO locale","SEO per e-commerce","SEO per aziende di servizi","SEO internazionale","Audit SEO"],
   "ads":["Google Ads","Campagne orientate a contatti pertinenti, non solo a clic.","Annunci nella Ricerca Google","Google Shopping","Google Ads per attività locali","Audit Google Ads","Google Merchant Center"],
@@ -130,6 +138,13 @@ function mrseo_trial_menu_route_map($locale) {
   'sites'=>array('tworzenie-stron-internetowych','service-websites','landing-pages','corporate-websites','website-redesign'),
   'dev'=>array('opieka-wordpress','api-integrations','website-speed-security','web-development','web-applications')
  );
+ if($locale==='es')return array(
+  'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+  'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
+  'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
+  'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
+  'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
+ );
  if($locale==='it')return array(
   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
@@ -184,6 +199,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
  if($locale==='fr')return (function_exists('mrseo_fr_service_slugs') && in_array($slug,mrseo_fr_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='it')return (function_exists('mrseo_it_service_slugs') && in_array($slug,mrseo_it_service_slugs(),true))
+    || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
+ if($locale==='es')return (function_exists('mrseo_es_service_slugs') && in_array($slug,mrseo_es_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  return function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true);
 }
