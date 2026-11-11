@@ -313,7 +313,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     ],
     "lead": "We koppelen Merchant Center, productfeed, campagnes en aankoopmeting. Zo ontdekken we welke productgroepen budget gebruiken zonder dat de gegevens of verkooproute betrouwbaar zijn.",
     "intro": "Waar verliest Shopping zijn grip op de catalogus?",
-    "introText": "Productinformatie, voorraadstatus en conversiemeting moeten overeenkomen met de echte webshop.",
+    "introText": "De productfeed, het winkelmandje en je advertentiegegevens moeten kloppen. Voor Shopping in Nederland kijken we ook welke vergelijkingsdienst (CSS) wordt gebruikt.",
     "problems": [
       [
         "Afgekeurde producten",
@@ -369,8 +369,8 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
         "Nee. Dat hangt af van assortiment, datakwaliteit, volume en de behoefte aan controle."
       ],
       [
-        "Wat is de eerste stap voor google shopping en performance max?",
-        "We beginnen met de concrete vraag en de bestaande situatie. Pas na de controle spreken we een aanpak en werkzaamheden af."
+        "Is een vergelijkingsdienst (CSS) nodig in Nederland?",
+        "Ja. Shopping-advertenties in Nederland lopen via een Comparison Shopping Service, bijvoorbeeld Google Shopping of een andere CSS. We controleren de bestaande inrichting en bijbehorende afspraken."
       ],
       [
         "Hoe zien we of het werk is uitgevoerd?",
@@ -388,7 +388,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
       "SHOPPING",
       "AANKOOP"
     ],
-    "risk": "Advertentiebudget en beheerkosten staan los van elkaar. In Nederland moeten prijs, btw, verzendkosten en toepasselijke Merchant Center-vereisten correct worden aangeleverd.",
+    "risk": "Advertentiebudget en beheerkosten staan los van elkaar. Voor Nederland controleren we prijzen inclusief btw, verzendkosten en de gekozen Comparison Shopping Service. Goedkeuring en verkoopresultaten zijn niet gegarandeerd.",
     "related": [
       [
         "merchant-center-help",
