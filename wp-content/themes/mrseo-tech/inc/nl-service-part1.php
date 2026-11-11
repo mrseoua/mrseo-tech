@@ -84,7 +84,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
       "De gewijzigde pagina en contactroute zijn handmatig te controleren."
     ],
     "visual": [
-      "ZOEKOPDRACHT",
+      "ZOEKVRAAG",
       "WERKGEBIED",
       "CONTACT"
     ],
@@ -185,7 +185,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     ],
     "visual": [
       "DIENST",
-      "ZOEKINTENTIE",
+      "ZOEKVRAAG",
       "AANVRAAG"
     ],
     "risk": "Organische vindbaarheid vraagt onderhoud. Het aantal aanvragen hangt ook af van prijs, concurrentie en de kwaliteit van je aanbod.",
@@ -384,7 +384,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
       "Productstatus en geregistreerde testbestellingen worden opnieuw gecontroleerd."
     ],
     "visual": [
-      "PRODUCTFEED",
+      "FEED",
       "SHOPPING",
       "AANKOOP"
     ],
@@ -485,7 +485,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     ],
     "visual": [
       "LOCATIE",
-      "ADVERTENTIE",
+      "ADVERT.",
       "OPROEP"
     ],
     "risk": "Lokale targeting is nooit volkomen nauwkeurig. De haalbaarheid van leads hangt van concurrentie, budget en bereikbaarheid af.",
@@ -686,7 +686,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     "visual": [
       "PRODUCT",
       "MELDING",
-      "HERCONTROLE"
+      "CONTROLE"
     ],
     "risk": "Goedkeuring blijft afhankelijk van Googles actuele beleid en beoordeling. We beloven geen opheffing van een accountschorsing.",
     "related": [
@@ -785,7 +785,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     ],
     "visual": [
       "PLATFORM",
-      "WINKELWAGEN",
+      "MANDJE",
       "BESTELLING"
     ],
     "risk": "Licenties, platformkosten, betaalprovider en externe apps vallen buiten de ontwikkelvergoeding tenzij anders afgesproken.",
@@ -885,7 +885,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     ],
     "visual": [
       "PRODUCT",
-      "WINKELWAGEN",
+      "MANDJE",
       "BETALING"
     ],
     "risk": "Conversieverandering is afhankelijk van verkeer, seizoen en aanbod. Zonder bruikbare data claimen we geen bewezen uplift.",
