@@ -69,6 +69,17 @@ async function run(){
      }
      if((width===390||width===1440)&&['local-seo','woocommerce-shopify-stores','landing-pages','api-integrations','web-applications'].includes(slug))
       await page.screenshot({path:path.join(out,`es-${slug}-${width}.jpg`),fullPage:true,type:'jpeg',quality:74});
+     if(slug==='local-seo' && width===390){
+      const scene=page.locator('.pl-svc-scene');
+      const bar=page.locator('.mrseo-mobile-contact-bar');
+      assert.equal(await bar.count(),1,'Shared mobile contact bar missing');
+      await scene.scrollIntoViewIfNeeded();
+      await page.waitForFunction(()=>document.documentElement.classList.contains('mrseo-es-scene-visible'),null,{timeout:8000});
+      assert.equal(await bar.evaluate(el=>getComputedStyle(el).visibility),'hidden','Mobile bar must not cover Spanish semantic diagram');
+      await page.evaluate(()=>window.scrollTo(0,document.documentElement.scrollHeight));
+      await page.waitForFunction(()=>!document.documentElement.classList.contains('mrseo-es-scene-visible'),null,{timeout:8000});
+      assert.equal(await bar.evaluate(el=>getComputedStyle(el).visibility),'visible','Contact bar must reappear below the hero');
+     }
      results.push({slug,width,...r});
     }catch(e){throw Error(`${url}, width=${width}: ${e.message}`)}finally{await page.close()}
    }
