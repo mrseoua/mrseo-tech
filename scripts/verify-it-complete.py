@@ -5,7 +5,7 @@ import json,re
 root=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 def read(path):return (root/path).read_text(encoding="utf-8")
 def load(path,marker):
-    m=re.search(r"<<<'"+re.escape(marker)+r"'\n([\s\S]*?)\n"+re.escape(marker)+r"\n",read(path))
+    m=re.search(r"<<<'"+re.escape(marker)+r"'\n([\s\S]*?)\n"+re.escape(marker)+r";?\n",text)
     assert m,(path,"missing or malformed JSON")
     return json.loads(m.group(1))
 p1=load("inc/it-service-part1.php","MRSEO_IT_P1")
@@ -41,7 +41,7 @@ assert "redirezioni" not in str(pages["website-redesign"])
 existing_it=load("inc/eu-content.php","MRSEO_EU_JSON")["it"]
 assert existing_it["code"]=="it-IT"
 assert existing_it["nav"][0]=="Servizi"
-assert "Non inviare password" in existing_it["pages"]["contact"]["lead"]
+assert "Non inviare credenziali" in existing_it["pages"]["contact"]["lead"]
 assert existing_it["pages"]["contact"]["lead"].count("Non inviare")==1
 assert "inviata" in existing_it["ui"][12]
 assert "collaboriamo" in existing_it["ui"][16].lower()
