@@ -6,8 +6,8 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
   "local-seo": {
     "variant": "local-seo",
     "nodes": [
-      "ZOEKVRAAG",
-      "WERKGEBIED",
+      "ZOEKEN",
+      "REGIO",
       "CONTACT"
     ],
     "symbol": "⌖"
@@ -16,7 +16,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "service-business-seo",
     "nodes": [
       "DIENST",
-      "ZOEKVRAAG",
+      "VRAAG",
       "AANVRAAG"
     ],
     "symbol": "⌕"
@@ -26,7 +26,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "nodes": [
       "LAND",
       "TAAL",
-      "JUISTE URL"
+      "URL"
     ],
     "symbol": "◎"
   },
@@ -53,7 +53,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "nodes": [
       "ACCOUNT",
       "CONTROLE",
-      "ACTIEPLAN"
+      "PLAN"
     ],
     "symbol": "▤"
   },
@@ -71,7 +71,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "nodes": [
       "PLATFORM",
       "MANDJE",
-      "BESTELLING"
+      "ORDER"
     ],
     "symbol": "▣"
   },
@@ -89,16 +89,16 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "nodes": [
       "DATABRON",
       "REGELS",
-      "CATALOGUS"
+      "CATALOG"
     ],
     "symbol": "⇄"
   },
   "store-migration": {
     "variant": "store-migration",
     "nodes": [
-      "OUDE SHOP",
+      "OUDE",
       "OVERZET",
-      "NIEUWE SHOP"
+      "NIEUWE"
     ],
     "symbol": "⇢"
   },
@@ -116,7 +116,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "nodes": [
       "ADVERT.",
       "AANBOD",
-      "FORMULIER"
+      "AANVRAAG"
     ],
     "symbol": "↗"
   },
@@ -124,7 +124,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "corporate-websites",
     "nodes": [
       "BEDRIJF",
-      "STRUCTUUR",
+      "SITE",
       "AANVRAAG"
     ],
     "symbol": "▧"
@@ -151,7 +151,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "api-integrations",
     "nodes": [
       "BRON",
-      "API / CRM",
+      "API/CRM",
       "LOGBOEK"
     ],
     "symbol": "◈"
@@ -168,9 +168,9 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
   "web-applications": {
     "variant": "web-applications",
     "nodes": [
-      "WERKPROCES",
+      "PROCES",
       "WEBAPP",
-      "RESULTAAT"
+      "UITKOMST"
     ],
     "symbol": "▣"
   }
