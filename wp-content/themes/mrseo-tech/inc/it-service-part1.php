@@ -305,13 +305,13 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
   },
   "google-shopping": {
     "title": "Google Shopping per e-commerce | MrSeo.tech",
-    "description": "Controlliamo Merchant Center, feed, schede prodotto e struttura delle campagne, distinguendo gli articoli rifiutati da quelli che ricevono traffico poco pertinente.",
+    "description": "Audit Google Shopping in Italia: Merchant Center, feed prodotti, campagne Shopping e verifica del Servizio di shopping comparativo (CSS) associato.",
     "kicker": "GOOGLE SHOPPING PER E-COMMERCE",
     "hero": [
       "I tuoi prodotti sono disponibili.",
       "Perché non appaiono nelle inserzioni?"
     ],
-    "lead": "Controlliamo Merchant Center, feed, schede prodotto e struttura delle campagne, distinguendo gli articoli rifiutati da quelli che ricevono traffico poco pertinente.",
+    "lead": "Controlliamo Merchant Center, feed prodotti, campagne e il Servizio di shopping comparativo (CSS) collegato all'account per individuare blocchi di pubblicazione e traffico poco pertinente.",
     "intro": "Merchant Center rifiuta prodotti — I clic riguardano prodotti sbagliati",
     "introText": "Gli attributi del feed o le pagine non rispettano i requisiti. Individuiamo i codici di errore e gli ID interessati.",
     "problems": [
@@ -333,8 +333,8 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
     ],
     "process": [
       [
-        "Esaminare le diagnosi Merchant",
-        "Individuiamo i codici di errore e gli ID interessati."
+        "Controllare Merchant Center e CSS",
+        "Verifichiamo i prodotti interessati, le diagnosi e il servizio di comparazione associato."
       ],
       [
         "Confrontare feed e sito",
@@ -351,7 +351,7 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
     ],
     "outcomes": [
       [
-        "Elenco prodotti da correggere",
+        "Verifica feed e servizio CSS",
         "Individuiamo i codici di errore e gli ID interessati."
       ],
       [
@@ -371,8 +371,8 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
     ],
     "faq": [
       [
-        "Merchant Center è necessario?",
-        "Sì, per le comuni inserzioni prodotto di Shopping."
+        "In Italia serve un Servizio di shopping comparativo?",
+        "Sì. Per pubblicare annunci Shopping in Italia serve almeno un CSS (Servizio di shopping comparativo), che può essere Google Shopping. Verifichiamo quello associato all'account."
       ],
       [
         "Bisogna sponsorizzare ogni prodotto?",
@@ -471,7 +471,7 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
     ],
     "faq": [
       [
-        "Conviene coprire tutta la regione?",
+        "È utile pubblicizzare tutta la regione?",
         "Solo se l'attività può servire quelle località."
       ],
       [
@@ -604,11 +604,11 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
     "cta": "Richiedi un audit Google Ads"
   },
   "merchant-center-help": {
-    "title": "Problemi Google Merchant Center | MrSeo.tech",
+    "title": "Problemi con Google Merchant Center | MrSeo.tech",
     "description": "Analizziamo le segnalazioni di Merchant Center e confrontiamo feed, disponibilità, prezzi e schede del negozio per individuare la causa specifica di ogni errore.",
     "kicker": "PROBLEMI GOOGLE MERCHANT CENTER",
     "hero": [
-      "Alcuni prodotti sono stati rifiutati.",
+      "Google ha rifiutato alcuni prodotti.",
       "Che cosa blocca le inserzioni?"
     ],
     "lead": "Analizziamo le segnalazioni di Merchant Center e confrontiamo feed, disponibilità, prezzi e schede del negozio per individuare la causa specifica di ogni errore.",
@@ -616,7 +616,7 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
     "introText": "Attributi o informazioni commerciali sono incompleti. Raggruppiamo gli errori per prodotto e motivazione.",
     "problems": [
       [
-        "Gli articoli risultano non approvati",
+        "I prodotti risultano non approvati",
         "Attributi o informazioni commerciali sono incompleti.",
         "Raggruppiamo gli errori per prodotto e motivazione."
       ],
@@ -701,7 +701,7 @@ function mrseo_it_service_part1(){return json_decode(<<<'MRSEO_IT_P1'
       "ERRORE",
       "VERIFICA"
     ],
-    "cta": "Analizziamo i rifiuti Merchant"
+    "cta": "Verifichiamo i prodotti non approvati"
   },
   "woocommerce-shopify-stores": {
     "title": "Negozi WooCommerce e Shopify | MrSeo.tech",
