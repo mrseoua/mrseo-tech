@@ -340,7 +340,7 @@ function mrseo_eu_all(){
       "Sito web (facoltativo)",
       "Descrivi il problema",
       "Invia richiesta",
-      "Messaggio affidato all’invio. Risponderemo via email.",
+      "La richiesta è stata inviata. Ti risponderemo via email.",
       "Controlla i campi obbligatori.",
       "Invio non riuscito. Riprova più tardi.",
       "Non inviare password o accessi riservati.",
@@ -382,7 +382,7 @@ function mrseo_eu_all(){
           ]
         ],
         "offer": {
-          "title": "Da dove inizia il miglioramento ?",
+          "title": "Da dove iniziare a migliorare?",
           "intro": "Colleghiamo vendite e problemi tecnici prima di definire un servizio.",
           "items": [
             {
@@ -435,7 +435,7 @@ function mrseo_eu_all(){
             "No: i posizionamenti non sono garantibili. Verifichiamo interventi e segnali osservabili."
           ],
           [
-            "L’audit include anche le correzioni ?",
+            "L’audit include anche le correzioni?",
             "Il documento di audit e le attività di implementazione sono servizi distinti; ambito e costi vanno concordati prima."
           ]
         ],
@@ -493,7 +493,7 @@ function mrseo_eu_all(){
             "Non garantiamo vendite o ROAS: dipendono anche dal sito, dai prezzi e dal mercato."
           ],
           [
-            "Il budget media è incluso ?",
+            "Il budget pubblicitario è incluso?",
             "No. La spesa pubblicitaria è distinta dal costo dell’analisi o della gestione."
           ]
         ],
@@ -551,7 +551,7 @@ function mrseo_eu_all(){
             "Possiamo progettare applicazioni SaaS e CRM dopo aver chiarito ambito, costi e responsabilità."
           ],
           [
-            "Possiamo collegare il gestionale al negozio ?",
+            "Possiamo collegare il gestionale al negozio?",
             "Dipende dalle API e dalla qualità dei dati. Prima esaminiamo la fattibilità tecnica."
           ]
         ],
@@ -580,7 +580,7 @@ function mrseo_eu_all(){
         "description": "Descrivi il sito e l’ostacolo che vuoi risolvere. Rispondiamo dopo aver esaminato la richiesta.",
         "eyebrow": "CONTATTO / PROGETTO",
         "headline": "Cosa sta frenando <em>la tua attività?</em>",
-        "lead": "Inserisci l’URL, il Paese di riferimento e un breve esempio di ciò che non funziona. Non inviare credenziali o dati riservati. Indica piattaforma, numero approssimativo di prodotti e difficoltà principale. Non condividere credenziali.",
+        "lead": "Indica l’indirizzo del sito e il mercato di riferimento. Per un e-commerce puoi aggiungere la piattaforma e il numero indicativo di prodotti. Indica il problema principale. Non inviare credenziali, password o dati riservati.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -615,7 +615,7 @@ function mrseo_eu_all(){
       "heading": "Prima il problema del negozio, poi il servizio",
       "description": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
       "cta": "Descrivi il problema",
-      "brief": "Indica piattaforma, numero approssimativo di prodotti e difficoltà principale. Non condividere credenziali.",
+      "brief": "Indica il problema principale. Non inviare credenziali, password o dati riservati.",
       "portfolioLabel": "Guarda i progetti (in inglese)"
     }
   },

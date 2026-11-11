@@ -9,7 +9,7 @@
       [
         "Pagine non indicizzate",
         "Direttive, link interni o problemi di scansione nascondono contenuti importanti.",
-        "Verificare Search Console, status delle URL e sitemap."
+        "Verificare Search Console, stato degli URL e sitemap."
       ],
       [
         "Contenuti duplicati",
@@ -262,7 +262,7 @@
     "faq": [
       [
         "Si può migrare uno shop esistente?",
-        "Serve uno studio specifico per dati, URL, redirect e continuità degli ordini."
+        "Serve uno studio specifico per dati, URL, reindirizzamenti 301 e continuità degli ordini."
       ],
       [
         "Quale piattaforma scegliete?",
