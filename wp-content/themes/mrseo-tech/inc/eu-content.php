@@ -580,7 +580,7 @@ function mrseo_eu_all(){
         "description": "Descrivi il sito e l’ostacolo che vuoi risolvere. Rispondiamo dopo aver esaminato la richiesta.",
         "eyebrow": "CONTATTO / PROGETTO",
         "headline": "Cosa sta frenando <em>la tua attività?</em>",
-        "lead": "Indica l’indirizzo del sito, il mercato di riferimento e il problema principale. Per un e-commerce puoi aggiungere piattaforma e numero indicativo di prodotti. Non inviare password o dati riservati.",
+        "lead": "Indica l’indirizzo del sito e il mercato di riferimento. Per un e-commerce puoi aggiungere la piattaforma e il numero indicativo di prodotti. Indica il problema principale. Non inviare credenziali, password o dati riservati.",
         "problems": [],
         "outcomes": [],
         "faq": []
@@ -615,7 +615,7 @@ function mrseo_eu_all(){
       "heading": "Prima il problema del negozio, poi il servizio",
       "description": "WooCommerce, PrestaShop e Shopify possono presentare criticità diverse nei filtri, nel catalogo e nel tracciamento. Verifichiamo il sistema effettivo prima di proporre modifiche.",
       "cta": "Descrivi il problema",
-      "brief": "Indica piattaforma, numero approssimativo di prodotti e difficoltà principale. Non condividere credenziali.",
+      "brief": "Indica il problema principale. Non inviare credenziali, password o dati riservati.",
       "portfolioLabel": "Guarda i progetti (in inglese)"
     }
   },
