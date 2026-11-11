@@ -68,7 +68,15 @@ function mrseo_trial_menu_translations() {
   "dev":["Développement web","Résoudre les problèmes techniques et simplifier les processus.","Maintenance WordPress","Intégrations et automatisation","Performance et sécurité","CRM et espaces clients","Applications web et MVP"],
   "bottom":["Votre besoin ne figure pas ici ?","Expliquez votre problème : nous proposerons des pistes concrètes.","Parlons de votre projet"]
  },
- "de":{
+ "nl":{
+   "seo":["SEO & online vindbaarheid","Zorg dat de juiste klanten je in Google vinden.","Lokale SEO","SEO voor webshops","SEO voor dienstverleners","Internationale SEO","SEO-audit"],
+   "ads":["Google Ads","Advertenties richten op relevante vragen en meetbare aanvragen.","Google Ads beheer","Google Shopping","Google Ads voor lokale bedrijven","Google Ads-audit","Google Merchant Center"],
+   "commerce":["Webshops","Betrouwbare webshops bouwen, verbeteren en verbinden.","Webshop laten maken","WooCommerce & Shopify","Conversieoptimalisatie","Catalogusautomatisering","Webshopmigratie"],
+   "sites":["Websites laten maken","Een duidelijke website die vertrouwen en aanvragen ondersteunt.","Websites laten maken","Websites voor dienstverleners","Landingspagina’s voor advertenties","Zakelijke websites","Website moderniseren"],
+   "dev":["Webontwikkeling","Systemen slimmer verbinden en concrete werkprocessen verbeteren.","WordPress onderhoud","API-koppelingen","Snelheid & beveiliging","Maatwerk webontwikkeling","Webapplicaties & klantportalen"],
+   "bottom":["Staat jouw vraag er niet bij?","Beschrijf wat er vastloopt. We bespreken een gerichte aanpak.","Bespreek je project"]
+  },
+  "de":{
   "seo":["SEO & Suchmaschinenoptimierung","Damit Kunden Ihr Unternehmen bei Google finden.","Lokales SEO","SEO für Onlineshops","SEO für Dienstleister","Internationales SEO","SEO-Audit"],
   "ads":["Google Ads","Anzeigen für relevante Anfragen potenzieller Kunden.","Google Suchanzeigen","Google Shopping","Google Ads für lokale Unternehmen","Google Ads Audit","Google Merchant Center"],
   "commerce":["Onlineshops","Shops erstellen, verbessern und automatisieren.","Onlineshop-Erstellung","WooCommerce & Shopify","Conversion-Optimierung im Shop","Shop-Automatisierung","Shop-Relaunch & Migration"],
@@ -138,7 +146,14 @@ function mrseo_trial_menu_route_map($locale) {
   'sites'=>array('tworzenie-stron-internetowych','service-websites','landing-pages','corporate-websites','website-redesign'),
   'dev'=>array('opieka-wordpress','api-integrations','website-speed-security','web-development','web-applications')
  );
- if($locale==='es')return array(
+ if($locale==='nl')return array(
+   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
+   'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
+   'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
+   'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
+  );
+  if($locale==='es')return array(
   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
   'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
@@ -199,6 +214,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
  if($locale==='fr')return (function_exists('mrseo_fr_service_slugs') && in_array($slug,mrseo_fr_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='it')return (function_exists('mrseo_it_service_slugs') && in_array($slug,mrseo_it_service_slugs(),true))
+    || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
+ if($locale==='nl')return (function_exists('mrseo_nl_service_slugs') && in_array($slug,mrseo_nl_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='es')return (function_exists('mrseo_es_service_slugs') && in_array($slug,mrseo_es_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
