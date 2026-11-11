@@ -9,7 +9,7 @@ function mrseo_it_service_part2(){return json_decode(<<<'MRSEO_IT_P2'
     "kicker": "MIGRAZIONE DI NEGOZI ONLINE",
     "hero": [
       "Stai cambiando piattaforma.",
-      "Come salvare prodotti e indirizzi?"
+      "Come non perdere prodotti e vecchi link?"
     ],
     "lead": "Pianifichiamo il trasferimento di catalogo, varianti e integrazioni, mantenendo raggiungibili le pagine utili attraverso reindirizzamenti 301 verificati.",
     "intro": "I vecchi link diventano errori 404 — All'import mancano varianti e categorie",
@@ -245,8 +245,8 @@ function mrseo_it_service_part2(){return json_decode(<<<'MRSEO_IT_P2'
         "Verifichiamo l'invio reale e l'evento di conversione."
       ],
       [
-        "Provare modulo e tracking",
-        "Al termine verifichiamo l'esito in un percorso reale di prova."
+        "Verificare modulo, conversioni e consenso",
+        "Proviamo l'invio della richiesta e verifichiamo le impostazioni di tracciamento in rapporto alle preferenze di consenso applicabili."
       ]
     ],
     "outcomes": [
@@ -455,7 +455,7 @@ function mrseo_it_service_part2(){return json_decode(<<<'MRSEO_IT_P2'
         "Esaminiamo schermi piccoli e interazioni chiave."
       ],
       [
-        "Piano URL e redirezioni",
+        "Piano degli URL e dei reindirizzamenti",
         "Prepariamo conservazione e reindirizzamenti 301."
       ],
       [
@@ -809,7 +809,7 @@ function mrseo_it_service_part2(){return json_decode(<<<'MRSEO_IT_P2'
     "kicker": "APPLICAZIONI WEB, PORTALI E MVP",
     "hero": [
       "I fogli di calcolo non bastano più.",
-      "Serve uno strumento progettato per voi?"
+      "Serve uno strumento per la tua attività?"
     ],
     "lead": "Realizziamo applicazioni web e portali clienti partendo da un processo concreto, con ruoli, autorizzazioni e un primo MVP limitato alle funzioni indispensabili.",
     "intro": "Ogni reparto usa dati diversi — I clienti chiedono sempre aggiornamenti",
@@ -875,7 +875,7 @@ function mrseo_it_service_part2(){return json_decode(<<<'MRSEO_IT_P2'
         "Sì, se risolvono il problema principale."
       ],
       [
-        "Potremo integrare il CRM in seguito?",
+        "Potrai integrare il CRM in seguito?",
         "Secondo le API e i permessi disponibili."
       ],
       [
