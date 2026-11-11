@@ -29,6 +29,23 @@ for slug,page in pages.items():
     assert "garantiamo il primo posto" not in page["lead"].lower(),slug
     titles.append(page["title"]);descriptions.append(page["description"]);leads.append(page["lead"]);heroes.append(" ".join(page["hero"]))
 assert len(set(titles))==len(set(descriptions))==len(set(leads))==len(set(heroes))==19,"Italian duplicate copy"
+
+# Italy-specific commerce facts and native-language quality guards.
+assert "Servizio di shopping comparativo" in pages["google-shopping"]["lead"]
+assert "In Italia" in pages["google-shopping"]["faq"][0][0]
+assert "CSS" in pages["google-shopping"]["faq"][0][1]
+assert "rifiuti Merchant" not in pages["merchant-center-help"]["cta"]
+assert "per voi?" not in pages["web-applications"]["hero"][1]
+assert "Potremo integrare" not in pages["web-applications"]["faq"][1][0]
+assert "redirezioni" not in str(pages["website-redesign"])
+existing_it=load("inc/eu-content.php","MRSEO_EU_JSON")["it"]
+assert existing_it["code"]=="it-IT"
+assert existing_it["nav"][0]=="Servizi"
+assert "Non inviare password" in existing_it["pages"]["contact"]["lead"]
+assert existing_it["pages"]["contact"]["lead"].count("Non inviare")==1
+assert "inviata" in existing_it["ui"][12]
+assert "collaboriamo" in existing_it["ui"][16].lower()
+
 menu=read("inc/mega-menu-trial.php")
 m=re.search(r"if\(\$locale==='it'\)return array\((.*?)\n \);",menu,re.S)
 assert m,"Missing Italian menu destinations"
