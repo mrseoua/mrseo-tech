@@ -28,7 +28,8 @@ async function run(){
       scene:document.querySelectorAll('.pl-art').length,cta:document.querySelectorAll('.pl-svc-hero-actions .intl-button').length,
       styledScene:document.querySelector('.pl-svc-scene')?getComputedStyle(document.querySelector('.pl-svc-scene')).display:'',
       styledGrid:document.querySelector('.pl-svc-hero-grid')?getComputedStyle(document.querySelector('.pl-svc-hero-grid')).display:'',
-      styledCards:document.querySelector('.pl-svc-need-grid')?getComputedStyle(document.querySelector('.pl-svc-need-grid')).display:''
+      styledCards:document.querySelector('.pl-svc-need-grid')?getComputedStyle(document.querySelector('.pl-svc-need-grid')).display:'',
+      heroContact:document.querySelector('.pl-svc-hero-actions .intl-button')?.getAttribute('href')||''
      }));
      assert.equal(r.h1,1,`H1 ${slug}`);
      assert(r.h1Text.length>12,`short H1 ${slug}`);
@@ -48,6 +49,7 @@ async function run(){
       assert.equal(r.styledGrid,'grid',`Italian hero grid not styled on ${slug}`);
       assert.equal(r.styledCards,'grid',`Italian problem cards not styled on ${slug}`);
       assert.equal(r.cta,1,`contact CTA ${slug}`);
+      assert(new URL(r.heroContact,origin).pathname==='/it/contact/',`Italian CTA must link to real /it/contact/ ${slug}`);
      }
      if(slug==='local-seo' && [390,1440].includes(width)){
       const mega=page.locator('.mrseo-mega--trial').first();
@@ -70,6 +72,18 @@ async function run(){
      results.push({slug,width,...r});
     }catch(e){throw Error(`${url}, width=${width}: ${e.message}`)}finally{await page.close()}
    }
+  }
+  if(shard===0){
+   const contact=await browser.newPage({viewport:{width:390,height:850}});
+   const resp=await contact.goto(origin+'/it/contact/',{waitUntil:'domcontentloaded',timeout:30000});
+   assert(resp&&resp.status()===200,'Italian contact route must return HTTP 200');
+   const form=contact.locator('form[action*="admin-post.php"]');
+   assert.equal(await form.count(),1,'Italian contact form missing');
+   assert.equal(await form.locator('input[name="mrseo_lang"]').inputValue(),'it','Contact form must submit Italian locale');
+   assert.equal(await form.locator('input[name="contact_email"]').count(),1,'Italian email input missing');
+   assert.equal(await form.locator('textarea[name="contact_message"]').count(),1,'Italian message textarea missing');
+   assert.equal(await contact.locator('.mrseo-privacy-notice a[href*="/it/privacy/"]').count(),1,'Italian privacy notice link missing');
+   await contact.close();
   }
  }finally{await browser.close()}
  fs.writeFileSync(path.join(out,`it-diagnostics-${shard}.json`),JSON.stringify(results,null,2));
