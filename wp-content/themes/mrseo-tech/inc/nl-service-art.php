@@ -6,7 +6,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
   "local-seo": {
     "variant": "local-seo",
     "nodes": [
-      "ZOEKOPDRACHT",
+      "ZOEKVRAAG",
       "WERKGEBIED",
       "CONTACT"
     ],
@@ -16,7 +16,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "service-business-seo",
     "nodes": [
       "DIENST",
-      "ZOEKINTENTIE",
+      "ZOEKVRAAG",
       "AANVRAAG"
     ],
     "symbol": "⌕"
@@ -33,7 +33,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
   "google-shopping": {
     "variant": "google-shopping",
     "nodes": [
-      "PRODUCTFEED",
+      "FEED",
       "SHOPPING",
       "AANKOOP"
     ],
@@ -43,7 +43,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "local-google-ads",
     "nodes": [
       "LOCATIE",
-      "ADVERTENTIE",
+      "ADVERT.",
       "OPROEP"
     ],
     "symbol": "◉"
@@ -62,7 +62,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "nodes": [
       "PRODUCT",
       "MELDING",
-      "HERCONTROLE"
+      "CONTROLE"
     ],
     "symbol": "◈"
   },
@@ -70,7 +70,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "woocommerce-shopify-stores",
     "nodes": [
       "PLATFORM",
-      "WINKELWAGEN",
+      "MANDJE",
       "BESTELLING"
     ],
     "symbol": "▣"
@@ -79,7 +79,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "store-conversion",
     "nodes": [
       "PRODUCT",
-      "WINKELWAGEN",
+      "MANDJE",
       "BETALING"
     ],
     "symbol": "◍"
@@ -114,7 +114,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
   "landing-pages": {
     "variant": "landing-pages",
     "nodes": [
-      "ADVERTENTIE",
+      "ADVERT.",
       "AANBOD",
       "FORMULIER"
     ],
@@ -132,7 +132,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
   "website-redesign": {
     "variant": "website-redesign",
     "nodes": [
-      "HUIDIGE SITE",
+      "HUIDIGE",
       "ONTWERP",
       "TEST"
     ],
@@ -150,9 +150,9 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
   "api-integrations": {
     "variant": "api-integrations",
     "nodes": [
-      "BRONSYSTEEM",
+      "BRON",
       "API / CRM",
-      "REGISTRATIE"
+      "LOGBOEK"
     ],
     "symbol": "◈"
   },
@@ -160,7 +160,7 @@ function mrseo_nl_scene_presets(){return json_decode(<<<'MRSEO_NL_ART'
     "variant": "website-speed-security",
     "nodes": [
       "METING",
-      "VERBETERING",
+      "INGREEP",
       "HERTEST"
     ],
     "symbol": "◇"
