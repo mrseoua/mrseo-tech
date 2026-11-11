@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 448
+EXPECTED_PAGES = 467
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -33,6 +33,8 @@ SAMPLE = [
     "/es/api-integrations/", "/es/web-applications/",
     "/nl/local-seo/", "/nl/google-shopping/", "/nl/woocommerce-shopify-stores/",
     "/nl/api-integrations/", "/nl/web-applications/",
+    "/ro/local-seo/", "/ro/google-shopping/", "/ro/woocommerce-shopify-stores/",
+    "/ro/api-integrations/", "/ro/web-applications/", "/ro/contact/",
     "/en/google-shopping/", "/pl/google-shopping/", "/google-shopping/",
     "/ru/google-shopping/", "/pl/problemy-merchant-center/",
     "/en/merchant-center-help/", "/ru/merchant-center/",
@@ -196,6 +198,8 @@ ES_ALL_NEW = {
 }
 NL_MATCHED = set(ES_MATCHED)
 NL_ALL_NEW = set(ES_ALL_NEW)
+RO_MATCHED = set(ES_MATCHED)
+RO_ALL_NEW = set(ES_ALL_NEW)
 DE_ALL_NEW = {
     "local-seo", "service-business-seo", "international-seo",
     "google-shopping", "local-google-ads", "google-ads-audit",
@@ -232,6 +236,8 @@ def assert_paired_ru_pages(sitemap):
             expected["es-ES"] = HOST + "/es/" + slug + "/"
         if slug in NL_MATCHED:
             expected["nl-NL"] = HOST + "/nl/" + slug + "/"
+        if slug in RO_MATCHED:
+            expected["ro-RO"] = HOST + "/ro/" + slug + "/"
         if slug == "google-ads-audit":
             if sitemap.get(HOST + "/en/google-ads-audit/") != expected:
                 fail("UK Ads audit not reciprocal with UA/RU/PL/DE")
@@ -347,7 +353,8 @@ if __name__ == "__main__":
                         "fr-FR": HOST + "/fr/woocommerce-shopify-stores/",
                         "it-IT": HOST + "/it/woocommerce-shopify-stores/",
                         "es-ES": HOST + "/es/woocommerce-shopify-stores/",
-                        "nl-NL": HOST + "/nl/woocommerce-shopify-stores/"}
+                        "nl-NL": HOST + "/nl/woocommerce-shopify-stores/",
+                        "ro-RO": HOST + "/ro/woocommerce-shopify-stores/"}
         elif slug in UK_MICRO:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
@@ -364,6 +371,8 @@ if __name__ == "__main__":
                 expected["es-ES"] = HOST + "/es/" + slug + "/"
             if slug in NL_MATCHED:
                 expected["nl-NL"] = HOST + "/nl/" + slug + "/"
+            if slug in RO_MATCHED:
+                expected["ro-RO"] = HOST + "/ro/" + slug + "/"
         else:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
@@ -380,6 +389,8 @@ if __name__ == "__main__":
                 expected["es-ES"] = HOST + "/es/" + slug + "/"
             if slug in NL_MATCHED:
                 expected["nl-NL"] = HOST + "/nl/" + slug + "/"
+            if slug in RO_MATCHED:
+                expected["ro-RO"] = HOST + "/ro/" + slug + "/"
         if any(sitemap.get(href) != expected for href in expected.values()):
             fail(f"Unpaired real international service: {slug}")
 
@@ -407,6 +418,10 @@ if __name__ == "__main__":
         url = HOST + "/nl/" + slug + "/"
         if url not in sitemap or sitemap[url].get("nl-NL") != url:
             fail(f"Missing Dutch canonical: {slug}")
+    for slug in RO_ALL_NEW:
+        url = HOST + "/ro/" + slug + "/"
+        if url not in sitemap or sitemap[url].get("ro-RO") != url:
+            fail(f"Missing Romanian canonical: {slug}")
 
     # Completed Germany-specific service URLs must be real canonical pages.
     for slug in DE_ALL_NEW:
@@ -421,7 +436,8 @@ if __name__ == "__main__":
                          "fr-FR": HOST + "/fr/woocommerce-shopify-stores/",
                          "it-IT": HOST + "/it/woocommerce-shopify-stores/",
                          "es-ES": HOST + "/es/woocommerce-shopify-stores/",
-                         "nl-NL": HOST + "/nl/woocommerce-shopify-stores/"}
+                         "nl-NL": HOST + "/nl/woocommerce-shopify-stores/",
+                         "ro-RO": HOST + "/ro/woocommerce-shopify-stores/"}
     if sitemap.get(platform) != expected_platform:
         fail("PL WooCommerce and Shopify route not reciprocally matched")
 
