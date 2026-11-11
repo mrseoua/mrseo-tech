@@ -84,8 +84,8 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
       "De gewijzigde pagina en contactroute zijn handmatig te controleren."
     ],
     "visual": [
-      "ZOEKVRAAG",
-      "WERKGEBIED",
+      "ZOEKEN",
+      "REGIO",
       "CONTACT"
     ],
     "risk": "Lokale posities hangen ook af van concurrentie, afstand en reputatie. We beloven geen vaste Maps-positie.",
@@ -185,7 +185,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     ],
     "visual": [
       "DIENST",
-      "ZOEKVRAAG",
+      "VRAAG",
       "AANVRAAG"
     ],
     "risk": "Organische vindbaarheid vraagt onderhoud. Het aantal aanvragen hangt ook af van prijs, concurrentie en de kwaliteit van je aanbod.",
@@ -286,7 +286,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     "visual": [
       "LAND",
       "TAAL",
-      "JUISTE URL"
+      "URL"
     ],
     "risk": "Hreflang is een signaal, geen garantie voor landgebonden rankings. Juridische en logistieke lokalisatie blijft een verantwoordelijkheid van het bedrijf.",
     "related": [
@@ -586,7 +586,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     "visual": [
       "ACCOUNT",
       "CONTROLE",
-      "ACTIEPLAN"
+      "PLAN"
     ],
     "risk": "De audit toont vaststelbare problemen, maar kan geen historische resultaten of toekomstige omzet garanderen.",
     "related": [
@@ -786,7 +786,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     "visual": [
       "PLATFORM",
       "MANDJE",
-      "BESTELLING"
+      "ORDER"
     ],
     "risk": "Licenties, platformkosten, betaalprovider en externe apps vallen buiten de ontwikkelvergoeding tenzij anders afgesproken.",
     "related": [
@@ -986,7 +986,7 @@ function mrseo_nl_service_part1(){return json_decode(<<<'MRSEO_NL_P1'
     "visual": [
       "DATABRON",
       "REGELS",
-      "CATALOGUS"
+      "CATALOG"
     ],
     "risk": "Automatisering kan alleen betrouwbaar zijn met consistente brondata en beschikbare toegang tot de betrokken systemen.",
     "related": [
