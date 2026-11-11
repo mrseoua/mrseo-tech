@@ -12,7 +12,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Cómo conservar productos y enlaces?"
     ],
     "lead": "Planificamos el traslado de referencias, variantes, pedidos compatibles y redirecciones 301 para evitar que clientes y buscadores terminen en páginas inexistentes.",
-    "intro": "Las URL antiguas devuelven errores 404 — Se pierden productos o variantes",
+    "intro": "¿Qué puede perderse al migrar la tienda?",
     "introText": "La nueva tienda utiliza rutas distintas a las que estaban publicadas. Preparamos un mapa de URL anteriores y destinos pertinentes.",
     "problems": [
       [
@@ -112,7 +112,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿La web lo explica bien?"
     ],
     "lead": "Creamos páginas por servicio con información clara, preguntas reales de los clientes y una forma sencilla de pedir cita o presupuesto desde el móvil.",
-    "intro": "Los servicios parecen iguales — Faltan respuestas antes de contratar",
+    "intro": "¿Tu web explica bien cada servicio?",
     "introText": "La web no distingue cuándo necesita cada prestación el cliente. Separamos los servicios según su finalidad y sus requisitos.",
     "problems": [
       [
@@ -212,7 +212,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Por qué el formulario sigue vacío?"
     ],
     "lead": "Diseñamos una página centrada en la necesidad que motivó el anuncio, con una oferta comprensible y una acción medible, sin convertir cada clic en un supuesto cliente.",
-    "intro": "El anuncio dirige a una página genérica — Los usuarios abandonan el formulario",
+    "intro": "¿Qué frena las solicitudes desde tus anuncios?",
     "introText": "La promesa publicitaria no se corresponde con lo que encuentra el usuario. Alineamos titular, servicio y búsqueda.",
     "problems": [
       [
@@ -312,7 +312,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Tu web sigue contando la historia correcta?"
     ],
     "lead": "Organizamos servicios, departamentos y contenidos corporativos para que clientes, socios y candidatos encuentren información verificada en pocos pasos.",
-    "intro": "Cada público necesita una respuesta distinta — Actualizar una página resulta difícil",
+    "intro": "¿Tu web conecta con cada público?",
     "introText": "Clientes, colaboradores y candidatos comparten un menú confuso. Diseñamos recorridos separados según cada necesidad.",
     "problems": [
       [
@@ -412,7 +412,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Qué merece la pena cambiar?"
     ],
     "lead": "Renovamos diseño, legibilidad y navegación sin perder de vista las URL útiles, los formularios ni el seguimiento de conversiones que ya funcionan.",
-    "intro": "En móvil los textos se solapan — El rediseño hace desaparecer URL",
+    "intro": "¿Qué debes conservar al renovar tu web?",
     "introText": "Los bloques y márgenes no se adaptan a pantallas pequeñas. Auditamos las páginas y acciones principales en móvil.",
     "problems": [
       [
@@ -512,7 +512,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Quién comprueba que todo siga funcionando?"
     ],
     "lead": "Organizamos actualizaciones, copias de seguridad, accesos y pruebas funcionales para que el mantenimiento de WordPress no se limite a pulsar «Actualizar».",
-    "intro": "Una actualización rompe el diseño — La copia de seguridad no se ha probado",
+    "intro": "¿Qué falla después de actualizar WordPress?",
     "introText": "Tema y extensiones pueden dejar de ser compatibles. Revisamos riesgos, copias y páginas afectadas.",
     "problems": [
       [
@@ -612,7 +612,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Por qué tus herramientas no se conectan?"
     ],
     "lead": "Conectamos formularios, tiendas y sistemas CRM con reglas para identificadores, permisos, errores y duplicados; comprobamos que cada dato llegue donde corresponde.",
-    "intro": "Los contactos no llegan al CRM — Un pedido aparece dos veces",
+    "intro": "¿Dónde se pierden datos entre herramientas?",
     "introText": "El formulario funciona pero la API falla al transmitir. Seguimos los registros y códigos de error.",
     "problems": [
       [
@@ -712,7 +712,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Y las actualizaciones te preocupan?"
     ],
     "lead": "Identificamos recursos que ralentizan el sitio, cambios bruscos de diseño y riesgos de acceso antes de proponer optimizaciones que puedan medirse.",
-    "intro": "La primera pantalla aparece tarde — Los elementos se mueven mientras carga",
+    "intro": "¿Qué ralentiza y pone en riesgo tu web?",
     "introText": "Imágenes, tipografías o scripts bloquean el contenido. Medimos recursos y fases de carga en páginas representativas.",
     "problems": [
       [
@@ -812,7 +812,7 @@ function mrseo_es_service_part2(){return json_decode(<<<'MRSEO_ES_P2'
       "¿Necesitas una herramienta para tu equipo?"
     ],
     "lead": "Creamos aplicaciones internas, portales de clientes y primeros productos MVP a partir de procesos concretos, con permisos definidos y una entrega inicial acotada.",
-    "intro": "Cada departamento maneja datos diferentes — Los clientes piden el estado de su solicitud",
+    "intro": "¿Qué proceso necesita una aplicación propia?",
     "introText": "Hojas y correos tienen información incompatible. Modelamos un proceso compartido con responsables claros.",
     "problems": [
       [
