@@ -284,7 +284,7 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
       "We testen dezelfde route vanuit advertentievoorbeeld tot bevestiging."
     ],
     "visual": [
-      "ADVERTENTIE",
+      "ADVERT.",
       "AANBOD",
       "FORMULIER"
     ],
@@ -484,7 +484,7 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
       "We vergelijken mobiele acties en metadata vóór en na publicatie."
     ],
     "visual": [
-      "HUIDIGE SITE",
+      "HUIDIGE",
       "ONTWERP",
       "TEST"
     ],
@@ -684,9 +684,9 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
       "Testbestellingen worden in beide systemen gecontroleerd, ook bij foutresponsen."
     ],
     "visual": [
-      "BRONSYSTEEM",
+      "BRON",
       "API / CRM",
-      "REGISTRATIE"
+      "LOGBOEK"
     ],
     "risk": "Externe API-limieten, licenties en wijzigingen bij leveranciers bepalen mede de betrouwbaarheid en onderhoudskosten.",
     "related": [
@@ -785,7 +785,7 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
     ],
     "visual": [
       "METING",
-      "VERBETERING",
+      "INGREEP",
       "HERTEST"
     ],
     "risk": "Beveiliging is een doorlopend proces. Externe hosting en plugins kunnen nieuwe risico's introduceren.",
