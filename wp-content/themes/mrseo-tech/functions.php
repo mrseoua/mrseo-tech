@@ -15,6 +15,7 @@ require_once get_template_directory() . '/inc/pl-service-routing.php';
 require_once get_template_directory() . '/inc/de-service-routing.php';
 require_once get_template_directory() . '/inc/fr-service-routing.php';
 require_once get_template_directory() . '/inc/it-service-routing.php';
+require_once get_template_directory() . '/inc/es-service-routing.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/international-seo.php';
 require_once get_template_directory() . '/inc/privacy-page.php';
@@ -52,6 +53,12 @@ function mrseo_assets(){
   wp_enqueue_style('mrseo-it-services-base',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
   wp_enqueue_style('mrseo-it-art-base',get_template_directory_uri().'/assets/pl-unique-scenes.css',array('mrseo-it-services-base'),'1.0.0');
   wp_enqueue_style('mrseo-it-services',get_template_directory_uri().'/assets/it-services.css',array('mrseo-it-art-base'),'1.0.0');
+ }
+ if(function_exists('mrseo_es_service_route') && mrseo_es_service_route()){
+  wp_enqueue_style('mrseo-es-services-base',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
+  wp_enqueue_style('mrseo-es-art-base',get_template_directory_uri().'/assets/pl-unique-scenes.css',array('mrseo-es-services-base'),'1.0.0');
+  wp_enqueue_style('mrseo-es-services',get_template_directory_uri().'/assets/es-services.css',array('mrseo-es-art-base'),'1.0.1');
+  wp_enqueue_script('mrseo-es-hero-contact',get_template_directory_uri().'/assets/es-service-hero-contact.js',array(),'1.0.0',true);
  }
  if((function_exists('mrseo_ua_website_route') && mrseo_ua_website_route())
     || (function_exists('mrseo_ru_website_route') && mrseo_ru_website_route())
@@ -115,6 +122,7 @@ function mrseo_assets(){
  if(in_array(mrseo_locale(),array('pl','de'),true)
     || (function_exists('mrseo_fr_service_route') && mrseo_fr_service_route())
     || (function_exists('mrseo_it_service_route') && mrseo_it_service_route())
+    || (function_exists('mrseo_es_service_route') && mrseo_es_service_route())
     || mrseo_slug()==='web-development'
     || (function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())){
   wp_enqueue_style('mrseo-international',get_template_directory_uri().'/assets/international.css',array('mrseo-style'),'1.3.0');

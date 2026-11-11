@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 410
+EXPECTED_PAGES = 429
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -29,6 +29,8 @@ SAMPLE = [
     "/fr/local-seo/", "/fr/woocommerce-shopify-stores/", "/fr/web-applications/",
     "/it/local-seo/", "/it/google-shopping/", "/it/woocommerce-shopify-stores/",
     "/it/api-integrations/", "/it/web-applications/",
+    "/es/local-seo/", "/es/google-shopping/", "/es/woocommerce-shopify-stores/",
+    "/es/api-integrations/", "/es/web-applications/",
     "/en/google-shopping/", "/pl/google-shopping/", "/google-shopping/",
     "/ru/google-shopping/", "/pl/problemy-merchant-center/",
     "/en/merchant-center-help/", "/ru/merchant-center/",
@@ -153,6 +155,43 @@ IT_ALL_NEW = {
     'website-speed-security',
     'web-applications',
 }
+ES_MATCHED = {
+    'local-seo',
+    'service-business-seo',
+    'international-seo',
+    'local-google-ads',
+    'google-ads-audit',
+    'store-conversion',
+    'store-migration',
+    'landing-pages',
+    'corporate-websites',
+    'website-redesign',
+    'website-speed-security',
+    'catalog-automation',
+    'api-integrations',
+    'web-applications',
+}
+ES_ALL_NEW = {
+    'local-seo',
+    'service-business-seo',
+    'international-seo',
+    'google-shopping',
+    'local-google-ads',
+    'google-ads-audit',
+    'merchant-center-help',
+    'woocommerce-shopify-stores',
+    'store-conversion',
+    'catalog-automation',
+    'store-migration',
+    'service-websites',
+    'landing-pages',
+    'corporate-websites',
+    'website-redesign',
+    'wordpress-care',
+    'api-integrations',
+    'website-speed-security',
+    'web-applications',
+}
 DE_ALL_NEW = {
     "local-seo", "service-business-seo", "international-seo",
     "google-shopping", "local-google-ads", "google-ads-audit",
@@ -185,6 +224,8 @@ def assert_paired_ru_pages(sitemap):
             expected["fr-FR"] = HOST + "/fr/" + slug + "/"
         if slug in IT_MATCHED:
             expected["it-IT"] = HOST + "/it/" + slug + "/"
+        if slug in ES_MATCHED:
+            expected["es-ES"] = HOST + "/es/" + slug + "/"
         if slug == "google-ads-audit":
             if sitemap.get(HOST + "/en/google-ads-audit/") != expected:
                 fail("UK Ads audit not reciprocal with UA/RU/PL/DE")
@@ -298,7 +339,8 @@ if __name__ == "__main__":
                         "pl-PL": HOST + "/pl/" + UK_PLATFORM[slug] + "/",
                         "de-DE": HOST + "/de/woocommerce-shopify-stores/",
                         "fr-FR": HOST + "/fr/woocommerce-shopify-stores/",
-                        "it-IT": HOST + "/it/woocommerce-shopify-stores/"}
+                        "it-IT": HOST + "/it/woocommerce-shopify-stores/",
+                        "es-ES": HOST + "/es/woocommerce-shopify-stores/"}
         elif slug in UK_MICRO:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
@@ -311,6 +353,8 @@ if __name__ == "__main__":
                 expected["fr-FR"] = HOST + "/fr/" + slug + "/"
             if slug in IT_MATCHED:
                 expected["it-IT"] = HOST + "/it/" + slug + "/"
+            if slug in ES_MATCHED:
+                expected["es-ES"] = HOST + "/es/" + slug + "/"
         else:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
@@ -323,6 +367,8 @@ if __name__ == "__main__":
                 expected["fr-FR"] = HOST + "/fr/" + slug + "/"
             if slug in IT_MATCHED:
                 expected["it-IT"] = HOST + "/it/" + slug + "/"
+            if slug in ES_MATCHED:
+                expected["es-ES"] = HOST + "/es/" + slug + "/"
         if any(sitemap.get(href) != expected for href in expected.values()):
             fail(f"Unpaired real international service: {slug}")
 
@@ -341,6 +387,10 @@ if __name__ == "__main__":
         url = HOST + "/it/" + slug + "/"
         if url not in sitemap or sitemap[url].get("it-IT") != url:
             fail(f"Missing Italian canonical: {slug}")
+    for slug in ES_ALL_NEW:
+        url = HOST + "/es/" + slug + "/"
+        if url not in sitemap or sitemap[url].get("es-ES") != url:
+            fail(f"Missing Spanish canonical: {slug}")
 
     # Completed Germany-specific service URLs must be real canonical pages.
     for slug in DE_ALL_NEW:
@@ -353,7 +403,8 @@ if __name__ == "__main__":
                          "pl-PL": platform,
                          "de-DE": HOST + "/de/woocommerce-shopify-stores/",
                          "fr-FR": HOST + "/fr/woocommerce-shopify-stores/",
-                         "it-IT": HOST + "/it/woocommerce-shopify-stores/"}
+                         "it-IT": HOST + "/it/woocommerce-shopify-stores/",
+                         "es-ES": HOST + "/es/woocommerce-shopify-stores/"}
     if sitemap.get(platform) != expected_platform:
         fail("PL WooCommerce and Shopify route not reciprocally matched")
 
