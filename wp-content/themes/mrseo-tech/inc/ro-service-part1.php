@@ -92,12 +92,12 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "related": [
       [
         "service-business-seo",
-        "SEO pentru firme de servicii",
+        "Seo pentru firme de servicii",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ],
       [
         "service-websites",
-        "service-websites",
+        "Creare site-uri pentru firme de servicii",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
@@ -192,12 +192,12 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "related": [
       [
         "local-seo",
-        "SEO local pentru afaceri",
+        "Seo local pentru afaceri",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ],
       [
         "service-websites",
-        "service-websites",
+        "Creare site-uri pentru firme de servicii",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
@@ -297,7 +297,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
       ],
       [
         "website-design",
-        "Creare site-uri web",
+        "Creare website",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
@@ -392,7 +392,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "related": [
       [
         "merchant-center-help",
-        "Remediere Google Merchant Center",
+        "Remediere google merchant center",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ],
       [
@@ -497,7 +497,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
       ],
       [
         "landing-pages",
-        "landing-pages",
+        "Landing page pentru campanii google ads",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
@@ -597,7 +597,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
       ],
       [
         "google-shopping",
-        "Google Shopping și reclame pentru produse",
+        "Google shopping și reclame pentru produse",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
@@ -692,7 +692,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "related": [
       [
         "google-shopping",
-        "Google Shopping și reclame pentru produse",
+        "Google shopping și reclame pentru produse",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ],
       [
@@ -797,7 +797,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
       ],
       [
         "api-integrations",
-        "api-integrations",
+        "Integrări api și automatizarea proceselor",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
@@ -892,12 +892,12 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "related": [
       [
         "woocommerce-shopify-stores",
-        "Magazine online WooCommerce și Shopify",
+        "Magazine online woocommerce și shopify",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ],
       [
         "website-speed-security",
-        "website-speed-security",
+        "Viteză și securitate pentru website",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
@@ -992,12 +992,12 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "related": [
       [
         "api-integrations",
-        "api-integrations",
+        "Integrări api și automatizarea proceselor",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ],
       [
         "merchant-center-help",
-        "Remediere Google Merchant Center",
+        "Remediere google merchant center",
         "Un serviciu complementar care rezolvă o altă parte a problemei."
       ]
     ],
