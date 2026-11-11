@@ -12,7 +12,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Por qué no te encuentran?"
     ],
     "lead": "Revisamos las búsquedas de tu zona, tu Perfil de Empresa en Google y las páginas de servicios para que una consulta local pueda terminar en una llamada o una solicitud real.",
-    "intro": "No apareces en búsquedas cercanas — La ficha de Google no coincide con la web",
+    "intro": "¿Qué frena tu visibilidad en Google Maps?",
     "introText": "Tu web no explica bien qué ofreces y en qué zonas prestas servicio. Comparamos búsquedas con localidades y servicios que realmente atiendes.",
     "problems": [
       [
@@ -112,7 +112,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Saben cómo encontrarlos?"
     ],
     "lead": "Convertimos un catálogo de servicios confuso en páginas claras según la intención de búsqueda, evitando que varias URL compitan por la misma consulta.",
-    "intro": "Todos los servicios aparecen mezclados — Las visitas no se convierten en presupuestos",
+    "intro": "¿Por qué tus servicios no generan consultas?",
     "introText": "La persona que busca una solución concreta no encuentra detalles suficientes. Organizamos cada necesidad en una página útil cuando existe una intención propia.",
     "problems": [
       [
@@ -212,7 +212,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Llega al país adecuado?"
     ],
     "lead": "Contrastamos búsquedas de cada mercado y revisamos equivalencias reales entre URL, canonical y etiquetas hreflang para no mostrar páginas en un idioma incorrecto.",
-    "intro": "Google muestra la versión equivocada — La traducción no atrae búsquedas",
+    "intro": "¿Qué falla entre países e idiomas?",
     "introText": "Los idiomas no están conectados mediante alternativas recíprocas. Auditamos hreflang, códigos país-idioma y destinos publicados.",
     "problems": [
       [
@@ -312,7 +312,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Por qué no salen en Shopping?"
     ],
     "lead": "Revisamos Merchant Center, el feed de productos, las campañas y el servicio de comparación de precios (CSS) asociado para detectar rechazos, datos incoherentes y gasto poco útil en España.",
-    "intro": "Merchant Center rechaza referencias — Se promocionan artículos poco adecuados",
+    "intro": "¿Qué impide anunciar tus productos?",
     "introText": "Algunos atributos del feed incumplen los requisitos de publicación. Agrupamos los motivos de rechazo por ID de producto.",
     "problems": [
       [
@@ -412,7 +412,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Son clientes de tu zona?"
     ],
     "lead": "Revisamos las ubicaciones objetivo, los términos de búsqueda y el seguimiento de llamadas o formularios para reducir contactos fuera de tu área de servicio.",
-    "intro": "Llegan clics desde demasiado lejos — El teléfono apenas recibe llamadas",
+    "intro": "¿Tu presupuesto llega a la zona correcta?",
     "introText": "La configuración geográfica incluye personas fuera de tu ámbito real. Auditamos opciones de ubicación y los informes por zona.",
     "problems": [
       [
@@ -512,7 +512,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Sabes qué está consiguiendo?"
     ],
     "lead": "Analizamos campañas, búsquedas, costes y conversiones reales para detectar errores de configuración y ordenar las mejoras por impacto y riesgo.",
-    "intro": "Pagas por búsquedas que no te interesan — Los formularios se cuentan dos veces",
+    "intro": "¿Qué está consumiendo el presupuesto?",
     "introText": "Faltan exclusiones o se mezclan intenciones incompatibles. Identificamos términos de búsqueda costosos y poco pertinentes.",
     "problems": [
       [
@@ -612,7 +612,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Qué información está fallando?"
     ],
     "lead": "Investigamos errores de Merchant Center y contrastamos atributos del feed con la ficha y el carrito para señalar qué impide publicar cada producto.",
-    "intro": "Los artículos quedan sin aprobar — El stock no coincide al comprar",
+    "intro": "¿Por qué Google rechaza tus artículos?",
     "introText": "El feed presenta atributos incompletos o inconsistentes. Clasificamos los avisos por código de error e ID de artículo.",
     "problems": [
       [
@@ -712,7 +712,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "Elige según cómo vendes."
     ],
     "lead": "Comparamos funciones, variantes, medios de pago, transporte y costes de mantenimiento antes de recomendar la plataforma que encaje con tu operativa.",
-    "intro": "Depender de extensiones complica la tienda — No conoces el coste total",
+    "intro": "¿Qué plataforma encaja con tu tienda?",
     "introText": "Plugins y aplicaciones añaden costes y conflictos. Definimos funciones imprescindibles y las dependencias reales.",
     "problems": [
       [
@@ -812,7 +812,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Por qué abandonan el carrito?"
     ],
     "lead": "Analizamos búsqueda y filtros, ficha de producto, costes de envío y pago para identificar obstáculos concretos y medir compras reales.",
-    "intro": "Encontrar la variante cuesta demasiado — Los gastos aparecen demasiado tarde",
+    "intro": "¿Dónde abandonan la compra tus clientes?",
     "introText": "Los filtros o selectores no coinciden con la necesidad. Probamos búsquedas y variantes con productos de la tienda.",
     "problems": [
       [
@@ -912,7 +912,7 @@ function mrseo_es_service_part1(){return json_decode(<<<'MRSEO_ES_P1'
       "¿Sigues actualizándolos a mano?"
     ],
     "lead": "Conectamos datos de proveedores, ERP y tienda mediante reglas controladas para precios, stock y referencias SKU, incluyendo detección de errores y pruebas antes de importar.",
-    "intro": "El stock varía entre sistemas — Copiar precios manualmente genera fallos",
+    "intro": "¿Qué tareas del catálogo generan errores?",
     "introText": "Tienda y proveedor actualizan con frecuencias diferentes. Definimos la fuente fiable y cuándo sincronizar.",
     "problems": [
       [
