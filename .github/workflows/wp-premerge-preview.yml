@@ -144,11 +144,13 @@ jobs:
             shots/fr-*.jpg
             shots/it-*.jpg
             shots/es-*.jpg
+            shots/nl-*.jpg
             shots/pl-diagnostics-*.json
             shots/de-diagnostics-*.json
             shots/fr-diagnostics-*.json
             shots/it-diagnostics-*.json
             shots/es-diagnostics-*.json
+            shots/nl-diagnostics-*.json
             /tmp/mrseo-preview-server.log
           if-no-files-found: warn
           retention-days: 7
