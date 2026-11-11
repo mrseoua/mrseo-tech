@@ -12,7 +12,7 @@ p1=load("inc/es-service-part1.php","MRSEO_ES_P1")
 p2=load("inc/es-service-part2.php","MRSEO_ES_P2")
 pages={**p1,**p2}
 assert len(p1)==10 and len(p2)==9 and len(pages)==19
-titles=[];descriptions=[];leads=[];heroes=[]
+titles=[];descriptions=[];leads=[];heroes=[];intros=[]
 for slug,page in pages.items():
     assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",slug),slug
     for field in ("title","description","kicker","lead","intro","introText","risk","cta"):
@@ -27,7 +27,10 @@ for slug,page in pages.items():
     assert len(page["example"])==4 and page["example"][0]=="EJEMPLO DE SITUACIÓN",(slug,"example")
     assert len(page["visual"])==3 and len(set(page["visual"]))==3,(slug,"visual")
     titles.append(page["title"]);descriptions.append(page["description"]);leads.append(page["lead"]);heroes.append(" ".join(page["hero"]))
+    assert len(page["intro"])<=88 and " — " not in page["intro"],(slug,"cluttered section heading")
+    intros.append(page["intro"])
 assert len(set(titles))==len(set(descriptions))==len(set(leads))==len(set(heroes))==19,"Duplicated Spanish commercial copy"
+assert len(set(intros))==19,"Spanish section headings must be original and concise"
 # Spanish-local Google Shopping requirement, from official Merchant Center help.
 assert "servicio de comparación de precios" in pages["google-shopping"]["lead"]
 assert "En España" in pages["google-shopping"]["faq"][0][0]
