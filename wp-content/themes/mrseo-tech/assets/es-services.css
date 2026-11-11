@@ -72,3 +72,11 @@
 }
 @media(max-width:390px){.es-svc .intl-wrap{width:calc(100% - 32px)}}
 @media(prefers-reduced-motion:reduce){.es-svc .pl-art-node{animation:none!important;transform:none!important}}
+
+/* On Spain-only service pages, hero CTA stays visible while the shared fixed
+   mobile bar moves out of the way of a visible semantic diagram. */
+@media(max-width:767px){
+ html.mrseo-es-scene-visible .mrseo-mobile-contact-bar{
+  opacity:0;visibility:hidden;pointer-events:none;
+ }
+}
