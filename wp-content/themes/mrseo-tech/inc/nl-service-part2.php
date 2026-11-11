@@ -84,9 +84,9 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
       "Na livegang controleren we redirects, belangrijke pagina's en besteltests."
     ],
     "visual": [
-      "OUDE SHOP",
+      "OUDE",
       "OVERZET",
-      "NIEUWE SHOP"
+      "NIEUWE"
     ],
     "risk": "Een platformmigratie kan tijdelijke schommelingen in organisch verkeer geven, zelfs wanneer redirects goed zijn uitgevoerd.",
     "related": [
@@ -286,7 +286,7 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
     "visual": [
       "ADVERT.",
       "AANBOD",
-      "FORMULIER"
+      "AANVRAAG"
     ],
     "risk": "Een landingspagina kan frictie verminderen, maar resultaten zijn afhankelijk van de kwaliteit van verkeer en aanbod.",
     "related": [
@@ -385,7 +385,7 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
     ],
     "visual": [
       "BEDRIJF",
-      "STRUCTUUR",
+      "SITE",
       "AANVRAAG"
     ],
     "risk": "Referenties, keurmerken en bedrijfsclaims worden alleen gepubliceerd als zij werkelijk aantoonbaar en goedgekeurd zijn.",
@@ -685,7 +685,7 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
     ],
     "visual": [
       "BRON",
-      "API / CRM",
+      "API/CRM",
       "LOGBOEK"
     ],
     "risk": "Externe API-limieten, licenties en wijzigingen bij leveranciers bepalen mede de betrouwbaarheid en onderhoudskosten.",
@@ -884,9 +884,9 @@ function mrseo_nl_service_part2(){return json_decode(<<<'MRSEO_NL_P2'
       "Een proefgroep controleert of de belangrijkste acties werken."
     ],
     "visual": [
-      "WERKPROCES",
+      "PROCES",
       "WEBAPP",
-      "RESULTAAT"
+      "UITKOMST"
     ],
     "risk": "Planning en kosten hangen sterk af van rollen, integraties en de kwaliteit van bestaande gegevens; die scope stemmen we vooraf af.",
     "related": [
