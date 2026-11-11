@@ -27,6 +27,7 @@ for slug,p in pages.items():
     assert len(p["visual"])==3 and len(set(p["visual"]))==3,(slug,"visual")
     assert len(p["related"])==2 and all(x[0]!=slug for x in p["related"]),(slug,"related")
 assert "btw" in pages["google-shopping"]["risk"].lower()
+assert "CSS" in pages["google-shopping"]["faq"][1][0] and "Comparison Shopping Service" in pages["google-shopping"]["faq"][1][1]
 assert "geen" in pages["google-ads-audit"]["risk"].lower()
 menu=read("inc/mega-menu-trial.php")
 mm=re.search(r"if\(\$locale==='nl'\)return array\(([\s\S]*?)\n\s*\);",menu)
