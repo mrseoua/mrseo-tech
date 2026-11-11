@@ -92,7 +92,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     "related": [
       [
         "woocommerce-shopify-stores",
-        "Magazine online WooCommerce și Shopify",
+        "Magazine online woocommerce și shopify",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ],
       [
@@ -192,12 +192,12 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     "related": [
       [
         "service-business-seo",
-        "SEO pentru firme de servicii",
+        "Seo pentru firme de servicii",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ],
       [
         "landing-pages",
-        "Landing page pentru campanii Google Ads",
+        "Landing page pentru campanii google ads",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ]
     ],
@@ -292,7 +292,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     "related": [
       [
         "local-google-ads",
-        "Google Ads pentru afaceri locale",
+        "Google ads pentru afaceri locale",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ],
       [
@@ -397,7 +397,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
       ],
       [
         "international-seo",
-        "SEO internațional pentru piețe europene",
+        "Seo internațional pentru piețe europene",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ]
     ],
@@ -597,7 +597,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
       ],
       [
         "api-integrations",
-        "Integrări API și automatizarea proceselor",
+        "Integrări api și automatizarea proceselor",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ]
     ],
@@ -792,7 +792,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     "related": [
       [
         "wordpress-care",
-        "Mentenanță și suport WordPress",
+        "Mentenanță și suport wordpress",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ],
       [
@@ -892,7 +892,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     "related": [
       [
         "api-integrations",
-        "Integrări API și automatizarea proceselor",
+        "Integrări api și automatizarea proceselor",
         "Un serviciu complementar pentru următoarea etapă a proiectului."
       ],
       [
