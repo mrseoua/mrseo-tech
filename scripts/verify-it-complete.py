@@ -5,7 +5,7 @@ import json,re
 root=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 def read(path):return (root/path).read_text(encoding="utf-8")
 def load(path,marker):
-    m=re.search(r"<<<'"+re.escape(marker)+r"'\n([\s\S]*?)\n"+re.escape(marker)+r";?\n",text)
+    m=re.search(r"<<<'"+re.escape(marker)+r"'\n([\s\S]*?)\n"+re.escape(marker)+r";?\n",read(path))
     assert m,(path,"missing or malformed JSON")
     return json.loads(m.group(1))
 p1=load("inc/it-service-part1.php","MRSEO_IT_P1")
