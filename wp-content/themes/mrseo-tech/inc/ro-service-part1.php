@@ -8,8 +8,8 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "description": "SEO local pentru afaceri din România: analizăm Google Business Profile, căutările pe orașe și paginile de servicii pentru a îmbunătăți traseul către contact.",
     "kicker": "SEO LOCAL PENTRU AFACERI",
     "hero": [
-      "Clienții caută în apropiere.",
-      "Te găsesc pe Google?"
+      "SEO local pentru afaceri.",
+      "Te găsesc clienții în orașul tău?"
     ],
     "lead": "Dacă ai un cabinet, un atelier sau o firmă de servicii, ai nevoie de vizibilitate în zona pe care o deservești, nu de trafic din toată țara.",
     "intro": "De ce nu apari la căutările din orașul tău?",
@@ -33,20 +33,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un instalator din Brașov apare la căutări generale, dar nu la intervenții din zona sa. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Aria de servicii",
+        "Notăm localitățile deservite și serviciile pentru care poți prelua solicitări."
       ],
       [
-        "Verificăm cauzele",
-        "Comparăm căutările pe localități cu zona reală de intervenție. Verificăm datele companiei și legăturile cu paginile relevante."
+        "Vizibilitate actuală",
+        "Examinăm interogările din Search Console și datele profilului Google."
       ],
       [
-        "Pregătim intervenția",
-        "Comparăm expresiile locale, serviciile din profil și informațiile de pe site. Stabilim responsabilitățile și criteriile de acceptare."
+        "Pagini relevante",
+        "Stabilim ce informații trebuie adăugate pe paginile locale, fără pagini artificiale pentru fiecare oraș."
       ],
       [
-        "Controlăm rezultatul",
-        "Validăm legăturile dintre profil, pagini și opțiunile de contact."
+        "Control pe mobil",
+        "Verificăm linkurile către profil, telefon și formular, apoi stabilim indicatorii de monitorizare."
       ]
     ],
     "outcomes": [
@@ -101,15 +101,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de seo local pentru afaceri"
+    "cta": "Discută promovarea locală"
   },
   "service-business-seo": {
     "title": "SEO pentru firme de servicii | MrSeo.tech",
     "description": "SEO pentru firme de servicii: structurăm paginile comerciale, răspundem întrebărilor clienților și verificăm căile către cereri de ofertă.",
     "kicker": "SEO PENTRU FIRME DE SERVICII",
     "hero": [
-      "Ai servicii bune.",
-      "Dar prea puține cereri?"
+      "SEO pentru firme de servicii.",
+      "Ai trafic, dar prea puține cereri?"
     ],
     "lead": "Un site de servicii trebuie să răspundă la întrebarea clientului înainte să îl trimită la formular. Analizăm cererea, structura și paginile care ar trebui să genereze solicitări.",
     "intro": "Ce lipsește dintre căutare și cererea de ofertă?",
@@ -133,20 +133,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "O firmă de contabilitate are o pagină comună pentru salarizare, fiscalitate și contabilitate. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Inventar comercial",
+        "Identificăm serviciile contractabile, tipurile de clienți și paginile care le prezintă."
       ],
       [
-        "Verificăm cauzele",
-        "Grupăm intențiile și stabilim pagini distincte unde există cerere. Comparăm terminologia din căutări cu oferta reală."
+        "Cerere reală",
+        "Asociem întrebările și expresiile comerciale cu paginile existente."
       ],
       [
-        "Pregătim intervenția",
-        "Separăm întrebările și serviciile, apoi construim legături către solicitările potrivite. Stabilim responsabilitățile și criteriile de acceptare."
+        "Structură și conținut",
+        "Propunem pagini separate unde intenția o cere, cu răspunsuri și legături interne."
       ],
       [
-        "Controlăm rezultatul",
-        "Verificăm paginile, metadatele și parcursul formularului."
+        "Solicitări măsurabile",
+        "Testăm traseul către ofertă și stabilim cum distingem solicitările utile."
       ]
     ],
     "outcomes": [
@@ -201,15 +201,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de seo pentru firme de servicii"
+    "cta": "Discută promovarea serviciilor"
   },
   "international-seo": {
     "title": "SEO internațional | MrSeo.tech",
     "description": "SEO internațional pentru site-uri multilingve: analizăm cererea pe țări, URL-urile, canonical, hreflang și conținutul localizat.",
     "kicker": "SEO INTERNAȚIONAL",
     "hero": [
-      "Site-ul are mai multe limbi.",
-      "Ajunge la piața corectă?"
+      "SEO internațional.",
+      "Ajungi la piața corectă?"
     ],
     "lead": "Extinderea din România spre alte piețe cere mai mult decât traduceri. Verificăm arhitectura, cererea locală, versiunile lingvistice și echivalențele reale dintre pagini.",
     "intro": "Unde se amestecă limbile și piețele?",
@@ -233,20 +233,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un magazin românesc lansează versiuni pentru Ungaria și Germania, dar Google afișează pagina românească. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Obiective pe țări",
+        "Documentăm limbi, piețe, ofertă și diferențe comerciale."
       ],
       [
-        "Verificăm cauzele",
-        "Comparăm canonical, hreflang și răspunsurile HTTP. Mapăm cererea și vocabularul comercial pe țări."
+        "Audit URL",
+        "Verificăm codurile de răspuns, canonical, hreflang și paginile corespondente."
       ],
       [
-        "Pregătim intervenția",
-        "Inventariem echivalențele, verificăm limba și destinațiile canonice. Stabilim responsabilitățile și criteriile de acceptare."
+        "Localizare",
+        "Mapăm cererea pe țări și construim un plan pentru traduceri și conținut original."
       ],
       [
-        "Controlăm rezultatul",
-        "Testăm fiecare legătură reciprocă și sitemapul."
+        "Validare reciprocă",
+        "Controlăm legăturile dintre versiuni, sitemapul și paginile fără echivalent."
       ]
     ],
     "outcomes": [
@@ -301,15 +301,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de seo internațional"
+    "cta": "Discută extinderea internațională"
   },
   "google-shopping": {
     "title": "Google Shopping și Performance Max | MrSeo.tech",
     "description": "Google Shopping și Performance Max pentru magazine online: verificăm feedul, conversiile, eligibilitatea și performanța pe produse.",
     "kicker": "GOOGLE SHOPPING ȘI PERFORMANCE MAX",
     "hero": [
-      "Produsele sunt în catalog.",
-      "Dar reclama nu vinde?"
+      "Google Shopping și Performance Max.",
+      "Catalogul tău generează vânzări?"
     ],
     "lead": "Analizăm dacă produsele eligibile, datele din Merchant Center și obiectivele din Google Ads reflectă stocul, prețurile în RON și economia reală a magazinului.",
     "intro": "Unde se pierde bugetul din catalog?",
@@ -333,20 +333,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un magazin cu accesorii auto are produse aprobate, dar campania favorizează articole cu marjă mică. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Date de produse",
+        "Verificăm identificatori, stoc, preț și destinațiile din feed."
       ],
       [
-        "Verificăm cauzele",
-        "Comparăm atributele produsului cu pagina și finalizarea comenzii. Analizăm costuri și valoarea conversiilor pe produse și categorii."
+        "Măsurarea comenzilor",
+        "Testăm valorile și identificatorii de tranzacție înainte de a interpreta ROAS."
       ],
       [
-        "Pregătim intervenția",
-        "Verificăm datele pe produse, conversiile și segmentarea disponibilă. Stabilim responsabilitățile și criteriile de acceptare."
+        "Structură și bugete",
+        "Evaluăm distribuția costurilor și definim segmentarea potrivită."
       ],
       [
-        "Controlăm rezultatul",
-        "Comparăm costurile și valoarea validată înainte și după modificările convenite."
+        "Evaluare",
+        "Comparăm cheltuieli, valoare validată și produse eligibile în intervalul convenit."
       ]
     ],
     "outcomes": [
@@ -401,15 +401,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de google shopping și performance max"
+    "cta": "Discută campaniile Shopping"
   },
   "local-google-ads": {
     "title": "Google Ads pentru afaceri locale | MrSeo.tech",
     "description": "Google Ads pentru afaceri locale din România: analiză a zonelor, termenilor de căutare, anunțurilor și conversiilor prin apeluri sau formulare.",
     "kicker": "GOOGLE ADS PENTRU AFACERI LOCALE",
     "hero": [
-      "Plătești pentru clicuri.",
-      "Primești cereri din zona ta?"
+      "Google Ads pentru afaceri locale.",
+      "Plătești pentru solicitări relevante?"
     ],
     "lead": "Campaniile pentru firme locale trebuie să ajungă la persoane din aria de lucru, cu anunțuri și pagini adaptate serviciului, nu la orice căutare asemănătoare.",
     "intro": "De ce intră apeluri din afara zonei?",
@@ -433,20 +433,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un service auto din Cluj primește apeluri pentru reparații pe care nu le oferă. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Zone și program",
+        "Documentăm aria de lucru, intervalele de răspuns și serviciile prioritare."
       ],
       [
-        "Verificăm cauzele",
-        "Verificăm setările de prezență și rapoartele geografice. Revizuim termenii reali și excluderile adecvate."
+        "Interogări și locații",
+        "Analizăm căutările reale, excluderile și rapoartele geografice."
       ],
       [
-        "Pregătim intervenția",
-        "Separăm serviciile și termenii irelevanți, apoi revizuim zonele. Stabilim responsabilitățile și criteriile de acceptare."
+        "Mesaj și destinație",
+        "Aliniem anunțurile cu oferta și paginile dedicate."
       ],
       [
-        "Controlăm rezultatul",
-        "Verificăm rapoartele geografice și solicitările calificate."
+        "Calificarea cererilor",
+        "Testăm conversiile și stabilim cum verificăm proveniența solicitărilor."
       ]
     ],
     "outcomes": [
@@ -501,14 +501,14 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de google ads pentru afaceri locale"
+    "cta": "Discută publicitatea locală"
   },
   "google-ads-audit": {
     "title": "Audit Google Ads | MrSeo.tech",
     "description": "Audit Google Ads: verificăm conversiile, costurile, structura și setările campaniilor. Primești constatări și un plan de acțiuni, fără modificări automate.",
     "kicker": "AUDIT GOOGLE ADS",
     "hero": [
-      "Bugetul se consumă.",
+      "Audit Google Ads.",
       "Știi unde se duc banii?"
     ],
     "lead": "Un audit independent verifică datele, structura, termenii de căutare și setările care pot ascunde risipă. Primești un raport prioritizat; administrarea continuă este un serviciu separat.",
@@ -533,20 +533,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "O firmă vede multe conversii, dar echipa comercială nu confirmă numărul de cereri. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Acces de citire",
+        "Stabilim obiectivele, perioada și informațiile disponibile despre vânzări."
       ],
       [
-        "Verificăm cauzele",
-        "Analizăm sursele, obiectivele primare și deduplicarea. Comparăm costurile cu obiectivele și datele disponibile."
+        "Verificare cont",
+        "Analizăm conversiile, termenii, bugetele, setările și istoricul."
       ],
       [
-        "Pregătim intervenția",
-        "Comparăm setările de conversie, tipurile de acțiuni și datele din CRM disponibile. Stabilim responsabilitățile și criteriile de acceptare."
+        "Raport prioritizat",
+        "Separăm erorile confirmate de ipotezele care trebuie testate."
       ],
       [
-        "Controlăm rezultatul",
-        "Documentăm diferențele și propunem o metodă de măsurare corectă."
+        "Plan de urmărire",
+        "Predăm recomandările și indicatorii pentru verificarea implementării ulterioare."
       ]
     ],
     "outcomes": [
@@ -601,15 +601,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de audit google ads"
+    "cta": "Solicită auditul Google Ads"
   },
   "merchant-center-help": {
     "title": "Rezolvarea problemelor Google Merchant Center | MrSeo.tech",
     "description": "Ajutor Google Merchant Center: diagnosticăm respingerile, diferențele de preț și stoc, datele produselor și problemele de eligibilitate.",
     "kicker": "REZOLVAREA PROBLEMELOR GOOGLE MERCHANT CENTER",
     "hero": [
-      "Produsele sunt respinse.",
-      "Găsim cauza, nu o ocolim."
+      "Google Merchant Center.",
+      "De ce sunt respinse produsele?"
     ],
     "lead": "Produsele din România trebuie să aibă date coerente în feed, pe site și la finalizarea comenzii. Identificăm tipul de problemă și stabilim remedieri documentate.",
     "intro": "De ce nu sunt eligibile produsele?",
@@ -633,20 +633,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un magazin actualizează stocul de două ori pe zi, dar pagina produsului și feedul diferă. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Identificare notificări",
+        "Separăm problemele de cont de erorile la nivel de produs."
       ],
       [
-        "Verificăm cauzele",
-        "Testăm pagina, variantele și traseul până la comandă. Verificăm cerințele pentru tipurile de produse afectate."
+        "Compararea surselor",
+        "Verificăm atributele, pagina, variantele și informațiile de la comandă."
       ],
       [
-        "Pregătim intervenția",
-        "Comparam orele de actualizare, variantele și disponibilitatea reală. Stabilim responsabilitățile și criteriile de acceptare."
+        "Remediere documentată",
+        "Stabilim modificările necesare și responsabilitățile din feed sau site."
       ],
       [
-        "Controlăm rezultatul",
-        "Verificăm eșantioane după sincronizare și urmărim diagnosticul."
+        "Control de eligibilitate",
+        "Verificăm eșantioanele și diagnosticul înaintea unei eventuale solicitări de revizuire."
       ]
     ],
     "outcomes": [
@@ -680,7 +680,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     "example": [
       "SITUAȚIE ILUSTRATIVĂ",
       "Un magazin actualizează stocul de două ori pe zi, dar pagina produsului și feedul diferă.",
-      "Comparam orele de actualizare, variantele și disponibilitatea reală.",
+      "Comparăm orele de actualizare, variantele și disponibilitatea reală.",
       "Verificăm eșantioane după sincronizare și urmărim diagnosticul."
     ],
     "visual": [
@@ -701,15 +701,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de rezolvarea problemelor google merchant center"
+    "cta": "Discută problemele Merchant Center"
   },
   "woocommerce-shopify-stores": {
     "title": "Magazine WooCommerce și Shopify | MrSeo.tech",
     "description": "Dezvoltare magazine WooCommerce și Shopify: catalog, coș, plăți, livrare, integrarea sistemelor și verificări înainte de lansare.",
     "kicker": "MAGAZINE WOOCOMMERCE ȘI SHOPIFY",
     "hero": [
-      "Alegi platforma.",
-      "Dar cum va funcționa magazinul?"
+      "Magazine WooCommerce și Shopify.",
+      "Cum construim un magazin funcțional?"
     ],
     "lead": "Construim sau adaptăm magazine pe WooCommerce și Shopify pornind de la catalog, plăți, livrare, administrare și integrarea cu sistemele firmei, nu doar de la aspect.",
     "intro": "Ce trebuie să funcționeze înainte de lansare?",
@@ -733,20 +733,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un comerciant cu variante de mărime și culoare vrea să treacă de la un site simplu la un magazin. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Cerințe și platformă",
+        "Comparăm catalogul, costurile, administrarea și integrările necesare."
       ],
       [
-        "Verificăm cauzele",
-        "Modelăm atributele și structura categoriilor. Verificăm integrările disponibile pentru plăți și curieri."
+        "Modelul catalogului",
+        "Definim atributele, variațiile, categoriile și importul de produse."
       ],
       [
-        "Pregătim intervenția",
-        "Proiectăm catalogul și testăm o comandă completă cu integrările alese. Stabilim responsabilitățile și criteriile de acceptare."
+        "Flux de cumpărare",
+        "Configurăm interfața, metodele convenite de plată și livrare."
       ],
       [
-        "Controlăm rezultatul",
-        "Validăm administrarea produselor și rezultatul comenzii."
+        "Teste și predare",
+        "Verificăm o comandă completă, notificările și operațiunile de administrare."
       ]
     ],
     "outcomes": [
@@ -801,15 +801,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de magazine woocommerce și shopify"
+    "cta": "Discută platforma magazinului"
   },
   "store-conversion": {
     "title": "Optimizarea conversiilor în magazine online | MrSeo.tech",
     "description": "Optimizarea conversiilor pentru magazine online: analizăm paginile produselor, coșul, livrarea și checkoutul, apoi propunem teste măsurabile.",
     "kicker": "OPTIMIZAREA CONVERSIILOR ÎN MAGAZINE ONLINE",
     "hero": [
-      "Vizitatorii intră.",
-      "De ce nu finalizează comanda?"
+      "Optimizarea conversiilor în magazine online.",
+      "Unde se opresc cumpărătorii?"
     ],
     "lead": "Identificăm obstacolele de cumpărare pe mobil și desktop: informații despre produs, costuri de livrare, încredere, coș și pași de plată. Prioritizăm schimbările pe dovezi.",
     "intro": "Unde se opresc cumpărătorii?",
@@ -833,20 +833,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un magazin de mobilă afișează costul transportului numai la ultima etapă. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Date inițiale",
+        "Verificăm evenimentele și etapele de cumpărare pentru a avea o bază comparabilă."
       ],
       [
-        "Verificăm cauzele",
-        "Analizăm întrebările frecvente și informațiile afișate. Verificăm transparența prețului și pașii checkoutului."
+        "Traseu cumpărător",
+        "Testăm paginile de produs, costurile, coșul și finalizarea comenzii."
       ],
       [
-        "Pregătim intervenția",
-        "Verificăm informațiile disponibile și propunem afișarea mai devreme a condițiilor. Stabilim responsabilitățile și criteriile de acceptare."
+        "Ipoteze prioritizate",
+        "Definim modificări proporționale cu problemele observate."
       ],
       [
-        "Controlăm rezultatul",
-        "Testăm traseul și comparăm datele relevante după implementare."
+        "Măsurare ulterioară",
+        "Stabilim indicatorii, perioada și limitele interpretării rezultatelor."
       ]
     ],
     "outcomes": [
@@ -901,15 +901,15 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de optimizarea conversiilor în magazine online"
+    "cta": "Discută optimizarea conversiilor"
   },
   "catalog-automation": {
     "title": "Automatizarea catalogului de produse | MrSeo.tech",
     "description": "Automatizarea catalogului: importuri, actualizări de stoc și preț, maparea atributelor, validare și jurnal de erori pentru magazine online.",
     "kicker": "AUTOMATIZAREA CATALOGULUI DE PRODUSE",
     "hero": [
-      "Stocurile se schimbă zilnic.",
-      "Datele țin pasul?"
+      "Automatizarea catalogului.",
+      "Stocurile și prețurile sunt la zi?"
     ],
     "lead": "Automatizăm transferul de produse, prețuri și disponibilitate între furnizori, magazin și canalele de vânzare. Stabilim reguli de validare și un mod clar de tratare a erorilor.",
     "intro": "Unde se strică datele produselor?",
@@ -933,20 +933,20 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un distribuitor primește liste CSV de la mai mulți furnizori, cu denumiri diferite ale coloanelor. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Inventar surse",
+        "Examinăm formatul, accesul și frecvența actualizărilor."
       ],
       [
-        "Verificăm cauzele",
-        "Stabilim cheia de asociere și regulile pentru variante. Validăm regulile de conversie și actualizare."
+        "Mapare și validare",
+        "Definim identificatorii, coloanele, monedele și regulile pentru valori lipsă."
       ],
       [
-        "Pregătim intervenția",
-        "Mapăm codurile, normalizăm valorile și izolăm înregistrările invalide. Stabilim responsabilitățile și criteriile de acceptare."
+        "Import controlat",
+        "Implementăm fluxul convenit, cu separarea înregistrărilor invalide."
       ],
       [
-        "Controlăm rezultatul",
-        "Verificăm un eșantion și jurnalul fiecărei rulări."
+        "Monitorizare",
+        "Testăm eșantioane, tratarea erorilor și informarea echipei după rulare."
       ]
     ],
     "outcomes": [
@@ -1001,7 +1001,7 @@ function mrseo_ro_service_part1(){return json_decode(<<<'MRSEO_RO_P1'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de automatizarea catalogului de produse"
+    "cta": "Discută automatizarea catalogului"
   }
 }
 MRSEO_RO_P1
