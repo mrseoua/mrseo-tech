@@ -44,6 +44,8 @@ jobs:
         run: python3 scripts/verify-cs-complete.py
       - name: Portuguese commercial landings and 25 real menu links
         run: python3 scripts/verify-pt-complete.py
+      - name: Swedish commercial landings and 25 real menu links
+        run: python3 scripts/verify-sv-complete.py
       - name: Ukrainian and Russian regression tests
         run: |
           python3 scripts/verify-ru-compact.py
