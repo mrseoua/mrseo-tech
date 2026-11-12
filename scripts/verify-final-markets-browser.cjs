@@ -61,7 +61,7 @@ async function run(){
       assert.equal(r.styledGrid,'grid',`Final-market hero grid not styled on ${slug}`);
       assert.equal(r.styledCards,'grid',`Final-market problem cards not styled on ${slug}`);
       assert.equal(r.cta,1,`contact CTA ${slug}`);
-      assert(new URL(r.heroContact,origin).pathname==='/'+locale+'/contact/',`Final-market CTA must link to real /da/contact/ ${slug}`);
+      assert(new URL(r.heroContact,origin).pathname==='/'+locale+'/contact/',`Final-market CTA must link to real local contact page ${slug}`);
      }
      if(slug==='local-seo' && [390,1440].includes(width)){
       const mega=page.locator('.mrseo-mega--trial').first();
@@ -109,7 +109,7 @@ async function run(){
    await contact.close();
   }
  }finally{await browser.close()}
- fs.writeFileSync(path.join(out,`da-diagnostics-${shard}.json`),JSON.stringify(results,null,2));
+ fs.writeFileSync(path.join(out,`${locale}-diagnostics-${shard}.json`),JSON.stringify(results,null,2));
  console.log(`Final-market browser PASS: ${locale}, shard ${shard}, ${results.length} viewports, 25 service URLs across 4 shards`);
 }
 run().catch(e=>{console.error(e.stack||e);process.exitCode=1});
