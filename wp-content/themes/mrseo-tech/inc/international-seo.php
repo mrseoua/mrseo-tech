@@ -84,6 +84,7 @@ function mrseo_i18n_page_groups() {
                 && in_array($slug,mrseo_sv_service_slugs(),true))$pages['sv']=$slug;
             if(function_exists('mrseo_da_service_slugs')
                 && in_array($slug,mrseo_da_service_slugs(),true))$pages['da']=$slug;
+        if(function_exists('mrseo_final_market_alternates'))$pages=array_merge($pages,mrseo_final_market_alternates($slug));
             $groups[]=array('group'=>'ua-service:'.$slug,'pages'=>$pages);
         }
     }
@@ -112,6 +113,7 @@ function mrseo_i18n_page_groups() {
             && in_array($slug,mrseo_sv_service_slugs(),true))$pages['sv']=$slug;
         if($slug==='service-websites' && function_exists('mrseo_da_service_slugs')
             && in_array($slug,mrseo_da_service_slugs(),true))$pages['da']=$slug;
+        if(function_exists('mrseo_final_market_alternates'))$pages=array_merge($pages,mrseo_final_market_alternates($slug));
         $groups[] = array('group' => 'three:' . $slug,'pages'=>$pages);
     }
 
@@ -148,6 +150,7 @@ function mrseo_i18n_page_groups() {
             && in_array($slug,mrseo_sv_service_slugs(),true))$pages['sv']=$slug;
         if(function_exists('mrseo_da_service_slugs')
             && in_array($slug,mrseo_da_service_slugs(),true))$pages['da']=$slug;
+        if(function_exists('mrseo_final_market_alternates'))$pages=array_merge($pages,mrseo_final_market_alternates($slug));
         $groups[] = array('group'=>'ua-ru:' . $slug,'pages'=>$pages);
     }
 
@@ -158,12 +161,12 @@ function mrseo_i18n_page_groups() {
             'en'=>'online-shop-development','pl'=>'tworzenie-sklepow-internetowych','de'=>'online-shop-development','fr'=>'online-shop-development','it'=>'online-shop-development','es'=>'online-shop-development','nl'=>'online-shop-development','ro'=>'online-shop-development','cs'=>'online-shop-development','pt'=>'online-shop-development','sv'=>'online-shop-development','da'=>'online-shop-development','fi'=>'online-shop-development','hu'=>'online-shop-development','sk'=>'online-shop-development','el'=>'online-shop-development','bg'=>'online-shop-development','hr'=>'online-shop-development'));
     $groups[] = array('group'=>'merchant-center-help',
         'pages'=>array('uk'=>'merchant-center','ru'=>'merchant-center',
-            'en'=>'merchant-center-help','pl'=>'problemy-merchant-center','de'=>'merchant-center-help','fr'=>'merchant-center-help','it'=>'merchant-center-help','es'=>'merchant-center-help','nl'=>'merchant-center-help','ro'=>'merchant-center-help','cs'=>'merchant-center-help','pt'=>'merchant-center-help','sv'=>'merchant-center-help','da'=>'merchant-center-help'));
+            'en'=>'merchant-center-help','pl'=>'problemy-merchant-center','de'=>'merchant-center-help','fr'=>'merchant-center-help','it'=>'merchant-center-help','es'=>'merchant-center-help','nl'=>'merchant-center-help','ro'=>'merchant-center-help','cs'=>'merchant-center-help','pt'=>'merchant-center-help','sv'=>'merchant-center-help','da'=>'merchant-center-help','fi'=>'merchant-center-help','hu'=>'merchant-center-help','sk'=>'merchant-center-help','el'=>'merchant-center-help','bg'=>'merchant-center-help','hr'=>'merchant-center-help'));
     $groups[] = array('group'=>'google-shopping',
         'pages'=>array('uk'=>'google-shopping','ru'=>'google-shopping',
-            'en'=>'google-shopping','pl'=>'google-shopping','de'=>'google-shopping','fr'=>'google-shopping','it'=>'google-shopping','es'=>'google-shopping','nl'=>'google-shopping','ro'=>'google-shopping','cs'=>'google-shopping','pt'=>'google-shopping','sv'=>'google-shopping','da'=>'google-shopping'));
+            'en'=>'google-shopping','pl'=>'google-shopping','de'=>'google-shopping','fr'=>'google-shopping','it'=>'google-shopping','es'=>'google-shopping','nl'=>'google-shopping','ro'=>'google-shopping','cs'=>'google-shopping','pt'=>'google-shopping','sv'=>'google-shopping','da'=>'google-shopping','fi'=>'google-shopping','hu'=>'google-shopping','sk'=>'google-shopping','el'=>'google-shopping','bg'=>'google-shopping','hr'=>'google-shopping'));
     $groups[] = array('group'=>'wordpress-maintenance',
-        'pages'=>array('en'=>'wordpress-care','pl'=>'opieka-wordpress','de'=>'wordpress-care','fr'=>'wordpress-care','it'=>'wordpress-care','es'=>'wordpress-care','nl'=>'wordpress-care','ro'=>'wordpress-care','cs'=>'wordpress-care','pt'=>'wordpress-care','sv'=>'wordpress-care','da'=>'wordpress-care'));
+        'pages'=>array('en'=>'wordpress-care','pl'=>'opieka-wordpress','de'=>'wordpress-care','fr'=>'wordpress-care','it'=>'wordpress-care','es'=>'wordpress-care','nl'=>'wordpress-care','ro'=>'wordpress-care','cs'=>'wordpress-care','pt'=>'wordpress-care','sv'=>'wordpress-care','da'=>'wordpress-care','fi'=>'wordpress-care','hu'=>'wordpress-care','sk'=>'wordpress-care','el'=>'wordpress-care','bg'=>'wordpress-care','hr'=>'wordpress-care'));
 
     // Platform-specific WooCommerce / Shopify service now has a genuine Polish counterpart.
     // Automation, API and web applications share their genuine UA/RU/EN groups.
@@ -197,6 +200,7 @@ function mrseo_i18n_page_groups() {
             && in_array('woocommerce-shopify-stores',mrseo_sv_service_slugs(),true))$pages['sv']='woocommerce-shopify-stores';
         if(function_exists('mrseo_da_service_slugs')
             && in_array('woocommerce-shopify-stores',mrseo_da_service_slugs(),true))$pages['da']='woocommerce-shopify-stores';
+        if(function_exists('mrseo_final_market_alternates'))$pages=array_merge($pages,mrseo_final_market_alternates('woocommerce-shopify-stores'));
         $groups[]=array('group'=>'platform:woocommerce-shopify','pages'=>$pages);
     }
     return $groups;

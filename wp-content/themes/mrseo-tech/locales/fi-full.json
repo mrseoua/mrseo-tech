@@ -248,57 +248,65 @@
       }
     },
     "google-ads": {
-      "title": "Google Ads -auditointi verkkokaupalle",
-      "description": "Google Ads -auditointi verkkokaupalle. Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia.",
+      "title": "Google Ads -hallinta suomalaisille yrityksille",
+      "description": "Google Ads -hallinta: hakumainonta, Shopping, Performance Max, konversiomittaus ja jatkuva kampanjoiden optimointi.",
       "eyebrow": "GOOGLE ADS",
-      "headline": "Mainonta maksaa. <em>Mitä ostoksia se tuottaa?</em>",
-      "lead": "Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia. Sen jälkeen arvioimme hakutermit, Shopping-tuotteet ja mittauksen suhteen liiketoiminnan katteisiin.",
+      "headline": "Mainonta maksaa. <em>Saavutatko oikeat asiakkaat?</em>",
+      "lead": "Hallinnoimme palveluyritysten ja verkkokauppojen Google Ads -kampanjoita. Sovimme tavoitteet, varmistamme ostojen ja yhteydenottojen mittauksen ja kehitämme kampanjoita todennettujen liiketoimintatietojen perusteella.",
       "problems": [
         [
-          "Konversiot ovat virheellisiä",
-          "Ostotapahtuma saattaa kirjautua kahdesti.",
-          "Verrata tilausnumeroita ja GA4-tapahtumia."
+          "Budjetti ilman tavoitteita",
+          "Eri kampanjat kilpailevat samasta rahasta.",
+          "Ryhmittele kampanjat palvelujen, tuotteiden ja tavoitteiden mukaan."
         ],
         [
-          "Tuotteet kuluttavat budjettia",
-          "Jotkin tuoteryhmät voivat maksaa ilman vahvistettua myyntiä.",
-          "Tarkastella kustannuksia tuotekategorioittain."
+          "Virheellinen mittaus",
+          "Klikkaukset eivät vastaa oikeita tilauksia tai yhteydenottoja.",
+          "Varmista konversiot ja laadukkaan yhteydenoton määritelmä."
         ],
         [
-          "Tuotesyöte ei täsmää",
-          "Merchant Centerin hinta tai saatavuus voi poiketa kaupasta.",
-          "Verrata syötteen tiedot tuotesivuihin."
+          "Seuranta puuttuu",
+          "Kysyntä ja kilpailu muuttuvat jatkuvasti.",
+          "Seuraa hakutermejä, kustannuksia ja sovittuja testejä."
         ]
       ],
       "outcomes": [
-        "Konversiomittauksen tarkistus",
-        "Kulusignaalien analyysi",
-        "Rajatut testattavat parannukset"
+        "Kampanjarakenne ja budjettisuunnitelma",
+        "Tarkistettu tulosten mittaus",
+        "Jatkuvan optimoinnin suunnitelma"
       ],
       "faq": [
         [
-          "Voitteko taata tietyn ROAS-arvon?",
-          "Emme. Tulokseen vaikuttavat myös katteet, markkinat ja mittauksen luotettavuus."
+          "Sisältyykö mainosbudjetti palkkioon?",
+          "Ei, mainoskulut ja hallintapalkkio ovat erillisiä."
+        ],
+        [
+          "Takaatteko tietyn ROAS-arvon?",
+          "Emme, tulokseen vaikuttavat kate, kilpailu ja datan laatu."
+        ],
+        [
+          "Voinko tilata vain auditoinnin?",
+          "Kyllä, auditointi on erillinen tehtävä ilman automaattisia tilimuutoksia."
         ]
       ],
       "offer": {
-        "title": "Selvitämme lähtötilanteen → Varmistamme vaikutukset",
-        "intro": "Ennen budjetin kasvattamista tarkistamme, mittaavatko kampanjat oikeita ostoksia. Sen jälkeen arvioimme hakutermit, Shopping-tuotteet ja mittauksen suhteen liiketoiminnan katteisiin.",
+        "title": "Kampanjasuunnitelmasta jatkuvaan optimointiin",
+        "intro": "Sovimme tavoitteet, mittarit ja budjetin ennen muutoksia.",
         "items": [
           {
-            "title": "Selvitämme lähtötilanteen",
-            "detail": "Verrata tilausnumeroita ja GA4-tapahtumia."
+            "title": "Tavoitteet ja mittaus",
+            "detail": "Määritä arvokkaat ostot ja yhteydenotot."
           },
           {
-            "title": "Priorisoimme korjaukset",
-            "detail": "Tarkastella kustannuksia tuotekategorioittain."
+            "title": "Kampanjoiden toteutus",
+            "detail": "Rakenna tai järjestele mainokset ja kohdistus sovitusti."
           },
           {
-            "title": "Varmistamme vaikutukset",
-            "detail": "Verrata syötteen tiedot tuotesivuihin."
+            "title": "Jatkuva kehittäminen",
+            "detail": "Seuraa tuloksia ja testaa perustellut muutokset."
           }
         ],
-        "cta": "Kerro verkkosivustosi ongelmasta"
+        "cta": "Keskustele Google Ads -hallinnasta"
       }
     },
     "analytics": {
@@ -626,11 +634,11 @@
       }
     },
     "contact": {
-      "title": "Ota yhteyttä verkkosivustosi ongelmasta",
-      "description": "Ota yhteyttä verkkosivustosi ongelmasta. Lähetä sivustosi osoite, kohdemaa ja esimerkki ongelmasta.",
+      "title": "Ota yhteyttä SEO:sta, mainonnasta tai verkkokehityksestä",
+      "description": "Ota yhteyttä MrSeo.tech-tiimiin verkkosivustosta, verkkokaupasta, Google Adsista tai ohjelmistokehityksestä.",
       "eyebrow": "YHTEYSTIEDOT",
       "headline": "Mikä estää <em>uusien asiakkaiden saamista?</em>",
-      "lead": "Lähetä sivustosi osoite, kohdemaa ja esimerkki ongelmasta. Lyhytkin kuvaus riittää alustavan arvion lähtökohdaksi. Kerro käyttämäsi verkkokauppa-alusta, kohdemaa ja konkreettinen esimerkki ongelmasta. Älä lähetä salasanoja.",
+      "lead": "Tarvitsetko lisää relevantteja yhteydenottoja, toimivan verkkokaupan tai apua manuaalisiin työvaiheisiin? Kerro verkkosivustostasi tai työnkulustasi, kohdemarkkinasta ja konkreettisesta ongelmasta. Älä lähetä salasanoja.",
       "problems": [],
       "outcomes": [],
       "faq": []
@@ -665,7 +673,7 @@
     "heading": "Hakukoneoptimointi, Google Ads ja verkkokehitys Suomessa",
     "description": "Jos kävijät eivät muutu tilauksiksi tai yhteydenotoiksi, lisämainonta ei aina auta. Tutkimme löydettävyyden, ostotapahtumien mittauksen ja manuaaliset työvaiheet ennen ehdotuksia.",
     "cta": "Kerro verkkosivustosi ongelmasta",
-    "brief": "Kerro käyttämäsi verkkokauppa-alusta, kohdemaa ja konkreettinen esimerkki ongelmasta. Älä lähetä salasanoja.",
+    "brief": "Kerro verkkosivustostasi tai työnkulustasi, kohdemarkkinasta ja konkreettisesta ongelmasta. Älä lähetä salasanoja.",
     "portfolioLabel": "Projektit"
   },
   "serviceLabels": {

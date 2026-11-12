@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (543 URLs)
+ * - all completed pages are represented exactly once (657 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -57,6 +57,7 @@ require_once $root . '/inc/cs-service-routing.php';
 require_once $root . '/inc/pt-service-routing.php';
 require_once $root . '/inc/sv-service-routing.php';
 require_once $root . '/inc/da-service-routing.php';
+require_once $root . '/inc/final-market-services.php';
 require_once $root . '/inc/uk-market-routing.php';
 require_once $root . '/inc/eu-routing.php';
 require_once $root . '/inc/international-seo.php';
@@ -69,7 +70,7 @@ $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
 assert_seo(count($groups) === 42, 'Expected 42 editorial equivalence groups');
-assert_seo(count($inventory) === 543, 'Expected 543 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($inventory) === 657, 'Expected 657 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
     'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs()),
@@ -86,12 +87,12 @@ $expected = [
     'pt' => array_merge(mrseo_eu_slugs(),mrseo_pt_service_slugs()),
     'sv' => array_merge(mrseo_eu_slugs(),mrseo_sv_service_slugs()),
     'da' => array_merge(mrseo_eu_slugs(),mrseo_da_service_slugs()),
-    'fi' => mrseo_eu_slugs(),
-    'hu' => mrseo_eu_slugs(),
-    'sk' => mrseo_eu_slugs(),
-    'el' => mrseo_eu_slugs(),
-    'bg' => mrseo_eu_slugs(),
-    'hr' => mrseo_eu_slugs(),
+    'fi' => array_merge(mrseo_eu_slugs(),mrseo_final_market_slugs('fi')),
+    'hu' => array_merge(mrseo_eu_slugs(),mrseo_final_market_slugs('hu')),
+    'sk' => array_merge(mrseo_eu_slugs(),mrseo_final_market_slugs('sk')),
+    'el' => array_merge(mrseo_eu_slugs(),mrseo_final_market_slugs('el')),
+    'bg' => array_merge(mrseo_eu_slugs(),mrseo_final_market_slugs('bg')),
+    'hr' => array_merge(mrseo_eu_slugs(),mrseo_final_market_slugs('hr')),
 ];
 foreach ($expected as $lang => $slugs) {
     $expected[$lang] = array_values(array_unique($slugs));
@@ -121,7 +122,7 @@ foreach ($inventory as $entry) {
         $home_count++;
     }
 }
-assert_seo(count($seen) === 543 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 657 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -220,6 +221,9 @@ foreach(mrseo_ua_website_slugs() as $slug){
     $expectedAlternates['sv-SE']='https://mrseo.tech/sv/'.$slug.'/';
    if(in_array($slug,mrseo_da_service_slugs(),true))
     $expectedAlternates['da-DK']='https://mrseo.tech/da/'.$slug.'/';
+   foreach(mrseo_final_market_codes() as $final_locale=>$final_code)
+    if(in_array($slug,mrseo_final_market_slugs($final_locale),true))
+     $expectedAlternates[$final_code]='https://mrseo.tech/'.$final_locale.'/'.$slug.'/';
   assert_seo($entry['alternates']===$expectedAlternates,
     'Wrong genuine international hreflang set '.$slug);
   $other=$language==='uk'?'ru':'uk';
@@ -267,6 +271,8 @@ foreach(mrseo_ua_website_slugs() as $slug){
    elseif($language==='da' && in_array($slug,mrseo_da_service_slugs(),true))
     assert_seo($dest==='https://mrseo.tech/da/'.$slug.'/',
      'Completed Danish equivalent is not accessible '.$slug);
+   elseif(in_array($slug,mrseo_final_market_slugs($language),true))
+    assert_seo($dest==='https://mrseo.tech/'.$language.'/'.$slug.'/', 'Completed final-market equivalent not accessible '.$language.'/'.$slug);
   else
    assert_seo($dest!=='https://mrseo.tech/'.$language.'/'.$slug.'/',
     'Invented market alternate '.$language.'/'.$slug);
@@ -308,7 +314,13 @@ foreach(array('woocommerce-shopify-stores') as $slug){
      'cs-CZ'=>'https://mrseo.tech/cs/woocommerce-shopify-stores/',
      'pt-PT'=>'https://mrseo.tech/pt/woocommerce-shopify-stores/',
      'sv-SE'=>'https://mrseo.tech/sv/woocommerce-shopify-stores/',
-     'da-DK'=>'https://mrseo.tech/da/woocommerce-shopify-stores/'),
+     'da-DK'=>'https://mrseo.tech/da/woocommerce-shopify-stores/',
+     'fi-FI'=>'https://mrseo.tech/fi/woocommerce-shopify-stores/',
+     'hu-HU'=>'https://mrseo.tech/hu/woocommerce-shopify-stores/',
+     'sk-SK'=>'https://mrseo.tech/sk/woocommerce-shopify-stores/',
+     'el-GR'=>'https://mrseo.tech/el/woocommerce-shopify-stores/',
+     'bg-BG'=>'https://mrseo.tech/bg/woocommerce-shopify-stores/',
+     'hr-HR'=>'https://mrseo.tech/hr/woocommerce-shopify-stores/'),
    'Missing genuine UK/Poland platform-store equivalents '.$slug);
 }
 // Existing UA/RU microservices now genuinely match UK: do not treat as UK-only.
@@ -329,7 +341,13 @@ foreach(array('catalog-automation','api-integrations','web-applications','ga4-co
    in_array($slug,mrseo_cs_service_slugs(),true)?array('cs-CZ'=>'https://mrseo.tech/cs/'.$slug.'/'):array(),
    in_array($slug,mrseo_pt_service_slugs(),true)?array('pt-PT'=>'https://mrseo.tech/pt/'.$slug.'/'):array(),
    in_array($slug,mrseo_sv_service_slugs(),true)?array('sv-SE'=>'https://mrseo.tech/sv/'.$slug.'/'):array(),
-   in_array($slug,mrseo_da_service_slugs(),true)?array('da-DK'=>'https://mrseo.tech/da/'.$slug.'/'):array()),
+   in_array($slug,mrseo_da_service_slugs(),true)?array('da-DK'=>'https://mrseo.tech/da/'.$slug.'/'):array(),
+   in_array($slug,mrseo_final_market_slugs('fi'),true)?array('fi-FI'=>'https://mrseo.tech/fi/'.$slug.'/'):array(),
+   in_array($slug,mrseo_final_market_slugs('hu'),true)?array('hu-HU'=>'https://mrseo.tech/hu/'.$slug.'/'):array(),
+   in_array($slug,mrseo_final_market_slugs('sk'),true)?array('sk-SK'=>'https://mrseo.tech/sk/'.$slug.'/'):array(),
+   in_array($slug,mrseo_final_market_slugs('el'),true)?array('el-GR'=>'https://mrseo.tech/el/'.$slug.'/'):array(),
+   in_array($slug,mrseo_final_market_slugs('bg'),true)?array('bg-BG'=>'https://mrseo.tech/bg/'.$slug.'/'):array(),
+   in_array($slug,mrseo_final_market_slugs('hr'),true)?array('hr-HR'=>'https://mrseo.tech/hr/'.$slug.'/'):array()),
    'Missing true international microservice match '.$slug);
 }
 // UK and Polish 'google-shopping' are real pages, not Google Ads fallbacks.

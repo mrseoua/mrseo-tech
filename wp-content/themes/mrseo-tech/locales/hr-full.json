@@ -248,57 +248,65 @@
       }
     },
     "google-ads": {
-      "title": "Google Ads revizija za web-trgovine",
-      "description": "Google Ads revizija za web-trgovine. Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi.",
+      "title": "Upravljanje Google Ads kampanjama za tvrtke u Hrvatskoj",
+      "description": "Upravljanje Google Ads kampanjama: pretraživački oglasi, Shopping, Performance Max, mjerenje konverzija i stalna optimizacija.",
       "eyebrow": "GOOGLE ADS",
-      "headline": "Oglašavanje troši proračun. <em>Što stvarno donosi?</em>",
-      "lead": "Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi. Zatim analiziramo kampanje, Shopping proizvode i kvalitetu Merchant Center podataka.",
+      "headline": "Ulažete u oglašavanje. <em>Dosežete li prave kupce?</em>",
+      "lead": "Upravljamo Google Ads kampanjama za uslužne tvrtke i web-trgovine. Dogovaramo ciljeve, provjeravamo kupnje i upite te razvijamo kampanje prema potvrđenim poslovnim podacima.",
       "problems": [
         [
-          "Pogrešne konverzije",
-          "Dvostruki događaji kupnje mogu zavesti algoritam.",
-          "Usporediti ID narudžbi i GA4 događaje."
+          "Proračun bez jasnog cilja",
+          "Kampanje se natječu za potrošnju bez prioriteta.",
+          "Organiziramo kampanje prema uslugama, proizvodima i ciljevima."
         ],
         [
-          "Trošak bez potvrđene vrijednosti",
-          "Određene kategorije mogu trošiti bez prodaje.",
-          "Pregledati trošak po proizvodnim skupinama."
+          "Pogrešno mjerenje",
+          "Klikovi ne odgovaraju stvarnim kupnjama ili upitima.",
+          "Provjeravamo konverzije i kriterije relevantnog kontakta."
         ],
         [
-          "Netočni podaci u feedu",
-          "Cijene ili zalihe ne odgovaraju web-stranici.",
-          "Provjeriti Merchant Center i proizvode."
+          "Nedostatak praćenja",
+          "Potražnja i konkurencija se mijenjaju.",
+          "Pratimo pojmove pretrage, troškove i dogovorene testove."
         ]
       ],
       "outcomes": [
-        "Kontrola signala za optimizaciju",
-        "Procjena spornih troškova",
-        "Mjerljivi testovi kampanja"
+        "Struktura kampanja i plan proračuna",
+        "Provjereno mjerenje rezultata",
+        "Plan kontinuirane optimizacije"
       ],
       "faq": [
         [
-          "Možete li jamčiti ROAS?",
-          "Ne. Učinak ovisi o marži, tržištu i kvaliteti mjerenja."
+          "Je li oglasni proračun uključen u naknadu?",
+          "Ne, trošak oglašavanja i naknada za upravljanje su odvojeni."
+        ],
+        [
+          "Jamčite li ROAS?",
+          "Ne, utječu marža, konkurencija i kvaliteta podataka."
+        ],
+        [
+          "Mogu li naručiti samo reviziju?",
+          "Da, revizija je zaseban zadatak bez automatskih promjena računa."
         ]
       ],
       "offer": {
-        "title": "Provjera stanja → Provjera učinka",
-        "intro": "Prije povećanja ulaganja provjeravamo točnost mjerenja narudžbi. Zatim analiziramo kampanje, Shopping proizvode i kvalitetu Merchant Center podataka.",
+        "title": "Od plana kampanja do kontinuirane optimizacije",
+        "intro": "Prije promjena dogovaramo ciljeve, mjerenje i proračun.",
         "items": [
           {
-            "title": "Provjera stanja",
-            "detail": "Usporediti ID narudžbi i GA4 događaje."
+            "title": "Ciljevi i mjerenje",
+            "detail": "Definiramo vrijedne kupnje i relevantne upite."
           },
           {
-            "title": "Plan prioritetnih izmjena",
-            "detail": "Pregledati trošak po proizvodnim skupinama."
+            "title": "Upravljanje kampanjama",
+            "detail": "Izrađujemo i vodimo dogovorene kampanje."
           },
           {
-            "title": "Provjera učinka",
-            "detail": "Provjeriti Merchant Center i proizvode."
+            "title": "Kontinuirano poboljšanje",
+            "detail": "Pratimo rezultate i testiramo opravdane promjene."
           }
         ],
-        "cta": "Opišite problem svojeg weba"
+        "cta": "Razgovarajmo o upravljanju Google Ads"
       }
     },
     "analytics": {
@@ -626,11 +634,11 @@
       }
     },
     "contact": {
-      "title": "Kontaktirajte nas i opišite svoj projekt",
-      "description": "Kontaktirajte nas i opišite svoj projekt. Pošaljite adresu web-stranice, tržište i konkretan primjer problema.",
+      "title": "Kontakt za SEO, oglašavanje ili web razvoj",
+      "description": "Kontaktirajte MrSeo.tech za SEO, Google Ads, web, web-trgovinu ili razvoj sustava.",
       "eyebrow": "KONTAKT",
       "headline": "Što sprječava <em>nove upite i narudžbe?</em>",
-      "lead": "Pošaljite adresu web-stranice, tržište i konkretan primjer problema. Nije potrebno dijeliti pristupne podatke. Navedite platformu web-trgovine, tržište i primjer poteškoće. Ne šaljite lozinke.",
+      "lead": "Trebate li više relevantnih upita, bolje oglase, novi web ili automatizaciju radnog procesa? Opišite web ili radni proces, ciljano tržište i konkretan problem. Ne šaljite lozinke.",
       "problems": [],
       "outcomes": [],
       "faq": []
@@ -665,7 +673,7 @@
     "heading": "SEO, Google Ads i web razvoj za tvrtke u Hrvatskoj",
     "description": "Ako se posjeti ne pretvaraju u narudžbe i upite, dodatno oglašavanje nije uvijek rješenje. Provjeravamo vidljivost, mjerenje kupnji i poslovne procese prije prijedloga rada.",
     "cta": "Opišite problem svojeg weba",
-    "brief": "Navedite platformu web-trgovine, tržište i primjer poteškoće. Ne šaljite lozinke.",
+    "brief": "Opišite web ili radni proces, ciljano tržište i konkretan problem. Ne šaljite lozinke.",
     "portfolioLabel": "Projekti"
   },
   "serviceLabels": {

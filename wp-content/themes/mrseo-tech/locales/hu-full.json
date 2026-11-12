@@ -248,57 +248,65 @@
       }
     },
     "google-ads": {
-      "title": "Google Ads és Shopping kampányok auditálása",
-      "description": "Google Ads és Shopping kampányok auditálása. A kampányok optimalizálása előtt a konverziókat kell ellenőrizni.",
+      "title": "Google Ads kezelés magyar vállalkozásoknak",
+      "description": "Google Ads kezelés: keresési kampányok, Shopping, Performance Max, konverziómérés és folyamatos optimalizálás.",
       "eyebrow": "GOOGLE ADS",
-      "headline": "Költ a hirdetésre. <em>Milyen rendeléseket hoz?</em>",
-      "lead": "A kampányok optimalizálása előtt a konverziókat kell ellenőrizni. Ezt követően vizsgáljuk a keresési kifejezéseket, a Shopping-termékeket és a költés üzleti értékét.",
+      "headline": "Költ a hirdetésre. <em>Eléri a megfelelő ügyfeleket?</em>",
+      "lead": "Szolgáltató cégek és webáruházak Google Ads kampányait kezeljük. Egyeztetjük a célokat, ellenőrizzük a vásárlások és megkeresések mérését, majd a bizonyított üzleti adatok szerint fejlesztjük a kampányokat.",
       "problems": [
         [
-          "Hibás vásárlásmérés",
-          "A duplikált esemény rossz licitálási jelet adhat.",
-          "Összehasonlítani a valós rendeléseket a méréssel."
+          "Keret világos cél nélkül",
+          "A kampányok egymással versenyeznek a költésért.",
+          "Rendezzük a kampányokat szolgáltatás, termék és üzleti cél szerint."
         ],
         [
-          "Költés eredmény nélkül",
-          "Egyes termékek felemésztik a keretet igazolt bevétel nélkül.",
-          "Elemezni a termékcsoportok költségét."
+          "Hibás eredménymérés",
+          "Kattintások szerepelnek valódi vásárlások vagy érdeklődések helyett.",
+          "Ellenőrizzük a konverziókat és releváns megkereséseket."
         ],
         [
-          "Eltérő feed-adatok",
-          "A Merchant Center ára vagy készlete eltérhet az oldaltól.",
-          "Ellenőrizni a termékadatokat és céloldalakat."
+          "Hiányzó utánkövetés",
+          "A kereslet és a verseny változik, de a kampány nem.",
+          "Követjük a kereséseket, költségeket és egyeztetett teszteket."
         ]
       ],
       "outcomes": [
-        "Konverziómérési hibák feltárása",
-        "Kiadások termékszintű elemzése",
-        "Mérhető kampánytesztek"
+        "Kampánystruktúra és költségkeret",
+        "Ellenőrzött eredménymérés",
+        "Folyamatos optimalizálási terv"
       ],
       "faq": [
         [
+          "A hirdetési keret benne van a díjban?",
+          "Nem, a költés és kezelési díj külön tétel."
+        ],
+        [
           "Garantálják a ROAS-t?",
-          "Nem. A megtérülés függ a piaci helyzettől, az árréstől és a mérés pontosságától."
+          "Nem, árrés, verseny és adatminőség is számít."
+        ],
+        [
+          "Rendelhető csak audit?",
+          "Igen, az önálló audit nem jár automatikus fiókmódosítással."
         ]
       ],
       "offer": {
-        "title": "A tények ellenőrzése → Eredmények visszamérése",
-        "intro": "A kampányok optimalizálása előtt a konverziókat kell ellenőrizni. Ezt követően vizsgáljuk a keresési kifejezéseket, a Shopping-termékeket és a költés üzleti értékét.",
+        "title": "Kampánytervtől a folyamatos optimalizálásig",
+        "intro": "A változtatások előtt rögzítjük a célokat, mérést és keretet.",
         "items": [
           {
-            "title": "A tények ellenőrzése",
-            "detail": "Összehasonlítani a valós rendeléseket a méréssel."
+            "title": "Célok és mérés",
+            "detail": "Határozzuk meg az értékes rendelést és megkeresést."
           },
           {
-            "title": "Feladatok rangsorolása",
-            "detail": "Elemezni a termékcsoportok költségét."
+            "title": "Kampánykezelés",
+            "detail": "Felépítjük és kezeljük az egyeztetett kampányokat."
           },
           {
-            "title": "Eredmények visszamérése",
-            "detail": "Ellenőrizni a termékadatokat és céloldalakat."
+            "title": "Folyamatos fejlesztés",
+            "detail": "Követjük az eredményeket és teszteljük a módosításokat."
           }
         ],
-        "cta": "Írja le a problémát"
+        "cta": "Beszéljünk a Google Ads kezelésről"
       }
     },
     "analytics": {
@@ -626,11 +634,11 @@
       }
     },
     "contact": {
-      "title": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban",
-      "description": "Kapcsolatfelvétel weboldallal vagy hirdetéssel kapcsolatban. Küldje el weboldala címét, a célpiacot és egy konkrét példát a hibára.",
+      "title": "Kapcsolat SEO, hirdetés vagy webfejlesztés ügyében",
+      "description": "Vegye fel a kapcsolatot a MrSeo.tech csapatával SEO, Google Ads, weboldal vagy egyedi fejlesztés ügyében.",
       "eyebrow": "KAPCSOLAT",
       "headline": "Mi akadályozza <em>az új ügyfelek érkezését?</em>",
-      "lead": "Küldje el weboldala címét, a célpiacot és egy konkrét példát a hibára. Rövid leírás is elegendő a kiinduló helyzet felméréséhez. Írja meg a webáruház platformját, a célpiacot és a konkrét hibát. Ne osszon meg jelszavakat.",
+      "lead": "Több releváns megkeresésre, jobb hirdetésre, új weboldalra vagy automatizált munkafolyamatra van szüksége? Írja le weboldalát vagy munkafolyamatát, a célpiacot és a konkrét problémát. Ne osszon meg jelszavakat.",
       "problems": [],
       "outcomes": [],
       "faq": []
@@ -665,7 +673,7 @@
     "heading": "SEO, Google Ads és webfejlesztés magyar vállalkozásoknak",
     "description": "Ha a látogatók nem válnak megrendelőkké, a nagyobb reklámköltés önmagában nem megoldás. Megvizsgáljuk a keresési láthatóságot, a konverziómérést és a kézi folyamatokat.",
     "cta": "Írja le a problémát",
-    "brief": "Írja meg a webáruház platformját, a célpiacot és a konkrét hibát. Ne osszon meg jelszavakat.",
+    "brief": "Írja le weboldalát vagy munkafolyamatát, a célpiacot és a konkrét problémát. Ne osszon meg jelszavakat.",
     "portfolioLabel": "Projektek"
   },
   "serviceLabels": {

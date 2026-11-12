@@ -46,7 +46,7 @@ add_action('wp_enqueue_scripts',function(){
     // The market-specific CSS remains scoped to EU interior pages only.
     if(mrseo_slug()==='')return;
     wp_enqueue_style('mrseo-eu-expansion',get_template_directory_uri().'/assets/eu-expansion.css',
-        array('mrseo-language-dropdown'),'1.0.4');
+        array('mrseo-language-dropdown'),'1.0.5');
     // Only real service pages load their subject-specific, mobile-ready hero scene.
     if(in_array(mrseo_slug(),array('seo','seo-audit','ecommerce-seo','google-ads','analytics','web-development','website-design','online-shop-development'),true)){
         wp_enqueue_style('mrseo-eu-service-scenes',get_template_directory_uri().'/assets/eu-service-scenes.css',

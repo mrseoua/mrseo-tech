@@ -203,3 +203,8 @@
 .mrseo-eu .eu-contact-assurance .eu-text-link{flex:none}
 @media(max-width:1120px){.mrseo-eu .eu-hero--contact .eu-hero-grid{grid-template-columns:1fr;gap:28px}.mrseo-eu .eu-hero--contact .eu-hero-copy{padding-top:0}.mrseo-eu .eu-hero-contact{max-width:750px}}
 @media(max-width:650px){.mrseo-eu .eu-hero--contact{padding-top:46px;padding-bottom:48px}.mrseo-eu .eu-hero-contact .eu-form-panel{padding:20px}.mrseo-eu .eu-contact-assurance{padding:37px 0 50px}.mrseo-eu .eu-contact-assurance-inner{display:block}.mrseo-eu .eu-contact-assurance .eu-text-link{display:inline-block;margin-top:15px}}
+
+/* Long localized commercial headings must not expand the mobile grid track. */
+.mrseo-eu .eu-market-heading>div{min-width:0;max-width:100%}
+.mrseo-eu .eu-market-heading h2,.mrseo-eu .eu-market-heading p,.mrseo-eu .eu-market-heading .eu-text-link{overflow-wrap:anywhere;hyphens:auto}
+@media(max-width:790px){.mrseo-eu .eu-market-heading{grid-template-columns:minmax(0,1fr)}}

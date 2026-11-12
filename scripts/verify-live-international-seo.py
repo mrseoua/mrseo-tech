@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 543
+EXPECTED_PAGES = 657
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -43,6 +43,12 @@ SAMPLE = [
     "/sv/api-integrations/", "/sv/web-applications/",
     "/da/local-seo/", "/da/google-shopping/", "/da/woocommerce-shopify-stores/",
     "/da/api-integrations/", "/da/web-applications/",
+    "/fi/local-seo/", "/fi/google-shopping/", "/fi/woocommerce-shopify-stores/", "/fi/api-integrations/", "/fi/web-applications/",
+    "/hu/local-seo/", "/hu/google-shopping/", "/hu/woocommerce-shopify-stores/", "/hu/api-integrations/", "/hu/web-applications/",
+    "/sk/local-seo/", "/sk/google-shopping/", "/sk/woocommerce-shopify-stores/", "/sk/api-integrations/", "/sk/web-applications/",
+    "/el/local-seo/", "/el/google-shopping/", "/el/woocommerce-shopify-stores/", "/el/api-integrations/", "/el/web-applications/",
+    "/bg/local-seo/", "/bg/google-shopping/", "/bg/woocommerce-shopify-stores/", "/bg/api-integrations/", "/bg/web-applications/",
+    "/hr/local-seo/", "/hr/google-shopping/", "/hr/woocommerce-shopify-stores/", "/hr/api-integrations/", "/hr/web-applications/",
     "/en/google-shopping/", "/pl/google-shopping/", "/google-shopping/",
     "/ru/google-shopping/", "/pl/problemy-merchant-center/",
     "/en/merchant-center-help/", "/ru/merchant-center/",
@@ -216,6 +222,7 @@ SV_MATCHED = set(PT_MATCHED)
 SV_ALL_NEW = set(PT_ALL_NEW)
 DA_MATCHED = set(SV_MATCHED)
 DA_ALL_NEW = set(SV_ALL_NEW)
+FINAL_MARKETS = {"fi":"fi-FI","hu":"hu-HU","sk":"sk-SK","el":"el-GR","bg":"bg-BG","hr":"hr-HR"}
 DE_ALL_NEW = {
     "local-seo", "service-business-seo", "international-seo",
     "google-shopping", "local-google-ads", "google-ads-audit",
@@ -262,6 +269,8 @@ def assert_paired_ru_pages(sitemap):
             expected["sv-SE"] = HOST + "/sv/" + slug + "/"
         if slug in DA_MATCHED:
             expected["da-DK"] = HOST + "/da/" + slug + "/"
+            for locale, code in FINAL_MARKETS.items():
+                expected[code] = HOST + "/" + locale + "/" + slug + "/"
         if slug == "google-ads-audit":
             if sitemap.get(HOST + "/en/google-ads-audit/") != expected:
                 fail("UK Ads audit not reciprocal with UA/RU/PL/DE")
@@ -382,7 +391,13 @@ if __name__ == "__main__":
                         "cs-CZ": HOST + "/cs/woocommerce-shopify-stores/",
                         "pt-PT": HOST + "/pt/woocommerce-shopify-stores/",
                         "sv-SE": HOST + "/sv/woocommerce-shopify-stores/",
-                        "da-DK": HOST + "/da/woocommerce-shopify-stores/"}
+                        "da-DK": HOST + "/da/woocommerce-shopify-stores/",
+                        "fi-FI": HOST + "/fi/woocommerce-shopify-stores/",
+                        "hu-HU": HOST + "/hu/woocommerce-shopify-stores/",
+                        "sk-SK": HOST + "/sk/woocommerce-shopify-stores/",
+                        "el-GR": HOST + "/el/woocommerce-shopify-stores/",
+                        "bg-BG": HOST + "/bg/woocommerce-shopify-stores/",
+                        "hr-HR": HOST + "/hr/woocommerce-shopify-stores/"}
         elif slug in UK_MICRO:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
@@ -409,6 +424,8 @@ if __name__ == "__main__":
                 expected["sv-SE"] = HOST + "/sv/" + slug + "/"
             if slug in DA_MATCHED:
                 expected["da-DK"] = HOST + "/da/" + slug + "/"
+                for locale, code in FINAL_MARKETS.items():
+                    expected[code] = HOST + "/" + locale + "/" + slug + "/"
         else:
             expected = {"uk-UA": HOST + "/" + slug + "/",
                         "ru": HOST + "/ru/" + slug + "/",
@@ -435,6 +452,8 @@ if __name__ == "__main__":
                 expected["sv-SE"] = HOST + "/sv/" + slug + "/"
             if slug in DA_MATCHED:
                 expected["da-DK"] = HOST + "/da/" + slug + "/"
+                for locale, code in FINAL_MARKETS.items():
+                    expected[code] = HOST + "/" + locale + "/" + slug + "/"
         if any(sitemap.get(href) != expected for href in expected.values()):
             fail(f"Unpaired real international service: {slug}")
 
@@ -488,6 +507,12 @@ if __name__ == "__main__":
         if url not in sitemap or sitemap[url].get("da-DK") != url:
             fail(f"Missing Danish canonical: {slug}")
 
+    for locale, code in FINAL_MARKETS.items():
+        for slug in DA_ALL_NEW:
+            url = HOST + "/" + locale + "/" + slug + "/"
+            if url not in sitemap or sitemap[url].get(code) != url:
+                fail(f"Missing final-market canonical: {locale}/{slug}")
+
     # Completed Germany-specific service URLs must be real canonical pages.
     for slug in DE_ALL_NEW:
         url = HOST + "/de/" + slug + "/"
@@ -506,7 +531,13 @@ if __name__ == "__main__":
                         "cs-CZ": HOST + "/cs/woocommerce-shopify-stores/",
                         "pt-PT": HOST + "/pt/woocommerce-shopify-stores/",
                         "sv-SE": HOST + "/sv/woocommerce-shopify-stores/",
-                        "da-DK": HOST + "/da/woocommerce-shopify-stores/"}
+                        "da-DK": HOST + "/da/woocommerce-shopify-stores/",
+                        "fi-FI": HOST + "/fi/woocommerce-shopify-stores/",
+                        "hu-HU": HOST + "/hu/woocommerce-shopify-stores/",
+                        "sk-SK": HOST + "/sk/woocommerce-shopify-stores/",
+                        "el-GR": HOST + "/el/woocommerce-shopify-stores/",
+                        "bg-BG": HOST + "/bg/woocommerce-shopify-stores/",
+                        "hr-HR": HOST + "/hr/woocommerce-shopify-stores/"}
     if sitemap.get(platform) != expected_platform:
         fail("PL WooCommerce and Shopify route not reciprocally matched")
 

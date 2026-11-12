@@ -145,6 +145,14 @@ jobs:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
           MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
         run: node scripts/verify-da-browser.cjs
+      - name: Verify final six markets at all three viewport sizes
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
+        run: |
+          for locale in fi hu sk el bg hr; do
+            MRSEO_FINAL_LOCALE="$locale" node scripts/verify-final-markets-browser.cjs || exit 1
+          done
       - name: Browser smoke test all 20 locales (isolated site, no public deployment)
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
@@ -175,6 +183,12 @@ jobs:
             shots/pt-*.jpg
             shots/sv-*.jpg
             shots/da-*.jpg
+            shots/fi-*.jpg
+            shots/hu-*.jpg
+            shots/sk-*.jpg
+            shots/el-*.jpg
+            shots/bg-*.jpg
+            shots/hr-*.jpg
             shots/pl-diagnostics-*.json
             shots/de-diagnostics-*.json
             shots/fr-diagnostics-*.json
@@ -186,6 +200,12 @@ jobs:
             shots/pt-diagnostics-*.json
             shots/sv-diagnostics-*.json
             shots/da-diagnostics-*.json
+            shots/fi-diagnostics-*.json
+            shots/hu-diagnostics-*.json
+            shots/sk-diagnostics-*.json
+            shots/el-diagnostics-*.json
+            shots/bg-diagnostics-*.json
+            shots/hr-diagnostics-*.json
             /tmp/mrseo-preview-server.log
           if-no-files-found: warn
           retention-days: 7

@@ -248,57 +248,65 @@
       }
     },
     "google-ads": {
-      "title": "PPC audit a Google Ads pre e-shopy",
-      "description": "PPC audit a Google Ads pre e-shopy. Pri hodnotení Google Ads a PPC začíname dátami.",
+      "title": "Správa Google Ads pre slovenské firmy",
+      "description": "Správa Google Ads: vyhľadávacie kampane, Shopping, Performance Max, meranie konverzií a priebežná optimalizácia.",
       "eyebrow": "GOOGLE ADS / PPC",
-      "headline": "Rozpočet sa míňa. <em>Čo z neho e-shop má?</em>",
-      "lead": "Pri hodnotení Google Ads a PPC začíname dátami. Overíme konverzie a objednávky, následne vyhodnotíme kampane, produktové skupiny a náklady.",
+      "headline": "Rozpočet sa míňa. <em>Oslovujete správnych zákazníkov?</em>",
+      "lead": "Spravujeme Google Ads pre služby a e-shopy. Dohodneme obchodné ciele, overíme nákupy a dopyty a priebežne rozvíjame kampane podľa overiteľných údajov.",
       "problems": [
         [
-          "Nesprávne konverzie",
-          "Duplicity môžu zavádzať automatické ponuky.",
-          "Porovnať GA4, Ads a skutočné objednávky."
+          "Rozpočet bez jasného cieľa",
+          "Kampane súťažia o rozpočet bez priorít.",
+          "Usporiadame kampane podľa služieb, produktov a cieľov."
         ],
         [
-          "Neefektívne produkty",
-          "Časť sortimentu môže spotrebovať rozpočet bez predaja.",
-          "Rozdeliť výsledky podľa produktov a marží."
+          "Chybné meranie",
+          "Kliknutia nenahrádzajú reálne nákupy alebo kontakty.",
+          "Overíme konverzie a kritériá relevantného dopytu."
         ],
         [
-          "Neaktuálne údaje vo feede",
-          "Merchant Center môže zobrazovať inú cenu či dostupnosť.",
-          "Skontrolovať synchronizáciu a produktové stránky."
+          "Chýbajúca priebežná kontrola",
+          "Dopyt a konkurencia sa menia.",
+          "Sledujeme výrazy, náklady a dohodnuté zmeny."
         ]
       ],
       "outcomes": [
-        "Kontrola merania reklamy",
-        "Identifikácia nejasných výdavkov",
-        "Návrh merateľných testov"
+        "Kampanová štruktúra a plán rozpočtu",
+        "Overené meranie výsledkov",
+        "Plán priebežnej optimalizácie"
       ],
       "faq": [
         [
-          "Viete garantovať ROAS?",
-          "Nie. Rentabilita závisí aj od ceny, marže a trhu."
+          "Je reklamný rozpočet v odmene?",
+          "Nie, náklady na reklamu a odmena sú oddelené."
+        ],
+        [
+          "Garantujete ROAS?",
+          "Nie, vplývajú marža, konkurencia a kvalita dát."
+        ],
+        [
+          "Môžem objednať iba audit?",
+          "Áno, audit je samostatný bez automatických zmien účtu."
         ]
       ],
       "offer": {
-        "title": "Analýza skutočného stavu → Overenie zmien",
-        "intro": "Pri hodnotení Google Ads a PPC začíname dátami. Overíme konverzie a objednávky, následne vyhodnotíme kampane, produktové skupiny a náklady.",
+        "title": "Od kampanového plánu k priebežnej optimalizácii",
+        "intro": "Pred zmenami dohodneme ciele, meranie a rozpočet.",
         "items": [
           {
-            "title": "Analýza skutočného stavu",
-            "detail": "Porovnať GA4, Ads a skutočné objednávky."
+            "title": "Ciele a meranie",
+            "detail": "Určíme hodnotné nákupy a relevantné dopyty."
           },
           {
-            "title": "Prioritný plán úprav",
-            "detail": "Rozdeliť výsledky podľa produktov a marží."
+            "title": "Správa kampaní",
+            "detail": "Vytvoríme a spravujeme dohodnuté kampane."
           },
           {
-            "title": "Overenie zmien",
-            "detail": "Skontrolovať synchronizáciu a produktové stránky."
+            "title": "Priebežné zlepšenia",
+            "detail": "Sledujeme výsledky a testujeme odôvodnené zmeny."
           }
         ],
-        "cta": "Opísať problém webu"
+        "cta": "Prebrať správu Google Ads"
       }
     },
     "analytics": {
@@ -626,11 +634,11 @@
       }
     },
     "contact": {
-      "title": "Kontaktujte nás a opíšte svoj problém",
-      "description": "Kontaktujte nás a opíšte svoj problém. Pošlite adresu stránky, cieľový trh a konkrétny problém.",
+      "title": "Kontakt pre SEO, reklamu alebo vývoj webu",
+      "description": "Kontaktujte MrSeo.tech v súvislosti so SEO, Google Ads, webom, e-shopom alebo vývojom systémov.",
       "eyebrow": "KONTAKT",
       "headline": "Čo bráni <em>novým zákazníckym dopytom?</em>",
-      "lead": "Pošlite adresu stránky, cieľový trh a konkrétny problém. Nie je potrebné pripravovať rozsiahle zadanie ani poskytovať prihlasovacie údaje. Uveďte platformu e-shopu, používané reklamné systémy a konkrétny problém. Neposielajte prihlasovacie heslá.",
+      "lead": "Potrebujete viac relevantných dopytov, lepšiu reklamu, nový web alebo automatizovať manuálne postupy? Opíšte svoj web alebo pracovný postup, cieľový trh a konkrétny problém. Neposielajte prihlasovacie heslá.",
       "problems": [],
       "outcomes": [],
       "faq": []
@@ -665,7 +673,7 @@
     "heading": "SEO, Google Ads a vývoj webov pre firmy na Slovensku",
     "description": "Ak reklama stojí peniaze, ale nevznikajú objednávky, problém nemusí byť iba v návštevnosti. Skontrolujeme vyhľadávanie, meranie, stránku aj procesy v e-shope.",
     "cta": "Opísať problém webu",
-    "brief": "Uveďte platformu e-shopu, používané reklamné systémy a konkrétny problém. Neposielajte prihlasovacie heslá.",
+    "brief": "Opíšte svoj web alebo pracovný postup, cieľový trh a konkrétny problém. Neposielajte prihlasovacie heslá.",
     "portfolioLabel": "Projekty"
   },
   "serviceLabels": {

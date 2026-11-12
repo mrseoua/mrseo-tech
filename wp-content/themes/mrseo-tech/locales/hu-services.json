@@ -1,0 +1,1992 @@
+{
+  "code": "hu-HU",
+  "labels": {
+    "crumb": "Navigációs útvonal",
+    "home": "Kezdőlap",
+    "work": "Így dolgozunk",
+    "note": "Először az okot tárjuk fel. Nem teszünk ellenőrizhetetlen ígéreteket.",
+    "sceneEnd": "PÉLDA / FOLYAMAT",
+    "sceneStatus": "ELEMZÉS / ELLENŐRZÉS",
+    "needs": "MIT VIZSGÁLUNK",
+    "check": "ÍGY ELLENŐRIZZÜK",
+    "exampleTitle": "A konkrét problémától",
+    "exampleEm": "az ellenőrizhető megoldásig.",
+    "exampleNote": "Szemléltető példa, nem valós ügyféleredmény.",
+    "exampleCta": "Beszéljünk az Ön helyzetéről",
+    "caseLabels": [
+      "HELYZET",
+      "MEGKÖZELÍTÉS",
+      "ELLENŐRZÉS"
+    ],
+    "process": "A MUNKA MENETE",
+    "processTitle": "A feltárástól az ellenőrizhető átadásig.",
+    "processNote": "Minden lépésnek világos célja és ellenőrzési pontja van.",
+    "outcomes": "AMIT ÁTADUNK",
+    "outcomesTitle": "Kézzelfogható, ellenőrizhető eredmények.",
+    "outcomesNote": "A feladat körét előre egyeztetjük. Ezek az ellenőrizhető átadandó elemek példái.",
+    "limits": "KERETEK ÉS ELVÁRÁSOK",
+    "limitsTitle": "Mit érdemes tudni az indulás előtt?",
+    "faq": "GYAKORI KÉRDÉSEK",
+    "faqTitle": "Világos válaszok az együttműködés előtt.",
+    "related": "KAPCSOLÓDÓ SZOLGÁLTATÁSOK",
+    "relatedTitle": "A munkát kiegészítő további szolgáltatások.",
+    "contactKicker": "MRSEO.TECH / ELSŐ KAPCSOLAT",
+    "contactTitle": "Milyen problémát szeretne megoldani?",
+    "contactNote": "Írja le, mi nem működik, és küldje el a weboldal címét, ha van. A következő lépést és a feladat körét egyeztetjük, előre gyártott csomag nélkül.",
+    "exampleLabel": "SZEMLÉLTETŐ PÉLDA"
+  },
+  "nav": {
+    "seo": [
+      "SEO és keresési láthatóság",
+      "Segítünk, hogy a megfelelő ügyfelek megtalálják vállalkozását.",
+      "Helyi keresőoptimalizálás",
+      "Webáruház SEO",
+      "SEO szolgáltató vállalkozásoknak",
+      "Nemzetközi SEO",
+      "Technikai SEO audit"
+    ],
+    "ads": [
+      "Google Ads",
+      "Hirdetések világos célokkal és ellenőrizhető méréssel.",
+      "Google Ads kezelés",
+      "Google Shopping és Performance Max",
+      "Google Ads helyi vállalkozásoknak",
+      "Google Ads audit",
+      "Google Merchant Center segítség"
+    ],
+    "commerce": [
+      "Webáruházak",
+      "Építés, fejlesztés és automatizálás.",
+      "Webáruház készítés",
+      "WooCommerce és Shopify webáruház",
+      "Webáruház konverzióoptimalizálás",
+      "Termékkatalógus automatizálása",
+      "Webáruház költöztetése"
+    ],
+    "sites": [
+      "Weboldalkészítés",
+      "Weboldalak, amelyek érthetővé teszik a kínálatot.",
+      "Weboldalkészítés",
+      "Weboldalak szolgáltató cégeknek",
+      "Landing oldalak hirdetésekhez",
+      "Vállalati weboldalak és bemutatkozás",
+      "Weboldal újratervezése"
+    ],
+    "dev": [
+      "Webfejlesztés",
+      "Technikai megoldások és automatizált munkafolyamatok.",
+      "WordPress karbantartás és támogatás",
+      "API-integrációk és automatizálás",
+      "Weboldal sebessége, biztonsága és hozzáférhetősége",
+      "Egyedi webfejlesztés",
+      "Webalkalmazások, CRM és ügyfélportálok"
+    ],
+    "bottom": [
+      "Nem találja a megfelelő szolgáltatást?",
+      "Írja le a problémát vagy projektet, és megbeszéljük a következő lépést.",
+      "Beszéljünk a projektről"
+    ]
+  },
+  "pages": {
+    "local-seo": {
+      "title": "Helyi keresőoptimalizálás | MrSeo.tech",
+      "description": "Helyi keresőoptimalizálás: Összekötjük a valós szolgáltatási területet, a helyi kereséseket és az ajánlatkérés útját.",
+      "kicker": "HELYI KERESŐOPTIMALIZÁLÁS",
+      "hero": [
+        "Helyi keresőoptimalizálás.",
+        "Megtalálják Önt a közelben kereső ügyfelek?"
+      ],
+      "lead": "Egy szegedi szerviznek nem országos látogatottságra, hanem a tényleges körzetéből érkező megkeresésekre van szüksége. A Google Cégprofilt, a helyi találatokat és a kapcsolatfelvétel útját vizsgáljuk.",
+      "intro": "Miért maradnak el a környékbeli érdeklődők?",
+      "introText": "Összekötjük a valós szolgáltatási területet, a helyi kereséseket és az ajánlatkérés útját.",
+      "problems": [
+        [
+          "Túl tág célterület",
+          "Olyan településekről érkeznek látogatók, ahol nem dolgoznak.",
+          "Vesse össze a kereséseket a tényleges körzettel."
+        ],
+        [
+          "Eltérő cégadatok",
+          "A profilban és a weboldalon különböző nyitvatartás szerepel.",
+          "Ellenőrizze a kategóriákat, adatokat és linkeket."
+        ],
+        [
+          "Nehéz kapcsolatfelvétel",
+          "Mobilon nehéz megtalálni az időpontfoglalást.",
+          "Tesztelje a telefonszámot és az űrlapot."
+        ]
+      ],
+      "process": [
+        [
+          "Körzet",
+          "Határozzuk meg az ellátott területeket."
+        ],
+        [
+          "Keresés",
+          "Vizsgáljuk a helyi találatokat."
+        ],
+        [
+          "Tartalom",
+          "Pontosítjuk a releváns szolgáltatásokat."
+        ],
+        [
+          "Ellenőrzés",
+          "Teszteljük a megkeresés útját."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Helyi keresési térkép",
+          "Valós települések és szolgáltatások."
+        ],
+        [
+          "Cégprofil-javítások",
+          "Adatok és céloldalak ellenőrzése."
+        ],
+        [
+          "Kapcsolati teszt",
+          "Telefon és mobil űrlap."
+        ]
+      ],
+      "faq": [
+        [
+          "Kell külön oldal minden városra?",
+          "Csak akkor, ha valódi helyi értéket ad."
+        ],
+        [
+          "Garantált az első hely?",
+          "Nem, távolság és verseny is számít."
+        ],
+        [
+          "Milyen hozzáférés kell?",
+          "Szükség esetén jogosultság a Cégprofilhoz és a Search Console-hoz."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy szegedi műhely más megyékből kap forgalmat.",
+        "Körzethez kötött szolgáltatásokat és pontos profilt tervezünk.",
+        "Ellenőrizzük az időpontkérést és a helyi kereséseket."
+      ],
+      "visual": [
+        "KERESÉS",
+        "KÖRZET",
+        "AJÁNLAT"
+      ],
+      "risk": "Nem hozunk létre fiktív telephelyet, és nem garantálunk helyezést. A valós működési terület a kiindulópont.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO szolgáltató vállalkozásoknak",
+          "A keresési szándékra épülő szolgáltatásoldalakat, belső linkeket és ajánlatkérési útvonalat tervezzük."
+        ],
+        [
+          "service-websites",
+          "Weboldalak szolgáltató cégeknek",
+          "Valós szolgáltatási tartalmat, igazolt vállalati anyagokat és egyszerű mobil ajánlatkérést tervezünk."
+        ]
+      ],
+      "cta": "Beszéljünk a helyi SEO-ról"
+    },
+    "service-business-seo": {
+      "title": "SEO szolgáltató vállalkozásoknak | MrSeo.tech",
+      "description": "SEO szolgáltató vállalkozásoknak: A keresési szándékra épülő szolgáltatásoldalakat, belső linkeket és ajánlatkérési útvonalat tervezzük.",
+      "kicker": "SEO SZOLGÁLTATÓ VÁLLALKOZÁSOKNAK",
+      "hero": [
+        "SEO szolgáltató vállalkozásoknak.",
+        "Érti a látogató, miben tud segíteni?"
+      ],
+      "lead": "Egy könyvelőiroda többféle ügyfélproblémát old meg. Külön oldalakra rendezzük a szolgáltatásokat és a keresési szándékot, hogy az érdeklődő megtalálja a számára megfelelő ajánlatot.",
+      "intro": "Miért nem lesz a látogatóból érdeklődő?",
+      "introText": "A keresési szándékra épülő szolgáltatásoldalakat, belső linkeket és ajánlatkérési útvonalat tervezzük.",
+      "problems": [
+        [
+          "Összemosott szolgáltatások",
+          "A bérszámfejtés és a könyvelés egy oldalon szerepel.",
+          "Válassza szét a különböző keresési igényeket."
+        ],
+        [
+          "Belső szakzsargon",
+          "Az ügyfelek más kifejezésekkel keresnek.",
+          "Hasonlítsa össze az ügyfélkérdéseket és a szöveget."
+        ],
+        [
+          "Elrejtett ajánlatkérés",
+          "Az érdeklődő nem találja a következő lépést.",
+          "Vizsgálja a navigációt és az űrlapot."
+        ]
+      ],
+      "process": [
+        [
+          "Üzleti cél",
+          "Válasszuk ki a kívánt megbízásokat."
+        ],
+        [
+          "Keresési igény",
+          "Térképezzük fel a kérdéseket."
+        ],
+        [
+          "Oldalterv",
+          "Rendezzük az oldalakat és linkeket."
+        ],
+        [
+          "Kapcsolat",
+          "Teszteljük az ajánlatkérést."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Szolgáltatási térkép",
+          "Oldalak és üzleti célok."
+        ],
+        [
+          "Tartalmi terv",
+          "Címek, kérdések és linkek."
+        ],
+        [
+          "Mérési terv",
+          "A releváns érdeklődés meghatározása."
+        ]
+      ],
+      "faq": [
+        [
+          "Elég a blogírás?",
+          "Nem, ha a fontos szolgáltatásoknak nincs saját oldaluk."
+        ],
+        [
+          "Új weboldal szükséges?",
+          "Nem feltétlenül, a meglévőt értékeljük."
+        ],
+        [
+          "Hogyan előzik meg az átfedést?",
+          "Oldalanként egy fő keresési célt jelölünk ki."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy budapesti iroda csak általános könyvelési keresésekre jelenik meg.",
+        "Különválasztjuk a bérügyeket és a tanácsadást.",
+        "Ellenőrizzük az oldalak címét és az ajánlatkérési utat."
+      ],
+      "visual": [
+        "SZOLG.",
+        "KERESÉS",
+        "AJÁNLAT"
+      ],
+      "risk": "A megkereséseket az ár, a kereslet és az értékesítési folyamat is befolyásolja. Konkrét darabszámot nem ígérünk.",
+      "related": [
+        [
+          "local-seo",
+          "Helyi keresőoptimalizálás",
+          "Összekötjük a valós szolgáltatási területet, a helyi kereséseket és az ajánlatkérés útját."
+        ],
+        [
+          "service-websites",
+          "Weboldalak szolgáltató cégeknek",
+          "Valós szolgáltatási tartalmat, igazolt vállalati anyagokat és egyszerű mobil ajánlatkérést tervezünk."
+        ]
+      ],
+      "cta": "Tervezze meg szolgáltatási SEO-ját"
+    },
+    "international-seo": {
+      "title": "Nemzetközi SEO | MrSeo.tech",
+      "description": "Nemzetközi SEO: Piaconkénti tartalomtervet, canonical- és hreflang-ellenőrzést készítünk a valódi megfelelő oldalakhoz.",
+      "kicker": "NEMZETKÖZI SEO",
+      "hero": [
+        "Nemzetközi SEO.",
+        "A megfelelő nyelvi oldal jelenik meg a célpiacon?"
+      ],
+      "lead": "Egy magyar gyártó szlovák és német vásárlókat is elérhet, de a fordítás önmagában kevés. Feltárjuk a helyi keresési igényeket, a nyelvi URL-eket és az egyenértékű oldalak kapcsolatát.",
+      "intro": "Hol keverednek össze az országok jelzései?",
+      "introText": "Piaconkénti tartalomtervet, canonical- és hreflang-ellenőrzést készítünk a valódi megfelelő oldalakhoz.",
+      "problems": [
+        [
+          "Rossz nyelvi találat",
+          "Magyar termékoldal jelenik meg német keresésre.",
+          "Ellenőrizze a nyelvi jelöléseket és kanonikus címet."
+        ],
+        [
+          "Szó szerinti fordítás",
+          "A célnyelvi ügyfél más termékkifejezést használ.",
+          "Térképezze fel a helyi keresési igényeket."
+        ],
+        [
+          "Téves nyelvi pár",
+          "A nyelvváltó más szolgáltatásra visz.",
+          "Kapcsolja össze csak a ténylegesen megfelelő oldalakat."
+        ]
+      ],
+      "process": [
+        [
+          "Piacok",
+          "Határozzuk meg az országokat és kínálatot."
+        ],
+        [
+          "URL-rendszer",
+          "Ellenőrizzük a címeket és átirányításokat."
+        ],
+        [
+          "Lokalizáció",
+          "Válasszuk ki a helyi témákat."
+        ],
+        [
+          "Validálás",
+          "Teszteljük a kölcsönös nyelvi jelzéseket."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Piaci térkép",
+          "Országok, nyelvek, URL-ek."
+        ],
+        [
+          "Technikai jelentés",
+          "Canonical, hreflang és sitemap."
+        ],
+        [
+          "Tartalmi prioritás",
+          "A célpiac fontos oldalai."
+        ]
+      ],
+      "faq": [
+        [
+          "Kell országonként domain?",
+          "Nem feltétlenül, az alkönyvtár is megfelelő lehet."
+        ],
+        [
+          "A hreflang javítja a rangsort?",
+          "Segíti a nyelvi változat megértését, nem garancia."
+        ],
+        [
+          "Mi van hiányzó fordításnál?",
+          "Nem jelölünk nem létező oldalt megfelelőként."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy magyar bútorcég új szlovák kategóriát indít.",
+        "A keresésekhez és valódi termékkategóriákhoz igazítjuk a struktúrát.",
+        "Ellenőrizzük a kölcsönös hreflangot és az XML-térképet."
+      ],
+      "visual": [
+        "PIAC",
+        "NYELV",
+        "URL"
+      ],
+      "risk": "A hreflang nem garantál helyezést. A szállítás, ár és országonkénti jogi feltételek külön vizsgálandók.",
+      "related": [
+        [
+          "ecommerce-seo",
+          "Webáruház SEO",
+          "Rendezzük a kategóriákat és termékeket kereséshez."
+        ],
+        [
+          "website-design",
+          "Weboldalkészítés",
+          "Érthető és karbantartható weboldal."
+        ]
+      ],
+      "cta": "Tervezzen nemzetközi SEO-t"
+    },
+    "google-shopping": {
+      "title": "Google Shopping és Performance Max | MrSeo.tech",
+      "description": "Google Shopping és Performance Max: A Shopping-feed, a vásárlásmérés és a termékcsoportok gazdasági eredménye alapján tervezzük a kampányokat.",
+      "kicker": "GOOGLE SHOPPING ÉS PERFORMANCE MAX",
+      "hero": [
+        "Google Shopping és Performance Max.",
+        "A termékhirdetés valóban nyereséget hoz?"
+      ],
+      "lead": "A forintban mért magas hirdetési bevétel nem azonos a nyereséggel. A termékadatokat, rendeléseket, költségeket és elérhető árrésadatokat együtt vizsgáljuk, mielőtt a költségkeretet növelnénk.",
+      "intro": "Melyik termékcsoport fogyasztja a büdzsét?",
+      "introText": "A Shopping-feed, a vásárlásmérés és a termékcsoportok gazdasági eredménye alapján tervezzük a kampányokat.",
+      "problems": [
+        [
+          "Áreltérés a feedben",
+          "A HUF-ár vagy készlet eltér a termékoldaltól.",
+          "Hasonlítsa össze a feedet, a változatot és a kosarat."
+        ],
+        [
+          "Eltérő árrés",
+          "Alacsony árrésű termékek viszik el a keretet.",
+          "Vizsgálja a költséget és az igazolt értéket csoportonként."
+        ],
+        [
+          "Dupla vásárlásmérés",
+          "Egy rendelés többször jelenik meg.",
+          "Ellenőrizze a purchase eseményt és transaction_id-t."
+        ]
+      ],
+      "process": [
+        [
+          "Adat",
+          "Vizsgáljuk az árakat és azonosítókat."
+        ],
+        [
+          "Mérés",
+          "Egyeztetjük a rendelésértékeket."
+        ],
+        [
+          "Csoportosítás",
+          "Tervezzük a termék- és keretcsoportokat."
+        ],
+        [
+          "Értékelés",
+          "Összevetjük a rendeléseket a költéssel."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Feed-hibalista",
+          "Termékek és eltérések."
+        ],
+        [
+          "Kampánystruktúra",
+          "Célokhoz rendelt termékcsoportok."
+        ],
+        [
+          "Mérési ellenőrzés",
+          "Egyedi rendelések és értékek."
+        ]
+      ],
+      "faq": [
+        [
+          "Shopping vagy Performance Max?",
+          "A cél, előzmény és kontrolligény dönti el."
+        ],
+        [
+          "Mi a CSS?",
+          "A Comparison Shopping Service ár-összehasonlító szolgáltatás a Shopping rendszerében."
+        ],
+        [
+          "A hirdetési keret benne van a díjban?",
+          "Nem, a költés és munkadíj külön tétel."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy alkatrészbolt sok kis értékű terméket ad el, de az árrés kevés.",
+        "A termékcsoportok valós költségét és elérhető árrését vizsgáljuk.",
+        "Összehasonlítható időszakokon értékeljük a módosításokat."
+      ],
+      "visual": [
+        "FEED",
+        "HIRDETÉS",
+        "VÁSÁRLÁS"
+      ],
+      "risk": "A ROAS nem profit. Áfa, árrés, szállítás, visszáru és egyéb költségek is meghatározzák a nyereséget.",
+      "related": [
+        [
+          "merchant-center-help",
+          "Google Merchant Center segítség",
+          "Az elutasítás okát a termékadatok, a céloldal és a fiókszintű korlátozás szerint különítjük el."
+        ],
+        [
+          "catalog-automation",
+          "Termékkatalógus automatizálása",
+          "Stabil azonosítókat, mezőtérképet, frissítési szabályokat és hibakezelést határozunk meg."
+        ]
+      ],
+      "cta": "Vizsgáljuk meg Shopping-kampányait"
+    },
+    "local-google-ads": {
+      "title": "Google Ads helyi vállalkozásoknak | MrSeo.tech",
+      "description": "Google Ads helyi vállalkozásoknak: Valós szolgáltatási területhez, kapacitáshoz és ajánlatokhoz igazítjuk a keresési kampányokat.",
+      "kicker": "GOOGLE ADS HELYI VÁLLALKOZÁSOKNAK",
+      "hero": [
+        "Google Ads helyi vállalkozásoknak.",
+        "Olyan megkeresésekért fizet, amelyeket el tud vállalni?"
+      ],
+      "lead": "Egy debreceni klímaszerelő számára a környékbeli telepítési igény értékesebb, mint a távoli vagy álláskereső kattintás. A területi célzást, keresési kifejezéseket és megkeresésmérést hangoljuk össze.",
+      "intro": "Miért érkeznek nem megfelelő érdeklődők?",
+      "introText": "Valós szolgáltatási területhez, kapacitáshoz és ajánlatokhoz igazítjuk a keresési kampányokat.",
+      "problems": [
+        [
+          "Túl széles célzás",
+          "Más megyékből érkeznek megkeresések.",
+          "Vizsgálja a földrajzi beállításokat és helyjelentéseket."
+        ],
+        [
+          "Irreleváns keresések",
+          "A büdzsé ingyenes útmutatókra és állásokra fogy.",
+          "Elemezze a tényleges keresési kifejezéseket."
+        ],
+        [
+          "Félrevezető hívásmérés",
+          "A telefonszám-kattintás kész ügyletként szerepel.",
+          "Határozza meg a valódi érdeklődés kritériumait."
+        ]
+      ],
+      "process": [
+        [
+          "Terület",
+          "Rögzítjük a helyszíneket és időpontokat."
+        ],
+        [
+          "Kifejezések",
+          "Kizárjuk az irreleváns kereséseket."
+        ],
+        [
+          "Hirdetés",
+          "Összehangoljuk az üzenetet és céloldalt."
+        ],
+        [
+          "Minőség",
+          "Ellenőrizzük a megkeresések mérését."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Területi terv",
+          "Célzott körzetek és kizárások."
+        ],
+        [
+          "Hirdetéscsoportok",
+          "Valós szolgáltatásokhoz igazítva."
+        ],
+        [
+          "Kapcsolati mérés",
+          "Hívás és űrlap kritériumai."
+        ]
+      ],
+      "faq": [
+        [
+          "Lehet csak Debrecenben hirdetni?",
+          "Igen, a platform helyadatainak pontosságán belül."
+        ],
+        [
+          "Kell éjjel is hirdetni?",
+          "Nem, az ütemezés a kapacitástól függ."
+        ],
+        [
+          "Minden hívás konverzió?",
+          "Nem, a minősített érdeklődés külön fogalom."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy debreceni műhely olyan munkára kap hívásokat, amelyet nem végez.",
+        "Szűkítjük a keresési szándékot és pontosítjuk a hirdetést.",
+        "Ellenőrizzük az elérhető hívás- és űrlapadatokat."
+      ],
+      "visual": [
+        "KÖRZET",
+        "HIRDETÉS",
+        "HÍVÁS"
+      ],
+      "risk": "A megkeresés ára a versenytől, kereslettől, ajánlattól és utánkövetéstől függ. Fix leadárat nem garantálunk.",
+      "related": [
+        [
+          "google-ads",
+          "Google Ads kezelés",
+          "Kampánykezelés igazolt üzleti célok alapján."
+        ],
+        [
+          "landing-pages",
+          "Landing oldalak hirdetésekhez",
+          "A keresési szándék, ajánlat, mobilélmény és konverziós esemény összhangját ellenőrizzük."
+        ]
+      ],
+      "cta": "Beszéljünk a helyi hirdetésről"
+    },
+    "google-ads-audit": {
+      "title": "Google Ads audit | MrSeo.tech",
+      "description": "Google Ads audit: Elválasztjuk a bizonyított mérési hibákat, a költési kockázatokat és a tesztelendő feltevéseket.",
+      "kicker": "GOOGLE ADS AUDIT",
+      "hero": [
+        "Google Ads audit.",
+        "Tudja, mire megy el a hirdetési keret?"
+      ],
+      "lead": "Az önálló audit dokumentált problémákat és sorrendbe állított ajánlásokat ad, nem módosít automatikusan kampányokat. A konverziókat, struktúrát, kifejezéseket és költségeket üzleti cél szerint elemezzük.",
+      "intro": "Mit kell ellenőrizni a következő változtatás előtt?",
+      "introText": "Elválasztjuk a bizonyított mérési hibákat, a költési kockázatokat és a tesztelendő feltevéseket.",
+      "problems": [
+        [
+          "Hibás konverziók",
+          "Egy rendelés többször kerül a jelentésbe.",
+          "Vesse össze az elsődleges műveleteket a rendelésazonosítókkal."
+        ],
+        [
+          "Igazolatlan eredmény",
+          "A jelentett leadeket az értékesítők nem ismerik.",
+          "Hasonlítsa össze a hozzáférhető CRM- és Ads-adatokat."
+        ],
+        [
+          "Kevert célok",
+          "Különböző szolgáltatások egy keretért versenyeznek.",
+          "Vizsgálja a kampánystruktúrát és változásnaplót."
+        ]
+      ],
+      "process": [
+        [
+          "Keret",
+          "Egyeztetjük a célt és olvasási hozzáférést."
+        ],
+        [
+          "Vizsgálat",
+          "Ellenőrizzük az adatokat és beállításokat."
+        ],
+        [
+          "Sorrend",
+          "Elkülönítjük a hibát és hipotézist."
+        ],
+        [
+          "Jelentés",
+          "Rögzítjük a bizonyítékokat és teszteket."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Auditjelentés",
+          "Megfigyelések konkrét példákkal."
+        ],
+        [
+          "Prioritási lista",
+          "Kockázat és lehetséges hatás."
+        ],
+        [
+          "Ellenőrzési terv",
+          "Mérőszámok és feltételek."
+        ]
+      ],
+      "faq": [
+        [
+          "Módosítják a kampányokat?",
+          "Nem, csak külön jóváhagyással."
+        ],
+        [
+          "Melyik időszakot vizsgálják?",
+          "Az adat és szezonális változások alapján."
+        ],
+        [
+          "Garantálnak alacsonyabb költséget?",
+          "Nem, ellenőrizhető ajánlásokat adunk."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy B2B cég sok leadet lát, de kevés ajánlatkérést igazol a CRM.",
+        "A konverziós eseményeket és CRM-adatokat egyeztetjük.",
+        "Dokumentáljuk az eltérést és a mérési korrekciót."
+      ],
+      "visual": [
+        "FIÓK",
+        "AUDIT",
+        "TERV"
+      ],
+      "risk": "Az audit nem tartalmaz automatikusan kampánykezelést, megvalósítást vagy keretmódosítást. Ezek külön megbízások.",
+      "related": [
+        [
+          "google-ads",
+          "Google Ads kezelés",
+          "Kampánykezelés igazolt üzleti célok alapján."
+        ],
+        [
+          "analytics",
+          "GA4 és konverziómérés",
+          "Vásárlások és megkeresések mérésének ellenőrzése."
+        ]
+      ],
+      "cta": "Kérjen Google Ads auditot"
+    },
+    "merchant-center-help": {
+      "title": "Google Merchant Center segítség | MrSeo.tech",
+      "description": "Google Merchant Center segítség: Az elutasítás okát a termékadatok, a céloldal és a fiókszintű korlátozás szerint különítjük el.",
+      "kicker": "GOOGLE MERCHANT CENTER SEGÍTSÉG",
+      "hero": [
+        "Google Merchant Center segítség.",
+        "Miért utasítja el a Google a termékeket?"
+      ],
+      "lead": "A hibás ár, elérhetőség vagy termékazonosító megakadályozhatja a megjelenést. Megkeressük a Merchant Center jelzésének forrását a webshopban, a feedben vagy a fiók beállításaiban.",
+      "intro": "Mi akadályozza a termék jóváhagyását?",
+      "introText": "Az elutasítás okát a termékadatok, a céloldal és a fiókszintű korlátozás szerint különítjük el.",
+      "problems": [
+        [
+          "Hibás készlet",
+          "A termékváltozat rendelhetőnek látszik, de elfogyott.",
+          "Ellenőrizze a variánst, feedet és kosarat."
+        ],
+        [
+          "Hiányos adatok",
+          "A GTIN vagy kép nem felel meg az adott követelménynek.",
+          "Vesse össze a forrásadatot a termékkövetelménnyel."
+        ],
+        [
+          "Fiókkorlátozás",
+          "Egy értesítés sok terméket érint.",
+          "Vizsgálja a pontos üzenetet és weboldali cégadatokat."
+        ]
+      ],
+      "process": [
+        [
+          "Diagnózis",
+          "Elválasztjuk a termék- és fiókhibát."
+        ],
+        [
+          "Összevetés",
+          "Ellenőrizzük az adatokat és vásárlást."
+        ],
+        [
+          "Javítás",
+          "Meghatározzuk a forrásmódosítást."
+        ],
+        [
+          "Kontroll",
+          "Mintát és diagnosztikát vizsgálunk."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Hibalista",
+          "Érintett termékek és okok."
+        ],
+        [
+          "Javítási terv",
+          "Feed, forrásadat és oldal."
+        ],
+        [
+          "Ellenőrzött minták",
+          "Javított termékek tesztje."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantált a jóváhagyás?",
+          "Nem, a Google dönt."
+        ],
+        [
+          "Kell új feed?",
+          "Nem mindig, a meglévő javítható."
+        ],
+        [
+          "Új fiókkal megkerülhető?",
+          "Nem kerülünk meg korlátozást, az okot javítjuk."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy cipőbolt minden méretet készleten lévőnek küld.",
+        "A változatazonosítókat és készletfrissítést vizsgáljuk.",
+        "A javított mintákat összevetjük a diagnosztikával."
+      ],
+      "visual": [
+        "TERMÉK",
+        "HIBA",
+        "KONTROLL"
+      ],
+      "risk": "A termék vagy fiók jóváhagyását a Google dönti el. Nem ígérünk jóváhagyási határidőt vagy biztos eredményt.",
+      "related": [
+        [
+          "google-shopping",
+          "Google Shopping és Performance Max",
+          "A Shopping-feed, a vásárlásmérés és a termékcsoportok gazdasági eredménye alapján tervezzük a kampányokat."
+        ],
+        [
+          "catalog-automation",
+          "Termékkatalógus automatizálása",
+          "Stabil azonosítókat, mezőtérképet, frissítési szabályokat és hibakezelést határozunk meg."
+        ]
+      ],
+      "cta": "Kérjen Merchant Center segítséget"
+    },
+    "woocommerce-shopify-stores": {
+      "title": "WooCommerce és Shopify webáruház | MrSeo.tech",
+      "description": "WooCommerce és Shopify webáruház: Termékszerkezetet, pénztárat, rendeléskezelést és ellenőrzött integrációkat tervezünk.",
+      "kicker": "WOOCOMMERCE ÉS SHOPIFY WEBÁRUHÁZ",
+      "hero": [
+        "WooCommerce és Shopify webáruház.",
+        "A platform szolgálja a vállalkozást, ne fordítva."
+      ],
+      "lead": "A jó webshop a változatokat, fizetést, szállítást és rendeléseket egy folyamatban kezeli. A magyar fizetési és csomagküldési lehetőségeket a platform és szerződés tényleges támogatása alapján értékeljük.",
+      "intro": "Mi működjön az első rendelés előtt?",
+      "introText": "Termékszerkezetet, pénztárat, rendeléskezelést és ellenőrzött integrációkat tervezünk.",
+      "problems": [
+        [
+          "Összetett termékváltozatok",
+          "Méretek és árak nehezen tarthatók karban.",
+          "Tervezzük meg az attribútumokat és kategóriákat."
+        ],
+        [
+          "Fizetési és szállítási igény",
+          "A kiválasztott megoldás támogatása bizonytalan.",
+          "Ellenőrizzük a szolgáltatót és platformot."
+        ],
+        [
+          "Kézi rendelésfeldolgozás",
+          "A rendelést újra be kell gépelni a rendszerbe.",
+          "Határozzuk meg a szükséges adatátadást."
+        ]
+      ],
+      "process": [
+        [
+          "Követelmények",
+          "Egyeztetjük a választékot és folyamatot."
+        ],
+        [
+          "Termékmodell",
+          "Tervezzük a változatokat és importot."
+        ],
+        [
+          "Fejlesztés",
+          "Elkészítjük a megbeszélt funkciókat."
+        ],
+        [
+          "Próbarendelés",
+          "Teszteljük a fizetést és visszaigazolást."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Platformdöntés",
+          "Követelmények és költségek."
+        ],
+        [
+          "Webáruház",
+          "Katalógus, pénztár, integrációk."
+        ],
+        [
+          "Tesztjegyzőkönyv",
+          "Rendelés és fizetés."
+        ]
+      ],
+      "faq": [
+        [
+          "WooCommerce vagy Shopify?",
+          "A választék, kontroll, üzemeltetés és költség alapján döntünk."
+        ],
+        [
+          "Barion vagy SimplePay beköthető?",
+          "A szolgáltatói szerződést, platformot és technikai támogatást ellenőrizzük."
+        ],
+        [
+          "Lehet Foxpost vagy GLS szállítás?",
+          "A megfelelő integrációt és feltételeket külön vizsgáljuk."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy magyar ruhabolt méretváltozatokat és csomagpontos átvételt szeretne.",
+        "A katalógus és elérhető fizetési-szállítási megoldások alapján választunk platformot.",
+        "Teszteljük a termékválasztást, fizetést és rendelést."
+      ],
+      "visual": [
+        "KATALÓG.",
+        "PÉNZTÁR",
+        "RENDELÉS"
+      ],
+      "risk": "A szolgáltatói szerződések, előfizetések, bővítmények és szállítás külön költséggel járhatnak. A kompatibilitást előre ellenőrizzük.",
+      "related": [
+        [
+          "online-shop-development",
+          "Webáruház készítés",
+          "Katalógus, pénztár és rendeléskezelés tervezése."
+        ],
+        [
+          "store-migration",
+          "Webáruház költöztetése",
+          "Termék- és URL-migrációt, 301-es átirányításokat és ellenőrzött rendelési tesztet tervezünk."
+        ]
+      ],
+      "cta": "Tervezze meg új webáruházát"
+    },
+    "store-conversion": {
+      "title": "Webáruház konverzióoptimalizálás | MrSeo.tech",
+      "description": "Webáruház konverzióoptimalizálás: A termékoldalt, kosarat, szállítási feltételeket és vásárlásmérést a valós akadályok alapján javítjuk.",
+      "kicker": "WEBÁRUHÁZ KONVERZIÓOPTIMALIZÁLÁS",
+      "hero": [
+        "Webáruház konverzióoptimalizálás.",
+        "Miért marad félbe a vásárlás?"
+      ],
+      "lead": "A több látogató nem oldja meg a bizonytalan termékválasztást, a későn látható szállítási díjat vagy a nehézkes mobil pénztárat. A vásárlói utat és mérési adatokat együtt vizsgáljuk.",
+      "intro": "Mi akadályozza a rendelés befejezését?",
+      "introText": "A termékoldalt, kosarat, szállítási feltételeket és vásárlásmérést a valós akadályok alapján javítjuk.",
+      "problems": [
+        [
+          "Bizonytalan termékválasztás",
+          "A vevő nem tudja, melyik változat illik hozzá.",
+          "Vizsgálja a termékadatokat és gyakori kérdéseket."
+        ],
+        [
+          "Későn látható költség",
+          "A teljes szállítási díj csak a pénztárban derül ki.",
+          "Tegye egyértelművé az összköltséget."
+        ],
+        [
+          "Hiányos mérés",
+          "Nem látható, hol szakad meg a vásárlás.",
+          "Ellenőrizze az eseményeket és a rendeléseket."
+        ]
+      ],
+      "process": [
+        [
+          "Kiindulás",
+          "Egyeztetjük a mérési adatokat."
+        ],
+        [
+          "Vásárlói út",
+          "Teszteljük a terméket, kosarat, fizetést."
+        ],
+        [
+          "Prioritás",
+          "Kiválasztjuk a tényleges akadályokat."
+        ],
+        [
+          "Értékelés",
+          "Meghatározzuk az összehasonlítást."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Akadálylista",
+          "Konkrét használati problémák."
+        ],
+        [
+          "Javítási terv",
+          "Tesztelhető változtatások."
+        ],
+        [
+          "Mérési terv",
+          "Események és összehasonlítható időszakok."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantált a konverziónövekedés?",
+          "Nem, a változást adatokkal értékeljük."
+        ],
+        [
+          "Kell teljes új dizájn?",
+          "Nem, a valós akadályokkal kezdünk."
+        ],
+        [
+          "Végeznek A/B tesztet?",
+          "Ha a forgalom, technika és feladat lehetővé teszi."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy bútorbolt csak az utolsó lépésben mutat szállítási díjat.",
+        "Korábban mutatjuk meg a feltételeket és teljes árat.",
+        "Próbarendeléssel és összehasonlítható adatokkal vizsgáljuk."
+      ],
+      "visual": [
+        "TERMÉK",
+        "KOSÁR",
+        "FIZETÉS"
+      ],
+      "risk": "A konverziót az ár, készlet, szezon és forgalom minősége is befolyásolja. Egy változtatásnak nem tulajdonítunk minden hatást.",
+      "related": [
+        [
+          "analytics",
+          "GA4 és konverziómérés",
+          "Vásárlások és megkeresések mérésének ellenőrzése."
+        ],
+        [
+          "website-redesign",
+          "Weboldal újratervezése",
+          "Az értékes címek, navigáció, mobilfelület és átirányítások alapján tervezzük a modernizálást."
+        ]
+      ],
+      "cta": "Vizsgáljuk meg a vásárlói utat"
+    },
+    "catalog-automation": {
+      "title": "Termékkatalógus automatizálása | MrSeo.tech",
+      "description": "Termékkatalógus automatizálása: Stabil azonosítókat, mezőtérképet, frissítési szabályokat és hibakezelést határozunk meg.",
+      "kicker": "TERMÉKKATALÓGUS AUTOMATIZÁLÁSA",
+      "hero": [
+        "Termékkatalógus automatizálása.",
+        "Ne frissítse kézzel az árakat és készleteket."
+      ],
+      "lead": "A beszállítói fájlok eltérő cikkszámokat, formátumokat és áfabeállításokat tartalmazhatnak. Ellenőrizhető importot építünk, amely jelzi a módosított és hibás tételeket.",
+      "intro": "Hol keletkeznek a termékadat-hibák?",
+      "introText": "Stabil azonosítókat, mezőtérképet, frissítési szabályokat és hibakezelést határozunk meg.",
+      "problems": [
+        [
+          "Eltérő cikkszámok",
+          "Ugyanaz az áru több beszállítói kóddal szerepel.",
+          "Rögzítse a termék- és változatkulcsokat."
+        ],
+        [
+          "Különböző árformátum",
+          "Nettó és bruttó forintár keveredik.",
+          "Ellenőrizze a mezőket és árképzési szabályokat."
+        ],
+        [
+          "Csendes importhiba",
+          "Hibás sorok frissítés nélkül maradnak.",
+          "Tervezzen naplózást és eltéréslistát."
+        ]
+      ],
+      "process": [
+        [
+          "Források",
+          "Katalogizáljuk a fájlokat és ütemezést."
+        ],
+        [
+          "Mezők",
+          "Meghatározzuk a kulcsokat és szabályokat."
+        ],
+        [
+          "Import",
+          "Validálással építjük a feldolgozást."
+        ],
+        [
+          "Felügyelet",
+          "Teszteljük az újrafuttatást és értesítést."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Adattérkép",
+          "Forrásmezők és átalakítások."
+        ],
+        [
+          "Automatikus import",
+          "A jóváhagyott mezők frissítése."
+        ],
+        [
+          "Hibajelentés",
+          "Elutasított sorok okkal."
+        ]
+      ],
+      "faq": [
+        [
+          "CSV vagy API is használható?",
+          "Igen, ha az adat és hozzáférés megfelelő."
+        ],
+        [
+          "Mi lesz az eltűnt termékkel?",
+          "Előre rögzítjük a deaktiválás szabályát."
+        ],
+        [
+          "Csak készletet lehet frissíteni?",
+          "Igen, a módosítható mezőket korlátozzuk."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy nagykereskedő három beszállító árlistáját tölti fel.",
+        "Egységesítjük a kódokat és az ármezőket, külön kezeljük a hibákat.",
+        "Mintákkal ellenőrizzük a módosított tételeket és a naplót."
+      ],
+      "visual": [
+        "FORRÁS",
+        "SZABÁLY",
+        "KATALÓG."
+      ],
+      "risk": "Az automatizálás a forrásadat minőségétől, hozzáféréstől, API-korláttól és platformfeltételektől függ.",
+      "related": [
+        [
+          "api-integrations",
+          "API-integrációk és automatizálás",
+          "Az adatátadás szabályait, azonosítóit, hozzáférését és az ismételt feldolgozás biztonságát tervezzük."
+        ],
+        [
+          "merchant-center-help",
+          "Google Merchant Center segítség",
+          "Az elutasítás okát a termékadatok, a céloldal és a fiókszintű korlátozás szerint különítjük el."
+        ]
+      ],
+      "cta": "Automatizálja termékkatalógusát"
+    },
+    "store-migration": {
+      "title": "Webáruház költöztetése | MrSeo.tech",
+      "description": "Webáruház költöztetése: Termék- és URL-migrációt, 301-es átirányításokat és ellenőrzött rendelési tesztet tervezünk.",
+      "kicker": "WEBÁRUHÁZ KÖLTÖZTETÉSE",
+      "hero": [
+        "Webáruház költöztetése.",
+        "Váltson platformot felesleges kiesés nélkül."
+      ],
+      "lead": "Új webshop indításakor a régi termékadatok, népszerű URL-ek és rendelési funkciók nem tűnhetnek el. Feltérképezzük az adatokat, átirányításokat és próbavásárlásokat a váltás előtt.",
+      "intro": "Mit kell megőrizni a költözés során?",
+      "introText": "Termék- és URL-migrációt, 301-es átirányításokat és ellenőrzött rendelési tesztet tervezünk.",
+      "problems": [
+        [
+          "Elveszett URL-ek",
+          "A régi terméklink 404-es hibát ad.",
+          "Keresse meg a valódi új megfelelőket és átirányításokat."
+        ],
+        [
+          "Hiányos termékadat",
+          "Változatok vagy képek maradnak ki az importból.",
+          "Vizsgálja reprezentatív export- és importmintákat."
+        ],
+        [
+          "Megszakadt fizetés",
+          "A költözés után a pénztár vagy szállítás hibás.",
+          "Tesztelje elkülönített környezetben a vásárlást."
+        ]
+      ],
+      "process": [
+        [
+          "Felmérés",
+          "Leltározzuk az adatokat és címeket."
+        ],
+        [
+          "Megfeleltetés",
+          "Összerendeljük a régi és új URL-eket."
+        ],
+        [
+          "Próbaköltözés",
+          "Ellenőrizzük az importot és pénztárat."
+        ],
+        [
+          "Indítás",
+          "Követjük a fontos címeket és rendeléseket."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Migrációs leltár",
+          "Adatok és függőségek."
+        ],
+        [
+          "Átirányítási térkép",
+          "Régi címek és új célok."
+        ],
+        [
+          "Indítási terv",
+          "Teszt és utóellenőrzés."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantált a Google-helyezés?",
+          "Nem, a technikai kockázatot csökkentjük."
+        ],
+        [
+          "Átvihető régi rendszer Shopify-ra?",
+          "Először az exportot és célfunkciókat vizsgáljuk."
+        ],
+        [
+          "Átvihető a rendeléstörténet?",
+          "A két rendszer támogatásától függ."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy webshop új platformon más kategória-URL-eket kap.",
+        "Összerendeljük a címeket, adatokat és integrációkat.",
+        "Ellenőrizzük a 301-eket, rendelést és feedet az indítás után."
+      ],
+      "visual": [
+        "RÉGI",
+        "KÖLTÖZÉS",
+        "ÚJ"
+      ],
+      "risk": "A gondos migráció is okozhat átmeneti forgalomváltozást. Helyezés és visszaállás nem garantálható.",
+      "related": [
+        [
+          "woocommerce-shopify-stores",
+          "WooCommerce és Shopify webáruház",
+          "Termékszerkezetet, pénztárat, rendeléskezelést és ellenőrzött integrációkat tervezünk."
+        ],
+        [
+          "ecommerce-seo",
+          "Webáruház SEO",
+          "Rendezzük a kategóriákat és termékeket kereséshez."
+        ]
+      ],
+      "cta": "Tervezze meg webáruháza költözését"
+    },
+    "service-websites": {
+      "title": "Weboldalak szolgáltató cégeknek | MrSeo.tech",
+      "description": "Weboldalak szolgáltató cégeknek: Valós szolgáltatási tartalmat, igazolt vállalati anyagokat és egyszerű mobil ajánlatkérést tervezünk.",
+      "kicker": "WEBOLDALAK SZOLGÁLTATÓ CÉGEKNEK",
+      "hero": [
+        "Weboldalak szolgáltató cégeknek.",
+        "Megérti az ügyfél, mit kínál a vállalkozás?"
+      ],
+      "lead": "Olyan weboldalt építünk, amelyből kiderül, milyen problémára ad megoldást a szolgáltatás, milyen feltételekkel és hogyan kérhető ajánlat. A szerkezet a vevő döntési útjára épül.",
+      "intro": "Mit kell tudnia az ügyfélnek a kapcsolatfelvétel előtt?",
+      "introText": "Valós szolgáltatási tartalmat, igazolt vállalati anyagokat és egyszerű mobil ajánlatkérést tervezünk.",
+      "problems": [
+        [
+          "Homályos szolgáltatási kínálat",
+          "Az ügyfél nem tudja, melyik megoldás illik hozzá.",
+          "Rendezze külön a valós szolgáltatásokat."
+        ],
+        [
+          "Hiányzó döntési információ",
+          "A munkák tartalma és feltételei nem láthatók.",
+          "Használjon jóváhagyott vállalati anyagokat."
+        ],
+        [
+          "Bonyolult űrlap",
+          "Mobilon túl sok lépés kell az ajánlatkéréshez.",
+          "Egyszerűsítse a mezőket és tesztelje a küldést."
+        ]
+      ],
+      "process": [
+        [
+          "Cél",
+          "Egyeztetjük a kívánt ügyfeleket."
+        ],
+        [
+          "Szerkezet",
+          "Megtervezzük az oldalakat és navigációt."
+        ],
+        [
+          "Fejlesztés",
+          "Elkészítjük a reszponzív elemeket."
+        ],
+        [
+          "Átadás",
+          "Teszteljük a linkeket és űrlapot."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Oldaltérkép",
+          "Szolgáltatások és ügyfélutak."
+        ],
+        [
+          "Működő weboldal",
+          "Egyeztetett nézetek és funkciók."
+        ],
+        [
+          "Űrlapteszt",
+          "Küldés, validálás és értesítés."
+        ]
+      ],
+      "faq": [
+        [
+          "Szöveget is írnak?",
+          "A tartalmi munkát és tények jóváhagyását egyeztetjük."
+        ],
+        [
+          "WordPress használható?",
+          "Igen, ha megfelel a fenntartási igényeknek."
+        ],
+        [
+          "Jár hozzá folyamatos SEO?",
+          "A technikai alapokat egyeztetjük, a folyamatos SEO külön feladat."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy felújító cég egyetlen oldalon mutatja be a munkákat.",
+        "Külön szolgáltatási oldalakat és ajánlatkérési utat építünk.",
+        "Mobilon ellenőrizzük a navigációt és az űrlapot."
+      ],
+      "visual": [
+        "SZOLG.",
+        "OLDAL",
+        "AJÁNLAT"
+      ],
+      "risk": "Ár és határidő az oldalszámtól, tartalomtól, integrációktól és jóváhagyott anyagoktól függ.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO szolgáltató vállalkozásoknak",
+          "A keresési szándékra épülő szolgáltatásoldalakat, belső linkeket és ajánlatkérési útvonalat tervezzük."
+        ],
+        [
+          "website-design",
+          "Weboldalkészítés",
+          "Érthető és karbantartható weboldal."
+        ]
+      ],
+      "cta": "Tervezzen szolgáltatói weboldalt"
+    },
+    "landing-pages": {
+      "title": "Landing oldalak hirdetésekhez | MrSeo.tech",
+      "description": "Landing oldalak hirdetésekhez: A keresési szándék, ajánlat, mobilélmény és konverziós esemény összhangját ellenőrizzük.",
+      "kicker": "LANDING OLDALAK HIRDETÉSEKHEZ",
+      "hero": [
+        "Landing oldalak hirdetésekhez.",
+        "A hirdetési kattintásból legyen releváns megkeresés."
+      ],
+      "lead": "A céloldalnak teljesítenie kell a hirdetés ígéretét. Egy világos ajánlatot, a fontos kérdések válaszait és mérhető fő műveletet tervezünk, mobilra is.",
+      "intro": "Hol szakad meg a hirdetés és az oldal kapcsolata?",
+      "introText": "A keresési szándék, ajánlat, mobilélmény és konverziós esemény összhangját ellenőrizzük.",
+      "problems": [
+        [
+          "Rossz céloldal",
+          "Egy konkrét szolgáltatás hirdetése a főoldalra visz.",
+          "Igazítsa a címet és ajánlatot a kampányhoz."
+        ],
+        [
+          "Túl sok művelet",
+          "Különböző gombok versenyeznek a figyelemért.",
+          "Jelöljön ki egy elsődleges cselekvést."
+        ],
+        [
+          "Hibás konverzió",
+          "A gombkattintás mérhető, de az elküldött űrlap nem.",
+          "Tesztelje a küldést és sikeres eseményt."
+        ]
+      ],
+      "process": [
+        [
+          "Cél",
+          "Meghatározzuk az ajánlatot és műveletet."
+        ],
+        [
+          "Üzenet",
+          "Válaszolunk a vevő kérdéseire."
+        ],
+        [
+          "Megvalósítás",
+          "Felépítjük az oldalt és mérést."
+        ],
+        [
+          "Teszt",
+          "Ellenőrizzük a küldést és visszajelzést."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Kampányüzenet",
+          "Keresési szándékhoz illeszkedik."
+        ],
+        [
+          "Céloldal",
+          "Reszponzív és világos CTA."
+        ],
+        [
+          "Mérési teszt",
+          "Valódi űrlapesemény."
+        ]
+      ],
+      "faq": [
+        [
+          "Egy oldal jó minden kampányhoz?",
+          "Csak ha az ajánlat és szándék valóban azonos."
+        ],
+        [
+          "Kezelik a hirdetéseket is?",
+          "Igen, külön megállapodás alapján."
+        ],
+        [
+          "Lehet a saját domainen?",
+          "Gyakran igen, a hozzáférés és technika ellenőrzése után."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy napelem-karbantartási hirdetés általános energetikai oldalra visz.",
+        "Külön ajánlatot és egyértelmű kapcsolatot tervezünk.",
+        "Teszteljük a hirdetés egyezését és az űrlapmérést."
+      ],
+      "visual": [
+        "HIRDETÉS",
+        "AJÁNLAT",
+        "LEAD"
+      ],
+      "risk": "A céloldal önmagában nem garantál leadeket. A kampány, ajánlat, kereslet és válaszidő is számít.",
+      "related": [
+        [
+          "google-ads",
+          "Google Ads kezelés",
+          "Kampánykezelés igazolt üzleti célok alapján."
+        ],
+        [
+          "local-google-ads",
+          "Google Ads helyi vállalkozásoknak",
+          "Valós szolgáltatási területhez, kapacitáshoz és ajánlatokhoz igazítjuk a keresési kampányokat."
+        ]
+      ],
+      "cta": "Készítsen céloldalt kampányához"
+    },
+    "corporate-websites": {
+      "title": "Vállalati weboldalak és bemutatkozás | MrSeo.tech",
+      "description": "Vállalati weboldalak és bemutatkozás: Célcsoportok szerint szervezzük az üzletágakat, jóváhagyott referenciákat és kapcsolati útvonalakat.",
+      "kicker": "VÁLLALATI WEBOLDALAK ÉS BEMUTATKOZÁS",
+      "hero": [
+        "Vállalati weboldalak és bemutatkozás.",
+        "Mutassa meg érthetően vállalata tényleges értékét."
+      ],
+      "lead": "Egy B2B partner számára fontos a kompetencia, az üzletágak és az engedélyezett dokumentumok elérése. Úgy építjük fel az információkat, hogy a vállalat később is karban tudja tartani azokat.",
+      "intro": "Milyen információ kell a leendő partnernek?",
+      "introText": "Célcsoportok szerint szervezzük az üzletágakat, jóváhagyott referenciákat és kapcsolati útvonalakat.",
+      "problems": [
+        [
+          "Összemosott üzletágak",
+          "A látogató nem érti a különböző kínálatot.",
+          "Tervezze meg a hierarchiát a célcsoportok szerint."
+        ],
+        [
+          "Elavult anyagok",
+          "A dokumentumoknak nincs felelőse.",
+          "Leltározza a tartalmakat és frissítési feladatokat."
+        ],
+        [
+          "Rossz kapcsolat",
+          "A partner nem tudja, melyik részleghez forduljon.",
+          "Alakítson ki részlegenkénti kapcsolatot."
+        ]
+      ],
+      "process": [
+        [
+          "Anyagok",
+          "Összegyűjtjük az igazolt információkat."
+        ],
+        [
+          "Architektúra",
+          "Tervezzük a célcsoportokat és oldalakat."
+        ],
+        [
+          "Fejlesztés",
+          "Elkészítjük a sablonokat és navigációt."
+        ],
+        [
+          "Átadás",
+          "Teszteljük az információkeresést."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Információs térkép",
+          "Oldalak és dokumentumok."
+        ],
+        [
+          "Vállalati weboldal",
+          "Egységes komponensek és navigáció."
+        ],
+        [
+          "Karbantartási leírás",
+          "Tartalmi felelősségek."
+        ]
+      ],
+      "faq": [
+        [
+          "Lehet többnyelvű?",
+          "Igen, jóváhagyott tartalom és nyelvi terv alapján."
+        ],
+        [
+          "Kitehetők tanúsítványok?",
+          "Csak a vállalat által igazolt és engedélyezett anyagok."
+        ],
+        [
+          "Integrálható CRM?",
+          "A jogosultságot és adatfolyamot előzetesen értékeljük."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy magyar ipari beszállítónak külön termékágai és letölthető dokumentumai vannak.",
+        "A termékágakat és jóváhagyott anyagokat célcsoport szerint rendezzük.",
+        "Teszteljük a dokumentumkeresést és kapcsolatot."
+      ],
+      "visual": [
+        "VÁLLALAT",
+        "OLDALAK",
+        "KONTAKT"
+      ],
+      "risk": "Nem találunk ki referenciákat, irodákat, tanúsítványokat vagy eredményeket. A vállalat jóváhagyja a tényeket.",
+      "related": [
+        [
+          "website-design",
+          "Weboldalkészítés",
+          "Érthető és karbantartható weboldal."
+        ],
+        [
+          "web-applications",
+          "Webalkalmazások, CRM és ügyfélportálok",
+          "A felhasználók, adatmodell, hozzáférések és elfogadási feltételek alapján határoljuk le a fejlesztést."
+        ]
+      ],
+      "cta": "Tervezze meg vállalati weboldalát"
+    },
+    "website-redesign": {
+      "title": "Weboldal újratervezése | MrSeo.tech",
+      "description": "Weboldal újratervezése: Az értékes címek, navigáció, mobilfelület és átirányítások alapján tervezzük a modernizálást.",
+      "kicker": "WEBOLDAL ÚJRATERVEZÉSE",
+      "hero": [
+        "Weboldal újratervezése.",
+        "Újítsa meg oldalát a működő értékek elvesztése nélkül."
+      ],
+      "lead": "Egy régi honlap jó keresési forgalmat hozhat, miközben mobilon nehéz használni. Felmérjük az értékes URL-eket, tartalmakat és használati akadályokat az új dizájn előtt.",
+      "intro": "Mit kell megtartani, és mit érdemes megváltoztatni?",
+      "introText": "Az értékes címek, navigáció, mobilfelület és átirányítások alapján tervezzük a modernizálást.",
+      "problems": [
+        [
+          "Nehéz mobilhasználat",
+          "A gombok és szövegek nehezen használhatók telefonon.",
+          "Vizsgálja az olvashatóságot és navigációt."
+        ],
+        [
+          "Elrejtett információ",
+          "Fontos szolgáltatások több kattintásra vannak.",
+          "Térképezze fel a hierarchiát és belső linkeket."
+        ],
+        [
+          "SEO-veszteség kockázata",
+          "A címek változnak átirányítási terv nélkül.",
+          "Tervezze meg a valódi megfelelő URL-eket."
+        ]
+      ],
+      "process": [
+        [
+          "Felmérés",
+          "Azonosítjuk az értékes oldalakat."
+        ],
+        [
+          "Hatókör",
+          "Kiválasztjuk a megtartandó funkciókat."
+        ],
+        [
+          "Újratervezés",
+          "Elkészítjük az új komponenseket."
+        ],
+        [
+          "Teszt",
+          "Ellenőrizzük a címeket és kapcsolatot."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Kiinduló leltár",
+          "Értékes URL-ek és hibák."
+        ],
+        [
+          "Új felület",
+          "Egyeztetett sablonok."
+        ],
+        [
+          "Indítási teszt",
+          "Navigáció, űrlap és SEO-jelek."
+        ]
+      ],
+      "faq": [
+        [
+          "Kell platformot váltani?",
+          "Nem, ha a meglévő technika megfelelő."
+        ],
+        [
+          "Megmaradhatnak az URL-ek?",
+          "Igen, ahol lehet, máshol átirányítást tervezünk."
+        ],
+        [
+          "Sebességjavítás is jár?",
+          "A mérhető beavatkozásokat a feladatban rögzítjük."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy tanácsadó honlap mobilon elrejti az ajánlatkérést.",
+        "Megtartjuk az értékes címeket és javítjuk az ügyfélutat.",
+        "Az új felületen ellenőrizzük a kapcsolatot és canonical címeket."
+      ],
+      "visual": [
+        "RÉGI",
+        "DIZÁJN",
+        "TESZT"
+      ],
+      "risk": "Az új dizájn nem garantál nagyobb forgalmat vagy több érdeklődőt. A hatást megfelelő adatokkal kell értékelni.",
+      "related": [
+        [
+          "website-speed-security",
+          "Weboldal sebessége, biztonsága és hozzáférhetősége",
+          "A Core Web Vitals, biztonsági beállítások és hozzáférhetőségi akadályok külön ellenőrzési feladatot kapnak."
+        ],
+        [
+          "service-websites",
+          "Weboldalak szolgáltató cégeknek",
+          "Valós szolgáltatási tartalmat, igazolt vállalati anyagokat és egyszerű mobil ajánlatkérést tervezünk."
+        ]
+      ],
+      "cta": "Újítsa meg weboldalát"
+    },
+    "wordpress-care": {
+      "title": "WordPress karbantartás és támogatás | MrSeo.tech",
+      "description": "WordPress karbantartás és támogatás: A megelőző karbantartást, hibaelhárítást és új funkciófejlesztést külön feladatként kezeljük.",
+      "kicker": "WORDPRESS KARBANTARTÁS ÉS TÁMOGATÁS",
+      "hero": [
+        "WordPress karbantartás és támogatás.",
+        "Működni fog az oldal a következő frissítés után?"
+      ],
+      "lead": "A WordPress bővítményei és verziói változnak. Ellenőrzött frissítéseket, mentéseket és funkcióteszteket tervezünk, a visszatérő hibákat pedig az oknál vizsgáljuk.",
+      "intro": "Hogyan csökkenthető a leállás kockázata?",
+      "introText": "A megelőző karbantartást, hibaelhárítást és új funkciófejlesztést külön feladatként kezeljük.",
+      "problems": [
+        [
+          "Inkompatibilis frissítés",
+          "Egy bővítmény hibát okoz az űrlapban.",
+          "Tesztelje a kompatibilitást kockázatos módosítás előtt."
+        ],
+        [
+          "Kipróbálatlan mentés",
+          "A mentés megvan, de visszaállítás nem történt.",
+          "Értékelje a mentést és visszaállítási lehetőséget."
+        ],
+        [
+          "Visszatérő hiba",
+          "A tüneti javítás után újra jelentkezik a gond.",
+          "Vizsgálja a naplókat és kiváltó okot."
+        ]
+      ],
+      "process": [
+        [
+          "Leltár",
+          "Ellenőrizzük a verziókat és mentéseket."
+        ],
+        [
+          "Teszt",
+          "Reprodukáljuk a hibát."
+        ],
+        [
+          "Javítás",
+          "Megvalósítjuk a jóváhagyott módosítást."
+        ],
+        [
+          "Kontroll",
+          "Ellenőrizzük az alapfunkciókat."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karbantartási terv",
+          "Verziók és időközök."
+        ],
+        [
+          "Változásnapló",
+          "Elvégzett munka és tesztek."
+        ],
+        [
+          "Visszaállítási terv",
+          "Mentések és lépések."
+        ]
+      ],
+      "faq": [
+        [
+          "Jár hozzá tárhely?",
+          "Nem automatikusan, a meglévő tárhelyen dolgozhatunk."
+        ],
+        [
+          "Éles oldalon frissítenek?",
+          "Kockázatos változásnál tesztet és visszaállítást tervezünk."
+        ],
+        [
+          "Új funkció benne van?",
+          "Nem, külön fejlesztési feladatként egyeztetjük."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Frissítés után nem érkezik meg a kapcsolatfelvételi üzenet.",
+        "Reprodukáljuk a hibát és teszteljük a megoldást.",
+        "Ellenőrizzük az űrlapot és dokumentáljuk a változást."
+      ],
+      "visual": [
+        "MENTÉS",
+        "JAVÍTÁS",
+        "TESZT"
+      ],
+      "risk": "A válaszidő és elérhetőség megállapodás kérdése. Mentés és karbantartás nem zár ki minden kockázatot.",
+      "related": [
+        [
+          "website-speed-security",
+          "Weboldal sebessége, biztonsága és hozzáférhetősége",
+          "A Core Web Vitals, biztonsági beállítások és hozzáférhetőségi akadályok külön ellenőrzési feladatot kapnak."
+        ],
+        [
+          "api-integrations",
+          "API-integrációk és automatizálás",
+          "Az adatátadás szabályait, azonosítóit, hozzáférését és az ismételt feldolgozás biztonságát tervezzük."
+        ]
+      ],
+      "cta": "Kérjen WordPress-támogatást"
+    },
+    "api-integrations": {
+      "title": "API-integrációk és automatizálás | MrSeo.tech",
+      "description": "API-integrációk és automatizálás: Az adatátadás szabályait, azonosítóit, hozzáférését és az ismételt feldolgozás biztonságát tervezzük.",
+      "kicker": "API-INTEGRÁCIÓK ÉS AUTOMATIZÁLÁS",
+      "hero": [
+        "API-integrációk és automatizálás.",
+        "Ne kelljen ugyanazt a rendelést többször rögzíteni."
+      ],
+      "lead": "A webshop, CRM és számlázó között elakadhat az adatfolyam. A rendelkezésre álló interfészek alapján megtervezzük az átadandó mezőket, az azonosítókat, jogosultságokat és hibakezelést.",
+      "intro": "Hol vész el adat vagy munkaidő?",
+      "introText": "Az adatátadás szabályait, azonosítóit, hozzáférését és az ismételt feldolgozás biztonságát tervezzük.",
+      "problems": [
+        [
+          "Kézi rögzítés",
+          "A rendelést újra be kell írni a számlázóba.",
+          "Térképezze fel a forrást, célt és indító eseményt."
+        ],
+        [
+          "Duplikált adatok",
+          "Az újrapróbálkozás második rendelést hoz létre.",
+          "Határozzon meg stabil azonosítót és biztonságos újrafuttatást."
+        ],
+        [
+          "Észrevétlen hiba",
+          "Az átadás napló nélkül megszakad.",
+          "Tervezzen naplózást, korlátos ismétlést és értesítést."
+        ]
+      ],
+      "process": [
+        [
+          "Adatfolyam",
+          "Rögzítjük a mezőket és eseményeket."
+        ],
+        [
+          "Interfész",
+          "Ellenőrizzük a jogosultságokat és korlátokat."
+        ],
+        [
+          "Fejlesztés",
+          "Validált átadást építünk."
+        ],
+        [
+          "Teszt",
+          "Vizsgáljuk a hibát és ismétlést."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Adatspecifikáció",
+          "Mezők és szabályok."
+        ],
+        [
+          "Tesztelt kapcsolat",
+          "Normál és hibás adatfolyam."
+        ],
+        [
+          "Üzemeltetési leírás",
+          "Naplók és értesítések."
+        ]
+      ],
+      "faq": [
+        [
+          "Kell API?",
+          "Nem mindig, engedélyezett export vagy webhook is lehet."
+        ],
+        [
+          "Billingo vagy Számlázz.hu integrálható?",
+          "A csomagot, interfészt, szerződést és hozzáférést előbb ellenőrizzük."
+        ],
+        [
+          "Mi történik leálláskor?",
+          "Korlátozott újrapróbálkozást és hibaértesítést tervezünk."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy magyar webshop kézzel rögzíti a rendeléseket a számlázóban.",
+        "Megvizsgáljuk a hozzáférhető interfészt, rendelésazonosítót és mezőket.",
+        "Teszteljük a normál átadást, duplikációt és időszakos hibát."
+      ],
+      "visual": [
+        "FORRÁS",
+        "API",
+        "CRM"
+      ],
+      "risk": "A munka az interfésztől, jogosultságtól, adatminőségtől és szerződéstől függ. A számlázási és adózási szabályokat a vállalkozásnak kell igazolnia.",
+      "related": [
+        [
+          "catalog-automation",
+          "Termékkatalógus automatizálása",
+          "Stabil azonosítókat, mezőtérképet, frissítési szabályokat és hibakezelést határozunk meg."
+        ],
+        [
+          "web-applications",
+          "Webalkalmazások, CRM és ügyfélportálok",
+          "A felhasználók, adatmodell, hozzáférések és elfogadási feltételek alapján határoljuk le a fejlesztést."
+        ]
+      ],
+      "cta": "Kapcsolja össze rendszereit"
+    },
+    "website-speed-security": {
+      "title": "Weboldal sebessége, biztonsága és hozzáférhetősége | MrSeo.tech",
+      "description": "Weboldal sebessége, biztonsága és hozzáférhetősége: A Core Web Vitals, biztonsági beállítások és hozzáférhetőségi akadályok külön ellenőrzési feladatot kapnak.",
+      "kicker": "WEBOLDAL SEBESSÉGE, BIZTONSÁGA ÉS HOZZÁFÉRHETŐSÉGE",
+      "hero": [
+        "Weboldal sebessége, biztonsága és hozzáférhetősége.",
+        "Mi lassítja vagy akadályozza a weboldal használatát?"
+      ],
+      "lead": "Megmérjük a betöltést, áttekintjük a látható technikai kockázatokat és a felhasználói akadályokat. A beavatkozásokat a valódi hatás szerint rangsoroljuk, nem egy tökéletes tesztpontszámot ígérünk.",
+      "intro": "Melyik probléma érinti ténylegesen a felhasználót?",
+      "introText": "A Core Web Vitals, biztonsági beállítások és hozzáférhetőségi akadályok külön ellenőrzési feladatot kapnak.",
+      "problems": [
+        [
+          "Lassú betöltés",
+          "Nagy képek és szkriptek terhelik a mobilt.",
+          "Mérje a forrásokat és teljesítménymutatókat."
+        ],
+        [
+          "Kockázatos beállítás",
+          "Elavult összetevő vagy túl széles jogosultság növeli a kockázatot.",
+          "Vizsgálja az egyeztetett verziókat és beállításokat."
+        ],
+        [
+          "Hozzáférési akadály",
+          "A billentyűzettel nem használható űrlap akadályozza a vásárlót.",
+          "Tesztelje a kontrasztot és interakciókat."
+        ]
+      ],
+      "process": [
+        [
+          "Mérés",
+          "Felmérjük a lassú forrásokat és kockázatot."
+        ],
+        [
+          "Sorrend",
+          "Értékeljük a hatást és ráfordítást."
+        ],
+        [
+          "Javítás",
+          "Elvégezzük a jóváhagyott beavatkozást."
+        ],
+        [
+          "Újrateszt",
+          "Azonos feltételekkel mérünk."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Mért diagnózis",
+          "Hibák és prioritások."
+        ],
+        [
+          "Technikai javítások",
+          "Igazolt okokhoz rendelve."
+        ],
+        [
+          "Kontrolljelentés",
+          "Mérések és korlátok."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantált a 100-as pontszám?",
+          "Nem, eszköz és külső szolgáltatás is számít."
+        ],
+        [
+          "Jár behatolásteszt?",
+          "Nem, külön engedélyezett feladat szükséges."
+        ],
+        [
+          "Jogi tanúsítvány a hozzáférhetőség?",
+          "Nem, a korlátozott technikai vizsgálat nem teljes jogi minősítés."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy webshop mobilon lassú és a pénztár billentyűzettel nehézkes.",
+        "Mérjük az erőforrásokat és a konkrét akadályokat.",
+        "A javítás után megismételjük a teszteket."
+      ],
+      "visual": [
+        "MÉRÉS",
+        "JAVÍTÁS",
+        "TESZT"
+      ],
+      "risk": "Teljes biztonságot nem lehet garantálni. Az infrastruktúra, külső szolgáltatások és feladat hatóköre korlátozza a vizsgálatot.",
+      "related": [
+        [
+          "wordpress-care",
+          "WordPress karbantartás és támogatás",
+          "A megelőző karbantartást, hibaelhárítást és új funkciófejlesztést külön feladatként kezeljük."
+        ],
+        [
+          "website-redesign",
+          "Weboldal újratervezése",
+          "Az értékes címek, navigáció, mobilfelület és átirányítások alapján tervezzük a modernizálást."
+        ]
+      ],
+      "cta": "Vizsgálja meg a sebességet és biztonságot"
+    },
+    "web-applications": {
+      "title": "Webalkalmazások, CRM és ügyfélportálok | MrSeo.tech",
+      "description": "Webalkalmazások, CRM és ügyfélportálok: A felhasználók, adatmodell, hozzáférések és elfogadási feltételek alapján határoljuk le a fejlesztést.",
+      "kicker": "WEBALKALMAZÁSOK, CRM ÉS ÜGYFÉLPORTÁLOK",
+      "hero": [
+        "Webalkalmazások, CRM és ügyfélportálok.",
+        "Kinőtte a vállalkozás a táblázatokat?"
+      ],
+      "lead": "Ajánlatok, munkalapok és ügyféladatok széttagolt tárolása lassítja a csapatot. Egy konkrét folyamatra tervezünk webalkalmazást, ellenőrizhető első verzióval, szerepkörökkel és integrációkkal.",
+      "intro": "Melyik munkafolyamat igényel saját alkalmazást?",
+      "introText": "A felhasználók, adatmodell, hozzáférések és elfogadási feltételek alapján határoljuk le a fejlesztést.",
+      "problems": [
+        [
+          "Szétszórt adatok",
+          "A munkalapok és ajánlatok több táblázatban vannak.",
+          "Tervezze meg a státuszokat és adatmodellt."
+        ],
+        [
+          "Túl széles jogosultság",
+          "A munkatárs szükségtelen személyes adatokat is lát.",
+          "Határozza meg a szerepeket és hozzáférést."
+        ],
+        [
+          "Növekvő projekt",
+          "Új funkciók kerülnek be az első érték igazolása előtt.",
+          "Rögzítse az első verzió elfogadási kritériumait."
+        ]
+      ],
+      "process": [
+        [
+          "Folyamat",
+          "Felmérjük a felhasználókat és adatokat."
+        ],
+        [
+          "Első verzió",
+          "Kijelöljük a fő funkciókat."
+        ],
+        [
+          "Fejlesztés",
+          "Megépítjük a szerepköröket és kapcsolatokat."
+        ],
+        [
+          "Pilot",
+          "Teszteljük a valós munkafolyamatokat."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Funkcionális leírás",
+          "Szerepek, adatok, szabályok."
+        ],
+        [
+          "Használható modul",
+          "Egyeztetett fő funkciók."
+        ],
+        [
+          "Fejlesztési terv",
+          "Teszt és következő lépés."
+        ]
+      ],
+      "faq": [
+        [
+          "Kezdhetünk MVP-vel?",
+          "Igen, egy valódi munkafolyamatot választunk."
+        ],
+        [
+          "Kell CRM-et cserélni?",
+          "Nem feltétlenül, integráció is elég lehet."
+        ],
+        [
+          "Meddig tart a fejlesztés?",
+          "A funkciók, adatok és integrációk tisztázása után becsülhető."
+        ]
+      ],
+      "example": [
+        "SZEMLÉLTETŐ PÉLDA",
+        "Egy szerviz több táblázatban követi a munkalapokat és ajánlatokat.",
+        "Szerepkörökkel és rendelésstátuszokkal tervezünk első portált.",
+        "Kiválasztott munkatársakkal teszteljük a fő folyamatokat."
+      ],
+      "visual": [
+        "FOLYAMAT",
+        "PORTÁL",
+        "EREDMÉNY"
+      ],
+      "risk": "Idő és költség a funkcióktól, adatoktól, biztonsági követelményektől és integrációktól függ. Új funkciókat külön becsülünk.",
+      "related": [
+        [
+          "api-integrations",
+          "API-integrációk és automatizálás",
+          "Az adatátadás szabályait, azonosítóit, hozzáférését és az ismételt feldolgozás biztonságát tervezzük."
+        ],
+        [
+          "web-development",
+          "Egyedi webfejlesztés",
+          "A vállalkozásnak szükséges funkciók fejlesztése."
+        ]
+      ],
+      "cta": "Tervezze meg webalkalmazását"
+    }
+  }
+}
