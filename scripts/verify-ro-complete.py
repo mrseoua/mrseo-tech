@@ -28,14 +28,14 @@ for slug,p in pages.items():
     assert len(p["related"])==2 and all(x[0]!=slug for x in p["related"]),(slug,"related")
 assert "TVA" in pages["google-shopping"]["risk"]
 assert "CSS" in pages["google-shopping"]["faq"][1][0] and "Comparison Shopping Service" in pages["google-shopping"]["faq"][1][1]
-assert all(len(set(x["description"] for x in pages.values())) == 19 for _ in (0,))
+assert len({x["description"] for x in pages.values()}) == 19
 assert len({p["hero"][0] for p in pages.values()}) == 19
 assert len({tuple(tuple(x) for x in p["process"]) for p in pages.values()}) == 19
 assert all(all(len(node)<=8 for node in p["visual"]) for p in pages.values())
 assert "nu include automat" in pages["google-ads-audit"]["risk"].lower()
 menu=read("inc/mega-menu-trial.php")
 mm=re.search(r"if\(\$locale==='ro'\)return array\(([\s\S]*?)\n\s*\);",menu)
-assert mm,"NL menu routes missing"
+assert mm,"RO menu routes missing"
 links=[]
 for group in ("seo","ads","commerce","sites","dev"):
     row=re.search(r"'"+group+r"'=>array\(([^)]*)\)",mm.group(1))
@@ -69,5 +69,5 @@ assert "IntersectionObserver" in read("assets/ro-service-hero-contact.js")
 assert "mrseo-ro-scene-visible" in read("assets/ro-services.css")
 assert "X-Robots-Tag: noindex, nofollow" in fn
 base=json_php("inc/eu-content.php","MRSEO_EU_JSON")["ro"]
-assert base["code"]=="ro-NL" and len(base["pages"]["contact"]["lead"])>25
+assert base["code"]=="ro-RO" and len(base["pages"]["contact"]["lead"])>25
 print("RO PASS: 19 original services, 25 real menu links, 19 unique scenes and staging noindex")
