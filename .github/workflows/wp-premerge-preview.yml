@@ -135,6 +135,11 @@ jobs:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
           MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
         run: node scripts/verify-pt-browser.cjs
+      - name: Verify 25 Swedish services, native menu, forms and responsive CSS in WordPress
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
+        run: node scripts/verify-sv-browser.cjs
       - name: Browser smoke test all 20 locales (isolated site, no public deployment)
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
@@ -163,6 +168,7 @@ jobs:
             shots/ro-*.jpg
             shots/cs-*.jpg
             shots/pt-*.jpg
+            shots/sv-*.jpg
             shots/pl-diagnostics-*.json
             shots/de-diagnostics-*.json
             shots/fr-diagnostics-*.json
@@ -172,6 +178,7 @@ jobs:
             shots/ro-diagnostics-*.json
             shots/cs-diagnostics-*.json
             shots/pt-diagnostics-*.json
+            shots/sv-diagnostics-*.json
             /tmp/mrseo-preview-server.log
           if-no-files-found: warn
           retention-days: 7
