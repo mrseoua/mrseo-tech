@@ -318,7 +318,7 @@ function mrseo_cs_service_part1(){return json_decode(<<<'MRSEO_CS_P1'
       [
         "Rozdílné ceny",
         "Cena s DPH nebo skladovost nesouhlasí s webem.",
-        "Porovnáme feed, produktovou stránku a košík."
+        "Porovnáme feed, produktovou stránku a košík včetně ceny v Kč a dostupnosti variant."
       ],
       [
         "Nerovnoměrné náklady",
@@ -765,8 +765,8 @@ function mrseo_cs_service_part1(){return json_decode(<<<'MRSEO_CS_P1'
     ],
     "faq": [
       [
-        "WooCommerce, nebo Shopify?",
-        "Rozhodují požadavky, provozní náklady a potřebná kontrola."
+        "WooCommerce, Shopify, nebo Shoptet?",
+        "Pokud zvažujete i Shoptet, porovnáme dostupné funkce, české platební a dopravní integrace, náklady a správu. WooCommerce a Shopify nabízíme v rámci této služby; jiné platformy posoudíme samostatně."
       ],
       [
         "Zahrnuje cena platební bránu?",
@@ -965,8 +965,8 @@ function mrseo_cs_service_part1(){return json_decode(<<<'MRSEO_CS_P1'
     ],
     "faq": [
       [
-        "Zvládnete CSV a API?",
-        "Ano, pokud je dostupný použitelný zdroj a oprávnění."
+        "Lze napojit Shoptet, dodavatelský XML feed nebo účetnictví?",
+        "Nejdříve ověříme dostupné exporty, API, tarif a oprávnění. Integraci navrhneme podle konkrétního zdroje, bez tvrzení o oficiálním partnerství."
       ],
       [
         "Co když produkt ze souboru zmizí?",
