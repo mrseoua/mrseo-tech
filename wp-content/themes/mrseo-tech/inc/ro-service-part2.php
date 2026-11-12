@@ -8,8 +8,8 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     "description": "Migrare magazin online: inventar de produse și URL-uri, transfer de date, redirecționări 301 și teste pentru comenzi, feeduri și SEO.",
     "kicker": "MIGRAREA MAGAZINELOR ONLINE",
     "hero": [
-      "Schimbi platforma.",
-      "Ce se întâmplă cu traficul?"
+      "Migrare magazin online.",
+      "Cum protejăm traficul și comenzile?"
     ],
     "lead": "Planificăm mutarea catalogului, adreselor URL, conținutului și fluxurilor comerciale, astfel încât lansarea să nu întrerupă inutil accesul la produse și comenzi.",
     "intro": "Ce nu trebuie pierdut la migrare?",
@@ -33,20 +33,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un magazin trece de la o platformă proprie la WooCommerce și schimbă structura categoriilor. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Inventariere",
+        "Exportăm lista URL-urilor, structura catalogului și dependențele disponibile."
       ],
       [
-        "Verificăm cauzele",
-        "Construim o mapare către destinații relevante. Verificăm eșantioane înainte de schimbare."
+        "Mapare",
+        "Asociem datele și adresele vechi cu destinațiile din noua platformă."
       ],
       [
-        "Pregătim intervenția",
-        "Inventariem URL-urile, produsele și legăturile, apoi pregătim redirecționările. Stabilim responsabilitățile și criteriile de acceptare."
+        "Test înainte de lansare",
+        "Verificăm importul, comanda, plățile și redirecționările într-un mediu separat."
       ],
       [
-        "Controlăm rezultatul",
-        "Verificăm rutele vechi, comenzile și feedul după schimbare."
+        "Control după lansare",
+        "Urmărim rutele vechi, erorile și eligibilitatea produselor."
       ]
     ],
     "outcomes": [
@@ -101,15 +101,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de migrarea magazinelor online"
+    "cta": "Discută migrarea magazinului"
   },
   "service-websites": {
     "title": "Creare site-uri pentru firme de servicii | MrSeo.tech",
     "description": "Creare site-uri pentru firme de servicii: arhitectură comercială, design adaptiv, pagini dedicate și formulare de contact testate.",
     "kicker": "CREARE SITE-URI PENTRU FIRME DE SERVICII",
     "hero": [
-      "Ai o ofertă bună.",
-      "Site-ul o face ușor de ales?"
+      "Creare site-uri pentru firme de servicii.",
+      "Clientul înțelege oferta ta?"
     ],
     "lead": "Construim site-uri care explică serviciile, condițiile și pașii pentru o solicitare. Structura se stabilește din întrebările clienților, nu dintr-un șablon generic.",
     "intro": "Ce trebuie să afle clientul înainte de contact?",
@@ -133,20 +133,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "O firmă de instalații are doar o pagină cu telefon și o listă lungă de servicii. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Brief comercial",
+        "Stabilim serviciile, întrebările clienților și informațiile confirmate."
       ],
       [
-        "Verificăm cauzele",
-        "Proiectăm pagini și navigație după nevoi reale. Organizăm informațiile confirmate de firmă."
+        "Arhitectură",
+        "Proiectăm paginile și traseele de contact în funcție de intenții."
       ],
       [
-        "Pregătim intervenția",
-        "Construim o structură clară cu pagini de ofertă și solicitare. Stabilim responsabilitățile și criteriile de acceptare."
+        "Implementare",
+        "Construim șabloanele și formularul, apoi adaptăm interfața la mobil."
       ],
       [
-        "Controlăm rezultatul",
-        "Testăm navigația și formularul de pe telefon."
+        "Predare",
+        "Testăm navigația, validarea datelor și notificările de contact."
       ]
     ],
     "outcomes": [
@@ -201,15 +201,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de creare site-uri pentru firme de servicii"
+    "cta": "Discută site-ul pentru servicii"
   },
   "landing-pages": {
     "title": "Pagini de destinație pentru reclame | MrSeo.tech",
     "description": "Creare landing page pentru reclame: mesaj aliniat campaniei, ofertă clară, design mobil, formular și măsurarea conversiei.",
     "kicker": "PAGINI DE DESTINAȚIE PENTRU RECLAME",
     "hero": [
-      "Reclama atrage clicuri.",
-      "Pagina convinge clientul?"
+      "Pagini de destinație pentru reclame.",
+      "Clicurile devin solicitări?"
     ],
     "lead": "O pagină de destinație trebuie să continue exact promisiunea anunțului. Construim o ofertă clară, răspunsuri la obiecții și un traseu scurt către acțiunea convenită.",
     "intro": "Unde se rupe legătura dintre anunț și ofertă?",
@@ -233,20 +233,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "O campanie pentru instalarea unui sistem de climatizare trimite către pagina generală a firmei. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Mesajul campaniei",
+        "Identificăm promisiunea anunțului, publicul și acțiunea urmărită."
       ],
       [
-        "Verificăm cauzele",
-        "Aliniem titlul și informația cu intenția campaniei. Definim o acțiune principală și eliminăm distragerile inutile."
+        "Structura ofertei",
+        "Pregătim informațiile care răspund obiecțiilor și un singur pas principal."
       ],
       [
-        "Pregătim intervenția",
-        "Construim o pagină dedicată cu oferta, condițiile și solicitarea. Stabilim responsabilitățile și criteriile de acceptare."
+        "Dezvoltare mobilă",
+        "Implementăm pagina, formularul și evenimentele convenite."
       ],
       [
-        "Controlăm rezultatul",
-        "Verificăm formularul și potrivirea mesajului cu anunțul."
+        "Test de conversie",
+        "Verificăm solicitarea, confirmarea și măsurarea acesteia."
       ]
     ],
     "outcomes": [
@@ -301,15 +301,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de pagini de destinație pentru reclame"
+    "cta": "Discută pagina pentru campanie"
   },
   "corporate-websites": {
     "title": "Creare site-uri de prezentare pentru companii | MrSeo.tech",
     "description": "Creare site corporate: prezentarea companiei, servicii, proiecte confirmate, navigație adaptivă și trasee către contact.",
     "kicker": "CREARE SITE-URI DE PREZENTARE PENTRU COMPANII",
     "hero": [
-      "Compania are experiență.",
-      "Site-ul o demonstrează?"
+      "Creare site-uri corporate.",
+      "Compania ta inspiră încredere online?"
     ],
     "lead": "Construim site-uri corporate care prezintă competențele, diviziile, proiectele confirmate și modalitățile de colaborare. Vizitatorii trebuie să înțeleagă rapid cu cine lucrează.",
     "intro": "Ce informații caută un partener înainte de discuție?",
@@ -333,20 +333,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un producător dorește să prezinte trei divizii și documentația pentru distribuitori. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Inventar informații",
+        "Colectăm competențele, diviziile, documentele și proiectele confirmate."
       ],
       [
-        "Verificăm cauzele",
-        "Proiectăm arhitectura pentru tipurile de vizitatori. Inventariem materialele și responsabilitățile editoriale."
+        "Arhitectură editorială",
+        "Definim paginile și responsabilitățile de administrare."
       ],
       [
-        "Pregătim intervenția",
-        "Separăm navigația, paginile de capacitate și documentele confirmate. Stabilim responsabilitățile și criteriile de acceptare."
+        "Implementare",
+        "Construim șabloane, navigație și rute de contact pentru publicurile definite."
       ],
       [
-        "Controlăm rezultatul",
-        "Testăm găsirea informațiilor și contactarea departamentului corect."
+        "Validare",
+        "Testăm găsirea documentelor, interacțiunile și actualizarea conținutului."
       ]
     ],
     "outcomes": [
@@ -401,15 +401,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de creare site-uri de prezentare pentru companii"
+    "cta": "Discută site-ul companiei"
   },
   "website-redesign": {
     "title": "Redesign și modernizare site | MrSeo.tech",
     "description": "Redesign site web: audit de utilizare și structură, design adaptiv, păstrarea URL-urilor relevante și verificări înainte de lansare.",
     "kicker": "REDESIGN ȘI MODERNIZARE SITE",
     "hero": [
-      "Site-ul funcționează.",
-      "Dar frânează solicitările?"
+      "Redesign și modernizare site.",
+      "Ce merită schimbat fără să pierzi trafic?"
     ],
     "lead": "Modernizăm site-uri păstrând conținutul util și adresele importante. Identificăm întâi problemele de utilizare, tehnologie și structură, ca redesignul să nu devină o simplă schimbare cosmetică.",
     "intro": "Ce merită păstrat și ce trebuie schimbat?",
@@ -426,27 +426,27 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Mapăm structura și legăturile existente."
       ],
       [
-        "Risc SEO",
+        "Risc de pierdere SEO",
         "Designul nou schimbă adresele fără plan.",
         "Pregătim o mapare și testăm canonical și redirecționări."
       ]
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un site de servicii vechi are trafic organic, dar formularul este greu de utilizat pe telefon. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Analiza site-ului",
+        "Inventariem adresele importante, conținutul și obstacolele de utilizare."
       ],
       [
-        "Verificăm cauzele",
-        "Evaluăm lizibilitatea, navigația și formularele. Mapăm structura și legăturile existente."
+        "Priorități",
+        "Separăm paginile care trebuie păstrate de componentele care necesită redesign."
       ],
       [
-        "Pregătim intervenția",
-        "Păstrăm adresele utile, modernizăm șabloanele și scurtăm parcursul. Stabilim responsabilitățile și criteriile de acceptare."
+        "Implementare controlată",
+        "Modernizăm șabloanele și pregătim redirecționări unde sunt necesare."
       ],
       [
-        "Controlăm rezultatul",
-        "Testăm paginile, contactul și semnalele SEO înainte de lansare."
+        "Verificări înainte de lansare",
+        "Testăm dispozitivele, formularele și semnalele SEO ale paginilor importante."
       ]
     ],
     "outcomes": [
@@ -501,15 +501,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de redesign și modernizare site"
+    "cta": "Discută modernizarea site-ului"
   },
   "wordpress-care": {
     "title": "Mentenanță și suport WordPress | MrSeo.tech",
     "description": "Mentenanță WordPress: actualizări controlate, backup, diagnosticarea erorilor și verificarea funcțiilor site-ului.",
     "kicker": "MENTENANȚĂ ȘI SUPORT WORDPRESS",
     "hero": [
-      "Site-ul trebuie să rămână stabil.",
-      "Cine verifică actualizările?"
+      "Mentenanță WordPress.",
+      "Site-ul rămâne stabil după actualizări?"
     ],
     "lead": "Oferim intervenții și întreținere WordPress cu actualizări controlate, copii de siguranță, diagnosticarea erorilor și verificarea funcțiilor importante după schimbare.",
     "intro": "Cum reducem riscul întreruperilor?",
@@ -533,20 +533,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un site WordPress nu mai trimite mesaje după actualizarea unei extensii. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Inventar tehnic",
+        "Verificăm versiuni, extensii, acces și mecanismul de backup."
       ],
       [
-        "Verificăm cauzele",
-        "Verificăm compatibilitatea și testăm înainte de schimbare. Analizăm frecvența și procedura de restaurare."
+        "Mediu de test",
+        "Reproducem erorile și evaluăm compatibilitatea actualizărilor."
       ],
       [
-        "Pregătim intervenția",
-        "Reproducem eroarea, verificăm jurnalul și testăm o corecție. Stabilim responsabilitățile și criteriile de acceptare."
+        "Intervenție",
+        "Aplicăm schimbările convenite cu o procedură de revenire."
       ],
       [
-        "Controlăm rezultatul",
-        "Confirmăm trimiterea formularului și documentăm schimbarea."
+        "Control",
+        "Verificăm paginile, formularele și funcțiile comerciale, apoi documentăm intervenția."
       ]
     ],
     "outcomes": [
@@ -601,15 +601,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de mentenanță și suport wordpress"
+    "cta": "Discută mentenanța WordPress"
   },
   "api-integrations": {
     "title": "Integrări API și automatizări | MrSeo.tech",
     "description": "Integrări API și automatizări: conectare CRM, magazine și sisteme externe, sincronizare date, validare și monitorizarea erorilor.",
     "kicker": "INTEGRĂRI API ȘI AUTOMATIZĂRI",
     "hero": [
-      "Sistemele lucrează separat.",
-      "Echipa repetă aceeași muncă?"
+      "Integrări API și automatizări.",
+      "Elimină introducerea repetată a datelor."
     ],
     "lead": "Conectăm site-uri, magazine, CRM-uri și servicii externe prin interfețe disponibile. Definim ce date circulă, când, cu ce permisiuni și ce se întâmplă dacă transferul eșuează.",
     "intro": "Unde se repetă sau se pierd datele?",
@@ -623,7 +623,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
       [
         "Înregistrări duplicate",
         "O reluare a cererii creează același client de două ori.",
-        "Definim identificatori și reguli de idempotentă."
+        "Definim identificatori și reguli de idempotență."
       ],
       [
         "Erori fără urmărire",
@@ -633,20 +633,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un magazin exportă manual comenzile în CRM și echipa introduce din nou datele. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Harta fluxului",
+        "Definim sursa, destinația, datele și evenimentele relevante."
       ],
       [
-        "Verificăm cauzele",
-        "Mapăm câmpurile și evenimentele care declanșează transferul. Definim identificatori și reguli de idempotentă."
+        "Contract tehnic",
+        "Verificăm autentificarea, limitele, identificatorii și permisiunile."
       ],
       [
-        "Pregătim intervenția",
-        "Definim asocierea clienților și trimiterea comenzii prin API. Stabilim responsabilitățile și criteriile de acceptare."
+        "Implementare și erori",
+        "Construim transferul cu validare și mecanism de reluare controlată."
       ],
       [
-        "Controlăm rezultatul",
-        "Testăm cereri repetate, erori și rezultatul în CRM."
+        "Teste de integrare",
+        "Verificăm operațiunile normale, cererile repetate și erorile documentate."
       ]
     ],
     "outcomes": [
@@ -701,15 +701,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de integrări api și automatizări"
+    "cta": "Discută integrarea sistemelor"
   },
   "website-speed-security": {
     "title": "Viteză, securitate și accesibilitate web | MrSeo.tech",
     "description": "Optimizare viteză, securitate și accesibilitate: diagnostic tehnic, Core Web Vitals, verificări de bază și teste după remediere.",
     "kicker": "VITEZĂ, SECURITATE ȘI ACCESIBILITATE WEB",
     "hero": [
-      "Site-ul se încarcă greu.",
-      "Sau are riscuri tehnice?"
+      "Viteză, securitate și accesibilitate web.",
+      "Ce frânează utilizatorul?"
     ],
     "lead": "Evaluăm performanța, vulnerabilitățile observabile și barierele de utilizare. Stabilim intervenții concrete și verificări, fără să confundăm un scor automat cu întreaga calitate a site-ului.",
     "intro": "Care probleme afectează utilizatorul și operarea?",
@@ -733,20 +733,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "Un magazin are imagini foarte mari și un formular dificil de completat cu tastatura. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Măsurare inițială",
+        "Identificăm resursele lente, configurările și barierele observabile."
       ],
       [
-        "Verificăm cauzele",
-        "Măsurăm resursele și indicatorii de performanță. Verificăm actualizările, permisiunile și configurațiile convenite."
+        "Priorități tehnice",
+        "Clasificăm problemele după impact, risc și efort."
       ],
       [
-        "Pregătim intervenția",
-        "Măsurăm resursele, optimizăm imaginile și corectăm interacțiunile convenite. Stabilim responsabilitățile și criteriile de acceptare."
+        "Remediere",
+        "Aplicăm schimbările autorizate și verificăm că funcțiile existente rămân utilizabile."
       ],
       [
-        "Controlăm rezultatul",
-        "Repetăm testele în condiții comparabile."
+        "Retestare",
+        "Repetăm măsurătorile și testele convenite în condiții comparabile."
       ]
     ],
     "outcomes": [
@@ -801,15 +801,15 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de viteză, securitate și accesibilitate web"
+    "cta": "Discută optimizarea tehnică"
   },
   "web-applications": {
     "title": "Aplicații web, CRM și portaluri | MrSeo.tech",
     "description": "Dezvoltare aplicații web, CRM și portaluri: analiză de proces, roluri, fluxuri, integrări și MVP verificabil.",
     "kicker": "APLICAȚII WEB, CRM ȘI PORTALURI",
     "hero": [
-      "Procesele au crescut.",
-      "Fișierele nu mai sunt suficiente?"
+      "Aplicații web, CRM și portaluri.",
+      "Transformă procesele într-un sistem."
     ],
     "lead": "Dezvoltăm aplicații web și portaluri pentru procese definite: solicitări, roluri, stări, documente și integrări. Începem cu un flux esențial, nu cu o listă nelimitată de funcții.",
     "intro": "Ce activitate merită transformată într-un sistem?",
@@ -833,20 +833,20 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
     ],
     "process": [
       [
-        "Stabilim situația",
-        "O firmă de mentenanță urmărește intervențiile și ofertele în tabele separate. Clarificăm obiectivul și datele disponibile pentru proiect."
+        "Proces și utilizatori",
+        "Documentăm stările, rolurile, datele și problemele din activitatea actuală."
       ],
       [
-        "Verificăm cauzele",
-        "Modelăm datele și etapele de lucru. Definim rolurile și permisiunile."
+        "Specificație MVP",
+        "Delimităm funcțiile esențiale și criteriile de acceptare."
       ],
       [
-        "Pregătim intervenția",
-        "Construim un portal pilot cu roluri și stări ale solicitărilor. Stabilim responsabilitățile și criteriile de acceptare."
+        "Dezvoltare",
+        "Implementăm fluxul, permisiunile și integrările convenite."
       ],
       [
-        "Controlăm rezultatul",
-        "Utilizatorii de test validează operațiunile esențiale și accesul."
+        "Pilot",
+        "Testăm operațiunile cu utilizatorii desemnați și stabilim următoarea etapă."
       ]
     ],
     "outcomes": [
@@ -901,7 +901,7 @@ function mrseo_ro_service_part2(){return json_decode(<<<'MRSEO_RO_P2'
         "Vezi serviciul complementar și lucrările pe care le include."
       ]
     ],
-    "cta": "Discută proiectul de aplicații web, crm și portaluri"
+    "cta": "Discută aplicația web sau CRM-ul"
   }
 }
 MRSEO_RO_P2
