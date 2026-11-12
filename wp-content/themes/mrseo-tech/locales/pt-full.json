@@ -248,57 +248,65 @@
       }
     },
     "google-ads": {
-      "title": "Auditoria Google Ads e Shopping para lojas online",
-      "description": "Auditoria Google Ads e Shopping para lojas online. Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição.",
-      "eyebrow": "GOOGLE ADS",
-      "headline": "Paga por cliques. <em>Que vendas está a medir?</em>",
-      "lead": "Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição. Depois analisamos campanhas de Pesquisa, Shopping e Performance Max de acordo com os objetivos e margens reais.",
+      "title": "Gestão de Google Ads para empresas em Portugal",
+      "description": "Gestão de Google Ads em Portugal: campanhas de Pesquisa, Shopping e Performance Max, medição de contactos e compras e otimização de orçamento.",
+      "eyebrow": "GOOGLE ADS / GESTÃO DE CAMPANHAS",
+      "headline": "Paga por publicidade. <em>Está a atrair os clientes certos?</em>",
+      "lead": "Gerimos campanhas de Google Ads para empresas de serviços e lojas online. Definimos o que representa um contacto ou compra útil, alinhamos a publicidade com a oferta e acompanhamos custos e resultados com dados verificáveis.",
       "problems": [
         [
-          "Conversões incorretas",
-          "Eventos repetidos podem fazer parecer rentável uma campanha que não o é.",
-          "Comparar compras com transações GA4 e Google Ads."
+          "Investimento sem foco",
+          "Campanhas diferentes competem pelo mesmo orçamento sem objetivos claros.",
+          "Organizar serviços, produtos e prioridades de investimento."
         ],
         [
-          "Produtos que gastam sem vender",
-          "Grupos de produtos podem consumir orçamento sem valor comprovado.",
-          "Analisar custos por categoria e SKU."
+          "Contactos ou compras mal medidos",
+          "A plataforma regista eventos que não correspondem a resultados comerciais.",
+          "Validar ações de conversão e critérios de qualidade."
         ],
         [
-          "Feed inconsistente",
-          "Preços ou disponibilidade no Merchant Center podem divergir da loja.",
-          "Conferir atributos e páginas de produto."
+          "Desempenho sem acompanhamento",
+          "Alterações de procura, oferta e margem podem tornar campanhas menos eficientes.",
+          "Analisar resultados e testar melhorias acordadas."
         ]
       ],
       "outcomes": [
-        "Diagnóstico dos eventos principais",
-        "Despesas que merecem investigação",
-        "Hipóteses de otimização mensuráveis"
+        "Estrutura de campanhas e objetivos acordados",
+        "Acompanhamento de custos, contactos e compras",
+        "Plano de otimização baseado nos dados"
       ],
       "faq": [
         [
-          "Garantem um ROAS?",
-          "Não. O retorno depende das margens, do mercado, da oferta e da medição correta."
+          "O orçamento publicitário está incluído?",
+          "Não. O investimento na plataforma e a gestão têm custos distintos."
+        ],
+        [
+          "Garantem um ROAS ou um custo por contacto?",
+          "Não. A evolução depende da concorrência, oferta, orçamento, qualidade dos dados e capacidade comercial."
+        ],
+        [
+          "Posso contratar apenas uma auditoria?",
+          "Sim. A auditoria é um serviço separado, sem alterações automáticas à conta."
         ]
       ],
       "offer": {
-        "title": "Diagnóstico por dados → Validação prática",
-        "intro": "Antes de aumentar o orçamento, validamos os eventos de compra e os dados de atribuição. Depois analisamos campanhas de Pesquisa, Shopping e Performance Max de acordo com os objetivos e margens reais.",
+        "title": "Da estratégia ao acompanhamento das campanhas",
+        "intro": "Definimos objetivos comerciais e critérios de medição antes de gerir o investimento. Cada alteração deve ter um propósito e uma forma de avaliação.",
         "items": [
           {
-            "title": "Diagnóstico por dados",
-            "detail": "Comparar compras com transações GA4 e Google Ads."
+            "title": "Estratégia e medição",
+            "detail": "Definir objetivos, campanhas, orçamento e conversões úteis."
           },
           {
-            "title": "Correções prioritárias",
-            "detail": "Analisar custos por categoria e SKU."
+            "title": "Implementação e gestão",
+            "detail": "Criar ou reorganizar campanhas, anúncios e destinos de acordo com o âmbito."
           },
           {
-            "title": "Validação prática",
-            "detail": "Conferir atributos e páginas de produto."
+            "title": "Otimização contínua",
+            "detail": "Acompanhar custos, termos de pesquisa e resultados comerciais e testar melhorias."
           }
         ],
-        "cta": "Falar sobre o meu projeto"
+        "cta": "Falar sobre a gestão de campanhas"
       }
     },
     "analytics": {
@@ -627,10 +635,10 @@
     },
     "contact": {
       "title": "Contacte-nos para analisar o seu projeto",
-      "description": "Contacte-nos para analisar o seu projeto. Diga-nos o endereço do site, o mercado pretendido e um exemplo concreto do que não funciona.",
+      "description": "Contacte a MrSeo.tech para analisar SEO, Google Ads, criação de sites, lojas online ou desenvolvimento web. Descreva o seu problema e o projeto.",
       "eyebrow": "CONTACTOS",
       "headline": "Qual é o problema <em>que impede novos pedidos?</em>",
-      "lead": "Diga-nos o endereço do site, o mercado pretendido e um exemplo concreto do que não funciona. Não precisa de enviar acessos nem de preparar um documento complexo. Indique a plataforma, o país de venda e um exemplo concreto do problema. Não partilhe palavras-passe.",
+      "lead": "Descreva o problema: poucos pedidos, publicidade sem resultados, uma loja difícil de gerir ou um processo que precisa de automatizar. Indique o site ou processo, o mercado pretendido e um exemplo concreto do problema. Não partilhe palavras-passe.",
       "problems": [],
       "outcomes": [],
       "faq": []
@@ -665,7 +673,7 @@
     "heading": "SEO, Google Ads e desenvolvimento web para empresas em Portugal",
     "description": "Quando uma loja recebe visitas mas poucos pedidos, não basta investir em anúncios. Verificamos a descoberta dos produtos, as páginas comerciais, a medição das compras e os processos que fazem perder tempo.",
     "cta": "Falar sobre o meu projeto",
-    "brief": "Indique a plataforma, o país de venda e um exemplo concreto do problema. Não partilhe palavras-passe.",
+    "brief": "Indique o site ou processo, o mercado pretendido e um exemplo concreto do problema. Não partilhe palavras-passe.",
     "portfolioLabel": "Projetos"
   },
   "serviceLabels": {
