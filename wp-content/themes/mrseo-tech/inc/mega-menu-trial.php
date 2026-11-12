@@ -347,6 +347,10 @@ function mrseo_trial_menu_translations() {
 }
 MRSEO_TRIAL_NAV_JSON;
  $all=json_decode($json,true,512,JSON_THROW_ON_ERROR);
+ if(function_exists('mrseo_final_market_codes'))foreach(mrseo_final_market_codes() as $locale=>$code){
+  $market=mrseo_final_market_data($locale);
+  if(!empty($market['nav']))$all[$locale]=$market['nav'];
+ }
  return $all;
 }
 
@@ -448,6 +452,7 @@ function mrseo_trial_menu_route_map($locale) {
    'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
    'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
   );
+ if(function_exists('mrseo_final_market_codes') && isset(mrseo_final_market_codes()[$locale]))return mrseo_final_market_routes();
   if($locale==='es')return array(
   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
@@ -521,6 +526,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
  if($locale==='sv')return (function_exists('mrseo_sv_service_slugs') && in_array($slug,mrseo_sv_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='da')return (function_exists('mrseo_da_service_slugs') && in_array($slug,mrseo_da_service_slugs(),true))
+    || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
+ if(function_exists('mrseo_final_market_codes') && isset(mrseo_final_market_codes()[$locale]))return in_array($slug,mrseo_final_market_slugs($locale),true)
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='es')return (function_exists('mrseo_es_service_slugs') && in_array($slug,mrseo_es_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
