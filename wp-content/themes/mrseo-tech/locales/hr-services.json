@@ -1,0 +1,1992 @@
+{
+  "code": "hr-HR",
+  "labels": {
+    "crumb": "Navigacijska putanja",
+    "home": "Početna",
+    "work": "Kako radimo",
+    "note": "Prvo utvrđujemo uzrok. Ne dajemo obećanja koja se ne mogu provjeriti.",
+    "sceneEnd": "PRIMJER / PROCES",
+    "sceneStatus": "ANALIZA / KONTROLA",
+    "needs": "ŠTO PROVJERAVAMO",
+    "check": "KAKO PROVJERAVAMO",
+    "exampleTitle": "Od konkretnog problema",
+    "exampleEm": "do provjerljivog rješenja.",
+    "exampleNote": "Ilustrativni primjer, ne stvarni rezultat klijenta.",
+    "exampleCta": "Razgovarajmo o vašoj situaciji",
+    "caseLabels": [
+      "SITUACIJA",
+      "PRISTUP",
+      "PROVJERA"
+    ],
+    "process": "KAKO RADIMO",
+    "processTitle": "Od analize do provjerljive isporuke.",
+    "processNote": "Svaki korak ima jasan cilj i kontrolnu točku.",
+    "outcomes": "ŠTO DOBIVATE",
+    "outcomesTitle": "Konkretne rezultate koje možete provjeriti.",
+    "outcomesNote": "Opseg dogovaramo unaprijed. Ovo su primjeri provjerljivih isporuka.",
+    "limits": "OGRANIČENJA I OČEKIVANJA",
+    "limitsTitle": "Što trebate znati prije početka?",
+    "faq": "ČESTA PITANJA",
+    "faqTitle": "Jasni odgovori prije suradnje.",
+    "related": "POVEZANE USLUGE",
+    "relatedTitle": "Druge usluge koje nadopunjuju ovaj rad.",
+    "contactKicker": "MRSEO.TECH / PRVI KONTAKT",
+    "contactTitle": "Koji problem želite riješiti?",
+    "contactNote": "Opišite što ne radi i pošaljite adresu weba ako postoji. Razgovarat ćemo o sljedećem koraku i opsegu bez unaprijed određenog paketa.",
+    "exampleLabel": "ILUSTRATIVNI PRIMJER"
+  },
+  "nav": {
+    "seo": [
+      "SEO i vidljivost",
+      "Pomažemo pravim kupcima pronaći vašu tvrtku.",
+      "Lokalni SEO za tvrtke",
+      "SEO web-trgovina",
+      "SEO za uslužne djelatnosti",
+      "Međunarodni SEO",
+      "Tehnička SEO revizija"
+    ],
+    "ads": [
+      "Google Ads",
+      "Kampanje s jasnim ciljevima i provjerljivim mjerenjem.",
+      "Upravljanje Google Ads kampanjama",
+      "Google Shopping i Performance Max",
+      "Google Ads za lokalne tvrtke",
+      "Neovisna revizija Google Ads",
+      "Pomoć za Google Merchant Center"
+    ],
+    "commerce": [
+      "Web-trgovine",
+      "Izrada, razvoj i automatizacija prodaje.",
+      "Izrada web-trgovine",
+      "WooCommerce i Shopify web-trgovine",
+      "Optimizacija konverzija web-trgovine",
+      "Automatizacija kataloga proizvoda",
+      "Migracija web-trgovine"
+    ],
+    "sites": [
+      "Izrada web-stranica",
+      "Webovi koji objašnjavaju ponudu i olakšavaju kontakt.",
+      "Izrada web-stranice",
+      "Web-stranice za uslužne tvrtke",
+      "Odredišne stranice za oglašavanje",
+      "Korporativne i prezentacijske web-stranice",
+      "Redizajn i modernizacija weba"
+    ],
+    "dev": [
+      "Web razvoj",
+      "Tehnička rješenja i automatizacija procesa.",
+      "Održavanje i podrška za WordPress",
+      "API integracije i automatizacija",
+      "Brzina, sigurnost i pristupačnost weba",
+      "Web razvoj po mjeri",
+      "Web-aplikacije, CRM i korisnički portali"
+    ],
+    "bottom": [
+      "Ne pronalazite odgovarajuću uslugu?",
+      "Opišite problem ili projekt pa ćemo dogovoriti sljedeći korak.",
+      "Razgovarajmo o projektu"
+    ]
+  },
+  "pages": {
+    "local-seo": {
+      "title": "Lokalni SEO za tvrtke | MrSeo.tech",
+      "description": "Lokalni SEO za tvrtke: Povezujemo stvarno područje rada, lokalne pretrage, poslovni profil i jasne kontaktne korake.",
+      "kicker": "LOKALNI SEO ZA TVRTKE",
+      "hero": [
+        "Lokalni SEO za tvrtke.",
+        "Pronalaze li vas kupci u vašem području?"
+      ],
+      "lead": "Servis u Splitu treba upite vozača koje zaista može uslužiti. Provjeravamo Google poslovni profil, lokalne pretrage i put od rezultata do rezervacije termina.",
+      "intro": "Gdje gubite lokalne upite?",
+      "introText": "Povezujemo stvarno područje rada, lokalne pretrage, poslovni profil i jasne kontaktne korake.",
+      "problems": [
+        [
+          "Pogrešno područje",
+          "Posjetitelji dolaze iz krajeva u kojima ne radite.",
+          "Usporedimo pretrage i stvarno područje usluge."
+        ],
+        [
+          "Neusklađeni podaci",
+          "Radno vrijeme ili telefon razlikuju se na profilu i webu.",
+          "Provjeravamo kategorije, podatke i poveznice."
+        ],
+        [
+          "Teško naručivanje",
+          "Na mobitelu nije jasno kako rezervirati termin.",
+          "Testiramo telefon, navigaciju i obrazac."
+        ]
+      ],
+      "process": [
+        [
+          "Područje",
+          "Određujemo stvarne lokacije i usluge."
+        ],
+        [
+          "Vidljivost",
+          "Analiziramo lokalne rezultate."
+        ],
+        [
+          "Sadržaj",
+          "Planiramo relevantne stranice."
+        ],
+        [
+          "Provjera",
+          "Testiramo kontakt i rezervaciju."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karta lokalnih pretraga",
+          "Usluge i prioritetna područja."
+        ],
+        [
+          "Plan poslovnog profila",
+          "Podaci, kategorije i poveznice."
+        ],
+        [
+          "Test kontakta",
+          "Telefon, obrazac i mobilna navigacija."
+        ]
+      ],
+      "faq": [
+        [
+          "Treba li stranica za svaki grad?",
+          "Samo ako pruža stvarnu lokalnu vrijednost."
+        ],
+        [
+          "Jamčite li prvo mjesto na Kartama?",
+          "Ne, ovise i o udaljenosti i konkurenciji."
+        ],
+        [
+          "Trebate li lozinku?",
+          "Ne, po potrebi koristimo dodijeljena prava."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Splitska radionica dobiva posjete iz cijele Hrvatske, ali malo rezervacija.",
+        "Usklađujemo usluge s područjem rada i profilom.",
+        "Provjeravamo rezervaciju i relevantne lokalne pretrage."
+      ],
+      "visual": [
+        "PRETRAGA",
+        "PODRUČJE",
+        "KONTAKT"
+      ],
+      "risk": "Ne stvaramo izmišljene poslovnice i ne jamčimo rangiranje. Polazimo od stvarnog područja pružanja usluge.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO za uslužne djelatnosti",
+          "Planiramo stranice usluga, namjere pretrage, interne poveznice i put do zahtjeva za ponudom."
+        ],
+        [
+          "service-websites",
+          "Web-stranice za uslužne tvrtke",
+          "Organiziramo stvarne usluge, odobrene materijale i funkcionalan mobilni obrazac."
+        ]
+      ],
+      "cta": "Razgovarajmo o lokalnom SEO-u"
+    },
+    "service-business-seo": {
+      "title": "SEO za uslužne djelatnosti | MrSeo.tech",
+      "description": "SEO za uslužne djelatnosti: Planiramo stranice usluga, namjere pretrage, interne poveznice i put do zahtjeva za ponudom.",
+      "kicker": "SEO ZA USLUŽNE DJELATNOSTI",
+      "hero": [
+        "SEO za uslužne djelatnosti.",
+        "Razumiju li posjetitelji koje probleme rješavate?"
+      ],
+      "lead": "Računovodstvo, obračun plaća i savjetovanje odgovaraju različitim potrebama. Organiziramo sadržaj u jasne stranice prema namjeri pretrage i stvarnoj ponudi tvrtke.",
+      "intro": "Zašto posjeti ne postaju upiti?",
+      "introText": "Planiramo stranice usluga, namjere pretrage, interne poveznice i put do zahtjeva za ponudom.",
+      "problems": [
+        [
+          "Pomiješane usluge",
+          "Različiti poslovi opisani su na jednoj općoj stranici.",
+          "Razdvajamo različite potrebe pretrage."
+        ],
+        [
+          "Interna terminologija",
+          "Kupci traže drugim riječima od stručnjaka.",
+          "Uspoređujemo pitanja kupaca i sadržaj."
+        ],
+        [
+          "Skriven obrazac",
+          "Posjetitelj ne nalazi način da zatraži ponudu.",
+          "Provjeravamo navigaciju, gumbe i obrazac."
+        ]
+      ],
+      "process": [
+        [
+          "Cilj",
+          "Određujemo željene poslove."
+        ],
+        [
+          "Pretrage",
+          "Istražujemo pitanja i stranice."
+        ],
+        [
+          "Struktura",
+          "Planiramo teme i poveznice."
+        ],
+        [
+          "Kontakt",
+          "Testiramo upit i mjerenje."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karta usluga",
+          "Zasebni poslovni ciljevi stranica."
+        ],
+        [
+          "Plan sadržaja",
+          "Naslovi, pitanja i poveznice."
+        ],
+        [
+          "Model mjerenja",
+          "Definicija relevantnog upita."
+        ]
+      ],
+      "faq": [
+        [
+          "Je li dovoljan blog?",
+          "Ne ako ključne usluge nemaju svoje stranice."
+        ],
+        [
+          "Treba li novi web?",
+          "Najprije procjenjujemo postojeću strukturu."
+        ],
+        [
+          "Kako sprječavate preklapanje?",
+          "Svakoj stranici dodjeljujemo glavnu namjeru."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Zagrebački računovodstveni ured sve usluge opisuje jednim tekstom.",
+        "Odvajamo obračun plaća i savjetovanje prema potrebama klijenta.",
+        "Provjeravamo naslove, poveznice i slanje upita."
+      ],
+      "visual": [
+        "USLUGA",
+        "PRETRAGA",
+        "PONUDA"
+      ],
+      "risk": "Broj upita ovisi i o cijeni, potražnji, konkurenciji i prodaji. Ne obećavamo određen broj klijenata.",
+      "related": [
+        [
+          "local-seo",
+          "Lokalni SEO za tvrtke",
+          "Povezujemo stvarno područje rada, lokalne pretrage, poslovni profil i jasne kontaktne korake."
+        ],
+        [
+          "service-websites",
+          "Web-stranice za uslužne tvrtke",
+          "Organiziramo stvarne usluge, odobrene materijale i funkcionalan mobilni obrazac."
+        ]
+      ],
+      "cta": "Planirajte SEO svojih usluga"
+    },
+    "international-seo": {
+      "title": "Međunarodni SEO | MrSeo.tech",
+      "description": "Međunarodni SEO: Planiramo jezične URL-ove, canonical, hreflang i sadržaj prema potrebama ciljanih tržišta.",
+      "kicker": "MEĐUNARODNI SEO",
+      "hero": [
+        "Međunarodni SEO.",
+        "Prikazuje li se pravi jezik na pravom tržištu?"
+      ],
+      "lead": "Hrvatskom proizvođaču koji prodaje u Sloveniji ili Njemačkoj nije dovoljan prijevod kataloga. Provjeravamo lokalne pretrage, jezične adrese i stvarne ekvivalente stranica.",
+      "intro": "Gdje se miješaju signali različitih tržišta?",
+      "introText": "Planiramo jezične URL-ove, canonical, hreflang i sadržaj prema potrebama ciljanih tržišta.",
+      "problems": [
+        [
+          "Pogrešan jezik",
+          "Hrvatska kategorija prikazuje se u njemačkoj pretrazi.",
+          "Provjeravamo canonical i jezične oznake."
+        ],
+        [
+          "Doslovan prijevod",
+          "Lokalni kupci koriste druga imena proizvoda.",
+          "Istražujemo lokalne izraze i potražnju."
+        ],
+        [
+          "Pogrešan ekvivalent",
+          "Odabir jezika vodi na nepovezanu uslugu.",
+          "Povezujemo samo stvarno odgovarajuće stranice."
+        ]
+      ],
+      "process": [
+        [
+          "Tržišta",
+          "Definiramo zemlje, ponudu i dostavu."
+        ],
+        [
+          "Adrese",
+          "Provjeravamo URL-ove i preusmjeravanja."
+        ],
+        [
+          "Lokalizacija",
+          "Povezujemo lokalne potrebe s ponudom."
+        ],
+        [
+          "Validacija",
+          "Provjeravamo uzajamne hreflang oznake i sitemap."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karta tržišta",
+          "Zemlje, jezici i stvarne adrese."
+        ],
+        [
+          "Tehnička provjera",
+          "Canonical i hreflang."
+        ],
+        [
+          "Plan lokalizacije",
+          "Prioritetne komercijalne stranice."
+        ]
+      ],
+      "faq": [
+        [
+          "Treba li domena za svaku zemlju?",
+          "Ne nužno, poddirektoriji mogu biti prikladni."
+        ],
+        [
+          "Jamči li hreflang rangiranje?",
+          "Ne, pomaže prepoznavanju jezičnih verzija."
+        ],
+        [
+          "Što ako prijevod nedostaje?",
+          "Ne označavamo nepostojeći ekvivalent."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Hrvatski trgovac otvori slovensku kategoriju, no prikazuje se hrvatska.",
+        "Provjeravamo adrese, lokalne izraze i jezične veze.",
+        "Potvrđujemo uzajamne oznake i XML kartu."
+      ],
+      "visual": [
+        "TRŽIŠTE",
+        "JEZIK",
+        "URL"
+      ],
+      "risk": "Hreflang ne jamči vidljivost. Cijene, isporuku i pravne uvjete treba procijeniti zasebno za svako tržište.",
+      "related": [
+        [
+          "ecommerce-seo",
+          "SEO web-trgovina",
+          "Organiziramo kategorije i proizvode za pretragu."
+        ],
+        [
+          "website-design",
+          "Izrada web-stranice",
+          "Razumljiv web kojim je lako upravljati."
+        ]
+      ],
+      "cta": "Planirajte međunarodni SEO"
+    },
+    "google-shopping": {
+      "title": "Google Shopping i Performance Max | MrSeo.tech",
+      "description": "Google Shopping i Performance Max: Provjeravamo feed, mjerenje kupnji, segmentaciju proizvoda i ekonomiku kampanja.",
+      "kicker": "GOOGLE SHOPPING I PERFORMANCE MAX",
+      "hero": [
+        "Google Shopping i Performance Max.",
+        "Donose li oglasi proizvoda profitabilne narudžbe?"
+      ],
+      "lead": "Visok prihod u eurima nije isto što i dobit. Uspoređujemo feed, stvarne narudžbe, trošak oglasa i dostupne marže kako bismo procijenili skupine proizvoda.",
+      "intro": "Koji proizvodi troše oglasni proračun?",
+      "introText": "Provjeravamo feed, mjerenje kupnji, segmentaciju proizvoda i ekonomiku kampanja.",
+      "problems": [
+        [
+          "Različite cijene",
+          "Cijena s PDV-om u feedu ne odgovara trgovini.",
+          "Uspoređujemo varijantu, feed i košaricu."
+        ],
+        [
+          "Niske marže",
+          "Proizvodi s malom maržom koriste velik dio proračuna.",
+          "Analiziramo trošak i vrijednost po skupini."
+        ],
+        [
+          "Dvostruke kupnje",
+          "Jedna narudžba bilježi se više puta.",
+          "Provjeravamo purchase i transaction_id."
+        ]
+      ],
+      "process": [
+        [
+          "Feed",
+          "Provjeravamo cijene, zalihu i identifikatore."
+        ],
+        [
+          "Mjerenje",
+          "Usklađujemo vrijednosti narudžbi."
+        ],
+        [
+          "Segmentacija",
+          "Planiramo skupine i proračun."
+        ],
+        [
+          "Procjena",
+          "Uspoređujemo potvrđene kupnje i trošak."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Popis pogrešaka feeda",
+          "Proizvodi i odstupanja."
+        ],
+        [
+          "Struktura kampanja",
+          "Skupine prema poslovnim ciljevima."
+        ],
+        [
+          "Kontrola mjerenja",
+          "Jedinstvene narudžbe i vrijednosti."
+        ]
+      ],
+      "faq": [
+        [
+          "Shopping ili Performance Max?",
+          "Ovisi o povijesti, ciljevima i potrebi za kontrolom."
+        ],
+        [
+          "Što je CSS?",
+          "Comparison Shopping Service je usluga usporedbe cijena u europskom Shopping sustavu."
+        ],
+        [
+          "Je li proračun uključen u naknadu?",
+          "Ne, trošak oglasa i naknada su odvojeni."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Trgovina opremom bilježi visok ROAS, ali prodaje uglavnom proizvode s malom maržom.",
+        "Povezujemo stvarne narudžbe, dostupne marže i potrošnju po skupinama.",
+        "Procjenjujemo promjene u usporedivim razdobljima."
+      ],
+      "visual": [
+        "FEED",
+        "OGLAS",
+        "KUPNJA"
+      ],
+      "risk": "ROAS nije dobit. PDV, marža, dostava, povrati i drugi troškovi utječu na profitabilnost.",
+      "related": [
+        [
+          "merchant-center-help",
+          "Pomoć za Google Merchant Center",
+          "Razlikujemo pogreške proizvoda, probleme weba i ograničenja računa kako bismo predložili ispravak na izvoru."
+        ],
+        [
+          "catalog-automation",
+          "Automatizacija kataloga proizvoda",
+          "Definiramo identifikatore, mapiranje polja, pravila ažuriranja i obradu pogrešaka."
+        ]
+      ],
+      "cta": "Provjerite Shopping kampanje"
+    },
+    "local-google-ads": {
+      "title": "Google Ads za lokalne tvrtke | MrSeo.tech",
+      "description": "Google Ads za lokalne tvrtke: Usklađujemo lokalne oglase, područje, stvarne usluge i mjerenje relevantnih upita.",
+      "kicker": "GOOGLE ADS ZA LOKALNE TVRTKE",
+      "hero": [
+        "Google Ads za lokalne tvrtke.",
+        "Plaćate li upite koje možete uslužiti?"
+      ],
+      "lead": "Monter u Rijeci treba poslove u svom području, a ne klikove ljudi koji traže posao ili upute. Provjeravamo geografsko ciljanje, pojmove pretrage i korisne kontakte.",
+      "intro": "Zašto se javljaju pogrešni kupci?",
+      "introText": "Usklađujemo lokalne oglase, područje, stvarne usluge i mjerenje relevantnih upita.",
+      "problems": [
+        [
+          "Preširoko ciljanje",
+          "Upiti dolaze iz mjesta koja ne pokrivate.",
+          "Provjeravamo geografske postavke i izvještaje."
+        ],
+        [
+          "Nevažne pretrage",
+          "Proračun se troši na upute i oglase za posao.",
+          "Analiziramo pojmove i negativne ključne riječi."
+        ],
+        [
+          "Zavaravajuće mjerenje",
+          "Klik na telefon računa se kao dobiven posao.",
+          "Definiramo kriterije korisnog kontakta."
+        ]
+      ],
+      "process": [
+        [
+          "Područje",
+          "Određujemo lokacije i kapacitet."
+        ],
+        [
+          "Pojmovi",
+          "Pronalazimo nevažne pretrage."
+        ],
+        [
+          "Oglasi",
+          "Povezujemo poruku i uslugu."
+        ],
+        [
+          "Kvaliteta",
+          "Provjeravamo mjerenje kontakata."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Geografski plan",
+          "Područja i isključenja."
+        ],
+        [
+          "Grupe oglasa",
+          "Poruke za stvarne usluge."
+        ],
+        [
+          "Definicija kontakta",
+          "Kriteriji poziva i obrazaca."
+        ]
+      ],
+      "faq": [
+        [
+          "Možemo li ciljati samo Rijeku?",
+          "Da, u granicama mogućnosti i točnosti platforme."
+        ],
+        [
+          "Moraju li oglasi raditi cijeli dan?",
+          "Ne, uzimamo u obzir radno vrijeme i kapacitet."
+        ],
+        [
+          "Je li svaki poziv konverzija?",
+          "Ne, razlikujemo kontakt od kvalificiranog upita."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Riječki servis prima pozive za poslove koje ne obavlja.",
+        "Sužavamo pojmove i usklađujemo oglas sa stvarnom ponudom.",
+        "Provjeravamo dostupne podatke o pozivima i upitima."
+      ],
+      "visual": [
+        "PODRUČJE",
+        "OGLAS",
+        "POZIV"
+      ],
+      "risk": "Cijena upita ovisi o konkurenciji, ponudi, sezoni i obradi kontakata. Ne jamčimo fiksnu cijenu po leadu.",
+      "related": [
+        [
+          "google-ads",
+          "Upravljanje Google Ads kampanjama",
+          "Upravljamo kampanjama prema provjerenim ciljevima."
+        ],
+        [
+          "landing-pages",
+          "Odredišne stranice za oglašavanje",
+          "Usklađujemo namjeru pretrage, oglasnu poruku, mobilno iskustvo i konverzijski događaj."
+        ]
+      ],
+      "cta": "Razgovarajmo o lokalnim oglasima"
+    },
+    "google-ads-audit": {
+      "title": "Neovisna revizija Google Ads | MrSeo.tech",
+      "description": "Neovisna revizija Google Ads: Razdvajamo potvrđene pogreške mjerenja, rizike potrošnje i hipoteze koje treba testirati.",
+      "kicker": "NEOVISNA REVIZIJA GOOGLE ADS",
+      "hero": [
+        "Neovisna revizija Google Ads.",
+        "Znate li kamo odlazi proračun za oglase?"
+      ],
+      "lead": "Neovisna revizija otkriva dokazive probleme bez automatskih promjena računa. Analiziramo konverzije, strukturu kampanja, pojmove i troškove te predajemo prioritetni plan.",
+      "intro": "Što treba provjeriti prije optimizacije?",
+      "introText": "Razdvajamo potvrđene pogreške mjerenja, rizike potrošnje i hipoteze koje treba testirati.",
+      "problems": [
+        [
+          "Pogrešne konverzije",
+          "Ista narudžba prikazuje se više puta.",
+          "Uspoređujemo konverzijske radnje i identifikatore."
+        ],
+        [
+          "Nepotvrđeni rezultati",
+          "Prodaja ne prepoznaje prijavljene upite.",
+          "Uspoređujemo dostupne CRM i Ads podatke."
+        ],
+        [
+          "Pomiješani ciljevi",
+          "Različite usluge natječu se za isti proračun.",
+          "Istražujemo strukturu i povijest izmjena."
+        ]
+      ],
+      "process": [
+        [
+          "Opseg",
+          "Dogovaramo cilj i pristup za čitanje."
+        ],
+        [
+          "Provjera",
+          "Analiziramo postavke i podatke."
+        ],
+        [
+          "Prioriteti",
+          "Razlikujemo pogreške i pretpostavke."
+        ],
+        [
+          "Izvještaj",
+          "Bilježimo dokaze i testove."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Revizijski izvještaj",
+          "Nalazi s konkretnim primjerima."
+        ],
+        [
+          "Popis radnji",
+          "Prioritet prema riziku i učinku."
+        ],
+        [
+          "Plan provjere",
+          "Mjerila i kriteriji."
+        ]
+      ],
+      "faq": [
+        [
+          "Mijenjate li kampanje tijekom revizije?",
+          "Ne bez zasebnog odobrenja."
+        ],
+        [
+          "Koje razdoblje analizirate?",
+          "Ovisi o podacima, sezoni i promjenama."
+        ],
+        [
+          "Jamčite li niži trošak?",
+          "Ne, isporučujemo obrazložene preporuke."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "B2B tvrtka vidi mnogo leadova, ali prodaja potvrđuje samo neke.",
+        "Uspoređujemo konverzijske radnje i dostupne podatke o prodaji.",
+        "Dokumentiramo razlike i prijedlog korekcije."
+      ],
+      "visual": [
+        "RAČUN",
+        "REVIZIJA",
+        "PLAN"
+      ],
+      "risk": "Revizija ne uključuje automatski upravljanje, provedbu ni promjene proračuna. To se dogovara zasebno.",
+      "related": [
+        [
+          "google-ads",
+          "Upravljanje Google Ads kampanjama",
+          "Upravljamo kampanjama prema provjerenim ciljevima."
+        ],
+        [
+          "analytics",
+          "GA4 i mjerenje konverzija",
+          "Provjeravamo kupnje i relevantne kontakte."
+        ]
+      ],
+      "cta": "Zatražite reviziju Google Ads"
+    },
+    "merchant-center-help": {
+      "title": "Pomoć za Google Merchant Center | MrSeo.tech",
+      "description": "Pomoć za Google Merchant Center: Razlikujemo pogreške proizvoda, probleme weba i ograničenja računa kako bismo predložili ispravak na izvoru.",
+      "kicker": "POMOĆ ZA GOOGLE MERCHANT CENTER",
+      "hero": [
+        "Pomoć za Google Merchant Center.",
+        "Zašto se proizvodi ne prikazuju?"
+      ],
+      "lead": "Pogrešna cijena, dostupnost ili identifikator može spriječiti prikaz proizvoda. Provjeravamo dijagnostiku i utvrđujemo uzrok u izvornim podacima, trgovini ili ograničenju računa.",
+      "intro": "Što sprječava odobrenje proizvoda?",
+      "introText": "Razlikujemo pogreške proizvoda, probleme weba i ograničenja računa kako bismo predložili ispravak na izvoru.",
+      "problems": [
+        [
+          "Netočna zaliha",
+          "Varijanta je dostupna u feedu, ali se ne može kupiti.",
+          "Provjeravamo varijantu, feed i košaricu."
+        ],
+        [
+          "Nepotpuni podaci",
+          "GTIN ili slika ne zadovoljava primjenjive zahtjeve.",
+          "Uspoređujemo izvore i pravila za proizvod."
+        ],
+        [
+          "Ograničen račun",
+          "Obavijest zahvaća velik dio kataloga.",
+          "Provjeravamo poruku i podatke o tvrtki."
+        ]
+      ],
+      "process": [
+        [
+          "Dijagnoza",
+          "Razdvajamo pogreške proizvoda i računa."
+        ],
+        [
+          "Usporedba",
+          "Provjeravamo cijene, zalihu i kodove."
+        ],
+        [
+          "Ispravak",
+          "Određujemo izmjene na izvoru."
+        ],
+        [
+          "Kontrola",
+          "Provjeravamo uzorke i dijagnostiku."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Popis pogrešaka",
+          "Proizvodi i razlozi odbijanja."
+        ],
+        [
+          "Plan ispravka",
+          "Promjene u feedu ili trgovini."
+        ],
+        [
+          "Provjereni uzorci",
+          "Kontrola ispravljenih proizvoda."
+        ]
+      ],
+      "faq": [
+        [
+          "Jamčite li odobrenje?",
+          "Ne, Google donosi odluku."
+        ],
+        [
+          "Treba li novi feed?",
+          "Ne uvijek, često se može ispraviti postojeći."
+        ],
+        [
+          "Pomaže li novi račun?",
+          "Ne zaobilazimo ograničenja, rješavamo uzrok."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Trgovina obućom šalje istu dostupnost za sve veličine.",
+        "Provjeravamo identifikatore varijanti i ažuriranje zalihe.",
+        "Uspoređujemo ispravljene uzorke s dijagnostikom."
+      ],
+      "visual": [
+        "PROIZVOD",
+        "POGREŠKA",
+        "KONTROLA"
+      ],
+      "risk": "Google odlučuje o odobrenju proizvoda i računa. Ne obećavamo vrijeme ni siguran rezultat odobrenja.",
+      "related": [
+        [
+          "google-shopping",
+          "Google Shopping i Performance Max",
+          "Provjeravamo feed, mjerenje kupnji, segmentaciju proizvoda i ekonomiku kampanja."
+        ],
+        [
+          "catalog-automation",
+          "Automatizacija kataloga proizvoda",
+          "Definiramo identifikatore, mapiranje polja, pravila ažuriranja i obradu pogrešaka."
+        ]
+      ],
+      "cta": "Riješite odbijene proizvode"
+    },
+    "woocommerce-shopify-stores": {
+      "title": "WooCommerce i Shopify web-trgovine | MrSeo.tech",
+      "description": "WooCommerce i Shopify web-trgovine: Planiramo katalog, blagajnu, dostavu, narudžbe i provjerene veze s drugim sustavima.",
+      "kicker": "WOOCOMMERCE I SHOPIFY WEB-TRGOVINE",
+      "hero": [
+        "WooCommerce i Shopify web-trgovine.",
+        "Odaberite platformu prema stvarnim potrebama."
+      ],
+      "lead": "Web-trgovina mora upravljati varijantama, zalihom, plaćanjem, dostavom i narudžbama. Procjenjujemo hrvatske načine plaćanja i dostavne usluge prije dogovora o integracijama.",
+      "intro": "Što mora raditi prije prve narudžbe?",
+      "introText": "Planiramo katalog, blagajnu, dostavu, narudžbe i provjerene veze s drugim sustavima.",
+      "problems": [
+        [
+          "Složene varijante",
+          "Veličine i cijene teško je održavati.",
+          "Planiramo atribute i kategorije."
+        ],
+        [
+          "Neprovjereno plaćanje",
+          "Željeni način plaćanja možda nije podržan.",
+          "Provjeravamo pružatelja, ugovor i platformu."
+        ],
+        [
+          "Ručna obrada narudžbi",
+          "Narudžba se unosi i u drugi sustav.",
+          "Definiramo polja i odgovornosti prijenosa."
+        ]
+      ],
+      "process": [
+        [
+          "Zahtjevi",
+          "Utvrđujemo asortiman i procese."
+        ],
+        [
+          "Model",
+          "Planiramo varijante i uvoz."
+        ],
+        [
+          "Razvoj",
+          "Izrađujemo dogovorene funkcije."
+        ],
+        [
+          "Test",
+          "Provjeravamo narudžbu i plaćanje."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Odabir platforme",
+          "Zahtjevi, troškovi i ograničenja."
+        ],
+        [
+          "Funkcionalna trgovina",
+          "Katalog, blagajna i integracije."
+        ],
+        [
+          "Probna kupnja",
+          "Plaćanje, dostava i potvrda."
+        ]
+      ],
+      "faq": [
+        [
+          "WooCommerce ili Shopify?",
+          "Prema asortimanu, održavanju, trošku i kontroli."
+        ],
+        [
+          "Može li Monri ili CorvusPay?",
+          "Prvo provjeravamo pružatelja, ugovor, platformu i kompatibilnost."
+        ],
+        [
+          "Može li dostava GLS-om?",
+          "Procjenjujemo dostupnu integraciju i uvjete dostave."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Hrvatska trgovina odjećom želi veličine, kartično plaćanje i dostavu.",
+        "Biramo platformu prema katalogu i potvrđenim uslugama.",
+        "Testiramo varijante, naplatu i narudžbu."
+      ],
+      "visual": [
+        "KATALOG",
+        "BLAGAJNA",
+        "NARUDŽBA"
+      ],
+      "risk": "Ugovori o plaćanju, pretplate, dodaci i dostava mogu imati zasebne troškove. Kompatibilnost se provjerava unaprijed.",
+      "related": [
+        [
+          "online-shop-development",
+          "Izrada web-trgovine",
+          "Planiramo katalog, blagajnu i narudžbe."
+        ],
+        [
+          "store-migration",
+          "Migracija web-trgovine",
+          "Planiramo prijenos kataloga, mapiranje URL-ova, 301 preusmjeravanja i testiranje narudžbi."
+        ]
+      ],
+      "cta": "Planirajte novu web-trgovinu"
+    },
+    "store-conversion": {
+      "title": "Optimizacija konverzija web-trgovine | MrSeo.tech",
+      "description": "Optimizacija konverzija web-trgovine: Provjeravamo odabir proizvoda, košaricu, dostavu, plaćanje i mjerenje kupnje.",
+      "kicker": "OPTIMIZACIJA KONVERZIJA WEB-TRGOVINE",
+      "hero": [
+        "Optimizacija konverzija web-trgovine.",
+        "Zašto kupci napuštaju košaricu?"
+      ],
+      "lead": "Više posjeta ne rješava nejasan izbor proizvoda, iznenadnu cijenu dostave ili teško plaćanje na mobitelu. Analiziramo put kupnje i njegove podatke.",
+      "intro": "Što sprječava dovršetak narudžbe?",
+      "introText": "Provjeravamo odabir proizvoda, košaricu, dostavu, plaćanje i mjerenje kupnje.",
+      "problems": [
+        [
+          "Nejasan izbor",
+          "Kupac ne zna koja mu veličina ili varijanta odgovara.",
+          "Provjeravamo informacije i česta pitanja."
+        ],
+        [
+          "Kasni troškovi",
+          "Ukupna dostava prikazuje se tek na kraju.",
+          "Provjeravamo prikaz ukupnog iznosa."
+        ],
+        [
+          "Nedostatni podaci",
+          "Nije jasno gdje se kupnja prekida.",
+          "Provjeravamo događaje kupnje i narudžbe."
+        ]
+      ],
+      "process": [
+        [
+          "Polazište",
+          "Potvrđujemo mjerenje kupnje."
+        ],
+        [
+          "Put kupnje",
+          "Testiramo proizvod, košaricu i naplatu."
+        ],
+        [
+          "Promjene",
+          "Odabiremo stvarne prepreke."
+        ],
+        [
+          "Procjena",
+          "Definiramo usporedive podatke."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karta prepreka",
+          "Konkretni problemi korisnika."
+        ],
+        [
+          "Plan poboljšanja",
+          "Hipoteze za provjeru."
+        ],
+        [
+          "Plan mjerenja",
+          "Događaji i usporediva razdoblja."
+        ]
+      ],
+      "faq": [
+        [
+          "Jamčite li rast konverzija?",
+          "Ne, promjene procjenjujemo podacima."
+        ],
+        [
+          "Treba li potpuno novi dizajn?",
+          "Ne, počinjemo od konkretnih prepreka."
+        ],
+        [
+          "Radite li A/B testove?",
+          "Kada promet i tehnologija omogućuju smislen test."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Trgovina namještajem prikazuje cijenu dostave na otoke tek na kraju.",
+        "Predlažemo jasnije uvjete prije blagajne.",
+        "Testiramo kupnju i uspoređujemo podatke uz sezonalnost."
+      ],
+      "visual": [
+        "PROIZVOD",
+        "KOŠARICA",
+        "PLAĆANJE"
+      ],
+      "risk": "Cijena, zaliha, sezona, akcije i kvaliteta prometa utječu na konverzije. Jednoj izmjeni ne pripisujemo sve učinke.",
+      "related": [
+        [
+          "analytics",
+          "GA4 i mjerenje konverzija",
+          "Provjeravamo kupnje i relevantne kontakte."
+        ],
+        [
+          "website-redesign",
+          "Redizajn i modernizacija weba",
+          "Planiramo modernizaciju navigacije, sučelja i URL strukture uz provjere prije pokretanja."
+        ]
+      ],
+      "cta": "Provjerite put kupnje"
+    },
+    "catalog-automation": {
+      "title": "Automatizacija kataloga proizvoda | MrSeo.tech",
+      "description": "Automatizacija kataloga proizvoda: Definiramo identifikatore, mapiranje polja, pravila ažuriranja i obradu pogrešaka.",
+      "kicker": "AUTOMATIZACIJA KATALOGA PROIZVODA",
+      "hero": [
+        "Automatizacija kataloga proizvoda.",
+        "Prestanite ručno ažurirati cijene i zalihu."
+      ],
+      "lead": "Dobavljačke datoteke mogu imati različite šifre i formate. Gradimo kontrolirani uvoz koji prikazuje ažurirane zapise, pogreške i odbačene retke.",
+      "intro": "Gdje nastaju pogreške u katalogu?",
+      "introText": "Definiramo identifikatore, mapiranje polja, pravila ažuriranja i obradu pogrešaka.",
+      "problems": [
+        [
+          "Različite šifre",
+          "Isti artikl ima više dobavljačkih kodova.",
+          "Određujemo stabilne ključeve i varijante."
+        ],
+        [
+          "Neusklađene cijene",
+          "Miješaju se neto i bruto cijene.",
+          "Provjeravamo formate i pravila PDV-a."
+        ],
+        [
+          "Nevidljive pogreške",
+          "Nevaljani red preskače se bez obavijesti.",
+          "Planiramo validaciju i izvještaj odstupanja."
+        ]
+      ],
+      "process": [
+        [
+          "Izvori",
+          "Popisujemo datoteke i intervale."
+        ],
+        [
+          "Mapiranje",
+          "Definiramo ključeve i polja."
+        ],
+        [
+          "Uvoz",
+          "Gradimo kontrolirani postupak."
+        ],
+        [
+          "Nadzor",
+          "Testiramo ponavljanje i obavijesti."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karta podataka",
+          "Izvori i pravila pretvorbe."
+        ],
+        [
+          "Automatski uvoz",
+          "Ažuriranje dogovorenih polja."
+        ],
+        [
+          "Izvještaj pogrešaka",
+          "Odbačeni redovi s razlozima."
+        ]
+      ],
+      "faq": [
+        [
+          "CSV, XML ili API?",
+          "Da, ako su izvor i pristup odgovarajući."
+        ],
+        [
+          "Što kad proizvod nedostaje?",
+          "Dogovaramo zadržavanje, deaktivaciju ili oznaku."
+        ],
+        [
+          "Može li se mijenjati samo zaliha?",
+          "Da, ograničavamo dopuštena polja."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Veletrgovac prima cjenike od više dobavljača s različitim šiframa.",
+        "Usklađujemo ključeve i cijene, izdvajamo neispravne redove.",
+        "Provjeravamo uzorke i izvještaj nakon uvoza."
+      ],
+      "visual": [
+        "IZVOR",
+        "PRAVILA",
+        "KATALOG"
+      ],
+      "risk": "Automatizacija ovisi o kvaliteti podataka, pristupu, API ograničenjima i uvjetima platforme.",
+      "related": [
+        [
+          "api-integrations",
+          "API integracije i automatizacija",
+          "Planiramo tokove podataka, pristup, validaciju, sigurno ponavljanje i nadzor pogrešaka."
+        ],
+        [
+          "merchant-center-help",
+          "Pomoć za Google Merchant Center",
+          "Razlikujemo pogreške proizvoda, probleme weba i ograničenja računa kako bismo predložili ispravak na izvoru."
+        ]
+      ],
+      "cta": "Automatizirajte katalog"
+    },
+    "store-migration": {
+      "title": "Migracija web-trgovine | MrSeo.tech",
+      "description": "Migracija web-trgovine: Planiramo prijenos kataloga, mapiranje URL-ova, 301 preusmjeravanja i testiranje narudžbi.",
+      "kicker": "MIGRACIJA WEB-TRGOVINE",
+      "hero": [
+        "Migracija web-trgovine.",
+        "Promijenite platformu bez nepotrebnih prekida."
+      ],
+      "lead": "Prijenos trgovine zahtijeva očuvanje važnih adresa, proizvoda i narudžbenih procesa. Testiramo uvoz, preusmjeravanja i kupnju prije zamjene stare trgovine.",
+      "intro": "Što se ne smije izgubiti tijekom migracije?",
+      "introText": "Planiramo prijenos kataloga, mapiranje URL-ova, 301 preusmjeravanja i testiranje narudžbi.",
+      "problems": [
+        [
+          "Izgubljene adrese",
+          "Stare poveznice proizvoda vraćaju 404.",
+          "Pronalazimo stvarne nove ekvivalente."
+        ],
+        [
+          "Nepotpun uvoz",
+          "Nedostaju slike, varijante ili opisi.",
+          "Provjeravamo reprezentativne uzorke."
+        ],
+        [
+          "Prekid naplate",
+          "Blagajna ili dostava ne rade nakon promjene.",
+          "Testiramo ključne funkcije u odvojenom okruženju."
+        ]
+      ],
+      "process": [
+        [
+          "Popis",
+          "Bilježimo podatke i adrese."
+        ],
+        [
+          "Mapiranje",
+          "Povezujemo stare i nove URL-ove."
+        ],
+        [
+          "Probni prijenos",
+          "Provjeravamo uvoz i kupnju."
+        ],
+        [
+          "Pokretanje",
+          "Pratimo poveznice i narudžbe."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Migracijski inventar",
+          "Podaci i ovisnosti."
+        ],
+        [
+          "Karta preusmjeravanja",
+          "Stari URL-ovi i novi ciljevi."
+        ],
+        [
+          "Plan pokretanja",
+          "Testovi i naknadna kontrola."
+        ]
+      ],
+      "faq": [
+        [
+          "Jamčite li pozicije na Googleu?",
+          "Ne, smanjujemo tehničke rizike."
+        ],
+        [
+          "Možemo li na Shopify?",
+          "Najprije procjenjujemo izvoz i zahtjeve."
+        ],
+        [
+          "Prenosi li se povijest narudžbi?",
+          "Ovisi o mogućnostima izvornog i ciljnog sustava."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Trgovina mijenja platformu i adrese kategorija.",
+        "Planiramo mapiranje, uvoz i probnu narudžbu.",
+        "Nakon pokretanja provjeravamo 301, narudžbe i feed."
+      ],
+      "visual": [
+        "STARO",
+        "PRIJENOS",
+        "NOVO"
+      ],
+      "risk": "Čak i planirana migracija može privremeno promijeniti organski promet. Očuvanje rangiranja nije zajamčeno.",
+      "related": [
+        [
+          "woocommerce-shopify-stores",
+          "WooCommerce i Shopify web-trgovine",
+          "Planiramo katalog, blagajnu, dostavu, narudžbe i provjerene veze s drugim sustavima."
+        ],
+        [
+          "ecommerce-seo",
+          "SEO web-trgovina",
+          "Organiziramo kategorije i proizvode za pretragu."
+        ]
+      ],
+      "cta": "Planirajte migraciju trgovine"
+    },
+    "service-websites": {
+      "title": "Web-stranice za uslužne tvrtke | MrSeo.tech",
+      "description": "Web-stranice za uslužne tvrtke: Organiziramo stvarne usluge, odobrene materijale i funkcionalan mobilni obrazac.",
+      "kicker": "WEB-STRANICE ZA USLUŽNE TVRTKE",
+      "hero": [
+        "Web-stranice za uslužne tvrtke.",
+        "Razumije li kupac što vaša tvrtka nudi?"
+      ],
+      "lead": "Gradimo web na kojem posjetitelj nalazi odgovarajuću uslugu, uvjete i jednostavan način da zatraži ponudu. Struktura slijedi stvarna pitanja kupaca, a ne dekorativne efekte.",
+      "intro": "Što kupac treba znati prije kontakta?",
+      "introText": "Organiziramo stvarne usluge, odobrene materijale i funkcionalan mobilni obrazac.",
+      "problems": [
+        [
+          "Nejasna ponuda",
+          "Posjetitelj ne zna koja usluga rješava njegov problem.",
+          "Razdvajamo korisničke putove prema potrebama."
+        ],
+        [
+          "Nedostatak informacija",
+          "Opseg rada i uvjeti nisu objašnjeni.",
+          "Koristimo potvrđene materijale tvrtke."
+        ],
+        [
+          "Složen obrazac",
+          "Slanje upita na mobitelu zahtijeva previše koraka.",
+          "Pojednostavljujemo i testiramo slanje."
+        ]
+      ],
+      "process": [
+        [
+          "Ciljevi",
+          "Definiramo željene klijente."
+        ],
+        [
+          "Struktura",
+          "Planiramo stranice i kontakte."
+        ],
+        [
+          "Razvoj",
+          "Izrađujemo responzivne komponente."
+        ],
+        [
+          "Predaja",
+          "Testiramo obrasce i upravljanje."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karta usluga",
+          "Stranice i putovi kupaca."
+        ],
+        [
+          "Funkcionalan web",
+          "Dogovorene funkcije i predlošci."
+        ],
+        [
+          "Test kontakta",
+          "Slanje i obavijest."
+        ]
+      ],
+      "faq": [
+        [
+          "Pišete li i tekstove?",
+          "Dogovaramo opseg i potvrđujemo činjenice."
+        ],
+        [
+          "Koristite li WordPress?",
+          "Da, kada odgovara zahtjevima održavanja."
+        ],
+        [
+          "Je li uključen kontinuirani SEO?",
+          "Tehničke osnove prema projektu, daljnji SEO zasebno."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Tvrtka za adaptacije ima opću stranicu bez opisa konkretnih radova.",
+        "Organiziramo usluge i jasan zahtjev za ponudom.",
+        "Testiramo navigaciju i obrazac na mobitelu."
+      ],
+      "visual": [
+        "USLUGA",
+        "STRANICA",
+        "PONUDA"
+      ],
+      "risk": "Cijena i rok ovise o broju stranica, sadržaju, integracijama i odobrenim materijalima.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO za uslužne djelatnosti",
+          "Planiramo stranice usluga, namjere pretrage, interne poveznice i put do zahtjeva za ponudom."
+        ],
+        [
+          "website-design",
+          "Izrada web-stranice",
+          "Razumljiv web kojim je lako upravljati."
+        ]
+      ],
+      "cta": "Planirajte web za usluge"
+    },
+    "landing-pages": {
+      "title": "Odredišne stranice za oglašavanje | MrSeo.tech",
+      "description": "Odredišne stranice za oglašavanje: Usklađujemo namjeru pretrage, oglasnu poruku, mobilno iskustvo i konverzijski događaj.",
+      "kicker": "ODREDIŠNE STRANICE ZA OGLAŠAVANJE",
+      "hero": [
+        "Odredišne stranice za oglašavanje.",
+        "Pretvorite klik oglasa u relevantan upit."
+      ],
+      "lead": "Odredišna stranica mora ispuniti obećanje oglasa. Gradimo jasnu ponudu, odgovore na bitna pitanja i jednu glavnu radnju uz provjereno mjerenje.",
+      "intro": "Gdje se prekida veza oglasa i stranice?",
+      "introText": "Usklađujemo namjeru pretrage, oglasnu poruku, mobilno iskustvo i konverzijski događaj.",
+      "problems": [
+        [
+          "Pogrešna odredišna stranica",
+          "Oglas konkretne usluge vodi na naslovnicu.",
+          "Usklađujemo naslov, ponudu i radnju."
+        ],
+        [
+          "Previše izbora",
+          "Različiti gumbi natječu se za pozornost.",
+          "Određujemo jednu glavnu radnju."
+        ],
+        [
+          "Netočno mjerenje",
+          "Klik se bilježi, ali poslani obrazac ne.",
+          "Testiramo slanje i uspješan događaj."
+        ]
+      ],
+      "process": [
+        [
+          "Cilj",
+          "Definiramo ponudu i radnju."
+        ],
+        [
+          "Poruka",
+          "Odgovaramo na pitanja kupaca."
+        ],
+        [
+          "Izrada",
+          "Gradimo stranicu i mjerenje."
+        ],
+        [
+          "Test",
+          "Provjeravamo slanje i potvrdu."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Sadržaj kampanje",
+          "Ponuda prema namjeri pretrage."
+        ],
+        [
+          "Odredišna stranica",
+          "Čitljiva na mobilnom uređaju."
+        ],
+        [
+          "Test konverzije",
+          "Provjeren obrazac i događaj."
+        ]
+      ],
+      "faq": [
+        [
+          "Jedna stranica za sve kampanje?",
+          "Samo ako su ponuda i namjera iste."
+        ],
+        [
+          "Upravljate li oglasima?",
+          "Da, prema zasebnom dogovoru."
+        ],
+        [
+          "Može li biti na našoj domeni?",
+          "Često da, nakon provjere platforme i pristupa."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Oglas za ugradnju klima-uređaja vodi na opću stranicu tvrtke.",
+        "Gradimo konkretnu ponudu i jasan kontakt.",
+        "Testiramo usklađenost s oglasom i mjerenje upita."
+      ],
+      "visual": [
+        "OGLAS",
+        "PONUDA",
+        "UPIT"
+      ],
+      "risk": "Stranica sama ne jamči upite. Na rezultat utječu kvaliteta kampanje, cijena, potražnja i brzina odgovora.",
+      "related": [
+        [
+          "google-ads",
+          "Upravljanje Google Ads kampanjama",
+          "Upravljamo kampanjama prema provjerenim ciljevima."
+        ],
+        [
+          "local-google-ads",
+          "Google Ads za lokalne tvrtke",
+          "Usklađujemo lokalne oglase, područje, stvarne usluge i mjerenje relevantnih upita."
+        ]
+      ],
+      "cta": "Izradite stranicu kampanje"
+    },
+    "corporate-websites": {
+      "title": "Korporativne i prezentacijske web-stranice | MrSeo.tech",
+      "description": "Korporativne i prezentacijske web-stranice: Planiramo strukturu poslovnih područja, potvrđene materijale, dokumente i ciljane kontakte.",
+      "kicker": "KORPORATIVNE I PREZENTACIJSKE WEB-STRANICE",
+      "hero": [
+        "Korporativne i prezentacijske web-stranice.",
+        "Predstavite sposobnosti tvrtke razumljivo."
+      ],
+      "lead": "Poslovni partner mora pronaći područja rada, tehničke dokumente i pravi odjel. Organiziramo sadržaj za različite publike i jasnu odgovornost za održavanje.",
+      "intro": "Koje informacije treba budući partner?",
+      "introText": "Planiramo strukturu poslovnih područja, potvrđene materijale, dokumente i ciljane kontakte.",
+      "problems": [
+        [
+          "Nejasna područja rada",
+          "Posjetitelji ne razlikuju ponude odjela.",
+          "Planiramo hijerarhiju prema ciljnoj publici."
+        ],
+        [
+          "Zastarjeli materijali",
+          "Nije određeno tko ažurira dokumente.",
+          "Popisujemo sadržaj i odgovornosti."
+        ],
+        [
+          "Pogrešan kontakt",
+          "Upit dolazi u krivi odjel.",
+          "Stvaramo kontaktne putove prema području rada."
+        ]
+      ],
+      "process": [
+        [
+          "Materijali",
+          "Prikupljamo odobrene činjenice."
+        ],
+        [
+          "Arhitektura",
+          "Definiramo publiku i stranice."
+        ],
+        [
+          "Razvoj",
+          "Izrađujemo predloške i navigaciju."
+        ],
+        [
+          "Predaja",
+          "Testiramo pronalaženje dokumenata."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Informacijska karta",
+          "Stranice, publike i dokumenti."
+        ],
+        [
+          "Korporativni web",
+          "Usklađene responzivne komponente."
+        ],
+        [
+          "Upute za održavanje",
+          "Odgovornosti za sadržaj."
+        ]
+      ],
+      "faq": [
+        [
+          "Može li biti višejezičan?",
+          "Da, uz plan jezika i odobren sadržaj."
+        ],
+        [
+          "Objavljujete li certifikate?",
+          "Samo potvrđene materijale za koje postoji dopuštenje."
+        ],
+        [
+          "Može li se povezati CRM?",
+          "Najprije procjenjujemo podatke i prava."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Industrijski dobavljač ima više linija proizvoda i tehničke datoteke za partnere.",
+        "Organiziramo odobren materijal prema ciljnoj publici.",
+        "Testiramo pronalaženje dokumenta i pravog kontakta."
+      ],
+      "visual": [
+        "TVRTKA",
+        "STRANICE",
+        "KONTAKT"
+      ],
+      "risk": "Ne izmišljamo reference, certifikate, urede ni rezultate. Tvrtka potvrđuje objavljene podatke.",
+      "related": [
+        [
+          "website-design",
+          "Izrada web-stranice",
+          "Razumljiv web kojim je lako upravljati."
+        ],
+        [
+          "web-applications",
+          "Web-aplikacije, CRM i korisnički portali",
+          "Definiramo korisnike, model podataka, prava i kriterije prihvaćanja prije razvoja."
+        ]
+      ],
+      "cta": "Planirajte korporativni web"
+    },
+    "website-redesign": {
+      "title": "Redizajn i modernizacija weba | MrSeo.tech",
+      "description": "Redizajn i modernizacija weba: Planiramo modernizaciju navigacije, sučelja i URL strukture uz provjere prije pokretanja.",
+      "kicker": "REDIZAJN I MODERNIZACIJA WEBA",
+      "hero": [
+        "Redizajn i modernizacija weba.",
+        "Obnovite web bez gubitka onoga što radi."
+      ],
+      "lead": "Stari web može donositi organski promet, ali biti težak za korištenje na mobitelu. Popisujemo vrijedne adrese, sadržaj i prepreke prije promjene dizajna.",
+      "intro": "Što sačuvati, a što promijeniti?",
+      "introText": "Planiramo modernizaciju navigacije, sučelja i URL strukture uz provjere prije pokretanja.",
+      "problems": [
+        [
+          "Nepraktičan mobilni web",
+          "Tekst i gumbi otežavaju korištenje.",
+          "Provjeravamo čitljivost i navigaciju."
+        ],
+        [
+          "Skrivene usluge",
+          "Važne stranice teško se pronalaze.",
+          "Mapiramo hijerarhiju i interne poveznice."
+        ],
+        [
+          "SEO rizik",
+          "Nove adrese nemaju plan za stare poveznice.",
+          "Planiramo preusmjeravanja i canonical."
+        ]
+      ],
+      "process": [
+        [
+          "Popis",
+          "Pronalazimo vrijedne stranice."
+        ],
+        [
+          "Opseg",
+          "Dogovaramo funkcije koje ostaju."
+        ],
+        [
+          "Redizajn",
+          "Moderniziramo komponente."
+        ],
+        [
+          "Test",
+          "Provjeravamo adrese i kontakte."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Karta postojećeg weba",
+          "Vrijedne adrese i problemi."
+        ],
+        [
+          "Novo sučelje",
+          "Dogovoreni predlošci."
+        ],
+        [
+          "Test pokretanja",
+          "Navigacija, obrasci i SEO."
+        ]
+      ],
+      "faq": [
+        [
+          "Treba li mijenjati platformu?",
+          "Ne ako podržava izmjene."
+        ],
+        [
+          "Mogu li URL-ovi ostati?",
+          "Gdje je moguće, inače planiramo preusmjeravanje."
+        ],
+        [
+          "Je li uključena brzina?",
+          "Dogovaramo konkretne mjerljive zahvate."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Savjetodavni web ima promet, ali kontakt je skriven na mobitelu.",
+        "Čuvamo važne adrese i poboljšavamo put do upita.",
+        "Testiramo obrazac, canonical i poveznice."
+      ],
+      "visual": [
+        "STARO",
+        "DIZAJN",
+        "TEST"
+      ],
+      "risk": "Redizajn sam ne jamči više posjeta ili upita. Učinak se procjenjuje prikladnim podacima.",
+      "related": [
+        [
+          "website-speed-security",
+          "Brzina, sigurnost i pristupačnost weba",
+          "Razdvajamo Core Web Vitals, sigurnosne postavke i pristupačnost u provjerljive zadatke."
+        ],
+        [
+          "service-websites",
+          "Web-stranice za uslužne tvrtke",
+          "Organiziramo stvarne usluge, odobrene materijale i funkcionalan mobilni obrazac."
+        ]
+      ],
+      "cta": "Modernizirajte svoj web"
+    },
+    "wordpress-care": {
+      "title": "Održavanje i podrška za WordPress | MrSeo.tech",
+      "description": "Održavanje i podrška za WordPress: Odvajamo preventivno održavanje, otklanjanje kvarova i razvoj novih funkcija.",
+      "kicker": "ODRŽAVANJE I PODRŠKA ZA WORDPRESS",
+      "hero": [
+        "Održavanje i podrška za WordPress.",
+        "Hoće li web raditi nakon sljedećeg ažuriranja?"
+      ],
+      "lead": "WordPress zahtijeva kontrolirana ažuriranja, sigurnosne kopije i testove ključnih funkcija. Održavamo dogovoreni opseg i tražimo uzrok ponavljajućih tehničkih pogrešaka.",
+      "intro": "Kako smanjiti rizik prekida rada?",
+      "introText": "Odvajamo preventivno održavanje, otklanjanje kvarova i razvoj novih funkcija.",
+      "problems": [
+        [
+          "Nekompatibilno ažuriranje",
+          "Dodatak narušava obrazac ili blagajnu.",
+          "Provjeravamo kompatibilnost prije rizične promjene."
+        ],
+        [
+          "Neprovjerena kopija",
+          "Kopija postoji, ali povrat nije testiran.",
+          "Procjenjujemo kopije i mogućnost vraćanja."
+        ],
+        [
+          "Ponavljajuća pogreška",
+          "Problem se vraća nakon privremenog rješenja.",
+          "Provjeravamo zapisnike i uzrok."
+        ]
+      ],
+      "process": [
+        [
+          "Popis",
+          "Provjeravamo verzije i kopije."
+        ],
+        [
+          "Test",
+          "Ponavljamo problem u testnom okruženju."
+        ],
+        [
+          "Ispravak",
+          "Provodimo odobrenu promjenu."
+        ],
+        [
+          "Kontrola",
+          "Testiramo glavne funkcije."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Plan održavanja",
+          "Komponente, intervali i opseg."
+        ],
+        [
+          "Dnevnik promjena",
+          "Ažuriranja i provjere."
+        ],
+        [
+          "Plan vraćanja",
+          "Kopije i koraci oporavka."
+        ]
+      ],
+      "faq": [
+        [
+          "Je li hosting uključen?",
+          "Ne automatski, možemo raditi na postojećem."
+        ],
+        [
+          "Ažurirate li izravno produkciju?",
+          "Kod rizika prednost dajemo testu i mogućnosti povrata."
+        ],
+        [
+          "Jesu li nove funkcije uključene?",
+          "Ne, razvoj se dogovara zasebno."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Nakon ažuriranja dodatka kontaktni obrazac prestaje slati poruke.",
+        "Ponavljamo pogrešku, pregledavamo zapisnik i testiramo rješenje.",
+        "Provjeravamo slanje i dokumentiramo izmjenu."
+      ],
+      "visual": [
+        "KOPIJA",
+        "IZMJENA",
+        "TEST"
+      ],
+      "risk": "Vrijeme odgovora i dostupnost se dogovaraju. Kopije i održavanje ne uklanjaju sve rizike.",
+      "related": [
+        [
+          "website-speed-security",
+          "Brzina, sigurnost i pristupačnost weba",
+          "Razdvajamo Core Web Vitals, sigurnosne postavke i pristupačnost u provjerljive zadatke."
+        ],
+        [
+          "api-integrations",
+          "API integracije i automatizacija",
+          "Planiramo tokove podataka, pristup, validaciju, sigurno ponavljanje i nadzor pogrešaka."
+        ]
+      ],
+      "cta": "Zatražite WordPress podršku"
+    },
+    "api-integrations": {
+      "title": "API integracije i automatizacija | MrSeo.tech",
+      "description": "API integracije i automatizacija: Planiramo tokove podataka, pristup, validaciju, sigurno ponavljanje i nadzor pogrešaka.",
+      "kicker": "API INTEGRACIJE I AUTOMATIZACIJA",
+      "hero": [
+        "API integracije i automatizacija.",
+        "Prestanite unositi iste podatke u više sustava."
+      ],
+      "lead": "Web-trgovina, CRM i računovodstveni sustav trebaju pouzdan prijenos narudžbi. Najprije definiramo polja, prava, stabilne identifikatore i obradu pogrešaka.",
+      "intro": "Gdje se gubi vrijeme ili podatak o narudžbi?",
+      "introText": "Planiramo tokove podataka, pristup, validaciju, sigurno ponavljanje i nadzor pogrešaka.",
+      "problems": [
+        [
+          "Ručni unos",
+          "Narudžba se ponovno upisuje u računovodstvo.",
+          "Mapiramo izvor, cilj i događaj."
+        ],
+        [
+          "Dvostruki zapisi",
+          "Ponovni prijenos stvara drugu narudžbu.",
+          "Definiramo stabilan identifikator."
+        ],
+        [
+          "Nevidljivi kvarovi",
+          "Prijenos ne uspijeva bez obavijesti.",
+          "Planiramo zapisnike, ograničena ponavljanja i upozorenja."
+        ]
+      ],
+      "process": [
+        [
+          "Tok podataka",
+          "Definiramo polja i događaje."
+        ],
+        [
+          "Sučelje",
+          "Provjeravamo pristup i ograničenja."
+        ],
+        [
+          "Razvoj",
+          "Gradimo validiranu vezu."
+        ],
+        [
+          "Test",
+          "Provjeravamo duplikate i prekide."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Specifikacija podataka",
+          "Polja i pravila prijenosa."
+        ],
+        [
+          "Testirana integracija",
+          "Normalni tokovi i pogreške."
+        ],
+        [
+          "Upute za rad",
+          "Zapisnici i obavijesti."
+        ]
+      ],
+      "faq": [
+        [
+          "Mora li postojati API?",
+          "Ne uvijek, odobren izvoz ili webhook može biti dovoljan."
+        ],
+        [
+          "Možete li povezati Minimax ili PANTHEON?",
+          "Najprije provjeravamo sučelje, ugovor, prava i kompatibilnost."
+        ],
+        [
+          "Što kod prekida?",
+          "Dogovaramo sigurno ponavljanje i upozorenje bez duplikata."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Hrvatska trgovina ručno prenosi narudžbe u poslovni sustav.",
+        "Provjeravamo dostupno sučelje i mapiranje polja.",
+        "Testiramo normalnu narudžbu, ponavljanje i privremeni kvar."
+      ],
+      "visual": [
+        "IZVOR",
+        "API",
+        "CRM"
+      ],
+      "risk": "Opseg ovisi o sučeljima, pravima, ugovorima i kvaliteti podataka. Računovodstvena i fiskalna pravila potvrđuje tvrtka.",
+      "related": [
+        [
+          "catalog-automation",
+          "Automatizacija kataloga proizvoda",
+          "Definiramo identifikatore, mapiranje polja, pravila ažuriranja i obradu pogrešaka."
+        ],
+        [
+          "web-applications",
+          "Web-aplikacije, CRM i korisnički portali",
+          "Definiramo korisnike, model podataka, prava i kriterije prihvaćanja prije razvoja."
+        ]
+      ],
+      "cta": "Povežite svoje sustave"
+    },
+    "website-speed-security": {
+      "title": "Brzina, sigurnost i pristupačnost weba | MrSeo.tech",
+      "description": "Brzina, sigurnost i pristupačnost weba: Razdvajamo Core Web Vitals, sigurnosne postavke i pristupačnost u provjerljive zadatke.",
+      "kicker": "BRZINA, SIGURNOST I PRISTUPAČNOST WEBA",
+      "hero": [
+        "Brzina, sigurnost i pristupačnost weba.",
+        "Što usporava ili otežava korištenje weba?"
+      ],
+      "lead": "Mjerimo učitavanje, vidljive tehničke rizike i prepreke korištenju. Promjene vežemo uz konkretne nalaze, a ne obećanje savršenog automatskog rezultata.",
+      "intro": "Koji problemi stvarno utječu na korisnike?",
+      "introText": "Razdvajamo Core Web Vitals, sigurnosne postavke i pristupačnost u provjerljive zadatke.",
+      "problems": [
+        [
+          "Sporo učitavanje",
+          "Velike slike i skripte otežavaju mobilno korištenje.",
+          "Mjerimo resurse i pokazatelje performansi."
+        ],
+        [
+          "Rizične postavke",
+          "Zastarjele komponente ili preširoka prava povećavaju rizik.",
+          "Provjeravamo dogovorene verzije i postavke."
+        ],
+        [
+          "Prepreke pristupačnosti",
+          "Obrazac se ne može koristiti tipkovnicom.",
+          "Testiramo kontrast i relevantne interakcije."
+        ]
+      ],
+      "process": [
+        [
+          "Mjerenje",
+          "Popisujemo resurse i rizike."
+        ],
+        [
+          "Prioriteti",
+          "Procjenjujemo učinak i napor."
+        ],
+        [
+          "Ispravci",
+          "Izvodimo odobrene zahvate."
+        ],
+        [
+          "Ponovni test",
+          "Uspoređujemo mjerenja u sličnim uvjetima."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Dijagnoza",
+          "Mjerenja i prioriteti."
+        ],
+        [
+          "Tehničke izmjene",
+          "Ispravci potvrđenih uzroka."
+        ],
+        [
+          "Kontrolni izvještaj",
+          "Usporedba i ograničenja."
+        ]
+      ],
+      "faq": [
+        [
+          "Jamčite li 100 bodova?",
+          "Ne, ovise o uređaju, mreži i vanjskim uslugama."
+        ],
+        [
+          "Je li uključen penetracijski test?",
+          "Ne, zahtijeva zasebno odobren zadatak."
+        ],
+        [
+          "Je li to pravni certifikat pristupačnosti?",
+          "Ne, ograničena tehnička provjera ga ne zamjenjuje."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Trgovina ima velike slike i blagajnu tešku za korištenje tipkovnicom.",
+        "Mjerimo učitavanje i odabiremo relevantne ispravke.",
+        "Ponavljamo provjere u usporedivim uvjetima."
+      ],
+      "visual": [
+        "MJERENJE",
+        "ISPRAVAK",
+        "TEST"
+      ],
+      "risk": "Apsolutna sigurnost ne može se jamčiti. Infrastruktura, vanjske usluge i opseg provjere ograničavaju rezultate.",
+      "related": [
+        [
+          "wordpress-care",
+          "Održavanje i podrška za WordPress",
+          "Odvajamo preventivno održavanje, otklanjanje kvarova i razvoj novih funkcija."
+        ],
+        [
+          "website-redesign",
+          "Redizajn i modernizacija weba",
+          "Planiramo modernizaciju navigacije, sučelja i URL strukture uz provjere prije pokretanja."
+        ]
+      ],
+      "cta": "Provjerite brzinu i sigurnost"
+    },
+    "web-applications": {
+      "title": "Web-aplikacije, CRM i korisnički portali | MrSeo.tech",
+      "description": "Web-aplikacije, CRM i korisnički portali: Definiramo korisnike, model podataka, prava i kriterije prihvaćanja prije razvoja.",
+      "kicker": "WEB-APLIKACIJE, CRM I KORISNIČKI PORTALI",
+      "hero": [
+        "Web-aplikacije, CRM i korisnički portali.",
+        "Je li poslovanje preraslo proračunske tablice?"
+      ],
+      "lead": "Razvijamo alate za konkretne procese: ponude, radne naloge, dokumente, uloge i integracije. Prva verzija rješava jasno ograničenu potrebu prije širenja projekta.",
+      "intro": "Koji radni proces treba vlastitu aplikaciju?",
+      "introText": "Definiramo korisnike, model podataka, prava i kriterije prihvaćanja prije razvoja.",
+      "problems": [
+        [
+          "Raspršeni podaci",
+          "Ponude i radni nalozi nalaze se u različitim datotekama.",
+          "Planiramo model, statuse i tokove."
+        ],
+        [
+          "Preširoka prava",
+          "Korisnici vide podatke koji im nisu potrebni.",
+          "Definiramo uloge i pravila pristupa."
+        ],
+        [
+          "Nekontroliran opseg",
+          "Funkcije se dodaju prije potvrde koristi.",
+          "Ograničavamo prvu verziju i kriterije."
+        ]
+      ],
+      "process": [
+        [
+          "Proces",
+          "Popisujemo korisnike i zadatke."
+        ],
+        [
+          "Prva verzija",
+          "Određujemo ključne funkcije."
+        ],
+        [
+          "Razvoj",
+          "Gradimo uloge i veze."
+        ],
+        [
+          "Pilot",
+          "Testiramo stvarne radne postupke."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Funkcionalna specifikacija",
+          "Uloge, podaci i pravila."
+        ],
+        [
+          "Upotrebljiv modul",
+          "Dogovorene glavne funkcije."
+        ],
+        [
+          "Plan razvoja",
+          "Testovi i sljedeći korak."
+        ]
+      ],
+      "faq": [
+        [
+          "Možemo li početi s MVP-om?",
+          "Da, odabiremo jedan konkretan proces."
+        ],
+        [
+          "Moramo li zamijeniti CRM?",
+          "Ne uvijek, integracija može biti dovoljna."
+        ],
+        [
+          "Koliko traje razvoj?",
+          "Procjena zahtijeva opseg, podatke i integracije."
+        ]
+      ],
+      "example": [
+        "ILUSTRATIVNI PRIMJER",
+        "Servisna tvrtka vodi ponude i radne naloge u nekoliko tablica.",
+        "Planiramo portal s ulogama i statusima naloga.",
+        "Odabrani korisnici testiraju procese i pristup."
+      ],
+      "visual": [
+        "PROCES",
+        "PORTAL",
+        "REZULTAT"
+      ],
+      "risk": "Vrijeme i cijena ovise o funkcijama, podacima, sigurnosti i integracijama. Nove funkcije procjenjuju se zasebno.",
+      "related": [
+        [
+          "api-integrations",
+          "API integracije i automatizacija",
+          "Planiramo tokove podataka, pristup, validaciju, sigurno ponavljanje i nadzor pogrešaka."
+        ],
+        [
+          "web-development",
+          "Web razvoj po mjeri",
+          "Razvijamo funkcije prema stvarnim potrebama tvrtke."
+        ]
+      ],
+      "cta": "Planirajte svoju web-aplikaciju"
+    }
+  }
+}
