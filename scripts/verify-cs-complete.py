@@ -61,11 +61,11 @@ assert "mrseo_cs_service_rules_v1" in read("inc/cs-service-routing.php")
 fn=read("functions.php")
 assert "/inc/cs-service-routing.php" in fn
 assert "wp_enqueue_style('mrseo-cs-services'" in fn
-assert "wp_enqueue_script('mrseo-cs-hecs-contact'" in fn
+assert "wp_enqueue_script('mrseo-cs-hero-contact'" in fn
 assert "mrseo_cs_service_route()" in fn
 assert "mrseo_cs_service_slugs" in read("inc/international-seo.php")
 assert "prefers-reduced-motion:reduce" in read("assets/cs-services.css")
-assert "IntersectionObserver" in read("assets/cs-service-hecs-contact.js")
+assert "IntersectionObserver" in read("assets/cs-service-hero-contact.js")
 assert "mrseo-cs-scene-visible" in read("assets/cs-services.css")
 assert "X-Robots-Tag: noindex, nofollow" in fn
 base=json_php("inc/eu-content.php","MRSEO_EU_JSON")["cs"]
