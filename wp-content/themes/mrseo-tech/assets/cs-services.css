@@ -1,0 +1,85 @@
+/* Czechia-specific premium service visual system: inherited ivory/graphite/red, no global overrides. */
+.cs-svc .pl-svc-scene{background:linear-gradient(148deg,#333b3a,#1b2425);border-color:#535e59}
+.cs-svc .pl-svc-scene-mark:has(.pl-art){flex:1;min-height:292px;padding:20px 5px}
+.cs-svc .pl-art{min-height:250px}
+.cs-svc .pl-art-node{min-width:0;max-width:100%;border-color:#dce3d9}
+.cs-svc .pl-art-chain{min-width:0;max-width:100%}
+.cs-svc .pl-art-status{font-size:10px;letter-spacing:.055em}
+.cs-svc .pl-svc-hero-note{font-size:15px;line-height:1.65;color:#4f5854}
+.cs-svc .pl-svc-crumb{font-size:14px}
+.cs-svc .pl-svc-need-action small{font-size:13px}
+.cs-svc .intl-wrap{width:min(calc(100% - 64px),1370px);margin-inline:auto}
+.cs-svc,.cs-svc .intl-wrap,.cs-svc .pl-svc-hero-grid,.cs-svc .pl-svc-art,.cs-svc .pl-svc-hero-copy{min-width:0;max-width:100%}
+.cs-svc h1,.cs-svc h2,.cs-svc h3,.cs-svc p,.cs-svc strong,.cs-svc summary{overflow-wrap:anywhere;hyphens:auto}
+.cs-svc .pl-art--local-seo .pl-art-symbol{background:#e4e8dc;border-radius:50%;transform:rotate(-12deg)}
+.cs-svc .pl-art--local-seo .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.cs-svc .pl-art--local-seo .pl-art-orbit--one{border-style:dashed}
+.cs-svc .pl-art--local-seo .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.cs-svc .pl-art--service-business-seo .pl-art-symbol{background:#eddac9;border-radius:14px 4px 14px 4px;transform:rotate(-8deg)}
+.cs-svc .pl-art--service-business-seo .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.cs-svc .pl-art--international-seo .pl-art-symbol{background:#dde9e1;border-radius:8px;transform:rotate(-4deg)}
+.cs-svc .pl-art--international-seo .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
+.cs-svc .pl-art--google-shopping .pl-art-symbol{background:#e4e8dc;border-radius:5px 17px 5px 17px;transform:rotate(0deg)}
+.cs-svc .pl-art--google-shopping .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.cs-svc .pl-art--google-shopping .pl-art-orbit--one{border-style:dashed}
+.cs-svc .pl-art--local-google-ads .pl-art-symbol{background:#eddac9;border-radius:50%;transform:rotate(4deg)}
+.cs-svc .pl-art--local-google-ads .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
+.cs-svc .pl-art--local-google-ads .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.cs-svc .pl-art--google-ads-audit .pl-art-symbol{background:#dde9e1;border-radius:14px 4px 14px 4px;transform:rotate(8deg)}
+.cs-svc .pl-art--google-ads-audit .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.cs-svc .pl-art--merchant-center-help .pl-art-symbol{background:#e4e8dc;border-radius:8px;transform:rotate(12deg)}
+.cs-svc .pl-art--merchant-center-help .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.cs-svc .pl-art--merchant-center-help .pl-art-orbit--one{border-style:dashed}
+.cs-svc .pl-art--woocommerce-shopify-stores .pl-art-symbol{background:#eddac9;border-radius:5px 17px 5px 17px;transform:rotate(-12deg)}
+.cs-svc .pl-art--woocommerce-shopify-stores .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.cs-svc .pl-art--store-conversion .pl-art-symbol{background:#dde9e1;border-radius:50%;transform:rotate(-8deg)}
+.cs-svc .pl-art--store-conversion .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
+.cs-svc .pl-art--store-conversion .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.cs-svc .pl-art--catalog-automation .pl-art-symbol{background:#e4e8dc;border-radius:14px 4px 14px 4px;transform:rotate(-4deg)}
+.cs-svc .pl-art--catalog-automation .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.cs-svc .pl-art--catalog-automation .pl-art-orbit--one{border-style:dashed}
+.cs-svc .pl-art--store-migration .pl-art-symbol{background:#eddac9;border-radius:8px;transform:rotate(0deg)}
+.cs-svc .pl-art--store-migration .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
+.cs-svc .pl-art--service-websites .pl-art-symbol{background:#dde9e1;border-radius:5px 17px 5px 17px;transform:rotate(4deg)}
+.cs-svc .pl-art--service-websites .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.cs-svc .pl-art--landing-pages .pl-art-symbol{background:#e4e8dc;border-radius:50%;transform:rotate(8deg)}
+.cs-svc .pl-art--landing-pages .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.cs-svc .pl-art--landing-pages .pl-art-orbit--one{border-style:dashed}
+.cs-svc .pl-art--landing-pages .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.cs-svc .pl-art--corporate-websites .pl-art-symbol{background:#eddac9;border-radius:14px 4px 14px 4px;transform:rotate(12deg)}
+.cs-svc .pl-art--corporate-websites .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.cs-svc .pl-art--website-redesign .pl-art-symbol{background:#dde9e1;border-radius:8px;transform:rotate(-12deg)}
+.cs-svc .pl-art--website-redesign .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
+.cs-svc .pl-art--wordpress-care .pl-art-symbol{background:#e4e8dc;border-radius:5px 17px 5px 17px;transform:rotate(-8deg)}
+.cs-svc .pl-art--wordpress-care .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.cs-svc .pl-art--wordpress-care .pl-art-orbit--one{border-style:dashed}
+.cs-svc .pl-art--api-integrations .pl-art-symbol{background:#eddac9;border-radius:50%;transform:rotate(-4deg)}
+.cs-svc .pl-art--api-integrations .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
+.cs-svc .pl-art--api-integrations .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.cs-svc .pl-art--website-speed-security .pl-art-symbol{background:#dde9e1;border-radius:14px 4px 14px 4px;transform:rotate(0deg)}
+.cs-svc .pl-art--website-speed-security .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.cs-svc .pl-art--web-applications .pl-art-symbol{background:#e4e8dc;border-radius:8px;transform:rotate(4deg)}
+.cs-svc .pl-art--web-applications .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.cs-svc .pl-art--web-applications .pl-art-orbit--one{border-style:dashed}
+@media(max-width:800px){.cs-svc .intl-wrap{width:calc(100% - 40px)}}
+@media(max-width:480px){
+ .cs-svc .pl-svc-scene-mark:has(.pl-art){min-height:248px;padding:8px 0}
+ .cs-svc .pl-art{min-height:218px}
+ .cs-svc .pl-art-node strong{font-size:13px}
+ .cs-svc .pl-svc-hero h1,.cs-svc .pl-svc-hero h1 em{font-size:clamp(33px,9.4vw,46px);letter-spacing:-.048em;overflow-wrap:anywhere;hyphens:auto}
+ .cs-svc .pl-svc-process-list li{grid-template-columns:44px minmax(0,1fr)}
+ .cs-svc .pl-svc-process-list li>div{min-width:0}
+}
+@media(max-width:390px){.cs-svc .intl-wrap{width:calc(100% - 32px)}}
+@media(prefers-reduced-motion:reduce){.cs-svc .pl-art-node{animation:none!important;transform:none!important}}
+
+/* On Czechia-only service pages, hero CTA stays visible while the shared fixed
+   mobile bar moves out of the way of a visible semantic diagram. */
+@media(max-width:767px){
+ html.mrseo-cs-scene-visible .mrseo-mobile-contact-bar{
+  opacity:0;visibility:hidden;pointer-events:none;
+ }
+}
+
+.cs-svc .pl-svc-need h3{line-height:1.24;overflow-wrap:break-word}
+@media(max-width:480px){.cs-svc .pl-svc-need-action strong{font-size:14px;line-height:1.4}}
