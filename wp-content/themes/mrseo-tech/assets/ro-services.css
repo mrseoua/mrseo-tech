@@ -1,0 +1,85 @@
+/* Romania-specific premium service visual system: inherited ivory/graphite/red, no global overrides. */
+.ro-svc .pl-svc-scene{background:linear-gradient(148deg,#333b3a,#1b2425);border-color:#535e59}
+.ro-svc .pl-svc-scene-mark:has(.pl-art){flex:1;min-height:292px;padding:20px 5px}
+.ro-svc .pl-art{min-height:250px}
+.ro-svc .pl-art-node{min-width:0;max-width:100%;border-color:#dce3d9}
+.ro-svc .pl-art-chain{min-width:0;max-width:100%}
+.ro-svc .pl-art-status{font-size:10px;letter-spacing:.055em}
+.ro-svc .pl-svc-hero-note{font-size:15px;line-height:1.65;color:#4f5854}
+.ro-svc .pl-svc-crumb{font-size:14px}
+.ro-svc .pl-svc-need-action small{font-size:13px}
+.ro-svc .intl-wrap{width:min(calc(100% - 64px),1370px);margin-inline:auto}
+.ro-svc,.ro-svc .intl-wrap,.ro-svc .pl-svc-hero-grid,.ro-svc .pl-svc-art,.ro-svc .pl-svc-hero-copy{min-width:0;max-width:100%}
+.ro-svc h1,.ro-svc h2,.ro-svc h3,.ro-svc p,.ro-svc strong,.ro-svc summary{overflow-wrap:anywhere;hyphens:auto}
+.ro-svc .pl-art--local-seo .pl-art-symbol{background:#e4e8dc;border-radius:50%;transform:rotate(-12deg)}
+.ro-svc .pl-art--local-seo .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.ro-svc .pl-art--local-seo .pl-art-orbit--one{border-style:dashed}
+.ro-svc .pl-art--local-seo .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.ro-svc .pl-art--service-business-seo .pl-art-symbol{background:#eddac9;border-radius:14px 4px 14px 4px;transform:rotate(-8deg)}
+.ro-svc .pl-art--service-business-seo .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.ro-svc .pl-art--international-seo .pl-art-symbol{background:#dde9e1;border-radius:8px;transform:rotate(-4deg)}
+.ro-svc .pl-art--international-seo .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
+.ro-svc .pl-art--google-shopping .pl-art-symbol{background:#e4e8dc;border-radius:5px 17px 5px 17px;transform:rotate(0deg)}
+.ro-svc .pl-art--google-shopping .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.ro-svc .pl-art--google-shopping .pl-art-orbit--one{border-style:dashed}
+.ro-svc .pl-art--local-google-ads .pl-art-symbol{background:#eddac9;border-radius:50%;transform:rotate(4deg)}
+.ro-svc .pl-art--local-google-ads .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
+.ro-svc .pl-art--local-google-ads .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.ro-svc .pl-art--google-ads-audit .pl-art-symbol{background:#dde9e1;border-radius:14px 4px 14px 4px;transform:rotate(8deg)}
+.ro-svc .pl-art--google-ads-audit .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.ro-svc .pl-art--merchant-center-help .pl-art-symbol{background:#e4e8dc;border-radius:8px;transform:rotate(12deg)}
+.ro-svc .pl-art--merchant-center-help .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.ro-svc .pl-art--merchant-center-help .pl-art-orbit--one{border-style:dashed}
+.ro-svc .pl-art--woocommerce-shopify-stores .pl-art-symbol{background:#eddac9;border-radius:5px 17px 5px 17px;transform:rotate(-12deg)}
+.ro-svc .pl-art--woocommerce-shopify-stores .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.ro-svc .pl-art--store-conversion .pl-art-symbol{background:#dde9e1;border-radius:50%;transform:rotate(-8deg)}
+.ro-svc .pl-art--store-conversion .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
+.ro-svc .pl-art--store-conversion .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.ro-svc .pl-art--catalog-automation .pl-art-symbol{background:#e4e8dc;border-radius:14px 4px 14px 4px;transform:rotate(-4deg)}
+.ro-svc .pl-art--catalog-automation .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.ro-svc .pl-art--catalog-automation .pl-art-orbit--one{border-style:dashed}
+.ro-svc .pl-art--store-migration .pl-art-symbol{background:#eddac9;border-radius:8px;transform:rotate(0deg)}
+.ro-svc .pl-art--store-migration .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
+.ro-svc .pl-art--service-websites .pl-art-symbol{background:#dde9e1;border-radius:5px 17px 5px 17px;transform:rotate(4deg)}
+.ro-svc .pl-art--service-websites .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.ro-svc .pl-art--landing-pages .pl-art-symbol{background:#e4e8dc;border-radius:50%;transform:rotate(8deg)}
+.ro-svc .pl-art--landing-pages .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.ro-svc .pl-art--landing-pages .pl-art-orbit--one{border-style:dashed}
+.ro-svc .pl-art--landing-pages .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.ro-svc .pl-art--corporate-websites .pl-art-symbol{background:#eddac9;border-radius:14px 4px 14px 4px;transform:rotate(12deg)}
+.ro-svc .pl-art--corporate-websites .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.ro-svc .pl-art--website-redesign .pl-art-symbol{background:#dde9e1;border-radius:8px;transform:rotate(-12deg)}
+.ro-svc .pl-art--website-redesign .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
+.ro-svc .pl-art--wordpress-care .pl-art-symbol{background:#e4e8dc;border-radius:5px 17px 5px 17px;transform:rotate(-8deg)}
+.ro-svc .pl-art--wordpress-care .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.ro-svc .pl-art--wordpress-care .pl-art-orbit--one{border-style:dashed}
+.ro-svc .pl-art--api-integrations .pl-art-symbol{background:#eddac9;border-radius:50%;transform:rotate(-4deg)}
+.ro-svc .pl-art--api-integrations .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
+.ro-svc .pl-art--api-integrations .pl-art-node--1{border-bottom:4px solid #a6bcac}
+.ro-svc .pl-art--website-speed-security .pl-art-symbol{background:#dde9e1;border-radius:14px 4px 14px 4px;transform:rotate(0deg)}
+.ro-svc .pl-art--website-speed-security .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.ro-svc .pl-art--web-applications .pl-art-symbol{background:#e4e8dc;border-radius:8px;transform:rotate(4deg)}
+.ro-svc .pl-art--web-applications .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
+.ro-svc .pl-art--web-applications .pl-art-orbit--one{border-style:dashed}
+@media(max-width:800px){.ro-svc .intl-wrap{width:calc(100% - 40px)}}
+@media(max-width:480px){
+ .ro-svc .pl-svc-scene-mark:has(.pl-art){min-height:248px;padding:8px 0}
+ .ro-svc .pl-art{min-height:218px}
+ .ro-svc .pl-art-node strong{font-size:13px}
+ .ro-svc .pl-svc-hero h1,.ro-svc .pl-svc-hero h1 em{font-size:clamp(33px,9.4vw,46px);letter-spacing:-.048em;overflow-wrap:anywhere;hyphens:auto}
+ .ro-svc .pl-svc-process-list li{grid-template-columns:44px minmax(0,1fr)}
+ .ro-svc .pl-svc-process-list li>div{min-width:0}
+}
+@media(max-width:390px){.ro-svc .intl-wrap{width:calc(100% - 32px)}}
+@media(prefers-reduced-motion:reduce){.ro-svc .pl-art-node{animation:none!important;transform:none!important}}
+
+/* On Romania-only service pages, hero CTA stays visible while the shared fixed
+   mobile bar moves out of the way of a visible semantic diagram. */
+@media(max-width:767px){
+ html.mrseo-ro-scene-visible .mrseo-mobile-contact-bar{
+  opacity:0;visibility:hidden;pointer-events:none;
+ }
+}
+
+.ro-svc .pl-svc-need h3{line-height:1.24;overflow-wrap:break-word}
+@media(max-width:480px){.ro-svc .pl-svc-need-action strong{font-size:14px;line-height:1.4}}
