@@ -120,6 +120,11 @@ jobs:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
           MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
         run: node scripts/verify-nl-browser.cjs
+      - name: Verify 25 Romanian services, native menu, forms and responsive CSS in WordPress
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_LOCALE_SHARD: ${{ matrix.shard }}
+        run: node scripts/verify-ro-browser.cjs
       - name: Browser smoke test all 20 locales (isolated site, no public deployment)
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
@@ -145,12 +150,14 @@ jobs:
             shots/it-*.jpg
             shots/es-*.jpg
             shots/nl-*.jpg
+            shots/ro-*.jpg
             shots/pl-diagnostics-*.json
             shots/de-diagnostics-*.json
             shots/fr-diagnostics-*.json
             shots/it-diagnostics-*.json
             shots/es-diagnostics-*.json
             shots/nl-diagnostics-*.json
+            shots/ro-diagnostics-*.json
             /tmp/mrseo-preview-server.log
           if-no-files-found: warn
           retention-days: 7
