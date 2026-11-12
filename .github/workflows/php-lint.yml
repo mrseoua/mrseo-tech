@@ -68,6 +68,12 @@ jobs:
         run: python3 scripts/verify-cs-complete.py
       - name: Verify 25 complete Portuguese services and original Portugal-market content
         run: python3 scripts/verify-pt-complete.py
+      - name: Verify 25 complete Swedish services and original Sweden-market content
+        run: python3 scripts/verify-sv-complete.py
+      - name: Check Swedish browser and mobile contact scripts
+        run: |
+          node --check scripts/verify-sv-browser.cjs
+          node --check wp-content/themes/mrseo-tech/assets/sv-service-hero-contact.js
       - name: Check Portuguese browser and mobile contact scripts
         run: |
           node --check scripts/verify-pt-browser.cjs
@@ -202,7 +208,7 @@ jobs:
           print('Six UA service intents, metadata, prices, scoped offers and unchanged noindex OK')
           PY
 
-      - name: Run international SEO pre-indexing audit (505 routes)
+      - name: Run international SEO pre-indexing audit (524 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php

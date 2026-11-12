@@ -248,57 +248,65 @@
       }
     },
     "google-ads": {
-      "title": "Google Ads-granskning för e-handel och Shopping",
-      "description": "Google Ads-granskning för e-handel och Shopping. Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt.",
-      "eyebrow": "GOOGLE ADS",
-      "headline": "Annonser kostar pengar. <em>Vad leder de till?</em>",
-      "lead": "Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt. Vi granskar konverteringar, produktflöden och hur annonseringskostnader fördelas.",
+      "title": "Google Ads-förvaltning för företag i Sverige",
+      "description": "Google Ads-förvaltning för svenska företag: sökannonser, Shopping, Performance Max, konverteringsmätning och löpande budgetoptimering.",
+      "eyebrow": "GOOGLE ADS / KAMPANJFÖRVALTNING",
+      "headline": "Ni investerar i annonser. <em>Når ni rätt kunder?</em>",
+      "lead": "Vi förvaltar Google Ads för tjänsteföretag och webbutiker. Vi definierar vad som räknas som en relevant förfrågan eller ett köp, anpassar annonserna efter erbjudandet och följer upp kostnader och affärsresultat med verifierbara data.",
       "problems": [
         [
-          "Felaktiga konverteringar",
-          "Dubbla köp kan påverka automatiska bud.",
-          "Jämföra ordernummer, GA4 och Google Ads."
+          "Budget utan tydligt mål",
+          "Olika kampanjer konkurrerar om pengar utan tydliga prioriteringar.",
+          "Organisera tjänster, produkter och budget efter affärsmål."
         ],
         [
-          "Produkter utan lönsamhet",
-          "Shopping kan lägga pengar på produkter utan bekräftade köp.",
-          "Undersöka kostnader per produktkategori."
+          "Felaktigt uppmätta resultat",
+          "Klick och händelser registreras utan att motsvara riktiga köp eller förfrågningar.",
+          "Verifiera konverteringar och kriterier för relevanta kontakter."
         ],
         [
-          "Problem i produktflödet",
-          "Pris eller lagersaldo kan avvika från butikens uppgifter.",
-          "Kontrollera Merchant Center och produktsidor."
+          "Kampanjer utan uppföljning",
+          "Förändringar i efterfrågan, sortiment och konkurrens påverkar utfallet.",
+          "Följ upp resultat och testa överenskomna förbättringar."
         ]
       ],
       "outcomes": [
-        "Granskning av konverteringsdata",
-        "Översikt över tveksam spend",
-        "Testbara optimeringshypoteser"
+        "Kampanjstruktur och överenskomna mål",
+        "Uppföljning av kostnader och relevanta kontakter eller köp",
+        "Löpande optimeringsplan baserad på data"
       ],
       "faq": [
         [
-          "Kan ni garantera en viss ROAS?",
-          "Nej. Resultatet beror på marginaler, konkurrens och mätning, inte enbart kampanjinställningar."
+          "Ingår annonsbudgeten i arvodet?",
+          "Nej. Annonskostnaden och förvaltningsarvodet är separata."
+        ],
+        [
+          "Garanterar ni ett visst ROAS eller pris per lead?",
+          "Nej. Konkurrens, efterfrågan, erbjudande, budget och datakvalitet påverkar resultatet."
+        ],
+        [
+          "Kan vi beställa enbart en granskning?",
+          "Ja. Google Ads-granskning är ett separat uppdrag utan automatiska kontoändringar."
         ]
       ],
       "offer": {
-        "title": "Kartlägga nuläget → Följa upp resultaten",
-        "intro": "Innan budgeten höjs behöver köp och leads mätas på ett meningsfullt sätt. Vi granskar konverteringar, produktflöden och hur annonseringskostnader fördelas.",
+        "title": "Från kampanjplan till löpande förbättring",
+        "intro": "Vi sätter affärsmål och mätkriterier innan vi förvaltar budgeten. Varje förändring ska ha ett tydligt syfte och kunna följas upp.",
         "items": [
           {
-            "title": "Kartlägga nuläget",
-            "detail": "Jämföra ordernummer, GA4 och Google Ads."
+            "title": "Strategi och mätning",
+            "detail": "Bestäm mål, kampanjstruktur, budget och användbara konverteringar."
           },
           {
-            "title": "Prioritera insatser",
-            "detail": "Undersöka kostnader per produktkategori."
+            "title": "Genomförande och förvaltning",
+            "detail": "Bygg eller reorganisera kampanjer, annonser och destinationssidor enligt uppdraget."
           },
           {
-            "title": "Följa upp resultaten",
-            "detail": "Kontrollera Merchant Center och produktsidor."
+            "title": "Löpande förbättring",
+            "detail": "Följ kostnader, söktermer och affärsresultat och testa relevanta ändringar."
           }
         ],
-        "cta": "Beskriv mitt problem"
+        "cta": "Diskutera Google Ads-förvaltning"
       }
     },
     "analytics": {
@@ -626,11 +634,11 @@
       }
     },
     "contact": {
-      "title": "Kontakta oss om din webbplats eller webbutik",
-      "description": "Kontakta oss om din webbplats eller webbutik. Ange webbplatsens adress, marknaden du riktar dig till och vad som inte fungerar.",
+      "title": "Kontakta oss om SEO, annonsering eller webbutveckling",
+      "description": "Kontakta MrSeo.tech om SEO, Google Ads, webbplatser, e-handel eller systemutveckling. Beskriv ert problem och projekt.",
       "eyebrow": "KONTAKT",
       "headline": "Vad hindrar <em>nästa kundförfrågan?</em>",
-      "lead": "Ange webbplatsens adress, marknaden du riktar dig till och vad som inte fungerar. En kort konkret beskrivning räcker för att börja bedöma problemet. Berätta vilken e-handelsplattform du använder, vilken marknad du riktar dig till och ge ett exempel på problemet. Skicka inga lösenord.",
+      "lead": "Behöver ni fler relevanta förfrågningar, bättre annonsering, en ny webbplats eller hjälp med manuella arbetsflöden? Berätta om webbplatsen eller arbetsflödet, vilken marknad ni riktar er till och ge ett konkret exempel på problemet. Skicka inga lösenord.",
       "problems": [],
       "outcomes": [],
       "faq": []
@@ -665,7 +673,7 @@
     "heading": "SEO, Google Ads och webbutveckling för företag i Sverige",
     "description": "Om besökarna inte blir kunder räcker det sällan med mer trafik. Vi undersöker synlighet, annonsering, köpdata och arbetsflöden för att se var problemet faktiskt uppstår.",
     "cta": "Beskriv mitt problem",
-    "brief": "Berätta vilken e-handelsplattform du använder, vilken marknad du riktar dig till och ge ett exempel på problemet. Skicka inga lösenord.",
+    "brief": "Berätta om webbplatsen eller arbetsflödet, vilken marknad ni riktar er till och ge ett konkret exempel på problemet. Skicka inga lösenord.",
     "portfolioLabel": "Projekt"
   },
   "serviceLabels": {
