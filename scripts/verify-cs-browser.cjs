@@ -27,11 +27,11 @@ async function run(){
       alternates:[...document.querySelectorAll('link[rel="alternate"][hreflang="cs-CZ"]')].map(e=>e.href),
       scroll:Math.max(document.body.scrollWidth,document.documentElement.scrollWidth),vw:innerWidth,
       problems:document.querySelectorAll('.pl-svc-need').length,faq:document.querySelectorAll('.pl-svc-faq-items details').length,
-      scene:document.querySelectorAll('.pl-art').length,cta:document.querySelectorAll('.pl-svc-hecs-actions .intl-button').length,
+      scene:document.querySelectorAll('.pl-art').length,cta:document.querySelectorAll('.pl-svc-hero-actions .intl-button').length,
       styledScene:document.querySelector('.pl-svc-scene')?getComputedStyle(document.querySelector('.pl-svc-scene')).display:'',
-      styledGrid:document.querySelector('.pl-svc-hecs-grid')?getComputedStyle(document.querySelector('.pl-svc-hecs-grid')).display:'',
+      styledGrid:document.querySelector('.pl-svc-hero-grid')?getComputedStyle(document.querySelector('.pl-svc-hero-grid')).display:'',
       styledCards:document.querySelector('.pl-svc-need-grid')?getComputedStyle(document.querySelector('.pl-svc-need-grid')).display:'',
-      heroContact:document.querySelector('.pl-svc-hecs-actions .intl-button')?.getAttribute('href')||''
+      heroContact:document.querySelector('.pl-svc-hero-actions .intl-button')?.getAttribute('href')||''
      }));
      assert.equal(r.h1,1,`H1 ${slug}`);
      assert(r.h1Text.length>12,`short H1 ${slug}`);
