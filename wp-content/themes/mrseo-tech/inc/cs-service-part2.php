@@ -69,8 +69,8 @@ function mrseo_cs_service_part2(){return json_decode(<<<'MRSEO_CS_P2'
         "Nelze zaručit. Omezujeme technické ztráty a vývoj sledujeme."
       ],
       [
-        "Lze přenést historické objednávky?",
-        "Záleží na exportu a možnostech cílové platformy."
+        "Lze migrovat katalog ze Shoptetu?",
+        "Záleží na dostupných exportech, rozsahu dat a cílové platformě. Předem prověříme varianty, URL, historické objednávky a možnosti převodu."
       ],
       [
         "Je možné testovat před spuštěním?",
@@ -679,8 +679,8 @@ function mrseo_cs_service_part2(){return json_decode(<<<'MRSEO_CS_P2'
     ],
     "example": [
       "MODELOVÁ SITUACE",
-      "Český e-shop přepisuje objednávky do účetnictví a CRM ručně.",
-      "Navrhneme mapování objednávek a přenos přes dostupné rozhraní.",
+      "Český e-shop přepisuje objednávky do účetního systému, například POHODA, a do CRM ručně.",
+      "Prověříme dostupné rozhraní a oprávnění, zmapujeme objednávky a navrhneme přenos bez duplicit.",
       "Otestujeme běžné přenosy, opakování a chybové stavy."
     ],
     "visual": [
