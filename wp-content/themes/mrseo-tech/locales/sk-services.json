@@ -1,0 +1,1992 @@
+{
+  "code": "sk-SK",
+  "labels": {
+    "crumb": "Navigačná cesta",
+    "home": "Domov",
+    "work": "Ako pracujeme",
+    "note": "Najprv hľadáme príčinu. Nedávame sľuby, ktoré sa nedajú overiť.",
+    "sceneEnd": "PRÍKLAD / PROCES",
+    "sceneStatus": "ANALÝZA / KONTROLA",
+    "needs": "ČO SKÚMAME",
+    "check": "AKO OVERUJEME",
+    "exampleTitle": "Od konkrétneho problému",
+    "exampleEm": "k overiteľnému riešeniu.",
+    "exampleNote": "Ilustračný príklad, nie skutočný výsledok klienta.",
+    "exampleCta": "Prebrať vašu situáciu",
+    "caseLabels": [
+      "SITUÁCIA",
+      "POSTUP",
+      "KONTROLA"
+    ],
+    "process": "AKO PRACUJEME",
+    "processTitle": "Od analýzy k overiteľnému odovzdaniu.",
+    "processNote": "Každý krok má jasný cieľ a kontrolný bod.",
+    "outcomes": "ČO ZÍSKATE",
+    "outcomesTitle": "Konkrétne výstupy, ktoré si môžete overiť.",
+    "outcomesNote": "Presný rozsah dohodneme vopred. Ide o príklady overiteľných výstupov.",
+    "limits": "ROZSAH A OČAKÁVANIA",
+    "limitsTitle": "Čo treba vedieť pred začiatkom?",
+    "faq": "ČASTÉ OTÁZKY",
+    "faqTitle": "Jasné odpovede pred spoluprácou.",
+    "related": "SÚVISIACE SLUŽBY",
+    "relatedTitle": "Ďalšie služby, ktoré dopĺňajú túto prácu.",
+    "contactKicker": "MRSEO.TECH / PRVÝ KONTAKT",
+    "contactTitle": "Ktorý problém potrebujete vyriešiť?",
+    "contactNote": "Opíšte, čo nefunguje, a pošlite adresu webu, ak existuje. Preberieme ďalší krok a rozsah bez vopred daného balíka.",
+    "exampleLabel": "ILUSTRAČNÝ PRÍKLAD"
+  },
+  "nav": {
+    "seo": [
+      "SEO a viditeľnosť",
+      "Pomáhame správnym zákazníkom nájsť vašu firmu.",
+      "Lokálne SEO pre firmy",
+      "SEO e-shopov",
+      "SEO pre firmy poskytujúce služby",
+      "Medzinárodné SEO",
+      "Technický SEO audit"
+    ],
+    "ads": [
+      "Google Ads",
+      "Kampane s jasným cieľom a overiteľným meraním.",
+      "Správa Google Ads",
+      "Google Shopping a Performance Max",
+      "Google Ads pre lokálne firmy",
+      "Nezávislý audit Google Ads",
+      "Pomoc s Google Merchant Center"
+    ],
+    "commerce": [
+      "E-shopy",
+      "Tvorba, rozvoj a automatizácia predaja.",
+      "Tvorba e-shopov",
+      "E-shopy WooCommerce a Shopify",
+      "Optimalizácia konverzií e-shopu",
+      "Automatizácia produktového katalógu",
+      "Migrácia e-shopu"
+    ],
+    "sites": [
+      "Tvorba webov",
+      "Weby, ktoré vysvetľujú ponuku a uľahčujú kontakt.",
+      "Tvorba webových stránok",
+      "Webové stránky pre poskytovateľov služieb",
+      "Vstupné stránky pre reklamu",
+      "Firemné a prezentačné weby",
+      "Redizajn a modernizácia webu"
+    ],
+    "dev": [
+      "Vývoj webu",
+      "Riešenia technických problémov a automatizácia.",
+      "WordPress údržba a podpora",
+      "API integrácie a automatizácia",
+      "Rýchlosť, bezpečnosť a prístupnosť webu",
+      "Vývoj webu na mieru",
+      "Webové aplikácie, CRM a zákaznícke portály"
+    ],
+    "bottom": [
+      "Nenašli ste vhodnú službu?",
+      "Opíšte problém alebo projekt a preberieme ďalší krok.",
+      "Prebrať projekt"
+    ]
+  },
+  "pages": {
+    "local-seo": {
+      "title": "Lokálne SEO pre firmy | MrSeo.tech",
+      "description": "Lokálne SEO pre firmy: Prepojíme skutočné oblasti pôsobenia, lokálne vyhľadávanie, firemný profil a kontakt.",
+      "kicker": "LOKÁLNE SEO PRE FIRMY",
+      "hero": [
+        "Lokálne SEO pre firmy.",
+        "Nájdu vás zákazníci vo vašom okolí?"
+      ],
+      "lead": "Servis v Košiciach potrebuje dopyty od ľudí, ktorým dokáže pomôcť. Preskúmame miestne vyhľadávanie, firemný profil Google a cestu k rezervácii.",
+      "intro": "Kde strácate miestne dopyty?",
+      "introText": "Prepojíme skutočné oblasti pôsobenia, lokálne vyhľadávanie, firemný profil a kontakt.",
+      "problems": [
+        [
+          "Nesprávny región",
+          "Návštevníci prichádzajú z miest, kde nepracujete.",
+          "Porovnáme vyhľadávania s obsluhovaným územím."
+        ],
+        [
+          "Neaktuálne firemné údaje",
+          "Otváracie hodiny alebo telefón sa nezhodujú.",
+          "Overíme profil a webové odkazy."
+        ],
+        [
+          "Nejasná rezervácia",
+          "Mobilný návštevník nevie nájsť správnu službu.",
+          "Otestujeme navigáciu a objednanie."
+        ]
+      ],
+      "process": [
+        [
+          "Oblasť",
+          "Určíme skutočný rozsah služieb."
+        ],
+        [
+          "Viditeľnosť",
+          "Preskúmame miestne výsledky."
+        ],
+        [
+          "Obsah",
+          "Navrhneme relevantné stránky."
+        ],
+        [
+          "Kontrola",
+          "Overíme kontaktné cesty."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Mapa lokálnych dopytov",
+          "Služby a reálne oblasti."
+        ],
+        [
+          "Plán úprav profilu",
+          "Údaje, kategórie a odkazy."
+        ],
+        [
+          "Kontaktný test",
+          "Telefonát, formulár a rezervácia."
+        ]
+      ],
+      "faq": [
+        [
+          "Potrebujem stránku pre každé mesto?",
+          "Len ak ponúka reálnu miestnu hodnotu."
+        ],
+        [
+          "Garantujete prvé miesto v Mapách?",
+          "Nie, závisí aj od polohy a konkurencie."
+        ],
+        [
+          "Potrebujete heslo?",
+          "Nie, používame pridelené oprávnenia."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Košická dielňa dostáva návštevy z celého Slovenska, ale málo rezervácií.",
+        "Zladíme oblasť služieb, profil a stránky jednotlivých opráv.",
+        "Overíme rezerváciu a relevantné lokálne vyhľadávania."
+      ],
+      "visual": [
+        "DOPYT",
+        "OBLASŤ",
+        "KONTAKT"
+      ],
+      "risk": "Nevytvárame fiktívne prevádzky a negarantujeme pozíciu. Rozhoduje skutočná oblasť pôsobenia firmy.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO pre firmy poskytujúce služby",
+          "Vytvoríme plán služieb, vyhľadávacích zámerov, interných odkazov a žiadostí o cenovú ponuku."
+        ],
+        [
+          "service-websites",
+          "Webové stránky pre poskytovateľov služieb",
+          "Navrhneme prehľadné služby, schválené podklady a funkčný mobilný formulár."
+        ]
+      ],
+      "cta": "Prebrať lokálne SEO"
+    },
+    "service-business-seo": {
+      "title": "SEO pre firmy poskytujúce služby | MrSeo.tech",
+      "description": "SEO pre firmy poskytujúce služby: Vytvoríme plán služieb, vyhľadávacích zámerov, interných odkazov a žiadostí o cenovú ponuku.",
+      "kicker": "SEO PRE FIRMY POSKYTUJÚCE SLUŽBY",
+      "hero": [
+        "SEO pre firmy poskytujúce služby.",
+        "Rozumie zákazník tomu, čo ponúkate?"
+      ],
+      "lead": "Účtovníctvo, správa miezd a daňové poradenstvo riešia rôzne potreby. Navrhneme stránky podľa zámeru vyhľadávania a skutočného rozsahu služieb.",
+      "intro": "Prečo sa návštevy nemenia na dopyty?",
+      "introText": "Vytvoríme plán služieb, vyhľadávacích zámerov, interných odkazov a žiadostí o cenovú ponuku.",
+      "problems": [
+        [
+          "Zmiešané služby",
+          "Jedna všeobecná stránka zastupuje rôzne činnosti.",
+          "Rozdelíme odlišné vyhľadávacie potreby."
+        ],
+        [
+          "Interná terminológia",
+          "Zákazníci používajú iné slová než firma.",
+          "Porovnáme otázky zákazníkov s obsahom."
+        ],
+        [
+          "Skrytý formulár",
+          "Návštevník nenájde cestu k ponuke.",
+          "Skontrolujeme tlačidlá, navigáciu a formulár."
+        ]
+      ],
+      "process": [
+        [
+          "Zameranie",
+          "Určíme požadované zákazky."
+        ],
+        [
+          "Dopyty",
+          "Porovnáme otázky a stránky."
+        ],
+        [
+          "Štruktúra",
+          "Naplánujeme témy a odkazy."
+        ],
+        [
+          "Meranie",
+          "Overíme žiadosti o ponuku."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Mapa služieb",
+          "Samostatné obchodné ciele stránok."
+        ],
+        [
+          "Obsahový plán",
+          "Témy, nadpisy a otázky."
+        ],
+        [
+          "Definícia dopytu",
+          "Kritériá relevantnej žiadosti."
+        ]
+      ],
+      "faq": [
+        [
+          "Stačí písať blog?",
+          "Nie, ak hlavné služby nemajú vlastné stránky."
+        ],
+        [
+          "Treba nový web?",
+          "Najprv posúdime existujúcu štruktúru."
+        ],
+        [
+          "Ako zabránite prekrývaniu?",
+          "Každej stránke priradíme hlavný zámer."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Bratislavská účtovná firma má všetky služby v jednom texte.",
+        "Oddelíme účtovníctvo a mzdové služby podľa potrieb zákazníkov.",
+        "Overíme interné odkazy a odoslanie dopytu."
+      ],
+      "visual": [
+        "SLUŽBA",
+        "HĽADANIE",
+        "PONUKA"
+      ],
+      "risk": "Počet dopytov závisí aj od cien, konkurencie, dopytu a predaja. Nesľubujeme konkrétny počet zákaziek.",
+      "related": [
+        [
+          "local-seo",
+          "Lokálne SEO pre firmy",
+          "Prepojíme skutočné oblasti pôsobenia, lokálne vyhľadávanie, firemný profil a kontakt."
+        ],
+        [
+          "service-websites",
+          "Webové stránky pre poskytovateľov služieb",
+          "Navrhneme prehľadné služby, schválené podklady a funkčný mobilný formulár."
+        ]
+      ],
+      "cta": "Naplánovať SEO služieb"
+    },
+    "international-seo": {
+      "title": "Medzinárodné SEO | MrSeo.tech",
+      "description": "Medzinárodné SEO: Navrhneme štruktúru jazykových URL, canonical, hreflang a obsah podľa potrieb cieľového trhu.",
+      "kicker": "MEDZINÁRODNÉ SEO",
+      "hero": [
+        "Medzinárodné SEO.",
+        "Zobrazuje sa správna jazyková verzia?"
+      ],
+      "lead": "Slovenský výrobca pri vstupe na český alebo maďarský trh potrebuje viac než preklad katalógu. Skontrolujeme miestne vyhľadávania, adresy a skutočné jazykové ekvivalenty.",
+      "intro": "Kde sa miešajú signály jednotlivých trhov?",
+      "introText": "Navrhneme štruktúru jazykových URL, canonical, hreflang a obsah podľa potrieb cieľového trhu.",
+      "problems": [
+        [
+          "Nesprávny jazyk",
+          "Slovenská kategória sa zobrazuje v českom vyhľadávaní.",
+          "Overíme canonical a recipročné hreflang."
+        ],
+        [
+          "Doslovný preklad",
+          "Miestni zákazníci používajú odlišné označenia produktov.",
+          "Preskúmame lokálne výrazy a dopyty."
+        ],
+        [
+          "Chybný jazykový odkaz",
+          "Prepínač smeruje na nesúvisiacu službu.",
+          "Prepojíme len skutočné obsahové ekvivalenty."
+        ]
+      ],
+      "process": [
+        [
+          "Trhy",
+          "Určíme krajiny, ponuku a dodanie."
+        ],
+        [
+          "Adresy",
+          "Skontrolujeme presmerovania a jazykové signály."
+        ],
+        [
+          "Obsah",
+          "Priradíme miestne dopyty k stránkam."
+        ],
+        [
+          "Validácia",
+          "Overíme hreflang a sitemap."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Mapa trhov",
+          "Jazyky, krajiny a skutočné URL."
+        ],
+        [
+          "Technická kontrola",
+          "Canonical a recipročné odkazy."
+        ],
+        [
+          "Lokalizačný plán",
+          "Prioritné obchodné stránky."
+        ]
+      ],
+      "faq": [
+        [
+          "Treba doménu pre každú krajinu?",
+          "Nie vždy, podadresáre môžu fungovať."
+        ],
+        [
+          "Zaručí hreflang pozíciu?",
+          "Nie, pomáha rozpoznať jazykové verzie."
+        ],
+        [
+          "Čo ak preklad chýba?",
+          "Nevytvárame neexistujúci ekvivalent."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Slovenský obchod spustí českú kategóriu, no vo výsledkoch ostáva slovenská.",
+        "Skontrolujeme jazykové signály a miestne výrazy.",
+        "Overíme recipročné odkazy a XML mapu."
+      ],
+      "visual": [
+        "TRH",
+        "JAZYK",
+        "URL"
+      ],
+      "risk": "Hreflang negarantuje viditeľnosť. Ceny, dodanie a právne podmienky treba posúdiť pre každý trh.",
+      "related": [
+        [
+          "ecommerce-seo",
+          "SEO e-shopov",
+          "Usporiadame kategórie a produkty pre vyhľadávanie."
+        ],
+        [
+          "website-design",
+          "Tvorba webových stránok",
+          "Zrozumiteľný a spravovateľný web."
+        ]
+      ],
+      "cta": "Naplánovať medzinárodné SEO"
+    },
+    "google-shopping": {
+      "title": "Google Shopping a Performance Max | MrSeo.tech",
+      "description": "Google Shopping a Performance Max: Spojíme feed, meranie nákupov, produktové skupiny a ekonomiku kampaní.",
+      "kicker": "GOOGLE SHOPPING A PERFORMANCE MAX",
+      "hero": [
+        "Google Shopping a Performance Max.",
+        "Prinášajú produktové reklamy ziskové objednávky?"
+      ],
+      "lead": "Vysoké ROAS v eurách nemusí znamenať zisk. Porovnáme produktové dáta, skutočné objednávky, náklady a dostupné marže, aby sme našli vhodné skupiny na ďalšiu optimalizáciu.",
+      "intro": "Ktoré produkty spotrebúvajú rozpočet?",
+      "introText": "Spojíme feed, meranie nákupov, produktové skupiny a ekonomiku kampaní.",
+      "problems": [
+        [
+          "Rozdielne ceny",
+          "Cena s DPH vo feede nezodpovedá košíku.",
+          "Porovnáme zdroj, variant a nákupný proces."
+        ],
+        [
+          "Slabé marže",
+          "Nízkomaržové produkty využívajú veľkú časť rozpočtu.",
+          "Vyhodnotíme náklady a hodnotu podľa skupín."
+        ],
+        [
+          "Duplicitný nákup",
+          "Jedna objednávka sa zaznamená dvakrát.",
+          "Skontrolujeme purchase a transaction_id."
+        ]
+      ],
+      "process": [
+        [
+          "Feed",
+          "Overíme ceny, sklad a identifikátory."
+        ],
+        [
+          "Meranie",
+          "Porovnáme hodnoty objednávok."
+        ],
+        [
+          "Segmentácia",
+          "Navrhneme produktové skupiny."
+        ],
+        [
+          "Vyhodnotenie",
+          "Porovnáme potvrdené objednávky a náklady."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Zoznam chýb feedu",
+          "Konkrétne produkty a odchýlky."
+        ],
+        [
+          "Štruktúra kampaní",
+          "Skupiny podľa obchodných cieľov."
+        ],
+        [
+          "Kontrola merania",
+          "Jedinečné objednávky a hodnoty."
+        ]
+      ],
+      "faq": [
+        [
+          "Shopping alebo Performance Max?",
+          "Záleží na histórii, cieli a potrebe kontroly."
+        ],
+        [
+          "Čo je CSS?",
+          "Comparison Shopping Service je služba porovnávania cien v ekosystéme Shopping."
+        ],
+        [
+          "Je rozpočet v odmene?",
+          "Nie, náklady na reklamu a odmena sú oddelené."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "E-shop s náradím má vysoké ROAS, ale predáva najmä nízkomaržové príslušenstvo.",
+        "Porovnáme overené objednávky a marže jednotlivých skupín.",
+        "Vyhodnotíme zmeny na porovnateľnom období."
+      ],
+      "visual": [
+        "FEED",
+        "REKLAMA",
+        "NÁKUP"
+      ],
+      "risk": "ROAS nie je zisk. DPH, marža, doprava, vratky a ďalšie náklady ovplyvňujú rentabilitu.",
+      "related": [
+        [
+          "merchant-center-help",
+          "Pomoc s Google Merchant Center",
+          "Rozlíšime produktové chyby, stav webu a obmedzenia účtu a navrhneme nápravu pri zdroji."
+        ],
+        [
+          "catalog-automation",
+          "Automatizácia produktového katalógu",
+          "Definujeme identifikátory, mapovanie polí, pravidlá aktualizácie a spracovanie chýb."
+        ]
+      ],
+      "cta": "Preveriť Shopping kampane"
+    },
+    "local-google-ads": {
+      "title": "Google Ads pre lokálne firmy | MrSeo.tech",
+      "description": "Google Ads pre lokálne firmy: Zladíme skutočný rozsah služieb s geografickým zacielením, reklamou a meraním dopytov.",
+      "kicker": "GOOGLE ADS PRE LOKÁLNE FIRMY",
+      "hero": [
+        "Google Ads pre lokálne firmy.",
+        "Platíte za dopyty, ktoré viete obslúžiť?"
+      ],
+      "lead": "Montážnik v Žiline potrebuje zákazky v svojom regióne. Preskúmame geografické zacielenie, hľadané výrazy, text reklamy a kvalitu meraných kontaktov.",
+      "intro": "Prečo sa ozývajú nesprávni zákazníci?",
+      "introText": "Zladíme skutočný rozsah služieb s geografickým zacielením, reklamou a meraním dopytov.",
+      "problems": [
+        [
+          "Príliš široké zacielenie",
+          "Dopyty prichádzajú mimo vášho regiónu.",
+          "Overíme geografické nastavenia a prehľady."
+        ],
+        [
+          "Nevhodné výrazy",
+          "Rozpočet míňajú návody a pracovné ponuky.",
+          "Preskúmame vyhľadávacie výrazy a vylúčenia."
+        ],
+        [
+          "Skreslené telefonáty",
+          "Kliknutie na telefón sa ráta ako získaná zákazka.",
+          "Určíme kritériá kvalifikovaného kontaktu."
+        ]
+      ],
+      "process": [
+        [
+          "Región",
+          "Určíme územie a kapacitu."
+        ],
+        [
+          "Výrazy",
+          "Nájdeme irelevantné dopyty."
+        ],
+        [
+          "Reklamy",
+          "Zladíme ponuku s cieľovou stránkou."
+        ],
+        [
+          "Kvalita",
+          "Skontrolujeme meranie kontaktov."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Geografický plán",
+          "Oblasti a vylúčenia."
+        ],
+        [
+          "Reklamná štruktúra",
+          "Skupiny skutočných služieb."
+        ],
+        [
+          "Definícia kontaktu",
+          "Kritériá volaní a formulárov."
+        ]
+      ],
+      "faq": [
+        [
+          "Môžeme cieliť iba na Žilinu?",
+          "Áno, v rámci možností a presnosti platformy."
+        ],
+        [
+          "Musí reklama bežať nonstop?",
+          "Nie, zohľadníme pracovnú dobu."
+        ],
+        [
+          "Je každý telefonát konverzia?",
+          "Nie, odlíšime kontakt od relevantného dopytu."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Žilinský montážnik dostáva dopyty na služby, ktoré nevykonáva.",
+        "Zúžime výrazy a zladíme reklamy so skutočnou ponukou.",
+        "Overíme dostupné údaje o kontaktoch."
+      ],
+      "visual": [
+        "REGIÓN",
+        "REKLAMA",
+        "HOVOR"
+      ],
+      "risk": "Cena dopytu závisí od konkurencie, ponuky, sezóny a spracovania kontaktov. Negarantujeme fixnú cenu za lead.",
+      "related": [
+        [
+          "google-ads",
+          "Správa Google Ads",
+          "Správa kampaní podľa overených cieľov."
+        ],
+        [
+          "landing-pages",
+          "Vstupné stránky pre reklamu",
+          "Zladíme zámer vyhľadávania, reklamný text, mobilnú stránku a konverznú udalosť."
+        ]
+      ],
+      "cta": "Prebrať lokálne kampane"
+    },
+    "google-ads-audit": {
+      "title": "Nezávislý audit Google Ads | MrSeo.tech",
+      "description": "Nezávislý audit Google Ads: Oddelíme potvrdené chyby merania, riziká rozpočtu a hypotézy vhodné na testovanie.",
+      "kicker": "NEZÁVISLÝ AUDIT GOOGLE ADS",
+      "hero": [
+        "Nezávislý audit Google Ads.",
+        "Viete, na čo sa míňa rozpočet?"
+      ],
+      "lead": "Audit poskytne podložené zistenia a poradie odporúčaní bez automatických zmien v účte. Skontrolujeme konverzie, štruktúru, výrazy a náklady podľa obchodného cieľa.",
+      "intro": "Čo treba overiť pred optimalizáciou?",
+      "introText": "Oddelíme potvrdené chyby merania, riziká rozpočtu a hypotézy vhodné na testovanie.",
+      "problems": [
+        [
+          "Chybné konverzie",
+          "Rovnaká objednávka sa vykazuje viackrát.",
+          "Porovnáme konverzné akcie a identifikátory."
+        ],
+        [
+          "Výsledky bez potvrdenia",
+          "Obchod nevie doložiť vykázané dopyty.",
+          "Porovnáme dostupné CRM a reklamné dáta."
+        ],
+        [
+          "Zmiešané ciele",
+          "Rôzne služby súťažia o spoločný rozpočet.",
+          "Preskúmame štruktúru a históriu zmien."
+        ]
+      ],
+      "process": [
+        [
+          "Rozsah",
+          "Dohodneme cieľ a čítací prístup."
+        ],
+        [
+          "Kontrola",
+          "Preskúmame nastavenia a dáta."
+        ],
+        [
+          "Priority",
+          "Rozlíšime chyby a predpoklady."
+        ],
+        [
+          "Výstup",
+          "Zdokumentujeme zistenia a testy."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Správa auditu",
+          "Dôkazy a konkrétne príklady."
+        ],
+        [
+          "Zoznam odporúčaní",
+          "Poradie podľa rizika a dopadu."
+        ],
+        [
+          "Testovací plán",
+          "Metriky a kritériá."
+        ]
+      ],
+      "faq": [
+        [
+          "Meníte účet počas auditu?",
+          "Nie bez samostatného súhlasu."
+        ],
+        [
+          "Aké obdobie skúmate?",
+          "Závisí od dát, sezóny a zmien."
+        ],
+        [
+          "Garantujete nižšie náklady?",
+          "Nie, dodávame overiteľné odporúčania."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Firma vykazuje veľa formulárov, ale obchodníci ich nevidia v CRM.",
+        "Porovnáme udalosti, nastavenia a dostupné dáta.",
+        "Zdokumentujeme rozdiely a navrhneme nápravu merania."
+      ],
+      "visual": [
+        "ÚČET",
+        "AUDIT",
+        "PLÁN"
+      ],
+      "risk": "Audit automaticky nezahŕňa správu kampaní, implementáciu ani zmeny rozpočtu. Dohodnú sa samostatne.",
+      "related": [
+        [
+          "google-ads",
+          "Správa Google Ads",
+          "Správa kampaní podľa overených cieľov."
+        ],
+        [
+          "analytics",
+          "GA4 a meranie konverzií",
+          "Overíme nákupy a relevantné kontakty."
+        ]
+      ],
+      "cta": "Objednať audit Google Ads"
+    },
+    "merchant-center-help": {
+      "title": "Pomoc s Google Merchant Center | MrSeo.tech",
+      "description": "Pomoc s Google Merchant Center: Rozlíšime produktové chyby, stav webu a obmedzenia účtu a navrhneme nápravu pri zdroji.",
+      "kicker": "POMOC S GOOGLE MERCHANT CENTER",
+      "hero": [
+        "Pomoc s Google Merchant Center.",
+        "Prečo sa vaše produkty nezobrazujú?"
+      ],
+      "lead": "Zamietnutý produkt môže mať nesprávnu cenu, dostupnosť alebo identifikátor. Preskúmame diagnostiku a nájdeme príčinu v zdroji dát, e-shope alebo obmedzení účtu.",
+      "intro": "Čo bráni schváleniu produktov?",
+      "introText": "Rozlíšime produktové chyby, stav webu a obmedzenia účtu a navrhneme nápravu pri zdroji.",
+      "problems": [
+        [
+          "Chybný sklad",
+          "Variant je dostupný vo feede, no nedá sa kúpiť.",
+          "Overíme variant, feed a košík."
+        ],
+        [
+          "Chýbajúce údaje",
+          "GTIN alebo obrázok nespĺňa relevantné požiadavky.",
+          "Skontrolujeme zdrojové dáta a pravidlá."
+        ],
+        [
+          "Obmedzenie účtu",
+          "Hlásenie postihuje veľkú časť katalógu.",
+          "Preskúmame upozornenie a firemné údaje."
+        ]
+      ],
+      "process": [
+        [
+          "Diagnostika",
+          "Oddelíme produktové a účtové chyby."
+        ],
+        [
+          "Porovnanie",
+          "Overíme cenu, sklad a identifikátory."
+        ],
+        [
+          "Náprava",
+          "Definujeme zmeny zdroja."
+        ],
+        [
+          "Kontrola",
+          "Overíme vzorky a diagnostiku."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Zoznam chýb",
+          "Produkty a príčiny."
+        ],
+        [
+          "Plán nápravy",
+          "Úpravy feedu alebo webu."
+        ],
+        [
+          "Overené vzorky",
+          "Kontrola opravených údajov."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantujete schválenie?",
+          "Nie, rozhoduje Google."
+        ],
+        [
+          "Potrebujeme nový feed?",
+          "Nie vždy, často možno opraviť existujúci."
+        ],
+        [
+          "Pomôže nový účet?",
+          "Neobchádzame obmedzenia, riešime príčinu."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Obchod s obuvou posiela rovnakú dostupnosť všetkých veľkostí.",
+        "Preskúmame varianty a synchronizáciu skladu.",
+        "Skontrolujeme opravené vzorky v diagnostike."
+      ],
+      "visual": [
+        "PRODUKT",
+        "CHYBA",
+        "KONTROLA"
+      ],
+      "risk": "O schválení produktov či účtu rozhoduje Google. Nesľubujeme konkrétny termín ani úspešné schválenie.",
+      "related": [
+        [
+          "google-shopping",
+          "Google Shopping a Performance Max",
+          "Spojíme feed, meranie nákupov, produktové skupiny a ekonomiku kampaní."
+        ],
+        [
+          "catalog-automation",
+          "Automatizácia produktového katalógu",
+          "Definujeme identifikátory, mapovanie polí, pravidlá aktualizácie a spracovanie chýb."
+        ]
+      ],
+      "cta": "Vyriešiť zamietnuté produkty"
+    },
+    "woocommerce-shopify-stores": {
+      "title": "E-shopy WooCommerce a Shopify | MrSeo.tech",
+      "description": "E-shopy WooCommerce a Shopify: Naplánujeme produktový model, pokladňu, objednávky a dostupné prepojenia so systémami.",
+      "kicker": "E-SHOPY WOOCOMMERCE A SHOPIFY",
+      "hero": [
+        "E-shopy WooCommerce a Shopify.",
+        "Vyberte platformu podľa reálnych potrieb."
+      ],
+      "lead": "E-shop musí zvládnuť varianty, platby, dopravu, sklad a objednávky. Navrhneme platformu a posúdime slovenské platobné a dopravné služby pred potvrdením integrácií.",
+      "intro": "Čo musí fungovať pred prvou objednávkou?",
+      "introText": "Naplánujeme produktový model, pokladňu, objednávky a dostupné prepojenia so systémami.",
+      "problems": [
+        [
+          "Zložité varianty",
+          "Veľkosti a ceny sa ťažko udržiavajú.",
+          "Navrhneme atribúty a kategórie."
+        ],
+        [
+          "Neoverené platby",
+          "Preferovaná platobná brána nemusí byť kompatibilná.",
+          "Overíme zmluvu a technickú podporu."
+        ],
+        [
+          "Ručné prepisovanie objednávok",
+          "Objednávka sa zadáva opakovane do skladu.",
+          "Určíme dátové polia a zodpovednosť."
+        ]
+      ],
+      "process": [
+        [
+          "Požiadavky",
+          "Zmapujeme sortiment a procesy."
+        ],
+        [
+          "Model",
+          "Navrhneme varianty a import."
+        ],
+        [
+          "Vývoj",
+          "Implementujeme dohodnuté funkcie."
+        ],
+        [
+          "Test",
+          "Overíme platbu a objednávku."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Výber platformy",
+          "Požiadavky, náklady a obmedzenia."
+        ],
+        [
+          "Funkčný e-shop",
+          "Katalóg, pokladňa a dohodnuté integrácie."
+        ],
+        [
+          "Test nákupu",
+          "Platba, doprava a potvrdenie."
+        ]
+      ],
+      "faq": [
+        [
+          "WooCommerce alebo Shopify?",
+          "Podľa sortimentu, údržby a kontroly."
+        ],
+        [
+          "Dá sa pripojiť GoPay alebo TrustPay?",
+          "Najprv overíme poskytovateľa, zmluvu a platformu."
+        ],
+        [
+          "Dá sa pripojiť Packeta?",
+          "Posúdime kompatibilitu a podmienky doručovania."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Slovenský obchod chce varianty oblečenia, platbu kartou a výdajné miesta.",
+        "Vyberieme platformu podľa katalógu a potvrdených služieb.",
+        "Otestujeme nákup, platbu a doručenie."
+      ],
+      "visual": [
+        "KATALÓG",
+        "POKLADŇA",
+        "OBJEDN."
+      ],
+      "risk": "Zmluvy platobných služieb, predplatné, doplnky a doprava môžu mať samostatné náklady. Kompatibilitu overíme vopred.",
+      "related": [
+        [
+          "online-shop-development",
+          "Tvorba e-shopov",
+          "Navrhneme katalóg, pokladňu a objednávky."
+        ],
+        [
+          "store-migration",
+          "Migrácia e-shopu",
+          "Naplánujeme prenos katalógu, 301 presmerovania, skúšobné objednávky a kontrolu po spustení."
+        ]
+      ],
+      "cta": "Naplánovať nový e-shop"
+    },
+    "store-conversion": {
+      "title": "Optimalizácia konverzií e-shopu | MrSeo.tech",
+      "description": "Optimalizácia konverzií e-shopu: Skontrolujeme výber produktu, dodanie, košík, platbu a meranie nákupov.",
+      "kicker": "OPTIMALIZÁCIA KONVERZIÍ E-SHOPU",
+      "hero": [
+        "Optimalizácia konverzií e-shopu.",
+        "Prečo zákazníci opúšťajú košík?"
+      ],
+      "lead": "Viac návštev nepomôže, ak kupujúci nevie vybrať variant, cenu dopravy alebo dokončiť platbu. Preskúmame nákupnú cestu na mobile aj meranie.",
+      "intro": "Čo bráni dokončeniu nákupu?",
+      "introText": "Skontrolujeme výber produktu, dodanie, košík, platbu a meranie nákupov.",
+      "problems": [
+        [
+          "Nejasný variant",
+          "Kupujúci nevie, ktorý rozmer je správny.",
+          "Overíme údaje a otázky zákazníkov."
+        ],
+        [
+          "Prekvapivé náklady",
+          "Cena dopravy sa ukáže až na konci.",
+          "Preskúmame zobrazenie celkovej ceny."
+        ],
+        [
+          "Nedostatočné meranie",
+          "Nie je jasné, kde nákup končí.",
+          "Overíme nákupné udalosti a dostupné údaje."
+        ]
+      ],
+      "process": [
+        [
+          "Východisko",
+          "Overíme údaje o nákupoch."
+        ],
+        [
+          "Nákupná cesta",
+          "Otestujeme produkt, košík a platbu."
+        ],
+        [
+          "Zmeny",
+          "Vyberieme prekážky podľa dopadu."
+        ],
+        [
+          "Hodnotenie",
+          "Dohodneme metriky a obdobia."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Mapa prekážok",
+          "Konkrétne používateľské problémy."
+        ],
+        [
+          "Plán úprav",
+          "Testovateľné hypotézy."
+        ],
+        [
+          "Merací plán",
+          "Udalosti a porovnania."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantujete rast konverzie?",
+          "Nie, zmeny vyhodnocujeme na dátach."
+        ],
+        [
+          "Treba nový dizajn?",
+          "Nie, začneme skutočnými prekážkami."
+        ],
+        [
+          "Robíte A/B testy?",
+          "Ak to umožňuje návštevnosť a technika."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Predajca záhradnej techniky ukazuje dopravu až v poslednom kroku.",
+        "Zviditeľníme podmienky pred pokladňou.",
+        "Otestujeme nákup a vyhodnotíme porovnateľné dáta."
+      ],
+      "visual": [
+        "PRODUKT",
+        "KOŠÍK",
+        "PLATBA"
+      ],
+      "risk": "Na konverzie vplýva cena, sezóna, sklad, zľavy aj návštevnosť. Jednej zmene nepripisujeme celý výsledok.",
+      "related": [
+        [
+          "analytics",
+          "GA4 a meranie konverzií",
+          "Overíme nákupy a relevantné kontakty."
+        ],
+        [
+          "website-redesign",
+          "Redizajn a modernizácia webu",
+          "Pripravíme modernizáciu navigácie, rozhraní a adresnej štruktúry s kontrolou pri spustení."
+        ]
+      ],
+      "cta": "Preskúmať nákupnú cestu"
+    },
+    "catalog-automation": {
+      "title": "Automatizácia produktového katalógu | MrSeo.tech",
+      "description": "Automatizácia produktového katalógu: Definujeme identifikátory, mapovanie polí, pravidlá aktualizácie a spracovanie chýb.",
+      "kicker": "AUTOMATIZÁCIA PRODUKTOVÉHO KATALÓGU",
+      "hero": [
+        "Automatizácia produktového katalógu.",
+        "Aktualizujte ceny a sklad bez ručného prepisovania."
+      ],
+      "lead": "Dodávatelia posielajú rôzne kódy, ceny a formáty. Navrhneme kontrolovaný import, ktorý ukáže, ktoré položky sa aktualizovali a ktoré zlyhali.",
+      "intro": "Kde vznikajú chyby produktových dát?",
+      "introText": "Definujeme identifikátory, mapovanie polí, pravidlá aktualizácie a spracovanie chýb.",
+      "problems": [
+        [
+          "Rozdielne kódy",
+          "Rovnaký výrobok má rôzne dodávateľské čísla.",
+          "Určíme stabilné kľúče a varianty."
+        ],
+        [
+          "Rôzne formáty cien",
+          "Miešajú sa ceny s DPH a bez DPH.",
+          "Overíme formát a cenové pravidlá."
+        ],
+        [
+          "Tiché chyby importu",
+          "Chybný riadok sa preskočí bez oznámenia.",
+          "Navrhneme validáciu a hlásenie odchýlok."
+        ]
+      ],
+      "process": [
+        [
+          "Zdroje",
+          "Zmapujeme súbory a intervaly."
+        ],
+        [
+          "Mapovanie",
+          "Určíme kľúče a polia."
+        ],
+        [
+          "Import",
+          "Vytvoríme validovaný proces."
+        ],
+        [
+          "Dohľad",
+          "Otestujeme opakovanie a hlásenia."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Dátová mapa",
+          "Zdroje a transformačné pravidlá."
+        ],
+        [
+          "Automatický import",
+          "Aktualizácia dohodnutých polí."
+        ],
+        [
+          "Chybová správa",
+          "Odmietnuté položky s dôvodmi."
+        ]
+      ],
+      "faq": [
+        [
+          "CSV, XML alebo API?",
+          "Podľa dostupnosti a oprávnení zdroja."
+        ],
+        [
+          "Čo s chýbajúcim produktom?",
+          "Dohodneme deaktiváciu alebo označenie."
+        ],
+        [
+          "Možno meniť iba sklad?",
+          "Áno, povolené polia obmedzíme."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Veľkoobchod spája dva dodávateľské cenníky s rôznymi kódmi.",
+        "Zjednotíme identifikátory a formáty, oddelíme chybné riadky.",
+        "Overíme vzorky a výsledný protokol."
+      ],
+      "visual": [
+        "ZDROJ",
+        "PRAVIDLÁ",
+        "KATALÓG"
+      ],
+      "risk": "Automatizácia závisí od kvality dát, prístupu, limitov API a podmienok platformy.",
+      "related": [
+        [
+          "api-integrations",
+          "API integrácie a automatizácia",
+          "Navrhneme dátové toky, oprávnenia, validáciu, bezpečné opakovanie a dohľad nad chybami."
+        ],
+        [
+          "merchant-center-help",
+          "Pomoc s Google Merchant Center",
+          "Rozlíšime produktové chyby, stav webu a obmedzenia účtu a navrhneme nápravu pri zdroji."
+        ]
+      ],
+      "cta": "Automatizovať katalóg"
+    },
+    "store-migration": {
+      "title": "Migrácia e-shopu | MrSeo.tech",
+      "description": "Migrácia e-shopu: Naplánujeme prenos katalógu, 301 presmerovania, skúšobné objednávky a kontrolu po spustení.",
+      "kicker": "MIGRÁCIA E-SHOPU",
+      "hero": [
+        "Migrácia e-shopu.",
+        "Zmeňte platformu bez zbytočného výpadku."
+      ],
+      "lead": "Pri sťahovaní obchodu treba zachovať dôležité adresy, produktové dáta a objednávkové procesy. Pred prechodom testujeme import, presmerovania a nákup.",
+      "intro": "Čo nesmie pri migrácii zmiznúť?",
+      "introText": "Naplánujeme prenos katalógu, 301 presmerovania, skúšobné objednávky a kontrolu po spustení.",
+      "problems": [
+        [
+          "Stratené adresy",
+          "Staré produktové odkazy vracajú 404.",
+          "Priradíme nové zodpovedajúce URL."
+        ],
+        [
+          "Neúplný import",
+          "Varianty alebo obrázky sa nepreniesli.",
+          "Overíme reprezentatívne vzorky."
+        ],
+        [
+          "Nefunkčná pokladňa",
+          "Platba alebo doprava po prechode zlyháva.",
+          "Otestujeme kritické funkcie oddelene."
+        ]
+      ],
+      "process": [
+        [
+          "Inventúra",
+          "Zmapujeme dáta a adresy."
+        ],
+        [
+          "Mapovanie",
+          "Priradíme pôvodné a nové URL."
+        ],
+        [
+          "Skúška",
+          "Overíme import a nákup."
+        ],
+        [
+          "Spustenie",
+          "Skontrolujeme odkazy a objednávky."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Migračný inventár",
+          "Dáta a systémové závislosti."
+        ],
+        [
+          "Mapa presmerovaní",
+          "Pôvodné URL a nové ciele."
+        ],
+        [
+          "Plán spustenia",
+          "Testy a následná kontrola."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantujete pozície?",
+          "Nie, znižujeme technické riziká."
+        ],
+        [
+          "Možno prejsť na Shopify?",
+          "Najprv posúdime export a cieľové funkcie."
+        ],
+        [
+          "Prenesie sa história objednávok?",
+          "Záleží na možnostiach oboch systémov."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "E-shop pri zmene platformy mení adresy kategórií.",
+        "Pripravíme mapu URL, import produktov a skúšobný nákup.",
+        "Po spustení skontrolujeme presmerovania a feed."
+      ],
+      "visual": [
+        "STARÉ",
+        "MIGRÁCIA",
+        "NOVÉ"
+      ],
+      "risk": "Aj dobre pripravená migrácia môže dočasne zmeniť organickú návštevnosť. Zachovanie pozícií nie je garantované.",
+      "related": [
+        [
+          "woocommerce-shopify-stores",
+          "E-shopy WooCommerce a Shopify",
+          "Naplánujeme produktový model, pokladňu, objednávky a dostupné prepojenia so systémami."
+        ],
+        [
+          "ecommerce-seo",
+          "SEO e-shopov",
+          "Usporiadame kategórie a produkty pre vyhľadávanie."
+        ]
+      ],
+      "cta": "Naplánovať migráciu e-shopu"
+    },
+    "service-websites": {
+      "title": "Webové stránky pre poskytovateľov služieb | MrSeo.tech",
+      "description": "Webové stránky pre poskytovateľov služieb: Navrhneme prehľadné služby, schválené podklady a funkčný mobilný formulár.",
+      "kicker": "WEBOVÉ STRÁNKY PRE POSKYTOVATEĽOV SLUŽIEB",
+      "hero": [
+        "Webové stránky pre poskytovateľov služieb.",
+        "Rozumie zákazník vašej ponuke?"
+      ],
+      "lead": "Vytvoríme stránku, na ktorej návštevník zistí rozsah služby, podmienky a ako požiadať o cenovú ponuku. Štruktúra vychádza z reálnych otázok zákazníkov.",
+      "intro": "Čo potrebuje zákazník pred kontaktom?",
+      "introText": "Navrhneme prehľadné služby, schválené podklady a funkčný mobilný formulár.",
+      "problems": [
+        [
+          "Nejasná ponuka",
+          "Návštevník nevie, ktorá služba rieši jeho problém.",
+          "Rozdelíme ponuku podľa potrieb."
+        ],
+        [
+          "Chýbajúce informácie",
+          "Nie sú vysvetlené podmienky ani rozsah práce.",
+          "Využijeme overené firemné podklady."
+        ],
+        [
+          "Zložitý formulár",
+          "Žiadosť na mobile vyžaduje priveľa krokov.",
+          "Zjednodušíme a otestujeme odoslanie."
+        ]
+      ],
+      "process": [
+        [
+          "Ciele",
+          "Určíme požadovaných zákazníkov."
+        ],
+        [
+          "Štruktúra",
+          "Navrhneme stránky a kontakty."
+        ],
+        [
+          "Vývoj",
+          "Vytvoríme responzívne šablóny."
+        ],
+        [
+          "Odovzdanie",
+          "Otestujeme formuláre a správu."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Mapa webu",
+          "Služby a cesty zákazníkov."
+        ],
+        [
+          "Funkčný web",
+          "Dohodnuté šablóny a funkcie."
+        ],
+        [
+          "Kontaktný test",
+          "Odoslanie a upozornenie."
+        ]
+      ],
+      "faq": [
+        [
+          "Pripravujete aj texty?",
+          "Rozsah obsahu a schválenie údajov dohodneme."
+        ],
+        [
+          "Používate WordPress?",
+          "Áno, ak vyhovuje požiadavkám."
+        ],
+        [
+          "Je SEO súčasťou?",
+          "Technické základy podľa projektu, priebežné SEO samostatne."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Stavebná firma má jednu všeobecnú stránku bez konkrétnych prác.",
+        "Rozdelíme služby a vytvoríme jasnú cestu k ponuke.",
+        "Skontrolujeme mobilnú navigáciu a formulár."
+      ],
+      "visual": [
+        "SLUŽBA",
+        "STRÁNKA",
+        "PONUKA"
+      ],
+      "risk": "Cena a termín závisia od počtu stránok, obsahu, integrácií a schválených podkladov.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO pre firmy poskytujúce služby",
+          "Vytvoríme plán služieb, vyhľadávacích zámerov, interných odkazov a žiadostí o cenovú ponuku."
+        ],
+        [
+          "website-design",
+          "Tvorba webových stránok",
+          "Zrozumiteľný a spravovateľný web."
+        ]
+      ],
+      "cta": "Naplánovať web služieb"
+    },
+    "landing-pages": {
+      "title": "Vstupné stránky pre reklamu | MrSeo.tech",
+      "description": "Vstupné stránky pre reklamu: Zladíme zámer vyhľadávania, reklamný text, mobilnú stránku a konverznú udalosť.",
+      "kicker": "VSTUPNÉ STRÁNKY PRE REKLAMU",
+      "hero": [
+        "Vstupné stránky pre reklamu.",
+        "Premeňte kliknutie na relevantný dopyt."
+      ],
+      "lead": "Reklama na konkrétnu službu potrebuje cieľovú stránku s rovnakou ponukou. Vytvoríme zrozumiteľný obsah, jednu hlavnú akciu a overené meranie.",
+      "intro": "Kde sa stráca spojenie medzi reklamou a stránkou?",
+      "introText": "Zladíme zámer vyhľadávania, reklamný text, mobilnú stránku a konverznú udalosť.",
+      "problems": [
+        [
+          "Nesprávna cieľová stránka",
+          "Reklama smeruje na všeobecnú domovskú stránku.",
+          "Zladíme nadpis a ponuku s reklamou."
+        ],
+        [
+          "Priveľa volieb",
+          "Tlačidlá súťažia o pozornosť.",
+          "Určíme jednu hlavnú akciu."
+        ],
+        [
+          "Chybná konverzia",
+          "Kliknutie sa meria, no odoslaný formulár nie.",
+          "Otestujeme odoslanie a potvrdenie."
+        ]
+      ],
+      "process": [
+        [
+          "Cieľ",
+          "Určíme ponuku a akciu."
+        ],
+        [
+          "Obsah",
+          "Zodpovieme otázky zákazníka."
+        ],
+        [
+          "Vývoj",
+          "Vytvoríme stránku a meranie."
+        ],
+        [
+          "Test",
+          "Overíme formulár a konverziu."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Reklamné posolstvo",
+          "Obsah prispôsobený dopytu."
+        ],
+        [
+          "Vstupná stránka",
+          "Čitateľný mobilný dizajn."
+        ],
+        [
+          "Konverzný test",
+          "Skutočná udalosť po odoslaní."
+        ]
+      ],
+      "faq": [
+        [
+          "Stačí jedna stránka na všetky kampane?",
+          "Len pri rovnakom zámere a ponuke."
+        ],
+        [
+          "Spravujete aj reklamy?",
+          "Áno, v samostatnej dohode."
+        ],
+        [
+          "Môže byť na našej doméne?",
+          "Často áno, po preverení platformy."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Reklama na montáž tepelného čerpadla smeruje na všeobecný web.",
+        "Pripravíme konkrétnu ponuku a kontaktný krok.",
+        "Otestujeme súlad reklamy a meranie formulára."
+      ],
+      "visual": [
+        "REKLAMA",
+        "PONUKA",
+        "DOPYT"
+      ],
+      "risk": "Samotná stránka negarantuje dopyty. Rozhodujú aj reklama, cena, dopyt a rýchlosť reakcie firmy.",
+      "related": [
+        [
+          "google-ads",
+          "Správa Google Ads",
+          "Správa kampaní podľa overených cieľov."
+        ],
+        [
+          "local-google-ads",
+          "Google Ads pre lokálne firmy",
+          "Zladíme skutočný rozsah služieb s geografickým zacielením, reklamou a meraním dopytov."
+        ]
+      ],
+      "cta": "Vytvoriť stránku kampane"
+    },
+    "corporate-websites": {
+      "title": "Firemné a prezentačné weby | MrSeo.tech",
+      "description": "Firemné a prezentačné weby: Usporiadame oblasti podnikania, overené referencie, dokumenty a kontakty podľa používateľov.",
+      "kicker": "FIREMNÉ A PREZENTAČNÉ WEBY",
+      "hero": [
+        "Firemné a prezentačné weby.",
+        "Predstavte kompetencie firmy zrozumiteľne."
+      ],
+      "lead": "Partneri výrobnej firmy potrebujú nájsť produktové línie, dokumentáciu a správne oddelenie. Navrhneme informačnú štruktúru pre rôzne cieľové skupiny a udržateľnú správu.",
+      "intro": "Aké informácie potrebuje obchodný partner?",
+      "introText": "Usporiadame oblasti podnikania, overené referencie, dokumenty a kontakty podľa používateľov.",
+      "problems": [
+        [
+          "Nejasné oblasti podnikania",
+          "Partner nerozlišuje ponuku jednotlivých divízií.",
+          "Navrhneme hierarchiu podľa cieľových skupín."
+        ],
+        [
+          "Zastarané dokumenty",
+          "Nie je určený vlastník aktualizácie.",
+          "Zmapujeme podklady a zodpovednosť."
+        ],
+        [
+          "Nesprávny kontakt",
+          "Dopyt putuje na nesprávne oddelenie.",
+          "Vytvoríme kontakty pre jednotlivé oblasti."
+        ]
+      ],
+      "process": [
+        [
+          "Podklady",
+          "Zhromaždíme schválené informácie."
+        ],
+        [
+          "Architektúra",
+          "Navrhneme stránky a skupiny."
+        ],
+        [
+          "Vývoj",
+          "Vytvoríme šablóny a navigáciu."
+        ],
+        [
+          "Test",
+          "Overíme vyhľadanie dokumentov."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Informačná mapa",
+          "Stránky, dokumenty a publikum."
+        ],
+        [
+          "Firemný web",
+          "Jednotné responzívne komponenty."
+        ],
+        [
+          "Návod na správu",
+          "Zodpovednosť za obsah."
+        ]
+      ],
+      "faq": [
+        [
+          "Môže byť viacjazyčný?",
+          "Áno, pri schválenom obsahu a jazykovom pláne."
+        ],
+        [
+          "Zverejníte certifikáty?",
+          "Len overené materiály s povolením."
+        ],
+        [
+          "Prepojíte CRM?",
+          "Najprv posúdime dáta a oprávnenia."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Slovenský výrobca potrebuje oddelené produktové línie a dokumenty pre predajcov.",
+        "Usporiadame schválený obsah podľa potrieb partnerov.",
+        "Otestujeme vyhľadanie podkladov a kontaktu."
+      ],
+      "visual": [
+        "FIRMA",
+        "STRÁNKY",
+        "KONTAKT"
+      ],
+      "risk": "Nevymýšľame referencie, certifikáty, pobočky ani výsledky. Firma potvrdzuje zverejňované údaje.",
+      "related": [
+        [
+          "website-design",
+          "Tvorba webových stránok",
+          "Zrozumiteľný a spravovateľný web."
+        ],
+        [
+          "web-applications",
+          "Webové aplikácie, CRM a zákaznícke portály",
+          "Najprv určíme používateľov, dátový model, oprávnenia a kritériá prijatia prvej verzie."
+        ]
+      ],
+      "cta": "Naplánovať firemný web"
+    },
+    "website-redesign": {
+      "title": "Redizajn a modernizácia webu | MrSeo.tech",
+      "description": "Redizajn a modernizácia webu: Pripravíme modernizáciu navigácie, rozhraní a adresnej štruktúry s kontrolou pri spustení.",
+      "kicker": "REDIZAJN A MODERNIZÁCIA WEBU",
+      "hero": [
+        "Redizajn a modernizácia webu.",
+        "Zmeňte vzhľad bez straty toho, čo funguje."
+      ],
+      "lead": "Starší web môže získavať kvalitnú návštevnosť, hoci sa ťažko používa na mobile. Zmapujeme hodnotné adresy, obsah a funkcie pred zmenou dizajnu.",
+      "intro": "Čo zachovať a čo zmeniť?",
+      "introText": "Pripravíme modernizáciu navigácie, rozhraní a adresnej štruktúry s kontrolou pri spustení.",
+      "problems": [
+        [
+          "Slabá mobilná použiteľnosť",
+          "Text a tlačidlá sú nepraktické na telefóne.",
+          "Preskúmame čitateľnosť a navigáciu."
+        ],
+        [
+          "Skryté služby",
+          "Dôležitá stránka je príliš hlboko.",
+          "Zmapujeme hierarchiu a odkazy."
+        ],
+        [
+          "SEO riziko",
+          "Nové adresy nemajú plán pre pôvodné URL.",
+          "Navrhneme presmerovania a canonical."
+        ]
+      ],
+      "process": [
+        [
+          "Inventúra",
+          "Určíme hodnotné stránky a prekážky."
+        ],
+        [
+          "Rozsah",
+          "Dohodneme zachované funkcie."
+        ],
+        [
+          "Úpravy",
+          "Modernizujeme komponenty."
+        ],
+        [
+          "Test",
+          "Overíme adresy a kontakty."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Mapa pôvodného webu",
+          "Hodnotné adresy a problémy."
+        ],
+        [
+          "Nové rozhranie",
+          "Dohodnuté šablóny."
+        ],
+        [
+          "Test spustenia",
+          "Navigácia, odkazy a formuláre."
+        ]
+      ],
+      "faq": [
+        [
+          "Musíme meniť platformu?",
+          "Nie, ak existujúca zvládne úpravy."
+        ],
+        [
+          "Zachováte URL?",
+          "Kde je to možné, inak pripravíme presmerovania."
+        ],
+        [
+          "Je rýchlosť zahrnutá?",
+          "Konkrétne opatrenia dohodneme podľa rozsahu."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Poradenský web má návštevnosť, ale na mobile sa ťažko hľadá kontakt.",
+        "Zachováme adresy a zlepšíme cestu k dopytu.",
+        "Otestujeme formuláre, canonical a odkazy."
+      ],
+      "visual": [
+        "PÔVODNÉ",
+        "DIZAJN",
+        "TEST"
+      ],
+      "risk": "Redizajn sám negarantuje viac návštev ani dopytov. Dopad treba vyhodnotiť na vhodných dátach.",
+      "related": [
+        [
+          "website-speed-security",
+          "Rýchlosť, bezpečnosť a prístupnosť webu",
+          "Rozlíšime Core Web Vitals, bezpečnostné nastavenia a prístupnosť na samostatné overiteľné úlohy."
+        ],
+        [
+          "service-websites",
+          "Webové stránky pre poskytovateľov služieb",
+          "Navrhneme prehľadné služby, schválené podklady a funkčný mobilný formulár."
+        ]
+      ],
+      "cta": "Modernizovať web"
+    },
+    "wordpress-care": {
+      "title": "WordPress údržba a podpora | MrSeo.tech",
+      "description": "WordPress údržba a podpora: Oddelíme preventívnu údržbu, riešenie porúch a vývoj nových funkcií.",
+      "kicker": "WORDPRESS ÚDRŽBA A PODPORA",
+      "hero": [
+        "WordPress údržba a podpora.",
+        "Zvládne web ďalšiu aktualizáciu?"
+      ],
+      "lead": "WordPress potrebuje kontrolované aktualizácie, zálohy a testy kľúčových funkcií. Pomôžeme odhaliť príčinu technickej chyby a pripraviť bezpečný postup.",
+      "intro": "Ako znížiť riziko výpadku?",
+      "introText": "Oddelíme preventívnu údržbu, riešenie porúch a vývoj nových funkcií.",
+      "problems": [
+        [
+          "Nekompatibilný doplnok",
+          "Aktualizácia naruší formulár alebo pokladňu.",
+          "Overíme kompatibilitu pred zmenou."
+        ],
+        [
+          "Neoverená záloha",
+          "Záloha existuje, no obnova nie je vyskúšaná.",
+          "Posúdime možnosť obnovy."
+        ],
+        [
+          "Opakujúca sa chyba",
+          "Problém sa vracia po dočasnom riešení.",
+          "Preskúmame logy a príčinu."
+        ]
+      ],
+      "process": [
+        [
+          "Inventúra",
+          "Overíme verzie, prístupy a zálohy."
+        ],
+        [
+          "Skúška",
+          "Zopakujeme chybu v testovacom prostredí."
+        ],
+        [
+          "Náprava",
+          "Vykonáme schválené zmeny."
+        ],
+        [
+          "Kontrola",
+          "Otestujeme hlavné funkcie."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Plán údržby",
+          "Komponenty, intervaly a rozsah."
+        ],
+        [
+          "Záznam zmien",
+          "Úpravy a vykonané kontroly."
+        ],
+        [
+          "Plán obnovy",
+          "Zálohy a kroky návratu."
+        ]
+      ],
+      "faq": [
+        [
+          "Je hosting zahrnutý?",
+          "Nie automaticky, môžeme pracovať na existujúcom."
+        ],
+        [
+          "Aktualizujete priamo produkciu?",
+          "Pri riziku uprednostníme test a obnovu."
+        ],
+        [
+          "Sú nové funkcie súčasťou?",
+          "Nie, vývoj dohodneme samostatne."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Po aktualizácii pluginu neprichádzajú správy z formulára.",
+        "Zopakujeme chybu, preveríme log a otestujeme nápravu.",
+        "Overíme odoslanie a zdokumentujeme zmenu."
+      ],
+      "visual": [
+        "ZÁLOHA",
+        "ZMENA",
+        "TEST"
+      ],
+      "risk": "Čas reakcie a dostupnosť dohodneme. Záloha a údržba neodstraňujú všetky riziká.",
+      "related": [
+        [
+          "website-speed-security",
+          "Rýchlosť, bezpečnosť a prístupnosť webu",
+          "Rozlíšime Core Web Vitals, bezpečnostné nastavenia a prístupnosť na samostatné overiteľné úlohy."
+        ],
+        [
+          "api-integrations",
+          "API integrácie a automatizácia",
+          "Navrhneme dátové toky, oprávnenia, validáciu, bezpečné opakovanie a dohľad nad chybami."
+        ]
+      ],
+      "cta": "Získať podporu WordPress"
+    },
+    "api-integrations": {
+      "title": "API integrácie a automatizácia | MrSeo.tech",
+      "description": "API integrácie a automatizácia: Navrhneme dátové toky, oprávnenia, validáciu, bezpečné opakovanie a dohľad nad chybami.",
+      "kicker": "API INTEGRÁCIE A AUTOMATIZÁCIA",
+      "hero": [
+        "API integrácie a automatizácia.",
+        "Neprepisujte tie isté údaje do viacerých systémov."
+      ],
+      "lead": "Prepojenie e-shopu, CRM a fakturácie musí zvládnuť objednávku aj chybu. Najprv definujeme polia, prístupy, identifikátory a spracovanie výpadkov.",
+      "intro": "Kde sa stráca čas alebo objednávkové údaje?",
+      "introText": "Navrhneme dátové toky, oprávnenia, validáciu, bezpečné opakovanie a dohľad nad chybami.",
+      "problems": [
+        [
+          "Ručný prepis",
+          "Objednávka sa zadáva znovu do fakturácie.",
+          "Zmapujeme zdroj, cieľ a spúšťač."
+        ],
+        [
+          "Duplicitné objednávky",
+          "Opakovaný prenos vytvorí ďalší záznam.",
+          "Určíme stabilný identifikátor."
+        ],
+        [
+          "Neviditeľné chyby",
+          "Prenos zlyhá bez hlásenia.",
+          "Navrhneme logy, obmedzené opakovanie a upozornenia."
+        ]
+      ],
+      "process": [
+        [
+          "Tok dát",
+          "Určíme polia a udalosti."
+        ],
+        [
+          "Rozhrania",
+          "Overíme prístupy a limity."
+        ],
+        [
+          "Vývoj",
+          "Vytvoríme validované prepojenie."
+        ],
+        [
+          "Test",
+          "Overíme duplicity a výpadky."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Špecifikácia dát",
+          "Polia a pravidlá prenosu."
+        ],
+        [
+          "Overená integrácia",
+          "Normálne aj chybové scenáre."
+        ],
+        [
+          "Prevádzkový návod",
+          "Logy a upozornenia."
+        ]
+      ],
+      "faq": [
+        [
+          "Musí existovať API?",
+          "Nie vždy, môže stačiť schválený export alebo webhook."
+        ],
+        [
+          "Prepojíte SuperFaktúru alebo iDoklad?",
+          "Najprv overíme rozhranie, zmluvu a oprávnenia."
+        ],
+        [
+          "Čo pri výpadku?",
+          "Dohodneme bezpečné opakovanie a hlásenie chýb."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Slovenský e-shop ručne fakturuje prijaté objednávky.",
+        "Preskúmame rozhranie fakturácie a pravidlá mapovania.",
+        "Otestujeme objednávku, duplicitný prenos a výpadok."
+      ],
+      "visual": [
+        "ZDROJ",
+        "API",
+        "CRM"
+      ],
+      "risk": "Rozsah závisí od rozhraní, oprávnení, kvality dát a zmluvných podmienok. Účtovné pravidlá musí potvrdiť podnik.",
+      "related": [
+        [
+          "catalog-automation",
+          "Automatizácia produktového katalógu",
+          "Definujeme identifikátory, mapovanie polí, pravidlá aktualizácie a spracovanie chýb."
+        ],
+        [
+          "web-applications",
+          "Webové aplikácie, CRM a zákaznícke portály",
+          "Najprv určíme používateľov, dátový model, oprávnenia a kritériá prijatia prvej verzie."
+        ]
+      ],
+      "cta": "Prepojiť systémy"
+    },
+    "website-speed-security": {
+      "title": "Rýchlosť, bezpečnosť a prístupnosť webu | MrSeo.tech",
+      "description": "Rýchlosť, bezpečnosť a prístupnosť webu: Rozlíšime Core Web Vitals, bezpečnostné nastavenia a prístupnosť na samostatné overiteľné úlohy.",
+      "kicker": "RÝCHLOSŤ, BEZPEČNOSŤ A PRÍSTUPNOSŤ WEBU",
+      "hero": [
+        "Rýchlosť, bezpečnosť a prístupnosť webu.",
+        "Čo spomaľuje web alebo bráni jeho používaniu?"
+      ],
+      "lead": "Zmeriame načítanie, pozorovateľné technické riziká a prekážky pri ovládaní. Zmeny viažeme na konkrétne zistenia, nie na sľub dokonalého automatického skóre.",
+      "intro": "Ktoré problémy majú reálny vplyv na používateľa?",
+      "introText": "Rozlíšime Core Web Vitals, bezpečnostné nastavenia a prístupnosť na samostatné overiteľné úlohy.",
+      "problems": [
+        [
+          "Pomalé načítanie",
+          "Veľké obrázky a skripty zaťažujú mobil.",
+          "Zmeriame zdroje a výkonnostné ukazovatele."
+        ],
+        [
+          "Rizikové nastavenia",
+          "Zastarané komponenty alebo široké oprávnenia zvyšujú riziko.",
+          "Overíme dohodnuté verzie a nastavenia."
+        ],
+        [
+          "Prekážka prístupnosti",
+          "Formulár nemožno ovládať klávesnicou.",
+          "Otestujeme kontrast a relevantné interakcie."
+        ]
+      ],
+      "process": [
+        [
+          "Meranie",
+          "Zmapujeme zdroje a riziká."
+        ],
+        [
+          "Priority",
+          "Posúdime dopad a náročnosť."
+        ],
+        [
+          "Úpravy",
+          "Vykonáme schválené zásahy."
+        ],
+        [
+          "Opakovaný test",
+          "Porovnáme merania za podobných podmienok."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Diagnostika",
+          "Konkrétne nálezy a priority."
+        ],
+        [
+          "Technické úpravy",
+          "Zásahy k overeným príčinám."
+        ],
+        [
+          "Kontrolná správa",
+          "Porovnanie a obmedzenia."
+        ]
+      ],
+      "faq": [
+        [
+          "Garantujete skóre 100?",
+          "Nie, vplýva zariadenie, sieť a externé služby."
+        ],
+        [
+          "Je zahrnutý penetračný test?",
+          "Nie, vyžaduje samostatné oprávnenie."
+        ],
+        [
+          "Je to právny certifikát prístupnosti?",
+          "Nie, čiastková technická kontrola ho nenahrádza."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "E-shop má ťažké obrázky a klávesnicou ťažko ovládateľnú pokladňu.",
+        "Zmeriame zdroje a navrhneme dohodnuté úpravy.",
+        "Zopakujeme porovnateľné testy."
+      ],
+      "visual": [
+        "MERANIE",
+        "ÚPRAVA",
+        "TEST"
+      ],
+      "risk": "Absolútnu bezpečnosť nemožno garantovať. Infraštruktúra a rozsah kontroly určujú hranice zistení.",
+      "related": [
+        [
+          "wordpress-care",
+          "WordPress údržba a podpora",
+          "Oddelíme preventívnu údržbu, riešenie porúch a vývoj nových funkcií."
+        ],
+        [
+          "website-redesign",
+          "Redizajn a modernizácia webu",
+          "Pripravíme modernizáciu navigácie, rozhraní a adresnej štruktúry s kontrolou pri spustení."
+        ]
+      ],
+      "cta": "Preskúmať rýchlosť a bezpečnosť"
+    },
+    "web-applications": {
+      "title": "Webové aplikácie, CRM a zákaznícke portály | MrSeo.tech",
+      "description": "Webové aplikácie, CRM a zákaznícke portály: Najprv určíme používateľov, dátový model, oprávnenia a kritériá prijatia prvej verzie.",
+      "kicker": "WEBOVÉ APLIKÁCIE, CRM A ZÁKAZNÍCKE PORTÁLY",
+      "hero": [
+        "Webové aplikácie, CRM a zákaznícke portály.",
+        "Prerástli procesy firmy tabuľky?"
+      ],
+      "lead": "Vyvíjame webové nástroje pre konkrétnu prácu: ponuky, zákazky, dokumenty, používateľské roly alebo integrácie. Prvá verzia musí riešiť jasne vymedzenú potrebu.",
+      "intro": "Ktorý pracovný postup potrebuje aplikáciu?",
+      "introText": "Najprv určíme používateľov, dátový model, oprávnenia a kritériá prijatia prvej verzie.",
+      "problems": [
+        [
+          "Rozptýlené dáta",
+          "Ponuky a zákazky sú v tabuľkách a správach.",
+          "Navrhneme model dát a stavy."
+        ],
+        [
+          "Príliš široké prístupy",
+          "Používatelia vidia údaje, ktoré nepotrebujú.",
+          "Určíme roly a pravidlá prístupu."
+        ],
+        [
+          "Rastúci rozsah",
+          "Nové funkcie pribúdajú bez overenej hodnoty.",
+          "Vymedzíme prvú verziu a kritériá."
+        ]
+      ],
+      "process": [
+        [
+          "Proces",
+          "Zmapujeme používateľov a úlohy."
+        ],
+        [
+          "Prvá verzia",
+          "Určíme prioritné funkcie."
+        ],
+        [
+          "Vývoj",
+          "Vytvoríme roly a integrácie."
+        ],
+        [
+          "Pilot",
+          "Otestujeme reálne pracovné postupy."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Funkčná špecifikácia",
+          "Roly, dáta a pravidlá."
+        ],
+        [
+          "Použiteľný modul",
+          "Dohodnuté hlavné funkcie."
+        ],
+        [
+          "Plán rozvoja",
+          "Testy a ďalšia etapa."
+        ]
+      ],
+      "faq": [
+        [
+          "Môžeme začať MVP?",
+          "Áno, jedným konkrétnym procesom."
+        ],
+        [
+          "Musíme vymeniť CRM?",
+          "Nie vždy, môže stačiť integrácia."
+        ],
+        [
+          "Ako dlho trvá vývoj?",
+          "Odhad vyžaduje rozsah, dáta a integrácie."
+        ]
+      ],
+      "example": [
+        "ILUSTRAČNÝ PRÍKLAD",
+        "Servisná firma eviduje zákazky a ponuky v niekoľkých tabuľkách.",
+        "Navrhneme portál so stavmi zákaziek a rolami.",
+        "Vybraní používatelia otestujú pracovný postup a prístupy."
+      ],
+      "visual": [
+        "PROCES",
+        "PORTÁL",
+        "VÝSLEDOK"
+      ],
+      "risk": "Čas a cena závisia od funkcií, dát, bezpečnosti a integrácií. Nové funkcie odhadujeme samostatne.",
+      "related": [
+        [
+          "api-integrations",
+          "API integrácie a automatizácia",
+          "Navrhneme dátové toky, oprávnenia, validáciu, bezpečné opakovanie a dohľad nad chybami."
+        ],
+        [
+          "web-development",
+          "Vývoj webu na mieru",
+          "Funkcie podľa skutočných potrieb firmy."
+        ]
+      ],
+      "cta": "Naplánovať webovú aplikáciu"
+    }
+  }
+}
