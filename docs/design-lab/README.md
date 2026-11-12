@@ -1,0 +1,3 @@
+# SEO Design Lab
+
+Standalone offline HTML prototype: open seo.html in a browser. Three selectable visual directions, same Ukrainian SEO copy and information architecture to compare visual treatment. No WordPress files, production routes, translations, forms, robots or homepage modified. CSS-only illustrative SERP, not actual rankings. CTA opens existing contact page; no form submissions in prototype. No external assets or libraries. Visual/browser QA not yet verified; before implementation test 360/390/1440, keyboard, contrast, reduced motion and compare against current UA SEO. Owner chooses direction before any theme integration. Never merge/deploy this experiment without explicit approval.
