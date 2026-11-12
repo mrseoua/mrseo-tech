@@ -25,7 +25,7 @@ for slug,p in pages.items():
     assert len(p["faq"])==3 and all(len(x)==2 for x in p["faq"]),(slug,"faq")
     assert len(p["example"])==4 and p["example"][0]=="SITUAÇÃO ILUSTRATIVA",(slug,"example")
     assert len(p["visual"])==3 and len(set(p["visual"]))==3,(slug,"visual")
-    assert len(p["related"])==2 and all(x[0]!=slug for x in p["related"]),(slug,"related")
+    assert len(p["related"])==2 and all(len(x)==3 and x[0]!=slug and all(isinstance(y,str) and y for y in x) for x in p["related"]),(slug,"related")
 assert "IVA" in pages["google-shopping"]["risk"]
 assert "CSS" in pages["google-shopping"]["faq"][1][0] and "Comparison Shopping Service" in pages["google-shopping"]["faq"][1][1]
 assert len({x["description"] for x in pages.values()}) == 19
@@ -70,4 +70,7 @@ assert "mrseo-pt-scene-visible" in read("assets/pt-services.css")
 assert "X-Robots-Tag: noindex, nofollow" in fn
 base=json.loads(read("locales/pt-full.json"))
 assert base["code"]=="pt-PT" and len(base["pages"]["contact"]["lead"])>25
+assert "Gestão de Google Ads" in base["pages"]["google-ads"]["title"]
+assert "Auditoria Google Ads" in pages["google-ads-audit"]["title"]
+assert all(x[0] in set(pages)|set(base["pages"]) for p in pages.values() for x in p["related"])
 print("PT PASS: 19 original services, 25 real menu links, 19 unique scenes and staging noindex")
