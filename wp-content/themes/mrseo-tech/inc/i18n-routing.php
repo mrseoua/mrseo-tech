@@ -34,6 +34,11 @@ function mrseo_url($slug='',$lang=null){
     && in_array($slug,mrseo_pt_service_slugs(),true)
     && ($lang===mrseo_locale() || !function_exists('mrseo_i18n_matching_slug')))
   return mrseo_i18n_exact_url('pt',$slug);
+ // Completed Swedish services must keep exact URL paths.
+ if($lang==='sv' && function_exists('mrseo_sv_service_slugs')
+    && in_array($slug,mrseo_sv_service_slugs(),true)
+    && ($lang===mrseo_locale() || !function_exists('mrseo_i18n_matching_slug')))
+  return mrseo_i18n_exact_url('sv',$slug);
  // Completed Spanish service URLs must never be silently redirected to an EU parent.
  if($lang==='es' && function_exists('mrseo_es_service_slugs')
     && in_array($slug,mrseo_es_service_slugs(),true)
@@ -110,7 +115,8 @@ function mrseo_url($slug='',$lang=null){
      && !($lang==='nl' && function_exists('mrseo_nl_service_slugs') && in_array($slug,mrseo_nl_service_slugs(),true))
      && !($lang==='ro' && function_exists('mrseo_ro_service_slugs') && in_array($slug,mrseo_ro_service_slugs(),true))
      && !($lang==='cs' && function_exists('mrseo_cs_service_slugs') && in_array($slug,mrseo_cs_service_slugs(),true))
-     && !($lang==='pt' && function_exists('mrseo_pt_service_slugs') && in_array($slug,mrseo_pt_service_slugs(),true))){
+     && !($lang==='pt' && function_exists('mrseo_pt_service_slugs') && in_array($slug,mrseo_pt_service_slugs(),true))
+     && !($lang==='sv' && function_exists('mrseo_sv_service_slugs') && in_array($slug,mrseo_sv_service_slugs(),true))){
   if(in_array($slug,array('seo-audit','ecommerce-seo'),true))$slug='seo';
   elseif(in_array($slug,array('performance-max','google-shopping','merchant-center'),true))$slug='google-ads';
   elseif(in_array($slug,array('service-websites','online-store-development','website-design','wordpress-care'),true))$slug='web-development';
@@ -125,7 +131,8 @@ function mrseo_url($slug='',$lang=null){
        || ($lang==='nl' && function_exists('mrseo_nl_service_slugs') && in_array($slug,mrseo_nl_service_slugs(),true))
        || ($lang==='ro' && function_exists('mrseo_ro_service_slugs') && in_array($slug,mrseo_ro_service_slugs(),true))
        || ($lang==='cs' && function_exists('mrseo_cs_service_slugs') && in_array($slug,mrseo_cs_service_slugs(),true))
-       || ($lang==='pt' && function_exists('mrseo_pt_service_slugs') && in_array($slug,mrseo_pt_service_slugs(),true)))){
+       || ($lang==='pt' && function_exists('mrseo_pt_service_slugs') && in_array($slug,mrseo_pt_service_slugs(),true))
+       || ($lang==='sv' && function_exists('mrseo_sv_service_slugs') && in_array($slug,mrseo_sv_service_slugs(),true)))){
   return mrseo_i18n_exact_url($lang,$slug);
  }
  // UK-only routes switch to real parent services in other languages.
