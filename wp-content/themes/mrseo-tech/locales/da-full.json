@@ -248,57 +248,65 @@
       }
     },
     "google-ads": {
-      "title": "Google Ads-gennemgang for webshops og Shopping",
-      "description": "Google Ads-gennemgang for webshops og Shopping. Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres.",
-      "eyebrow": "GOOGLE ADS",
-      "headline": "Annoncebudgettet bruges. <em>Hvad giver det tilbage?</em>",
-      "lead": "Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres. Vi undersøger måling, søgetermer og Shopping-produktdata med fokus på reel forretningsværdi.",
+      "title": "Administration af Google Ads til danske virksomheder",
+      "description": "Administration af Google Ads: søgeannoncer, Shopping, Performance Max, konverteringssporing og løbende budgetoptimering for virksomheder i Danmark.",
+      "eyebrow": "GOOGLE ADS / KAMPAGNEADMINISTRATION",
+      "headline": "Du investerer i annoncer. <em>Når du de rigtige kunder?</em>",
+      "lead": "Vi administrerer Google Ads for servicevirksomheder og webshops. Vi definerer, hvad der tæller som en relevant henvendelse eller et køb, tilpasser annoncerne til virksomhedens tilbud og følger op på udgifter og forretningsresultater med verificerbare data.",
       "problems": [
         [
-          "Forkerte konverteringer",
-          "Dobbelte hændelser kan styre budstrategien forkert.",
-          "Sammenligne transaktioner med GA4 og Ads."
+          "Budget uden klart mål",
+          "Kampagner konkurrerer om budgettet uden tydelige prioriteringer.",
+          "Organisér ydelser, produkter og budget efter forretningsmål."
         ],
         [
-          "Udgifter uden tydelig værdi",
-          "Produkter eller søgeord kan bruge budget uden salg.",
-          "Gennemgå omkostninger fordelt på sortiment."
+          "Misvisende resultatmåling",
+          "Klik og hændelser tælles uden at svare til faktiske køb eller henvendelser.",
+          "Verificér konverteringer og kriterier for relevante kontakter."
         ],
         [
-          "Uens produktdata",
-          "Pris og lager i Merchant Center kan afvige fra siden.",
-          "Sammenligne feed og produktlandingssider."
+          "Manglende løbende opfølgning",
+          "Efterspørgsel, sortiment og konkurrence ændrer kampagnernes resultater.",
+          "Følg resultater og afprøv aftalte forbedringer."
         ]
       ],
       "outcomes": [
-        "Kontrol af målegrundlaget",
-        "Mulige budgettab identificeret",
-        "Forslag til afgrænsede tests"
+        "Kampagnestruktur og aftalte mål",
+        "Opfølgning på udgifter, relevante henvendelser og køb",
+        "Løbende optimeringsplan baseret på data"
       ],
       "faq": [
         [
-          "Garanterer I et bestemt ROAS-niveau?",
-          "Nej. Resultater afhænger også af priser, margin og marked."
+          "Er annoncebudgettet inkluderet i honoraret?",
+          "Nej. Annonceudgifter og honorar for administration er separate."
+        ],
+        [
+          "Garanterer I en bestemt ROAS eller pris pr. lead?",
+          "Nej. Konkurrence, efterspørgsel, tilbud, budget og datakvalitet påvirker resultatet."
+        ],
+        [
+          "Kan vi bestille en uafhængig gennemgang?",
+          "Ja. En Google Ads-gennemgang er en separat opgave uden automatiske ændringer af kontoen."
         ]
       ],
       "offer": {
-        "title": "Undersøg eksisterende data → Kontrollér effekten",
-        "intro": "Før kampagner skaleres, bør det være klart, hvilke køb og leads der registreres. Vi undersøger måling, søgetermer og Shopping-produktdata med fokus på reel forretningsværdi.",
+        "title": "Fra kampagneplan til løbende forbedringer",
+        "intro": "Vi aftaler forretningsmål og målekriterier, før vi administrerer budgettet. Hver ændring skal have et klart formål og kunne følges op.",
         "items": [
           {
-            "title": "Undersøg eksisterende data",
-            "detail": "Sammenligne transaktioner med GA4 og Ads."
+            "title": "Strategi og måling",
+            "detail": "Fastlæg mål, kampagnestruktur, budget og brugbare konverteringer."
           },
           {
-            "title": "Vælg indsats efter betydning",
-            "detail": "Gennemgå omkostninger fordelt på sortiment."
+            "title": "Implementering og administration",
+            "detail": "Opret eller omstrukturér kampagner, annoncer og landingssider efter aftalen."
           },
           {
-            "title": "Kontrollér effekten",
-            "detail": "Sammenligne feed og produktlandingssider."
+            "title": "Løbende forbedringer",
+            "detail": "Følg omkostninger, søgetermer og forretningsresultater og test relevante ændringer."
           }
         ],
-        "cta": "Fortæl om mit projekt"
+        "cta": "Tal med os om Google Ads"
       }
     },
     "analytics": {
@@ -626,11 +634,11 @@
       }
     },
     "contact": {
-      "title": "Kontakt os om dit website eller webshopprojekt",
-      "description": "Kontakt os om dit website eller webshopprojekt. Send webadressen, målmarkedet og et konkret eksempel på problemet.",
+      "title": "Kontakt os om SEO, annoncering eller webudvikling",
+      "description": "Kontakt MrSeo.tech om SEO, Google Ads, hjemmesider, webshops eller systemudvikling. Beskriv dit problem og projekt.",
       "eyebrow": "KONTAKT",
       "headline": "Hvad forhindrer <em>flere relevante henvendelser?</em>",
-      "lead": "Send webadressen, målmarkedet og et konkret eksempel på problemet. En kort beskrivelse er tilstrækkelig til en første vurdering. Fortæl os, hvilket system din webshop bruger, hvilket marked du sælger på, og hvad der ikke fungerer. Send ingen adgangskoder.",
+      "lead": "Har du brug for flere relevante henvendelser, bedre annoncering, en ny hjemmeside eller hjælp til manuelle arbejdsgange? Fortæl os om din hjemmeside eller arbejdsgang, hvilket marked du henvender dig til, og hvad der ikke fungerer. Send ingen adgangskoder.",
       "problems": [],
       "outcomes": [],
       "faq": []
@@ -665,7 +673,7 @@
     "heading": "SEO, Google Ads og webudvikling til virksomheder i Danmark",
     "description": "Når trafik ikke bliver til ordrer eller henvendelser, er løsningen ikke altid flere annoncer. Vi undersøger søgninger, brugeroplevelse, konverteringsdata og besværlige arbejdsgange.",
     "cta": "Fortæl om mit projekt",
-    "brief": "Fortæl os, hvilket system din webshop bruger, hvilket marked du sælger på, og hvad der ikke fungerer. Send ingen adgangskoder.",
+    "brief": "Fortæl os om din hjemmeside eller arbejdsgang, hvilket marked du henvender dig til, og hvad der ikke fungerer. Send ingen adgangskoder.",
     "portfolioLabel": "Projekter"
   },
   "serviceLabels": {
