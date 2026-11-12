@@ -2,11 +2,6 @@ name: International SEO live pre-index audit
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/verify-live-international-seo.py'
-      - '.github/workflows/seo-live-readiness.yml'
   workflow_run:
     workflows: ["Deploy WordPress theme"]
     types: [completed]
@@ -16,7 +11,7 @@ permissions:
 
 jobs:
   verify-live-international-seo:
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
