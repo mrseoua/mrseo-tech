@@ -68,6 +68,58 @@ function mrseo_trial_menu_translations() {
   "dev":["Développement web","Résoudre les problèmes techniques et simplifier les processus.","Maintenance WordPress","Intégrations et automatisation","Performance et sécurité","CRM et espaces clients","Applications web et MVP"],
   "bottom":["Votre besoin ne figure pas ici ?","Expliquez votre problème : nous proposerons des pistes concrètes.","Parlons de votre projet"]
  },
+ "ro":{
+  "seo": [
+    "Optimizare SEO",
+    "Ajutăm clienții potriviți să găsească afacerea ta în Google.",
+    "SEO local",
+    "SEO pentru magazine online",
+    "SEO pentru firme de servicii",
+    "SEO internațional",
+    "Audit SEO"
+  ],
+  "ads": [
+    "Google Ads",
+    "Campanii pentru cereri relevante și rezultate măsurabile.",
+    "Administrare Google Ads",
+    "Google Shopping",
+    "Google Ads pentru afaceri locale",
+    "Audit Google Ads",
+    "Google Merchant Center"
+  ],
+  "commerce": [
+    "Magazine online",
+    "Construim, optimizăm și conectăm magazine online.",
+    "Creare magazin online",
+    "WooCommerce și Shopify",
+    "Optimizarea conversiilor",
+    "Automatizarea catalogului",
+    "Migrarea magazinului"
+  ],
+  "sites": [
+    "Creare site-uri web",
+    "Site-uri care explică oferta și susțin cererile de contact.",
+    "Creare site-uri web",
+    "Site-uri pentru firme de servicii",
+    "Pagini de destinație pentru reclame",
+    "Site-uri corporate",
+    "Redesign site"
+  ],
+  "dev": [
+    "Dezvoltare web",
+    "Rezolvăm probleme tehnice și automatizăm procese.",
+    "Mentenanță WordPress",
+    "Integrări API",
+    "Viteză, securitate și accesibilitate",
+    "Dezvoltare web personalizată",
+    "Aplicații web și portaluri"
+  ],
+  "bottom": [
+    "Nu ai găsit serviciul potrivit?",
+    "Descrie problema sau proiectul. Stabilim împreună următorul pas.",
+    "Discută proiectul"
+  ]
+},
  "nl":{
    "seo":["SEO & online vindbaarheid","Zorg dat de juiste klanten je in Google vinden.","Lokale SEO","SEO voor webshops","SEO voor dienstverleners","Internationale SEO","SEO-audit"],
    "ads":["Google Ads","Advertenties richten op relevante vragen en meetbare aanvragen.","Google Ads beheer","Google Shopping","Google Ads voor lokale bedrijven","Google Ads-audit","Google Merchant Center"],
@@ -153,6 +205,13 @@ function mrseo_trial_menu_route_map($locale) {
    'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
    'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
   );
+ if($locale==='ro')return array(
+   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
+   'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
+   'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
+   'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
+  );
   if($locale==='es')return array(
   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
@@ -216,6 +275,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
  if($locale==='it')return (function_exists('mrseo_it_service_slugs') && in_array($slug,mrseo_it_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='nl')return (function_exists('mrseo_nl_service_slugs') && in_array($slug,mrseo_nl_service_slugs(),true))
+    || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
+ if($locale==='ro')return (function_exists('mrseo_ro_service_slugs') && in_array($slug,mrseo_ro_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='es')return (function_exists('mrseo_es_service_slugs') && in_array($slug,mrseo_es_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
