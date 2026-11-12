@@ -106,7 +106,7 @@ async function run(){
    await contact.close();
   }
  }finally{await browser.close()}
- fs.writeFileSync(path.join(out,`pt-diagnostipt-${shard}.json`),JSON.stringify(results,null,2));
+ fs.writeFileSync(path.join(out,`pt-diagnostics-${shard}.json`),JSON.stringify(results,null,2));
  console.log(`Portuguese browser PASS: shard ${shard}, ${results.length} viewports, 25 service URLs across 4 shards`);
 }
 run().catch(e=>{console.error(e.stack||e);process.exitCode=1});
