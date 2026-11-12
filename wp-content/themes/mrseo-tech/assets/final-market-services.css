@@ -73,7 +73,7 @@
 @media(max-width:390px){.final-svc .intl-wrap{width:calc(100% - 32px)}}
 @media(prefers-reduced-motion:reduce){.final-svc .pl-art-node{animation:none!important;transform:none!important}}
 
-/* On Denmark-only service pages, hero CTA stays visible while the shared fixed
+/* On final-market service pages, hero CTA stays visible while the shared fixed
    mobile bar moves out of the way of a visible semantic diagram. */
 @media(max-width:767px){
  html.mrseo-final-scene-visible .mrseo-mobile-contact-bar{
