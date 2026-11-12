@@ -68,6 +68,58 @@ function mrseo_trial_menu_translations() {
   "dev":["Développement web","Résoudre les problèmes techniques et simplifier les processus.","Maintenance WordPress","Intégrations et automatisation","Performance et sécurité","CRM et espaces clients","Applications web et MVP"],
   "bottom":["Votre besoin ne figure pas ici ?","Expliquez votre problème : nous proposerons des pistes concrètes.","Parlons de votre projet"]
  },
+ "sv":{
+  "seo": [
+    "SEO och synlighet i sök",
+    "Hjälp rätt kunder att hitta ert företag.",
+    "Lokal SEO",
+    "SEO för webbutiker",
+    "SEO för tjänsteföretag",
+    "Internationell SEO",
+    "SEO-granskning"
+  ],
+  "ads": [
+    "Google Ads",
+    "Kampanjer med tydliga mål och verifierbara resultat.",
+    "Google Ads-förvaltning",
+    "Google Shopping",
+    "Google Ads för lokala företag",
+    "Google Ads-granskning",
+    "Google Merchant Center"
+  ],
+  "commerce": [
+    "E-handel",
+    "Bygg, förbättra och automatisera webbutiken.",
+    "Utveckling av webbutiker",
+    "WooCommerce och Shopify",
+    "Konverteringsoptimering",
+    "Automatisering av kataloger",
+    "Migrering av webbutiker"
+  ],
+  "sites": [
+    "Webbdesign",
+    "Webbplatser som förklarar erbjudandet och förenklar kontakt.",
+    "Skapa webbplats",
+    "Webbplatser för tjänsteföretag",
+    "Landningssidor",
+    "Företagswebbplatser",
+    "Redesign av webbplatser"
+  ],
+  "dev": [
+    "Webbutveckling",
+    "Lös tekniska problem och automatisera arbetsflöden.",
+    "WordPress-underhåll",
+    "API-integrationer",
+    "Hastighet och säkerhet",
+    "Skräddarsydd webbutveckling",
+    "Webbapplikationer och portaler"
+  ],
+  "bottom": [
+    "Hittar ni inte rätt tjänst?",
+    "Beskriv problemet eller projektet, så diskuterar vi nästa steg.",
+    "Berätta om projektet"
+  ]
+},
  "pt":{
   "seo": [
     "SEO e visibilidade na pesquisa",
@@ -330,6 +382,13 @@ function mrseo_trial_menu_route_map($locale) {
    'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
    'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
   );
+ if($locale==='sv')return array(
+   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
+   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
+   'commerce'=>array('online-shop-development','woocommerce-shopify-stores','store-conversion','catalog-automation','store-migration'),
+   'sites'=>array('website-design','service-websites','landing-pages','corporate-websites','website-redesign'),
+   'dev'=>array('wordpress-care','api-integrations','website-speed-security','web-development','web-applications')
+  );
   if($locale==='es')return array(
   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
   'ads'=>array('google-ads','google-shopping','local-google-ads','google-ads-audit','merchant-center-help'),
@@ -399,6 +458,8 @@ function mrseo_trial_menu_valid($slug,$locale) {
  if($locale==='cs')return (function_exists('mrseo_cs_service_slugs') && in_array($slug,mrseo_cs_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='pt')return (function_exists('mrseo_pt_service_slugs') && in_array($slug,mrseo_pt_service_slugs(),true))
+    || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
+ if($locale==='sv')return (function_exists('mrseo_sv_service_slugs') && in_array($slug,mrseo_sv_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
  if($locale==='es')return (function_exists('mrseo_es_service_slugs') && in_array($slug,mrseo_es_service_slugs(),true))
     || (function_exists('mrseo_eu_slugs') && in_array($slug,mrseo_eu_slugs(),true));
