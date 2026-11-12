@@ -1,0 +1,1992 @@
+{
+  "code": "fi-FI",
+  "labels": {
+    "crumb": "Sijaintipolku",
+    "home": "Etusivu",
+    "work": "Näin työskentelemme",
+    "note": "Selvitämme syyn ensin. Emme anna lupauksia, joita ei voi todentaa.",
+    "sceneEnd": "ESIMERKKI / PROSESSI",
+    "sceneStatus": "ANALYYSI / TARKISTUS",
+    "needs": "MITÄ TUTKIMME",
+    "check": "NÄIN TARKISTAMME",
+    "exampleTitle": "Konkreettisesta ongelmasta",
+    "exampleEm": "todennettavaan ratkaisuun.",
+    "exampleNote": "Havainnollistava esimerkki, ei todellinen asiakastulos.",
+    "exampleCta": "Keskustele tilanteestasi",
+    "caseLabels": [
+      "TILANNE",
+      "RATKAISUTAPA",
+      "TARKISTUS"
+    ],
+    "process": "NÄIN ETENEMME",
+    "processTitle": "Selvityksestä todennettavaan toimitukseen.",
+    "processNote": "Jokaisella vaiheella on tavoite ja tarkistuspiste.",
+    "outcomes": "MITÄ SAAT",
+    "outcomesTitle": "Konkreettiset toimitukset, jotka voit tarkistaa.",
+    "outcomesNote": "Laajuus sovitaan etukäteen. Nämä ovat esimerkkejä tarkistettavista toimituksista.",
+    "limits": "RAJAUKSET JA ODOTUKSET",
+    "limitsTitle": "Mitä on hyvä tietää ennen aloittamista?",
+    "faq": "USEIN KYSYTYT KYSYMYKSET",
+    "faqTitle": "Vastauksia ennen yhteistyötä.",
+    "related": "LIITTYVÄT PALVELUT",
+    "relatedTitle": "Muut työtä täydentävät palvelut.",
+    "contactKicker": "MRSEO.TECH / ENSIMMÄINEN YHTEYS",
+    "contactTitle": "Minkä ongelman haluat ratkaista?",
+    "contactNote": "Kerro ongelmasta ja lähetä sivuston osoite, jos sellainen on. Sovimme seuraavasta vaiheesta ja työn laajuudesta ilman valmista pakettia.",
+    "exampleLabel": "HAVAINNOLLISTAVA ESIMERKKI"
+  },
+  "nav": {
+    "seo": [
+      "SEO ja löydettävyys",
+      "Auta oikeita asiakkaita löytämään yrityksesi.",
+      "Paikallinen hakukoneoptimointi",
+      "Verkkokaupan SEO",
+      "SEO palveluyrityksille",
+      "Kansainvälinen hakukoneoptimointi",
+      "Tekninen SEO-auditointi"
+    ],
+    "ads": [
+      "Google Ads",
+      "Mainonta selkeillä tavoitteilla ja todennetulla mittauksella.",
+      "Google Ads -hallinta",
+      "Google Shopping ja Performance Max",
+      "Google Ads paikallisille yrityksille",
+      "Google Ads -auditointi",
+      "Google Merchant Center -apu"
+    ],
+    "commerce": [
+      "Verkkokauppa",
+      "Rakenna, kehitä ja automatisoi kauppasi.",
+      "Verkkokaupan rakentaminen",
+      "WooCommerce- ja Shopify-verkkokaupat",
+      "Verkkokaupan konversio-optimointi",
+      "Tuotekatalogin automatisointi",
+      "Verkkokaupan siirto"
+    ],
+    "sites": [
+      "Verkkosivujen suunnittelu",
+      "Sivustot, jotka selittävät tarjonnan ja helpottavat yhteydenottoa.",
+      "Verkkosivujen rakentaminen",
+      "Verkkosivut palveluyrityksille",
+      "Mainonnan laskeutumissivut",
+      "Yrityssivustot ja B2B-esittelyt",
+      "Verkkosivuston uudistus"
+    ],
+    "dev": [
+      "Verkkokehitys",
+      "Ratkaise tekniset ongelmat ja automatisoi työvaiheet.",
+      "WordPress-ylläpito ja tuki",
+      "API-integraatiot ja automaatio",
+      "Sivuston nopeus, turvallisuus ja saavutettavuus",
+      "Räätälöity verkkokehitys",
+      "Verkkosovellukset, CRM ja asiakasportaalit"
+    ],
+    "bottom": [
+      "Etkö löydä tarvitsemaasi palvelua?",
+      "Kerro ongelmasta tai projektista, niin selvitämme seuraavan vaiheen.",
+      "Kerro projektistasi"
+    ]
+  },
+  "pages": {
+    "local-seo": {
+      "title": "Paikallinen hakukoneoptimointi | MrSeo.tech",
+      "description": "Paikallinen hakukoneoptimointi: Yhdistämme todelliset palvelualueet, paikalliset hakusanat ja toimivan yhteydenottopolun.",
+      "kicker": "PAIKALLINEN HAKUKONEOPTIMOINTI",
+      "hero": [
+        "Paikallinen hakukoneoptimointi.",
+        "Löytääkö asiakas yrityksesi läheltä?"
+      ],
+      "lead": "Tampereella toimivan autokorjaamon kannattaa näkyä silloin, kun lähialueen asiakas tarvitsee huoltoa. Selvitämme Google-yritysprofiilin, hakutulokset ja ajanvaraukseen johtavan reitin.",
+      "intro": "Miksi lähialueen yhteydenotot puuttuvat?",
+      "introText": "Yhdistämme todelliset palvelualueet, paikalliset hakusanat ja toimivan yhteydenottopolun.",
+      "problems": [
+        [
+          "Väärä palvelualue",
+          "Sivusto houkuttelee kävijöitä paikkakunnilta, joilla ette toimi.",
+          "Vertaa hakukyselyjä todellisiin palvelualueisiin."
+        ],
+        [
+          "Epäyhtenäiset tiedot",
+          "Aukioloajat tai puhelinnumero poikkeavat yritysprofiilista.",
+          "Tarkista profiilin tiedot ja verkkosivun linkit."
+        ],
+        [
+          "Epäselvä ajanvaraus",
+          "Mobiilikävijä ei löydä sopivaa palvelua tai varausta.",
+          "Testaa palvelusivut, puhelut ja lomakkeet."
+        ]
+      ],
+      "process": [
+        [
+          "Palvelualue",
+          "Rajaa alueet ja palvelut."
+        ],
+        [
+          "Hakusanat",
+          "Tutki paikalliset hakutulokset."
+        ],
+        [
+          "Sisältö",
+          "Tarkenna palvelukohtaisia sivuja."
+        ],
+        [
+          "Seuranta",
+          "Tarkista varaus ja yhteydenotot."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Paikallinen hakukartta",
+          "Palvelut ja tärkeimmät alueet."
+        ],
+        [
+          "Profiilin korjauslista",
+          "Tiedot, kategoriat ja linkit."
+        ],
+        [
+          "Yhteydenottotesti",
+          "Mobiilivaraus ja puhelinpolku."
+        ]
+      ],
+      "faq": [
+        [
+          "Tarvitaanko sivu jokaiselle kaupungille?",
+          "Vain jos sivulla on todellista paikallista hyötyä."
+        ],
+        [
+          "Voitteko taata Mapsin kärjen?",
+          "Emme. Sijainti, kilpailu ja relevanssi vaikuttavat."
+        ],
+        [
+          "Tarvitsetteko salasanan?",
+          "Emme, käytämme tarvittaessa myönnettyä käyttöoikeutta."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Tampereen huoltoliike saa käyntejä valtakunnallisesta hausta mutta vähän varauksia.",
+        "Rajataan palvelualue ja tehdään huoltokohtaiset sivut löydettäviksi.",
+        "Tarkistetaan varausten polku ja paikallisten hakujen kehitys."
+      ],
+      "visual": [
+        "HAKU",
+        "ALUE",
+        "VARAUS"
+      ],
+      "risk": "Emme luo tekaistuja toimipaikkoja emmekä takaa sijoitusta. Paikallinen kysyntä ja yrityksen todellinen sijainti ohjaavat työtä.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO palveluyrityksille",
+          "Selkeytämme palvelujen sisällön, hakutarkoituksen, sisäiset linkit ja tarjouksen pyytämisen."
+        ],
+        [
+          "service-websites",
+          "Verkkosivut palveluyrityksille",
+          "Selkeytämme palvelutarjonnan, hyväksytyn yritysmateriaalin ja mobiililomakkeen."
+        ]
+      ],
+      "cta": "Keskustele paikallisesta SEO:sta"
+    },
+    "service-business-seo": {
+      "title": "SEO palveluyrityksille | MrSeo.tech",
+      "description": "SEO palveluyrityksille: Selkeytämme palvelujen sisällön, hakutarkoituksen, sisäiset linkit ja tarjouksen pyytämisen.",
+      "kicker": "SEO PALVELUYRITYKSILLE",
+      "hero": [
+        "SEO palveluyrityksille.",
+        "Saako kävijä selvän käsityksen palvelustasi?"
+      ],
+      "lead": "Kun tilitoimisto tarjoaa kirjanpitoa, palkanlaskentaa ja neuvontaa, jokainen palvelu tarvitsee oman selkeän vastauksen asiakkaan kysymykseen. Suunnittelemme hakutarkoituksen mukaan rakennetut palvelusivut.",
+      "intro": "Miksi käynti ei muutu tarjouspyynnöksi?",
+      "introText": "Selkeytämme palvelujen sisällön, hakutarkoituksen, sisäiset linkit ja tarjouksen pyytämisen.",
+      "problems": [
+        [
+          "Palvelut sekoittuvat",
+          "Yhdellä sivulla kuvataan useita eri toimeksiantoja.",
+          "Erota asiakkaan hakutarkoitukset omille sivuille."
+        ],
+        [
+          "Liian tekninen sanasto",
+          "Asiakas etsii ratkaisua eri sanoilla kuin asiantuntija.",
+          "Vertaa hakutermejä asiakkaiden kysymyksiin."
+        ],
+        [
+          "Piilossa oleva tarjouspyyntö",
+          "Kävijä joutuu etsimään yhteystietoja useasta valikosta.",
+          "Tarkista palvelusivun toimintakehotus ja lomake."
+        ]
+      ],
+      "process": [
+        [
+          "Tavoite",
+          "Valitse halutut toimeksiannot."
+        ],
+        [
+          "Hakutarve",
+          "Tutki kysymykset ja nykyiset sivut."
+        ],
+        [
+          "Sivusuunnitelma",
+          "Määritä otsikot ja linkit."
+        ],
+        [
+          "Yhteys",
+          "Testaa tarjouspyyntö ja mittaus."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Palvelukartta",
+          "Sivukohtaiset kaupalliset tavoitteet."
+        ],
+        [
+          "Sisältösuunnitelma",
+          "Otsikot, kysymykset ja linkit."
+        ],
+        [
+          "Mittausmalli",
+          "Relevantin yhteydenoton määritelmä."
+        ]
+      ],
+      "faq": [
+        [
+          "Riittävätkö blogit?",
+          "Eivät, jos tärkeimmiltä palveluilta puuttuvat omat sivut."
+        ],
+        [
+          "Onko koko sivusto uusittava?",
+          "Ei välttämättä, ensin arvioimme nykyisen rakenteen."
+        ],
+        [
+          "Miten vältetään päällekkäisyys?",
+          "Jokaiselle sivulle määritetään yksi pääasiallinen tarkoitus."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Palkanlaskentaa tarjoava tilitoimisto näkyy yleisillä kirjanpidon hauilla.",
+        "Erota palvelut ja kuvaa asiakasyrityksen todelliset kysymykset.",
+        "Tarkista hakusivut ja tarjouslomakkeen toiminta."
+      ],
+      "visual": [
+        "PALVELU",
+        "HAKU",
+        "TARJOUS"
+      ],
+      "risk": "Yhteydenottoihin vaikuttavat myös kilpailu, hinnoittelu ja myyntiprosessi. Emme lupaa tiettyä määrää tarjouspyyntöjä.",
+      "related": [
+        [
+          "local-seo",
+          "Paikallinen hakukoneoptimointi",
+          "Yhdistämme todelliset palvelualueet, paikalliset hakusanat ja toimivan yhteydenottopolun."
+        ],
+        [
+          "service-websites",
+          "Verkkosivut palveluyrityksille",
+          "Selkeytämme palvelutarjonnan, hyväksytyn yritysmateriaalin ja mobiililomakkeen."
+        ]
+      ],
+      "cta": "Suunnittele palvelusivujen SEO"
+    },
+    "international-seo": {
+      "title": "Kansainvälinen hakukoneoptimointi | MrSeo.tech",
+      "description": "Kansainvälinen hakukoneoptimointi: Rakennamme markkinakohtaisen URL-, canonical- ja hreflang-suunnitelman todellisille vastinesivuille.",
+      "kicker": "KANSAINVÄLINEN HAKUKONEOPTIMOINTI",
+      "hero": [
+        "Kansainvälinen hakukoneoptimointi.",
+        "Ohjaako kieliversio oikeaan maahan?"
+      ],
+      "lead": "Suomalainen verkkokauppa voi myydä Ruotsiin ja Viroon, mutta pelkkä tekstin kääntäminen ei takaa löydettävyyttä. Tarkistamme kieliversiot, hakukysynnän ja sivujen vastaavuuden.",
+      "intro": "Missä maiden väliset hakusignaalit sekoittuvat?",
+      "introText": "Rakennamme markkinakohtaisen URL-, canonical- ja hreflang-suunnitelman todellisille vastinesivuille.",
+      "problems": [
+        [
+          "Väärä kieli hakutuloksessa",
+          "Suomenkielinen tuoteryhmä näkyy ruotsinkielisessä haussa.",
+          "Tarkista sivun kieli ja vastavuoroiset hreflang-merkinnät."
+        ],
+        [
+          "Käännetty mutta vieras sanasto",
+          "Kohdemaan ostajat käyttävät muita tuotenimiä.",
+          "Kartoita kysyntä ja paikalliset hakuilmaukset."
+        ],
+        [
+          "Väärä sivuvastine",
+          "Kielivalitsin ohjaa toisen palvelun sivulle.",
+          "Yhdistä vain sisällöltään vastaavat osoitteet."
+        ]
+      ],
+      "process": [
+        [
+          "Markkinat",
+          "Määritä maat ja toimitukset."
+        ],
+        [
+          "Osoitteet",
+          "Tarkista canonical ja uudelleenohjaukset."
+        ],
+        [
+          "Sisältö",
+          "Valitse paikalliset hakutarpeet."
+        ],
+        [
+          "Validointi",
+          "Tarkista sitemap ja kielivastineet."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Markkinakartta",
+          "Kielet, osoitteet ja tarjonta."
+        ],
+        [
+          "Tekninen tarkistus",
+          "Canonical ja hreflang."
+        ],
+        [
+          "Sisältöprioriteetit",
+          "Kohdemaan tärkeimmät sivut."
+        ]
+      ],
+      "faq": [
+        [
+          "Tarvitaanko oma verkkotunnus maittain?",
+          "Ei välttämättä, alihakemistot voivat toimia."
+        ],
+        [
+          "Takaako hreflang sijoitukset?",
+          "Ei, se auttaa tunnistamaan oikean kieliversion."
+        ],
+        [
+          "Entä puuttuva käännös?",
+          "Emme liitä olematonta sivua vastineeksi."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Suomalainen valmistaja avaa ruotsinkielisen tuoteryhmän, mutta vanha osoite näkyy Ruotsissa.",
+        "Tarkista tekniset viitteet ja paikallinen sisältö.",
+        "Varmista sivujen vastavuoroiset merkinnät XML-kartassa."
+      ],
+      "visual": [
+        "MAA",
+        "KIELI",
+        "URL"
+      ],
+      "risk": "Hreflang ei takaa näkyvyyttä. Kunkin maan toimitusehdot, hinnat ja oikeudelliset vaatimukset on selvitettävä erikseen.",
+      "related": [
+        [
+          "ecommerce-seo",
+          "Verkkokaupan SEO",
+          "Jäsennä tuotteet ja kategoriat hakua varten."
+        ],
+        [
+          "website-design",
+          "Verkkosivujen rakentaminen",
+          "Tee selkeä ja ylläpidettävä sivusto."
+        ]
+      ],
+      "cta": "Suunnittele kansainvälinen SEO"
+    },
+    "google-shopping": {
+      "title": "Google Shopping ja Performance Max | MrSeo.tech",
+      "description": "Google Shopping ja Performance Max: Tarkistamme syötteen, ostotapahtumat, tuoteryhmät ja mainonnan taloudelliset lähtökohdat.",
+      "kicker": "GOOGLE SHOPPING JA PERFORMANCE MAX",
+      "hero": [
+        "Google Shopping ja Performance Max.",
+        "Tuottavatko tuotemainokset kannattavaa myyntiä?"
+      ],
+      "lead": "Verkkokaupan suuri ROAS voi peittää matalakatteiset tuotteet ja virheellisen ostomittauksen. Yhdistämme tuotesyötteen, eurohinnat, tilaukset ja kustannukset tuoteryhmien arviointiin.",
+      "intro": "Mihin mainosbudjetti todellisuudessa kuluu?",
+      "introText": "Tarkistamme syötteen, ostotapahtumat, tuoteryhmät ja mainonnan taloudelliset lähtökohdat.",
+      "problems": [
+        [
+          "Hinta ei täsmää",
+          "Tuotteen hinta tai saatavuus poikkeaa syötteestä.",
+          "Vertaa Merchant Centerin tietoja tuotesivuun ja kassaan."
+        ],
+        [
+          "Kate unohtuu",
+          "Pienikatteinen tuote käyttää suuren osan mainosrahasta.",
+          "Vertaa kustannuksia ja saatavilla olevia katetietoja."
+        ],
+        [
+          "Osto kirjautuu kahdesti",
+          "Yksi tilaus näkyy raportissa useana ostona.",
+          "Tarkista purchase-tapahtumat ja transaction_id."
+        ]
+      ],
+      "process": [
+        [
+          "Syöte",
+          "Tarkista hinnat, tunnisteet ja varasto."
+        ],
+        [
+          "Mittaus",
+          "Varmista tilausarvot."
+        ],
+        [
+          "Ryhmittely",
+          "Suunnittele tuote- ja budjettiryhmät."
+        ],
+        [
+          "Arviointi",
+          "Vertaa vahvistettuja tilauksia ja kuluja."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Syötteen korjauslista",
+          "Tuotteet ja havaitut poikkeamat."
+        ],
+        [
+          "Kampanjarakenne",
+          "Tavoitteisiin sidotut tuoteryhmät."
+        ],
+        [
+          "Ostomittaus",
+          "Tarkistetut tilausarvot."
+        ]
+      ],
+      "faq": [
+        [
+          "Shopping vai Performance Max?",
+          "Valinta riippuu historiasta, budjetista ja kontrollin tarpeesta."
+        ],
+        [
+          "Mikä on CSS?",
+          "Comparison Shopping Service on hintavertailupalvelu Shopping-järjestelmässä. Arvioimme sopivat vaihtoehdot."
+        ],
+        [
+          "Sisältyykö mainosbudjetti hintaan?",
+          "Ei, mainoskulut ja palvelupalkkio ovat erillisiä."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Suomalaisen varaosakaupan kampanja myy edullisia osia, joiden kate on pieni.",
+        "Yhdistä todelliset ostot ja saatavilla oleva kate tuoteryhmiin.",
+        "Vertaa ryhmien kustannuksia sovituilla jaksoilla."
+      ],
+      "visual": [
+        "SYÖTE",
+        "MAINOS",
+        "OSTO"
+      ],
+      "risk": "ROAS ei ole voitto. ALV, kate, toimituskulut, palautukset ja muut kustannukset vaikuttavat kannattavuuteen.",
+      "related": [
+        [
+          "merchant-center-help",
+          "Google Merchant Center -apu",
+          "Selvitämme hylkäysten syyn ja määritämme korjauksen tuotetietoon, syötteeseen tai kaupan ostopolkuun."
+        ],
+        [
+          "catalog-automation",
+          "Tuotekatalogin automatisointi",
+          "Määritämme tunnisteet, kenttäkartoituksen, päivityssäännöt ja virheiden käsittelyn ennen automaatiota."
+        ]
+      ],
+      "cta": "Arvioi Shopping-kampanjat"
+    },
+    "local-google-ads": {
+      "title": "Google Ads paikallisille yrityksille | MrSeo.tech",
+      "description": "Google Ads paikallisille yrityksille: Kohdistamme kampanjat todellisiin palveluihin, alueisiin ja yrityksen vastauskykyyn.",
+      "kicker": "GOOGLE ADS PAIKALLISILLE YRITYKSILLE",
+      "hero": [
+        "Google Ads paikallisille yrityksille.",
+        "Maksatko yhteydenotoista, joihin voit vastata?"
+      ],
+      "lead": "Turkulainen putkiliike tarvitsee lähialueen huoltotöitä eikä työnhakijoiden klikkauksia. Tutkimme maantieteellisen kohdennuksen, hakutermit ja sen, millainen yhteydenotto on oikeasti arvokas.",
+      "intro": "Miksi mainoksista tulee vääriä yhteydenottoja?",
+      "introText": "Kohdistamme kampanjat todellisiin palveluihin, alueisiin ja yrityksen vastauskykyyn.",
+      "problems": [
+        [
+          "Liian laaja kohdennus",
+          "Mainoksia näytetään alueilla, joille ette matkusta.",
+          "Tarkista sijaintiasetukset ja raportit."
+        ],
+        [
+          "Väärät hakutermit",
+          "Budjettia kuluu ilmaisiin ohjeisiin ja työpaikkoihin.",
+          "Tutki hakutermit ja poissulkevat avainsanat."
+        ],
+        [
+          "Virheellinen puhelumittaus",
+          "Puhelinnumeron klikkaus tulkitaan kaupaksi.",
+          "Määritä laadukkaan yhteydenoton kriteerit."
+        ]
+      ],
+      "process": [
+        [
+          "Alue",
+          "Sovi palvelualue ja aukiolo."
+        ],
+        [
+          "Hakutermit",
+          "Rajaa epärelevantit haut."
+        ],
+        [
+          "Mainokset",
+          "Yhdistä tarjous oikeaan sivuun."
+        ],
+        [
+          "Laatu",
+          "Tarkista yhteydenottojen mittaus."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Kohdennussuunnitelma",
+          "Alueet, rajaukset ja ajat."
+        ],
+        [
+          "Mainosrakenne",
+          "Palvelukohtaiset ryhmät."
+        ],
+        [
+          "Yhteydenoton määritelmä",
+          "Puhelut ja lomakkeet."
+        ]
+      ],
+      "faq": [
+        [
+          "Voiko mainostaa vain Turussa?",
+          "Kyllä, alustan sijaintitarkkuuden rajoissa."
+        ],
+        [
+          "Onko mainostettava yöllä?",
+          "Ei, aikataulu sovitetaan palveluun."
+        ],
+        [
+          "Onko jokainen puhelu liidi?",
+          "Ei, yhteydenotto ja laadukas tarjouspyyntö ovat eri asioita."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Turkulainen huoltoliike saa puheluita palvelusta, jota se ei tarjoa.",
+        "Rajaa hakutermejä ja yhdistä mainos todelliseen huoltoon.",
+        "Tarkista puheluiden ja lomakkeiden relevanssi käytettävissä olevista tiedoista."
+      ],
+      "visual": [
+        "ALUE",
+        "MAINOS",
+        "PUHELU"
+      ],
+      "risk": "Liidin hinta riippuu kilpailusta, kysynnästä, tarjonnasta ja myynnin seurannasta. Kiinteää hankintahintaa ei voida luvata.",
+      "related": [
+        [
+          "google-ads",
+          "Google Ads -hallinta",
+          "Hallinnoi kampanjoita todennettujen tavoitteiden mukaan."
+        ],
+        [
+          "landing-pages",
+          "Mainonnan laskeutumissivut",
+          "Yhdistämme hakutarkoituksen, viestin, mobiilikäytön ja yhteydenoton mittauksen."
+        ]
+      ],
+      "cta": "Keskustele paikallisesta mainonnasta"
+    },
+    "google-ads-audit": {
+      "title": "Google Ads -auditointi | MrSeo.tech",
+      "description": "Google Ads -auditointi: Erotamme todennetut mittausvirheet, budjettiriskit ja testattavat hypoteesit toisistaan.",
+      "kicker": "GOOGLE ADS -AUDITOINTI",
+      "hero": [
+        "Google Ads -auditointi.",
+        "Tiedätkö, mitä budjetilla todella tapahtuu?"
+      ],
+      "lead": "Riippumaton auditointi selvittää tilin ongelmat muuttamatta kampanjoita automaattisesti. Tutkimme konversiot, asetukset, hakutermit ja kustannukset ja annamme perustellun tehtävälistan.",
+      "intro": "Mitä pitää tarkistaa ennen uusia muutoksia?",
+      "introText": "Erotamme todennetut mittausvirheet, budjettiriskit ja testattavat hypoteesit toisistaan.",
+      "problems": [
+        [
+          "Virheelliset konversiot",
+          "Sama tilaus tai lomake rekisteröityy useasti.",
+          "Vertaa konversiotoimintoja tilausten tunnisteisiin."
+        ],
+        [
+          "Kulut ilman vahvistusta",
+          "Raportoitu myynti ei vastaa yrityksen tilauksia.",
+          "Vertaa saatavilla olevia tilaus- ja CRM-tietoja."
+        ],
+        [
+          "Ristiriitaiset tavoitteet",
+          "Eri palvelut kilpailevat samasta budjetista.",
+          "Tutki kampanjoiden rakenne ja muutoshistoria."
+        ]
+      ],
+      "process": [
+        [
+          "Rajaus",
+          "Sovi tavoitteet ja lukupääsy."
+        ],
+        [
+          "Tutkimus",
+          "Tarkista data ja asetukset."
+        ],
+        [
+          "Priorisointi",
+          "Luokittele virheet ja oletukset."
+        ],
+        [
+          "Raportti",
+          "Kirjaa näyttö, toimet ja testit."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Auditointiraportti",
+          "Havainnot ja esimerkit."
+        ],
+        [
+          "Toimenpidelista",
+          "Tärkeys ja perustelut."
+        ],
+        [
+          "Testisuunnitelma",
+          "Mittaustapa ja hyväksymiskriteerit."
+        ]
+      ],
+      "faq": [
+        [
+          "Muutatteko tiliä auditoinnissa?",
+          "Emme ilman erillistä lupaa."
+        ],
+        [
+          "Mikä ajanjakso tutkitaan?",
+          "Riippuu datamäärästä ja kausivaihtelusta."
+        ],
+        [
+          "Takaatteko pienemmät kulut?",
+          "Emme, toimitamme perusteltuja löydöksiä."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "B2B-yritys näkee paljon lomakekonversioita, mutta myyjät eivät tunnista niitä.",
+        "Tarkista tapahtumat, asetukset ja myynnin saatavilla olevat tiedot.",
+        "Dokumentoi erot ja korjattavan mittauksen määritelmä."
+      ],
+      "visual": [
+        "TILI",
+        "AUDIT",
+        "SUUNTA"
+      ],
+      "risk": "Auditointi ei sisällä automaattisesti jatkuvaa hallintaa, toteutusta tai budjettimuutoksia. Ne sovitaan erikseen.",
+      "related": [
+        [
+          "google-ads",
+          "Google Ads -hallinta",
+          "Hallinnoi kampanjoita todennettujen tavoitteiden mukaan."
+        ],
+        [
+          "analytics",
+          "GA4 ja konversiomittaus",
+          "Tarkista ostojen ja yhteydenottojen mittaus."
+        ]
+      ],
+      "cta": "Tilaa Google Ads -auditointi"
+    },
+    "merchant-center-help": {
+      "title": "Google Merchant Center -apu | MrSeo.tech",
+      "description": "Google Merchant Center -apu: Selvitämme hylkäysten syyn ja määritämme korjauksen tuotetietoon, syötteeseen tai kaupan ostopolkuun.",
+      "kicker": "GOOGLE MERCHANT CENTER -APU",
+      "hero": [
+        "Google Merchant Center -apu.",
+        "Miksi tuotteesi eivät näy mainoksissa?"
+      ],
+      "lead": "Virheellinen hinta, varastosaldo tai tunniste voi estää tuotteen näyttämisen. Selvitämme Merchant Centerin diagnostiikasta, syntyykö ongelma lähdedatassa, verkkokaupassa vai tilin rajoituksissa.",
+      "intro": "Mikä estää tuotteen hyväksynnän?",
+      "introText": "Selvitämme hylkäysten syyn ja määritämme korjauksen tuotetietoon, syötteeseen tai kaupan ostopolkuun.",
+      "problems": [
+        [
+          "Väärä saatavuus",
+          "Tuote näkyy varastossa, mutta sitä ei voi ostaa.",
+          "Vertaa variaatiota, syötettä ja kassaa."
+        ],
+        [
+          "Puutteelliset tunnisteet",
+          "Tuotteen GTIN tai kuva ei täytä soveltuvaa vaatimusta.",
+          "Tarkista lähdetieto ja kyseisen tuotteen vaatimukset."
+        ],
+        [
+          "Tilin rajoitus",
+          "Varoitus koskee suurta osaa valikoimasta.",
+          "Tutki ilmoitus ja verkkokaupan yritystiedot."
+        ]
+      ],
+      "process": [
+        [
+          "Diagnoosi",
+          "Erota tuote- ja tilitason virheet."
+        ],
+        [
+          "Vertailu",
+          "Tarkista hinta, saatavuus ja tunnisteet."
+        ],
+        [
+          "Korjaus",
+          "Määritä muutokset lähdejärjestelmään."
+        ],
+        [
+          "Tarkistus",
+          "Varmista otos ja diagnostiikka."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Virheluettelo",
+          "Tuotteet ja hylkäysten syyt."
+        ],
+        [
+          "Korjausmalli",
+          "Syötteen tai sivun muutokset."
+        ],
+        [
+          "Vahvistetut otokset",
+          "Tarkistetut korjatut tuotteet."
+        ]
+      ],
+      "faq": [
+        [
+          "Takaatteko hyväksynnän?",
+          "Emme, Google tekee päätöksen."
+        ],
+        [
+          "Tarvitaanko uusi syöte?",
+          "Ei aina, nykyinen tietolähde voidaan usein korjata."
+        ],
+        [
+          "Voiko avata uuden tilin?",
+          "Emme kierrä rajoituksia vaan korjaamme syyn."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Vaatekaupan kaikki koot näkyvät syötteessä saatavilla, vaikka osa on loppu.",
+        "Tarkista varianttitunnisteet ja varaston päivitys.",
+        "Vertaa korjattuja tuotteita Merchant Centerin diagnostiikkaan."
+      ],
+      "visual": [
+        "TUOTE",
+        "VIRHE",
+        "TARKISTA"
+      ],
+      "risk": "Google päättää tuotteiden ja tilin hyväksynnästä. Emme lupaa tiettyä hyväksyntäaikaa tai lopputulosta.",
+      "related": [
+        [
+          "google-shopping",
+          "Google Shopping ja Performance Max",
+          "Tarkistamme syötteen, ostotapahtumat, tuoteryhmät ja mainonnan taloudelliset lähtökohdat."
+        ],
+        [
+          "catalog-automation",
+          "Tuotekatalogin automatisointi",
+          "Määritämme tunnisteet, kenttäkartoituksen, päivityssäännöt ja virheiden käsittelyn ennen automaatiota."
+        ]
+      ],
+      "cta": "Selvitä tuotehylkäykset"
+    },
+    "woocommerce-shopify-stores": {
+      "title": "WooCommerce- ja Shopify-verkkokaupat | MrSeo.tech",
+      "description": "WooCommerce- ja Shopify-verkkokaupat: Määritämme tuotemallin, kassan, tilausten käsittelyn ja tarvittavat järjestelmäyhteydet.",
+      "kicker": "WOOCOMMERCE- JA SHOPIFY-VERKKOKAUPAT",
+      "hero": [
+        "WooCommerce- ja Shopify-verkkokaupat.",
+        "Valitse alusta liiketoiminnan mukaan."
+      ],
+      "lead": "Verkkokaupan pitää käsitellä tuotteet, varasto, maksut, toimitukset ja tilaukset yhdessä. Suunnittelemme ratkaisun ja selvitämme Paytrailin tai muiden maksupalvelujen sekä toimitusten yhteensopivuuden ennen sopimista.",
+      "intro": "Mitä pitää toimia ennen ensimmäistä tilausta?",
+      "introText": "Määritämme tuotemallin, kassan, tilausten käsittelyn ja tarvittavat järjestelmäyhteydet.",
+      "problems": [
+        [
+          "Monimutkaiset variantit",
+          "Koot ja hinnat ovat työläitä ylläpitää.",
+          "Suunnittele tuotemalli ja attribuutit."
+        ],
+        [
+          "Maksut ja toimitukset",
+          "Haluttu maksutapa ei välttämättä sovi valitulle alustalle.",
+          "Varmista palveluntarjoajan sopimus ja tekninen tuki."
+        ],
+        [
+          "Manuaaliset tilaukset",
+          "Tilaus kirjataan uudelleen varastoon tai taloushallintoon.",
+          "Kartoita tietovirrat ja vastuut."
+        ]
+      ],
+      "process": [
+        [
+          "Vaatimukset",
+          "Rajaa valikoima ja toimitukset."
+        ],
+        [
+          "Tuotemalli",
+          "Suunnittele kategoriat ja import."
+        ],
+        [
+          "Rakennus",
+          "Toteuta sovitut toiminnot."
+        ],
+        [
+          "Testi",
+          "Tee koeosto ja tarkista tilaus."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Alustapäätös",
+          "Vertailu tarpeisiin ja kuluihin."
+        ],
+        [
+          "Toimiva kauppa",
+          "Tuotteet, kassa ja sovitut yhteydet."
+        ],
+        [
+          "Koeostot",
+          "Maksu, toimitus ja ilmoitukset."
+        ]
+      ],
+      "faq": [
+        [
+          "WooCommerce vai Shopify?",
+          "Riippuu valikoimasta, ylläpidosta ja kustannuksista."
+        ],
+        [
+          "Voitteko liittää Paytrailin?",
+          "Selvitämme alustan, sopimuksen ja yhteensopivan integraation."
+        ],
+        [
+          "Voiko nykyiset tuotteet tuoda?",
+          "Kyllä, jos vientidata ja kohdeformaatti soveltuvat."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Urheiluvälineliike tarvitsee kokovariantit ja suomalaiset maksutavat.",
+        "Valitse alusta katalogin ja saatavien maksu- ja toimitusratkaisujen mukaan.",
+        "Testaa variantit, maksu, tilausvahvistus ja varastopäivitys."
+      ],
+      "visual": [
+        "KATALOGI",
+        "KASSA",
+        "TILAUS"
+      ],
+      "risk": "Maksusopimukset, lisäosat, alustamaksut ja kuljetuspalvelut voivat aiheuttaa erillisiä kuluja. Yhteensopivuus tarkistetaan ensin.",
+      "related": [
+        [
+          "online-shop-development",
+          "Verkkokaupan rakentaminen",
+          "Suunnittele tuotteet, kassa ja tilausprosessi."
+        ],
+        [
+          "store-migration",
+          "Verkkokaupan siirto",
+          "Suunnittelemme tuotemigraation, 301-ohjaukset, kassatestit ja julkaisun jälkeisen seurannan."
+        ]
+      ],
+      "cta": "Suunnittele uusi verkkokauppa"
+    },
+    "store-conversion": {
+      "title": "Verkkokaupan konversio-optimointi | MrSeo.tech",
+      "description": "Verkkokaupan konversio-optimointi: Tutkimme tuotevalinnan, toimitusehdot, maksamisen ja ostopolun mittauksen.",
+      "kicker": "VERKKOKAUPAN KONVERSIO-OPTIMOINTI",
+      "hero": [
+        "Verkkokaupan konversio-optimointi.",
+        "Miksi asiakas jättää ostoskorin kesken?"
+      ],
+      "lead": "Lisää liikennettä ei korjaa epäselvää toimitusaikaa tai hankalaa mobiilikassaa. Käymme ostopolun läpi ja selvitämme, missä todellinen este tai mittausvirhe syntyy.",
+      "intro": "Mikä vaikeuttaa ostamista?",
+      "introText": "Tutkimme tuotevalinnan, toimitusehdot, maksamisen ja ostopolun mittauksen.",
+      "problems": [
+        [
+          "Epäselvä tuotevalinta",
+          "Asiakas ei tiedä oikeaa kokoa tai yhteensopivuutta.",
+          "Tarkista tuotetiedot ja valintojen ohjeistus."
+        ],
+        [
+          "Yllättävät toimituskulut",
+          "Kokonaiskustannus selviää vasta kassalla.",
+          "Tarkista kulujen ja toimitusajan esitystapa."
+        ],
+        [
+          "Puutteellinen mittaus",
+          "Ostopolun keskeytystä ei nähdä raporteissa.",
+          "Varmista ostotapahtumat ja saatavilla oleva data."
+        ]
+      ],
+      "process": [
+        [
+          "Lähtötilanne",
+          "Vahvista ostomittaus."
+        ],
+        [
+          "Ostopolku",
+          "Testaa tuote, kori ja maksu."
+        ],
+        [
+          "Muutokset",
+          "Valitse korjattavat esteet."
+        ],
+        [
+          "Arviointi",
+          "Määritä vertailujaksot."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Ostopolun havainnot",
+          "Konkreettiset käyttöesteet."
+        ],
+        [
+          "Parannusehdotukset",
+          "Priorisoitu testilista."
+        ],
+        [
+          "Mittausmalli",
+          "Tapahtumat ja vertailuperusteet."
+        ]
+      ],
+      "faq": [
+        [
+          "Takaatteko konversion nousun?",
+          "Emme, tulokset arvioidaan datalla."
+        ],
+        [
+          "Tarvitaanko uusi ulkoasu?",
+          "Ei, ensin korjataan havaitut esteet."
+        ],
+        [
+          "Teettekö A/B-testejä?",
+          "Kun liikenne ja tekniikka mahdollistavat mielekkään kokeen."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Huonekalukauppa näyttää toimitushinnan vasta viimeisessä vaiheessa.",
+        "Tee toimitusehdot selväksi ennen kassaa.",
+        "Testaa ostopolku ja vertaa tilauksia huomioiden kausivaihtelu."
+      ],
+      "visual": [
+        "TUOTE",
+        "KORI",
+        "MAKSU"
+      ],
+      "risk": "Konversioon vaikuttavat hinta, liikenteen laatu, varasto, tarjoukset ja sesonki. Emme tulkitse yhtä ulkoasumuutosta kaiken muutoksen syyksi.",
+      "related": [
+        [
+          "analytics",
+          "GA4 ja konversiomittaus",
+          "Tarkista ostojen ja yhteydenottojen mittaus."
+        ],
+        [
+          "website-redesign",
+          "Verkkosivuston uudistus",
+          "Kartoittamme arvokkaat osoitteet, käytettävyysongelmat, uuden rakenteen ja julkaisuriskit."
+        ]
+      ],
+      "cta": "Tutki verkkokaupan ostopolku"
+    },
+    "catalog-automation": {
+      "title": "Tuotekatalogin automatisointi | MrSeo.tech",
+      "description": "Tuotekatalogin automatisointi: Määritämme tunnisteet, kenttäkartoituksen, päivityssäännöt ja virheiden käsittelyn ennen automaatiota.",
+      "kicker": "TUOTEKATALOGIN AUTOMATISOINTI",
+      "hero": [
+        "Tuotekatalogin automatisointi.",
+        "Päivitä hinnat ja varasto ilman käsityötä."
+      ],
+      "lead": "Toimittajien CSV- ja XML-tiedostot voivat sisältää eri tuotetunnuksia ja valuuttamuotoja. Rakennamme hallitun tuonnin, jossa muutokset, virheet ja hylätyt rivit ovat nähtävissä.",
+      "intro": "Mistä tuotetietojen virheet syntyvät?",
+      "introText": "Määritämme tunnisteet, kenttäkartoituksen, päivityssäännöt ja virheiden käsittelyn ennen automaatiota.",
+      "problems": [
+        [
+          "Eri tuotekoodit",
+          "Sama tuote esiintyy usealla toimittajan tunnisteella.",
+          "Määritä pysyvät avaimet ja varianttien vastaavuus."
+        ],
+        [
+          "Sekalaiset hinnat",
+          "Tiedostoissa on eri valuuttoja tai ALV-käsittelyä.",
+          "Varmista kentät ja hinnan laskentasäännöt."
+        ],
+        [
+          "Hiljaiset tuontivirheet",
+          "Virheellinen rivi jää päivittämättä ilman ilmoitusta.",
+          "Suunnittele validointi, loki ja virheraportti."
+        ]
+      ],
+      "process": [
+        [
+          "Lähteet",
+          "Kartoita tiedostot ja aikataulu."
+        ],
+        [
+          "Kartoitus",
+          "Määritä avaimet ja kentät."
+        ],
+        [
+          "Tuonti",
+          "Toteuta tarkistus ja päivitys."
+        ],
+        [
+          "Valvonta",
+          "Testaa uusinta ja ilmoitukset."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Tietokartta",
+          "Lähteet, avaimet ja muunnokset."
+        ],
+        [
+          "Automaattinen tuonti",
+          "Sovittujen kenttien päivitys."
+        ],
+        [
+          "Poikkeamalista",
+          "Hylätyt rivit syineen."
+        ]
+      ],
+      "faq": [
+        [
+          "Voiko käyttää API:a?",
+          "Kyllä, jos rajapinta ja käyttöoikeus ovat käytettävissä."
+        ],
+        [
+          "Entä kadonnut tuote?",
+          "Sovitaan, poistetaanko, piilotetaanko vai merkitäänkö."
+        ],
+        [
+          "Voiko päivittää vain varaston?",
+          "Kyllä, päivitettävät kentät rajataan."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Tukkukauppa saa eri toimittajilta erilaisia hintalistoja.",
+        "Yhdistä tunnisteet, yhtenäistä formaatti ja eristä virherivit.",
+        "Tarkista muuttuneet kentät ja virheraportti tuonnin jälkeen."
+      ],
+      "visual": [
+        "LÄHDE",
+        "SÄÄNNÖT",
+        "KATALOGI"
+      ],
+      "risk": "Automaatio riippuu lähdetietojen laadusta, käyttöoikeuksista, rajapintarajoista ja alustojen ehdoista.",
+      "related": [
+        [
+          "api-integrations",
+          "API-integraatiot ja automaatio",
+          "Määritämme tietovirrat, käyttöoikeudet, tunnisteet ja virheiden valvonnan."
+        ],
+        [
+          "merchant-center-help",
+          "Google Merchant Center -apu",
+          "Selvitämme hylkäysten syyn ja määritämme korjauksen tuotetietoon, syötteeseen tai kaupan ostopolkuun."
+        ]
+      ],
+      "cta": "Automatisoi tuotekatalogi"
+    },
+    "store-migration": {
+      "title": "Verkkokaupan siirto | MrSeo.tech",
+      "description": "Verkkokaupan siirto: Suunnittelemme tuotemigraation, 301-ohjaukset, kassatestit ja julkaisun jälkeisen seurannan.",
+      "kicker": "VERKKOKAUPAN SIIRTO",
+      "hero": [
+        "Verkkokaupan siirto.",
+        "Vaihda alustaa menettämättä tärkeitä toimintoja."
+      ],
+      "lead": "Kun kauppa siirretään uuteen alustaan, vanhat osoitteet, tuotetiedot ja tilausprosessi on kartoitettava. Testaamme tuonnin ja ostopolun ennen julkaisua.",
+      "intro": "Mitä tietoja ja osoitteita on säilytettävä?",
+      "introText": "Suunnittelemme tuotemigraation, 301-ohjaukset, kassatestit ja julkaisun jälkeisen seurannan.",
+      "problems": [
+        [
+          "Katkenneet osoitteet",
+          "Vanha suosittu tuotesivu palauttaa 404-virheen.",
+          "Määritä vastaavat uudet osoitteet ja 301-ohjaukset."
+        ],
+        [
+          "Puuttuvat variantit",
+          "Tuonnin jälkeen koot tai kuvat puuttuvat.",
+          "Tarkista edustavat vienti- ja tuontinäytteet."
+        ],
+        [
+          "Kassa ei toimi",
+          "Maksu tai toimitus ei enää toimi siirron jälkeen.",
+          "Tee koeostot erillisessä ympäristössä."
+        ]
+      ],
+      "process": [
+        [
+          "Inventointi",
+          "Kartoita tiedot ja liikenneosoitteet."
+        ],
+        [
+          "Vastaavuus",
+          "Yhdistä vanhat ja uudet sivut."
+        ],
+        [
+          "Koemigraatio",
+          "Testaa tuonti ja kassa."
+        ],
+        [
+          "Julkaisu",
+          "Seuraa osoitteita ja tilauksia."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Siirtokartta",
+          "Tiedot ja riippuvuudet."
+        ],
+        [
+          "Ohjauslista",
+          "Vanhat URL:t ja uudet kohteet."
+        ],
+        [
+          "Julkaisusuunnitelma",
+          "Testit ja seuranta."
+        ]
+      ],
+      "faq": [
+        [
+          "Takaatteko Google-sijoitukset?",
+          "Emme, teknisiä riskejä voidaan vähentää."
+        ],
+        [
+          "Voiko siirtää Shopifyhin?",
+          "Arvioimme ensin vientitiedot ja alustan ominaisuudet."
+        ],
+        [
+          "Siirtyykö tilaushistoria?",
+          "Riippuu lähde- ja kohdejärjestelmän tuesta."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Kauppa siirtyy WooCommerceen ja kategoriarakenteen osoitteet muuttuvat.",
+        "Kartoita vanhat osoitteet, tuonti ja maksut.",
+        "Testaa 301-ohjaukset ja tilausprosessi ennen ja jälkeen julkaisun."
+      ],
+      "visual": [
+        "VANHA",
+        "SIIRTO",
+        "UUSI"
+      ],
+      "risk": "Hyvinkin suunniteltu migraatio voi aiheuttaa tilapäisiä näkyvyysmuutoksia. Sijoitusten säilymistä ei voida taata.",
+      "related": [
+        [
+          "woocommerce-shopify-stores",
+          "WooCommerce- ja Shopify-verkkokaupat",
+          "Määritämme tuotemallin, kassan, tilausten käsittelyn ja tarvittavat järjestelmäyhteydet."
+        ],
+        [
+          "ecommerce-seo",
+          "Verkkokaupan SEO",
+          "Jäsennä tuotteet ja kategoriat hakua varten."
+        ]
+      ],
+      "cta": "Suunnittele kaupan siirto"
+    },
+    "service-websites": {
+      "title": "Verkkosivut palveluyrityksille | MrSeo.tech",
+      "description": "Verkkosivut palveluyrityksille: Selkeytämme palvelutarjonnan, hyväksytyn yritysmateriaalin ja mobiililomakkeen.",
+      "kicker": "VERKKOSIVUT PALVELUYRITYKSILLE",
+      "hero": [
+        "Verkkosivut palveluyrityksille.",
+        "Ymmärtääkö asiakas, mitä yrityksesi tekee?"
+      ],
+      "lead": "Rakennamme palvelusivuston, josta asiakas löytää sopivan palvelun, hinnan tai tarjouksen edellytykset ja yhteystiedot. Rakenne lähtee asiakkaan päätöksestä, ei koristeista.",
+      "intro": "Mitä asiakkaan pitää tietää ennen yhteydenottoa?",
+      "introText": "Selkeytämme palvelutarjonnan, hyväksytyn yritysmateriaalin ja mobiililomakkeen.",
+      "problems": [
+        [
+          "Epäselvä palveluvalikoima",
+          "Kävijä ei tiedä, mikä palvelu vastaa hänen tarvettaan.",
+          "Jäsennä todelliset palvelut erillisiksi poluiksi."
+        ],
+        [
+          "Puuttuvat lähtötiedot",
+          "Sivulta ei löydy työn sisältöä tai ehtoja.",
+          "Hyödynnä yrityksen vahvistamia kuvauksia."
+        ],
+        [
+          "Hankala lomake",
+          "Tarjouspyyntö vaatii tarpeettoman monta kenttää.",
+          "Testaa lomake ja yksinkertaista kenttiä."
+        ]
+      ],
+      "process": [
+        [
+          "Tavoite",
+          "Määritä asiakkaat ja palvelut."
+        ],
+        [
+          "Rakenne",
+          "Suunnittele sivut ja yhteys."
+        ],
+        [
+          "Toteutus",
+          "Rakenna responsiiviset komponentit."
+        ],
+        [
+          "Luovutus",
+          "Testaa lomakkeet ja hallinta."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Palvelukartta",
+          "Sivut ja asiakaspolut."
+        ],
+        [
+          "Valmis sivusto",
+          "Sovitut näkymät ja toiminnot."
+        ],
+        [
+          "Lomaketesti",
+          "Lähetys ja ilmoitus."
+        ]
+      ],
+      "faq": [
+        [
+          "Teettekö myös tekstit?",
+          "Sisältö sovitaan ja yritystiedot vahvistetaan yhdessä."
+        ],
+        [
+          "Käytättekö WordPressiä?",
+          "Kun se vastaa ylläpito- ja turvallisuusvaatimuksiin."
+        ],
+        [
+          "Sisältyykö jatkuva SEO?",
+          "Tekniset perusteet sovitaan projektissa, jatkuva SEO erikseen."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Remonttiyrityksellä on yksi yleissivu ilman eroa kylpyhuone- ja keittiötöiden välillä.",
+        "Rakenna erilliset palvelupolut ja tarjouspyyntö.",
+        "Tarkista navigaatio ja lomake mobiilissa."
+      ],
+      "visual": [
+        "PALVELU",
+        "SIVU",
+        "TARJOUS"
+      ],
+      "risk": "Hinta ja toimitusaika riippuvat sivumäärästä, sisällöstä, integraatioista ja hyväksytystä aineistosta.",
+      "related": [
+        [
+          "service-business-seo",
+          "SEO palveluyrityksille",
+          "Selkeytämme palvelujen sisällön, hakutarkoituksen, sisäiset linkit ja tarjouksen pyytämisen."
+        ],
+        [
+          "website-design",
+          "Verkkosivujen rakentaminen",
+          "Tee selkeä ja ylläpidettävä sivusto."
+        ]
+      ],
+      "cta": "Suunnittele palvelusivusto"
+    },
+    "landing-pages": {
+      "title": "Mainonnan laskeutumissivut | MrSeo.tech",
+      "description": "Mainonnan laskeutumissivut: Yhdistämme hakutarkoituksen, viestin, mobiilikäytön ja yhteydenoton mittauksen.",
+      "kicker": "MAINONNAN LASKEUTUMISSIVUT",
+      "hero": [
+        "Mainonnan laskeutumissivut.",
+        "Tee mainosklikkauksesta relevantti tarjouspyyntö."
+      ],
+      "lead": "Hakumainoksen lupaus pitää lunastaa sivulla. Suunnittelemme yhden selkeän tarjouksen, vastaukset tärkeisiin kysymyksiin ja mitattavan toimintakehotuksen.",
+      "intro": "Missä mainoksen ja sivun yhteys katkeaa?",
+      "introText": "Yhdistämme hakutarkoituksen, viestin, mobiilikäytön ja yhteydenoton mittauksen.",
+      "problems": [
+        [
+          "Väärä kohdesivu",
+          "Tietyn palvelun mainos johtaa yleiselle etusivulle.",
+          "Sovita otsikko ja tarjous mainoksen tarkoitukseen."
+        ],
+        [
+          "Liikaa valintoja",
+          "Useat toimintakehotukset kilpailevat huomiosta.",
+          "Valitse yksi päätoiminto ja poista häiriötekijät."
+        ],
+        [
+          "Puuttuva konversio",
+          "Klikkaus mitataan, mutta lomakkeen lähetys ei.",
+          "Testaa lähetys ja vahvistettu tapahtuma."
+        ]
+      ],
+      "process": [
+        [
+          "Kampanja",
+          "Määritä tavoite ja tarjous."
+        ],
+        [
+          "Viesti",
+          "Kirjoita olennaiset vastaukset."
+        ],
+        [
+          "Toteutus",
+          "Rakenna sivu ja mittaus."
+        ],
+        [
+          "Testi",
+          "Varmista lähetys ja konversio."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Tarjousviesti",
+          "Hakutarkoitukseen sopiva sisältö."
+        ],
+        [
+          "Laskeutumissivu",
+          "Selkeä mobiilinäkymä."
+        ],
+        [
+          "Mittaus",
+          "Lomakkeen ja tapahtuman testi."
+        ]
+      ],
+      "faq": [
+        [
+          "Voiko yksi sivu palvella kaikkia kampanjoita?",
+          "Vain jos tarjous ja tarkoitus ovat samat."
+        ],
+        [
+          "Hallinnoitteko mainoksia?",
+          "Kyllä erillisessä sovitussa tehtävässä."
+        ],
+        [
+          "Voiko sivun tehdä nykyiselle domainille?",
+          "Usein, kun tekniikka ja oikeudet sallivat."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Lämpöpumppumainos ohjaa yleiselle LVI-sivulle.",
+        "Tee asennukselle oma tarjous ja yhteydenottoreitti.",
+        "Varmista mainoksen vastaavuus ja lomakkeen mittaus."
+      ],
+      "visual": [
+        "MAINOS",
+        "TARJOUS",
+        "LIIDI"
+      ],
+      "risk": "Sivu ei yksin takaa yhteydenottoja. Mainonnan laatu, hinta, kysyntä ja vastausnopeus vaikuttavat tulokseen.",
+      "related": [
+        [
+          "google-ads",
+          "Google Ads -hallinta",
+          "Hallinnoi kampanjoita todennettujen tavoitteiden mukaan."
+        ],
+        [
+          "local-google-ads",
+          "Google Ads paikallisille yrityksille",
+          "Kohdistamme kampanjat todellisiin palveluihin, alueisiin ja yrityksen vastauskykyyn."
+        ]
+      ],
+      "cta": "Tee sivu kampanjallesi"
+    },
+    "corporate-websites": {
+      "title": "Yrityssivustot ja B2B-esittelyt | MrSeo.tech",
+      "description": "Yrityssivustot ja B2B-esittelyt: Jäsennämme liiketoiminta-alueet, varmennetut referenssit, materiaalit ja yhteystiedot.",
+      "kicker": "YRITYSSIVUSTOT JA B2B-ESITTELYT",
+      "hero": [
+        "Yrityssivustot ja B2B-esittelyt.",
+        "Tee yrityksesi osaaminen ymmärrettäväksi."
+      ],
+      "lead": "Teollinen ostaja tarvitsee tiedot tuotteista, palvelukyvystä, dokumenteista ja oikeasta yhteyshenkilöstä. Suunnittelemme sivuston eri sidosryhmille ja ylläpidettävän tietorakenteen.",
+      "intro": "Mitä kumppanin pitää löytää sivustolta?",
+      "introText": "Jäsennämme liiketoiminta-alueet, varmennetut referenssit, materiaalit ja yhteystiedot.",
+      "problems": [
+        [
+          "Epäselvät toimialat",
+          "Vierailija ei erota yksiköiden tarjontaa toisistaan.",
+          "Suunnittele sisältöhierarkia ostajan tarpeista."
+        ],
+        [
+          "Vanhentunut materiaali",
+          "Dokumenteilla ei ole vastuuhenkilöä tai päivitystapaa.",
+          "Kartoita aineistot ja ylläpitovastuu."
+        ],
+        [
+          "Väärä yhteyshenkilö",
+          "Kumppani ei tiedä, minne kysely kuuluu.",
+          "Luo toimintakohtaiset yhteysreitit."
+        ]
+      ],
+      "process": [
+        [
+          "Aineisto",
+          "Kerää vahvistetut tiedot."
+        ],
+        [
+          "Arkkitehtuuri",
+          "Jäsennä kohderyhmät ja sivut."
+        ],
+        [
+          "Rakennus",
+          "Toteuta näkymät ja navigaatio."
+        ],
+        [
+          "Luovutus",
+          "Testaa tiedon löydettävyys."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Sisältökartta",
+          "Sivut, yleisöt ja dokumentit."
+        ],
+        [
+          "Yrityssivusto",
+          "Yhtenäiset responsiiviset näkymät."
+        ],
+        [
+          "Ylläpito-ohje",
+          "Sisältövastuut ja hallinta."
+        ]
+      ],
+      "faq": [
+        [
+          "Voiko sivusto olla monikielinen?",
+          "Kyllä, kun sisältö ja kielivastineet suunnitellaan."
+        ],
+        [
+          "Voiko julkaista sertifikaatit?",
+          "Vain vahvistetun ja sallitun materiaalin."
+        ],
+        [
+          "Voiko CRM:n liittää?",
+          "Arvioimme tietovirrat ja käyttöoikeudet."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Konepajalla on useita tuotelinjoja ja jälleenmyyjille teknisiä dokumentteja.",
+        "Jäsennä tuotelinjat ja hyväksytyt aineistot eri kohderyhmille.",
+        "Testaa dokumenttien löytyminen ja yhteys oikeaan yksikköön."
+      ],
+      "visual": [
+        "YRITYS",
+        "SIVUT",
+        "YHTEYS"
+      ],
+      "risk": "Emme keksi sertifikaatteja, toimipaikkoja, referenssejä tai tuloksia. Yritys vahvistaa julkaistavat tiedot.",
+      "related": [
+        [
+          "website-design",
+          "Verkkosivujen rakentaminen",
+          "Tee selkeä ja ylläpidettävä sivusto."
+        ],
+        [
+          "web-applications",
+          "Verkkosovellukset, CRM ja asiakasportaalit",
+          "Määritämme käyttäjät, tietomallin, käyttöoikeudet ja hyväksymiskriteerit ennen kehitystä."
+        ]
+      ],
+      "cta": "Suunnittele yrityssivusto"
+    },
+    "website-redesign": {
+      "title": "Verkkosivuston uudistus | MrSeo.tech",
+      "description": "Verkkosivuston uudistus: Kartoittamme arvokkaat osoitteet, käytettävyysongelmat, uuden rakenteen ja julkaisuriskit.",
+      "kicker": "VERKKOSIVUSTON UUDISTUS",
+      "hero": [
+        "Verkkosivuston uudistus.",
+        "Uudista sivusto menettämättä toimivaa perustaa."
+      ],
+      "lead": "Vanha verkkosivusto voi saada hyvää hakuliikennettä, vaikka mobiilivalikko toimii huonosti. Etsimme säilytettävät sivut ja ratkaistavat käyttöesteet ennen ulkoasun muuttamista.",
+      "intro": "Mitä pitää säilyttää ja mitä uudistaa?",
+      "introText": "Kartoittamme arvokkaat osoitteet, käytettävyysongelmat, uuden rakenteen ja julkaisuriskit.",
+      "problems": [
+        [
+          "Heikko mobiilikäyttö",
+          "Teksti ja painikkeet ovat vaikeita käyttää puhelimella.",
+          "Tarkista luettavuus, navigaatio ja lomakkeet."
+        ],
+        [
+          "Piilossa olevat sivut",
+          "Tärkeät palvelut ovat vaikeasti löydettäviä.",
+          "Tutki hierarkia ja sisäinen linkitys."
+        ],
+        [
+          "SEO-riski",
+          "Uudet osoitteet jättävät vanhat linkit toimimatta.",
+          "Suunnittele tarvittavat uudelleenohjaukset."
+        ]
+      ],
+      "process": [
+        [
+          "Inventointi",
+          "Tunnista arvokkaat sivut."
+        ],
+        [
+          "Rajaus",
+          "Päätä säilytettävät toiminnot."
+        ],
+        [
+          "Uudistus",
+          "Toteuta uudet komponentit."
+        ],
+        [
+          "Testi",
+          "Varmista osoitteet ja yhteys."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Nykytilakartta",
+          "Sivut ja käyttöesteet."
+        ],
+        [
+          "Uudistetut näkymät",
+          "Sovitut komponentit."
+        ],
+        [
+          "Julkaisutesti",
+          "Linkit ja lomakkeet."
+        ]
+      ],
+      "faq": [
+        [
+          "Onko alustaa vaihdettava?",
+          "Ei, jos nykyinen tekniikka riittää."
+        ],
+        [
+          "Voiko URL:t säilyttää?",
+          "Kyllä, jos mahdollista, muuten ohjataan vastaavaan sivuun."
+        ],
+        [
+          "Sisältyykö nopeusoptimointi?",
+          "Sovimme mitattavat korjaukset erikseen tai projektissa."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Konsultti saa hakuliikennettä, mutta mobiilikävijät eivät löydä yhteydenottoa.",
+        "Säilytä toimivat osoitteet ja uudista palvelupolku.",
+        "Testaa yhteydenotto, canonical ja tärkeät linkit."
+      ],
+      "visual": [
+        "NYKYINEN",
+        "DESIGN",
+        "TESTI"
+      ],
+      "risk": "Uudistus ei takaa enemmän liikennettä tai liidejä. Vaikutukset on arvioitava sovituilla mittareilla.",
+      "related": [
+        [
+          "website-speed-security",
+          "Sivuston nopeus, turvallisuus ja saavutettavuus",
+          "Erotamme Core Web Vitals -mittarit, tietoturvan ja saavutettavuuden omiksi korjattaviksi kokonaisuuksiksi."
+        ],
+        [
+          "service-websites",
+          "Verkkosivut palveluyrityksille",
+          "Selkeytämme palvelutarjonnan, hyväksytyn yritysmateriaalin ja mobiililomakkeen."
+        ]
+      ],
+      "cta": "Uudista verkkosivustosi"
+    },
+    "wordpress-care": {
+      "title": "WordPress-ylläpito ja tuki | MrSeo.tech",
+      "description": "WordPress-ylläpito ja tuki: Erotamme ylläpidon, vian korjauksen ja uuden ominaisuuden kehityksen.",
+      "kicker": "WORDPRESS-YLLÄPITO JA TUKI",
+      "hero": [
+        "WordPress-ylläpito ja tuki.",
+        "Kestääkö sivustosi seuraavan päivityksen?"
+      ],
+      "lead": "WordPressin lisäosat ja versiot muuttuvat. Huolehdimme sovituista päivityksistä, varmuuskopioista ja tärkeiden toimintojen tarkistuksista sekä selvitämme toistuvien vikojen syyt.",
+      "intro": "Miten pienennämme käyttökatkon riskiä?",
+      "introText": "Erotamme ylläpidon, vian korjauksen ja uuden ominaisuuden kehityksen.",
+      "problems": [
+        [
+          "Yhteensopimaton päivitys",
+          "Lisäosa rikkoo lomakkeen tai kassan.",
+          "Testaa yhteensopivuus ennen riskialtista päivitystä."
+        ],
+        [
+          "Testaamaton varmuuskopio",
+          "Kopiota ei ole koskaan palautettu.",
+          "Arvioi kopiot ja palautusmahdollisuus."
+        ],
+        [
+          "Toistuva vika",
+          "Sama virhe palaa tilapäisen korjauksen jälkeen.",
+          "Tutki lokit ja vian juurisyy."
+        ]
+      ],
+      "process": [
+        [
+          "Kartoitus",
+          "Tarkista versiot ja kopiot."
+        ],
+        [
+          "Testi",
+          "Toista vika erillisessä ympäristössä."
+        ],
+        [
+          "Korjaus",
+          "Tee hyväksytty muutos palautuspolulla."
+        ],
+        [
+          "Seuranta",
+          "Testaa ydintoiminnot."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Ylläpitosuunnitelma",
+          "Versiot, välit ja vastuut."
+        ],
+        [
+          "Muutosloki",
+          "Tehdyt muutokset ja testit."
+        ],
+        [
+          "Palautussuunnitelma",
+          "Kopiot ja toimenpiteet."
+        ]
+      ],
+      "faq": [
+        [
+          "Sisältyykö hosting?",
+          "Ei automaattisesti, voimme käyttää nykyistä hostingia."
+        ],
+        [
+          "Päivitetäänkö suoraan tuotantoon?",
+          "Riskimuutoksissa suosimme testiä ja palautusmahdollisuutta."
+        ],
+        [
+          "Sisältyykö uusi ominaisuus?",
+          "Ei, kehitystyö sovitaan erikseen."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Päivityksen jälkeen yhteydenottolomake ei lähetä viestejä.",
+        "Toista ongelma, tarkista lokit ja testaa korjaus.",
+        "Varmista lomakkeen lähetys ja dokumentoi muutos."
+      ],
+      "visual": [
+        "KOPIO",
+        "MUUTOS",
+        "TESTI"
+      ],
+      "risk": "Vasteajat ja saatavuus sovitaan. Varmuuskopiot ja ylläpito eivät poista kaikkia riskejä.",
+      "related": [
+        [
+          "website-speed-security",
+          "Sivuston nopeus, turvallisuus ja saavutettavuus",
+          "Erotamme Core Web Vitals -mittarit, tietoturvan ja saavutettavuuden omiksi korjattaviksi kokonaisuuksiksi."
+        ],
+        [
+          "api-integrations",
+          "API-integraatiot ja automaatio",
+          "Määritämme tietovirrat, käyttöoikeudet, tunnisteet ja virheiden valvonnan."
+        ]
+      ],
+      "cta": "Keskustele WordPress-tuesta"
+    },
+    "api-integrations": {
+      "title": "API-integraatiot ja automaatio | MrSeo.tech",
+      "description": "API-integraatiot ja automaatio: Määritämme tietovirrat, käyttöoikeudet, tunnisteet ja virheiden valvonnan.",
+      "kicker": "API-INTEGRAATIOT JA AUTOMAATIO",
+      "hero": [
+        "API-integraatiot ja automaatio.",
+        "Lopeta samojen tilausten kirjaaminen käsin."
+      ],
+      "lead": "Kun verkkokauppa, CRM ja taloushallinto eivät keskustele, työntekijät joutuvat siirtämään tietoja käsin. Suunnittelemme rajapinnat, tietokentät ja turvallisen virheenkäsittelyn.",
+      "intro": "Missä tilausdata tai työaika katoaa?",
+      "introText": "Määritämme tietovirrat, käyttöoikeudet, tunnisteet ja virheiden valvonnan.",
+      "problems": [
+        [
+          "Käsinkirjaus",
+          "Tilaus kopioidaan useaan järjestelmään.",
+          "Tunnista lähde, kohde ja siirron käynnistävä tapahtuma."
+        ],
+        [
+          "Kaksoiskappaleet",
+          "Uusintayritys luo saman tilauksen uudelleen.",
+          "Määritä pysyvä tunniste ja idempotentti käsittely."
+        ],
+        [
+          "Huomaamaton virhe",
+          "Siirto epäonnistuu ilman ilmoitusta.",
+          "Rakenna lokitus, rajatut uusinnat ja hälytys."
+        ]
+      ],
+      "process": [
+        [
+          "Tietovirta",
+          "Kartoita lähteet ja kentät."
+        ],
+        [
+          "Rajapinta",
+          "Tarkista oikeudet ja rajoitukset."
+        ],
+        [
+          "Toteutus",
+          "Rakenna validoitu yhteys."
+        ],
+        [
+          "Testi",
+          "Tarkista virheet ja uusinnat."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Tietomäärittely",
+          "Kentät ja siirtosäännöt."
+        ],
+        [
+          "Testattu integraatio",
+          "Normaali ja virheellinen tilaus."
+        ],
+        [
+          "Käyttöohje",
+          "Lokit ja valvonta."
+        ]
+      ],
+      "faq": [
+        [
+          "Tarvitaanko API?",
+          "Ei aina, hyväksytty tiedostovienti tai webhook voi riittää."
+        ],
+        [
+          "Voitteko yhdistää Procountorin tai Netvisorin?",
+          "Tarkistamme rajapinnan, sopimuksen, oikeudet ja yhteensopivuuden ennen lupausta."
+        ],
+        [
+          "Entä käyttökatko?",
+          "Sovitaan rajatut uusinnat ja virheilmoitukset ilman kaksoiskappaleita."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Suomalainen verkkokauppa kirjaa tilaukset taloushallintoon ja CRM:ään käsin.",
+        "Selvitä käytettävissä olevat rajapinnat ja tilauskentät.",
+        "Testaa normaali tilaus, uusinta ja tilapäinen käyttökatko."
+      ],
+      "visual": [
+        "LÄHDE",
+        "API",
+        "CRM"
+      ],
+      "risk": "Työn laajuus riippuu rajapinnoista, oikeuksista, sopimuksista ja datasta. Taloushallinnon säännöt vahvistetaan yrityksen kanssa.",
+      "related": [
+        [
+          "catalog-automation",
+          "Tuotekatalogin automatisointi",
+          "Määritämme tunnisteet, kenttäkartoituksen, päivityssäännöt ja virheiden käsittelyn ennen automaatiota."
+        ],
+        [
+          "web-applications",
+          "Verkkosovellukset, CRM ja asiakasportaalit",
+          "Määritämme käyttäjät, tietomallin, käyttöoikeudet ja hyväksymiskriteerit ennen kehitystä."
+        ]
+      ],
+      "cta": "Yhdistä järjestelmäsi"
+    },
+    "website-speed-security": {
+      "title": "Sivuston nopeus, turvallisuus ja saavutettavuus | MrSeo.tech",
+      "description": "Sivuston nopeus, turvallisuus ja saavutettavuus: Erotamme Core Web Vitals -mittarit, tietoturvan ja saavutettavuuden omiksi korjattaviksi kokonaisuuksiksi.",
+      "kicker": "SIVUSTON NOPEUS, TURVALLISUUS JA SAAVUTETTAVUUS",
+      "hero": [
+        "Sivuston nopeus, turvallisuus ja saavutettavuus.",
+        "Mikä hidastaa tai estää sivuston käyttöä?"
+      ],
+      "lead": "Tutkimme todellisen latauksen, havaittavat tekniset riskit ja käyttäjän esteet. Korjaukset perustuvat mitattuun ongelmaan, eivät lupaukseen täydellisistä testipisteistä.",
+      "intro": "Mitkä ongelmat vaikuttavat käyttäjään?",
+      "introText": "Erotamme Core Web Vitals -mittarit, tietoturvan ja saavutettavuuden omiksi korjattaviksi kokonaisuuksiksi.",
+      "problems": [
+        [
+          "Raskaat sivut",
+          "Suuret kuvat ja skriptit hidastavat mobiilikäyttöä.",
+          "Mittaa resurssit ja olennaiset suorituskykymittarit."
+        ],
+        [
+          "Riskialttiit asetukset",
+          "Vanhentuneet osat tai liian laajat oikeudet lisäävät riskiä.",
+          "Tarkista sovitut versiot ja asetukset."
+        ],
+        [
+          "Käytön esteet",
+          "Lomake tai valikko ei toimi näppäimistöllä.",
+          "Testaa olennaiset vuorovaikutukset ja kontrastit."
+        ]
+      ],
+      "process": [
+        [
+          "Mittaus",
+          "Kartoita hitaat resurssit ja riskit."
+        ],
+        [
+          "Priorisointi",
+          "Arvioi vaikutus ja työmäärä."
+        ],
+        [
+          "Korjaus",
+          "Tee hyväksytyt muutokset."
+        ],
+        [
+          "Uusintatesti",
+          "Vertaa samoilla ehdoilla."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Diagnoosi",
+          "Mittaukset ja ongelmalista."
+        ],
+        [
+          "Korjaukset",
+          "Todennettuihin syihin kohdistuvat muutokset."
+        ],
+        [
+          "Uusintaraportti",
+          "Vertailu ja jäljellä olevat rajoitteet."
+        ]
+      ],
+      "faq": [
+        [
+          "Takaatteko 100 pistettä?",
+          "Emme, laite, verkko ja ulkoiset palvelut vaikuttavat."
+        ],
+        [
+          "Sisältyykö tunkeutumistestaus?",
+          "Ei, se vaatii erikseen valtuutetun tehtävän."
+        ],
+        [
+          "Onko saavutettavuustesti juridinen todistus?",
+          "Ei, rajattu tekninen testi ei korvaa kattavaa asiantuntija-arviota."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Tuotesivun suuret kuvat hidastavat mobiilia ja kassa on hankala näppäimistöllä.",
+        "Mittaa lataus ja korjaa sovitut kuvat ja käyttöesteet.",
+        "Toista testit vertailukelpoisissa oloissa."
+      ],
+      "visual": [
+        "MITTAUS",
+        "KORJAUS",
+        "TESTI"
+      ],
+      "risk": "Täydellistä turvallisuutta ei voi taata. Infrastruktuuri, ulkoiset palvelut ja tarkastuksen rajaus vaikuttavat tuloksiin.",
+      "related": [
+        [
+          "wordpress-care",
+          "WordPress-ylläpito ja tuki",
+          "Erotamme ylläpidon, vian korjauksen ja uuden ominaisuuden kehityksen."
+        ],
+        [
+          "website-redesign",
+          "Verkkosivuston uudistus",
+          "Kartoittamme arvokkaat osoitteet, käytettävyysongelmat, uuden rakenteen ja julkaisuriskit."
+        ]
+      ],
+      "cta": "Tutki nopeus ja turvallisuus"
+    },
+    "web-applications": {
+      "title": "Verkkosovellukset, CRM ja asiakasportaalit | MrSeo.tech",
+      "description": "Verkkosovellukset, CRM ja asiakasportaalit: Määritämme käyttäjät, tietomallin, käyttöoikeudet ja hyväksymiskriteerit ennen kehitystä.",
+      "kicker": "VERKKOSOVELLUKSET, CRM JA ASIAKASPORTAALIT",
+      "hero": [
+        "Verkkosovellukset, CRM ja asiakasportaalit.",
+        "Onko taulukkolaskenta muuttunut pullonkaulaksi?"
+      ],
+      "lead": "Rakennamme verkkopohjaisia työkaluja tarjous-, tilaus-, dokumentti- ja asiakasprosesseihin. Ensimmäinen versio ratkaisee yhden rajatun työnkulun, ennen kuin uusia ominaisuuksia lisätään.",
+      "intro": "Mikä työnkulku tarvitsee oman sovelluksen?",
+      "introText": "Määritämme käyttäjät, tietomallin, käyttöoikeudet ja hyväksymiskriteerit ennen kehitystä.",
+      "problems": [
+        [
+          "Hajallaan olevat tiedot",
+          "Tarjoukset ja tehtävät ovat viesteissä ja taulukoissa.",
+          "Suunnittele tietomalli, tilat ja työnkulku."
+        ],
+        [
+          "Liian laajat oikeudet",
+          "Käyttäjä näkee tietoja, joita hän ei tarvitse.",
+          "Rajaa roolit ja pääsyoikeudet."
+        ],
+        [
+          "Kasvava projektirajaus",
+          "Ominaisuuksia lisätään ennen ensimmäisen hyödyn todentamista.",
+          "Määritä ensimmäisen version hyväksymiskriteerit."
+        ]
+      ],
+      "process": [
+        [
+          "Prosessi",
+          "Kartoita työvaiheet ja käyttäjät."
+        ],
+        [
+          "Rajaus",
+          "Valitse ensimmäisen version toiminnot."
+        ],
+        [
+          "Kehitys",
+          "Rakenna roolit ja työnkulut."
+        ],
+        [
+          "Pilotti",
+          "Testaa oikeilla käyttötilanteilla."
+        ]
+      ],
+      "outcomes": [
+        [
+          "Toiminnallinen kuvaus",
+          "Roolit, data ja työnkulut."
+        ],
+        [
+          "Käytettävä moduuli",
+          "Sovitut ydintoiminnot."
+        ],
+        [
+          "Jatkokehityskartta",
+          "Testit ja seuraava vaihe."
+        ]
+      ],
+      "faq": [
+        [
+          "Voiko aloittaa MVP:stä?",
+          "Kyllä, rajataan yksi tärkeä prosessi."
+        ],
+        [
+          "Onko CRM vaihdettava?",
+          "Ei aina, integraatio voi riittää."
+        ],
+        [
+          "Kuinka kauan kehitys kestää?",
+          "Arvio vaatii toiminnallisen rajauksen ja tietolähteet."
+        ]
+      ],
+      "example": [
+        "HAVAINNOLLISTAVA ESIMERKKI",
+        "Huoltoyritys hallitsee työmääräyksiä ja tarjouksia useissa tiedostoissa.",
+        "Suunnittele portaali, jossa on roolit ja tilauksen tila.",
+        "Testaa työnkulku ja käyttöoikeudet valittujen käyttäjien kanssa."
+      ],
+      "visual": [
+        "PROSESSI",
+        "PORTAALI",
+        "TULOS"
+      ],
+      "risk": "Aika ja kustannus riippuvat toiminnallisuudesta, datasta, turvallisuudesta ja integraatioista. Uudet ominaisuudet arvioidaan erikseen.",
+      "related": [
+        [
+          "api-integrations",
+          "API-integraatiot ja automaatio",
+          "Määritämme tietovirrat, käyttöoikeudet, tunnisteet ja virheiden valvonnan."
+        ],
+        [
+          "web-development",
+          "Räätälöity verkkokehitys",
+          "Rakenna liiketoiminnan tarvitsemat toiminnot."
+        ]
+      ],
+      "cta": "Suunnittele verkkosovellus"
+    }
+  }
+}
