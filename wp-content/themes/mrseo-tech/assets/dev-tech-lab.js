@@ -67,9 +67,9 @@ if(root){
    let visible=true,raf=0,px=0,py=0,last=0,failed=false;
    function resize(){const w=stage.clientWidth,h=stage.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w/h<1.1?40:34;camera.updateProjectionMatrix();draw(performance.now(),true);}
    function draw(t,force=false){if(failed||(!visible&&!force))return;
-    const time=t*.001;for(let i=0;i<4;i++){const target=baseY[i]+(i===selected?.16:0);layers[i].position.y=reduced.matches?target:layers[i].position.y+(target-layers[i].position.y)*.13;rims[i].color.set(i===selected?0xa73e32:0x9a8b79);rims[i].opacity=i===selected?1:.55;}
+    const time=t*.001;for(let i=0;i<4;i++){const target=baseY[i]+(i===selected ? .16 : 0);layers[i].position.y=reduced.matches?target:layers[i].position.y+(target-layers[i].position.y)*.13;rims[i].color.set(i===selected?0xa73e32:0x9a8b79);rims[i].opacity=i===selected?1:.55;}
     model.rotation.y=reduced.matches?0:model.rotation.y+(px*.22-model.rotation.y)*.07;model.rotation.x=reduced.matches?0:model.rotation.x+(py*.12-model.rotation.x)*.07;
-    for(const o of particles){const k=reduced.matches?.5:(time*.55+o.offset)%1;o.p.position.lerpVectors(o.a,o.b,k);}
+    for(const o of particles){const k=reduced.matches ? .5 : (time*.55+o.offset)%1;o.p.position.lerpVectors(o.a,o.b,k);}
     renderer.render(scene,camera);
    }
    function loop(t){raf=0;if(failed||!visible||document.hidden||reduced.matches)return;if(t-last>32){draw(t);last=t;}raf=requestAnimationFrame(loop);}
