@@ -1,8 +1,9 @@
 <?php
 if (!defined('ABSPATH')) exit;
 /* Premium Tech preview: service-specific vector models; no client data. */
-function mrseo_dev_lab_art($kind) {
+function mrseo_dev_lab_art($kind, $card_preview=false) {
  $kind=(int)$kind;
+ if($kind===0 && $card_preview){require get_template_directory().'/inc/dev-tech-lab-store-render.php';return;}
  static $serial=0;
  $id='dtm-'.(++$serial);
  ?>
