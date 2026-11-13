@@ -1,5 +1,6 @@
 <?php
 if(!defined('ABSPATH'))exit;
+if(mrseo_locale()==='uk'){require get_template_directory().'/premium-ua-interior.php';return;}
 $dev_locale=mrseo_locale();
 if($dev_locale==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
 $dev=mrseo_dev_page($dev_locale);
