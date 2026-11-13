@@ -1,7 +1,11 @@
 <?php
 if(!defined('ABSPATH'))exit;
 $dev_locale=mrseo_locale();
+// Opt-in design preview only; do not expose it in navigation or sitemap.
+$dev_tech_preview=$dev_locale==='uk' && isset($_GET['design_lab']) && is_string($_GET['design_lab']) && $_GET['design_lab']==='premium-tech';
+if($dev_tech_preview){nocache_headers();header('X-Robots-Tag: noindex, nofollow',true);}
 if($dev_locale==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
+if($dev_tech_preview){require_once get_template_directory().'/inc/dev-tech-lab-sections.php';wp_enqueue_style('mrseo-dev-tech-sections',get_template_directory_uri().'/assets/dev-tech-lab-sections.css',array('mrseo-development','mrseo-ua-commercial-visuals'),'1.0.1');wp_enqueue_script('mrseo-dev-tech-sections',get_template_directory_uri().'/assets/dev-tech-lab-sections.js',array(),'1.0.0',true);}
 $dev=mrseo_dev_page($dev_locale);
 if(!$dev){status_header(404);include get_404_template();return;}
 $is_int_dev=in_array($dev_locale,array('pl','de'),true);
@@ -14,7 +18,7 @@ $dev_nav=array(
 );
 get_header();
 ?>
-<div class="dev-scope<?php echo $dev_locale==='uk'?' dev-scope-uk':'';?>">
+<div class="dev-scope<?php echo $dev_locale==='uk'?' dev-scope-uk':''; echo $dev_tech_preview?' dt-preview':'';?>">
 <section class="dev-hero" aria-labelledby="dev-title">
  <div class="dev-wrap dev-hero-grid">
   <div class="dev-hero-copy">
@@ -26,7 +30,7 @@ get_header();
     <a class="dev-text-link" href="#dev-capabilities"><?php echo esc_html($dev['labels']['scope']);?> ↓</a>
    </div>
   </div>
-  <?php mrseo_render_motion_scene('web-development',$dev_locale);?>
+  <?php if($dev_tech_preview){require get_template_directory().'/inc/dev-tech-lab.php';}else{mrseo_render_motion_scene('web-development',$dev_locale);}?>
  </div>
 </section>
 <section class="dev-section dev-diagnosis" aria-labelledby="dev-problems-title">
@@ -50,7 +54,7 @@ get_header();
   </div>
  </div>
 </section>
-<?php if($dev_locale==='uk')mrseo_render_ua_commercial_visual('web-development','connections'); ?>
+<?php if($dev_tech_preview){mrseo_dev_lab_connections();}elseif($dev_locale==='uk'){mrseo_render_ua_commercial_visual('web-development','connections');} ?>
 <section class="dev-section dev-capabilities" id="dev-capabilities" aria-labelledby="dev-scope-title">
  <div class="dev-wrap">
   <div class="dev-section-heading"><div class="dev-eyebrow">02 / <?php echo esc_html($dev['labels']['scope']);?></div>
@@ -59,7 +63,7 @@ get_header();
   <div class="dev-cap-grid">
   <?php foreach($dev['capabilities'] as $i=>$cap):?>
    <article class="dev-cap"><div class="dev-cap-top"><span><?php echo esc_html(sprintf('%02d',$i+1));?> / 06</span><span aria-hidden="true"><?php echo esc_html(array('▣','◈','◇','⌁','↗','◎')[$i]);?></span></div>
-     <div class="dev-cap-visual" aria-hidden="true"><i></i><i></i><i></i></div>
+     <?php if($dev_tech_preview):?><div class="dev-cap-visual dtm-card-art" aria-hidden="true"><?php mrseo_dev_lab_art($i,true);?></div><?php else:?><div class="dev-cap-visual" aria-hidden="true"><i></i><i></i><i></i></div><?php endif;?>
      <h3><?php echo esc_html($cap[0]);?></h3><p><?php echo esc_html($cap[1]);?></p>
    </article>
   <?php endforeach;?>
