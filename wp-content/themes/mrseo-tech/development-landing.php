@@ -5,7 +5,7 @@ $dev_locale=mrseo_locale();
 $dev_tech_preview=$dev_locale==='uk' && isset($_GET['design_lab']) && is_string($_GET['design_lab']) && $_GET['design_lab']==='premium-tech';
 if($dev_tech_preview){nocache_headers();header('X-Robots-Tag: noindex, nofollow',true);}
 if($dev_locale==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
-if($dev_tech_preview){require_once get_template_directory().'/inc/dev-tech-lab-sections.php';wp_enqueue_style('mrseo-dev-tech-sections',get_template_directory_uri().'/assets/dev-tech-lab-sections.css',array('mrseo-development','mrseo-ua-commercial-visuals'),'1.0.0');wp_enqueue_script('mrseo-dev-tech-sections',get_template_directory_uri().'/assets/dev-tech-lab-sections.js',array(),'1.0.0',true);}
+if($dev_tech_preview){require_once get_template_directory().'/inc/dev-tech-lab-sections.php';wp_enqueue_style('mrseo-dev-tech-sections',get_template_directory_uri().'/assets/dev-tech-lab-sections.css',array('mrseo-development','mrseo-ua-commercial-visuals'),'1.0.1');wp_enqueue_script('mrseo-dev-tech-sections',get_template_directory_uri().'/assets/dev-tech-lab-sections.js',array(),'1.0.0',true);}
 $dev=mrseo_dev_page($dev_locale);
 if(!$dev){status_header(404);include get_404_template();return;}
 $is_int_dev=in_array($dev_locale,array('pl','de'),true);
@@ -63,7 +63,7 @@ get_header();
   <div class="dev-cap-grid">
   <?php foreach($dev['capabilities'] as $i=>$cap):?>
    <article class="dev-cap"><div class="dev-cap-top"><span><?php echo esc_html(sprintf('%02d',$i+1));?> / 06</span><span aria-hidden="true"><?php echo esc_html(array('▣','◈','◇','⌁','↗','◎')[$i]);?></span></div>
-     <?php if($dev_tech_preview):?><div class="dev-cap-visual dtm-card-art" aria-hidden="true"><?php mrseo_dev_lab_art($i);?></div><?php else:?><div class="dev-cap-visual" aria-hidden="true"><i></i><i></i><i></i></div><?php endif;?>
+     <?php if($dev_tech_preview):?><div class="dev-cap-visual dtm-card-art" aria-hidden="true"><?php mrseo_dev_lab_art($i,true);?></div><?php else:?><div class="dev-cap-visual" aria-hidden="true"><i></i><i></i><i></i></div><?php endif;?>
      <h3><?php echo esc_html($cap[0]);?></h3><p><?php echo esc_html($cap[1]);?></p>
    </article>
   <?php endforeach;?>
