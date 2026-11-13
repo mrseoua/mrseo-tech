@@ -94,3 +94,23 @@ body .mrseo-footer .mrseo-contact-messenger:hover{background:#eee0d2;color:#a143
 body .mrseo-footer .mrseo-contact-messenger span{color:#a14332}
 body .mrseo-footer .mrseo-footer-utilities>a{color:#625e54}
 body .mrseo-footer .mrseo-contact-phone:hover,body .mrseo-footer .mrseo-footer-utilities>a:hover{color:#a14332}
+
+/* Owner feedback: fit the complete Earth/orbit within the desktop first screen.
+   Preserve safe-fit geometry in JS and all mobile orbital dimensions. */
+@media(min-width:1181px){
+ .pt-ua-home .pt-home{padding-block:clamp(18px,2.7vh,36px) 24px;margin-bottom:clamp(48px,5vw,76px)}
+ .pt-ua-home .pt-home .pt-orbit{height:clamp(490px,calc(100svh - 216px),690px);min-height:490px;aspect-ratio:auto}
+ .pt-ua-home .pt-orbit-bottom{padding-top:10px;margin-top:4px}
+}
+/* Keep the original native mega menu and contacts; enlarge the desktop header only on UA home. */
+@media(min-width:1280px){
+ body:has(.pt-ua-home) .site-header .nav{max-width:1620px;min-height:82px;padding-inline:clamp(24px,3.5vw,58px);gap:clamp(14px,1.8vw,30px)}
+ body:has(.pt-ua-home) .site-header .logo{font-size:28px}
+ body:has(.pt-ua-home) .site-header .nav-links,body:has(.pt-ua-home) .site-header .nav-dropdown .services-menu-toggle{font-size:16px;font-weight:700}
+ body:has(.pt-ua-home) .site-header .nav-cta{font-size:14px}
+}
+/* Entire card is a real native hyperlink; one tab stop, no nested anchors or JS navigation. */
+.pt-ua-home a.ph-card-link{color:#272e27;text-decoration:none;cursor:pointer}
+.pt-ua-home a.ph-card-link:focus-visible{outline:3px solid #a14332;outline-offset:4px}
+.pt-ua-home a.ph-card-link:hover .ph-service-link,.pt-ua-home a.ph-card-link:focus-visible .ph-service-link{text-decoration:underline;color:#a14332}
+.pt-ua-home a.ph-card-link .ph-art{pointer-events:none}
