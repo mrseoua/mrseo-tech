@@ -82,3 +82,15 @@ body .mrseo-footer .mrseo-footer-cta:hover{background:#a14332;color:#fffaf3!impo
 @media(max-width:700px){.pt-ua-home .ph-content{padding-inline:18px}.pt-ua-home .ph-resolution p,.pt-ua-home .ph-final p{font-size:16px}.pt-ua-home .ph-process p{font-size:14px}}
 @media(max-width:680px){.pt-ua-home .pt-home-lead{font-size:16px;line-height:1.6}.pt-ua-home .pt-home-caption{font-size:12px;margin-top:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Native contact channels and language switcher remain readable on the light footer. */
+#main:has(> .pt-ua-home){width:100%;max-width:none;margin:0;padding:0}
+body .mrseo-footer .mrseo-footer-feature{border-color:#d5c8b8}
+body .mrseo-footer .mrseo-footer-promise{color:#625e54}
+body .mrseo-footer .mrseo-contact-heading,body .mrseo-footer .mrseo-contact-phone{color:#292e28}
+body .mrseo-footer .mrseo-contact-label{color:#625e54}
+body .mrseo-footer .mrseo-contact-messenger{background:#faf6ef;border-color:#cbbba9;color:#292e28}
+body .mrseo-footer .mrseo-contact-messenger:hover{background:#eee0d2;color:#a14332;border-color:#b4866e}
+body .mrseo-footer .mrseo-contact-messenger span{color:#a14332}
+body .mrseo-footer .mrseo-footer-utilities>a{color:#625e54}
+body .mrseo-footer .mrseo-contact-phone:hover,body .mrseo-footer .mrseo-footer-utilities>a:hover{color:#a14332}
