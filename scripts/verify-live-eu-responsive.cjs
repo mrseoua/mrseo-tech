@@ -129,7 +129,12 @@ async function audit(browser,viewport,lang,slug){
     uaPremiumCards:document.querySelectorAll('.pt-ua-home .ph-service').length,
     uaPremiumImages:[...document.querySelectorAll('.pt-ua-home .ph-art img')].every(img=>!!img.getAttribute('src')&&img.getAttribute('src').startsWith('data:image/webp;base64,')),
     uaPremiumMotions:document.querySelectorAll('.pt-ua-home .ph-motion').length,
-    uaPremiumLinks:document.querySelectorAll('.pt-ua-home .ph-service-link[href]').length,
+    uaPremiumLinks:document.querySelectorAll('.pt-ua-home a.ph-card-link[href]').length,
+    uaPremiumImageLinks:[...document.querySelectorAll('.pt-ua-home .ph-art img')].filter(img=>img.closest('a.ph-card-link[href]')).length,
+    uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-mega--trial .mrseo-mega-group').length,
+    uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-mega--trial a.mrseo-mega-heading-link[href]').length,
+    uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
+    uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
     uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&!!document.querySelector('.pt-ua-home .ph-pause'),
     uaPremiumResolution:!!document.querySelector('.pt-ua-home .ph-resolution a[href$="/contact/"]'),
     heroEdge:(()=>{
@@ -354,7 +359,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||c.serviceMenuItems!==25||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
