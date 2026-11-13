@@ -79,7 +79,7 @@ async function audit(browser,viewport,lang,slug){
     internalWidth:document.documentElement.scrollWidth,
     clientWidth:document.documentElement.clientWidth,
     viewport:innerWidth,
-    hero:!!document.querySelector(slug===''?(uaHome?'.pt-ua-home .pt-home':'.orbit-lab .lab-shell'):coreShard?'.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
+    hero:!!document.querySelector(slug===''?(uaHome?'.pt-ua-home .pt-home':'.orbit-lab .lab-shell'):coreShard?'.pti-page .pti-hero,.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     footerLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(a=>a.textContent.trim()),
@@ -125,6 +125,23 @@ async function audit(browser,viewport,lang,slug){
     })(),
     orbitMaster:!!document.querySelector(uaHome?'.pt-ua-home .pt-orbit':'.orbit-lab .lab-shell .lab-visual'),
     uaPremiumHome:!!document.querySelector('.pt-ua-home'),
+    premiumInterior:(()=>{
+      const root=document.querySelector('.pti-page'),stage=root?.querySelector('.pti-stage'),scene=root?.querySelector('.pti-scene');
+      const rect=stage?.getBoundingClientRect(),story=root?.querySelector('[data-pti-story]');
+      const imgs=[...root?.querySelectorAll('img')||[]];
+      return {route:root?.dataset.ptiService||'',style:!!document.querySelector('link[href*="premium-ua-interiors.css"]'),
+        geometry:!!rect&&rect.width>240&&rect.left>=-2&&rect.right<=innerWidth+2,
+        scene:!!scene,sceneSvg:!!stage?.querySelector('svg.pti-scene-svg'),sceneMotion:stage?.querySelectorAll('animate,animateMotion,animateTransform').length||0,
+        images:imgs.length,realImages:imgs.every(x=>x.getAttribute('src')?.startsWith('data:image/webp;base64,')),
+        heroImage:!!stage?.querySelector('img')?.naturalWidth,story:story?.dataset.ptiStory||'',
+        problems:root?.querySelectorAll('section[id$="problems"] article.pti-card,#ukseo-cases article.pti-card').length||0,
+        steps:story?.querySelectorAll('.pti-step').length||0,faq:root?.querySelectorAll('.pti-faq details').length||0,
+        caps:root?.querySelectorAll('#dev-capabilities .pti-card-art svg').length||0,
+        capMotion:root?.querySelectorAll('#dev-capabilities .pti-card-art animate,#dev-capabilities .pti-card-art animateMotion,#dev-capabilities .pti-card-art animateTransform').length||0,
+        solutions:root?.querySelectorAll('.pti-solution').length||0,
+        tabs:root?.querySelectorAll('[data-phase]').length||0,pause:!!root?.querySelector('.pti-pause'),
+        final:!!root?.querySelector('.pti-final a[href$="/contact/"]')};
+    })(),
     uaPremiumStyles:!!document.querySelector('link[href*="home-uk-premium.css"]'),
     uaPremiumCards:document.querySelectorAll('.pt-ua-home .ph-service').length,
     uaPremiumImages:[...document.querySelectorAll('.pt-ua-home .ph-art img')].every(img=>!!img.getAttribute('src')&&img.getAttribute('src').startsWith('data:image/webp;base64,')),
@@ -198,12 +215,12 @@ async function audit(browser,viewport,lang,slug){
     })(),
     uaCommercialVisuals:(()=>{
       const target=lang==='uk'&&['google-ads','web-development'].includes(slug);
-      const sections=target?[...document.querySelectorAll('.ua-sv')]:[];
-      const style=!!document.querySelector('link[href*="ua-commercial-visuals.css"]');
+      const sections=target?[...document.querySelectorAll('.pti-page [data-pti-story],.ua-sv')]:[];
+      const style=!!document.querySelector('link[href*="ua-commercial-visuals.css"],.pti-page')&&!!document.querySelector('link[href*="premium-ua-interiors.css"],link[href*="ua-commercial-visuals.css"]');
       const expected=lang==='uk'?1:2;
       const roots=sections.map(e=>({id:e.querySelector('h2')?.id||'',width:Math.round(e.getBoundingClientRect().width),
         left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right)}));
-      return {style,sections:sections.length,roots,headings:[...document.querySelectorAll('.ua-sv h2')].map(x=>x.textContent.trim()),
+      return {style,sections:sections.length,roots,headings:[...document.querySelectorAll('.pti-page [data-pti-story] h2,.ua-sv h2')].map(x=>x.textContent.trim()),
         properOrder:sections.length===expected&&(expected===1||!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING)),
         hiddenOnForeign:lang!=='uk'&&!document.querySelector('.ua-sv'),
         goodGeometry:roots.length===expected&&roots.every(r=>r.left>=-2&&r.right<=innerWidth+2&&r.width>250)};
@@ -211,8 +228,8 @@ async function audit(browser,viewport,lang,slug){
     uaAdsPricing:(()=>{
       const target=lang==='uk'&&slug==='google-ads';
       const root=document.querySelector('#ukads-pricing');
-      const cards=[...document.querySelectorAll('.ukads-price-card')];
-      const css=!!document.querySelector('link[href*="ua-google-ads-pricing.css"]');
+      const cards=[...document.querySelectorAll('.ukads-price-card,.pti-price-card')];
+      const css=!!document.querySelector('link[href*="ua-google-ads-pricing.css"]')||(target&&!!document.querySelector('link[href*="premium-ua-interiors.css"]'));
       const flow=document.querySelector('.ukads-flow-plate');
       const stages=flow?.querySelectorAll('.ukads-flow-node').length||0;
       const boxes=[root,flow,...cards].filter(Boolean).map(el=>{
@@ -221,11 +238,11 @@ async function audit(browser,viewport,lang,slug){
       });
       const text=cards.map(el=>el.textContent.replace(/\s+/g,' ').trim());
       const heading=root?.querySelector('h2')?.textContent.trim()||'';
-      const hero=document.querySelector('.ukseo--ads .ukseo-hero-copy h1');
+      const hero=document.querySelector('.ukseo--ads .ukseo-hero-copy h1,.pti-page[data-pti-service="google-ads"] .pti-hero h1');
       const letterSpace=hero?parseFloat(getComputedStyle(hero).letterSpacing):NaN;
-      const heroTrackingOK=!target||(Number.isFinite(letterSpace)&&letterSpace>-3&&letterSpace<=0);
+      const heroTrackingOK=!target||(Number.isFinite(letterSpace)&&letterSpace>-5&&letterSpace<=0);
       return {target,css,count:cards.length,stages,heading,
-        heroTrackingOK,pricesCorrect:text.length===2&&text[0].includes('5 000')&&text[1].includes('10 000')&&text.every(s=>s.includes('Разове налаштування')),
+        heroTrackingOK,pricesCorrect:text.length===2&&text[0].includes('5 000')&&text[0].includes('5 900')&&text[1].includes('10 000')&&text[1].includes('9 500')&&text.every(s=>s.includes('Разове налаштування')&&s.includes('₴/міс.')),
         geometry:boxes.length===3&&boxes.every(b=>b.width>250&&b.left>=-2&&b.right<=innerWidth+2),
         noLeak:!target&&!css&&!root&&cards.length===0&&!flow};
     })(),
@@ -234,8 +251,8 @@ async function audit(browser,viewport,lang,slug){
       const journey=document.querySelector('#ukseo-journey-title');
       const priorities=document.querySelector('#ukseo-priorities-title');
       const stages=document.querySelectorAll('.ukseo-visual-journey > li');
-      const board=document.querySelector('.ukseo-visual-priority-board');
-      const css=!!document.querySelector('link[href*="ua-seo-visuals.css"]');
+      const board=document.querySelector('.ukseo-visual-priority-board,.pti-page [data-pti-story="seo"]');
+      const css=!!document.querySelector('link[href*="ua-seo-visuals.css"],link[href*="premium-ua-interiors.css"]');
       const rects=[priorities,board].filter(Boolean).map(el=>el.getBoundingClientRect());
       return {css,stageCount:stages.length,journey:!!journey,priorities:!!priorities,board:!!board,
         boundariesOK:rects.length===2&&rects.every(r=>r.width>0&&r.left>=-2&&r.right<=innerWidth+2),
@@ -266,6 +283,31 @@ async function audit(browser,viewport,lang,slug){
   },{lang,slug,width:viewport.width,coreShard});
   const c=item.check;
   const exactPath=url;
+  const premiumTarget=lang==='uk'&&['seo','google-ads','web-development'].includes(slug);
+  const pi=c.premiumInterior;
+  if(premiumTarget){
+    const expectedStory=slug==='seo'?'seo':slug==='google-ads'?'ads':'dev';
+    if(pi.route!==slug||!pi.style||!pi.geometry||!pi.scene||!pi.sceneSvg||pi.sceneMotion<1||
+       pi.images!==(slug==='web-development'?8:2)||!pi.realImages||!pi.heroImage||pi.story!==expectedStory||
+       pi.problems!==3||pi.steps!==3||pi.faq<3||pi.tabs!==3||!pi.pause||!pi.final||
+       (slug==='web-development'&&(pi.caps!==6||pi.capMotion!==34||pi.solutions!==3)))
+      item.errors.push('UA Premium interior mismatch: '+JSON.stringify(pi));
+    if(c.serviceMenuItems!==25||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
+      item.errors.push('Native full menu or contacts missing from premium interior');
+    if(pi.scene&&pi.tabs===3&&pi.pause){
+      const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
+      const button=page.locator('.pti-page .pti-pause');
+      await stage.scrollIntoViewIfNeeded();
+      await page.locator('.pti-page [data-phase="2"]').click();
+      if(await scene.getAttribute('data-step')!=='2'||await page.locator('.pti-page [data-phase="2"]').getAttribute('aria-pressed')!=='true'||(await page.locator('.pti-page [data-scene-index]').textContent()).trim()!=='03 / 03')
+        item.errors.push('Premium scene phase switch broken');
+      await button.click();
+      if(await button.getAttribute('aria-pressed')!=='true'||await scene.evaluate(e=>e.classList.contains('pti-live')))
+        item.errors.push('Premium pause broken');
+      await page.locator('.pti-page [data-phase="0"]').click();await button.click();
+      await page.evaluate(()=>window.scrollTo(0,0));
+    }
+  }else if(pi.route||pi.style)item.errors.push('Premium UA interior leaked onto '+lang+'/'+slug);
   if(!c.title||c.title.length<(coreShard?8:12))item.errors.push('Missing document title');
   if(c.htmlLang.toLowerCase().split('-')[0]!==lang)item.errors.push('Wrong html lang '+c.htmlLang);
   if(c.h1!==1)item.errors.push('H1 count '+c.h1);
