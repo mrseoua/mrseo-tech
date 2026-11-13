@@ -67,7 +67,7 @@ get_header();
   <div class="dev-cap-grid">
   <?php foreach($dev['capabilities'] as $i=>$cap):?>
    <article class="dev-cap"><div class="dev-cap-top"><span><?php echo esc_html(sprintf('%02d',$i+1));?> / 06</span><span aria-hidden="true"><?php echo esc_html(array('▣','◈','◇','⌁','↗','◎')[$i]);?></span></div>
-     <?php if($dev_locale==='uk')mrseo_premium_dev_art($i);else: ?><div class="dev-cap-visual" aria-hidden="true"><i></i><i></i><i></i></div><?php endif;?>
+     <?php if($dev_locale==='uk'): mrseo_premium_dev_art($i); else: ?><div class="dev-cap-visual" aria-hidden="true"><i></i><i></i><i></i></div><?php endif;?>
      <h3><?php echo esc_html($cap[0]);?></h3><p><?php echo esc_html($cap[1]);?></p>
    </article>
   <?php endforeach;?>
