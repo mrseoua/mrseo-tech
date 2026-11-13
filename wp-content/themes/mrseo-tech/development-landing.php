@@ -1,6 +1,9 @@
 <?php
 if(!defined('ABSPATH'))exit;
 $dev_locale=mrseo_locale();
+// Opt-in design preview only; do not expose it in navigation or sitemap.
+$dev_tech_preview=$dev_locale==='uk' && isset($_GET['design_lab']) && is_string($_GET['design_lab']) && $_GET['design_lab']==='premium-tech';
+if($dev_tech_preview){nocache_headers();header('X-Robots-Tag: noindex, nofollow',true);}
 if($dev_locale==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
 $dev=mrseo_dev_page($dev_locale);
 if(!$dev){status_header(404);include get_404_template();return;}
@@ -26,7 +29,7 @@ get_header();
     <a class="dev-text-link" href="#dev-capabilities"><?php echo esc_html($dev['labels']['scope']);?> ↓</a>
    </div>
   </div>
-  <?php mrseo_render_motion_scene('web-development',$dev_locale);?>
+  <?php if($dev_tech_preview){require get_template_directory().'/inc/dev-tech-lab.php';}else{mrseo_render_motion_scene('web-development',$dev_locale);}?>
  </div>
 </section>
 <section class="dev-section dev-diagnosis" aria-labelledby="dev-problems-title">
