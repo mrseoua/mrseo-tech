@@ -5,6 +5,7 @@
  * The homepage, international routing and robots policy remain unchanged.
  */
 if (!defined('ABSPATH')) exit;
+if(mrseo_locale()==='uk'){require get_template_directory().'/premium-ua-interior.php';return;}
 require_once get_template_directory().'/inc/ua-seo-visuals.php';
 get_header();
 ?>
