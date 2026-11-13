@@ -18,9 +18,9 @@ if (!defined('ABSPATH')) exit;
 .dev-tech-lab .dt-detail p{margin:0;font-size:15px;line-height:1.5;color:#57524c}
 .dev-tech-lab .dt-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #d7cfc3;padding-top:12px;font-size:12px;color:#655e55}
 .dev-tech-lab .dt-original{color:#8e352b;text-decoration:underline}
-.dev-tech-lab .dt-fallback-layer{transition:opacity .25s,transform .25s;transform-box:fill-box;transform-origin:center}
+.dev-tech-lab .dt-fallback-layer{transition:opacity .25s}
 .dev-tech-lab .dt-fallback-layer:not(.active){opacity:.65}
-.dev-tech-lab .dt-fallback-layer.active{transform:translateY(-5px)}
+.dev-tech-lab .dt-fallback-layer.active{opacity:1}
 @media(max-width:560px){.dev-tech-lab{padding:13px;border-radius:14px}.dev-tech-lab .dt-stage{min-height:250px;aspect-ratio:1}.dev-tech-lab .dt-head{font-size:11px;letter-spacing:0}.dev-tech-lab .dt-tabs button{font-size:12px}.dev-tech-lab .dt-detail{min-height:120px}.dev-tech-lab .dt-foot{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.dev-tech-lab *{transition:none!important}}
 </style>
