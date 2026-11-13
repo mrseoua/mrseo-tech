@@ -125,6 +125,12 @@ async function audit(browser,viewport,lang,slug){
     })(),
     orbitMaster:!!document.querySelector(uaHome?'.pt-ua-home .pt-orbit':'.orbit-lab .lab-shell .lab-visual'),
     uaPremiumHome:!!document.querySelector('.pt-ua-home'),
+    premiumDev:!!document.querySelector('.pdi-scope'),
+    premiumDevStyle:!!document.querySelector('link[href*="premium-interiors.css"]'),
+    premiumDevCards:document.querySelectorAll('.pdi-scope .dev-cap .pdi-art img').length,
+    premiumDevScenes:document.querySelectorAll('.pdi-scope .pdi-motion').length,
+    premiumDevIntegration:!!document.querySelector('.pdi-scope .pdi-integration'),
+    premiumDevControls:!!document.querySelector('.pdi-scope [data-pdi-toggle]')&&document.querySelectorAll('.pdi-scope [data-pdi-tab]').length===3,
     uaPremiumStyles:!!document.querySelector('link[href*="home-uk-premium.css"]'),
     uaPremiumCards:document.querySelectorAll('.pt-ua-home .ph-service').length,
     uaPremiumImages:[...document.querySelectorAll('.pt-ua-home .ph-art img')].every(img=>!!img.getAttribute('src')&&img.getAttribute('src').startsWith('data:image/webp;base64,')),
@@ -382,6 +388,9 @@ async function audit(browser,viewport,lang,slug){
   }
   if(lang!=='uk'&&c.uaFourScenes.leak)
     item.errors.push('UA-only four-service scenes leaked into '+lang);
+  if(lang==='uk'&&slug==='web-development'){
+    if(!c.premiumDev||!c.premiumDevStyle||c.premiumDevCards!==6||c.premiumDevScenes!==7||!c.premiumDevIntegration||!c.premiumDevControls) item.errors.push('UA premium development scenes missing');
+  }else if(c.premiumDev||c.premiumDevStyle)item.errors.push('UA premium development leaked onto '+lang+'/'+slug);
   if(lang==='uk'&&['google-ads','web-development'].includes(slug)){
     const v=c.uaCommercialVisuals;
     if(!v||!v.style||v.sections!==1||!v.properOrder||!v.goodGeometry||v.headings.length!==1)
