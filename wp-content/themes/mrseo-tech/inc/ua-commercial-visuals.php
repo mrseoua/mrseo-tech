@@ -91,13 +91,13 @@ function mrseo_render_ua_commercial_visual($service, $variant) {
     <h2 id="ua-sv-dev-flow-title">З’єднуємо інструменти. <em>Прибираємо ручну роботу.</em></h2></div>
    <p>Сайт, CRM та облік можуть працювати як одна система — якщо інтеграція потрібна й технічно можлива.</p>
   </header>
-  <div class="ua-sv-dev-diagram" role="img" aria-label="Схема: сайт передає дані через інтеграцію до CRM та обліку">
-   <div class="ua-sv-dev-node ua-sv-dev-node--site"><span class="ua-sv-dev-icon">▣</span><strong>Сайт</strong><small>Заявки та замовлення</small></div>
-   <div class="ua-sv-dev-connector" aria-hidden="true"><span>→</span></div>
-   <div class="ua-sv-dev-node ua-sv-dev-node--api"><span class="ua-sv-dev-icon">⌁</span><strong>Інтеграція</strong><small>Передача даних</small></div>
-   <div class="ua-sv-dev-connector" aria-hidden="true"><span>→</span></div>
-   <div class="ua-sv-dev-node ua-sv-dev-node--crm"><span class="ua-sv-dev-icon">◎</span><strong>CRM та облік</strong><small>Робота команди</small></div>
-  </div>
+  <div class="ua-sv-dev-diagram pdi-integration" role="img" aria-label="Сайт передає заявки через інтеграцію до CRM та обліку">
+ <div class="pdi-system"><div class="pdi-system-screen"><div class="pdi-window-top"><i></i><i></i><i></i><span>САЙТ</span></div><div class="pdi-web-body"><div><b></b><i></i><i></i><em></em></div><div class="pdi-web-tile"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M12 14h8l6 24h22l5-17H22" fill="none" stroke="#a34b36" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="46" r="4" fill="#a34b36"/><circle cx="46" cy="46" r="4" fill="#a34b36"/></svg></div></div><div class="pdi-site-order">✓ Заявка</div></div><strong>Сайт</strong><small>Заявки та замовлення</small></div>
+ <div class="pdi-wire" aria-hidden="true"><i></i><b></b></div>
+ <div class="pdi-system pdi-system-api"><div class="pdi-api-object"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="m35 32-20 18 20 18m30-36 20 18-20 18M57 24 43 76" fill="none" stroke="#fff3e3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>API</span></div><strong>Інтеграція</strong><small>Передача даних</small></div>
+ <div class="pdi-wire" aria-hidden="true"><i></i><b></b></div>
+ <div class="pdi-system"><div class="pdi-system-screen"><div class="pdi-window-top"><i></i><i></i><i></i><span>CRM</span></div><div class="pdi-crm"><div><b></b><i></i><i></i></div><div><b></b><i></i></div><div><b></b><i></i><i></i></div></div><div class="pdi-site-order">✓ Статус</div></div><strong>CRM та облік</strong><small>Робота команди</small></div>
+ </div>
   <div class="ua-sv-dev-points">
    <div><span>01</span><strong>Менше дублювання</strong><p>Не потрібно повторно вводити одні й ті самі дані, якщо системи це дозволяють.</p></div>
    <div><span>02</span><strong>Зрозумілі процеси</strong><p>Статуси, ролі та відповідальність узгоджені до розробки.</p></div>
