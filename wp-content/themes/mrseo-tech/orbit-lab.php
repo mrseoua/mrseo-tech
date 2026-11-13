@@ -1,4 +1,4 @@
-<?php if(!defined('ABSPATH'))exit;$mrseo_is_home=mrseo_slug()==='';get_header();?>
+<?php if(!defined('ABSPATH'))exit;$mrseo_is_home=mrseo_slug()==='';if($mrseo_is_home && mrseo_locale()==='uk'){require get_template_directory().'/home-uk-premium.php';return;}get_header();?>
 <style>
 .orbit-lab{--lab-ink:#eeeae2;--lab-accent:#ff6c51;--lab-muted:#9fa69e;background:#101614;color:var(--lab-ink);min-height:calc(100svh - 80px);position:relative;overflow:hidden;isolation:isolate}
 .orbit-lab:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 77% 45%,#24433a70,transparent 47%),linear-gradient(100deg,#121916 0%,#101614 65%);pointer-events:none}
