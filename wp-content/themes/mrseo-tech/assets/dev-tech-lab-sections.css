@@ -41,3 +41,14 @@
 @keyframes dtm-flow-mobile{0%{top:0;opacity:1}100%{top:calc(100% - 9px);opacity:1}}
 @media(max-width:480px){.dt-preview .dtm-flow-head{align-items:flex-start;flex-direction:column}.dt-preview .dtm-flow-status{padding:12px 0;min-height:70px}.dev-scope.dt-preview .dev-cap-visual.dtm-card-art{aspect-ratio:1.78}}
 @media(prefers-reduced-motion:reduce){.dt-preview .dtm-art *,.dt-preview .dtm-flow *,.dt-preview .dev-cap{animation:none!important;transition:none!important}.dt-preview .dtm-node[data-active=true]{transform:none}}
+
+/* Original product render: photograph-like lighting, independent order confirmation layer. */
+.dev-scope.dt-preview .dev-cap-visual.dtm-card-art:has(.dtm-rendered-store){aspect-ratio:1000/640;background:#d9d4c8}
+.dt-preview .dtm-rendered-store{position:relative;width:100%;height:100%;overflow:hidden;isolation:isolate;background:#d9d4c8}
+.dt-preview .dtm-rendered-store img{display:block;position:absolute;max-width:none;pointer-events:none;user-select:none}
+.dt-preview .dtm-rendered-store .dtm-store-base{inset:0;width:100%;height:100%;object-fit:fill}
+.dt-preview .dtm-rendered-store .dtm-store-receipt{left:52%;top:53.125%;width:23.2%;height:auto;filter:drop-shadow(0 5px 6px #3d251e40);transition:translate .4s}
+.dt-preview .dtm-rendered-store.dtm-inview .dtm-store-receipt{animation:dtm-receipt-lift 5s ease-in-out infinite}
+.dt-preview .dev-cap:hover .dtm-store-receipt{translate:0 -5px}
+@keyframes dtm-receipt-lift{50%{transform:translateY(-7%)}}
+@media(prefers-reduced-motion:reduce){.dt-preview .dtm-store-receipt{animation:none!important;transition:none!important;translate:none!important}}
