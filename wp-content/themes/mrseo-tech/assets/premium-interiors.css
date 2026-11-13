@@ -1,0 +1,91 @@
+/* Premium Tech UA interiors — independent from the homepage and other locales. */
+.pdi-scope{--pdi-cream:#eee9e1;--pdi-ink:#292e28;--pdi-red:#ac4634;--pdi-metal:#c5b5a0;background:var(--pdi-cream);color:var(--pdi-ink)}
+.pdi-scope .dev-hero{background:radial-gradient(ellipse at 74% 40%,#fffdf8 0%,#f5efe5 49%,#e9e1d5 100%);padding-block:clamp(34px,4.5vw,70px)}
+.pdi-scope .dev-hero h1{font-weight:850;font-size:clamp(46px,5.2vw,78px)!important;color:var(--pdi-ink);line-height:1.04!important;letter-spacing:-.045em!important}
+.pdi-scope .dev-hero h1 em{color:var(--pdi-red)}
+.pdi-scope .dev-eyebrow,.pdi-scope .dev-cap-top{color:var(--pdi-red)}
+.pdi-scope .dev-lead{font-weight:520;color:#57554b;line-height:1.68}
+.pdi-scope .dev-diagnosis,.pdi-scope .dev-faq{background:#faf6ef}
+.pdi-scope .dev-capabilities,.pdi-scope .ua-sv--dev-connections{background:#eee9e1}
+.pdi-scope .dev-cap{background:#faf6f0;border:1px solid #dcd2c5;border-radius:20px;box-shadow:0 8px 23px #53432c0b;min-height:0;overflow:hidden}
+.pdi-scope .dev-cap:hover{transform:translateY(-4px);box-shadow:0 16px 32px #53432c20;border-color:#bca590}
+.pdi-scope .dev-cap h3{font-size:clamp(24px,2vw,30px);letter-spacing:-.04em;line-height:1.18;margin:12px 0 10px;color:var(--pdi-ink)}
+.pdi-scope .dev-cap p{font-size:16px;line-height:1.65;color:#55564f}
+.pdi-art{aspect-ratio:1.68;position:relative;display:block;margin:8px -7px 10px;overflow:hidden;border-radius:12px;background:#faf6f0}
+.pdi-art img,.pdi-art .pdi-motion{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.pdi-art .pdi-motion{pointer-events:none;overflow:hidden;visibility:hidden}
+.pdi-art.pdi-live .pdi-motion{visibility:visible}
+.pdi-motion .signal{filter:drop-shadow(0 0 4px #eab479)}
+.pdi-hero-scene{min-width:0;background:linear-gradient(145deg,#fffdf8,#f0e6d8);border:1px solid #d7c8b6;border-radius:24px;padding:20px;box-shadow:0 20px 50px #59452d17}
+.pdi-hero-top,.pdi-hero-caption,.pdi-tabs,.pdi-motion-controls{display:flex;align-items:center;gap:12px}
+.pdi-hero-top{justify-content:space-between;flex-wrap:wrap;color:#9d4433;font-size:11px;font-weight:800;letter-spacing:.06em}
+.pdi-status{display:flex;align-items:center;gap:6px;color:#68594b;font-size:10px}
+.pdi-status i{width:7px;height:7px;border-radius:50%;background:#b6533b;box-shadow:0 0 0 4px #b6533b16}
+.pdi-hero-scene .pdi-art-hero{aspect-ratio:1.3;margin:12px 0;background:#f6eee3}
+.pdi-hero-caption{align-items:flex-start;border-top:1px solid #d5c6b5;padding-top:15px;min-height:87px}
+.pdi-hero-caption>span{color:#a14332;font-size:12px;font-weight:800;white-space:nowrap}
+.pdi-hero-caption strong{font-size:17px;line-height:1.3}
+.pdi-hero-caption p{color:#625b51;font-size:14px;line-height:1.5;margin:5px 0}
+.pdi-tabs{flex-wrap:wrap;margin-top:12px;gap:7px}
+.pdi-tabs button,.pdi-motion-controls button{min-height:44px;padding:9px 13px;font:700 13px/1.3 system-ui,sans-serif;border-radius:24px;border:1px solid #cbbba9;background:#faf6ef;color:#40392f;cursor:pointer}
+.pdi-tabs button[aria-pressed=true]{color:#fff9ef;background:#292e28;border-color:#292e28}
+.pdi-tabs button:focus-visible,.pdi-motion-controls button:focus-visible{outline:2px solid #a14332;outline-offset:3px}
+.pdi-motion-controls{justify-content:space-between;flex-wrap:wrap;margin-bottom:18px;color:#625e56;font-size:13px}
+.pdi-scope .dev-outcomes{background:linear-gradient(120deg,#e7ddce,#f3ece1);color:var(--pdi-ink);border-block:1px solid #d8cabc}
+.pdi-scope .dev-outcomes h2,.pdi-scope .dev-outcome strong{color:var(--pdi-ink)}
+.pdi-scope .dev-outcomes-grid>div:nth-child(2),.pdi-scope .dev-outcome{border-color:#cdbdaa}
+.pdi-scope .dev-outcome span{color:#a14332}
+.pdi-scope .dev-cta{background:#e8dfd3;color:var(--pdi-ink)}
+.pdi-scope .dev-cta h2{color:var(--pdi-ink)}
+.pdi-scope .dev-cta p{color:#55564f}
+.pdi-scope .dev-cta .dev-button{background:#292e28;color:#fffdf6!important}
+.pdi-scope .dev-cta .dev-button:hover{background:#a44836}
+.pdi-scope .pdi-integration{background:linear-gradient(155deg,#fffdf7,#e9dfd1);border:1px solid #d5c5b3;box-shadow:0 20px 42px #57442d12;align-items:center;gap:10px;padding:clamp(20px,3vw,42px)}
+.pdi-system{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;text-align:center}
+.pdi-system>strong{font-size:clamp(20px,2vw,28px);color:#292e28}
+.pdi-system>small{font-size:14px;color:#625e54}
+.pdi-system-screen{width:100%;max-width:255px;aspect-ratio:1.42;background:linear-gradient(155deg,#635e52,#282d28 45%,#4f4a40);border:1px solid #958471;border-radius:12px;padding:9px;box-shadow:0 9px 0 #b8a58f,0 16px 24px #4e3b2a30;position:relative;margin:0 0 15px}
+.pdi-window-top{display:flex;align-items:center;gap:4px;font-size:9px;color:#eee1cf;margin:0 0 7px;text-align:left}
+.pdi-window-top i{width:5px;height:5px;border-radius:50%;background:#c98769}
+.pdi-window-top i:nth-child(2){background:#d9b995}.pdi-window-top i:nth-child(3){background:#8e9b7d}.pdi-window-top span{margin-left:5px}
+.pdi-web-body{display:grid;grid-template-columns:1fr 1fr;gap:7px;background:#f3ebdf;border-radius:4px;padding:12px;height:calc(100% - 21px)}
+.pdi-web-body>div:first-child{display:flex;flex-direction:column;gap:7px;justify-content:center}
+.pdi-web-body b,.pdi-web-body i,.pdi-web-body em{height:6px;background:#c5b8a5;border-radius:3px;display:block}.pdi-web-body b{height:12px;background:#4e5146}.pdi-web-body em{width:60%;height:15px;background:#b6654e}
+.pdi-web-tile{background:#e4d4c2;border-radius:5px;display:grid;place-items:center}.pdi-web-tile svg{width:70%;height:auto}
+.pdi-site-order{position:absolute;right:-5px;bottom:13px;background:linear-gradient(145deg,#cb8c72,#9d4533);border:1px solid #ddad91;border-radius:7px;color:#fff5e7;font-size:11px;font-weight:800;padding:9px 11px;box-shadow:0 5px 8px #4c342940}
+.pdi-api-object{width:clamp(84px,10vw,140px);aspect-ratio:1;border-radius:24%;background:linear-gradient(145deg,#c88267,#a64d38 50%,#733a2e);border:2px solid #d6b395;box-shadow:inset 0 1px 3px #fff4,0 5px 0 #8c5c45,0 16px 24px #59412c42;display:grid;place-items:center;position:relative;margin:0 0 15px}
+.pdi-api-object svg{width:70%;height:70%;transform:translateY(-7%)}.pdi-api-object span{position:absolute;bottom:12%;color:#fff0dd;font-size:13px;font-weight:800;letter-spacing:.1em}
+.pdi-crm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:6px;background:#e9e1d5;height:calc(100% - 21px);border-radius:4px}
+.pdi-crm>div{background:#f8f1e5;border-radius:3px;padding:5px;display:flex;flex-direction:column;gap:6px}.pdi-crm b{height:6px;border-radius:2px;background:#ab8d75}.pdi-crm i{height:23%;background:#d7c8b5;border-radius:3px}.pdi-crm>div:nth-child(3) b{background:#7d9579}
+.pdi-wire{height:3px;position:relative;background:linear-gradient(90deg,#b48d71,#e5a878,#b48d71);border-radius:4px;margin-bottom:49px;box-shadow:0 2px 6px #b65c3833}
+.pdi-wire i,.pdi-wire b{position:absolute;top:-3px;left:0;width:9px;height:9px;border-radius:50%;background:#fff0cb;box-shadow:0 0 9px #e8a365;opacity:0}
+.pdi-integration.pdi-live .pdi-wire i{animation:pdi-flow 2.1s linear infinite;opacity:1}.pdi-integration.pdi-live .pdi-wire b{animation:pdi-flow 2.1s linear infinite -.95s;opacity:1}
+@keyframes pdi-flow{from{left:0}to{left:calc(100% - 9px)}}
+/* The real WordPress footer, in the approved light palette; keep all functional links. */
+body:has(.pdi-scope) .mrseo-footer{background:#eee9e1;color:#55564f;border-color:#d0c2b0}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-inner{padding-top:55px}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-logo{color:#292e28}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-logo span{color:#ac4634}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-brand p,body:has(.pdi-scope) .mrseo-footer .mrseo-footer-region,body:has(.pdi-scope) .mrseo-footer .mrseo-footer-contact>span{color:#625e54}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-col h2{color:#282e27}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-col>a,body:has(.pdi-scope) .mrseo-footer .mrseo-footer-bottom,body:has(.pdi-scope) .mrseo-footer .mrseo-footer-bottom a{color:#55564f}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-col>a:hover{color:#a14332}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-bottom{border-color:#d5c8b8}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-cta{background:#292e28;color:#fffaf3!important}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-cta:hover{background:#a14332;color:#fffaf3!important}
+
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-feature{border-color:#d5c8b8}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-promise{color:#625e54}
+body:has(.pdi-scope) .mrseo-footer .mrseo-contact-heading,body:has(.pdi-scope) .mrseo-footer .mrseo-contact-phone{color:#292e28}
+body:has(.pdi-scope) .mrseo-footer .mrseo-contact-label{color:#625e54}
+body:has(.pdi-scope) .mrseo-footer .mrseo-contact-messenger{background:#faf6ef;border-color:#cbbba9;color:#292e28}
+body:has(.pdi-scope) .mrseo-footer .mrseo-contact-messenger:hover{background:#eee0d2;color:#a14332;border-color:#b4866e}
+body:has(.pdi-scope) .mrseo-footer .mrseo-contact-messenger span{color:#a14332}
+body:has(.pdi-scope) .mrseo-footer .mrseo-footer-utilities>a{color:#625e54}
+body:has(.pdi-scope) .mrseo-footer .mrseo-contact-phone:hover,body:has(.pdi-scope) .mrseo-footer .mrseo-footer-utilities>a:hover{color:#a14332}
+
+
+@media(min-width:1280px){body:has(.pdi-scope) .site-header .nav{max-width:1620px;min-height:82px;padding-inline:clamp(24px,3.5vw,58px);gap:clamp(14px,1.8vw,30px)}body:has(.pdi-scope) .site-header .logo{font-size:28px}body:has(.pdi-scope) .site-header .nav-links,body:has(.pdi-scope) .site-header .nav-dropdown .services-menu-toggle{font-size:16px;font-weight:700}}
+@media(max-width:740px){.pdi-scope .dev-hero h1{font-size:clamp(38px,10vw,54px)!important;letter-spacing:-.03em!important}.pdi-scope .dev-lead{font-size:17px}.pdi-hero-scene{padding:14px}.pdi-hero-scene .pdi-art-hero{aspect-ratio:1.05}.pdi-scope .pdi-integration{grid-template-columns:1fr;gap:16px}.pdi-wire{width:3px;height:35px;justify-self:center;margin:0}.pdi-wire i,.pdi-wire b{left:-3px;top:0}.pdi-integration.pdi-live .pdi-wire i,.pdi-integration.pdi-live .pdi-wire b{animation-name:pdi-flow-vertical}.pdi-system-screen{max-width:220px}.pdi-system>strong{font-size:24px}.pdi-system>small{font-size:15px}}
+@keyframes pdi-flow-vertical{from{top:0}to{top:calc(100% - 9px)}}
+@media(prefers-reduced-motion:reduce){.pdi-scope .pdi-motion{visibility:hidden!important}.pdi-scope .pdi-wire i,.pdi-scope .pdi-wire b{animation:none!important;opacity:0}.pdi-scope .dev-cap,.pdi-scope .dev-button{transition:none!important}.pdi-scope .dev-cap:hover{transform:none}}
