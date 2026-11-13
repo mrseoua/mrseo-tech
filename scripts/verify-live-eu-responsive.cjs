@@ -66,8 +66,9 @@ async function audit(browser,viewport,lang,slug){
   item.check=await page.evaluate(({lang,slug,width,coreShard})=>{
    const canonical=[...document.querySelectorAll('link[rel=canonical]')].map(x=>x.href);
    const body=document.body;
-   const node=slug===''?document.querySelector('.orbit-lab .lab-visual'):document.querySelector('.eu-orbit-scene');
-   const earth=slug===''?node?.querySelector('.lab-core'):node?.querySelector('.eu-earth-core');
+   const uaHome=lang==='uk'&&slug==='';
+   const node=slug===''?document.querySelector(uaHome?'.pt-ua-home .pt-orbit':'.orbit-lab .lab-visual'):document.querySelector('.eu-orbit-scene');
+   const earth=slug===''?node?.querySelector(uaHome?'.pt-globe':'.lab-core'):node?.querySelector('.eu-earth-core');
    const links=[...document.querySelectorAll('header.site-header .mrseo-language-options a')].map(a=>({href:a.href,lang:a.lang}));
    return {
     title:document.title,
@@ -78,7 +79,7 @@ async function audit(browser,viewport,lang,slug){
     internalWidth:document.documentElement.scrollWidth,
     clientWidth:document.documentElement.clientWidth,
     viewport:innerWidth,
-    hero:!!document.querySelector(slug===''?'.orbit-lab .lab-shell':coreShard?'.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
+    hero:!!document.querySelector(slug===''?(uaHome?'.pt-ua-home .pt-home':'.orbit-lab .lab-shell'):coreShard?'.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     footerLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(a=>a.textContent.trim()),
@@ -122,25 +123,38 @@ async function audit(browser,viewport,lang,slug){
         contact:!!root?.querySelector('a[href$="/ru/contact/"]')
       };
     })(),
-    orbitMaster:!!document.querySelector('.orbit-lab .lab-shell .lab-visual'),
+    orbitMaster:!!document.querySelector(uaHome?'.pt-ua-home .pt-orbit':'.orbit-lab .lab-shell .lab-visual'),
+    uaPremiumHome:!!document.querySelector('.pt-ua-home'),
+    uaPremiumStyles:!!document.querySelector('link[href*="home-uk-premium.css"]'),
+    uaPremiumCards:document.querySelectorAll('.pt-ua-home .ph-service').length,
+    uaPremiumImages:[...document.querySelectorAll('.pt-ua-home .ph-art img')].every(img=>!!img.getAttribute('src')&&img.getAttribute('src').startsWith('data:image/webp;base64,')),
+    uaPremiumMotions:document.querySelectorAll('.pt-ua-home .ph-motion').length,
+    uaPremiumLinks:document.querySelectorAll('.pt-ua-home a.ph-card-link[href]').length,
+    uaPremiumImageLinks:[...document.querySelectorAll('.pt-ua-home .ph-art img')].filter(img=>img.closest('a.ph-card-link[href]')).length,
+    uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-mega--trial .mrseo-mega-group').length,
+    uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-mega--trial a.mrseo-mega-heading-link[href]').length,
+    uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
+    uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
+    uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&!!document.querySelector('.pt-ua-home .ph-pause'),
+    uaPremiumResolution:!!document.querySelector('.pt-ua-home .ph-resolution a[href$="/contact/"]'),
     heroEdge:(()=>{
-      const el=document.querySelector('#main > .orbit-lab');
+      const el=document.querySelector(uaHome?'#main > .pt-ua-home > .pt-home':'#main > .orbit-lab');
       if(!el)return null;
       const rect=el.getBoundingClientRect();
       return {left:Math.round(rect.left),right:Math.round(rect.right),width:Math.round(rect.width)};
     })(),
     heroPanel:(()=>{
-      const el=document.querySelector('#main > .orbit-lab > .lab-shell');
+      const el=document.querySelector(uaHome?'#main > .pt-ua-home > .pt-home':'#main > .orbit-lab > .lab-shell');
       if(!el)return null;
       const computed=getComputedStyle(el);
       return {background:computed.backgroundColor,radius:computed.borderTopLeftRadius,
         overflow:computed.overflowX,shadow:computed.boxShadow};
     })(),
-    orbitStylesheet:!!document.querySelector('link[href*="orbit-scene.css"]'),
+    orbitStylesheet:!!document.querySelector(uaHome?'link[href*="home-uk-premium.css"]':'link[href*="orbit-scene.css"]'),
     legacyEuStylesheet:!!document.querySelector('link[href*="eu-expansion.css"]'),
-    sharedHomepageVisual:!!document.querySelector('.orbit-lab .lab-shell .lab-visual .lab-core')&&!!document.querySelector('.orbit-lab .lab-connectors #lab-spokes'),
-    orbitCanvas:!!document.querySelector('.orbit-lab canvas.lab-webgl-canvas'),
-    orbitStaticTexture:earth?getComputedStyle(earth,'::before').backgroundImage.includes('earth-day.jpg'):false,
+    sharedHomepageVisual:uaHome?!!document.querySelector('.pt-ua-home .pt-globe')&&document.querySelectorAll('.pt-ua-home .pt-orbit-lines path').length===8:!!document.querySelector('.orbit-lab .lab-shell .lab-visual .lab-core')&&!!document.querySelector('.orbit-lab .lab-connectors #lab-spokes'),
+    orbitCanvas:!!document.querySelector(uaHome?'.pt-globe.pt-globe-ready canvas':'.orbit-lab canvas.lab-webgl-canvas'),
+    orbitStaticTexture:uaHome?!!earth?.querySelector('img[src^="data:image/"]')&&earth.querySelector('img').naturalWidth>0:earth?getComputedStyle(earth,'::before').backgroundImage.includes('earth-day.jpg'):false,
     clientBand:!!document.querySelector('.client-band-home'),
     marketOffers:document.querySelectorAll('.eu-offer-card').length,
     form:document.querySelector('form[action*="admin-post.php"]')?.querySelector('input[name=mrseo_lang]')?.value||null,
@@ -243,7 +257,7 @@ async function audit(browser,viewport,lang,slug){
     portfolioCards:document.querySelectorAll('.eu-project-card,.client-directory-card').length,
     core:!!earth,
     coreDimensions:earth?{w:Math.round(earth.getBoundingClientRect().width),h:Math.round(earth.getBoundingClientRect().height)}:null,
-    satellites:node?.querySelectorAll(slug===''?'.lab-node':'.eu-satellite').length||0,
+    satellites:node?.querySelectorAll(slug===''?(uaHome?'.pt-node':'.lab-node'):'.eu-satellite').length||0,
     portfolio:!!document.querySelector('a[href$="/'+(lang==='uk'?'':lang+'/')+'portfolio/"]'),
     privacyLink:!!document.querySelector('a[href$="/'+(lang==='uk'?'':lang+'/')+'privacy/"]'),
     contactBarText:document.querySelector('.mrseo-mobile-contact-bar')?.textContent||'',
@@ -327,7 +341,7 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('RU compact CSS leaked to '+lang);
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
-  if(slug===''&&(!c.orbitMaster||!c.core||(coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
+  if(slug===''&&(!c.orbitMaster||!c.core||(lang==='uk'?c.satellites!==8:coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
   if(slug===''&&!c.orbitCanvas&&!c.orbitStaticTexture)item.errors.push('No real 3D globe or Earth texture fallback');
   if(slug===''){
     // Regression guard: all 20 locale homepages must physically reach both
@@ -337,13 +351,17 @@ async function audit(browser,viewport,lang,slug){
       item.errors.push('Homepage has visible side gutters: '+JSON.stringify(edge)+' viewport='+c.viewport);
     const panel=c.heroPanel;
     if(!panel||!['transparent','rgba(0, 0, 0, 0)'].includes(panel.background)||
-       panel.radius!=='0px'||panel.shadow!=='none'||panel.overflow!=='visible')
+       panel.radius!=='0px'||panel.shadow!=='none'||(lang!=='uk'&&panel.overflow!=='visible'))
       item.errors.push('Homepage has inherited dark rounded 1700px panel: '+JSON.stringify(panel));
   }
   if(slug===''&&(!c.orbitStylesheet||!c.sharedHomepageVisual))item.errors.push('Not using the exact approved shared 3D homepage visual');
   if(slug===''&&!coreShard&&c.legacyEuStylesheet)item.errors.push('EU landing stylesheet leaked onto unified homepage');
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
-  if(slug===''&&!c.clientBand)item.errors.push('Homepage public client band missing');
+  if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
+  if(lang==='uk'&&slug===''){
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||c.serviceMenuItems!==25||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+      item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
+  }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
