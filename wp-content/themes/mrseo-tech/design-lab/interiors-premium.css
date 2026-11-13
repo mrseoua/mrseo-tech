@@ -7,3 +7,6 @@
 @keyframes serp-rise{0%,100%{transform:translateY(14px);opacity:.75}26%,76%{transform:translateY(-22px);opacity:1}}
 .scene:not(.live) .dynamic{visibility:hidden}.scene.live .dynamic{visibility:visible}
 @media(max-width:600px){.hero h1 em{display:block}.seo .hero-art,.dev .hero-art{width:64%;left:18%}.ads .hero-art{width:62%;left:26%}.plate{font-size:10px}.ads-channel{font-size:9px}.seo-query{min-width:41%}.scene-svg{z-index:3}}
+
+/* Ensure all decorative CSS animations also pause outside viewport or on demand. */
+.scene:not(.live) .animated{animation-play-state:paused!important}
