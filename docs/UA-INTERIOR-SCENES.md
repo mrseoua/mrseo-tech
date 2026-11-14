@@ -49,3 +49,7 @@ Owner direction, 14 November 2026: every **individual UA route** and every subst
 | /privacy/ | Readable legal information | No distracting animation; keep exact privacy content |
 
 The 25 menu sublinks and their parent links include repeated destinations by design (e.g. Google Ads and web development). This registry covers those actual Ukrainian destinations plus analytics/about/portfolio/contact/privacy; verify any additional routed specialist URLs and portfolio cases from the router before designing them. A menu label is not a reason to create a duplicate route. The remaining entries are proposed, not implemented.
+
+
+## 14 November 2026 — SEO cluster implementation in review
+Five existing Ukrainian routes now implemented in branch `chatgpt/ua-premium-seo-cluster-20261114` with 34 unique native SVG scenes (not photographic 3D models): local-seo 6, ecommerce-seo 8, service-business-seo 6, international-seo 6, seo-audit 8. Their earlier pending rows above are now **implemented in branch, not yet published**. Original commercial copy and native navigation preserved; each has three hero phases, unique problem/solution/final art, and specialist catalog or audit evidence as applicable. CI and owner production approval required. Do not claim the rest of the Ukrainian registry is implemented.
