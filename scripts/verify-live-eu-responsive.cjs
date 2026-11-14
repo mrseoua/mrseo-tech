@@ -322,6 +322,10 @@ async function audit(browser,viewport,lang,slug){
         const lower=page.locator('.pti-page .pti-story-art svg.pti-lower-motion');
         const lowerButton=page.locator('.pti-page .pti-lower-pause');
         await lower.scrollIntoViewIfNeeded();
+        if(slug==='seo'){
+          const diagnostic=await lower.evaluate(svg=>{const art=svg.parentElement,im=art.querySelector('img');const cs=getComputedStyle(art),is=getComputedStyle(im);return {transparent:cs.backgroundImage==='none'&&cs.backgroundColor==='rgba(0, 0, 0, 0)',clip:is.clipPath.includes('pti-seo-object'),transforms:svg.querySelectorAll('animateTransform[type="rotate"]').length,gear:!!svg.querySelector('image'),scan:!!svg.querySelector('animate[attributeName="y"]')}});
+          if(!diagnostic.transparent||!diagnostic.clip||diagnostic.transforms!==2||!diagnostic.gear||!diagnostic.scan)item.errors.push('SEO diagnostic object not fully integrated: '+JSON.stringify(diagnostic));
+        }
         await page.waitForTimeout(250);
         const before=await lower.evaluate(s=>({paused:s.animationsPaused(),time:s.getCurrentTime()}));
         await page.waitForTimeout(180);
