@@ -97,7 +97,7 @@ get_header();
   </div>
  </section>
  <?php if(!empty($psc['proof'])):?>
- <section class="pti-section pti-alt psc-proof"><div class="pti-wrap psc-proof-grid"><div><span class="pti-kicker"><?php echo esc_html($psc['proof']['kicker']);?></span><h2 id="<?php echo esc_attr($psc_shop?'ukcommerce-experience-title':'ukaudit-boundary-title');?>"><?php echo esc_html($psc['proof']['heading'][0]);?> <em><?php echo esc_html($psc['proof']['heading'][1]);?></em></h2></div><div><p class="pti-lead"><?php echo esc_html($psc['proof']['text']);?></p><a class="pti-pill pti-secondary" href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($psc['proof']['link']);?> ↗</a></div></div></section>
+ <section class="pti-section pti-alt psc-proof"><div class="pti-wrap psc-proof-grid"><div><span class="pti-kicker"><?php echo esc_html($psc['proof']['kicker']);?></span><h2 id="<?php echo esc_attr($psc_shop?'ukcommerce-experience-title':'ukaudit-boundary-title');?>"><?php echo esc_html($psc['proof']['heading'][0]);?> <em><?php echo esc_html($psc['proof']['heading'][1]);?></em></h2></div><div><div class="psc-proof-art"><?php mrseo_psc_art($psc_art['proof']);?></div><p class="pti-lead"><?php echo esc_html($psc['proof']['text']);?></p><a class="pti-pill pti-secondary" href="<?php echo esc_url(mrseo_url('portfolio'));?>"><?php echo esc_html($psc['proof']['link']);?> ↗</a></div></div></section>
  <?php endif;?>
  <section class="pti-section psc-faq-section"><div class="pti-wrap pti-faq">
   <div><span class="pti-kicker">ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>"><?php echo esc_html($psc['faqHeading']??'Коротко про важливе.');?></h2><?php if(!empty($psc['faqLead'])):?><p><?php echo esc_html($psc['faqLead']);?></p><?php endif;?></div>
