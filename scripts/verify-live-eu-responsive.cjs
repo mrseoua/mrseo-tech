@@ -332,8 +332,7 @@ async function audit(browser,viewport,lang,slug){
           item.errors.push('Lower and hero pause controls not synchronized');
         await lowerButton.click();
         await page.emulateMedia({reducedMotion:'reduce'});
-        await page.waitForTimeout(100);
-        if(!(await lower.evaluate(s=>s.animationsPaused()))||!(await lowerButton.isDisabled()))item.errors.push('Lower reduced-motion preference not respected');
+        try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');const b=document.querySelector('.pti-lower-pause');return matchMedia('(prefers-reduced-motion: reduce)').matches&&s?.animationsPaused()&&b?.disabled},{},{timeout:5000});}catch(_){item.errors.push('Lower reduced-motion preference not respected');}
         await page.emulateMedia({reducedMotion:'no-preference'});
       }
       await page.evaluate(()=>window.scrollTo(0,0));
