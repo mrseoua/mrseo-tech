@@ -20,7 +20,7 @@ if($psc_audit){require_once get_template_directory().'/inc/ua-final-interior-vis
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-psc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'1.0.0');
- wp_enqueue_script('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.js',array(),'1.0.0',true);
+ wp_enqueue_script('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.js',array(),'1.0.1',true);
 },100);
 get_header();
 ?>
@@ -72,7 +72,7 @@ get_header();
      array('Товари','Зрозуміла назва товару · Точні характеристики · Зв’язок із категоріями','Товарна картка має допомагати покупцю обрати товар і пов’язувати його з каталогом.')
     );?>
     <div class="pti-tabs psc-lab-tabs ec-tabs" role="group" aria-label="Складові пошукової структури каталогу"><?php foreach($psc_lab as $i=>$lab):?><button type="button" data-psc-lab-tab="<?php echo esc_attr($i);?>" data-psc-lab-title="<?php echo esc_attr($lab[1]);?>" data-psc-lab-caption="<?php echo esc_attr($lab[2]);?>" aria-pressed="<?php echo $i===0?'true':'false';?>"><?php echo esc_html($lab[0]);?></button><?php endforeach;?></div>
-    <div class="psc-lab-result" role="status"><strong data-psc-lab-title><?php echo esc_html($psc_lab[0][1]);?></strong><p data-psc-lab-caption><?php echo esc_html($psc_lab[0][2]);?></p></div>
+    <div class="psc-lab-result" role="status"><strong data-psc-lab-result-title><?php echo esc_html($psc_lab[0][1]);?></strong><p data-psc-lab-result-caption><?php echo esc_html($psc_lab[0][2]);?></p></div>
    </div>
   </div>
  </section>
