@@ -321,3 +321,10 @@ body:has(.pti-page) .mrseo-footer .mrseo-contact-phone:hover,body:has(.pti-page)
 @media(max-width:740px){.pti-page[data-pti-service="web-development"] #problems .pti-card{display:block}.pti-page[data-pti-service="web-development"] #problems .pti-problem-visual{margin:12px 0}.pti-page[data-pti-service="web-development"] .pti-story .pti-steps{grid-template-columns:1fr;gap:8px}.pti-page[data-pti-service="web-development"] .pti-story-art{aspect-ratio:1.7}}
 @media(max-width:600px){.pti-page .pti-next-mark{width:85px;margin-bottom:14px}.pti-page .pti-story-art{aspect-ratio:1.15}.pti-page .pti-problem-visual svg{max-height:110px}}
 @media(prefers-reduced-motion:reduce){.pti-page .pti-lower-motion{transition:none!important}}
+
+/* SEO diagnostic: remove the opaque photographic rectangle; retain the real metallic object. */
+.pti-page[data-pti-service="seo"] .pti-story-art.pti-seo-object{position:relative;isolation:isolate;aspect-ratio:384/420;width:min(100%,520px);max-width:none;max-height:none;margin-inline:auto;background:none!important;border:0!important;border-radius:0;overflow:visible}
+.pti-page .pti-seo-object::before{content:"";position:absolute;left:8%;right:7%;bottom:5%;height:8%;border-radius:50%;background:#6e574b36;filter:blur(13px);z-index:0}
+.pti-page .pti-story-art.pti-seo-object>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:fill;mix-blend-mode:normal;mask-image:none;clip-path:url(#pti-seo-object);z-index:1}
+.pti-page .pti-story-art.pti-seo-object>svg{position:absolute;inset:0;width:100%;height:100%;filter:none;z-index:2}
+@media(max-width:600px){.pti-page[data-pti-service="seo"] .pti-story-art.pti-seo-object{width:min(100%,390px);aspect-ratio:384/420}}
