@@ -304,10 +304,10 @@ async function audit(browser,viewport,lang,slug){
   if(clusterTarget){
     const families={
      'local-seo':['local-map','local-radius','local-profile','local-call','local-contact-path','local-address'],
-     'ecommerce-seo':['commerce-shelves','commerce-depth','commerce-duplicates','commerce-product','commerce-filter-lab','commerce-canonical','commerce-discovery'],
+     'ecommerce-seo':['commerce-shelves','commerce-depth','commerce-duplicates','commerce-product','commerce-filter-lab','commerce-canonical','commerce-catalog-scale','commerce-discovery'],
      'service-business-seo':['service-intent','service-missing-page','service-match','service-enquiry','service-page-anatomy','service-lead'],
      'international-seo':['intl-market-network','intl-wrong-market','intl-reciprocal','intl-language','intl-url-mapping','intl-market-check'],
-     'seo-audit':['audit-crawler','audit-traffic','audit-index','audit-parameters','audit-priority','audit-report','audit-verified']
+     'seo-audit':['audit-crawler','audit-traffic','audit-index','audit-parameters','audit-priority','audit-report','audit-handoff','audit-verified']
     }[slug];
     if(cluster.route!==slug||!cluster.css||!cluster.hero||cluster.heroWidth<240||!cluster.geometry||
        !cluster.animations||JSON.stringify(cluster.families)!==JSON.stringify(families)||cluster.tabs!==3||cluster.pause!==2||
