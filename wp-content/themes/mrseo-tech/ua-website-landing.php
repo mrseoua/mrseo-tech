@@ -4,6 +4,7 @@
  * per service. Distinct miniature browser scenes, no unnecessary third-party JS.
  */
 if(!defined('ABSPATH')) exit;
+if(mrseo_locale()==='uk'&&in_array(mrseo_slug(),array('local-seo','service-business-seo','international-seo'),true)){require get_template_directory().'/premium-seo-cluster.php';return;}
 if(!mrseo_ua_website_route() && !mrseo_ru_website_route() && !mrseo_en_gb_route()){
  status_header(404);
  include get_404_template();
