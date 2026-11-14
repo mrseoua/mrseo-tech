@@ -333,7 +333,7 @@ async function audit(browser,viewport,lang,slug){
       await page.emulateMedia({reducedMotion:'reduce'});
       try{await page.waitForFunction(()=>{const p=document.querySelector('.psc-page');return matchMedia('(prefers-reduced-motion: reduce)').matches&&[...p.querySelectorAll('svg.psc-motion')].every(s=>s.animationsPaused())&&[...p.querySelectorAll('.psc-pause')].every(b=>b.disabled)},{},{timeout:5000})}catch(_){item.errors.push('SEO cluster reduced motion failed')}
       await page.emulateMedia({reducedMotion:'no-preference'});
-      if(slug==='ecommerce-seo'&&cluster.lab===3){await page.locator('[data-psc-lab-tab="1"]').click();if(await page.locator('[data-psc-lab-tab="1"]').getAttribute('aria-pressed')!=='true'||!(await page.locator('[data-psc-lab-caption]').textContent()).includes('Не відкриваємо всі'))item.errors.push('SEO cluster catalog lab failed')}
+      if(slug==='ecommerce-seo'&&cluster.lab===3){const tabs=page.locator('[data-psc-lab-tab]');const initial=await tabs.allTextContents();for(const i of [1,2,0]){const tab=tabs.nth(i);await tab.click();if(await tab.getAttribute('aria-pressed')!=='true'||(await page.locator('[data-psc-lab-result-caption]').textContent()).trim()!==(await tab.getAttribute('data-psc-lab-caption'))||(await page.locator('[data-psc-lab-result-title]').textContent()).trim()!==(await tab.getAttribute('data-psc-lab-title'))||JSON.stringify(await tabs.allTextContents())!==JSON.stringify(initial))item.errors.push('SEO cluster catalog lab failed at phase '+i)}}
       await page.evaluate(()=>window.scrollTo(0,0));
     }
   }else if(cluster.route||cluster.css)item.errors.push('UA premium SEO cluster leaked to '+lang+'/'+slug);
