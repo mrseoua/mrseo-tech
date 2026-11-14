@@ -273,3 +273,58 @@ body:has(.pti-page) .mrseo-footer .mrseo-contact-phone:hover,body:has(.pti-page)
 .pti-page .pti-solution p{margin-top:10px}
 @media(max-width:600px){.pti-page .pti-price-grid{grid-template-columns:1fr}}
 @media(min-width:1280px){body:has(.pti-page) .site-header .nav{max-width:1620px;min-height:82px;padding-inline:clamp(24px,3.5vw,58px);gap:clamp(14px,1.8vw,30px)}body:has(.pti-page) .site-header .logo{font-size:28px}body:has(.pti-page) .site-header .nav-links,body:has(.pti-page) .site-header .nav-dropdown .services-menu-toggle{font-size:16px;font-weight:700}}
+
+/* UA motion system v1.1: distinct semantic content blocks, only on the three approved routes. */
+.pti-page .pti-story-art{isolation:isolate;background:radial-gradient(ellipse at 50% 48%,#fdf8ef 0%,#eadfce 74%,#e4d6c3 100%)}
+.pti-page .pti-story-art>img,.pti-page .pti-story-art>svg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.pti-page .pti-story-art>img{mix-blend-mode:multiply;mask-image:linear-gradient(to right,transparent,#000 11%,#000 89%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
+.pti-page .pti-story-art>svg{z-index:2;pointer-events:none;filter:drop-shadow(0 0 3px #f9c18c99)}
+.pti-page .pti-problem-visual{position:relative;display:grid;place-items:center;min-width:0;aspect-ratio:2.4;margin:14px 0 0;border-radius:12px;background:radial-gradient(ellipse,#fffaf1,#e9dcc9);border:1px solid #dfd0bd;overflow:hidden}
+.pti-page .pti-problem-visual svg{display:block;width:100%;height:100%;max-height:134px}
+.pti-page .pti-next-mark{flex:0 0 105px;width:105px;max-width:100%}
+.pti-page .pti-next-mark svg{display:block;width:100%;height:auto}
+.pti-page .pti-lower-pause{margin-top:14px;padding:8px 14px;min-height:42px;border:1px solid #c9b9a6;background:#faf6ee;border-radius:999px;font-size:13px;font-weight:750;color:#51473c}
+.pti-page .pti-lower-pause:hover{border-color:#ac4634}
+.pti-page .pti-lower-pause:disabled{opacity:.6;cursor:default}
+.pti-page .pti-lower-motion{pointer-events:none}
+/* SEO: editorial diagnostics, three compact visual cards and a restrained audit board. */
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-card{border-top:3px solid #b77b60}
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-problem-visual{background:linear-gradient(145deg,#fbf6ed,#ece1d1)}
+.pti-page[data-pti-service="seo"] .pti-story .pti-step{grid-template-columns:36px minmax(0,1fr)}
+.pti-page[data-pti-service="seo"] .pti-story .pti-step b{border-radius:50%;background:#e9dbcc;width:28px;height:28px;display:grid;place-items:center}
+.pti-page[data-pti-service="seo"] [data-pti-faq="seo"] .pti-related{border-top:1px solid #cfc1af;padding-top:20px}
+.pti-page[data-pti-service="seo"] .pti-final{background:linear-gradient(110deg,#e8dccb,#f0e7d9)}
+/* Ads: channel/budget cards, reversed campaign analysis, two price packages. */
+.pti-page[data-pti-service="google-ads"] #ukads-problems .pti-card{background:#f6eee3;border-bottom:3px solid #bc997e}
+.pti-page[data-pti-service="google-ads"] #ukads-problems .pti-card:nth-child(2){background:#fdf8f0}
+.pti-page[data-pti-service="google-ads"] #ukads-problems .pti-card:nth-child(3){background:#eee5d6}
+.pti-page[data-pti-service="google-ads"] .pti-story .pti-step b{border-left:3px solid #ad563e;padding-left:9px}
+.pti-page[data-pti-service="google-ads"] .pti-price-grid .pti-extra-visual{aspect-ratio:3.2;max-height:155px}
+.pti-page[data-pti-service="google-ads"] .pti-price-grid .pti-price-card{background:linear-gradient(145deg,#fffaf2,#f0e4d5);border-top:3px solid #b67c5f}
+.pti-page[data-pti-service="google-ads"] [data-pti-faq="ads"] details{padding:18px 20px;margin-bottom:10px;border:1px solid #d6c6b3;border-radius:13px;background:#faf5ed}
+.pti-page[data-pti-service="google-ads"] .pti-final{background:linear-gradient(115deg,#eee3d4,#dfcbb7)}
+@media(min-width:941px){.pti-page[data-pti-service="google-ads"] .pti-story{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}.pti-page[data-pti-service="google-ads"] .pti-story-art{grid-column:2;grid-row:1}.pti-page[data-pti-service="google-ads"] .pti-story>div:last-child{grid-column:1;grid-row:1}}
+/* Development: horizontal problem modules, a wide integration architecture, distinct result cards. */
+.pti-page[data-pti-service="web-development"] #problems .pti-grid{grid-template-columns:1fr}
+.pti-page[data-pti-service="web-development"] #problems .pti-card{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:6px 24px;align-items:start}
+.pti-page[data-pti-service="web-development"] #problems .pti-problem-visual{grid-column:1;grid-row:1/span 4;align-self:center;margin:0}
+.pti-page[data-pti-service="web-development"] #problems .pti-card>.pti-num,.pti-page[data-pti-service="web-development"] #problems .pti-card>h3,.pti-page[data-pti-service="web-development"] #problems .pti-card>p,.pti-page[data-pti-service="web-development"] #problems .pti-card>.pti-solution{grid-column:2}
+.pti-page[data-pti-service="web-development"] #problems .pti-card h3{margin:4px 0}
+.pti-page[data-pti-service="web-development"] #problems .pti-solution{margin-top:8px}
+.pti-page[data-pti-service="web-development"] .pti-story{grid-template-columns:1fr}
+.pti-page[data-pti-service="web-development"] .pti-story-art{aspect-ratio:2.2;max-width:none;width:100%;max-height:520px}
+.pti-page[data-pti-service="web-development"] .pti-story .pti-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pti-page[data-pti-service="web-development"] .pti-story .pti-step{display:block;border-top:3px solid #bc9a80;padding:16px 0}
+.pti-page[data-pti-service="web-development"] .pti-story .pti-step b{display:block;margin-bottom:10px}
+.pti-page[data-pti-service="web-development"] [data-pti-faq="dev"] details{border-left:3px solid #bd9e83;padding:15px 18px;margin-bottom:12px;background:#f7f0e5}
+.pti-page[data-pti-service="web-development"] .pti-final{background:linear-gradient(120deg,#e4d6c3,#eee5d7)}
+@media(max-width:740px){.pti-page[data-pti-service="web-development"] #problems .pti-card{display:block}.pti-page[data-pti-service="web-development"] #problems .pti-problem-visual{margin:12px 0}.pti-page[data-pti-service="web-development"] .pti-story .pti-steps{grid-template-columns:1fr;gap:8px}.pti-page[data-pti-service="web-development"] .pti-story-art{aspect-ratio:1.7}}
+@media(max-width:600px){.pti-page .pti-next-mark{width:85px;margin-bottom:14px}.pti-page .pti-story-art{aspect-ratio:1.15}.pti-page .pti-problem-visual svg{max-height:110px}}
+@media(prefers-reduced-motion:reduce){.pti-page .pti-lower-motion{transition:none!important}}
+
+/* SEO diagnostic: remove the opaque photographic rectangle; retain the real metallic object. */
+.pti-page[data-pti-service="seo"] .pti-story-art.pti-seo-object{position:relative;isolation:isolate;aspect-ratio:384/420;width:min(100%,520px);max-width:none;max-height:none;margin-inline:auto;background:none!important;border:0!important;border-radius:0;overflow:visible}
+.pti-page .pti-seo-object::before{content:"";position:absolute;left:8%;right:7%;bottom:5%;height:8%;border-radius:50%;background:#6e574b36;filter:blur(13px);z-index:0}
+.pti-page .pti-story-art.pti-seo-object>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:fill;mix-blend-mode:normal;mask-image:none;clip-path:url(#pti-seo-object);z-index:1}
+.pti-page .pti-story-art.pti-seo-object>svg{position:absolute;inset:0;width:100%;height:100%;filter:none;z-index:2}
+@media(max-width:600px){.pti-page[data-pti-service="seo"] .pti-story-art.pti-seo-object{width:min(100%,390px);aspect-ratio:384/420}}

@@ -139,6 +139,11 @@ async function audit(browser,viewport,lang,slug){
         caps:root?.querySelectorAll('#dev-capabilities .pti-card-art svg').length||0,
         capMotion:root?.querySelectorAll('#dev-capabilities .pti-card-art animate,#dev-capabilities .pti-card-art animateMotion,#dev-capabilities .pti-card-art animateTransform').length||0,
         solutions:root?.querySelectorAll('.pti-solution').length||0,
+        lowerFamilies:[...root?.querySelectorAll('svg.pti-lower-motion')||[]].map(s=>s.dataset.ptiMotion),
+        lowerStory:story?.querySelector('.pti-story-art svg.pti-lower-motion')?.dataset.ptiMotion||'',
+        lowerGeometry:[...root?.querySelectorAll('svg.pti-lower-motion')||[]].every(s=>{const r=s.getBoundingClientRect();return r.width>0&&r.height>0&&r.left>=-2&&r.right<=innerWidth+2}),
+        lowerPause:!!root?.querySelector('.pti-lower-pause'),
+        lowerAnimations:[...root?.querySelectorAll('svg.pti-lower-motion')||[]].every(s=>!!s.querySelector('animate,animateMotion,animateTransform')),
         tabs:root?.querySelectorAll('[data-phase]').length||0,pause:!!root?.querySelector('.pti-pause'),
         final:!!root?.querySelector('.pti-final a[href$="/contact/"]')};
     })(),
@@ -292,6 +297,14 @@ async function audit(browser,viewport,lang,slug){
        pi.problems!==3||pi.steps!==3||pi.faq<3||pi.tabs!==3||!pi.pause||!pi.final||
        (slug==='web-development'&&(pi.caps!==6||pi.capMotion!==34||pi.solutions!==3)))
       item.errors.push('UA Premium interior mismatch: '+JSON.stringify(pi));
+    const expectedLower={
+      seo:['seo-index','seo-cluster','seo-conversion','seo-diagnostic','seo-next'],
+      'google-ads':['ads-waste','ads-event','ads-budget','ads-allocation','ads-search-plan','ads-shopping-plan','ads-next'],
+      'web-development':['dev-sync','dev-crm','dev-module','dev-routing','dev-plan','dev-delivery','dev-support','dev-next']
+    }[slug];
+    const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
+    if(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations)
+      item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
     if(c.serviceMenuItems!==25||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
     if(pi.scene&&pi.tabs===3&&pi.pause){
@@ -305,6 +318,27 @@ async function audit(browser,viewport,lang,slug){
       if(await button.getAttribute('aria-pressed')!=='true'||await scene.evaluate(e=>e.classList.contains('pti-live')))
         item.errors.push('Premium pause broken');
       await page.locator('.pti-page [data-phase="0"]').click();await button.click();
+      if(pi.lowerPause&&pi.lowerStory){
+        const lower=page.locator('.pti-page .pti-story-art svg.pti-lower-motion');
+        const lowerButton=page.locator('.pti-page .pti-lower-pause');
+        await lower.scrollIntoViewIfNeeded();
+        if(slug==='seo'){
+          const diagnostic=await lower.evaluate(svg=>{const art=svg.parentElement,im=art.querySelector('img');const cs=getComputedStyle(art),is=getComputedStyle(im);return {transparent:cs.backgroundImage==='none'&&cs.backgroundColor==='rgba(0, 0, 0, 0)',clip:is.clipPath.includes('pti-seo-object'),transforms:svg.querySelectorAll('animateTransform[type="rotate"]').length,gear:!!svg.querySelector('image'),scan:!!svg.querySelector('animate[attributeName="y"]')}});
+          if(!diagnostic.transparent||!diagnostic.clip||diagnostic.transforms!==2||!diagnostic.gear||!diagnostic.scan)item.errors.push('SEO diagnostic object not fully integrated: '+JSON.stringify(diagnostic));
+        }
+        await page.waitForTimeout(250);
+        const before=await lower.evaluate(s=>({paused:s.animationsPaused(),time:s.getCurrentTime()}));
+        await page.waitForTimeout(180);
+        const after=await lower.evaluate(s=>({paused:s.animationsPaused(),time:s.getCurrentTime()}));
+        if(before.paused||after.paused||after.time<=before.time)item.errors.push('Lower scene does not animate in viewport');
+        await lowerButton.click();
+        if(await lowerButton.getAttribute('aria-pressed')!=='true'||await button.getAttribute('aria-pressed')!=='true'||!(await lower.evaluate(s=>s.animationsPaused())))
+          item.errors.push('Lower and hero pause controls not synchronized');
+        await lowerButton.click();
+        await page.emulateMedia({reducedMotion:'reduce'});
+        try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');const b=document.querySelector('.pti-lower-pause');return matchMedia('(prefers-reduced-motion: reduce)').matches&&s?.animationsPaused()&&b?.disabled},{},{timeout:5000});}catch(_){item.errors.push('Lower reduced-motion preference not respected');}
+        await page.emulateMedia({reducedMotion:'no-preference'});
+      }
       await page.evaluate(()=>window.scrollTo(0,0));
     }
   }else if(pi.route||pi.style)item.errors.push('Premium UA interior leaked onto '+lang+'/'+slug);
