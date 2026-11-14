@@ -1,6 +1,7 @@
 <?php
 /** Ukrainian-only, problem-led SEO for online stores. Other languages unchanged. */
 if (!defined('ABSPATH')) exit;
+if(mrseo_locale()==='uk'&&mrseo_slug()==='ecommerce-seo'){require get_template_directory().'/premium-seo-cluster.php';return;}
 get_header();
 ?>
 <div class="ukseo ukseo--commerce" id="main-content">

@@ -4,6 +4,7 @@
  * Scope: /seo-audit/ only. Other routes retain existing templates.
  */
 if (!defined('ABSPATH')) exit;
+if(mrseo_locale()==='uk'&&mrseo_slug()==='seo-audit'){require get_template_directory().'/premium-seo-cluster.php';return;}
 require_once get_template_directory().'/inc/ua-final-interior-visuals.php';
 get_header();
 ?>
