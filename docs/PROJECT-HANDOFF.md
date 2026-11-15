@@ -655,3 +655,7 @@
 
 ### 15 ноября 2026 — independent Horoshop and industry navigation
 - Architecture revision in docs/UA-NEXT-SERVICE-ARCHITECTURE.md: Horoshop as separate group, 10 platform pages (existing hub + 9 candidates), separate automotive store vs service intent, fashion/construct/electronics/toys/furniture verticals, 7 service groups plus industry/task sections. Serpstat targeted batch recorded, missing queries not treated as zero. No theme edits or production change from this discussion.
+
+
+### 15 ноября 2026 — scope reduction: Horoshop
+- Owner: «из хорошопа давай уберем автоматизации интеграции и перенос на хорошоп, не хочу это делать». Exclude platform-specific automation, integrations/API/CRM and migration. Keep seven Horoshop pages including existing /horoshop/: SEO, audit, native setup, Google Ads, native feeds, GA4. General automation/integration/migration services outside Horoshop retained. Revised plan 48 candidates, 98 UA / 716 total if all built. Current live inventory unchanged; no new theme edits or deployment. Update docs architecture and enforce scope in future copy/menu.

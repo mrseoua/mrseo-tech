@@ -53,7 +53,6 @@ Existing (6): /online-store-development/, /catalog-automation/, /store-conversio
 | Stage | New route | UA service | Primary query candidate | Scope / separation |
 |---|---|---|---|---|
 | A | /horoshop-seo/ | SEO-просування магазину на Хорошоп | seo хорошоп | Platform-specific SEO categories, filters, metadata and technical limitations; parent retains store creation. |
-| A | /horoshop-integrations/ | Інтеграції Хорошоп | інтеграції хорошоп | Platform capabilities and API access; Хорошоп API 50/mo technical intent. No claim all plans support API. |
 | B | /horoshop-setup/ | Налаштування магазину на Хорошоп | налаштування хорошоп | Configuration of existing store (domain, payment, delivery, basic settings), not new-store creation. |
 | C | /horoshop-product-feeds/ | Товарні фіди Хорошоп | товарний фід хорошоп | Platform-specific feed configuration; only separate from general product-feed page if actual distinct platform workflow/intent. |
 | B | /category-seo/ | SEO-оптимізація категорій інтернет-магазину | оптимізація категорій сайту | Category intent, filters, headings, copy and links; existing ecommerce SEO retains ongoing strategy. |
@@ -109,7 +108,7 @@ Top level existing 'Послуги' opens 6 compact service groups; 'Рішен�
 
 ## Revision: independent Horoshop and e-commerce verticals (15 Nov 2026)
 
-Owner proposes separate Horoshop subcategories and store promotion by specific business. Supersedes the nested-Horoshop menu proposal above. Architecture only; no implementation/deploy authorized by this message. Existing /horoshop/ remains the platform hub and creation landing. Four previously proposed routes retained; five additional platform candidates. Ten total Horoshop pages including the existing hub. Keep existing global service pages and URL paths; do not substitute a platform name into generic content.
+Owner proposes separate Horoshop subcategories and store promotion by specific business. Supersedes the nested-Horoshop menu proposal above. Architecture only; no implementation/deploy authorized by this message. Existing /horoshop/ remains the platform hub and creation landing. Owner narrowed the platform offering: seven total Horoshop pages including the existing hub. No Horoshop automation, external integrations/API, or migration services. Keep existing global service pages and URL paths; do not substitute a platform name into generic content.
 
 | Route | Scope | Intent distinction |
 |---|---|---|
@@ -119,9 +118,6 @@ Owner proposes separate Horoshop subcategories and store promotion by specific b
 | /horoshop-setup/ | Existing store settings, domain, payment, delivery | Not new store design |
 | /horoshop-google-ads/ | Ads for Horoshop stores | Platform-specific feed, purchase tracking and ad setup; not generic Ads |
 | /horoshop-product-feeds/ | Feed setup and validation | Item IDs, attributes, price and availability; distinguish from Merchant suspension |
-| /horoshop-integrations/ | CRM, API, supported external services | Confirm tariff and access before promising implementation |
-| /horoshop-automation/ | Supplier imports, recurring stock/price synchronization | Recurring catalog workflow vs one-time integration |
-| /horoshop-migration/ | Migration to Horoshop | Export, URL mapping, redirects and checks; platform-dependent |
 | /horoshop-ga4/ | GA4 purchase events and conversion verification | Horoshop-specific measurement and consent constraints |
 
 Serpstat g_ua exact batch: створення сайту на хорошоп 10/mo; хорошоп api 50/mo. Most other platform phrases returned no rows; missing is not zero. New URLs are candidates based on differentiated buyer task and relevant platform expertise, not confirmed independent SERPs. Only UA and RU platform pages where genuine translations exist.
@@ -134,4 +130,9 @@ Serpstat g_ua newly checked: реклама магазину одягу 50/mo; �
 
 ### Updated navigation direction
 
-Seven main service groups (SEO, Google Ads, Analytics, E-commerce, Horoshop, Website Creation, Web Development), industry and one-time tasks as separate navigation sections. Desktop all existing links visible without nested disclosure, compact semantic subheadings and wide responsive panel; mobile vertical scroll. No links to unwritten URLs, no home Earth redesign. Published six-group menu PR #135 at main 72ffa7c7b8a6acb2e557cfbac16c4614a5557582; deploy 43751750911 success; final browser/live checks were pending at release. Owner has expressed preference for all-visible menu; this revision records plan only. Additional 5 Horoshop and 5 e-commerce vertical candidates expand previous 41 to 51 candidate new routes (101 UA total if all independently justified and implemented); counts are planning, not live inventory. Confirm intent and capability before committing all.
+Seven main service groups (SEO, Google Ads, Analytics, E-commerce, Horoshop, Website Creation, Web Development), industry and one-time tasks as separate navigation sections. Desktop all existing links visible without nested disclosure, compact semantic subheadings and wide responsive panel; mobile vertical scroll. No links to unwritten URLs, no home Earth redesign. Published six-group menu PR #135 at main 72ffa7c7b8a6acb2e557cfbac16c4614a5557582; deploy 43751750911 success; final browser/live checks were pending at release. Owner has expressed preference for all-visible menu; this revision records plan only. The latest owner scope removes three Horoshop candidates from the earlier 51, leaving 48 candidate new routes (98 UA total if all independently justified and implemented); counts are planning, not live inventory. Confirm intent and capability before committing all.
+
+
+## Owner scope correction — Horoshop (15 Nov 2026)
+
+Owner explicitly declined Horoshop automation, integrations and migration to Horoshop. Remove /horoshop-automation/, /horoshop-integrations/, /horoshop-migration/ from active plans and future navigation, keyword targets and marketing copy. Do not sell custom API/CRM connections, supplier-price/stock synchronization or migration as Horoshop services, including under alternative labels. Seven platform pages remain: /horoshop/, /horoshop-seo/, /horoshop-audit/, /horoshop-setup/, /horoshop-google-ads/, /horoshop-product-feeds/, /horoshop-ga4/. Setup is native platform configuration only; product feeds are native Merchant Center setup and optimization, not bespoke supplier automation; GA4 is native measurement and testing. General non-Horoshop automation, API integration, CRM, and site/store migration services remain unchanged; do not infer a ban beyond Horoshop. Industry verticals remain planned, without implying excluded platform services. Revised candidate total: 48 new, 98 UA total, 716 total canonical if all implemented UA-only; 50 UA/668 total actually live. No theme or production edit required for nonexistent planned routes. Before future release, check existing Horoshop content and cross-links for conflicting promises. This correction supersedes earlier counts and candidate rows.
