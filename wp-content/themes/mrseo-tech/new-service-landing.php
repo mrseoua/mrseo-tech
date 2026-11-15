@@ -4,6 +4,7 @@
  * Globally approved warm design system; no homepage / Earth dependencies.
  */
 if(!defined('ABSPATH'))exit;
+if(mrseo_locale()==='uk'&&mrseo_new_service_route()){require get_template_directory().'/premium-ua-commercial.php';return;}
 if(!mrseo_new_service_route()){status_header(404);include get_404_template();return;}
 $slug=mrseo_slug();$lang=mrseo_locale();$page=mrseo_new_service_copy($slug,$lang);
 $editorial=mrseo_new_service_editorial($slug,$lang);
