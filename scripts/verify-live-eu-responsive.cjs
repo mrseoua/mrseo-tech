@@ -363,6 +363,16 @@ async function audit(browser,viewport,lang,slug){
    const needsHeading=slug!=='privacy';
    if(!accent.loaded||accent.labels<1||(needsHeading&&accent.headings<1)||(slug==='horoshop'&&accent.headings!==4)||(slug==='portfolio'&&accent.dark!==1)||accent.wrong.length)item.errors.push('UA brand accent regression '+JSON.stringify(accent));
    item.brandAccent=accent;
+   // Verify that editorial labels are not merely the correct computed
+   // color: each must be truly visible in its own scrolled viewport.
+   if(['about','portfolio'].includes(slug)){
+    const labels=page.locator(slug==='about'?'.about-page .eyebrow, .uaf-eyebrow':'.portfolio-hero .eyebrow,.portfolio-heading .eyebrow,.inner-final-cta .eyebrow,.client-confidential .eyebrow,.uaf-eyebrow');
+    for(let i=0;i<await labels.count();i++){
+     const label=labels.nth(i);await label.scrollIntoViewIfNeeded();
+     try{await label.evaluate(el=>new Promise((resolve,reject)=>{const start=performance.now();function sample(){let opacity=1,visible=true;for(let n=el;n;n=n.parentElement){const c=getComputedStyle(n);opacity*=Number(c.opacity);if(c.display==='none'||c.visibility==='hidden')visible=false;}const r=el.getBoundingClientRect();if(visible&&opacity>=.99&&r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight){resolve();return;}if(performance.now()-start>4000){reject(Error('not visible: '+el.textContent.trim()+' opacity='+opacity));return;}requestAnimationFrame(sample);}sample();}));}catch(e){item.errors.push('UA editorial accent not readable after scroll: '+e.message);}
+    }
+    await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
+   }
   }else if(accent.loaded)item.errors.push('UA brand accent stylesheet leaked to '+lang+'/'+slug);
   const exactPath=url;
   const commercialTarget=lang==='uk'&&premiumCommercialSlugs.includes(slug);
@@ -498,11 +508,15 @@ async function audit(browser,viewport,lang,slug){
           const diagnostic=await lower.evaluate(svg=>{const art=svg.parentElement,im=art.querySelector('img');const cs=getComputedStyle(art),is=getComputedStyle(im);return {transparent:cs.backgroundImage==='none'&&cs.backgroundColor==='rgba(0, 0, 0, 0)',clip:is.clipPath.includes('pti-seo-object'),transforms:svg.querySelectorAll('animateTransform[type="rotate"]').length,gear:!!svg.querySelector('image'),scan:!!svg.querySelector('animate[attributeName="y"]')}});
           if(!diagnostic.transparent||!diagnostic.clip||diagnostic.transforms!==2||!diagnostic.gear||!diagnostic.scan)item.errors.push('SEO diagnostic object not fully integrated: '+JSON.stringify(diagnostic));
         }
-        await page.waitForTimeout(250);
-        const before=await lower.evaluate(s=>({paused:s.animationsPaused(),time:s.getCurrentTime()}));
-        await page.waitForTimeout(180);
-        const after=await lower.evaluate(s=>({paused:s.animationsPaused(),time:s.getCurrentTime()}));
-        if(before.paused||after.paused||after.time<=before.time)item.errors.push('Lower scene does not animate in viewport');
+        // Require actual continuous progress, not a fixed wall-clock sample
+        // taken before observer/scroll reconciliation has run.
+        try{await lower.evaluate(s=>new Promise((resolve,reject)=>{
+          const start=performance.now();let first=null;
+          function sample(){const r=s.getBoundingClientRect(),visible=r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;
+            if(visible&&!s.animationsPaused()){const t=s.getCurrentTime();if(first===null)first=t;if(t>first+.12){resolve();return;}}else first=null;
+            if(performance.now()-start>5000){reject(Error('no visible timeline progress; paused='+s.animationsPaused()+' rect='+JSON.stringify(r.toJSON())));return;}requestAnimationFrame(sample);
+          }sample();
+        }));}catch(e){item.errors.push('Lower scene does not animate in viewport: '+e.message);}
         await lowerButton.click();
         if(await lowerButton.getAttribute('aria-pressed')!=='true'||await button.getAttribute('aria-pressed')!=='true'||!(await lower.evaluate(s=>s.animationsPaused())))
           item.errors.push('Lower and hero pause controls not synchronized');
@@ -510,6 +524,12 @@ async function audit(browser,viewport,lang,slug){
         await page.emulateMedia({reducedMotion:'reduce'});
         try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');const b=document.querySelector('.pti-lower-pause');return matchMedia('(prefers-reduced-motion: reduce)').matches&&s?.animationsPaused()&&b?.disabled},{},{timeout:5000});}catch(_){item.errors.push('Lower reduced-motion preference not respected');}
         await page.emulateMedia({reducedMotion:'no-preference'});
+        await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
+        // Explicitly require offscreen pause after returning to the hero.
+        try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');if(!s)return false;const r=s.getBoundingClientRect();return r.top>=innerHeight&&s.animationsPaused()},{},{timeout:5000});}catch(_){item.errors.push('Lower scene did not pause offscreen');}
+        // Resume once more: catches stale visibility after repeated jumps.
+        await lower.scrollIntoViewIfNeeded();
+        try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');return s&&!s.animationsPaused()},{},{timeout:5000});}catch(_){item.errors.push('Lower scene did not resume on second entry');}
       }
       await page.evaluate(()=>window.scrollTo(0,0));
     }

@@ -25,3 +25,14 @@ body:has(.pue-marker) .uaf-eyebrow{
 body:has([data-pue-route="portfolio"]) .client-confidential .eyebrow{
  color:var(--mrseo-ua-dark-red)!important;
 }
+
+/* Section labels are information, not decorative motion. The old global
+ * scroll-reveal makes these labels transparent until an observer fires.
+ * Keep the labels readable immediately; retain the rest of the scene motion. */
+body:has([data-pue-route="about"]) .about-page .eyebrow[data-motion-reveal],
+body:has([data-pue-route="portfolio"]) :is(.portfolio-hero,.portfolio-heading,.inner-final-cta,.client-confidential) .eyebrow[data-motion-reveal]{
+ opacity:1!important;
+ transform:none!important;
+ filter:none!important;
+ transition:none!important;
+}

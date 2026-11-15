@@ -285,7 +285,7 @@ add_action('wp_enqueue_scripts','mrseo_assets');
 add_action('wp_enqueue_scripts',static function(){
  if(mrseo_locale()!=='uk'||mrseo_slug()==='')return;
  if(!mrseo_i18n_current_entry())return;
- wp_enqueue_style('mrseo-ua-brand-accents',get_template_directory_uri().'/assets/ua-brand-accents.css',array('mrseo-style'),'1.0.0');
+ wp_enqueue_style('mrseo-ua-brand-accents',get_template_directory_uri().'/assets/ua-brand-accents.css',array('mrseo-style'),'1.0.1');
 },120);
 
 function mrseo_meta_description(){
