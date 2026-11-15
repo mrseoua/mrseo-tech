@@ -43,7 +43,7 @@ body:has([data-pue-route="about"]) .about-experience-number{color:#32372e}
 body:has([data-pue-route="about"]) .about-experience-top,body:has([data-pue-route="about"]) .about-experience-bottom{color:#6b5843}
 body:has([data-pue-route="about"]) .about-experience-bottom>div span{color:#605342;border-color:#cdb89f;background:#f7eddd}
 body:has([data-pue-route="about"]) .about-experience-ring{display:none}
-body:has([data-pue-route="about"]) .pue-about-hero{position:absolute;right:-12%;top:9%;width:80%;margin:0;z-index:1;opacity:.66}
+body:has([data-pue-route="about"]) .pue-about-hero{position:absolute;right:0;top:9%;width:75%;margin:0;z-index:1;opacity:.66}
 body:has([data-pue-route="about"]) .about-method-item .pue-art,body:has([data-pue-route="about"]) .about-fit-card .pue-art{max-width:240px;margin:12px 0}
 body:has([data-pue-route="about"]) .about-fit-card h3{margin:8px 0 13px}
 body:has([data-pue-route="about"]) .uaf-network{background:radial-gradient(ellipse,#f8eee0,#e4d4bd)}
@@ -69,5 +69,5 @@ body:has([data-pue-route="contact"]) .uaf-contact-steps li{background:#faf4ea;bo
 body:has([data-pue-route="contact"]) .uaf-contact-guide{background:#eee5d8}
 body:has([data-pue-route="privacy"]) .mrseo-privacy-page{background:#eee9e1}
 body:has([data-pue-route="privacy"]) .mrseo-privacy-page section p{font-size:17px;line-height:1.75}
-@media(max-width:650px){body:has([data-pue-route="about"]) .pue-about-hero{width:70%;right:-15%;top:12%}body:has([data-pue-route="portfolio"]) .portfolio-stat .pue-art{max-width:96px}body:has([data-pue-route="portfolio"]) .portfolio-stat{min-height:170px!important}body:has([data-pue-route="contact"]) .uaf-contact-steps .pue-art{max-width:140px}body:has([data-pue-route="horoshop"]) .pue-hs-story{max-width:100%}}
+@media(max-width:650px){body:has([data-pue-route="about"]) .pue-about-hero{width:68%;right:0;top:12%}body:has([data-pue-route="portfolio"]) .portfolio-stat .pue-art{max-width:96px}body:has([data-pue-route="portfolio"]) .portfolio-stat{min-height:170px!important}body:has([data-pue-route="contact"]) .uaf-contact-steps .pue-art{max-width:140px}body:has([data-pue-route="horoshop"]) .pue-hs-story{max-width:100%}}
 @media(prefers-reduced-motion:reduce){body:has(.pue-marker) .pue-art *,body:has(.pue-marker) .pue-pause{transition:none!important;animation:none!important}}
