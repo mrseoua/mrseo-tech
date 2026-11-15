@@ -138,9 +138,9 @@ function mrseo_render_ua_portfolio_visual() {
    <div class="uaf-heading"><div><span class="uaf-eyebrow">ЯК ЧИТАТИ НАШЕ ПОРТФОЛІО</span><h2 id="uaf-portfolio-heading">Реальні сайти. <em>Без вигаданих графіків зростання.</em></h2></div>
     <p>Показуємо компанії та напрями роботи. Не приписуємо кожному логотипу результати, яких не можемо публічно підтвердити.</p></div>
    <div class="uaf-evidence" aria-label="Три принципи представлення портфоліо">
-    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art'))mrseo_pue_art('portfolio-web');else:?><span>WWW</span><b>↗</b><?php endif;?></div><h3>Перевірювані сайти</h3><p>У каталозі — назви й посилання на проєкти.</p></div>
-    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art'))mrseo_pue_art('portfolio-sectors');else:?><span>◎</span><b>✳</b><?php endif;?></div><h3>Різні галузі</h3><p>Інтернет-магазини, послуги та інші бізнеси.</p></div>
-    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art'))mrseo_pue_art('portfolio-lock');else:?><span>✓</span><b>◇</b><?php endif;?></div><h3>Повага до даних</h3><p>Бюджети й внутрішню статистику не розкриваємо.</p></div>
+    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art')):mrseo_pue_art('portfolio-web');else:?><span>WWW</span><b>↗</b><?php endif;?></div><h3>Перевірювані сайти</h3><p>У каталозі — назви й посилання на проєкти.</p></div>
+    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art')):mrseo_pue_art('portfolio-sectors');else:?><span>◎</span><b>✳</b><?php endif;?></div><h3>Різні галузі</h3><p>Інтернет-магазини, послуги та інші бізнеси.</p></div>
+    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art')):mrseo_pue_art('portfolio-lock');else:?><span>✓</span><b>◇</b><?php endif;?></div><h3>Повага до даних</h3><p>Бюджети й внутрішню статистику не розкриваємо.</p></div>
    </div>
   </div>
  </section>
