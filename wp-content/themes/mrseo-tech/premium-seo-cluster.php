@@ -33,7 +33,7 @@ get_header();
     <h1 id="<?php echo esc_attr($psc_title_id);?>"><?php echo esc_html($psc['headline'][0]);?> <em><?php echo esc_html($psc['headline'][1]);?></em></h1>
     <p class="pti-lead"><?php echo esc_html($psc['lead']);?></p>
     <div class="pti-actions"><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['button']);?> ↗</a><a class="pti-pill pti-secondary" href="#<?php echo esc_attr($psc_problem_id);?>">З чого почнемо ↓</a></div>
-    <p class="pti-footnote"><?php echo esc_html($psc['foot']??'Спочатку перевіряємо причину, потім погоджуємо зміни.');?></p>
+    <p class="pti-footnote"><?php echo esc_html($psc['foot']);?></p>
    </div>
    <div class="psc-hero-scene" data-psc-phase="0">
     <div class="psc-hero-stage">
@@ -53,7 +53,7 @@ get_header();
  </section>
  <section class="pti-section psc-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
   <div class="pti-wrap">
-   <div class="pti-section-head"><div><span class="pti-kicker">ЯКУ ПРОБЛЕМУ ВИРІШУЄМО</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']??'Що заважає отримувати результат?');?></h2></div><p><?php echo esc_html($psc['problemLead']??'Перевіряємо конкретні ситуації вашого бізнесу.');?></p></div>
+   <div class="pti-section-head"><div><span class="pti-kicker">ЯКУ ПРОБЛЕМУ ВИРІШУЄМО</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
    <div class="pti-grid psc-problem-grid">
    <?php foreach($psc['pains'] as $i=>$problem):?>
     <article class="pti-card psc-problem-card"><span class="pti-num"><?php echo esc_html(sprintf('%02d',$i+1));?> / 03</span><div class="psc-mini-art"><?php mrseo_psc_art($psc_art['problem'][$i]);?></div><h3><?php echo esc_html($problem[0]);?></h3><p><?php echo esc_html($problem[1]);?></p></article>

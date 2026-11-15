@@ -13,5 +13,14 @@ MRSEO_PSC_VISUAL
  if(!isset($visual[$slug]))return null;
  $data=$static[$slug]??mrseo_ua_website_data($slug);
  if(!$data)return null;
+ $problemIntros=array(
+  'local-seo'=>array('Чому клієнти не знаходять вас у місцевому пошуку?','Перевіряємо видимість у Google і на Картах, дані профілю компанії та можливість зателефонувати чи записатися.'),
+  'service-business-seo'=>array('Чому готовий сайт послуг не приносить звернень із Google?','Зіставляємо запити клієнтів із наявними сторінками послуг і перевіряємо, чи є на них потрібні відповіді та контакти.'),
+  'international-seo'=>array('Чому клієнти з інших країн не знаходять потрібну версію сайту?','Перевіряємо відповідність сторінок мовам і країнам, налаштування мовних зв’язків та місцевий пошуковий попит.')
+ );
+ if(isset($problemIntros[$slug])){
+  $data['problemHeading']=$problemIntros[$slug][0];
+  $data['problemLead']=$problemIntros[$slug][1];
+ }
  return array_merge($data,$visual[$slug]);
 }

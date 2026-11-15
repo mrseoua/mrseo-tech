@@ -21,7 +21,6 @@ function mrseo_puc_copy($slug){
    'group'=>$slug==='performance-max'?'Google Ads':($slug==='analytics'?'Аналітика':'Створення сайтів'),
    'parent'=>$slug==='performance-max'?'google-ads':($slug==='analytics'?'':'web-development'),
    'kicker'=>$d['eyebrow'],'headline'=>$d['headline'],'lead'=>$d['lead'],'button'=>$d['button'],
-   'foot'=>'Спочатку підтверджуємо причину. Потім пропонуємо рішення.',
    'pains'=>$d['problems'],'problemHeading'=>$d['symptomHeading'],'problemLead'=>$d['symptomLead'],
    'sectionTitle'=>$d['deliveryHeading'][0].' <em>'.$d['deliveryHeading'][1].'</em>',
    'benefits'=>$d['deliveries'],'result'=>$d['deliveryLead'],
@@ -39,7 +38,6 @@ function mrseo_puc_copy($slug){
    'title'=>$d['title'],'group'=>array('ads'=>'Google Ads','commerce'=>'Інтернет-магазини','dev'=>'Веброзробка','audit'=>'SEO','data'=>'Аналітика')[mrseo_new_service_group($slug)]??'Послуги',
    'parent'=>mrseo_new_service_parent_slugs()[$slug]??'web-development',
    'kicker'=>mb_strtoupper($d['title'],'UTF-8'),'headline'=>$d['head'],'lead'=>$u['hero']??$d['lead'],'button'=>$d['cta'],
-   'foot'=>'Спочатку підтверджуємо причину. Потім пропонуємо рішення.',
    'pains'=>$d['problems'],'problemHeading'=>$e['problem']??'Де бізнес втрачає результат?','problemLead'=>$u['problemLead']??'Перевіряємо не лише симптоми, а й те, як підтвердити ефект виправлення.',
    'sectionTitle'=>$u['deliveryTitle']??'Не обіцянки. Конкретні результати роботи.',
    'benefits'=>array_map(static function($outcome,$i)use($e){return array($outcome,$e['outcomes'][$i]??'Конкретний результат за погодженими критеріями.');},$d['outcomes'],array_keys($d['outcomes'])),
@@ -55,6 +53,45 @@ function mrseo_puc_copy($slug){
   $data=$d;
   $data['group']=$d['group']??'Створення сайтів';
   $data['parent']=in_array($slug,array('local-google-ads','google-ads-audit'),true)?'google-ads':(in_array($slug,array('store-conversion','store-migration'),true)?'online-store-development':(in_array($slug,array('website-maintenance','website-speed-security'),true)?'web-development':'service-websites'));
+ }
+ // Route-specific first-screen notes and problem introductions; preserve original offer and FAQ.
+ $footnotes=array(
+  'performance-max'=>'Оцінюємо продажі з урахуванням витрат на рекламу й маржі товарів.',
+  'analytics'=>'Порівнюємо канали за заявками, продажами та витратами, а не лише кліками.',
+  'service-websites'=>'До запуску перевіряємо сторінки послуг, контакти й форми заявок.',
+  'merchant-center'=>'Починаємо з конкретного повідомлення Google про відхилення або обмеження.',
+  'google-shopping'=>'Зіставляємо витрати на товарні оголошення з підтвердженими покупками.',
+  'ga4-conversions'=>'Одна покупка має враховуватися один раз із правильною сумою.',
+  'business-dashboards'=>'У кожного показника має бути зрозуміле джерело й дата оновлення.',
+  'reporting-automation'=>'Якщо дані не оновилися, відповідальна людина має отримати повідомлення.',
+  'online-store-development'=>'Платформу обираємо за асортиментом, оплатою, доставкою та потребами магазину.',
+  'catalog-automation'=>'Оновлення цін і залишків має зупинятися, якщо дані помилкові.',
+  'api-integrations'=>'Повторне надсилання замовлення не повинно створювати його копію.',
+  'web-applications'=>'Кожен користувач отримує доступ лише до потрібних йому функцій.',
+  'custom-functionality'=>'Спочатку погоджуємо правила нової функції, потім перевіряємо її на прикладах.',
+  'website-audit'=>'Звіт містить конкретні сторінки, проблеми та черговість виправлень.',
+  'traffic-recovery'=>'Зіставляємо дату падіння переходів з останніми змінами на сайті.',
+  'local-business-websites'=>'Адреса, графік і спосіб зв’язку мають бути помітні навіть на телефоні.',
+  'landing-pages'=>'Одна рекламна сторінка — одна пропозиція та зрозуміла дія для відвідувача.',
+  'corporate-websites'=>'Партнер має швидко знайти інформацію про компанію, її послуги та контакти.',
+  'website-redesign'=>'Під час оновлення дизайну зберігаємо важливі адреси сторінок і перевіряємо форми.'
+ );
+ if(isset($footnotes[$slug]))$data['foot']=$footnotes[$slug];
+ $problemIntros=array(
+  'local-google-ads'=>array('Чому реклама не приводить клієнтів із вашого міста?','Перевіряємо, де показуються оголошення, за якими фразами люди переходять і чи надходять дзвінки з потрібного району.'),
+  'google-ads-audit'=>array('Де рекламний бюджет витрачається без потрібного результату?','Зіставляємо витрати, фактичні звернення та зміни в кампаніях, щоб визначити пріоритети разового аудиту.'),
+  'store-conversion'=>array('На якому кроці покупець відмовляється від замовлення?','Проходимо шлях від пошуку товару до оплати: перевіряємо каталог, картку товару, кошик і доставку.'),
+  'store-migration'=>array('Що може піти не так під час перенесення магазину?','До переїзду визначаємо, які дані треба перенести, які адреси зберегти та які інтеграції перевірити.'),
+  'local-business-websites'=>array('Чого бракує клієнту, який шукає ваш бізнес поруч?','Перевіряємо, чи легко знайти адресу, графік, перелік послуг і спосіб запису або дзвінка.'),
+  'landing-pages'=>array('Чому люди переходять з реклами, але не залишають заявку?','З’ясовуємо, чи відповідає сторінка оголошенню, чи зрозуміла пропозиція та чи працює форма.'),
+  'corporate-websites'=>array('Що заважає сайту представити вашу компанію?','Дивимося, чи може майбутній партнер знайти напрями роботи, інформацію про досвід і потрібні контакти.'),
+  'website-redesign'=>array('Які недоліки старого сайту заважають клієнтам?','Визначаємо, які екрани та сценарії потребують оновлення, не втрачаючи сторінок, що вже приводять людей із Google.'),
+  'website-maintenance'=>array('Які збої заважають сайту працювати щодня?','Перевіряємо проблемні функції, останні оновлення та причини повторних помилок, перш ніж змінювати код.'),
+  'website-speed-security'=>array('Що робить сайт повільним, вразливим або незручним?','Вимірюємо швидкість, перевіряємо оновлення й резервні копії, оцінюємо зручність кнопок, тексту та форм.')
+ );
+ if(isset($problemIntros[$slug])){
+  $data['problemHeading']=$problemIntros[$slug][0];
+  $data['problemLead']=$problemIntros[$slug][1];
  }
  // Three explicit semantic phase explanations derived from each route's existing deliverables.
  $data['label']=$r['label'];
