@@ -18,6 +18,30 @@ const commercialTwoFaq=["merchant-center","google-shopping","ga4-conversions","b
 const premiumEditorialFamilies={"horoshop":["hs-categories","hs-filters","hs-feed","hs-store-process","hs-next"],"about":["about-experience","about-listen","about-investigate","about-solve","about-network","about-fit-store","about-fit-service","about-fit-ads","about-next"],"portfolio":["portfolio-count","portfolio-seo","portfolio-ads","portfolio-data","portfolio-web","portfolio-sectors","portfolio-lock","portfolio-next"],"contact":["contact-describe","contact-address","contact-next"],"privacy":[]};
 const premiumEditorialSlugs=Object.keys(premiumEditorialFamilies);
 const premiumSeoSlugs=['local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'];
+const allUaPremiumSlugs=['','seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs];
+// The actual WordPress SEO inventory, not menu labels, defines completion.
+async function assertUaInventory(){
+ const response=await fetch(HOST+'/mrseo-locales-sitemap.xml');
+ if(!response.ok)throw Error('UA inventory sitemap HTTP '+response.status);
+ const xml=await response.text();
+ const published=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1].replace(/&amp;/g,'&')).pathname.replace(/^\/+|\/+$/g,''));
+ const foreign=new Set(['ru','en','pl','de',...allLocales]);
+ const ua=published.filter(path=>!foreign.has(path.split('/')[0]));
+ const expected=new Set(allUaPremiumSlugs),actual=new Set(ua);
+ const missing=[...actual].filter(path=>!expected.has(path)),extra=[...expected].filter(path=>!actual.has(path));
+ if(expected.size!==39||ua.length!==actual.size||missing.length||extra.length)throw Error('UA Premium inventory mismatch '+JSON.stringify({expected:expected.size,actual:actual.size,missing,extra,duplicates:ua.length-actual.size}));
+ console.log('UA Premium route coverage: '+actual.size+' canonical routes');
+}
+async function auditUaScenePlayback(page,selector,item){
+ const scenes=page.locator(selector);
+ for(let i=0;i<await scenes.count();i++){
+  const scene=scenes.nth(i);
+  await scene.scrollIntoViewIfNeeded();
+  const state=await scene.evaluate(s=>({id:s.getAttribute('data-puc-scene')||s.getAttribute('data-pue-scene')||s.id||String(s.className.baseVal),animated:!!s.querySelector('animate,animateMotion,animateTransform')}));
+  try{await scene.evaluate(s=>new Promise((resolve,reject)=>{const start=performance.now();let previous=null;function sample(){const t=s.getCurrentTime();if(!s.animationsPaused()){if(previous===null)previous=t;if(t>previous+.035){resolve();return;}}else previous=null;if(performance.now()-start>3000){reject(Error('no timeline progress'));return;}requestAnimationFrame(sample);}sample();}));}catch(e){item.errors.push('UA scene not moving: '+state.id+' '+e.message);}
+  if(!state.animated)item.errors.push('UA static scene: '+state.id);
+ }
+}
 const uaFourSlugs=['ecommerce-seo','analytics','service-websites','horoshop'];
 const uaFinalSlugs=['seo-audit','performance-max','about','portfolio','contact'];
 const uaNewSlugs=['local-business-websites','landing-pages','corporate-websites','website-redesign','local-seo','service-business-seo','international-seo','local-google-ads','google-ads-audit','store-conversion','store-migration','website-maintenance','website-speed-security'];
@@ -39,7 +63,7 @@ const results=[];
 const urlOf=(l,s)=>HOST+'/'+(l==='uk'?'':l+'/')+(s?s+'/':'');
 async function audit(browser,viewport,lang,slug){
  const url=urlOf(lang,slug);
- const mobile=viewport.name!=='desktop';
+ const mobile=viewport.width<=390;
  const browserUA=mobile
   ? 'Mozilla/5.0 (Linux; Android 15; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36'
   : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36';
@@ -344,6 +368,13 @@ async function audit(browser,viewport,lang,slug){
       const lower=page.locator('.puc-page .psc-delivery svg.puc-motion'),lowerButton=page.locator('.puc-page .psc-lower-pause');
       await lower.scrollIntoViewIfNeeded();
       try{await page.waitForFunction(()=>{const s=document.querySelector('.puc-page .psc-delivery svg.puc-motion');return s&&!s.animationsPaused()},{},{timeout:5000})}catch(_){item.errors.push('UA commercial lower scene not playing')}
+      if(viewport.name==='mobile'){
+        const integrated=await lower.evaluate(s=>{const wrapper=s.closest('.psc-story-visual'),a=getComputedStyle(wrapper),b=getComputedStyle(s);return [a,b].every(x=>x.backgroundImage==='none'&&(x.backgroundColor==='rgba(0, 0, 0, 0)'||x.backgroundColor==='transparent'));});
+        if(!integrated)item.errors.push('UA lower illustration has a separate background');
+        await lower.screenshot({path:'shots/ua-'+slug+'-solution-mobile.jpg',type:'jpeg',quality:76});
+        await auditUaScenePlayback(page,'.puc-page svg.puc-motion',item);
+        await lower.scrollIntoViewIfNeeded();
+      }
       const t=await lower.evaluate(s=>s.getCurrentTime());await page.waitForTimeout(180);
       if(await lower.evaluate(s=>s.getCurrentTime())<=t)item.errors.push('UA commercial lower timeline stationary');
       await lowerButton.click();
@@ -362,6 +393,11 @@ async function audit(browser,viewport,lang,slug){
       const svg=page.locator('svg.pue-motion').last(),pause=page.locator('.pue-pause');
       await svg.scrollIntoViewIfNeeded();
       try{await page.waitForFunction(()=>{const s=[...document.querySelectorAll('svg.pue-motion')].at(-1);return s&&!s.animationsPaused()},{},{timeout:5000})}catch(_){item.errors.push('UA editorial lower motion not playing')}
+      if(viewport.name==='mobile'){
+        await svg.screenshot({path:'shots/ua-'+slug+'-lower-mobile.jpg',type:'jpeg',quality:76});
+        await auditUaScenePlayback(page,'svg.pue-motion',item);
+        await svg.scrollIntoViewIfNeeded();
+      }
       const t=await svg.evaluate(s=>s.getCurrentTime());await page.waitForTimeout(180);
       if(await svg.evaluate(s=>s.getCurrentTime())<=t)item.errors.push('UA editorial timeline stationary');
       await pause.click();
@@ -680,6 +716,7 @@ async function audit(browser,viewport,lang,slug){
 }
 (async()=>{
  await fs.mkdir('shots',{recursive:true});
+ if(coreShard)await assertUaInventory();
  const launchOptions={headless:true,args:['--disable-dev-shm-usage','--enable-webgl','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']};
  // Reset Chromium (including its software WebGL state) between locales/viewport
  // profiles. A single long-lived browser can accumulate GPU load over 165 views
@@ -688,7 +725,7 @@ async function audit(browser,viewport,lang,slug){
   for(const lang of locales){
    const browser=await chromium.launch(launchOptions);
    try{
-    const selectedSlugs=coreShard&&lang==='uk'?[...new Set([...slugs,...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs])]:(coreShard&&lang==='ru'?[...new Set([...slugs,...ruPilotSlugs,...ruNewSlugs])]:(coreShard&&lang==='en'?[...new Set([...slugs,...enGbExisting,...enGbNewSlugs,'about','portfolio','contact'])]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs))));
+    const selectedSlugs=coreShard&&lang==='uk'?allUaPremiumSlugs:(coreShard&&lang==='ru'?[...new Set([...slugs,...ruPilotSlugs,...ruNewSlugs])]:(coreShard&&lang==='en'?[...new Set([...slugs,...enGbExisting,...enGbNewSlugs,'about','portfolio','contact'])]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs))));
     for(const slug of selectedSlugs){
      if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug))&&!(lang==='ru'&&['seo','google-ads','analytics','service-websites','horoshop','landing-pages','google-ads-audit','website-maintenance'].includes(slug))&&!(lang==='en'&&['seo','analytics','service-websites','website-design','landing-pages','store-conversion','api-integrations'].includes(slug)))continue;
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs].includes(slug))&&!(lang==='ru'&&[...ruPilotSlugs,...ruNewSlugs].includes(slug))&&!(lang==='en'&&[...enGbExisting,...enGbNewSlugs].includes(slug)))continue;
