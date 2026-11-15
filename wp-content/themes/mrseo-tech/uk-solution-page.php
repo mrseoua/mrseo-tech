@@ -1,6 +1,7 @@
 <?php
 /** Reusable UI, original content per service. Ukrainian routes only. */
 if(!defined('ABSPATH'))exit;
+if(mrseo_locale()==='uk'&&in_array(mrseo_slug(),array('performance-max','analytics','service-websites'),true)){require get_template_directory().'/premium-ua-commercial.php';return;}
 require_once get_template_directory().'/inc/uk-solution-content.php';
 $slug=mrseo_slug();
 $page=mrseo_uk_solution_content($slug);
