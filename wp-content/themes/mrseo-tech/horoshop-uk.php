@@ -1,7 +1,8 @@
 <?php
 /** Ukrainian-only Horoshop page with original partner hero kept verbatim. */
 if(!defined('ABSPATH'))exit;
-get_header();
+if(mrseo_locale()==='uk'){require_once get_template_directory().'/inc/premium-ua-editorial.php';mrseo_pue_setup('horoshop');}
+get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 ?>
 <div class="ukseo ukseo--horoshop" id="main-content">
 <section class="ukhoroshop-wrap">
@@ -53,13 +54,13 @@ get_header();
   <p>Перевіряємо категорії, фільтри та товарний фід — із урахуванням можливостей Хорошоп.</p>
  </div>
  <div class="ukseo-problem-grid">
-  <article class="ukseo-problem-card"><div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div><h3>Категорій не видно в Google</h3><p>Категорії, бренди й властивості товарів не завжди збігаються з тим, як покупці шукають товари.</p></article>
-  <article class="ukseo-problem-card"><div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div><h3>Фільтри заважають індексації</h3><p>Параметри фільтрів, недоступні товари або неузгоджені адреси створюють зайві технічні сценарії.</p></article>
-  <article class="ukseo-problem-card"><div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div><h3>Merchant Center відхиляє товари</h3><p>Ціна, наявність або атрибути у фіді не збігаються з тим, що бачить покупець у магазині.</p></article>
+  <article class="ukseo-problem-card"><div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-categories','');?><h3>Категорій не видно в Google</h3><p>Категорії, бренди й властивості товарів не завжди збігаються з тим, як покупці шукають товари.</p></article>
+  <article class="ukseo-problem-card"><div class="ukseo-card-number">02 <span aria-hidden="true">↗</span></div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-filters','');?><h3>Фільтри заважають індексації</h3><p>Параметри фільтрів, недоступні товари або неузгоджені адреси створюють зайві технічні сценарії.</p></article>
+  <article class="ukseo-problem-card"><div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-feed','');?><h3>Merchant Center відхиляє товари</h3><p>Ціна, наявність або атрибути у фіді не збігаються з тим, що бачить покупець у магазині.</p></article>
  </div>
 </div></section>
 <section class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">
- <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p></div>
+ <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-store-process','pue-hs-story');?><?php if(mrseo_locale()==='uk')mrseo_pue_pause();?></div>
  <div class="ukseo-delivery-list">
   <div><span aria-hidden="true">01</span><div><h3>Створення й налаштування</h3><p>Структура каталогу, навігація, основні сторінки й готовність до запуску.</p></div></div>
   <div><span aria-hidden="true">02</span><div><h3>SEO та робота з індексацією</h3><p>Посадкові сторінки під попит, перелінкування, метадані й контроль технічних URL.</p></div></div>
@@ -75,7 +76,7 @@ get_header();
  </div>
 </div></section>
 <section class="ukseo-final" aria-labelledby="ukhoroshop-final-title"><div class="container ukseo-final-grid">
- <div><span class="ukseo-kicker">ПЕРШИЙ КРОК</span><h2 id="ukhoroshop-final-title">Магазин працює. <em>Знайдімо, що стримує його зростання.</em></h2><p>Надішліть адресу вашого магазину й коротко опишіть проблему. Почнемо з перевірки того, що справді впливає на результат.</p></div>
+ <div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-next','pue-hs-next');?><span class="ukseo-kicker">ПЕРШИЙ КРОК</span><h2 id="ukhoroshop-final-title">Магазин працює. <em>Знайдімо, що стримує його зростання.</em></h2><p>Надішліть адресу вашого магазину й коротко опишіть проблему. Почнемо з перевірки того, що справді впливає на результат.</p></div>
  <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити Хорошоп <span aria-hidden="true">↗</span></a>
 </div></section>
 </div>
