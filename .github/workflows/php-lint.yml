@@ -220,7 +220,38 @@ jobs:
           print('Six UA service intents, metadata, prices, scoped offers and unchanged noindex OK')
           PY
 
-      - name: Run international SEO pre-indexing audit (657 routes)
+      - name: Verify Ukrainian expansion content, menu and original scene registry
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          p=Path('wp-content/themes/mrseo-tech/inc')
+          def read(file,marker):
+              s=(p/file).read_text()
+              return json.loads(re.search(r"<<<'"+marker+r"'\n([\s\S]*?)\n"+marker,s).group(1))
+          d=read('ua-commercial-expansion.php','MRSEO_UA_EXPANSION')
+          a=read('premium-ua-commercial-art-6.php','MRSEO_PUC_EXPANSION_ART')
+          r=read('premium-ua-commercial-routes.php','MRSEO_PUC_EXPANSION_ROUTES')
+          n=read('premium-ua-commercial-art.php','MRSEO_PUC_EXPANSION_INDEX')
+          assert len(d)==len(r)==11 and len(a)==len(n)==66
+          assert set(a)==set(n)
+          seen=set()
+          for slug,x in d.items():
+              assert x['resultTitle']=='Що ви отримаєте'
+              assert len(x['pains'])==len(x['benefits'])==len(x['faq'])==len(x['tabs'])==3
+              assert all(t[1] not in [b[1] for b in x['benefits']] for t in x['tabs'])
+              assert all(len(t)==2 and all(t) for k in ('pains','benefits','faq','tabs') for t in x[k])
+              ids=[r[slug]['hero'],*r[slug]['problem'],r[slug]['storyId'],r[slug]['endId']]
+              assert len(ids)==len(set(ids))==6 and all(i in a for i in ids)
+              for i in ids:
+                  s=a[i]; assert 'data-puc-scene="'+i+'"' in s and re.search(r'<animate(?:Motion|Transform)?\b',s)
+                  shape=s.replace(i,'SCENE')
+                  assert shape not in seen,'Repeated expansion scene '+i
+                  seen.add(shape)
+              assert a[ids[0]].count('data-puc-part=')==3
+          print('11 unique commercial landings and 66 original animated SVGs verified')
+          PY
+      - name: Run international SEO pre-indexing audit (668 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php

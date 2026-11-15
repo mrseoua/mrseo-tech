@@ -4,6 +4,7 @@ if(!defined('ABSPATH'))exit;
 function mrseo_puc_copy($slug){
  $r=mrseo_puc_route($slug);
  if(!$r)return null;
+ if(function_exists('mrseo_ua_expansion_data')&&($extra=mrseo_ua_expansion_data($slug)))return $extra;
  $core=in_array($slug,array('performance-max','analytics','service-websites'),true);
  if($core){
   require_once __DIR__.'/uk-solution-content.php';

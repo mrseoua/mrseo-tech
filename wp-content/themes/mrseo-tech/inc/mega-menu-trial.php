@@ -13,13 +13,69 @@ function mrseo_trial_menu_translations() {
  $json=<<<'MRSEO_TRIAL_NAV_JSON'
 {
  "uk":{
-  "seo":["SEO-просування","Допомагаємо клієнтам знаходити ваш бізнес у Google.","Локальне SEO","SEO інтернет-магазинів","SEO сайтів послуг","Міжнародне SEO","SEO-аудит"],
-  "ads":["Google Ads","Реклама, яка приводить потрібних клієнтів.","Пошукова реклама Google","Google Shopping та Performance Max","Google Ads для локального бізнесу","Аудит Google Ads","Google Merchant Center"],
-  "commerce":["Інтернет-магазини","Створення, розвиток і автоматизація продажів.","Створення інтернет-магазинів","Інтернет-магазини на Хорошоп","Збільшення конверсії магазину","Автоматизація інтернет-магазину","Модернізація та перенесення магазину"],
-  "sites":["Створення сайтів","Сайти, які представляють бізнес і збирають заявки.","Сайти для локального бізнесу","Сайти послуг","Лендінги для реклами","Корпоративні сайти","Редизайн та оновлення сайтів"],
-  "dev":["Веброзробка","Вирішуємо технічні проблеми та автоматизуємо процеси.","Підтримка та доопрацювання сайтів","Інтеграції та автоматизація","Оптимізація, безпека та доступність","CRM та особисті кабінети","Вебзастосунки та MVP"],
-  "bottom":["Не знайшли свою задачу?","Опишіть проблему або ідею — підкажемо, з чого почати.","Обговорити проєкт"]
- },
+  "seo": [
+    "SEO-просування",
+    "Допомагаємо клієнтам знаходити ваш бізнес у Google.",
+    "Локальне SEO",
+    "SEO інтернет-магазинів",
+    "SEO сайтів послуг",
+    "Міжнародне SEO",
+    "SEO-аудит",
+    "Збір семантичного ядра",
+    "SEO-копірайтинг"
+  ],
+  "ads": [
+    "Google Ads",
+    "Реклама, яка приводить потрібних клієнтів.",
+    "Налаштування та ведення Google Ads",
+    "Performance Max",
+    "Google Ads для локального бізнесу",
+    "Аудит Google Ads",
+    "Google Merchant Center",
+    "Пошукова реклама Google",
+    "Google Shopping",
+    "Ремаркетинг Google Ads",
+    "Consent Mode та згода"
+  ],
+  "commerce": [
+    "Інтернет-магазини",
+    "Створення, розвиток і автоматизація продажів.",
+    "Створення інтернет-магазинів",
+    "Інтернет-магазини на Хорошоп",
+    "Збільшення конверсії магазину",
+    "Автоматизація інтернет-магазину",
+    "Модернізація та перенесення магазину",
+    "Моніторинг цін конкурентів"
+  ],
+  "sites": [
+    "Створення сайтів",
+    "Сайти, які представляють бізнес і збирають заявки.",
+    "Сайти для локального бізнесу",
+    "Сайти послуг",
+    "Лендінги для реклами",
+    "Корпоративні сайти",
+    "Редизайн та оновлення сайтів",
+    "Розробка сайтів на WordPress"
+  ],
+  "dev": [
+    "Веброзробка",
+    "Вирішуємо технічні проблеми та автоматизуємо процеси.",
+    "Підтримка та доопрацювання сайтів",
+    "Інтеграції та автоматизація",
+    "Оптимізація, безпека та доступність",
+    "Індивідуальна веброзробка",
+    "Вебзастосунки та MVP",
+    "Автоматизація бізнес-процесів",
+    "CRM та інтеграції",
+    "AI-агенти для бізнесу",
+    "Розробка чат-ботів"
+  ],
+  "bottom": [
+    "Не знайшли свою задачу?",
+    "Опишіть проблему або ідею — підкажемо, з чого почати.",
+    "Обговорити проєкт"
+  ]
+},
  "ru":{
   "seo":["SEO-продвижение","Помогаем клиентам находить ваш бизнес в Google.","Локальное SEO","SEO интернет-магазинов","SEO сайтов услуг","Международное SEO","SEO-аудит"],
   "ads":["Google Ads","Реклама для привлечения нужных клиентов.","Поисковая реклама Google","Google Shopping и Performance Max","Google Ads для локального бизнеса","Аудит Google Ads","Google Merchant Center"],
@@ -379,11 +435,11 @@ function mrseo_trial_menu_route_map($locale) {
  // 25 Ukrainian menu options now have a real, independent landing page.
  if($locale==='uk'){
   return array(
-   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),
-   'ads'=>array('google-ads','performance-max','local-google-ads','google-ads-audit','merchant-center'),
-   'commerce'=>array('online-store-development','horoshop','store-conversion','catalog-automation','store-migration'),
-   'sites'=>array('local-business-websites','service-websites','landing-pages','corporate-websites','website-redesign'),
-   'dev'=>array('website-maintenance','api-integrations','website-speed-security','web-development','web-applications')
+   'seo'=>array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit','semantic-core','seo-content'),
+   'ads'=>array('google-ads','performance-max','local-google-ads','google-ads-audit','merchant-center','google-search-ads','google-shopping','google-remarketing','consent-mode'),
+   'commerce'=>array('online-store-development','horoshop','store-conversion','catalog-automation','store-migration','competitor-price-monitoring'),
+   'sites'=>array('local-business-websites','service-websites','landing-pages','corporate-websites','website-redesign','wordpress-development'),
+   'dev'=>array('website-maintenance','api-integrations','website-speed-security','web-development','web-applications','business-automation','crm-development','ai-agents','chatbot-development')
   );
  }
  if($locale==='ru'){
@@ -492,6 +548,7 @@ function mrseo_trial_menu_route_map($locale) {
 
 function mrseo_trial_menu_valid($slug,$locale) {
  if(!$slug)return false;
+ if($locale==='uk' && function_exists('mrseo_ua_expansion_data') && mrseo_ua_expansion_data($slug))return true;
  if($locale==='uk' && function_exists('mrseo_ua_website_slugs')
     && in_array($slug,mrseo_ua_website_slugs(),true))return true;
  if($locale==='ru' && function_exists('mrseo_ru_website_slugs')

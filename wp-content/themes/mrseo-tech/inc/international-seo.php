@@ -9,6 +9,7 @@
  * Staging noindex and X-Robots-Tag controls live in functions.php and are untouched.
  */
 if (!defined('ABSPATH')) exit;
+require_once __DIR__.'/ua-commercial-expansion.php';
 
 function mrseo_i18n_locale_codes() {
     return array('uk' => 'uk-UA', 'ru' => 'ru', 'en' => 'en-GB', 'pl' => 'pl-PL', 'de' => 'de-DE', 'fr' => 'fr-FR', 'it' => 'it-IT', 'es' => 'es-ES', 'nl' => 'nl-NL', 'ro' => 'ro-RO', 'cs' => 'cs-CZ', 'pt' => 'pt-PT', 'sv' => 'sv-SE', 'da' => 'da-DK', 'fi' => 'fi-FI', 'hu' => 'hu-HU', 'sk' => 'sk-SK', 'el' => 'el-GR', 'bg' => 'bg-BG', 'hr' => 'hr-HR');
@@ -203,6 +204,7 @@ function mrseo_i18n_page_groups() {
         if(function_exists('mrseo_final_market_alternates'))$pages=array_merge($pages,mrseo_final_market_alternates('woocommerce-shopify-stores'));
         $groups[]=array('group'=>'platform:woocommerce-shopify','pages'=>$pages);
     }
+    foreach(mrseo_ua_expansion_slugs() as $slug)$groups[]=array('group'=>'ua-expansion:'.$slug,'pages'=>array('uk'=>$slug));
     return $groups;
 }
 

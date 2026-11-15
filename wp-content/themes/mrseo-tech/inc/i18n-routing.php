@@ -8,6 +8,11 @@ function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_P
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ // New Ukrainian offers have exact UA URLs; foreign language navigation goes to a real parent, never hreflang.
+ if(function_exists('mrseo_ua_expansion_data')&&($extra=mrseo_ua_expansion_data($slug))){
+  if($lang==='uk')return home_url('/'.$slug.'/');
+  return mrseo_i18n_exact_url($lang,$extra['fallback']);
+ }
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
  // A real Russian page always wins over UK-only slug fallbacks. In particular,
  // google-ads-audit exists independently on /ru/ and must not become /ru/google-ads/.
