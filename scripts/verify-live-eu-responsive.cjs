@@ -349,6 +349,21 @@ async function audit(browser,viewport,lang,slug){
    };
   },{lang,slug,width:viewport.width,coreShard});
   const c=item.check;
+  // Compare computed colors, not merely CSS presence. Covers all 38 UA
+  // interiors at each existing tested viewport; no asset leak to home/RU.
+  const accent=await page.evaluate(()=>{
+   const loaded=!!document.querySelector('link[href*="ua-brand-accents.css"]');
+   const headings=[...document.querySelectorAll('.pti-page :is(h1,h2,h3) em,body:has([data-pue-route="horoshop"]) :is(.special-hero-horoshop,.ukseo--horoshop) :is(h1,h2,h3) em,body:has(.pue-marker) :is(.uaf-heading,.uaf-contact-guide-top,.uaf-capability-copy) :is(h1,h2,h3) em')];
+   const labels=[...document.querySelectorAll('.pti-page .pti-kicker,body:has([data-pue-route="horoshop"]) :is(.special-hero-horoshop .eyebrow,.ukseo--horoshop .ukseo-kicker,.hs-demo-kicker),body:has([data-pue-route="about"]) .about-page .eyebrow,body:has([data-pue-route="portfolio"]) :is(.portfolio-hero,.portfolio-heading,.inner-final-cta) .eyebrow,body:has([data-pue-route="contact"]) :is(.contact-cinematic-hero .eyebrow,.contact-brief-kicker),body:has([data-pue-route="privacy"]) .mrseo-privacy-kicker,body:has(.pue-marker) .uaf-eyebrow')];
+   const dark=[...document.querySelectorAll('body:has([data-pue-route="portfolio"]) .client-confidential .eyebrow')];
+   const verify=(nodes,color)=>nodes.filter(n=>getComputedStyle(n).color!==color||Number(getComputedStyle(n).opacity)<.99).map(n=>({text:n.textContent.trim().slice(0,100),color:getComputedStyle(n).color,opacity:getComputedStyle(n).opacity}));
+   return {loaded,headings:headings.length,labels:labels.length,dark:dark.length,wrong:[...verify(headings,'rgb(172, 70, 52)'),...verify(labels,'rgb(140, 57, 42)'),...verify(dark,'rgb(242, 163, 140)')]};
+  });
+  if(lang==='uk'&&slug!==''){
+   const needsHeading=slug!=='privacy';
+   if(!accent.loaded||accent.labels<1||(needsHeading&&accent.headings<1)||(slug==='horoshop'&&accent.headings!==4)||(slug==='portfolio'&&accent.dark!==1)||accent.wrong.length)item.errors.push('UA brand accent regression '+JSON.stringify(accent));
+   item.brandAccent=accent;
+  }else if(accent.loaded)item.errors.push('UA brand accent stylesheet leaked to '+lang+'/'+slug);
   const exactPath=url;
   const commercialTarget=lang==='uk'&&premiumCommercialSlugs.includes(slug);
   const editorialTarget=lang==='uk'&&premiumEditorialSlugs.includes(slug);
