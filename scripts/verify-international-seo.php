@@ -427,5 +427,16 @@ $_SERVER['REQUEST_URI']='/ru/seo/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA semantics leaked to RU');
 $_SERVER['REQUEST_URI']='/seo/unknown/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA metadata on nonexistent nested route');
+// New UA menu includes all 45 published offers exactly once, no invented routes.
+require_once $root.'/inc/mega-menu-trial.php';
+$menu_slugs=array();
+foreach(mrseo_ua_menu_groups() as $group){
+ $menu_slugs[]=$group['parent'];
+ foreach($group['items'] as $item)$menu_slugs[]=$item[0];
+}
+$commercial_slugs=array_keys(array_filter(mrseo_ua_semantic_map(),static function($m){return $m['intent']==='commercial';}));
+sort($menu_slugs);sort($commercial_slugs);
+assert_seo(count(mrseo_ua_menu_groups())===6&&count($menu_slugs)===45&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
+foreach($menu_slugs as $slug)assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Invalid UA menu URL '.$slug);
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";
