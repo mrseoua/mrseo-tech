@@ -51,7 +51,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 <section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
  <div class="ukseo-section-head">
   <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-problem-title">Що саме заважає <em>клієнту знайти й купити товар?</em></h2></div>
-  <p>Перевіряємо категорії, фільтри та товарний фід — із урахуванням можливостей Хорошоп.</p>
+  <p>SEO-просування магазину на Хорошоп починаємо з перевірки категорій, фільтрів та товарного фіда — з урахуванням можливостей платформи.</p>
  </div>
  <div class="ukseo-problem-grid">
   <article class="ukseo-problem-card"><div class="ukseo-card-number">01 <span aria-hidden="true">↗</span></div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-categories','');?><h3>Категорій не видно в Google</h3><p>Категорії, бренди й властивості товарів не завжди збігаються з тим, як покупці шукають товари.</p></article>
@@ -62,7 +62,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 <section class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">
  <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-store-process','pue-hs-story');?><?php if(mrseo_locale()==='uk')mrseo_pue_pause();?></div>
  <div class="ukseo-delivery-list">
-  <div><span aria-hidden="true">01</span><div><h3>Створення й налаштування</h3><p>Структура каталогу, навігація, основні сторінки й готовність до запуску.</p></div></div>
+  <div><span aria-hidden="true">01</span><div><h3>Створення магазину на Хорошоп</h3><p>Структура каталогу, навігація, основні сторінки й готовність до запуску.</p></div></div>
   <div><span aria-hidden="true">02</span><div><h3>SEO та робота з індексацією</h3><p>Посадкові сторінки під попит, перелінкування, метадані й контроль технічних URL.</p></div></div>
   <div><span aria-hidden="true">03</span><div><h3>Merchant Center і Google Ads</h3><p>Діагностика товарного фіда, налаштування реклами та перевірка покупок.</p></div></div>
  </div>

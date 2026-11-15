@@ -4,6 +4,7 @@ if(!defined('ABSPATH'))exit;
 function mrseo_puc_copy($slug){
  $r=mrseo_puc_route($slug);
  if(!$r)return null;
+ if(function_exists('mrseo_ua_expansion_data')&&($extra=mrseo_ua_expansion_data($slug)))return mrseo_ua_semantic_copy($slug,$extra);
  $core=in_array($slug,array('performance-max','analytics','service-websites'),true);
  if($core){
   require_once __DIR__.'/uk-solution-content.php';
@@ -98,5 +99,5 @@ function mrseo_puc_copy($slug){
  $data['tabs']=array();
  foreach($r['phases'] as $i=>$label)$data['tabs'][]=array($label,$data['benefits'][$i][1]);
  $data['resultTitle']='Що ви отримаєте';
- return $data;
+ return mrseo_ua_semantic_copy($slug,$data);
 }

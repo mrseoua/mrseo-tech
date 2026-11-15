@@ -220,6 +220,7 @@ add_filter('pre_get_document_title',function($title){
     return mrseo_privacy_page_route()?mrseo_privacy_copy()['title'].' | MrSeo.tech':$title;
 },125);
 add_action('wp_head',function(){
+ if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;
     if(!mrseo_privacy_page_route())return;
     echo '<meta name="description" content="'.esc_attr(mrseo_privacy_copy()['desc']).'">'."\n";
 },3);

@@ -50,6 +50,7 @@ add_filter('body_class',function($classes){
  return $classes;
 });
 add_action('wp_head',function(){
+ if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;
  if(!mrseo_new_service_route())return;
  $slug=mrseo_slug();$copy=mrseo_new_service_copy();
  $desc=$copy['description']??wp_trim_words($copy['lead'],25,'…');

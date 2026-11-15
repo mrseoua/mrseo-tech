@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 657
+EXPECTED_PAGES = 668
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -70,6 +70,8 @@ SAMPLE = [
     "/bg/", "/bg/seo-audit/", "/bg/contact/",
     "/hr/", "/hr/seo-audit/", "/hr/contact/"
 ]
+# New offers are Ukrainian-only; inspect all HTML and genuine self hreflang.
+SAMPLE.extend(["/semantic-core/","/seo-content/","/google-search-ads/","/google-remarketing/","/consent-mode/","/competitor-price-monitoring/","/wordpress-development/","/business-automation/","/crm-development/","/ai-agents/","/chatbot-development/"])
 # Every approved Ukrainian service now has an actual Russian counterpart.
 PAIRED_RU_SLUGS = (
     "local-business-websites", "landing-pages", "corporate-websites", "website-redesign",
