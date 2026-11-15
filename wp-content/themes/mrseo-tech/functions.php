@@ -289,6 +289,7 @@ add_action('wp_enqueue_scripts',static function(){
 },120);
 
 function mrseo_meta_description(){
+ if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;
  // UK original service routes render their own single page-specific meta description.
  if(mrseo_locale()==='en' &&
    ((function_exists('mrseo_uk_market_route') && mrseo_uk_market_route())

@@ -22,5 +22,5 @@ MRSEO_PSC_VISUAL
   $data['problemHeading']=$problemIntros[$slug][0];
   $data['problemLead']=$problemIntros[$slug][1];
  }
- return array_merge($data,$visual[$slug]);
+ return mrseo_ua_semantic_copy($slug,array_merge($data,$visual[$slug]));
 }

@@ -1069,5 +1069,5 @@ add_filter('pre_handle_404',function($pre){return mrseo_ua_expansion_route()?tru
 add_filter('redirect_canonical',function($url){return mrseo_ua_expansion_route()?false:$url;},111);
 add_filter('template_include',function($template){return mrseo_ua_expansion_route()?get_template_directory().'/premium-ua-commercial.php':$template;},190);
 add_filter('pre_get_document_title',function($title){if(!mrseo_ua_expansion_route())return $title;return mrseo_ua_expansion_data(mrseo_slug())['title'].' | MrSeo.tech';},190);
-add_action('wp_head',function(){if(mrseo_ua_expansion_route())echo '<meta name="description" content="'.esc_attr(mrseo_ua_expansion_data(mrseo_slug())['description']).'">'."\n";},4);
+add_action('wp_head',function(){if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;if(mrseo_ua_expansion_route())echo '<meta name="description" content="'.esc_attr(mrseo_ua_expansion_data(mrseo_slug())['description']).'">'."\n";},4);
 add_action('init',function(){if(get_option('mrseo_ua_expansion_routes_v1')!=='ready'){flush_rewrite_rules(false);update_option('mrseo_ua_expansion_routes_v1','ready',false);}},45);

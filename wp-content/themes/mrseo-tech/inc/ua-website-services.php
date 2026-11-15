@@ -317,6 +317,7 @@ add_filter('pre_get_document_title',function($title){
  return $p?$p['title'].' | MrSeo.tech':$title;
 },140);
 add_action('wp_head',function(){
+ if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;
  if(!mrseo_ua_website_route())return;
  $p=mrseo_ua_website_data(mrseo_slug());
  if($p) echo '<meta name="description" content="'.esc_attr(($p['description']??wp_trim_words($p['lead'],26,'…'))).'">'."\n";

@@ -10,6 +10,7 @@
  */
 if (!defined('ABSPATH')) exit;
 require_once __DIR__.'/ua-commercial-expansion.php';
+require_once __DIR__.'/ua-semantic-map.php';
 
 function mrseo_i18n_locale_codes() {
     return array('uk' => 'uk-UA', 'ru' => 'ru', 'en' => 'en-GB', 'pl' => 'pl-PL', 'de' => 'de-DE', 'fr' => 'fr-FR', 'it' => 'it-IT', 'es' => 'es-ES', 'nl' => 'nl-NL', 'ro' => 'ro-RO', 'cs' => 'cs-CZ', 'pt' => 'pt-PT', 'sv' => 'sv-SE', 'da' => 'da-DK', 'fi' => 'fi-FI', 'hu' => 'hu-HU', 'sk' => 'sk-SK', 'el' => 'el-GR', 'bg' => 'bg-BG', 'hr' => 'hr-HR');
