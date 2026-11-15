@@ -20,7 +20,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('about');
           'A small team. Big challenges. Clear solutions.'
         ));?></h1>
         <p class="about-hero-lead"><?php echo esc_html(mrseo_t(
-          'Ми — невелика команда професіоналів із 10-річним досвідом у SEO, Google Ads, аналітиці та створенні сайтів. Допомагаємо бізнесу знаходити причини проблем і вирішувати їх без зайвої складності.',
+          'Ми — невелика команда професіоналів із 10-річним досвідом у SEO, Google Ads, аналітиці та створенні сайтів. Як агентство інтернет-маркетингу, поєднуємо ці напрями, щоб знаходити причини проблем бізнесу й вирішувати їх без зайвої складності.',
           'Мы — небольшая команда профессионалов с 10-летним опытом в SEO, Google Ads, аналитике и создании сайтов. Помогаем бизнесу находить причины проблем и решать их без лишней сложности.',
           'We are a small team of professionals with 10 years of experience in SEO, Google Ads, analytics and website development. We help businesses understand what is not working and fix it without unnecessary complexity.'
         ));?></p>
