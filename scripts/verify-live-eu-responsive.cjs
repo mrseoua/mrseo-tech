@@ -374,6 +374,13 @@ async function audit(browser,viewport,lang,slug){
     await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
    }
   }else if(accent.loaded)item.errors.push('UA brand accent stylesheet leaked to '+lang+'/'+slug);
+  // Copy quality: the 30 structured UA service pages must have actual
+  // service-specific introductory text, not old generic template fallbacks.
+  if(lang==='uk'&&await page.locator('.puc-page,.psc-page').count()){
+   const intro=await page.evaluate(()=>{const root=document.querySelector('.puc-page,.psc-page');if(!root)return null;return {foot:root.querySelector('.pti-hero-copy .pti-footnote')?.textContent.trim()||'',heading:root.querySelector('.psc-problems #psc-problem-title')?.textContent.trim()||'',lead:root.querySelector('.psc-problems .pti-section-head>p')?.textContent.trim()||''};});
+   const forbidden=["Спочатку підтверджуємо причину. Потім пропонуємо рішення.","Спочатку перевіряємо причину, потім погоджуємо зміни.","Що заважає отримувати результат?","Перевіряємо конкретні ситуації вашого бізнесу."];
+   if(!intro||Object.values(intro).some(v=>!v||forbidden.includes(v)))item.errors.push('UA service introduction missing or generic: '+JSON.stringify(intro));
+  }
   const exactPath=url;
   const commercialTarget=lang==='uk'&&premiumCommercialSlugs.includes(slug);
   const editorialTarget=lang==='uk'&&premiumEditorialSlugs.includes(slug);
