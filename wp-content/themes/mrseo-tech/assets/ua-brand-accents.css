@@ -1,0 +1,38 @@
+/* Ukrainian interior accent contract. The approved Premium Tech heading red
+ * is #ac4634. Small light-surface labels use a deeper red for contrast.
+ * Dark confidentiality panel retains a light-on-dark red; no artwork recolor.
+ * Loaded only on canonical UA interiors, never on the locked homepage or RU. */
+.pti-page,
+body:has(.pue-marker){
+ --mrseo-ua-heading-red:#ac4634;
+ --mrseo-ua-label-red:#8c392a;
+ --mrseo-ua-dark-red:#f2a38c;
+}
+.pti-page :is(h1,h2,h3) em,
+body:has([data-pue-route="horoshop"]) :is(.special-hero-horoshop,.ukseo--horoshop) :is(h1,h2,h3) em,
+body:has(.pue-marker) :is(.uaf-heading,.uaf-contact-guide-top,.uaf-capability-copy) :is(h1,h2,h3) em{
+ color:var(--mrseo-ua-heading-red)!important;
+}
+.pti-page .pti-kicker,
+body:has([data-pue-route="horoshop"]) :is(.special-hero-horoshop .eyebrow,.ukseo--horoshop .ukseo-kicker,.hs-demo-kicker),
+body:has([data-pue-route="about"]) .about-page .eyebrow,
+body:has([data-pue-route="portfolio"]) :is(.portfolio-hero,.portfolio-heading,.inner-final-cta) .eyebrow,
+body:has([data-pue-route="contact"]) :is(.contact-cinematic-hero .eyebrow,.contact-brief-kicker),
+body:has([data-pue-route="privacy"]) .mrseo-privacy-kicker,
+body:has(.pue-marker) .uaf-eyebrow{
+ color:var(--mrseo-ua-label-red)!important;
+}
+body:has([data-pue-route="portfolio"]) .client-confidential .eyebrow{
+ color:var(--mrseo-ua-dark-red)!important;
+}
+
+/* Section labels are information, not decorative motion. The old global
+ * scroll-reveal makes these labels transparent until an observer fires.
+ * Keep the labels readable immediately; retain the rest of the scene motion. */
+body:has([data-pue-route="about"]) .about-page .eyebrow[data-motion-reveal],
+body:has([data-pue-route="portfolio"]) :is(.portfolio-hero,.portfolio-heading,.inner-final-cta,.client-confidential) .eyebrow[data-motion-reveal]{
+ opacity:1!important;
+ transform:none!important;
+ filter:none!important;
+ transition:none!important;
+}

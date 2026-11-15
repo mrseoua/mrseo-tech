@@ -281,6 +281,13 @@ function mrseo_assets(){
  wp_enqueue_script('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.js',array(),'1.0.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
+/* Owner-approved UA interior accent correction. Leave homepage/other locales untouched. */
+add_action('wp_enqueue_scripts',static function(){
+ if(mrseo_locale()!=='uk'||mrseo_slug()==='')return;
+ if(!mrseo_i18n_current_entry())return;
+ wp_enqueue_style('mrseo-ua-brand-accents',get_template_directory_uri().'/assets/ua-brand-accents.css',array('mrseo-style'),'1.0.1');
+},120);
+
 function mrseo_meta_description(){
  // UK original service routes render their own single page-specific meta description.
  if(mrseo_locale()==='en' &&
