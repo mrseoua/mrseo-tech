@@ -407,5 +407,25 @@ foreach($exp as $slug=>$d){
  }
 }
 foreach(array('title','lead','foot','problemHeading','problemLead','result','description') as $field)assert_seo(count(array_unique(array_column($exp,$field)))===11,'Repeated expansion copy '.$field);
+// UA semantic coverage and exact emitted metadata for each real canonical page.
+$ua_map=mrseo_ua_semantic_map();
+$ua_inventory=array_values(array_filter($inventory,static function($e){return $e['language']==='uk';}));
+assert_seo(count($ua_map)===50&&count($ua_inventory)===50,'UA semantic coverage');
+foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===50,'Duplicate UA semantic '.$field);
+foreach($ua_inventory as $entry){
+ $slug=$entry['slug'];$_SERVER['REQUEST_URI']=parse_url($entry['loc'],PHP_URL_PATH);
+ $m=mrseo_ua_semantic_current();assert_seo($m&&$m===$ua_map[$slug],'Missing UA semantic entry '.$slug);
+ ob_start();$actions=$GLOBALS['test_actions']['wp_head']??array();ksort($actions);foreach($actions as $callbacks)foreach($callbacks as $callback)call_user_func($callback);$head=ob_get_clean();
+ assert_seo(substr_count($head,'name="description"')===1,'Duplicate/missing UA description '.$slug);
+ assert_seo(strpos($head,'content="'.esc_attr($m['description']).'"')!==false,'Wrong UA description '.$slug);
+ assert_seo(strpos($head,'name="keywords"')===false,'Hidden meta keywords '.$slug);
+ $titles=$GLOBALS['test_filters']['pre_get_document_title'][999]??array();
+ assert_seo(count($titles)===1&&call_user_func($titles[0],'fallback')===$m['title'],'Wrong UA title '.$slug);
+ foreach($m['related']??array() as $link)assert_seo($link[0]!==$slug&&isset($seen[mrseo_i18n_exact_url('uk',$link[0])]),'Bad UA semantic related link '.$slug);
+}
+$_SERVER['REQUEST_URI']='/ru/seo/';
+assert_seo(mrseo_ua_semantic_current()===null,'UA semantics leaked to RU');
+$_SERVER['REQUEST_URI']='/seo/unknown/';
+assert_seo(mrseo_ua_semantic_current()===null,'UA metadata on nonexistent nested route');
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";
