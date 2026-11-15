@@ -105,3 +105,33 @@ Existing (0): none.
 
 ## Menu approach
 Top level existing 'Послуги' opens 6 compact service groups; 'Рішення для бізнесу' and 'Разові послуги' available as separate paths within menu without altering the homepage Earth. Analytics gets an explicit group rather than hidden under Ads. Horoshop is a nested specialty within stores, with cross-links from SEO/Ads/Dev. On mobile use accordion group navigation with real links, no deep hover dependency. Use existing routes as parent hubs; one-time catalog contains searchable/filterable task tiles and actual links. No duplicate text or mass-generated city pages.
+
+
+## Revision: independent Horoshop and e-commerce verticals (15 Nov 2026)
+
+Owner proposes separate Horoshop subcategories and store promotion by specific business. Supersedes the nested-Horoshop menu proposal above. Architecture only; no implementation/deploy authorized by this message. Existing /horoshop/ remains the platform hub and creation landing. Four previously proposed routes retained; five additional platform candidates. Ten total Horoshop pages including the existing hub. Keep existing global service pages and URL paths; do not substitute a platform name into generic content.
+
+| Route | Scope | Intent distinction |
+|---|---|---|
+| /horoshop/ | Store creation and platform hub | New store, not configuration of existing store |
+| /horoshop-seo/ | Ongoing SEO, categories, filters, product pages | Platform-specific constraints and implementation |
+| /horoshop-audit/ | Scoped audit report | No promise of implementation in audit |
+| /horoshop-setup/ | Existing store settings, domain, payment, delivery | Not new store design |
+| /horoshop-google-ads/ | Ads for Horoshop stores | Platform-specific feed, purchase tracking and ad setup; not generic Ads |
+| /horoshop-product-feeds/ | Feed setup and validation | Item IDs, attributes, price and availability; distinguish from Merchant suspension |
+| /horoshop-integrations/ | CRM, API, supported external services | Confirm tariff and access before promising implementation |
+| /horoshop-automation/ | Supplier imports, recurring stock/price synchronization | Recurring catalog workflow vs one-time integration |
+| /horoshop-migration/ | Migration to Horoshop | Export, URL mapping, redirects and checks; platform-dependent |
+| /horoshop-ga4/ | GA4 purchase events and conversion verification | Horoshop-specific measurement and consent constraints |
+
+Serpstat g_ua exact batch: створення сайту на хорошоп 10/mo; хорошоп api 50/mo. Most other platform phrases returned no rows; missing is not zero. New URLs are candidates based on differentiated buyer task and relevant platform expertise, not confirmed independent SERPs. Only UA and RU platform pages where genuine translations exist.
+
+### Industry solutions: separate store marketing from local service marketing
+
+Existing proposed /automotive-marketing/ should become auto service/business solution hub, with /auto-parts-ecommerce/ a distinct product-catalog landing for auto parts and accessories (fitment, make/model/year, supplier stock and Shopping). /fashion-ecommerce/ covers apparel, footwear, bags and accessories initially, not four near-duplicate pages. Additional candidates /building-materials-ecommerce/ (construction materials, dimensions, delivery, calculators), /electronics-ecommerce/ (models, specifications, variants), /toys-ecommerce/ (age, assortment, seasonality), /furniture-ecommerce/ (dimensions, options, shipping). Furniture only if delivery experience and distinct demand verified; other pages likewise no unverified case claims. /medical-marketing/ and /dental-marketing/ remain service-business verticals, not online pharmacy offers. Preserve genuine portfolio and use case evidence only where permission/actual facts exist.
+
+Serpstat g_ua newly checked: реклама магазину одягу 50/mo; просування інтернет магазину одягу 1/mo; реклама меблів 30/mo; реклама магазину іграшок 20/mo; реклама будівельних матеріалів 10/mo; просування інтернет магазину 90/mo. Other exact terms not returned; no inflated demand. Prioritize automotive and fashion based on practical user experience, construction/electronics/toys next after real scope confirmation, furniture conditional. Do not create a separate platform×industry combination for every niche. Industry pages combine SEO, Ads, conversion and automation around actual sector problems, and link to relevant general/platform services.
+
+### Updated navigation direction
+
+Seven main service groups (SEO, Google Ads, Analytics, E-commerce, Horoshop, Website Creation, Web Development), industry and one-time tasks as separate navigation sections. Desktop all existing links visible without nested disclosure, compact semantic subheadings and wide responsive panel; mobile vertical scroll. No links to unwritten URLs, no home Earth redesign. Published six-group menu PR #135 at main 72ffa7c7b8a6acb2e557cfbac16c4614a5557582; deploy 43751750911 success; final browser/live checks were pending at release. Owner has expressed preference for all-visible menu; this revision records plan only. Additional 5 Horoshop and 5 e-commerce vertical candidates expand previous 41 to 51 candidate new routes (101 UA total if all independently justified and implemented); counts are planning, not live inventory. Confirm intent and capability before committing all.

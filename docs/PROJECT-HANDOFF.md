@@ -651,3 +651,7 @@
 
 ### 15 ноября 2026 — architecture proposal for remaining services
 - Owner requested to rebuild structure and make remaining services separate pages. Proposed complete map in `docs/UA-NEXT-SERVICE-ARCHITECTURE.md`: 7 groups + one-time hub, 45 existing commercial routes + 41 candidates (A 12, B 20, C 9) = 86 commercial/industry/hub and 91 total UA pages if all implemented. 709 total if new routes UA-only. Scope distinct from existing pages, stages C conditional on proven capability/intent. Architecture only, no new theme code or production publication. Preserve home Earth, existing URLs, 20 locales and noindex. Current published release all live checks passed.
+
+
+### 15 ноября 2026 — independent Horoshop and industry navigation
+- Architecture revision in docs/UA-NEXT-SERVICE-ARCHITECTURE.md: Horoshop as separate group, 10 platform pages (existing hub + 9 candidates), separate automotive store vs service intent, fashion/construct/electronics/toys/furniture verticals, 7 service groups plus industry/task sections. Serpstat targeted batch recorded, missing queries not treated as zero. No theme edits or production change from this discussion.
