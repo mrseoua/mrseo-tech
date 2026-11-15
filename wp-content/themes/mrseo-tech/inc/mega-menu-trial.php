@@ -612,7 +612,7 @@ function mrseo_trial_menu_parent($key,$locale){
 }
 
 
-// Ukrainian navigation preview: compact service families, real destinations only.
+// UA-only open navigation: all actual destinations visible without nested disclosure.
 function mrseo_ua_menu_groups(){
  static $groups=null;
  if($groups===null)$groups=json_decode(<<<'MRSEO_UA_MENU_GROUPS'
@@ -621,7 +621,54 @@ function mrseo_ua_menu_groups(){
     "key": "seo",
     "parent": "seo",
     "title": "SEO-просування",
-    "lead": "Видимість у Google, пошуковий попит і технічні виправлення.",
+    "sections": [
+      {
+        "title": "Просування",
+        "items": [
+          [
+            "local-seo",
+            "Локальне SEO"
+          ],
+          [
+            "ecommerce-seo",
+            "SEO інтернет-магазинів"
+          ],
+          [
+            "service-business-seo",
+            "SEO сайтів послуг"
+          ],
+          [
+            "international-seo",
+            "Міжнародне SEO"
+          ]
+        ]
+      },
+      {
+        "title": "Аудит і розвиток",
+        "items": [
+          [
+            "seo-audit",
+            "Технічний SEO-аудит"
+          ],
+          [
+            "website-audit",
+            "Комплексний аудит сайту"
+          ],
+          [
+            "traffic-recovery",
+            "Відновлення трафіку"
+          ],
+          [
+            "semantic-core",
+            "Збір семантичного ядра"
+          ],
+          [
+            "seo-content",
+            "SEO-копірайтинг"
+          ]
+        ]
+      }
+    ],
     "items": [
       [
         "local-seo",
@@ -632,20 +679,20 @@ function mrseo_ua_menu_groups(){
         "SEO інтернет-магазинів"
       ],
       [
-        "seo-audit",
-        "Технічний SEO-аудит"
-      ],
-      [
-        "website-audit",
-        "Комплексний аудит сайту"
-      ],
-      [
         "service-business-seo",
         "SEO сайтів послуг"
       ],
       [
         "international-seo",
         "Міжнародне SEO"
+      ],
+      [
+        "seo-audit",
+        "Технічний SEO-аудит"
+      ],
+      [
+        "website-audit",
+        "Комплексний аудит сайту"
       ],
       [
         "traffic-recovery",
@@ -659,13 +706,90 @@ function mrseo_ua_menu_groups(){
         "seo-content",
         "SEO-копірайтинг"
       ]
+    ],
+    "planned": [
+      [
+        "indexing-fixes",
+        "Виправлення індексації"
+      ],
+      [
+        "competitor-seo-analysis",
+        "SEO-аналіз конкурентів"
+      ],
+      [
+        "search-console-setup",
+        "Google Search Console"
+      ],
+      [
+        "crawl-configuration",
+        "Sitemap.xml та robots.txt"
+      ],
+      [
+        "seo-redirects",
+        "Налаштування 301-редиректів"
+      ],
+      [
+        "structured-data",
+        "Мікророзмітка Schema.org"
+      ],
+      [
+        "metadata-optimization",
+        "Оптимізація метатегів"
+      ],
+      [
+        "internal-linking",
+        "Внутрішня перелінковка"
+      ],
+      [
+        "ai-search-optimization",
+        "GEO та AI-пошук"
+      ]
     ]
   },
   {
     "key": "ads",
     "parent": "google-ads",
     "title": "Google Ads",
-    "lead": "Реклама для заявок і продажів, контроль бюджету.",
+    "sections": [
+      {
+        "title": "Рекламні кампанії",
+        "items": [
+          [
+            "google-search-ads",
+            "Пошукова реклама"
+          ],
+          [
+            "performance-max",
+            "Performance Max"
+          ],
+          [
+            "google-shopping",
+            "Google Shopping"
+          ],
+          [
+            "local-google-ads",
+            "Локальна реклама"
+          ],
+          [
+            "google-remarketing",
+            "Ремаркетинг"
+          ]
+        ]
+      },
+      {
+        "title": "Аудит і товарні дані",
+        "items": [
+          [
+            "google-ads-audit",
+            "Аудит Google Ads"
+          ],
+          [
+            "merchant-center",
+            "Google Merchant Center"
+          ]
+        ]
+      }
+    ],
     "items": [
       [
         "google-search-ads",
@@ -680,20 +804,42 @@ function mrseo_ua_menu_groups(){
         "Google Shopping"
       ],
       [
-        "merchant-center",
-        "Google Merchant Center"
+        "local-google-ads",
+        "Локальна реклама"
       ],
       [
-        "local-google-ads",
-        "Реклама локального бізнесу"
+        "google-remarketing",
+        "Ремаркетинг"
       ],
       [
         "google-ads-audit",
         "Аудит Google Ads"
       ],
       [
-        "google-remarketing",
-        "Ремаркетинг"
+        "merchant-center",
+        "Google Merchant Center"
+      ]
+    ],
+    "planned": [
+      [
+        "google-ads-automation",
+        "Автоматизація Google Ads"
+      ],
+      [
+        "product-feed-optimization",
+        "Оптимізація товарних фідів"
+      ],
+      [
+        "merchant-center-recovery",
+        "Розблокування Merchant Center"
+      ],
+      [
+        "youtube-ads",
+        "Реклама на YouTube"
+      ],
+      [
+        "display-ads",
+        "Медійна реклама"
       ]
     ]
   },
@@ -701,11 +847,42 @@ function mrseo_ua_menu_groups(){
     "key": "data",
     "parent": "analytics",
     "title": "Аналітика",
-    "lead": "Дізнайтеся, звідки приходять клієнти та продажі.",
+    "sections": [
+      {
+        "title": "Вимірювання",
+        "items": [
+          [
+            "ga4-conversions",
+            "GA4 та конверсії"
+          ],
+          [
+            "consent-mode",
+            "Consent Mode та згода"
+          ]
+        ]
+      },
+      {
+        "title": "Звіти й дані",
+        "items": [
+          [
+            "business-dashboards",
+            "Дашборди для бізнесу"
+          ],
+          [
+            "reporting-automation",
+            "Автоматизація звітності"
+          ]
+        ]
+      }
+    ],
     "items": [
       [
         "ga4-conversions",
-        "GA4 та відстеження конверсій"
+        "GA4 та конверсії"
+      ],
+      [
+        "consent-mode",
+        "Consent Mode та згода"
       ],
       [
         "business-dashboards",
@@ -714,10 +891,32 @@ function mrseo_ua_menu_groups(){
       [
         "reporting-automation",
         "Автоматизація звітності"
+      ]
+    ],
+    "planned": [
+      [
+        "google-tag-manager-setup",
+        "Google Tag Manager"
       ],
       [
-        "consent-mode",
-        "Consent Mode та згода"
+        "enhanced-conversions",
+        "Розширені конверсії"
+      ],
+      [
+        "offline-conversions",
+        "Офлайн-конверсії Google Ads"
+      ],
+      [
+        "call-tracking",
+        "Колтрекінг"
+      ],
+      [
+        "server-side-tracking",
+        "Серверне відстеження"
+      ],
+      [
+        "google-sheets-automation",
+        "Автоматизація Google Таблиць"
       ]
     ]
   },
@@ -725,16 +924,30 @@ function mrseo_ua_menu_groups(){
     "key": "commerce",
     "parent": "online-store-development",
     "title": "Інтернет-магазини",
-    "lead": "Створення магазину, розвиток каталогу та Хорошоп.",
+    "sections": [
+      {
+        "title": "Розвиток магазину",
+        "items": [
+          [
+            "store-conversion",
+            "Підвищення конверсії"
+          ],
+          [
+            "store-migration",
+            "Перенесення магазину"
+          ],
+          [
+            "catalog-automation",
+            "Автоматизація каталогу"
+          ],
+          [
+            "competitor-price-monitoring",
+            "Моніторинг цін конкурентів"
+          ]
+        ]
+      }
+    ],
     "items": [
-      [
-        "horoshop",
-        "Послуги для Хорошоп"
-      ],
-      [
-        "catalog-automation",
-        "Автоматизація каталогу"
-      ],
       [
         "store-conversion",
         "Підвищення конверсії"
@@ -744,8 +957,64 @@ function mrseo_ua_menu_groups(){
         "Перенесення магазину"
       ],
       [
+        "catalog-automation",
+        "Автоматизація каталогу"
+      ],
+      [
         "competitor-price-monitoring",
         "Моніторинг цін конкурентів"
+      ]
+    ],
+    "planned": [
+      [
+        "category-seo",
+        "SEO категорій магазину"
+      ],
+      [
+        "product-page-seo",
+        "SEO карток товарів"
+      ],
+      [
+        "product-import",
+        "Імпорт товарів"
+      ]
+    ]
+  },
+  {
+    "key": "horoshop",
+    "parent": "horoshop",
+    "title": "Хорошоп",
+    "sections": [
+      {
+        "title": "Створення магазину",
+        "items": []
+      }
+    ],
+    "items": [],
+    "planned": [
+      [
+        "horoshop-setup",
+        "Налаштування магазину"
+      ],
+      [
+        "horoshop-seo",
+        "SEO-просування Хорошоп"
+      ],
+      [
+        "horoshop-audit",
+        "SEO-аудит Хорошоп"
+      ],
+      [
+        "horoshop-google-ads",
+        "Google Ads для Хорошоп"
+      ],
+      [
+        "horoshop-product-feeds",
+        "Товарні фіди"
+      ],
+      [
+        "horoshop-ga4",
+        "GA4 та конверсії"
       ]
     ]
   },
@@ -753,7 +1022,46 @@ function mrseo_ua_menu_groups(){
     "key": "sites",
     "parent": "service-websites",
     "title": "Створення сайтів",
-    "lead": "Від нового сайту до оновлення та технічної підтримки.",
+    "sections": [
+      {
+        "title": "Нові сайти",
+        "items": [
+          [
+            "wordpress-development",
+            "Сайти на WordPress"
+          ],
+          [
+            "landing-pages",
+            "Лендінги"
+          ],
+          [
+            "local-business-websites",
+            "Сайти малого бізнесу"
+          ],
+          [
+            "corporate-websites",
+            "Корпоративні сайти"
+          ]
+        ]
+      },
+      {
+        "title": "Розвиток і підтримка",
+        "items": [
+          [
+            "website-redesign",
+            "Редизайн сайту"
+          ],
+          [
+            "website-maintenance",
+            "Технічна підтримка"
+          ],
+          [
+            "website-speed-security",
+            "Швидкість та безпека"
+          ]
+        ]
+      }
+    ],
     "items": [
       [
         "wordpress-development",
@@ -761,7 +1069,7 @@ function mrseo_ua_menu_groups(){
       ],
       [
         "landing-pages",
-        "Лендінги для реклами"
+        "Лендінги"
       ],
       [
         "local-business-websites",
@@ -783,13 +1091,70 @@ function mrseo_ua_menu_groups(){
         "website-speed-security",
         "Швидкість та безпека"
       ]
+    ],
+    "planned": [
+      [
+        "website-migration",
+        "Перенесення сайту"
+      ],
+      [
+        "wordpress-plugin-development",
+        "Розробка плагінів WordPress"
+      ],
+      [
+        "website-form-repair",
+        "Виправлення форм"
+      ],
+      [
+        "wordpress-speed-optimization",
+        "Прискорення WordPress"
+      ]
     ]
   },
   {
     "key": "dev",
     "parent": "web-development",
     "title": "Веброзробка",
-    "lead": "Інтеграції, програмне забезпечення та автоматизація.",
+    "sections": [
+      {
+        "title": "Бізнес-системи",
+        "items": [
+          [
+            "business-automation",
+            "Автоматизація бізнесу"
+          ],
+          [
+            "crm-development",
+            "CRM для бізнесу"
+          ],
+          [
+            "web-applications",
+            "Вебзастосунки та кабінети"
+          ],
+          [
+            "ai-agents",
+            "AI-агенти"
+          ],
+          [
+            "chatbot-development",
+            "Розробка чат-ботів"
+          ]
+        ]
+      },
+      {
+        "title": "Інтеграції й функціонал",
+        "items": [
+          [
+            "api-integrations",
+            "API-інтеграції"
+          ],
+          [
+            "custom-functionality",
+            "Індивідуальний функціонал"
+          ]
+        ]
+      }
+    ],
     "items": [
       [
         "business-automation",
@@ -800,12 +1165,16 @@ function mrseo_ua_menu_groups(){
         "CRM для бізнесу"
       ],
       [
+        "web-applications",
+        "Вебзастосунки та кабінети"
+      ],
+      [
         "ai-agents",
         "AI-агенти"
       ],
       [
-        "web-applications",
-        "Вебзастосунки та кабінети"
+        "chatbot-development",
+        "Розробка чат-ботів"
       ],
       [
         "api-integrations",
@@ -814,10 +1183,28 @@ function mrseo_ua_menu_groups(){
       [
         "custom-functionality",
         "Індивідуальний функціонал"
+      ]
+    ],
+    "planned": [
+      [
+        "data-parsing",
+        "Парсинг сайтів та даних"
       ],
       [
-        "chatbot-development",
-        "Розробка чат-ботів"
+        "payment-integration",
+        "Підключення оплати"
+      ],
+      [
+        "shipping-integration",
+        "Інтеграція доставки"
+      ],
+      [
+        "website-calculator",
+        "Онлайн-калькулятори"
+      ],
+      [
+        "crm-integration",
+        "Інтеграція сайту та CRM"
       ]
     ]
   }
@@ -826,34 +1213,104 @@ MRSEO_UA_MENU_GROUPS
  ,true,512,JSON_THROW_ON_ERROR);
  return $groups;
 }
+function mrseo_ua_menu_industries(){
+ static $groups=null;
+ if($groups===null)$groups=json_decode(<<<'MRSEO_UA_MENU_INDUSTRIES'
+[
+  {
+    "title": "Інтернет-магазини",
+    "items": [
+      [
+        "auto-parts-ecommerce",
+        "Автозапчастини та автоаксесуари"
+      ],
+      [
+        "fashion-ecommerce",
+        "Одяг, взуття та аксесуари"
+      ],
+      [
+        "building-materials-ecommerce",
+        "Будівельні матеріали"
+      ],
+      [
+        "electronics-ecommerce",
+        "Електроніка та техніка"
+      ],
+      [
+        "toys-ecommerce",
+        "Дитячі товари та іграшки"
+      ],
+      [
+        "furniture-ecommerce",
+        "Меблі та товари для дому"
+      ]
+    ]
+  },
+  {
+    "title": "Бізнес послуг",
+    "items": [
+      [
+        "medical-marketing",
+        "Медичні клініки"
+      ],
+      [
+        "dental-marketing",
+        "Стоматології"
+      ],
+      [
+        "automotive-marketing",
+        "Автосервіси"
+      ]
+    ]
+  }
+]
+MRSEO_UA_MENU_INDUSTRIES
+ ,true,512,JSON_THROW_ON_ERROR);
+ return $groups;
+}
+function mrseo_ua_menu_planned_item($item){
+ // A planned route is a plain label, never a broken link or a current offer.
+ echo '<span class="mrseo-ua-menu-planned-item" data-planned-slug="'.esc_attr($item[0]).'">'.esc_html($item[1]).'</span>';
+}
 function mrseo_render_ua_menu_architecture($mobile=false){
  $current=mrseo_slug();
- echo '<div class="mrseo-mega mrseo-mega--trial mrseo-mega--ua-architecture'.($mobile?' mrseo-mega--mobile-panel':'').'">';
- echo '<div class="mrseo-ua-menu-intro"><strong>Послуги для бізнесу</strong><span>Оберіть напрям або конкретну задачу</span></div>';
+ echo '<div class="mrseo-mega mrseo-mega--trial mrseo-mega--ua-architecture mrseo-mega--ua-open'.($mobile?' mrseo-mega--mobile-panel':'').'">';
+ echo '<div class="mrseo-ua-menu-intro"><strong>Послуги для бізнесу</strong><span>45 послуг · Нові напрями у підготовці</span></div>';
  echo '<div class="mrseo-mega-grid">';
  foreach(mrseo_ua_menu_groups() as $g){
-  $key=$g['key'];$parent=$g['parent'];$items=$g['items'];$count=count($items);
+  $key=$g['key'];$parent=$g['parent'];
   echo '<section class="mrseo-mega-group mrseo-mega-group--'.esc_attr($key).'">';
   echo '<h3>'.mrseo_mega_menu_icon($key).'<a class="mrseo-mega-heading-link" href="'.esc_url(mrseo_url($parent,'uk')).'"'.($current===$parent?' aria-current="page"':'').'>'.esc_html($g['title']).'</a></h3>';
-  echo '<p class="mrseo-mega-lead">'.esc_html($g['lead']).'</p>';
-  echo '<div class="mrseo-mega-items">';
-  foreach(array_slice($items,0,2) as $item)mrseo_ua_menu_item($item,$current);
-  echo '</div>';
-  $rest=array_slice($items,2);
-  if($rest){
-   $open=in_array($current,array_column($rest,0),true);
-   echo '<details class="mrseo-ua-menu-more"'.($open?' open':'').'><summary>Ще '.count($rest).' '.(count($rest)===2||count($rest)===3||count($rest)===4?'послуги':'послуг').'<span aria-hidden="true">+</span></summary><div class="mrseo-mega-items">';
-   foreach($rest as $item)mrseo_ua_menu_item($item,$current);
-   echo '</div></details>';
+  foreach($g['sections'] as $section){
+   if(!$section['items']){
+    // The Horoshop hub is the sole current platform landing, shown as the heading.
+    echo '<p class="mrseo-ua-menu-subheading">'.esc_html($section['title']).'</p>';
+    continue;
+   }
+   echo '<p class="mrseo-ua-menu-subheading">'.esc_html($section['title']).'</p><div class="mrseo-mega-items">';
+   foreach($section['items'] as $item)mrseo_ua_menu_item($item,$current);
+   echo '</div>';
+  }
+  if($g['planned']){
+   echo '<div class="mrseo-ua-menu-planned"><p class="mrseo-ua-menu-status">У підготовці</p>';
+   foreach($g['planned'] as $item)mrseo_ua_menu_planned_item($item);
+   echo '</div>';
   }
   echo '</section>';
  }
  echo '</div>';
  echo '<div class="mrseo-ua-menu-next" aria-label="Нові розділи у підготовці">';
- echo '<section><div><strong>Рішення для бізнесу</strong><span class="mrseo-ua-menu-status">У підготовці</span></div><p>Медицина · Автобізнес · Одяг та аксесуари</p></section>';
- echo '<section><div><strong>Разові послуги</strong><span class="mrseo-ua-menu-status">У підготовці</span></div><p>SEO, реклама, аналітика й технічні роботи</p></section>';
- echo '</div>';
- echo '<div class="mrseo-mega-bottom"><div class="mrseo-mega-bottom-copy"><strong>Не знайшли потрібну послугу?</strong><p>Опишіть проблему або ідею — підкажемо, з чого почати.</p></div><a class="mrseo-mega-contact" href="'.esc_url(mrseo_url('contact','uk')).'">Обговорити проєкт<span aria-hidden="true">↗</span></a></div></div>';
+ echo '<section class="mrseo-ua-menu-industry"><div><strong>Рішення для бізнесу</strong><span class="mrseo-ua-menu-status">У підготовці</span></div><div class="mrseo-ua-menu-industry-grid">';
+ foreach(mrseo_ua_menu_industries() as $group){
+  echo '<div><p class="mrseo-ua-menu-subheading">'.esc_html($group['title']).'</p>';
+  foreach($group['items'] as $item)mrseo_ua_menu_planned_item($item);
+  echo '</div>';
+ }
+ echo '</div></section>';
+ echo '<section class="mrseo-ua-menu-tasks"><div><strong>Разові послуги</strong><span class="mrseo-ua-menu-status">У підготовці</span></div>';
+ mrseo_ua_menu_planned_item(array('one-time-services','Каталог разових робіт'));
+ echo '<p>Окремі завдання з SEO, реклами, аналітики, сайтів та інтеграцій.</p></section></div>';
+ echo '<div class="mrseo-mega-bottom"><div class="mrseo-mega-bottom-copy"><strong>Не знайшли потрібну послугу?</strong><p>Опишіть завдання — знайдемо рішення.</p></div><a class="mrseo-mega-contact" href="'.esc_url(mrseo_url('contact','uk')).'">Обговорити проєкт<span aria-hidden="true">↗</span></a></div></div>';
 }
 function mrseo_ua_menu_item($item,$current){
  $slug=$item[0];$active=$current===$slug;

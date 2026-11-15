@@ -348,6 +348,7 @@ function mrseo_mega_menu_icon($key) {
        'commerce' => '<path d="M2.5 4h2l2.3 10.5h11.7l2.2-7.7H5.1"/><circle cx="8.2" cy="19" r="1.4"/><circle cx="17.5" cy="19" r="1.4"/>',
        'sites' => '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01M8 14h8M12 11v6"/>',
        'dev' => '<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-5 18"/>',
+       'horoshop' => '<path d="M4 8h16l1 13H3z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>',
        'data' => '<path d="M3 20V12h4v8M10 20V8h4v12M17 20V4h4v16M2 21h20"/>'
     );
     return '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'.($paths[$key] ?? $paths['seo']).'</svg>';

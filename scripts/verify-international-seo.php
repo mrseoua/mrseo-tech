@@ -436,7 +436,12 @@ foreach(mrseo_ua_menu_groups() as $group){
 }
 $commercial_slugs=array_keys(array_filter(mrseo_ua_semantic_map(),static function($m){return $m['intent']==='commercial';}));
 sort($menu_slugs);sort($commercial_slugs);
-assert_seo(count(mrseo_ua_menu_groups())===6&&count($menu_slugs)===45&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
+assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===45&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
 foreach($menu_slugs as $slug)assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Invalid UA menu URL '.$slug);
+$planned_menu=array('one-time-services');
+foreach(mrseo_ua_menu_groups() as $group){foreach($group['planned'] as $item)$planned_menu[]=$item[0];}
+foreach(mrseo_ua_menu_industries() as $group){foreach($group['items'] as $item)$planned_menu[]=$item[0];}
+assert_seo(count($planned_menu)===48&&count(array_unique($planned_menu))===48,'UA planned menu coverage');
+foreach($planned_menu as $slug)assert_seo(!in_array($slug,$menu_slugs,true)&&!in_array($slug,array('horoshop-integrations','horoshop-automation','horoshop-migration'),true),'Invalid planned menu scope '.$slug);
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";

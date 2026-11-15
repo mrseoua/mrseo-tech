@@ -405,7 +405,7 @@ async function audit(browser,viewport,lang,slug){
        !commercial.animations||JSON.stringify(commercial.families)!==JSON.stringify(premiumCommercialFamilies[slug])||commercial.tabs!==3||commercial.pause!==2||
        commercial.problems!==3||commercial.delivery!==3||commercial.faq!==(commercialTwoFaq.includes(slug)?2:3)||commercial.plan!==(hasPlan?3:0)||!commercial.result||!commercial.final||commercial.oldRelated!==0)
       item.errors.push('UA commercial premium content or visual regression: '+JSON.stringify(commercial));
-    if(c.serviceMenuItems!==39||c.menuItems!==20||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==38||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('UA commercial full navigation/contacts missing');
     if(commercial.hero&&commercial.tabs===3&&commercial.pause===2){
       const scene=page.locator('.puc-page .psc-hero-scene'),tabs=scene.locator('[data-puc-tab]'),button=scene.locator('.psc-pause');
@@ -434,7 +434,7 @@ async function audit(browser,viewport,lang,slug){
   if(editorialTarget){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
-    if(c.serviceMenuItems!==39||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
+    if(c.serviceMenuItems!==38||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
     if(slug!=='privacy'&&ed.pause===1&&ed.families.length){
       const svg=page.locator('svg.pue-motion').last(),pause=page.locator('.pue-pause');
       await svg.scrollIntoViewIfNeeded();
@@ -468,7 +468,7 @@ async function audit(browser,viewport,lang,slug){
        cluster.problems!==3||cluster.delivery!==3||cluster.faq!==3||!cluster.result||!cluster.final||
        (slug==='ecommerce-seo'&&(cluster.lab!==3||!cluster.proof))||(slug==='seo-audit'&&(cluster.audit!==3||!cluster.proof)))
        item.errors.push('UA premium SEO cluster missing content or scene: '+JSON.stringify(cluster));
-    if(c.serviceMenuItems!==39||c.menuItems!==20||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==38||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
        item.errors.push('SEO cluster native menu/contacts incomplete');
     if(cluster.hero&&cluster.tabs===3&&cluster.pause===2){
       const hero=page.locator('.psc-hero-scene'),heroSvg=page.locator('.psc-hero-stage svg.psc-motion'),button=hero.locator('.psc-pause');
@@ -508,7 +508,7 @@ async function audit(browser,viewport,lang,slug){
     const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
     if(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations)
       item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
-    if(c.serviceMenuItems!==39||c.menuItems!==20||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==38||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
     if(pi.scene&&pi.tabs===3&&pi.pause){
       const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
@@ -563,7 +563,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<(lang==='uk'?39:(['ru','en'].includes(lang)?25:4)))
+  if(c.serviceMenuItems<(lang==='uk'?38:(['ru','en'].includes(lang)?25:4)))
     item.errors.push('Shared mega menu has too few real working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)&&!clusterTarget&&!commercialTarget){
     const u=c.uaNewPages;
@@ -648,7 +648,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||c.serviceMenuItems!==39||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==38||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
@@ -733,19 +733,23 @@ async function audit(browser,viewport,lang,slug){
   if(lang==='uk'){
    const menuCoverage=await page.evaluate(()=>({
     links:[...document.querySelectorAll('header.site-header .mrseo-mega--ua-architecture a.mrseo-mega-heading-link,header.site-header .mrseo-mega--ua-architecture a.mrseo-mega-item')].map(a=>new URL(a.href).pathname).sort(),
-    planned:document.querySelectorAll('.mrseo-ua-menu-next section').length,
-    plannedLinks:document.querySelectorAll('.mrseo-ua-menu-next a').length
+    planned:[...document.querySelectorAll('.mrseo-ua-menu-planned-item')].map(x=>x.dataset.plannedSlug).sort(),
+    plannedLinks:document.querySelectorAll('.mrseo-ua-menu-next a,.mrseo-ua-menu-planned a').length,
+    nested:document.querySelectorAll('.mrseo-mega--ua-open details,.mrseo-mega--ua-open summary').length
    }));
    const expected=["/ai-agents/","/analytics/","/api-integrations/","/business-automation/","/business-dashboards/","/catalog-automation/","/chatbot-development/","/competitor-price-monitoring/","/consent-mode/","/corporate-websites/","/crm-development/","/custom-functionality/","/ecommerce-seo/","/ga4-conversions/","/google-ads-audit/","/google-ads/","/google-remarketing/","/google-search-ads/","/google-shopping/","/horoshop/","/international-seo/","/landing-pages/","/local-business-websites/","/local-google-ads/","/local-seo/","/merchant-center/","/online-store-development/","/performance-max/","/reporting-automation/","/semantic-core/","/seo-audit/","/seo-content/","/seo/","/service-business-seo/","/service-websites/","/store-conversion/","/store-migration/","/traffic-recovery/","/web-applications/","/web-development/","/website-audit/","/website-maintenance/","/website-redesign/","/website-speed-security/","/wordpress-development/"];
-   if(JSON.stringify(menuCoverage.links)!==JSON.stringify(expected)||menuCoverage.planned!==2||menuCoverage.plannedLinks!==0)item.errors.push('UA menu architecture coverage '+JSON.stringify(menuCoverage));
+   if(JSON.stringify(menuCoverage.links)!==JSON.stringify(expected)||JSON.stringify(menuCoverage.planned)!==JSON.stringify(["ai-search-optimization","auto-parts-ecommerce","automotive-marketing","building-materials-ecommerce","call-tracking","category-seo","competitor-seo-analysis","crawl-configuration","crm-integration","data-parsing","dental-marketing","display-ads","electronics-ecommerce","enhanced-conversions","fashion-ecommerce","furniture-ecommerce","google-ads-automation","google-sheets-automation","google-tag-manager-setup","horoshop-audit","horoshop-ga4","horoshop-google-ads","horoshop-product-feeds","horoshop-seo","horoshop-setup","indexing-fixes","internal-linking","medical-marketing","merchant-center-recovery","metadata-optimization","offline-conversions","one-time-services","payment-integration","product-feed-optimization","product-import","product-page-seo","search-console-setup","seo-redirects","server-side-tracking","shipping-integration","structured-data","toys-ecommerce","website-calculator","website-form-repair","website-migration","wordpress-plugin-development","wordpress-speed-optimization","youtube-ads"])||menuCoverage.plannedLinks!==0||menuCoverage.nested!==0)item.errors.push('UA menu architecture coverage '+JSON.stringify(menuCoverage));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const trigger=page.locator('header.site-header .services-menu-toggle');
    await trigger.click({timeout:4000});
-   const detail=page.locator('.mrseo-mega--ua-architecture .mrseo-ua-menu-more').first();
-   await detail.locator('summary').click({timeout:4000});
-   if(await detail.getAttribute('open')===null||!await detail.locator('a').first().isVisible())item.errors.push('UA desktop menu group cannot expand');
-   await detail.locator('summary').click({timeout:4000});
+   const menuOpen=await page.locator('.mrseo-mega--ua-open').evaluate(el=>{
+    const r=el.getBoundingClientRect();
+    const a=[...el.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link')];
+    const p=[...el.querySelectorAll('.mrseo-ua-menu-planned-item')];
+    return {width:r.width,left:r.left,right:r.right,viewport:innerWidth,visible:a.filter(x=>x.getClientRects().length>0&&getComputedStyle(x).visibility!=='hidden').length,planned:p.filter(x=>x.getClientRects().length>0).length,nested:el.querySelectorAll('details,summary').length};
+   });
+   if(menuOpen.visible!==45||menuOpen.planned!==48||menuOpen.nested!==0||menuOpen.left<-6||menuOpen.right>menuOpen.viewport+6)item.errors.push('UA open menu visibility or bounds '+JSON.stringify(menuOpen));
    await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
    await trigger.click({timeout:4000});
   }
@@ -767,10 +771,13 @@ async function audit(browser,viewport,lang,slug){
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
    if(lang==='uk'){
-    const detail=page.locator('.mrseo-mega--ua-architecture .mrseo-ua-menu-more').first();
-    await detail.locator('summary').click({timeout:4000});
-    if(await detail.getAttribute('open')===null||!await detail.locator('a').first().isVisible())item.errors.push('UA mobile menu group cannot expand');
-    await detail.locator('summary').click({timeout:4000});
+   const menuOpen=await page.locator('.mrseo-mega--ua-open').evaluate(el=>{
+    const r=el.getBoundingClientRect();
+    const a=[...el.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link')];
+    const p=[...el.querySelectorAll('.mrseo-ua-menu-planned-item')];
+    return {width:r.width,left:r.left,right:r.right,viewport:innerWidth,visible:a.filter(x=>x.getClientRects().length>0&&getComputedStyle(x).visibility!=='hidden').length,planned:p.filter(x=>x.getClientRects().length>0).length,nested:el.querySelectorAll('details,summary').length};
+   });
+   if(menuOpen.visible!==45||menuOpen.planned!==48||menuOpen.nested!==0||menuOpen.left<-6||menuOpen.right>menuOpen.viewport+6)item.errors.push('UA open menu visibility or bounds '+JSON.stringify(menuOpen));
    }
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
