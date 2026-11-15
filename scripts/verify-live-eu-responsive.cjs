@@ -405,7 +405,7 @@ async function audit(browser,viewport,lang,slug){
        !commercial.animations||JSON.stringify(commercial.families)!==JSON.stringify(premiumCommercialFamilies[slug])||commercial.tabs!==3||commercial.pause!==2||
        commercial.problems!==3||commercial.delivery!==3||commercial.faq!==(commercialTwoFaq.includes(slug)?2:3)||commercial.plan!==(hasPlan?3:0)||!commercial.result||!commercial.final||commercial.oldRelated!==0)
       item.errors.push('UA commercial premium content or visual regression: '+JSON.stringify(commercial));
-    if(c.serviceMenuItems!==37||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==39||c.menuItems!==20||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||!c.uaPremiumHeaderPhone)
       item.errors.push('UA commercial full navigation/contacts missing');
     if(commercial.hero&&commercial.tabs===3&&commercial.pause===2){
       const scene=page.locator('.puc-page .psc-hero-scene'),tabs=scene.locator('[data-puc-tab]'),button=scene.locator('.psc-pause');
@@ -434,7 +434,7 @@ async function audit(browser,viewport,lang,slug){
   if(editorialTarget){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
-    if(c.serviceMenuItems!==37||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
+    if(c.serviceMenuItems!==39||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
     if(slug!=='privacy'&&ed.pause===1&&ed.families.length){
       const svg=page.locator('svg.pue-motion').last(),pause=page.locator('.pue-pause');
       await svg.scrollIntoViewIfNeeded();
@@ -468,7 +468,7 @@ async function audit(browser,viewport,lang,slug){
        cluster.problems!==3||cluster.delivery!==3||cluster.faq!==3||!cluster.result||!cluster.final||
        (slug==='ecommerce-seo'&&(cluster.lab!==3||!cluster.proof))||(slug==='seo-audit'&&(cluster.audit!==3||!cluster.proof)))
        item.errors.push('UA premium SEO cluster missing content or scene: '+JSON.stringify(cluster));
-    if(c.serviceMenuItems!==37||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==39||c.menuItems!==20||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||!c.uaPremiumHeaderPhone)
        item.errors.push('SEO cluster native menu/contacts incomplete');
     if(cluster.hero&&cluster.tabs===3&&cluster.pause===2){
       const hero=page.locator('.psc-hero-scene'),heroSvg=page.locator('.psc-hero-stage svg.psc-motion'),button=hero.locator('.psc-pause');
@@ -508,7 +508,7 @@ async function audit(browser,viewport,lang,slug){
     const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
     if(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations)
       item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
-    if(c.serviceMenuItems!==37||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==39||c.menuItems!==20||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
     if(pi.scene&&pi.tabs===3&&pi.pause){
       const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
@@ -563,7 +563,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<(lang==='uk'?37:(['ru','en'].includes(lang)?25:4)))
+  if(c.serviceMenuItems<(lang==='uk'?39:(['ru','en'].includes(lang)?25:4)))
     item.errors.push('Shared mega menu has too few real working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)&&!clusterTarget&&!commercialTarget){
     const u=c.uaNewPages;
@@ -648,7 +648,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||c.serviceMenuItems!==37||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==6||c.uaPremiumMenuParents!==6||c.serviceMenuItems!==39||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
@@ -730,6 +730,25 @@ async function audit(browser,viewport,lang,slug){
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
   }
+  if(lang==='uk'){
+   const menuCoverage=await page.evaluate(()=>({
+    links:[...document.querySelectorAll('header.site-header .mrseo-mega--ua-architecture a.mrseo-mega-heading-link,header.site-header .mrseo-mega--ua-architecture a.mrseo-mega-item')].map(a=>new URL(a.href).pathname).sort(),
+    planned:document.querySelectorAll('.mrseo-ua-menu-next section').length,
+    plannedLinks:document.querySelectorAll('.mrseo-ua-menu-next a').length
+   }));
+   const expected=["/ai-agents/","/analytics/","/api-integrations/","/business-automation/","/business-dashboards/","/catalog-automation/","/chatbot-development/","/competitor-price-monitoring/","/consent-mode/","/corporate-websites/","/crm-development/","/custom-functionality/","/ecommerce-seo/","/ga4-conversions/","/google-ads-audit/","/google-ads/","/google-remarketing/","/google-search-ads/","/google-shopping/","/horoshop/","/international-seo/","/landing-pages/","/local-business-websites/","/local-google-ads/","/local-seo/","/merchant-center/","/online-store-development/","/performance-max/","/reporting-automation/","/semantic-core/","/seo-audit/","/seo-content/","/seo/","/service-business-seo/","/service-websites/","/store-conversion/","/store-migration/","/traffic-recovery/","/web-applications/","/web-development/","/website-audit/","/website-maintenance/","/website-redesign/","/website-speed-security/","/wordpress-development/"];
+   if(JSON.stringify(menuCoverage.links)!==JSON.stringify(expected)||menuCoverage.planned!==2||menuCoverage.plannedLinks!==0)item.errors.push('UA menu architecture coverage '+JSON.stringify(menuCoverage));
+  }
+  if(lang==='uk'&&slug===''&&viewport.name==='wide'){
+   const trigger=page.locator('header.site-header .services-menu-toggle');
+   await trigger.click({timeout:4000});
+   const detail=page.locator('.mrseo-mega--ua-architecture .mrseo-ua-menu-more').first();
+   await detail.locator('summary').click({timeout:4000});
+   if(await detail.getAttribute('open')===null||!await detail.locator('a').first().isVisible())item.errors.push('UA desktop menu group cannot expand');
+   await detail.locator('summary').click({timeout:4000});
+   await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
+   await trigger.click({timeout:4000});
+  }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
    const menu=page.locator('header.site-header .menu-toggle');
@@ -747,6 +766,12 @@ async function audit(browser,viewport,lang,slug){
       return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
+   if(lang==='uk'){
+    const detail=page.locator('.mrseo-mega--ua-architecture .mrseo-ua-menu-more').first();
+    await detail.locator('summary').click({timeout:4000});
+    if(await detail.getAttribute('open')===null||!await detail.locator('a').first().isVisible())item.errors.push('UA mobile menu group cannot expand');
+    await detail.locator('summary').click({timeout:4000});
+   }
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
    await page.keyboard.press('Escape');
