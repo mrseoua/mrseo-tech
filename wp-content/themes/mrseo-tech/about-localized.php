@@ -1,7 +1,8 @@
 <?php
 if(!defined('ABSPATH'))exit;
 if(mrseo_locale()==='uk')require_once get_template_directory().'/inc/ua-final-interior-visuals.php';
-get_header();
+if(mrseo_locale()==='uk'){require_once get_template_directory().'/inc/premium-ua-editorial.php';mrseo_pue_setup('about');}
+get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('about');
 ?>
 <div class="about-page">
   <section class="about-hero" aria-labelledby="about-heading">
@@ -35,6 +36,7 @@ get_header();
           <span><?php echo esc_html(mrseo_t('НЕВЕЛИКА КОМАНДА','НЕБОЛЬШАЯ КОМАНДА','SMALL TEAM'));?></span>
           <div><span>SEO</span><span><?php echo esc_html(mrseo_t('РЕКЛАМА','ADS','ADS'));?></span><span><?php echo esc_html(mrseo_t('ДАНІ','DATA','DATA'));?></span><span><?php echo esc_html(mrseo_t('САЙТИ','WEB','WEB'));?></span></div>
         </div>
+         <?php if(mrseo_locale()==='uk')mrseo_pue_art('about-experience','pue-about-hero');?>
         <span class="about-experience-ring about-experience-ring-one" aria-hidden="true"></span>
         <span class="about-experience-ring about-experience-ring-two" aria-hidden="true"></span>
       </div>
@@ -46,6 +48,7 @@ get_header();
         <div class="eyebrow"><?php echo esc_html(mrseo_t('ЯК МИ ПРАЦЮЄМО','КАК МЫ РАБОТАЕМ','HOW WE WORK'));?></div>
         <h2 id="about-method-heading"><?php echo esc_html(mrseo_t('Спочатку розуміємо проблему. Потім діємо.','Сначала понимаем проблему. Потом действуем.','Understand the problem first. Then act.'));?></h2>
       </div>
+      <?php if(mrseo_locale()==='uk')mrseo_pue_pause();?>
       <div class="about-method-grid">
         <?php
         $steps=array(
@@ -67,7 +70,7 @@ get_header();
         );
         foreach($steps as $step):?>
         <article class="about-method-item">
-          <span class="about-method-index"><?php echo esc_html($step[0]);?></span>
+          <span class="about-method-index"><?php echo esc_html($step[0]);?></span><?php if(mrseo_locale()==='uk')mrseo_pue_art(array('01'=>'about-listen','02'=>'about-investigate','03'=>'about-solve')[$step[0]]);?>
           <h3><?php echo esc_html($step[1]);?></h3>
           <p><?php echo esc_html($step[2]);?></p>
         </article>
@@ -92,7 +95,7 @@ get_header();
         foreach($audiences as $i=>$audience):?>
         <a class="about-fit-card" href="<?php echo esc_url(mrseo_url($audience[0]));?>">
           <span class="about-fit-top"><span><?php echo esc_html(sprintf('%02d',$i+1));?></span><span aria-hidden="true">↗</span></span>
-          <h3><?php echo esc_html($audience[1]);?></h3>
+          <?php if(mrseo_locale()==='uk')mrseo_pue_art(array('about-fit-store','about-fit-service','about-fit-ads')[$i]);?><h3><?php echo esc_html($audience[1]);?></h3>
           <p><?php echo esc_html($audience[2]);?></p>
         </a>
         <?php endforeach;?>
@@ -101,7 +104,7 @@ get_header();
   </section>
   <section class="about-final">
     <div class="container about-final-inner">
-      <div>
+      <div><?php if(mrseo_locale()==='uk')mrseo_pue_art('about-next','pue-about-next');?>
         <div class="eyebrow"><?php echo esc_html(mrseo_t('ПОЧНІМО З ГОЛОВНОГО','НАЧНЁМ С ГЛАВНОГО','START WITH WHAT MATTERS'));?></div>
         <h2><?php echo esc_html(mrseo_t('Розкажіть, що не працює. Знайдемо, з чого почати.','Расскажите, что не работает. Найдём, с чего начать.','Tell us what is not working. We will find where to start.'));?></h2>
       </div>

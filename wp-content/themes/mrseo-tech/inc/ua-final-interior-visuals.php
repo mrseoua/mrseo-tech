@@ -110,7 +110,7 @@ function mrseo_render_ua_about_visual() {
    <div class="uaf-heading"><div><span class="uaf-eyebrow">СПІЛЬНА РОБОТА НАД ОДНІЄЮ ЗАДАЧЕЮ</span><h2 id="uaf-about-heading">Сайт, реклама й аналітика. <em>Не окремо одне від одного.</em></h2></div>
     <p>Рішення в одній сфері може впливати на іншу. Тому дивимося на задачу бізнесу цілісно.</p></div>
    <div class="uaf-capability-card">
-    <div class="uaf-network" role="img" aria-label="Візуальна схема: SEO, реклама, дані та розробка пов'язані з бізнесовою задачею">
+    <div class="uaf-network" role="img" aria-label="Візуальна схема: SEO, реклама, дані та розробка пов'язані з бізнесовою задачею"><?php if(function_exists('mrseo_pue_art'))mrseo_pue_art('about-network','pue-network-overlay');?>
      <div class="uaf-network-center"><span>ВАША ЗАДАЧА</span><strong>Знайти рішення</strong></div>
      <div class="uaf-network-satellite uaf-network-satellite--seo">SEO</div>
      <div class="uaf-network-satellite uaf-network-satellite--ads">Google Ads</div>
@@ -138,9 +138,9 @@ function mrseo_render_ua_portfolio_visual() {
    <div class="uaf-heading"><div><span class="uaf-eyebrow">ЯК ЧИТАТИ НАШЕ ПОРТФОЛІО</span><h2 id="uaf-portfolio-heading">Реальні сайти. <em>Без вигаданих графіків зростання.</em></h2></div>
     <p>Показуємо компанії та напрями роботи. Не приписуємо кожному логотипу результати, яких не можемо публічно підтвердити.</p></div>
    <div class="uaf-evidence" aria-label="Три принципи представлення портфоліо">
-    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><span>WWW</span><b>↗</b></div><h3>Перевірювані сайти</h3><p>У каталозі — назви й посилання на проєкти.</p></div>
-    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><span>◎</span><b>✳</b></div><h3>Різні галузі</h3><p>Інтернет-магазини, послуги та інші бізнеси.</p></div>
-    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><span>✓</span><b>◇</b></div><h3>Повага до даних</h3><p>Бюджети й внутрішню статистику не розкриваємо.</p></div>
+    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art')):mrseo_pue_art('portfolio-web');else:?><span>WWW</span><b>↗</b><?php endif;?></div><h3>Перевірювані сайти</h3><p>У каталозі — назви й посилання на проєкти.</p></div>
+    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art')):mrseo_pue_art('portfolio-sectors');else:?><span>◎</span><b>✳</b><?php endif;?></div><h3>Різні галузі</h3><p>Інтернет-магазини, послуги та інші бізнеси.</p></div>
+    <div class="uaf-evidence-item"><div class="uaf-evidence-figure"><?php if(function_exists('mrseo_pue_art')):mrseo_pue_art('portfolio-lock');else:?><span>✓</span><b>◇</b><?php endif;?></div><h3>Повага до даних</h3><p>Бюджети й внутрішню статистику не розкриваємо.</p></div>
    </div>
   </div>
  </section>
@@ -155,10 +155,10 @@ function mrseo_render_ua_contact_visual() {
   <div class="container">
    <div class="uaf-contact-guide-top"><span class="uaf-eyebrow">ПОЧАТИ ПРОСТО</span><h2 id="uaf-contact-heading">Не потрібне технічне завдання. <em>Достатньо описати проблему.</em></h2></div>
    <ol class="uaf-contact-steps">
-    <li><span>01</span><div><strong>Опишіть ситуацію</strong><p>Що зараз не працює або що хочете створити.</p></div></li>
-    <li><span>02</span><div><strong>Залиште контакт</strong><p>Можна додати адресу сайту, якщо він уже є.</p></div></li>
-    <li><span>03</span><div><strong>Обговоримо наступний крок</strong><p>Уточнимо задачу й можливі способи її вирішення.</p></div></li>
-   </ol>
+    <li><span>01</span><div><?php if(function_exists('mrseo_pue_art'))mrseo_pue_art('contact-describe');?><strong>Опишіть ситуацію</strong><p>Що зараз не працює або що хочете створити.</p></div></li>
+    <li><span>02</span><div><?php if(function_exists('mrseo_pue_art'))mrseo_pue_art('contact-address');?><strong>Залиште контакт</strong><p>Можна додати адресу сайту, якщо він уже є.</p></div></li>
+    <li><span>03</span><div><?php if(function_exists('mrseo_pue_art'))mrseo_pue_art('contact-next');?><strong>Обговоримо наступний крок</strong><p>Уточнимо задачу й можливі способи її вирішення.</p></div></li>
+   </ol><?php if(function_exists('mrseo_pue_pause'))mrseo_pue_pause();?>
   </div>
  </section>
  <?php

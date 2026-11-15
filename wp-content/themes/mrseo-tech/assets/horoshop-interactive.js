@@ -8,7 +8,7 @@ const problem=root.querySelector('.hs-demo-message [data-hs-problem]');
 const solution=root.querySelector('.hs-demo-message [data-hs-solution]');
 if(buttons.length!==3||!demo||!problem||!solution)return;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-let active=0,interval=null,resume=null,visible=true;
+let active=0,interval=null,resume=null,visible=true,pagePaused=false;
 function select(index){
  if(index<0||index>=buttons.length)return;
  active=index;
@@ -25,7 +25,7 @@ function select(index){
 function stop(){if(interval!==null){clearInterval(interval);interval=null}}
 function play(){
  stop();
- if(!visible||document.hidden||reduced.matches||resume!==null)return;
+ if(pagePaused||!visible||document.hidden||reduced.matches||resume!==null)return;
  interval=setInterval(()=>select((active+1)%buttons.length),4600);
 }
 function manual(index){
@@ -49,6 +49,7 @@ root.addEventListener('focusin',stop);
 root.addEventListener('focusout',event=>{if(!root.contains(event.relatedTarget))play()});
 reduced.addEventListener?.('change',play);
 document.addEventListener('visibilitychange',play);
+document.addEventListener('mrseo:pue-motion',event=>{pagePaused=!!event.detail?.paused;play()});
 if('IntersectionObserver' in window){
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;play()},{threshold:.15}).observe(root);
 }

@@ -2,7 +2,8 @@
 if(!defined('ABSPATH'))exit;
 $privacy=mrseo_privacy_copy();
 $intl=in_array(mrseo_locale(),array('pl','de'),true);
-get_header();
+if(mrseo_locale()==='uk'){require_once get_template_directory().'/inc/premium-ua-editorial.php';mrseo_pue_setup('privacy');}
+get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('privacy');
 ?>
 <style>
 .mrseo-privacy-page{padding:clamp(55px,7vw,105px) 0 100px;background:#f7f5f0;color:#242725}

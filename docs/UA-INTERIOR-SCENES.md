@@ -53,3 +53,12 @@ The 25 menu sublinks and their parent links include repeated destinations by des
 
 ## 14 November 2026 — SEO cluster implementation in review
 Five existing Ukrainian routes now implemented in branch `chatgpt/ua-premium-seo-cluster-20261114` with 34 unique native SVG scenes (not photographic 3D models): local-seo 6, ecommerce-seo 8, service-business-seo 6, international-seo 6, seo-audit 8. Their earlier pending rows above are now **implemented in branch, not yet published**. Original commercial copy and native navigation preserved; each has three hero phases, unique problem/solution/final art, and specialist catalog or audit evidence as applicable. CI and owner production approval required. Do not claim the rest of the Ukrainian registry is implemented.
+
+
+## 15 November 2026 — Remaining Ukrainian routes implemented in review
+- SEO cluster PR #127 merged and green. New branch `chatgpt/ua-premium-commercial-20261115` contains all 25 remaining commercial routes from native menu + additional audit/traffic, Shopping, GA4, dashboard/reporting and custom functionality routes. See `inc/premium-ua-commercial-routes.php` for exact scene registry (153 scenes, distinct heroes and route-specific compositions, shared symbols). Original content adapted live; no new URLs or SEO changes.
+- Special UA Horoshop, About, Portfolio, Contact and Privacy also styled; 25 new editorial/Horoshop scenes. Approved partner hero, real portfolio, actual enquiry form and legal copy preserved. Privacy deliberately static.
+- Entire public Ukrainian route inventory now has a Premium Tech implementation in main + this review branch (homepage remains frozen; no design-lab/404 routes promoted). This is **not a claim of publication or visually verified production**. The remaining review branch needs green CI and explicit approval. Do not start international propagation until approved UA review.
+
+## 15 November — complete Ukrainian route gate
+The approved existing homepage plus eight earlier service interiors and thirty routes in PR #128 account for 39 public Ukrainian canonical routes. The core Playwright test checks the real XML sitemap against this complete set and tests every new SVG timeline at 390px. Lower story backgrounds must be transparent. No extra visual concepts or routes; no production merge without owner approval. The earlier pending list is a historical design registry, not a release status.
