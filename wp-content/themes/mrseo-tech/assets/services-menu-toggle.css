@@ -245,34 +245,50 @@
  .mrseo-mega--trial .mrseo-mega-bottom{gap:13px!important}
 }
 
-/* UA-only next service architecture. Other locales retain the approved five-pillar menu. */
-.mrseo-mega--ua-architecture .mrseo-ua-menu-intro{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:21px 28px 0;color:#292f2b}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-intro strong{font-size:20px;font-weight:800;letter-spacing:-.025em}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-intro span{font-size:13px;color:#60665d}
-.mrseo-mega--ua-architecture .mrseo-mega-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:start;gap:12px!important;padding:18px 22px!important}
-.mrseo-mega--ua-architecture .mrseo-mega-grid>.mrseo-mega-group{border:1px solid #e4d9cc!important;border-radius:12px;padding:16px!important;min-width:0;background:#fcf9f4}
-.mrseo-mega--ua-architecture .mrseo-mega-group h3{font-size:17px;line-height:1.35;margin-bottom:7px}
-.mrseo-mega--ua-architecture .mrseo-mega-lead{font-size:13px;line-height:1.5;min-height:0;margin-bottom:8px;color:#565d54}
-.site-header .nav-submenu .mrseo-mega--ua-architecture .mrseo-mega-items .mrseo-mega-item{font-size:14px!important;line-height:1.4!important;padding:6px 8px!important;min-height:32px;font-weight:650!important}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-more{margin-top:7px;border-top:1px solid #e7ded2}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-more summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 5px 2px;min-height:34px;cursor:pointer;list-style:none;font-size:13px;line-height:1.4;font-weight:750;color:#943b2b}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-more summary::-webkit-details-marker{display:none}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-more summary span{font-size:20px;font-weight:500;line-height:1}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-more[open] summary span{transform:rotate(45deg)}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-more summary:focus-visible{outline:3px solid #c25d49;outline-offset:2px;border-radius:4px}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-next{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 22px 18px}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-next section{min-width:0;padding:13px 16px;border:1px dashed #d8c8b7;border-radius:10px;background:#fffdfa}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-next section>div{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-next strong{font-size:15px;font-weight:750;color:#292f2b}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-next p{margin:5px 0 0;font-size:13px;line-height:1.45;color:#60665d}
-.mrseo-mega--ua-architecture .mrseo-ua-menu-status{font-size:11px;font-weight:650;color:#8c392a}
+/* UA-only fully open service menu. No layout change outside this panel. */
+.mrseo-mega--ua-open{background:#fffdfa}
+.mrseo-mega--ua-open .mrseo-ua-menu-intro{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:20px 24px 14px;border-bottom:1px solid #e4d9ce;color:#292f2b}
+.mrseo-mega--ua-open .mrseo-ua-menu-intro strong{font-size:20px;font-weight:800;letter-spacing:-.025em}
+.mrseo-mega--ua-open .mrseo-ua-menu-intro span{font-size:13px;color:#66675e}
+.mrseo-mega--ua-open .mrseo-mega-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:start;gap:22px 0!important;padding:20px 14px!important}
+.mrseo-mega--ua-open .mrseo-mega-grid>.mrseo-mega-group{min-width:0;padding:0 13px!important;border:0!important;border-left:1px solid #e8ded3!important;border-radius:0;background:transparent}
+.mrseo-mega--ua-open .mrseo-mega-grid>.mrseo-mega-group:first-child{border-left:0!important}
+.mrseo-mega--ua-open .mrseo-mega-group h3{font-size:16px;line-height:1.32;margin:0 0 12px;gap:7px;min-height:22px}
+.site-header .nav-submenu .mrseo-mega--ua-open .mrseo-mega-group h3 a.mrseo-mega-heading-link{color:#9d4132!important;font-weight:800!important}
+.mrseo-mega--ua-open .mrseo-ua-menu-subheading{font-size:12px;font-weight:800;line-height:1.45;color:#494b43;margin:12px 0 5px;padding:0;letter-spacing:0}
+.mrseo-mega--ua-open .mrseo-mega-items{gap:0}
+.site-header .nav-submenu .mrseo-mega--ua-open .mrseo-mega-items .mrseo-mega-item{font-size:14px!important;font-weight:620!important;line-height:1.4!important;padding:6px 5px!important;min-height:32px;overflow-wrap:break-word!important}
+.site-header .nav-submenu .mrseo-mega--ua-open .mrseo-mega-items .mrseo-mega-item:hover,.site-header .nav-submenu .mrseo-mega--ua-open .mrseo-mega-items .mrseo-mega-item.is-current{color:#a94938!important;background:#f3ece4!important}
+.mrseo-mega--ua-open .mrseo-ua-menu-planned{border-top:1px solid #e4d9ce;margin-top:13px;padding-top:10px}
+.mrseo-mega--ua-open .mrseo-ua-menu-status{display:block;margin:0 0 5px;font-size:11px;font-weight:750;line-height:1.5;color:#8b6655}
+.mrseo-mega--ua-open .mrseo-ua-menu-planned-item{display:block;padding:4px 3px;line-height:1.42;font-size:13px;color:#68665e;overflow-wrap:break-word}
+.mrseo-mega--ua-open .mrseo-ua-menu-next{display:grid;grid-template-columns:2fr 1fr;gap:14px;padding:0 20px 20px}
+.mrseo-mega--ua-open .mrseo-ua-menu-next section{min-width:0;padding:15px 18px;border:1px solid #e5dacd;border-radius:10px;background:#f8f3ec}
+.mrseo-mega--ua-open .mrseo-ua-menu-next section>div:first-child{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:5px}
+.mrseo-mega--ua-open .mrseo-ua-menu-next strong{font-size:16px;font-weight:800;color:#9d4132}
+.mrseo-mega--ua-open .mrseo-ua-menu-next p{margin:5px 0;font-size:13px;line-height:1.5;color:#5e6158}
+.mrseo-mega--ua-open .mrseo-ua-menu-industry-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:7px}
+.mrseo-mega--ua-open .mrseo-ua-menu-industry-grid .mrseo-ua-menu-subheading{font-size:13px;font-weight:800;color:#393c35}
+@media(min-width:951px){
+ .site-header .nav-dropdown>.nav-submenu:has(.mrseo-mega--ua-open){width:min(1560px,calc(100vw - 40px))!important;max-height:calc(100dvh - 105px)!important;overflow-y:auto!important;overscroll-behavior:contain}
+}
+@media(min-width:1400px){
+ .mrseo-mega--ua-open .mrseo-mega-grid{grid-template-columns:repeat(7,minmax(0,1fr))!important}
+}
+@media(min-width:951px) and (max-width:1399px){
+ .mrseo-mega--ua-open .mrseo-mega-grid>.mrseo-mega-group:nth-child(5){border-left:0!important}
+}
 @media(max-width:950px){
- .mrseo-mega--ua-architecture .mrseo-mega-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:12px 8px!important}
- .mrseo-mega--ua-architecture .mrseo-ua-menu-intro{padding:12px 11px 0;align-items:flex-start;flex-direction:column;gap:2px}
- .mrseo-mega--ua-architecture .mrseo-ua-menu-next{padding:0 8px 12px}
+ .mrseo-mega--ua-open .mrseo-mega-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:16px 9px!important;gap:18px 0!important}
+ .mrseo-mega--ua-open .mrseo-mega-grid>.mrseo-mega-group:nth-child(odd){border-left:0!important}
+ .mrseo-mega--ua-open .mrseo-ua-menu-intro{padding:12px 11px;align-items:flex-start;flex-direction:column;gap:3px}
+ .mrseo-mega--ua-open .mrseo-ua-menu-next{grid-template-columns:1fr;padding:0 9px 14px}
 }
 @media(max-width:620px){
- .mrseo-mega--ua-architecture .mrseo-mega-grid,.mrseo-mega--ua-architecture .mrseo-ua-menu-next{grid-template-columns:1fr!important;gap:9px!important}
- .mrseo-mega--ua-architecture .mrseo-mega-grid>.mrseo-mega-group{padding:13px!important}
- .mrseo-mega--ua-architecture .mrseo-ua-menu-intro strong{font-size:18px}
+ .mrseo-mega--ua-open .mrseo-mega-grid,.mrseo-mega--ua-open .mrseo-ua-menu-industry-grid{grid-template-columns:1fr!important;gap:14px!important}
+ .mrseo-mega--ua-open .mrseo-mega-grid>.mrseo-mega-group{border-left:0!important;border-top:1px solid #e4d9ce!important;padding:15px 7px 0!important}
+ .mrseo-mega--ua-open .mrseo-mega-grid>.mrseo-mega-group:first-child{border-top:0!important;padding-top:0!important}
+ .mrseo-mega--ua-open .mrseo-ua-menu-intro strong{font-size:18px}
+ .site-header .nav-submenu .mrseo-mega--ua-open .mrseo-mega-items .mrseo-mega-item{min-height:40px;font-size:15px!important}
+ .mrseo-mega--ua-open .mrseo-ua-menu-planned-item{font-size:14px}
 }
