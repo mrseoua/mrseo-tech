@@ -5,6 +5,14 @@
   const groups=[...root.querySelectorAll('[data-hybrid-group]')],panels=[...root.querySelectorAll('[data-hybrid-panel]')];
   const modeButtons=[...root.querySelectorAll('[data-hybrid-mode]')],views=[...root.querySelectorAll('[data-hybrid-view]')];
   const extras=[...root.querySelectorAll('[data-hybrid-extra]')],extraPanels=[...root.querySelectorAll('[data-hybrid-extra-panel]')];
+  const bundles=[...root.querySelectorAll('[data-seo-bundle]')],bundlePanels=[...root.querySelectorAll('[data-seo-bundle-panel]')];
+  function openBundle(key){
+   bundles.forEach(b=>{const active=b.dataset.seoBundle===key;b.setAttribute('aria-expanded',String(active));b.lastElementChild.textContent=active?'−':'+';});
+   bundlePanels.forEach(p=>p.hidden=p.dataset.seoBundlePanel!==key);
+  }
+  bundles.forEach(b=>b.addEventListener('click',()=>openBundle(b.getAttribute('aria-expanded')==='true'?null:b.dataset.seoBundle)));
+  const initialBundle=bundlePanels.find(p=>p.querySelector('[aria-current="page"]'))?.dataset.seoBundlePanel||null;
+  openBundle(initialBundle);
   const trigger=root.closest('.nav-dropdown,.intl-dropdown')?.querySelector('.services-menu-toggle');
   const scrollParent=()=>narrow.matches?root.closest('.nav-links'):root.closest('.nav-submenu');
   let selected=root.dataset.initialGroup||'seo',mode='services',drill=false;
@@ -33,7 +41,7 @@
    extraPanels.forEach(p=>p.hidden=!(opening&&p.dataset.hybridExtraPanel===b.dataset.hybridExtra));
   }));
   extraPanels.forEach(p=>p.hidden=true);
-  const reset=()=>{mode='services';drill=false;selected=root.dataset.initialGroup||'seo';extras.forEach(b=>{b.setAttribute('aria-expanded','false');b.lastElementChild.textContent='+';});extraPanels.forEach(p=>p.hidden=true);render();};
+  const reset=()=>{openBundle(initialBundle);mode='services';drill=false;selected=root.dataset.initialGroup||'seo';extras.forEach(b=>{b.setAttribute('aria-expanded','false');b.lastElementChild.textContent='+';});extraPanels.forEach(p=>p.hidden=true);render();};
   narrow.addEventListener('change',()=>{drill=false;render();});
   if(trigger){
    // Shared disclosure normally focuses its first link on ArrowDown; the hybrid

@@ -388,3 +388,22 @@
  .mrseo-mega--ua-hybrid .mrseo-mega-bottom{padding:17px 16px!important;grid-template-columns:1fr!important}
  .site-header .nav-submenu .mrseo-mega--ua-hybrid a.mrseo-mega-contact{width:100%!important;max-width:none!important}
 }
+
+/* Compact SEO catalogue: only visual grouping, every service link remains in HTML. */
+.mrseo-mega--ua-hybrid [data-hybrid-panel="seo"] .mrseo-hybrid-columns{align-items:start;gap:20px 28px}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-left,.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-right{min-width:0}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-left .mrseo-hybrid-section+.mrseo-hybrid-section{margin-top:24px}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-bundle{margin:5px 0}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-bundle>button{display:none;width:100%;min-height:40px;align-items:center;justify-content:space-between;gap:10px;border:1px solid transparent;background:transparent;border-radius:8px;padding:9px 8px;text-align:left;font-size:15px;font-weight:750;line-height:1.4}
+.mrseo-mega--ua-hybrid.is-enhanced .mrseo-hybrid-seo-bundle>button{display:flex}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-bundle>button:hover,.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-bundle>button[aria-expanded=true]{background:#f1e6d8;border-color:#e5d5c2;color:var(--mh-red)}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-bundle>button>span:last-child{color:var(--mh-red);font-size:19px;flex:none}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-links{padding:5px 7px 6px 14px;border-left:2px solid #dfc7b1;margin:5px 0 9px 8px;background:#faf5ee;border-radius:0 8px 8px 0}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-recovery{margin-top:8px}
+.site-header .nav-submenu .mrseo-mega--ua-hybrid a.mrseo-hybrid-seo-all{display:inline-flex!important;align-items:center;gap:8px;color:var(--mh-red)!important;font-size:15px!important;font-weight:750!important;white-space:normal!important;padding:12px 8px!important;margin-top:18px;border-top:1px solid var(--mh-line)!important;border-radius:0!important;background:transparent!important;width:100%}
+.mrseo-mega--ua-hybrid .mrseo-hybrid-seo-all::after{display:none!important;content:none!important}
+@media(max-width:950px){
+ .mrseo-mega--ua-hybrid [data-hybrid-panel="seo"] .mrseo-hybrid-columns{grid-template-columns:1fr;gap:20px}
+ .mrseo-mega--ua-hybrid .mrseo-hybrid-seo-bundle>button{min-height:46px;font-size:16px}
+ .mrseo-mega--ua-hybrid .mrseo-hybrid-seo-links{padding-left:9px}
+}
