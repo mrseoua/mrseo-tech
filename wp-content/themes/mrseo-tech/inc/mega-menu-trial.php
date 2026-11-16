@@ -623,7 +623,7 @@ function mrseo_ua_menu_groups(){
     "title": "SEO-просування",
     "sections": [
       {
-        "title": "Просування",
+        "title": "Комплексне просування",
         "items": [
           [
             "local-seo",
@@ -644,7 +644,7 @@ function mrseo_ua_menu_groups(){
         ]
       },
       {
-        "title": "Аудит і розвиток",
+        "title": "Аудит і стратегія",
         "items": [
           [
             "seo-audit",
@@ -659,12 +659,63 @@ function mrseo_ua_menu_groups(){
             "Відновлення трафіку"
           ],
           [
+            "competitor-seo-analysis",
+            "SEO-аналіз конкурентів"
+          ],
+          [
             "semantic-core",
             "Збір семантичного ядра"
-          ],
+          ]
+        ]
+      },
+      {
+        "title": "Контент та оптимізація",
+        "items": [
           [
             "seo-content",
             "SEO-копірайтинг"
+          ],
+          [
+            "metadata-optimization",
+            "Оптимізація метатегів"
+          ],
+          [
+            "internal-linking",
+            "Внутрішня перелінковка"
+          ]
+        ]
+      },
+      {
+        "title": "Технічні роботи",
+        "items": [
+          [
+            "indexing-fixes",
+            "Виправлення індексації"
+          ],
+          [
+            "search-console-setup",
+            "Google Search Console"
+          ],
+          [
+            "crawl-configuration",
+            "Sitemap.xml та robots.txt"
+          ],
+          [
+            "seo-redirects",
+            "Налаштування 301-редиректів"
+          ],
+          [
+            "structured-data",
+            "Мікророзмітка Schema.org"
+          ]
+        ]
+      },
+      {
+        "title": "Нові можливості",
+        "items": [
+          [
+            "ai-search-optimization",
+            "GEO та AI-пошук"
           ]
         ]
       }
@@ -699,22 +750,28 @@ function mrseo_ua_menu_groups(){
         "Відновлення трафіку"
       ],
       [
+        "competitor-seo-analysis",
+        "SEO-аналіз конкурентів"
+      ],
+      [
         "semantic-core",
         "Збір семантичного ядра"
       ],
       [
         "seo-content",
         "SEO-копірайтинг"
-      ]
-    ],
-    "planned": [
+      ],
+      [
+        "metadata-optimization",
+        "Оптимізація метатегів"
+      ],
+      [
+        "internal-linking",
+        "Внутрішня перелінковка"
+      ],
       [
         "indexing-fixes",
         "Виправлення індексації"
-      ],
-      [
-        "competitor-seo-analysis",
-        "SEO-аналіз конкурентів"
       ],
       [
         "search-console-setup",
@@ -733,18 +790,11 @@ function mrseo_ua_menu_groups(){
         "Мікророзмітка Schema.org"
       ],
       [
-        "metadata-optimization",
-        "Оптимізація метатегів"
-      ],
-      [
-        "internal-linking",
-        "Внутрішня перелінковка"
-      ],
-      [
         "ai-search-optimization",
         "GEO та AI-пошук"
       ]
-    ]
+    ],
+    "planned": []
   },
   {
     "key": "ads",
@@ -1275,7 +1325,7 @@ function mrseo_ua_menu_planned_item($item){
 function mrseo_render_ua_menu_architecture($mobile=false){
  $current=mrseo_slug();
  echo '<div class="mrseo-mega mrseo-mega--trial mrseo-mega--ua-architecture mrseo-mega--ua-open'.($mobile?' mrseo-mega--mobile-panel':'').'">';
- echo '<div class="mrseo-ua-menu-intro"><strong>Послуги для бізнесу</strong><span>45 послуг · Нові напрями у підготовці</span></div>';
+ echo '<div class="mrseo-ua-menu-intro"><strong>Послуги для бізнесу</strong><span>54 послуги · Нові напрями у підготовці</span></div>';
  echo '<div class="mrseo-mega-grid">';
  foreach(mrseo_ua_menu_groups() as $g){
   $key=$g['key'];$parent=$g['parent'];

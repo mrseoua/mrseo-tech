@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (668 URLs)
+ * - all completed pages are represented exactly once (677 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -69,8 +69,8 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 53, 'Expected 53 editorial equivalence groups');
-assert_seo(count($inventory) === 668, 'Expected 668 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($groups) === 62, 'Expected 62 editorial equivalence groups');
+assert_seo(count($inventory) === 677, 'Expected 677 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
     'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs(),mrseo_ua_expansion_slugs()),
@@ -122,7 +122,7 @@ foreach ($inventory as $entry) {
         $home_count++;
     }
 }
-assert_seo(count($seen) === 668 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 677 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -391,7 +391,7 @@ foreach (array('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el',
 
 // Every new commercial offer has a single UA canonical, actual route and unique copy.
 $exp=mrseo_ua_expansion_data();
-assert_seo(count($exp)===11,'Expected 11 new UA commercial offers');
+assert_seo(count($exp)===20,'Expected 20 new UA commercial offers');
 foreach($exp as $slug=>$d){
  $_SERVER['REQUEST_URI']='/'.$slug.'/';
  assert_seo(mrseo_ua_expansion_route(),'New UA route missing '.$slug);
@@ -406,12 +406,12 @@ foreach($exp as $slug=>$d){
   assert_seo(!mrseo_ua_expansion_route()&&mrseo_i18n_current_entry()===null,'Invented foreign expansion route '.$language.'/'.$slug);
  }
 }
-foreach(array('title','lead','foot','problemHeading','problemLead','result','description') as $field)assert_seo(count(array_unique(array_column($exp,$field)))===11,'Repeated expansion copy '.$field);
+foreach(array('title','lead','foot','problemHeading','problemLead','result','description') as $field)assert_seo(count(array_unique(array_column($exp,$field)))===20,'Repeated expansion copy '.$field);
 // UA semantic coverage and exact emitted metadata for each real canonical page.
 $ua_map=mrseo_ua_semantic_map();
 $ua_inventory=array_values(array_filter($inventory,static function($e){return $e['language']==='uk';}));
-assert_seo(count($ua_map)===50&&count($ua_inventory)===50,'UA semantic coverage');
-foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===50,'Duplicate UA semantic '.$field);
+assert_seo(count($ua_map)===59&&count($ua_inventory)===59,'UA semantic coverage');
+foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===59,'Duplicate UA semantic '.$field);
 foreach($ua_inventory as $entry){
  $slug=$entry['slug'];$_SERVER['REQUEST_URI']=parse_url($entry['loc'],PHP_URL_PATH);
  $m=mrseo_ua_semantic_current();assert_seo($m&&$m===$ua_map[$slug],'Missing UA semantic entry '.$slug);
@@ -427,7 +427,7 @@ $_SERVER['REQUEST_URI']='/ru/seo/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA semantics leaked to RU');
 $_SERVER['REQUEST_URI']='/seo/unknown/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA metadata on nonexistent nested route');
-// New UA menu includes all 45 published offers exactly once, no invented routes.
+// New UA menu includes all 54 published offers exactly once, no invented routes.
 require_once $root.'/inc/mega-menu-trial.php';
 $menu_slugs=array();
 foreach(mrseo_ua_menu_groups() as $group){
@@ -436,12 +436,16 @@ foreach(mrseo_ua_menu_groups() as $group){
 }
 $commercial_slugs=array_keys(array_filter(mrseo_ua_semantic_map(),static function($m){return $m['intent']==='commercial';}));
 sort($menu_slugs);sort($commercial_slugs);
-assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===45&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
+assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===54&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
 foreach($menu_slugs as $slug)assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Invalid UA menu URL '.$slug);
+$seo_group=array_values(array_filter(mrseo_ua_menu_groups(),static function($g){return $g['key']==='seo';}))[0];
+$seo_hub_slugs=array();foreach($seo_group['sections'] as $section){foreach($section['items'] as $item)$seo_hub_slugs[]=$item[0];}
+assert_seo(count($seo_group['sections'])===5&&count($seo_hub_slugs)===18&&count(array_unique($seo_hub_slugs))===18&&$seo_group['planned']===array(),'Complete SEO hub inventory');
+assert_seo($seo_hub_slugs===array_column($seo_group['items'],0),'SEO hub and menu differ');
 $planned_menu=array('one-time-services');
 foreach(mrseo_ua_menu_groups() as $group){foreach($group['planned'] as $item)$planned_menu[]=$item[0];}
 foreach(mrseo_ua_menu_industries() as $group){foreach($group['items'] as $item)$planned_menu[]=$item[0];}
-assert_seo(count($planned_menu)===48&&count(array_unique($planned_menu))===48,'UA planned menu coverage');
+assert_seo(count($planned_menu)===39&&count(array_unique($planned_menu))===39,'UA planned menu coverage');
 foreach($planned_menu as $slug)assert_seo(!in_array($slug,$menu_slugs,true)&&!in_array($slug,array('horoshop-integrations','horoshop-automation','horoshop-migration'),true),'Invalid planned menu scope '.$slug);
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";
