@@ -1343,9 +1343,9 @@ function mrseo_render_ua_menu_architecture($mobile=false){
  echo '<div class="mrseo-hybrid-rail-note"><strong>Не знаєте, з чого почати?</strong><p>Оберіть пошук за проблемою бізнесу.</p><button type="button" data-hybrid-mode="problems">Знайти рішення →</button></div></div>';
  echo '<div class="mrseo-mega-grid"><button type="button" class="mrseo-hybrid-back" data-hybrid-back>← Усі напрями</button>';
  foreach($groups as $g){
-  $key=$g['key'];$parent=$g['parent'];
+  $key=$g['key'];$parent=$g['parent'];$count=count($g['items'])+1;$last=$count%10;$ending=($count%100>=11&&$count%100<=14)?'послуг':($last===1?'послуга':($last>=2&&$last<=4?'послуги':'послуг'));
   echo '<section class="mrseo-mega-group mrseo-mega-group--'.esc_attr($key).'" id="'.esc_attr($id.'-'.$key).'" data-hybrid-panel="'.esc_attr($key).'">';
-  echo '<div class="mrseo-hybrid-panel-head"><h3>'.mrseo_mega_menu_icon($key).'<a class="mrseo-mega-heading-link" href="'.esc_url(mrseo_url($parent,'uk')).'"'.($current===$parent?' aria-current="page"':'').'>'.esc_html($g['title']).'</a></h3><span>'.esc_html(count($g['items'])+1).' послуг</span></div><p class="mrseo-hybrid-panel-lead">'.esc_html($leads[$key]??'').'. Оберіть потрібну послугу.</p><div class="mrseo-hybrid-columns">';
+  echo '<div class="mrseo-hybrid-panel-head"><h3>'.mrseo_mega_menu_icon($key).'<a class="mrseo-mega-heading-link" href="'.esc_url(mrseo_url($parent,'uk')).'"'.($current===$parent?' aria-current="page"':'').'>'.esc_html($g['title']).'</a></h3><span>'.esc_html($count.' '.$ending).'</span></div><p class="mrseo-hybrid-panel-lead">'.esc_html($leads[$key]??'').'. Оберіть потрібну послугу.</p><div class="mrseo-hybrid-columns">';
   foreach($g['sections'] as $section){
    if(!$section['items'])continue;
    echo '<div class="mrseo-hybrid-section"><p class="mrseo-ua-menu-subheading">'.esc_html($section['title']).'</p><div class="mrseo-mega-items">';

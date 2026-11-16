@@ -35,7 +35,26 @@
   extraPanels.forEach(p=>p.hidden=true);
   const reset=()=>{mode='services';drill=false;selected=root.dataset.initialGroup||'seo';extras.forEach(b=>{b.setAttribute('aria-expanded','false');b.lastElementChild.textContent='+';});extraPanels.forEach(p=>p.hidden=true);render();};
   narrow.addEventListener('change',()=>{drill=false;render();});
-  if(trigger){new MutationObserver(()=>{if(trigger.getAttribute('aria-expanded')==='true'){reset();scrollParent()?.scrollTo({top:0});}}).observe(trigger,{attributes:true,attributeFilter:['aria-expanded']});}
+  if(trigger){
+   // Shared disclosure normally focuses its first link on ArrowDown; the hybrid
+   // must instead focus the selected direction because other panels are hidden.
+   trigger.addEventListener('keydown',event=>{
+    if(event.key!=='ArrowDown')return;
+    event.preventDefault();event.stopImmediatePropagation();
+    if(trigger.getAttribute('aria-expanded')!=='true')trigger.click();
+    queueMicrotask(()=>{
+     if(narrow.matches)root.querySelector('.mrseo-hybrid-modes [data-hybrid-mode="services"]')?.focus({preventScroll:true});
+     else groups.find(b=>b.dataset.hybridGroup===selected)?.focus({preventScroll:true});
+    });
+   },true);
+   new MutationObserver(()=>{
+    if(trigger.getAttribute('aria-expanded')!=='true')return;
+    reset();scrollParent()?.scrollTo({top:0});
+    // The main mobile trigger becomes visually hidden while the panel is open.
+    // Move focus into the now-visible panel instead of leaving it on that trigger.
+    if(narrow.matches)root.querySelector('.mrseo-hybrid-modes [data-hybrid-mode="services"]')?.focus({preventScroll:true});
+   }).observe(trigger,{attributes:true,attributeFilter:['aria-expanded']});
+  }
   root.classList.add('is-enhanced');render();
  });
 })();

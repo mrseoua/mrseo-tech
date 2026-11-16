@@ -750,17 +750,15 @@ async function audit(browser,viewport,lang,slug){
    const inspect=()=>root.evaluate(el=>{const r=el.getBoundingClientRect();const panels=[...el.querySelectorAll('[data-hybrid-panel]')].filter(p=>!p.hidden);return {enhanced:el.classList.contains('is-enhanced'),groups:el.querySelectorAll('[data-hybrid-group]').length,panels:panels.map(p=>p.dataset.hybridPanel),links:panels.reduce((n,p)=>n+p.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link').length,0),left:r.left,right:r.right,viewport:innerWidth};});
    let info=await inspect();
    if(!info.enhanced||info.groups!==7||info.left<-6||info.right>info.viewport+6||JSON.stringify(info.panels)!==JSON.stringify(mobile?[]:['seo']))item.errors.push('UA hybrid initial layout '+JSON.stringify(info));
-   if(mobile)await root.locator('[data-hybrid-group="seo"]').click();
-   info=await inspect();
-   if(info.links!==19||JSON.stringify(info.panels)!==JSON.stringify(['seo']))item.errors.push('UA hybrid SEO panel '+JSON.stringify(info));
-   if(mobile)await root.locator('[data-hybrid-back]').click();
-   await root.locator('[data-hybrid-group="ads"]').click();
-   info=await inspect();
-   if(JSON.stringify(info.panels)!==JSON.stringify(['ads'])||!info.links)item.errors.push('UA hybrid Ads selection '+JSON.stringify(info));
-   if(mobile)await root.locator('[data-hybrid-back]').click();
-   await root.locator('[data-hybrid-group="horoshop"]').click();
-   info=await inspect();
-   if(info.links!==1||JSON.stringify(info.panels)!==JSON.stringify(['horoshop']))item.errors.push('UA hybrid Horoshop selection '+JSON.stringify(info));
+   for(const [key,count] of [['seo',19],['ads',8],['data',5],['commerce',5],['sites',8],['dev',8],['horoshop',1]]){
+    await root.locator('[data-hybrid-group="'+key+'"]').click();
+    info=await inspect();
+    if(info.links!==count||JSON.stringify(info.panels)!==JSON.stringify([key]))item.errors.push('UA hybrid direction '+key+' '+JSON.stringify(info));
+    if(mobile&&key!=='horoshop'){
+     await root.locator('[data-hybrid-back]').click();
+     if(!await root.locator('[data-hybrid-group="'+key+'"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile back focus '+key);
+    }
+   }
    await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="problems"]').click();
    if(!await root.locator('[data-hybrid-view="problems"]').isVisible()||await root.locator('[data-hybrid-view="services"]').isVisible()||await root.locator('.mrseo-hybrid-problem').count()!==6)item.errors.push('UA hybrid problem mode');
    await root.locator('[data-hybrid-extra="industry"]').click();
@@ -778,6 +776,11 @@ async function audit(browser,viewport,lang,slug){
    await verifyHybridMenu(false);
    await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
    await trigger.click({timeout:4000});
+   await trigger.focus();
+   await trigger.press('ArrowDown');
+   if(!await page.locator('.mrseo-mega--ua-hybrid [data-hybrid-group="seo"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid ArrowDown focus');
+   await page.keyboard.press('Escape');
+   if(await trigger.getAttribute('aria-expanded')!=='false'||!await trigger.evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid Escape focus');
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -796,7 +799,14 @@ async function audit(browser,viewport,lang,slug){
       return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
-   if(lang==='uk')await verifyHybridMenu(true);
+   if(lang==='uk'){
+    await verifyHybridMenu(true);
+    const root=page.locator('.mrseo-mega--ua-hybrid');
+    await root.locator('[data-hybrid-close]').click();
+    if(await services.getAttribute('aria-expanded')!=='false'||!await services.evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile close focus');
+    await services.click({timeout:4000});
+    if(!await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="services"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile open focus');
+   }
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
    await page.keyboard.press('Escape');
