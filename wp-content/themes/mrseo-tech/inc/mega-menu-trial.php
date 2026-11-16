@@ -667,6 +667,23 @@ function mrseo_ua_menu_groups(){
             "SEO-копірайтинг"
           ]
         ]
+      },
+      {
+        "title": "Технічні виправлення",
+        "items": [
+          [
+            "indexing-fixes",
+            "Виправлення індексації"
+          ],
+          [
+            "metadata-optimization",
+            "Оптимізація метатегів"
+          ],
+          [
+            "internal-linking",
+            "Внутрішня перелінковка"
+          ]
+        ]
       }
     ],
     "items": [
@@ -705,13 +722,21 @@ function mrseo_ua_menu_groups(){
       [
         "seo-content",
         "SEO-копірайтинг"
-      ]
-    ],
-    "planned": [
+      ],
       [
         "indexing-fixes",
         "Виправлення індексації"
       ],
+      [
+        "metadata-optimization",
+        "Оптимізація метатегів"
+      ],
+      [
+        "internal-linking",
+        "Внутрішня перелінковка"
+      ]
+    ],
+    "planned": [
       [
         "competitor-seo-analysis",
         "SEO-аналіз конкурентів"
@@ -731,14 +756,6 @@ function mrseo_ua_menu_groups(){
       [
         "structured-data",
         "Мікророзмітка Schema.org"
-      ],
-      [
-        "metadata-optimization",
-        "Оптимізація метатегів"
-      ],
-      [
-        "internal-linking",
-        "Внутрішня перелінковка"
       ],
       [
         "ai-search-optimization",
@@ -1275,7 +1292,7 @@ function mrseo_ua_menu_planned_item($item){
 function mrseo_render_ua_menu_architecture($mobile=false){
  $current=mrseo_slug();
  echo '<div class="mrseo-mega mrseo-mega--trial mrseo-mega--ua-architecture mrseo-mega--ua-open'.($mobile?' mrseo-mega--mobile-panel':'').'">';
- echo '<div class="mrseo-ua-menu-intro"><strong>Послуги для бізнесу</strong><span>45 послуг · Нові напрями у підготовці</span></div>';
+ echo '<div class="mrseo-ua-menu-intro"><strong>Послуги для бізнесу</strong><span>48 послуг · Нові напрями у підготовці</span></div>';
  echo '<div class="mrseo-mega-grid">';
  foreach(mrseo_ua_menu_groups() as $g){
   $key=$g['key'];$parent=$g['parent'];
