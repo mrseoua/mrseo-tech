@@ -233,7 +233,7 @@ jobs:
           a=read('premium-ua-commercial-art-6.php','MRSEO_PUC_EXPANSION_ART')
           r=read('premium-ua-commercial-routes.php','MRSEO_PUC_EXPANSION_ROUTES')
           n=read('premium-ua-commercial-art.php','MRSEO_PUC_EXPANSION_INDEX')
-          assert len(d)==len(r)==14 and len(a)==len(n)==84
+          assert len(d)==len(r)==20 and len(a)==len(n)==120
           assert set(a)==set(n)
           seen=set()
           for slug,x in d.items():
@@ -249,9 +249,9 @@ jobs:
                   assert shape not in seen,'Repeated expansion scene '+i
                   seen.add(shape)
               assert a[ids[0]].count('data-puc-part=')==3
-          print('14 unique commercial landings and 84 original animated SVGs verified')
+          print('20 unique commercial landings and 120 original animated SVGs verified')
           PY
-      - name: Run international SEO pre-indexing audit (671 routes)
+      - name: Run international SEO pre-indexing audit (677 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php
