@@ -745,18 +745,42 @@ async function audit(browser,viewport,lang,slug){
    const expectedHub=["/ai-search-optimization/","/competitor-seo-analysis/","/crawl-configuration/","/ecommerce-seo/","/indexing-fixes/","/internal-linking/","/international-seo/","/local-seo/","/metadata-optimization/","/search-console-setup/","/semantic-core/","/seo-audit/","/seo-content/","/seo-redirects/","/service-business-seo/","/structured-data/","/traffic-recovery/","/website-audit/"];
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO hub service coverage or geometry '+JSON.stringify(hub));
   }
+  async function verifyHybridMenu(mobile){
+   const root=page.locator('.mrseo-mega--ua-hybrid');
+   const inspect=()=>root.evaluate(el=>{const r=el.getBoundingClientRect();const panels=[...el.querySelectorAll('[data-hybrid-panel]')].filter(p=>!p.hidden);return {enhanced:el.classList.contains('is-enhanced'),groups:el.querySelectorAll('[data-hybrid-group]').length,panels:panels.map(p=>p.dataset.hybridPanel),links:panels.reduce((n,p)=>n+p.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link').length,0),left:r.left,right:r.right,viewport:innerWidth};});
+   let info=await inspect();
+   if(!info.enhanced||info.groups!==7||info.left<-6||info.right>info.viewport+6||JSON.stringify(info.panels)!==JSON.stringify(mobile?[]:['seo']))item.errors.push('UA hybrid initial layout '+JSON.stringify(info));
+   for(const [key,count] of [['seo',19],['ads',8],['data',5],['commerce',5],['sites',8],['dev',8],['horoshop',1]]){
+    await root.locator('[data-hybrid-group="'+key+'"]').click();
+    info=await inspect();
+    if(info.links!==count||JSON.stringify(info.panels)!==JSON.stringify([key]))item.errors.push('UA hybrid direction '+key+' '+JSON.stringify(info));
+    if(mobile&&key!=='horoshop'){
+     await root.locator('[data-hybrid-back]').click();
+     if(!await root.locator('[data-hybrid-group="'+key+'"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile back focus '+key);
+    }
+   }
+   await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="problems"]').click();
+   if(!await root.locator('[data-hybrid-view="problems"]').isVisible()||await root.locator('[data-hybrid-view="services"]').isVisible()||await root.locator('.mrseo-hybrid-problem').count()!==6)item.errors.push('UA hybrid problem mode');
+   await root.locator('[data-hybrid-extra="industry"]').click();
+   if(!await root.locator('[data-hybrid-extra-panel="industry"]').isVisible())item.errors.push('UA hybrid industry panel');
+   await root.locator('[data-hybrid-extra="tasks"]').click();
+   if(!await root.locator('[data-hybrid-extra-panel="tasks"]').isVisible()||await root.locator('[data-hybrid-extra-panel="industry"]').isVisible())item.errors.push('UA hybrid tasks panel');
+   await root.locator('[data-hybrid-extra="tasks"]').click();
+   await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="services"]').click();
+   await root.locator('[data-hybrid-group="seo"]').click();
+   if(mobile)await root.locator('[data-hybrid-back]').click();
+  }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const trigger=page.locator('header.site-header .services-menu-toggle');
    await trigger.click({timeout:4000});
-   const menuOpen=await page.locator('.mrseo-mega--ua-open').evaluate(el=>{
-    const r=el.getBoundingClientRect();
-    const a=[...el.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link')];
-    const p=[...el.querySelectorAll('.mrseo-ua-menu-planned-item')];
-    return {width:r.width,left:r.left,right:r.right,viewport:innerWidth,visible:a.filter(x=>x.getClientRects().length>0&&getComputedStyle(x).visibility!=='hidden').length,planned:p.filter(x=>x.getClientRects().length>0).length,nested:el.querySelectorAll('details,summary').length};
-   });
-   if(menuOpen.visible!==54||menuOpen.planned!==39||menuOpen.nested!==0||menuOpen.left<-6||menuOpen.right>menuOpen.viewport+6)item.errors.push('UA open menu visibility or bounds '+JSON.stringify(menuOpen));
+   await verifyHybridMenu(false);
    await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
    await trigger.click({timeout:4000});
+   await trigger.focus();
+   await trigger.press('ArrowDown');
+   if(!await page.locator('.mrseo-mega--ua-hybrid [data-hybrid-group="seo"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid ArrowDown focus');
+   await page.keyboard.press('Escape');
+   if(await trigger.getAttribute('aria-expanded')!=='false'||!await trigger.evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid Escape focus');
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -776,13 +800,12 @@ async function audit(browser,viewport,lang,slug){
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
    if(lang==='uk'){
-   const menuOpen=await page.locator('.mrseo-mega--ua-open').evaluate(el=>{
-    const r=el.getBoundingClientRect();
-    const a=[...el.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link')];
-    const p=[...el.querySelectorAll('.mrseo-ua-menu-planned-item')];
-    return {width:r.width,left:r.left,right:r.right,viewport:innerWidth,visible:a.filter(x=>x.getClientRects().length>0&&getComputedStyle(x).visibility!=='hidden').length,planned:p.filter(x=>x.getClientRects().length>0).length,nested:el.querySelectorAll('details,summary').length};
-   });
-   if(menuOpen.visible!==54||menuOpen.planned!==39||menuOpen.nested!==0||menuOpen.left<-6||menuOpen.right>menuOpen.viewport+6)item.errors.push('UA open menu visibility or bounds '+JSON.stringify(menuOpen));
+    await verifyHybridMenu(true);
+    const root=page.locator('.mrseo-mega--ua-hybrid');
+    await root.locator('[data-hybrid-close]').click();
+    if(await services.getAttribute('aria-expanded')!=='false'||!await services.evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile close focus');
+    await services.click({timeout:4000});
+    if(!await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="services"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile open focus');
    }
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
