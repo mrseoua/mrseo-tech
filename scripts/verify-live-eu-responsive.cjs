@@ -745,16 +745,37 @@ async function audit(browser,viewport,lang,slug){
    const expectedHub=["/ai-search-optimization/","/competitor-seo-analysis/","/crawl-configuration/","/ecommerce-seo/","/indexing-fixes/","/internal-linking/","/international-seo/","/local-seo/","/metadata-optimization/","/search-console-setup/","/semantic-core/","/seo-audit/","/seo-content/","/seo-redirects/","/service-business-seo/","/structured-data/","/traffic-recovery/","/website-audit/"];
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO hub service coverage or geometry '+JSON.stringify(hub));
   }
+  async function verifyHybridMenu(mobile){
+   const root=page.locator('.mrseo-mega--ua-hybrid');
+   const inspect=()=>root.evaluate(el=>{const r=el.getBoundingClientRect();const panels=[...el.querySelectorAll('[data-hybrid-panel]')].filter(p=>!p.hidden);return {enhanced:el.classList.contains('is-enhanced'),groups:el.querySelectorAll('[data-hybrid-group]').length,panels:panels.map(p=>p.dataset.hybridPanel),links:panels.reduce((n,p)=>n+p.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link').length,0),left:r.left,right:r.right,viewport:innerWidth};});
+   let info=await inspect();
+   if(!info.enhanced||info.groups!==7||info.left<-6||info.right>info.viewport+6||JSON.stringify(info.panels)!==JSON.stringify(mobile?[]:['seo']))item.errors.push('UA hybrid initial layout '+JSON.stringify(info));
+   if(mobile)await root.locator('[data-hybrid-group="seo"]').click();
+   info=await inspect();
+   if(info.links!==19||JSON.stringify(info.panels)!==JSON.stringify(['seo']))item.errors.push('UA hybrid SEO panel '+JSON.stringify(info));
+   if(mobile)await root.locator('[data-hybrid-back]').click();
+   await root.locator('[data-hybrid-group="ads"]').click();
+   info=await inspect();
+   if(JSON.stringify(info.panels)!==JSON.stringify(['ads'])||!info.links)item.errors.push('UA hybrid Ads selection '+JSON.stringify(info));
+   if(mobile)await root.locator('[data-hybrid-back]').click();
+   await root.locator('[data-hybrid-group="horoshop"]').click();
+   info=await inspect();
+   if(info.links!==1||JSON.stringify(info.panels)!==JSON.stringify(['horoshop']))item.errors.push('UA hybrid Horoshop selection '+JSON.stringify(info));
+   await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="problems"]').click();
+   if(!await root.locator('[data-hybrid-view="problems"]').isVisible()||await root.locator('[data-hybrid-view="services"]').isVisible()||await root.locator('.mrseo-hybrid-problem').count()!==6)item.errors.push('UA hybrid problem mode');
+   await root.locator('[data-hybrid-extra="industry"]').click();
+   if(!await root.locator('[data-hybrid-extra-panel="industry"]').isVisible())item.errors.push('UA hybrid industry panel');
+   await root.locator('[data-hybrid-extra="tasks"]').click();
+   if(!await root.locator('[data-hybrid-extra-panel="tasks"]').isVisible()||await root.locator('[data-hybrid-extra-panel="industry"]').isVisible())item.errors.push('UA hybrid tasks panel');
+   await root.locator('[data-hybrid-extra="tasks"]').click();
+   await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="services"]').click();
+   await root.locator('[data-hybrid-group="seo"]').click();
+   if(mobile)await root.locator('[data-hybrid-back]').click();
+  }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const trigger=page.locator('header.site-header .services-menu-toggle');
    await trigger.click({timeout:4000});
-   const menuOpen=await page.locator('.mrseo-mega--ua-open').evaluate(el=>{
-    const r=el.getBoundingClientRect();
-    const a=[...el.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link')];
-    const p=[...el.querySelectorAll('.mrseo-ua-menu-planned-item')];
-    return {width:r.width,left:r.left,right:r.right,viewport:innerWidth,visible:a.filter(x=>x.getClientRects().length>0&&getComputedStyle(x).visibility!=='hidden').length,planned:p.filter(x=>x.getClientRects().length>0).length,nested:el.querySelectorAll('details,summary').length};
-   });
-   if(menuOpen.visible!==54||menuOpen.planned!==39||menuOpen.nested!==0||menuOpen.left<-6||menuOpen.right>menuOpen.viewport+6)item.errors.push('UA open menu visibility or bounds '+JSON.stringify(menuOpen));
+   await verifyHybridMenu(false);
    await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
    await trigger.click({timeout:4000});
   }
@@ -775,15 +796,7 @@ async function audit(browser,viewport,lang,slug){
       return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
-   if(lang==='uk'){
-   const menuOpen=await page.locator('.mrseo-mega--ua-open').evaluate(el=>{
-    const r=el.getBoundingClientRect();
-    const a=[...el.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link')];
-    const p=[...el.querySelectorAll('.mrseo-ua-menu-planned-item')];
-    return {width:r.width,left:r.left,right:r.right,viewport:innerWidth,visible:a.filter(x=>x.getClientRects().length>0&&getComputedStyle(x).visibility!=='hidden').length,planned:p.filter(x=>x.getClientRects().length>0).length,nested:el.querySelectorAll('details,summary').length};
-   });
-   if(menuOpen.visible!==54||menuOpen.planned!==39||menuOpen.nested!==0||menuOpen.left<-6||menuOpen.right>menuOpen.viewport+6)item.errors.push('UA open menu visibility or bounds '+JSON.stringify(menuOpen));
-   }
+   if(lang==='uk')await verifyHybridMenu(true);
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
    await page.keyboard.press('Escape');
