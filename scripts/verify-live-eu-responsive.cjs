@@ -754,6 +754,18 @@ async function audit(browser,viewport,lang,slug){
     await root.locator('[data-hybrid-group="'+key+'"]').click();
     info=await inspect();
     if(info.links!==count||JSON.stringify(info.panels)!==JSON.stringify([key]))item.errors.push('UA hybrid direction '+key+' '+JSON.stringify(info));
+    if(key==='seo'){
+     const seo=root.locator('[data-hybrid-panel="seo"]');
+     if(await seo.locator('[data-seo-bundle]').count()!==5||await seo.locator('[data-seo-bundle-panel]:not([hidden])').count()!==0||await seo.locator('a.mrseo-mega-item:visible').count()!==6)item.errors.push('UA compact SEO initial state');
+     for(const [bundle,n] of [['audit',2],['technical',4],['strategy',2],['content',3],['analytics',1]]){
+      const toggle=seo.locator('[data-seo-bundle="'+bundle+'"]');
+      await toggle.click();
+      if(await toggle.getAttribute('aria-expanded')!=='true'||await seo.locator('[data-seo-bundle-panel]:not([hidden])').count()!==1||await seo.locator('[data-seo-bundle-panel="'+bundle+'"] a:visible').count()!==n)item.errors.push('UA compact SEO bundle '+bundle);
+     }
+     await seo.locator('[data-seo-bundle="analytics"]').click();
+     if(await seo.locator('[data-seo-bundle-panel]:not([hidden])').count()!==0)item.errors.push('UA compact SEO close');
+     if(await seo.locator('a.mrseo-hybrid-seo-all').getAttribute('href')!==new URL('/seo/',page.url()).href)item.errors.push('UA compact SEO hub link');
+    }
     if(mobile&&key!=='horoshop'){
      await root.locator('[data-hybrid-back]').click();
      if(!await root.locator('[data-hybrid-group="'+key+'"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile back focus '+key);

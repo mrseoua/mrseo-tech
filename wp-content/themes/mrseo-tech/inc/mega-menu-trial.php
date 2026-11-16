@@ -1346,13 +1346,32 @@ function mrseo_render_ua_menu_architecture($mobile=false){
   $key=$g['key'];$parent=$g['parent'];$count=count($g['items'])+1;$last=$count%10;$ending=($count%100>=11&&$count%100<=14)?'послуг':($last===1?'послуга':($last>=2&&$last<=4?'послуги':'послуг'));
   echo '<section class="mrseo-mega-group mrseo-mega-group--'.esc_attr($key).'" id="'.esc_attr($id.'-'.$key).'" data-hybrid-panel="'.esc_attr($key).'">';
   echo '<div class="mrseo-hybrid-panel-head"><h3>'.mrseo_mega_menu_icon($key).'<a class="mrseo-mega-heading-link" href="'.esc_url(mrseo_url($parent,'uk')).'"'.($current===$parent?' aria-current="page"':'').'>'.esc_html($g['title']).'</a></h3><span>'.esc_html($count.' '.$ending).'</span></div><p class="mrseo-hybrid-panel-lead">'.esc_html($leads[$key]??'').'. Оберіть потрібну послугу.</p><div class="mrseo-hybrid-columns">';
+  if($key==='seo'){
+   $seo_items=array_column($g['items'],1,0);
+   echo '<div class="mrseo-hybrid-seo-left"><div class="mrseo-hybrid-section"><p class="mrseo-ua-menu-subheading">Комплексне просування</p><div class="mrseo-mega-items">';
+   foreach(array('local-seo','ecommerce-seo','service-business-seo','international-seo') as $slug)mrseo_ua_menu_item(array($slug,$seo_items[$slug]),$current);
+   echo '</div></div><div class="mrseo-hybrid-section"><p class="mrseo-ua-menu-subheading">Нові можливості</p><div class="mrseo-mega-items">';
+   mrseo_ua_menu_item(array('ai-search-optimization',$seo_items['ai-search-optimization']),$current);
+   echo '</div></div></div><div class="mrseo-hybrid-seo-right"><p class="mrseo-ua-menu-subheading">Аудит та оптимізація</p>';
+   foreach(array(array('audit','SEO-аудит сайту',array('seo-audit','website-audit')),array('technical','Технічна SEO-оптимізація',array('indexing-fixes','crawl-configuration','seo-redirects','structured-data')),array('strategy','SEO-стратегія та семантика',array('competitor-seo-analysis','semantic-core')),array('content','SEO-оптимізація контенту',array('seo-content','metadata-optimization','internal-linking')),array('analytics','SEO-аналітика',array('search-console-setup'))) as $bundle){
+    $bundle_id=$id.'-seo-'.$bundle[0];
+    echo '<div class="mrseo-hybrid-seo-bundle"><button type="button" data-seo-bundle="'.esc_attr($bundle[0]).'" aria-expanded="false" aria-controls="'.esc_attr($bundle_id).'"><span>'.esc_html($bundle[1]).'</span><span aria-hidden="true">+</span></button><div class="mrseo-mega-items mrseo-hybrid-seo-links" id="'.esc_attr($bundle_id).'" data-seo-bundle-panel="'.esc_attr($bundle[0]).'">';
+    foreach($bundle[2] as $slug)mrseo_ua_menu_item(array($slug,$seo_items[$slug]),$current);
+    echo '</div></div>';
+   }
+   echo '<div class="mrseo-mega-items mrseo-hybrid-seo-recovery">';
+   mrseo_ua_menu_item(array('traffic-recovery',$seo_items['traffic-recovery']),$current);
+   echo '</div></div>';
+  }else{
   foreach($g['sections'] as $section){
    if(!$section['items'])continue;
    echo '<div class="mrseo-hybrid-section"><p class="mrseo-ua-menu-subheading">'.esc_html($section['title']).'</p><div class="mrseo-mega-items">';
    foreach($section['items'] as $item)mrseo_ua_menu_item($item,$current);
    echo '</div></div>';
   }
+  }
   echo '</div>';
+  if($key==='seo')echo '<a class="mrseo-hybrid-seo-all" href="'.esc_url(mrseo_url('seo','uk')).'">Усі SEO-послуги <span aria-hidden="true">↗</span></a>';
   if($g['planned']){
    echo '<div class="mrseo-ua-menu-planned"><p class="mrseo-ua-menu-status">У підготовці</p><div class="mrseo-hybrid-planned-grid">';
    foreach($g['planned'] as $item)mrseo_ua_menu_planned_item($item);
