@@ -749,33 +749,25 @@ async function audit(browser,viewport,lang,slug){
    const expectedHub=["/ai-search-optimization/","/competitor-seo-analysis/","/crawl-configuration/","/ecommerce-seo/","/indexing-fixes/","/internal-linking/","/international-seo/","/local-seo/","/metadata-optimization/","/search-console-setup/","/semantic-core/","/seo-audit/","/seo-content/","/seo-redirects/","/service-business-seo/","/structured-data/","/traffic-recovery/","/website-audit/"];
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO hub service coverage or geometry '+JSON.stringify(hub));
   }
-  async function verifyDirectMenu(mobile){
-   const root=page.locator('header.site-header .mrseo-simple-nav--direct');
-   const cards=root.locator('a.mrseo-simple-card[href]'),chips=root.locator('a.mrseo-simple-chip[href]');
-   if(!await root.isVisible()||await cards.count()!==7||await chips.count()!==4||!await cards.first().isVisible()||!await chips.first().isVisible())item.errors.push('UA direct menu visibility');
-   const allLinks=await root.locator('a[href]').evaluateAll(elements=>elements.map(a=>{const r=a.getBoundingClientRect();return {text:a.textContent.trim(),left:r.left,right:r.right,width:r.width,height:r.height,href:a.href}}));
-   if(allLinks.some(a=>a.left<-6||a.right>innerWidth+6||a.width<10||a.height<25))item.errors.push('UA direct menu link geometry '+JSON.stringify(allLinks));
-   const seo=await cards.first().getAttribute('href');
-   if(seo!==new URL('/seo/',page.url()).href)item.errors.push('UA direct SEO category destination');
-   if(mobile){
-    await root.locator('[data-simple-close]').click();
-    const trigger=page.locator('header.site-header .services-menu-toggle');
-    if(await trigger.getAttribute('aria-expanded')!=='false'||!await trigger.evaluate(el=>el===document.activeElement))item.errors.push('UA direct mobile close focus');
-    await trigger.click();
-    if(!await cards.first().evaluate(el=>el===document.activeElement))item.errors.push('UA direct mobile open focus');
-   }
+  if(lang==='uk'){
+   const six=await page.evaluate(()=>{
+    const desktop=document.querySelector('.mrseo-ua-six--desktop'),mobile=document.querySelector('.mrseo-ua-six--mobile');
+    return {desktop:desktop?.querySelectorAll('details').length,mobile:mobile?.querySelectorAll('details').length,
+      names:[...desktop?.querySelectorAll('summary')||[]].map(x=>x.textContent.trim().replace('⌄','').trim()),
+      hrefs:[...desktop?.querySelectorAll('.mrseo-ua-six-primary')||[]].map(x=>new URL(x.href).pathname).sort(),
+      assets:!!document.querySelector('link[href*="ua-six-header.css"]')&&!!document.querySelector('script[src*="ua-six-header.js"]')};
+   });
+   if(six.desktop!==6||six.mobile!==6||JSON.stringify(six.names)!==JSON.stringify(['SEO-просування','Google Ads','Інтернет-магазини','Хорошоп','Створення сайтів','Веброзробка'])||JSON.stringify(six.hrefs)!==JSON.stringify(['/seo/','/google-ads/','/online-store-development/','/horoshop/','/service-websites/','/web-development/'].sort())||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
-   const trigger=page.locator('header.site-header .services-menu-toggle');
-   await trigger.click();
-   await verifyDirectMenu(false);
-   await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
-   await trigger.click();
-   await trigger.focus();
-   await trigger.press('ArrowDown');
-   if(!await page.locator('.mrseo-simple-nav--direct .mrseo-simple-card').first().evaluate(el=>el===document.activeElement))item.errors.push('UA direct ArrowDown');
+   const groups=page.locator('.mrseo-ua-six--desktop details');
+   for(let i=0;i<6;i++){
+    await groups.nth(i).locator('summary').click();
+    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[5,5,4,1,5,5][i])item.errors.push('UA six-header desktop item '+i);
+   }
    await page.keyboard.press('Escape');
-   if(await trigger.getAttribute('aria-expanded')!=='false')item.errors.push('UA direct Escape');
+   if(await groups.last().getAttribute('open')!==null)item.errors.push('UA six-header desktop Escape');
+   await page.screenshot({path:'shots/ua-six-header-wide.jpg',type:'jpeg',quality:80,fullPage:false});
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -784,17 +776,21 @@ async function audit(browser,viewport,lang,slug){
    await menu.click({timeout:4000});
    if(await menu.getAttribute('aria-expanded')!=='true')
       item.errors.push('Global mobile menu cannot open');
-   const services=page.locator('header.site-header .services-menu-toggle');
-   item.stage='open service menu';
-   await services.click({timeout:4000});
-   if(await services.getAttribute('aria-expanded')!=='true')
-      item.errors.push('Shared service dropdown cannot open');
-   const good=await page.locator('.mrseo-mega-grid').evaluate(el=>{
-      const r=el.getBoundingClientRect();
-      return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;
-   });
-   if(!good)item.errors.push('Premium services menu overflows 360px viewport');
-   if(lang==='uk')await verifyDirectMenu(true);
+   if(lang==='uk'){
+    item.stage='UA six-header mobile';
+    const six=page.locator('.mrseo-ua-six--mobile details');
+    for(let i=0;i<6;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[5,5,4,1,5,5][i])item.errors.push('UA six mobile item '+i);}
+    await page.keyboard.press('Escape');
+    if(await six.last().getAttribute('open')!==null)item.errors.push('UA mobile Escape');
+    const box=await page.locator('.mrseo-ua-six--mobile').evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right}});
+    if(box.left<-6||box.right>innerWidth+6)item.errors.push('UA mobile nav overflow '+JSON.stringify(box));
+   }else{
+    const services=page.locator('header.site-header .services-menu-toggle');
+    item.stage='open service menu';await services.click({timeout:4000});
+    if(await services.getAttribute('aria-expanded')!=='true')item.errors.push('Shared service dropdown cannot open');
+    const good=await page.locator('.mrseo-mega-grid').evaluate(el=>{const r=el.getBoundingClientRect();return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;});
+    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
+   }
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
    await page.keyboard.press('Escape');
