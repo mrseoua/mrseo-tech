@@ -405,7 +405,7 @@ async function audit(browser,viewport,lang,slug){
        !commercial.animations||JSON.stringify(commercial.families)!==JSON.stringify(premiumCommercialFamilies[slug])||commercial.tabs!==3||commercial.pause!==2||
        commercial.problems!==3||commercial.delivery!==3||commercial.faq!==(commercialTwoFaq.includes(slug)?2:3)||commercial.plan!==(hasPlan?3:0)||!commercial.result||!commercial.final||commercial.oldRelated!==0)
       item.errors.push('UA commercial premium content or visual regression: '+JSON.stringify(commercial));
-    if(c.serviceMenuItems!==47||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==22||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('UA commercial full navigation/contacts missing');
     if(commercial.hero&&commercial.tabs===3&&commercial.pause===2){
       const scene=page.locator('.puc-page .psc-hero-scene'),tabs=scene.locator('[data-puc-tab]'),button=scene.locator('.psc-pause');
@@ -434,7 +434,7 @@ async function audit(browser,viewport,lang,slug){
   if(editorialTarget){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
-    if(c.serviceMenuItems!==47||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
+    if(c.serviceMenuItems!==22||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
     if(slug!=='privacy'&&ed.pause===1&&ed.families.length){
       const svg=page.locator('svg.pue-motion').last(),pause=page.locator('.pue-pause');
       await svg.scrollIntoViewIfNeeded();
@@ -468,7 +468,7 @@ async function audit(browser,viewport,lang,slug){
        cluster.problems!==3||cluster.delivery!==3||cluster.faq!==3||!cluster.result||!cluster.final||
        (slug==='ecommerce-seo'&&(cluster.lab!==3||!cluster.proof))||(slug==='seo-audit'&&(cluster.audit!==3||!cluster.proof)))
        item.errors.push('UA premium SEO cluster missing content or scene: '+JSON.stringify(cluster));
-    if(c.serviceMenuItems!==47||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==22||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
        item.errors.push('SEO cluster native menu/contacts incomplete');
     if(cluster.hero&&cluster.tabs===3&&cluster.pause===2){
       const hero=page.locator('.psc-hero-scene'),heroSvg=page.locator('.psc-hero-stage svg.psc-motion'),button=hero.locator('.psc-pause');
@@ -508,7 +508,7 @@ async function audit(browser,viewport,lang,slug){
     const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
     if(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations)
       item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
-    if(c.serviceMenuItems!==47||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==22||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
     if(pi.scene&&pi.tabs===3&&pi.pause){
       const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
@@ -563,7 +563,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<(lang==='uk'?47:(['ru','en'].includes(lang)?25:4)))
+  if(c.serviceMenuItems<(lang==='uk'?22:(['ru','en'].includes(lang)?25:4)))
     item.errors.push('Shared mega menu has too few real working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)&&!clusterTarget&&!commercialTarget){
     const u=c.uaNewPages;
@@ -648,7 +648,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==47||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==22||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
@@ -731,68 +731,62 @@ async function audit(browser,viewport,lang,slug){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
   }
   if(lang==='uk'){
-   const menuCoverage=await page.evaluate(()=>({
-    links:[...document.querySelectorAll('header.site-header .mrseo-mega--ua-architecture a.mrseo-mega-heading-link,header.site-header .mrseo-mega--ua-architecture a.mrseo-mega-item')].map(a=>new URL(a.href).pathname).sort(),
-    planned:[...document.querySelectorAll('.mrseo-ua-menu-planned-item')].map(x=>x.dataset.plannedSlug).sort(),
-    plannedLinks:document.querySelectorAll('.mrseo-ua-menu-next a,.mrseo-ua-menu-planned a').length,
-    nested:document.querySelectorAll('.mrseo-mega--ua-open details,.mrseo-mega--ua-open summary').length
-   }));
-   const expected=["/ai-agents/","/ai-search-optimization/","/analytics/","/api-integrations/","/business-automation/","/business-dashboards/","/catalog-automation/","/chatbot-development/","/competitor-price-monitoring/","/competitor-seo-analysis/","/consent-mode/","/corporate-websites/","/crawl-configuration/","/crm-development/","/custom-functionality/","/ecommerce-seo/","/ga4-conversions/","/google-ads-audit/","/google-ads/","/google-remarketing/","/google-search-ads/","/google-shopping/","/horoshop/","/indexing-fixes/","/internal-linking/","/international-seo/","/landing-pages/","/local-business-websites/","/local-google-ads/","/local-seo/","/merchant-center/","/metadata-optimization/","/online-store-development/","/performance-max/","/reporting-automation/","/search-console-setup/","/semantic-core/","/seo-audit/","/seo-content/","/seo-redirects/","/seo/","/service-business-seo/","/service-websites/","/store-conversion/","/store-migration/","/structured-data/","/traffic-recovery/","/web-applications/","/web-development/","/website-audit/","/website-maintenance/","/website-redesign/","/website-speed-security/","/wordpress-development/"];
-   if(JSON.stringify(menuCoverage.links)!==JSON.stringify(expected)||JSON.stringify(menuCoverage.planned)!==JSON.stringify(["auto-parts-ecommerce","automotive-marketing","building-materials-ecommerce","call-tracking","category-seo","crm-integration","data-parsing","dental-marketing","display-ads","electronics-ecommerce","enhanced-conversions","fashion-ecommerce","furniture-ecommerce","google-ads-automation","google-sheets-automation","google-tag-manager-setup","horoshop-audit","horoshop-ga4","horoshop-google-ads","horoshop-product-feeds","horoshop-seo","horoshop-setup","medical-marketing","merchant-center-recovery","offline-conversions","one-time-services","payment-integration","product-feed-optimization","product-import","product-page-seo","server-side-tracking","shipping-integration","toys-ecommerce","website-calculator","website-form-repair","website-migration","wordpress-plugin-development","wordpress-speed-optimization","youtube-ads"])||menuCoverage.plannedLinks!==0||menuCoverage.nested!==0)item.errors.push('UA menu architecture coverage '+JSON.stringify(menuCoverage));
+   const nav=await page.evaluate(()=>{
+    const root=document.querySelector('header.site-header .mrseo-simple-nav');
+    if(!root)return null;
+    return {cards:root.querySelectorAll('[data-simple-category]').length,panels:root.querySelectorAll('[data-simple-panel]').length,
+      quick:[...root.querySelectorAll('[data-simple-panel] a.mrseo-mega-item')].map(a=>new URL(a.href).pathname).sort(),
+      parents:[...root.querySelectorAll('a.mrseo-mega-heading-link')].map(a=>new URL(a.href).pathname).sort(),
+      css:!!document.querySelector('link[href*="ua-simple-menu.css"]'),
+      script:!!document.querySelector('script[src*="ua-simple-menu.js"]'),
+      legacy:!!root.querySelector('[data-hybrid-mode],[data-seo-bundle]'),
+      links:[...root.querySelectorAll('a[href]')].every(a=>{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.startsWith('/')})};
+   });
+   const expectedQuick=["/ai-agents/","/api-integrations/","/business-dashboards/","/catalog-automation/","/corporate-websites/","/crm-development/","/ecommerce-seo/","/ga4-conversions/","/google-ads-audit/","/google-search-ads/","/google-shopping/","/international-seo/","/landing-pages/","/local-seo/","/performance-max/","/reporting-automation/","/seo-audit/","/store-conversion/","/store-migration/","/web-applications/","/website-redesign/","/wordpress-development/"];
+   const expectedParents=["/analytics/","/google-ads/","/horoshop/","/online-store-development/","/seo/","/service-websites/","/web-development/"];
+   if(!nav||nav.cards!==7||nav.panels!==7||!nav.css||!nav.script||nav.legacy||!nav.links||JSON.stringify(nav.quick)!==JSON.stringify(expectedQuick)||JSON.stringify(nav.parents)!==JSON.stringify(expectedParents))item.errors.push('UA simple menu coverage '+JSON.stringify(nav));
   }
   if(lang==='uk'&&slug==='seo'){
    const hub=await page.evaluate(()=>{const el=document.querySelector('#ukseo-services');if(!el)return null;const links=[...el.querySelectorAll('nav a[href]')];return {groups:el.querySelectorAll('article').length,links:links.map(a=>new URL(a.href).pathname).sort(),geometry:links.every(a=>{const r=a.getBoundingClientRect();return r.left>=-2&&r.right<=innerWidth+2&&r.width>0&&r.height>0;})};});
    const expectedHub=["/ai-search-optimization/","/competitor-seo-analysis/","/crawl-configuration/","/ecommerce-seo/","/indexing-fixes/","/internal-linking/","/international-seo/","/local-seo/","/metadata-optimization/","/search-console-setup/","/semantic-core/","/seo-audit/","/seo-content/","/seo-redirects/","/service-business-seo/","/structured-data/","/traffic-recovery/","/website-audit/"];
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO hub service coverage or geometry '+JSON.stringify(hub));
   }
-  async function verifyHybridMenu(mobile){
-   const root=page.locator('.mrseo-mega--ua-hybrid');
-   const inspect=()=>root.evaluate(el=>{const r=el.getBoundingClientRect();const panels=[...el.querySelectorAll('[data-hybrid-panel]')].filter(p=>!p.hidden);return {enhanced:el.classList.contains('is-enhanced'),groups:el.querySelectorAll('[data-hybrid-group]').length,panels:panels.map(p=>p.dataset.hybridPanel),links:panels.reduce((n,p)=>n+p.querySelectorAll('a.mrseo-mega-item,a.mrseo-mega-heading-link').length,0),left:r.left,right:r.right,viewport:innerWidth};});
-   let info=await inspect();
-   if(!info.enhanced||info.groups!==7||info.left<-6||info.right>info.viewport+6||JSON.stringify(info.panels)!==JSON.stringify(mobile?[]:['seo']))item.errors.push('UA hybrid initial layout '+JSON.stringify(info));
-   for(const [key,count] of [['seo',19],['ads',8],['data',5],['commerce',5],['sites',8],['dev',8],['horoshop',1]]){
-    await root.locator('[data-hybrid-group="'+key+'"]').click();
-    info=await inspect();
-    if(info.links!==count||JSON.stringify(info.panels)!==JSON.stringify([key]))item.errors.push('UA hybrid direction '+key+' '+JSON.stringify(info));
-    if(key==='seo'){
-     const seo=root.locator('[data-hybrid-panel="seo"]');
-     if(await seo.locator('[data-seo-bundle]').count()!==5||await seo.locator('[data-seo-bundle-panel]:not([hidden])').count()!==0||await seo.locator('a.mrseo-mega-item:visible').count()!==6)item.errors.push('UA compact SEO initial state');
-     for(const [bundle,n] of [['audit',2],['technical',4],['strategy',2],['content',3],['analytics',1]]){
-      const toggle=seo.locator('[data-seo-bundle="'+bundle+'"]');
-      await toggle.click();
-      if(await toggle.getAttribute('aria-expanded')!=='true'||await seo.locator('[data-seo-bundle-panel]:not([hidden])').count()!==1||await seo.locator('[data-seo-bundle-panel="'+bundle+'"] a:visible').count()!==n)item.errors.push('UA compact SEO bundle '+bundle);
-     }
-     await seo.locator('[data-seo-bundle="analytics"]').click();
-     if(await seo.locator('[data-seo-bundle-panel]:not([hidden])').count()!==0)item.errors.push('UA compact SEO close');
-     if(await seo.locator('a.mrseo-hybrid-seo-all').getAttribute('href')!==new URL('/seo/',page.url()).href)item.errors.push('UA compact SEO hub link');
-    }
-    if(mobile&&key!=='horoshop'){
-     await root.locator('[data-hybrid-back]').click();
-     if(!await root.locator('[data-hybrid-group="'+key+'"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile back focus '+key);
-    }
+  async function verifySimpleMenu(mobile){
+   const root=page.locator('header.site-header .mrseo-simple-nav');
+   const cards=root.locator('[data-simple-cards]'),detail=root.locator('[data-simple-details]');
+   if(!await root.isVisible()||!await cards.isVisible()||await detail.isVisible()||await cards.locator('[data-simple-category]').count()!==7)item.errors.push('Simple menu initial state');
+   const positions=[['seo',5],['ads',5],['data',4],['commerce',4],['horoshop',1],['sites',5],['dev',5]];
+   for(const [category,links] of positions){
+    await root.locator('[data-simple-category="'+category+'"]').click();
+    const panel=root.locator('[data-simple-panel="'+category+'"]');
+    if(!await detail.isVisible()||await cards.isVisible()||!await panel.isVisible()||await panel.locator('a').count()!==links)item.errors.push('Simple menu category '+category);
+    const bounds=await panel.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=-6&&r.right<=innerWidth+6});
+    if(!bounds)item.errors.push('Simple menu category overflow '+category);
+    await root.locator('[data-simple-back]').click();
+    if(!await cards.isVisible()||await detail.isVisible()||!await root.locator('[data-simple-category="'+category+'"]').evaluate(el=>el===document.activeElement))item.errors.push('Simple menu back '+category);
    }
-   await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="problems"]').click();
-   if(!await root.locator('[data-hybrid-view="problems"]').isVisible()||await root.locator('[data-hybrid-view="services"]').isVisible()||await root.locator('.mrseo-hybrid-problem').count()!==6)item.errors.push('UA hybrid problem mode');
-   await root.locator('[data-hybrid-extra="industry"]').click();
-   if(!await root.locator('[data-hybrid-extra-panel="industry"]').isVisible())item.errors.push('UA hybrid industry panel');
-   await root.locator('[data-hybrid-extra="tasks"]').click();
-   if(!await root.locator('[data-hybrid-extra-panel="tasks"]').isVisible()||await root.locator('[data-hybrid-extra-panel="industry"]').isVisible())item.errors.push('UA hybrid tasks panel');
-   await root.locator('[data-hybrid-extra="tasks"]').click();
-   await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="services"]').click();
-   await root.locator('[data-hybrid-group="seo"]').click();
-   if(mobile)await root.locator('[data-hybrid-back]').click();
+   await root.locator('[data-simple-category="seo"]').click();
+   if(await root.locator('[data-simple-panel="seo"] .mrseo-simple-all').getAttribute('href')!==new URL('/seo/',page.url()).href)item.errors.push('Simple SEO hub link');
+   await root.locator('[data-simple-back]').click();
+   if(mobile){
+    await root.locator('[data-simple-close]').click();
+    const trigger=page.locator('header.site-header .services-menu-toggle');
+    if(await trigger.getAttribute('aria-expanded')!=='false')item.errors.push('Simple mobile close');
+    await trigger.click();
+    if(!await cards.isVisible()||!await root.locator('[data-simple-category="seo"]').evaluate(el=>el===document.activeElement))item.errors.push('Simple mobile open focus');
+   }
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const trigger=page.locator('header.site-header .services-menu-toggle');
-   await trigger.click({timeout:4000});
-   await verifyHybridMenu(false);
+   await trigger.click();
+   await verifySimpleMenu(false);
    await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
-   await trigger.click({timeout:4000});
+   await trigger.click();
    await trigger.focus();
    await trigger.press('ArrowDown');
-   if(!await page.locator('.mrseo-mega--ua-hybrid [data-hybrid-group="seo"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid ArrowDown focus');
+   if(!await page.locator('.mrseo-simple-nav [data-simple-category="seo"]').evaluate(el=>el===document.activeElement))item.errors.push('Simple desktop ArrowDown');
    await page.keyboard.press('Escape');
-   if(await trigger.getAttribute('aria-expanded')!=='false'||!await trigger.evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid Escape focus');
+   if(await trigger.getAttribute('aria-expanded')!=='false')item.errors.push('Simple Escape');
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -811,14 +805,7 @@ async function audit(browser,viewport,lang,slug){
       return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
-   if(lang==='uk'){
-    await verifyHybridMenu(true);
-    const root=page.locator('.mrseo-mega--ua-hybrid');
-    await root.locator('[data-hybrid-close]').click();
-    if(await services.getAttribute('aria-expanded')!=='false'||!await services.evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile close focus');
-    await services.click({timeout:4000});
-    if(!await root.locator('.mrseo-hybrid-modes [data-hybrid-mode="services"]').evaluate(el=>el===document.activeElement))item.errors.push('UA hybrid mobile open focus');
-   }
+   if(lang==='uk')await verifySimpleMenu(true);
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
    await page.keyboard.press('Escape');

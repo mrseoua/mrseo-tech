@@ -1323,83 +1323,32 @@ function mrseo_ua_menu_planned_item($item){
  echo '<span class="mrseo-ua-menu-planned-item" data-planned-slug="'.esc_attr($item[0]).'">'.esc_html($item[1]).'</span>';
 }
 function mrseo_render_ua_menu_architecture($mobile=false){
- static $instance=0;$id='mrseo-hybrid-'.(++$instance);
+ static $count=0;$id='mrseo-simple-nav-'.(++$count);
  $current=mrseo_slug();$groups=mrseo_ua_menu_groups();
- $leads=array('seo'=>'Видимість і клієнти з Google','ads'=>'Реклама та продажі','data'=>'Вимірювання й контроль','commerce'=>'Розвиток інтернет-магазину','horoshop'=>'Магазини на платформі Хорошоп','sites'=>'Сайти для вашого бізнесу','dev'=>'Індивідуальні цифрові рішення');
- $problems=array(
- array('seo','Мало клієнтів із Google','Знайдемо, чому сайт не отримує потрібного пошукового трафіку.',array('seo','seo-audit','indexing-fixes','traffic-recovery')),
- array('ads','Реклама витрачає бюджет без продажів','Перевіримо кампанії, товарні дані та якість конверсій.',array('google-ads-audit','google-ads','merchant-center','performance-max')),
- array('data','Не знаю, які канали приносять заявки','Налаштуємо вимірювання і зрозумілі звіти.',array('analytics','ga4-conversions','business-dashboards')),
- array('commerce','Є відвідувачі, але мало замовлень','Перевіримо каталог, картки товарів і шлях до покупки.',array('store-conversion','ecommerce-seo','horoshop')),
- array('sites','Потрібен новий сайт або магазин','Підберемо платформу й структуру під задачу бізнесу.',array('service-websites','online-store-development','wordpress-development','horoshop')),
- array('dev','Забагато ручної роботи','З’єднаємо системи та автоматизуємо повторювані дії.',array('business-automation','crm-development','api-integrations','ai-agents'))
- );
- $names=array();$selected='seo';foreach($groups as $g){$names[$g['parent']]=$g['title'];if($g['parent']===$current||in_array($current,array_column($g['items'],0),true))$selected=$g['key'];foreach($g['items'] as $item)$names[$item[0]]=$item[1];}
- echo '<div class="mrseo-mega mrseo-mega--trial mrseo-mega--ua-architecture mrseo-mega--ua-open mrseo-mega--ua-hybrid'.($mobile?' mrseo-mega--mobile-panel':'').'" data-ua-hybrid data-initial-group="'.esc_attr($selected).'">';
- echo '<div class="mrseo-ua-menu-intro"><div><strong>Послуги для бізнесу</strong><span>Знайдіть потрібну послугу або рішення</span></div><button type="button" class="mrseo-hybrid-close" data-hybrid-close aria-label="Закрити меню послуг">×</button></div>';
- echo '<div class="mrseo-hybrid-modes" role="group" aria-label="Спосіб пошуку послуг"><button type="button" data-hybrid-mode="services" aria-pressed="true" aria-controls="'.esc_attr($id.'-services').'">За напрямами</button><button type="button" data-hybrid-mode="problems" aria-pressed="false" aria-controls="'.esc_attr($id.'-problems').'">За проблемами</button></div>';
- echo '<div id="'.esc_attr($id.'-services').'" class="mrseo-hybrid-services" data-hybrid-view="services"><div class="mrseo-hybrid-rail" role="group" aria-label="Напрями послуг">';
- foreach($groups as $g){$key=$g['key'];echo '<button type="button" data-hybrid-group="'.esc_attr($key).'" aria-pressed="'.($key===$selected?'true':'false').'" aria-controls="'.esc_attr($id.'-'.$key).'">'.mrseo_mega_menu_icon($key).'<span><strong>'.esc_html($g['title']).'</strong><small>'.esc_html($leads[$key]??'').'</small></span><span class="mrseo-hybrid-chevron" aria-hidden="true">›</span></button>';}
- echo '<div class="mrseo-hybrid-rail-note"><strong>Не знаєте, з чого почати?</strong><p>Оберіть пошук за проблемою бізнесу.</p><button type="button" data-hybrid-mode="problems">Знайти рішення →</button></div></div>';
- echo '<div class="mrseo-mega-grid"><button type="button" class="mrseo-hybrid-back" data-hybrid-back>← Усі напрями</button>';
+ $quick=array('seo'=>array('seo-audit','ecommerce-seo','local-seo','international-seo'),'ads'=>array('google-search-ads','performance-max','google-shopping','google-ads-audit'),'data'=>array('ga4-conversions','business-dashboards','reporting-automation'),'commerce'=>array('store-conversion','store-migration','catalog-automation'),'horoshop'=>array(),'sites'=>array('wordpress-development','landing-pages','corporate-websites','website-redesign'),'dev'=>array('crm-development','web-applications','api-integrations','ai-agents'));
+ $descriptions=array('seo'=>'Більше клієнтів із Google','ads'=>'Реклама та продажі','data'=>'Розумійте свої цифри','commerce'=>'Розвиток продажів','horoshop'=>'Магазини на платформі','sites'=>'Сайти, які працюють','dev'=>'CRM, API та автоматизація');
+ echo '<div class="mrseo-mega mrseo-mega--ua-architecture mrseo-simple-nav'.($mobile?' mrseo-mega--mobile-panel':'').'" data-simple-nav>';
+ echo '<div class="mrseo-simple-top"><div><span class="mrseo-simple-eyebrow">MRSEO.TECH</span><h2>Чим можемо допомогти?</h2></div><button type="button" class="mrseo-simple-close" data-simple-close aria-label="Закрити меню послуг">×</button></div>';
+ echo '<div class="mrseo-mega-grid mrseo-simple-cards" id="'.esc_attr($id.'-cards').'" data-simple-cards aria-label="Напрями послуг">';
  foreach($groups as $g){
-  $key=$g['key'];$parent=$g['parent'];$count=count($g['items'])+1;$last=$count%10;$ending=($count%100>=11&&$count%100<=14)?'послуг':($last===1?'послуга':($last>=2&&$last<=4?'послуги':'послуг'));
-  echo '<section class="mrseo-mega-group mrseo-mega-group--'.esc_attr($key).'" id="'.esc_attr($id.'-'.$key).'" data-hybrid-panel="'.esc_attr($key).'">';
-  echo '<div class="mrseo-hybrid-panel-head"><h3>'.mrseo_mega_menu_icon($key).'<a class="mrseo-mega-heading-link" href="'.esc_url(mrseo_url($parent,'uk')).'"'.($current===$parent?' aria-current="page"':'').'>'.esc_html($g['title']).'</a></h3><span>'.esc_html($count.' '.$ending).'</span></div><p class="mrseo-hybrid-panel-lead">'.esc_html($leads[$key]??'').'. Оберіть потрібну послугу.</p><div class="mrseo-hybrid-columns">';
-  if($key==='seo'){
-   $seo_items=array_column($g['items'],1,0);
-   echo '<div class="mrseo-hybrid-seo-left"><div class="mrseo-hybrid-section"><p class="mrseo-ua-menu-subheading">Комплексне просування</p><div class="mrseo-mega-items">';
-   foreach(array('local-seo','ecommerce-seo','service-business-seo','international-seo') as $slug)mrseo_ua_menu_item(array($slug,$seo_items[$slug]),$current);
-   echo '</div></div><div class="mrseo-hybrid-section"><p class="mrseo-ua-menu-subheading">Нові можливості</p><div class="mrseo-mega-items">';
-   mrseo_ua_menu_item(array('ai-search-optimization',$seo_items['ai-search-optimization']),$current);
-   echo '</div></div></div><div class="mrseo-hybrid-seo-right"><p class="mrseo-ua-menu-subheading">Аудит та оптимізація</p>';
-   foreach(array(array('audit','SEO-аудит сайту',array('seo-audit','website-audit')),array('technical','Технічна SEO-оптимізація',array('indexing-fixes','crawl-configuration','seo-redirects','structured-data')),array('strategy','SEO-стратегія та семантика',array('competitor-seo-analysis','semantic-core')),array('content','SEO-оптимізація контенту',array('seo-content','metadata-optimization','internal-linking')),array('analytics','SEO-аналітика',array('search-console-setup'))) as $bundle){
-    $bundle_id=$id.'-seo-'.$bundle[0];
-    echo '<div class="mrseo-hybrid-seo-bundle"><button type="button" data-seo-bundle="'.esc_attr($bundle[0]).'" aria-expanded="false" aria-controls="'.esc_attr($bundle_id).'"><span>'.esc_html($bundle[1]).'</span><span aria-hidden="true">+</span></button><div class="mrseo-mega-items mrseo-hybrid-seo-links" id="'.esc_attr($bundle_id).'" data-seo-bundle-panel="'.esc_attr($bundle[0]).'">';
-    foreach($bundle[2] as $slug)mrseo_ua_menu_item(array($slug,$seo_items[$slug]),$current);
-    echo '</div></div>';
-   }
-   echo '<div class="mrseo-mega-items mrseo-hybrid-seo-recovery">';
-   mrseo_ua_menu_item(array('traffic-recovery',$seo_items['traffic-recovery']),$current);
-   echo '</div></div>';
-  }else{
-  foreach($g['sections'] as $section){
-   if(!$section['items'])continue;
-   echo '<div class="mrseo-hybrid-section"><p class="mrseo-ua-menu-subheading">'.esc_html($section['title']).'</p><div class="mrseo-mega-items">';
-   foreach($section['items'] as $item)mrseo_ua_menu_item($item,$current);
-   echo '</div></div>';
-  }
-  }
-  echo '</div>';
-  if($key==='seo')echo '<a class="mrseo-hybrid-seo-all" href="'.esc_url(mrseo_url('seo','uk')).'">Усі SEO-послуги <span aria-hidden="true">↗</span></a>';
-  if($g['planned']){
-   echo '<div class="mrseo-ua-menu-planned"><p class="mrseo-ua-menu-status">У підготовці</p><div class="mrseo-hybrid-planned-grid">';
-   foreach($g['planned'] as $item)mrseo_ua_menu_planned_item($item);
-   echo '</div></div>';
-  }
-  echo '</section>';
+  $key=$g['key'];echo '<button type="button" class="mrseo-simple-card" data-simple-category="'.esc_attr($key).'" aria-expanded="false" aria-controls="'.esc_attr($id.'-'.$key).'">';
+  echo '<span class="mrseo-simple-icon">'.mrseo_mega_menu_icon($key).'</span><span class="mrseo-simple-card-copy"><strong>'.esc_html($g['title']).'</strong><small>'.esc_html($descriptions[$key]).'</small></span><span class="mrseo-simple-arrow" aria-hidden="true">↗</span></button>';
  }
- echo '</div></div>';
- echo '<div class="mrseo-hybrid-problems" id="'.esc_attr($id.'-problems').'" data-hybrid-view="problems"><div class="mrseo-hybrid-problem-intro"><h3>Яку проблему потрібно вирішити?</h3><p>Почніть із ситуації, знайомої вашому бізнесу.</p></div><div class="mrseo-hybrid-problem-grid">';
- foreach($problems as $problem){
-  echo '<section class="mrseo-hybrid-problem"><h4>'.mrseo_mega_menu_icon($problem[0]).esc_html($problem[1]).'</h4><p>'.esc_html($problem[2]).'</p><div class="mrseo-hybrid-problem-links">';
-  foreach($problem[3] as $slug){if(isset($names[$slug]))echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'">'.esc_html($names[$slug]).' <span aria-hidden="true">↗</span></a>';}
-  echo '</div></section>';
+ echo '</div>';
+ echo '<div class="mrseo-simple-detail" data-simple-details aria-label="Швидкі посилання">';
+ echo '<button type="button" class="mrseo-simple-back" data-simple-back>← Усі напрями</button>';
+ foreach($groups as $g){
+  $key=$g['key'];$parent=$g['parent'];$by_slug=array_column($g['items'],1,0);
+  echo '<section class="mrseo-mega-group mrseo-simple-panel" id="'.esc_attr($id.'-'.$key).'" data-simple-panel="'.esc_attr($key).'">';
+  echo '<div class="mrseo-simple-panel-head"><span class="mrseo-simple-icon">'.mrseo_mega_menu_icon($key).'</span><h3>'.esc_html($g['title']).'</h3></div>';
+  echo '<p class="mrseo-simple-panel-lead">'.esc_html($descriptions[$key]).'</p><nav class="mrseo-simple-links" aria-label="'.esc_attr($g['title']).'">';
+  echo '<a class="mrseo-mega-heading-link mrseo-simple-all" href="'.esc_url(mrseo_url($parent,'uk')).'"'.($current===$parent?' aria-current="page"':'').'>'.esc_html($key==='seo'?'Усі SEO-послуги':($key==='horoshop'?'Хорошоп — послуги для магазину':'Усі послуги напряму')).'<span aria-hidden="true">↗</span></a>';
+  foreach($quick[$key] as $slug)mrseo_ua_menu_item(array($slug,$by_slug[$slug]),$current);
+  echo '</nav></section>';
  }
- echo '</div></div>';
- echo '<div class="mrseo-hybrid-extra"><button type="button" data-hybrid-extra="industry" aria-expanded="false" aria-controls="'.esc_attr($id.'-industry').'"><span><strong>Галузеві рішення</strong><small>Для магазинів і бізнесу послуг</small></span><span aria-hidden="true">+</span></button><button type="button" data-hybrid-extra="tasks" aria-expanded="false" aria-controls="'.esc_attr($id.'-tasks').'"><span><strong>Разові послуги</strong><small>Окремі завдання без супроводу</small></span><span aria-hidden="true">+</span></button></div>';
- echo '<div class="mrseo-ua-menu-next" aria-label="Нові розділи у підготовці">';
- echo '<section class="mrseo-ua-menu-industry" id="'.esc_attr($id.'-industry').'" data-hybrid-extra-panel="industry"><div><strong>Рішення для бізнесу</strong><span class="mrseo-ua-menu-status">У підготовці</span></div><div class="mrseo-ua-menu-industry-grid">';
- foreach(mrseo_ua_menu_industries() as $group){
-  echo '<div><p class="mrseo-ua-menu-subheading">'.esc_html($group['title']).'</p>';
-  foreach($group['items'] as $item)mrseo_ua_menu_planned_item($item);
-  echo '</div>';
- }
- echo '</div></section>';
- echo '<section class="mrseo-ua-menu-tasks" id="'.esc_attr($id.'-tasks').'" data-hybrid-extra-panel="tasks"><div><strong>Разові послуги</strong><span class="mrseo-ua-menu-status">У підготовці</span></div>';
- mrseo_ua_menu_planned_item(array('one-time-services','Каталог разових робіт'));
- echo '<p>Окремі завдання з SEO, реклами, аналітики, сайтів та інтеграцій.</p></section></div>';
- echo '<div class="mrseo-mega-bottom"><div class="mrseo-mega-bottom-copy"><strong>Не знайшли потрібну послугу?</strong><p>Опишіть завдання — знайдемо рішення.</p></div><a class="mrseo-mega-contact" href="'.esc_url(mrseo_url('contact','uk')).'">Обговорити проєкт<span aria-hidden="true">↗</span></a></div></div>';
+ echo '</div>';
+ echo '<div class="mrseo-simple-footer"><span>Не знаєте, що обрати?</span><a href="'.esc_url(mrseo_url('contact','uk')).'">Обговорити проєкт <span aria-hidden="true">↗</span></a></div>';
+ echo '</div>';
 }
 function mrseo_ua_menu_item($item,$current){
  $slug=$item[0];$active=$current===$slug;
