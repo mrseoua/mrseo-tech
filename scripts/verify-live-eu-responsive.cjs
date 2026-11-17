@@ -217,8 +217,8 @@ async function audit(browser,viewport,lang,slug){
     uaPremiumMotions:document.querySelectorAll('.pt-ua-home .ph-motion').length,
     uaPremiumLinks:document.querySelectorAll('.pt-ua-home a.ph-card-link[href]').length,
     uaPremiumImageLinks:[...document.querySelectorAll('.pt-ua-home .ph-art img')].filter(img=>img.closest('a.ph-card-link[href]')).length,
-    uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-simple-nav .mrseo-mega-group').length,
-    uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-simple-nav a.mrseo-mega-heading-link[href]').length,
+    uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-simple-nav .mrseo-simple-card').length,
+    uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-simple-nav a.mrseo-simple-card[href]').length,
     uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
     uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
     uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&!!document.querySelector('.pt-ua-home .ph-pause'),
@@ -405,7 +405,7 @@ async function audit(browser,viewport,lang,slug){
        !commercial.animations||JSON.stringify(commercial.families)!==JSON.stringify(premiumCommercialFamilies[slug])||commercial.tabs!==3||commercial.pause!==2||
        commercial.problems!==3||commercial.delivery!==3||commercial.faq!==(commercialTwoFaq.includes(slug)?2:3)||commercial.plan!==(hasPlan?3:0)||!commercial.result||!commercial.final||commercial.oldRelated!==0)
       item.errors.push('UA commercial premium content or visual regression: '+JSON.stringify(commercial));
-    if(c.serviceMenuItems!==22||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('UA commercial full navigation/contacts missing');
     if(commercial.hero&&commercial.tabs===3&&commercial.pause===2){
       const scene=page.locator('.puc-page .psc-hero-scene'),tabs=scene.locator('[data-puc-tab]'),button=scene.locator('.psc-pause');
@@ -434,7 +434,7 @@ async function audit(browser,viewport,lang,slug){
   if(editorialTarget){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
-    if(c.serviceMenuItems!==22||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
+    if(c.serviceMenuItems!==4||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
     if(slug!=='privacy'&&ed.pause===1&&ed.families.length){
       const svg=page.locator('svg.pue-motion').last(),pause=page.locator('.pue-pause');
       await svg.scrollIntoViewIfNeeded();
@@ -468,7 +468,7 @@ async function audit(browser,viewport,lang,slug){
        cluster.problems!==3||cluster.delivery!==3||cluster.faq!==3||!cluster.result||!cluster.final||
        (slug==='ecommerce-seo'&&(cluster.lab!==3||!cluster.proof))||(slug==='seo-audit'&&(cluster.audit!==3||!cluster.proof)))
        item.errors.push('UA premium SEO cluster missing content or scene: '+JSON.stringify(cluster));
-    if(c.serviceMenuItems!==22||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
        item.errors.push('SEO cluster native menu/contacts incomplete');
     if(cluster.hero&&cluster.tabs===3&&cluster.pause===2){
       const hero=page.locator('.psc-hero-scene'),heroSvg=page.locator('.psc-hero-stage svg.psc-motion'),button=hero.locator('.psc-pause');
@@ -508,7 +508,7 @@ async function audit(browser,viewport,lang,slug){
     const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
     if(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations)
       item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
-    if(c.serviceMenuItems!==22||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
     if(pi.scene&&pi.tabs===3&&pi.pause){
       const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
@@ -563,7 +563,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<(lang==='uk'?22:(['ru','en'].includes(lang)?25:4)))
+  if(c.serviceMenuItems<(lang==='uk'?4:(['ru','en'].includes(lang)?25:4)))
     item.errors.push('Shared mega menu has too few real working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)&&!clusterTarget&&!commercialTarget){
     const u=c.uaNewPages;
@@ -648,7 +648,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==22||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||c.uaPremiumCards!==8||c.uaPremiumMotions!==8||c.uaPremiumLinks!==8||c.uaPremiumImageLinks!==8||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
@@ -732,61 +732,50 @@ async function audit(browser,viewport,lang,slug){
   }
   if(lang==='uk'){
    const nav=await page.evaluate(()=>{
-    const root=document.querySelector('header.site-header .mrseo-simple-nav');
+    const root=document.querySelector('header.site-header .mrseo-simple-nav--direct');
     if(!root)return null;
-    return {cards:root.querySelectorAll('[data-simple-category]').length,panels:root.querySelectorAll('[data-simple-panel]').length,
-      quick:[...root.querySelectorAll('[data-simple-panel] a.mrseo-mega-item')].map(a=>new URL(a.href).pathname).sort(),
-      parents:[...root.querySelectorAll('a.mrseo-mega-heading-link')].map(a=>new URL(a.href).pathname).sort(),
-      css:!!document.querySelector('link[href*="ua-simple-menu.css"]'),
-      script:!!document.querySelector('script[src*="ua-simple-menu.js"]'),
-      legacy:!!root.querySelector('[data-hybrid-mode],[data-seo-bundle]'),
-      links:[...root.querySelectorAll('a[href]')].every(a=>{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.startsWith('/')})};
+    return {cards:[...root.querySelectorAll('a.mrseo-simple-card[href]')].map(a=>new URL(a.href).pathname).sort(),
+      chips:[...root.querySelectorAll('a.mrseo-simple-chip[href]')].map(a=>new URL(a.href).pathname).sort(),
+      details:root.querySelectorAll('[data-simple-panel],[data-simple-back],[data-simple-details]').length,
+      scripts:!!document.querySelector('script[src*="ua-simple-menu.js"]'),
+      style:!!document.querySelector('link[href*="ua-simple-menu.css"]'),
+      badLinks:[...root.querySelectorAll('a[href]')].filter(a=>new URL(a.href).origin!==location.origin).length
+    };
    });
-   const expectedQuick=["/ai-agents/","/api-integrations/","/business-dashboards/","/catalog-automation/","/corporate-websites/","/crm-development/","/ecommerce-seo/","/ga4-conversions/","/google-ads-audit/","/google-search-ads/","/google-shopping/","/international-seo/","/landing-pages/","/local-seo/","/performance-max/","/reporting-automation/","/seo-audit/","/store-conversion/","/store-migration/","/web-applications/","/website-redesign/","/wordpress-development/"];
-   const expectedParents=["/analytics/","/google-ads/","/horoshop/","/online-store-development/","/seo/","/service-websites/","/web-development/"];
-   if(!nav||nav.cards!==7||nav.panels!==7||!nav.css||!nav.script||nav.legacy||!nav.links||JSON.stringify(nav.quick)!==JSON.stringify(expectedQuick)||JSON.stringify(nav.parents)!==JSON.stringify(expectedParents))item.errors.push('UA simple menu coverage '+JSON.stringify(nav));
+   if(!nav||JSON.stringify(nav.cards)!==JSON.stringify(["/analytics/","/google-ads/","/horoshop/","/online-store-development/","/seo/","/service-websites/","/web-development/"])||JSON.stringify(nav.chips)!==JSON.stringify(["/ecommerce-seo/","/performance-max/","/seo-audit/","/wordpress-development/"])||nav.details||!nav.scripts||!nav.style||nav.badLinks)item.errors.push('UA direct card navigation coverage '+JSON.stringify(nav));
   }
   if(lang==='uk'&&slug==='seo'){
    const hub=await page.evaluate(()=>{const el=document.querySelector('#ukseo-services');if(!el)return null;const links=[...el.querySelectorAll('nav a[href]')];return {groups:el.querySelectorAll('article').length,links:links.map(a=>new URL(a.href).pathname).sort(),geometry:links.every(a=>{const r=a.getBoundingClientRect();return r.left>=-2&&r.right<=innerWidth+2&&r.width>0&&r.height>0;})};});
    const expectedHub=["/ai-search-optimization/","/competitor-seo-analysis/","/crawl-configuration/","/ecommerce-seo/","/indexing-fixes/","/internal-linking/","/international-seo/","/local-seo/","/metadata-optimization/","/search-console-setup/","/semantic-core/","/seo-audit/","/seo-content/","/seo-redirects/","/service-business-seo/","/structured-data/","/traffic-recovery/","/website-audit/"];
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO hub service coverage or geometry '+JSON.stringify(hub));
   }
-  async function verifySimpleMenu(mobile){
-   const root=page.locator('header.site-header .mrseo-simple-nav');
-   const cards=root.locator('[data-simple-cards]'),detail=root.locator('[data-simple-details]');
-   if(!await root.isVisible()||!await cards.isVisible()||await detail.isVisible()||await cards.locator('[data-simple-category]').count()!==7)item.errors.push('Simple menu initial state');
-   const positions=[['seo',5],['ads',5],['data',4],['commerce',4],['horoshop',1],['sites',5],['dev',5]];
-   for(const [category,links] of positions){
-    await root.locator('[data-simple-category="'+category+'"]').click();
-    const panel=root.locator('[data-simple-panel="'+category+'"]');
-    if(!await detail.isVisible()||await cards.isVisible()||!await panel.isVisible()||await panel.locator('a').count()!==links)item.errors.push('Simple menu category '+category);
-    const bounds=await panel.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=-6&&r.right<=innerWidth+6});
-    if(!bounds)item.errors.push('Simple menu category overflow '+category);
-    await root.locator('[data-simple-back]').click();
-    if(!await cards.isVisible()||await detail.isVisible()||!await root.locator('[data-simple-category="'+category+'"]').evaluate(el=>el===document.activeElement))item.errors.push('Simple menu back '+category);
-   }
-   await root.locator('[data-simple-category="seo"]').click();
-   if(await root.locator('[data-simple-panel="seo"] .mrseo-simple-all').getAttribute('href')!==new URL('/seo/',page.url()).href)item.errors.push('Simple SEO hub link');
-   await root.locator('[data-simple-back]').click();
+  async function verifyDirectMenu(mobile){
+   const root=page.locator('header.site-header .mrseo-simple-nav--direct');
+   const cards=root.locator('a.mrseo-simple-card[href]'),chips=root.locator('a.mrseo-simple-chip[href]');
+   if(!await root.isVisible()||await cards.count()!==7||await chips.count()!==4||!await cards.first().isVisible()||!await chips.first().isVisible())item.errors.push('UA direct menu visibility');
+   const allLinks=await root.locator('a[href]').evaluateAll(elements=>elements.map(a=>{const r=a.getBoundingClientRect();return {text:a.textContent.trim(),left:r.left,right:r.right,width:r.width,height:r.height,href:a.href}}));
+   if(allLinks.some(a=>a.left<-6||a.right>innerWidth+6||a.width<10||a.height<25))item.errors.push('UA direct menu link geometry '+JSON.stringify(allLinks));
+   const seo=await cards.first().getAttribute('href');
+   if(seo!==new URL('/seo/',page.url()).href)item.errors.push('UA direct SEO category destination');
    if(mobile){
     await root.locator('[data-simple-close]').click();
     const trigger=page.locator('header.site-header .services-menu-toggle');
-    if(await trigger.getAttribute('aria-expanded')!=='false')item.errors.push('Simple mobile close');
+    if(await trigger.getAttribute('aria-expanded')!=='false'||!await trigger.evaluate(el=>el===document.activeElement))item.errors.push('UA direct mobile close focus');
     await trigger.click();
-    if(!await cards.isVisible()||!await root.locator('[data-simple-category="seo"]').evaluate(el=>el===document.activeElement))item.errors.push('Simple mobile open focus');
+    if(!await cards.first().evaluate(el=>el===document.activeElement))item.errors.push('UA direct mobile open focus');
    }
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const trigger=page.locator('header.site-header .services-menu-toggle');
    await trigger.click();
-   await verifySimpleMenu(false);
+   await verifyDirectMenu(false);
    await page.screenshot({path:'shots/ua-service-menu-architecture-wide.jpg',type:'jpeg',quality:80,fullPage:false});
    await trigger.click();
    await trigger.focus();
    await trigger.press('ArrowDown');
-   if(!await page.locator('.mrseo-simple-nav [data-simple-category="seo"]').evaluate(el=>el===document.activeElement))item.errors.push('Simple desktop ArrowDown');
+   if(!await page.locator('.mrseo-simple-nav--direct .mrseo-simple-card').first().evaluate(el=>el===document.activeElement))item.errors.push('UA direct ArrowDown');
    await page.keyboard.press('Escape');
-   if(await trigger.getAttribute('aria-expanded')!=='false')item.errors.push('Simple Escape');
+   if(await trigger.getAttribute('aria-expanded')!=='false')item.errors.push('UA direct Escape');
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -805,7 +794,7 @@ async function audit(browser,viewport,lang,slug){
       return r.width>200&&r.left>=-6&&r.right<=innerWidth+6;
    });
    if(!good)item.errors.push('Premium services menu overflows 360px viewport');
-   if(lang==='uk')await verifySimpleMenu(true);
+   if(lang==='uk')await verifyDirectMenu(true);
    await page.screenshot({path:'shots/eu-'+lang+'-shared-mobile-menu.jpg',type:'jpeg',quality:75,fullPage:false});
    item.stage='close service/menu';
    await page.keyboard.press('Escape');
