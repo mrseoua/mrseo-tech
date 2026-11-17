@@ -274,8 +274,8 @@ function mrseo_assets(){
  wp_enqueue_style('mrseo-language-dropdown',get_template_directory_uri().'/assets/language-dropdown.css',array('mrseo-style'),'1.0.2');
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.6.0');
  if(mrseo_locale()==='uk'){
-  wp_enqueue_style('mrseo-ua-simple-menu',get_template_directory_uri().'/assets/ua-simple-menu.css',array('mrseo-services-menu-toggle'),'1.0.0');
-  wp_enqueue_script('mrseo-ua-simple-menu',get_template_directory_uri().'/assets/ua-simple-menu.js',array('mrseo-ui'),'1.0.0',true);
+  wp_enqueue_style('mrseo-ua-simple-menu',get_template_directory_uri().'/assets/ua-simple-menu.css',array('mrseo-services-menu-toggle'),'1.1.0');
+  wp_enqueue_script('mrseo-ua-simple-menu',get_template_directory_uri().'/assets/ua-simple-menu.js',array('mrseo-ui'),'1.1.0',true);
  }
  wp_enqueue_style('mrseo-footer-contact-channels',get_template_directory_uri().'/assets/footer-contact-channels.css',array('mrseo-style'),'1.0.0');
  // After theme/intl footer styles: fix the old .footer .container flex layout and normalize full-width footer.
