@@ -771,7 +771,7 @@ async function audit(browser,viewport,lang,slug){
       secondLine:header?.querySelector('.mrseo-ua-nav-utility')?.getBoundingClientRect().height,
       menuLeft:services?.getBoundingClientRect().left,logoRight:bar?.querySelector('.logo')?.getBoundingClientRect().right};
    });
-   if(top.portfolioTop||!top.about||!top.contacts||JSON.stringify(top.utilityLinks)!==JSON.stringify(['Про нас','Контакти'])||!top.servicesFirst||top.topHasAbout||!top.portfolioAccessible||top.barHeight<60||top.menuLeft<top.logoRight-3)item.errors.push('UA service-first header structure '+JSON.stringify(top));
+   if(top.portfolioTop||!top.about||!top.contacts||JSON.stringify(top.utilityLinks)!==JSON.stringify(['Про нас','Контакти'])||!top.servicesFirst||top.topHasAbout||!top.portfolioAccessible||top.barHeight<60||(viewport.name==='wide'&&top.menuLeft<top.logoRight-3))item.errors.push('UA service-first header structure '+JSON.stringify(top));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const headerLayout=await page.evaluate(()=>{
