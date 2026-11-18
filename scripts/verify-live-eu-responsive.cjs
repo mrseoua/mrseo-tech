@@ -780,6 +780,8 @@ async function audit(browser,viewport,lang,slug){
      return {mainTop:m?.top,utilityTop:u?.top,mainBottom:m?.bottom,servicesWidth:s?.width,overflow:document.documentElement.scrollWidth>innerWidth+4};
    });
    if(headerLayout.utilityTop<headerLayout.mainBottom-2||headerLayout.servicesWidth<450||headerLayout.overflow)item.errors.push('UA service-first header geometry '+JSON.stringify(headerLayout));
+   const labelFont=await page.locator('.mrseo-ua-six--desktop summary').evaluateAll(els=>{const sizes=els.map(el=>parseFloat(getComputedStyle(el).fontSize));return {min:Math.min(...sizes),max:Math.max(...sizes)};});
+   if(labelFont.min<15||labelFont.max>16.1)item.errors.push('UA header top-level font size '+JSON.stringify(labelFont));
    const groups=page.locator('.mrseo-ua-six--desktop details');
    for(let i=0;i<6;i++){
     await groups.nth(i).locator('summary').click();

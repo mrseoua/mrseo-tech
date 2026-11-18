@@ -44,7 +44,7 @@
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary .logo{flex:none;font-size:clamp(23px,1.9vw,28px)}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop{flex:1;min-width:0;background:transparent;border:0;z-index:10}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-inner{max-width:none;padding:0;gap:clamp(3px,.48vw,9px);justify-content:center}
-.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item summary{padding:10px clamp(10px,.85vw,15px);font-size:clamp(12px,.92vw,14px);min-height:42px}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item summary{padding:10px clamp(10px,.85vw,15px);font-size:clamp(15px,.95vw,16px);min-height:42px}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-panel{top:calc(100% + 8px)}
 .site-header.mrseo-ua-header-v2 .nav-cta{flex:none;padding:13px 16px;font-size:13px}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.nav-links{display:none}
