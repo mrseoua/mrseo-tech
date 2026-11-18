@@ -76,3 +76,34 @@
  .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary{gap:5px;padding:0 10px}
  .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary .logo{font-size:19px}
 }
+
+/* Grouped subcategories: preserve approved ivory palette and typography. */
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-panel{
+ width:min(360px,calc(100vw - 32px));max-width:min(360px,calc(100vw - 32px));
+ max-height:min(72dvh,690px);overflow-y:auto;overscroll-behavior:contain;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-panel--wide{
+ width:min(720px,calc(100vw - 32px));max-width:min(720px,calc(100vw - 32px));
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--seo .mrseo-ua-six-panel,
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--ads .mrseo-ua-six-panel,
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--commerce .mrseo-ua-six-panel{left:0;right:auto}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-panel,
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--sites .mrseo-ua-six-panel,
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--dev .mrseo-ua-six-panel{left:auto;right:0}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-panel--wide .mrseo-ua-six-catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-catalog-group{min-width:0;padding:5px 0 8px;break-inside:avoid}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-catalog-group h3{
+ margin:8px 11px 4px;font-size:12px;font-weight:800;
+ letter-spacing:.06em;text-transform:uppercase;color:#8b6f62;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-unlinked{
+ display:block;padding:9px 12px;min-height:38px;
+ font-size:14px;font-weight:650;line-height:1.45;color:#4d4741;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-panel{max-height:65dvh;overflow-y:auto;overscroll-behavior:contain}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-catalog-group{padding:5px 0}
+@media(max-width:1250px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-panel{width:auto;max-width:100%}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-catalog{display:block}
+}
