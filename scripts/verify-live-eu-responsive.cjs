@@ -780,6 +780,18 @@ async function audit(browser,viewport,lang,slug){
      return {mainTop:m?.top,utilityTop:u?.top,mainBottom:m?.bottom,servicesWidth:s?.width,overflow:document.documentElement.scrollWidth>innerWidth+4};
    });
    if(headerLayout.utilityTop<headerLayout.mainBottom-2||headerLayout.servicesWidth<450||headerLayout.overflow)item.errors.push('UA service-first header geometry '+JSON.stringify(headerLayout));
+   const legibility=await page.evaluate(()=>{
+    const head=document.querySelector('.mrseo-ua-header-v2');
+    const heading=head?.querySelector('.mrseo-ua-six--desktop summary');
+    const link=head?.querySelector('.mrseo-ua-six--desktop .mrseo-ua-six-panel a');
+    const h=heading?getComputedStyle(heading):null;
+    const a=link?getComputedStyle(link):null;
+    const rect=head?.querySelector('.mrseo-ua-nav-primary')?.getBoundingClientRect();
+    const last=head?.querySelector('.mrseo-ua-six--desktop details:last-child')?.getBoundingClientRect();
+    return {heading:parseFloat(h?.fontSize||'0'),sub:parseFloat(a?.fontSize||'0'),
+      headerRight:rect?.right,categoryRight:last?.right,overflow:document.documentElement.scrollWidth>innerWidth+4};
+   });
+   if(legibility.heading<15||legibility.sub<16||legibility.overflow||legibility.categoryRight>legibility.headerRight+3)item.errors.push('UA readable desktop menu '+JSON.stringify(legibility));
    const groups=page.locator('.mrseo-ua-six--desktop details');
    for(let i=0;i<6;i++){
     await groups.nth(i).locator('summary').click();
@@ -800,6 +812,12 @@ async function audit(browser,viewport,lang,slug){
     const servicesTop=await page.locator('.mrseo-ua-six--desktop').isVisible();
     const utility=await page.locator('.mrseo-ua-nav-utility').isVisible();
     if(servicesTop||utility)item.errors.push('UA service-first mobile desktop controls visible');
+    const mobileText=await page.evaluate(()=>{
+      const root=document.querySelector('.mrseo-ua-six--mobile');
+      const summary=root?.querySelector('summary'),link=root?.querySelector('.mrseo-ua-six-panel a');
+      return {summary:parseFloat(getComputedStyle(summary).fontSize),link:parseFloat(getComputedStyle(link).fontSize)};
+    });
+    if(mobileText.summary<17||mobileText.link<16)item.errors.push('UA readable mobile menu '+JSON.stringify(mobileText));
     item.stage='UA six-header mobile';
     const six=page.locator('.mrseo-ua-six--mobile details');
     for(let i=0;i<6;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[5,5,4,1,5,5][i])item.errors.push('UA six mobile item '+i);}

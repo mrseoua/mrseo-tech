@@ -76,3 +76,77 @@
  .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary{gap:5px;padding:0 10px}
  .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary .logo{font-size:19px}
 }
+
+/* Larger readable Ukrainian navigation and submenu links.
+   The six-service primary row stays visually dominant; use hamburger before crowding. */
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item summary{
+ font-size:clamp(15px,1.06vw,16px);
+ font-weight:800;
+ min-height:46px;
+ padding:11px clamp(12px,.92vw,16px);
+ color:#25231f;
+ background:#f0e7dc;
+ border-color:#d9c9b8;
+ letter-spacing:0;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item summary:hover,
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item[open]>summary{
+ background:#f1dfd6;
+ border-color:#b97060;
+ color:#8f382d;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-panel a{
+ font-size:16px!important;
+ font-weight:700;
+ min-height:49px;
+ line-height:1.45;
+ padding:12px 15px!important;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-panel a.mrseo-ua-six-primary{
+ font-weight:850;
+ font-size:16px!important;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-panel{
+ min-width:285px;
+ max-width:min(380px,calc(100vw - 26px));
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility-links a{
+ font-size:14px;
+ font-weight:700;
+}
+@media(max-width:1360px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop{display:none}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.menu-toggle{
+  display:block;margin-left:auto;border-radius:10px;padding:8px 11px;background:#eee8df;color:#18211d;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.nav-links{
+  display:none;position:absolute;top:75px;left:0;right:0;z-index:101;
+  flex-direction:column;align-items:stretch;padding:18px 24px 26px;gap:5px;
+  background:#fbf9f5;border-bottom:1px solid #e7dcd0;box-shadow:0 20px 25px #171c1720;
+  max-height:calc(100dvh - 75px);overflow-y:auto;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.nav-links.open{display:flex}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile{display:block}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility{display:none}
+}
+@media(max-width:1360px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-item summary{
+  font-size:18px;
+  min-height:52px;
+  font-weight:800;
+  color:#28221e;
+  background:#f0e7dc;
+  border-color:#ddccbb;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-panel a{
+  font-size:16px!important;
+  min-height:49px;
+  font-weight:700;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.nav-links>a{
+  font-size:16px;font-weight:750;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six-item summary{transition:none}
+}
