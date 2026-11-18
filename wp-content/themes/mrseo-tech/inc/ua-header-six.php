@@ -1,22 +1,34 @@
 <?php
 if(!defined('ABSPATH'))exit;
-/* Only existing Ukrainian routes. No new landing pages or duplicate SEO content. */
+/* Existing Ukrainian service taxonomy. No invented URLs for planned Horoshop items. */
 function mrseo_ua_header_six($mobile=false){
  $groups=mrseo_ua_menu_groups();$current=mrseo_slug();
- $quick=array('seo'=>array('seo-audit','ecommerce-seo','local-seo','international-seo'),'ads'=>array('google-search-ads','performance-max','google-shopping','google-ads-audit'),'commerce'=>array('store-conversion','store-migration','catalog-automation'),'horoshop'=>array(),'sites'=>array('wordpress-development','landing-pages','corporate-websites','website-redesign'),'dev'=>array('crm-development','web-applications','api-integrations','ai-agents'));
+ $names=array('seo'=>'SEO','ads'=>'Google Ads','commerce'=>'Інтернет-магазини','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Веброзробка');
  echo '<nav class="mrseo-ua-six'.($mobile?' mrseo-ua-six--mobile':' mrseo-ua-six--desktop').'" aria-label="Напрями послуг"><div class="mrseo-ua-six-inner">';
- foreach($groups as $g){
-  if($g['key']==='data')continue;
-  $key=$g['key'];$by_slug=array_column($g['items'],1,0);
-  $nav_names=array('seo'=>'SEO','ads'=>'Google Ads','commerce'=>'Інтернет-магазини','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Автоматизація та CRM');
-  echo '<details class="mrseo-ua-six-item" name="'.($mobile?'ua-six-mobile':'ua-six-desktop').'">';
-  echo '<summary>'.esc_html($nav_names[$key]).'<span aria-hidden="true">⌄</span></summary>';
-  echo '<div class="mrseo-ua-six-panel">';
-  echo '<a class="mrseo-ua-six-primary" href="'.esc_url(mrseo_url($g['parent'],'uk')).'"'.($current===$g['parent']?' aria-current="page"':'').'>'.esc_html($key==='seo'?'Усі SEO-послуги':($key==='horoshop'?'Послуги для Хорошоп':'Усі послуги')).' <span aria-hidden="true">↗</span></a>';
-  foreach($quick[$key] as $slug){$active=$current===$slug;
-   echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($by_slug[$slug]).' <span aria-hidden="true">↗</span></a>';
+ foreach($groups as $group){
+  if($group['key']==='data')continue;
+  $key=$group['key'];$is_horoshop=$key==='horoshop';
+  echo '<details class="mrseo-ua-six-item mrseo-ua-six-item--'.esc_attr($key).'" name="'.($mobile?'ua-six-mobile':'ua-six-desktop').'">';
+  echo '<summary>'.esc_html($names[$key]).'<span aria-hidden="true">⌄</span></summary>';
+  echo '<div class="mrseo-ua-six-panel'.($key==='seo'?' mrseo-ua-six-panel--wide':'').'">';
+  echo '<a class="mrseo-ua-six-primary" href="'.esc_url(mrseo_url($group['parent'],'uk')).'"'.($current===$group['parent']?' aria-current="page"':'').'>'.esc_html($key==='seo'?'Усі SEO-послуги':($is_horoshop?'Усі послуги для Хорошоп':'Усі послуги')).' <span aria-hidden="true">↗</span></a>';
+  echo '<div class="mrseo-ua-six-catalog">';
+  if($is_horoshop){
+   echo '<section class="mrseo-ua-six-catalog-group"><h3>Напрями роботи</h3>';
+   foreach($group['planned'] as $service)echo '<span class="mrseo-ua-six-unlinked">'.esc_html($service[1]).'</span>';
+   echo '</section>';
+  }else{
+   foreach($group['sections'] as $section){
+    if(empty($section['items']))continue;
+    echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($section['title']).'</h3>';
+    foreach($section['items'] as $service){
+     $slug=$service[0];$active=$current===$slug;
+     echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($service[1]).' <span aria-hidden="true">↗</span></a>';
+    }
+    echo '</section>';
+   }
   }
-  echo '</div></details>';
+  echo '</div></div></details>';
  }
  echo '</div></nav>';
 }
