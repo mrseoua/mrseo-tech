@@ -757,7 +757,17 @@ async function audit(browser,viewport,lang,slug){
       hrefs:[...desktop?.querySelectorAll('.mrseo-ua-six-primary')||[]].map(x=>new URL(x.href).pathname).sort(),
       assets:!!document.querySelector('link[href*="ua-six-header.css"]')&&!!document.querySelector('script[src*="ua-six-header.js"]')};
    });
-   if(six.desktop!==6||six.mobile!==6||JSON.stringify(six.names)!==JSON.stringify(['SEO-просування','Google Ads','Інтернет-магазини','Хорошоп','Створення сайтів','Веброзробка'])||JSON.stringify(six.hrefs)!==JSON.stringify(['/seo/','/google-ads/','/online-store-development/','/horoshop/','/service-websites/','/web-development/'].sort())||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
+   if(six.desktop!==6||six.mobile!==6||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Інтернет-магазини','Хорошоп','Сайти','Автоматизація та CRM'])||JSON.stringify(six.hrefs)!==JSON.stringify(['/seo/','/google-ads/','/online-store-development/','/horoshop/','/service-websites/','/web-development/'].sort())||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
+  }
+  if(lang==='uk'){
+   const top=await page.evaluate(()=>{
+    const header=document.querySelector('header.site-header');
+    const bar=header?.querySelector('.container.nav');
+    const links=[...header?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim());
+    return {topLinks:links,portfolioTop:links.includes('Портфоліо'),about:links.includes('Про нас'),contacts:links.includes('Контакти'),
+      portfolioAccessible:!!document.querySelector('a[href$="/portfolio/"]'),barHeight:bar?.getBoundingClientRect().height};
+   });
+   if(top.portfolioTop||!top.about||!top.contacts||!top.portfolioAccessible||top.barHeight<60)item.errors.push('UA polished header structure '+JSON.stringify(top));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const groups=page.locator('.mrseo-ua-six--desktop details');

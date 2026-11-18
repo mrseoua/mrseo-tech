@@ -8,8 +8,9 @@ function mrseo_ua_header_six($mobile=false){
  foreach($groups as $g){
   if($g['key']==='data')continue;
   $key=$g['key'];$by_slug=array_column($g['items'],1,0);
+  $nav_names=array('seo'=>'SEO','ads'=>'Google Ads','commerce'=>'Інтернет-магазини','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Автоматизація та CRM');
   echo '<details class="mrseo-ua-six-item" name="'.($mobile?'ua-six-mobile':'ua-six-desktop').'">';
-  echo '<summary>'.esc_html($g['title']).'<span aria-hidden="true">⌄</span></summary>';
+  echo '<summary>'.esc_html($nav_names[$key]).'<span aria-hidden="true">⌄</span></summary>';
   echo '<div class="mrseo-ua-six-panel">';
   echo '<a class="mrseo-ua-six-primary" href="'.esc_url(mrseo_url($g['parent'],'uk')).'"'.($current===$g['parent']?' aria-current="page"':'').'>'.esc_html($key==='seo'?'Усі SEO-послуги':($key==='horoshop'?'Послуги для Хорошоп':'Усі послуги')).' <span aria-hidden="true">↗</span></a>';
   foreach($quick[$key] as $slug){$active=$current===$slug;
