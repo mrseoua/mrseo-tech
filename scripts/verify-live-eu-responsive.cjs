@@ -763,13 +763,23 @@ async function audit(browser,viewport,lang,slug){
    const top=await page.evaluate(()=>{
     const header=document.querySelector('header.site-header');
     const bar=header?.querySelector('.container.nav');
-    const links=[...header?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim());
-    return {topLinks:links,portfolioTop:links.includes('Портфоліо'),about:links.includes('Про нас'),contacts:links.includes('Контакти'),
-      portfolioAccessible:!!document.querySelector('a[href$="/portfolio/"]'),barHeight:bar?.getBoundingClientRect().height};
+    const topLinks=[...header?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim());
+    const utilityLinks=[...header?.querySelectorAll('.mrseo-ua-nav-utility-links a')||[]].map(a=>a.textContent.trim());
+    const services=header?.querySelector('.mrseo-ua-nav-primary > .mrseo-ua-six--desktop');
+    return {topLinks,utilityLinks,servicesFirst:!!services,portfolioTop:topLinks.includes('Портфоліо'),about:topLinks.includes('Про нас'),contacts:topLinks.includes('Контакти'),topHasAbout:!!bar?.querySelector('.mrseo-ua-nav-utility-links'),
+      portfolioAccessible:!!document.querySelector('a[href$="/portfolio/"]'),barHeight:bar?.getBoundingClientRect().height,
+      secondLine:header?.querySelector('.mrseo-ua-nav-utility')?.getBoundingClientRect().height,
+      menuLeft:services?.getBoundingClientRect().left,logoRight:bar?.querySelector('.logo')?.getBoundingClientRect().right};
    });
-   if(top.portfolioTop||!top.about||!top.contacts||!top.portfolioAccessible||top.barHeight<60)item.errors.push('UA polished header structure '+JSON.stringify(top));
+   if(top.portfolioTop||!top.about||!top.contacts||JSON.stringify(top.utilityLinks)!==JSON.stringify(['Про нас','Контакти'])||!top.servicesFirst||top.topHasAbout||!top.portfolioAccessible||top.barHeight<60||(viewport.name==='wide'&&top.menuLeft<top.logoRight-3))item.errors.push('UA service-first header structure '+JSON.stringify(top));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
+   const headerLayout=await page.evaluate(()=>{
+     const head=document.querySelector('.mrseo-ua-header-v2'),main=head?.querySelector('.mrseo-ua-nav-primary'),utility=head?.querySelector('.mrseo-ua-nav-utility'),services=head?.querySelector('.mrseo-ua-six--desktop');
+     const m=main?.getBoundingClientRect(),u=utility?.getBoundingClientRect(),s=services?.getBoundingClientRect();
+     return {mainTop:m?.top,utilityTop:u?.top,mainBottom:m?.bottom,servicesWidth:s?.width,overflow:document.documentElement.scrollWidth>innerWidth+4};
+   });
+   if(headerLayout.utilityTop<headerLayout.mainBottom-2||headerLayout.servicesWidth<450||headerLayout.overflow)item.errors.push('UA service-first header geometry '+JSON.stringify(headerLayout));
    const groups=page.locator('.mrseo-ua-six--desktop details');
    for(let i=0;i<6;i++){
     await groups.nth(i).locator('summary').click();
@@ -787,6 +797,9 @@ async function audit(browser,viewport,lang,slug){
    if(await menu.getAttribute('aria-expanded')!=='true')
       item.errors.push('Global mobile menu cannot open');
    if(lang==='uk'){
+    const servicesTop=await page.locator('.mrseo-ua-six--desktop').isVisible();
+    const utility=await page.locator('.mrseo-ua-nav-utility').isVisible();
+    if(servicesTop||utility)item.errors.push('UA service-first mobile desktop controls visible');
     item.stage='UA six-header mobile';
     const six=page.locator('.mrseo-ua-six--mobile details');
     for(let i=0;i<6;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[5,5,4,1,5,5][i])item.errors.push('UA six mobile item '+i);}
