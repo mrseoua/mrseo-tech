@@ -107,3 +107,28 @@
  .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-panel{width:auto;max-width:100%}
  .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-catalog{display:block}
 }
+
+/* Larger, legible submenu typography. Keep the approved layout, colors and dimensions. */
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-panel .mrseo-ua-six-catalog-group a,
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-panel > a.mrseo-ua-six-primary{
+ font-size:17px!important;
+ font-weight:700;
+ line-height:1.45;
+ min-height:47px;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-catalog-group h3{
+ font-size:14px;
+ line-height:1.4;
+ letter-spacing:.045em;
+}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-six-unlinked{
+ font-size:16px;
+ line-height:1.45;
+}
+@media(max-width:1250px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-panel .mrseo-ua-six-catalog-group a,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-panel > a.mrseo-ua-six-primary{
+  font-size:17px!important;
+  min-height:48px;
+ }
+}
