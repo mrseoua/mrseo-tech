@@ -786,6 +786,16 @@ async function audit(browser,viewport,lang,slug){
    const horoshopLabels=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-unlinked').count();
    const seoColumns=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-panel--wide .mrseo-ua-six-catalog').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
    if(subcategories!==43||horoshopLabels!==6||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
+   const submenuTypography=await page.evaluate(()=>{
+     const base=document.querySelector('.mrseo-ua-six--desktop');
+     const link=base?.querySelector('.mrseo-ua-six-catalog-group a');
+     const lead=base?.querySelector('.mrseo-ua-six-primary');
+     const group=base?.querySelector('.mrseo-ua-six-catalog-group h3');
+     const planned=base?.querySelector('.mrseo-ua-six-unlinked');
+     return {link:parseFloat(getComputedStyle(link).fontSize),lead:parseFloat(getComputedStyle(lead).fontSize),
+      group:parseFloat(getComputedStyle(group).fontSize),planned:parseFloat(getComputedStyle(planned).fontSize)};
+   });
+   if(submenuTypography.link<16.9||submenuTypography.lead<16.9||submenuTypography.group<13.9||submenuTypography.planned<15.9)item.errors.push('UA submenu text legibility '+JSON.stringify(submenuTypography));
    const groups=page.locator('.mrseo-ua-six--desktop details');
    for(let i=0;i<6;i++){
     await groups.nth(i).locator('summary').click();
@@ -807,6 +817,8 @@ async function audit(browser,viewport,lang,slug){
     const utility=await page.locator('.mrseo-ua-nav-utility').isVisible();
     if(servicesTop||utility)item.errors.push('UA service-first mobile desktop controls visible');
     item.stage='UA six-header mobile';
+    const mobileLinkFont=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+    if(mobileLinkFont<16.9)item.errors.push('UA mobile submenu readability '+mobileLinkFont);
     const six=page.locator('.mrseo-ua-six--mobile details');
     const mobileCount=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').count();
     if(mobileCount!==43)item.errors.push('UA mobile subcategory count '+mobileCount);
