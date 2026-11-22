@@ -47,7 +47,7 @@ assert "horoshop-premium-routes.php" in functions
 assert "mrseo_hs_key()" in premium and "hs-premium-visual" in premium
 assert "get_header()" in premium and "get_footer()" in premium
 assert "rel=\"canonical\"" in premium_routes
-assert "add_rewrite_rule('^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)/?
+assert "add_rewrite_rule(\u0027^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)/?\u0024\u0027" in premium_routes
 assert "mrseo_hs_url($anchor)" in header
 for key in ("setup","seo","audit","ads","feeds","ga4"):
  if key!='setup': assert "'"+key+"'" in header
