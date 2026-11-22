@@ -52,4 +52,17 @@ for key in ("setup","seo","audit","ads","feeds","ga4"):
 assert "prefers-reduced-motion:reduce" in premium_css
 assert "@media(max-width:480px)" in premium_css
 assert "mrseo-horoshop-premium-pages" in premium_routes
-print("Horoshop UA: six dedicated premium routes and hub modules, original partner visual, metadata, noindex and UA/RU routing preserved.")
+# Premium interaction regression: six distinct service motions and keyboard-operable stages.
+motion=(root/"assets/horoshop-premium-motion.js").read_text(encoding="utf-8")
+assert "horoshop-premium-motion.js" in premium_routes
+assert "mrseo-horoshop-premium-motion" in premium_routes
+assert "data-hs-active-stage" in premium
+assert "hs-premium-stage-button" in premium
+assert 'aria-pressed' in premium and 'aria-live="polite"' in premium
+assert "hs-premium-stage-description" in premium
+assert "hs-premium-scanline" in premium and premium.count("hs-premium-ping--")==3
+assert all("hs-premium-"+name in premium_css for name in ("basket","search","audit","ads","feed","chart","scan","ring","route"))
+assert all(key in motion for key in ("ArrowRight","ArrowLeft","IntersectionObserver","visibilitychange","prefers-reduced-motion","pauseAnimations"))
+assert "data-hs-motion-paused" in premium_css
+assert "@media(prefers-reduced-motion:reduce)" in premium_css
+print("Horoshop UA: six premium routes, interactive motion stages and hub modules, original partner visual, metadata, noindex and UA/RU routing preserved.")
