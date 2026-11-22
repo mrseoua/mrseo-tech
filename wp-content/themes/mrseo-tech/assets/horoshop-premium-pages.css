@@ -79,6 +79,7 @@
 .hs-premium-scene{isolation:isolate}
 .hs-premium-scanline{position:absolute;z-index:0;left:6%;right:6%;top:7%;height:2px;pointer-events:none;opacity:.55;background:linear-gradient(90deg,transparent,#b35f4577,transparent);box-shadow:0 0 25px #bd806244;animation:hs-premium-scan 5.8s ease-in-out infinite alternate}
 .hs-premium-scene svg{position:relative;z-index:1}
+.hs-premium-visual[data-hs-motion-paused="true"] .hs-premium-scanline,.hs-premium-visual[data-hs-motion-paused="true"] .hs-premium-route,.hs-premium-visual[data-hs-motion-paused="true"] .hs-premium-route-back,.hs-premium-visual[data-hs-motion-paused="true"] .hs-premium-node,.hs-premium-visual[data-hs-motion-paused="true"] .hs-premium-ping,.hs-premium-visual[data-hs-motion-paused="true"] .hs-premium-service-symbol{animation-play-state:paused}
 .hs-premium-route{animation:hs-premium-route 8s linear infinite}
 .hs-premium-route-back{animation:hs-premium-route 12s linear infinite reverse}
 .hs-premium-node{transition:filter .5s ease,opacity .5s ease}
