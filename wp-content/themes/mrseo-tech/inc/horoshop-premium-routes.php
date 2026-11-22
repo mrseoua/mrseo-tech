@@ -140,6 +140,12 @@ function mrseo_hs_url($key){return home_url('/horoshop/'.$key.'/');}
 add_action('init',function(){
  add_rewrite_rule('^horoshop/(setup|seo|audit|ads|feeds|ga4)/?$','index.php?mrseo_service=horoshop','top');
 },12);
+add_action('init',function(){
+ if(get_option('mrseo_hs_premium_routes_v1')!=='ready'){
+  flush_rewrite_rules(false);
+  update_option('mrseo_hs_premium_routes_v1','ready',false);
+ }
+},45);
 add_filter('pre_handle_404',function($pre){return mrseo_hs_key()?true:$pre;},110);
 add_filter('redirect_canonical',function($url){return mrseo_hs_key()?false:$url;},110);
 add_filter('template_include',function($template){
