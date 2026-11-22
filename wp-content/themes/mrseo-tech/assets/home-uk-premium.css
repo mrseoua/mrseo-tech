@@ -114,3 +114,9 @@ body .mrseo-footer .mrseo-contact-phone:hover,body .mrseo-footer .mrseo-footer-u
 .pt-ua-home a.ph-card-link:focus-visible{outline:3px solid #a14332;outline-offset:4px}
 .pt-ua-home a.ph-card-link:hover .ph-service-link,.pt-ua-home a.ph-card-link:focus-visible .ph-service-link{text-decoration:underline;color:#a14332}
 .pt-ua-home a.ph-card-link .ph-art{pointer-events:none}
+
+/* Main category alignment: exactly five orbit links, one balanced final mobile card. */
+@media(max-width:680px){
+ .pt-ua-home .pt-orbit>.pt-node.n4{grid-column:1 / -1;justify-self:center;width:min(100%,335px)}
+ .pt-ua-home .pt-orbit>.pt-node.n4 .pt-node-label{font-size:13px}
+}
