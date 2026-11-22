@@ -909,9 +909,14 @@ async function audit(browser,viewport,lang,slug){
          asset:!!document.querySelector('link[href*="horoshop-premium-pages.css"]'),
          page:!!body,svg:!!document.querySelector('.hs-premium-visual svg'),
          badge:!!document.querySelector('.hs-premium-partner img[alt*="ACTIVE"]'),
+         workbench:!!document.querySelector('.hs-story-workbench'),
+         machineNodes:document.querySelectorAll('.hs-story-machine-node').length,
+         proofRows:document.querySelectorAll('.hs-story-proof-row').length,
+         stepVisuals:document.querySelectorAll('.hs-story-step-visual').length,
+         finalOrbit:!!document.querySelector('.hs-story-final-orbit'),
          overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
-      if(!state.page||!state.hero||!state.svg||!state.badge||!state.asset||state.desc!==1||state.steps!==3||state.faq!==3||state.buttons<2||state.overflow)item.errors.push('Horoshop premium markup/geometry '+JSON.stringify(state));
+      if(!state.page||!state.hero||!state.svg||!state.badge||!state.asset||state.desc!==1||state.steps!==3||state.faq!==3||state.buttons<2||!state.workbench||state.machineNodes!==3||state.proofRows!==3||state.stepVisuals!==3||!state.finalOrbit||state.overflow)item.errors.push('Horoshop premium markup/geometry '+JSON.stringify(state));
       const stages=page.locator('.hs-premium-stage-button');
       if(await stages.count()!==3)item.errors.push('Horoshop premium stage controls missing');
       else{
@@ -923,6 +928,11 @@ async function audit(browser,viewport,lang,slug){
        if(selected!=='1'||pressed!=='true'||!message?.trim())item.errors.push('Horoshop interactive stages did not switch');
       }
       if(!await page.locator('script[src*="horoshop-premium-motion.js"]').count())item.errors.push('Horoshop premium motion asset missing');
+      const lower=await page.evaluate(()=>{
+       const elements=[...document.querySelectorAll('.hs-story-workbench,.hs-story-machine,.hs-story-proof,.hs-story-step-visual,.hs-story-final-orbit')];
+       return {count:elements.length,geometry:elements.every(e=>{const r=e.getBoundingClientRect();return r.width>20&&r.right<=innerWidth+4&&r.left>=-4;})};
+      });
+      if(lower.count!==7||!lower.geometry)item.errors.push('Horoshop below-fold visual geometry '+JSON.stringify(lower));
       if(state.canon!==url)item.errors.push('Horoshop self-canonical '+state.canon);
       if(!/noindex/i.test(state.robots))item.errors.push('Horoshop noindex missing');
       if(/ru\/horoshop\/(setup|seo|audit|ads|feeds|ga4)\//.test(await page.content()))item.errors.push('Invented RU Horoshop subservice URL');
