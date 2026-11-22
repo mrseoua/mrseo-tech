@@ -316,7 +316,7 @@ add_filter('template_include',function($template){
 add_filter('pre_get_document_title',function($title){
  if(!mrseo_ua_website_route())return $title;
  $p=mrseo_ua_website_data(mrseo_slug());
- return $p?$p['title'].' | MrSeo.tech':$title;
+ return $p?($p['seoTitle']??($p['title'].' | MrSeo.tech')):$title;
 },140);
 add_action('wp_head',function(){
  if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;
