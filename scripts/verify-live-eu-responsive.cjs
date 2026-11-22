@@ -766,9 +766,10 @@ async function audit(browser,viewport,lang,slug){
       hubRows:desktop?.querySelectorAll('.mrseo-ua-six-primary').length, horoshopHub:[...desktop?.querySelectorAll('.mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog-group a')||[]].map(x=>new URL(x.href).pathname+new URL(x.href).hash),
       megaPanels:desktop?.querySelectorAll('.mrseo-ua-six-panel--mega').length,
       overviewLinks:desktop?.querySelectorAll('.mrseo-ua-six-overview-link[href]').length,
+      seoLinks:[...desktop?.querySelectorAll('.mrseo-ua-six-item--seo .mrseo-ua-six-catalog-group a')||[]].map(x=>new URL(x.href).pathname),
       assets:!!document.querySelector('link[href*="ua-six-header.css"]')&&!!document.querySelector('script[src*="ua-six-header.js"]')};
    });
-   if(six.desktop!==6||six.mobile!==6||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Інтернет-магазини','Хорошоп','Створення сайтів','Веброзробка'])||six.hubRows!==0||six.megaPanels!==6||six.overviewLinks!==6||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/search-ads/','/horoshop/shopping/','/horoshop/pmax/','/horoshop/feeds/','/horoshop/ga4/'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
+   if(six.desktop!==5||six.mobile!==5||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Хорошоп','Сайти','Веброзробка'])||six.hubRows!==0||six.megaPanels!==5||six.overviewLinks!==5||six.seoLinks.length!==5||JSON.stringify(six.seoLinks)!==JSON.stringify(['/local-seo/','/ecommerce-seo/','/service-business-seo/','/international-seo/','/seo-audit/'])||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/search-ads/','/horoshop/shopping/','/horoshop/pmax/','/horoshop/feeds/','/horoshop/ga4/'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
   }
   if(lang==='uk'){
    const top=await page.evaluate(()=>{
