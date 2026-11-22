@@ -217,6 +217,8 @@ async function audit(browser,viewport,lang,slug){
     uaCinematicVisuals:document.querySelectorAll('.pt-ua-home .cs-art-field').length,
     uaCinematicScripts:!!document.querySelector('script[src*="home-cinematic-showcase.js"]')&&!!document.querySelector('link[href*="home-cinematic-showcase.css"]'),
     uaCinematicButtons:!!document.querySelector('.pt-ua-home [data-cs-previous]')&&!!document.querySelector('.pt-ua-home [data-cs-next]'),
+    uaCinematicReference:!!document.querySelector('link[href*="home-cinematic-reference.css"]')&&!!document.querySelector('.cs-google-ads-mark')&&document.querySelectorAll('.cs-shopping-card').length===1&&document.querySelectorAll('.cs-campaigns-card').length===1,
+
     uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-simple-nav .mrseo-simple-card').length,
     uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-simple-nav a.mrseo-simple-card[href]').length,
     uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
@@ -648,7 +650,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks<30||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks<25||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
