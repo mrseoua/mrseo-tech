@@ -3,6 +3,7 @@
 if(!defined('ABSPATH'))exit;
 $key=mrseo_hs_key();
 require_once get_template_directory().'/inc/horoshop-premium-story.php';
+require_once get_template_directory().'/inc/horoshop-ads-scenes.php';
 if(!$key){status_header(404);get_header();get_footer();return;}
 $p=mrseo_hs_pages()[$key];
 $keys=array_keys(mrseo_hs_pages());
@@ -12,7 +13,10 @@ $scenes=array(
  'audit'=>array('URL','Правила','Звіт'),
  'ads'=>array('Товари','Кампанії','Продажі'),
  'feeds'=>array('Фід','Перевірка','Google'),
- 'ga4'=>array('Покупка','GA4','Google Ads')
+ 'ga4'=>array('Покупка','GA4','Google Ads'),
+ 'search-ads'=>array('Запит','Оголошення','Категорія'),
+ 'shopping'=>array('Товар','Merchant','Shopping'),
+ 'pmax'=>array('Фід','Ресурси','Покупки')
 );
 $visual=$scenes[$key];
 get_header();
@@ -53,6 +57,12 @@ get_header();
        <g class="hs-premium-service-symbol" fill="none" stroke="#a65d45" stroke-width="5" stroke-linecap="round"><rect x="235" y="246" width="94" height="66" rx="8"/><path d="M248 262h48M248 280h66M248 296h39M300 233v24M291 248l9 9 9-9"/></g>
       <?php elseif($key==='ga4'):?>
        <g class="hs-premium-service-symbol" fill="#a65d45"><rect x="240" y="284" width="19" height="28" rx="7"/><rect x="272" y="266" width="19" height="46" rx="7"/><rect x="304" y="244" width="19" height="68" rx="7"/><circle cx="249" cy="264" r="7" fill="#caab8f"/></g>
+      <?php elseif($key==='search-ads'):?>
+       <g class="hs-premium-service-symbol" fill="none" stroke="#a65d45" stroke-width="5" stroke-linecap="round"><circle cx="271" cy="272" r="26"/><path d="M290 292l25 24"/><path d="M255 270h30M255 281h18"/></g>
+      <?php elseif($key==='shopping'):?>
+       <g class="hs-premium-service-symbol" fill="none" stroke="#a65d45" stroke-width="5" stroke-linejoin="round"><path d="M238 252h88v59h-88zM238 270h88M248 244h68v8"/><path d="M258 286h48M258 297h30"/></g>
+      <?php elseif($key==='pmax'):?>
+       <g class="hs-premium-service-symbol" fill="none" stroke="#a65d45" stroke-width="4" stroke-linejoin="round"><circle cx="283" cy="277" r="23"/><circle cx="238" cy="304" r="9"/><circle cx="328" cy="304" r="9"/><path d="M264 291l-20 10M302 291l20 10M283 254v-22"/></g>
       <?php endif;?>
       <circle class="hs-premium-ping hs-premium-ping--one" cx="100" cy="164" r="20" fill="none" stroke="#b75942" stroke-width="2"/>
       <circle class="hs-premium-ping hs-premium-ping--two" cx="285" cy="110" r="69" fill="none" stroke="#b75942" stroke-width="2"/>
@@ -73,6 +83,7 @@ get_header();
   </div>
  </section>
  <?php mrseo_hs_trust(); ?>
+ <?php mrseo_hs_paid_scene($key);?>
  <section class="hs-premium-problems" id="hs-process">
   <div class="hs-premium-wrap">
    <div class="hs-premium-head"><span class="hs-premium-eyebrow">ПОСЛІДОВНІ КРОКИ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
@@ -99,7 +110,7 @@ get_header();
    <details><summary>Чи залежать зміни від тарифу Хорошоп?<span aria-hidden="true">+</span></summary><p>Так. Перш ніж обіцяти конкретний функціонал, перевіримо його доступність у вашому тарифі та способи реалізації.</p></details>
   </div></div>
  </section>
- <section class="hs-premium-related"><div class="hs-premium-wrap"><span class="hs-premium-eyebrow">ПОВ’ЯЗАНІ ПОСЛУГИ</span><div class="hs-premium-related-grid"><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Усі послуги Хорошоп <span aria-hidden="true">↗</span></a><a href="<?php echo esc_url(mrseo_url($p[16],'uk'));?>"><?php echo esc_html($p[17]);?> <span aria-hidden="true">↗</span></a><?php if($key==='seo'):?><a href="<?php echo esc_url(mrseo_hs_url('audit'));?>">SEO-аудит сайтів на Хорошоп <span aria-hidden="true">↗</span></a><?php elseif($key==='audit'):?><a href="<?php echo esc_url(mrseo_hs_url('seo'));?>">SEO-просування сайтів на Хорошоп <span aria-hidden="true">↗</span></a><?php endif;?></div></div></section>
+ <section class="hs-premium-related"><div class="hs-premium-wrap"><span class="hs-premium-eyebrow">ПОВ’ЯЗАНІ ПОСЛУГИ</span><div class="hs-premium-related-grid"><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Усі послуги Хорошоп <span aria-hidden="true">↗</span></a><a href="<?php echo esc_url(mrseo_url($p[16],'uk'));?>"><?php echo esc_html($p[17]);?> <span aria-hidden="true">↗</span></a><?php if($key==='seo'):?><a href="<?php echo esc_url(mrseo_hs_url('audit'));?>">SEO-аудит сайтів на Хорошоп <span aria-hidden="true">↗</span></a><?php elseif($key==='audit'):?><a href="<?php echo esc_url(mrseo_hs_url('seo'));?>">SEO-просування сайтів на Хорошоп <span aria-hidden="true">↗</span></a><?php elseif(in_array($key,array('ads','search-ads','shopping','pmax'),true)):?><?php foreach(array('search-ads'=>'Пошукова реклама для Хорошоп','shopping'=>'Google Shopping для Хорошоп','pmax'=>'Performance Max для Хорошоп') as $other=>$label):?><?php if($key!==$other):?><a href="<?php echo esc_url(mrseo_hs_url($other));?>"><?php echo esc_html($label);?> <span aria-hidden="true">↗</span></a><?php endif;?><?php endforeach;?><?php endif;?></div></div></section>
  <section class="hs-premium-final"><div class="hs-premium-wrap"><div class="hs-story-final-orbit" aria-hidden="true"><i></i><i></i><i></i><span></span></div><span class="hs-premium-eyebrow">Є КОНКРЕТНА ПРОБЛЕМА?</span><h2>Опишіть задачу. <em>Знайдемо реальне рішення.</em></h2><p>Надішліть адресу магазину й поясніть, що не працює. Спочатку перевіримо обсяг задачі та можливості платформи.</p><a class="hs-premium-button hs-premium-button-light" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити Хорошоп ↗</a></div></section>
 </div>
 <?php get_footer();?>
