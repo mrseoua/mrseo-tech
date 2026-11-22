@@ -104,6 +104,8 @@ jobs:
         run: |
           node --check scripts/verify-ro-browser.cjs
           node --check wp-content/themes/mrseo-tech/assets/ro-service-hero-contact.js
+      - name: Verify seven Ukrainian small-business website niches and nested navigation
+        run: python3 scripts/verify-ua-small-business-niches.py
       - name: Verify 13 approved Ukrainian service landings and service menu
         run: |
           python3 - <<'PY'
