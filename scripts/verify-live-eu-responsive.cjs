@@ -792,7 +792,7 @@ async function audit(browser,viewport,lang,slug){
    const subcategories=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-catalog-group a').count();
    const horoshopLabels=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-unlinked').count();
    const seoColumns=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-panel--wide .mrseo-ua-six-catalog').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
-   if(subcategories!==44||horoshopLabels!==0||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
+   if(subcategories!==47||horoshopLabels!==0||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
    const submenuTypography=await page.evaluate(()=>{
      const base=document.querySelector('.mrseo-ua-six--desktop');
      const link=base?.querySelector('.mrseo-ua-six-catalog-group a');
@@ -805,7 +805,7 @@ async function audit(browser,viewport,lang,slug){
    const groups=page.locator('.mrseo-ua-six--desktop details');
    for(let i=0;i<5;i++){
     await groups.nth(i).locator('summary').click();
-    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,5,7,7][i])item.errors.push('UA six-header desktop item '+i);
+    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,8,7,7][i])item.errors.push('UA six-header desktop item '+i);
    }
    await page.keyboard.press('Escape');
    if(await groups.last().getAttribute('open')!==null)item.errors.push('UA six-header desktop Escape');
@@ -827,8 +827,8 @@ async function audit(browser,viewport,lang,slug){
     if(mobileLinkFont<16.9)item.errors.push('UA mobile submenu readability '+mobileLinkFont);
     const six=page.locator('.mrseo-ua-six--mobile details');
     const mobileCount=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').count();
-    if(mobileCount!==44)item.errors.push('UA mobile subcategory count '+mobileCount);
-    for(let i=0;i<5;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,5,7,7][i])item.errors.push('UA six mobile item '+i);}
+    if(mobileCount!==47)item.errors.push('UA mobile subcategory count '+mobileCount);
+    for(let i=0;i<5;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,8,7,7][i])item.errors.push('UA six mobile item '+i);}
     await page.keyboard.press('Escape');
     if(await six.last().getAttribute('open')!==null)item.errors.push('UA mobile Escape');
     const box=await page.locator('.mrseo-ua-six--mobile').evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right}});
@@ -891,7 +891,7 @@ async function audit(browser,viewport,lang,slug){
    try{
     const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height}});
     const page=await context.newPage();
-    for(const key of ['setup','seo','audit','ads','feeds','ga4']){
+    for(const key of ['setup','seo','audit','ads','search-ads','shopping','pmax','feeds','ga4']){
      const url=HOST+'/horoshop/'+key+'/';
      const item={url,viewport:viewport.name,errors:[],stage:'Horoshop premium individual page'};
      try{
@@ -910,6 +910,8 @@ async function audit(browser,viewport,lang,slug){
          page:!!body,svg:!!document.querySelector('.hs-premium-visual svg'),
          badge:!!document.querySelector('.hs-premium-partner img[alt*="ACTIVE"]'),
          trust:!!document.querySelector('.hs-trust'),
+         dedicatedScene:!!document.querySelector('.hs-ads-journey'),
+         dedicatedSceneCss:!!document.querySelector('link[href*="horoshop-ads-scenes.css"]'),
          trustProof:!!document.querySelector('.hs-trust-proof[href*="horoshop.ua/ua/offers/"]'),
          trustExperience:document.querySelector('.hs-trust-copy h2')?.textContent.includes('10 років'),
          trustCss:!!document.querySelector('link[href*="horoshop-partner-trust.css"]'),
@@ -937,6 +939,13 @@ async function audit(browser,viewport,lang,slug){
        return {count:elements.length,geometry:elements.every(e=>{const r=e.getBoundingClientRect();return r.width>20&&r.right<=innerWidth+4&&r.left>=-4;})};
       });
       if(lower.count!==7||!lower.geometry)item.errors.push('Horoshop below-fold visual geometry '+JSON.stringify(lower));
+      if(['search-ads','shopping','pmax'].includes(key)){
+       if(!state.dedicatedScene||!state.dedicatedSceneCss)item.errors.push('Missing Horoshop paid-service scene '+JSON.stringify(state));
+       const visuals=await page.locator('.hs-ads-demo').count();
+       if(visuals!==1)item.errors.push('Missing unique Horoshop Ads visual');
+       const realLink=await page.locator('.hs-premium-related-grid a[href]').count();
+       if(realLink<3)item.errors.push('New paid-services cross-links missing');
+      }
       if(state.canon!==url)item.errors.push('Horoshop self-canonical '+state.canon);
       if(!/noindex/i.test(state.robots))item.errors.push('Horoshop noindex missing');
       if(/ru\/horoshop\/(setup|seo|audit|ads|feeds|ga4)\//.test(await page.content()))item.errors.push('Invented RU Horoshop subservice URL');
