@@ -50,6 +50,10 @@ jobs:
         run: python3 scripts/verify-ua-horoshop-services.py
       - name: Verify five Ukrainian 3D Earth category satellites and linked destinations
         run: python3 scripts/verify-ua-home-five-satellites.py
+      - name: Verify Cinematic Showcase category navigation and preserved globe
+        run: |
+          python3 scripts/verify-ua-home-cinematic-showcase.py
+          node --check wp-content/themes/mrseo-tech/assets/home-cinematic-showcase.js
       - name: Verify 19 Ukrainian SEO landings and metadata integrity
         run: python3 scripts/verify-ua-seo-19.py
       - name: Verify RU compact service coverage and distinct client intents
