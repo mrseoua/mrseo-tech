@@ -16,16 +16,19 @@ function mrseo_ua_header_six($mobile=false){
   if($is_horoshop){
    echo '<section class="mrseo-ua-six-catalog-group"><h3>Напрями роботи</h3>';
    // Keep the Horoshop overview accessible elsewhere, but not in this dropdown.
-   // Six real premium WordPress routes, Ukrainian-only.
-   $horoshop_anchors=array(
-    'horoshop-seo'=>'seo',
-    'horoshop-audit'=>'audit','horoshop-google-ads'=>'ads',
-    'horoshop-product-feeds'=>'feeds','horoshop-ga4'=>'ga4'
+   // Nine real Ukrainian Horoshop routes; overview/setup stay out of the menu.
+   $horoshop_services=array(
+    'seo'=>'SEO-просування сайтів на Хорошоп',
+    'audit'=>'SEO-аудит сайтів на Хорошоп',
+    'ads'=>'Google Ads для Хорошоп',
+    'search-ads'=>'Пошукова реклама для Хорошоп',
+    'shopping'=>'Google Shopping для Хорошоп',
+    'pmax'=>'Performance Max для Хорошоп',
+    'feeds'=>'Товарні фіди',
+    'ga4'=>'GA4 та конверсії'
    );
-   foreach($group['planned'] as $service){
-    $anchor=$horoshop_anchors[$service[0]]??null;
-    if(!$anchor)continue;
-    echo '<a href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($service[1]).' <span aria-hidden="true">↗</span></a>';
+   foreach($horoshop_services as $anchor=>$label){
+    echo '<a href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
    }
    echo '</section>';
   }else{
