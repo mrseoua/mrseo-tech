@@ -6,7 +6,7 @@
  const prev=root.querySelector('[data-cs-previous]'),next=root.querySelector('[data-cs-next]');
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  if(tabs.length!==5||panels.length!==5||!counter||!progress||!prev||!next)return;
- let active=0;
+ let active=1;
  function select(index,focus=false){
   active=(index+tabs.length)%tabs.length;
   tabs.forEach((tab,i)=>{
@@ -48,7 +48,7 @@
  }
  document.addEventListener('visibilitychange',syncMotion);
  if(reduce.addEventListener)reduce.addEventListener('change',syncMotion);
- select(0);
+ select(1);
  root.classList.add('cs-enhanced');
  syncMotion();
 })();
