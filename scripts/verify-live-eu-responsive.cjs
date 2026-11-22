@@ -883,6 +883,47 @@ async function audit(browser,viewport,lang,slug){
    }finally{await browser.close()}
   }
  }
+ // Standalone Horoshop services are intentionally not duplicated in the international inventory.
+ // Smoke-test each real Ukrainian URL on desktop and mobile in isolated WordPress.
+ if(coreShard){
+  for(const viewport of [{name:'wide',width:1440,height:900},{name:'mobile',width:390,height:844}]){
+   const browser=await chromium.launch(launchOptions);
+   try{
+    const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height}});
+    const page=await context.newPage();
+    for(const key of ['setup','seo','audit','ads','feeds','ga4']){
+     const url=HOST+'/horoshop/'+key+'/';
+     const item={url,viewport:viewport.name,errors:[],stage:'Horoshop premium individual page'};
+     try{
+      const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:25000});
+      if(!response||response.status()!==200)item.errors.push('Horoshop route HTTP '+(response?.status()||'null'));
+      const state=await page.evaluate(()=>{
+       const body=document.querySelector('.hs-premium');
+       return {hero:!!document.querySelector('.hs-premium-hero h1'),
+         title:document.title,desc:document.querySelectorAll('meta[name="description"]').length,
+         canon:document.querySelector('link[rel="canonical"]')?.href,
+         robots:document.querySelector('meta[name="robots"]')?.content||'',
+         buttons:document.querySelectorAll('.hs-premium-button[href]').length,
+         steps:document.querySelectorAll('.hs-premium-step').length,
+         faq:document.querySelectorAll('.hs-premium-faq details').length,
+         asset:!!document.querySelector('link[href*="horoshop-premium-pages.css"]'),
+         page:!!body,svg:!!document.querySelector('.hs-premium-visual svg'),
+         badge:!!document.querySelector('.hs-premium-partner img[alt*="ACTIVE"]'),
+         overflow:document.documentElement.scrollWidth>innerWidth+4};
+      });
+      if(!state.page||!state.hero||!state.svg||!state.badge||!state.asset||state.desc!==1||state.steps!==3||state.faq!==3||state.buttons<2||state.overflow)item.errors.push('Horoshop premium markup/geometry '+JSON.stringify(state));
+      if(state.canon!==url)item.errors.push('Horoshop self-canonical '+state.canon);
+      if(!/noindex/i.test(state.robots))item.errors.push('Horoshop noindex missing');
+      if(/ru\/horoshop\/(setup|seo|audit|ads|feeds|ga4)\//.test(await page.content()))item.errors.push('Invented RU Horoshop subservice URL');
+      await page.screenshot({path:'shots/horoshop-'+key+'-'+viewport.name+'.jpg',type:'jpeg',quality:76,fullPage:false});
+     }catch(error){item.errors.push('Horoshop page stage '+String(error).slice(0,500));}
+     results.push(item);
+     console.log((item.errors.length?'FAIL':'PASS')+' Horoshop '+viewport.name+' '+key+' '+item.errors.join(' | '));
+    }
+    await context.close();
+   }finally{await browser.close()}
+  }
+ }
  const errors=results.filter(x=>x.errors.length);
  const summary={checked:results.length,failed:errors.length,success:results.length-errors.length,errors:errors.map(x=>({url:x.url,viewport:x.viewport,errors:x.errors})),results};
  await fs.writeFile('shots/eu-diagnostics.json',JSON.stringify(summary,null,2));
