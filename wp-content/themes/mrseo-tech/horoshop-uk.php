@@ -82,7 +82,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     <p class="hs-service-pain">Потрібен новий магазин, але незрозуміло, як організувати товари, категорії, оплату та доставку.</p>
     <p>Підготуємо структуру каталогу, налаштуємо доступні способи замовлення, перевіримо мобільний кошик і тестове оформлення покупки.</p>
     <p class="hs-service-result"><strong>Результат:</strong> магазин із перевіреним шляхом від товару до замовлення.</p>
-    <a href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити запуск <span aria-hidden="true">↗</span></a>
+    <a href="<?php echo esc_url(mrseo_hs_url('setup'));?>">Детальніше про створення магазину <span aria-hidden="true">↗</span></a>
    </article>
    <article class="hs-service-card" id="hs-seo">
     <span class="hs-service-number">02 / ПОШУК GOOGLE</span>
@@ -90,7 +90,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     <p class="hs-service-pain">У каталозі багато товарів, але цільові категорії не отримують органічних переходів.</p>
     <p>Зіставимо пошуковий попит зі структурою магазину, визначимо корисні сторінки категорій і фільтрів, підготуємо метатеги та внутрішні посилання.</p>
     <p class="hs-service-result"><strong>Результат:</strong> погоджена карта SEO-посадкових і пріоритети впровадження.</p>
-    <a href="<?php echo esc_url(mrseo_url('ecommerce-seo','uk'));?>">Докладніше про SEO магазинів <span aria-hidden="true">↗</span></a>
+    <a href="<?php echo esc_url(mrseo_hs_url('seo'));?>">Переглянути SEO Хорошоп <span aria-hidden="true">↗</span></a>
    </article>
    <article class="hs-service-card" id="hs-audit">
     <span class="hs-service-number">03 / ДІАГНОСТИКА</span>
@@ -98,7 +98,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     <p class="hs-service-pain">Google індексує зайві URL або не знаходить важливі сторінки каталогу.</p>
     <p>Перевіримо індексацію, canonical, сторінки фільтрів, sitemap і внутрішню навігацію. Відділимо налаштування Хорошоп від проблем контенту й структури.</p>
     <p class="hs-service-result"><strong>Результат:</strong> звіт з URL, доказами та пріоритетами; виправлення погоджуються окремо.</p>
-    <a href="<?php echo esc_url(mrseo_url('seo-audit','uk'));?>">Як проходить SEO-аудит <span aria-hidden="true">↗</span></a>
+    <a href="<?php echo esc_url(mrseo_hs_url('audit'));?>">Переглянути аудит Хорошоп <span aria-hidden="true">↗</span></a>
    </article>
    <article class="hs-service-card" id="hs-ads">
     <span class="hs-service-number">04 / РЕКЛАМА</span>
@@ -106,7 +106,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     <p class="hs-service-pain">Реклама витрачає бюджет, а незрозуміло, які товари та кампанії приносять замовлення.</p>
     <p>Перевіримо відстеження покупок, групування товарів і структуру Shopping або Performance Max. Визначимо, які витрати та результати потрібно контролювати.</p>
     <p class="hs-service-result"><strong>Результат:</strong> план кампаній і перевірені конверсії перед масштабуванням.</p>
-    <a href="<?php echo esc_url(mrseo_url('google-ads','uk'));?>">Послуги Google Ads <span aria-hidden="true">↗</span></a>
+    <a href="<?php echo esc_url(mrseo_hs_url('ads'));?>">Переглянути рекламу Хорошоп <span aria-hidden="true">↗</span></a>
    </article>
    <article class="hs-service-card" id="hs-feeds">
     <span class="hs-service-number">05 / ТОВАРНІ ДАНІ</span>
@@ -114,7 +114,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     <p class="hs-service-pain">Google відхиляє товари через ціни, залишки, характеристики або невідповідності на сайті.</p>
     <p>Зіставимо дані фіда зі сторінками товарів та оформленням замовлень, знайдемо причини відхилень і підготуємо доступні виправлення.</p>
     <p class="hs-service-result"><strong>Результат:</strong> перелік виправлених або переданих на перевірку помилок; розблокування не гарантуємо.</p>
-    <a href="<?php echo esc_url(mrseo_url('merchant-center','uk'));?>">Робота з Merchant Center <span aria-hidden="true">↗</span></a>
+    <a href="<?php echo esc_url(mrseo_hs_url('feeds'));?>">Переглянути товарні фіди <span aria-hidden="true">↗</span></a>
    </article>
    <article class="hs-service-card" id="hs-ga4">
     <span class="hs-service-number">06 / АНАЛІТИКА</span>
@@ -122,7 +122,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     <p class="hs-service-pain">У Google Ads показано покупки, але цифри не збігаються з реальними замовленнями.</p>
     <p>Перевіримо подію purchase, суму замовлення, дублікати транзакцій та передачу конверсій у рекламу з урахуванням доступних інтеграцій.</p>
     <p class="hs-service-result"><strong>Результат:</strong> протокол тестових замовлень і знайдених розбіжностей, виправлення в узгодженому обсязі.</p>
-    <a href="<?php echo esc_url(mrseo_url('ga4-conversions','uk'));?>">Налаштування GA4 <span aria-hidden="true">↗</span></a>
+    <a href="<?php echo esc_url(mrseo_hs_url('ga4'));?>">Переглянути аналітику Хорошоп <span aria-hidden="true">↗</span></a>
    </article>
   </div>
   <p class="hs-services-footnote">Якщо потрібні функції, яких немає в поточному тарифі або налаштуваннях Хорошоп, окремо погодимо альтернативу. Не обіцяємо змін, які платформа не підтримує.</p>
