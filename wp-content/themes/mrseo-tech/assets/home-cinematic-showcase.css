@@ -214,3 +214,6 @@
  .pt-ua-home .cs-showcase *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .pt-ua-home .cs-showcase .cs-panel{animation:none!important}
 }
+
+/* Pause GPU-light motion while this section is out of view or page is hidden. */
+.pt-ua-home .cs-showcase.cs-motion-off .cs-art *{animation-play-state:paused!important}
