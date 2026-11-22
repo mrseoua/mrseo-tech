@@ -7,6 +7,7 @@
 .hs-premium-breadcrumb{display:flex;gap:12px;flex-wrap:wrap;align-items:center;color:#786d61;font-size:13px;font-weight:650;margin-bottom:48px}
 .hs-premium-breadcrumb a{color:inherit;text-decoration:none}
 .hs-premium-breadcrumb a:hover{color:var(--hs-rust)}
+.hs-premium-partner{display:flex;align-items:center;gap:19px;max-width:100%;margin:0 0 21px}.hs-premium-partner img{display:block;max-width:100%;object-fit:contain}.hs-premium-partner img:first-child{width:157px;height:auto}.hs-premium-partner img:last-child{width:68px;height:auto;background:#fffdf9;padding:4px;border:1px solid #e2d7c8;border-radius:8px;box-shadow:0 5px 18px #40302212}
 .hs-premium-eyebrow{font-weight:850;letter-spacing:.11em;color:#975a46;font-size:12px;display:block}
 .hs-premium h1{font-size:clamp(48px,4.8vw,79px);line-height:1.045;letter-spacing:-.064em;font-weight:850;margin:18px 0 24px;max-width:720px;color:#222925}
 .hs-premium-lead{font-size:clamp(18px,1.7vw,23px);line-height:1.55;font-weight:600;color:#3e4940;max-width:590px}
