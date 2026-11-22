@@ -23,6 +23,7 @@ get_header();
    <div class="hs-premium-copy">
     <nav class="hs-premium-breadcrumb" aria-label="Навігаційний шлях"><a href="<?php echo esc_url(mrseo_url('','uk'));?>">Головна</a><span aria-hidden="true">/</span><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Хорошоп</a><span aria-hidden="true">/</span><span><?php echo esc_html($p[0]);?></span></nav>
     <div class="hs-premium-partner"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-wordmark.svg');?>" width="157" height="30" alt="Хорошоп" loading="eager" decoding="async"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-partner-active.svg');?>" width="68" height="50" alt="Хорошоп Partner ACTIVE" loading="eager" decoding="async"></div>
+    <p class="hs-premium-trust-inline">Офіційний партнер Хорошоп <span aria-hidden="true">·</span> Команда з 10-річним досвідом у SEO та Google Ads</p>
     <span class="hs-premium-eyebrow"><?php echo esc_html($p[3]);?></span>
     <h1><?php echo esc_html($p[0]);?><em><?php echo esc_html($p[1]);?></em></h1>
     <p class="hs-premium-lead"><?php echo esc_html($p[2]);?></p>
@@ -71,6 +72,7 @@ get_header();
    </div>
   </div>
  </section>
+ <?php mrseo_hs_trust(); ?>
  <section class="hs-premium-problems" id="hs-process">
   <div class="hs-premium-wrap">
    <div class="hs-premium-head"><span class="hs-premium-eyebrow">ПОСЛІДОВНІ КРОКИ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
