@@ -1,5 +1,5 @@
 /* Ukrainian services: one-step premium card navigation, scoped to this menu only. */
-.mrseo-simple-nav--direct{--simple-ink:#272522;--simple-red:#a34234;--simple-line:#e6dacd;--simple-warm:#f7f2eb;background:#fffdfa;color:var(--simple-ink);max-width:100%;overflow-x:hidden}
+.mrseo-simple-nav--direct{--simple-ink:#272522;--simple-red:var(--mrseo-brand-red);--simple-line:#e6dacd;--simple-warm:#f7f2eb;background:#fffdfa;color:var(--simple-ink);max-width:100%;overflow-x:hidden}
 .mrseo-simple-nav--direct *{box-sizing:border-box}
 .mrseo-simple-nav--direct button:focus-visible,.mrseo-simple-nav--direct a:focus-visible{outline:3px solid var(--simple-red);outline-offset:2px}
 .mrseo-simple-top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:22px 27px 9px}
