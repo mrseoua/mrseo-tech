@@ -444,16 +444,17 @@ $_SERVER['REQUEST_URI']='/ru/seo/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA semantics leaked to RU');
 $_SERVER['REQUEST_URI']='/seo/unknown/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA metadata on nonexistent nested route');
-// New UA menu includes all 54 published offers exactly once, no invented routes.
+// 54 original commercial menu URLs plus seven genuine nested small-business destinations.
 require_once $root.'/inc/mega-menu-trial.php';
 $menu_slugs=array();
 foreach(mrseo_ua_menu_groups() as $group){
  $menu_slugs[]=$group['parent'];
  foreach($group['items'] as $item)$menu_slugs[]=$item[0];
 }
+$menu_slugs=array_merge($menu_slugs,mrseo_ua_business_niche_slugs());
 $commercial_slugs=array_keys(array_filter(mrseo_ua_semantic_map(),static function($m){return $m['intent']==='commercial';}));
 sort($menu_slugs);sort($commercial_slugs);
-assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===54&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
+assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===61&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
 foreach($menu_slugs as $slug)assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Invalid UA menu URL '.$slug);
 $seo_group=array_values(array_filter(mrseo_ua_menu_groups(),static function($g){return $g['key']==='seo';}))[0];
 $seo_hub_slugs=array();foreach($seo_group['sections'] as $section){foreach($section['items'] as $item)$seo_hub_slugs[]=$item[0];}
