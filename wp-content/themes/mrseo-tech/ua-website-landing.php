@@ -26,14 +26,14 @@ $category=$p['group']??($tr('Створення сайтів','Создание 
 $foot=$p['foot']??($tr('Дизайн · Мобільна версія · Зручний зв’язок','Дизайн · Мобильная версия · Связь','Design · Mobile · Enquiries'));
 get_header();
 ?>
-<div class="ukseo uws-page uws-page--<?php echo esc_attr($kind); ?>" id="main-content">
+<div class="ukseo uws-page uws-page--<?php echo esc_attr($kind); ?><?php echo !empty($p['demo'])?' uws-page--niche':'';?>" id="main-content">
  <section class="ukseo-hero uws-hero" aria-labelledby="uws-title">
   <div class="container ukseo-hero-grid">
    <div class="ukseo-hero-copy">
     <nav class="ukseo-crumbs" aria-label="<?php echo esc_attr($tr('Навігація','Навигация','Breadcrumb')); ?>">
      <a href="<?php echo esc_url(mrseo_url()); ?>"><?php echo esc_html($tr('Головна','Главная','Home')); ?></a>
      <span aria-hidden="true">/</span>
-     <span><?php echo esc_html($category); ?></span>
+     <?php if(!empty($p['demo'])):?><a href="<?php echo esc_url(mrseo_url('local-business-websites','uk'));?>">Сайти малого бізнесу</a><?php else:?><span><?php echo esc_html($category); ?></span><?php endif;?>
      <span aria-hidden="true">/</span>
      <span><?php echo esc_html($p['title']); ?></span>
     </nav>
@@ -54,12 +54,12 @@ get_header();
      </div>
      <?php if($kind==='local'): ?>
       <div class="uws-demo-body uws-local" aria-hidden="true">
-       <div class="uws-local-search">⌕ <span><?php echo esc_html($tr('Послуги поруч із вами','Услуги рядом с вами','Services near you')); ?></span><b>↗</b></div>
+       <div class="uws-local-search">⌕ <span><?php echo esc_html($p['demo'][0]??$tr('Послуги поруч із вами','Услуги рядом с вами','Services near you')); ?></span><b>↗</b></div>
        <div class="uws-local-result">
         <span class="uws-local-pin">⌖</span>
-        <div><small><?php echo esc_html($tr('МІСЦЕВИЙ БІЗНЕС','МЕСТНЫЙ БИЗНЕС','LOCAL BUSINESS')); ?></small><strong><?php echo esc_html($tr('Ваша компанія','Ваша компания','Your business')); ?></strong><span><?php echo esc_html($tr('Адреса · Графік · Послуги','Адрес · График · Услуги','Address · Hours · Services')); ?></span></div>
+        <div><small><?php echo esc_html($tr('МІСЦЕВИЙ БІЗНЕС','МЕСТНЫЙ БИЗНЕС','LOCAL BUSINESS')); ?></small><strong><?php echo esc_html($p['title']); ?></strong><span><?php echo esc_html($p['demo'][1]??$tr('Адреса · Графік · Послуги','Адрес · График · Услуги','Address · Hours · Services')); ?></span></div>
        </div>
-       <div class="uws-demo-mini-actions"><span><?php echo esc_html($tr('Зателефонувати ↗','Позвонить ↗','Call ↗')); ?></span><span><?php echo esc_html($tr('Маршрут ⤴','Маршрут ⤴','Directions ⤴')); ?></span></div>
+       <div class="uws-demo-mini-actions"><span><?php echo esc_html($p['demo'][2]??$tr('Зателефонувати ↗','Позвонить ↗','Call ↗')); ?></span><span><?php echo esc_html($tr('Маршрут ⤴','Маршрут ⤴','Directions ⤴')); ?></span></div>
       </div>
      <?php elseif($kind==='landing'): ?>
       <div class="uws-demo-body uws-landing" aria-hidden="true">

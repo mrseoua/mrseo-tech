@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (677 URLs)
+ * - all completed pages are represented exactly once (684 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -69,11 +69,11 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 62, 'Expected 62 editorial equivalence groups');
-assert_seo(count($inventory) === 677, 'Expected 677 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($groups) === 69, 'Expected 69 editorial equivalence groups');
+assert_seo(count($inventory) === 684, 'Expected 684 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
-    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs(),mrseo_ua_expansion_slugs()),
+    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs(),mrseo_ua_business_niche_slugs(),mrseo_ua_expansion_slugs()),
     'ru' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ru_website_slugs()),
     'en' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','privacy'], mrseo_uk_market_new_slugs(),mrseo_en_gb_slugs()),
     'pl' => array_merge(mrseo_int_pages(), ['privacy'],mrseo_pl_service_slugs()),
@@ -112,7 +112,7 @@ foreach ($inventory as $entry) {
     $url_groups[$url] = $entry['group'];
     assert_seo(isset($entry['alternates'][$codes[$lang]]) &&
         $entry['alternates'][$codes[$lang]] === $url, "Missing self hreflang on $url");
-    if(str_starts_with($entry['group'],'en-gb-only:')||str_starts_with($entry['group'],'ua-expansion:'))
+    if(str_starts_with($entry['group'],'en-gb-only:')||str_starts_with($entry['group'],'ua-expansion:')||str_starts_with($entry['group'],'ua-business-niche:'))
         assert_seo(count($entry['alternates']) === 1, "UK-specific service has false foreign translations: $url");
     else
         assert_seo(count($entry['alternates']) >= 2, "Invalid hreflang on $url");
@@ -122,7 +122,7 @@ foreach ($inventory as $entry) {
         $home_count++;
     }
 }
-assert_seo(count($seen) === 677 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 684 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -389,6 +389,23 @@ foreach (array('fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el',
 }
 
 
+// The seven new small-business verticals have no Russian or European counterpart.
+assert_seo(count(mrseo_ua_business_niche_slugs())===7,'Expected seven original UA business niche pages');
+foreach(mrseo_ua_business_niche_slugs() as $slug){
+ $_SERVER['REQUEST_URI']='/'.$slug.'/';
+ assert_seo(mrseo_ua_website_route(),'Missing original UA niche route '.$slug);
+ $entry=mrseo_i18n_current_entry();
+ $url='https://mrseo.tech/'.$slug.'/';
+ assert_seo($entry && $entry['group']==='ua-business-niche:'.$slug &&
+  $entry['canonical']===$url && $entry['alternates']===array('uk-UA'=>$url),
+  'Niche page has fabricated hreflang or wrong canonical: '.$slug);
+ foreach(array_keys($codes) as $language){
+  if($language==='uk')continue;
+  assert_seo(mrseo_url($slug,$language)===mrseo_url('service-websites',$language),
+   'Niche locale switch does not use real service parent '.$language.'/'.$slug);
+ }
+}
+
 // Every new commercial offer has a single UA canonical, actual route and unique copy.
 $exp=mrseo_ua_expansion_data();
 assert_seo(count($exp)===20,'Expected 20 new UA commercial offers');
@@ -410,8 +427,8 @@ foreach(array('title','lead','foot','problemHeading','problemLead','result','des
 // UA semantic coverage and exact emitted metadata for each real canonical page.
 $ua_map=mrseo_ua_semantic_map();
 $ua_inventory=array_values(array_filter($inventory,static function($e){return $e['language']==='uk';}));
-assert_seo(count($ua_map)===59&&count($ua_inventory)===59,'UA semantic coverage');
-foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===59,'Duplicate UA semantic '.$field);
+assert_seo(count($ua_map)===66&&count($ua_inventory)===66,'UA semantic coverage');
+foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===66,'Duplicate UA semantic '.$field);
 foreach($ua_inventory as $entry){
  $slug=$entry['slug'];$_SERVER['REQUEST_URI']=parse_url($entry['loc'],PHP_URL_PATH);
  $m=mrseo_ua_semantic_current();assert_seo($m&&$m===$ua_map[$slug],'Missing UA semantic entry '.$slug);
@@ -427,16 +444,17 @@ $_SERVER['REQUEST_URI']='/ru/seo/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA semantics leaked to RU');
 $_SERVER['REQUEST_URI']='/seo/unknown/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA metadata on nonexistent nested route');
-// New UA menu includes all 54 published offers exactly once, no invented routes.
+// 54 original commercial menu URLs plus seven genuine nested small-business destinations.
 require_once $root.'/inc/mega-menu-trial.php';
 $menu_slugs=array();
 foreach(mrseo_ua_menu_groups() as $group){
  $menu_slugs[]=$group['parent'];
  foreach($group['items'] as $item)$menu_slugs[]=$item[0];
 }
+$menu_slugs=array_merge($menu_slugs,mrseo_ua_business_niche_slugs());
 $commercial_slugs=array_keys(array_filter(mrseo_ua_semantic_map(),static function($m){return $m['intent']==='commercial';}));
 sort($menu_slugs);sort($commercial_slugs);
-assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===54&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
+assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===61&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
 foreach($menu_slugs as $slug)assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Invalid UA menu URL '.$slug);
 $seo_group=array_values(array_filter(mrseo_ua_menu_groups(),static function($g){return $g['key']==='seo';}))[0];
 $seo_hub_slugs=array();foreach($seo_group['sections'] as $section){foreach($section['items'] as $item)$seo_hub_slugs[]=$item[0];}

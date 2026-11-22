@@ -5,9 +5,18 @@
  */
 if (!defined('ABSPATH')) exit;
 require_once __DIR__.'/ua-additional-services.php';
+require_once __DIR__.'/ua-business-niche-pages.php';
 
+// Historical 13 paired UA/RU services: preserve international hreflang equivalence.
 function mrseo_ua_website_slugs() {
- return array_keys(mrseo_ua_website_data());
+ return array_values(array_diff(array_keys(mrseo_ua_website_data()),array_keys(mrseo_ua_business_niche_data())));
+}
+// Seven new original UA-only industry landings have no invented Russian translations.
+function mrseo_ua_business_niche_slugs(){
+ return array_keys(mrseo_ua_business_niche_data());
+}
+function mrseo_ua_all_website_slugs(){
+ return array_merge(mrseo_ua_website_slugs(),mrseo_ua_business_niche_slugs());
 }
 function mrseo_ua_website_data($slug=null){
  static $pages=null;
@@ -290,16 +299,17 @@ function mrseo_ua_website_data($slug=null){
 MRSEO_UA_WEBSITES;
   $pages=json_decode($raw,true,512,JSON_THROW_ON_ERROR);
   $pages=array_merge($pages,mrseo_ua_additional_service_data());
+  $pages=array_merge($pages,mrseo_ua_business_niche_data());
  }
  return $slug===null?$pages:($pages[$slug]??null);
 }
 function mrseo_ua_website_route(){
  if(mrseo_locale()!=='uk')return false;
  $path=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');
- return in_array($path,mrseo_ua_website_slugs(),true);
+ return in_array($path,mrseo_ua_all_website_slugs(),true);
 }
 add_action('init',function(){
- $part=implode('|',mrseo_ua_website_slugs());
+ $part=implode('|',mrseo_ua_all_website_slugs());
  add_rewrite_rule('^('.$part.')/?$','index.php?mrseo_service=$matches[1]','top');
 },11);
 add_filter('pre_handle_404',function($pre){
@@ -314,7 +324,7 @@ add_filter('template_include',function($template){
 add_filter('pre_get_document_title',function($title){
  if(!mrseo_ua_website_route())return $title;
  $p=mrseo_ua_website_data(mrseo_slug());
- return $p?$p['title'].' | MrSeo.tech':$title;
+ return $p?($p['seoTitle']??($p['title'].' | MrSeo.tech')):$title;
 },140);
 add_action('wp_head',function(){
  if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;
@@ -324,8 +334,8 @@ add_action('wp_head',function(){
  // Canonical and (when available) true alternates are managed by international-seo.php.
 },4);
 add_action('init',function(){
- if(get_option('mrseo_ua_website_routes_v1')!=='ready'){
+ if(get_option('mrseo_ua_website_routes_v2')!=='ready'){
   flush_rewrite_rules(false);
-  update_option('mrseo_ua_website_routes_v1','ready',false);
+  update_option('mrseo_ua_website_routes_v2','ready',false);
  }
 },41);

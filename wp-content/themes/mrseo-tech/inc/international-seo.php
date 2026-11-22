@@ -91,6 +91,13 @@ function mrseo_i18n_page_groups() {
         }
     }
 
+    // Ukrainian-only industry sites are original services, not fake translated pages.
+    if(function_exists('mrseo_ua_business_niche_slugs')){
+        foreach(mrseo_ua_business_niche_slugs() as $slug){
+            $groups[]=array('group'=>'ua-business-niche:'.$slug,'pages'=>array('uk'=>$slug));
+        }
+    }
+
     foreach (array('service-websites', 'performance-max') as $slug) {
         $pages=array('uk'=>$slug,'ru'=>$slug,'en'=>$slug);
         if($slug==='service-websites' && function_exists('mrseo_pl_service_slugs')

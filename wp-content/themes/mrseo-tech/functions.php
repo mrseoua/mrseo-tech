@@ -117,6 +117,7 @@ function mrseo_assets(){
    array('mrseo-style'),'1.0.2');
   wp_enqueue_style('mrseo-ua-websites',get_template_directory_uri().'/assets/ua-websites.css',
    array('mrseo-ua-websites-base'),'1.0.0');
+  if(mrseo_locale()==='uk' && function_exists('mrseo_ua_business_niche_data') && mrseo_ua_business_niche_data(mrseo_slug()))wp_enqueue_style('mrseo-ua-business-niches',get_template_directory_uri().'/assets/ua-business-niches.css',array('mrseo-ua-websites'),'1.0.0');
   wp_enqueue_style('mrseo-ua-additional-scenes',get_template_directory_uri().'/assets/ua-additional-scenes.css',
    array('mrseo-ua-websites'),'1.0.0');
   if(function_exists('mrseo_en_gb_route') && mrseo_en_gb_route())
@@ -128,6 +129,7 @@ function mrseo_assets(){
      get_template_directory_uri().'/assets/ru-website-scenes.css',
      array('mrseo-ua-additional-scenes'),'1.0.0');
  }
+ if(mrseo_locale()==='uk' && mrseo_slug()==='local-business-websites')wp_enqueue_style('mrseo-ua-business-niches',get_template_directory_uri().'/assets/ua-business-niches.css',array('mrseo-style'),'1.0.0');
  if(function_exists('mrseo_new_service_route') && mrseo_new_service_route()){
   wp_enqueue_style('mrseo-ukseo-new-base',get_template_directory_uri().'/assets/seo-uk-pilot.css',array('mrseo-style'),'1.0.2');
   wp_enqueue_style('mrseo-new-services',get_template_directory_uri().'/assets/new-services.css',array('mrseo-ukseo-new-base'),'1.1.0');
@@ -279,7 +281,7 @@ function mrseo_assets(){
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.6.0');
  if(mrseo_locale()==='uk'){
   wp_enqueue_style('mrseo-ua-simple-menu',get_template_directory_uri().'/assets/ua-simple-menu.css',array('mrseo-services-menu-toggle'),'1.1.0');
-  wp_enqueue_style('mrseo-ua-six-header',get_template_directory_uri().'/assets/ua-six-header.css',array('mrseo-ua-simple-menu'),'1.5.0');
+  wp_enqueue_style('mrseo-ua-six-header',get_template_directory_uri().'/assets/ua-six-header.css',array('mrseo-ua-simple-menu'),'1.5.1');
   wp_enqueue_script('mrseo-ua-six-header',get_template_directory_uri().'/assets/ua-six-header.js',array('mrseo-ui'),'1.0.0',true);
  }
  wp_enqueue_style('mrseo-footer-contact-channels',get_template_directory_uri().'/assets/footer-contact-channels.css',array('mrseo-style'),'1.0.0');

@@ -1,0 +1,24 @@
+/* Seven genuine UA website-creation niches: premium editorial, no global homepage impact. */
+.mrseo-niches-directory{background:#f7f1e8;color:#283029;padding:clamp(65px,7vw,105px) 0;border-block:1px solid #e4d9cb}
+.mrseo-niches-directory *{box-sizing:border-box}
+.mrseo-niches-intro{max-width:850px;margin-bottom:clamp(26px,4vw,43px)}
+.mrseo-niches-intro h2{font-size:clamp(36px,4vw,60px);line-height:1.11;letter-spacing:-.045em;margin:15px 0 22px;color:#283029}
+.mrseo-niches-intro h2 em{font-style:normal;color:#a24b3b}
+.mrseo-niches-intro>p{color:#5c6159;font-size:clamp(17px,1.45vw,20px);line-height:1.6;max-width:750px;margin:0}
+.mrseo-niches-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.5vw,23px)}
+.mrseo-niches-card{display:flex;flex-direction:column;gap:16px;min-width:0;min-height:255px;padding:clamp(21px,2.2vw,30px);text-decoration:none!important;border:1px solid #e2d3c3;border-radius:17px;background:#fffcf8;box-shadow:0 9px 28px #3c302009;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.mrseo-niches-card:hover{transform:translateY(-4px);border-color:#cba98e;box-shadow:0 16px 38px #3c302015}
+.mrseo-niches-card:focus-visible{outline:3px solid #a24b3b;outline-offset:4px}
+.mrseo-niches-card-top{display:flex;align-items:center;gap:10px;color:#935846;font-size:11px;font-weight:850;letter-spacing:.07em;line-height:1.45}
+.mrseo-niches-card-top i{width:12px;height:12px;flex:none;border:2px solid #bc7959;transform:rotate(45deg);border-radius:3px}
+.mrseo-niches-card strong{font-size:clamp(22px,2vw,28px);line-height:1.18;letter-spacing:-.025em;color:#2d3830;font-weight:820}
+.mrseo-niches-card-text{font-size:14px;line-height:1.55;color:#62665e}
+.mrseo-niches-card-action{margin-top:auto;border-top:1px solid #e5d9cc;padding-top:14px;display:flex;align-items:center;justify-content:space-between;color:#924a3a;font-weight:800;font-size:14px}
+.mrseo-niches-card-action b{font-size:19px;line-height:1}
+.uws-page--niche .uws-local-result strong{font-size:clamp(17px,1.8vw,23px);line-height:1.17;overflow-wrap:anywhere}
+.uws-page--niche .uws-local-search span{font-size:clamp(13px,1.2vw,16px)}
+.uws-page--niche .uws-demo-mini-actions{margin-top:8px}
+.uws-page--niche .ukseo-hero-copy h1{overflow-wrap:normal}
+@media(max-width:960px){.mrseo-niches-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.mrseo-niches-card{min-height:225px}}
+@media(max-width:610px){.mrseo-niches-cards{grid-template-columns:1fr}.mrseo-niches-card{min-height:190px;padding:23px}.mrseo-niches-intro h2{font-size:35px}.uws-page--niche .uws-local-result{gap:11px;margin:17px 8px 11px;padding:15px 11px}.uws-page--niche .uws-local-pin{flex-basis:44px;height:47px;font-size:30px}.uws-page--niche .uws-local-result strong{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.mrseo-niches-card{transition:none}.mrseo-niches-card:hover{transform:none}}

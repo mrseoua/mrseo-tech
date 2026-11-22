@@ -4,7 +4,7 @@ if(!defined('ABSPATH'))exit;
  * Never render keyword arrays or hidden keyword text. */
 function mrseo_ua_semantic_map(){
  static $map=null;
- if($map===null)$map=json_decode(<<<'MRSEO_UA_SEMANTIC_MAP'
+ if($map===null){$map=json_decode(<<<'MRSEO_UA_SEMANTIC_MAP'
 {
   "": {
     "primary": "агентство інтернет-маркетингу",
@@ -1205,6 +1205,29 @@ function mrseo_ua_semantic_map(){
 }
 MRSEO_UA_SEMANTIC_MAP
  ,true,512,JSON_THROW_ON_ERROR);
+ // Seven original Ukrainian-only Website Creation niches: search intent and copy
+ // are unique. Volume values are recorded only for measured exact Serpstat phrases.
+ if(function_exists('mrseo_ua_business_niche_data')){
+  $target=array(
+   'clinic-websites'=>array('створення сайту для клініки',array('сайт клініки','сайт для медичного центру'),array()),
+   'beauty-salon-websites'=>array('створення сайту для салону краси',array('сайт салону краси','сайт барбершопу'),array('сайт салону краси'=>10)),
+   'restaurant-websites'=>array('створення сайту для кафе та ресторану',array('сайт кафе','сайт ресторану'),array('сайт кафе'=>50,'сайт ресторану'=>20)),
+   'auto-service-websites'=>array('створення сайту для сто',array('сайт для сто','сайт автосервісу'),array('сайт для сто'=>10)),
+   'lawyer-websites'=>array('створення сайту адвоката',array('сайт адвоката','сайт юриста'),array('сайт адвоката'=>50,'сайт юриста'=>20)),
+   'photographer-websites'=>array('створення сайту фотографа',array('сайт фотографа','сайт для фотографа'),array('сайт фотографа'=>70,'сайт для фотографа'=>50)),
+   'psychologist-websites'=>array('створення сайту психолога',array('сайт психолога','сайт для психолога'),array('сайт психолога'=>90,'сайт для психолога'=>10))
+  );
+  foreach($target as $slug=>$terms){
+   $p=mrseo_ua_business_niche_data($slug);
+   if(!$p)continue;
+   $map[$slug]=array(
+    'primary'=>$terms[0],'secondary'=>$terms[1],
+    'title'=>$p['seoTitle'],'description'=>$p['description'],
+    'lead'=>$p['lead'],'intent'=>'commercial','serpstat'=>$terms[2]
+   );
+  }
+ }
+ }
  return $map;
 }
 function mrseo_ua_semantic_current(){
