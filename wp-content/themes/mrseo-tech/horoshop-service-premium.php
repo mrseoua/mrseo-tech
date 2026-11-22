@@ -23,7 +23,7 @@ get_header();
     <nav class="hs-premium-breadcrumb" aria-label="Навігаційний шлях"><a href="<?php echo esc_url(mrseo_url('','uk'));?>">Головна</a><span aria-hidden="true">/</span><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Хорошоп</a><span aria-hidden="true">/</span><span><?php echo esc_html($p[0]);?></span></nav>
     <div class="hs-premium-partner"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-wordmark.svg');?>" width="157" height="30" alt="Хорошоп" loading="eager" decoding="async"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-partner-active.svg');?>" width="68" height="50" alt="Хорошоп Partner ACTIVE" loading="eager" decoding="async"></div>
     <span class="hs-premium-eyebrow"><?php echo esc_html($p[3]);?></span>
-    <h1><?php echo esc_html($p[1]);?></h1>
+    <h1><?php echo esc_html($p[0]);?><em><?php echo esc_html($p[1]);?></em></h1>
     <p class="hs-premium-lead"><?php echo esc_html($p[2]);?></p>
     <p class="hs-premium-issue"><?php echo esc_html($p[4]);?></p>
     <div class="hs-premium-buttons"><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити задачу <span aria-hidden="true">↗</span></a><a class="hs-premium-textlink" href="#hs-process">Що зробимо <span aria-hidden="true">↓</span></a></div>
