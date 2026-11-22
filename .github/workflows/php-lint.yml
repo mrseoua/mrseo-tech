@@ -203,7 +203,7 @@ jobs:
           assert 'Створюємо нові сайти' in dev['lead'] and 'SEO-просування погоджуємо окремо' in dev['lead']
           assert 'Просуваємо вже створені сайти' in seo['lead'] and 'Новий сайт' in seo['lead']
           assert 'Налаштуємо й вестимемо рекламу.' in management
-          assert all(price in management for price in ('5 000','10 000','5 900','9 500'))
+          assert all(price not in management for price in ('5 000','10 000','5 900','9 500'))
           assert 'разову перевірку' in audit['lead'] and 'ведення реклами — окремо' in audit['result']
           assert 'Витрати на рекламу є.' in analytics['headline'] and 'заявки та замовлення' in analytics['lead']
           assert 'налаштування подій GA4' in analytics['lead']
@@ -221,7 +221,7 @@ jobs:
           visual=(root/'inc/ua-four-service-visuals.php').read_text()
           assert "'artTitle'=>'Витрати та продажі'" in visual
           assert "X-Robots-Tag: noindex, nofollow" in (root/'functions.php').read_text()
-          print('Six UA service intents, metadata, prices, scoped offers and unchanged noindex OK')
+          print('Six UA service intents, metadata, public prices removed, scoped offers and unchanged noindex OK')
           PY
 
       - name: Verify Ukrainian expansion content, menu and original scene registry
@@ -840,11 +840,11 @@ jobs:
           pricing_css=(root/'assets/ua-google-ads-pricing.css').read_text()
           assert ua_ads.count('<h1 ')==1, 'Google Ads must have exactly one hero H1'
           assert ua_ads.count('class="ukads-price-card ')==2, 'Exactly two price packages expected'
-          assert all(x in ua_ads for x in ('5 000','10 000','5 900','9 500',
-              'ukads-pricing','ukads-problems','ukads-faq-title','ukads-final-title')), 'UA tariffs or conversion narrative missing'
+          assert all(x in ua_ads for x in ('ukads-pricing','ukads-problems','ukads-faq-title','ukads-final-title')), 'UA conversion narrative missing'
+          assert all(x not in ua_ads for x in ('5 000','10 000','5 900','9 500')), 'Public prices unexpectedly present'
           assert ua_ads.index('id="ukads-problems"') < ua_ads.index('id="ukads-pricing"') < ua_ads.index(
               "mrseo_render_ua_commercial_visual('google-ads','decisions')") < ua_ads.index('id="ukads-faq-title"') < ua_ads.index('id="ukads-final-title"')
-          assert 'ЩОМІСЯЦЯ ЗА ВЕДЕННЯ ВІД' in ua_ads and ua_ads.count('Разове налаштування')==2
+          assert 'ФОРМАТИ СПІВПРАЦІ' in ua_ads and ua_ads.count('class="ukads-price-card ')==2
           assert '.ukseo--ads .ukseo-hero-copy h1' in pricing_css and 'letter-spacing:-.024em' in pricing_css
           assert 'font-size:clamp(37px,9.75vw,50px)' in pricing_css
           assert '.ukseo--ads .ukads-price-grid' in pricing_css

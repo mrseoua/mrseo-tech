@@ -311,7 +311,7 @@ async function audit(browser,viewport,lang,slug){
       const letterSpace=hero?parseFloat(getComputedStyle(hero).letterSpacing):NaN;
       const heroTrackingOK=!target||(Number.isFinite(letterSpace)&&letterSpace>-5&&letterSpace<=0);
       return {target,css,count:cards.length,stages,heading,
-        heroTrackingOK,pricesCorrect:text.length===2&&text[0].includes('5 000')&&text[0].includes('5 900')&&text[1].includes('10 000')&&text[1].includes('9 500')&&text.every(s=>s.includes('Разове налаштування')&&s.includes('₴/міс.')),
+        heroTrackingOK,pricesCorrect:text.length===2&&text.every(s=>!/(?:5 000|5 900|10 000|9 500|₴\/міс\.)/.test(s)),
         geometry:boxes.length===3&&boxes.every(b=>b.width>250&&b.left>=-2&&b.right<=innerWidth+2),
         noLeak:!target&&!css&&!root&&cards.length===0&&!flow};
     })(),
@@ -682,7 +682,7 @@ async function audit(browser,viewport,lang,slug){
   if(lang==='uk'&&slug==='google-ads'){
     const p=c.uaAdsPricing;
     if(!p||!p.css||p.count!==2||p.stages!==0||!p.pricesCorrect||!p.geometry||!p.heading||!p.heroTrackingOK)
-      item.errors.push('UA Google Ads prices/visuals missing or overflow: '+JSON.stringify(p));
+      item.errors.push('UA Google Ads service formats/visuals missing or overflow: '+JSON.stringify(p));
   }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
     item.errors.push('Ukrainian Google Ads pricing leaked onto other pages');
