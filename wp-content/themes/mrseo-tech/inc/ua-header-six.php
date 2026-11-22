@@ -37,7 +37,29 @@ function mrseo_ua_header_six($mobile=false){
     echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($section['title']).'</h3>';
     foreach($section['items'] as $service){
      $slug=$service[0];$active=$current===$slug;
-     echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($service[1]).' <span aria-hidden="true">↗</span></a>';
+     if($key==='sites' && $slug==='local-business-websites'){
+      // Use a real inline disclosure on desktop and mobile, not a hover-only submenu.
+      $industries=array(
+       'clinic-websites'=>'Клініки та медичні центри',
+       'beauty-salon-websites'=>'Салони краси та барбершопи',
+       'restaurant-websites'=>'Кафе та ресторани',
+       'auto-service-websites'=>'СТО та автосервіси',
+       'lawyer-websites'=>'Адвокати та юристи',
+       'photographer-websites'=>'Фотографи',
+       'psychologist-websites'=>'Психологи'
+      );
+      echo '<details class="mrseo-ua-six-submenu"'.(isset($industries[$current])?' open':'').'>';
+      echo '<summary aria-label="Розгорнути сайти для малого бізнесу">Сайти малого бізнесу <span aria-hidden="true">⌄</span></summary>';
+      echo '<div class="mrseo-ua-six-submenu-links">';
+      echo '<a class="mrseo-ua-six-submenu-overview" href="'.esc_url(mrseo_url($slug,'uk')).'">Усі сайти малого бізнесу <span aria-hidden="true">↗</span></a>';
+      foreach($industries as $nicheSlug=>$nicheLabel){
+       if(!function_exists('mrseo_ua_business_niche_data')||!mrseo_ua_business_niche_data($nicheSlug))continue;
+       echo '<a href="'.esc_url(mrseo_url($nicheSlug,'uk')).'"'.($current===$nicheSlug?' aria-current="page"':'').'>'.esc_html($nicheLabel).' <span aria-hidden="true">↗</span></a>';
+      }
+      echo '</div></details>';
+     }else{
+      echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($service[1]).' <span aria-hidden="true">↗</span></a>';
+     }
     }
     echo '</section>';
    }
