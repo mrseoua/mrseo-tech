@@ -20,6 +20,12 @@ assert "horoshop-wordmark.svg" in scene
 assert "cs-polish-card" not in scene and "cs-polish-card" not in css
 assert "cs-optimization-card" not in scene
 assert "cs-art-spark" not in scene
+assert '<small>SEO</small><span>ЗАПИТ</span>' not in scene
+assert "home-cinematic-polish.css" in home and "'1.0.2'" in home
+assert "background:linear-gradient(180deg,#f8f6f2" in css
+assert "overflow:hidden; border-radius:18px" in css
+assert "grid-template-columns:minmax(242px,.9fr) minmax(0,1.65fr)" in css
+assert "cs-art--seo .cs-visual-float--left{display:none}" in css
 assert ".pt-ua-home .cs-art-orbit--two" in css
 assert "cs-campaigns-card" in scene and "cs-shopping-card" in scene and "cs-conversions-card" in scene
 assert "prefers-reduced-motion:reduce" in css
