@@ -15,10 +15,10 @@ function mrseo_ua_header_six($mobile=false){
   echo '<div class="mrseo-ua-six-catalog">';
   if($is_horoshop){
    echo '<section class="mrseo-ua-six-catalog-group"><h3>Напрями роботи</h3>';
-   echo '<a href="'.esc_url(mrseo_url($group['parent'],'uk')).'"'.($current===$group['parent']?' aria-current="page"':'').'>Про послуги Хорошоп <span aria-hidden="true">↗</span></a>';
+   // Keep the Horoshop overview accessible elsewhere, but not in this dropdown.
    // Six real premium WordPress routes, Ukrainian-only.
    $horoshop_anchors=array(
-    'horoshop-setup'=>'setup','horoshop-seo'=>'seo',
+    'horoshop-seo'=>'seo',
     'horoshop-audit'=>'audit','horoshop-google-ads'=>'ads',
     'horoshop-product-feeds'=>'feeds','horoshop-ga4'=>'ga4'
    );
