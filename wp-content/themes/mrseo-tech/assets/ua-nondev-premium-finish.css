@@ -1,0 +1,117 @@
+/* MrSeo.tech / Ukrainian interiors / non-development routes only.
+   Preserve every service's independent original art/animation; improve containment,
+   reading rhythm and perceived sharpness instead of adding decorative motion. */
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page,.uws-page,
+.ukseo--seo,.ukseo--audit,.ukseo--commerce,.ukseo--ads,.ukseo--horoshop){
+ --ua-finish-paper:#f7f5f0;
+ --ua-finish-ink:#292e29;
+ --ua-finish-line:#e2d9cf;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-hero-grid,.pti-scene,.pti-stage,.psc-hero-scene,.psc-hero-stage,.pti-story,.psc-story-grid,.pti-wrap){
+ min-width:0;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-hero,.pti-story,.pti-faq,.pti-final,.psc-story-grid){
+ color:var(--ua-finish-ink);
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page) .pti-hero{
+ background:linear-gradient(135deg,#f9f7f3 0%,#f1ede6 100%);
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-hero h1,.pti-story h2,.psc-final h2){
+ text-wrap:balance;
+ overflow-wrap:break-word;
+ letter-spacing:-.043em;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-lead,.pti-card p,.pti-step p,.psc-problem-card p,.pti-faq p){
+ line-height:1.7;
+ overflow-wrap:break-word;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-stage,.psc-hero-stage){
+ background:radial-gradient(ellipse at 55% 43%,#fffefa 0%,#f5f0e8 63%,#eee8df 100%);
+ border-color:#ded4c9;
+ box-shadow:0 18px 42px #3b34280c,inset 0 1px 0 #fff;
+ overflow:hidden;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-scene-svg,.psc-motion,.pti-lower-motion){
+ max-width:100%;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-scene-caption,.psc-demo-note){
+ line-height:1.55;
+ min-width:0;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-tabs button,.pti-pause,.psc-pause,.psc-lower-pause,.psc-lab-tabs button){
+ min-height:44px;
+}
+:is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+:is(.pti-stage-label,.pti-stage-code,.psc-stage-meta){line-height:1.45}
+.puc-page .psc-problem-card{box-shadow:0 11px 28px #3a2f2412;border-color:#ded5ca}
+.puc-page .psc-mini-art{overflow:clip}
+.puc-page .psc-result{background:#f0e8df;border-left-color:var(--mrseo-brand-red)}
+/* Website-creation pages keep their individual browser/phone scenes. */
+.uws-page{background:var(--ua-finish-paper)}
+.uws-page :is(.ukseo-hero-grid,.ukseo-hero-copy,.ukseo-hero-art,.uws-demo,.uws-scene){min-width:0}
+.uws-page :is(h1,h2,h3){text-wrap:balance;overflow-wrap:break-word}
+.uws-page :is(.ukseo-hero-lead,.uws-result p,.uws-scene p){line-height:1.66}
+.uws-page .uws-demo{border-color:var(--ua-finish-line);box-shadow:0 16px 34px #342e2112}
+.uws-page .uws-scene{box-shadow:8px 12px 27px #382e271a;transform:rotate(-.5deg)}
+/* Existing UA SEO/Ads page families: contained panels, readable primary copy. */
+:is(.ukseo--seo,.ukseo--audit,.ukseo--commerce,.ukseo--ads)
+:is(.ukseo-hero-grid,.ukseo-hero-copy,.ukseo-hero-art,.ukseo-problem-card,.ms-scene){min-width:0}
+:is(.ukseo--seo,.ukseo--audit,.ukseo--commerce,.ukseo--ads)
+:is(.ukseo-hero-copy h1,.ukseo-section-head h2){text-wrap:balance;overflow-wrap:break-word}
+:is(.ukseo--seo,.ukseo--audit,.ukseo--commerce,.ukseo--ads)
+:is(.ukseo-hero-lead,.ukseo-problem-card p){line-height:1.68}
+:is(.ukseo--seo,.ukseo--audit,.ukseo--commerce,.ukseo--ads) .ms-scene{box-shadow:0 17px 43px #23242818}
+.ukseo--ads .ukads-pricing{background:linear-gradient(135deg,#faf8f4,#f1eee8)}
+.ukseo--ads .ukads-price-card{box-shadow:0 15px 35px #45392b16}
+/* Horoshop partner: official logo and distinctive commerce UI untouched. */
+.ukseo--horoshop .special-hero-horoshop{background:#f7f5f0}
+.ukseo--horoshop :is(.hs-showcase,.hs-demo,.hs-ads-demo,.hs-ads-journey-grid){min-width:0}
+.ukseo--horoshop .hs-ads-journey{background:#f8f6f2}
+.ukseo--horoshop .hs-ads-demo{box-shadow:0 16px 36px #46382714}
+.ukseo--horoshop .hs-ads-shopping-products{min-width:0}
+.ukseo--horoshop .hs-ads-shopping-card{min-width:0}
+.ukseo--horoshop .hs-ads-shopping-card :is(strong,span,small){overflow-wrap:anywhere}
+/* Editorial informational pages (About, Contact, Privacy): calm text rhythm.
+   Do not alter portfolio, Web Development or the protected Earth home. */
+body:has([data-pue-route="about"]) .about-page :is(.about-hero-lead,.about-method-item p,.about-fit-card p),
+body:has([data-pue-route="contact"]) :is(.contact-brief p,.uaf-contact-guide p),
+body:has([data-pue-route="privacy"]) .mrseo-privacy-page p{
+ line-height:1.7;
+ overflow-wrap:break-word;
+}
+body:has([data-pue-route="about"]) :is(.about-page .pue-art,.about-page .pue-motion),
+body:has([data-pue-route="contact"]) :is(.pue-art,.pue-motion){max-width:100%}
+@media(max-width:940px){
+ :is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+ :is(.pti-hero-grid,.psc-story-grid){grid-template-columns:minmax(0,1fr)}
+ .puc-page .psc-hero-scene{max-width:770px}
+}
+@media(max-width:600px){
+ :is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+ :is(.pti-hero h1,.psc-final h2){font-size:clamp(35px,9vw,48px);line-height:1.12}
+ :is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+ :is(.pti-lead,.pti-card p,.psc-problem-card p){font-size:max(16px,1rem)}
+ :is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+ :is(.pti-tabs,.psc-lab-tabs){gap:8px}
+ :is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+ :is(.pti-stage-label,.pti-stage-code,.psc-stage-meta){font-size:11px;letter-spacing:.04em}
+ .uws-page .uws-scene{transform:none;box-shadow:0 12px 28px #382e2719}
+ .ukseo--horoshop .hs-ads-shopping-card{padding:9px;gap:8px}
+ .ukseo--horoshop .hs-ads-shopping-card strong{font-size:12px;line-height:1.35}
+ .ukseo--horoshop .hs-ads-shopping-card>span,.ukseo--horoshop .hs-ads-shopping-card small{font-size:11px;line-height:1.4}
+ .ukseo--horoshop .hs-ads-shopping-item{height:82px}
+ .ukseo--horoshop .hs-ads-shopping-flow{font-size:11px;flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){
+ .uws-page .uws-scene{animation:none!important;transform:none!important}
+ :is(.pti-page[data-pti-service="seo"],.pti-page[data-pti-service="google-ads"],.puc-page)
+ :is(.pti-stage,.psc-hero-stage){scroll-behavior:auto}
+}
