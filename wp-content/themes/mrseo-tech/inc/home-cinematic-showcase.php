@@ -115,7 +115,7 @@ $cs_services=array(
      <div class="cs-art cs-art--<?php echo esc_attr($key);?>" role="img" aria-label="<?php echo esc_attr('Ілюстрація процесу: '.$entry['name']);?>">
       <div class="cs-art-field" aria-hidden="true"><span class="cs-stage-base"></span><span class="cs-stage-base-ring"></span><svg class="cs-stage-trail" viewBox="0 0 850 580" preserveAspectRatio="none"><defs><linearGradient id="cs-trail-red-<?php echo esc_attr($key);?>" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#b34437"/><stop offset="45%" stop-color="#e2a990"/><stop offset="100%" stop-color="#bd5b48"/></linearGradient></defs><ellipse cx="425" cy="308" rx="351" ry="155" fill="none" stroke="url(#cs-trail-red-<?php echo esc_attr($key);?>)" stroke-width="2.8" transform="rotate(-12 425 308)"/><circle cx="89" cy="308" r="6" fill="#fff9e8" stroke="#dfb391" stroke-width="3"/><circle cx="750" cy="252" r="5" fill="#fff9e8" stroke="#dfb391" stroke-width="3"/></svg>
        <span class="cs-art-halo"></span><span class="cs-art-orbit cs-art-orbit--one"></span><span class="cs-art-orbit cs-art-orbit--two"></span>
-       <span class="cs-art-spark cs-art-spark--a"></span><span class="cs-art-spark cs-art-spark--b"></span>
+
        <?php if($key==='seo'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">⌕</span><span>ПОШУКОВА ВИДИМІСТЬ</span></div>
         <div class="cs-visual-main cs-visual-seo">
@@ -124,7 +124,7 @@ $cs_services=array(
          <div class="cs-serp-result cs-serp-result--second"><small>Сторінка · Оптимізація</small><strong>Релевантний зміст</strong><span>Зручність • Швидкість • Інформація</span></div>
         </div>
         <div class="cs-visual-float cs-visual-float--left"><small>SEO</small><span>ЗАПИТ</span><strong>→ СТОРІНКА</strong></div>
-        <div class="cs-polish-card cs-polish-card--seo" aria-hidden="true"><span>ТЕХНІЧНИЙ АУДИТ</span><strong>Індексація та структура</strong><i></i><i></i><i></i></div>
+
        <?php elseif($key==='ads'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">A</span><span>GOOGLE ADS · СХЕМА</span></div>
         <div class="cs-visual-main cs-visual-ads">
@@ -135,7 +135,7 @@ $cs_services=array(
         <div class="cs-visual-float cs-visual-float--right"><small>MERCHANT CENTER</small><span>Товарні дані</span><div class="cs-product-mini"><i></i><i></i><i></i></div></div>
         <div class="cs-visual-float cs-visual-float--left cs-campaigns-card"><div class="cs-float-title"><span class="cs-float-icon">⌁</span> Кампанії</div><div class="cs-campaign-row"><b>✓</b><i></i></div><div class="cs-campaign-row"><b>✓</b><i></i></div><div class="cs-campaign-row"><b>✓</b><i></i></div></div>
         <div class="cs-visual-float cs-shopping-card"><div class="cs-float-title"><span class="cs-float-icon">◇</span> Google Shopping</div><div class="cs-shopping-tiles"><div><i class="cs-product-shape cs-product-shape--headphone"></i><b></b><b></b></div><div><i class="cs-product-shape cs-product-shape--shoe"></i><b></b><b></b></div><div><i class="cs-product-shape cs-product-shape--chair"></i><b></b><b></b></div></div></div>
-        <div class="cs-visual-float cs-optimization-card"><div class="cs-float-title">Оптимізація кампаній</div><div class="cs-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+
         <div class="cs-visual-float cs-conversions-card"><div class="cs-float-title"><span>↗</span> Конверсії</div><strong>Перевірені дані</strong><small>Вимірювання покупок</small></div>
        <?php elseif($key==='horoshop'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">H</span><span>ХОРОШОП · МАГАЗИН</span></div>
@@ -145,7 +145,7 @@ $cs_services=array(
          <div class="cs-store-bottom"><span>Каталог → Фід → Реклама</span><strong>↗</strong></div>
         </div>
         <div class="cs-visual-float cs-visual-float--right"><small>SEO · GOOGLE ADS</small><span>Товари та покупці</span><strong>Дані для рішень</strong></div>
-        <div class="cs-polish-card cs-polish-card--horoshop" aria-hidden="true"><span>ТОВАРНИЙ ФІД</span><strong>Каталог → Merchant</strong><i></i><i></i><i></i></div>
+
        <?php elseif($key==='sites'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">▣</span><span>ВІД ІДЕЇ ДО САЙТУ</span></div>
         <div class="cs-visual-main cs-visual-site">
@@ -154,7 +154,7 @@ $cs_services=array(
          <div class="cs-site-tiles"><i></i><i></i><i></i></div>
         </div>
         <div class="cs-visual-float cs-visual-float--right cs-site-phone"><span></span><i></i><b></b><small>МОБІЛЬНА ВЕРСІЯ</small></div>
-        <div class="cs-polish-card cs-polish-card--sites" aria-hidden="true"><span>ШЛЯХ КЛІЄНТА</span><strong>Сторінка → Заявка</strong><i></i><i></i><i></i></div>
+
        <?php else:?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">⌘</span><span>СИСТЕМИ ТА АВТОМАТИЗАЦІЯ</span></div>
         <div class="cs-visual-main cs-visual-dev">
@@ -163,7 +163,7 @@ $cs_services=array(
          <div class="cs-dev-edge cs-dev-edge--two"></div><div class="cs-dev-edge cs-dev-edge--three"></div>
          <div class="cs-dev-node cs-dev-node--bottom">АВТОМАТИЗАЦІЯ</div>
         </div>
-        <?php if($key==='dev'):?><div class="cs-polish-card cs-polish-card--dev" aria-hidden="true"><span>ПОВ’ЯЗАНІ СИСТЕМИ</span><strong>Запит → CRM → Дія</strong><i></i><i></i><i></i></div><?php endif;?>
+
        <?php endif;?>
        <span class="cs-visual-caption">Схематична візуалізація — не фактична статистика</span>
       </div>

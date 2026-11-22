@@ -9,15 +9,18 @@ css=(theme/"assets/home-cinematic-polish.css").read_text(encoding="utf-8")
 reference=(theme/"assets/home-cinematic-reference.css").read_text(encoding="utf-8")
 assert "home-cinematic-polish.css" in home and "'mrseo-home-cinematic-reference'" in home
 assert "class=\"ph-confidential\"" in home
-assert "Довіра важливіша за публічне портфоліо." in home
-assert "без їхнього дозволу" in home
-assert "class=\"ph-final\"" in home
-assert home.index('class="ph-resolution"') < home.index('class="ph-confidential"') < home.index('class="ph-final"')
+assert "Ваші дані залишаються приватними." in home
+assert "без дозволу клієнта" in home
+assert 'class="ph-final"' not in home
+assert home.index('class="ph-resolution"') < home.index('class="ph-confidential"')
+assert home.count('class="pt-home-cta"') == 2, "Only hero and final privacy CTAs"
+assert 'class="ph-confidential-action"' in home
 assert "class=\"pt-globe" in home and "pt-orbit-lines" in home
 assert "horoshop-wordmark.svg" in scene
-for name in ("seo","horoshop","sites","dev"):
-    assert "cs-polish-card--"+name in scene
-    assert ".cs-polish-card--"+name in css
+assert "cs-polish-card" not in scene and "cs-polish-card" not in css
+assert "cs-optimization-card" not in scene
+assert "cs-art-spark" not in scene
+assert ".pt-ua-home .cs-art-orbit--two" in css
 assert "cs-campaigns-card" in scene and "cs-shopping-card" in scene and "cs-conversions-card" in scene
 assert "prefers-reduced-motion:reduce" in css
 assert "max-width:410px" in css and "max-width:710px" in css
@@ -26,4 +29,4 @@ assert ".pt-ua-home .cs-showcase" in css
 assert ".pt-globe" not in css and ".pt-orbit" not in css
 assert "cs-brand.cs-brand-horoshop" in reference
 assert "X-Robots-Tag: noindex, nofollow" in (theme/"functions.php").read_text(encoding="utf-8")
-print("PASS: five scene balance, responsive/reduced-motion CSS, no public portfolio, privacy-first copy, unchanged Earth/noindex")
+print("PASS: five calm service scenes, 2 purposeful CTAs, combined confidentiality block, responsive/motion safety, unchanged Earth/noindex")
