@@ -227,3 +227,7 @@
 @media(prefers-reduced-motion:reduce){
  .pt-ua-home .cs-showcase *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* Keep the authentic Horoshop wordmark at its original proportions above the title. */
+.pt-ua-home .cs-brand.cs-brand-horoshop{width:clamp(150px,15vw,205px);height:auto;min-height:44px;margin-bottom:12px;display:flex;align-items:center}
+.pt-ua-home .cs-brand-horoshop .cs-horoshop-wordmark{display:block;width:100%;height:auto;max-width:205px;object-fit:contain}
