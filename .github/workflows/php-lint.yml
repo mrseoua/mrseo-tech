@@ -54,6 +54,8 @@ jobs:
         run: |
           python3 scripts/verify-ua-home-cinematic-showcase.py
           node --check wp-content/themes/mrseo-tech/assets/home-cinematic-showcase.js
+      - name: Verify Ukrainian homepage Premium Polish and confidentiality notice
+        run: python3 scripts/verify-ua-home-premium-polish.py
       - name: Verify global agency brand red across locales and services
         run: python3 scripts/verify-global-brand-palette.py
       - name: Verify 19 Ukrainian SEO landings and metadata integrity
