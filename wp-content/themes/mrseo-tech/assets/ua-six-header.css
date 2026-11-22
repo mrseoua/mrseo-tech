@@ -313,3 +313,177 @@
   transition:none!important;
  }
 }
+
+
+/* Premium Tech Navigation 03: true six-direction mega menu, not the old long dropdown.
+   The shared nav is the positioning context, so every panel remains within the header. */
+@media(min-width:1351px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary{
+  gap:clamp(9px,1vw,19px);
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-inner{
+  position:relative;
+  gap:clamp(0px,.28vw,6px);
+  justify-content:space-evenly;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item{
+  position:static;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item summary{
+  font-size:clamp(13px,.89vw,16px);
+  padding:13px clamp(5px,.58vw,12px);
+  gap:6px;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-panel--mega,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--seo .mrseo-ua-six-panel,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--ads .mrseo-ua-six-panel,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--commerce .mrseo-ua-six-panel,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-panel,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--sites .mrseo-ua-six-panel,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--dev .mrseo-ua-six-panel{
+  position:absolute;
+  left:0!important;
+  right:0!important;
+  top:calc(100% + 14px);
+  width:100%!important;
+  max-width:none!important;
+  min-width:0;
+  max-height:min(78dvh,740px);
+  padding:0;
+  border-radius:19px;
+  overflow-y:auto;
+  background:#fffdfa;
+  box-shadow:0 24px 72px #28231c24,0 2px 8px #28231c0a;
+  border:1px solid #e2d8cc;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-panel--mega{
+  display:grid;
+  grid-template-columns:minmax(185px,.31fr) minmax(0,1fr);
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-overview{
+  padding:clamp(26px,2.4vw,38px);
+  border-right:1px solid #e7dfd5;
+  background:linear-gradient(155deg,#f9f5ef,#f3eee8);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-overview h2{
+  font-size:clamp(26px,2.2vw,35px);
+  font-weight:720;
+  color:#262c27;
+  line-height:1.12;
+  letter-spacing:-.045em;
+  margin:18px 0 15px;
+  overflow-wrap:anywhere;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-overview p{
+  font-size:15px;
+  line-height:1.6;
+  color:#5d625b;
+  margin:0 0 22px;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-eyebrow{
+  color:var(--mrseo-brand-red);
+  font-size:11px;
+  letter-spacing:.12em;
+  font-weight:800;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-overview-link{
+  margin-top:auto;
+  display:inline-flex!important;
+  align-items:center;
+  gap:12px;
+  padding:12px 0!important;
+  border:0!important;
+  border-bottom:1px solid var(--mrseo-brand-red)!important;
+  border-radius:0;
+  background:transparent;
+  color:var(--mrseo-brand-red)!important;
+  font-size:14px!important;
+  font-weight:800;
+  text-decoration:none;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-catalog{
+  padding:clamp(22px,2vw,32px);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px 28px;
+  align-content:start;
+  min-width:0;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--seo .mrseo-ua-six-catalog{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:17px;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-catalog-group{
+  min-width:0;
+  padding:2px 0 12px;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-catalog-group h3{
+  color:#7f6f63;
+  font-size:11px;
+  margin:0 10px 8px;
+  letter-spacing:.085em;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-catalog-group a{
+  font-size:14px!important;
+  font-weight:650;
+  min-height:39px;
+  line-height:1.35;
+  padding:9px 11px!important;
+  gap:7px;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-catalog-group a span{
+  font-size:12px;
+  opacity:.72;
+ }
+}
+/* Mobile/tablet is an actual expandable catalogue, with a compact overview link. */
+@media(max-width:1350px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop{display:none!important}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.menu-toggle{
+  display:block;
+  margin-left:auto;
+  border-radius:10px;
+  padding:8px 11px;
+  background:#eee8df;
+  color:#18211d;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.nav-links{
+  display:none;
+  position:absolute;
+  top:75px;left:0;right:0;
+  z-index:101;
+  flex-direction:column;
+  align-items:stretch;
+  padding:16px 24px 26px;
+  gap:5px;
+  background:#faf8f4;
+  border-bottom:1px solid #e7dcd0;
+  box-shadow:0 20px 25px #171c1720;
+  max-height:calc(100dvh - 75px);
+  overflow-y:auto;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary>.nav-links.open{display:flex}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile{display:block}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility{display:none}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary{min-height:75px}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six-overview{padding:10px 14px 4px}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six-overview h2,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six-overview p,
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six-eyebrow{display:none}
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six-overview-link{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--mrseo-brand-red);
+  padding:8px 0;
+  font-weight:800;
+  font-size:14px;
+  text-decoration:none;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six-panel--mega{animation:none!important}
+}
