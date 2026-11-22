@@ -44,6 +44,8 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
+      - name: Verify eight Ukrainian Google Ads pages and internal service routes
+        run: python3 scripts/verify-ua-google-ads-8.py
       - name: Verify 19 Ukrainian SEO landings and metadata integrity
         run: python3 scripts/verify-ua-seo-19.py
       - name: Verify RU compact service coverage and distinct client intents
