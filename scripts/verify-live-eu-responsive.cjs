@@ -912,6 +912,17 @@ async function audit(browser,viewport,lang,slug){
          overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
       if(!state.page||!state.hero||!state.svg||!state.badge||!state.asset||state.desc!==1||state.steps!==3||state.faq!==3||state.buttons<2||state.overflow)item.errors.push('Horoshop premium markup/geometry '+JSON.stringify(state));
+      const stages=page.locator('.hs-premium-stage-button');
+      if(await stages.count()!==3)item.errors.push('Horoshop premium stage controls missing');
+      else{
+       await page.waitForLoadState('load');
+       await stages.nth(1).click();
+       const selected=await page.locator('.hs-premium-visual').getAttribute('data-hs-active-stage');
+       const pressed=await stages.nth(1).getAttribute('aria-pressed');
+       const message=await page.locator('[data-hs-stage-description]').textContent();
+       if(selected!=='1'||pressed!=='true'||!message?.trim())item.errors.push('Horoshop interactive stages did not switch');
+      }
+      if(!await page.locator('script[src*="horoshop-premium-motion.js"]').count())item.errors.push('Horoshop premium motion asset missing');
       if(state.canon!==url)item.errors.push('Horoshop self-canonical '+state.canon);
       if(!/noindex/i.test(state.robots))item.errors.push('Horoshop noindex missing');
       if(/ru\/horoshop\/(setup|seo|audit|ads|feeds|ga4)\//.test(await page.content()))item.errors.push('Invented RU Horoshop subservice URL');
