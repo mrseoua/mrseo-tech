@@ -48,6 +48,8 @@ jobs:
         run: python3 scripts/verify-ua-google-ads-8.py
       - name: Verify six Ukrainian Horoshop commercial service destinations
         run: python3 scripts/verify-ua-horoshop-services.py
+      - name: Verify five Ukrainian 3D Earth category satellites and linked destinations
+        run: python3 scripts/verify-ua-home-five-satellites.py
       - name: Verify 19 Ukrainian SEO landings and metadata integrity
         run: python3 scripts/verify-ua-seo-19.py
       - name: Verify RU compact service coverage and distinct client intents

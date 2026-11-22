@@ -238,7 +238,7 @@ async function audit(browser,viewport,lang,slug){
     })(),
     orbitStylesheet:!!document.querySelector(uaHome?'link[href*="home-uk-premium.css"]':'link[href*="orbit-scene.css"]'),
     legacyEuStylesheet:!!document.querySelector('link[href*="eu-expansion.css"]'),
-    sharedHomepageVisual:uaHome?!!document.querySelector('.pt-ua-home .pt-globe')&&document.querySelectorAll('.pt-ua-home .pt-orbit-lines path').length===8:!!document.querySelector('.orbit-lab .lab-shell .lab-visual .lab-core')&&!!document.querySelector('.orbit-lab .lab-connectors #lab-spokes'),
+    sharedHomepageVisual:uaHome?!!document.querySelector('.pt-ua-home .pt-globe')&&document.querySelectorAll('.pt-ua-home .pt-orbit-lines path').length===5:!!document.querySelector('.orbit-lab .lab-shell .lab-visual .lab-core')&&!!document.querySelector('.orbit-lab .lab-connectors #lab-spokes'),
     orbitCanvas:!!document.querySelector(uaHome?'.pt-globe.pt-globe-ready canvas':'.orbit-lab canvas.lab-webgl-canvas'),
     orbitStaticTexture:uaHome?!!earth?.querySelector('img[src^="data:image/"]')&&earth.querySelector('img').naturalWidth>0:earth?getComputedStyle(earth,'::before').backgroundImage.includes('earth-day.jpg'):false,
     clientBand:!!document.querySelector('.client-band-home'),
@@ -630,7 +630,7 @@ async function audit(browser,viewport,lang,slug){
     item.errors.push('RU compact CSS leaked to '+lang);
   if(!c.privacyLink)item.errors.push('Privacy link missing');
   if(slug!=='privacy'&&!c.hero)item.errors.push('Hero missing');
-  if(slug===''&&(!c.orbitMaster||!c.core||(lang==='uk'?c.satellites!==8:coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
+  if(slug===''&&(!c.orbitMaster||!c.core||(lang==='uk'?c.satellites!==5:coreShard?(c.satellites<6||c.satellites>8):(c.satellites!==7))||!c.coreDimensions?.w))item.errors.push('Shared orbit master/satellites missing');
   if(slug===''&&!c.orbitCanvas&&!c.orbitStaticTexture)item.errors.push('No real 3D globe or Earth texture fallback');
   if(slug===''){
     // Regression guard: all 20 locale homepages must physically reach both
