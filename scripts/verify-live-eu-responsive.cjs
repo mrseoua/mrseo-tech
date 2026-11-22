@@ -792,7 +792,7 @@ async function audit(browser,viewport,lang,slug){
    const subcategories=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-catalog-group a').count();
    const horoshopLabels=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-unlinked').count();
    const seoColumns=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-panel--wide .mrseo-ua-six-catalog').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
-   if(subcategories!==47||horoshopLabels!==0||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
+   if(subcategories!==54||horoshopLabels!==0||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
    const submenuTypography=await page.evaluate(()=>{
      const base=document.querySelector('.mrseo-ua-six--desktop');
      const link=base?.querySelector('.mrseo-ua-six-catalog-group a');
@@ -802,13 +802,24 @@ async function audit(browser,viewport,lang,slug){
       group:parseFloat(getComputedStyle(group).fontSize),planned:parseFloat(getComputedStyle(planned).fontSize)};
    });
    if(submenuTypography.link<16.9||submenuTypography.group<13.9||submenuTypography.planned<15.9)item.errors.push('UA submenu text legibility '+JSON.stringify(submenuTypography));
-   const groups=page.locator('.mrseo-ua-six--desktop details');
+   const groups=page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-inner > details');
    for(let i=0;i<5;i++){
-    await groups.nth(i).locator('summary').click();
-    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,8,7,7][i])item.errors.push('UA six-header desktop item '+i);
+    await groups.nth(i).locator(':scope > summary').click();
+    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,8,14,7][i])item.errors.push('UA six-header desktop item '+i);
    }
    await page.keyboard.press('Escape');
    if(await groups.last().getAttribute('open')!==null)item.errors.push('UA six-header desktop Escape');
+   // Small-business second level opens in-flow; every link is an actual URL.
+   const siteMenu=page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-item--sites');
+   await siteMenu.locator(':scope > summary').click();
+   const nicheMenu=siteMenu.locator('.mrseo-ua-six-submenu');
+   await nicheMenu.locator(':scope > summary').click();
+   const nicheLinks=await nicheMenu.locator('.mrseo-ua-six-submenu-links a[href]').count();
+   if(nicheLinks!==8||!await nicheMenu.locator('.mrseo-ua-six-submenu-links a[href]').first().isVisible())
+    item.errors.push('Desktop seven niche links hidden or missing '+nicheLinks);
+   await page.keyboard.press('Escape');
+   if(await siteMenu.getAttribute('open')!==null)item.errors.push('UA niche menu Escape');
+
    await page.screenshot({path:'shots/ua-six-header-wide.jpg',type:'jpeg',quality:80,fullPage:false});
   }
   if(slug===''&&viewport.name==='narrow'){
@@ -825,10 +836,17 @@ async function audit(browser,viewport,lang,slug){
     item.stage='UA six-header mobile';
     const mobileLinkFont=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
     if(mobileLinkFont<16.9)item.errors.push('UA mobile submenu readability '+mobileLinkFont);
-    const six=page.locator('.mrseo-ua-six--mobile details');
+    const six=page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-inner > details');
     const mobileCount=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').count();
-    if(mobileCount!==47)item.errors.push('UA mobile subcategory count '+mobileCount);
-    for(let i=0;i<5;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,8,7,7][i])item.errors.push('UA six mobile item '+i);}
+    if(mobileCount!==54)item.errors.push('UA mobile subcategory count '+mobileCount);
+    for(let i=0;i<5;i++){await six.nth(i).locator(':scope > summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,8,14,7][i])item.errors.push('UA six mobile item '+i);}
+    const siteMenu=page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-item--sites');
+    await siteMenu.locator(':scope > summary').click();
+    const nicheMenu=siteMenu.locator('.mrseo-ua-six-submenu');
+    await nicheMenu.locator(':scope > summary').click();
+    const nicheLinks=await nicheMenu.locator('.mrseo-ua-six-submenu-links a[href]').count();
+    if(nicheLinks!==8||!await nicheMenu.locator('.mrseo-ua-six-submenu-links a[href]').first().isVisible())
+     item.errors.push('Mobile seven niche links hidden or missing '+nicheLinks);
     await page.keyboard.press('Escape');
     if(await six.last().getAttribute('open')!==null)item.errors.push('UA mobile Escape');
     const box=await page.locator('.mrseo-ua-six--mobile').evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right}});
