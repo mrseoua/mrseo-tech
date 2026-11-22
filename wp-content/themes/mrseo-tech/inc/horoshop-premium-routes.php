@@ -154,7 +154,7 @@ add_action('wp',function(){
 add_action('wp_head',function(){
  $k=mrseo_hs_key();if(!$k)return;
  $p=mrseo_hs_pages()[$k];
- echo '<meta name="description" content="'.esc_attr($p[2].' '.$p[12]).'">'."\n";
+ echo '<meta name="description" content="'.esc_attr($p[2].' '.$p[4]).'">'."\n";
  echo '<link rel="canonical" href="'.esc_url(mrseo_hs_url($k)).'">'."\n";
 },2);
 add_action('wp_enqueue_scripts',function(){
