@@ -20,6 +20,10 @@ assert page.count('class="hs-service-pain"')==6
 assert page.count('class="hs-service-number"')==6
 assert page.count('class="hs-service-card"')==page.count('class="hs-service-result"')
 assert "mrseo_hs_url($anchor)" in header
+assert "Про послуги Хорошоп" not in header
+assert "\'horoshop-setup\'=>\'setup\'" not in header
+assert "horoshop-setup" not in header
+assert all("\'horoshop-"+key+"\'=>\'"+value+"\'" in header for key,value in [("seo","seo"),("audit","audit"),("google-ads","ads"),("product-feeds","feeds"),("ga4","ga4")])
 assert "horoshop-partner-active.svg" in page and "horoshop-wordmark.svg" in page
 assert page.count('class="hs-switch')>=4
 assert "mrseo_locale()==='uk'" in page
@@ -46,7 +50,7 @@ assert "rel=\"canonical\"" in premium_routes
 assert "add_rewrite_rule('^horoshop/(setup|seo|audit|ads|feeds|ga4)/?$'" in premium_routes
 assert "mrseo_hs_url($anchor)" in header
 for key in ("setup","seo","audit","ads","feeds","ga4"):
- assert "'"+key+"'" in header
+ if key!='setup': assert "'"+key+"'" in header
  assert "mrseo_hs_url('"+key+"')" in page
  assert "'"+key+"'" in premium_routes or '"'+key+'"' in premium_routes
 assert "prefers-reduced-motion:reduce" in premium_css
