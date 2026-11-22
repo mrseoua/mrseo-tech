@@ -976,6 +976,50 @@ async function audit(browser,viewport,lang,slug){
    }finally{await browser.close()}
   }
  }
+ // Business verticals have true Ukrainian service URLs, never reused as fake international translations.
+ if(coreShard){
+  const niches=['clinic-websites','beauty-salon-websites','restaurant-websites','auto-service-websites','lawyer-websites','photographer-websites','psychologist-websites'];
+  for(const viewport of [{name:'wide',width:1440,height:900},{name:'mobile',width:390,height:844}]){
+   const browser=await chromium.launch(launchOptions);
+   try{
+    const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height}});
+    const page=await context.newPage();
+    for(const key of niches){
+     const url=HOST+'/'+key+'/';
+     const item={url,viewport:viewport.name,errors:[],stage:'Ukrainian business niche site'};
+     try{
+      const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:25000});
+      if(!response||response.status()!==200)item.errors.push('Niche route HTTP '+(response?.status()||'null'));
+      const state=await page.evaluate(()=>({
+       page:!!document.querySelector('.uws-page--niche'),
+       h1:document.querySelectorAll('h1').length,
+       title:document.title,
+       desc:[...document.querySelectorAll('meta[name="description"]')].map(x=>x.content),
+       canonical:document.querySelector('link[rel="canonical"]')?.href,
+       robots:document.querySelector('meta[name="robots"]')?.content||'',
+       visual:!!document.querySelector('.uws-demo--local'),
+       nicheStyle:!!document.querySelector('link[href*="ua-business-niches.css"]'),
+       inquiries:document.querySelectorAll('.ukseo-actions a[href*="/contact/"]').length,
+       overflow:document.documentElement.scrollWidth>innerWidth+4
+      }));
+      if(!state.page||state.h1!==1||!state.visual||!state.nicheStyle||state.inquiries<1||state.desc.length!==1||state.overflow)
+       item.errors.push('Niche layout or metadata integrity '+JSON.stringify(state));
+      if(!/noindex/i.test(state.robots))item.errors.push('Niche noindex missing');
+      if(state.canonical!==url)item.errors.push('Niche self canonical '+state.canonical);
+      if(!state.title.includes('MrSeo.tech'))item.errors.push('Niche SEO title missing');
+      if(viewport.name==='mobile'){
+       const textSize=await page.locator('.ukseo-hero-lead').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+       if(textSize<15)item.errors.push('Niche mobile hero text too small: '+textSize);
+      }
+      await page.screenshot({path:'shots/niche-'+key+'-'+viewport.name+'.jpg',type:'jpeg',quality:76,fullPage:false});
+     }catch(error){item.errors.push('Niche browser stage '+String(error).slice(0,430));}
+     results.push(item);
+     console.log((item.errors.length?'FAIL':'PASS')+' Niche '+viewport.name+' '+key+' '+item.errors.join(' | '));
+    }
+    await context.close();
+   }finally{await browser.close()}
+  }
+ }
  const errors=results.filter(x=>x.errors.length);
  const summary={checked:results.length,failed:errors.length,success:results.length-errors.length,errors:errors.map(x=>({url:x.url,viewport:x.viewport,errors:x.errors})),results};
  await fs.writeFile('shots/eu-diagnostics.json',JSON.stringify(summary,null,2));
