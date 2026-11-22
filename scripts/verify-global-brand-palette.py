@@ -50,6 +50,8 @@ assert total>200,total
 assert "#4285f4" in (root/"assets/home-cinematic-reference.css").read_text(encoding="utf-8").lower()
 assert "#34a853" in (root/"assets/home-cinematic-reference.css").read_text(encoding="utf-8").lower()
 assert "#fbbc05" in (root/"assets/home-cinematic-reference.css").read_text(encoding="utf-8").lower()
+cinematic=(root/"assets/home-cinematic-reference.css").read_text(encoding="utf-8").lower()
+assert not any(old in cinematic for old in ("#b12c31","#b4282d","#b73136","#a61f29","#b32731","#b33035","#b12e33","#b3272d","#b52730"))
 assert "horoshop-partner-trust" in (root/"inc/horoshop-premium-routes.php").read_text(encoding="utf-8")
 assert "pt-orbit-lines" in (root/"home-uk-premium.php").read_text(encoding="utf-8")
 print(f"PASS: {len(target_files)} CSS stylesheets share a single #A84432 primary-red token ({total} uses), brand logo colors and noindex preserved")
