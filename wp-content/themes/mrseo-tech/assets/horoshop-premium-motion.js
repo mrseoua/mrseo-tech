@@ -62,22 +62,22 @@ if('IntersectionObserver' in window&&!reduced.matches){
 }else{targets.forEach(node=>node.classList.add('hs-premium-in-view'));}
 // Keep newly added below-the-fold motion lightweight: animate only visible sections.
 const storySections=[...root.querySelectorAll('.hs-premium-problems,.hs-story-workbench,.hs-premium-outcome,.hs-premium-final')];
+const visibleStories=new WeakMap();
 let storyObserver=null;
 function syncStoryMotion(){
  storySections.forEach(section=>{
-  section.classList.toggle('hs-story-reduced',reduced.matches);
-  if(reduced.matches||document.hidden)section.classList.remove('hs-story-motion-on');
+  section.classList.toggle('hs-story-motion-on',
+   visibleStories.get(section)!==false&&!document.hidden&&!reduced.matches);
  });
 }
 if('IntersectionObserver' in window){
  storyObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-   entry.target.classList.toggle('hs-story-motion-on',entry.isIntersecting&&!document.hidden&&!reduced.matches);
-  });
+  entries.forEach(entry=>visibleStories.set(entry.target,entry.isIntersecting));
+  syncStoryMotion();
  },{threshold:.06});
- storySections.forEach(section=>storyObserver.observe(section));
+ storySections.forEach(section=>{visibleStories.set(section,false);storyObserver.observe(section);});
 }else{
- storySections.forEach(section=>section.classList.add('hs-story-motion-on'));
+ storySections.forEach(section=>visibleStories.set(section,true));
 }
 reduced.addEventListener?.('change',syncStoryMotion);
 document.addEventListener('visibilitychange',syncStoryMotion);
