@@ -90,8 +90,12 @@ assert "1.2.0" in premium_routes
 trust_css=(root/"assets/horoshop-partner-trust.css").read_text(encoding="utf-8")
 assert "mrseo_hs_trust(true)" in page and "mrseo_hs_trust();" in premium
 assert "Офіційний партнер Хорошоп" in story and "10-річним досвідом" in story
-assert "horoshop.ua/ua/offers/seo-na-etape-razrabotki-im-na-horoshop/" in story
-assert "noopener noreferrer" in story
+assert "ОФІЦІЙНИЙ ПАРТНЕР ХОРОШОП" in story and "ОФИЦИАЛЬНЫЙ ПАРТНЁР ХОРОШОП" in story
+assert "horoshop.ua/ua/offers/" not in story and "hs-trust-proof" not in story
+assert "Перевірити партнерство на сайті Хорошоп" not in story
+assert "Проверить партнёрство на сайте Хорошоп" not in story
+assert 'class="hs-trust-contact"' in story and "mrseo_url('contact',mrseo_locale())" in story
+assert "hs-trust-proof" not in trust_css
 assert "horoshop-partner-trust.css" in functions and "horoshop-partner-trust.css" in premium_routes
 assert "prefers-reduced-motion:reduce" in trust_css
 assert "mrseo_hs_search_meta($key)" in premium_routes

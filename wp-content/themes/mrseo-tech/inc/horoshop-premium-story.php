@@ -65,14 +65,12 @@ function mrseo_hs_result_visual($key){
 }
 
 /**
- * Visible Horoshop partnership proof and experience.
- * Official Horoshop offer links to the existing MrSeo entity at mrseo.com.ua.
+ * Horoshop partnership presentation and team experience; no verification outbound link.
  * Ten years refers to specialists' experience, not to the age of mrseo.tech
  * or to length of partnership.
  */
 function mrseo_hs_trust($compact=false){
  $ru=mrseo_locale()==='ru';
- $proof='https://horoshop.ua/ua/offers/seo-na-etape-razrabotki-im-na-horoshop/';
  $badge=get_template_directory_uri().'/assets/horoshop-partner-active.svg';
  $heading=$ru?'Официальный партнёр Хорошоп':'Офіційний партнер Хорошоп';
  $intro=$ru?'За вашим магазином — команда специалистов с 10-летним опытом в SEO, Google Ads и электронной коммерции. Разбираемся в возможностях платформы и ищем решения для конкретных задач магазина.':'За вашим магазином — команда фахівців із 10-річним досвідом у SEO, Google Ads та електронній комерції. Розуміємо можливості платформи й знаходимо рішення під конкретні завдання магазину.';
@@ -101,11 +99,11 @@ function mrseo_hs_trust($compact=false){
     <span class="hs-trust-emblem-line" aria-hidden="true"></span>
    </div>
    <div class="hs-trust-copy">
-    <span class="hs-trust-kicker"><?php echo esc_html($ru?'ПАРТНЁРСТВО, ПОДТВЕРЖДЁННОЕ ПЛАТФОРМОЙ':'ПАРТНЕРСТВО, ПІДТВЕРДЖЕНЕ ПЛАТФОРМОЮ');?></span>
+    <span class="hs-trust-kicker"><?php echo esc_html($ru?'ОФИЦИАЛЬНЫЙ ПАРТНЁР ХОРОШОП':'ОФІЦІЙНИЙ ПАРТНЕР ХОРОШОП');?></span>
     <h2 id="<?php echo $compact?'hs-hub-trust-title':'hs-service-trust-title';?>"><?php echo esc_html($heading);?>. <em><?php echo esc_html($ru?'10 лет практического опыта команды.':'10 років практичного досвіду команди.');?></em></h2>
     <p class="hs-trust-lead"><?php echo esc_html($intro);?></p>
     <p><?php echo esc_html($detail);?></p>
-    <div class="hs-trust-actions"><a class="hs-trust-proof" href="<?php echo esc_url($proof);?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($ru?'Проверить партнёрство на сайте Хорошоп':'Перевірити партнерство на сайті Хорошоп');?> <span aria-hidden="true">↗</span></a><a class="hs-trust-contact" href="<?php echo esc_url(mrseo_url('contact',mrseo_locale()));?>"><?php echo esc_html($ru?'Обсудить свой магазин':'Обговорити свій магазин');?> <span aria-hidden="true">↗</span></a></div>
+    <div class="hs-trust-actions"><a class="hs-trust-contact" href="<?php echo esc_url(mrseo_url('contact',mrseo_locale()));?>"><?php echo esc_html($ru?'Обсудить свой магазин':'Обговорити свій магазин');?> <span aria-hidden="true">↗</span></a></div>
    </div>
   </div>
  </section>
