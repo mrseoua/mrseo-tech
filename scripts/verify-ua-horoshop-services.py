@@ -65,4 +65,21 @@ assert all("hs-premium-"+name in premium_css for name in ("basket","search","aud
 assert all(key in motion for key in ("ArrowRight","ArrowLeft","IntersectionObserver","visibilitychange","prefers-reduced-motion","pauseAnimations"))
 assert "data-hs-motion-paused" in premium_css
 assert "@media(prefers-reduced-motion:reduce)" in premium_css
-print("Horoshop UA: six premium routes, interactive motion stages and hub modules, original partner visual, metadata, noindex and UA/RU routing preserved.")
+# Below-fold premium visual stories: six accurate intent-specific narratives.
+story=(root/"inc/horoshop-premium-story.php").read_text(encoding="utf-8")
+assert "require_once get_template_directory().'/inc/horoshop-premium-story.php';" in premium
+assert "mrseo_hs_workbench($key)" in premium
+assert "mrseo_hs_result_visual($key)" in premium
+assert "hs-story-step-visual" in premium and "hs-story-final-orbit" in premium
+for name in ("setup","seo","audit","ads","feeds","ga4"):
+ assert "'"+name+"'=>array(" in story,("missing visual story",name)
+for token in ("hs-story-workbench","hs-story-machine","hs-story-machine-flow",
+              "hs-story-proof-row","hs-story-proof-note","hs-story-final-orbit"):
+ assert token in story+premium,("missing scene",token)
+ assert token in premium_css,("missing scene CSS",token)
+assert "Схематична візуалізація процесу" in story
+assert "не фактичний звіт" in story
+assert "hs-story-motion-on" in motion and "visibilitychange" in motion
+assert "prefers-reduced-motion:reduce" in premium_css
+assert "1.2.0" in premium_routes
+print("Horoshop UA: six premium routes, premium below-fold motion narratives and interactive hero, original partner visual, metadata, noindex and UA/RU routing preserved.")
