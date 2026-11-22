@@ -487,3 +487,51 @@
 @media(prefers-reduced-motion:reduce){
  .site-header.mrseo-ua-header-v2 .mrseo-ua-six-panel--mega{animation:none!important}
 }
+
+/* Navigation 04 — approved concise five-category taxonomy, no wrapped SEO heading.
+   A wider overview column is intentional; the 18-page SEO catalogue belongs on /seo/. */
+@media(min-width:1351px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-panel--mega{
+  grid-template-columns:minmax(300px,35%) minmax(0,1fr);
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-overview{
+  padding:clamp(25px,2.1vw,36px);
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-overview h2{
+  font-size:clamp(24px,1.9vw,29px);
+  line-height:1.18;
+  letter-spacing:-.04em;
+  white-space:nowrap;
+  overflow-wrap:normal;
+  hyphens:none;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--seo .mrseo-ua-six-catalog{
+  display:block;
+  padding:clamp(30px,2.7vw,42px);
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--seo .mrseo-ua-six-catalog-group{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px 15px;
+  align-content:start;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--seo .mrseo-ua-six-catalog-group h3{
+  grid-column:1 / -1;
+  font-size:12px;
+  margin:0 10px 13px;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop .mrseo-ua-six-item--seo .mrseo-ua-six-catalog-group a{
+  min-height:50px;
+  padding:14px 10px!important;
+  font-size:15px!important;
+  line-height:1.35;
+ }
+}
+@media(max-width:1350px){
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-item--seo .mrseo-ua-six-catalog{
+  display:block;
+ }
+ .site-header.mrseo-ua-header-v2 .mrseo-ua-six--mobile .mrseo-ua-six-overview h2{
+  display:none;
+ }
+}
