@@ -7,8 +7,16 @@ if (!defined('ABSPATH')) exit;
 require_once __DIR__.'/ua-additional-services.php';
 require_once __DIR__.'/ua-business-niche-pages.php';
 
+// Historical 13 paired UA/RU services: preserve international hreflang equivalence.
 function mrseo_ua_website_slugs() {
- return array_keys(mrseo_ua_website_data());
+ return array_values(array_diff(array_keys(mrseo_ua_website_data()),array_keys(mrseo_ua_business_niche_data())));
+}
+// Seven new original UA-only industry landings have no invented Russian translations.
+function mrseo_ua_business_niche_slugs(){
+ return array_keys(mrseo_ua_business_niche_data());
+}
+function mrseo_ua_all_website_slugs(){
+ return array_merge(mrseo_ua_website_slugs(),mrseo_ua_business_niche_slugs());
 }
 function mrseo_ua_website_data($slug=null){
  static $pages=null;
@@ -298,10 +306,10 @@ MRSEO_UA_WEBSITES;
 function mrseo_ua_website_route(){
  if(mrseo_locale()!=='uk')return false;
  $path=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');
- return in_array($path,mrseo_ua_website_slugs(),true);
+ return in_array($path,mrseo_ua_all_website_slugs(),true);
 }
 add_action('init',function(){
- $part=implode('|',mrseo_ua_website_slugs());
+ $part=implode('|',mrseo_ua_all_website_slugs());
  add_rewrite_rule('^('.$part.')/?$','index.php?mrseo_service=$matches[1]','top');
 },11);
 add_filter('pre_handle_404',function($pre){
