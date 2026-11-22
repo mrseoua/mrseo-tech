@@ -16,48 +16,48 @@
 .ro-svc .pl-art--local-seo .pl-art-orbit--one{border-style:dashed}
 .ro-svc .pl-art--local-seo .pl-art-node--1{border-bottom:4px solid #a6bcac}
 .ro-svc .pl-art--service-business-seo .pl-art-symbol{background:#eddac9;border-radius:14px 4px 14px 4px;transform:rotate(-8deg)}
-.ro-svc .pl-art--service-business-seo .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.ro-svc .pl-art--service-business-seo .pl-art-node--2{border-top:3px solid var(--mrseo-brand-red);transform:translateY(-8px) rotateX(5deg)}
 .ro-svc .pl-art--international-seo .pl-art-symbol{background:#dde9e1;border-radius:8px;transform:rotate(-4deg)}
 .ro-svc .pl-art--international-seo .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
 .ro-svc .pl-art--google-shopping .pl-art-symbol{background:#e4e8dc;border-radius:5px 17px 5px 17px;transform:rotate(0deg)}
-.ro-svc .pl-art--google-shopping .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.ro-svc .pl-art--google-shopping .pl-art-node--2{border-top:2px solid var(--mrseo-brand-red);transform:translateY(-10px) rotateX(5deg)}
 .ro-svc .pl-art--google-shopping .pl-art-orbit--one{border-style:dashed}
 .ro-svc .pl-art--local-google-ads .pl-art-symbol{background:#eddac9;border-radius:50%;transform:rotate(4deg)}
 .ro-svc .pl-art--local-google-ads .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
 .ro-svc .pl-art--local-google-ads .pl-art-node--1{border-bottom:4px solid #a6bcac}
 .ro-svc .pl-art--google-ads-audit .pl-art-symbol{background:#dde9e1;border-radius:14px 4px 14px 4px;transform:rotate(8deg)}
-.ro-svc .pl-art--google-ads-audit .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.ro-svc .pl-art--google-ads-audit .pl-art-node--2{border-top:4px solid var(--mrseo-brand-red);transform:translateY(-12px) rotateX(5deg)}
 .ro-svc .pl-art--merchant-center-help .pl-art-symbol{background:#e4e8dc;border-radius:8px;transform:rotate(12deg)}
 .ro-svc .pl-art--merchant-center-help .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
 .ro-svc .pl-art--merchant-center-help .pl-art-orbit--one{border-style:dashed}
 .ro-svc .pl-art--woocommerce-shopify-stores .pl-art-symbol{background:#eddac9;border-radius:5px 17px 5px 17px;transform:rotate(-12deg)}
-.ro-svc .pl-art--woocommerce-shopify-stores .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.ro-svc .pl-art--woocommerce-shopify-stores .pl-art-node--2{border-top:3px solid var(--mrseo-brand-red);transform:translateY(-8px) rotateX(5deg)}
 .ro-svc .pl-art--store-conversion .pl-art-symbol{background:#dde9e1;border-radius:50%;transform:rotate(-8deg)}
 .ro-svc .pl-art--store-conversion .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
 .ro-svc .pl-art--store-conversion .pl-art-node--1{border-bottom:4px solid #a6bcac}
 .ro-svc .pl-art--catalog-automation .pl-art-symbol{background:#e4e8dc;border-radius:14px 4px 14px 4px;transform:rotate(-4deg)}
-.ro-svc .pl-art--catalog-automation .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.ro-svc .pl-art--catalog-automation .pl-art-node--2{border-top:2px solid var(--mrseo-brand-red);transform:translateY(-10px) rotateX(5deg)}
 .ro-svc .pl-art--catalog-automation .pl-art-orbit--one{border-style:dashed}
 .ro-svc .pl-art--store-migration .pl-art-symbol{background:#eddac9;border-radius:8px;transform:rotate(0deg)}
 .ro-svc .pl-art--store-migration .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
 .ro-svc .pl-art--service-websites .pl-art-symbol{background:#dde9e1;border-radius:5px 17px 5px 17px;transform:rotate(4deg)}
-.ro-svc .pl-art--service-websites .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.ro-svc .pl-art--service-websites .pl-art-node--2{border-top:4px solid var(--mrseo-brand-red);transform:translateY(-12px) rotateX(5deg)}
 .ro-svc .pl-art--landing-pages .pl-art-symbol{background:#e4e8dc;border-radius:50%;transform:rotate(8deg)}
 .ro-svc .pl-art--landing-pages .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
 .ro-svc .pl-art--landing-pages .pl-art-orbit--one{border-style:dashed}
 .ro-svc .pl-art--landing-pages .pl-art-node--1{border-bottom:4px solid #a6bcac}
 .ro-svc .pl-art--corporate-websites .pl-art-symbol{background:#eddac9;border-radius:14px 4px 14px 4px;transform:rotate(12deg)}
-.ro-svc .pl-art--corporate-websites .pl-art-node--2{border-top:3px solid #ba705c;transform:translateY(-8px) rotateX(5deg)}
+.ro-svc .pl-art--corporate-websites .pl-art-node--2{border-top:3px solid var(--mrseo-brand-red);transform:translateY(-8px) rotateX(5deg)}
 .ro-svc .pl-art--website-redesign .pl-art-symbol{background:#dde9e1;border-radius:8px;transform:rotate(-12deg)}
 .ro-svc .pl-art--website-redesign .pl-art-node--2{border-top:4px solid #7f9c91;transform:translateY(-9px) rotateX(-5deg)}
 .ro-svc .pl-art--wordpress-care .pl-art-symbol{background:#e4e8dc;border-radius:5px 17px 5px 17px;transform:rotate(-8deg)}
-.ro-svc .pl-art--wordpress-care .pl-art-node--2{border-top:2px solid #ba705c;transform:translateY(-10px) rotateX(5deg)}
+.ro-svc .pl-art--wordpress-care .pl-art-node--2{border-top:2px solid var(--mrseo-brand-red);transform:translateY(-10px) rotateX(5deg)}
 .ro-svc .pl-art--wordpress-care .pl-art-orbit--one{border-style:dashed}
 .ro-svc .pl-art--api-integrations .pl-art-symbol{background:#eddac9;border-radius:50%;transform:rotate(-4deg)}
 .ro-svc .pl-art--api-integrations .pl-art-node--2{border-top:3px solid #7f9c91;transform:translateY(-11px) rotateX(-5deg)}
 .ro-svc .pl-art--api-integrations .pl-art-node--1{border-bottom:4px solid #a6bcac}
 .ro-svc .pl-art--website-speed-security .pl-art-symbol{background:#dde9e1;border-radius:14px 4px 14px 4px;transform:rotate(0deg)}
-.ro-svc .pl-art--website-speed-security .pl-art-node--2{border-top:4px solid #ba705c;transform:translateY(-12px) rotateX(5deg)}
+.ro-svc .pl-art--website-speed-security .pl-art-node--2{border-top:4px solid var(--mrseo-brand-red);transform:translateY(-12px) rotateX(5deg)}
 .ro-svc .pl-art--web-applications .pl-art-symbol{background:#e4e8dc;border-radius:8px;transform:rotate(4deg)}
 .ro-svc .pl-art--web-applications .pl-art-node--2{border-top:2px solid #7f9c91;transform:translateY(-7px) rotateX(-5deg)}
 .ro-svc .pl-art--web-applications .pl-art-orbit--one{border-style:dashed}
