@@ -871,3 +871,5 @@
 - `assets/ua-six-header.css`: desktop ≥1351px — panel anchored to full `mrseo-ua-six-inner`, а не отдельному пункту; левый editorial блок, в SEO 3 колонки, остальные 2, светлый ivory/graphite/red, небольшой fade. На ≤1350px hamburger + native single-column details, группы и overview доступны по клавиатуре. Проверить 1440px, 390px, 360px и отсутствие horizontal overflow на самом WordPress viewport. Обновлён кэш до 1.7.0.
 - `scripts/verify-ua-premium-tech-navigation.py`: регрессии с 6 пунктами, обзором, истинными ссылками, брейкпоинтами. PR автономный; нет изменений WebGL-Земли, других 19 языков, noindex, текущих услуг/метатегов. Не объединять с PR #170 или #160. Откат через revert этого PR.
 - Важно: отображение настоящего сайта зависит от отдельного deploy/cache; GitHub merge не доказывает deploy.
+
+- Browser QA `scripts/verify-live-eu-responsive.cjs` обновлён: ожидаются ровно 6 desktop/mobile направлений, 6 широких панелей/обзорных внутренних ссылок, 8 действующих Horoshop-подуслуг. Это устраняет устаревшую проверку на 5 пунктов, которая иначе обязательно провалилась бы.
