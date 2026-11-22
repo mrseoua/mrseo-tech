@@ -106,6 +106,20 @@ get_header();
  <section class="pti-final psc-final"><div class="pti-wrap">
   <div class="psc-final-art"><?php mrseo_psc_art($psc_art['end']);?></div>
   <div><span class="pti-kicker">ПЕРШИЙ КРОК</span><h2 id="<?php echo esc_attr($psc_final_id);?>"><?php $psc_head($psc['ctaTitle']);?></h2><p><?php echo esc_html($psc['ctaLead']);?></p></div>
+  <?php
+  // Existing, published destinations related to the current SEO service.
+  $mrseo_seo_links=array(
+   'local-seo'=>array(array('seo','SEO-просування'),array('seo-audit','Технічний SEO-аудит')),
+   'ecommerce-seo'=>array(array('seo','SEO-просування'),array('semantic-core','Збір семантичного ядра'),array('seo-content','SEO-копірайтинг')),
+   'service-business-seo'=>array(array('seo','SEO-просування'),array('semantic-core','Семантичне ядро'),array('seo-content','SEO-копірайтинг')),
+   'international-seo'=>array(array('seo','SEO-просування'),array('ecommerce-seo','SEO інтернет-магазинів')),
+   'seo-audit'=>array(array('website-audit','Комплексний аудит сайту'),array('indexing-fixes','Виправлення індексації'),array('seo','Усі напрями SEO'))
+  );?>
+  <nav class="psc-seo-related" aria-label="Суміжні SEO-послуги">
+  <?php foreach($mrseo_seo_links[$psc_slug] as $related):?>
+    <a href="<?php echo esc_url(mrseo_url($related[0],'uk'));?>"><?php echo esc_html($related[1]);?> ↗</a>
+  <?php endforeach;?>
+  </nav>
   <a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['finalButton']??$psc['button']);?> ↗</a>
  </div></section>
 </div>

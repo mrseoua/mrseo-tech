@@ -78,3 +78,9 @@
 @media(prefers-reduced-motion:reduce){.psc-page *{transition:none!important}}
 
 .psc-page .psc-proof-art{width:min(100%,450px);margin:0 auto 20px}.psc-page .psc-proof-art svg{width:100%;height:auto}
+
+/* Modest, accessible contextual links under the SEO service conclusion. */
+.psc-seo-related{display:flex;flex-wrap:wrap;gap:10px 15px;max-width:660px}
+.psc-seo-related a{color:#634b3e;font-size:15px;line-height:1.5;font-weight:650;text-decoration:underline;text-decoration-color:#c8b6a5;text-underline-offset:4px}
+.psc-seo-related a:hover{color:#9e4435;text-decoration-color:currentColor}
+.psc-seo-related a:focus-visible{outline:3px solid #9e4435;outline-offset:4px;border-radius:2px}
