@@ -10,6 +10,7 @@
 .hs-premium-partner{display:flex;align-items:center;gap:19px;max-width:100%;margin:0 0 21px}.hs-premium-partner img{display:block;max-width:100%;object-fit:contain}.hs-premium-partner img:first-child{width:157px;height:auto}.hs-premium-partner img:last-child{width:68px;height:auto;background:#fffdf9;padding:4px;border:1px solid #e2d7c8;border-radius:8px;box-shadow:0 5px 18px #40302212}
 .hs-premium-eyebrow{font-weight:850;letter-spacing:.11em;color:#975a46;font-size:12px;display:block}
 .hs-premium h1{font-size:clamp(48px,4.8vw,79px);line-height:1.045;letter-spacing:-.064em;font-weight:850;margin:18px 0 24px;max-width:720px;color:#222925}
+.hs-premium h1 em{display:block;font-size:.69em;line-height:1.18;letter-spacing:-.045em;margin-top:18px;font-weight:740;font-style:normal;color:#9a4c3a}
 .hs-premium-lead{font-size:clamp(18px,1.7vw,23px);line-height:1.55;font-weight:600;color:#3e4940;max-width:590px}
 .hs-premium-issue{font-size:16px;line-height:1.68;color:#62635b;margin-top:20px;max-width:580px}
 .hs-premium-buttons{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:32px}
