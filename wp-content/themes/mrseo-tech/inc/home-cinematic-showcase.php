@@ -124,6 +124,7 @@ $cs_services=array(
          <div class="cs-serp-result cs-serp-result--second"><small>Сторінка · Оптимізація</small><strong>Релевантний зміст</strong><span>Зручність • Швидкість • Інформація</span></div>
         </div>
         <div class="cs-visual-float cs-visual-float--left"><small>SEO</small><span>ЗАПИТ</span><strong>→ СТОРІНКА</strong></div>
+        <div class="cs-polish-card cs-polish-card--seo" aria-hidden="true"><span>ТЕХНІЧНИЙ АУДИТ</span><strong>Індексація та структура</strong><i></i><i></i><i></i></div>
        <?php elseif($key==='ads'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">A</span><span>GOOGLE ADS · СХЕМА</span></div>
         <div class="cs-visual-main cs-visual-ads">
@@ -144,6 +145,7 @@ $cs_services=array(
          <div class="cs-store-bottom"><span>Каталог → Фід → Реклама</span><strong>↗</strong></div>
         </div>
         <div class="cs-visual-float cs-visual-float--right"><small>SEO · GOOGLE ADS</small><span>Товари та покупці</span><strong>Дані для рішень</strong></div>
+        <div class="cs-polish-card cs-polish-card--horoshop" aria-hidden="true"><span>ТОВАРНИЙ ФІД</span><strong>Каталог → Merchant</strong><i></i><i></i><i></i></div>
        <?php elseif($key==='sites'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">▣</span><span>ВІД ІДЕЇ ДО САЙТУ</span></div>
         <div class="cs-visual-main cs-visual-site">
@@ -152,6 +154,7 @@ $cs_services=array(
          <div class="cs-site-tiles"><i></i><i></i><i></i></div>
         </div>
         <div class="cs-visual-float cs-visual-float--right cs-site-phone"><span></span><i></i><b></b><small>МОБІЛЬНА ВЕРСІЯ</small></div>
+        <div class="cs-polish-card cs-polish-card--sites" aria-hidden="true"><span>ШЛЯХ КЛІЄНТА</span><strong>Сторінка → Заявка</strong><i></i><i></i><i></i></div>
        <?php else:?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">⌘</span><span>СИСТЕМИ ТА АВТОМАТИЗАЦІЯ</span></div>
         <div class="cs-visual-main cs-visual-dev">
@@ -160,6 +163,7 @@ $cs_services=array(
          <div class="cs-dev-edge cs-dev-edge--two"></div><div class="cs-dev-edge cs-dev-edge--three"></div>
          <div class="cs-dev-node cs-dev-node--bottom">АВТОМАТИЗАЦІЯ</div>
         </div>
+        <?php if($key==='dev'):?><div class="cs-polish-card cs-polish-card--dev" aria-hidden="true"><span>ПОВ’ЯЗАНІ СИСТЕМИ</span><strong>Запит → CRM → Дія</strong><i></i><i></i><i></i></div><?php endif;?>
        <?php endif;?>
        <span class="cs-visual-caption">Схематична візуалізація — не фактична статистика</span>
       </div>
