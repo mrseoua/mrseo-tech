@@ -28,9 +28,9 @@ get_header();
     <p class="hs-premium-issue"><?php echo esc_html($p[4]);?></p>
     <div class="hs-premium-buttons"><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити задачу <span aria-hidden="true">↗</span></a><a class="hs-premium-textlink" href="#hs-process">Що зробимо <span aria-hidden="true">↓</span></a></div>
    </div>
-   <div class="hs-premium-visual" role="img" aria-label="<?php echo esc_attr('Схема: '.$visual[0].' — '.$visual[1].' — '.$visual[2]);?>">
+   <div class="hs-premium-visual" role="group" aria-label="<?php echo esc_attr('Інтерактивна схема: '.$visual[0].' — '.$visual[1].' — '.$visual[2]);?>" data-hs-active-stage="0">
     <div class="hs-premium-visual-top"><span class="hs-premium-dot"></span><span class="hs-premium-dot"></span><span class="hs-premium-dot"></span><span>HOROSHOP / <?php echo esc_html(strtoupper($key));?></span></div>
-    <div class="hs-premium-scene" aria-hidden="true">
+    <div class="hs-premium-scene" aria-hidden="true"><div class="hs-premium-scanline"></div>
      <svg viewBox="0 0 570 330" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="hsMetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9eee0"/><stop offset=".54" stop-color="#e5c7a6"/><stop offset="1" stop-color="#b68f73"/></linearGradient></defs>
       <path class="hs-premium-route" d="M100 164 C176 164 183 110 285 110 S402 164 472 164" fill="none" stroke="#c1a38c" stroke-width="3" stroke-dasharray="7 9"/>
@@ -52,9 +52,19 @@ get_header();
       <?php elseif($key==='ga4'):?>
        <g class="hs-premium-service-symbol" fill="#a65d45"><rect x="240" y="284" width="19" height="28" rx="7"/><rect x="272" y="266" width="19" height="46" rx="7"/><rect x="304" y="244" width="19" height="68" rx="7"/><circle cx="249" cy="264" r="7" fill="#caab8f"/></g>
       <?php endif;?>
+      <circle class="hs-premium-ping hs-premium-ping--one" cx="100" cy="164" r="20" fill="none" stroke="#b75942" stroke-width="2"/>
+      <circle class="hs-premium-ping hs-premium-ping--two" cx="285" cy="110" r="69" fill="none" stroke="#b75942" stroke-width="2"/>
+      <circle class="hs-premium-ping hs-premium-ping--three" cx="472" cy="164" r="25" fill="none" stroke="#b75942" stroke-width="2"/>
+      <g class="hs-premium-meter" aria-hidden="true">
+       <rect x="214" y="319" width="142" height="4" rx="2" fill="#d2c5b5"/>
+       <rect x="214" y="319" width="142" height="4" rx="2" fill="#ab5643" class="hs-premium-meter-progress"/>
+      </g>
       <circle class="hs-premium-signal" r="7" fill="#b2503c"><animateMotion dur="4.8s" repeatCount="indefinite" path="M100 164 C176 164 183 110 285 110 S402 164 472 164"/></circle>
      </svg>
-     <div class="hs-premium-scene-labels"><span><?php echo esc_html($visual[0]);?></span><span><?php echo esc_html($visual[1]);?></span><span><?php echo esc_html($visual[2]);?></span></div>
+     <div class="hs-premium-scene-labels" role="group" aria-label="Кроки роботи">
+      <?php foreach($visual as $index=>$label):?><button class="hs-premium-stage-button<?php echo $index===0?' is-active':'';?>" type="button" data-hs-stage="<?php echo esc_attr((string)$index);?>" aria-pressed="<?php echo $index===0?'true':'false';?>"><span class="hs-premium-stage-index"><?php echo esc_html('0'.($index+1));?></span><span><?php echo esc_html($label);?></span></button><?php endforeach;?>
+     </div>
+     <p class="hs-premium-stage-description" data-hs-stage-description aria-live="polite" data-hs-stage-text="<?php echo esc_attr(wp_json_encode(array($p[6],$p[8],$p[10]),JSON_UNESCAPED_UNICODE));?>"><?php echo esc_html($p[6]);?></p>
     </div>
     <p class="hs-premium-scene-caption">Задача <span aria-hidden="true">→</span> перевірка <span aria-hidden="true">→</span> результат</p>
    </div>
