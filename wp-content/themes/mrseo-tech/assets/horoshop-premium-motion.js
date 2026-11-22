@@ -22,13 +22,20 @@ function show(index){
  });
  description.textContent=messages[active];
 }
-function canPlay(){return visible&&!reduced.matches&&!document.hidden&&Date.now()>=manualUntil&&!root.contains(document.activeElement);}
 function tick(){
  if(!visible||reduced.matches||document.hidden)return;
  if(Date.now()<manualUntil||root.contains(document.activeElement))return;
  show(active+1);
 }
-function sync(){stop();if(visible&&!reduced.matches&&!document.hidden)interval=window.setInterval(tick,4300);}
+function sync(){
+ stop();
+ const playing=visible&&!reduced.matches&&!document.hidden;
+ visual.dataset.hsMotionPaused=String(!playing);
+ const svg=visual.querySelector('svg');
+ if(playing)svg?.unpauseAnimations?.();
+ else svg?.pauseAnimations?.();
+ if(playing)interval=window.setInterval(tick,4300);
+}
 stages.forEach((button,i)=>{
  button.addEventListener('click',()=>{manualUntil=Date.now()+18000;show(i);});
  button.addEventListener('keydown',e=>{
