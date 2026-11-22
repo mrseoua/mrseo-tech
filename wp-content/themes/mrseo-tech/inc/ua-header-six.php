@@ -11,10 +11,10 @@ function mrseo_ua_header_six($mobile=false){
   echo '<details class="mrseo-ua-six-item mrseo-ua-six-item--'.esc_attr($key).'" name="'.($mobile?'ua-six-mobile':'ua-six-desktop').'">';
   echo '<summary>'.esc_html($names[$key]).'<span aria-hidden="true">⌄</span></summary>';
   echo '<div class="mrseo-ua-six-panel'.($key==='seo'?' mrseo-ua-six-panel--wide':'').'">';
-  echo '<a class="mrseo-ua-six-primary" href="'.esc_url(mrseo_url($group['parent'],'uk')).'"'.($current===$group['parent']?' aria-current="page"':'').'>'.esc_html($key==='seo'?'Усі SEO-послуги':($is_horoshop?'Усі послуги для Хорошоп':'Усі послуги')).' <span aria-hidden="true">↗</span></a>';
   echo '<div class="mrseo-ua-six-catalog">';
   if($is_horoshop){
    echo '<section class="mrseo-ua-six-catalog-group"><h3>Напрями роботи</h3>';
+   echo '<a href="'.esc_url(mrseo_url($group['parent'],'uk')).'"'.($current===$group['parent']?' aria-current="page"':'').'>Про послуги Хорошоп <span aria-hidden="true">↗</span></a>';
    foreach($group['planned'] as $service)echo '<span class="mrseo-ua-six-unlinked">'.esc_html($service[1]).'</span>';
    echo '</section>';
   }else{

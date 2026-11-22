@@ -754,10 +754,10 @@ async function audit(browser,viewport,lang,slug){
     const desktop=document.querySelector('.mrseo-ua-six--desktop'),mobile=document.querySelector('.mrseo-ua-six--mobile');
     return {desktop:desktop?.querySelectorAll('details').length,mobile:mobile?.querySelectorAll('details').length,
       names:[...desktop?.querySelectorAll('summary')||[]].map(x=>x.textContent.trim().replace('⌄','').trim()),
-      hrefs:[...desktop?.querySelectorAll('.mrseo-ua-six-primary')||[]].map(x=>new URL(x.href).pathname).sort(),
+      hubRows:desktop?.querySelectorAll('.mrseo-ua-six-primary').length, horoshopHub:[...desktop?.querySelectorAll('.mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog-group a')||[]].map(x=>new URL(x.href).pathname),
       assets:!!document.querySelector('link[href*="ua-six-header.css"]')&&!!document.querySelector('script[src*="ua-six-header.js"]')};
    });
-   if(six.desktop!==6||six.mobile!==6||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Інтернет-магазини','Хорошоп','Сайти','Веброзробка'])||JSON.stringify(six.hrefs)!==JSON.stringify(['/seo/','/google-ads/','/online-store-development/','/horoshop/','/service-websites/','/web-development/'].sort())||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
+   if(six.desktop!==6||six.mobile!==6||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Інтернет-магазини','Хорошоп','Сайти','Веброзробка'])||six.hubRows!==0||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
   }
   if(lang==='uk'){
    const top=await page.evaluate(()=>{
@@ -785,21 +785,20 @@ async function audit(browser,viewport,lang,slug){
    const subcategories=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-catalog-group a').count();
    const horoshopLabels=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-unlinked').count();
    const seoColumns=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-panel--wide .mrseo-ua-six-catalog').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
-   if(subcategories!==43||horoshopLabels!==6||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
+   if(subcategories!==44||horoshopLabels!==6||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
    const submenuTypography=await page.evaluate(()=>{
      const base=document.querySelector('.mrseo-ua-six--desktop');
      const link=base?.querySelector('.mrseo-ua-six-catalog-group a');
-     const lead=base?.querySelector('.mrseo-ua-six-primary');
      const group=base?.querySelector('.mrseo-ua-six-catalog-group h3');
      const planned=base?.querySelector('.mrseo-ua-six-unlinked');
-     return {link:parseFloat(getComputedStyle(link).fontSize),lead:parseFloat(getComputedStyle(lead).fontSize),
+     return {link:parseFloat(getComputedStyle(link).fontSize),
       group:parseFloat(getComputedStyle(group).fontSize),planned:parseFloat(getComputedStyle(planned).fontSize)};
    });
-   if(submenuTypography.link<16.9||submenuTypography.lead<16.9||submenuTypography.group<13.9||submenuTypography.planned<15.9)item.errors.push('UA submenu text legibility '+JSON.stringify(submenuTypography));
+   if(submenuTypography.link<16.9||submenuTypography.group<13.9||submenuTypography.planned<15.9)item.errors.push('UA submenu text legibility '+JSON.stringify(submenuTypography));
    const groups=page.locator('.mrseo-ua-six--desktop details');
    for(let i=0;i<6;i++){
     await groups.nth(i).locator('summary').click();
-    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[19,8,5,1,8,8][i])item.errors.push('UA six-header desktop item '+i);
+    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,4,1,7,7][i])item.errors.push('UA six-header desktop item '+i);
    }
    await page.keyboard.press('Escape');
    if(await groups.last().getAttribute('open')!==null)item.errors.push('UA six-header desktop Escape');
@@ -821,8 +820,8 @@ async function audit(browser,viewport,lang,slug){
     if(mobileLinkFont<16.9)item.errors.push('UA mobile submenu readability '+mobileLinkFont);
     const six=page.locator('.mrseo-ua-six--mobile details');
     const mobileCount=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').count();
-    if(mobileCount!==43)item.errors.push('UA mobile subcategory count '+mobileCount);
-    for(let i=0;i<6;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[19,8,5,1,8,8][i])item.errors.push('UA six mobile item '+i);}
+    if(mobileCount!==44)item.errors.push('UA mobile subcategory count '+mobileCount);
+    for(let i=0;i<6;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,4,1,7,7][i])item.errors.push('UA six mobile item '+i);}
     await page.keyboard.press('Escape');
     if(await six.last().getAttribute('open')!==null)item.errors.push('UA mobile Escape');
     const box=await page.locator('.mrseo-ua-six--mobile').evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right}});
