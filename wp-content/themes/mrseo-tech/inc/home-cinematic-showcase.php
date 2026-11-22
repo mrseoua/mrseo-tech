@@ -96,7 +96,7 @@ $cs_services=array(
    <?php foreach($cs_services as $key=>$entry):?>
     <div class="cs-panel<?php echo $key==='ads'?' is-active':'';?>" id="cs-panel-<?php echo esc_attr($key);?>" data-cs-panel="<?php echo esc_attr($key);?>">
      <div class="cs-content">
-      <span class="cs-tag"><?php echo esc_html($entry['tag']);?></span><span class="cs-brand" aria-hidden="true"><?php if($key==='ads'):?><span class="cs-google-ads-mark"><i></i><i></i><i></i></span><?php elseif($key==='seo'):?>⌕<?php elseif($key==='horoshop'):?>H<?php elseif($key==='sites'):?>▣<?php else:?>⌘<?php endif;?></span>
+      <span class="cs-tag"><?php echo esc_html($entry['tag']);?></span><span class="cs-brand<?php echo $key==='horoshop'?' cs-brand-horoshop':'';?>" aria-hidden="true"><?php if($key==='ads'):?><span class="cs-google-ads-mark"><i></i><i></i><i></i></span><?php elseif($key==='seo'):?>⌕<?php elseif($key==='horoshop'):?><img class="cs-horoshop-wordmark" src="<?php echo esc_url(get_template_directory_uri().'/assets/horoshop-wordmark.svg');?>" alt="" width="200" height="37" decoding="async"><?php elseif($key==='sites'):?>▣<?php else:?>⌘<?php endif;?></span>
       <h3><?php echo esc_html($entry['name']);?></h3>
       <p class="cs-problem"><?php echo esc_html($entry['problem']);?></p>
       <p class="cs-answer"><?php echo esc_html($entry['answer']);?></p>
