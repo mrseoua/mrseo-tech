@@ -1,9 +1,9 @@
 /* MrSeo.tech / Ukrainian SEO page design pilot. Isolated from all other locales and homepage. */
-.ukseo{--ukseo-paper:#f6f3ec;--ukseo-cream:#eee9df;--ukseo-white:#fffdf8;--ukseo-ink:#202523;--ukseo-muted:#59615a;--ukseo-red:#c64b37;--ukseo-line:#ded8ce;color:var(--ukseo-ink);background:var(--ukseo-paper);overflow:clip}
+.ukseo{--ukseo-paper:#f6f3ec;--ukseo-cream:#eee9df;--ukseo-white:#fffdf8;--ukseo-ink:#202523;--ukseo-muted:#59615a;--ukseo-red:var(--mrseo-brand-red);--ukseo-line:#ded8ce;color:var(--ukseo-ink);background:var(--ukseo-paper);overflow:clip}
 .ukseo :where(h1,h2,h3,p){margin-top:0}
 .ukseo :where(h1,h2,h3){text-wrap:balance}
 .ukseo :where(a,button,summary):focus-visible{outline:3px solid var(--ukseo-red);outline-offset:4px}
-.ukseo .ukseo-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:830;color:#955442;line-height:1.5;margin:0 0 22px}
+.ukseo .ukseo-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:830;color:var(--mrseo-brand-red);line-height:1.5;margin:0 0 22px}
 .ukseo h2{font-size:clamp(37px,4.55vw,64px);line-height:1.08;letter-spacing:-.057em;font-weight:820}
 .ukseo h2 em{font-style:normal;color:var(--ukseo-red)}
 .ukseo-hero{padding:51px 0 90px;background:radial-gradient(ellipse at 91% 26%,#dfb9a539,transparent 42%),linear-gradient(125deg,#f9f6ef,#f0ebe2);border-bottom:1px solid var(--ukseo-line)}
@@ -24,11 +24,11 @@
 .ukseo-button-light:hover{background:#fff}
 .ukseo-button span{font-size:20px}
 .ukseo-text-link{display:inline-flex;align-items:center;gap:10px;font-size:15px;line-height:1.55;font-weight:770;text-decoration:underline;text-decoration-color:#b6a9a0;text-underline-offset:5px;min-height:44px}
-.ukseo-text-link:hover{color:#a73b2d;text-decoration-color:currentColor}
+.ukseo-text-link:hover{color:var(--mrseo-brand-red);text-decoration-color:currentColor}
 .ukseo-hero-foot{margin:27px 0 0;color:#606b62;font-size:14px;font-weight:650;line-height:1.55;max-width:540px}
 .ukseo-hero-art .ms-scene{box-shadow:0 30px 70px #242a2221;border-radius:22px}
 .ukseo-visual-caption{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px;margin-top:15px;font-size:13px;font-weight:650;line-height:1.5;color:#60635a}
-.ukseo-visual-caption-mark{font-weight:850;color:#92513e;letter-spacing:.08em}
+.ukseo-visual-caption-mark{font-weight:850;color:var(--mrseo-brand-red);letter-spacing:.08em}
 .ukseo-cases{padding:clamp(75px,8vw,125px) 0}
 .ukseo-section-head{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(240px,.62fr);align-items:end;gap:28px;margin-bottom:45px}
 .ukseo-section-head h2{margin:0}
@@ -36,12 +36,12 @@
 .ukseo-problem-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
 .ukseo-problem-card{display:flex;flex-direction:column;min-height:380px;background:var(--ukseo-white);padding:clamp(23px,2.5vw,35px);border:1px solid var(--ukseo-line);border-radius:19px;box-shadow:0 15px 38px #32271909}
 .ukseo-problem-card:nth-child(2){background:#efe9e1}
-.ukseo-card-number{display:flex;justify-content:space-between;align-items:center;color:#91503d;font-size:13px;letter-spacing:.09em;font-weight:850;margin-bottom:50px}
+.ukseo-card-number{display:flex;justify-content:space-between;align-items:center;color:var(--mrseo-brand-red);font-size:13px;letter-spacing:.09em;font-weight:850;margin-bottom:50px}
 .ukseo-card-number span{font-size:26px;font-weight:500}
 .ukseo-problem-card h3{font-size:clamp(23px,2vw,29px);line-height:1.18;letter-spacing:-.04em;font-weight:810;margin:0 0 15px}
 .ukseo-problem-card>p{color:#565f57;font-size:17px;font-weight:570;line-height:1.62;margin:0 0 24px}
 .ukseo-card-diagnosis{border-top:1px solid #d6d0c6;padding-top:20px;margin-top:auto}
-.ukseo-card-diagnosis span{display:block;font-size:12px;font-weight:840;letter-spacing:.07em;text-transform:uppercase;color:#9b513e;margin-bottom:9px}
+.ukseo-card-diagnosis span{display:block;font-size:12px;font-weight:840;letter-spacing:.07em;text-transform:uppercase;color:var(--mrseo-brand-red);margin-bottom:9px}
 .ukseo-card-diagnosis strong{font-size:16px;line-height:1.55;color:#364238;font-weight:690}
 .ukseo-decision{background:#e8e4dc;padding:clamp(75px,8vw,120px) 0;border-top:1px solid #d9d2c8;border-bottom:1px solid #d9d2c8}
 .ukseo-decision-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.84fr);gap:clamp(42px,8vw,140px);align-items:center}
@@ -56,16 +56,16 @@
 .ukseo-work{padding:clamp(80px,8vw,130px) 0;background:#fbf9f4}
 .ukseo-steps{list-style:none;padding:0;margin:0;border-top:1px solid #cfc9bf}
 .ukseo-steps li{display:grid;grid-template-columns:66px minmax(0,1.05fr) minmax(210px,.62fr);align-items:start;gap:25px;padding:27px 10px;border-bottom:1px solid #d7d1c8}
-.ukseo-step-index{font-size:14px;font-weight:810;letter-spacing:.04em;color:#ad5842;padding-top:5px}
+.ukseo-step-index{font-size:14px;font-weight:810;letter-spacing:.04em;color:var(--mrseo-brand-red);padding-top:5px}
 .ukseo-steps h3{font-size:clamp(23px,2.3vw,31px);line-height:1.25;font-weight:800;letter-spacing:-.04em;margin:0 0 9px}
 .ukseo-steps p{font-size:17px;font-weight:570;line-height:1.62;color:#4f5c52;max-width:580px;margin:0}
-.ukseo-steps li>strong{display:block;align-self:center;font-size:16px;font-weight:760;line-height:1.53;color:#48554b;border-left:3px solid #bd5946;padding-left:16px}
+.ukseo-steps li>strong{display:block;align-self:center;font-size:16px;font-weight:760;line-height:1.53;color:#48554b;border-left:3px solid var(--mrseo-brand-red);padding-left:16px}
 .ukseo-delivery{padding:clamp(75px,8vw,125px) 0;background:#f0ece4}
 .ukseo-delivery-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(30px,8vw,120px);align-items:start}
 .ukseo-delivery-grid>div:first-child>p{font-size:18px;font-weight:570;line-height:1.7;color:#4e594e;max-width:490px}
 .ukseo-delivery-list{border-top:1px solid #c6c1b7}
 .ukseo-delivery-list>div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:19px;padding:27px 0;border-bottom:1px solid #c6c1b7}
-.ukseo-delivery-list>div>span{font-size:13px;color:#a34a38;font-weight:850;padding-top:5px}
+.ukseo-delivery-list>div>span{font-size:13px;color:var(--mrseo-brand-red);font-weight:850;padding-top:5px}
 .ukseo-delivery-list h3{font-size:clamp(22px,2.3vw,29px);line-height:1.22;letter-spacing:-.043em;margin-bottom:9px}
 .ukseo-delivery-list p{font-size:17px;font-weight:570;color:#586157;line-height:1.65;margin:0}
 .ukseo-proof{padding:clamp(70px,7vw,110px) 0;background:#fffdf8}
@@ -78,7 +78,7 @@
 .ukseo-faq-items details{border-bottom:1px solid #cbc6bc}
 .ukseo-faq-items summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:82px;padding:19px 0;font-weight:800;font-size:clamp(19px,1.7vw,23px);line-height:1.4;letter-spacing:-.02em;list-style:none}
 .ukseo-faq-items summary::-webkit-details-marker{display:none}
-.ukseo-faq-items summary span{display:grid;place-items:center;flex:none;width:34px;height:34px;font-weight:500;font-size:24px;color:#ad4e37;border:1px solid #c9b0a6;border-radius:50%;transition:transform .2s ease}
+.ukseo-faq-items summary span{display:grid;place-items:center;flex:none;width:34px;height:34px;font-weight:500;font-size:24px;color:var(--mrseo-brand-red);border:1px solid #c9b0a6;border-radius:50%;transition:transform .2s ease}
 .ukseo-faq-items details[open] summary span{transform:rotate(45deg)}
 .ukseo-faq-items details>p{font-size:18px;font-weight:580;line-height:1.72;color:#4d594f;max-width:630px;padding:0 40px 22px 0;margin:0}
 .ukseo-final{background:#252f29;padding:clamp(68px,7.2vw,112px) 0;color:#f8f3ed}
