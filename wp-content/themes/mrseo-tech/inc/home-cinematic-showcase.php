@@ -123,7 +123,6 @@ $cs_services=array(
          <div class="cs-serp-result cs-serp-result--first"><small>Категорія · Структура</small><strong>Зрозуміла відповідь на запит</strong><span>Послуги • Деталі • Звернення</span><b></b></div>
          <div class="cs-serp-result cs-serp-result--second"><small>Сторінка · Оптимізація</small><strong>Релевантний зміст</strong><span>Зручність • Швидкість • Інформація</span></div>
         </div>
-        <div class="cs-visual-float cs-visual-float--left"><small>SEO</small><span>ЗАПИТ</span><strong>→ СТОРІНКА</strong></div>
 
        <?php elseif($key==='ads'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">A</span><span>GOOGLE ADS · СХЕМА</span></div>
