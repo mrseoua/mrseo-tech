@@ -16,7 +16,17 @@ function mrseo_ua_header_six($mobile=false){
   if($is_horoshop){
    echo '<section class="mrseo-ua-six-catalog-group"><h3>Напрями роботи</h3>';
    echo '<a href="'.esc_url(mrseo_url($group['parent'],'uk')).'"'.($current===$group['parent']?' aria-current="page"':'').'>Про послуги Хорошоп <span aria-hidden="true">↗</span></a>';
-   foreach($group['planned'] as $service)echo '<span class="mrseo-ua-six-unlinked">'.esc_html($service[1]).'</span>';
+   // Six real premium WordPress routes, Ukrainian-only.
+   $horoshop_anchors=array(
+    'horoshop-setup'=>'setup','horoshop-seo'=>'seo',
+    'horoshop-audit'=>'audit','horoshop-google-ads'=>'ads',
+    'horoshop-product-feeds'=>'feeds','horoshop-ga4'=>'ga4'
+   );
+   foreach($group['planned'] as $service){
+    $anchor=$horoshop_anchors[$service[0]]??null;
+    if(!$anchor)continue;
+    echo '<a href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($service[1]).' <span aria-hidden="true">↗</span></a>';
+   }
    echo '</section>';
   }else{
    foreach($group['sections'] as $section){

@@ -25,6 +25,7 @@ require_once get_template_directory() . '/inc/da-service-routing.php';
 require_once get_template_directory() . '/inc/final-market-services.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/international-seo.php';
+require_once get_template_directory() . '/inc/horoshop-premium-routes.php';
 require_once get_template_directory() . '/inc/privacy-page.php';
 require_once get_template_directory() . '/inc/eu-routing.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
@@ -192,6 +193,7 @@ function mrseo_assets(){
  if(mrseo_slug()==='horoshop' && in_array(mrseo_locale(),array('uk','ru'),true)){
   wp_enqueue_style('mrseo-horoshop-hero',get_template_directory_uri().'/assets/horoshop-hero.css',array('mrseo-style'),'3.1.0');
   wp_enqueue_script('mrseo-horoshop-interactive',get_template_directory_uri().'/assets/horoshop-interactive.js',array(),'3.0.1',true);
+  if(mrseo_locale()==='uk')wp_enqueue_style('mrseo-horoshop-services',get_template_directory_uri().'/assets/horoshop-services-ua.css',array('mrseo-horoshop-hero'),'1.0.0');
  }
  if(mrseo_slug()==='about')wp_enqueue_style('mrseo-about',get_template_directory_uri().'/assets/about-page.css',array('mrseo-style'),'1.0.0');
  // Remaining Ukrainian service pages and existing About/Portfolio/Contact/Development refinements.
