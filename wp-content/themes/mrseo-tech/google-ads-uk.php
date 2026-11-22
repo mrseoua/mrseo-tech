@@ -52,7 +52,7 @@ get_header();
  <section class="ukads-pricing" id="ukads-pricing" aria-labelledby="ukads-pricing-title">
   <div class="container">
    <div class="ukseo-section-head ukads-pricing-heading">
-    <div><span class="ukseo-kicker">ВАРТІСТЬ GOOGLE ADS</span><h2 id="ukads-pricing-title">Скільки коштує <em>Google Ads?</em></h2></div>
+    <div><span class="ukseo-kicker">ФОРМАТИ СПІВПРАЦІ</span><h2 id="ukads-pricing-title">Яка реклама <em>потрібна вам?</em></h2></div>
     <p>Окремо оплачуєте нашу роботу та рекламний бюджет у Google.</p>
    </div>
    <div class="ukads-price-grid">
@@ -66,8 +66,8 @@ get_header();
      </div>
      <h3>Google Ads Start</h3>
      <p class="ukads-price-lead">Для бізнесу, якому потрібні дзвінки та заявки з Google.</p>
-     <div class="ukads-price-cost"><span>ЩОМІСЯЦЯ ЗА ВЕДЕННЯ ВІД</span><strong>5 000 <small>₴/міс.</small></strong></div>
-     <div class="ukads-price-setup">Разове налаштування — <strong>від 5 900 ₴</strong></div>
+     
+     
      <ul>
       <li>Перевірка заявок і конверсій</li>
       <li>Налаштування та ведення пошукових кампаній</li>
@@ -85,8 +85,8 @@ get_header();
      </div>
      <h3>Shopping + PMax</h3>
      <p class="ukads-price-lead">Для магазинів, які хочуть продавати товари через Google.</p>
-     <div class="ukads-price-cost"><span>ЩОМІСЯЦЯ ЗА ВЕДЕННЯ ВІД</span><strong>10 000 <small>₴/міс.</small></strong></div>
-     <div class="ukads-price-setup">Разове налаштування — <strong>від 9 500 ₴</strong></div>
+     
+     
      <ul>
       <li>Перевірка Merchant Center і товарного фіда</li>
       <li>Ведення Shopping і Performance Max</li>
@@ -97,7 +97,7 @@ get_header();
    </div>
    <div class="ukads-pricing-footer">
     <div class="ukads-budget-coin" aria-hidden="true"><span>₴</span></div>
-    <div><strong>Рекламний бюджет сплачуєте Google окремо.</strong><p>Налаштування — разово, ведення — щомісяця. Обсяг робіт і точну ціну погоджуємо до старту.</p></div>
+    <div><strong>Рекламний бюджет сплачуєте Google окремо.</strong><p>Налаштування — разово, ведення — щомісяця. Обсяг робіт та умови співпраці погоджуємо до старту.</p></div>
    </div>
   </div>
  </section>
