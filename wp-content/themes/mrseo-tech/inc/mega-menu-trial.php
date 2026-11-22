@@ -1048,11 +1048,11 @@ function mrseo_ua_menu_groups(){
       ],
       [
         "horoshop-seo",
-        "SEO-просування Хорошоп"
+        "SEO-просування сайтів на Хорошоп"
       ],
       [
         "horoshop-audit",
-        "SEO-аудит Хорошоп"
+        "SEO-аудит сайтів на Хорошоп"
       ],
       [
         "horoshop-google-ads",
