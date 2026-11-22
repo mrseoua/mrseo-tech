@@ -12,7 +12,7 @@ assert "mrseo_ua_header_six(false)" in header and "mrseo_ua_header_six(true)" in
 assert "mrseo-ua-header-v2" in header
 assert "name=\"'.($mobile?'ua-six-mobile':'ua-six-desktop').'\"" in nav
 assert nav.count("mrseo_hs_url($anchor)") == 1
-assert nav.count("mrseo_url($slug,'uk')") == 1
+assert nav.count("mrseo_url($slug,'uk')") == 2  # SEO shortlist + other categories
 assert "foreach($groups as $group)" in nav
 assert "array('data','commerce')" in nav and "'dev'=>'Веброзробка'" in nav
 assert "'sites'=>'Сайти'" in nav
