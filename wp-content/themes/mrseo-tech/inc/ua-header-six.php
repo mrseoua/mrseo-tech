@@ -6,7 +6,8 @@ function mrseo_ua_header_six($mobile=false){
  $names=array('seo'=>'SEO','ads'=>'Google Ads','commerce'=>'Інтернет-магазини','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Веброзробка');
  echo '<nav class="mrseo-ua-six'.($mobile?' mrseo-ua-six--mobile':' mrseo-ua-six--desktop').'" aria-label="Напрями послуг"><div class="mrseo-ua-six-inner">';
  foreach($groups as $group){
-  if($group['key']==='data')continue;
+  // Hide the redundant e-commerce navigation category; keep its service URLs accessible elsewhere.
+  if(in_array($group['key'],array('data','commerce'),true))continue;
   $key=$group['key'];$is_horoshop=$key==='horoshop';
   echo '<details class="mrseo-ua-six-item mrseo-ua-six-item--'.esc_attr($key).'" name="'.($mobile?'ua-six-mobile':'ua-six-desktop').'">';
   echo '<summary>'.esc_html($names[$key]).'<span aria-hidden="true">⌄</span></summary>';
