@@ -23,14 +23,14 @@
 .pl-svc--en-gb-compact .pl-svc-scene-head{font-size:12px;letter-spacing:.02em}
 .pl-svc--en-gb-compact .pl-svc-scene-end{font-size:12px;letter-spacing:.01em}
 .pl-svc--en-gb-compact .pl-svc-scene-step strong{font-size:clamp(13px,1.2vw,15px);line-height:1.38}
-.pl-svc--en-gb-compact .pl-svc-light{background:#bd7761}
+.pl-svc--en-gb-compact .pl-svc-light{background:var(--mrseo-brand-red)}
 .pl-svc--en-gb-compact .pl-svc-needs,.pl-svc--en-gb-compact .pl-svc-outcomes,
 .pl-svc--en-gb-compact .pl-svc-faq{padding:clamp(50px,5vw,78px) 0}
 .pl-svc--en-gb-compact .pl-svc-need{min-height:0;padding:clamp(23px,2.2vw,30px)}
 .pl-svc--en-gb-compact .pl-svc-need-index{margin-bottom:20px}
 .pl-svc--en-gb-compact .pl-svc-need p{font-size:16px;line-height:1.55}
 .pl-svc--en-gb-compact .pl-svc-need-action strong{font-size:16px;line-height:1.5}
-.pl-svc--en-gb-compact .pl-svc-outcomes h2 em{color:#ae5549;font-style:normal}
+.pl-svc--en-gb-compact .pl-svc-outcomes h2 em{color:var(--mrseo-brand-red);font-style:normal}
 .pl-svc--en-gb-compact .pl-svc-outcomes-grid>div:first-child>p{font-size:15px;line-height:1.6}
 .pl-svc--en-gb-compact .pl-svc-final{background:#273032}
 .pl-svc--en-gb-compact .pl-svc-final h2{max-width:720px}
@@ -38,7 +38,7 @@
 .pl-svc--seo .pl-svc-bars i:nth-child(2),
 .pl-svc-seo-audit .pl-svc-bars i:nth-child(4){background:#d6a48a}
 .pl-svc--data .pl-svc-bars i:nth-child(3){background:#c4cfd0}
-.pl-svc--ads .pl-svc-bars i:nth-child(5){background:#bb7565}
+.pl-svc--ads .pl-svc-bars i:nth-child(5){background:var(--mrseo-brand-red)}
 .pl-svc--commerce .pl-svc-shop i:nth-child(2){border-color:#d1a593}
 .pl-svc--merchant .pl-svc-merchant span:first-child{color:#d98b79}
 .pl-svc--support .pl-svc-support i:nth-child(2){background:#d1ad9c}
@@ -83,9 +83,9 @@
 }
 .pl-svc--en-gb-compact .pl-svc-technical-link a,
 .uws-page .uws-en-gb-sibling a{
- color:#9d4036;font-weight:750;text-decoration:underline;text-underline-offset:4px;
+ color:var(--mrseo-brand-red);font-weight:750;text-decoration:underline;text-underline-offset:4px;
 }
 .pl-svc--en-gb-compact .pl-svc-technical-link a:focus-visible,
 .uws-page .uws-en-gb-sibling a:focus-visible{
- outline:2px solid #9d4036;outline-offset:3px;border-radius:3px
+ outline:2px solid var(--mrseo-brand-red);outline-offset:3px;border-radius:3px
 }

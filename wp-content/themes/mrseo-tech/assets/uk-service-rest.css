@@ -1,7 +1,7 @@
 /* MrSeo.tech — remaining premium Ukrainian service pages. 
    Extends approved ukseo.css. Exclusively included for selected UA internal routes. */
 .ukseo--solution .ukseo-hero{background:radial-gradient(ellipse at 87% 26%,#e3c5af46,transparent 44%),linear-gradient(125deg,#faf7f0,#f0ebe3)}
-.ukseo--solution .ukseo-problem-card:nth-child(3){border-top:3px solid #a94a38}
+.ukseo--solution .ukseo-problem-card:nth-child(3){border-top:3px solid var(--mrseo-brand-red)}
 .ukseo--solution .ukseo-hero-art .ms-scene{box-shadow:0 28px 70px #1c251c29}
 .ukseo--solution .ukseo-spec-row strong{font-size:17px;font-weight:700;line-height:1.57}
 .ukseo--solution .ukseo-spec-foot{font-size:14px;font-weight:600}
@@ -26,7 +26,7 @@
 .ukseo--horoshop .hs-demo-kicker{font-size:12px;font-weight:840}
 .ukseo--horoshop .hs-switch{font-size:15px!important;font-weight:800;line-height:1.3}
 .ukseo--horoshop .ukseo-decision{background:#e8e5dc}
-.ukseo--horoshop .ukseo-problem-card:nth-child(3){border-top:3px solid #a94a38}
+.ukseo--horoshop .ukseo-problem-card:nth-child(3){border-top:3px solid var(--mrseo-brand-red)}
 .ukseo--horoshop .ukseo-spec-row strong{font-size:17px;font-weight:700}
 .ukseo--horoshop .ukseo-faq-items details>p{font-size:18px;font-weight:580}
 .ukseo--horoshop .ukseo-faq-items summary{font-weight:800}

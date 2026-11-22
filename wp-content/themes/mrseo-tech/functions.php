@@ -37,8 +37,21 @@ function mrseo_setup() {
  register_nav_menus(array('primary'=>__('Primary Navigation','mrseo-tech')));
 }
 add_action('after_setup_theme','mrseo_setup');
+/**
+ * Force a fresh theme stylesheet download for the single brand palette rollout.
+ * This is scoped to this theme only; external logos/plugins retain their URLs.
+ */
+function mrseo_brand_palette_css_cache_key($src,$handle){
+ $theme_url=get_template_directory_uri().'/';
+ if(is_string($src) && strpos($src,$theme_url)===0){
+  return add_query_arg('brand_palette','a84432',$src);
+ }
+ return $src;
+}
+add_filter('style_loader_src','mrseo_brand_palette_css_cache_key',99,2);
+
 function mrseo_assets(){
- wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.6');
+ wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.7');
  if(function_exists('mrseo_uk_market_route') && mrseo_uk_market_route()){
   wp_enqueue_style('mrseo-uk-market-base',get_template_directory_uri().'/assets/pl-services.css',array('mrseo-international'),'1.0.0');
   wp_enqueue_style('mrseo-uk-market',get_template_directory_uri().'/assets/uk-market.css',array('mrseo-uk-market-base'),'1.1.0');

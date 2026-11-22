@@ -23,7 +23,7 @@
 .ukseo--ads .ukseo-card-number{margin-bottom:28px;position:relative;z-index:1}
 .ukseo--ads .ukseo-card-number span{
  display:grid;place-items:center;width:47px;height:47px;border-radius:15px;
- border:1px solid #cfb3a2;background:#f2e4dc;color:#a95241;
+ border:1px solid #cfb3a2;background:#f2e4dc;color:var(--mrseo-brand-red);
  box-shadow:4px 6px 0 #e0cbbd85;transform:rotate(-10deg);
 }
 .ukseo--ads .ukseo-problem-card h3{position:relative;z-index:1;font-size:clamp(24px,2.1vw,30px)}
@@ -69,11 +69,11 @@
 }
 .ukseo--ads .ukads-price-top{
  display:flex;align-items:center;justify-content:space-between;gap:14px;
- font-weight:850;font-size:12px;line-height:1.45;letter-spacing:.1em;color:#94513f;
+ font-weight:850;font-size:12px;line-height:1.45;letter-spacing:.1em;color:var(--mrseo-brand-red);
 }
 .ukseo--ads .ukads-price-top span:last-child{
  display:grid;place-items:center;width:32px;height:32px;border:1px solid #c6a693;
- border-radius:50%;font-size:19px;font-weight:700;letter-spacing:0;color:#a04b3a;
+ border-radius:50%;font-size:19px;font-weight:700;letter-spacing:0;color:var(--mrseo-brand-red);
 }
 .ukseo--ads .ukads-price-glyph{
  position:relative;isolation:isolate;height:170px;margin:15px -9px 12px;
@@ -93,7 +93,7 @@
 .ukseo--ads .ukads-price-planet{
  position:relative;z-index:2;display:grid;place-items:center;width:112px;height:100px;
  border-radius:26px;background:linear-gradient(150deg,#fdf7ee,#d7ded2);
- border:1px solid #b6c1b1;color:#a34d3a;font-size:62px;font-weight:720;
+ border:1px solid #b6c1b1;color:var(--mrseo-brand-red);font-size:62px;font-weight:720;
  line-height:1;box-shadow:11px 14px 0 #a2b2a258,19px 26px 28px #3c493a39;
  transform:rotateY(-15deg) rotateX(12deg);
  animation:ukads-glyph-float 8.5s ease-in-out infinite;
@@ -112,7 +112,7 @@
 .ukseo--ads .ukads-price-chip--two{right:6%;bottom:20px;animation-delay:-3.2s}
 .ukseo--ads .ukads-price-path{
  position:absolute;z-index:1;height:3px;width:67%;top:55%;
- background:linear-gradient(90deg,#bc684e,#e2b9a0,#658f76);border-radius:5px;
+ background:linear-gradient(90deg,var(--mrseo-brand-red),#e2b9a0,#658f76);border-radius:5px;
  box-shadow:0 4px 11px #9e8b7544;transform:rotate(-8deg);
 }
 .ukseo--ads .ukads-price-card h3{
@@ -128,7 +128,7 @@
  padding:18px 0 16px;border-top:1px solid #d9d5ca;
 }
 .ukseo--ads .ukads-price-cost>span{
- color:#94503d;font-size:12px;font-weight:850;letter-spacing:.07em;
+ color:var(--mrseo-brand-red);font-size:12px;font-weight:850;letter-spacing:.07em;
 }
 .ukseo--ads .ukads-price-cost strong{
  color:#222d27;font-size:clamp(45px,4.6vw,68px);font-weight:850;
@@ -142,7 +142,7 @@
  font-size:15px;line-height:1.45;color:#556055;font-weight:650;
  padding-bottom:17px;border-bottom:1px solid #d9d5ca;
 }
-.ukseo--ads .ukads-price-setup strong{color:#a34d3a;font-size:17px;font-weight:830;white-space:nowrap}
+.ukseo--ads .ukads-price-setup strong{color:var(--mrseo-brand-red);font-size:17px;font-weight:830;white-space:nowrap}
 .ukseo--ads .ukads-price-card ul{
  list-style:none;padding:17px 0 0;margin:0 0 25px;
  display:flex;flex-direction:column;gap:12px;
@@ -163,7 +163,7 @@
  transition:background .2s,transform .2s;
 }
 .ukseo--ads .ukads-price-link span{font-size:21px;line-height:1}
-.ukseo--ads .ukads-price-link:hover{background:#af523e;transform:translateY(-2px)}
+.ukseo--ads .ukads-price-link:hover{background:var(--mrseo-brand-red);transform:translateY(-2px)}
 .ukseo--ads .ukads-pricing-footer{
  display:flex;align-items:center;gap:24px;margin:29px 0 0;
  padding:21px 25px;background:#fffaf0cb;border:1px solid #dbd5c9;
@@ -175,7 +175,7 @@
  box-shadow:6px 7px 0 #b37c5a42;
  animation:ukads-coin-float 8s ease-in-out infinite;
 }
-.ukseo--ads .ukads-budget-coin span{font-size:35px;font-weight:780;color:#a9513f}
+.ukseo--ads .ukads-budget-coin span{font-size:35px;font-weight:780;color:var(--mrseo-brand-red)}
 .ukseo--ads .ukads-pricing-footer strong{
  display:block;color:#27382c;font-size:18px;line-height:1.4;font-weight:830;
 }
@@ -211,7 +211,7 @@
 }
 .ukseo--ads .ukads-flow-track{
  position:absolute;z-index:1;left:10%;right:10%;top:50%;height:3px;
- background:linear-gradient(90deg,#b25c44,#e0b398,#6c987c);
+ background:linear-gradient(90deg,var(--mrseo-brand-red),#e0b398,#6c987c);
  transform:translateY(-50%);box-shadow:0 5px 8px #3c4a3766;
 }
 .ukseo--ads .ukads-flow-node{
@@ -227,13 +227,13 @@
 .ukseo--ads .ukads-flow-node:nth-child(4){animation-delay:-4s}
 .ukseo--ads .ukads-flow-node:nth-child(5){animation-delay:-6s}
 .ukseo--ads .ukads-flow-node>span{
- color:#ad5945;font-size:12px;font-weight:850;letter-spacing:.08em;
+ color:var(--mrseo-brand-red);font-size:12px;font-weight:850;letter-spacing:.08em;
 }
 .ukseo--ads .ukads-flow-node strong{
  font-size:clamp(19px,2.2vw,30px);line-height:1.14;font-weight:840;letter-spacing:-.04em;
 }
 .ukseo--ads .ukads-flow-node b{
- align-self:flex-end;font-size:30px;font-weight:590;color:#a54d39;line-height:1;
+ align-self:flex-end;font-size:30px;font-weight:590;color:var(--mrseo-brand-red);line-height:1;
 }
 .ukseo--ads .ua-sv--ads-decisions{padding:clamp(58px,5.8vw,85px) 0}
 .ukseo--ads .ua-sv--ads-decisions .ua-sv-heading{margin-bottom:25px}
@@ -259,7 +259,7 @@
 }
 .ukseo--ads .ukseo-faq-grid>div:first-child:before{
  content:"?";position:absolute;z-index:1;left:67px;bottom:19px;
- font-size:68px;font-weight:830;color:#ac5742;line-height:1;
+ font-size:68px;font-weight:830;color:var(--mrseo-brand-red);line-height:1;
  pointer-events:none;
 }
 .ukseo--ads .ukseo-faq-items details>p{font-size:16px;line-height:1.6}
@@ -278,7 +278,7 @@
  animation:ukads-coin-float 8s ease-in-out infinite;
 }
 .ukseo--ads .ukads-final-seal span{font-size:12px;font-weight:850;letter-spacing:.05em;color:#3d5946}
-.ukseo--ads .ukads-final-seal strong{color:#a54c3c;font-size:27px}
+.ukseo--ads .ukads-final-seal strong{color:var(--mrseo-brand-red);font-size:27px}
 .ukseo--ads .ukads-final-seal i{flex:0 0 100%;font-size:36px;color:#5a8965;font-style:normal;line-height:1}
 @keyframes ukads-ring-float{
  0%,100%{translate:0 0;opacity:.7}50%{translate:-8px 12px;opacity:1}

@@ -1,9 +1,9 @@
 /* Ukraine-only Google Ads visual extension. Reuses approved problem-led UA typography. */
 .ukseo--ads .ukseo-hero{background:radial-gradient(ellipse at 88% 18%,#e1b4a43b,transparent 42%),linear-gradient(120deg,#faf7f0,#efebe2)}
-.ukseo--ads .ukseo-hero h1 em{color:#a94634}
+.ukseo--ads .ukseo-hero h1 em{color:var(--mrseo-brand-red)}
 .ukseo--ads .ukseo-hero-art .ms-scene{border:1px solid #526051;box-shadow:0 28px 74px #242e2729}
 .ukseo--ads .ukseo-problem-card:nth-child(2){background:#f0e7e0}
-.ukseo--ads .ukseo-problem-card:nth-child(3){border-top:3px solid #ae5341}
+.ukseo--ads .ukseo-problem-card:nth-child(3){border-top:3px solid var(--mrseo-brand-red)}
 .ukseo--ads .ukseo-visual-caption{font-size:13px;font-weight:670}
 .ukseo--ads .ms-top-mark{font-size:12px;font-weight:850}
 .ukseo--ads .ms-ads-card{font-size:13px;font-weight:790;line-height:1.45;overflow-wrap:anywhere}

@@ -1,6 +1,6 @@
 /* Premium polish for the Ukrainian two-row header. Six services, no portfolio in top navigation.
    The WordPress homepage 3D Earth and all other 19 locales are untouched. */
-.site-header:has(.mrseo-ua-six--desktop){--u6-red:#9b4335;--u6-ink:#24221f;--u6-line:#e8ddd0;background:#fcfaf6}
+.site-header:has(.mrseo-ua-six--desktop){--u6-red:var(--mrseo-brand-red);--u6-ink:#24221f;--u6-line:#e8ddd0;background:#fcfaf6}
 .site-header:has(.mrseo-ua-six--desktop) .nav-links>.nav-dropdown{display:none!important}
 .site-header:has(.mrseo-ua-six--desktop)>.container.nav{min-height:78px;gap:clamp(13px,1.9vw,29px)}
 .site-header:has(.mrseo-ua-six--desktop) .nav-links{gap:clamp(18px,2.4vw,38px)}
@@ -10,16 +10,16 @@
 .site-header .mrseo-ua-six-item{position:relative;min-width:0}
 .site-header .mrseo-ua-six-item summary{display:flex;align-items:center;justify-content:space-between;gap:9px;min-height:39px;padding:10px clamp(13px,1.2vw,21px);font-size:clamp(13px,1vw,15px);font-weight:750;line-height:1.2;letter-spacing:-.008em;color:#302b26;background:#fffdf9;border:1px solid #e7ddcf;border-radius:10px;cursor:pointer;white-space:nowrap;list-style:none;box-shadow:0 1px 2px #33200c07;transition:background .18s,border-color .18s,box-shadow .18s,color .18s}
 .site-header .mrseo-ua-six-item summary::-webkit-details-marker{display:none}
-.site-header .mrseo-ua-six-item summary span{font-size:15px;line-height:1;color:#a85847;transition:transform .18s}
+.site-header .mrseo-ua-six-item summary span{font-size:15px;line-height:1;color:var(--mrseo-brand-red);transition:transform .18s}
 .site-header .mrseo-ua-six-item[open] summary span{transform:rotate(180deg)}
-.site-header .mrseo-ua-six-item summary:hover,.site-header .mrseo-ua-six-item[open] summary{background:#f1e6da;color:#8f372c;border-color:#dbc0aa;box-shadow:0 4px 13px #41271c0d}
-.site-header .mrseo-ua-six-item summary:focus-visible,.site-header .mrseo-ua-six-panel a:focus-visible{outline:3px solid #9b4335;outline-offset:2px}
+.site-header .mrseo-ua-six-item summary:hover,.site-header .mrseo-ua-six-item[open] summary{background:#f1e6da;color:var(--mrseo-brand-red);border-color:#dbc0aa;box-shadow:0 4px 13px #41271c0d}
+.site-header .mrseo-ua-six-item summary:focus-visible,.site-header .mrseo-ua-six-panel a:focus-visible{outline:3px solid var(--mrseo-brand-red);outline-offset:2px}
 .site-header .mrseo-ua-six--desktop .mrseo-ua-six-panel{position:absolute;top:calc(100% + 9px);left:0;min-width:250px;width:max-content;max-width:min(355px,calc(100vw - 26px));padding:10px;background:#fffdfa;border:1px solid #e6d7c7;border-radius:14px;box-shadow:0 19px 48px #261a122a,0 3px 11px #261a120a;z-index:11000}
 .site-header .mrseo-ua-six--desktop .mrseo-ua-six-item:nth-last-child(-n+2) .mrseo-ua-six-panel{left:auto;right:0}
 .site-header .mrseo-ua-six-panel a{display:flex!important;align-items:center;justify-content:space-between;gap:12px;min-height:43px;padding:11px 12px!important;font-size:14px!important;line-height:1.4;font-weight:650;color:#302923!important;text-decoration:none;white-space:normal!important;border-radius:8px}
-.site-header .mrseo-ua-six-panel a:hover,.site-header .mrseo-ua-six-panel a[aria-current=page]{color:#8f392e!important;background:#f6eee5}
-.site-header .mrseo-ua-six-panel a span{color:#a85847;flex:none}
-.site-header .mrseo-ua-six-panel a.mrseo-ua-six-primary{color:#92382c!important;background:#f4e8db;font-weight:800;margin-bottom:5px}
+.site-header .mrseo-ua-six-panel a:hover,.site-header .mrseo-ua-six-panel a[aria-current=page]{color:var(--mrseo-brand-red)!important;background:#f6eee5}
+.site-header .mrseo-ua-six-panel a span{color:var(--mrseo-brand-red);flex:none}
+.site-header .mrseo-ua-six-panel a.mrseo-ua-six-primary{color:var(--mrseo-brand-red)!important;background:#f4e8db;font-weight:800;margin-bottom:5px}
 .site-header .mrseo-ua-six-panel a::after{display:none!important}
 .site-header .mrseo-ua-six--mobile{display:none}
 @media(min-width:951px) and (max-width:1120px){
@@ -39,7 +39,7 @@
 
 /* Service-first hierarchy (Ukrainian only): logo + six directions + action above,
    subdued About/Contacts/phone utility line below. Switch to hamburger before crowding. */
-.site-header.mrseo-ua-header-v2{--u6-red:#9b4335;--u6-ink:#24221f;--u6-line:#e8ddd0}
+.site-header.mrseo-ua-header-v2{--u6-red:var(--mrseo-brand-red);--u6-ink:#24221f;--u6-line:#e8ddd0}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary{max-width:1760px;min-height:76px;display:flex;align-items:center;gap:clamp(12px,1.25vw,22px);padding-left:clamp(18px,2.1vw,36px);padding-right:clamp(18px,2.1vw,36px)}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-primary .logo{flex:none;font-size:clamp(23px,1.9vw,28px)}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-six--desktop{flex:1;min-width:0;background:transparent;border:0;z-index:10}
@@ -52,7 +52,7 @@
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility-inner{max-width:1700px;margin:0 auto;padding:7px clamp(18px,2.1vw,36px);display:flex;align-items:center;justify-content:flex-end;gap:clamp(16px,2vw,30px);min-height:35px}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility-links{display:flex;align-items:center;gap:25px}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility-links a{font-size:13px;font-weight:650;color:#65594f;text-decoration:none;white-space:nowrap}
-.site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility-links a:hover{color:#9b4335}
+.site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility-links a:hover{color:var(--mrseo-brand-red)}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility .mrseo-header-contact{display:flex;align-items:center}
 .site-header.mrseo-ua-header-v2 .mrseo-ua-nav-utility a[href^="tel:"]{font-weight:750;color:#3b302a;white-space:nowrap}
 @media(max-width:1250px){

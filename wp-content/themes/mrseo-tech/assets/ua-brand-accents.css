@@ -1,11 +1,11 @@
 /* Ukrainian interior accent contract. The approved Premium Tech heading red
- * is #ac4634. Small light-surface labels use a deeper red for contrast.
+ * is var(--mrseo-brand-red). Small light-surface labels use a deeper red for contrast.
  * Dark confidentiality panel retains a light-on-dark red; no artwork recolor.
  * Loaded only on canonical UA interiors, never on the locked homepage or RU. */
 .pti-page,
 body:has(.pue-marker){
- --mrseo-ua-heading-red:#ac4634;
- --mrseo-ua-label-red:#8c392a;
+ --mrseo-ua-heading-red:var(--mrseo-brand-red);
+ --mrseo-ua-label-red:var(--mrseo-brand-red);
  --mrseo-ua-dark-red:#f2a38c;
 }
 .pti-page :is(h1,h2,h3) em,
