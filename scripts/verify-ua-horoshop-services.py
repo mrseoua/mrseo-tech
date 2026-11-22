@@ -124,7 +124,7 @@ for key in ('search-ads','shopping','pmax'):
  assert "'"+key+"'=>array(" in story,('missing story',key)
  assert "mrseo_hs_url('"+key+"')" in page,('missing overview navigation',key)
  assert "=>array(" not in header or "'"+key+"'=>" in header,('missing desktop/mobile menu route',key)
- assert "$key==='"+key+"'" in ads_visual,('missing original animation illustration',key)
+ assert ("$key==='"+key+"'" in ads_visual if key!="pmax" else "'pmax'=>array(" in ads_visual),('missing original animation illustration',key)
  assert "hs-ads-"+('search' if key=='search-ads' else 'shopping' if key=='shopping' else 'pmax')+"-preview" in ads_visual
 assert "mrseo_hs_paid_scene($key)" in premium
 assert "horoshop-ads-scenes.css" in functions and "horoshop-ads-scenes.css" in premium_routes
