@@ -77,6 +77,35 @@ get_header();
    </div>
   </div>
  </section>
+ <?php if($psc_slug==='local-business-websites' && function_exists('mrseo_ua_business_niche_data')):?>
+ <section class="mrseo-niches-directory" id="business-sites" aria-labelledby="mrseo-niches-heading">
+  <div class="pti-wrap">
+   <div class="mrseo-niches-intro">
+    <span class="pti-kicker">САЙТИ ПІД РЕАЛЬНУ ПОСЛУГУ</span>
+    <h2 id="mrseo-niches-heading">Кожен бізнес має <em>свій шлях до заявки.</em></h2>
+    <p>Для клініки важливий запис на прийом, для кафе — меню й бронювання, для фотографа — портфоліо. Оберіть напрям, щоб побачити структуру сайту під вашу задачу.</p>
+   </div>
+   <div class="mrseo-niches-cards">
+    <?php $nicheLabels=array(
+     'clinic-websites'=>'Клініки й медичні центри',
+     'beauty-salon-websites'=>'Салони краси',
+     'restaurant-websites'=>'Кафе та ресторани',
+     'auto-service-websites'=>'СТО й автосервіси',
+     'lawyer-websites'=>'Адвокати та юристи',
+     'photographer-websites'=>'Фотографи',
+     'psychologist-websites'=>'Психологи'
+    );foreach($nicheLabels as $nicheSlug=>$nicheName):$niche=mrseo_ua_business_niche_data($nicheSlug);if(!$niche)continue;?>
+    <a class="mrseo-niches-card" href="<?php echo esc_url(mrseo_url($nicheSlug,'uk'));?>">
+     <span class="mrseo-niches-card-top"><i aria-hidden="true"></i><?php echo esc_html($niche['kicker']);?></span>
+     <strong><?php echo esc_html($nicheName);?></strong>
+     <span class="mrseo-niches-card-text"><?php echo esc_html($niche['demo'][1]);?></span>
+     <span class="mrseo-niches-card-action">Детальніше <b aria-hidden="true">↗</b></span>
+    </a>
+    <?php endforeach;?>
+   </div>
+  </div>
+ </section>
+ <?php endif;?>
  <section class="pti-section psc-faq-section"><div class="pti-wrap pti-faq">
   <div><span class="pti-kicker">ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>"><?php echo esc_html($psc['faqHeading']??'Коротко про важливе.');?></h2><?php if(!empty($psc['faqLead'])):?><p><?php echo esc_html($psc['faqLead']);?></p><?php endif;?></div>
   <div><?php foreach($psc['faq'] as $i=>$item):?><details><summary><?php echo esc_html($item[0]);?></summary><p><?php echo esc_html($item[1]);?></p></details><?php endforeach;?></div>
