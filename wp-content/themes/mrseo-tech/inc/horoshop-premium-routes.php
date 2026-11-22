@@ -151,8 +151,43 @@ add_filter('redirect_canonical',function($url){return mrseo_hs_key()?false:$url;
 add_filter('template_include',function($template){
  return mrseo_hs_key()?get_template_directory().'/horoshop-service-premium.php':$template;
 },110);
+/**
+ * Commercial intent per page, separated from the broad navigational Horoshop queries.
+ * Serpstat g_ua snapshot 2026-11-22: development 390, SEO stores 30,
+ * ads setup 70, product feed 10. Low-volume/no-data Horoshop combinations
+ * are included naturally, never represented as measured traffic.
+ */
+function mrseo_hs_search_meta($key){
+ $meta=array(
+  'setup'=>array(
+   'Створення інтернет-магазину на Хорошоп | MrSeo.tech',
+   'Створення магазину на Хорошоп: структура каталогу, оплата, доставка й тестове замовлення. Офіційний партнер Хорошоп, команда з 10-річним досвідом.'
+  ),
+  'seo'=>array(
+   'SEO-просування магазину на Хорошоп | MrSeo.tech',
+   'SEO для інтернет-магазину на Хорошоп: категорії, фільтри, метатеги й індексація. Офіційний партнер Хорошоп, команда з 10-річним досвідом.'
+  ),
+  'audit'=>array(
+   'SEO-аудит магазину на Хорошоп | MrSeo.tech',
+   'SEO-аудит Хорошоп: перевірка індексації, фільтрів, canonical та технічних URL. Звіт із пріоритетами від офіційного партнера Хорошоп.'
+  ),
+  'ads'=>array(
+   'Google Ads для Хорошоп — Shopping та Performance Max | MrSeo.tech',
+   'Google Ads для магазину на Хорошоп: Shopping, Performance Max, товарні кампанії й перевірка конверсій. Офіційний партнер Хорошоп.'
+  ),
+  'feeds'=>array(
+   'Товарний фід Хорошоп і Google Merchant Center | MrSeo.tech',
+   'Налаштування товарного фіда Хорошоп і Merchant Center: ціни, залишки, атрибути, відхилені товари. Офіційний партнер Хорошоп.'
+  ),
+  'ga4'=>array(
+   'Налаштування GA4 та конверсій для Хорошоп | MrSeo.tech',
+   'Налаштування GA4 для магазину на Хорошоп: подія purchase, вартість замовлення, дублікати та імпорт конверсій Google Ads. 10 років досвіду команди.'
+  )
+ );
+ return $meta[$key]??null;
+}
 add_filter('pre_get_document_title',function($title){
- $k=mrseo_hs_key();return $k?mrseo_hs_pages()[$k][0].' — послуги для магазину | MrSeo.tech':$title;
+ $k=mrseo_hs_key();$m=$k?mrseo_hs_search_meta($k):null;return $m?$m[0]:$title;
 },1100);
 add_action('wp',function(){
  if(mrseo_hs_key())remove_action('wp_head','rel_canonical');
@@ -160,11 +195,13 @@ add_action('wp',function(){
 add_action('wp_head',function(){
  $k=mrseo_hs_key();if(!$k)return;
  $p=mrseo_hs_pages()[$k];
- echo '<meta name="description" content="'.esc_attr($p[2].' '.$p[4]).'">'."\n";
+ $m=mrseo_hs_search_meta($k);
+ echo '<meta name="description" content="'.esc_attr($m[1]).'">'."\n";
  echo '<link rel="canonical" href="'.esc_url(mrseo_hs_url($k)).'">'."\n";
 },2);
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_hs_key())return;
  wp_enqueue_style('mrseo-horoshop-premium-pages',get_template_directory_uri().'/assets/horoshop-premium-pages.css',array('mrseo-style'),'1.2.0');
+ wp_enqueue_style('mrseo-horoshop-partner-trust',get_template_directory_uri().'/assets/horoshop-partner-trust.css',array('mrseo-horoshop-premium-pages'),'1.0.0');
  wp_enqueue_script('mrseo-horoshop-premium-motion',get_template_directory_uri().'/assets/horoshop-premium-motion.js',array(),'1.0.0',true);
 },105);

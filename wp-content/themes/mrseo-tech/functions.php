@@ -192,6 +192,7 @@ function mrseo_assets(){
  }
  if(mrseo_slug()==='horoshop' && in_array(mrseo_locale(),array('uk','ru'),true)){
   wp_enqueue_style('mrseo-horoshop-hero',get_template_directory_uri().'/assets/horoshop-hero.css',array('mrseo-style'),'3.1.0');
+  wp_enqueue_style('mrseo-horoshop-partner-trust',get_template_directory_uri().'/assets/horoshop-partner-trust.css',array('mrseo-horoshop-hero'),'1.0.0');
   wp_enqueue_script('mrseo-horoshop-interactive',get_template_directory_uri().'/assets/horoshop-interactive.js',array(),'3.0.1',true);
   if(mrseo_locale()==='uk')wp_enqueue_style('mrseo-horoshop-services',get_template_directory_uri().'/assets/horoshop-services-ua.css',array('mrseo-horoshop-hero'),'1.0.0');
  }

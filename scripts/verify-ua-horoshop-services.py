@@ -86,4 +86,18 @@ assert "не фактичний звіт" in story
 assert "hs-story-motion-on" in motion and "visibilitychange" in motion
 assert "prefers-reduced-motion:reduce" in premium_css
 assert "1.2.0" in premium_routes
+# Verified Horoshop partner trust + specific commercial metadata.
+trust_css=(root/"assets/horoshop-partner-trust.css").read_text(encoding="utf-8")
+assert "mrseo_hs_trust(true)" in page and "mrseo_hs_trust();" in premium
+assert "Офіційний партнер Хорошоп" in story and "10-річним досвідом" in story
+assert "horoshop.ua/ua/offers/seo-na-etape-razrabotki-im-na-horoshop/" in story
+assert "noopener noreferrer" in story
+assert "horoshop-partner-trust.css" in functions and "horoshop-partner-trust.css" in premium_routes
+assert "prefers-reduced-motion:reduce" in trust_css
+assert "mrseo_hs_search_meta($key)" in premium_routes
+for key in ("setup","seo","audit","ads","feeds","ga4"):
+ assert "'"+key+"'=>array(" in premium_routes,("unique metadata absent",key)
+assert "Офіційний партнер Хорошоп" in info['description']
+assert "10-річним досвідом" in info['description']
+
 print("Horoshop UA: six premium routes, premium below-fold motion narratives and interactive hero, original partner visual, metadata, noindex and UA/RU routing preserved.")

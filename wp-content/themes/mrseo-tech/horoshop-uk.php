@@ -2,6 +2,7 @@
 /** Ukrainian-only Horoshop page with original partner hero kept verbatim. */
 if(!defined('ABSPATH'))exit;
 if(mrseo_locale()==='uk'){require_once get_template_directory().'/inc/premium-ua-editorial.php';mrseo_pue_setup('horoshop');}
+require_once get_template_directory().'/inc/horoshop-premium-story.php';
 get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 ?>
 <div class="ukseo ukseo--horoshop" id="main-content">
@@ -16,6 +17,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     'Категории не находят в Google? Фильтры мешают индексации? Merchant Center отклоняет товары? Находим причину, предлагаем решение с учётом возможностей Хорошоп и проверяем результат.',
     'We find and fix catalog, indexing and shopping feed issues.'
    ));?></p>
+   <p class="hs-hero-partner-line"><?php echo esc_html(mrseo_t('Офіційний партнер Хорошоп · 10 років досвіду команди в SEO та Google Ads','Официальный партнёр Хорошоп · 10 лет опыта команды в SEO и Google Ads','Official Horoshop partner'));?></p>
    <a class="btn hs-hero-cta" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html(mrseo_t('Обговорити свій магазин','Обсудить свой магазин','Discuss your store'));?> <span aria-hidden="true">↗</span></a>
   </div>
   <div class="hs-showcase" aria-label="<?php echo esc_attr(mrseo_t('Інтерактивна модель розвитку магазину Хорошоп','Интерактивная модель развития магазина Хорошоп','Horoshop store SEO interactive model'));?>">
@@ -48,6 +50,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
  </div>
 </section>
 </section>
+<?php mrseo_hs_trust(true);?>
 <section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
  <div class="ukseo-section-head">
   <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-problem-title">Що саме заважає <em>клієнту знайти й купити товар?</em></h2></div>
