@@ -16,7 +16,7 @@ $scenes=array(
 $visual=$scenes[$key];
 get_header();
 ?>
-<main class="hs-premium hs-premium--<?php echo esc_attr($key);?>" data-hs-premium="<?php echo esc_attr($key);?>">
+<div class="hs-premium hs-premium--<?php echo esc_attr($key);?>" data-hs-premium="<?php echo esc_attr($key);?>">
  <section class="hs-premium-hero">
   <div class="hs-premium-wrap hs-premium-hero-grid">
    <div class="hs-premium-copy">
@@ -71,5 +71,5 @@ get_header();
  </section>
  <section class="hs-premium-related"><div class="hs-premium-wrap"><span class="hs-premium-eyebrow">ПОВ’ЯЗАНІ ПОСЛУГИ</span><div class="hs-premium-related-grid"><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Усі послуги Хорошоп <span aria-hidden="true">↗</span></a><a href="<?php echo esc_url(mrseo_url($p[16],'uk'));?>"><?php echo esc_html($p[17]);?> <span aria-hidden="true">↗</span></a></div></div></section>
  <section class="hs-premium-final"><div class="hs-premium-wrap"><span class="hs-premium-eyebrow">Є КОНКРЕТНА ПРОБЛЕМА?</span><h2>Опишіть задачу. <em>Знайдемо реальне рішення.</em></h2><p>Надішліть адресу магазину й поясніть, що не працює. Спочатку перевіримо обсяг задачі та можливості платформи.</p><a class="hs-premium-button hs-premium-button-light" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити Хорошоп ↗</a></div></section>
-</main>
+</div>
 <?php get_footer();?>
