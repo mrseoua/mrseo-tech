@@ -764,7 +764,7 @@ async function audit(browser,viewport,lang,slug){
       hubRows:desktop?.querySelectorAll('.mrseo-ua-six-primary').length, horoshopHub:[...desktop?.querySelectorAll('.mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog-group a')||[]].map(x=>new URL(x.href).pathname+new URL(x.href).hash),
       assets:!!document.querySelector('link[href*="ua-six-header.css"]')&&!!document.querySelector('script[src*="ua-six-header.js"]')};
    });
-   if(six.desktop!==5||six.mobile!==5||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Хорошоп','Сайти','Веброзробка'])||six.hubRows!==0||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/','/horoshop/#hs-setup','/horoshop/#hs-seo','/horoshop/#hs-audit','/horoshop/#hs-ads','/horoshop/#hs-feeds','/horoshop/#hs-ga4'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
+   if(six.desktop!==5||six.mobile!==5||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Хорошоп','Сайти','Веброзробка'])||six.hubRows!==0||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/','/horoshop/setup/','/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/feeds/','/horoshop/ga4/'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
   }
   if(lang==='uk'){
    const top=await page.evaluate(()=>{
