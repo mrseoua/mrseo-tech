@@ -44,7 +44,7 @@
  animation:uws-float-search 7s ease-in-out infinite;
 }
 .uws-local-search span{font-size:14px;line-height:1.4;font-weight:740;flex:1}
-.uws-local-search b{color:#b35440;font-size:18px}
+.uws-local-search b{color:var(--mrseo-brand-red);font-size:18px}
 .uws-local-result{
  display:flex;align-items:center;gap:16px;
  padding:20px 16px;border-radius:15px;border:1px solid #c0c5b4;
@@ -55,11 +55,11 @@
 }
 .uws-local-pin{
  display:grid;place-items:center;flex:0 0 55px;height:58px;
- border-radius:17px;background:#e9c6b6;color:#9e4231;font-size:40px;
+ border-radius:17px;background:#e9c6b6;color:var(--mrseo-brand-red);font-size:40px;
  transform:rotate(-8deg);
 }
 .uws-local-result>div{display:flex;flex-direction:column;gap:3px;min-width:0}
-.uws-local-result small{font-size:10px;color:#a54a39;font-weight:850;letter-spacing:.09em}
+.uws-local-result small{font-size:10px;color:var(--mrseo-brand-red);font-weight:850;letter-spacing:.09em}
 .uws-local-result strong{font-size:clamp(19px,2vw,26px);letter-spacing:-.02em;line-height:1.14}
 .uws-local-result>div>span{color:#606c5f;font-size:12px;font-weight:650}
 .uws-demo-mini-actions{display:flex;gap:8px;flex-wrap:wrap;margin-inline:23px}
@@ -71,7 +71,7 @@
  box-shadow:11px 13px 0 #b0a89a4a,18px 27px 35px #111b1552;
  color:#27362e;transform:rotate(-2deg);animation:uws-landing-hover 8s ease-in-out infinite;
 }
-.uws-landing-tag{font-size:11px;font-weight:830;letter-spacing:.09em;color:#a24e3d;margin-bottom:19px}
+.uws-landing-tag{font-size:11px;font-weight:830;letter-spacing:.09em;color:var(--mrseo-brand-red);margin-bottom:19px}
 .uws-landing>strong{font-size:clamp(25px,3vw,37px);line-height:1.2;letter-spacing:-.035em}
 .uws-landing-lines{display:flex;flex-direction:column;gap:8px;margin:20px 0}
 .uws-landing-lines i{display:block;background:#b8c2b5;height:7px;border-radius:5px;width:82%}
@@ -87,15 +87,15 @@
 .uws-corporate-bar b{font-weight:890;letter-spacing:.04em}
 .uws-corporate-bar span{font-size:9px;color:#6b746b}
 .uws-corporate-hero{display:flex;flex-direction:column;gap:11px;min-height:151px;padding:25px 25px 15px;background:radial-gradient(circle at 85% 49%,#d2aa9570,transparent 42%),linear-gradient(110deg,#f7f4eb,#e5e6d8)}
-.uws-corporate-hero small{font-weight:850;font-size:10px;color:#a65846;letter-spacing:.09em}
+.uws-corporate-hero small{font-weight:850;font-size:10px;color:var(--mrseo-brand-red);letter-spacing:.09em}
 .uws-corporate-hero strong{font-size:clamp(22px,2.4vw,32px);line-height:1.17;letter-spacing:-.03em}
-.uws-corporate-hero i{display:block;width:65px;height:4px;background:#b95945;border-radius:3px}
+.uws-corporate-hero i{display:block;width:65px;height:4px;background:var(--mrseo-brand-red);border-radius:3px}
 .uws-corporate-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:13px}
 .uws-corporate-cards span{font-size:11px;font-weight:750;padding:12px 6px;text-align:center;border:1px solid #d7dcd1;background:#f0f0e8;border-radius:6px}
 .uws-redesign{width:100%;display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr);align-items:stretch;gap:5px;min-height:225px}
 .uws-redesign-before,.uws-redesign-after{display:flex;flex-direction:column;gap:9px;min-width:0}
 .uws-redesign-before small,.uws-redesign-after small{align-self:flex-start;padding:5px 9px;border-radius:5px;background:#f8f3ec;color:#5e675d;font-weight:880;font-size:10px;letter-spacing:.06em}
-.uws-redesign-after small{color:#aa4e3e}
+.uws-redesign-after small{color:var(--mrseo-brand-red)}
 .uws-redesign-old,.uws-redesign-new{min-height:207px;display:flex;flex-direction:column;border-radius:12px;background:#c9c7c0;padding:18px 12px;box-shadow:0 12px 20px #10181040}
 .uws-redesign-old{gap:18px;filter:saturate(.6);opacity:.83;transform:rotate(-5deg)}
 .uws-redesign-old i{display:block;height:13px;width:100%;border:1px solid #b3b0a9;background:#b9b6ae;border-radius:2px}
@@ -114,7 +114,7 @@
 .uws-page .ukseo-problem-card{min-height:0;padding:clamp(22px,2.4vw,30px);transition:transform .24s,box-shadow .24s}
 .uws-page .ukseo-problem-card:hover{transform:translateY(-4px);box-shadow:0 24px 36px #252d2315}
 .uws-page .ukseo-card-number{margin-bottom:27px}
-.uws-page .ukseo-card-number span{font-size:25px;color:#a85440}
+.uws-page .ukseo-card-number span{font-size:25px;color:var(--mrseo-brand-red)}
 .uws-page .ukseo-problem-card h3{font-size:clamp(22px,2vw,27px);margin-bottom:12px;letter-spacing:-.018em;line-height:1.23}
 .uws-page .ukseo-problem-card>p{font-size:16px;line-height:1.53;margin:0}
 .uws-page h2{font-size:clamp(34px,4vw,55px);letter-spacing:-.027em;line-height:1.13}
@@ -123,7 +123,7 @@
 .uws-solution-lead>p{font-size:17px;line-height:1.62;color:#505d51;margin:18px 0 25px}
 .uws-solution-list{border-top:1px solid #c9c2b8}
 .uws-solution-list>div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:22px 0;border-bottom:1px solid #c9c2b8}
-.uws-solution-list>div>span{font-size:13px;font-weight:850;color:#ab5341;padding-top:4px}
+.uws-solution-list>div>span{font-size:13px;font-weight:850;color:var(--mrseo-brand-red);padding-top:4px}
 .uws-solution-list h3{font-size:clamp(20px,2.15vw,27px);letter-spacing:-.015em;line-height:1.22;margin:0 0 8px}
 .uws-solution-list p{margin:0;font-size:16px;font-weight:560;line-height:1.55;color:#596356}
 .uws-faq{padding:clamp(55px,5.5vw,83px) 0}
@@ -163,7 +163,7 @@
 
 
 /* One concrete deliverable per service instead of an extra generic explanation. */
-.uws-result{margin:22px 0 25px;padding:18px 20px;border-left:3px solid #ad604b;background:#f7f3eb;border-radius:0 12px 12px 0}
-.uws-result>span{display:block;margin-bottom:9px;font-size:11px;letter-spacing:.09em;color:#995341;font-weight:850}
+.uws-result{margin:22px 0 25px;padding:18px 20px;border-left:3px solid var(--mrseo-brand-red);background:#f7f3eb;border-radius:0 12px 12px 0}
+.uws-result>span{display:block;margin-bottom:9px;font-size:11px;letter-spacing:.09em;color:var(--mrseo-brand-red);font-weight:850}
 .uws-result>p{font-size:clamp(16px,1.35vw,18px);line-height:1.52;color:#2c3b32;font-weight:680;margin:0}
 @media(max-width:620px){.uws-result{margin:18px 0 23px;padding:16px}}
