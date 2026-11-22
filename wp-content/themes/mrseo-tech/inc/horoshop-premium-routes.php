@@ -201,9 +201,9 @@ add_action('init',function(){
  add_rewrite_rule('^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)/?$','index.php?mrseo_service=horoshop','top');
 },12);
 add_action('init',function(){
- if(get_option('mrseo_hs_premium_routes_v1')!=='ready'){
+ if(get_option('mrseo_hs_premium_routes_v2')!=='ready'){
   flush_rewrite_rules(false);
-  update_option('mrseo_hs_premium_routes_v1','ready',false);
+  update_option('mrseo_hs_premium_routes_v2','ready',false);
  }
 },45);
 add_filter('pre_handle_404',function($pre){return mrseo_hs_key()?true:$pre;},110);
