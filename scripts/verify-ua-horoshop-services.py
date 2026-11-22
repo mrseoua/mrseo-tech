@@ -100,4 +100,18 @@ for key in ("setup","seo","audit","ads","feeds","ga4"):
 assert "Офіційний партнер Хорошоп" in info['description']
 assert "10-річним досвідом" in info['description']
 
+# Distinct intent: SEO promotion is ongoing work, audit is diagnosis/report only.
+menu=(root/"inc/mega-menu-trial.php").read_text(encoding="utf-8")
+assert "SEO-просування сайтів на Хорошоп" in menu
+assert "SEO-аудит сайтів на Хорошоп" in menu
+assert "SEO-просування сайтів на Хорошоп" in page
+assert "SEO-аудит сайтів на Хорошоп" in page
+assert '"SEO-просування сайтів на Хорошоп"' in premium_routes
+assert '"SEO-аудит сайтів на Хорошоп"' in premium_routes
+assert "'SEO-просування сайтів на Хорошоп | MrSeo.tech'" in premium_routes
+assert "'SEO-аудит сайтів на Хорошоп | MrSeo.tech'" in premium_routes
+assert "mrseo_hs_url('audit')" in premium and "mrseo_hs_url('seo')" in premium
+assert "самі зміни — окрема послуга" in page
+assert "Впровадження — лише після погодження" in premium_routes
+
 print("Horoshop UA: six premium routes, premium below-fold motion narratives and interactive hero, original partner visual, metadata, noindex and UA/RU routing preserved.")
