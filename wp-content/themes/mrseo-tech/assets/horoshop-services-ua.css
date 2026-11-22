@@ -1,0 +1,23 @@
+/* UA Horoshop only: six concise, directly accessible service modules. */
+.ukseo--horoshop .hs-service-section{padding:clamp(64px,7vw,112px) 0;background:#f8f5ef;color:#292a26}
+.ukseo--horoshop .hs-services-heading{max-width:860px;margin:0 0 clamp(28px,4vw,48px)}
+.ukseo--horoshop .hs-services-heading h2{font-size:clamp(34px,4.1vw,60px);line-height:1.1;letter-spacing:-.045em;margin:13px 0 19px;color:#262a26}
+.ukseo--horoshop .hs-services-heading h2 em{font-style:normal;color:#9c4939}
+.ukseo--horoshop .hs-services-heading>p{font-size:clamp(17px,1.3vw,20px);line-height:1.65;color:#545a54;max-width:790px}
+.ukseo--horoshop .hs-services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,26px)}
+.ukseo--horoshop .hs-service-card{min-width:0;display:flex;flex-direction:column;align-items:flex-start;padding:clamp(22px,2.8vw,38px);background:#fffdf9;border:1px solid #e2d8cb;border-radius:21px;box-shadow:0 8px 29px #40302208;scroll-margin-top:120px;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+.ukseo--horoshop .hs-service-card:target{border-color:#bd7967;box-shadow:0 0 0 3px #bb6b5330,0 16px 40px #40302215}
+.ukseo--horoshop .hs-service-number{font-size:12px;font-weight:800;letter-spacing:.1em;color:#975744}
+.ukseo--horoshop .hs-service-card h3{font-size:clamp(23px,2.1vw,31px);line-height:1.16;letter-spacing:-.025em;margin:20px 0 14px;color:#262a26}
+.ukseo--horoshop .hs-service-card p{font-size:17px;line-height:1.62;margin:0 0 14px;color:#53574f}
+.ukseo--horoshop .hs-service-card .hs-service-pain{font-weight:700;color:#343630}
+.ukseo--horoshop .hs-service-card .hs-service-result{margin-top:auto;border-top:1px solid #e9dfd4;padding-top:15px;width:100%}
+.ukseo--horoshop .hs-service-card .hs-service-result strong{color:#34302b}
+.ukseo--horoshop .hs-service-card>a{display:inline-flex;align-items:center;gap:12px;margin-top:5px;padding:12px 0;font-size:16px;font-weight:780;text-decoration:none;color:#984333}
+.ukseo--horoshop .hs-service-card>a:hover{text-decoration:underline}
+.ukseo--horoshop .hs-service-card>a:focus-visible{outline:3px solid #984333;outline-offset:4px;border-radius:4px}
+.ukseo--horoshop .hs-services-footnote{margin:23px 0 0;max-width:850px;font-size:15px;line-height:1.6;color:#625f59}
+@media(hover:hover){.ukseo--horoshop .hs-service-card:hover{transform:translateY(-3px);box-shadow:0 17px 42px #40302212}}
+@media(max-width:760px){.ukseo--horoshop .hs-services-grid{grid-template-columns:minmax(0,1fr)}.ukseo--horoshop .hs-service-card{scroll-margin-top:88px}.ukseo--horoshop .hs-service-card p{font-size:16.5px}}
+@media(max-width:390px){.ukseo--horoshop .hs-service-card{padding:21px}.ukseo--horoshop .hs-services-heading h2{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.ukseo--horoshop .hs-service-card{transition:none}.ukseo--horoshop .hs-service-card:hover{transform:none}}
