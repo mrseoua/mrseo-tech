@@ -27,10 +27,12 @@ assert "mrseo_ua_menu_groups()" in main
 assert "mrseo_url($mrseo_ads_service[0],'uk')" in main
 assert "mrseo_ads_catalog" in main
 assert main.count("<h1 ")==1
-assert "5 000" in main and "5 900" in main and "10 000" in main and "9 500" in main
+assert all(price not in main for price in ("5 000", "5 900", "10 000", "9 500"))
+assert "ФОРМАТИ СПІВПРАЦІ" in main
+assert "Обговорити рекламу" in main and "Обговорити магазин" in main
 assert "X-Robots-Tag: noindex, nofollow" in (root/"functions.php").read_text(encoding="utf-8")
 assert "function mrseo_i18n_current_entry" in (root/"inc/international-seo.php").read_text(encoding="utf-8")
 assert "ведення окремо" in semantic["google-ads-audit"]["description"]
 assert "без гарантій розблокування" in semantic["merchant-center"]["description"]
 assert all(u in semantic for u,_ in semantic["merchant-center"]["related"])
-print("Eight Ukrainian Google Ads pages, seven child routes, unique metadata, prices and noindex intact.")
+print("Eight Ukrainian Google Ads pages, seven child routes, unique metadata, no public prices and noindex intact.")
