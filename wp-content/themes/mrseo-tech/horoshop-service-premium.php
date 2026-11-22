@@ -2,6 +2,7 @@
 /** Six distinct premium pages; original Horoshop hub remains intact. */
 if(!defined('ABSPATH'))exit;
 $key=mrseo_hs_key();
+require_once get_template_directory().'/inc/horoshop-premium-story.php';
 if(!$key){status_header(404);get_header();get_footer();return;}
 $p=mrseo_hs_pages()[$key];
 $keys=array_keys(mrseo_hs_pages());
@@ -76,6 +77,7 @@ get_header();
    <div class="hs-premium-steps">
     <?php foreach(array(5,7,9) as $i):?>
     <article class="hs-premium-step">
+     <div class="hs-story-step-visual" aria-hidden="true"><span class="hs-story-step-ring"></span><span class="hs-story-step-core"><i></i><i></i><i></i></span><span class="hs-story-step-ray"></span></div>
      <span class="hs-premium-step-number"><?php echo esc_html(str_pad((string)(($i-5)/2+1),2,'0',STR_PAD_LEFT));?></span>
      <h3><?php echo esc_html($p[$i]);?></h3>
      <p><?php echo esc_html($p[$i+1]);?></p>
@@ -84,8 +86,9 @@ get_header();
    </div>
   </div>
  </section>
+ <?php mrseo_hs_workbench($key);?>
  <section class="hs-premium-outcome">
-  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
+  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><?php mrseo_hs_result_visual($key);?><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
  </section>
  <section class="hs-premium-faq">
   <div class="hs-premium-wrap hs-premium-faq-grid"><div><span class="hs-premium-eyebrow">ПЕРЕД ПОЧАТКОМ</span><h2>Коротко про <em>роботу.</em></h2></div><div class="hs-premium-faq-list">
@@ -95,6 +98,6 @@ get_header();
   </div></div>
  </section>
  <section class="hs-premium-related"><div class="hs-premium-wrap"><span class="hs-premium-eyebrow">ПОВ’ЯЗАНІ ПОСЛУГИ</span><div class="hs-premium-related-grid"><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Усі послуги Хорошоп <span aria-hidden="true">↗</span></a><a href="<?php echo esc_url(mrseo_url($p[16],'uk'));?>"><?php echo esc_html($p[17]);?> <span aria-hidden="true">↗</span></a></div></div></section>
- <section class="hs-premium-final"><div class="hs-premium-wrap"><span class="hs-premium-eyebrow">Є КОНКРЕТНА ПРОБЛЕМА?</span><h2>Опишіть задачу. <em>Знайдемо реальне рішення.</em></h2><p>Надішліть адресу магазину й поясніть, що не працює. Спочатку перевіримо обсяг задачі та можливості платформи.</p><a class="hs-premium-button hs-premium-button-light" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити Хорошоп ↗</a></div></section>
+ <section class="hs-premium-final"><div class="hs-premium-wrap"><div class="hs-story-final-orbit" aria-hidden="true"><i></i><i></i><i></i><span></span></div><span class="hs-premium-eyebrow">Є КОНКРЕТНА ПРОБЛЕМА?</span><h2>Опишіть задачу. <em>Знайдемо реальне рішення.</em></h2><p>Надішліть адресу магазину й поясніть, що не працює. Спочатку перевіримо обсяг задачі та можливості платформи.</p><a class="hs-premium-button hs-premium-button-light" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити Хорошоп ↗</a></div></section>
 </div>
 <?php get_footer();?>
