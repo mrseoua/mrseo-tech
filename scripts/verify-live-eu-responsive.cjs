@@ -764,7 +764,7 @@ async function audit(browser,viewport,lang,slug){
       hubRows:desktop?.querySelectorAll('.mrseo-ua-six-primary').length, horoshopHub:[...desktop?.querySelectorAll('.mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog-group a')||[]].map(x=>new URL(x.href).pathname+new URL(x.href).hash),
       assets:!!document.querySelector('link[href*="ua-six-header.css"]')&&!!document.querySelector('script[src*="ua-six-header.js"]')};
    });
-   if(six.desktop!==5||six.mobile!==5||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Хорошоп','Сайти','Веброзробка'])||six.hubRows!==0||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/','/horoshop/setup/','/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/feeds/','/horoshop/ga4/'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
+   if(six.desktop!==5||six.mobile!==5||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Хорошоп','Сайти','Веброзробка'])||six.hubRows!==0||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/feeds/','/horoshop/ga4/'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
   }
   if(lang==='uk'){
    const top=await page.evaluate(()=>{
@@ -792,7 +792,7 @@ async function audit(browser,viewport,lang,slug){
    const subcategories=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-catalog-group a').count();
    const horoshopLabels=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-unlinked').count();
    const seoColumns=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-panel--wide .mrseo-ua-six-catalog').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
-   if(subcategories!==46||horoshopLabels!==0||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
+   if(subcategories!==44||horoshopLabels!==0||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
    const submenuTypography=await page.evaluate(()=>{
      const base=document.querySelector('.mrseo-ua-six--desktop');
      const link=base?.querySelector('.mrseo-ua-six-catalog-group a');
@@ -805,7 +805,7 @@ async function audit(browser,viewport,lang,slug){
    const groups=page.locator('.mrseo-ua-six--desktop details');
    for(let i=0;i<5;i++){
     await groups.nth(i).locator('summary').click();
-    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,7,7,7][i])item.errors.push('UA six-header desktop item '+i);
+    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,5,7,7][i])item.errors.push('UA six-header desktop item '+i);
    }
    await page.keyboard.press('Escape');
    if(await groups.last().getAttribute('open')!==null)item.errors.push('UA six-header desktop Escape');
@@ -827,8 +827,8 @@ async function audit(browser,viewport,lang,slug){
     if(mobileLinkFont<16.9)item.errors.push('UA mobile submenu readability '+mobileLinkFont);
     const six=page.locator('.mrseo-ua-six--mobile details');
     const mobileCount=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').count();
-    if(mobileCount!==46)item.errors.push('UA mobile subcategory count '+mobileCount);
-    for(let i=0;i<5;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,7,7,7][i])item.errors.push('UA six mobile item '+i);}
+    if(mobileCount!==44)item.errors.push('UA mobile subcategory count '+mobileCount);
+    for(let i=0;i<5;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,5,7,7][i])item.errors.push('UA six mobile item '+i);}
     await page.keyboard.press('Escape');
     if(await six.last().getAttribute('open')!==null)item.errors.push('UA mobile Escape');
     const box=await page.locator('.mrseo-ua-six--mobile').evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right}});
