@@ -914,7 +914,7 @@ async function audit(browser,viewport,lang,slug){
          trust:!!document.querySelector('.hs-trust'),
          dedicatedScene:!!document.querySelector('.hs-ads-journey'),
          dedicatedSceneCss:!!document.querySelector('link[href*="horoshop-ads-scenes.css"]'),
-         trustProof:!!document.querySelector('.hs-trust-proof[href*="horoshop.ua/ua/offers/"]'),
+         trustNoOutbound:!document.querySelector('.hs-trust-proof, .hs-trust a[href*="horoshop.ua/"]'),
          trustExperience:document.querySelector('.hs-trust-copy h2')?.textContent.includes('10 років'),
          trustCss:!!document.querySelector('link[href*="horoshop-partner-trust.css"]'),
          workbench:!!document.querySelector('.hs-story-workbench'),
@@ -924,7 +924,7 @@ async function audit(browser,viewport,lang,slug){
          finalOrbit:!!document.querySelector('.hs-story-final-orbit'),
          overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
-      if(!state.page||!state.hero||!state.svg||!state.badge||!state.asset||state.desc!==1||state.steps!==3||state.faq!==3||state.buttons<2||!state.workbench||state.machineNodes!==3||state.proofRows!==3||state.stepVisuals!==3||!state.finalOrbit||!state.trust||!state.trustProof||!state.trustExperience||!state.trustCss||state.overflow)item.errors.push('Horoshop premium markup/geometry '+JSON.stringify(state));
+      if(!state.page||!state.hero||!state.svg||!state.badge||!state.asset||state.desc!==1||state.steps!==3||state.faq!==3||state.buttons<2||!state.workbench||state.machineNodes!==3||state.proofRows!==3||state.stepVisuals!==3||!state.finalOrbit||!state.trust||!state.trustNoOutbound||!state.trustExperience||!state.trustCss||state.overflow)item.errors.push('Horoshop premium markup/geometry '+JSON.stringify(state));
       const stages=page.locator('.hs-premium-stage-button');
       if(await stages.count()!==3)item.errors.push('Horoshop premium stage controls missing');
       else{
