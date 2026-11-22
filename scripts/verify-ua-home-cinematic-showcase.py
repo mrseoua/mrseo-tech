@@ -37,6 +37,17 @@ assert "cs-motion-off" not in old_js
 assert "tabs.length!==5||panels.length!==5" in js
 assert "aria-pressed" in js and "ArrowRight" in js and "ArrowLeft" in js
 assert "root.classList.add('cs-enhanced')" in js
-assert "uaCinematicLinks<30" in browser and "uaCinematicVisuals!==5" in browser
+assert "uaCinematicLinks<25" in browser and "uaCinematicVisuals!==5" in browser
+reference=(root/"assets/home-cinematic-reference.css").read_text(encoding="utf-8")
+assert "home-cinematic-reference.css" in home
+assert ".cs-layout{grid-template-columns:minmax(235px,24%) minmax(0,76%)" in reference
+assert ".cs-shopping-card" in reference and ".cs-stage-base" in reference
+assert "cs-google-ads-mark" in section and "cs-campaigns-card" in section
+assert "cs-conversions-card" in section
+assert "array_slice($entry['links'],0,5)" in section
+assert "data-cs-current>02" in section
+assert "select(1);" in js
+assert "prefers-reduced-motion:reduce" in reference
+assert "max-width:410px" in reference
 assert "X-Robots-Tag: noindex, nofollow" in (root/"functions.php").read_text(encoding="utf-8")
 print("PASS: 5 premium homepage service categories, 30+ real links, independent animated scenes, JS/SEO fallback, noindex and preserved Earth")
