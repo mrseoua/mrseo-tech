@@ -23,7 +23,7 @@ assert "mrseo_hs_url($anchor)" in header
 assert "Про послуги Хорошоп" not in header
 assert "'horoshop-setup'=>'setup'" not in header
 assert "horoshop-setup" not in header
-assert all("\'horoshop-"+key+"\'=>\'"+value+"\'" in header for key,value in [("seo","seo"),("audit","audit"),("google-ads","ads"),("product-feeds","feeds"),("ga4","ga4")])
+assert all("'"+key+"'=>" in header for key in ('seo','audit','ads','search-ads','shopping','pmax','feeds','ga4'))
 assert "horoshop-partner-active.svg" in page and "horoshop-wordmark.svg" in page
 assert page.count('class="hs-switch')>=4
 assert "mrseo_locale()==='uk'" in page
@@ -47,7 +47,7 @@ assert "horoshop-premium-routes.php" in functions
 assert "mrseo_hs_key()" in premium and "hs-premium-visual" in premium
 assert "get_header()" in premium and "get_footer()" in premium
 assert "rel=\"canonical\"" in premium_routes
-assert "add_rewrite_rule('^horoshop/(setup|seo|audit|ads|feeds|ga4)/?$'" in premium_routes
+assert "search-ads|shopping|pmax" in premium_routes and "add_rewrite_rule(" in premium_routes
 assert "mrseo_hs_url($anchor)" in header
 for key in ("setup","seo","audit","ads","feeds","ga4"):
  if key!='setup': assert "'"+key+"'" in header
@@ -113,5 +113,24 @@ assert "'SEO-аудит сайтів на Хорошоп | MrSeo.tech'" in premi
 assert "mrseo_hs_url('audit')" in premium and "mrseo_hs_url('seo')" in premium
 assert "самі зміни — окрема послуга" in page
 assert "Впровадження — лише після погодження" in premium_routes
+
+
+# New independent Google Ads offerings on Horoshop: routes, service copy, visual scenes and navigation.
+ads_visual=(root/"inc/horoshop-ads-scenes.php").read_text(encoding="utf-8")
+ads_css=(root/"assets/horoshop-ads-scenes.css").read_text(encoding="utf-8")
+for key in ('search-ads','shopping','pmax'):
+ assert '"'+key+'": [' in premium_routes,('missing Horoshop route data',key)
+ assert "'"+key+"'=>array(" in premium_routes,('missing unique SEO metadata',key)
+ assert "'"+key+"'=>array(" in story,('missing story',key)
+ assert "mrseo_hs_url('"+key+"')" in page,('missing overview navigation',key)
+ assert "=>array(" not in header or "'"+key+"'=>" in header,('missing desktop/mobile menu route',key)
+ assert ("$key==='"+key+"'" in ads_visual if key!="pmax" else "'pmax'=>array(" in ads_visual),('missing original animation illustration',key)
+ assert "hs-ads-"+('search' if key=='search-ads' else 'shopping' if key=='shopping' else 'pmax')+"-preview" in ads_visual
+assert "mrseo_hs_paid_scene($key)" in premium
+assert "horoshop-ads-scenes.css" in functions and "horoshop-ads-scenes.css" in premium_routes
+assert "prefers-reduced-motion:reduce" in ads_css
+assert "mrseo_hs_premium_routes_v2" in premium_routes
+assert page.count('class="hs-paid-catalog-card"')==3
+assert "X-Robots-Tag: noindex, nofollow" in functions
 
 print("Horoshop UA: six premium routes, premium below-fold motion narratives and interactive hero, original partner visual, metadata, noindex and UA/RU routing preserved.")

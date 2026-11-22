@@ -85,6 +85,66 @@ function mrseo_hs_pages(){
     "google-ads",
     "Послуги Google Ads"
   ],
+  "search-ads": [
+      "Пошукова реклама Google Ads для Хорошоп",
+      "Покупці шукають ваш товар, але бачать конкурентів?",
+      "Налаштовуємо пошукові кампанії Google Ads під реальний попит на товари й категорії магазину Хорошоп.",
+      "ПОШУКОВА РЕКЛАМА ХОРОШОП",
+      "Рекламний бюджет витрачається на загальні запити, а користувачі не знаходять потрібну категорію або товар. Перевіряємо пошукові фрази й сторінки, на які потрапляє покупець.",
+      "Запити з наміром купити",
+      "Збираємо комерційні пошукові фрази за категоріями, відсікаємо нецільові запити й погоджуємо структуру кампаній.",
+      "Оголошення і сторінки",
+      "Готуємо релевантні оголошення та ведемо на конкретні категорії або товари Хорошоп, а не на випадкові сторінки.",
+      "Перевірка заявок",
+      "Перевіряємо облік покупок, пошукові фрази й витрати; визначаємо, що змінювати після запуску.",
+      "Узгоджена структура пошукових кампаній, список виключених запитів, підготовлені оголошення й перевірений сценарій конверсії.",
+      "Чи обов’язково підключати товарний фід?",
+      "Ні. Для звичайної пошукової реклами потрібні відповідні сторінки товарів чи категорій, а не обов’язково Merchant Center.",
+      "Чи гарантуєте конкретну кількість замовлень?",
+      "Ні. Прогноз залежить від попиту, ціни товару, бюджету й конкуренції; після запуску працюємо з фактичними даними.",
+      "google-search-ads",
+      "Пошукова реклама Google Ads"
+  ],
+  "shopping": [
+      "Google Shopping для магазинів на Хорошоп",
+      "Товари не показуються у Google Shopping?",
+      "Підключаємо та оптимізуємо товарну рекламу на основі фіда Хорошоп і даних Google Merchant Center.",
+      "ТОВАРНА РЕКЛАМА ХОРОШОП",
+      "У магазині є асортимент, але частина товарів відхилена Google або покази не приводять цільових покупців. Перевіряємо, як пошукова система бачить товарні дані.",
+      "Товарний фід",
+      "Зіставляємо назви, ціни, наявність, посилання й ідентифікатори товарів Хорошоп із вимогами Merchant Center.",
+      "Merchant Center",
+      "Перевіряємо діагностику, правила магазину й доступні налаштування фіда перед підключенням кампаній.",
+      "Shopping-кампанія",
+      "Узгоджуємо товарні групи, бюджет і спосіб вимірювання покупок; перевіряємо перші покази та статуси товарів.",
+      "Перевірений товарний фід, список проблемних позицій і налаштована структура Shopping-кампанії з обліком покупок.",
+      "Чи можна рекламувати відхилені товари?",
+      "Ні. Спочатку усуваємо причини відхилення, якщо це можливо, і повторно перевіряємо статус у Merchant Center.",
+      "Чи достатньо просто експортувати фід із Хорошоп?",
+      "Не завжди. Google порівнює дані фіда із сайтом, цінами, наявністю, оплатою й доставкою. Потрібна перевірка відповідності.",
+      "merchant-center",
+      "Налаштування Merchant Center"
+  ],
+  "pmax": [
+      "Performance Max для магазинів на Хорошоп",
+      "Реклама працює, але не видно, які товари приносять продажі?",
+      "Будуємо Performance Max для магазину Хорошоп на перевірених товарних даних, коректних покупках і зрозумілій структурі кампаній.",
+      "PERFORMANCE MAX ХОРОШОП",
+      "Автоматична кампанія витрачає бюджет, а частина асортименту отримує мало показів або дані про продажі не відповідають замовленням. Починаємо з перевірки товарів і конверсій.",
+      "Фід і сегменти",
+      "Перевіряємо Merchant Center і поділ асортименту за категоріями, пріоритетами та економікою товарів, якщо ці дані доступні.",
+      "Сигнали та матеріали",
+      "Готуємо обґрунтовану структуру груп ресурсів, тексти, зображення та сигнали аудиторій без зайвих дублів.",
+      "Контроль результату",
+      "Звіряємо покупки в Google Ads із замовленнями Хорошоп, аналізуємо витрати й коригуємо налаштування за фактичними даними.",
+      "Структура Performance Max, перевірені конверсії та узгоджений план контролю витрат і товарних груп.",
+      "Чим Performance Max відрізняється від Shopping?",
+      "Performance Max може показувати рекламу в кількох каналах Google і використовує додаткові ресурси; Shopping орієнтований на товарний попит.",
+      "Чи гарантує Performance Max високий ROAS?",
+      "Ні. Результат залежить від даних про покупки, асортименту, маржі, конкуренції та бюджету.",
+      "performance-max",
+      "Налаштування Performance Max"
+  ],
   "feeds": [
     "Товарні фіди Хорошоп",
     "Google відхиляє товари?",
@@ -133,17 +193,17 @@ MRSEO_HS_PAGES
 function mrseo_hs_key(){
  if(mrseo_locale()!=='uk')return null;
  $path=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');
- if(!preg_match('~^horoshop/(setup|seo|audit|ads|feeds|ga4)$~D',$path,$m))return null;
+ if(!preg_match('~^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)$~D',$path,$m))return null;
  return isset(mrseo_hs_pages()[$m[1]])?$m[1]:null;
 }
 function mrseo_hs_url($key){return home_url('/horoshop/'.$key.'/');}
 add_action('init',function(){
- add_rewrite_rule('^horoshop/(setup|seo|audit|ads|feeds|ga4)/?$','index.php?mrseo_service=horoshop','top');
+ add_rewrite_rule('^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)/?$','index.php?mrseo_service=horoshop','top');
 },12);
 add_action('init',function(){
- if(get_option('mrseo_hs_premium_routes_v1')!=='ready'){
+ if(get_option('mrseo_hs_premium_routes_v2')!=='ready'){
   flush_rewrite_rules(false);
-  update_option('mrseo_hs_premium_routes_v1','ready',false);
+  update_option('mrseo_hs_premium_routes_v2','ready',false);
  }
 },45);
 add_filter('pre_handle_404',function($pre){return mrseo_hs_key()?true:$pre;},110);
@@ -175,6 +235,18 @@ function mrseo_hs_search_meta($key){
    'Google Ads для Хорошоп — Shopping та Performance Max | MrSeo.tech',
    'Google Ads для магазину на Хорошоп: Shopping, Performance Max, товарні кампанії й перевірка конверсій. Офіційний партнер Хорошоп.'
   ),
+  'search-ads'=>array(
+   'Пошукова реклама для Хорошоп — Google Ads | MrSeo.tech',
+   'Пошукова реклама Google Ads для Хорошоп: комерційні запити, оголошення, мінус-слова та перевірка покупок. Офіційний партнер Хорошоп.'
+  ),
+  'shopping'=>array(
+   'Google Shopping для Хорошоп — товарна реклама | MrSeo.tech',
+   'Google Shopping для магазинів на Хорошоп: товарний фід, Merchant Center, налаштування Shopping-кампаній і контроль покупок. Офіційний партнер.'
+  ),
+  'pmax'=>array(
+   'Performance Max для Хорошоп — реклама товарів | MrSeo.tech',
+   'Performance Max для Хорошоп: перевірка товарного фіда, сегменти, групи ресурсів та коректні конверсії. Команда з 10-річним досвідом.'
+  ),
   'feeds'=>array(
    'Товарний фід Хорошоп і Google Merchant Center | MrSeo.tech',
    'Налаштування товарного фіда Хорошоп і Merchant Center: ціни, залишки, атрибути, відхилені товари. Офіційний партнер Хорошоп.'
@@ -203,5 +275,6 @@ add_action('wp_enqueue_scripts',function(){
  if(!mrseo_hs_key())return;
  wp_enqueue_style('mrseo-horoshop-premium-pages',get_template_directory_uri().'/assets/horoshop-premium-pages.css',array('mrseo-style'),'1.2.0');
  wp_enqueue_style('mrseo-horoshop-partner-trust',get_template_directory_uri().'/assets/horoshop-partner-trust.css',array('mrseo-horoshop-premium-pages'),'1.0.0');
+ if(in_array(mrseo_hs_key(),array('search-ads','shopping','pmax'),true))wp_enqueue_style('mrseo-horoshop-ads-scenes',get_template_directory_uri().'/assets/horoshop-ads-scenes.css',array('mrseo-horoshop-premium-pages'),'1.0.0');
  wp_enqueue_script('mrseo-horoshop-premium-motion',get_template_directory_uri().'/assets/horoshop-premium-motion.js',array(),'1.0.0',true);
 },105);

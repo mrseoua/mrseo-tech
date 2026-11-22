@@ -128,6 +128,32 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
     <a href="<?php echo esc_url(mrseo_hs_url('ga4'));?>">Переглянути аналітику Хорошоп <span aria-hidden="true">↗</span></a>
    </article>
   </div>
+  <div class="hs-paid-catalog" aria-labelledby="hs-paid-catalog-title">
+   <div class="hs-paid-catalog-head"><span class="ukseo-kicker">ОКРЕМІ РЕКЛАМНІ ПОСЛУГИ</span><h3 id="hs-paid-catalog-title">Яка реклама потрібна <em>вашому магазину?</em></h3><p>Не зводимо всі формати Google Ads до однієї кампанії. Для кожної задачі — свій підхід, перевірка даних і результат, який можна оцінити.</p></div>
+   <div class="hs-paid-catalog-grid">
+    <article class="hs-paid-catalog-card">
+     <div class="hs-paid-catalog-icon hs-paid-catalog-icon--search" aria-hidden="true"><span></span></div>
+     <span class="hs-paid-catalog-number">01 / ПОШУКОВА РЕКЛАМА</span>
+     <h4>Пошукова реклама для Хорошоп</h4>
+     <p>Людина вже шукає товар. Допоможемо показати релевантне оголошення й привести її на потрібну категорію чи товар.</p>
+     <a href="<?php echo esc_url(mrseo_hs_url('search-ads'));?>">Налаштування пошукової реклами <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="hs-paid-catalog-card">
+     <div class="hs-paid-catalog-icon hs-paid-catalog-icon--shopping" aria-hidden="true"><span></span></div>
+     <span class="hs-paid-catalog-number">02 / ТОВАРНІ ОГОЛОШЕННЯ</span>
+     <h4>Google Shopping для Хорошоп</h4>
+     <p>Товари мають показуватися з актуальною ціною й наявністю. Перевіримо фід, Merchant Center і структуру товарних кампаній.</p>
+     <a href="<?php echo esc_url(mrseo_hs_url('shopping'));?>">Реклама товарів у Shopping <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="hs-paid-catalog-card">
+     <div class="hs-paid-catalog-icon hs-paid-catalog-icon--pmax" aria-hidden="true"><span></span></div>
+     <span class="hs-paid-catalog-number">03 / АВТОМАТИЗАЦІЯ</span>
+     <h4>Performance Max для Хорошоп</h4>
+     <p>Зв’яжемо товарні групи, матеріали кампанії та підтверджені покупки. Підготуємо основу для контролю рекламних витрат.</p>
+     <a href="<?php echo esc_url(mrseo_hs_url('pmax'));?>">Налаштування Performance Max <span aria-hidden="true">↗</span></a>
+    </article>
+   </div>
+  </div>
   <p class="hs-services-footnote">Якщо потрібні функції, яких немає в поточному тарифі або налаштуваннях Хорошоп, окремо погодимо альтернативу. Не обіцяємо змін, які платформа не підтримує.</p>
  </div>
 </section>
