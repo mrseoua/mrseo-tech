@@ -16,7 +16,7 @@ $cs_services=array(
    array('local-seo','Локальне SEO'),
    array('ecommerce-seo','SEO інтернет-магазинів'),
    array('semantic-core','Семантика та структура'),
-   array('technical-seo','Технічне SEO'),
+   array('indexing-fixes','Виправлення індексації'),
    array('international-seo','Міжнародне SEO')
   )
  ),
