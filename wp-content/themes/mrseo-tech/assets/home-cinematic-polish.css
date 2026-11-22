@@ -20,35 +20,11 @@
 .pt-ua-home .cs-actions a{min-height:46px}
 .pt-ua-home .cs-art{isolation:isolate}
 .pt-ua-home .cs-art-field{isolation:isolate}
-.pt-ua-home .cs-polish-card{
- position:absolute;z-index:5;min-width:174px;max-width:230px;
- padding:13px 16px 13px;border:1px solid #d9bda9;border-radius:17px;
- background:linear-gradient(155deg,#fffefa,#f5e7dc);
- box-shadow:0 17px 27px #5a403024,0 0 0 1px #fffaf7 inset;
- display:flex;flex-direction:column;gap:7px;
- transform:rotate(4deg);animation:cs-polish-drift 8s ease-in-out infinite;
- pointer-events:none;
-}
-.pt-ua-home .cs-polish-card span{font-size:10px;color:var(--mrseo-brand-red);font-weight:800;letter-spacing:.08em;line-height:1.3}
-.pt-ua-home .cs-polish-card strong{font-size:14px;line-height:1.3;font-weight:750;color:#303530}
-.pt-ua-home .cs-polish-card i{
- display:inline-block;position:absolute;bottom:13px;height:3px;width:22px;
- border-radius:4px;background:var(--mrseo-brand-red);opacity:.75
-}
-.pt-ua-home .cs-polish-card i:nth-of-type(1){left:16px}
-.pt-ua-home .cs-polish-card i:nth-of-type(2){left:44px;background:#c6aa93}
-.pt-ua-home .cs-polish-card i:nth-of-type(3){left:72px;background:#d5c3af}
-.pt-ua-home .cs-polish-card{padding-bottom:25px}
-.pt-ua-home .cs-polish-card--seo{top:7%;right:2%;transform:rotate(5deg)}
-.pt-ua-home .cs-polish-card--horoshop{top:9%;right:2%;transform:rotate(4deg)}
-.pt-ua-home .cs-polish-card--sites{bottom:9%;left:0;transform:rotate(-5deg)}
-.pt-ua-home .cs-polish-card--dev{top:6%;right:1%;transform:rotate(4deg)}
 .pt-ua-home .cs-art--seo .cs-visual-main{transform:rotate(-5deg) skewX(-1deg)}
 .pt-ua-home .cs-art--horoshop .cs-visual-main{transform:rotate(-4deg) skewX(-1deg)}
 .pt-ua-home .cs-art--sites .cs-visual-main{transform:rotate(-5deg) skewX(-1deg)}
 .pt-ua-home .cs-art--dev .cs-visual-main{transform:none}
 .pt-ua-home .cs-bottom{padding-top:clamp(12px,1.8vw,22px);border-top:1px solid #e5d8cd}
-@keyframes cs-polish-drift{0%,100%{translate:0 0}50%{translate:0 -8px}}
 /* One restrained tonal transition between the showcase and problem-solving section. */
 .pt-ua-home .ph-resolution{
  position:relative;isolation:isolate;
@@ -92,25 +68,12 @@
  color:#e4e2dc;font-size:clamp(16px,1.28vw,19px);
  line-height:1.7;margin:0;max-width:620px
 }
-.pt-ua-home .ph-final{
- border-top:1px solid #d9c8ba;padding-top:clamp(24px,3vw,38px);
- margin-bottom:clamp(42px,5.2vw,76px)
-}
-.pt-ua-home .ph-final p{font-size:clamp(17px,1.4vw,20px);line-height:1.65}
 @media(max-width:1180px){
- .pt-ua-home .cs-polish-card{min-width:150px;max-width:195px;padding:11px 12px 23px}
- .pt-ua-home .cs-polish-card strong{font-size:12px}
- .pt-ua-home .cs-polish-card i:nth-of-type(1){left:12px}
- .pt-ua-home .cs-polish-card i:nth-of-type(2){left:40px}
- .pt-ua-home .cs-polish-card i:nth-of-type(3){left:68px}
- .pt-ua-home .cs-polish-card--seo,.pt-ua-home .cs-polish-card--horoshop{right:0}
 }
 @media(max-width:900px){
  .pt-ua-home .cs-intro h2{font-size:clamp(40px,6.8vw,58px)}
  .pt-ua-home .cs-content h3{font-size:clamp(36px,5.1vw,45px)}
  .pt-ua-home .cs-tab-name{font-size:clamp(13px,2vw,18px)}
- .pt-ua-home .cs-polish-card{max-width:150px;min-width:0}
- .pt-ua-home .cs-polish-card--seo,.pt-ua-home .cs-polish-card--horoshop,.pt-ua-home .cs-polish-card--dev{top:8%}
  .pt-ua-home .ph-confidential{grid-template-columns:1fr;gap:18px}
 }
 @media(max-width:710px){
@@ -119,29 +82,41 @@
  .pt-ua-home .cs-intro p{font-size:16px;line-height:1.65}
  .pt-ua-home .cs-content h3{font-size:clamp(36px,9vw,44px);margin-bottom:15px}
  .pt-ua-home .cs-links a{font-size:15px;min-height:46px}
- .pt-ua-home .cs-polish-card{padding:9px 10px 19px;border-radius:11px;max-width:137px}
- .pt-ua-home .cs-polish-card span{font-size:8px}
- .pt-ua-home .cs-polish-card strong{font-size:10px}
- .pt-ua-home .cs-polish-card i{bottom:9px;width:16px}
- .pt-ua-home .cs-polish-card i:nth-of-type(1){left:10px}
- .pt-ua-home .cs-polish-card i:nth-of-type(2){left:32px}
- .pt-ua-home .cs-polish-card i:nth-of-type(3){left:54px}
- .pt-ua-home .cs-polish-card--seo,.pt-ua-home .cs-polish-card--horoshop,.pt-ua-home .cs-polish-card--dev{top:8%;right:1%}
- .pt-ua-home .cs-polish-card--sites{bottom:11%;left:1%}
  .pt-ua-home .cs-visual-caption{font-size:10px;line-height:1.4}
  .pt-ua-home .ph-confidential{padding:26px 21px;border-radius:18px}
  .pt-ua-home .ph-confidential h2{font-size:clamp(28px,7vw,38px)}
  .pt-ua-home .ph-confidential p{font-size:16px}
 }
 @media(max-width:410px){
- .pt-ua-home .cs-polish-card{max-width:119px}
- .pt-ua-home .cs-polish-card strong{font-size:9px}
- .pt-ua-home .cs-art--dev .cs-polish-card--dev{right:0;top:0}
- .pt-ua-home .cs-art--seo .cs-polish-card--seo{top:2%}
- .pt-ua-home .cs-art--horoshop .cs-polish-card--horoshop{top:0}
 }
 @media(prefers-reduced-motion:reduce){
- .pt-ua-home .cs-polish-card{animation:none!important;translate:none!important}
  .pt-ua-home .ph-process>div{transition:none!important}
  .pt-ua-home .ph-process>div:hover{transform:none!important}
+}
+
+/* Minimalism pass: one foreground story per service, low-noise decorative orbit. */
+.pt-ua-home .cs-art-orbit--two{opacity:.24;animation:none}
+.pt-ua-home .cs-stage-trail{opacity:.56}
+.pt-ua-home .cs-art-halo{opacity:.57;filter:blur(12px)}
+.pt-ua-home .cs-visual-main{animation-duration:12s}
+.pt-ua-home .cs-visual-float{animation-duration:13s}
+.pt-ua-home .cs-art--ads .cs-conversions-card{animation-delay:-2s}
+.pt-ua-home .cs-intro{margin-bottom:clamp(33px,4.2vw,56px)}
+.pt-ua-home .cs-showcase{margin-bottom:clamp(62px,7vw,102px)}
+.pt-ua-home .ph-resolution{margin-bottom:clamp(32px,4vw,58px)}
+.pt-ua-home .ph-process>div{box-shadow:0 7px 18px #503b2510}
+.pt-ua-home .ph-confidential{margin-bottom:clamp(44px,5vw,76px)}
+.pt-ua-home .ph-confidential-action{display:grid;justify-items:start;gap:clamp(16px,2.2vw,24px)}
+.pt-ua-home .ph-confidential-action .pt-home-cta{background:#fffaf4;color:#252c26;box-shadow:none;min-height:50px}
+.pt-ua-home .ph-confidential-action .pt-home-cta:hover{background:#f3e1da;color:#252c26}
+.pt-ua-home .ph-confidential-action .pt-home-cta:focus-visible{outline:3px solid #efb8a8;outline-offset:4px}
+@media(max-width:710px){
+ .pt-ua-home .cs-showcase{margin-bottom:60px}
+ .pt-ua-home .cs-art-halo{opacity:.35}
+ .pt-ua-home .cs-visual-caption{font-size:10px}
+ .pt-ua-home .ph-confidential-action{gap:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pt-ua-home .cs-art .cs-visual-float,
+ .pt-ua-home .cs-art .cs-visual-main{animation:none!important}
 }
