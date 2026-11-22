@@ -12,14 +12,14 @@ routes=(root/"inc/i18n-routing.php").read_text(encoding="utf-8")
 anchors=["hs-setup","hs-seo","hs-audit","hs-ads","hs-feeds","hs-ga4"]
 for anchor in anchors:
  assert page.count('id="'+anchor+'"')==1,("missing or duplicate card",anchor)
- assert "'"+anchor+"'" in header,("menu anchor",anchor)
+ assert "'"+anchor.split("-")[1]+"'" in header,("premium route",anchor)
  assert len(re.findall(r'<article[^>]*id="'+anchor+r'"',page))==1,("semantic article",anchor)
 assert page.count('class="hs-service-card"')==6
 assert page.count('class="hs-service-result"')==6
 assert page.count('class="hs-service-pain"')==6
 assert page.count('class="hs-service-number"')==6
 assert page.count('class="hs-service-card"')==page.count('class="hs-service-result"')
-assert "mrseo_url($group['parent'],'uk').'#'.$anchor" in header
+assert "mrseo_hs_url($anchor)" in header
 assert "horoshop-partner-active.svg" in page and "horoshop-wordmark.svg" in page
 assert page.count('class="hs-switch')>=4
 assert "mrseo_locale()==='uk'" in page
@@ -34,4 +34,22 @@ info=data['horoshop']
 assert len(info["description"])>=110
 assert all(x in info['secondary'] for x in ["сайт на хорошоп","хорошоп створити сайт","seo хорошоп"])
 assert "🛒" not in info["description"]
-print("Horoshop UA: six anchored commercial modules, original partner visual, metadata, noindex and UA/RU routing preserved.")
+
+# Separate premium pages: one real WP route per offering; never placeholder anchors.
+premium=(root/"horoshop-service-premium.php").read_text(encoding="utf-8")
+premium_routes=(root/"inc/horoshop-premium-routes.php").read_text(encoding="utf-8")
+premium_css=(root/"assets/horoshop-premium-pages.css").read_text(encoding="utf-8")
+assert "horoshop-premium-routes.php" in functions
+assert "mrseo_hs_key()" in premium and "hs-premium-visual" in premium
+assert "get_header()" in premium and "get_footer()" in premium
+assert "rel=\"canonical\"" in premium_routes
+assert "add_rewrite_rule('^horoshop/(setup|seo|audit|ads|feeds|ga4)/?$'" in premium_routes
+assert "mrseo_hs_url($anchor)" in header
+for key in ("setup","seo","audit","ads","feeds","ga4"):
+ assert "'"+key+"'" in header
+ assert "mrseo_hs_url('"+key+"')" in page
+ assert "'"+key+"'" in premium_routes or '"'+key+'"' in premium_routes
+assert "prefers-reduced-motion:reduce" in premium_css
+assert "@media(max-width:480px)" in premium_css
+assert "mrseo-horoshop-premium-pages" in premium_routes
+print("Horoshop UA: six dedicated premium routes and hub modules, original partner visual, metadata, noindex and UA/RU routing preserved.")
