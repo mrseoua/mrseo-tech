@@ -78,33 +78,33 @@ $cs_services=array(
 <section class="cs-showcase" id="pt-development" aria-labelledby="cs-showcase-title" data-cs-showcase>
  <div class="cs-shell">
   <div class="cs-intro">
-   <span class="cs-overline"><i aria-hidden="true"></i> НАПРЯМИ РОБОТИ / 01—05</span>
-   <h2 id="cs-showcase-title">Ваш бізнес. <em>Наші рішення.</em></h2>
-   <p>Сайт є, а клієнтів недостатньо? Оберіть напрям — покажемо, як знайти причину та перейти до рішення.</p>
+   <span class="cs-overline"><i aria-hidden="true"></i> НАПРЯМИ РОБОТИ</span>
+   <h2 id="cs-showcase-title">Ваш бізнес. Наші рішення<span class="cs-title-dot">.</span></h2>
+   <p>Комплексні рішення, що залучають клієнтів, збільшують продажі та допомагають розвивати ваш бізнес онлайн.</p>
   </div>
   <div class="cs-layout">
    <nav class="cs-navigation" aria-label="П’ять напрямів послуг">
     <?php foreach($cs_services as $key=>$entry):?>
-    <button type="button" class="cs-tab<?php echo $key==='seo'?' is-active':'';?>" data-cs-select="<?php echo esc_attr($key);?>" aria-controls="cs-panel-<?php echo esc_attr($key);?>" aria-expanded="<?php echo $key==='seo'?'true':'false';?>" aria-pressed="<?php echo $key==='seo'?'true':'false';?>">
+    <button type="button" class="cs-tab<?php echo $key==='ads'?' is-active':'';?>" data-cs-select="<?php echo esc_attr($key);?>" aria-controls="cs-panel-<?php echo esc_attr($key);?>" aria-expanded="<?php echo $key==='ads'?'true':'false';?>" aria-pressed="<?php echo $key==='ads'?'true':'false';?>">
      <span class="cs-tab-number"><?php echo esc_html(str_pad((string)(array_search($key,array_keys($cs_services),true)+1),2,'0',STR_PAD_LEFT));?></span>
      <span class="cs-tab-name"><?php echo esc_html($entry['name']);?></span>
-     <span class="cs-tab-icon" aria-hidden="true">↗</span>
+     <span class="cs-tab-icon" aria-hidden="true">›</span>
     </button>
     <?php endforeach;?>
    </nav>
    <div class="cs-panels">
    <?php foreach($cs_services as $key=>$entry):?>
-    <div class="cs-panel<?php echo $key==='seo'?' is-active':'';?>" id="cs-panel-<?php echo esc_attr($key);?>" data-cs-panel="<?php echo esc_attr($key);?>">
+    <div class="cs-panel<?php echo $key==='ads'?' is-active':'';?>" id="cs-panel-<?php echo esc_attr($key);?>" data-cs-panel="<?php echo esc_attr($key);?>">
      <div class="cs-content">
-      <span class="cs-tag"><?php echo esc_html($entry['tag']);?></span>
+      <span class="cs-tag"><?php echo esc_html($entry['tag']);?></span><span class="cs-brand" aria-hidden="true"><?php if($key==='ads'):?><span class="cs-google-ads-mark"><i></i><i></i><i></i></span><?php elseif($key==='seo'):?>⌕<?php elseif($key==='horoshop'):?>H<?php elseif($key==='sites'):?>▣<?php else:?>⌘<?php endif;?></span>
       <h3><?php echo esc_html($entry['name']);?></h3>
       <p class="cs-problem"><?php echo esc_html($entry['problem']);?></p>
       <p class="cs-answer"><?php echo esc_html($entry['answer']);?></p>
       <div class="cs-links" aria-label="<?php echo esc_attr('Послуги: '.$entry['name']);?>">
-       <?php foreach($entry['links'] as $link):
+       <?php foreach(array_slice($entry['links'],0,5) as $link):
         $url=$key==='horoshop' && function_exists('mrseo_hs_url')?mrseo_hs_url($link[0]):mrseo_url($link[0],'uk');
        ?>
-       <a href="<?php echo esc_url($url);?>"><?php echo esc_html($link[1]);?> <span aria-hidden="true">↗</span></a>
+       <a href="<?php echo esc_url($url);?>"><span aria-hidden="true" class="cs-link-tick">✓</span><?php echo esc_html($link[1]);?></a>
        <?php endforeach;?>
       </div>
       <div class="cs-actions">
@@ -113,7 +113,7 @@ $cs_services=array(
       </div>
      </div>
      <div class="cs-art cs-art--<?php echo esc_attr($key);?>" role="img" aria-label="<?php echo esc_attr('Ілюстрація процесу: '.$entry['name']);?>">
-      <div class="cs-art-field" aria-hidden="true">
+      <div class="cs-art-field" aria-hidden="true"><span class="cs-stage-base"></span><span class="cs-stage-base-ring"></span><svg class="cs-stage-trail" viewBox="0 0 850 580" preserveAspectRatio="none"><defs><linearGradient id="cs-trail-red" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#b34437"/><stop offset="45%" stop-color="#e2a990"/><stop offset="100%" stop-color="#bd5b48"/></linearGradient></defs><ellipse cx="425" cy="308" rx="351" ry="155" fill="none" stroke="url(#cs-trail-red)" stroke-width="2.8" transform="rotate(-12 425 308)"/><circle cx="89" cy="308" r="6" fill="#fff9e8" stroke="#dfb391" stroke-width="3"/><circle cx="750" cy="252" r="5" fill="#fff9e8" stroke="#dfb391" stroke-width="3"/></svg>
        <span class="cs-art-halo"></span><span class="cs-art-orbit cs-art-orbit--one"></span><span class="cs-art-orbit cs-art-orbit--two"></span>
        <span class="cs-art-spark cs-art-spark--a"></span><span class="cs-art-spark cs-art-spark--b"></span>
        <?php if($key==='seo'):?>
@@ -127,12 +127,15 @@ $cs_services=array(
        <?php elseif($key==='ads'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">A</span><span>GOOGLE ADS · СХЕМА</span></div>
         <div class="cs-visual-main cs-visual-ads">
-         <div class="cs-search-query"><i></i><span>купити товар онлайн</span></div>
+         <div class="cs-search-query cs-ad-google-search"><b class="cs-google-g">G</b><span>Купити онлайн</span><i></i></div>
          <div class="cs-ad-label">Реклама · Google Ads</div>
          <div class="cs-ad-result"><strong>Товар у вашому магазині</strong><span>Категорія • Наявність • Замовлення</span><i></i><i></i></div>
         </div>
         <div class="cs-visual-float cs-visual-float--right"><small>MERCHANT CENTER</small><span>Товарні дані</span><div class="cs-product-mini"><i></i><i></i><i></i></div></div>
-        <div class="cs-visual-float cs-visual-float--left"><small>КАМПАНІЇ</small><span>Пошук · Shopping</span><strong>Performance Max</strong></div>
+        <div class="cs-visual-float cs-visual-float--left cs-campaigns-card"><div class="cs-float-title"><span class="cs-float-icon">⌁</span> Кампанії</div><div class="cs-campaign-row"><b>✓</b><i></i></div><div class="cs-campaign-row"><b>✓</b><i></i></div><div class="cs-campaign-row"><b>✓</b><i></i></div></div>
+        <div class="cs-visual-float cs-shopping-card"><div class="cs-float-title"><span class="cs-float-icon">◇</span> Google Shopping</div><div class="cs-shopping-tiles"><div><i class="cs-product-shape cs-product-shape--headphone"></i><b></b><b></b></div><div><i class="cs-product-shape cs-product-shape--shoe"></i><b></b><b></b></div><div><i class="cs-product-shape cs-product-shape--chair"></i><b></b><b></b></div></div></div>
+        <div class="cs-visual-float cs-optimization-card"><div class="cs-float-title">Оптимізація кампаній</div><div class="cs-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="cs-visual-float cs-conversions-card"><div class="cs-float-title"><span>↗</span> Конверсії</div><strong>Перевірені дані</strong><small>Вимірювання покупок</small></div>
        <?php elseif($key==='horoshop'):?>
         <div class="cs-visual-heading"><span class="cs-visual-symbol">H</span><span>ХОРОШОП · МАГАЗИН</span></div>
         <div class="cs-visual-main cs-visual-store">
@@ -158,7 +161,7 @@ $cs_services=array(
          <div class="cs-dev-node cs-dev-node--bottom">АВТОМАТИЗАЦІЯ</div>
         </div>
        <?php endif;?>
-       <span class="cs-visual-caption">Візуальна схема процесу · без вигаданих результатів</span>
+       <span class="cs-visual-caption">Схематична візуалізація — не фактична статистика</span>
       </div>
      </div>
     </div>
@@ -166,7 +169,7 @@ $cs_services=array(
    </div>
   </div>
   <div class="cs-bottom">
-   <span class="cs-index"><strong data-cs-current>01</strong><span> / 05</span></span>
+   <span class="cs-index"><strong data-cs-current>02</strong><span> / 05</span></span>
    <div class="cs-track" aria-hidden="true"><span data-cs-progress></span></div>
    <div class="cs-bottom-note">П’ять напрямів — конкретні рішення</div>
    <div class="cs-controls">
