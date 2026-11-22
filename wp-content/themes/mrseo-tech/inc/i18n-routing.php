@@ -8,6 +8,12 @@ function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_P
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ // Seven Ukrainian-only industry website services do not have translated pages.
+ // Navigation in other languages intentionally leads to the real Website Creation parent.
+ if(function_exists('mrseo_ua_business_niche_slugs') && in_array($slug,mrseo_ua_business_niche_slugs(),true)){
+  if($lang==='uk')return home_url('/'.$slug.'/');
+  return mrseo_url('service-websites',$lang);
+ }
  // New Ukrainian offers have exact UA URLs; foreign language navigation goes to a real parent, never hreflang.
  if(function_exists('mrseo_ua_expansion_data')&&($extra=mrseo_ua_expansion_data($slug))){
   if($lang==='uk')return home_url('/'.$slug.'/');
