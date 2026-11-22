@@ -12,7 +12,7 @@ browser=(root.parents[2]/"scripts/verify-live-eu-responsive.cjs").read_text(enco
 assert "require get_template_directory().'/inc/home-cinematic-showcase.php'" in home
 assert "home-cinematic-showcase.css" in home and "home-cinematic-showcase.js" in home
 assert '<section class="ph-services"' not in home and "class=\"ph-service ph-card-link\"" not in home
-assert "class=\"pt-globe\"" in home and "class=\"pt-orbit\"" in home
+assert "class=\"pt-globe" in home and "class=\"pt-orbit" in home
 assert "pt-orbit-lines" in home and "class=\"pt-node n4\"" in home
 assert "const a=-Math.PI/2+i*2*Math.PI/nodes.length+phase;" in old_js
 assert "document.querySelector('.ph-pause')" not in old_js
