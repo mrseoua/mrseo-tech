@@ -89,19 +89,19 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
    </article>
    <article class="hs-service-card" id="hs-seo">
     <span class="hs-service-number">02 / ПОШУК GOOGLE</span>
-    <h3>SEO-просування Хорошоп</h3>
-    <p class="hs-service-pain">У каталозі багато товарів, але цільові категорії не отримують органічних переходів.</p>
-    <p>Зіставимо пошуковий попит зі структурою магазину, визначимо корисні сторінки категорій і фільтрів, підготуємо метатеги та внутрішні посилання.</p>
-    <p class="hs-service-result"><strong>Результат:</strong> погоджена карта SEO-посадкових і пріоритети впровадження.</p>
-    <a href="<?php echo esc_url(mrseo_hs_url('seo'));?>">Переглянути SEO Хорошоп <span aria-hidden="true">↗</span></a>
+    <h3>SEO-просування сайтів на Хорошоп</h3>
+    <p class="hs-service-pain">Сайт на Хорошоп має товари, але його категорії майже не знаходять у Google?</p>
+    <p>Визначимо сторінки під комерційний попит, оптимізуємо категорії, фільтри, метатеги та внутрішні посилання. Погодимо послідовність SEO-просування і контроль пошукових переходів.</p>
+    <p class="hs-service-result"><strong>Результат:</strong> карта пріоритетних сторінок, план робіт і контроль результатів SEO-просування.</p>
+    <a href="<?php echo esc_url(mrseo_hs_url('seo'));?>">Детальніше про SEO-просування <span aria-hidden="true">↗</span></a>
    </article>
    <article class="hs-service-card" id="hs-audit">
     <span class="hs-service-number">03 / ДІАГНОСТИКА</span>
-    <h3>SEO-аудит магазину</h3>
-    <p class="hs-service-pain">Google індексує зайві URL або не знаходить важливі сторінки каталогу.</p>
-    <p>Перевіримо індексацію, canonical, сторінки фільтрів, sitemap і внутрішню навігацію. Відділимо налаштування Хорошоп від проблем контенту й структури.</p>
-    <p class="hs-service-result"><strong>Результат:</strong> звіт з URL, доказами та пріоритетами; виправлення погоджуються окремо.</p>
-    <a href="<?php echo esc_url(mrseo_hs_url('audit'));?>">Переглянути аудит Хорошоп <span aria-hidden="true">↗</span></a>
+    <h3>SEO-аудит сайтів на Хорошоп</h3>
+    <p class="hs-service-pain">Google не індексує важливі сторінки сайту на Хорошоп або знаходить зайві адреси фільтрів?</p>
+    <p>Проведемо SEO-аудит: перевіримо індексацію, canonical, sitemap, фільтри, перелінкування та конкретні проблемні URL. Відділимо причини від симптомів.</p>
+    <p class="hs-service-result"><strong>Результат:</strong> звіт з URL, доказами й планом виправлень; самі зміни — окрема послуга.</p>
+    <a href="<?php echo esc_url(mrseo_hs_url('audit'));?>">Детальніше про SEO-аудит <span aria-hidden="true">↗</span></a>
    </article>
    <article class="hs-service-card" id="hs-ads">
     <span class="hs-service-number">04 / РЕКЛАМА</span>
