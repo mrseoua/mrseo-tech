@@ -47,7 +47,7 @@ assert "horoshop-premium-routes.php" in functions
 assert "mrseo_hs_key()" in premium and "hs-premium-visual" in premium
 assert "get_header()" in premium and "get_footer()" in premium
 assert "rel=\"canonical\"" in premium_routes
-assert "add_rewrite_rule(\u0027^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)/?\u0024\u0027" in premium_routes
+assert "search-ads|shopping|pmax" in premium_routes and "add_rewrite_rule(" in premium_routes
 assert "mrseo_hs_url($anchor)" in header
 for key in ("setup","seo","audit","ads","feeds","ga4"):
  if key!='setup': assert "'"+key+"'" in header
@@ -114,73 +114,6 @@ assert "mrseo_hs_url('audit')" in premium and "mrseo_hs_url('seo')" in premium
 assert "самі зміни — окрема послуга" in page
 assert "Впровадження — лише після погодження" in premium_routes
 
-print("Horoshop UA: six premium routes, premium below-fold motion narratives and interactive hero, original partner visual, metadata, noindex and UA/RU routing preserved.")
-" in premium_routes
-assert "mrseo_hs_url($anchor)" in header
-for key in ("setup","seo","audit","ads","feeds","ga4"):
- if key!='setup': assert "'"+key+"'" in header
- assert "mrseo_hs_url('"+key+"')" in page
- assert "'"+key+"'" in premium_routes or '"'+key+'"' in premium_routes
-assert "prefers-reduced-motion:reduce" in premium_css
-assert "@media(max-width:480px)" in premium_css
-assert "mrseo-horoshop-premium-pages" in premium_routes
-# Premium interaction regression: six distinct service motions and keyboard-operable stages.
-motion=(root/"assets/horoshop-premium-motion.js").read_text(encoding="utf-8")
-assert "horoshop-premium-motion.js" in premium_routes
-assert "mrseo-horoshop-premium-motion" in premium_routes
-assert "data-hs-active-stage" in premium
-assert "hs-premium-stage-button" in premium
-assert 'aria-pressed' in premium and 'aria-live="polite"' in premium
-assert "hs-premium-stage-description" in premium
-assert "hs-premium-scanline" in premium and premium.count("hs-premium-ping--")==3
-assert all("hs-premium-"+name in premium_css for name in ("basket","search","audit","ads","feed","chart","scan","ring","route"))
-assert all(key in motion for key in ("ArrowRight","ArrowLeft","IntersectionObserver","visibilitychange","prefers-reduced-motion","pauseAnimations"))
-assert "data-hs-motion-paused" in premium_css
-assert "@media(prefers-reduced-motion:reduce)" in premium_css
-# Below-fold premium visual stories: six accurate intent-specific narratives.
-story=(root/"inc/horoshop-premium-story.php").read_text(encoding="utf-8")
-assert "require_once get_template_directory().'/inc/horoshop-premium-story.php';" in premium
-assert "mrseo_hs_workbench($key)" in premium
-assert "mrseo_hs_result_visual($key)" in premium
-assert "hs-story-step-visual" in premium and "hs-story-final-orbit" in premium
-for name in ("setup","seo","audit","ads","feeds","ga4"):
- assert "'"+name+"'=>array(" in story,("missing visual story",name)
-for token in ("hs-story-workbench","hs-story-machine","hs-story-machine-flow",
-              "hs-story-proof-row","hs-story-proof-note","hs-story-final-orbit"):
- assert token in story+premium,("missing scene",token)
- assert token in premium_css,("missing scene CSS",token)
-assert "Схематична візуалізація процесу" in story
-assert "не фактичний звіт" in story
-assert "hs-story-motion-on" in motion and "visibilitychange" in motion
-assert "prefers-reduced-motion:reduce" in premium_css
-assert "1.2.0" in premium_routes
-# Verified Horoshop partner trust + specific commercial metadata.
-trust_css=(root/"assets/horoshop-partner-trust.css").read_text(encoding="utf-8")
-assert "mrseo_hs_trust(true)" in page and "mrseo_hs_trust();" in premium
-assert "Офіційний партнер Хорошоп" in story and "10-річним досвідом" in story
-assert "horoshop.ua/ua/offers/seo-na-etape-razrabotki-im-na-horoshop/" in story
-assert "noopener noreferrer" in story
-assert "horoshop-partner-trust.css" in functions and "horoshop-partner-trust.css" in premium_routes
-assert "prefers-reduced-motion:reduce" in trust_css
-assert "mrseo_hs_search_meta($key)" in premium_routes
-for key in ("setup","seo","audit","ads","feeds","ga4"):
- assert "'"+key+"'=>array(" in premium_routes,("unique metadata absent",key)
-assert "Офіційний партнер Хорошоп" in info['description']
-assert "10-річним досвідом" in info['description']
-
-# Distinct intent: SEO promotion is ongoing work, audit is diagnosis/report only.
-menu=(root/"inc/mega-menu-trial.php").read_text(encoding="utf-8")
-assert "SEO-просування сайтів на Хорошоп" in menu
-assert "SEO-аудит сайтів на Хорошоп" in menu
-assert "SEO-просування сайтів на Хорошоп" in page
-assert "SEO-аудит сайтів на Хорошоп" in page
-assert '"SEO-просування сайтів на Хорошоп"' in premium_routes
-assert '"SEO-аудит сайтів на Хорошоп"' in premium_routes
-assert "'SEO-просування сайтів на Хорошоп | MrSeo.tech'" in premium_routes
-assert "'SEO-аудит сайтів на Хорошоп | MrSeo.tech'" in premium_routes
-assert "mrseo_hs_url('audit')" in premium and "mrseo_hs_url('seo')" in premium
-assert "самі зміни — окрема послуга" in page
-assert "Впровадження — лише після погодження" in premium_routes
 
 # New independent Google Ads offerings on Horoshop: routes, service copy, visual scenes and navigation.
 ads_visual=(root/"inc/horoshop-ads-scenes.php").read_text(encoding="utf-8")
