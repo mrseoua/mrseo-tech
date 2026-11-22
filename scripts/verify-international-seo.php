@@ -427,8 +427,8 @@ foreach(array('title','lead','foot','problemHeading','problemLead','result','des
 // UA semantic coverage and exact emitted metadata for each real canonical page.
 $ua_map=mrseo_ua_semantic_map();
 $ua_inventory=array_values(array_filter($inventory,static function($e){return $e['language']==='uk';}));
-assert_seo(count($ua_map)===59&&count($ua_inventory)===59,'UA semantic coverage');
-foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===59,'Duplicate UA semantic '.$field);
+assert_seo(count($ua_map)===66&&count($ua_inventory)===66,'UA semantic coverage');
+foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===66,'Duplicate UA semantic '.$field);
 foreach($ua_inventory as $entry){
  $slug=$entry['slug'];$_SERVER['REQUEST_URI']=parse_url($entry['loc'],PHP_URL_PATH);
  $m=mrseo_ua_semantic_current();assert_seo($m&&$m===$ua_map[$slug],'Missing UA semantic entry '.$slug);
