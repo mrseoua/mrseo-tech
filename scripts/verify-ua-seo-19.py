@@ -17,8 +17,9 @@ titles,descs,primaries=[],[],[]
 for slug in pages:
     assert slug in semantic,slug
     d=semantic[slug]
-    for k in ("title","description","primary","lead"):
+    for k in ("title","description","primary"):
         assert d.get(k),(slug,k)
+    # Some route-specific lead copy lives in a service template rather than the keyword map.
     assert 34<=len(d["title"])<=74,(slug,"title length")
     assert 100<=len(d["description"])<=185,(slug,"description length")
     assert not re.search(r"[\U0001F000-\U0001FAFF\u2600-\u27BF]",d["description"]),(slug,"emoji")
