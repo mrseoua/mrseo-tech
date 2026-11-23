@@ -1,6 +1,6 @@
 <?php
 /**
- * Premium six-service homepage directory, UA only.
+ * Premium five-service homepage directory, UA only.
  * Earth hero, global header/footer and non-home locales are intentionally unchanged.
  * Illustrations are HTML/CSS interface studies, not screenshots or real campaign statistics.
  */
@@ -12,25 +12,22 @@ $services = [
  ['key'=>'ads','number'=>'02','kicker'=>'GOOGLE ADS','name'=>'Google Ads','slug'=>'google-ads',
   'copy'=>'Реклама витрачає бюджет, а результат незрозумілий? Зіставимо кампанії, товарні фіди й конверсії, щоб рішення спиралися на дані.',
   'link'=>'Про Google Ads'],
- ['key'=>'commerce','number'=>'03','kicker'=>'E-COMMERCE','name'=>'E-commerce','slug'=>'ecommerce-seo',
-  'copy'=>'У каталозі багато товарів, а продажі не зростають? Працюємо з SEO магазину, рекламними даними, категоріями й шляхом покупця.',
-  'link'=>'Про E-commerce'],
- ['key'=>'horoshop','number'=>'04','kicker'=>'HOROSHOP','name'=>'Horoshop','slug'=>'horoshop',
+ ['key'=>'horoshop','number'=>'03','kicker'=>'HOROSHOP','name'=>'Хорошоп','slug'=>'horoshop',
   'copy'=>'Магазин на Хорошоп потребує розвитку? Перевіримо фільтри, категорії, індексацію, фіди та налаштування реклами.',
-  'link'=>'Про Horoshop'],
+  'link'=>'Про Хорошоп'],
+ ['key'=>'sites','number'=>'04','kicker'=>'WEBSITES','name'=>'Сайти','slug'=>'service-websites',
+  'copy'=>'Потрібен сайт, на якому легко обрати послугу й залишити заявку? Створюємо лендінги, корпоративні сайти та зрозумілі сторінки бізнесу.',
+  'link'=>'Про сайти']
  ['key'=>'dev','number'=>'05','kicker'=>'DEVELOPMENT','name'=>'Веброзробка','slug'=>'web-development',
   'copy'=>'Роботу гальмують ручні дії й розрізнені системи? Розробляємо особисті кабінети, API-інтеграції, парсинг і бізнес-автоматизацію.',
-  'link'=>'Про веброзробку'],
- ['key'=>'sites','number'=>'06','kicker'=>'WEBSITES','name'=>'Створення сайтів','slug'=>'service-websites',
-  'copy'=>'Потрібен сайт, на якому легко обрати послугу й залишити заявку? Створюємо лендінги, корпоративні сайти та зрозумілі сторінки бізнесу.',
-  'link'=>'Про створення сайтів']
+  'link'=>'Про веброзробку']
 ];
 ?>
 <section class="hsix" id="pt-development" aria-labelledby="hsix-heading">
  <div class="hsix-shell">
   <div class="hsix-heading">
    <div><span class="hsix-heading-rule" aria-hidden="true"></span><h2 id="hsix-heading">Послуги MrSeo.tech</h2></div>
-   <p>Шість напрямів. Рішення під задачі вашого бізнесу.</p>
+   <p>П’ять напрямів. Рішення під задачі вашого бізнесу.</p>
   </div>
   <div class="hsix-grid">
    <?php foreach ($services as $service):
