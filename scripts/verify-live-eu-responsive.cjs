@@ -212,18 +212,18 @@ async function audit(browser,viewport,lang,slug){
         final:!!root?.querySelector('.pti-final a[href$="/contact/"]')};
     })(),
     uaPremiumStyles:!!document.querySelector('link[href*="home-uk-premium.css"]'),
-    uaCinematic:document.querySelectorAll('.pt-ua-home .cs-tab').length===5&&document.querySelectorAll('.pt-ua-home .cs-panel').length===5,
-    uaCinematicLinks:document.querySelectorAll('.pt-ua-home .cs-links a[href]').length,
-    uaCinematicVisuals:document.querySelectorAll('.pt-ua-home .cs-art-field').length,
-    uaCinematicScripts:!!document.querySelector('script[src*="home-cinematic-showcase.js"]')&&!!document.querySelector('link[href*="home-cinematic-showcase.css"]'),
-    uaCinematicButtons:!!document.querySelector('.pt-ua-home [data-cs-previous]')&&!!document.querySelector('.pt-ua-home [data-cs-next]'),
-    uaCinematicReference:!!document.querySelector('link[href*="home-cinematic-reference.css"]')&&!!document.querySelector('.cs-google-ads-mark')&&document.querySelectorAll('.cs-shopping-card').length===1&&document.querySelectorAll('.cs-campaigns-card').length===1,
+    uaCinematic:document.querySelectorAll('.pt-ua-home .hsix-card').length===5&&document.querySelectorAll('.pt-ua-home .hsix-card h3').length===5,
+    uaCinematicLinks:document.querySelectorAll('.pt-ua-home .hsix-card-footer a[href]').length,
+    uaCinematicVisuals:document.querySelectorAll('.pt-ua-home .hsix-browser').length,
+    uaCinematicScripts:!!document.querySelector('link[href*="home-six-services.css"]')&&!document.querySelector('script[src*="home-cinematic-showcase.js"]'),
+    uaCinematicButtons:[...document.querySelectorAll('.pt-ua-home .hsix-card-footer a[href]')].every(a=>{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.endsWith('/')&&a.getBoundingClientRect().width>0}),
+    uaCinematicReference:['hsix-search','hsix-chart','hsix-shop-screen','hsix-site-screen','hsix-code'].every(c=>!!document.querySelector('.pt-ua-home .'+c)),
 
     uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-simple-nav .mrseo-simple-card').length,
     uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-simple-nav a.mrseo-simple-card[href]').length,
     uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
     uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
-    uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&!!document.querySelector('.pt-ua-home .cs-controls button'),
+    uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&document.querySelectorAll('.pt-ua-home .hsix-card a[href]').length===5,
     uaPremiumResolution:!!document.querySelector('.pt-ua-home .ph-resolution a[href$="/contact/"]'),
     heroEdge:(()=>{
       const el=document.querySelector(uaHome?'#main > .pt-ua-home > .pt-home':'#main > .orbit-lab');
@@ -650,7 +650,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks<25||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==5||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
@@ -717,6 +717,12 @@ async function audit(browser,viewport,lang,slug){
   if(slug!=='privacy'&&!c.portfolio)item.errors.push('Proof/portfolio link missing');
   if((lang==='uk'&&['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (lang==='ru'&&ruNewSlugs.includes(slug)) || (lang==='en'&&enGbNewSlugs.includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,'seo-audit','performance-max','about','contact','local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)});
+  }
+  // Screenshot the actual six-card section, not just the Earth first viewport.
+  if(lang==='uk'&&slug===''&&['desktop','mobile','narrow'].includes(viewport.name)){
+   const gallery=page.locator('.pt-ua-home .hsix');
+   await gallery.screenshot({path:'shots/eu-uk-six-services-'+viewport.name+'.jpg',type:'jpeg',quality:80,timeout:20000})
+    .catch(e=>item.errors.push('UA five-card visual capture failed: '+e.message));
   }
   // Independent screenshots of middle and footer; Chromium fullPage can repeat
   // the top on long pages. Cover five distinct RU service scene families.
