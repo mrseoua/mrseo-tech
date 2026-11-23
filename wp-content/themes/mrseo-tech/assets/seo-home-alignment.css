@@ -142,3 +142,104 @@
 @media(prefers-reduced-motion:reduce){
  .pti-page[data-pti-service="seo"] .pti-pill{transition:none!important}
 }
+
+
+/* 2026-11 SEO SERP diagnostic — the standalone, clearly animated counterpart
+   to approved homepage mini-interfaces. Not used on any other service. */
+.pti-page[data-pti-service="seo"] .pti-seo-console-stage{
+ aspect-ratio:1.36;min-height:445px;
+ background:linear-gradient(145deg,#f5f0e9,#e8ece7);
+ overflow:hidden;border:1px solid #cbd5cd;border-radius:17px;
+}
+.pti-page[data-pti-service="seo"] .pti-seo-console-stage:before{display:none}
+.pti-page[data-pti-service="seo"] .pti-seo-console-stage .pti-stage-label,
+.pti-page[data-pti-service="seo"] .pti-seo-console-stage .pti-stage-code{
+ z-index:4;top:12px;color:#725d52;font-size:10px;letter-spacing:.08em;
+}
+.pti-page[data-pti-service="seo"] .seo-console{
+ position:absolute;inset:42px 20px 30px;z-index:2;
+ display:flex;flex-direction:column;min-width:0;overflow:hidden;
+ background:#fffdf9;border:1px solid #cfd9d2;border-radius:12px;
+ box-shadow:0 20px 39px #39453a18;
+ color:#2a302b;
+}
+.pti-page[data-pti-service="seo"] .seo-console-bar{display:flex;align-items:center;gap:12px;padding:0 15px;height:42px;flex:none;background:#e9efeb;border-bottom:1px solid #d2dcd5;color:#53685e;font-size:10px;font-weight:800;letter-spacing:.09em}
+.pti-page[data-pti-service="seo"] .seo-console-bar>b{margin-left:auto;font-size:10px;white-space:nowrap;color:#9d4c3b}
+.pti-page[data-pti-service="seo"] .seo-console-dots{display:flex;gap:5px}
+.pti-page[data-pti-service="seo"] .seo-console-dots i{width:7px;height:7px;border-radius:50%;background:#b6c5bd}
+.pti-page[data-pti-service="seo"] .seo-console-body{padding:clamp(12px,2vw,23px);flex:1;min-height:0}
+.pti-page[data-pti-service="seo"] .seo-console-search{display:flex;gap:11px;align-items:center;height:48px;padding:0 16px;border:1px solid #c7d6cb;border-radius:25px;background:#fff;box-shadow:0 4px 13px #3d453710;font-size:clamp(12px,1.25vw,16px);font-weight:700;color:#354139;white-space:nowrap}
+.pti-page[data-pti-service="seo"] .seo-console-mark{font-size:25px;line-height:1;color:#b94134}
+.pti-page[data-pti-service="seo"] .seo-console-search b{margin-left:auto;color:#b94134;font-size:20px}
+.pti-page[data-pti-service="seo"] .seo-console-caret{display:inline-block;width:2px;height:21px;background:#b94134}
+.pti-page[data-pti-service="seo"] .seo-console-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(155px,.82fr);gap:15px;margin-top:18px;min-height:0}
+.pti-page[data-pti-service="seo"] .seo-console-results{position:relative;display:grid;gap:12px;min-width:0;overflow:hidden}
+.pti-page[data-pti-service="seo"] .seo-console-result{padding:13px 15px 10px;background:#fafcf9;border:1px solid #dee5dd;border-radius:8px;min-width:0}
+.pti-page[data-pti-service="seo"] .seo-console-result--primary{border-color:#b9d8c4;background:#f5fbf7}
+.pti-page[data-pti-service="seo"] .seo-console-result small{display:block;font-size:9px;letter-spacing:.08em;font-weight:800;color:#9a624f;margin:0 0 7px}
+.pti-page[data-pti-service="seo"] .seo-console-result strong{display:block;font-size:clamp(11px,1.05vw,15px);color:#2b6288;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:10px}
+.pti-page[data-pti-service="seo"] .seo-console-line{display:block;background:#cbd8d2;width:88%;height:5px;border-radius:5px;margin:6px 0}
+.pti-page[data-pti-service="seo"] .seo-console-line--strong{height:7px;background:#76b09a;width:80%;transform-origin:left}
+.pti-page[data-pti-service="seo"] .seo-console-line--short{width:57%}
+.pti-page[data-pti-service="seo"] .seo-console-scan{position:absolute;inset:0 auto 0 0;width:25%;background:linear-gradient(90deg,transparent,#86b9a538,transparent);pointer-events:none;opacity:0}
+.pti-page[data-pti-service="seo"] .seo-console-diagnostic{min-width:0;background:#f5f3ed;border:1px solid #e0d8ca;border-radius:8px;padding:12px}
+.pti-page[data-pti-service="seo"] .seo-console-aside-title{display:block;font-size:10px;font-weight:850;color:#9b4938;letter-spacing:.06em;margin-bottom:11px}
+.pti-page[data-pti-service="seo"] .seo-console-check{display:flex;align-items:center;gap:7px;padding:9px 0;border-bottom:1px solid #e2d9cb;font-size:12px;font-weight:700;color:#4f574e}
+.pti-page[data-pti-service="seo"] .seo-console-check i{font-size:10px;font-style:normal;color:#ab9385}
+.pti-page[data-pti-service="seo"] .seo-console-check b{margin-left:auto;color:#34a778;font-size:15px}
+.pti-page[data-pti-service="seo"] .seo-console-readout{margin-top:16px;font-size:9px;color:#806b5d;letter-spacing:.045em;font-weight:800}
+.pti-page[data-pti-service="seo"] .seo-console-bars{height:29px;display:flex;align-items:end;gap:5px;margin-top:7px}
+.pti-page[data-pti-service="seo"] .seo-console-bars i{flex:1;height:48%;background:#98c6b5;border-radius:3px 3px 0 0;transform-origin:bottom}
+.pti-page[data-pti-service="seo"] .seo-console-bars i:nth-child(2){height:66%}
+.pti-page[data-pti-service="seo"] .seo-console-bars i:nth-child(3){height:38%}
+.pti-page[data-pti-service="seo"] .seo-console-bars i:nth-child(4){height:85%}
+.pti-page[data-pti-service="seo"] .seo-console-bars i:nth-child(5){height:61%}
+.pti-page[data-pti-service="seo"] .seo-console-bars i:nth-child(6){height:97%}
+.pti-page[data-pti-service="seo"] .seo-console-bars i:nth-child(7){height:76%}
+.pti-page[data-pti-service="seo"] .seo-console-status{margin-top:auto;display:flex;gap:8px;align-items:center;border-top:1px solid #dce6de;padding:11px 16px;background:#edf4ee;color:#3e6456;font-size:10px;font-weight:850;letter-spacing:.04em}
+.pti-page[data-pti-service="seo"] .seo-console-status>span:last-child{margin-left:auto;color:#b64a36}
+.pti-page[data-pti-service="seo"] .seo-console-status-light{width:8px;height:8px;border-radius:50%;background:#28a879}
+.pti-page[data-pti-service="seo"] .seo-console-svg{position:absolute;z-index:1;opacity:.5}
+.pti-page[data-pti-service="seo"] .pti-seo-console .pti-scene-controls{position:relative;z-index:4}
+.pti-page[data-pti-service="seo"] .pti-seo-console[data-step="0"] .seo-console-check:nth-child(2),
+.pti-page[data-pti-service="seo"] .pti-seo-console[data-step="1"] .seo-console-check:nth-child(3),
+.pti-page[data-pti-service="seo"] .pti-seo-console[data-step="2"] .seo-console-check:nth-child(4){background:#e4ede4;color:#285b46;border-radius:5px;padding-inline:6px}
+@keyframes seo-console-sweep{0%,8%{transform:translateX(-130%);opacity:0}22%,75%{opacity:.9}92%,100%{transform:translateX(540%);opacity:0}}
+@keyframes seo-console-line{0%,15%,100%{transform:scaleX(.46)}53%,80%{transform:scaleX(1)}}
+@keyframes seo-console-bar{0%,100%{transform:scaleY(.44);opacity:.5}50%,78%{transform:scaleY(1);opacity:1}}
+@keyframes seo-console-check{0%,100%{opacity:.45;transform:scale(.85)}50%,78%{opacity:1;transform:scale(1.14)}}
+@keyframes seo-console-caret{0%,50%,100%{opacity:1}51%,75%{opacity:0}}
+@media(prefers-reduced-motion:no-preference){
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-scan{animation:seo-console-sweep 6.7s ease-in-out infinite}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-line--strong{animation:seo-console-line 6.7s ease-in-out infinite}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-bars i{animation:seo-console-bar 5.4s ease-in-out infinite}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-bars i:nth-child(2n){animation-delay:-1.2s}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-bars i:nth-child(3n){animation-delay:-2.5s}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-check b{animation:seo-console-check 5s ease-in-out infinite}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-check:nth-child(3) b{animation-delay:-1.5s}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-check:nth-child(4) b{animation-delay:-3s}
+ .pti-page[data-pti-service="seo"] .pti-seo-console.pti-live .seo-console-caret{animation:seo-console-caret 1.35s steps(1,end) infinite}
+}
+@media(max-width:940px){.pti-page[data-pti-service="seo"] .pti-seo-console-stage{min-height:445px}}
+@media(max-width:600px){
+ .pti-page[data-pti-service="seo"] .pti-seo-console-stage{min-height:390px;aspect-ratio:1.05}
+ .pti-page[data-pti-service="seo"] .seo-console{inset:35px 8px 18px}
+ .pti-page[data-pti-service="seo"] .seo-console-bar{gap:6px;height:32px;padding:0 8px;font-size:8px}
+ .pti-page[data-pti-service="seo"] .seo-console-bar b{font-size:8px}
+ .pti-page[data-pti-service="seo"] .seo-console-body{padding:10px}
+ .pti-page[data-pti-service="seo"] .seo-console-search{padding:0 10px;height:38px;font-size:12px}
+ .pti-page[data-pti-service="seo"] .seo-console-layout{grid-template-columns:minmax(0,1fr) minmax(105px,.65fr);gap:7px;margin-top:10px}
+ .pti-page[data-pti-service="seo"] .seo-console-result{padding:7px}
+ .pti-page[data-pti-service="seo"] .seo-console-result strong{font-size:10px;margin-bottom:6px}
+ .pti-page[data-pti-service="seo"] .seo-console-result small{font-size:8px}
+ .pti-page[data-pti-service="seo"] .seo-console-diagnostic{padding:7px}
+ .pti-page[data-pti-service="seo"] .seo-console-aside-title{font-size:8px}
+ .pti-page[data-pti-service="seo"] .seo-console-check{font-size:10px;padding:6px 0}
+ .pti-page[data-pti-service="seo"] .seo-console-status{font-size:8px;padding:8px}
+ .pti-page[data-pti-service="seo"] .seo-console-readout{margin-top:10px;font-size:8px}
+ .pti-page[data-pti-service="seo"] .seo-console-bars{height:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pti-page[data-pti-service="seo"] .seo-console *{animation:none!important;transition:none!important}
+ .pti-page[data-pti-service="seo"] .seo-console-scan{opacity:0!important}
+}
