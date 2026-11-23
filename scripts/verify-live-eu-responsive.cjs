@@ -992,30 +992,40 @@ async function audit(browser,viewport,lang,slug){
         meta:document.querySelectorAll('meta[name="description"]').length,
         canonical:document.querySelector('link[rel="canonical"]')?.href,
         robots:document.querySelector('meta[name="robots"]')?.content||'',
-        scenes:root?.querySelectorAll('.udv-visual svg.udv-kinetic-svg').length,
-        nodeCards:root?.querySelectorAll('.udv-visual [data-udv-part]').length,
-        lowerScenes:root?.querySelectorAll('.udv-lower-graphic svg.udv-lower-svg').length,
+        scenes:root?.querySelectorAll('.udv-visual .udv-premium-scene img.udv-premium-hero-image').length,
+        nodeCards:root?.querySelectorAll('.udv-visual .udv-premium-point[data-udv-part]').length,
+        lowerScenes:root?.querySelectorAll('.udv-lower-graphic img.udv-premium-detail-image').length,
         lowerProblem:root?.querySelectorAll('.udv-section--problems [data-udv-lower="problem"]').length,
         lowerSolution:root?.querySelectorAll('.udv-section--solution [data-udv-lower="solution"]').length,
-        lowerAnimated:root?.querySelectorAll('.udv-lower-svg animateMotion').length,
-        heroArtVariant:root?.querySelector('svg.udv-kinetic-svg')?.getAttribute('data-udv-svg'),
+        lowerAnimated:root?.querySelectorAll('.udv-lower-graphic .udv-premium-detail-tracer').length,
+        heroArtVariant:root?.querySelector('.udv-premium-scene')?.dataset.udvPremiumScene,
+        heroImgUrl:root?.querySelector('.udv-premium-hero-image')?.getAttribute('src'),
+        premiumAssetStyle:!!document.querySelector('link[href*="ua-dev-premium-images.css"]'),
 
         premiumShell:!!root?.matches('.pti-page.puc-page')&&!!root?.querySelector('.pti-hero.psc-hero .psc-hero-stage'),
         premiumCSS:!!document.querySelector('link[href*="premium-ua-commercial.css"]'),
         storySteps:root?.querySelectorAll('.udv-storyboard [data-udv-stage]').length,
         storyActive:root?.querySelectorAll('.udv-story-step.is-current').length,
         motionButton:!!root?.querySelector('.udv-motion-toggle[aria-pressed="false"]'),
-        motionScript:!!document.querySelector('script[src*="ua-dev-kinetic-scenes.js"]'),
+        motionScript:!!document.querySelector('script[src*="ua-dev-premium-images.js"]'),
         sceneName:root?.querySelector('.udv-visual-wrap')?.dataset.udvScene,
         problems:root?.querySelectorAll('.udv-cards .udv-card').length,
         actions:root?.querySelectorAll('.udv-steps .udv-step').length,
         faq:root?.querySelectorAll('.udv-faq-list details').length,
         contactLinks:root?.querySelectorAll('a[href*="/contact/"]').length,
         newCss:!!document.querySelector('link[href*="ua-dev-new-landings.css"]'),
-        external:root?.querySelectorAll('a[href^="http"]:not([href*="mrseo.tech"])').length||0,
+        external:[...root?.querySelectorAll('a[href]')||[]].filter(a=>{try{const u=new URL(a.href,location.href);return /^https?:$/.test(u.protocol)&&u.origin!==location.origin;}catch{return false;}}).length,
         overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
-      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.nodeCards!==3||state.lowerScenes!==2||state.lowerProblem!==1||state.lowerSolution!==1||state.lowerAnimated!==2||state.heroArtVariant!==state.sceneName||!state.premiumShell||!state.premiumCSS||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
+      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.nodeCards!==3||state.lowerScenes!==2||state.lowerProblem!==1||state.lowerSolution!==1||state.lowerAnimated!==2||state.heroArtVariant!==state.sceneName||!state.heroImgUrl?.includes('ua-dev-premium-')||!state.premiumAssetStyle||!state.premiumShell||!state.premiumCSS||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
+      const imageLoaded=await page.locator('.udv-premium-hero-image').evaluate(async img=>{
+       if(!img.complete)try{await img.decode();}catch(_){}
+       return img.complete&&img.naturalWidth>=1000&&img.naturalHeight>=700;
+      });
+      if(!imageLoaded)item.errors.push('Premium hero image failed to decode or was too small');
+      const lowerImageFiles=await page.locator('.udv-lower-graphic img.udv-premium-detail-image').evaluateAll(images=>
+       images.every(img=>img.getAttribute('loading')==='lazy'&&img.getAttribute('src')?.includes('ua-dev-premium-')));
+      if(!lowerImageFiles)item.errors.push('Missing lazy-loaded lower WebP images');
       if(slug==='client-portals'){
        const visual=page.locator('.udv-visual-wrap[data-udv-scene]');
        await visual.scrollIntoViewIfNeeded();
