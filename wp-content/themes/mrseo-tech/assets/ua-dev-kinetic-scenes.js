@@ -1,51 +1,68 @@
-/* MrSeo.tech UA-only WebDev storyboards: 3 business-process stages per scene.
-   One light timer while visible; no canvas/WebGL, no external requests. */
+/* Unified MrSeo.tech premium WebDev animations: same interaction language as
+   /business-automation/, unique three-card SVG story for each of seven services.
+   Visibility-aware animation, manual tabs, keyboard-operable pause, reduced motion. */
 (function(){
  'use strict';
- const visual=document.querySelector('.udv-visual[data-udv-scene]');
- if(!visual)return;
- const stages=[...visual.querySelectorAll('[data-udv-stage]')];
- const button=visual.querySelector('.udv-motion-toggle');
- if(stages.length!==3||!button)return;
- const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const hero=document.querySelector('.udv-page .udv-visual-wrap[data-udv-scene]');
+ if(!hero)return;
+ const buttons=[...hero.querySelectorAll('.udv-story-step[data-udv-stage]')];
+ const svg=hero.querySelector('svg.udv-kinetic-svg');
+ const pause=hero.querySelector('.udv-motion-toggle');
+ const caption=hero.querySelector('[data-udv-caption-text]');
+ const index=hero.querySelector('[data-udv-index]');
+ if(buttons.length!==3||!pause||!svg||!caption||!index)return;
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  const conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
- let step=0,interval=null,visible=false,manualPause=false;
- function setStep(next){
-  step=next%stages.length;
-  visual.dataset.udvStep=String(step);
-  stages.forEach((item,i)=>item.classList.toggle('is-current',i===step));
- }
- function stopped(){
-  return manualPause||reduced.matches||Boolean(conn&&conn.saveData)||!visible||document.hidden;
+ let step=0,timer=null,visible=false,manualPause=false;
+ const motionRestricted=()=>reduce.matches||Boolean(conn&&conn.saveData);
+ const stopped=()=>manualPause||motionRestricted()||!visible||document.hidden;
+ function select(next){
+  step=(next+buttons.length)%buttons.length;
+  hero.dataset.udvStep=String(step);
+  buttons.forEach((button,i)=>{
+   button.setAttribute('aria-pressed',String(i===step));
+   button.classList.toggle('is-current',i===step);
+  });
+  index.textContent=String(step+1).padStart(2,'0')+' / 03';
+  caption.textContent=buttons[step].dataset.udvCaption||'';
  }
  function sync(){
-  const paused=stopped();
-  if(paused&&interval!==null){window.clearInterval(interval);interval=null;}
-  if(!paused&&interval===null)interval=window.setInterval(()=>setStep(step+1),3300);
-  visual.dataset.udvPaused=String(paused);
-  button.setAttribute('aria-pressed',String(manualPause));
-  button.setAttribute('aria-label',manualPause?'Відновити демонстрацію':'Призупинити демонстрацію');
-  button.innerHTML=manualPause?'Відтворити <span aria-hidden="true">▶</span>':'Пауза <span aria-hidden="true">Ⅱ</span>';
+  const shouldStop=stopped();
+  if(shouldStop&&timer!==null){window.clearInterval(timer);timer=null;}
+  else if(!shouldStop&&timer===null)timer=window.setInterval(()=>select(step+1),4200);
+  if(typeof svg.pauseAnimations==='function'&&typeof svg.unpauseAnimations==='function'){
+   if(shouldStop)svg.pauseAnimations();
+   else svg.unpauseAnimations();
+  }
+  hero.dataset.udvPaused=String(shouldStop);
+  pause.setAttribute('aria-pressed',String(manualPause));
+  pause.disabled=motionRestricted();
+  pause.textContent=motionRestricted()?'Рух вимкнено':(manualPause?'Увімкнути рух':'Призупинити рух');
  }
- button.addEventListener('click',()=>{manualPause=!manualPause;sync();});
- const observer=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{
-  visible=entries.some(e=>e.isIntersecting);
-  sync();
- },{rootMargin:'0px',threshold:.12}):null;
- if(observer)observer.observe(visual);
- else {visible=true;sync();}
- document.addEventListener('visibilitychange',sync,{passive:true});
- if(typeof reduced.addEventListener==='function')reduced.addEventListener('change',()=>{
-  if(reduced.matches)setStep(0);
-  sync();
+ buttons.forEach((button,i)=>{
+  button.addEventListener('click',()=>{
+   select(i);
+   // Clicking a stage keeps the illustration focused on the chosen explanation.
+   manualPause=true;
+   sync();
+  });
  });
- else if(typeof reduced.addListener==='function')reduced.addListener(()=>{if(reduced.matches)setStep(0);sync();});
+ pause.addEventListener('click',()=>{manualPause=!manualPause;sync();});
+ const observer='IntersectionObserver' in window?
+  new IntersectionObserver(entries=>{
+   visible=entries.some(entry=>entry.isIntersecting);
+   sync();
+  },{threshold:.12}):null;
+ if(observer)observer.observe(hero);else visible=true;
+ document.addEventListener('visibilitychange',sync,{passive:true});
+ if(typeof reduce.addEventListener==='function')reduce.addEventListener('change',sync);
+ else if(typeof reduce.addListener==='function')reduce.addListener(sync);
  if(conn&&typeof conn.addEventListener==='function')conn.addEventListener('change',sync);
- window.addEventListener('pagehide',()=>{visible=false;sync();if(observer)observer.disconnect();},{once:true});
- // Below-the-fold narrative enters once; existing content stays visible without JS.
- // IntersectionObserver only animates transform/opacity, never page geometry.
+ window.addEventListener('pagehide',()=>{
+  visible=false;sync();if(observer)observer.disconnect();
+ },{once:true});
  const root=document.querySelector('.udv-page');
- if(root&&!reduced.matches&&!(conn&&conn.saveData)&&'IntersectionObserver' in window){
+ if(root&&!motionRestricted()&&'IntersectionObserver' in window){
   const items=[...root.querySelectorAll('.udv-card,.udv-step,.udv-result,.udv-faq-list details')];
   items.forEach(item=>item.classList.add('udv-reveal'));
   const reveal=new IntersectionObserver(entries=>{
@@ -58,6 +75,5 @@
   },{threshold:.12,rootMargin:'0px 0px -20px 0px'});
   items.forEach(item=>reveal.observe(item));
  }
- setStep(0);
- sync();
+ select(0);sync();
 })();
