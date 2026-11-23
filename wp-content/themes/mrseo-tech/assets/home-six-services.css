@@ -76,3 +76,9 @@
 @media(max-width:700px){.pt-ua-home .hsix{padding:45px 0 65px;margin-bottom:30px}.pt-ua-home .hsix-shell{width:min(100% - 32px,490px)}.pt-ua-home .hsix-heading{display:block;margin-bottom:22px}.pt-ua-home .hsix-heading>div{gap:11px}.pt-ua-home .hsix-heading-rule{width:26px}.pt-ua-home .hsix-heading h2{font-size:clamp(32px,8vw,42px)}.pt-ua-home .hsix-heading p{border:0;padding:0;margin:10px 0 0 38px;font-size:15px}.pt-ua-home .hsix-grid{grid-template-columns:1fr;gap:12px}.pt-ua-home .hsix-card{padding:19px}.pt-ua-home .hsix-card h3{font-size:25px;margin:9px 0 15px}.pt-ua-home .hsix-card-footer p{font-size:16px;line-height:1.55;margin-top:16px}.pt-ua-home .hsix-card-footer a{min-height:36px}.pt-ua-home .hsix-browser{aspect-ratio:1.88;min-height:160px}}
 @media(max-width:370px){.pt-ua-home .hsix-browser{min-height:145px}.pt-ua-home .hsix-browser-label{font-size:8px}.pt-ua-home .hsix-card{padding:15px}.pt-ua-home .hsix-shop-list>div{font-size:9px}.pt-ua-home .hsix-code{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.pt-ua-home .hsix-card{transition:none}.pt-ua-home .hsix-card:hover{transform:none}.pt-ua-home .hsix-card-footer a{transition:none}}
+
+/* Authentic partner wordmark and restrained CSS filesystem icons. */
+.pt-ua-home .hsix-shop-logo{width:min(88px,100%);height:auto;max-height:24px;object-fit:contain;display:block;margin-bottom:1px}
+.pt-ua-home .hsix-folder{position:relative;display:inline-block;width:12px;height:9px;flex:0 0 12px;border:1px solid #d9a45d;border-radius:2px;background:linear-gradient(#f3cb86,#dfac61)}
+.pt-ua-home .hsix-folder:before{content:"";position:absolute;width:6px;height:3px;left:0;top:-4px;background:#ebbd74;border:1px solid #d9a45d;border-radius:2px 2px 0 0}
+.pt-ua-home .hsix-gear{color:#6a9587;font-size:13px;width:12px;flex:none;font-style:normal;line-height:1}
