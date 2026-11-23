@@ -786,34 +786,30 @@ async function audit(browser,viewport,lang,slug){
     await page.evaluate(()=>window.scrollTo(0,0));
   }
   if(lang==='uk'&&slug==='seo'){
-   const journey=page.locator('.pti-page[data-pti-service="seo"] .seo-path');
+   // Screenshot the original, SEO-specific animated hero, now aligned to the
+   // approved home design rather than adding a second generic card grid.
+   const hero=page.locator('.pti-page[data-pti-service="seo"] .pti-hero');
    try{
-    if(await journey.count()!==1)item.errors.push('SEO journey missing or duplicated');
-    else{
-     const cards=journey.locator('.seo-path-card');
-     if(await cards.count()!==3)item.errors.push('SEO journey must show exactly three distinct stages');
-     await journey.scrollIntoViewIfNeeded();
-     await page.emulateMedia({reducedMotion:'no-preference'});
-     const active=await page.evaluate(()=>{
-      const root=document.querySelector('.pti-page[data-pti-service="seo"] .seo-path');
-      const dot=root?.querySelector('.seo-path-progress-dot');
-      const search=root?.querySelector('.seo-path-search-caret');
-      const form=root?.querySelector('.seo-path-form-button');
-      return {
-       motion:[dot,search,form].map(e=>e?.getAnimations().some(a=>a.playState==='running')||false),
-       overflow:document.documentElement.scrollWidth>innerWidth+4,
-       cardCount:root?.querySelectorAll('.seo-path-card').length
-      };
+    if(await hero.count()!==1)item.errors.push('SEO premium hero missing or duplicate');
+    else {
+     const style=await page.evaluate(()=>{
+      const root=document.querySelector('.pti-page[data-pti-service="seo"]');
+      const hero=root?.querySelector('.pti-hero');
+      const stage=root?.querySelector('.pti-scene.pti-seo');
+      const rect=hero?.getBoundingClientRect();
+      return {style:!!document.querySelector('link[href*="seo-home-alignment.css"]'),
+              rounded:parseFloat(getComputedStyle(hero).borderTopLeftRadius)>=18,
+              animation:!!stage?.querySelector('animateMotion'),
+              phases:stage?.querySelectorAll('[data-phase]').length,
+              overflow:document.documentElement.scrollWidth>innerWidth+4,
+              noGeneric:!root?.querySelector('.seo-path'),
+              fit:rect&&rect.right<=innerWidth+4&&rect.left>=-4};
      });
-     if(active.motion.some(a=>!a))item.errors.push('SEO narrative animation not running '+JSON.stringify(active));
-     if(active.overflow)item.errors.push('SEO journey causes horizontal overflow');
-     await journey.screenshot({path:'shots/ua-seo-search-journey-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
-     await page.emulateMedia({reducedMotion:'reduce'});
-     const names=await page.evaluate(()=>[...document.querySelectorAll('.pti-page[data-pti-service="seo"] .seo-path-progress-dot,.pti-page[data-pti-service="seo"] .seo-path-page-highlight')].map(e=>getComputedStyle(e).animationName));
-     if(names.some(n=>n!=='none'))item.errors.push('SEO journey reduced-motion CSS still animated');
-     await page.emulateMedia({reducedMotion:'no-preference'});
+     if(!style.style||!style.rounded||!style.animation||style.phases!==3||style.overflow||!style.noGeneric||!style.fit)
+      item.errors.push('SEO homepage-style hero regression '+JSON.stringify(style));
+     await hero.screenshot({path:'shots/ua-seo-premium-hero-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
     }
-   }catch(e){item.errors.push('SEO journey viewport QA '+e.message)}
+   }catch(e){item.errors.push('SEO hero design QA '+e.message)}
   }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
