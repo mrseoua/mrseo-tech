@@ -40,7 +40,7 @@ get_header();
     <div class="pti-scene-controls udv-scene-controls">
      <div class="pti-tabs udv-storyboard" role="group" aria-label="Етапи процесу">
       <?php foreach($motion_stages[$scene] as $step=>$title):?>
-       <button type="button" class="udv-story-step" data-udv-stage="<?php echo (int)$step;?>" data-udv-caption="<?php echo esc_attr($p['actions'][$step][1]);?>" aria-pressed="<?php echo $step===0?'true':'false';?>"><?php echo esc_html($title);?></button>
+       <button type="button" class="udv-story-step<?php echo $step===0?' is-current':'';?>" data-udv-stage="<?php echo (int)$step;?>" data-udv-caption="<?php echo esc_attr($p['actions'][$step][1]);?>" aria-pressed="<?php echo $step===0?'true':'false';?>"><?php echo esc_html($title);?></button>
       <?php endforeach;?>
      </div>
      <button type="button" class="pti-pause udv-motion-toggle" aria-pressed="false">Призупинити рух</button>
