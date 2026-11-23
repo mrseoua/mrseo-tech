@@ -418,7 +418,7 @@ add_action('admin_post_mrseo_contact','mrseo_handle_contact');
  * Never list these concept routes in the international XML sitemap.
  */
 function mrseo_private_concept_route() {
-    return in_array(mrseo_slug(), array('orbit-lab', 'orbit-light', 'premium-tech-preview'), true);
+    return in_array(mrseo_slug(), array('orbit-lab', 'orbit-light'), true) || (function_exists('mrseo_premium_tech_preview_request') && mrseo_premium_tech_preview_request());
 }
 add_filter('wp_robots', function($robots) {
     if (mrseo_private_concept_route()) {
