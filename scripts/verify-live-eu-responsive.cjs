@@ -718,6 +718,12 @@ async function audit(browser,viewport,lang,slug){
   if((lang==='uk'&&['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)) || (lang==='ru'&&ruNewSlugs.includes(slug)) || (lang==='en'&&enGbNewSlugs.includes(slug)) || (viewport.name==='wide'&&slug==='') || viewport.name==='mobile' || (viewport.name==='narrow'&&['','contact'].includes(slug))){
    await page.screenshot({path:'shots/eu-'+lang+'-'+(slug||'home')+'-'+viewport.name+'.jpg',type:'jpeg',quality:75,fullPage:lang==='uk'&&['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,'seo-audit','performance-max','about','contact','local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug)});
   }
+  // Screenshot the actual six-card section, not just the Earth first viewport.
+  if(lang==='uk'&&slug===''&&['desktop','mobile','narrow'].includes(viewport.name)){
+   const gallery=page.locator('.pt-ua-home .hsix');
+   await gallery.screenshot({path:'shots/eu-uk-six-services-'+viewport.name+'.jpg',type:'jpeg',quality:80,timeout:20000})
+    .catch(e=>item.errors.push('UA six-card visual capture failed: '+e.message));
+  }
   // Independent screenshots of middle and footer; Chromium fullPage can repeat
   // the top on long pages. Cover five distinct RU service scene families.
   if(lang==='ru'&&ruNewSlugs.includes(slug)&&viewport.name==='mobile'&&
