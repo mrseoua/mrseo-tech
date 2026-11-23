@@ -13,7 +13,7 @@ assert "mrseo_ua_header_six(false)" in header and "mrseo_ua_header_six(true)" in
 assert "mrseo-ua-header-v2" in header
 assert "name=\"'.($mobile?'ua-six-mobile':'ua-six-desktop').'\"" in nav
 assert nav.count("mrseo_hs_url($anchor)") == 1
-assert nav.count("mrseo_url($slug,'uk')") == 2  # SEO shortlist + other categories
+assert nav.count("mrseo_url($slug,'uk')") == 3  # SEO shortlist + WebDev + other categories
 assert "foreach($groups as $group)" in nav
 assert "array('data','commerce')" in nav and "'dev'=>'Веброзробка'" in nav
 assert "'sites'=>'Сайти'" in nav
@@ -33,14 +33,17 @@ assert "@media(prefers-reduced-motion:reduce)" in css
 
 # The UA menu keeps the approved five top-level categories and four WebDev groups.
 for heading in ("Бізнес-системи","Інтеграції й функціонал","Штучний інтелект","Мобільні застосунки"):
-    assert '"title": "'+heading+'"' in taxonomy, heading
+    assert "'"+heading+"'=>array(" in nav, heading
 for label in ("Вебзастосунки","Особисті кабінети клієнтів","Дашборди та звітність",
               "Інтеграція сервісів через API","Парсинг і синхронізація даних",
               "Інтеграція платіжних систем","AI-агенти для бізнесу",
               "Мобільні застосунки для iOS та Android","Застосунки для інтернет-магазинів",
               "Корпоративні мобільні застосунки","PWA-застосунки"):
-    assert label in taxonomy, label
-assert "if($key==='dev'&&!empty($section['planned']))" in nav
+    assert label in nav, label
+assert "elseif($key==='dev')" in nav
+assert "foreach($dev_groups as $heading=>$services)" in nav
+assert "foreach($services['planned'] as $label)" in nav
+assert 'mrseo_ua_menu_groups()' in nav
 assert 'class="mrseo-ua-six-planned"' in nav
 assert 'Сторінка готується' in nav
 assert "mrseo-ua-six-item--dev .mrseo-ua-six-catalog" in css
