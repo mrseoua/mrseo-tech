@@ -39,6 +39,6 @@ add_action('wp_head',function(){
  echo '<link rel="canonical" href="'.esc_url(home_url('/'.mrseo_slug().'/')).'">'."\n";
 },6);
 add_action('wp_enqueue_scripts',function(){
- if(!mrseo_ua_dev_new_route())return;
+ if(!mrseo_ua_dev_new_route() && !(mrseo_locale()==='uk'&&mrseo_slug()==='web-development'))return;
  wp_enqueue_style('mrseo-ua-dev-new-landings',get_template_directory_uri().'/assets/ua-dev-new-landings.css',array('mrseo-style'),'1.0.0');
 },145);
