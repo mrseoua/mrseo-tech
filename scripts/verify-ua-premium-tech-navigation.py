@@ -20,6 +20,16 @@ assert "'commerce'=>'Інтернет-магазини'" not in nav
 for slug in ("local-seo","ecommerce-seo","service-business-seo","international-seo","seo-audit"):
     assert "'"+slug+"'=>'" in nav, slug
 assert "SEO-послуги" in nav and "foreach($seo_services as $slug=>$label)" in nav
+assert "Огляд напряму" not in nav and "mrseo-ua-six-overview-link" not in nav
+assert "mrseo-ua-six-deco" in nav
+assert "SEO та просування" in nav and "Товари та аналітика" in nav
+assert "foreach($horoshop_groups as $heading=>$services)" in nav
+for key in ("seo","audit","ads","search-ads","shopping","pmax","feeds","ga4"):
+    assert "'"+key+"'=>" in nav, key
+assert "Navigation 05" in css and "@keyframes mrseo-menu-line" in css
+assert "mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog" in css
+assert "@media(prefers-reduced-motion:reduce)" in css
+
 assert "mrseo_ua_menu_summaries()" in nav
 assert 'mrseo-ua-six-overview' in nav and 'mrseo-ua-six-panel--mega' in nav
 assert "summary" in nav and "mrseo-ua-six-panel" in nav
@@ -29,10 +39,10 @@ assert "mrseo-ua-menu-reveal" in css and "prefers-reduced-motion:reduce" in css
 assert ".mrseo-ua-six--desktop .mrseo-ua-six-item summary::after" in css
 assert "overflow-y:auto" in css and "min-height:48px" in css
 assert "pointerdown" in js and "Escape" in js
-assert "assets/ua-six-header.css" in functions and "'1.8.0'" in functions
+assert "assets/ua-six-header.css" in functions and "'1.9.0'" in functions
 assert "white-space:nowrap;" in css and "grid-template-columns:minmax(300px,35%) minmax(0,1fr)" in css
 assert "Navigation 04" in css
 assert "X-Robots-Tag: noindex, nofollow" in functions
 assert css.count("{")==css.count("}"), "Unbalanced stylesheet braces"
 assert "pt-globe" not in css and "pt-orbit" not in css
-print("PASS: 5 approved UA categories, 5 targeted SEO links, no wrapped SEO heading, actual submenus and noindex")
+print("PASS: 5 UA categories; balanced two-column Horoshop; no overview CTA; restrained reduced-motion pattern; unchanged Earth/noindex")
