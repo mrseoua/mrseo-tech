@@ -53,12 +53,12 @@ get_header();
  </section>
  <section class="pti-section udv-section udv-section--problems" id="udv-problems" aria-labelledby="udv-problems-h">
   <div class="container"><div class="udv-heading"><span class="pti-kicker udv-eyebrow">ЯКУ ПРОБЛЕМУ ВИРІШУЄМО</span><h2 id="udv-problems-h"><?php echo esc_html($p['h1']);?></h2><p>Визначаємо, де саме бізнес втрачає час, дані або контроль над процесом.</p></div>
-   <div class="pti-grid udv-cards"><?php foreach($p['problems'] as $i=>$item):?><article class="pti-card udv-card"><span class="udv-count"><?php echo esc_html(sprintf('%02d',$i+1));?></span><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></article><?php endforeach;?></div>
+   <div class="udv-illustrated-grid"><div class="udv-problem-illustration"><?php mrseo_udv_lower_art($scene,'problem',$p['problems']);?></div><div class="pti-grid udv-cards"><?php foreach($p['problems'] as $i=>$item):?><article class="pti-card udv-card"><span class="udv-count"><?php echo esc_html(sprintf('%02d',$i+1));?></span><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></article><?php endforeach;?></div></div>
   </div>
  </section>
  <section class="pti-section udv-section udv-section--solution" aria-labelledby="udv-solutions-h">
   <div class="container"><div class="udv-heading"><span class="pti-kicker udv-eyebrow">ЩО РОБИМО</span><h2 id="udv-solutions-h">Що зробимо для вашого бізнесу</h2><p>Працюємо з конкретними сценаріями, доступами й перевіркою результату.</p></div>
-   <div class="udv-steps"><?php foreach($p['actions'] as $i=>$item):?><article class="udv-step"><span class="udv-count"><?php echo esc_html(sprintf('%02d',$i+1));?></span><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></article><?php endforeach;?></div>
+   <div class="udv-illustrated-grid udv-illustrated-grid--solution"><div class="udv-steps"><?php foreach($p['actions'] as $i=>$item):?><article class="udv-step"><span class="udv-count"><?php echo esc_html(sprintf('%02d',$i+1));?></span><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></article><?php endforeach;?></div><div class="udv-solution-illustration"><?php mrseo_udv_lower_art($scene,'solution',$p['actions']);?></div></div>
    <div class="udv-result"><span class="udv-eyebrow">КОНКРЕТНИЙ РЕЗУЛЬТАТ</span><p><?php echo esc_html($p['result']);?></p></div>
   </div>
  </section>
