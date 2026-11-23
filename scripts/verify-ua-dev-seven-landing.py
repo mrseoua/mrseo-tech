@@ -6,7 +6,9 @@ from pathlib import Path
 t=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 copy=(t/"inc/ua-dev-new-pages.php").read_text(encoding="utf-8")
 routing=(t/"inc/ua-dev-new-routes.php").read_text(encoding="utf-8")
-motion=(t/"assets/ua-dev-kinetic-scenes.js").read_text(encoding="utf-8")
+motion=(t/"assets/ua-dev-premium-images.js").read_text(encoding="utf-8")
+premium_css=(t/"assets/ua-dev-premium-images.css").read_text(encoding="utf-8")
+import hashlib
 master=(t/"inc/ua-dev-master-hero.php").read_text(encoding="utf-8")
 reference=(t/"premium-ua-commercial.php").read_text(encoding="utf-8")
 template=(t/"ua-dev-new-landing.php").read_text(encoding="utf-8")
@@ -82,27 +84,43 @@ assert "pti-hero psc-hero" in reference and "psc-hero-stage" in reference
 assert "mrseo_udv_master_scene_data" in master and "function mrseo_udv_lower_art(" in master
 assert "udv-lower-graphic" in master and "mrseo_udv_lower_art($scene,'problem',$p['problems'])" in template
 assert "mrseo_udv_lower_art($scene,'solution',$p['actions'])" in template
-assert "udv-lower-svg" in master and "udv-lower-traveler" in master
-assert "udv-illustrated-grid" in css and "udv-lower-legend" in css
-assert "udvLowerPaused" in motion and "lowerObserver" in motion
-assert "udv-lower-graphic" in css and "udv-precision-turn" in css
+assert "udv-premium-scene" in master and "udv-premium-hero-image" in master
+assert "udv-premium-detail-image" in master and "udv-premium-detail-tracer" in master
+assert "udv-premium-hero-image" in premium_css and "udv-premium-detail-frame" in premium_css
+assert 'loading="eager"' in master and 'fetchpriority="high"' in master
+assert 'loading="lazy"' in master and 'decoding="async"' in master
+assert 'get_template_directory_uri()' in master and 'esc_url($src)' in master
+assert "udv-lower-graphic" in css and "udv-illustrated-grid" in css
+assert "udvLowerPaused" in motion and "lowerIo" in motion
+assert "ua-dev-premium-images.js" in routing and "ua-dev-premium-images.css" in routing
+assert "'2.2.0'" in routing and "'1.0.0'" in routing
+assert 'data-udv-part' in master and "data-udv-premium-scene" in master
+assert "udv-scene-controls" in css
 for scene in ("portal","parsing","payment","mobile","shop","team","pwa"):
-    assert "case '"+scene+"':" in master,scene
-    assert "udv-kinetic-svg--" in master
-assert master.count("data-udv-part")>=7,"All 7 compositions must provide real stage controls"
-assert "udv-moving-point" in master and "animateMotion" in master
+    assert f"'{scene}'=>array(" in master,scene
+    assert f"'{scene}'=>array(" in master,scene
+    assert "ua-dev-premium-" in master
+sizes=[]
+hashes=[]
 for scene in ("portal","parsing","payment","mobile","shop","team","pwa"):
-    assert f"'{scene}'=>array(" in master, scene
+    image=(t/f"assets/ua-dev-premium-{scene}.webp")
+    assert image.is_file(),scene
+    raw=image.read_bytes()
+    assert raw[:4]==b"RIFF" and raw[8:12]==b"WEBP",scene
+    assert 16000<len(raw)<120000,(scene,len(raw))
+    sizes.append(len(raw))
+    hashes.append(hashlib.sha256(raw).hexdigest())
+assert len(set(hashes))==7,"Every service must have its own original artwork"
+assert sum(sizes)<450000,"No unoptimized multi-megabyte hero images"
 for token in ("IntersectionObserver","setInterval","visibilitychange","prefers-reduced-motion","saveData",
               "aria-pressed","pagehide","clearInterval","udvPaused","is-current"):
     assert token in motion,token
-assert "ua-dev-kinetic-scenes.js" in routing
-assert "'2.1.0'" in routing and "'1.1.1'" in routing
-assert "data-udv-part" in master and ".udv-kinetic-card" in css
-assert "pauseAnimations" in motion and "unpauseAnimations" in motion
+assert "@media(max-width:710px)" in premium_css
+assert "@media(prefers-reduced-motion:reduce)" in premium_css
+assert premium_css.count("{")==premium_css.count("}")
 assert "udv-scene-controls" in css and "udv-section--close" in css
 assert "@media(max-width:710px)" in css and "@media(max-width:430px)" in css
 assert "prefers-reduced-motion:reduce" in css and "@keyframes udv-float" in css
 assert css.count("{")==css.count("}"),"Unbalanced CSS"
 assert not re.search(r'href=["\x27]https?://',template), "No external links"
-print("PASS: 7 distinct hero SVG compositions plus 14 below-fold animated diagrams; premium design, 20 locales and SEO preserved")
+print("PASS: seven distinct optimized premium WebP assets, accessible hero stages, image-based lower sections, routes/SEO and reduced-motion")
