@@ -21,7 +21,7 @@ function mrseo_ua_header_six($mobile=false){
   echo '<details class="mrseo-ua-six-item mrseo-ua-six-item--'.esc_attr($key).'" name="'.($mobile?'ua-six-mobile':'ua-six-desktop').'">';
   echo '<summary>'.esc_html($names[$key]).'<span aria-hidden="true">⌄</span></summary>';
   echo '<div class="mrseo-ua-six-panel mrseo-ua-six-panel--mega">';
-  echo '<div class="mrseo-ua-six-overview"><span class="mrseo-ua-six-eyebrow">НАПРЯМ / '.esc_html(strtoupper($names[$key])).'</span><h2>'.esc_html($group['title']).'</h2><p>'.esc_html(mrseo_ua_menu_summaries()[$key]??'Послуги для розвитку вашого бізнесу.').'</p><a class="mrseo-ua-six-overview-link" href="'.esc_url(mrseo_url($group['parent'],'uk')).'">Огляд напряму <span aria-hidden="true">↗</span></a></div>';
+  echo '<div class="mrseo-ua-six-overview"><span class="mrseo-ua-six-eyebrow">НАПРЯМ / '.esc_html(strtoupper($names[$key])).'</span><h2>'.esc_html($group['title']).'</h2><p>'.esc_html(mrseo_ua_menu_summaries()[$key]??'Послуги для розвитку вашого бізнесу.').'</p><span class="mrseo-ua-six-deco" aria-hidden="true"><i></i><i></i><i></i></span></div>';
   echo '<div class="mrseo-ua-six-catalog">';
   if($key==='seo'){
    echo '<section class="mrseo-ua-six-catalog-group"><h3>SEO-послуги</h3>';
@@ -37,23 +37,28 @@ function mrseo_ua_header_six($mobile=false){
    }
    echo '</section>';
   }elseif($is_horoshop){
-   echo '<section class="mrseo-ua-six-catalog-group"><h3>Послуги Хорошоп</h3>';
-   // Keep the Horoshop overview accessible elsewhere, but not in this dropdown.
-   // Nine real Ukrainian Horoshop routes; overview/setup stay out of the menu.
-   $horoshop_services=array(
-    'seo'=>'SEO-просування сайтів на Хорошоп',
-    'audit'=>'SEO-аудит сайтів на Хорошоп',
-    'ads'=>'Google Ads для Хорошоп',
-    'search-ads'=>'Пошукова реклама для Хорошоп',
-    'shopping'=>'Google Shopping для Хорошоп',
-    'pmax'=>'Performance Max для Хорошоп',
-    'feeds'=>'Товарні фіди',
-    'ga4'=>'GA4 та конверсії'
+   // Two balanced groups of existing internally routed services.
+   $horoshop_groups=array(
+    'SEO та просування'=>array(
+     'seo'=>'SEO-просування сайтів на Хорошоп',
+     'audit'=>'SEO-аудит сайтів на Хорошоп',
+     'ads'=>'Google Ads для Хорошоп',
+     'search-ads'=>'Пошукова реклама для Хорошоп'
+    ),
+    'Товари та аналітика'=>array(
+     'shopping'=>'Google Shopping для Хорошоп',
+     'pmax'=>'Performance Max для Хорошоп',
+     'feeds'=>'Товарні фіди',
+     'ga4'=>'GA4 та конверсії'
+    )
    );
-   foreach($horoshop_services as $anchor=>$label){
-    echo '<a href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
+   foreach($horoshop_groups as $heading=>$services){
+    echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($heading).'</h3>';
+    foreach($services as $anchor=>$label){
+     echo '<a href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
+    }
+    echo '</section>';
    }
-   echo '</section>';
   }else{
    foreach($group['sections'] as $section){
     if(empty($section['items']))continue;
