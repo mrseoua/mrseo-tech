@@ -95,7 +95,7 @@ for token in ("IntersectionObserver","setInterval","visibilitychange","prefers-r
               "aria-pressed","pagehide","clearInterval","udvPaused","is-current"):
     assert token in motion,token
 assert "ua-dev-kinetic-scenes.js" in routing
-assert "'2.0.0'" in routing and "'1.1.1'" in routing
+assert "'2.1.0'" in routing and "'1.1.1'" in routing
 assert "data-udv-part" in master and ".udv-kinetic-card" in css
 assert "pauseAnimations" in motion and "unpauseAnimations" in motion
 assert "udv-scene-controls" in css and "udv-section--close" in css
