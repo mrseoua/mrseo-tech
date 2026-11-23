@@ -74,10 +74,22 @@ assert "class=\"pti-scene-caption udv-scene-caption\"" in template
 assert '<h1 id="udv-h1"><?php echo esc_html($p[\'title\']);?>' in template
 assert "mrseo_udv_master_hero_accents()" in master
 assert "esc_html($hero_accent)" in template
-assert len(set(re.findall(r"'(?:portal|parsing|payment|mobile|shop|team|pwa)'=>'([^']+)'",master)))==7
+assert "function mrseo_udv_master_hero_accents()" in master
+# Layout-specific descriptive labels intentionally add seven more phrases, so
+# do not count every scene => label match across the whole file.
 assert "premium-ua-interiors.css" in routing and "premium-ua-commercial.css" in routing
 assert "pti-hero psc-hero" in reference and "psc-hero-stage" in reference
-assert "mrseo_udv_master_scene_data" in master and "mrseo_udv_master_icon_paths" in master
+assert "mrseo_udv_master_scene_data" in master and "function mrseo_udv_lower_art(" in master
+assert "udv-lower-graphic" in master and "mrseo_udv_lower_art($scene,'problem',$p['problems'])" in template
+assert "mrseo_udv_lower_art($scene,'solution',$p['actions'])" in template
+assert "udv-lower-svg" in master and "udv-lower-traveler" in master
+assert "udv-illustrated-grid" in css and "udv-lower-legend" in css
+assert "udvLowerPaused" in motion and "lowerObserver" in motion
+assert "udv-lower-graphic" in css and "udv-precision-turn" in css
+for scene in ("portal","parsing","payment","mobile","shop","team","pwa"):
+    assert "case '"+scene+"':" in master,scene
+    assert "udv-kinetic-svg--" in master
+assert master.count("data-udv-part")>=7,"All 7 compositions must provide real stage controls"
 assert "udv-moving-point" in master and "animateMotion" in master
 for scene in ("portal","parsing","payment","mobile","shop","team","pwa"):
     assert f"'{scene}'=>array(" in master, scene
@@ -85,7 +97,7 @@ for token in ("IntersectionObserver","setInterval","visibilitychange","prefers-r
               "aria-pressed","pagehide","clearInterval","udvPaused","is-current"):
     assert token in motion,token
 assert "ua-dev-kinetic-scenes.js" in routing
-assert "'2.0.0'" in routing and "'1.1.1'" in routing
+assert "'2.1.0'" in routing and "'1.1.1'" in routing
 assert "data-udv-part" in master and ".udv-kinetic-card" in css
 assert "pauseAnimations" in motion and "unpauseAnimations" in motion
 assert "udv-scene-controls" in css and "udv-section--close" in css
@@ -93,4 +105,4 @@ assert "@media(max-width:710px)" in css and "@media(max-width:430px)" in css
 assert "prefers-reduced-motion:reduce" in css and "@keyframes udv-float" in css
 assert css.count("{")==css.count("}"),"Unbalanced CSS"
 assert not re.search(r'href=["\x27]https?://',template), "No external links"
-print("PASS: 7 UA landings share approved premium automation hero/design/SVG while retaining distinct stories, responsive tabs and unchanged SEO metadata")
+print("PASS: 7 distinct hero SVG compositions plus 14 below-fold animated diagrams; premium design, 20 locales and SEO preserved")

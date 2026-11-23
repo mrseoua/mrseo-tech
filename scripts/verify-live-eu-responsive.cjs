@@ -994,6 +994,12 @@ async function audit(browser,viewport,lang,slug){
         robots:document.querySelector('meta[name="robots"]')?.content||'',
         scenes:root?.querySelectorAll('.udv-visual svg.udv-kinetic-svg').length,
         nodeCards:root?.querySelectorAll('.udv-visual [data-udv-part]').length,
+        lowerScenes:root?.querySelectorAll('.udv-lower-graphic svg.udv-lower-svg').length,
+        lowerProblem:root?.querySelectorAll('.udv-section--problems [data-udv-lower="problem"]').length,
+        lowerSolution:root?.querySelectorAll('.udv-section--solution [data-udv-lower="solution"]').length,
+        lowerAnimated:root?.querySelectorAll('.udv-lower-svg animateMotion').length,
+        heroArtVariant:root?.querySelector('svg.udv-kinetic-svg')?.getAttribute('data-udv-svg'),
+
         premiumShell:!!root?.matches('.pti-page.puc-page')&&!!root?.querySelector('.pti-hero.psc-hero .psc-hero-stage'),
         premiumCSS:!!document.querySelector('link[href*="premium-ua-commercial.css"]'),
         storySteps:root?.querySelectorAll('.udv-storyboard [data-udv-stage]').length,
@@ -1009,7 +1015,7 @@ async function audit(browser,viewport,lang,slug){
         external:root?.querySelectorAll('a[href^="http"]:not([href*="mrseo.tech"])').length||0,
         overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
-      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.nodeCards!==3||!state.premiumShell||!state.premiumCSS||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
+      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.nodeCards!==3||state.lowerScenes!==2||state.lowerProblem!==1||state.lowerSolution!==1||state.lowerAnimated!==2||state.heroArtVariant!==state.sceneName||!state.premiumShell||!state.premiumCSS||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
       if(slug==='client-portals'){
        const visual=page.locator('.udv-visual-wrap[data-udv-scene]');
        await visual.scrollIntoViewIfNeeded();
@@ -1028,6 +1034,12 @@ async function audit(browser,viewport,lang,slug){
        const clicked=await visual.getAttribute('data-udv-step');
        const caption=await page.locator('[data-udv-index]').textContent();
        if(clicked!=='2'||!caption?.includes('03 / 03'))item.errors.push('Premium stage tab did not select requested business phase');
+      }
+      if(slug==='payment-integration'&&vp.name==='desktop'){
+       await page.locator('.udv-problem-illustration').scrollIntoViewIfNeeded();
+       await page.screenshot({path:'shots/webdev-below-problems-desktop.jpg',type:'jpeg',quality:78,fullPage:false});
+       await page.locator('.udv-solution-illustration').scrollIntoViewIfNeeded();
+       await page.screenshot({path:'shots/webdev-below-solution-desktop.jpg',type:'jpeg',quality:78,fullPage:false});
       }
       await page.screenshot({path:'shots/webdev-'+slug+'-'+vp.name+'.jpg',type:'jpeg',quality:77,fullPage:false});
      }catch(error){item.errors.push('UA WebDev landing '+String(error).slice(0,500));}
