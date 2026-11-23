@@ -18,7 +18,8 @@ assert 'premium-tech-preview' in f
 assert 'mrseo_premium_tech_preview_request' in f
 assert 'get_template_directory().\'/premium-tech-preview.php\'' in f
 assert "get_option('mrseo_premium_preview_rewrite_v1')" in f
-assert "'orbit-lab', 'orbit-light', 'premium-tech-preview'" in f
+assert "array('orbit-lab', 'orbit-light')" in f
+assert "function_exists('mrseo_premium_tech_preview_request')" in f
 assert 'X-Robots-Tag: noindex, nofollow' in f
 assert 'mrseo_premium_tech_preview_request()?false:$url' in f
 assert page.count("get_header()")==1 and page.count("get_footer()")==1
