@@ -72,7 +72,9 @@ assert 'class="pti-wrap pti-hero-grid udv-hero-grid"' in template
 assert 'class="psc-hero-stage udv-visual"' in template
 assert "class=\"pti-scene-caption udv-scene-caption\"" in template
 assert '<h1 id="udv-h1"><?php echo esc_html($p[\'title\']);?>' in template
-assert "esc_html($p['highlight'])" in template
+assert "mrseo_udv_master_hero_accents()" in master
+assert "esc_html($hero_accent)" in template
+assert len(set(re.findall(r"'(?:portal|parsing|payment|mobile|shop|team|pwa)'=>'([^']+)'",master)))==7
 assert "premium-ua-interiors.css" in routing and "premium-ua-commercial.css" in routing
 assert "pti-hero psc-hero" in reference and "psc-hero-stage" in reference
 assert "mrseo_udv_master_scene_data" in master and "mrseo_udv_master_icon_paths" in master
