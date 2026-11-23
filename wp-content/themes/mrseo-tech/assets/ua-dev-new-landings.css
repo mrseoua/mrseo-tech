@@ -455,3 +455,162 @@
  .pti-page.puc-page.udv-page .udv-kinetic-card{opacity:1!important;transition:none!important}
  .pti-page.puc-page.udv-page .udv-story-step{transition:none!important}
 }
+
+
+/* WebDev art 03: seven genuine scene compositions. Only the premium palette is shared.
+   Additional schematic artwork is embedded under problems AND implementation on every UA page. */
+.pti-page.puc-page.udv-page .udv-kinetic-svg{
+ width:100%;height:auto;display:block;overflow:hidden;aspect-ratio:720/520;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-svg-small{
+ font:800 13px/1.3 system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+ letter-spacing:.065em;fill:#796353;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-svg-title{
+ font:750 20px/1.3 system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+ fill:#39443a;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-svg-label{
+ font:750 18px/1.3 system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+ fill:#444138;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-svg-tiny{
+ font:700 12px/1.3 system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+ fill:#73695c;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-graphic-kicker{
+ font:800 13px/1.3 system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+ letter-spacing:.12em;fill:#a14332;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-connector{
+ stroke:#a98461;stroke-width:3.5;fill:none;stroke-linecap:round;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-moving-point{
+ fill:#fff2d8;stroke:#ac4634;stroke-width:2;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-kinetic-card{
+ opacity:.72;transition:opacity .45s ease,filter .45s ease;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-gear{
+ transform-box:fill-box;transform-origin:center;
+ animation:udv-precision-turn 26s linear infinite;
+}
+.pti-page.puc-page.udv-page .udv-kinetic-svg .udv-alert-pulse{
+ transform-box:fill-box;transform-origin:center;
+ animation:udv-notice-pulse 3.8s ease-in-out infinite;
+}
+@keyframes udv-precision-turn{to{transform:rotate(360deg)}}
+@keyframes udv-notice-pulse{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.17)}}
+.pti-page.puc-page.udv-page .udv-illustrated-grid{
+ display:grid;
+ grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+ gap:clamp(26px,4.5vw,76px);
+ align-items:center;
+}
+.pti-page.puc-page.udv-page .udv-illustrated-grid--solution{
+ grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+}
+.pti-page.puc-page.udv-page .udv-illustrated-grid .udv-cards,
+.pti-page.puc-page.udv-page .udv-illustrated-grid .udv-steps{
+ display:grid;grid-template-columns:minmax(0,1fr);gap:12px;
+}
+.pti-page.puc-page.udv-page .udv-illustrated-grid .udv-card{
+ padding:18px 23px;border-radius:12px;
+ box-shadow:0 5px 18px #59442b08;
+}
+.pti-page.puc-page.udv-page .udv-illustrated-grid .udv-card h3{
+ font-size:clamp(17px,1.4vw,21px);margin:6px 0;
+}
+.pti-page.puc-page.udv-page .udv-illustrated-grid .udv-card p{
+ font-size:14px;line-height:1.58;
+}
+.pti-page.puc-page.udv-page .udv-illustrated-grid .udv-step{
+ padding:14px 8px 15px 0;
+ border-top:1px solid #cbb8a3;
+}
+.pti-page.puc-page.udv-page .udv-illustrated-grid .udv-step h3{
+ font-size:clamp(17px,1.4vw,21px);
+}
+.pti-page.puc-page.udv-page .udv-lower-graphic{
+ background:linear-gradient(145deg,#fffdf7,#efe8dd 68%,#e8dbc9);
+ border:1px solid #d3bfa7;border-radius:24px;
+ box-shadow:0 18px 44px #59442b14;
+ padding:clamp(18px,2vw,29px);
+ min-width:0;
+ overflow:hidden;
+}
+.pti-page.puc-page.udv-page .udv-lower-graphic-top{
+ display:flex;justify-content:space-between;gap:12px;
+ color:#96503a;font-size:10px;letter-spacing:.085em;
+ font-weight:850;line-height:1.5;
+}
+.pti-page.puc-page.udv-page .udv-lower-svg{
+ display:block;max-width:100%;width:100%;height:auto;
+ margin:14px auto;
+ filter:drop-shadow(0 8px 8px #65523b16);
+}
+.pti-page.puc-page.udv-page .udv-lower-node{
+ transform-box:fill-box;transform-origin:center;
+ animation:udv-node-activity 6s ease-in-out infinite;
+}
+.pti-page.puc-page.udv-page .udv-lower-node:nth-of-type(2){animation-delay:.65s}
+.pti-page.puc-page.udv-page .udv-lower-node:nth-of-type(3){animation-delay:1.25s}
+@keyframes udv-node-activity{0%,100%{opacity:.8;transform:translateY(0)}50%{opacity:1;transform:translateY(-5px)}}
+.pti-page.puc-page.udv-page .udv-lower-index{
+ font:800 13px/1.3 system-ui,-apple-system,sans-serif;fill:#9f503d;
+}
+.pti-page.puc-page.udv-page .udv-lower-node-name{
+ font:750 13px/1.2 system-ui,-apple-system,sans-serif;fill:#665a4e;
+}
+.pti-page.puc-page.udv-page .udv-lower-legend{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:10px;
+ border-top:1px solid #d9c9b6;
+ padding-top:17px;
+}
+.pti-page.puc-page.udv-page .udv-lower-legend span{
+ font-size:12px;line-height:1.35;color:#645c52;
+ overflow-wrap:anywhere;
+}
+.pti-page.puc-page.udv-page .udv-lower-legend b{
+ display:block;color:#a14332;font-size:10px;letter-spacing:.08em;
+ margin-bottom:5px;
+}
+.pti-page.puc-page.udv-page .udv-lower-graphic--payment-solution,
+.pti-page.puc-page.udv-page .udv-lower-graphic--shop-solution{background:linear-gradient(135deg,#faf7ef,#e7eddf)}
+.pti-page.puc-page.udv-page .udv-lower-graphic--team-problem,
+.pti-page.puc-page.udv-page .udv-lower-graphic--team-solution{background:linear-gradient(135deg,#fffaf3,#e9e1d3)}
+.pti-page.puc-page.udv-page .udv-lower-graphic--pwa-solution,
+.pti-page.puc-page.udv-page .udv-lower-graphic--mobile-solution{background:linear-gradient(145deg,#f8fbf5,#e3e8df)}
+.pti-page.puc-page.udv-page .udv-result{margin-top:clamp(26px,3.5vw,48px)}
+.pti-page.puc-page.udv-page [data-udv-lower-paused="true"] .udv-lower-node{
+ animation-play-state:paused!important;
+}
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-paused="true"] .udv-gear,
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-paused="true"] .udv-alert-pulse{
+ animation-play-state:paused!important;
+}
+@media(max-width:1050px){
+ .pti-page.puc-page.udv-page .udv-illustrated-grid,
+ .pti-page.puc-page.udv-page .udv-illustrated-grid--solution{
+  grid-template-columns:1fr;gap:26px;
+ }
+ .pti-page.puc-page.udv-page .udv-problem-illustration,
+ .pti-page.puc-page.udv-page .udv-solution-illustration{
+  width:100%;max-width:760px;margin-inline:auto;
+ }
+ .pti-page.puc-page.udv-page .udv-illustrated-grid--solution .udv-solution-illustration{order:-1}
+}
+@media(max-width:710px){
+ .pti-page.puc-page.udv-page .udv-lower-graphic{padding:17px;border-radius:18px}
+ .pti-page.puc-page.udv-page .udv-lower-graphic-top{font-size:9px}
+ .pti-page.puc-page.udv-page .udv-lower-legend span{font-size:10px}
+ .pti-page.puc-page.udv-page .udv-lower-node-name{font-size:12px}
+ .pti-page.puc-page.udv-page .udv-illustrated-grid .udv-card{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pti-page.puc-page.udv-page .udv-kinetic-svg .udv-gear,
+ .pti-page.puc-page.udv-page .udv-kinetic-svg .udv-alert-pulse,
+ .pti-page.puc-page.udv-page .udv-lower-node{animation:none!important;transform:none!important}
+ .pti-page.puc-page.udv-page .udv-lower-traveler{display:none!important}
+}
