@@ -1,0 +1,21 @@
+/* Russian-only WebDev directory: uses original premium art and no new assets. */
+.rdv-hub{padding:clamp(56px,7vw,110px) 0;background:#f8f2e9;color:#282622}
+.rdv-hub-heading{max-width:780px;margin:0 0 30px}
+.rdv-hub-heading h2{font-size:clamp(32px,4.1vw,58px);letter-spacing:-.045em;line-height:1.12;margin:14px 0 16px}
+.rdv-hub-heading h2 em{font-style:normal;color:#a84432}
+.rdv-hub-heading p{font-size:clamp(16px,1.3vw,19px);line-height:1.58;color:#5e574f}
+.rdv-hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rdv-hub-card{display:block;min-width:0;overflow:hidden;border:1px solid #dfd3c4;border-radius:20px;background:#fffaf4;color:inherit;text-decoration:none;box-shadow:0 14px 34px #4533240b;transition:transform .3s ease,box-shadow .3s ease}
+.rdv-hub-card:hover{transform:translateY(-4px);box-shadow:0 20px 42px #4533241c}
+.rdv-hub-card:focus-visible{outline:3px solid #a84432;outline-offset:4px}
+.rdv-hub-image{aspect-ratio:1.65;background:#f2e8dd;overflow:hidden}
+.rdv-hub-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease}
+.rdv-hub-card:hover .rdv-hub-image img{transform:scale(1.035)}
+.rdv-hub-card-copy{padding:clamp(18px,2vw,26px);position:relative}
+.rdv-hub-card-copy span{font-size:11px;letter-spacing:.08em;font-weight:800;color:#9b4b37}
+.rdv-hub-card-copy h3{font-size:clamp(19px,1.7vw,24px);letter-spacing:-.025em;line-height:1.25;margin:12px 0}
+.rdv-hub-card-copy p{font-size:15px;line-height:1.5;color:#5f594f;margin:0 22px 0 0}
+.rdv-hub-card-copy b{position:absolute;right:21px;bottom:18px;color:#a84432;font-size:20px}
+@media(max-width:980px){.rdv-hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.rdv-hub{padding:50px 0}.rdv-hub-grid{grid-template-columns:1fr;gap:14px}.rdv-hub-card-copy{padding:19px}.rdv-hub-card-copy h3{font-size:21px}.rdv-hub-image{aspect-ratio:1.75}}
+@media(prefers-reduced-motion:reduce){.rdv-hub-card,.rdv-hub-image img{transition:none!important;transform:none!important}}
