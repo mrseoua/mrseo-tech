@@ -80,7 +80,7 @@ assert "function mrseo_udv_master_hero_accents()" in master
 assert "premium-ua-interiors.css" in routing and "premium-ua-commercial.css" in routing
 assert "pti-hero psc-hero" in reference and "psc-hero-stage" in reference
 assert "mrseo_udv_master_scene_data" in master and "function mrseo_udv_lower_art(" in master
-assert "udv-lower-graphic" in template and "mrseo_udv_lower_art($scene,'problem',$p['problems'])" in template
+assert "udv-lower-graphic" in master and "mrseo_udv_lower_art($scene,'problem',$p['problems'])" in template
 assert "mrseo_udv_lower_art($scene,'solution',$p['actions'])" in template
 assert "udv-lower-svg" in master and "udv-lower-traveler" in master
 assert "udv-illustrated-grid" in css and "udv-lower-legend" in css
