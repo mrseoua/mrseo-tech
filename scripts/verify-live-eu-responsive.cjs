@@ -970,6 +970,52 @@ async function audit(browser,viewport,lang,slug){
    }finally{await browser.close()}
   }
  }
+ // Seven new Ukrainian-only WebDev service routes: real WordPress URL, canonical,
+ // structured original copy, unique art, responsive viewport and global noindex.
+ if(coreShard){
+  const newDevSlugs=['client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development'];
+  for(const vp of [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844}]){
+   const browser=await chromium.launch(launchOptions);
+   try{
+    const context=await browser.newContext({viewport:{width:vp.width,height:vp.height}});
+    const page=await context.newPage();
+    for(const slug of newDevSlugs){
+     const url=HOST+'/'+slug+'/';
+     const item={url,viewport:vp.name,stage:'UA WebDev seven new landings',errors:[]};
+     try{
+      const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:25000});
+      if(!response||response.status()!==200)item.errors.push('HTTP '+(response?.status()??'null'));
+      const state=await page.evaluate(()=>{
+       const root=document.querySelector('.udv-page');
+       return {page:!!root,h1:root?.querySelectorAll('h1').length,
+        h1text:root?.querySelector('h1')?.textContent?.trim()||'',
+        meta:document.querySelectorAll('meta[name="description"]').length,
+        canonical:document.querySelector('link[rel="canonical"]')?.href,
+        robots:document.querySelector('meta[name="robots"]')?.content||'',
+        scenes:root?.querySelectorAll('.udv-visual .udv-art').length,
+        problems:root?.querySelectorAll('.udv-cards .udv-card').length,
+        actions:root?.querySelectorAll('.udv-steps .udv-step').length,
+        faq:root?.querySelectorAll('.udv-faq-list details').length,
+        contactLinks:root?.querySelectorAll('a[href*="/contact/"]').length,
+        newCss:!!document.querySelector('link[href*="ua-dev-new-landings.css"]'),
+        external:root?.querySelectorAll('a[href^="http"]:not([href*="mrseo.tech"])').length||0,
+        overflow:document.documentElement.scrollWidth>innerWidth+4};
+      });
+      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
+      await page.screenshot({path:'shots/webdev-'+slug+'-'+vp.name+'.jpg',type:'jpeg',quality:77,fullPage:false});
+     }catch(error){item.errors.push('UA WebDev landing '+String(error).slice(0,500));}
+     results.push(item);
+     console.log((item.errors.length?'FAIL':'PASS')+' UA WebDev '+vp.name+' '+slug+' '+item.errors.join(' | '));
+    }
+    const hub=await page.goto(HOST+'/web-development/',{waitUntil:'domcontentloaded',timeout:25000});
+    const anchors=await page.locator('.udv-hub-grid .udv-hub-card[href]').count();
+    const item={url:HOST+'/web-development/',viewport:vp.name,stage:'UA WebDev hub seven links',errors:[]};
+    if(!hub||hub.status()!==200||anchors!==7)item.errors.push('WebDev hub links '+JSON.stringify({status:hub?.status(),anchors}));
+    results.push(item);
+    await context.close();
+   }finally{await browser.close()}
+  }
+ }
  const errors=results.filter(x=>x.errors.length);
  const summary={checked:results.length,failed:errors.length,success:results.length-errors.length,errors:errors.map(x=>({url:x.url,viewport:x.viewport,errors:x.errors})),results};
  await fs.writeFile('shots/eu-diagnostics.json',JSON.stringify(summary,null,2));
