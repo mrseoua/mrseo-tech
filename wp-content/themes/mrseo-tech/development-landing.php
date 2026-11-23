@@ -85,6 +85,21 @@ get_header();
  </div>
 </section>
 <?php endif; ?>
+<?php if($dev_locale==='ru' && function_exists('mrseo_ru_dev_pages')): ?>
+<section class="rdv-hub" aria-labelledby="rdv-hub-title">
+ <div class="dev-wrap">
+  <div class="rdv-hub-heading"><span class="dev-eyebrow">ВЕБ-РАЗРАБОТКА ДЛЯ БИЗНЕСА</span><h2 id="rdv-hub-title">Выберите задачу, <em>которую нужно решить</em></h2><p>Семь отдельных направлений — не абстрактное «программирование», а понятные бизнес-сценарии с результатом и этапами проверки.</p></div>
+  <div class="rdv-hub-grid">
+   <?php foreach(mrseo_ru_dev_pages() as $slug=>$service): ?>
+   <a class="rdv-hub-card" href="<?php echo esc_url(mrseo_i18n_exact_url('ru',$slug));?>">
+    <div class="rdv-hub-image"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/ua-dev-premium-'.$service['scene'].'.webp');?>" alt="" loading="lazy" decoding="async" width="1280" height="960"></div>
+    <div class="rdv-hub-card-copy"><span><?php echo esc_html($service['tag']);?></span><h3><?php echo esc_html($service['title']);?></h3><p><?php echo esc_html($service['h1']);?></p><b aria-hidden="true">↗</b></div>
+   </a>
+   <?php endforeach;?>
+  </div>
+ </div>
+</section>
+<?php endif; ?>
 <section class="dev-outcomes" aria-labelledby="dev-outcomes-title"><div class="dev-wrap dev-outcomes-grid">
  <div><div class="dev-eyebrow"><?php echo $dev_locale==='uk'?'03 / ':'05 / ';?><?php echo esc_html($dev['labels']['deliverablesTag']);?></div><h2 id="dev-outcomes-title"><?php echo esc_html($dev['labels']['results']);?></h2></div>
  <div><?php foreach($dev['outcomes'] as $i=>$outcome):?><div class="dev-outcome"><span><?php echo esc_html(sprintf('%02d',$i+1));?></span><strong><?php echo esc_html($outcome);?></strong></div><?php endforeach;?></div>
