@@ -1179,17 +1179,15 @@ function mrseo_ua_menu_groups(){
           ],
           [
             "web-applications",
-            "Вебзастосунки"
+            "Вебзастосунки та кабінети"
           ],
           [
-            "business-dashboards",
-            "Дашборди та звітність"
-          ]
-        ],
-        "planned": [
+            "ai-agents",
+            "AI-агенти"
+          ],
           [
-            "client-portals",
-            "Особисті кабінети клієнтів"
+            "chatbot-development",
+            "Розробка чат-ботів"
           ]
         ]
       },
@@ -1198,57 +1196,11 @@ function mrseo_ua_menu_groups(){
         "items": [
           [
             "api-integrations",
-            "Інтеграція сервісів через API"
+            "API-інтеграції"
           ],
           [
             "custom-functionality",
             "Індивідуальний функціонал"
-          ]
-        ],
-        "planned": [
-          [
-            "data-parsing",
-            "Парсинг і синхронізація даних"
-          ],
-          [
-            "payment-integration",
-            "Інтеграція платіжних систем"
-          ]
-        ]
-      },
-      {
-        "title": "Штучний інтелект",
-        "items": [
-          [
-            "ai-agents",
-            "AI-агенти для бізнесу"
-          ],
-          [
-            "chatbot-development",
-            "Розробка чат-ботів"
-          ]
-        ],
-        "planned": []
-      },
-      {
-        "title": "Мобільні застосунки",
-        "items": [],
-        "planned": [
-          [
-            "mobile-app-development",
-            "Мобільні застосунки для iOS та Android"
-          ],
-          [
-            "ecommerce-mobile-apps",
-            "Застосунки для інтернет-магазинів"
-          ],
-          [
-            "corporate-mobile-apps",
-            "Корпоративні мобільні застосунки"
-          ],
-          [
-            "pwa-development",
-            "PWA-застосунки"
           ]
         ]
       }
@@ -1264,57 +1216,45 @@ function mrseo_ua_menu_groups(){
       ],
       [
         "web-applications",
-        "Вебзастосунки"
-      ],
-      [
-        "business-dashboards",
-        "Дашборди та звітність"
-      ],
-      [
-        "api-integrations",
-        "Інтеграція сервісів через API"
-      ],
-      [
-        "custom-functionality",
-        "Індивідуальний функціонал"
+        "Вебзастосунки та кабінети"
       ],
       [
         "ai-agents",
-        "AI-агенти для бізнесу"
+        "AI-агенти"
       ],
       [
         "chatbot-development",
         "Розробка чат-ботів"
+      ],
+      [
+        "api-integrations",
+        "API-інтеграції"
+      ],
+      [
+        "custom-functionality",
+        "Індивідуальний функціонал"
       ]
     ],
     "planned": [
       [
-        "client-portals",
-        "Особисті кабінети клієнтів"
-      ],
-      [
         "data-parsing",
-        "Парсинг і синхронізація даних"
+        "Парсинг сайтів та даних"
       ],
       [
         "payment-integration",
-        "Інтеграція платіжних систем"
+        "Підключення оплати"
       ],
       [
-        "mobile-app-development",
-        "Мобільні застосунки для iOS та Android"
+        "shipping-integration",
+        "Інтеграція доставки"
       ],
       [
-        "ecommerce-mobile-apps",
-        "Застосунки для інтернет-магазинів"
+        "website-calculator",
+        "Онлайн-калькулятори"
       ],
       [
-        "corporate-mobile-apps",
-        "Корпоративні мобільні застосунки"
-      ],
-      [
-        "pwa-development",
-        "PWA-застосунки"
+        "crm-integration",
+        "Інтеграція сайту та CRM"
       ]
     ]
   }
