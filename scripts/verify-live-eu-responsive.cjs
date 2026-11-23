@@ -223,7 +223,7 @@ async function audit(browser,viewport,lang,slug){
     uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-simple-nav a.mrseo-simple-card[href]').length,
     uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
     uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
-    uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&!!document.querySelector('.pt-ua-home .cs-controls button'),
+    uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&document.querySelectorAll('.pt-ua-home .hsix-card a[href]').length===6,
     uaPremiumResolution:!!document.querySelector('.pt-ua-home .ph-resolution a[href$="/contact/"]'),
     heroEdge:(()=>{
       const el=document.querySelector(uaHome?'#main > .pt-ua-home > .pt-home':'#main > .orbit-lab');
