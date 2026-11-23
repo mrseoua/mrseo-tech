@@ -18,10 +18,10 @@ assert 'class="hsix-card ' in section and '<h3>' in section
 assert "foreach ($services as $service)" in section
 actual=re.findall(r"'key'=>'([^']+)','number'=>'(\d+)','kicker'=>'([^']+)','name'=>'([^']+)','slug'=>'([^']+)'",section)
 expected=[("seo","01","SEARCH","SEO","seo"),("ads","02","GOOGLE ADS","Google Ads","google-ads"),
-("commerce","03","E-COMMERCE","E-commerce","ecommerce-seo"),("horoshop","04","HOROSHOP","Horoshop","horoshop"),
-("dev","05","DEVELOPMENT","Веброзробка","web-development"),("sites","06","WEBSITES","Створення сайтів","service-websites")]
+("horoshop","03","HOROSHOP","Хорошоп","horoshop"),("sites","04","WEBSITES","Сайти","service-websites"),
+("dev","05","DEVELOPMENT","Веброзробка","web-development")]
 assert actual==expected,(actual,expected)
-for item in ("hsix-search","hsix-chart","hsix-products","hsix-shop-screen","hsix-code","hsix-site-screen"):
+for item in ("hsix-search","hsix-chart","hsix-shop-screen","hsix-site-screen","hsix-code"):
     assert item in section,("Missing distinctive diagram",item)
 assert "mrseo_url($service['slug'],'uk')" in section
 assert "aria-label" in section and "role=\"img\"" in section
@@ -40,4 +40,4 @@ assert "const a=-Math.PI/2+i*2*Math.PI/nodes.length+phase;" in earth_js
 assert "home-uk-premium.js" in home
 assert "X-Robots-Tag: noindex, nofollow" in functions
 assert 'class="ph-confidential"' in home and "home-cinematic-polish.css" in home
-print("PASS: 6 Ukrainian UI-card categories, legitimate URLs, 3/2/1 columns, Earth unchanged, confidentiality and global noindex")
+print("PASS: 5 Ukrainian menu-aligned UI-card categories, legitimate URLs, 3/2/1 columns, Earth unchanged, confidentiality and global noindex")
