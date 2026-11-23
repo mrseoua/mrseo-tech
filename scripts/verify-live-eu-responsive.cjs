@@ -1014,7 +1014,7 @@ async function audit(browser,viewport,lang,slug){
         faq:root?.querySelectorAll('.udv-faq-list details').length,
         contactLinks:root?.querySelectorAll('a[href*="/contact/"]').length,
         newCss:!!document.querySelector('link[href*="ua-dev-new-landings.css"]'),
-        external:root?.querySelectorAll('a[href^="http"]:not([href*="mrseo.tech"])').length||0,
+        external:[...root?.querySelectorAll('a[href]')||[]].filter(a=>{try{const u=new URL(a.href,location.href);return /^https?:$/.test(u.protocol)&&u.origin!==location.origin;}catch{return false;}}).length,
         overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
       if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.nodeCards!==3||state.lowerScenes!==2||state.lowerProblem!==1||state.lowerSolution!==1||state.lowerAnimated!==2||state.heroArtVariant!==state.sceneName||!state.heroImgUrl?.includes('ua-dev-premium-')||!state.premiumAssetStyle||!state.premiumShell||!state.premiumCSS||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
