@@ -212,7 +212,7 @@ async function audit(browser,viewport,lang,slug){
         final:!!root?.querySelector('.pti-final a[href$="/contact/"]')};
     })(),
     uaPremiumStyles:!!document.querySelector('link[href*="home-uk-premium.css"]'),
-    uaCinematic:document.querySelectorAll('.pt-ua-home .hfive-card').length===5&&document.querySelectorAll('.pt-ua-home .hsix-card h3').length===5,
+    uaCinematic:document.querySelectorAll('.pt-ua-home .hsix-card').length===5&&document.querySelectorAll('.pt-ua-home .hsix-card h3').length===5,
     uaCinematicLinks:document.querySelectorAll('.pt-ua-home .hsix-card-footer a[href]').length,
     uaCinematicVisuals:document.querySelectorAll('.pt-ua-home .hsix-browser').length,
     uaCinematicScripts:!!document.querySelector('link[href*="home-six-services.css"]')&&!document.querySelector('script[src*="home-cinematic-showcase.js"]'),
@@ -722,7 +722,7 @@ async function audit(browser,viewport,lang,slug){
   if(lang==='uk'&&slug===''&&['desktop','mobile','narrow'].includes(viewport.name)){
    const gallery=page.locator('.pt-ua-home .hsix');
    await gallery.screenshot({path:'shots/eu-uk-six-services-'+viewport.name+'.jpg',type:'jpeg',quality:80,timeout:20000})
-    .catch(e=>item.errors.push('UA six-card visual capture failed: '+e.message));
+    .catch(e=>item.errors.push('UA five-card visual capture failed: '+e.message));
   }
   // Independent screenshots of middle and footer; Chromium fullPage can repeat
   // the top on long pages. Cover five distinct RU service scene families.
