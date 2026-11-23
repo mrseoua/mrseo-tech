@@ -44,7 +44,7 @@ add_action('wp_enqueue_scripts',function(){
  wp_enqueue_style('mrseo-ru-dev-commercial',$uri.'/assets/premium-ua-commercial.css',array('mrseo-ru-dev-base'),'1.0.0');
  wp_enqueue_style('mrseo-ru-dev-layout',$uri.'/assets/ua-dev-new-landings.css',array('mrseo-ru-dev-commercial'),'2.2.0');
  wp_enqueue_style('mrseo-ru-dev-art',$uri.'/assets/ua-dev-premium-images.css',array('mrseo-ru-dev-layout'),'1.1.0');
- wp_enqueue_script('mrseo-ru-dev-art',$uri.'/assets/ua-dev-premium-images.js',array(),'1.0.0',true);
+ wp_enqueue_script('mrseo-ru-dev-art',$uri.'/assets/ru-dev-premium-images.js',array(),'1.0.0',true);
 },146);
 
 // Only the Russian Web Development hub needs this illustrated service directory.
