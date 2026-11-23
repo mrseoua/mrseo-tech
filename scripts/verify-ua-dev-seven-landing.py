@@ -93,7 +93,12 @@ assert 'get_template_directory_uri()' in master and 'esc_url($src)' in master
 assert "udv-lower-graphic" in css and "udv-illustrated-grid" in css
 assert "udvLowerPaused" in motion and "lowerIo" in motion
 assert "ua-dev-premium-images.js" in routing and "ua-dev-premium-images.css" in routing
-assert "'2.2.0'" in routing and "'1.0.0'" in routing
+assert "'2.2.0'" in routing and "'1.1.0'" in routing
+assert 'mask-image:none' in premium_css and '-webkit-mask-image:none' in premium_css
+assert 'udv-premium-detail-image' in premium_css and 'aspect-ratio:1.65' in premium_css
+assert 'object-position:36% 53%' in premium_css and 'object-position:64% 49%' in premium_css
+assert 'transform:scale(1.015)' in premium_css
+assert 'udv-premium-point' in premium_css and 'width:13px;height:13px' in premium_css
 assert 'data-udv-part' in master and "data-udv-premium-scene" in master
 assert "udv-scene-controls" in css
 for scene in ("portal","parsing","payment","mobile","shop","team","pwa"):
