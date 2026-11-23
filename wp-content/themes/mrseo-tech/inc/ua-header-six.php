@@ -59,19 +59,54 @@ function mrseo_ua_header_six($mobile=false){
     }
     echo '</section>';
    }
+  }elseif($key==='dev'){
+   // Presentation-only groups. Never mutate the 54-URL SEO registry in mega-menu-trial.php.
+   $dev_groups=array(
+    'Бізнес-системи'=>array(
+     'live'=>array(
+      'business-automation'=>'Автоматизація бізнесу',
+      'crm-development'=>'CRM для бізнесу',
+      'web-applications'=>'Вебзастосунки',
+      'business-dashboards'=>'Дашборди та звітність'
+     ),
+     'planned'=>array('Особисті кабінети клієнтів')
+    ),
+    'Інтеграції й функціонал'=>array(
+     'live'=>array(
+      'api-integrations'=>'Інтеграція сервісів через API',
+      'custom-functionality'=>'Індивідуальний функціонал'
+     ),
+     'planned'=>array('Парсинг і синхронізація даних','Інтеграція платіжних систем')
+    ),
+    'Штучний інтелект'=>array(
+     'live'=>array(
+      'ai-agents'=>'AI-агенти для бізнесу',
+      'chatbot-development'=>'Розробка чат-ботів'
+     ),
+     'planned'=>array()
+    ),
+    'Мобільні застосунки'=>array(
+     'live'=>array(),
+     'planned'=>array('Мобільні застосунки для iOS та Android','Застосунки для інтернет-магазинів','Корпоративні мобільні застосунки','PWA-застосунки')
+    )
+   );
+   foreach($dev_groups as $heading=>$services){
+    echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($heading).'</h3>';
+    foreach($services['live'] as $slug=>$label){
+     echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
+    }
+    foreach($services['planned'] as $label){
+     echo '<span class="mrseo-ua-six-planned">'.esc_html($label).'<small>Сторінка готується</small></span>';
+    }
+    echo '</section>';
+   }
   }else{
    foreach($group['sections'] as $section){
-    if(empty($section['items'])&&empty($section['planned']))continue;
+    if(empty($section['items']))continue;
     echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($section['title']).'</h3>';
     foreach($section['items'] as $service){
      $slug=$service[0];$active=$current===$slug;
      echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($service[1]).' <span aria-hidden="true">↗</span></a>';
-    }
-    // A missing landing page is presented as text, never a fake href or a 404.
-    if($key==='dev'&&!empty($section['planned'])){
-     foreach($section['planned'] as $service){
-      echo '<span class="mrseo-ua-six-planned">'.esc_html($service[1]).'<small>Сторінка готується</small></span>';
-     }
     }
     echo '</section>';
    }
