@@ -31,7 +31,7 @@ for slug,p in pages.items():
     assert all(len(item)==2 and all(item) for key in ("problems","actions","faq","related") for item in p[key]),slug
     assert "http" not in json.dumps(p),slug
     assert f"'{slug}'=>'" in nav,slug
-    assert slug in routing,slug
+    assert slug in nav,slug  # Route uses dynamic array_keys() from the same validated page registry
     assert f"udv-art--{p['scene']}" in css,slug
     assert p["scene"] in template,slug
 for keyword in ("get_header();","get_footer();","aria-labelledby","id=\"udv-h1\"",
@@ -39,6 +39,7 @@ for keyword in ("get_header();","get_footer();","aria-labelledby","id=\"udv-h1\"
                 "esc_html($p['title'])"):
     assert keyword in template,keyword
 assert "esc_attr($page['meta'])" in routing
+assert "array_keys(mrseo_ua_dev_new_pages())" in routing
 assert "mrseo_ua_dev_new_route()" in routing
 assert "mrseo_locale()!=='uk'" in routing
 assert "redirect_canonical" in routing and "remove_action('wp_head','rel_canonical')" in routing
