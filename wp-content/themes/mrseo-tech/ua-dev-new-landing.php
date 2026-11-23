@@ -6,6 +6,7 @@ if(!mrseo_ua_dev_new_route()||!($p=mrseo_ua_dev_new_page())){
 }
 require_once get_template_directory().'/inc/ua-dev-master-hero.php';
 $scene=$p['scene'];
+$hero_accent=mrseo_udv_master_hero_accents()[$scene]??$p['highlight'];
 // Storyboard describes a real workflow, not fabricated client results.
 $motion_stages=array(
  'portal'=>array('Авторизація','Дані клієнта','Оновлення статусу'),
@@ -24,7 +25,7 @@ get_header();
    <div class="pti-hero-copy udv-hero-copy">
     <nav class="pti-crumb udv-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url('','uk'));?>">Головна</a> / <a href="<?php echo esc_url(mrseo_url('web-development','uk'));?>">Веброзробка</a> / <span><?php echo esc_html($p['title']);?></span></nav>
     <span class="pti-kicker udv-eyebrow"><?php echo esc_html($p['tag']);?></span>
-    <h1 id="udv-h1"><?php echo esc_html($p['title']);?><em><?php echo esc_html($p['highlight']);?></em></h1>
+    <h1 id="udv-h1"><?php echo esc_html($p['title']);?><em><?php echo esc_html($hero_accent);?></em></h1>
     <p class="pti-lead udv-lead"><?php echo esc_html($p['intro']);?></p>
     <div class="pti-actions udv-actions">
      <a class="pti-pill udv-cta" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити розробку ↗</a>
