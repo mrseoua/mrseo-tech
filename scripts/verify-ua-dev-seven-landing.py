@@ -36,9 +36,9 @@ for slug,p in pages.items():
     assert p["scene"] in template,slug
 for keyword in ("get_header();","get_footer();","aria-labelledby","id=\"udv-h1\"",
                 "mrseo_url('contact','uk')","class=\"udv-faq-list\"","esc_html($p['title'])",
-                "esc_html($p['meta'])"):
-    if keyword=="esc_html($p['meta'])":assert keyword in routing
-    else:assert keyword in template,keyword
+                "esc_html($p['title'])"):
+    assert keyword in template,keyword
+assert "esc_attr($page['meta'])" in routing
 assert "mrseo_ua_dev_new_route()" in routing
 assert "mrseo_locale()!=='uk'" in routing
 assert "redirect_canonical" in routing and "remove_action('wp_head','rel_canonical')" in routing
