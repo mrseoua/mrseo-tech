@@ -68,7 +68,7 @@ function mrseo_udv_master_scene($scene){
     <rect x="<?php echo (int)$x;?>" y="<?php echo (int)$y;?>" width="191" height="170" rx="19" fill="url(#<?php echo esc_attr($unique);?>-<?php echo $i===1?'accent':'metal';?>)" stroke="#b99e82" stroke-width="2"/>
     <rect x="<?php echo (int)($x+8);?>" y="<?php echo (int)($y+8);?>" width="175" height="154" rx="12" fill="none" stroke="#fff8eb" stroke-opacity=".65"/>
     <use href="#<?php echo esc_attr($unique.'-'.$id);?>" x="<?php echo (int)($x+51);?>" y="<?php echo (int)($y+18);?>" width="90" height="105" color="<?php echo $i===1?'#fff8eb':'#72543d';?>"/>
-    <text x="<?php echo (int)($x+95.5);?>" y="<?php echo (int)($y+150);?>" text-anchor="middle" font-family="system-ui,sans-serif" font-size="<?php echo mb_strlen($label)>11?'17':'20';?>" font-weight="700" fill="#403d35"><?php echo esc_html($label);?></text>
+    <text x="<?php echo (int)($x+95.5);?>" y="<?php echo (int)($y+150);?>" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" font-weight="700" fill="#403d35"><?php echo esc_html($label);?></text>
    </g>
   </g>
   <?php endforeach;?>
