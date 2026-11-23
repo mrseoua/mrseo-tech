@@ -7,6 +7,7 @@ require_once get_template_directory() . '/inc/ru-website-services.php';
 require_once get_template_directory() . '/inc/en-gb-services.php';
 require_once get_template_directory() . '/inc/ua-virtual-routes.php';
 require_once get_template_directory() . '/inc/ua-dev-new-routes.php';
+require_once get_template_directory() . '/inc/ru-dev-premium-routes.php';
 require_once get_template_directory() . '/inc/language-dropdown.php';
 require_once get_template_directory() . '/inc/contact-channels.php';
 require_once get_template_directory() . '/inc/contact-ui.php';
