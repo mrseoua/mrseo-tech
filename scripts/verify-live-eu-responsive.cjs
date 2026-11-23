@@ -215,7 +215,7 @@ async function audit(browser,viewport,lang,slug){
     uaCinematic:document.querySelectorAll('.pt-ua-home .hsix-card').length===5&&document.querySelectorAll('.pt-ua-home .hsix-card h3').length===5,
     uaCinematicLinks:document.querySelectorAll('.pt-ua-home .hsix-card-footer a[href]').length,
     uaCinematicVisuals:document.querySelectorAll('.pt-ua-home .hsix-browser').length,
-    uaCinematicScripts:!!document.querySelector('link[href*="home-six-services.css"]')&&!document.querySelector('script[src*="home-cinematic-showcase.js"]'),
+    uaCinematicScripts:!!document.querySelector('link[href*="home-six-services.css"]')&&!!document.querySelector('script[src*="home-five-motion.js"]')&&!document.querySelector('script[src*="home-cinematic-showcase.js"]'),
     uaCinematicButtons:[...document.querySelectorAll('.pt-ua-home .hsix-card-footer a[href]')].every(a=>{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.endsWith('/')&&a.getBoundingClientRect().width>0}),
     uaCinematicReference:['hsix-search','hsix-chart','hsix-shop-screen','hsix-site-screen','hsix-code'].every(c=>!!document.querySelector('.pt-ua-home .'+c)),
 
@@ -224,7 +224,7 @@ async function audit(browser,viewport,lang,slug){
     uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
     uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
     uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&document.querySelectorAll('.pt-ua-home .hsix-card a[href]').length===5,
-    uaPremiumResolution:!!document.querySelector('.pt-ua-home .ph-resolution a[href$="/contact/"]'),
+    uaPremiumResolution:document.querySelectorAll('.pt-ua-home .hsix-cta').length===1&&!!document.querySelector('.pt-ua-home .hsix-cta a[href$="/contact/"]')&&!document.querySelector('.pt-ua-home .ph-resolution'),
     heroEdge:(()=>{
       const el=document.querySelector(uaHome?'#main > .pt-ua-home > .pt-home':'#main > .orbit-lab');
       if(!el)return null;
