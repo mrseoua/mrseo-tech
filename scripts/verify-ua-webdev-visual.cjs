@@ -49,8 +49,10 @@ const sizes = [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,h
      await buttons.nth(2).click();
      if(await page.locator('.udv-visual-wrap').first().getAttribute('data-udv-step')!=='2')problems.push('stage selector');
      const toggle=page.locator('.udv-motion-toggle').first();
-     await toggle.click();
-     if(await toggle.getAttribute('aria-pressed')!=='true')problems.push('pause');
+     // This visual screenshot run explicitly emulates reduced motion. In that
+     // accessible mode the pause button is intentionally disabled and pressed.
+     if(await toggle.isEnabled())problems.push('reduced-motion toggle should be disabled');
+     if(await toggle.getAttribute('aria-pressed')!=='true')problems.push('reduced-motion state');
     } catch(error){problems.push(String(error).slice(0,400))}
     diagnostics.push({slug,viewport:size.name,problems});
     console.log((problems.length?'FAIL':'PASS')+' UA WebDev '+slug+' '+size.name+' '+problems.join('; '));
