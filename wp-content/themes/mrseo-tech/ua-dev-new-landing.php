@@ -24,7 +24,7 @@ get_header();
    <div class="pti-hero-copy udv-hero-copy">
     <nav class="pti-crumb udv-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url('','uk'));?>">Головна</a> / <a href="<?php echo esc_url(mrseo_url('web-development','uk'));?>">Веброзробка</a> / <span><?php echo esc_html($p['title']);?></span></nav>
     <span class="pti-kicker udv-eyebrow"><?php echo esc_html($p['tag']);?></span>
-    <h1 id="udv-h1"><?php echo esc_html($p['h1']);?><em><?php echo esc_html($p['highlight']);?></em></h1>
+    <h1 id="udv-h1"><?php echo esc_html($p['title']);?><em><?php echo esc_html($p['highlight']);?></em></h1>
     <p class="pti-lead udv-lead"><?php echo esc_html($p['intro']);?></p>
     <div class="pti-actions udv-actions">
      <a class="pti-pill udv-cta" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити розробку ↗</a>
