@@ -42,10 +42,11 @@ for label in ("Вебзастосунки","Особисті кабінети к
     assert label in nav, label
 assert "elseif($key==='dev')" in nav
 assert "foreach($dev_groups as $heading=>$services)" in nav
-assert "foreach($services['planned'] as $label)" in nav
+assert "foreach($services['live_extra'] as $slug=>$label)" in nav
 assert 'mrseo_ua_menu_groups()' in nav
-assert 'class="mrseo-ua-six-planned"' in nav
-assert 'Сторінка готується' in nav
+assert 'class="mrseo-ua-six-planned"' not in nav
+assert 'Сторінка готується' not in nav
+assert nav.count("home_url('/'.$slug.'/')")==1
 assert "mrseo-ua-six-item--dev .mrseo-ua-six-catalog" in css
 assert "mrseo-ua-six-item--dev .mrseo-ua-six-planned" in css
 assert "mrseo_url($slug,'uk')" in nav
@@ -58,10 +59,10 @@ assert "mrseo-ua-menu-reveal" in css and "prefers-reduced-motion:reduce" in css
 assert ".mrseo-ua-six--desktop .mrseo-ua-six-item summary::after" in css
 assert "overflow-y:auto" in css and "min-height:48px" in css
 assert "pointerdown" in js and "Escape" in js
-assert "assets/ua-six-header.css" in functions and "'2.0.0'" in functions
+assert "assets/ua-six-header.css" in functions and "'2.1.0'" in functions
 assert "white-space:nowrap;" in css and "grid-template-columns:minmax(300px,35%) minmax(0,1fr)" in css
 assert "Navigation 04" in css
 assert "X-Robots-Tag: noindex, nofollow" in functions
 assert css.count("{")==css.count("}"), "Unbalanced stylesheet braces"
 assert "pt-globe" not in css and "pt-orbit" not in css
-print("PASS: UA menu keeps five categories, WebDev has four scoped sections, real links and non-link planned services, Earth/noindex preserved")
+print("PASS: 5 top-level UA directions; 4 WebDev groups, all 15 links active; no placeholders; Earth/noindex untouched")
