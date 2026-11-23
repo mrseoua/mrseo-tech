@@ -11,6 +11,8 @@ css=(t/"assets/ua-dev-new-landings.css").read_text(encoding="utf-8")
 nav=(t/"inc/ua-header-six.php").read_text(encoding="utf-8")
 functions=(t/"functions.php").read_text(encoding="utf-8")
 i18n=(t/"inc/i18n-routing.php").read_text(encoding="utf-8")
+hub=(t/"inc/ua-dev-hub-links.php").read_text(encoding="utf-8")
+interior=(t/"premium-ua-interior.php").read_text(encoding="utf-8")
 taxonomy=(t/"inc/mega-menu-trial.php").read_text(encoding="utf-8")
 expected=("client-portals","data-parsing","payment-integration","mobile-app-development",
           "ecommerce-mobile-apps","corporate-mobile-apps","pwa-development")
@@ -41,6 +43,10 @@ for keyword in ("get_header();","get_footer();","aria-labelledby","id=\"udv-h1\"
 assert "esc_attr($page['meta'])" in routing
 assert "array_keys(mrseo_ua_dev_new_pages())" in routing
 assert "mrseo_ua_dev_new_route()" in routing
+assert "ua-dev-hub-links.php" in interior
+assert "mrseo_ua_dev_new_pages()" in hub
+assert "client-portals" in hub and "pwa-development" in hub
+assert "udv-hub-grid" in css and "data-pti-service=\"web-development\"" in css
 assert "mrseo_locale()!=='uk'" in routing
 assert "redirect_canonical" in routing and "remove_action('wp_head','rel_canonical')" in routing
 assert "pre_get_document_title" in routing and "wp_enqueue_style" in routing
