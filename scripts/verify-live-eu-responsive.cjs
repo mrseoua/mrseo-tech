@@ -212,18 +212,18 @@ async function audit(browser,viewport,lang,slug){
         final:!!root?.querySelector('.pti-final a[href$="/contact/"]')};
     })(),
     uaPremiumStyles:!!document.querySelector('link[href*="home-uk-premium.css"]'),
-    uaCinematic:document.querySelectorAll('.pt-ua-home .hsix-card').length===6&&document.querySelectorAll('.pt-ua-home .hsix-card h3').length===6,
+    uaCinematic:document.querySelectorAll('.pt-ua-home .hfive-card').length===5&&document.querySelectorAll('.pt-ua-home .hsix-card h3').length===5,
     uaCinematicLinks:document.querySelectorAll('.pt-ua-home .hsix-card-footer a[href]').length,
     uaCinematicVisuals:document.querySelectorAll('.pt-ua-home .hsix-browser').length,
     uaCinematicScripts:!!document.querySelector('link[href*="home-six-services.css"]')&&!document.querySelector('script[src*="home-cinematic-showcase.js"]'),
     uaCinematicButtons:[...document.querySelectorAll('.pt-ua-home .hsix-card-footer a[href]')].every(a=>{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.endsWith('/')&&a.getBoundingClientRect().width>0}),
-    uaCinematicReference:['hsix-search','hsix-chart','hsix-products','hsix-shop-screen','hsix-code','hsix-site-screen'].every(c=>!!document.querySelector('.pt-ua-home .'+c)),
+    uaCinematicReference:['hsix-search','hsix-chart','hsix-shop-screen','hsix-site-screen','hsix-code'].every(c=>!!document.querySelector('.pt-ua-home .'+c)),
 
     uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-simple-nav .mrseo-simple-card').length,
     uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-simple-nav a.mrseo-simple-card[href]').length,
     uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
     uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
-    uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&document.querySelectorAll('.pt-ua-home .hsix-card a[href]').length===6,
+    uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&document.querySelectorAll('.pt-ua-home .hsix-card a[href]').length===5,
     uaPremiumResolution:!!document.querySelector('.pt-ua-home .ph-resolution a[href$="/contact/"]'),
     heroEdge:(()=>{
       const el=document.querySelector(uaHome?'#main > .pt-ua-home > .pt-home':'#main > .orbit-lab');
@@ -650,7 +650,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==6||c.uaCinematicVisuals!==6||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==5||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
