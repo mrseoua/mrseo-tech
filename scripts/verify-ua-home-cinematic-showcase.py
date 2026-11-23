@@ -23,7 +23,23 @@ expected=[("seo","01","SEARCH","SEO","seo"),("ads","02","GOOGLE ADS","Google Ads
 assert actual==expected,(actual,expected)
 for item in ("hsix-search","hsix-chart","hsix-shop-screen","hsix-site-screen","hsix-code"):
     assert item in section,("Missing distinctive diagram",item)
-assert "mrseo_url($service['slug'],'uk')" in section
+# The cards must NEVER link to parent landing pages; only actual child URLs.
+assert "mrseo_url($service['slug'],'uk')" not in section
+assert "mrseo_home_subservice_groups($key)" in section
+assert section.count('<details class="hsix-subservices"')==1  # one template, loop renders five
+assert '<summary aria-label=' in section
+assert 'class="hsix-subgroup"' in section
+assert "esc_url($sub['url'])" in section and "esc_html($sub['label'])" in section
+subnav=(root/"inc/home-service-sublinks.php").read_text()
+assert "mrseo_ua_menu_groups()" in subnav
+assert "mrseo_hs_url($anchor)" in subnav
+assert "home_url('/'.$slug.'/')" in subnav
+for slug in ("local-seo","ecommerce-seo","service-business-seo","international-seo","seo-audit",
+"google-search-ads","performance-max","google-shopping","wordpress-development",
+"client-portals","data-parsing","payment-integration","pwa-development"):
+    assert slug in subnav or slug in (root/"inc/mega-menu-trial.php").read_text()
+assert "hsix-subpanel" in css and "hsix-subservices>summary" in css
+assert "prefers-reduced-motion:reduce" in css
 assert section.count('class="hsix-cta"')==1
 assert "mrseo_url('contact','uk')" in section
 assert "НЕ НАБІР ПОСЛУГ" in section

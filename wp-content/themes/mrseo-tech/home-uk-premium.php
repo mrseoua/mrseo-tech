@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) exit;
 if (mrseo_locale() !== 'uk' || mrseo_slug() !== '') { return; }
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-home-uk-premium',get_template_directory_uri().'/assets/home-uk-premium.css',array('mrseo-style'),'1.0.1');
- wp_enqueue_style('mrseo-home-six-services',get_template_directory_uri().'/assets/home-six-services.css',array('mrseo-home-uk-premium'),'1.1.0');
+ wp_enqueue_style('mrseo-home-six-services',get_template_directory_uri().'/assets/home-six-services.css',array('mrseo-home-uk-premium'),'1.2.0');
  wp_enqueue_script('mrseo-home-five-motion',get_template_directory_uri().'/assets/home-five-motion.js',array(),'1.0.0',true);
  wp_enqueue_style('mrseo-home-cinematic-polish',get_template_directory_uri().'/assets/home-cinematic-polish.css',array('mrseo-home-six-services'),'1.0.2');
  wp_enqueue_script('mrseo-home-uk-premium',get_template_directory_uri().'/assets/home-uk-premium.js',array(),'1.0.1',true);

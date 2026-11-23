@@ -5,6 +5,7 @@
  * Illustrations are HTML/CSS interface studies, not screenshots or real campaign statistics.
  */
 if (!defined('ABSPATH')) exit;
+require_once __DIR__.'/home-service-sublinks.php';
 $services = [
  ['key'=>'seo','number'=>'01','kicker'=>'SEARCH','name'=>'SEO','slug'=>'seo',
   'copy'=>'Сайт є, але Google показує конкурентів? Перевіримо структуру, індексацію та сторінки послуг, щоб прибрати перешкоди для органічного пошуку.',
@@ -32,7 +33,6 @@ $services = [
   <div class="hsix-grid">
    <?php foreach ($services as $service):
     $key=$service['key'];
-    $url=mrseo_url($service['slug'],'uk');
    ?>
    <article class="hsix-card hsix-card--<?php echo esc_attr($key);?>">
     <div class="hsix-card-header">
@@ -68,7 +68,22 @@ $services = [
     </div>
     <div class="hsix-card-footer">
      <p><?php echo esc_html($service['copy']);?></p>
-     <a href="<?php echo esc_url($url);?>" aria-label="<?php echo esc_attr($service['link']);?>"><?php echo esc_html($service['link']);?> <span aria-hidden="true">↗</span></a>
+     <?php $subgroups=mrseo_home_subservice_groups($key); ?>
+     <details class="hsix-subservices" name="hsix-subservices">
+      <summary aria-label="<?php echo esc_attr('Показати підпослуги: '.$service['name']);?>"><span>Переглянути послуги</span><span class="hsix-sub-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="hsix-subpanel">
+       <?php foreach($subgroups as $subgroup):?>
+       <div class="hsix-subgroup">
+        <strong><?php echo esc_html($subgroup['title']);?></strong>
+        <ul>
+         <?php foreach($subgroup['items'] as $sub):?>
+         <li><a href="<?php echo esc_url($sub['url']);?>"><?php echo esc_html($sub['label']);?><span aria-hidden="true">↗</span></a></li>
+         <?php endforeach;?>
+        </ul>
+       </div>
+       <?php endforeach;?>
+      </div>
+     </details>
     </div>
    </article>
    <?php endforeach;?>
