@@ -120,3 +120,140 @@
  .pti-page.puc-page.udv-page .udv-premium-point{opacity:0!important}
  .pti-page.puc-page.udv-page .udv-premium-detail-image{object-fit:cover!important}
 }
+
+
+/* Final production polish: retain full clarity of the original art, no fuzzy
+   vignette; shift attention gently between real regions of each composition. */
+.pti-page.puc-page.udv-page .udv-visual .udv-premium-scene{
+  background:#f5eee5;
+  border:1px solid #e5d7c8;
+  box-shadow:inset 0 1px 0 #fffdf8,0 17px 38px #4d3b2810;
+}
+.pti-page.puc-page.udv-page .udv-premium-hero-image{
+  -webkit-mask-image:none;
+  mask-image:none;
+  object-fit:contain;
+  transform:scale(1.005);
+  transform-origin:50% 52%;
+  transition:transform 1.4s cubic-bezier(.16,.72,.26,1);
+}
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-step="0"] .udv-premium-hero-image{
+  transform:scale(1.015) translateX(.55%);
+}
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-step="1"] .udv-premium-hero-image{
+  transform:scale(1.025);
+}
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-step="2"] .udv-premium-hero-image{
+  transform:scale(1.015) translateX(-.55%);
+}
+/* The focal points use the original art's positions; avoid oversized red dots
+   that obscure the card details. */
+.pti-page.puc-page.udv-page .udv-premium-point{
+  width:13px;height:13px;
+  border:1.5px solid #a84432;
+  background:#fff9eddf;
+  box-shadow:0 0 0 3px #fff6edaa;
+}
+.pti-page.puc-page.udv-page .udv-premium-point i{
+  inset:3px;background:#ac4836;
+}
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-step="0"] .udv-premium-point[data-udv-part="0"],
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-step="1"] .udv-premium-point[data-udv-part="1"],
+.pti-page.puc-page.udv-page .udv-visual-wrap[data-udv-step="2"] .udv-premium-point[data-udv-part="2"]{
+  box-shadow:0 0 0 7px #a844321a,0 1px 11px #a8443233;
+}
+.pti-page.puc-page.udv-page .udv-visual .udv-premium-sheen{
+  opacity:.38;
+}
+/* Editorial lower layouts: problem = contextual left detail, solution =
+   right-hand success workflow. The same downloaded asset is reused to avoid
+   repeating 14 image downloads, but focus/composition and annotations differ. */
+.pti-page.puc-page.udv-page .udv-lower-graphic{
+  padding:clamp(20px,2.3vw,30px);
+  background:linear-gradient(150deg,#fffcf6,#eee4d8);
+  border:1px solid #d9c6b2;
+  border-radius:23px;
+  box-shadow:0 19px 45px #4a392711;
+}
+.pti-page.puc-page.udv-page .udv-lower-graphic .udv-premium-detail-frame{
+  aspect-ratio:1.65;
+  background:radial-gradient(ellipse at center,#fffdf9 0%,#f0e5da 82%);
+  border:1px solid #dfd0c0;
+  border-radius:16px;
+  margin:19px 0 22px;
+}
+.pti-page.puc-page.udv-page .udv-premium-detail-image{
+  object-fit:cover;
+  transform:scale(1.055);
+  transform-origin:center;
+  transition:transform 1.5s cubic-bezier(.2,.65,.2,1),object-position 1.5s ease;
+}
+.pti-page.puc-page.udv-page [data-udv-lower="problem"] .udv-premium-detail-image{
+  object-position:36% 53%;
+  transform:scale(1.055) translateX(1%);
+}
+.pti-page.puc-page.udv-page [data-udv-lower="solution"] .udv-premium-detail-image{
+  object-position:64% 49%;
+  transform:scale(1.055) translateX(-1%);
+}
+.pti-page.puc-page.udv-page [data-udv-lower-visible="true"][data-udv-lower="problem"] .udv-premium-detail-image{
+  transform:scale(1.015) translateX(0);
+}
+.pti-page.puc-page.udv-page [data-udv-lower-visible="true"][data-udv-lower="solution"] .udv-premium-detail-image{
+  transform:scale(1.015) translateX(0);
+}
+.pti-page.puc-page.udv-page .udv-premium-detail-overlay{
+  background:linear-gradient(180deg,transparent 66%,#fcf5ebd6 100%);
+}
+.pti-page.puc-page.udv-page [data-udv-lower="solution"] .udv-premium-detail-ping{
+  left:auto;
+  right:13px;
+  border-color:#c1d1bd;
+  color:#58735c;
+}
+.pti-page.puc-page.udv-page [data-udv-lower="solution"] .udv-premium-detail-ping i{
+  background:#688b70;
+  box-shadow:0 0 0 4px #6f9d7d22;
+}
+.pti-page.puc-page.udv-page .udv-lower-graphic .udv-lower-legend{
+  gap:12px;
+}
+.pti-page.puc-page.udv-page .udv-lower-graphic .udv-lower-legend span{
+  font-size:clamp(11px,.9vw,13px);
+  line-height:1.45;
+  color:#61594f;
+}
+@media(max-width:710px){
+  .pti-page.puc-page.udv-page .udv-visual .udv-premium-scene{
+    border-radius:14px;
+  }
+  .pti-page.puc-page.udv-page .udv-premium-point{
+    width:10px;height:10px;
+  }
+  .pti-page.puc-page.udv-page .udv-premium-point i{
+    inset:2px;
+  }
+  .pti-page.puc-page.udv-page .udv-lower-graphic{
+    padding:16px;
+    border-radius:17px;
+  }
+  .pti-page.puc-page.udv-page .udv-lower-graphic .udv-premium-detail-frame{
+    aspect-ratio:1.5;
+    margin:16px 0 17px;
+    border-radius:11px;
+  }
+  .pti-page.puc-page.udv-page .udv-lower-graphic .udv-lower-legend{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:7px;
+  }
+  .pti-page.puc-page.udv-page .udv-lower-graphic .udv-lower-legend span{
+    font-size:10px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .pti-page.puc-page.udv-page .udv-premium-hero-image,
+  .pti-page.puc-page.udv-page .udv-premium-detail-image{
+    transform:none!important;
+    transition:none!important;
+  }
+}
