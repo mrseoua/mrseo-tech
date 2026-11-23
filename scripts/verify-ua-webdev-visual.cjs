@@ -21,13 +21,13 @@ const sizes = [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,h
      const data=await page.evaluate(async()=>{
       const hero=document.querySelector('.udv-premium-hero-image');
       const lower=[...document.querySelectorAll('.udv-premium-detail-image')];
-      await Promise.all([hero,...lower].filter(Boolean).map(async img=>{try{await img.decode()}catch{}}));
+      if(hero)try{await hero.decode()}catch{}
       return {
        h1:document.querySelectorAll('h1').length,
        robots:document.querySelector('meta[name=robots]')?.content||'',
        canonical:document.querySelector('link[rel=canonical]')?.href||'',
        hero:!!hero&&hero.naturalWidth>=1000,
-       lower:lower.length===2&&lower.every(img=>img.naturalWidth>=1000),
+       lower:lower.length===2&&lower.every(img=>img.getAttribute('src')?.includes('ua-dev-premium-')),
        scene:document.querySelector('.udv-premium-scene')?.dataset.udvPremiumScene||'',
        overflow:document.documentElement.scrollWidth>innerWidth+4,
        stages:document.querySelectorAll('.udv-story-step[data-udv-stage]').length,
@@ -41,6 +41,8 @@ const sizes = [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,h
      for(const part of ['problem','solution']){
       const graphic=page.locator('[data-udv-lower="'+part+'"]').first();
       await graphic.scrollIntoViewIfNeeded();
+      const lowerReady=await graphic.locator('img.udv-premium-detail-image').evaluate(async img=>{try{await img.decode()}catch{}return img.naturalWidth>=1000;});
+      if(!lowerReady)problems.push('Lower '+part+' WebP failed to decode');
       await page.screenshot({path:'shots/ua-webdev/'+slug+'-'+size.name+'-'+part+'.png',fullPage:false,animations:'disabled'});
      }
      const buttons=page.locator('.udv-story-step[data-udv-stage]');
