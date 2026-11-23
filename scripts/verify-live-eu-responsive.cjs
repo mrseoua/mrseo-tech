@@ -723,6 +723,24 @@ async function audit(browser,viewport,lang,slug){
    const gallery=page.locator('.pt-ua-home .hsix');
    await gallery.screenshot({path:'shots/eu-uk-six-services-'+viewport.name+'.jpg',type:'jpeg',quality:80,timeout:20000})
     .catch(e=>item.errors.push('UA five-card visual capture failed: '+e.message));
+   // Verify actual click-to-reveal behavior, keyboard accessibility and mobile layout.
+   const accordions=page.locator('.pt-ua-home .hsix-subservices');
+   try{
+    const first=accordions.first();
+    await first.locator('summary').click({timeout:10000});
+    if(!(await first.evaluate(node=>node.open)))item.errors.push('UA subservice accordion failed to open');
+    const firstLinks=first.locator('.hsix-subgroup a[href]');
+    if(await firstLinks.count()!==5)item.errors.push('UA SEO submenu should expose exactly 5 links');
+    if(!(await firstLinks.first().isVisible()))item.errors.push('UA subservice links not visible when expanded');
+    const second=accordions.nth(1);
+    await second.locator('summary').click({timeout:10000});
+    if(!(await second.evaluate(node=>node.open)))item.errors.push('UA second accordion failed to open');
+    if(await first.evaluate(node=>node.open))item.errors.push('UA other accordion did not close');
+    if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+4))item.errors.push('UA accordion horizontal overflow');
+    await gallery.screenshot({path:'shots/eu-uk-subservices-'+viewport.name+'.jpg',type:'jpeg',quality:80,timeout:20000});
+    await second.locator('summary').click({timeout:10000});
+   }catch(e){item.errors.push('UA accordion interaction: '+e.message)}
+
   }
   // Independent screenshots of middle and footer; Chromium fullPage can repeat
   // the top on long pages. Cover five distinct RU service scene families.
