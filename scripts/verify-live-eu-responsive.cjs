@@ -785,6 +785,36 @@ async function audit(browser,viewport,lang,slug){
     }
     await page.evaluate(()=>window.scrollTo(0,0));
   }
+  if(lang==='uk'&&slug==='seo'){
+   const journey=page.locator('.pti-page[data-pti-service="seo"] .seo-path');
+   try{
+    if(await journey.count()!==1)item.errors.push('SEO journey missing or duplicated');
+    else{
+     const cards=journey.locator('.seo-path-card');
+     if(await cards.count()!==3)item.errors.push('SEO journey must show exactly three distinct stages');
+     await journey.scrollIntoViewIfNeeded();
+     await page.emulateMedia({reducedMotion:'no-preference'});
+     const active=await page.evaluate(()=>{
+      const root=document.querySelector('.pti-page[data-pti-service="seo"] .seo-path');
+      const dot=root?.querySelector('.seo-path-progress-dot');
+      const search=root?.querySelector('.seo-path-search-caret');
+      const form=root?.querySelector('.seo-path-form-button');
+      return {
+       motion:[dot,search,form].map(e=>e?.getAnimations().some(a=>a.playState==='running')||false),
+       overflow:document.documentElement.scrollWidth>innerWidth+4,
+       cardCount:root?.querySelectorAll('.seo-path-card').length
+      };
+     });
+     if(active.motion.some(a=>!a))item.errors.push('SEO narrative animation not running '+JSON.stringify(active));
+     if(active.overflow)item.errors.push('SEO journey causes horizontal overflow');
+     await journey.screenshot({path:'shots/ua-seo-search-journey-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
+     await page.emulateMedia({reducedMotion:'reduce'});
+     const names=await page.evaluate(()=>[...document.querySelectorAll('.pti-page[data-pti-service="seo"] .seo-path-progress-dot,.pti-page[data-pti-service="seo"] .seo-path-page-highlight')].map(e=>getComputedStyle(e).animationName));
+     if(names.some(n=>n!=='none'))item.errors.push('SEO journey reduced-motion CSS still animated');
+     await page.emulateMedia({reducedMotion:'no-preference'});
+    }
+   }catch(e){item.errors.push('SEO journey viewport QA '+e.message)}
+  }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
   }

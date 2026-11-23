@@ -56,6 +56,8 @@ jobs:
           node --check wp-content/themes/mrseo-tech/assets/home-cinematic-showcase.js
       - name: Verify Ukrainian homepage Premium Polish and confidentiality notice
         run: python3 scripts/verify-ua-home-premium-polish.py
+      - name: Verify SEO search-to-page-to-inquiry animation and preserved landing
+        run: python3 scripts/verify-ua-seo-search-journey.py
       - name: Guard Ukrainian non-development interior premium design scope
         run: python3 scripts/verify-ua-nondev-premium-finish.py
       - name: Verify Ukrainian Premium Tech Navigation 02
