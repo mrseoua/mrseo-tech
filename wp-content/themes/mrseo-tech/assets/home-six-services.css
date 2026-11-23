@@ -149,3 +149,110 @@
 @keyframes hsix-subpanel-enter{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:700px){.pt-ua-home .hsix-subpanel{max-height:min(350px,48vh)}.pt-ua-home .hsix-card-footer .hsix-subgroup a{font-size:14px;min-height:43px}.pt-ua-home .hsix-subservices>summary{font-size:16px;min-height:47px}}
 @media(prefers-reduced-motion:reduce){.pt-ua-home .hsix-subpanel{animation:none!important}.pt-ua-home .hsix-sub-chevron,.pt-ua-home .hsix-subservices>summary{transition:none!important}}
+
+
+/* 2026-11: clearly visible, lightweight UI storytelling (five menu services).
+   The artwork itself animates, never the card geometry or accordion links.
+   No external assets, bogus traffic data or layout-affecting transitions. */
+@keyframes hsix-search-scan {
+  0%,8%{transform:translateY(-42px);opacity:0}
+  16%{opacity:.78}
+  53%{transform:translateY(96px);opacity:.82}
+  67%,100%{transform:translateY(96px);opacity:0}
+}
+@keyframes hsix-seo-result {
+  0%,15%,100%{background-color:#b7c6e0;transform:scaleX(.74)}
+  40%,72%{background-color:#377dc0;transform:scaleX(1)}
+}
+@keyframes hsix-ads-draw {
+  0%,9%{stroke-dashoffset:600}
+  46%,87%{stroke-dashoffset:0}
+  100%{stroke-dashoffset:600}
+}
+@keyframes hsix-ads-bars {
+  0%,100%{transform:scaleY(.42);opacity:.52}
+  45%,68%{transform:scaleY(1);opacity:1}
+}
+@keyframes hsix-catalog-focus {
+  0%,12%,100%{background:#edf4f0;transform:translateX(0)}
+  27%,54%{background:#d7ebe4;transform:translateX(4px)}
+}
+@keyframes hsix-catalog-check {
+  0%,15%,100%{color:#9bbcb0;transform:scale(.75);opacity:.45}
+  38%,72%{color:#00a977;transform:scale(1.15);opacity:1}
+}
+@keyframes hsix-site-preview {
+  0%,100%{transform:translateY(0)}
+  48%{transform:translateY(-9px)}
+}
+@keyframes hsix-site-window-highlight {
+  0%,12%,100%{opacity:.65;transform:scaleX(.64)}
+  42%,77%{opacity:1;transform:scaleX(1)}
+}
+@keyframes hsix-dev-status {
+  0%,19%,100%{background:#89a8a0;transform:translateX(0)}
+  38%,74%{background:#32c78d;transform:translateX(3px)}
+}
+@keyframes hsix-dev-code {
+  0%,9%,100%{opacity:.45;transform:translateX(-3px)}
+  35%,76%{opacity:1;transform:translateX(2px)}
+}
+@keyframes hsix-device-screen {
+  0%,100%{filter:saturate(.8)}
+  45%{filter:saturate(1.4)}
+}
+@media (prefers-reduced-motion:no-preference){
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--seo .hsix-browser-screen::after{
+   content:"";position:absolute;inset:auto 12px auto 12px;top:36px;height:16px;
+   border-radius:5px;background:linear-gradient(90deg,transparent,#62a2cc38,#8cdbcc58,transparent);
+   pointer-events:none;z-index:2;animation:hsix-search-scan 5.8s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--seo .hsix-serp--second .hsix-line--pale{
+   transform-origin:left;animation:hsix-seo-result 5.8s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--ads .hsix-chart path:nth-child(2){
+   stroke-dasharray:600;stroke-dashoffset:600;animation:hsix-ads-draw 6.2s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--ads .hsix-metrics span{
+   transform-origin:center bottom;animation:hsix-ads-bars 5.8s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--ads .hsix-metrics span:nth-child(2){animation-delay:-1.2s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--ads .hsix-metrics span:nth-child(3){animation-delay:-2.4s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--ads .hsix-metrics span:nth-child(4){animation-delay:-3.6s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--horoshop .hsix-shop-list>div{
+   animation:hsix-catalog-focus 6.4s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--horoshop .hsix-shop-list>div:nth-child(3){animation-delay:-1.6s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--horoshop .hsix-shop-list>div:nth-child(4){animation-delay:-3.2s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--horoshop .hsix-shop-list>div:nth-child(5){animation-delay:-4.8s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--horoshop .hsix-shop-list>div b{
+   animation:hsix-catalog-check 6.4s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--sites .hsix-device--phone{
+   animation:hsix-site-preview 5.5s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--sites .hsix-device--tablet{
+   animation:hsix-site-preview 6.5s ease-in-out -2s infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--sites .hsix-site-main>div b{
+   transform-origin:left;animation:hsix-site-window-highlight 5.5s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--sites .hsix-device b{
+   animation:hsix-device-screen 5.5s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--dev .hsix-code span:nth-child(3),
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--dev .hsix-code span:nth-child(6){
+   animation:hsix-dev-code 5.1s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--dev .hsix-code span:nth-child(6){animation-delay:-2.3s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--dev .hsix-dev-panel b{
+   animation:hsix-dev-status 5.1s ease-in-out infinite
+ }
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--dev .hsix-dev-panel>div:nth-child(3) b{animation-delay:-1.7s}
+ .pt-ua-home .hsix:not(.hsix-motion-off) .hsix-card--dev .hsix-dev-panel>div:nth-child(4) b{animation-delay:-3.4s}
+}
+/* Reduced-motion is a static complete illustration: no missing chart line. */
+@media (prefers-reduced-motion:reduce){
+ .pt-ua-home .hsix .hsix-chart path:nth-child(2){stroke-dasharray:none!important;stroke-dashoffset:0!important}
+ .pt-ua-home .hsix .hsix-serp .hsix-line{transform:none!important;opacity:1!important}
+}

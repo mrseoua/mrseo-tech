@@ -723,6 +723,31 @@ async function audit(browser,viewport,lang,slug){
    const gallery=page.locator('.pt-ua-home .hsix');
    await gallery.screenshot({path:'shots/eu-uk-six-services-'+viewport.name+'.jpg',type:'jpeg',quality:80,timeout:20000})
     .catch(e=>item.errors.push('UA five-card visual capture failed: '+e.message));
+   // Explicitly prove five UI animations run: static screenshots alone cannot.
+   try{
+    await page.emulateMedia({reducedMotion:'no-preference'});
+    await page.locator('.pt-ua-home .hsix-card--ads .hsix-chart').scrollIntoViewIfNeeded();
+    await page.waitForFunction(()=>!document.querySelector('.pt-ua-home .hsix')?.classList.contains('hsix-motion-off'),null,{timeout:6000});
+    const motion=await page.evaluate(()=>{
+     const selectors={
+      seo:'.hsix-card--seo .hsix-serp--second .hsix-line--pale',
+      ads:'.hsix-card--ads .hsix-chart path:nth-child(2)',
+      horoshop:'.hsix-card--horoshop .hsix-shop-list>div',
+      sites:'.hsix-card--sites .hsix-device--phone',
+      dev:'.hsix-card--dev .hsix-code span:nth-child(3)'
+     };
+     return Object.fromEntries(Object.entries(selectors).map(([name,selector])=>{
+      const node=document.querySelector('.pt-ua-home '+selector);
+      return [name,node?.getAnimations().some(a=>a.playState==='running')||false];
+     }));
+    });
+    if(Object.values(motion).some(active=>!active))item.errors.push('UA service scene animation is not running: '+JSON.stringify(motion));
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await page.waitForFunction(()=>document.querySelector('.pt-ua-home .hsix')?.classList.contains('hsix-motion-off'),null,{timeout:6000});
+    const reduced=await page.evaluate(()=>getComputedStyle(document.querySelector('.pt-ua-home .hsix-card--ads .hsix-chart path:nth-child(2)')).animationName);
+    if(reduced!=='none')item.errors.push('UA reduced-motion should disable all scene animations');
+    await page.emulateMedia({reducedMotion:'no-preference'});
+   }catch(e){item.errors.push('UA service scene animation QA: '+e.message)}
    // Verify actual click-to-reveal behavior, keyboard accessibility and mobile layout.
    const accordions=page.locator('.pt-ua-home .hsix-subservices');
    try{

@@ -53,6 +53,20 @@ assert "home-five-motion.js" in home
 assert "@keyframes hsix-chart-reveal" in css and "@keyframes hsix-device-rise" in css
 assert "@keyframes hsix-dev-glow" in css and "@keyframes hsix-horoshop-check" in css
 assert "@keyframes hsix-serp-pulse" in css
+# Visible movement, not just static illustrations with nearly imperceptible opacity changes.
+for animation in ("hsix-search-scan","hsix-seo-result","hsix-ads-draw",
+                  "hsix-ads-bars","hsix-catalog-focus","hsix-catalog-check",
+                  "hsix-site-preview","hsix-site-window-highlight",
+                  "hsix-dev-code","hsix-dev-status"):
+    assert "@keyframes "+animation in css, animation
+for card in ("seo","ads","horoshop","sites","dev"):
+    assert ".hsix-card--"+card in css
+assert "prefers-reduced-motion:no-preference" in css
+assert "stroke-dasharray:none!important" in css  # static complete graph in reduced-motion mode
+assert "rootMargin:'60px 0px 60px 0px'" in motion
+assert "entry.isIntersecting" in motion
+assert "home-five-motion.js',array(),'1.1.0'" in home
+assert "home-six-services.css',array('mrseo-home-uk-premium'),'1.3.0'" in home
 assert "<section class=\"ph-resolution\"" not in home
 assert "aria-label" in section and "role=\"img\"" in section
 assert "loading=\"lazy\"" not in section # no duplicate opaque remote images
