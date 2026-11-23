@@ -69,25 +69,25 @@ function mrseo_ua_header_six($mobile=false){
       'web-applications'=>'Вебзастосунки',
       'business-dashboards'=>'Дашборди та звітність'
      ),
-     'planned'=>array('Особисті кабінети клієнтів')
+     'live_extra'=>array('client-portals'=>'Особисті кабінети клієнтів')
     ),
     'Інтеграції й функціонал'=>array(
      'live'=>array(
       'api-integrations'=>'Інтеграція сервісів через API',
       'custom-functionality'=>'Індивідуальний функціонал'
      ),
-     'planned'=>array('Парсинг і синхронізація даних','Інтеграція платіжних систем')
+     'live_extra'=>array('data-parsing'=>'Парсинг і синхронізація даних','payment-integration'=>'Інтеграція платіжних систем')
     ),
     'Штучний інтелект'=>array(
      'live'=>array(
       'ai-agents'=>'AI-агенти для бізнесу',
       'chatbot-development'=>'Розробка чат-ботів'
      ),
-     'planned'=>array()
+     'live_extra'=>array()
     ),
     'Мобільні застосунки'=>array(
      'live'=>array(),
-     'planned'=>array('Мобільні застосунки для iOS та Android','Застосунки для інтернет-магазинів','Корпоративні мобільні застосунки','PWA-застосунки')
+     'live_extra'=>array('mobile-app-development'=>'Мобільні застосунки для iOS та Android','ecommerce-mobile-apps'=>'Застосунки для інтернет-магазинів','corporate-mobile-apps'=>'Корпоративні мобільні застосунки','pwa-development'=>'PWA-застосунки')
     )
    );
    foreach($dev_groups as $heading=>$services){
@@ -95,8 +95,8 @@ function mrseo_ua_header_six($mobile=false){
     foreach($services['live'] as $slug=>$label){
      echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
     }
-    foreach($services['planned'] as $label){
-     echo '<span class="mrseo-ua-six-planned">'.esc_html($label).'<small>Сторінка готується</small></span>';
+    foreach($services['live_extra'] as $slug=>$label){
+     echo '<a href="'.esc_url(home_url('/'.$slug.'/')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
     }
     echo '</section>';
    }
