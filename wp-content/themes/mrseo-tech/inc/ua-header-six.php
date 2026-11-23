@@ -7,7 +7,7 @@ function mrseo_ua_menu_summaries(){
   'ads'=>'Пошукова та товарна реклама, аудит і контроль рекламних кампаній.',
   'horoshop'=>'Налаштування, SEO, реклама та аналітика магазинів на Хорошоп.',
   'sites'=>'Сайти для бізнесу: від лендінгу до повноцінного онлайн-проєкту.',
-  'dev'=>'Вебзастосунки, автоматизація, CRM та індивідуальні інтеграції.'
+  'dev'=>'Бізнес-системи, інтеграції, AI та мобільні рішення під потреби компанії.'
  );
 }
 function mrseo_ua_header_six($mobile=false){
@@ -56,6 +56,47 @@ function mrseo_ua_header_six($mobile=false){
     echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($heading).'</h3>';
     foreach($services as $anchor=>$label){
      echo '<a href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
+    }
+    echo '</section>';
+   }
+  }elseif($key==='dev'){
+   // Presentation-only groups. Never mutate the 54-URL SEO registry in mega-menu-trial.php.
+   $dev_groups=array(
+    'Бізнес-системи'=>array(
+     'live'=>array(
+      'business-automation'=>'Автоматизація бізнесу',
+      'crm-development'=>'CRM для бізнесу',
+      'web-applications'=>'Вебзастосунки',
+      'business-dashboards'=>'Дашборди та звітність'
+     ),
+     'planned'=>array('Особисті кабінети клієнтів')
+    ),
+    'Інтеграції й функціонал'=>array(
+     'live'=>array(
+      'api-integrations'=>'Інтеграція сервісів через API',
+      'custom-functionality'=>'Індивідуальний функціонал'
+     ),
+     'planned'=>array('Парсинг і синхронізація даних','Інтеграція платіжних систем')
+    ),
+    'Штучний інтелект'=>array(
+     'live'=>array(
+      'ai-agents'=>'AI-агенти для бізнесу',
+      'chatbot-development'=>'Розробка чат-ботів'
+     ),
+     'planned'=>array()
+    ),
+    'Мобільні застосунки'=>array(
+     'live'=>array(),
+     'planned'=>array('Мобільні застосунки для iOS та Android','Застосунки для інтернет-магазинів','Корпоративні мобільні застосунки','PWA-застосунки')
+    )
+   );
+   foreach($dev_groups as $heading=>$services){
+    echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($heading).'</h3>';
+    foreach($services['live'] as $slug=>$label){
+     echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).' <span aria-hidden="true">↗</span></a>';
+    }
+    foreach($services['planned'] as $label){
+     echo '<span class="mrseo-ua-six-planned">'.esc_html($label).'<small>Сторінка готується</small></span>';
     }
     echo '</section>';
    }
