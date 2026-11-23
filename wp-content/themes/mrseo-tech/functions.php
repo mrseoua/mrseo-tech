@@ -418,7 +418,7 @@ add_action('admin_post_mrseo_contact','mrseo_handle_contact');
  * Never list these concept routes in the international XML sitemap.
  */
 function mrseo_private_concept_route() {
-    return in_array(mrseo_slug(), array('orbit-lab', 'orbit-light'), true);
+    return in_array(mrseo_slug(), array('orbit-lab', 'orbit-light'), true) || (function_exists('mrseo_premium_tech_preview_request') && mrseo_premium_tech_preview_request());
 }
 add_filter('wp_robots', function($robots) {
     if (mrseo_private_concept_route()) {
@@ -457,3 +457,31 @@ function mrseo_public_robots_during_development($output, $public) {
     return "User-agent: *\nAllow: /\n";
 }
 add_filter('robots_txt', 'mrseo_public_robots_during_development', 99, 2);
+
+/**
+ * Unlisted design-only preview. Do not add to service registries, menus,
+ * sitemap, canonical/hreflang or the main WordPress page inventory.
+ * Existing routes remain untouched; this explicitly scoped hook only matches
+ * the exact Ukrainian /premium-tech-preview/ path.
+ */
+function mrseo_premium_tech_preview_request() {
+ return trim((string)parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH),'/')==='premium-tech-preview';
+}
+add_action('init', static function () {
+ add_rewrite_rule('^premium-tech-preview/?$', 'index.php?mrseo_design_preview=1', 'top');
+ if (get_option('mrseo_premium_preview_rewrite_v1') !== 'ready') {
+  flush_rewrite_rules(false);
+  update_option('mrseo_premium_preview_rewrite_v1','ready',false);
+ }
+}, 12);
+add_filter('query_vars',static function($vars){$vars[]='mrseo_design_preview';return $vars;},20);
+add_filter('pre_handle_404',static function($pre){return mrseo_premium_tech_preview_request()?true:$pre;},120);
+add_filter('redirect_canonical',static function($url){return mrseo_premium_tech_preview_request()?false:$url;},120);
+add_filter('template_include',static function($template){
+ return mrseo_premium_tech_preview_request()
+  ?get_template_directory().'/premium-tech-preview.php':$template;
+},120);
+add_filter('pre_get_document_title',static function($title){
+ return mrseo_premium_tech_preview_request()
+  ?'Premium Tech — SEO Design Preview | MrSeo.tech':$title;
+},120);
