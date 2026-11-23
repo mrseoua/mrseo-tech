@@ -897,3 +897,8 @@
 - `assets/ua-six-header.css`: scoped dev desktop 2-column/four-group grid, разделение активных услуг и неактивных позиций, адаптация мобильной гармошки. CSS-ключ в `functions.php` обновлён до 2.0.0. Нет затрагивания 3D-Земли или robots.
 - `scripts/verify-ua-premium-tech-navigation.py` и `scripts/verify-live-eu-responsive.cjs`: контракт четырёх групп, восьми настоящих ссылок и семи planned-label, мобильной и desktop версий, пяти top-level категорий. Проверить CI + изолированный WordPress Browser Preview; не публиковать без отдельного «публикуй». Откат — revert одного PR.
 - Следующая отдельная задача после согласования: оформить реальные уникальные украинские посадочные для client-portals, data-parsing, payment-integration и мобильных направлений, если команда их действительно выполняет. Сейчас они лишь пункты структуры, а не готовые SEO-страницы.
+
+
+### 23 ноября 2026 — корректировка архитектуры WebDev-меню для безопасности SEO-инвентаря
+- Первоначальная попытка заменить `dev` в `mrseo_ua_menu_groups()` вызвала отказ International SEO QA: `scripts/verify-international-seo.php` фиксирует 7 групп, 54 настоящих route slug и 39 planned slug. **Реестр возвращён побайтно к main**, инварианты и глобальный hreflang/robots не меняются.
+- Новые группы теперь живут **только в выводе `inc/ua-header-six.php` при `$key==='dev'`**; остальные пять категорий, живые URL, sitemap, semantic map и планируемые slug-инвентари сохранены. В меню 8 настоящих ссылок (включая существующий data-маршрут `business-dashboards`) и 7 помеченных неактивных позиций. Тест навигации скорректирован под три реальных PHP цикла ссылки SEO/WebDev/other. Это узкая UI-перестановка, а не изменение SEO-архитектуры.
