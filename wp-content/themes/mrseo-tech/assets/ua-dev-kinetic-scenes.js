@@ -10,6 +10,8 @@
  const pause=hero.querySelector('.udv-motion-toggle');
  const caption=hero.querySelector('[data-udv-caption-text]');
  const index=hero.querySelector('[data-udv-index]');
+ const lower=[...document.querySelectorAll('.udv-page .udv-lower-graphic[data-udv-lower]')];
+ const lowerSeen=new WeakSet();
  if(buttons.length!==3||!pause||!svg||!caption||!index)return;
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  const conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
@@ -34,6 +36,15 @@
    if(shouldStop)svg.pauseAnimations();
    else svg.unpauseAnimations();
   }
+  lower.forEach(panel=>{
+   const stoppedLower=manualPause||motionRestricted()||document.hidden||!lowerSeen.has(panel);
+   panel.dataset.udvLowerPaused=String(stoppedLower);
+   const illustration=panel.querySelector('svg.udv-lower-svg');
+   if(illustration&&typeof illustration.pauseAnimations==='function'&&typeof illustration.unpauseAnimations==='function'){
+    if(stoppedLower)illustration.pauseAnimations();
+    else illustration.unpauseAnimations();
+   }
+  });
   hero.dataset.udvPaused=String(shouldStop);
   pause.setAttribute('aria-pressed',String(manualPause));
   pause.disabled=motionRestricted();
@@ -54,12 +65,21 @@
    sync();
   },{threshold:.12}):null;
  if(observer)observer.observe(hero);else visible=true;
+ const lowerObserver=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting)lowerSeen.add(entry.target);
+   else lowerSeen.delete(entry.target);
+  });
+  sync();
+ },{threshold:.1}):null;
+ if(lowerObserver)lower.forEach(panel=>lowerObserver.observe(panel));
+ else lower.forEach(panel=>lowerSeen.add(panel));
  document.addEventListener('visibilitychange',sync,{passive:true});
  if(typeof reduce.addEventListener==='function')reduce.addEventListener('change',sync);
  else if(typeof reduce.addListener==='function')reduce.addListener(sync);
  if(conn&&typeof conn.addEventListener==='function')conn.addEventListener('change',sync);
  window.addEventListener('pagehide',()=>{
-  visible=false;sync();if(observer)observer.disconnect();
+  visible=false;sync();if(observer)observer.disconnect();if(lowerObserver)lowerObserver.disconnect();
  },{once:true});
  const root=document.querySelector('.udv-page');
  if(root&&!motionRestricted()&&'IntersectionObserver' in window){
