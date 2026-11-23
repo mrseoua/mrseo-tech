@@ -42,6 +42,22 @@
  else if(typeof reduced.addListener==='function')reduced.addListener(()=>{if(reduced.matches)setStep(0);sync();});
  if(conn&&typeof conn.addEventListener==='function')conn.addEventListener('change',sync);
  window.addEventListener('pagehide',()=>{visible=false;sync();if(observer)observer.disconnect();},{once:true});
+ // Below-the-fold narrative enters once; existing content stays visible without JS.
+ // IntersectionObserver only animates transform/opacity, never page geometry.
+ const root=document.querySelector('.udv-page');
+ if(root&&!reduced.matches&&!(conn&&conn.saveData)&&'IntersectionObserver' in window){
+  const items=[...root.querySelectorAll('.udv-card,.udv-step,.udv-result,.udv-faq-list details')];
+  items.forEach(item=>item.classList.add('udv-reveal'));
+  const reveal=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){
+     entry.target.classList.add('udv-inview');
+     reveal.unobserve(entry.target);
+    }
+   });
+  },{threshold:.12,rootMargin:'0px 0px -20px 0px'});
+  items.forEach(item=>reveal.observe(item));
+ }
  setStep(0);
  sync();
 })();
