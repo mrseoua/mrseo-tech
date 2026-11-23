@@ -205,6 +205,14 @@ function mrseo_i18n_page_groups() {
         if(function_exists('mrseo_final_market_alternates'))$pages=array_merge($pages,mrseo_final_market_alternates('woocommerce-shopify-stores'));
         $groups[]=array('group'=>'platform:woocommerce-shopify','pages'=>$pages);
     }
+    // Seven complete original RU counterparts to existing Ukrainian WebDev services.
+    // Only these two real languages receive reciprocal hreflang declarations.
+    if(function_exists('mrseo_ru_dev_pages') && function_exists('mrseo_ua_dev_new_pages')){
+        foreach(array_keys(mrseo_ru_dev_pages()) as $slug){
+            if(isset(mrseo_ua_dev_new_pages()[$slug]))
+                $groups[]=array('group'=>'webdev-ua-ru:'.$slug,'pages'=>array('uk'=>$slug,'ru'=>$slug));
+        }
+    }
     foreach(mrseo_ua_expansion_slugs() as $slug)$groups[]=array('group'=>'ua-expansion:'.$slug,'pages'=>array('uk'=>$slug));
     return $groups;
 }
