@@ -1,0 +1,144 @@
+/* UA /seo/ only. Visual language from approved Ukrainian home: ivory paper,
+   graphite editorial text, restrained terracotta, fine border and spacious hero.
+   Existing SEO-specific animated artwork/controls stay untouched. */
+.pti-page[data-pti-service="seo"]{
+ --seo-ivory:#f9f5ee;
+ --seo-paper:#f7f3ed;
+ --seo-ink:#252c26;
+ --seo-muted:#5b5955;
+ --seo-accent:#b94134;
+ --seo-rule:#ded3c7;
+ background:#eee9e1;
+}
+.pti-page[data-pti-service="seo"] .pti-hero{
+ width:min(100% - clamp(28px,5vw,88px),1580px);
+ margin:clamp(20px,2.7vw,39px) auto clamp(32px,4.5vw,65px);
+ padding:clamp(34px,4.25vw,70px) 0;
+ position:relative;
+ isolation:isolate;
+ overflow:hidden;
+ border:1px solid #d9cdbf;
+ border-radius:28px;
+ box-shadow:0 24px 65px #55432e10;
+ background:radial-gradient(ellipse at 74% 38%,#fffdf7 0%,#f4eee4 46%,#e9e0d3 100%);
+}
+.pti-page[data-pti-service="seo"] .pti-hero:before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background-image:linear-gradient(#ad9c8410 1px,transparent 1px),linear-gradient(90deg,#ad9c8410 1px,transparent 1px);
+ background-size:45px 45px;
+ mask-image:linear-gradient(90deg,transparent 32%,#000 100%);
+}
+.pti-page[data-pti-service="seo"] .pti-hero .pti-wrap{
+ width:calc(100% - clamp(38px,7vw,112px));
+ max-width:1450px;
+}
+.pti-page[data-pti-service="seo"] .pti-hero-grid{
+ grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+ gap:clamp(24px,3.3vw,54px);
+}
+.pti-page[data-pti-service="seo"] .pti-crumb{
+ color:#696157;font-size:13px;line-height:1.5;margin-bottom:24px;
+}
+.pti-page[data-pti-service="seo"] .pti-kicker{
+ color:var(--seo-accent);font-size:12px;letter-spacing:.10em;
+}
+.pti-page[data-pti-service="seo"] .pti-kicker:before{background:var(--seo-accent)}
+.pti-page[data-pti-service="seo"] .pti-hero h1{
+ color:var(--seo-ink);
+ font-size:clamp(48px,5vw,82px);
+ font-weight:850;line-height:1.025;letter-spacing:-.065em;
+ margin:21px 0 25px;
+ text-wrap:balance;
+}
+.pti-page[data-pti-service="seo"] .pti-hero h1 em{color:var(--seo-accent)}
+.pti-page[data-pti-service="seo"] .pti-lead{
+ color:#57554b;font-size:clamp(17px,1.38vw,20px);
+ line-height:1.7;max-width:580px;
+}
+.pti-page[data-pti-service="seo"] .pti-actions{margin-top:29px}
+.pti-page[data-pti-service="seo"] .pti-pill{
+ border-radius:28px;min-height:50px;
+ background:#292e28;color:#fffdf6;border:1px solid #292e28;
+ font-size:14px;font-weight:780;box-shadow:0 6px 15px #292e2824;
+}
+.pti-page[data-pti-service="seo"] .pti-pill:hover{
+ background:var(--seo-accent);border-color:var(--seo-accent);
+}
+.pti-page[data-pti-service="seo"] .pti-pill.pti-secondary{
+ background:#fdf9f2;color:var(--seo-accent);border-color:#c9b7a4;box-shadow:none;
+}
+.pti-page[data-pti-service="seo"] .pti-pill.pti-secondary:hover{background:#f0e3d7}
+.pti-page[data-pti-service="seo"] .pti-footnote{
+ color:#696157;font-size:13px;line-height:1.55;
+ border-top:1px solid #cbbdab;padding-top:17px;margin-top:27px;
+ max-width:580px;
+}
+.pti-page[data-pti-service="seo"] .pti-stage{
+ border-radius:22px;border-color:#d3c8b9;
+ background:radial-gradient(ellipse at 52% 43%,#fffdf8 0%,#f4eee4 68%,#e9e0d3 100%);
+ box-shadow:inset 0 1px 0 #fff,0 20px 45px #59442b12;
+}
+.pti-page[data-pti-service="seo"] .pti-scene-caption{
+ color:#665b4f;line-height:1.5;
+}
+.pti-page[data-pti-service="seo"] .pti-tabs{
+ border-color:#cdbdaa;
+}
+.pti-page[data-pti-service="seo"] .pti-section:not(.pti-alt){
+ background:var(--seo-paper);
+}
+.pti-page[data-pti-service="seo"] .pti-section-head{margin-bottom:28px}
+.pti-page[data-pti-service="seo"] .pti-section-head h2{
+ font-size:clamp(36px,3.55vw,56px);letter-spacing:-.05em;line-height:1.12;
+}
+.pti-page[data-pti-service="seo"] .pti-section-head p{
+ font-size:clamp(16px,1.18vw,19px);line-height:1.65;
+}
+.pti-page[data-pti-service="seo"] .pti-card{
+ border-radius:6px;box-shadow:none;background:#faf7f2;
+ border-color:var(--seo-rule);
+}
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-card{
+ border-top:1px solid var(--seo-rule);
+}
+.pti-page[data-pti-service="seo"] .pti-card h3{
+ color:var(--seo-ink);font-size:clamp(24px,2.1vw,30px);
+}
+.pti-page[data-pti-service="seo"] .pti-card p{color:var(--seo-muted);line-height:1.65}
+.pti-page[data-pti-service="seo"] .pti-related a{
+ text-underline-offset:4px;
+}
+.pti-page[data-pti-service="seo"] .pti-final{
+ background:linear-gradient(125deg,#172321,#202e2a 80%,#263530);
+ color:#fffaf2;
+}
+.pti-page[data-pti-service="seo"] .pti-final h2,
+.pti-page[data-pti-service="seo"] .pti-final p{color:#fffaf2}
+.pti-page[data-pti-service="seo"] .pti-final .pti-kicker{color:#f0a497}
+.pti-page[data-pti-service="seo"] .pti-final .pti-pill{
+ background:#fffaf2;color:#252c26;border-color:#fffaf2;
+}
+@media(max-width:940px){
+ .pti-page[data-pti-service="seo"] .pti-hero-grid{grid-template-columns:1fr}
+ .pti-page[data-pti-service="seo"] .pti-hero h1{font-size:clamp(45px,7vw,68px)}
+ .pti-page[data-pti-service="seo"] .pti-hero .pti-wrap{width:calc(100% - 56px)}
+}
+@media(max-width:600px){
+ .pti-page[data-pti-service="seo"] .pti-hero{
+  width:calc(100% - 24px);margin:12px auto 37px;
+  border-radius:20px;padding:29px 0 35px;
+ }
+ .pti-page[data-pti-service="seo"] .pti-hero .pti-wrap{width:calc(100% - 32px)}
+ .pti-page[data-pti-service="seo"] .pti-hero h1{
+  font-size:clamp(39px,10vw,54px);line-height:1.04;letter-spacing:-.055em;
+ }
+ .pti-page[data-pti-service="seo"] .pti-lead{font-size:17px}
+ .pti-page[data-pti-service="seo"] .pti-stage{border-radius:16px}
+ .pti-page[data-pti-service="seo"] .pti-actions{gap:10px}
+ .pti-page[data-pti-service="seo"] .pti-pill{font-size:14px}
+ .pti-page[data-pti-service="seo"] .pti-card{border-radius:5px}
+ .pti-page[data-pti-service="seo"] .pti-section-head h2{font-size:clamp(34px,8.2vw,43px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .pti-page[data-pti-service="seo"] .pti-pill{transition:none!important}
+}
