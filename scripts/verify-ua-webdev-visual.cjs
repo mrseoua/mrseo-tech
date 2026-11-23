@@ -16,12 +16,12 @@ const sizes = [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,h
     const problems=[];
     const url=base+'/'+slug+'/';
     try {
-     const response=await page.goto(url,{waitUntil:'networkidle',timeout:35000});
+     const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:25000});
      if(response?.status()!==200)problems.push('HTTP '+response?.status());
      const data=await page.evaluate(async()=>{
       const hero=document.querySelector('.udv-premium-hero-image');
       const lower=[...document.querySelectorAll('.udv-premium-detail-image')];
-      if(hero)try{await hero.decode()}catch{}
+      if(hero)try{await Promise.race([hero.decode(),new Promise((_,reject)=>setTimeout(()=>reject(new Error('hero timeout')),10000))])}catch{}
       return {
        h1:document.querySelectorAll('h1').length,
        robots:document.querySelector('meta[name=robots]')?.content||'',
@@ -41,7 +41,7 @@ const sizes = [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,h
      for(const part of ['problem','solution']){
       const graphic=page.locator('[data-udv-lower="'+part+'"]').first();
       await graphic.scrollIntoViewIfNeeded();
-      const lowerReady=await graphic.locator('img.udv-premium-detail-image').evaluate(async img=>{try{await img.decode()}catch{}return img.naturalWidth>=1000;});
+      const lowerReady=await graphic.locator('img.udv-premium-detail-image').evaluate(async img=>{try{await Promise.race([img.decode(),new Promise((_,reject)=>setTimeout(()=>reject(new Error('lower timeout')),10000))])}catch{}return img.naturalWidth>=1000;});
       if(!lowerReady)problems.push('Lower '+part+' WebP failed to decode');
       await page.screenshot({path:'shots/ua-webdev/'+slug+'-'+size.name+'-'+part+'.png',fullPage:false,animations:'disabled'});
      }
