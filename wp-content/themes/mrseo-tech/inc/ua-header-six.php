@@ -7,7 +7,7 @@ function mrseo_ua_menu_summaries(){
   'ads'=>'Пошукова та товарна реклама, аудит і контроль рекламних кампаній.',
   'horoshop'=>'Налаштування, SEO, реклама та аналітика магазинів на Хорошоп.',
   'sites'=>'Сайти для бізнесу: від лендінгу до повноцінного онлайн-проєкту.',
-  'dev'=>'Вебзастосунки, автоматизація, CRM та індивідуальні інтеграції.'
+  'dev'=>'Бізнес-системи, інтеграції, AI та мобільні рішення під потреби компанії.'
  );
 }
 function mrseo_ua_header_six($mobile=false){
@@ -61,11 +61,17 @@ function mrseo_ua_header_six($mobile=false){
    }
   }else{
    foreach($group['sections'] as $section){
-    if(empty($section['items']))continue;
+    if(empty($section['items'])&&empty($section['planned']))continue;
     echo '<section class="mrseo-ua-six-catalog-group"><h3>'.esc_html($section['title']).'</h3>';
     foreach($section['items'] as $service){
      $slug=$service[0];$active=$current===$slug;
      echo '<a href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($service[1]).' <span aria-hidden="true">↗</span></a>';
+    }
+    // A missing landing page is presented as text, never a fake href or a 404.
+    if($key==='dev'&&!empty($section['planned'])){
+     foreach($section['planned'] as $service){
+      echo '<span class="mrseo-ua-six-planned">'.esc_html($service[1]).'<small>Сторінка готується</small></span>';
+     }
     }
     echo '</section>';
    }
