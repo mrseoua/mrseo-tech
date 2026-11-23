@@ -35,8 +35,7 @@ add_action('wp_head',function(){
  if(!mrseo_ua_dev_new_route())return;
  $page=mrseo_ua_dev_new_page();
  echo '<meta name="description" content="'.esc_attr($page['meta']).'">'."\n";
- // Only one exact Ukrainian version exists; no fabricated hreflang alternates.
- echo '<link rel="canonical" href="'.esc_url(home_url('/'.mrseo_slug().'/')).'">'."\n";
+ // Canonical and reciprocal hreflang now come from the shared exact-route SEO inventory.
 },6);
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_ua_dev_new_route() && !(mrseo_locale()==='uk'&&mrseo_slug()==='web-development'))return;
