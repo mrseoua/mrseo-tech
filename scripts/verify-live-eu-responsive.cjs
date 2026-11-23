@@ -974,7 +974,7 @@ async function audit(browser,viewport,lang,slug){
  // structured original copy, unique art, responsive viewport and global noindex.
  if(coreShard){
   const newDevSlugs=['client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development'];
-  for(const vp of [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844}]){
+  for(const vp of [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}]){
    const browser=await chromium.launch(launchOptions);
    try{
     const context=await browser.newContext({viewport:{width:vp.width,height:vp.height}});
@@ -992,12 +992,15 @@ async function audit(browser,viewport,lang,slug){
         meta:document.querySelectorAll('meta[name="description"]').length,
         canonical:document.querySelector('link[rel="canonical"]')?.href,
         robots:document.querySelector('meta[name="robots"]')?.content||'',
-        scenes:root?.querySelectorAll('.udv-visual .udv-art').length,
+        scenes:root?.querySelectorAll('.udv-visual svg.udv-kinetic-svg').length,
+        nodeCards:root?.querySelectorAll('.udv-visual [data-udv-part]').length,
+        premiumShell:!!root?.matches('.pti-page.puc-page')&&!!root?.querySelector('.pti-hero.psc-hero .psc-hero-stage'),
+        premiumCSS:!!document.querySelector('link[href*="premium-ua-commercial.css"]'),
         storySteps:root?.querySelectorAll('.udv-storyboard [data-udv-stage]').length,
         storyActive:root?.querySelectorAll('.udv-story-step.is-current').length,
         motionButton:!!root?.querySelector('.udv-motion-toggle[aria-pressed="false"]'),
         motionScript:!!document.querySelector('script[src*="ua-dev-kinetic-scenes.js"]'),
-        sceneName:root?.querySelector('.udv-visual')?.dataset.udvScene,
+        sceneName:root?.querySelector('.udv-visual-wrap')?.dataset.udvScene,
         problems:root?.querySelectorAll('.udv-cards .udv-card').length,
         actions:root?.querySelectorAll('.udv-steps .udv-step').length,
         faq:root?.querySelectorAll('.udv-faq-list details').length,
@@ -1006,11 +1009,11 @@ async function audit(browser,viewport,lang,slug){
         external:root?.querySelectorAll('a[href^="http"]:not([href*="mrseo.tech"])').length||0,
         overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
-      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
+      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.nodeCards!==3||!state.premiumShell||!state.premiumCSS||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
       if(slug==='client-portals'){
-       const visual=page.locator('.udv-visual[data-udv-scene]');
+       const visual=page.locator('.udv-visual-wrap[data-udv-scene]');
        await visual.scrollIntoViewIfNeeded();
-       await page.waitForTimeout(3650);
+       await page.waitForTimeout(4650);
        const step=await visual.getAttribute('data-udv-step');
        if(step==='0')item.errors.push('Kinetic scene did not advance to a new business-process stage');
        const toggle=page.locator('.udv-motion-toggle');
@@ -1021,6 +1024,10 @@ async function audit(browser,viewport,lang,slug){
        if(paused!=='true'||await visual.getAttribute('data-udv-step')!==pausedStep)item.errors.push('Accessible motion pause did not persist');
        await toggle.click();
        if(await toggle.getAttribute('aria-pressed')!=='false')item.errors.push('Accessible motion resume failed');
+       await page.locator('.udv-story-step[data-udv-stage="2"]').click();
+       const clicked=await visual.getAttribute('data-udv-step');
+       const caption=await page.locator('[data-udv-index]').textContent();
+       if(clicked!=='2'||!caption?.includes('03 / 03'))item.errors.push('Premium stage tab did not select requested business phase');
       }
       await page.screenshot({path:'shots/webdev-'+slug+'-'+vp.name+'.jpg',type:'jpeg',quality:77,fullPage:false});
      }catch(error){item.errors.push('UA WebDev landing '+String(error).slice(0,500));}

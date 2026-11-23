@@ -7,6 +7,8 @@ t=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 copy=(t/"inc/ua-dev-new-pages.php").read_text(encoding="utf-8")
 routing=(t/"inc/ua-dev-new-routes.php").read_text(encoding="utf-8")
 motion=(t/"assets/ua-dev-kinetic-scenes.js").read_text(encoding="utf-8")
+master=(t/"inc/ua-dev-master-hero.php").read_text(encoding="utf-8")
+reference=(t/"premium-ua-commercial.php").read_text(encoding="utf-8")
 template=(t/"ua-dev-new-landing.php").read_text(encoding="utf-8")
 css=(t/"assets/ua-dev-new-landings.css").read_text(encoding="utf-8")
 nav=(t/"inc/ua-header-six.php").read_text(encoding="utf-8")
@@ -35,8 +37,8 @@ for slug,p in pages.items():
     assert "http" not in json.dumps(p),slug
     assert f"'{slug}'=>'" in nav,slug
     assert slug in nav,slug  # Route uses dynamic array_keys() from the same validated page registry
-    assert f"udv-art--{p['scene']}" in css,slug
-    assert p["scene"] in template,slug
+    assert f"'{p['scene']}'=>array(" in master,slug
+    assert "mrseo_udv_master_scene($scene)" in template,slug
 for keyword in ("get_header();","get_footer();","aria-labelledby","id=\"udv-h1\"",
                 "mrseo_url('contact','uk')","class=\"udv-faq-list\"","esc_html($p['title'])",
                 "esc_html($p['title'])"):
@@ -62,18 +64,33 @@ assert "'sites'=>'Сайти'" in nav
 assert "mrseo_ua_menu_groups" in taxonomy and "Вебзастосунки та кабінети" in taxonomy, "SEO route registry must remain unchanged"
 assert "data-udv-step=\"0\"" in template and 'data-udv-scene=' in template
 assert 'data-udv-stage=' in template and 'udv-motion-toggle' in template
-assert "udv-storyboard" in template and "udv-console-footer" in template
-assert "udv-story-step" in css and "udv-visual--portal[data-udv-step" in css
+assert "udv-storyboard" in template and "pti-scene-controls" in template
+assert "udv-story-step" in css and "udv-kinetic-svg" in css
+assert 'class="pti-page puc-page udv-page' in template
+assert 'class="pti-hero psc-hero udv-hero"' in template
+assert 'class="pti-wrap pti-hero-grid udv-hero-grid"' in template
+assert 'class="psc-hero-stage udv-visual"' in template
+assert "class=\"pti-scene-caption udv-scene-caption\"" in template
+assert '<h1 id="udv-h1"><?php echo esc_html($p[\'title\']);?>' in template
+assert "mrseo_udv_master_hero_accents()" in master
+assert "esc_html($hero_accent)" in template
+assert len(set(re.findall(r"'(?:portal|parsing|payment|mobile|shop|team|pwa)'=>'([^']+)'",master)))==7
+assert "premium-ua-interiors.css" in routing and "premium-ua-commercial.css" in routing
+assert "pti-hero psc-hero" in reference and "psc-hero-stage" in reference
+assert "mrseo_udv_master_scene_data" in master and "mrseo_udv_master_icon_paths" in master
+assert "udv-moving-point" in master and "animateMotion" in master
 for scene in ("portal","parsing","payment","mobile","shop","team","pwa"):
-    assert f"udv-visual--{scene}[data-udv-step" in css, scene
+    assert f"'{scene}'=>array(" in master, scene
 for token in ("IntersectionObserver","setInterval","visibilitychange","prefers-reduced-motion","saveData",
               "aria-pressed","pagehide","clearInterval","udvPaused","is-current"):
     assert token in motion,token
 assert "ua-dev-kinetic-scenes.js" in routing
-assert "'1.1.0'" in routing and "'1.0.0'" in routing
-assert "@keyframes udv-packet-flow" in css and "udv-transaction-line" in css
+assert "'2.0.0'" in routing and "'1.1.1'" in routing
+assert "data-udv-part" in master and ".udv-kinetic-card" in css
+assert "pauseAnimations" in motion and "unpauseAnimations" in motion
+assert "udv-scene-controls" in css and "udv-section--close" in css
 assert "@media(max-width:710px)" in css and "@media(max-width:430px)" in css
 assert "prefers-reduced-motion:reduce" in css and "@keyframes udv-float" in css
 assert css.count("{")==css.count("}"),"Unbalanced CSS"
 assert not re.search(r'href=["\x27]https?://',template), "No external links"
-print("PASS: 7 UA landings with independent 3-stage process scenes, pause/reduced-motion/offscreen safeguards, unique meta and safe routes")
+print("PASS: 7 UA landings share approved premium automation hero/design/SVG while retaining distinct stories, responsive tabs and unchanged SEO metadata")
