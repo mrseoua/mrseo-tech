@@ -20,10 +20,15 @@ for token in ("#f9f5ee","#f7f3ed","#252c26","#b94134","border-radius:28px",
               "prefers-reduced-motion:reduce"):
     assert token in css,token
 assert page.count("<h1 ")==1
-assert 'class="pti-scene pti-seo"' in page
+assert 'class="pti-scene pti-seo pti-seo-console"' in page
+assert 'class="seo-console-results"' in page and 'class="seo-console-diagnostic"' in page
+assert 'class="seo-console-scan"' in page
+assert "animateMotion" not in page[:page.index('id="ukseo-cases"')]
+for key in ("seo-console-sweep","seo-console-line","seo-console-bar","seo-console-check","seo-console-caret"):
+    assert "@keyframes "+key in css,key
 assert page.count('data-phase="')==3
 assert "data-scene-status" in page
-assert "pti-animated" in page
+assert "pti-seo-console" in page and "pti-scene-controls" in page
 assert 'id="ukseo-cases"' in page and 'id="ukseo-services"' in page
 assert "mrseo_ua_menu_groups()" in page and 'data-pti-faq="seo"' in page
 assert "pti-seo" in base and "pti-stage" in base
