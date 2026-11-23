@@ -20,7 +20,8 @@ const commercialTwoFaq=["merchant-center","google-shopping","ga4-conversions","b
 const premiumEditorialFamilies={"horoshop":["hs-categories","hs-filters","hs-feed","hs-store-process","hs-next"],"about":["about-experience","about-listen","about-investigate","about-solve","about-network","about-fit-store","about-fit-service","about-fit-ads","about-next"],"portfolio":["portfolio-count","portfolio-seo","portfolio-ads","portfolio-data","portfolio-web","portfolio-sectors","portfolio-lock","portfolio-next"],"contact":["contact-describe","contact-address","contact-next"],"privacy":[]};
 const premiumEditorialSlugs=Object.keys(premiumEditorialFamilies);
 const premiumSeoSlugs=['local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'];
-const allUaPremiumSlugs=['','seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs];
+const uaWebDevPremiumSlugs=['client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development'];
+const allUaPremiumSlugs=['','seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs,...uaWebDevPremiumSlugs];
 // The actual WordPress SEO inventory, not menu labels, defines completion.
 async function assertUaInventory(){
  const response=await fetch(HOST+'/mrseo-locales-sitemap.xml');
@@ -31,7 +32,7 @@ async function assertUaInventory(){
  const ua=published.filter(path=>!foreign.has(path.split('/')[0]));
  const expected=new Set(allUaPremiumSlugs),actual=new Set(ua);
  const missing=[...actual].filter(path=>!expected.has(path)),extra=[...expected].filter(path=>!actual.has(path));
- if(expected.size!==59||ua.length!==actual.size||missing.length||extra.length)throw Error('UA Premium inventory mismatch '+JSON.stringify({expected:expected.size,actual:actual.size,missing,extra,duplicates:ua.length-actual.size}));
+ if(expected.size!==66||ua.length!==actual.size||missing.length||extra.length)throw Error('UA Premium inventory mismatch '+JSON.stringify({expected:expected.size,actual:actual.size,missing,extra,duplicates:ua.length-actual.size}));
  console.log('UA Premium route coverage: '+actual.size+' canonical routes');
 }
 async function auditUaScenePlayback(page,selector,item){
@@ -973,7 +974,7 @@ async function audit(browser,viewport,lang,slug){
  // Seven new Ukrainian-only WebDev service routes: real WordPress URL, canonical,
  // structured original copy, unique art, responsive viewport and global noindex.
  if(coreShard){
-  const newDevSlugs=['client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development'];
+  const newDevSlugs=uaWebDevPremiumSlugs;
   for(const vp of [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844},{name:'narrow',width:360,height:780}]){
    const browser=await chromium.launch(launchOptions);
    try{
