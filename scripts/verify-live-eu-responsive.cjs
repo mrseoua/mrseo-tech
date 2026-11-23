@@ -993,6 +993,11 @@ async function audit(browser,viewport,lang,slug){
         canonical:document.querySelector('link[rel="canonical"]')?.href,
         robots:document.querySelector('meta[name="robots"]')?.content||'',
         scenes:root?.querySelectorAll('.udv-visual .udv-art').length,
+        storySteps:root?.querySelectorAll('.udv-storyboard [data-udv-stage]').length,
+        storyActive:root?.querySelectorAll('.udv-story-step.is-current').length,
+        motionButton:!!root?.querySelector('.udv-motion-toggle[aria-pressed="false"]'),
+        motionScript:!!document.querySelector('script[src*="ua-dev-kinetic-scenes.js"]'),
+        sceneName:root?.querySelector('.udv-visual')?.dataset.udvScene,
         problems:root?.querySelectorAll('.udv-cards .udv-card').length,
         actions:root?.querySelectorAll('.udv-steps .udv-step').length,
         faq:root?.querySelectorAll('.udv-faq-list details').length,
@@ -1001,7 +1006,22 @@ async function audit(browser,viewport,lang,slug){
         external:root?.querySelectorAll('a[href^="http"]:not([href*="mrseo.tech"])').length||0,
         overflow:document.documentElement.scrollWidth>innerWidth+4};
       });
-      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
+      if(!state.page||state.h1!==1||!state.h1text||state.meta!==1||state.canonical!==url||!/noindex/i.test(state.robots)||state.scenes!==1||state.storySteps!==3||state.storyActive!==1||!state.motionButton||!state.motionScript||!state.sceneName||state.problems!==3||state.actions!==3||state.faq!==3||state.contactLinks<2||!state.newCss||state.external!==0||state.overflow)item.errors.push('Landing markup/SEO/mobile '+JSON.stringify(state));
+      if(slug==='client-portals'){
+       const visual=page.locator('.udv-visual[data-udv-scene]');
+       await visual.scrollIntoViewIfNeeded();
+       await page.waitForTimeout(3650);
+       const step=await visual.getAttribute('data-udv-step');
+       if(step==='0')item.errors.push('Kinetic scene did not advance to a new business-process stage');
+       const toggle=page.locator('.udv-motion-toggle');
+       await toggle.click();
+       const paused=await toggle.getAttribute('aria-pressed');
+       const pausedStep=await visual.getAttribute('data-udv-step');
+       await page.waitForTimeout(400);
+       if(paused!=='true'||await visual.getAttribute('data-udv-step')!==pausedStep)item.errors.push('Accessible motion pause did not persist');
+       await toggle.click();
+       if(await toggle.getAttribute('aria-pressed')!=='false')item.errors.push('Accessible motion resume failed');
+      }
       await page.screenshot({path:'shots/webdev-'+slug+'-'+vp.name+'.jpg',type:'jpeg',quality:77,fullPage:false});
      }catch(error){item.errors.push('UA WebDev landing '+String(error).slice(0,500));}
      results.push(item);

@@ -6,6 +6,7 @@ from pathlib import Path
 t=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 copy=(t/"inc/ua-dev-new-pages.php").read_text(encoding="utf-8")
 routing=(t/"inc/ua-dev-new-routes.php").read_text(encoding="utf-8")
+motion=(t/"assets/ua-dev-kinetic-scenes.js").read_text(encoding="utf-8")
 template=(t/"ua-dev-new-landing.php").read_text(encoding="utf-8")
 css=(t/"assets/ua-dev-new-landings.css").read_text(encoding="utf-8")
 nav=(t/"inc/ua-header-six.php").read_text(encoding="utf-8")
@@ -59,8 +60,20 @@ assert "mrseo-ua-six-planned" not in nav and "Сторінка готуєтьс�
 assert "if(in_array($group['key'],array('data','commerce'),true))continue;" in nav
 assert "'sites'=>'Сайти'" in nav
 assert "mrseo_ua_menu_groups" in taxonomy and "Вебзастосунки та кабінети" in taxonomy, "SEO route registry must remain unchanged"
+assert "data-udv-step=\"0\"" in template and 'data-udv-scene=' in template
+assert 'data-udv-stage=' in template and 'udv-motion-toggle' in template
+assert "udv-storyboard" in template and "udv-console-footer" in template
+assert "udv-story-step" in css and "udv-visual--portal[data-udv-step" in css
+for scene in ("portal","parsing","payment","mobile","shop","team","pwa"):
+    assert f"udv-visual--{scene}[data-udv-step" in css, scene
+for token in ("IntersectionObserver","setInterval","visibilitychange","prefers-reduced-motion","saveData",
+              "aria-pressed","pagehide","clearInterval","udvPaused","is-current"):
+    assert token in motion,token
+assert "ua-dev-kinetic-scenes.js" in routing
+assert "'1.1.0'" in routing and "'1.0.0'" in routing
+assert "@keyframes udv-packet-flow" in css and "udv-transaction-line" in css
 assert "@media(max-width:710px)" in css and "@media(max-width:430px)" in css
 assert "prefers-reduced-motion:reduce" in css and "@keyframes udv-float" in css
 assert css.count("{")==css.count("}"),"Unbalanced CSS"
 assert not re.search(r'href=["\x27]https?://',template), "No external links"
-print("PASS: 7 real UA WebDev routes, distinct H1/title/meta/content/visuals, 15 internal menu links, responsive, canonical/noindex, safe locale fallback")
+print("PASS: 7 UA landings with independent 3-stage process scenes, pause/reduced-motion/offscreen safeguards, unique meta and safe routes")
