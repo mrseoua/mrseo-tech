@@ -24,6 +24,20 @@ assert actual==expected,(actual,expected)
 for item in ("hsix-search","hsix-chart","hsix-shop-screen","hsix-site-screen","hsix-code"):
     assert item in section,("Missing distinctive diagram",item)
 assert "mrseo_url($service['slug'],'uk')" in section
+assert section.count('class="hsix-cta"')==1
+assert "mrseo_url('contact','uk')" in section
+assert "НЕ НАБІР ПОСЛУГ" in section
+assert "hsix-cta" in css and "hsix-cta-content" in css
+assert "hsix-card--dev{order:3}" in css and "hsix-card--sites{order:4}" in css
+assert "hsix-card--horoshop{order:5}" in css
+motion=(root/"assets/home-five-motion.js").read_text()
+assert "IntersectionObserver" in motion and "prefers-reduced-motion" in motion
+assert "hsix-motion-off" in motion
+assert "home-five-motion.js" in home
+assert "@keyframes hsix-chart-reveal" in css and "@keyframes hsix-device-rise" in css
+assert "@keyframes hsix-dev-glow" in css and "@keyframes hsix-horoshop-check" in css
+assert "@keyframes hsix-serp-pulse" in css
+assert "<section class=\"ph-resolution\"" not in home
 assert "aria-label" in section and "role=\"img\"" in section
 assert "loading=\"lazy\"" not in section # no duplicate opaque remote images
 assert "200+" not in section and "+42%" not in section and "15+" not in section
