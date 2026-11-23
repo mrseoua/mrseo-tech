@@ -11,6 +11,8 @@ function mrseo_url($slug='',$lang=null){
  // Ukrainian-only WebDev landings: foreign language selectors lead to an existing real parent,
  // never a fictional /ru/client-portals/ (or any other untranslated) page.
  if(function_exists('mrseo_ua_dev_new_pages') && isset(mrseo_ua_dev_new_pages()[$slug])){
+  if($lang==='ru' && function_exists('mrseo_ru_dev_pages') && isset(mrseo_ru_dev_pages()[$slug]))
+   return mrseo_i18n_exact_url('ru',$slug);
   return $lang==='uk'?home_url('/'.$slug.'/'):mrseo_i18n_exact_url($lang,'web-development');
  }
  // New Ukrainian offers have exact UA URLs; foreign language navigation goes to a real parent, never hreflang.
