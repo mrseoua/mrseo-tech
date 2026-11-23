@@ -18,6 +18,17 @@ function mrseo_udv_master_scene_data($scene){
  );
  return $scenes[$scene]??null;
 }
+function mrseo_udv_master_hero_accents(){
+ return array(
+  'portal'=>'Клієнт бачить усе сам.',
+  'parsing'=>'Без ручних оновлень.',
+  'payment'=>'Без загублених оплат.',
+  'mobile'=>'Під ваші сценарії.',
+  'shop'=>'Щоб купували знову.',
+  'team'=>'Команда працює злагоджено.',
+  'pwa'=>'Вебсервіс як застосунок.'
+ );
+}
 function mrseo_udv_master_icon_paths(){
  return array(
   'lock'=>'<rect x="28" y="45" width="44" height="41" rx="7"/><path d="M36 45V30a14 14 0 0 1 28 0v15"/><circle cx="50" cy="64" r="3"/>',
