@@ -799,7 +799,7 @@ async function audit(browser,viewport,lang,slug){
       const rect=hero?.getBoundingClientRect();
       return {style:!!document.querySelector('link[href*="seo-home-alignment.css"]'),
               rounded:parseFloat(getComputedStyle(hero).borderTopLeftRadius)>=18,
-              animation:!!stage?.querySelector('animateMotion'),
+              animation:!!stage?.querySelector('.seo-console-scan')&&!!stage?.querySelector('.seo-console-diagnostic'),
               phases:stage?.querySelectorAll('[data-phase]').length,
               overflow:document.documentElement.scrollWidth>innerWidth+4,
               noGeneric:!root?.querySelector('.seo-path'),
@@ -807,7 +807,15 @@ async function audit(browser,viewport,lang,slug){
      });
      if(!style.style||!style.rounded||!style.animation||style.phases!==3||style.overflow||!style.noGeneric||!style.fit)
       item.errors.push('SEO homepage-style hero regression '+JSON.stringify(style));
+     await page.emulateMedia({reducedMotion:'no-preference'});
+     await page.waitForFunction(()=>document.querySelector('.pti-page[data-pti-service="seo"] .pti-seo-console')?.classList.contains('pti-live'),null,{timeout:6000});
+     const motion=await page.evaluate(()=>['.seo-console-scan','.seo-console-line--strong','.seo-console-bars i'].map(sel=>document.querySelector('.pti-page[data-pti-service="seo"] '+sel)?.getAnimations().some(a=>a.playState==='running')));
+     if(motion.some(x=>!x))item.errors.push('SEO new SERP animation not running '+JSON.stringify(motion));
      await hero.screenshot({path:'shots/ua-seo-premium-hero-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
+     await page.emulateMedia({reducedMotion:'reduce'});
+     const reduced=await page.evaluate(()=>getComputedStyle(document.querySelector('.pti-page[data-pti-service="seo"] .seo-console-scan')).animationName);
+     if(reduced!=='none')item.errors.push('SEO SERP reduced-motion regression');
+     await page.emulateMedia({reducedMotion:'no-preference'});
     }
    }catch(e){item.errors.push('SEO hero design QA '+e.message)}
   }
