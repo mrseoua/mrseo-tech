@@ -10,5 +10,6 @@ get_header();
 ?>
 <div class="pti-page" data-pti-service="<?php echo esc_attr($pti_slug);?>">
 <?php require get_template_directory().'/inc/premium-ua-interiors/'.$pti_slug.'.php';?>
+<?php if($pti_slug==='web-development')require get_template_directory().'/inc/ua-dev-hub-links.php';?>
 </div>
 <?php get_footer();?>
