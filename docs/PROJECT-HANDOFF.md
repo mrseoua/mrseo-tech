@@ -1057,3 +1057,6 @@
 
 ### 24 ноября 2026 — reference artwork implementation
 Owner explicitly requested publication to inspect actual page. Replace UA SEO hero and five cards with six WebP assets extracted from the provided HTML preview; retain real HTML headings and links, lower content, noindex, 20 languages and homepage. Hero labels/search are baked into art; no 3D claim. Updated static/browser assertions for image decoding, links and layout. Visual QA and deployment not yet verified. Rollback: revert this PR.
+
+### 24 ноября 2026 — единственный дизайн-эталон: действующая главная
+Владелец отклонил горный концепт PR #194. Не использовать его как референс. Главная с Землёй остаётся неизменной. Новый PR: украинский SEO-хаб и пять дочерних страниц получают общий `assets/seo-home-system.css` с реальными токенами главной (system-ui, #252c26, #f7f3ed, #A84432, full-bleed grid hero, графитовые CTA, сетка 3×2 без зазоров). Hero SEO — читаемая тематическая схема поиска; пять карточек с интерфейсами и тёмным CTA, не горы. Нижний контент и пять уникальных дочерних сцен сохранены. Noindex, URL, hreflang, canonical, остальные 19 языков не менять. QA адаптирована к фактическому DOM. Визуальная проверка и CI ещё не подтверждены. Не merge без отдельного разрешения. Rollback: revert PR.

@@ -1,2 +1,25 @@
 <?php if(!defined('ABSPATH'))exit; ?>
-<div class="seo-page"><section class="seo-hero"><div class="seo-wrap"><div class="seo-copy"><p class="seo-eyebrow">SEO-ПРОСУВАННЯ</p><h1 id="pti-title"><span>Більше</span><span>органічних</span><span>клієнтів</span><em>для вашого бізнесу</em></h1><p>Комплексне SEO-просування сайту в Google, яке допомагає залучати цільових клієнтів, зміцнювати позиції та розвивати ваш бізнес.</p><div class="seo-actions"><a class="seo-btn" href="<?php echo esc_url(mrseo_url('contact','uk')); ?>">Запустити SEO <span>→</span></a><a class="seo-secondary" href="#seo-approach"><i>▶</i> Як ми працюємо</a></div></div></div><img class="seo-art" src="<?php echo esc_url(get_template_directory_uri().'/assets/seo-reference/hero.webp'); ?>" alt="Гірський ландшафт зі світловими маршрутами, що символізують пошукову видимість, трафік та зростання" fetchpriority="high"></section><div class="seo-wrap"><div class="seo-trust"><div><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M22 2 7 20h12l-3 20 19-25H22z"/></svg><span>10+ років<br>досвіду в SEO</span></div><div><svg viewBox="0 0 42 42" aria-hidden="true"><path d="m3 13 18-10 18 10-18 10zM3 21l18 10 18-10M3 29l18 10 18-10"/></svg><span>Комплексний<br>підхід</span></div><div><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M5 35v-9M15 35V17M25 35V10M35 35V3"/></svg><span>Прозорий<br>процес</span></div><div><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M21 21C9 2 1 12 1 21s8 19 20 0S41 2 41 21s-8 19-20 0Z"/></svg><span>Контроль<br>результату</span></div></div></div></div>
+<section class="pti-hero seo-hero" aria-labelledby="pti-title">
+ <div class="pti-wrap pti-hero-grid">
+  <div class="pti-hero-copy">
+   <span class="pti-kicker">SEO-ПРОСУВАННЯ · ПОШУК · КЛІЄНТИ</span>
+   <h1 id="pti-title">Сайт є.<br><em>А клієнти з Google?</em></h1>
+   <p class="pti-lead">SEO-просування сайту в Google допомагає клієнтам знаходити ваші товари та послуги. З’ясовуємо, чому сайт поступається конкурентам, і погоджуємо конкретні зміни.</p>
+   <div class="pti-actions"><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити проєкт ↗</a><a class="pti-pill pti-secondary" href="#ukseo-services">Напрями SEO ↓</a></div>
+   <p class="pti-footnote seo-home-note">10+ років досвіду в SEO. Контроль змін без обіцянок гарантованих позицій.</p>
+  </div>
+  <div class="seo-home-demo" aria-label="Ілюстрація принципу SEO">
+   <div class="seo-home-window seo-art">
+    <div class="seo-home-bar"><span class="seo-home-dots"><i></i><i></i><i></i></span><b>ПОШУК / ВИДИМІСТЬ</b></div>
+    <div class="seo-home-screen">
+     <div class="seo-home-search"><span aria-hidden="true">⌕</span><strong>ваш бізнес у Google</strong><b aria-hidden="true">↗</b></div>
+     <div class="seo-home-result"><small>example.com / services</small><strong>Послуги, які шукають клієнти</strong><i></i><i></i></div>
+     <div class="seo-home-result seo-home-result-active"><small>example.com / catalog</small><strong>Потрібна сторінка</strong><i></i><i></i></div>
+     <div class="seo-home-checks"><span>Структура</span><span>Видимість</span><span>Звернення</span></div>
+     <div class="seo-home-scan" aria-hidden="true"></div>
+    </div>
+   </div>
+   <div class="seo-home-demo-footer"><p><b>01 / SEO</b><br>Від пошукового запиту до потрібної сторінки. Схема, не дані клієнта.</p><button class="seo-cine-motion" type="button" aria-pressed="false">Призупинити рух</button></div>
+  </div>
+ </div>
+</section>

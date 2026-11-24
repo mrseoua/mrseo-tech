@@ -1,7 +1,7 @@
 /* Cinematic SEO: respect motion preferences across hero and retained lower SVG scenes. */
 (()=>{'use strict';
 const root=document.querySelector('.pti-page[data-pti-service="seo"]');if(!root)return;
-const hero=root.querySelector('.seo-cine-art'),heroButton=hero?.querySelector('.seo-cine-motion');
+const hero=root.querySelector('.seo-home-demo'),heroButton=hero?.querySelector('.seo-cine-motion');
 
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const lower=[...root.querySelectorAll('svg.pti-lower-motion')];
@@ -11,11 +11,11 @@ const visible=e=>{const r=e.getBoundingClientRect();return r.width>0&&r.height>0
 const smil=(el,run)=>{if(!el||typeof el.pauseAnimations!=='function')return;try{if(run)el.unpauseAnimations();else el.pauseAnimations()}catch(_){}};
 function sync(){
  const allowed=!paused&&!reduced.matches&&!document.hidden;
- root.classList.toggle('seo-cine-paused',!allowed||!heroVisible);
+ root.classList.toggle('seo-cine-paused',!allowed);
  if(heroButton){heroButton.disabled=reduced.matches;
  heroButton.setAttribute('aria-pressed',String(paused));
  heroButton.setAttribute('aria-label',allowed?'Зупинити декоративну анімацію':'Відновити декоративну анімацію');
- heroButton.textContent=allowed?'Ⅱ':'▶';}
+ heroButton.textContent=allowed?'Призупинити рух':'Увімкнути рух';}
  lowerButtons.forEach(btn=>{btn.disabled=reduced.matches;btn.setAttribute('aria-pressed',String(paused));btn.textContent=paused||reduced.matches?'Увімкнути рух':'Призупинити рух'});
  lower.forEach(svg=>smil(svg,allowed&&visible(svg)));
 }
