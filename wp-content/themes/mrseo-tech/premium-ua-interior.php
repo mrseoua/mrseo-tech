@@ -5,7 +5,7 @@ if(mrseo_locale()!=='uk'||!in_array($pti_slug,array('seo','google-ads','web-deve
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-premium-ua-interiors',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_script('mrseo-premium-ua-interiors',get_template_directory_uri().'/assets/premium-ua-interiors.js',array(),'1.1.2',true);
- if(mrseo_slug()==='seo')wp_enqueue_style('mrseo-seo-home-alignment',get_template_directory_uri().'/assets/seo-home-alignment.css',array('mrseo-premium-ua-interiors'),'2.0.0');
+ if(mrseo_slug()==='seo')wp_enqueue_style('mrseo-seo-home-alignment',get_template_directory_uri().'/assets/seo-home-alignment.css',array('mrseo-premium-ua-interiors'),'3.0.0');
 },100);
 get_header();
 ?>
