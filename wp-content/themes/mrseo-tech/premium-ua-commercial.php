@@ -4,8 +4,10 @@ if(!defined('ABSPATH'))exit;
 require_once get_template_directory().'/inc/premium-ua-commercial-routes.php';
 require_once get_template_directory().'/inc/premium-ua-commercial-copy.php';
 require_once get_template_directory().'/inc/premium-ua-commercial-art.php';
+require_once get_template_directory().'/inc/premium-ads-campaign-art.php';
 $psc_slug=mrseo_slug();
 $psc_art=mrseo_puc_route($psc_slug);
+$psc_ads_campaign=in_array($psc_slug,mrseo_puc_ads_campaign_slugs(),true);
 $psc=mrseo_puc_copy($psc_slug);
 if(mrseo_locale()!=='uk'||!$psc_art||!$psc){status_header(404);include get_404_template();return;}
 $psc_problem_id=$psc['problemId']??'uws-pains';
@@ -17,11 +19,12 @@ $psc_head=static function($value){echo wp_kses($value,array('em'=>array()));};
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-puc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.css',array('mrseo-puc-base'),'1.0.0');
- wp_enqueue_script('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.js',array(),'1.0.0',true);
+ wp_enqueue_script('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.js',array(),'1.1.0',true);
+ if(in_array(mrseo_slug(),mrseo_puc_ads_campaign_slugs(),true))wp_enqueue_style('mrseo-puc-ads-campaign',get_template_directory_uri().'/assets/premium-ads-campaign.css',array('mrseo-puc'),'1.0.0');
 },100);
 get_header();
 ?>
-<div class="pti-page puc-page" data-puc-route="<?php echo esc_attr($psc_slug);?>" id="main-content">
+<div class="pti-page puc-page<?php echo $psc_ads_campaign?' puc-ads-campaign':'';?>" data-puc-route="<?php echo esc_attr($psc_slug);?>" id="main-content">
  <section class="pti-hero psc-hero" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">
   <div class="pti-wrap pti-hero-grid">
    <div class="pti-hero-copy">

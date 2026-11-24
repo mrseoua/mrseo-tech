@@ -409,6 +409,12 @@ async function audit(browser,viewport,lang,slug){
       item.errors.push('UA commercial premium content or visual regression: '+JSON.stringify(commercial));
     if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('UA commercial full navigation/contacts missing');
+    if(['google-search-ads','performance-max','google-shopping','local-google-ads','google-remarketing'].includes(slug)){
+      const adDesign=await page.evaluate(()=>{const p=document.querySelector('.puc-ads-campaign');const art=[...p?.querySelectorAll('svg.puc-motion')||[]];return {root:!!p,css:!!document.querySelector('link[href*="premium-ads-campaign.css"]'),count:art.length,allNew:art.every(s=>s.dataset.mrseoAdsArt==='premium-v1'),overflow:document.documentElement.scrollWidth>innerWidth+4}});
+      if(!adDesign.root||!adDesign.css||!adDesign.allNew||adDesign.count!==(hasPlan?7:6)||adDesign.overflow)item.errors.push('UA paid campaign design '+JSON.stringify(adDesign));
+      await page.locator('.puc-ads-campaign .pti-hero').screenshot({path:'shots/ua-'+slug+'-premium-hero-'+viewport.name+'.jpg',type:'jpeg',quality:82,timeout:20000}).catch(e=>item.errors.push('Ads hero screenshot: '+e.message));
+      await page.locator('.puc-ads-campaign .psc-problems').screenshot({path:'shots/ua-'+slug+'-premium-problems-'+viewport.name+'.jpg',type:'jpeg',quality:82,timeout:20000}).catch(e=>item.errors.push('Ads problems screenshot: '+e.message));
+    }
     if(commercial.hero&&commercial.tabs===3&&commercial.pause===2){
       const scene=page.locator('.puc-page .psc-hero-scene'),tabs=scene.locator('[data-puc-tab]'),button=scene.locator('.psc-pause');
       await tabs.nth(2).click();
