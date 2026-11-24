@@ -489,10 +489,6 @@ add_filter('pre_get_document_title',static function($title){
 function mrseo_ua_unified_style_enabled(){
  return mrseo_locale()==='uk' && !in_array(mrseo_slug(),array('','orbit-lab','orbit-light'),true) && !is_404();
 }
-add_filter('body_class',static function($classes){
- if(mrseo_ua_unified_style_enabled())$classes[]='mrseo-ua-unified';
- return $classes;
-});
 add_action('wp_enqueue_scripts',static function(){
  if(!mrseo_ua_unified_style_enabled())return;
  wp_enqueue_style('mrseo-ua-unified-style',get_template_directory_uri().'/assets/ua-unified-style.css',array('mrseo-style'),'1.0.0');
