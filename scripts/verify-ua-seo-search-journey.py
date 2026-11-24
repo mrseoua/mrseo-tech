@@ -19,6 +19,8 @@ assert "sh-hero-stage" in hero and "sh-hero-main" in hero
 assert hero.count('class="seo-flow-object"')==3
 assert '.seo-hero-visual' not in hero and 'seo-hero-visual' not in hero
 assert 'clip-path:inset(50%)' in (r/'style.css').read_text()
+assert 'ОРГАНІЧНИЙ ПОШУК' in art and 'Умовний приклад пошукової видачі' in art
+assert 'running=new WeakMap()' in js
 assert page.count('class="seo-problem"')==3 and page.count('class="seo-plan-step"')==3 and page.count('<details>')==3
 assert 'data-pti-faq="seo"' in page and 'id="ukseo-cases"' in page and 'id="seo-approach"' in page
 assert 'id="ukseo-services"' in directions and 'mrseo_sh_art($scene);' in directions

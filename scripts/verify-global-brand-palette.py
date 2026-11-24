@@ -12,7 +12,7 @@ assert "X-Robots-Tag: noindex, nofollow" in (root/"functions.php").read_text(enc
 functions=(root/"functions.php").read_text(encoding="utf-8")
 assert "mrseo_brand_palette_css_cache_key" in functions
 assert "add_query_arg('brand_palette','a84432',$src)" in functions
-assert "wp_enqueue_style('mrseo-style',get_stylesheet_uri(),array(),'3.7.7')" in functions
+assert re.search(r"wp_enqueue_style\('mrseo-style',get_stylesheet_uri\(\),array\(\),'\d+\.\d+\.\d+'\)",functions), "Global style must have a versioned cache key"
 target_files=[
  "style.css","assets/home-uk-premium.css","assets/home-cinematic-showcase.css",
  "assets/home-cinematic-reference.css","assets/ua-six-header.css","assets/ua-brand-accents.css",
