@@ -859,7 +859,8 @@ async function audit(browser,viewport,lang,slug){
    const panel=page.locator('.mrseo-ua-mega-header .nav-submenu');
    if(!await panel.isVisible()||await trigger.getAttribute('aria-expanded')!=='true')item.errors.push('UA hover menu failed');
    const geo=await panel.evaluate(el=>{const r=el.getBoundingClientRect();const a=el.querySelector('.mrseo-catalog-link');return {left:r.left,right:r.right,width:r.width,vw:innerWidth,top:r.top,height:r.height,font:parseFloat(getComputedStyle(a).fontSize)}});
-   if(geo.left<-2||geo.right>geo.vw+2||geo.width<geo.vw-4||geo.font<14.9||geo.height<=0)item.errors.push('UA catalogue geometry '+JSON.stringify(geo));
+   if(geo.left<-2||geo.right>geo.vw+2||geo.width<geo.vw-4||geo.font<13.9||geo.height<=0)item.errors.push('UA catalogue geometry '+JSON.stringify(geo));
+   const styleQA=await panel.evaluate(el=>{const cards=[...el.querySelectorAll('.mrseo-catalog-group')],headers=cards.map(c=>c.querySelector('.mrseo-catalog-parent')),cta=el.querySelector('.mrseo-catalog-footer>a');return {cards:cards.every(c=>parseFloat(getComputedStyle(c).borderTopWidth)>=1&&parseFloat(getComputedStyle(c).borderTopLeftRadius)>=10),left:headers.every(h=>{const t=h.querySelector('.mrseo-catalog-title').getBoundingClientRect(),i=h.querySelector('.mrseo-catalog-icon').getBoundingClientRect();return t.left>=i.right&&t.left-i.right<20}),icons:el.querySelectorAll('.mrseo-catalog-icon').length,dev:el.querySelectorAll('.mrseo-catalog-group--dev .mrseo-catalog-subgroup').length,cta:cta.getBoundingClientRect().width<260}});if(!styleQA.cards||!styleQA.left||styleQA.icons!==5||styleQA.dev!==4||!styleQA.cta)item.errors.push('Approved menu card design '+JSON.stringify(styleQA));
    await page.screenshot({path:'shots/ua-catalog-menu-wide.jpg',type:'jpeg',quality:82,fullPage:false});
    await page.keyboard.press('Escape');
    if(await panel.isVisible())item.errors.push('UA catalogue Escape failed');
