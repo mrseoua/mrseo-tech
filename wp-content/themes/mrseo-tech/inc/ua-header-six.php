@@ -87,7 +87,7 @@ function mrseo_ua_header_six($mobile=false){
     ),
     'Мобільні застосунки'=>array(
      'live'=>array(),
-     'live_extra'=>array('mobile-app-development'=>'Мобільні застосунки для iOS та Android','ecommerce-mobile-apps'=>'Застосунки для інтернет-магазинів','corporate-mobile-apps'=>'Корпоративні мобільні застосунки','pwa-development'=>'PWA-застосунки')
+     'live_extra'=>array('mobile-app-development'=>'Мобільні застосунки для iOS та Android','ecommerce-mobile-apps'=>'Застосунок для інтернет-магазину','corporate-mobile-apps'=>'Застосунок для команди','pwa-development'=>'PWA-застосунки')
     )
    );
    foreach($dev_groups as $heading=>$services){
@@ -120,7 +120,7 @@ function mrseo_ua_header_six($mobile=false){
 function mrseo_ua_header_catalog(){
  $groups=mrseo_ua_menu_groups();$current=mrseo_slug();
  $names=array('seo'=>'SEO','ads'=>'Google Ads','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Веброзробка');
- $compact_exclude=array('google-ads-audit','merchant-center','website-maintenance','website-speed-security','custom-functionality','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development','google-remarketing','website-redesign');
+ $compact_exclude=array('google-ads-audit','merchant-center','website-maintenance','website-speed-security','custom-functionality','google-remarketing','website-redesign');
  $icons=array('seo'=>'<circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/>','ads'=>'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>','horoshop'=>'<path d="M4 8h16l1 13H3zM8 8V6a4 4 0 0 1 8 0v2"/>','sites'=>'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.1M10 6.5h.1"/>','dev'=>'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-5 18"/>');
  echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v4"><div class="mrseo-mega-grid mrseo-catalog-grid">';
  foreach($groups as $group){
@@ -196,7 +196,7 @@ function mrseo_ua_header_catalog(){
     ),
     'Мобільні застосунки'=>array(
      'live'=>array(),
-     'live_extra'=>array('mobile-app-development'=>'Мобільні застосунки для iOS та Android','ecommerce-mobile-apps'=>'Застосунки для інтернет-магазинів','corporate-mobile-apps'=>'Корпоративні мобільні застосунки','pwa-development'=>'PWA-застосунки')
+     'live_extra'=>array('mobile-app-development'=>'Мобільні застосунки для iOS та Android','ecommerce-mobile-apps'=>'Застосунок для інтернет-магазину','corporate-mobile-apps'=>'Застосунок для команди','pwa-development'=>'PWA-застосунки')
     )
    );
    foreach($dev_groups as $heading=>$services){
