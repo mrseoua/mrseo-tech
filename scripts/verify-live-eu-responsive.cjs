@@ -497,10 +497,11 @@ async function audit(browser,viewport,lang,slug){
   const pi=c.premiumInterior;
   if(premiumTarget){
     const expectedStory=slug==='seo'?'seo':slug==='google-ads'?'ads':'dev';
-    if(pi.route!==slug||!pi.style||!pi.geometry||!pi.scene||!pi.sceneSvg||pi.sceneMotion<1||
+    if(slug==='seo'?(pi.route!=='seo'||!pi.style||pi.story!=='seo'||pi.problems!==3||pi.steps!==3||pi.faq<3||!pi.final)
+      :(pi.route!==slug||!pi.style||!pi.geometry||!pi.scene||!pi.sceneSvg||pi.sceneMotion<1||
        pi.images!==(slug==='web-development'?8:2)||!pi.realImages||!pi.heroImage||pi.story!==expectedStory||
        pi.problems!==3||pi.steps!==3||pi.faq<3||pi.tabs!==3||!pi.pause||!pi.final||
-       (slug==='web-development'&&(pi.caps!==6||pi.capMotion!==34||pi.solutions!==3)))
+       (slug==='web-development'&&(pi.caps!==6||pi.capMotion!==34||pi.solutions!==3))))
       item.errors.push('UA Premium interior mismatch: '+JSON.stringify(pi));
     const expectedLower={
       seo:['seo-index','seo-cluster','seo-conversion','seo-diagnostic','seo-next'],
