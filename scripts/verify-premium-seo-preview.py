@@ -30,5 +30,5 @@ assert '@media(max-width:480px)' in css
 assert '.psp.is-playing' in css and 'aria-pressed' in js and 'visibilitychange' in js
 assert css.count('{')==css.count('}')
 assert "pt-globe" in home
-assert 'seo-console' in seo
+assert "seo-cinematic-hero.php" in seo and "seo-cinematic-directions.php" in seo
 print('PASS: standalone premium SEO prototype, 3 interactive steps, noindex, original home and SEO remain untouched')
