@@ -706,9 +706,9 @@ async function audit(browser,viewport,lang,slug){
       item.errors.push('Horoshop interactive hero or six service modules failed '+JSON.stringify(offer));
   }
   if(lang==='uk'&&slug==='ecommerce-seo'){
-    const lab=await page.locator('#ukcommerce-lab .ec-tabs button').count();
+    const lab=await page.locator('#ukcommerce-lab .local-ref-work-card').count();
     if(lab!==3||c.uaFourScenes.count!==0||c.uaFourScenes.style)
-      item.errors.push('Compact ecommerce catalog lab or redundant scenes failed: tabs='+lab);
+      item.errors.push('Compact ecommerce work groups or redundant scenes failed: groups='+lab);
   }
   if(lang==='uk'&&slug==='seo'){
     const v=c.uaSeoVisuals;

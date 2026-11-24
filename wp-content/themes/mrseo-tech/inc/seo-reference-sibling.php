@@ -28,8 +28,7 @@ $local_work=$psc_ref_copy['work'];
 <section class="pti-section pti-alt psc-delivery local-ref-work" id="uws-solution" aria-labelledby="<?php echo esc_attr($psc_delivery_id);?>">
  <div class="pti-wrap">
   <div class="pti-section-head"><div><span class="pti-kicker">02 / КОНКРЕТНІ РОБОТИ</span><h2 id="<?php echo esc_attr($psc_delivery_id);?>"><?php $psc_head($psc_ref_copy['workTitle']);?></h2></div><p><?php echo esc_html($psc_ref_copy['workLead']);?></p></div>
-  <?php if($psc_shop):?><div id="ukcommerce-lab" class="seo-ref-anchor"></div><?php endif;?>
-  <div class="local-ref-work-grid">
+  <div class="local-ref-work-grid"<?php if($psc_shop)echo ' id="ukcommerce-lab"';?>>
    <?php foreach($local_work as $i=>$item):?>
     <article class="pti-step local-ref-work-card"><span class="local-ref-label"><?php echo esc_html(sprintf('%02d',$i+1));?> / 03</span><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></article>
    <?php endforeach;?>
