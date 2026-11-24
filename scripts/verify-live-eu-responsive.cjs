@@ -693,6 +693,11 @@ async function audit(browser,viewport,lang,slug){
     if(!p||!p.css||p.count!==2||p.stages!==0||!p.pricesCorrect||!p.geometry||!p.heading||!p.heroTrackingOK)
       item.errors.push('UA Google Ads service formats/visuals missing or overflow: '+JSON.stringify(p));
   }
+  if(lang==='uk'&&slug==='google-ads'){
+   const v=await page.evaluate(()=>{const root=document.querySelector('.pti-page[data-service-standard="v1"]');return {root:!!root,problems:root?.querySelectorAll('.service-problem-answer').length||0,services:[...root?.querySelectorAll('[data-ads-service]')||[]].map(e=>({slug:e.dataset.adsService,href:e.querySelector('a')?.getAttribute('href')})),result:!!root?.querySelector('.service-deliverable'),css:!!document.querySelector('link[href*="service-standard.css"]')}});
+   const expected=['google-search-ads','performance-max','google-shopping','local-google-ads','google-remarketing','google-ads-audit','merchant-center'];
+   if(!v.root||!v.css||v.problems!==3||!v.result||JSON.stringify(v.services.map(s=>s.slug))!==JSON.stringify(expected)||v.services.some(s=>!s.href||new URL(s.href,page.url()).pathname!=='/'+s.slug+'/'))item.errors.push('Google Ads hub service standard '+JSON.stringify(v));
+  }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
     item.errors.push('Ukrainian Google Ads pricing leaked onto other pages');
   if(lang==='uk'&&slug==='horoshop'){
