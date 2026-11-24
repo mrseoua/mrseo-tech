@@ -42,12 +42,13 @@ a,b=Links(),Links();a.feed(old_html);b.feed(new_html)
 clean=lambda x:(x[0],x[1].replace("↗","").strip())
 original=[clean(x) for x in a.links]
 updated=[clean(x) for x in b.links if "mrseo-catalog-link" in x[2]]
-excluded={"/google-ads-audit/","/merchant-center/","/website-maintenance/","/website-speed-security/","/custom-functionality/","/ecommerce-mobile-apps/","/corporate-mobile-apps/","/pwa-development/","/horoshop/search-ads/","/horoshop/shopping/","/horoshop/pmax/","/google-remarketing/","/website-redesign/","/horoshop/ga4/"}
+excluded={"/google-ads-audit/","/merchant-center/","/website-maintenance/","/website-speed-security/","/custom-functionality/","/horoshop/search-ads/","/horoshop/shopping/","/horoshop/pmax/","/google-remarketing/","/website-redesign/","/horoshop/ga4/"}
 assert len(original)==42
 assert updated==[x for x in original if x[0] not in excluded],(original,updated)
-assert len(updated)==28,len(updated)
+assert len(updated)==31,len(updated)
+assert all(url in {x[0] for x in updated} for url in ('/mobile-app-development/','/ecommerce-mobile-apps/','/corporate-mobile-apps/','/pwa-development/'))
 assert len([x for x in b.links if "mrseo-catalog-parent" in x[2]])==5
-print("PASS: 28 original labels and URLs, explicitly excluded 14 secondary links; five parent categories; light palette")
+print("PASS: 31 original labels and URLs, explicitly excluded 11 secondary links; five parent categories; light palette")
 
 assert "mrseo-catalog-icon" in c and "mrseo-catalog-title" in c and "justify-content:flex-start!important" in css
 assert "border:1px solid #d9ccbc" in css and "background:#eee5d8!important" in css
