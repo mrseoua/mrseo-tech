@@ -37,7 +37,11 @@ for slug in ("local-seo","ecommerce-seo","service-business-seo","international-s
     assert "'"+slug+"'=>array(" in page,slug
 assert 'class="psc-seo-related"' in page
 assert "mrseo_url($related[0],'uk')" in page
-assert "mrseo_seo_catalog" in (ROOT/"inc/premium-ua-interiors/seo.php").read_text(encoding="utf8")
+hub=(ROOT/"inc/premium-ua-interiors/seo.php").read_text(encoding="utf8")
+assert "mrseo_seo_catalog" not in hub, "The SEO hub must not promote 18 services as top-level choices"
+assert hub.count('class="seo-editorial-feature ') == 5
+for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo"):
+    assert "mrseo_url('"+slug+"','uk')" in hub,slug
 assert "X-Robots-Tag: noindex, nofollow" in (ROOT/"functions.php").read_text(encoding="utf8")
 assert "function mrseo_i18n_current_entry" in (ROOT/"inc/international-seo.php").read_text(encoding="utf8")
-print("UA SEO cluster: 19 unique metadata sets, 18 menu links, scoped intent and contextual links OK")
+print("UA SEO: all 19 legacy metadata sets preserved, five primary editorial links in hub, scoped intent and contextual links OK")
