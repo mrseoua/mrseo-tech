@@ -20,9 +20,10 @@ add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-puc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.css',array('mrseo-puc-base'),'1.0.0');
  wp_enqueue_script('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.js',array(),'1.1.0',true);
- if(in_array(mrseo_slug(),mrseo_puc_ads_campaign_slugs(),true))wp_enqueue_style('mrseo-puc-ads-campaign',get_template_directory_uri().'/assets/premium-ads-campaign.css',array('mrseo-puc'),'1.0.0');
+ if(in_array(mrseo_slug(),mrseo_puc_ads_campaign_slugs(),true))wp_enqueue_style('mrseo-puc-ads-campaign',get_template_directory_uri().'/assets/premium-ads-campaign.css',array('mrseo-puc'),'2.0.0');
 },100);
 get_header();
+if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaign-page.php';get_footer();return;}
 ?>
 <div class="pti-page puc-page<?php echo $psc_ads_campaign?' puc-ads-campaign':'';?>" data-puc-route="<?php echo esc_attr($psc_slug);?>" id="main-content">
  <section class="pti-hero psc-hero" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">

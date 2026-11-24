@@ -62,3 +62,36 @@
 @media(max-width:950px){.pti-page.puc-ads-campaign .pti-hero-grid,.pti-page.puc-ads-campaign .pti-section-head,.pti-page.puc-ads-campaign .psc-story-grid,.pti-page.puc-ads-campaign .psc-faq-section .pti-faq{grid-template-columns:1fr;gap:22px}.pti-page.puc-ads-campaign .psc-hero-scene,.pti-page.puc-ads-campaign .psc-story-visual{max-width:720px;margin-inline:auto}.pti-page.puc-ads-campaign .pti-hero h1{font-size:clamp(42px,7.8vw,65px)}.pti-page.puc-ads-campaign .psc-final .pti-wrap{grid-template-columns:105px minmax(0,1fr)}.pti-page.puc-ads-campaign .psc-final .pti-pill{grid-column:2;justify-self:start}}
 @media(max-width:700px){.pti-page.puc-ads-campaign .pti-wrap{width:calc(100% - 36px)}.pti-page.puc-ads-campaign .pti-hero h1{font-size:clamp(37px,9.2vw,52px)}.pti-page.puc-ads-campaign .pti-section h2{font-size:clamp(32px,8vw,45px)}.pti-page.puc-ads-campaign .psc-problem-grid{grid-template-columns:1fr}.pti-page.puc-ads-campaign .psc-problem-card{padding:19px}.pti-page.puc-ads-campaign .pti-lead,.pti-page.puc-ads-campaign .psc-problem-card p{font-size:16px}.pti-page.puc-ads-campaign .psc-final .pti-wrap{grid-template-columns:1fr;padding:25px 21px}.pti-page.puc-ads-campaign .psc-final-art{max-width:125px}.pti-page.puc-ads-campaign .psc-final .pti-pill{grid-column:auto}.pti-page.puc-ads-campaign .pti-tabs button{font-size:13px;padding:8px 11px}.pti-page.puc-ads-campaign .psc-stage-meta{font-size:10px}.pti-page.puc-ads-campaign .pti-step{grid-template-columns:40px minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.pti-page.puc-ads-campaign *{transition:none!important;animation:none!important}}
+
+/* V2 editorial architecture: exact five paid-campaign routes, no shared template restyling. */
+.pti-page.puc-ads-campaign.ads-v2 .pti-wrap{width:min(1380px,90%)}
+.pti-page.puc-ads-campaign.ads-v2 .ads-opening .pti-crumb{margin:0 0 24px}
+.pti-page.puc-ads-campaign.ads-v2 .ads-opening .pti-hero-grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(30px,4vw,65px)}
+.pti-page.puc-ads-campaign.ads-v2 .ads-opening .pti-kicker{font-size:clamp(13px,1.15vw,16px);letter-spacing:.075em}
+.pti-page.puc-ads-campaign.ads-v2 .ads-opening h1{font-size:clamp(43px,4.65vw,76px);line-height:1.02;letter-spacing:-.065em}
+.pti-page.puc-ads-campaign.ads-v2 .ads-goal{font-size:clamp(19px,1.5vw,24px);font-weight:750;line-height:1.4;margin:0 0 15px;color:#292e28;max-width:570px}
+.pti-page.puc-ads-campaign.ads-v2 .psc-hero-stage .puc-motion{width:100%;max-height:none;overflow:visible}
+.pti-page.puc-ads-campaign.ads-v2 .ads-brief{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(28px,4vw,55px);background:#fffdf8b3;border:1px solid #d9cdbf;border-radius:20px;overflow:hidden}
+.pti-page.puc-ads-campaign.ads-v2 .ads-brief>div{padding:clamp(19px,2.25vw,32px);border-right:1px solid #d9cdbf;min-width:0}
+.pti-page.puc-ads-campaign.ads-v2 .ads-brief>div:last-child{border-right:0;background:#e9ded0}
+.pti-page.puc-ads-campaign.ads-v2 .ads-brief span,.pti-page.puc-ads-campaign.ads-v2 .ads-problem-fix>span{font-size:12px;font-weight:850;letter-spacing:.065em;color:var(--ads-red);display:block;margin-bottom:10px}
+.pti-page.puc-ads-campaign.ads-v2 .ads-brief p{font-size:clamp(17px,1.4vw,21px);font-weight:700;line-height:1.4}
+.pti-page.puc-ads-campaign.ads-v2 .ads-diagnosis{background:#f7f3ed}
+.pti-page.puc-ads-campaign.ads-v2 .ads-problem-rows{display:grid;grid-template-columns:1fr;border:0;border-top:1px solid var(--ads-line);gap:0}
+.pti-page.puc-ads-campaign.ads-v2 .ads-problem-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.65fr) minmax(0,1.55fr);gap:clamp(20px,3vw,45px);align-items:center;padding:clamp(23px,3vw,38px) 0;border:0;border-bottom:1px solid var(--ads-line);border-radius:0;background:transparent;box-shadow:none}
+.pti-page.puc-ads-campaign.ads-v2 .ads-problem-row .psc-mini-art{margin:0;aspect-ratio:1.4;max-width:270px;background:radial-gradient(ellipse,#fffdf9,#eae0d2);border-radius:14px}
+.pti-page.puc-ads-campaign.ads-v2 .ads-problem-row h3{font-size:clamp(23px,2.15vw,34px);line-height:1.13;margin:9px 0 13px}
+.pti-page.puc-ads-campaign.ads-v2 .ads-problem-fix{padding:20px 23px;border-left:3px solid var(--ads-red);background:#f0e5d8;border-radius:0 13px 13px 0}
+.pti-page.puc-ads-campaign.ads-v2 .ads-problem-fix p{font-size:18px;line-height:1.55;font-weight:650;color:#343b34}
+.pti-page.puc-ads-campaign.ads-v2 .ads-problem-fix small{display:block;font-size:14px;color:#62594f;line-height:1.5;margin-top:12px}
+.pti-page.puc-ads-campaign.ads-v2 .ads-work{background:#eee9e1}
+.pti-page.puc-ads-campaign.ads-v2 .ads-work-board{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,55px);align-items:center;border:1px solid #d9cdbf;background:#faf7f2;padding:clamp(22px,3vw,44px);border-radius:24px}
+.pti-page.puc-ads-campaign.ads-v2 .ads-work-board .psc-story-visual{background:transparent;box-shadow:none;border:0}
+.pti-page.puc-ads-campaign.ads-v2 .ads-work-board .psc-story-visual svg{filter:none;background:transparent}
+.pti-page.puc-ads-campaign.ads-v2 .ads-work-board .pti-steps{border-top:0}
+.pti-page.puc-ads-campaign.ads-v2 .ads-result{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(22px,4vw,50px);align-items:center;margin:22px 0 0;border:0;border-radius:20px;background:#dfd3c3;padding:clamp(25px,3vw,42px)}
+.pti-page.puc-ads-campaign.ads-v2 .ads-result h3{font-size:clamp(25px,2.6vw,40px);line-height:1.15;margin:13px 0 0}
+.pti-page.puc-ads-campaign.ads-v2 .ads-result p{font-size:17px;font-weight:500;margin:0}
+.pti-page.puc-ads-campaign.ads-v2 .psc-pause:not(:focus-visible){position:absolute!important;width:1px!important;height:1px!important;min-width:0!important;min-height:0!important;padding:0!important;margin:0!important;border:0!important;clip-path:inset(50%)!important;overflow:hidden!important;white-space:nowrap!important}
+@media(max-width:950px){.pti-page.puc-ads-campaign.ads-v2 .ads-opening .pti-hero-grid,.pti-page.puc-ads-campaign.ads-v2 .ads-work-board,.pti-page.puc-ads-campaign.ads-v2 .ads-result{grid-template-columns:1fr}.pti-page.puc-ads-campaign.ads-v2 .ads-problem-row{grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:20px}.pti-page.puc-ads-campaign.ads-v2 .ads-problem-fix{grid-column:2}}
+@media(max-width:700px){.pti-page.puc-ads-campaign.ads-v2 .pti-wrap{width:calc(100% - 36px)}.pti-page.puc-ads-campaign.ads-v2 .ads-opening h1{font-size:clamp(36px,9.4vw,52px)}.pti-page.puc-ads-campaign.ads-v2 .ads-brief,.pti-page.puc-ads-campaign.ads-v2 .ads-problem-row{grid-template-columns:1fr}.pti-page.puc-ads-campaign.ads-v2 .ads-brief>div{border-right:0;border-bottom:1px solid #d9cdbf;padding:20px}.pti-page.puc-ads-campaign.ads-v2 .ads-brief>div:last-child{border-bottom:0}.pti-page.puc-ads-campaign.ads-v2 .ads-problem-row .psc-mini-art{max-width:none;aspect-ratio:1.9}.pti-page.puc-ads-campaign.ads-v2 .ads-problem-fix{grid-column:auto;padding:18px}.pti-page.puc-ads-campaign.ads-v2 .ads-problem-fix p{font-size:16px}.pti-page.puc-ads-campaign.ads-v2 .ads-work-board{padding:17px}.pti-page.puc-ads-campaign.ads-v2 .ads-result{padding:22px}}
