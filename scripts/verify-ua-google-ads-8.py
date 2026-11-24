@@ -59,11 +59,12 @@ assert "service-standard.css" in (root/"premium-ua-interior.php").read_text()
 assert "prefers-reduced-motion" in (root/"assets/service-standard.css").read_text()
 print("PASS: Ads hub standard v1, seven service destinations, three clear problems/solutions, no pricing changes")
 
-# Positioning: exact eight routes; unique service-specific messages, a shared slogan and no SEO copy changes.
+# Positioning: seven active routes (eight original routes retained); unique service-specific messages, a shared slogan and no SEO copy changes.
 position=embedded("inc/ua-ads-position.php","MRSEO_ADS_POSITION")
-assert set(position)==set(pages)
-assert len({d["hero"] for d in position.values()})==8
-assert len({tuple(d["headline"]) for d in position.values()})==8
+assert set(position)==set(pages)-{'google-remarketing'}
+assert "if($mrseo_ads_service[0]==='google-remarketing')continue;" in main
+assert len({d["hero"] for d in position.values()})==7
+assert len({tuple(d["headline"]) for d in position.values()})==7
 for slug,d in position.items():
  assert len(d["headline"])==2 and len(d["items"])==(3 if slug=="google-ads" else 2)
  assert all(d["headline"]) and all(len(item)==2 and all(item) for item in d["items"])
@@ -85,4 +86,4 @@ assert renderer.count('id="mrseo-ads-approach"')==1 and 'href="#mrseo-ads-approa
 assert "Без пафосу. Без переплат." in renderer
 css=(root/"assets/ua-ads-position.css").read_text()
 assert css.count("{")==css.count("}") and "minmax(0,1fr)" in css and "@media(max-width:700px)" in css
-print("PASS: eight unique Ads positioning variants; scoped assets and early placement; compact child layouts")
+print("PASS: seven unique Ads positioning variants; scoped assets and early placement; compact child layouts")
