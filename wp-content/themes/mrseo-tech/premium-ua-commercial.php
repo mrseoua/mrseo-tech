@@ -16,11 +16,13 @@ $psc_title_id=$psc['titleId']??'uws-title';
 $psc_final_id=$psc['finalId']??'uws-final-title';
 $psc_faq_id=$psc['faqId']??'uws-faq-title';
 $psc_head=static function($value){echo wp_kses($value,array('em'=>array()));};
+require_once get_template_directory().'/inc/ua-ads-position.php';
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-puc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.css',array('mrseo-puc-base'),'1.0.0');
  wp_enqueue_script('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.js',array(),'1.1.0',true);
  if(in_array(mrseo_slug(),mrseo_puc_ads_campaign_slugs(),true))wp_enqueue_style('mrseo-puc-ads-campaign',get_template_directory_uri().'/assets/premium-ads-campaign.css',array('mrseo-puc'),'2.0.0');
+ if(mrseo_ads_position_copy(mrseo_slug()))wp_enqueue_style('mrseo-ua-ads-position',get_template_directory_uri().'/assets/ua-ads-position.css',array(in_array(mrseo_slug(),mrseo_puc_ads_campaign_slugs(),true)?'mrseo-puc-ads-campaign':'mrseo-puc'),'1.0.0');
 },100);
 get_header();
 if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaign-page.php';get_footer();return;}
@@ -33,6 +35,7 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
     <span class="pti-kicker"><?php echo esc_html($psc['kicker']);?></span>
     <h1 id="<?php echo esc_attr($psc_title_id);?>"><?php echo esc_html($psc['headline'][0]);?> <em><?php echo esc_html($psc['headline'][1]);?></em></h1>
     <p class="pti-lead"><?php echo esc_html($psc['lead']);?></p>
+    <?php mrseo_ads_position_hero($psc_slug);?>
     <div class="pti-actions"><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['button']);?> ↗</a><a class="pti-pill pti-secondary" href="#<?php echo esc_attr($psc_problem_id);?>">З чого почнемо ↓</a></div>
     <p class="pti-footnote"><?php echo esc_html($psc['foot']);?></p>
    </div>
@@ -52,6 +55,7 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
    </div>
   </div>
  </section>
+ <?php mrseo_ads_position_render($psc_slug);?>
  <section class="pti-section psc-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
   <div class="pti-wrap">
    <div class="pti-section-head"><div><span class="pti-kicker">ЯКУ ПРОБЛЕМУ ВИРІШУЄМО</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
