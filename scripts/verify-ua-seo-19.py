@@ -47,3 +47,16 @@ for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","int
 assert "X-Robots-Tag: noindex, nofollow" in (ROOT/"functions.php").read_text(encoding="utf8")
 assert "function mrseo_i18n_current_entry" in (ROOT/"inc/international-seo.php").read_text(encoding="utf8")
 print("UA SEO: all 19 legacy metadata sets preserved, five primary cinematic links in hub, scoped intent and contextual links OK")
+
+# Single route reference; other four cluster pages continue using the existing template.
+ref=(ROOT/"inc/local-seo-reference.php").read_text(encoding="utf8")
+css=(ROOT/"assets/local-seo-reference.css").read_text(encoding="utf8")
+assert "$psc_reference=$psc_slug==='local-seo';" in page and "inc/local-seo-reference.php" in page
+assert "data-service-reference=" in page and "local-seo-reference.css" in page
+assert ref.count('class="local-ref-answer"')==1 and len(re.findall(r"array\('0[123]','",ref))==3
+assert "mrseo_psc_art($id)" in ref and "class=\"local-reference-static\"" in ref
+assert 'id="uws-solution"' in ref and "psc_problem_id" in ref
+assert "Скільки коштує локальне SEO?" in ref and "Коли можна очікувати зміни?" in ref
+assert ref.count("mrseo_url('contact')")==1 and "portfolio" not in ref
+assert "data-service-reference=" in css and "@media(max-width:700px)" in css
+print("PASS: local SEO marketing reference, unchanged semantics, concrete work/conditions/CTA, scoped styles")
