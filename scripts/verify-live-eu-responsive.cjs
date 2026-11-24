@@ -786,38 +786,38 @@ async function audit(browser,viewport,lang,slug){
     await page.evaluate(()=>window.scrollTo(0,0));
   }
   if(lang==='uk'&&slug==='seo'){
-   // Screenshot the original, SEO-specific animated hero, now aligned to the
-   // approved home design rather than adding a second generic card grid.
-   const hero=page.locator('.pti-page[data-pti-service="seo"] .pti-hero');
+   // Visual design and functional QA for the approved cinematic SEO hero.
+   const hero=page.locator('.pti-page[data-pti-service="seo"] .seo-cine-hero');
    try{
-    if(await hero.count()!==1)item.errors.push('SEO premium hero missing or duplicate');
+    if(await hero.count()!==1)item.errors.push('SEO cinematic hero absent or duplicated');
     else {
      const style=await page.evaluate(()=>{
       const root=document.querySelector('.pti-page[data-pti-service="seo"]');
-      const hero=root?.querySelector('.pti-hero');
-      const stage=root?.querySelector('.pti-scene.pti-seo');
-      const rect=hero?.getBoundingClientRect();
-      return {style:!!document.querySelector('link[href*="seo-home-alignment.css"]'),
-              rounded:parseFloat(getComputedStyle(hero).borderTopLeftRadius)>=18,
-              animation:!!stage?.querySelector('.seo-console-scan')&&!!stage?.querySelector('.seo-console-diagnostic'),
-              phases:stage?.querySelectorAll('[data-phase]').length,
-              overflow:document.documentElement.scrollWidth>innerWidth+4,
-              noGeneric:!root?.querySelector('.seo-path'),
-              fit:rect&&rect.right<=innerWidth+4&&rect.left>=-4};
+      const rect=root?.querySelector('.seo-cine-hero')?.getBoundingClientRect();
+      const motion=root?.querySelector('.seo-cine-motion');
+      return {css:!!document.querySelector('link[href*="seo-cinematic.css"]'),
+       script:!!document.querySelector('script[src*="seo-cinematic.js"]'),
+       h1:root?.querySelectorAll('h1').length,
+       terrain:!!root?.querySelector('.seo-cine-terrain .seo-cine-flow path'),
+       search:!!root?.querySelector('.seo-cine-search'),
+       directions:root?.querySelectorAll('.seo-cine-direction-grid>a[href]').length,
+       pause:!!motion&&motion.getAttribute('aria-pressed')==='false',
+       overflow:document.documentElement.scrollWidth>innerWidth+4,
+       fit:!!rect&&rect.right<=innerWidth+4&&rect.left>=-4};
      });
-     if(!style.style||!style.rounded||!style.animation||style.phases!==3||style.overflow||!style.noGeneric||!style.fit)
-      item.errors.push('SEO homepage-style hero regression '+JSON.stringify(style));
+     if(!style.css||!style.script||style.h1!==1||!style.terrain||!style.search||style.directions!==5||!style.pause||style.overflow||!style.fit)item.errors.push('SEO cinematic hero layout '+JSON.stringify(style));
      await page.emulateMedia({reducedMotion:'no-preference'});
-     await page.waitForFunction(()=>document.querySelector('.pti-page[data-pti-service="seo"] .pti-seo-console')?.classList.contains('pti-live'),null,{timeout:6000});
-     const motion=await page.evaluate(()=>['.seo-console-scan','.seo-console-line--strong','.seo-console-bars i'].map(sel=>document.querySelector('.pti-page[data-pti-service="seo"] '+sel)?.getAnimations().some(a=>a.playState==='running')));
-     if(motion.some(x=>!x))item.errors.push('SEO new SERP animation not running '+JSON.stringify(motion));
      await hero.screenshot({path:'shots/ua-seo-premium-hero-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
+     const btn=page.locator('.seo-cine-motion');await btn.click();
+     if(await btn.getAttribute('aria-pressed')!=='true')item.errors.push('SEO cinematic pause did not engage');
+     await btn.click();
+     if(await btn.getAttribute('aria-pressed')!=='false')item.errors.push('SEO cinematic motion did not resume');
      await page.emulateMedia({reducedMotion:'reduce'});
-     const reduced=await page.evaluate(()=>getComputedStyle(document.querySelector('.pti-page[data-pti-service="seo"] .seo-console-scan')).animationName);
-     if(reduced!=='none')item.errors.push('SEO SERP reduced-motion regression');
+     const reduce=await page.locator('.seo-cine-flow path').first().evaluate(el=>getComputedStyle(el).animationName);
+     if(reduce!=='none')item.errors.push('SEO cinematic reduced-motion '+reduce);
      await page.emulateMedia({reducedMotion:'no-preference'});
     }
-   }catch(e){item.errors.push('SEO hero design QA '+e.message)}
+   }catch(e){item.errors.push('SEO cinematic hero QA '+e.message)}
   }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
