@@ -5,7 +5,7 @@ r=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 page=(r/"inc/premium-ua-interiors/seo.php").read_text()
 hero=(r/"inc/seo-cinematic-hero.php").read_text()
 directions=(r/"inc/seo-cinematic-directions.php").read_text()
-css=(r/"assets/seo-cinematic.css").read_text()
+css=(r/"assets/seo-reference.css").read_text()
 js=(r/"assets/seo-cinematic.js").read_text()
 wrapper=(r/"premium-ua-interior.php").read_text()
 home=(r/"home-uk-premium.php").read_text()
@@ -18,22 +18,23 @@ assert "seo-editorial-feature" not in page
 assert 'id="pti-title"' in hero and hero.count("<h1 ")==1
 assert "Більше" in hero and "органічних" in hero and "клієнтів" in hero
 assert "SEO-просування сайту в Google" in hero
-assert "class=\"seo-cine-terrain\"" in hero and "class=\"seo-cine-search\"" in hero
-assert "class=\"seo-cine-motion\"" in hero and "aria-pressed=\"false\"" in hero
+assert 'class="seo-art"' in hero and "seo-reference/hero.webp" in hero
+assert 'class="seo-actions"' in hero
 assert 'id="ukseo-services"' in directions
-assert "seo_cine_directions=array(" in directions
+assert directions.count('class="seo-card"')==5
 for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo"):
- assert "array('"+slug+"'" in directions,slug
-assert "mrseo_url($dir[0],'uk')" in directions
-assert "seo-cine-manifest" in directions and "seo-cine-direction-grid" in directions
-assert "10+ років" in hero and "Рішення за вашими бізнес-цілями" in hero
+ assert "mrseo_url('"+slug+"','uk')" in directions,slug
+assert directions.count("seo-reference/")==5
+assert "seo-approach" in directions and "seo-cards" in directions
+assert "10+ років" in hero and "Контроль" in hero
 assert "noindex" in functions and "X-Robots-Tag: noindex, nofollow" in functions
 assert "--mrseo-brand-red:#A84432;" in style
-for token in ("--sc-red:var(--mrseo-brand-red,#A84432)","--sc-ivory:#f7f3ed","--sc-ink:#242624","--sc-line:#ded3c7",
-             ".seo-cine-direction-grid",".seo-cine-manifest","@media(max-width:600px)","@media(max-width:380px)",
-             "@media(prefers-reduced-motion:reduce)","seo-cine-paused"):
+for token in ("--red:var(--mrseo-brand-red,#A84432)",".seo-cards",".seo-approach","@media(max-width:760px)","@media(prefers-reduced-motion:reduce)"):
  assert token in css,token
-assert "seo-cinematic.css" in wrapper and "seo-cinematic.js" in wrapper
+for name in ("hero","audit","shop","local","services","global"):
+ data=(r/"assets/seo-reference"/(name+".webp")).read_bytes()
+ assert data[:4]==b"RIFF" and data[8:12]==b"WEBP",name
+assert "seo-reference.css" in wrapper and "seo-cinematic.js" in wrapper
 assert "4.0.0" in wrapper
 assert "prefers-reduced-motion: reduce" in js and "aria-pressed" in js and "visibilitychange" in js
 assert css.count("{")==css.count("}"),"Unbalanced CSS block braces"

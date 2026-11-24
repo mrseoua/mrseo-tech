@@ -41,7 +41,7 @@ hub=(ROOT/"inc/premium-ua-interiors/seo.php").read_text(encoding="utf8")
 assert "mrseo_seo_catalog" not in hub, "The SEO hub must not promote 18 services as top-level choices"
 assert "seo-cinematic-directions.php" in hub
 visual=(ROOT/"inc/seo-cinematic-directions.php").read_text(encoding="utf8")
-assert visual.count("array(\x27")==5, "Exactly five commercial SEO directions"
+assert visual.count('class="seo-card"')==5, "Exactly five commercial SEO directions"
 for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo"):
     assert "'"+slug+"'" in visual,slug
 assert "X-Robots-Tag: noindex, nofollow" in (ROOT/"functions.php").read_text(encoding="utf8")
