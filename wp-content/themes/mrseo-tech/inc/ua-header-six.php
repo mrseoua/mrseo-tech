@@ -119,11 +119,13 @@ function mrseo_ua_header_six($mobile=false){
 /* Flat full-width Ukrainian service catalogue, preserving the existing native URLs. */
 function mrseo_ua_header_catalog(){
  $groups=mrseo_ua_menu_groups();$current=mrseo_slug();
- $names=array('seo'=>'SEO-просування','ads'=>'Google Ads','data'=>'Аналітика','commerce'=>'Інтернет-магазини','horoshop'=>'Хорошоп','sites'=>'Створення сайтів','dev'=>'Веброзробка');
- echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v1"><div class="mrseo-mega-grid mrseo-catalog-grid">';
+ $names=array('seo'=>'SEO','ads'=>'Google Ads','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Веброзробка');
+ echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v2"><div class="mrseo-mega-grid mrseo-catalog-grid">';
  foreach($groups as $group){
   // Five primary SEO destinations; the parent /seo/ is a full overview. All legacy routes remain valid.
-  $key=$group['key'];$is_horoshop=$key==='horoshop';
+  $key=$group['key'];
+  if(!isset($names[$key]))continue;
+  $is_horoshop=$key==='horoshop';
   echo '<section class="mrseo-catalog-group mrseo-catalog-group--'.esc_attr($key).'" data-catalog-group="'.esc_attr($key).'">';
   echo '<h3><a class="mrseo-catalog-parent" href="'.esc_url(mrseo_url($group['parent'],'uk')).'"><span class="mrseo-catalog-arrow" aria-hidden="true">↗</span><span>'.esc_html($names[$key]).'</span></a></h3>';
   echo '<div class="mrseo-catalog-links">';
