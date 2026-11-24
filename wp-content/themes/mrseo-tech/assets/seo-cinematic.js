@@ -1,6 +1,6 @@
 /* One motion controller for the full SEO hub, respecting viewport and user preference. */
 (()=>{'use strict';const root=document.querySelector('.seo-hub');if(!root)return;
-const flow=root.querySelector('.seo-journey'),button=root.querySelector('.seo-motion'),svgs=[...root.querySelectorAll('.seo-card-art svg')],reduce=matchMedia('(prefers-reduced-motion: reduce)');let paused=false,frame=0;
+const flow=root.querySelector('.seo-journey'),button=root.querySelector('.seo-motion'),svgs=[...root.querySelectorAll('.seo-premium-scene')],reduce=matchMedia('(prefers-reduced-motion: reduce)');let paused=false,frame=0;
 const visible=e=>{const r=e.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.left<innerWidth&&r.right>0};
 function sync(){const allowed=!paused&&!reduce.matches&&!document.hidden;flow.classList.toggle('is-visible',visible(flow));flow.classList.toggle('is-paused',!allowed);for(const s of svgs){const fn=allowed&&visible(s)?'unpauseAnimations':'pauseAnimations';if(typeof s[fn]==='function')s[fn]()}button.disabled=reduce.matches;button.setAttribute('aria-pressed',String(paused||reduce.matches));button.textContent=paused||reduce.matches?'Увімкнути рух':'Призупинити рух'}
 function schedule(){if(frame)return;frame=requestAnimationFrame(()=>{frame=0;sync()})}
