@@ -49,4 +49,5 @@ assert "prefers-reduced-motion:reduce" in css and "overflow:auto" in css
 assert "X-Robots-Tag: noindex, nofollow" in functions
 assert css.count("{")==css.count("}"), "Unbalanced stylesheet braces"
 assert "pt-globe" not in css and "pt-orbit" not in css
-print("PASS: unified catalogue; four WebDev groups, 15 active links, preserved routes; no placeholders; Earth/noindex untouched")
+assert '$compact_exclude' in nav
+print("PASS: unified compact catalogue; four WebDev groups, original route registry preserved; no placeholders; Earth/noindex untouched")
