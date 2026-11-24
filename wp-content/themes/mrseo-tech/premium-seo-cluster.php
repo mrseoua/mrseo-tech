@@ -26,7 +26,7 @@ add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-psc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'3.0.0');
  wp_enqueue_style('mrseo-seo-home-system',get_template_directory_uri().'/assets/seo-home-system.css',array('mrseo-psc'),'1.0.0');
- if(in_array(mrseo_slug(),array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),true))wp_enqueue_style('mrseo-local-seo-reference',get_template_directory_uri().'/assets/local-seo-reference.css',array('mrseo-seo-home-system'),'1.0.3');
+ if(in_array(mrseo_slug(),array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),true))wp_enqueue_style('mrseo-local-seo-reference',get_template_directory_uri().'/assets/local-seo-reference.css',array('mrseo-seo-home-system'),'1.0.4');
  wp_enqueue_script('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.js',array(),'1.0.1',true);
 },100);
 get_header();
