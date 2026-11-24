@@ -798,7 +798,7 @@ async function audit(browser,viewport,lang,slug){
       const art=root?.querySelector('.seo-journey');
       return {css:!!document.querySelector('link[href*="seo-hub.css"]'),
        h1:root?.querySelectorAll('h1').length,
-       terrain:!!art&&art.querySelectorAll('.seo-flow li').length===3,
+       terrain:!!art&&art.querySelectorAll('.seo-flow li').length===3&&!!root?.querySelector('.seo-hero-visual svg[data-seo-motion="sh-hero-main"]')&&new Set([...root.querySelectorAll('.seo-flow-object svg')].map(s=>s.dataset.seoMotion)).size===3,
        directions:root?.querySelectorAll('.seo-cards .seo-card-link[href]').length,
        overflow:document.documentElement.scrollWidth>innerWidth+4,
        fit:!!rect&&rect.right<=innerWidth+4&&rect.left>=-4};
@@ -809,8 +809,8 @@ async function audit(browser,viewport,lang,slug){
      const cards=page.locator('.seo-cards');
      await cards.scrollIntoViewIfNeeded();
      await page.waitForFunction(()=>document.querySelectorAll('.seo-cards .seo-card-art svg').length===5);
-     const pause=page.locator('.seo-motion'); await pause.click();
-     if(await pause.getAttribute('aria-pressed')!=='true'||!await page.locator('.seo-card-art svg').evaluateAll(nodes=>nodes.every(s=>s.animationsPaused())))item.errors.push('SEO hub pause failed');
+     const pause=page.locator('.seo-journey .seo-motion'); await pause.click();
+     if(await pause.getAttribute('aria-pressed')!=='true'||!await page.locator('.seo-premium-scene').evaluateAll(nodes=>nodes.every(s=>s.animationsPaused())))item.errors.push('SEO hub pause failed');
      await pause.click(); await page.emulateMedia({reducedMotion:'reduce'});
      if(!await pause.isDisabled())item.errors.push('SEO hub reduced motion failed');
      await page.emulateMedia({reducedMotion:'no-preference'});
