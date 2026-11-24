@@ -6,7 +6,7 @@
    <div class="seo-hero-copy"><span class="seo-kicker">01 / SEO-ПРОСУВАННЯ</span><h1 id="pti-title">Вас мають знаходити.<br><em>І обирати.</em></h1>
    <div class="seo-hero-intro"><p class="pti-lead">SEO-просування сайту допомагає клієнтам знаходити ваші послуги в Google. Перевіримо пошуковий попит, структуру й технічні проблеми, погодимо пріоритети SEO-оптимізації та перевіримо результат.</p>
     <div class="seo-actions"><a class="seo-button" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити проєкт ↗</a><a class="seo-button seo-outline" href="#ukseo-cases">З чого почати ↓</a></div></div></div>
-   <div class="seo-hero-visual" aria-label="Ілюстрація пошукового шляху"><?php mrseo_sh_art('sh-hero-main');?><div class="seo-hero-visual-caption"><span>ПОПИТ → ВИДИМІСТЬ → ЗВЕРНЕННЯ</span><button class="seo-motion seo-hero-motion" type="button" aria-pressed="false">Призупинити рух</button></div></div>
+   <div class="sh-hero-stage" aria-label="Ілюстрація пошукового шляху"><?php mrseo_sh_art('sh-hero-main');?><div class="sh-hero-stage-caption"><span>ПОПИТ → ВИДИМІСТЬ → ЗВЕРНЕННЯ</span><button class="seo-motion seo-hero-motion" type="button" aria-pressed="false">Призупинити рух</button></div></div>
   </div>
   <div class="seo-journey" aria-label="Схема шляху клієнта від пошуку до звернення">
    <div class="seo-journey-top"><span>MRSEO / ПОШУКОВИЙ ШЛЯХ</span><button class="seo-motion" type="button" aria-pressed="false">Призупинити рух</button></div>

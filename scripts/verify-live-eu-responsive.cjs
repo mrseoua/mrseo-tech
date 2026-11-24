@@ -425,9 +425,9 @@ async function audit(browser,viewport,lang,slug){
       }
       const t=await lower.evaluate(s=>s.getCurrentTime());await page.waitForTimeout(180);
       if(await lower.evaluate(s=>s.getCurrentTime())<=t)item.errors.push('UA commercial lower timeline stationary');
-      await lowerButton.click();
+      await lowerButton.evaluate(el=>el.click());
       if(await lowerButton.getAttribute('aria-pressed')!=='true'||await button.getAttribute('aria-pressed')!=='true'||!(await lower.evaluate(s=>s.animationsPaused())))item.errors.push('UA commercial page pause failed');
-      await lowerButton.click();await page.emulateMedia({reducedMotion:'reduce'});
+      await lowerButton.evaluate(el=>el.click());await page.emulateMedia({reducedMotion:'reduce'});
       try{await page.waitForFunction(()=>{const p=document.querySelector('.puc-page');return matchMedia('(prefers-reduced-motion: reduce)').matches&&[...p.querySelectorAll('svg.puc-motion')].every(s=>s.animationsPaused())&&[...p.querySelectorAll('.psc-pause')].every(b=>b.disabled)},{},{timeout:5000})}catch(_){item.errors.push('UA commercial reduced motion failed')}
       await page.emulateMedia({reducedMotion:'no-preference'});
       await page.evaluate(()=>window.scrollTo(0,0));
@@ -448,9 +448,9 @@ async function audit(browser,viewport,lang,slug){
       }
       const t=await svg.evaluate(s=>s.getCurrentTime());await page.waitForTimeout(180);
       if(await svg.evaluate(s=>s.getCurrentTime())<=t)item.errors.push('UA editorial timeline stationary');
-      await pause.click();
+      await pause.evaluate(el=>el.click());
       if(await pause.getAttribute('aria-pressed')!=='true'||!(await page.locator('svg.pue-motion').evaluateAll(ss=>ss.every(s=>s.animationsPaused()))))item.errors.push('UA editorial global pause failed');
-      await pause.click();await page.emulateMedia({reducedMotion:'reduce'});
+      await pause.evaluate(el=>el.click());await page.emulateMedia({reducedMotion:'reduce'});
       try{await page.waitForFunction(()=>matchMedia('(prefers-reduced-motion: reduce)').matches&&[...document.querySelectorAll('svg.pue-motion')].every(s=>s.animationsPaused())&&document.querySelector('.pue-pause')?.disabled,{},{timeout:5000})}catch(_){item.errors.push('UA editorial reduced motion failed')}
       await page.emulateMedia({reducedMotion:'no-preference'});await page.evaluate(()=>window.scrollTo(0,0));
     }
@@ -483,9 +483,9 @@ async function audit(browser,viewport,lang,slug){
       try{await page.waitForFunction(()=>{const s=document.querySelector('.psc-delivery svg.psc-motion');return s&&!s.animationsPaused()},{},{timeout:5000})}catch(_){item.errors.push('SEO cluster lower viewport motion failed')}
       const t=await lower.evaluate(s=>s.getCurrentTime());await page.waitForTimeout(200);
       if(await lower.evaluate(s=>s.getCurrentTime())<=t)item.errors.push('SEO cluster lower timeline stationary');
-      await lowerButton.click();
+      await lowerButton.evaluate(el=>el.click());
       if(await lowerButton.getAttribute('aria-pressed')!=='true'||await button.getAttribute('aria-pressed')!=='true'||!(await lower.evaluate(s=>s.animationsPaused())))item.errors.push('SEO cluster pause sync failed');
-      await lowerButton.click();
+      await lowerButton.evaluate(el=>el.click());
       await page.emulateMedia({reducedMotion:'reduce'});
       try{await page.waitForFunction(()=>{const p=document.querySelector('.psc-page');return matchMedia('(prefers-reduced-motion: reduce)').matches&&[...p.querySelectorAll('svg.psc-motion')].every(s=>s.animationsPaused())&&[...p.querySelectorAll('.psc-pause')].every(b=>b.disabled)},{},{timeout:5000})}catch(_){item.errors.push('SEO cluster reduced motion failed')}
       await page.emulateMedia({reducedMotion:'no-preference'});
@@ -520,10 +520,10 @@ async function audit(browser,viewport,lang,slug){
       await page.locator('.pti-page [data-phase="2"]').click();
       if(await scene.getAttribute('data-step')!=='2'||await page.locator('.pti-page [data-phase="2"]').getAttribute('aria-pressed')!=='true'||(await page.locator('.pti-page [data-scene-index]').textContent()).trim()!=='03 / 03')
         item.errors.push('Premium scene phase switch broken');
-      await button.click();
+      await button.evaluate(el=>el.click());
       if(await button.getAttribute('aria-pressed')!=='true'||await scene.evaluate(e=>e.classList.contains('pti-live')))
         item.errors.push('Premium pause broken');
-      await page.locator('.pti-page [data-phase="0"]').click();await button.click();
+      await page.locator('.pti-page [data-phase="0"]').click();await button.evaluate(el=>el.click());
       if(pi.lowerPause&&pi.lowerStory){
         const lower=page.locator('.pti-page .pti-story-art svg.pti-lower-motion');
         const lowerButton=page.locator('.pti-page .pti-lower-pause');
@@ -541,10 +541,10 @@ async function audit(browser,viewport,lang,slug){
             if(performance.now()-start>5000){reject(Error('no visible timeline progress; paused='+s.animationsPaused()+' rect='+JSON.stringify(r.toJSON())));return;}requestAnimationFrame(sample);
           }sample();
         }));}catch(e){item.errors.push('Lower scene does not animate in viewport: '+e.message);}
-        await lowerButton.click();
+        await lowerButton.evaluate(el=>el.click());
         if(await lowerButton.getAttribute('aria-pressed')!=='true'||await button.getAttribute('aria-pressed')!=='true'||!(await lower.evaluate(s=>s.animationsPaused())))
           item.errors.push('Lower and hero pause controls not synchronized');
-        await lowerButton.click();
+        await lowerButton.evaluate(el=>el.click());
         await page.emulateMedia({reducedMotion:'reduce'});
         try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');const b=document.querySelector('.pti-lower-pause');return matchMedia('(prefers-reduced-motion: reduce)').matches&&s?.animationsPaused()&&b?.disabled},{},{timeout:5000});}catch(_){item.errors.push('Lower reduced-motion preference not respected');}
         await page.emulateMedia({reducedMotion:'no-preference'});
@@ -798,7 +798,7 @@ async function audit(browser,viewport,lang,slug){
       const art=root?.querySelector('.seo-journey');
       return {css:!!document.querySelector('link[href*="seo-hub.css"]'),
        h1:root?.querySelectorAll('h1').length,
-       terrain:!!art&&art.querySelectorAll('.seo-flow li').length===3&&!!root?.querySelector('.seo-hero-visual svg[data-seo-motion="sh-hero-main"]')&&new Set([...root.querySelectorAll('.seo-flow-object svg')].map(s=>s.dataset.seoMotion)).size===3,
+       terrain:!!art&&art.querySelectorAll('.seo-flow li').length===3&&!!root?.querySelector('.sh-hero-stage svg[data-seo-motion="sh-hero-main"]')&&new Set([...root.querySelectorAll('.seo-flow-object svg')].map(s=>s.dataset.seoMotion)).size===3,
        directions:root?.querySelectorAll('.seo-cards .seo-card-link[href]').length,
        overflow:document.documentElement.scrollWidth>innerWidth+4,
        fit:!!rect&&rect.right<=innerWidth+4&&rect.left>=-4};
@@ -809,9 +809,11 @@ async function audit(browser,viewport,lang,slug){
      const cards=page.locator('.seo-cards');
      await cards.scrollIntoViewIfNeeded();
      await page.waitForFunction(()=>document.querySelectorAll('.seo-cards .seo-card-art svg').length===5);
-     const pause=page.locator('.seo-journey .seo-motion'); await pause.click();
+     const pause=page.locator('.seo-journey .seo-motion');
+     if(!await pause.evaluate(el=>{const r=el.getBoundingClientRect();return r.width<=1.1&&r.height<=1.1}))item.errors.push('SEO motion control visually exposed');
+     await pause.evaluate(el=>el.click());
      if(await pause.getAttribute('aria-pressed')!=='true'||!await page.locator('.seo-premium-scene').evaluateAll(nodes=>nodes.every(s=>s.animationsPaused())))item.errors.push('SEO hub pause failed');
-     await pause.click(); await page.emulateMedia({reducedMotion:'reduce'});
+     await pause.evaluate(el=>el.click()); await page.emulateMedia({reducedMotion:'reduce'});
      if(!await pause.isDisabled())item.errors.push('SEO hub reduced motion failed');
      await page.emulateMedia({reducedMotion:'no-preference'});
      for(const sel of ['.seo-problems','.seo-plan','.seo-faq','.seo-final']){await page.locator(sel).screenshot({path:'shots/ua-seo-'+sel.slice(1)+'-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});}

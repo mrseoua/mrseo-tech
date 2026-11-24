@@ -107,3 +107,6 @@
   }
  });
 })();
+
+/* Localized legacy controls: hide only decorative motion toggles, not media controls, tabs or calls to action. */
+(()=>{const labels=/^(?:[Ⅱ▶]\s*)?(?:призупинити рух|зупинити рух|увімкнути рух|відновити рух|зупинити декоративну анімацію|відновити декоративну анімацію|приостановить движение|остановить движение|возобновить движение|включить движение|pause motion|resume motion|stop motion|enable motion|pause animation|resume animation)$/iu;function mark(){document.querySelectorAll('button[aria-pressed]').forEach(b=>{if(labels.test(b.textContent.trim())||labels.test((b.getAttribute('aria-label')||'').trim()))b.setAttribute('data-mrseo-motion-control','')})}mark();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mark,{once:true})})();
