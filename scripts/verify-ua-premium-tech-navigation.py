@@ -14,8 +14,9 @@ assert "mrseo_ua_header_catalog()" in header and "mrseo-ua-mega-header" in heade
 assert nav.count("mrseo_hs_url($anchor)") == 1
 assert nav.count("mrseo_url($slug,'uk')") == 3
 assert "foreach($groups as $group)" in nav
-assert "'commerce'=>'Інтернет-магазини'" in nav and "'data'=>'Аналітика'" in nav
-assert "'sites'=>'Створення сайтів'" in nav and "'dev'=>'Веброзробка'" in nav
+assert "'commerce'=>'Інтернет-магазини'" not in nav and "'data'=>'Аналітика'" not in nav
+assert "if(!isset($names[$key]))continue;" in nav
+assert "'sites'=>'Сайти'" in nav and "'dev'=>'Веброзробка'" in nav
 for slug in ("local-seo","ecommerce-seo","service-business-seo","international-seo","seo-audit"):
     assert "'"+slug+"'=>'" in nav, slug
 assert "SEO-послуги" in nav and "foreach($seo_services as $slug=>$label)" in nav

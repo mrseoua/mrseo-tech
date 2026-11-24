@@ -7,28 +7,28 @@
 .site-header.mrseo-ua-mega-header .nav-cta{flex:none;padding:13px 19px;font-size:14px;white-space:nowrap}
 .site-header.mrseo-ua-mega-header .mrseo-header-contact{flex:none}
 .site-header.mrseo-ua-mega-header .services-menu-toggle{font-size:17px;font-weight:750;min-height:56px;padding:15px 4px}
-.site-header.mrseo-ua-mega-header .nav-submenu:has(.mrseo-mega--catalog){background:#252b27!important}
-.mrseo-mega.mrseo-mega--catalog{background:#252b27;color:#fffaf3;width:100%;font-family:inherit}
-.mrseo-mega--catalog .mrseo-catalog-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px clamp(24px,3vw,50px);max-width:1700px;margin-inline:auto;padding:clamp(26px,3vw,48px) clamp(22px,4vw,66px);align-items:start}
+.site-header.mrseo-ua-mega-header .nav-submenu:has(.mrseo-mega--catalog){background:#faf7f1!important}
+.mrseo-mega.mrseo-mega--catalog{background:#faf7f1;color:#292e28;width:100%;font-family:inherit}
+.mrseo-mega--catalog .mrseo-catalog-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px clamp(18px,2vw,34px);max-width:1510px;margin-inline:auto;padding:clamp(23px,2.6vw,38px) clamp(22px,3vw,48px);align-items:start}
 .mrseo-mega--catalog .mrseo-catalog-group{min-width:0}
-.mrseo-mega--catalog .mrseo-catalog-group h3{margin:0 0 15px;color:#fffaf3;font-size:clamp(19px,1.6vw,24px);font-weight:800;line-height:1.2}
-.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-parent{display:flex!important;align-items:center;gap:12px;color:#fffaf3!important;background:transparent!important;padding:0!important;border:0!important;white-space:normal!important;text-decoration:none!important;font-size:inherit!important;font-weight:800!important}
-.mrseo-mega--catalog .mrseo-catalog-arrow{display:grid;place-items:center;width:38px;height:38px;flex:none;border:1px solid #a39e92;border-radius:50%;font-size:24px;color:#fffaf3;transition:background .18s,border-color .18s}
-.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-parent:hover .mrseo-catalog-arrow{background:var(--mrseo-brand-red);border-color:var(--mrseo-brand-red)}
-.mrseo-mega--catalog .mrseo-catalog-links{display:grid;gap:8px;padding-left:50px}
+.mrseo-mega--catalog .mrseo-catalog-group h3{margin:0 0 15px;color:#292e28;font-size:clamp(19px,1.6vw,24px);font-weight:800;line-height:1.2}
+.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-parent{display:flex!important;align-items:center;gap:12px;color:#292e28!important;background:transparent!important;padding:0!important;border:0!important;white-space:normal!important;text-decoration:none!important;font-size:inherit!important;font-weight:800!important}
+.mrseo-mega--catalog .mrseo-catalog-arrow{display:grid;place-items:center;width:32px;height:32px;flex:none;border:1px solid #d7c7b6;border-radius:50%;font-size:21px;color:var(--mrseo-brand-red);transition:background .18s,border-color .18s}
+.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-parent:hover .mrseo-catalog-arrow{background:var(--mrseo-brand-red);border-color:var(--mrseo-brand-red);color:#fffaf3}
+.mrseo-mega--catalog .mrseo-catalog-links{display:grid;gap:8px;padding-left:0}
 .mrseo-mega--catalog .mrseo-catalog-subgroup{display:grid;gap:2px}
-.mrseo-mega--catalog .mrseo-catalog-subgroup h3{font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.055em;margin:6px 0 3px;color:#c9bdb0}
-.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link{display:block!important;padding:5px 0!important;min-height:27px;color:#f0ebe3!important;background:transparent!important;border:0!important;white-space:normal!important;text-decoration:none!important;font-size:15px!important;font-weight:600!important;line-height:1.35!important;overflow-wrap:anywhere}
-.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link:hover,.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link[aria-current="page"]{color:#f2b5a5!important;text-decoration:underline!important;text-underline-offset:4px}
+.mrseo-mega--catalog .mrseo-catalog-subgroup h3{font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.055em;margin:6px 0 3px;color:#77685c}
+.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link{display:block!important;padding:5px 0!important;min-height:27px;color:#403b35!important;background:transparent!important;border:0!important;white-space:normal!important;text-decoration:none!important;font-size:15px!important;font-weight:600!important;line-height:1.35!important;overflow-wrap:anywhere}
+.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link:hover,.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link[aria-current="page"]{color:var(--mrseo-brand-red)!important;text-decoration:underline!important;text-underline-offset:4px}
 .site-header .nav-submenu .mrseo-mega--catalog a::after{display:none!important}
-.mrseo-mega--catalog a:focus-visible{outline:2px solid #f2b5a5;outline-offset:4px}
-.mrseo-mega--catalog .mrseo-catalog-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;border-top:1px solid #ffffff26;padding:20px clamp(22px,4vw,66px) 24px;max-width:1700px;margin:auto}
-.mrseo-mega--catalog .mrseo-catalog-footer strong{font-size:18px;color:#fffaf3}
-.mrseo-mega--catalog .mrseo-catalog-footer p{margin:4px 0 0;color:#d9d1c7;font-size:15px}
+.mrseo-mega--catalog a:focus-visible{outline:2px solid var(--mrseo-brand-red);outline-offset:4px}
+.mrseo-mega--catalog .mrseo-catalog-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;border-top:1px solid #dfd3c5;padding:20px clamp(22px,4vw,66px) 24px;max-width:1510px;margin:auto}
+.mrseo-mega--catalog .mrseo-catalog-footer strong{font-size:18px;color:#292e28}
+.mrseo-mega--catalog .mrseo-catalog-footer p{margin:4px 0 0;color:#655b50;font-size:15px}
 .site-header .nav-submenu .mrseo-mega--catalog .mrseo-catalog-footer>a{color:#fffaf3!important;background:var(--mrseo-brand-red)!important;border-radius:30px;padding:13px 20px!important;font-size:15px!important;font-weight:750;white-space:normal!important}
 @media(min-width:951px){
  .site-header.mrseo-ua-mega-header .nav-dropdown{position:static}
- .site-header.mrseo-ua-mega-header .nav-dropdown>.nav-submenu:has(.mrseo-mega--catalog){position:fixed!important;top:var(--mrseo-menu-top,76px)!important;left:0!important;right:0!important;width:100%!important;max-width:none!important;min-width:0!important;transform:none!important;border:0!important;border-radius:0!important;margin:0!important;padding:0!important;max-height:calc(100dvh - var(--mrseo-menu-top,76px))!important;overflow:auto!important;overscroll-behavior:contain;box-shadow:0 20px 42px #171b1740!important}
+ .site-header.mrseo-ua-mega-header .nav-dropdown>.nav-submenu:has(.mrseo-mega--catalog){position:fixed!important;top:var(--mrseo-menu-top,76px)!important;left:0!important;right:0!important;width:100%!important;max-width:none!important;min-width:0!important;transform:none!important;border:0!important;border-radius:0!important;margin:0!important;padding:0!important;max-height:calc(100dvh - var(--mrseo-menu-top,76px))!important;overflow:auto!important;overscroll-behavior:contain;box-shadow:0 18px 40px #30271c20!important}
  .site-header.mrseo-ua-mega-header .nav-dropdown.is-open>.nav-submenu:has(.mrseo-mega--catalog){animation:mrseo-catalog-reveal .16s ease-out both}
  .site-header.mrseo-ua-mega-header .nav-dropdown.is-open>.services-menu-toggle{color:var(--mrseo-brand-red)}
 }
@@ -48,3 +48,21 @@
  .site-header.mrseo-ua-mega-header .nav-cta,.site-header.mrseo-ua-mega-header .mrseo-header-contact{display:none}
 }
 @media(prefers-reduced-motion:reduce){.site-header.mrseo-ua-mega-header *{animation:none!important;transition:none!important}}
+
+/* Owner-approved five categories only. Equal upper columns and a separate, readable development row. */
+.site-header.mrseo-ua-mega-header .nav-submenu:has(.mrseo-mega--catalog){background:#faf7f1!important;border-top:1px solid #e0d4c5!important}
+.mrseo-mega.mrseo-mega--catalog{background:linear-gradient(125deg,#fffdf8,#f7f2e9);color:#292e28}
+.mrseo-mega--catalog .mrseo-catalog-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:start}
+.mrseo-mega--catalog .mrseo-catalog-group{padding:0 12px 0 0;border-right:1px solid #e6ddd1}
+.mrseo-mega--catalog .mrseo-catalog-group--sites,.mrseo-mega--catalog .mrseo-catalog-group--dev{border-right:0;padding-right:0}
+.mrseo-mega--catalog .mrseo-catalog-group>h3{margin-bottom:14px;font-size:clamp(19px,1.55vw,24px);letter-spacing:-.025em}
+.mrseo-mega--catalog .mrseo-catalog-group--dev{grid-column:1/-1;border-top:1px solid #dcd0c2;padding-top:22px}
+.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-links{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2vw,34px);align-items:start}
+.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-subgroup{border-right:1px solid #e6ddd1;padding-right:12px}
+.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-subgroup:last-child{border:0;padding-right:0}
+.mrseo-mega--catalog .mrseo-catalog-subgroup h3{font-size:12px;line-height:1.4;color:#77685c;letter-spacing:.04em;margin:8px 0 4px}
+.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link{font-size:15px!important;line-height:1.4!important;font-weight:650!important;padding:5px 0!important}
+.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link:hover{color:var(--mrseo-brand-red)!important;background:transparent!important}
+.mrseo-mega--catalog .mrseo-catalog-footer{background:#f2ebe1;padding-top:16px;padding-bottom:17px}
+@media(min-width:951px) and (max-width:1199px){.mrseo-mega--catalog .mrseo-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-links{grid-template-columns:repeat(2,minmax(0,1fr))}.mrseo-mega--catalog .mrseo-catalog-group{border-right:0;padding-right:0}}
+@media(max-width:950px){.mrseo-mega--catalog .mrseo-catalog-grid,.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-links{grid-template-columns:1fr;gap:19px}.mrseo-mega--catalog .mrseo-catalog-group,.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-subgroup{border-right:0;padding-right:0}.mrseo-mega--catalog .mrseo-catalog-group{border-bottom:1px solid #e2d7ca;padding-bottom:18px}.mrseo-mega--catalog .mrseo-catalog-group--dev{border-top:0;padding-top:0;border-bottom:0}.site-header .nav-submenu .mrseo-mega--catalog a.mrseo-catalog-link{font-size:16px!important;padding:8px 0!important;min-height:38px}}
