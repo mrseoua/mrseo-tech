@@ -15,7 +15,7 @@ assert "hoverOnly" in js and "pointerenter" in js and "pointerleave" in js and "
 assert "X-Robots-Tag: noindex, nofollow" in (r/"functions.php").read_text()
 print("PASS: native UA one-trigger catalogue, preserved router, keyboard and hover, full-width desktop / responsive mobile")
 
-assert "data-ua-mega=\"v3\"" in c
+assert "data-ua-mega=\"v4\"" in c
 assert "if(!isset($names[$key]))continue;" in c
 assert "'data'=>'Аналітика'" not in c and "'commerce'=>'Інтернет-магазини'" not in c
 assert "background:#252b27" not in css and "background:linear-gradient(120deg,#f9f5ed,#f3ede3)" in css
@@ -42,12 +42,16 @@ a,b=Links(),Links();a.feed(old_html);b.feed(new_html)
 clean=lambda x:(x[0],x[1].replace("↗","").strip())
 original=[clean(x) for x in a.links]
 updated=[clean(x) for x in b.links if "mrseo-catalog-link" in x[2]]
-assert original==updated,(original,updated)
-assert len(updated)==42,len(updated)
+excluded={"/google-ads-audit/","/merchant-center/","/website-maintenance/","/website-speed-security/","/custom-functionality/","/ecommerce-mobile-apps/","/corporate-mobile-apps/","/pwa-development/","/horoshop/search-ads/","/horoshop/shopping/","/horoshop/pmax/"}
+assert len(original)==42
+assert updated==[x for x in original if x[0] not in excluded],(original,updated)
+assert len(updated)==31,len(updated)
 assert len([x for x in b.links if "mrseo-catalog-parent" in x[2]])==5
-print("PASS: exact original 42 labels and URLs, in original order, five parent categories, light palette")
+print("PASS: 31 original labels and URLs, explicitly excluded 11 secondary links; five parent categories; light palette")
 
 assert "mrseo-catalog-icon" in c and "mrseo-catalog-title" in c and "justify-content:flex-start!important" in css
 assert "border:1px solid #d9ccbc" in css and "background:#eee5d8!important" in css
 assert "border:1px solid #e3d8c9" in css and "flex:0 0 auto!important" in css
 print("PASS: approved five-card preview, left-aligned titles, framed development groups, compact CTA")
+
+assert "font-size:18px!important;font-weight:700" in css and "font-size:14px;font-weight:800" in css

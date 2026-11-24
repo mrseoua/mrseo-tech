@@ -120,8 +120,9 @@ function mrseo_ua_header_six($mobile=false){
 function mrseo_ua_header_catalog(){
  $groups=mrseo_ua_menu_groups();$current=mrseo_slug();
  $names=array('seo'=>'SEO','ads'=>'Google Ads','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Веброзробка');
+ $compact_exclude=array('google-ads-audit','merchant-center','website-maintenance','website-speed-security','custom-functionality','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development');
  $icons=array('seo'=>'<circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/>','ads'=>'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>','horoshop'=>'<path d="M4 8h16l1 13H3zM8 8V6a4 4 0 0 1 8 0v2"/>','sites'=>'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.1M10 6.5h.1"/>','dev'=>'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-5 18"/>');
- echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v3"><div class="mrseo-mega-grid mrseo-catalog-grid">';
+ echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v4"><div class="mrseo-mega-grid mrseo-catalog-grid">';
  foreach($groups as $group){
   // Five primary SEO destinations; the parent /seo/ is a full overview. All legacy routes remain valid.
   $key=$group['key'];
@@ -162,6 +163,7 @@ function mrseo_ua_header_catalog(){
    foreach($horoshop_groups as $heading=>$services){
     echo '<section class="mrseo-catalog-subgroup"><h3>'.esc_html($heading).'</h3>';
     foreach($services as $anchor=>$label){
+     if(in_array($anchor,array('search-ads','shopping','pmax'),true))continue;
      echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($label).'</a>';
     }
     echo '</section>';
@@ -200,18 +202,21 @@ function mrseo_ua_header_catalog(){
    foreach($dev_groups as $heading=>$services){
     echo '<section class="mrseo-catalog-subgroup"><h3>'.esc_html($heading).'</h3>';
     foreach($services['live'] as $slug=>$label){
+     if(in_array($slug,$compact_exclude,true))continue;
      echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(mrseo_url($slug,'uk')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).'</a>';
     }
     foreach($services['live_extra'] as $slug=>$label){
+     if(in_array($slug,$compact_exclude,true))continue;
      echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(home_url('/'.$slug.'/')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).'</a>';
     }
     echo '</section>';
    }
   }else{
    foreach($group['sections'] as $section){
-    if(empty($section['items']))continue;
+    $visible=array_values(array_filter($section['items'],static function($service)use($compact_exclude){return !in_array($service[0],$compact_exclude,true);}));
+    if(empty($visible))continue;
     echo '<section class="mrseo-catalog-subgroup"><h3>'.esc_html($section['title']).'</h3>';
-    foreach($section['items'] as $service){
+    foreach($visible as $service){
      $slug=$service[0];$active=$current===$slug;
      echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($service[1]).'</a>';
     }
