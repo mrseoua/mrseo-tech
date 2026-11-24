@@ -1,42 +1,30 @@
 #!/usr/bin/env python3
-"""Cinematic Ukrainian SEO hub QA: unchanged intent, five directions, noindex and visual continuity."""
+"""Homepage visual system shared by UA SEO hub and five children."""
 from pathlib import Path
 r=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 page=(r/"inc/premium-ua-interiors/seo.php").read_text()
 hero=(r/"inc/seo-cinematic-hero.php").read_text()
 directions=(r/"inc/seo-cinematic-directions.php").read_text()
-css=(r/"assets/seo-reference.css").read_text()
+css=(r/"assets/seo-home-system.css").read_text()
 js=(r/"assets/seo-cinematic.js").read_text()
 wrapper=(r/"premium-ua-interior.php").read_text()
-home=(r/"home-uk-premium.php").read_text()
-functions=(r/"functions.php").read_text()
-style=(r/"style.css").read_text()
+cluster=(r/"premium-seo-cluster.php").read_text()
 assert "seo-cinematic-hero.php" in page and "seo-cinematic-directions.php" in page
 assert page.count('<section class="pti-section" id="ukseo-cases"')==1
 assert page.count('data-pti-faq="seo"')==1
-assert "seo-editorial-feature" not in page
-assert 'id="pti-title"' in hero and hero.count("<h1 ")==1
-assert "Більше" in hero and "органічних" in hero and "клієнтів" in hero
-assert "SEO-просування сайту в Google" in hero
-assert 'class="seo-art"' in hero and "seo-reference/hero.webp" in hero
-assert 'class="seo-actions"' in hero
-assert 'id="ukseo-services"' in directions
-assert directions.count('class="seo-card"')==5
+assert hero.count("<h1 ")==1 and 'id="pti-title"' in hero
+assert "SEO-просування сайту допомагає клієнтам" in hero and "10+ років" in hero
+assert 'class="seo-home-window seo-art"' in hero and 'class="seo-cine-motion"' in hero
+assert 'id="ukseo-services"' in directions and "seo_home_cards=array(" in directions
 for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo"):
- assert "mrseo_url('"+slug+"','uk')" in directions,slug
-assert directions.count("seo-reference/")==5
-assert "seo-approach" in directions and "seo-cards" in directions
-assert "10+ років" in hero and "Контроль" in hero
-assert "noindex" in functions and "X-Robots-Tag: noindex, nofollow" in functions
-assert "--mrseo-brand-red:#A84432;" in style
-for token in ("--red:var(--mrseo-brand-red,#A84432)",".seo-cards",".seo-approach","@media(max-width:760px)","@media(prefers-reduced-motion:reduce)"):
- assert token in css,token
-for name in ("hero","audit","shop","local","services","global"):
- data=(r/"assets/seo-reference"/(name+".webp")).read_bytes()
- assert data[:4]==b"RIFF" and data[8:12]==b"WEBP",name
-assert "seo-reference.css" in wrapper and "seo-cinematic.js" in wrapper
-assert "4.0.0" in wrapper
-assert "prefers-reduced-motion: reduce" in js and "aria-pressed" in js and "visibilitychange" in js
-assert css.count("{")==css.count("}"),"Unbalanced CSS block braces"
-assert 'class="pt-globe"' in home
-print("PASS cinematic SEO: branded open hero, 5 approved links, original content/FAQ, mobile and noindex; homepage untouched")
+ assert "array('"+slug+"'" in directions,slug
+assert "mrseo_url($dir[0],'uk')" in directions
+assert "seo-reference/" not in hero+directions
+assert "seo-home-system.css" in wrapper and "seo-home-system.css" in cluster
+assert "seo-reference.css" not in wrapper
+assert "var(--mrseo-brand-red)" in css and "#e9e1d5" in css and "#172321" in css
+assert "prefers-reduced-motion" in css and "prefers-reduced-motion: reduce" in js
+assert css.count("{")==css.count("}")
+assert "X-Robots-Tag: noindex, nofollow" in (r/"functions.php").read_text()
+assert 'class="pt-globe"' in (r/"home-uk-premium.php").read_text()
+print("PASS: homepage-aligned SEO family, five real links, noindex, existing FAQ and motion")
