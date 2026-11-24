@@ -19,7 +19,7 @@ $psc_head=static function($value){echo wp_kses($value,array('em'=>array()));};
 if($psc_audit){require_once get_template_directory().'/inc/ua-final-interior-visuals.php';$psc_plan=mrseo_ua_final_service_copy('seo-audit')['plan'];}
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-psc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
- wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'1.0.0');
+ wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'2.0.0');
  wp_enqueue_script('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.js',array(),'1.0.1',true);
 },100);
 get_header();
@@ -109,11 +109,11 @@ get_header();
   <?php
   // Existing, published destinations related to the current SEO service.
   $mrseo_seo_links=array(
-   'local-seo'=>array(array('seo','SEO-просування'),array('seo-audit','Технічний SEO-аудит')),
-   'ecommerce-seo'=>array(array('seo','SEO-просування'),array('semantic-core','Збір семантичного ядра'),array('seo-content','SEO-копірайтинг')),
-   'service-business-seo'=>array(array('seo','SEO-просування'),array('semantic-core','Семантичне ядро'),array('seo-content','SEO-копірайтинг')),
-   'international-seo'=>array(array('seo','SEO-просування'),array('ecommerce-seo','SEO інтернет-магазинів')),
-   'seo-audit'=>array(array('website-audit','Комплексний аудит сайту'),array('indexing-fixes','Виправлення індексації'),array('seo','Усі напрями SEO'))
+   'local-seo'=>array(array('seo','Усі напрями SEO'),array('service-business-seo','SEO сайтів послуг')),
+   'ecommerce-seo'=>array(array('seo','Усі напрями SEO'),array('international-seo','Міжнародне SEO')),
+   'service-business-seo'=>array(array('seo','Усі напрями SEO'),array('local-seo','Локальне SEO')),
+   'international-seo'=>array(array('seo','Усі напрями SEO'),array('ecommerce-seo','SEO інтернет-магазинів')),
+   'seo-audit'=>array(array('seo','Усі напрями SEO'),array('ecommerce-seo','SEO інтернет-магазинів'))
   );?>
   <nav class="psc-seo-related" aria-label="Суміжні SEO-послуги">
   <?php foreach($mrseo_seo_links[$psc_slug] as $related):?>

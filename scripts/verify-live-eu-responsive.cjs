@@ -837,9 +837,9 @@ async function audit(browser,viewport,lang,slug){
    if(!nav||JSON.stringify(nav.cards)!==JSON.stringify(["/analytics/","/google-ads/","/horoshop/","/online-store-development/","/seo/","/service-websites/","/web-development/"])||JSON.stringify(nav.chips)!==JSON.stringify(["/ecommerce-seo/","/performance-max/","/seo-audit/","/wordpress-development/"])||nav.details||!nav.scripts||!nav.style||nav.badLinks)item.errors.push('UA direct card navigation coverage '+JSON.stringify(nav));
   }
   if(lang==='uk'&&slug==='seo'){
-   const hub=await page.evaluate(()=>{const el=document.querySelector('#ukseo-services');if(!el)return null;const links=[...el.querySelectorAll('nav a[href]')];return {groups:el.querySelectorAll('article').length,links:links.map(a=>new URL(a.href).pathname).sort(),geometry:links.every(a=>{const r=a.getBoundingClientRect();return r.left>=-2&&r.right<=innerWidth+2&&r.width>0&&r.height>0;})};});
-   const expectedHub=["/ai-search-optimization/","/competitor-seo-analysis/","/crawl-configuration/","/ecommerce-seo/","/indexing-fixes/","/internal-linking/","/international-seo/","/local-seo/","/metadata-optimization/","/search-console-setup/","/semantic-core/","/seo-audit/","/seo-content/","/seo-redirects/","/service-business-seo/","/structured-data/","/traffic-recovery/","/website-audit/"];
-   if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO hub service coverage or geometry '+JSON.stringify(hub));
+   const hub=await page.evaluate(()=>{const el=document.querySelector('#ukseo-services');if(!el)return null;const links=[...el.querySelectorAll('.seo-editorial-index>a[href]')];return {groups:links.length,links:links.map(a=>new URL(a.href).pathname).sort(),geometry:links.every(a=>{const r=a.getBoundingClientRect();return r.left>=-2&&r.right<=innerWidth+2&&r.width>0&&r.height>0;})};});
+   const expectedHub=["/ecommerce-seo/","/international-seo/","/local-seo/","/seo-audit/","/service-business-seo/"];
+   if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO five-page editorial hub coverage or geometry '+JSON.stringify(hub));
   }
   if(lang==='uk'){
    const six=await page.evaluate(()=>{
