@@ -48,10 +48,10 @@ assert "X-Robots-Tag: noindex, nofollow" in (ROOT/"functions.php").read_text(enc
 assert "function mrseo_i18n_current_entry" in (ROOT/"inc/international-seo.php").read_text(encoding="utf8")
 print("UA SEO: all 19 legacy metadata sets preserved, five primary cinematic links in hub, scoped intent and contextual links OK")
 
-# Single route reference; other four cluster pages continue using the existing template.
+# Approved local reference and four sibling pages share the same design.
 ref=(ROOT/"inc/local-seo-reference.php").read_text(encoding="utf8")
 css=(ROOT/"assets/local-seo-reference.css").read_text(encoding="utf8")
-assert "$psc_reference=$psc_slug==='local-seo';" in page and "inc/local-seo-reference.php" in page
+assert "$psc_reference=$psc_slug==='local-seo'||$psc_ref_copy!==null;" in page and "inc/local-seo-reference.php" in page
 assert "data-service-reference=" in page and "local-seo-reference.css" in page
 assert ref.count('class="local-ref-answer"')==1 and len(re.findall(r"array\('0[123]','",ref))==3
 assert "mrseo_psc_art($id)" in ref and "class=\"local-reference-static\"" in ref
@@ -60,3 +60,15 @@ assert "Скільки коштує локальне SEO?" in ref and "Коли 
 assert ref.count("mrseo_url('contact')")==1 and "portfolio" not in ref
 assert "data-service-reference=" in css and "@media(max-width:700px)" in css
 print("PASS: local SEO marketing reference, unchanged semantics, concrete work/conditions/CTA, scoped styles")
+
+content=load("inc/seo-reference-content.php","MRSEO_SEO_REFERENCE")
+sibling=(ROOT/"inc/seo-reference-sibling.php").read_text(encoding="utf8")
+assert set(content)=={"ecommerce-seo","service-business-seo","international-seo","seo-audit"}
+for slug,d in content.items():
+    assert len(d["problems"])==len(d["work"])==len(d["metrics"])==len(d["terms"])==3,slug
+    assert len(d["faq"])==2 and all(x[0] in semantic for x in d["links"]),slug
+    assert "portfolio" not in str(d),slug
+assert "inc/seo-reference-sibling.php" in page and "mrseo_seo_reference_content" in page
+assert "local-reference-static" in sibling and "psc_ref_copy" in sibling and "portfolio" not in sibling
+assert "окремо" in content["seo-audit"]["termsNote"]
+print("PASS: four distinct sibling contents, approved reference layout, audit boundary, existing links, no cases")
