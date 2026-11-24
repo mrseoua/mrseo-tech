@@ -219,8 +219,8 @@ async function audit(browser,viewport,lang,slug){
     uaCinematicButtons:document.querySelectorAll('.pt-ua-home .hsix-subservices').length===5&&document.querySelectorAll('.pt-ua-home .hsix-subservices>summary').length===5&&document.querySelectorAll('.pt-ua-home .hsix-card-footer>a[href]').length===0&&[...document.querySelectorAll('.pt-ua-home .hsix-subgroup a[href]')].every(a=>{const u=new URL(a.href);return u.origin===location.origin&&u.pathname.startsWith('/')&&!!a.textContent.trim()}),
     uaCinematicReference:['hsix-search','hsix-chart','hsix-shop-screen','hsix-site-screen','hsix-code'].every(c=>!!document.querySelector('.pt-ua-home .'+c)),
 
-    uaPremiumMenuGroups:document.querySelectorAll('header.site-header .mrseo-simple-nav .mrseo-simple-card').length,
-    uaPremiumMenuParents:document.querySelectorAll('header.site-header .mrseo-simple-nav a.mrseo-simple-card[href]').length,
+    uaPremiumMenuGroups:document.querySelectorAll('header.site-header [data-ua-mega] [data-catalog-group]').length,
+    uaPremiumMenuParents:document.querySelectorAll('header.site-header [data-ua-mega] a.mrseo-catalog-parent[href]').length,
     uaPremiumHeaderPhone:!!document.querySelector('header.site-header a[href^="tel:"]'),
     uaPremiumMenuFont:parseFloat(getComputedStyle(document.querySelector('header.site-header .services-menu-toggle')||document.body).fontSize),
     uaPremiumControls:!!document.querySelector('.pt-ua-home .pt-rotate')&&document.querySelectorAll('.pt-ua-home .hsix-subservices').length===5,
@@ -407,7 +407,7 @@ async function audit(browser,viewport,lang,slug){
        !commercial.animations||JSON.stringify(commercial.families)!==JSON.stringify(premiumCommercialFamilies[slug])||commercial.tabs!==3||commercial.pause!==2||
        commercial.problems!==3||commercial.delivery!==3||commercial.faq!==(commercialTwoFaq.includes(slug)?2:3)||commercial.plan!==(hasPlan?3:0)||!commercial.result||!commercial.final||commercial.oldRelated!==0)
       item.errors.push('UA commercial premium content or visual regression: '+JSON.stringify(commercial));
-    if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==50||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('UA commercial full navigation/contacts missing');
     if(['google-search-ads','performance-max','google-shopping','local-google-ads','google-remarketing'].includes(slug)){
       const adDesign=await page.evaluate(()=>{const p=document.querySelector('.puc-ads-campaign');const art=[...p?.querySelectorAll('svg.puc-motion')||[]];return {layout:p?.dataset.adsLayout,brief:p?.querySelectorAll('.ads-brief>div').length||0,fixes:p?.querySelectorAll('.ads-problem-fix p').length||0,work:!!p?.querySelector('.ads-work-board'),result:!!p?.querySelector('.ads-result'),root:!!p,css:!!document.querySelector('link[href*="premium-ads-campaign.css"]'),count:art.length,allNew:art.every(s=>s.dataset.mrseoAdsArt==='premium-v1'),overflow:document.documentElement.scrollWidth>innerWidth+4}});
@@ -442,7 +442,7 @@ async function audit(browser,viewport,lang,slug){
   if(editorialTarget){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
-    if(c.serviceMenuItems!==4||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
+    if(c.serviceMenuItems!==50||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
     if(slug!=='privacy'&&ed.pause===1&&ed.families.length){
       const svg=page.locator('svg.pue-motion').last(),pause=page.locator('.pue-pause');
       await svg.scrollIntoViewIfNeeded();
@@ -476,7 +476,7 @@ async function audit(browser,viewport,lang,slug){
        cluster.problems!==3||cluster.delivery!==3||cluster.faq!==3||!cluster.result||!cluster.final||
        (slug==='ecommerce-seo'&&(cluster.lab!==3||!cluster.proof))||(slug==='seo-audit'&&(cluster.audit!==3||!cluster.proof)))
        item.errors.push('UA premium SEO cluster missing content or scene: '+JSON.stringify(cluster));
-    if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==50||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
        item.errors.push('SEO cluster native menu/contacts incomplete');
     if(cluster.hero&&cluster.tabs===3&&cluster.pause===2){
       const hero=page.locator('.psc-hero-scene'),heroSvg=page.locator('.psc-hero-stage svg.psc-motion'),button=hero.locator('.psc-pause');
@@ -517,7 +517,7 @@ async function audit(browser,viewport,lang,slug){
     const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
     if(slug!=='seo'&&(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations))
       item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
-    if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==50||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
     if(pi.scene&&pi.tabs===3&&pi.pause){
       const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
@@ -572,7 +572,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<(lang==='uk'?4:(['ru','en'].includes(lang)?25:4)))
+  if(c.serviceMenuItems<(lang==='uk'?50:(['ru','en'].includes(lang)?25:4)))
     item.errors.push('Shared mega menu has too few real working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)&&!clusterTarget&&!commercialTarget){
     const u=c.uaNewPages;
@@ -657,7 +657,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==42||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==4||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==42||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||c.serviceMenuItems!==50||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
@@ -850,69 +850,19 @@ async function audit(browser,viewport,lang,slug){
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO five-page editorial hub coverage or geometry '+JSON.stringify(hub));
   }
   if(lang==='uk'){
-   const six=await page.evaluate(()=>{
-    const desktop=document.querySelector('.mrseo-ua-six--desktop'),mobile=document.querySelector('.mrseo-ua-six--mobile');
-    return {desktop:desktop?.querySelectorAll('details').length,mobile:mobile?.querySelectorAll('details').length,
-      names:[...desktop?.querySelectorAll('summary')||[]].map(x=>x.textContent.trim().replace('⌄','').trim()),
-      hubRows:desktop?.querySelectorAll('.mrseo-ua-six-primary').length, horoshopHub:[...desktop?.querySelectorAll('.mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog-group a')||[]].map(x=>new URL(x.href).pathname+new URL(x.href).hash),
-      megaPanels:desktop?.querySelectorAll('.mrseo-ua-six-panel--mega').length,
-      decorativeMarks:desktop?.querySelectorAll('.mrseo-ua-six-deco').length,
-      horoshopGroups:desktop?.querySelectorAll('.mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog-group').length,
-      devGroups:desktop?.querySelectorAll('.mrseo-ua-six-item--dev .mrseo-ua-six-catalog-group').length,
-      devLive:desktop?.querySelectorAll('.mrseo-ua-six-item--dev .mrseo-ua-six-catalog-group a[href]').length,
-      devPlanned:desktop?.querySelectorAll('.mrseo-ua-six-item--dev .mrseo-ua-six-planned:not(a)').length,
-      devNew:[...desktop?.querySelectorAll('.mrseo-ua-six-item--dev .mrseo-ua-six-catalog-group a[href]')||[]].map(a=>new URL(a.href).pathname).filter(p=>['/client-portals/','/data-parsing/','/payment-integration/','/mobile-app-development/','/ecommerce-mobile-apps/','/corporate-mobile-apps/','/pwa-development/'].includes(p)),
-      mobileDevGroups:mobile?.querySelectorAll('.mrseo-ua-six-item--dev .mrseo-ua-six-catalog-group').length,
-      overviewLinks:desktop?.querySelectorAll('.mrseo-ua-six-overview-link[href]').length,
-      seoLinks:[...desktop?.querySelectorAll('.mrseo-ua-six-item--seo .mrseo-ua-six-catalog-group a')||[]].map(x=>new URL(x.href).pathname),
-      assets:!!document.querySelector('link[href*="ua-six-header.css"]')&&!!document.querySelector('script[src*="ua-six-header.js"]')};
-   });
-   if(six.desktop!==5||six.mobile!==5||JSON.stringify(six.names)!==JSON.stringify(['SEO','Google Ads','Хорошоп','Сайти','Веброзробка'])||six.hubRows!==0||six.megaPanels!==5||six.overviewLinks!==0||six.decorativeMarks!==5||six.horoshopGroups!==2||six.devGroups!==4||six.mobileDevGroups!==4||six.devLive!==15||six.devPlanned!==0||six.devNew.length!==7||six.seoLinks.length!==5||JSON.stringify(six.seoLinks)!==JSON.stringify(['/local-seo/','/ecommerce-seo/','/service-business-seo/','/international-seo/','/seo-audit/'])||JSON.stringify(six.horoshopHub)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/search-ads/','/horoshop/shopping/','/horoshop/pmax/','/horoshop/feeds/','/horoshop/ga4/'])||!six.assets)item.errors.push('UA six-header structure '+JSON.stringify(six));
-  }
-  if(lang==='uk'){
-   const top=await page.evaluate(()=>{
-    const header=document.querySelector('header.site-header');
-    const bar=header?.querySelector('.container.nav');
-    const topLinks=[...header?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim());
-    const utilityLinks=[...header?.querySelectorAll('.mrseo-ua-nav-utility-links a')||[]].map(a=>a.textContent.trim());
-    const services=header?.querySelector('.mrseo-ua-nav-primary > .mrseo-ua-six--desktop');
-    return {topLinks,utilityLinks,servicesFirst:!!services,portfolioTop:topLinks.includes('Портфоліо'),about:topLinks.includes('Про нас'),contacts:topLinks.includes('Контакти'),topHasAbout:!!bar?.querySelector('.mrseo-ua-nav-utility-links'),
-      portfolioAccessible:!!document.querySelector('a[href$="/portfolio/"]'),barHeight:bar?.getBoundingClientRect().height,
-      secondLine:header?.querySelector('.mrseo-ua-nav-utility')?.getBoundingClientRect().height,
-      menuLeft:services?.getBoundingClientRect().left,logoRight:bar?.querySelector('.logo')?.getBoundingClientRect().right};
-   });
-   if(top.portfolioTop||!top.about||!top.contacts||JSON.stringify(top.utilityLinks)!==JSON.stringify(['Про нас','Контакти'])||!top.servicesFirst||top.topHasAbout||!top.portfolioAccessible||top.barHeight<60||(viewport.name==='wide'&&top.menuLeft<top.logoRight-3))item.errors.push('UA service-first header structure '+JSON.stringify(top));
+   const cat=await page.evaluate(()=>{const h=document.querySelector('.mrseo-ua-mega-header'),m=h?.querySelector('[data-ua-mega]');return {groups:[...m?.querySelectorAll('[data-catalog-group]')||[]].map(x=>x.dataset.catalogGroup),parents:m?.querySelectorAll('a.mrseo-catalog-parent[href]').length,links:m?.querySelectorAll('a.mrseo-catalog-link[href]').length,seo:[...m?.querySelectorAll('[data-catalog-group="seo"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),horoshop:[...m?.querySelectorAll('[data-catalog-group="horoshop"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),dev:m?.querySelectorAll('[data-catalog-group="dev"] .mrseo-catalog-link').length,top:[...h?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim()),trigger:h?.querySelectorAll('.services-menu-toggle').length,phone:!!h?.querySelector('a[href^="tel:"]'),languages:h?.querySelectorAll('.mrseo-language-options a').length};});
+   if(JSON.stringify(cat.groups)!==JSON.stringify(['seo','ads','data','commerce','horoshop','sites','dev'])||cat.parents!==7||cat.links!==50||cat.dev!==15||JSON.stringify(cat.seo)!==JSON.stringify(['/local-seo/','/ecommerce-seo/','/service-business-seo/','/international-seo/','/seo-audit/'])||JSON.stringify(cat.horoshop)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/search-ads/','/horoshop/shopping/','/horoshop/pmax/','/horoshop/feeds/','/horoshop/ga4/'])||JSON.stringify(cat.top)!==JSON.stringify(['Про нас','Контакти'])||cat.trigger!==1||!cat.phone||cat.languages!==20)item.errors.push('UA catalogue inventory '+JSON.stringify(cat));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
-   const headerLayout=await page.evaluate(()=>{
-     const head=document.querySelector('.mrseo-ua-header-v2'),main=head?.querySelector('.mrseo-ua-nav-primary'),utility=head?.querySelector('.mrseo-ua-nav-utility'),services=head?.querySelector('.mrseo-ua-six--desktop');
-     const m=main?.getBoundingClientRect(),u=utility?.getBoundingClientRect(),s=services?.getBoundingClientRect();
-     return {mainTop:m?.top,utilityTop:u?.top,mainBottom:m?.bottom,servicesWidth:s?.width,overflow:document.documentElement.scrollWidth>innerWidth+4};
-   });
-   if(headerLayout.utilityTop<headerLayout.mainBottom-2||headerLayout.servicesWidth<450||headerLayout.overflow)item.errors.push('UA service-first header geometry '+JSON.stringify(headerLayout));
-   const labelFont=await page.locator('.mrseo-ua-six--desktop summary').evaluateAll(els=>{const sizes=els.map(el=>parseFloat(getComputedStyle(el).fontSize));return {min:Math.min(...sizes),max:Math.max(...sizes)};});
-   if(labelFont.min<15||labelFont.max>16.1)item.errors.push('UA header top-level font size '+JSON.stringify(labelFont));
-   const subcategories=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-catalog-group a').count();
-   const horoshopLabels=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-item--horoshop .mrseo-ua-six-unlinked').count();
-   const seoColumns=await page.locator('.mrseo-ua-six--desktop .mrseo-ua-six-panel--wide .mrseo-ua-six-catalog').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
-   if(subcategories!==47||horoshopLabels!==0||seoColumns!==2)item.errors.push('UA full subcategory inventory '+JSON.stringify({subcategories,horoshopLabels,seoColumns}));
-   const submenuTypography=await page.evaluate(()=>{
-     const base=document.querySelector('.mrseo-ua-six--desktop');
-     const link=base?.querySelector('.mrseo-ua-six-catalog-group a');
-     const group=base?.querySelector('.mrseo-ua-six-catalog-group h3');
-     const planned=base?.querySelector('.mrseo-ua-six-item--horoshop .mrseo-ua-six-catalog-group a');
-     return {link:parseFloat(getComputedStyle(link).fontSize),
-      group:parseFloat(getComputedStyle(group).fontSize),planned:parseFloat(getComputedStyle(planned).fontSize)};
-   });
-   if(submenuTypography.link<16.9||submenuTypography.group<13.9||submenuTypography.planned<15.9)item.errors.push('UA submenu text legibility '+JSON.stringify(submenuTypography));
-   const groups=page.locator('.mrseo-ua-six--desktop details');
-   for(let i=0;i<5;i++){
-    await groups.nth(i).locator('summary').click();
-    if(await groups.nth(i).getAttribute('open')===null||!await groups.nth(i).locator('a').first().isVisible()||await groups.nth(i).locator('a').count()!==[18,7,8,7,7][i])item.errors.push('UA six-header desktop item '+i);
-   }
+   const trigger=page.locator('.mrseo-ua-mega-header .services-menu-toggle');
+   await trigger.hover();
+   const panel=page.locator('.mrseo-ua-mega-header .nav-submenu');
+   if(!await panel.isVisible()||await trigger.getAttribute('aria-expanded')!=='true')item.errors.push('UA hover menu failed');
+   const geo=await panel.evaluate(el=>{const r=el.getBoundingClientRect();const a=el.querySelector('.mrseo-catalog-link');return {left:r.left,right:r.right,width:r.width,vw:innerWidth,top:r.top,height:r.height,font:parseFloat(getComputedStyle(a).fontSize)}});
+   if(geo.left<-2||geo.right>geo.vw+2||geo.width<geo.vw-4||geo.font<14.9||geo.height<=0)item.errors.push('UA catalogue geometry '+JSON.stringify(geo));
+   await page.screenshot({path:'shots/ua-catalog-menu-wide.jpg',type:'jpeg',quality:82,fullPage:false});
    await page.keyboard.press('Escape');
-   if(await groups.last().getAttribute('open')!==null)item.errors.push('UA six-header desktop Escape');
-   await page.screenshot({path:'shots/ua-six-header-wide.jpg',type:'jpeg',quality:80,fullPage:false});
+   if(await panel.isVisible())item.errors.push('UA catalogue Escape failed');
   }
   if(slug===''&&viewport.name==='narrow'){
    // Shared UA/RU mobile menu must be usable in every new language.
@@ -922,20 +872,11 @@ async function audit(browser,viewport,lang,slug){
    if(await menu.getAttribute('aria-expanded')!=='true')
       item.errors.push('Global mobile menu cannot open');
    if(lang==='uk'){
-    const servicesTop=await page.locator('.mrseo-ua-six--desktop').isVisible();
-    const utility=await page.locator('.mrseo-ua-nav-utility').isVisible();
-    if(servicesTop||utility)item.errors.push('UA service-first mobile desktop controls visible');
-    item.stage='UA six-header mobile';
-    const mobileLinkFont=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
-    if(mobileLinkFont<16.9)item.errors.push('UA mobile submenu readability '+mobileLinkFont);
-    const six=page.locator('.mrseo-ua-six--mobile details');
-    const mobileCount=await page.locator('.mrseo-ua-six--mobile .mrseo-ua-six-catalog-group a').count();
-    if(mobileCount!==47)item.errors.push('UA mobile subcategory count '+mobileCount);
-    for(let i=0;i<5;i++){await six.nth(i).locator('summary').click();if(await six.nth(i).getAttribute('open')===null||await six.nth(i).locator('a').count()!==[18,7,8,7,7][i])item.errors.push('UA six mobile item '+i);}
-    await page.keyboard.press('Escape');
-    if(await six.last().getAttribute('open')!==null)item.errors.push('UA mobile Escape');
-    const box=await page.locator('.mrseo-ua-six--mobile').evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right}});
-    if(box.left<-6||box.right>innerWidth+6)item.errors.push('UA mobile nav overflow '+JSON.stringify(box));
+    const services=page.locator('.mrseo-ua-mega-header .services-menu-toggle');await services.click({timeout:4000});
+    const panel=page.locator('.mrseo-ua-mega-header .nav-submenu');
+    if(!await panel.isVisible()||await services.getAttribute('aria-expanded')!=='true')item.errors.push('UA mobile catalogue cannot open');
+    const box=await panel.evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,width:r.width,vw:innerWidth,links:el.querySelectorAll('a.mrseo-catalog-link').length}});
+    if(box.left<-3||box.right>box.vw+3||box.width<200||box.links!==50)item.errors.push('UA mobile catalogue geometry '+JSON.stringify(box));
    }else{
     const services=page.locator('header.site-header .services-menu-toggle');
     item.stage='open service menu';await services.click({timeout:4000});

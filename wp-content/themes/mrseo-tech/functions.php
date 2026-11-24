@@ -293,13 +293,12 @@ function mrseo_assets(){
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.6.0');
  if(mrseo_locale()==='uk'){
   wp_enqueue_style('mrseo-ua-simple-menu',get_template_directory_uri().'/assets/ua-simple-menu.css',array('mrseo-services-menu-toggle'),'1.1.0');
-  wp_enqueue_style('mrseo-ua-six-header',get_template_directory_uri().'/assets/ua-six-header.css',array('mrseo-ua-simple-menu'),'2.1.0');
-  wp_enqueue_script('mrseo-ua-six-header',get_template_directory_uri().'/assets/ua-six-header.js',array('mrseo-ui'),'1.0.0',true);
+  wp_enqueue_style('mrseo-ua-catalog-header',get_template_directory_uri().'/assets/ua-catalog-header.css',array('mrseo-ua-simple-menu'),'1.0.0');
  }
  wp_enqueue_style('mrseo-footer-contact-channels',get_template_directory_uri().'/assets/footer-contact-channels.css',array('mrseo-style'),'1.0.0');
  // After theme/intl footer styles: fix the old .footer .container flex layout and normalize full-width footer.
  wp_enqueue_style('mrseo-footer-layout-premium',get_template_directory_uri().'/assets/footer-layout-premium.css',array('mrseo-footer-contact-channels'),'1.0.0');
- wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.4',true);
+ wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.5',true);
  wp_enqueue_style('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.css',array('mrseo-footer-layout-premium'),'1.0.3');
  wp_enqueue_script('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.js',array(),'1.0.0',true);
 }
