@@ -35,3 +35,16 @@ css=(r/"assets/premium-ads-campaign.css").read_text()
 assert ".puc-ads-campaign" in css and "prefers-reduced-motion" in css
 assert "X-Robots-Tag: noindex, nofollow" in (r/"functions.php").read_text()
 print("PASS: five exact campaign routes, 31 distinct animated SVGs, scoped design, existing content adapter and noindex")
+
+# Whole-page redesign is actually selected, not a CSS-only variation.
+assert "inc/premium-ads-campaign-page.php" in t and "if($psc_ads_campaign)" in t
+page=(r/"inc/premium-ads-campaign-page.php").read_text()
+briefs=data("inc/premium-ads-campaign-page.php","MRSEO_ADS_BRIEFS")
+assert set(briefs)==set(slugs)
+assert all(len(b["solutions"])==3 and len(set(b["solutions"]))==3 and b["goal"] and b["output"] for b in briefs.values())
+assert 'data-ads-layout="problem-solution-v2"' in page
+assert page.index('ads-brief')<page.index('ads-problem-rows')<page.index('ads-work-board')<page.index('ads-result')
+for field in ("headline","lead","pains","benefits","result","faq","related"):
+ assert "$psc['"+field+"']" in page,field
+assert 'ads-problem-fix' in page and 'ads-v2' in css
+print("PASS: full five-page problem-to-solution architecture and original SEO copy rendered")
