@@ -19,7 +19,7 @@
   foreach($mrseo_ads_catalog as $mrseo_ads_section):?>
    <h3 class="service-catalog-group"><?php echo esc_html($mrseo_ads_section['title']);?></h3>
    <div class="service-catalog-grid">
-    <?php foreach($mrseo_ads_section['items'] as $mrseo_ads_service): $b=$mrseo_ads_briefs[$mrseo_ads_service[0]];?>
+    <?php foreach($mrseo_ads_section['items'] as $mrseo_ads_service): if($mrseo_ads_service[0]==='google-remarketing')continue; $b=$mrseo_ads_briefs[$mrseo_ads_service[0]];?>
      <article class="service-catalog-card" data-ads-service="<?php echo esc_attr($mrseo_ads_service[0]);?>">
       <div class="service-catalog-art" aria-hidden="true"><svg viewBox="0 0 160 80" width="160" height="80" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><?php echo $b[2];?></svg></div>
       <div class="service-catalog-copy"><span class="service-label"><?php echo esc_html($mrseo_ads_service[1]);?></span><h3><?php echo esc_html($b[0]);?></h3><p><?php echo esc_html($b[1]);?></p><a href="<?php echo esc_url(mrseo_url($mrseo_ads_service[0],'uk'));?>">Детальніше ↗</a></div>
