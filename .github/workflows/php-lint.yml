@@ -248,6 +248,8 @@ jobs:
           print('Six UA service intents, metadata, public prices removed, scoped offers and unchanged noindex OK')
           PY
 
+      - name: Verify unified Ukrainian service catalogue
+        run: python3 scripts/verify-ua-catalog-header.py
       - name: Verify five Ukrainian Google Ads campaign designs
         run: python3 scripts/verify-ua-ads-campaign-premium.py
       - name: Verify Ukrainian expansion content, menu and original scene registry

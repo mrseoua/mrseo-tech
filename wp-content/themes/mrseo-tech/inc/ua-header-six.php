@@ -115,3 +115,107 @@ function mrseo_ua_header_six($mobile=false){
  }
  echo '</div></nav>';
 }
+
+/* Flat full-width Ukrainian service catalogue, preserving the existing native URLs. */
+function mrseo_ua_header_catalog(){
+ $groups=mrseo_ua_menu_groups();$current=mrseo_slug();
+ $names=array('seo'=>'SEO-просування','ads'=>'Google Ads','data'=>'Аналітика','commerce'=>'Інтернет-магазини','horoshop'=>'Хорошоп','sites'=>'Створення сайтів','dev'=>'Веброзробка');
+ echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v1"><div class="mrseo-mega-grid mrseo-catalog-grid">';
+ foreach($groups as $group){
+  // Five primary SEO destinations; the parent /seo/ is a full overview. All legacy routes remain valid.
+  $key=$group['key'];$is_horoshop=$key==='horoshop';
+  echo '<section class="mrseo-catalog-group mrseo-catalog-group--'.esc_attr($key).'" data-catalog-group="'.esc_attr($key).'">';
+  echo '<h3><a class="mrseo-catalog-parent" href="'.esc_url(mrseo_url($group['parent'],'uk')).'"><span class="mrseo-catalog-arrow" aria-hidden="true">↗</span><span>'.esc_html($names[$key]).'</span></a></h3>';
+  echo '<div class="mrseo-catalog-links">';
+  if($key==='seo'){
+   echo '<section class="mrseo-catalog-subgroup"><h3>SEO-послуги</h3>';
+   $seo_services=array(
+    'local-seo'=>'Локальне SEO',
+    'ecommerce-seo'=>'SEO інтернет-магазинів',
+    'service-business-seo'=>'SEO сайтів послуг',
+    'international-seo'=>'Міжнародне SEO',
+    'seo-audit'=>'SEO-аудит'
+   );
+   foreach($seo_services as $slug=>$label){
+    echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(mrseo_url($slug,'uk')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).'</a>';
+   }
+   echo '</section>';
+  }elseif($is_horoshop){
+   // Two balanced groups of existing internally routed services.
+   $horoshop_groups=array(
+    'SEO та просування'=>array(
+     'seo'=>'SEO-просування сайтів на Хорошоп',
+     'audit'=>'SEO-аудит сайтів на Хорошоп',
+     'ads'=>'Google Ads для Хорошоп',
+     'search-ads'=>'Пошукова реклама для Хорошоп'
+    ),
+    'Товари та аналітика'=>array(
+     'shopping'=>'Google Shopping для Хорошоп',
+     'pmax'=>'Performance Max для Хорошоп',
+     'feeds'=>'Товарні фіди',
+     'ga4'=>'GA4 та конверсії'
+    )
+   );
+   foreach($horoshop_groups as $heading=>$services){
+    echo '<section class="mrseo-catalog-subgroup"><h3>'.esc_html($heading).'</h3>';
+    foreach($services as $anchor=>$label){
+     echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(mrseo_hs_url($anchor)).'">'.esc_html($label).'</a>';
+    }
+    echo '</section>';
+   }
+  }elseif($key==='dev'){
+   // Presentation-only groups. Never mutate the 54-URL SEO registry in mega-menu-trial.php.
+   $dev_groups=array(
+    'Бізнес-системи'=>array(
+     'live'=>array(
+      'business-automation'=>'Автоматизація бізнесу',
+      'crm-development'=>'CRM для бізнесу',
+      'web-applications'=>'Вебзастосунки',
+      'business-dashboards'=>'Дашборди та звітність'
+     ),
+     'live_extra'=>array('client-portals'=>'Особисті кабінети клієнтів')
+    ),
+    'Інтеграції й функціонал'=>array(
+     'live'=>array(
+      'api-integrations'=>'Інтеграція сервісів через API',
+      'custom-functionality'=>'Індивідуальний функціонал'
+     ),
+     'live_extra'=>array('data-parsing'=>'Парсинг і синхронізація даних','payment-integration'=>'Інтеграція платіжних систем')
+    ),
+    'Штучний інтелект'=>array(
+     'live'=>array(
+      'ai-agents'=>'AI-агенти для бізнесу',
+      'chatbot-development'=>'Розробка чат-ботів'
+     ),
+     'live_extra'=>array()
+    ),
+    'Мобільні застосунки'=>array(
+     'live'=>array(),
+     'live_extra'=>array('mobile-app-development'=>'Мобільні застосунки для iOS та Android','ecommerce-mobile-apps'=>'Застосунки для інтернет-магазинів','corporate-mobile-apps'=>'Корпоративні мобільні застосунки','pwa-development'=>'PWA-застосунки')
+    )
+   );
+   foreach($dev_groups as $heading=>$services){
+    echo '<section class="mrseo-catalog-subgroup"><h3>'.esc_html($heading).'</h3>';
+    foreach($services['live'] as $slug=>$label){
+     echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(mrseo_url($slug,'uk')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).'</a>';
+    }
+    foreach($services['live_extra'] as $slug=>$label){
+     echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(home_url('/'.$slug.'/')).'"'.($current===$slug?' aria-current="page"':'').'>'.esc_html($label).'</a>';
+    }
+    echo '</section>';
+   }
+  }else{
+   foreach($group['sections'] as $section){
+    if(empty($section['items']))continue;
+    echo '<section class="mrseo-catalog-subgroup"><h3>'.esc_html($section['title']).'</h3>';
+    foreach($section['items'] as $service){
+     $slug=$service[0];$active=$current===$slug;
+     echo '<a class="mrseo-mega-item mrseo-catalog-link" href="'.esc_url(mrseo_url($slug,'uk')).'"'.($active?' aria-current="page"':'').'>'.esc_html($service[1]).'</a>';
+    }
+    echo '</section>';
+   }
+  }
+  echo '</div></section>';
+ }
+ echo '</div><div class="mrseo-catalog-footer"><div><strong>Не знаєте, з чого почати?</strong><p>Розкажіть про вашу задачу — запропонуємо рішення.</p></div><a href="'.esc_url(mrseo_url('contact','uk')).'">Обговорити проєкт ↗</a></div></div>';
+}

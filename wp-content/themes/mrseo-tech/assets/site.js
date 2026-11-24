@@ -70,15 +70,23 @@
 (()=>{
  const dropdowns=[...document.querySelectorAll('.nav-dropdown,.intl-dropdown')].filter(node=>node.querySelector('.services-menu-toggle'));
  if(!dropdowns.length)return;
+ const hoverOnly=new WeakSet(),timers=new WeakMap();
+ const hoverCapable=()=>matchMedia('(hover: hover) and (pointer: fine)').matches&&innerWidth>950;
  function setOpen(node,open){
+  clearTimeout(timers.get(node));if(!open)hoverOnly.delete(node);
+  if(open){const header=node.closest('header');if(header)node.style.setProperty('--mrseo-menu-top',Math.max(0,header.getBoundingClientRect().bottom)+'px');}
   node.classList.toggle('is-open',open);
   node.querySelector('.services-menu-toggle')?.setAttribute('aria-expanded',String(open));
  }
  dropdowns.forEach(node=>{
   const trigger=node.querySelector('.services-menu-toggle');
   const anchors=[...node.querySelectorAll('.nav-submenu a,.intl-dropdown-menu a')];
+  trigger.addEventListener('pointerenter',event=>{if(event.pointerType!=='mouse'||!hoverCapable())return;clearTimeout(timers.get(node));if(node.classList.contains('is-open'))return;dropdowns.forEach(other=>{if(other!==node)setOpen(other,false)});setOpen(node,true);hoverOnly.add(node);});
+  node.addEventListener('pointerenter',()=>clearTimeout(timers.get(node)));
+  node.addEventListener('pointerleave',event=>{if(event.pointerType!=='mouse'||!hoverCapable()||!hoverOnly.has(node))return;timers.set(node,setTimeout(()=>{if(!node.contains(document.activeElement)||document.activeElement===trigger)setOpen(node,false)},170));});
   trigger.addEventListener('click',()=>{
-   const next=!node.classList.contains('is-open');
+   const next=hoverOnly.has(node)||!node.classList.contains('is-open');
+   hoverOnly.delete(node);
    dropdowns.forEach(other=>setOpen(other,false));
    setOpen(node,next);
   });
@@ -89,6 +97,7 @@
   });
   anchors.forEach(link=>link.addEventListener('click',()=>setOpen(node,false)));
  });
+ window.addEventListener('resize',()=>dropdowns.forEach(node=>{if(node.classList.contains('is-open'))setOpen(node,false)}),{passive:true});
  document.addEventListener('pointerdown',event=>{
   dropdowns.forEach(node=>{if(!node.contains(event.target))setOpen(node,false)});
  });
