@@ -455,3 +455,7 @@ Text Domain: mrseo-tech
  .site-header .locale-switcher a{min-width:23px;padding:6px 4px;font-size:9px}
  .site-header .menu-toggle{min-width:28px}
 }
+
+/* Owner: no persistent decorative motion controls in the visual interface. Keep them keyboard-accessible. */
+:is(button.pt-rotate,button#lab-motion,button.pti-pause,button.pti-lower-pause,button.psc-pause,button.psc-lower-pause,button.seo-motion,button.seo-cine-motion,button.uaf-pause,button.hsix-motion-toggle,button[data-motion-pause],button[data-pause-motion],button[data-mrseo-motion-control]):not(:focus-visible){position:absolute!important;width:1px!important;height:1px!important;min-width:0!important;min-height:0!important;max-width:1px!important;max-height:1px!important;margin:0!important;padding:0!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;box-shadow:none!important}
+:is(button.pt-rotate,button#lab-motion,button.pti-pause,button.pti-lower-pause,button.psc-pause,button.psc-lower-pause,button.seo-motion,button.seo-cine-motion,button.uaf-pause,button.hsix-motion-toggle,button[data-motion-pause],button[data-pause-motion],button[data-mrseo-motion-control]):focus-visible{outline:2px solid var(--mrseo-brand-red)!important;outline-offset:3px!important}

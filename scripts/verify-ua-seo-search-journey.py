@@ -15,8 +15,10 @@ art=(r/"inc/seo-hub-premium-art.php").read_text()
 for scene in ("sh-hero-main","sh-query","sh-find","sh-action","sh-audit","sh-commerce","sh-local","sh-service","sh-international"):
  assert scene in art and "animate" in art
 assert "seo-premium-scene" in js and "buttons.forEach" in js
-assert "seo-hero-visual" in hero and "sh-hero-main" in hero
+assert "sh-hero-stage" in hero and "sh-hero-main" in hero
 assert hero.count('class="seo-flow-object"')==3
+assert '.seo-hero-visual' not in hero and 'seo-hero-visual' not in hero
+assert 'clip-path:inset(50%)' in (r/'style.css').read_text()
 assert page.count('class="seo-problem"')==3 and page.count('class="seo-plan-step"')==3 and page.count('<details>')==3
 assert 'data-pti-faq="seo"' in page and 'id="ukseo-cases"' in page and 'id="seo-approach"' in page
 assert 'id="ukseo-services"' in directions and 'mrseo_sh_art($scene);' in directions
