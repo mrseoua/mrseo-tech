@@ -45,8 +45,18 @@ $local_work=array(
 </section>
 <section class="pti-section local-ref-outcome" aria-labelledby="local-reference-outcome">
  <div class="pti-wrap local-ref-outcome-grid">
+  <article class="local-ref-position" aria-labelledby="local-ref-position-title">
+   <span class="pti-kicker">МИ НЕ ТИПОВА SEO-АГЕНЦІЯ</span>
+   <h2 id="local-ref-position-title">Ви наймаєте фахівців,<br><em>а не продавців обіцянок.</em></h2>
+   <div class="local-ref-position-grid">
+    <div class="local-ref-position-item"><span class="local-ref-position-no" aria-hidden="true">01 /</span><h3>Не виставляємо рахунки на тисячі доларів лише тому, що можемо.</h3><p>Вартість визначає реальний обсяг роботи, а не амбіції агенції.</p></div>
+    <div class="local-ref-position-item"><span class="local-ref-position-no" aria-hidden="true">02 /</span><h3>Дорогі звіти ще не зробили жоден бізнес успішним.</h3><p>Не підміняємо роботу красивими графіками та показниками, які не мають цінності для вашого бізнесу.</p></div>
+    <div class="local-ref-position-item"><span class="local-ref-position-no" aria-hidden="true">03 /</span><h3>Не заробляємо на вашому незнанні.</h3><p>Не нав’язуємо зайвих послуг і не прикриваємося складними термінами, щоб виправдати високу вартість.</p></div>
+   </div>
+   <div class="local-ref-position-close"><p class="local-ref-position-motto">Без пафосу. Без переплат. <em>По суті.</em></p><p>Ми зацікавлені не в тому, щоб ви більше платили, а в тому, щоб ви більше заробляли.</p></div>
+  </article>
   <div class="local-ref-result psc-result"><span class="pti-kicker">03 / РЕЗУЛЬТАТ І КОНТРОЛЬ</span><h2 id="local-reference-outcome">Ви бачите, <em>за що платите.</em></h2><p>На старті — список проблем і пріоритети. Після погоджених робіт — перелік внесених змін та звіт про доступні показники.</p><ul><li>Видимість за важливими локальними запитами.</li><li>Покази, переходи та доступні дії в профілі Google.</li><li>Звернення із сайту, якщо налаштовано їх облік.</li></ul><p class="local-ref-small">Порівнюємо зміни з вихідними даними. Позиції залежать також від відстані, конкуренції та алгоритмів Google.</p></div>
-  <div class="local-ref-terms"><span class="pti-kicker">04 / УМОВИ СПІВПРАЦІ</span><h2>Розумний бюджет.<br><em>Реальна робота.</em></h2><p><strong>Ви платите за роботу, а не за обіцянки.</strong> Підбираємо лише те, що справді потрібно для просування вашого бізнесу. Без дорогих пакетів і зайвих витрат.</p><ol><li><strong>З’ясовуємо, що потрібно.</strong> Враховуємо місто, послуги, стан сайту й профілю Google.</li><li><strong>Погоджуємо розумний бюджет.</strong> Обсяг робіт, вартість і строки відомі до початку.</li><li><strong>Працюємо та звітуємо.</strong> Показуємо конкретні зміни й доступні показники, не обіцяємо гарантованого ТОПу.</li></ol><p>Можна почати з окремої перевірки, без зобов’язання замовляти регулярне просування.</p></div>
+  <div class="local-ref-terms"><span class="pti-kicker">04 / УМОВИ СПІВПРАЦІ</span><h2>Зрозумілий старт.</h2><ol><li><strong>З’ясовуємо, що потрібно.</strong> Враховуємо місто, послуги, стан сайту й профілю Google.</li><li><strong>Погоджуємо розумний бюджет.</strong> Обсяг робіт, вартість і строки відомі до початку.</li><li><strong>Працюємо та звітуємо.</strong> Показуємо конкретні зміни й доступні показники, не обіцяємо гарантованого ТОПу.</li></ol><p>Можна почати з окремої перевірки, без зобов’язання замовляти регулярне просування.</p></div>
  </div>
 </section>
 <section class="pti-section psc-faq-section local-ref-faq">
