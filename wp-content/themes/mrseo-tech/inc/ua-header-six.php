@@ -120,14 +120,15 @@ function mrseo_ua_header_six($mobile=false){
 function mrseo_ua_header_catalog(){
  $groups=mrseo_ua_menu_groups();$current=mrseo_slug();
  $names=array('seo'=>'SEO','ads'=>'Google Ads','horoshop'=>'Хорошоп','sites'=>'Сайти','dev'=>'Веброзробка');
- echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v2"><div class="mrseo-mega-grid mrseo-catalog-grid">';
+ $icons=array('seo'=>'<circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/>','ads'=>'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>','horoshop'=>'<path d="M4 8h16l1 13H3zM8 8V6a4 4 0 0 1 8 0v2"/>','sites'=>'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.1M10 6.5h.1"/>','dev'=>'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-5 18"/>');
+ echo '<div class="mrseo-mega mrseo-mega--catalog" data-ua-mega="v3"><div class="mrseo-mega-grid mrseo-catalog-grid">';
  foreach($groups as $group){
   // Five primary SEO destinations; the parent /seo/ is a full overview. All legacy routes remain valid.
   $key=$group['key'];
   if(!isset($names[$key]))continue;
   $is_horoshop=$key==='horoshop';
   echo '<section class="mrseo-catalog-group mrseo-catalog-group--'.esc_attr($key).'" data-catalog-group="'.esc_attr($key).'">';
-  echo '<h3><a class="mrseo-catalog-parent" href="'.esc_url(mrseo_url($group['parent'],'uk')).'"><span class="mrseo-catalog-arrow" aria-hidden="true">↗</span><span>'.esc_html($names[$key]).'</span></a></h3>';
+  echo '<h3><a class="mrseo-catalog-parent" href="'.esc_url(mrseo_url($group['parent'],'uk')).'"><svg class="mrseo-catalog-icon" viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'.$icons[$key].'</svg><span class="mrseo-catalog-title">'.esc_html($names[$key]).'</span><span class="mrseo-catalog-arrow" aria-hidden="true">↗</span></a></h3>';
   echo '<div class="mrseo-catalog-links">';
   if($key==='seo'){
    echo '<section class="mrseo-catalog-subgroup"><h3>SEO-послуги</h3>';
@@ -219,5 +220,5 @@ function mrseo_ua_header_catalog(){
   }
   echo '</div></section>';
  }
- echo '</div><div class="mrseo-catalog-footer"><div><strong>Не знаєте, з чого почати?</strong><p>Розкажіть про вашу задачу — запропонуємо рішення.</p></div><a href="'.esc_url(mrseo_url('contact','uk')).'">Обговорити проєкт ↗</a></div></div>';
+ echo '</div><div class="mrseo-catalog-footer"><div><strong>Маєте нестандартну задачу?</strong><p>Розкажіть про неї — запропонуємо можливе рішення.</p></div><a href="'.esc_url(mrseo_url('contact','uk')).'">Обговорити проєкт ↗</a></div></div>';
 }

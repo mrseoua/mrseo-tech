@@ -15,10 +15,10 @@ assert "hoverOnly" in js and "pointerenter" in js and "pointerleave" in js and "
 assert "X-Robots-Tag: noindex, nofollow" in (r/"functions.php").read_text()
 print("PASS: native UA one-trigger catalogue, preserved router, keyboard and hover, full-width desktop / responsive mobile")
 
-assert "data-ua-mega=\"v2\"" in c
+assert "data-ua-mega=\"v3\"" in c
 assert "if(!isset($names[$key]))continue;" in c
 assert "'data'=>'Аналітика'" not in c and "'commerce'=>'Інтернет-магазини'" not in c
-assert "background:#252b27" not in css and "background:linear-gradient(125deg,#fffdf8,#f7f2e9)" in css
+assert "background:#252b27" not in css and "background:linear-gradient(120deg,#f9f5ed,#f3ede3)" in css
 # Compare original and new renderer inventory exactly, including order and displayed labels.
 import subprocess,json
 source=(r/"inc/mega-menu-trial.php").read_text()
@@ -46,3 +46,8 @@ assert original==updated,(original,updated)
 assert len(updated)==42,len(updated)
 assert len([x for x in b.links if "mrseo-catalog-parent" in x[2]])==5
 print("PASS: exact original 42 labels and URLs, in original order, five parent categories, light palette")
+
+assert "mrseo-catalog-icon" in c and "mrseo-catalog-title" in c and "justify-content:flex-start!important" in css
+assert "border:1px solid #d9ccbc" in css and "background:#eee5d8!important" in css
+assert "border:1px solid #e3d8c9" in css and "flex:0 0 auto!important" in css
+print("PASS: approved five-card preview, left-aligned titles, framed development groups, compact CTA")
