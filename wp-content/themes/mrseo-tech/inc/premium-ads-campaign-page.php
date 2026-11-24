@@ -17,6 +17,7 @@ $ads=$ads_briefs[$psc_slug];
      <h1 id="<?php echo esc_attr($psc_title_id);?>"><?php echo esc_html($psc['headline'][0]);?> <em><?php echo esc_html($psc['headline'][1]);?></em></h1>
      <p class="ads-goal"><?php echo esc_html($ads['goal']);?></p>
      <p class="pti-lead"><?php echo esc_html($psc['lead']);?></p>
+     <?php mrseo_ads_position_hero($psc_slug);?>
      <div class="pti-actions"><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['button']);?> ↗</a><a class="pti-pill pti-secondary" href="#<?php echo esc_attr($psc_problem_id);?>">Як вирішуємо ↓</a></div>
      <p class="pti-footnote"><?php echo esc_html($psc['foot']);?></p>
     </div>
@@ -34,6 +35,7 @@ $ads=$ads_briefs[$psc_slug];
    </div>
   </div>
  </section>
+ <?php mrseo_ads_position_render($psc_slug);?>
  <section class="pti-section psc-problems ads-diagnosis" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
   <div class="pti-wrap">
    <div class="pti-section-head"><div><span class="pti-kicker">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>

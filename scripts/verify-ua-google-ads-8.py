@@ -58,3 +58,32 @@ assert 'data-service-standard="v1"' in (root/"premium-ua-interior.php").read_tex
 assert "service-standard.css" in (root/"premium-ua-interior.php").read_text()
 assert "prefers-reduced-motion" in (root/"assets/service-standard.css").read_text()
 print("PASS: Ads hub standard v1, seven service destinations, three clear problems/solutions, no pricing changes")
+
+# Positioning: seven active routes (eight original routes retained); unique service-specific messages, a shared slogan and no SEO copy changes.
+position=embedded("inc/ua-ads-position.php","MRSEO_ADS_POSITION")
+assert set(position)==set(pages)-{'google-remarketing'}
+assert "if($mrseo_ads_service[0]==='google-remarketing')continue;" in main
+assert len({d["hero"] for d in position.values()})==7
+assert len({tuple(d["headline"]) for d in position.values()})==7
+for slug,d in position.items():
+ assert len(d["headline"])==2 and len(d["items"])==(3 if slug=="google-ads" else 2)
+ assert all(d["headline"]) and all(len(item)==2 and all(item) for item in d["items"])
+ assert d["hero"] and d["close"]
+assert main.index("mrseo_ads_position_hero('google-ads')")<main.index("mrseo_ads_position_render('google-ads')")<main.index('id="ukads-problems"')
+campaign=(root/"inc/premium-ads-campaign-page.php").read_text()
+commercial=(root/"premium-ua-commercial.php").read_text()
+hub=(root/"premium-ua-interior.php").read_text()
+for template in (campaign,commercial):
+ assert template.count("mrseo_ads_position_hero($psc_slug)")==1
+ assert template.count("mrseo_ads_position_render($psc_slug)")==1
+ assert template.index("mrseo_ads_position_hero($psc_slug)")<template.index("mrseo_ads_position_render($psc_slug)")<template.index('class="pti-section psc-problems')
+assert "if(mrseo_ads_position_copy(mrseo_slug()))wp_enqueue_style" in commercial
+assert "if(mrseo_slug()==='google-ads')wp_enqueue_style('mrseo-ua-ads-position'" in hub
+assert "mrseo_locale()!=='uk'" in commercial and "mrseo_locale()!=='uk'" in hub
+renderer=(root/"inc/ua-ads-position.php").read_text()
+assert renderer.count("if(!$copy)return;")==2 and "return $copy[$slug]??null;" in renderer
+assert renderer.count('id="mrseo-ads-approach"')==1 and 'href="#mrseo-ads-approach"' in renderer
+assert "Без пафосу. Без переплат." in renderer
+css=(root/"assets/ua-ads-position.css").read_text()
+assert css.count("{")==css.count("}") and "minmax(0,1fr)" in css and "@media(max-width:700px)" in css
+print("PASS: seven unique Ads positioning variants; scoped assets and early placement; compact child layouts")
