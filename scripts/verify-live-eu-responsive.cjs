@@ -407,7 +407,7 @@ async function audit(browser,viewport,lang,slug){
        !commercial.animations||JSON.stringify(commercial.families)!==JSON.stringify(premiumCommercialFamilies[slug])||commercial.tabs!==3||commercial.pause!==2||
        commercial.problems!==3||commercial.delivery!==3||commercial.faq!==(commercialTwoFaq.includes(slug)?2:3)||commercial.plan!==(hasPlan?3:0)||!commercial.result||!commercial.final||commercial.oldRelated!==0)
       item.errors.push('UA commercial premium content or visual regression: '+JSON.stringify(commercial));
-    if(c.serviceMenuItems!==31||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==28||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
       item.errors.push('UA commercial full navigation/contacts missing');
     if(['google-search-ads','performance-max','google-shopping','local-google-ads','google-remarketing'].includes(slug)){
       const adDesign=await page.evaluate(()=>{const p=document.querySelector('.puc-ads-campaign');const art=[...p?.querySelectorAll('svg.puc-motion')||[]];return {layout:p?.dataset.adsLayout,brief:p?.querySelectorAll('.ads-brief>div').length||0,fixes:p?.querySelectorAll('.ads-problem-fix p').length||0,work:!!p?.querySelector('.ads-work-board'),result:!!p?.querySelector('.ads-result'),root:!!p,css:!!document.querySelector('link[href*="premium-ads-campaign.css"]'),count:art.length,allNew:art.every(s=>s.dataset.mrseoAdsArt==='premium-v1'),overflow:document.documentElement.scrollWidth>innerWidth+4}});
@@ -442,7 +442,7 @@ async function audit(browser,viewport,lang,slug){
   if(editorialTarget){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
-    if(c.serviceMenuItems!==31||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
+    if(c.serviceMenuItems!==28||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
     if(slug!=='privacy'&&ed.pause===1&&ed.families.length){
       const svg=page.locator('svg.pue-motion').last(),pause=page.locator('.pue-pause');
       await svg.scrollIntoViewIfNeeded();
@@ -475,7 +475,7 @@ async function audit(browser,viewport,lang,slug){
        !cluster.animations||JSON.stringify(cluster.families)!==JSON.stringify(families)||cluster.tabs!==3||cluster.pause!==1||
        cluster.problems!==3||cluster.delivery!==3||cluster.faq!==5||!cluster.result||!cluster.final||cluster.lab!==0||cluster.audit!==0||cluster.proof)
        item.errors.push('UA premium SEO cluster missing content or scene: '+JSON.stringify(cluster));
-    if(c.serviceMenuItems!==31||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==28||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
        item.errors.push('SEO cluster native menu/contacts incomplete');
     {
       const ref=await page.evaluate(()=>{const root=document.querySelector('.psc-page[data-service-reference="v1"]');if(!root)return null;return {h1:root.querySelectorAll('h1').length,answers:root.querySelectorAll('.local-ref-answer').length,staticArt:root.querySelectorAll('.local-ref-mini svg.local-reference-static').length,staticMotion:root.querySelectorAll('.local-ref-mini animate,.local-ref-mini animateMotion,.local-ref-mini animateTransform').length,work:root.querySelectorAll('.local-ref-work-card').length,terms:!!root.querySelector('.local-ref-terms'),cta:!!root.querySelector('.local-ref-final-action a[href$="/contact/"]'),font:parseFloat(getComputedStyle(root.querySelector('.local-ref-answer p')).fontSize),overflow:document.documentElement.scrollWidth>innerWidth+4}});
@@ -509,7 +509,7 @@ async function audit(browser,viewport,lang,slug){
     const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
     if(slug!=='seo'&&(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations))
       item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
-    if(c.serviceMenuItems!==31||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
+    if(c.serviceMenuItems!==28||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
     if(pi.scene&&pi.tabs===3&&pi.pause){
       const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
@@ -564,7 +564,7 @@ async function audit(browser,viewport,lang,slug){
   if(c.internalWidth>c.clientWidth+4)item.errors.push('Horizontal overflow '+c.internalWidth+' > '+c.clientWidth);
   if(c.menuItems!==20)item.errors.push('Header language options '+c.menuItems);
   if(lang!=='uk'&&/Написати|Зателефонувати/.test(c.contactBarText))item.errors.push('Ukrainian contact controls leaked into '+lang+' locale');
-  if(c.serviceMenuItems<(lang==='uk'?31:(['ru','en'].includes(lang)?25:4)))
+  if(c.serviceMenuItems<(lang==='uk'?28:(['ru','en'].includes(lang)?25:4)))
     item.errors.push('Shared mega menu has too few real working links: '+c.serviceMenuItems);
   if(lang==='uk'&&uaNewSlugs.includes(slug)&&!clusterTarget&&!commercialTarget){
     const u=c.uaNewPages;
@@ -649,7 +649,7 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==42||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||c.serviceMenuItems!==31||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==42||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||c.serviceMenuItems!==28||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.uaPremiumImages||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
@@ -687,7 +687,7 @@ async function audit(browser,viewport,lang,slug){
   }
   if(lang==='uk'&&slug==='google-ads'){
    const v=await page.evaluate(()=>{const root=document.querySelector('.pti-page[data-service-standard="v1"]');return {root:!!root,problems:root?.querySelectorAll('.service-problem-answer').length||0,services:[...root?.querySelectorAll('[data-ads-service]')||[]].map(e=>({slug:e.dataset.adsService,href:e.querySelector('a')?.getAttribute('href')})),result:!!root?.querySelector('.service-deliverable'),css:!!document.querySelector('link[href*="service-standard.css"]')}});
-   const expected=['google-search-ads','performance-max','google-shopping','local-google-ads','google-remarketing','google-ads-audit','merchant-center'];
+   const expected=['google-search-ads','performance-max','google-shopping','local-google-ads','google-ads-audit','merchant-center'];
    if(!v.root||!v.css||v.problems!==3||!v.result||JSON.stringify(v.services.map(s=>s.slug))!==JSON.stringify(expected)||v.services.some(s=>!s.href||new URL(s.href,page.url()).pathname!=='/'+s.slug+'/'))item.errors.push('Google Ads hub service standard '+JSON.stringify(v));
   }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
@@ -847,8 +847,8 @@ async function audit(browser,viewport,lang,slug){
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO five-page editorial hub coverage or geometry '+JSON.stringify(hub));
   }
   if(lang==='uk'){
-   const cat=await page.evaluate(()=>{const h=document.querySelector('.mrseo-ua-mega-header'),m=h?.querySelector('[data-ua-mega]');return {groups:[...m?.querySelectorAll('[data-catalog-group]')||[]].map(x=>x.dataset.catalogGroup),parents:m?.querySelectorAll('a.mrseo-catalog-parent[href]').length,links:m?.querySelectorAll('a.mrseo-catalog-link[href]').length,seo:[...m?.querySelectorAll('[data-catalog-group="seo"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),horoshop:[...m?.querySelectorAll('[data-catalog-group="horoshop"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),dev:m?.querySelectorAll('[data-catalog-group="dev"] .mrseo-catalog-link').length,top:[...h?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim()),trigger:h?.querySelectorAll('.services-menu-toggle').length,phone:!!h?.querySelector('a[href^="tel:"]'),languages:h?.querySelectorAll('.mrseo-language-options a').length};});
-   if(JSON.stringify(cat.groups)!==JSON.stringify(['seo','ads','horoshop','sites','dev'])||cat.parents!==5||cat.links!==31||cat.dev!==11||JSON.stringify(cat.seo)!==JSON.stringify(['/local-seo/','/ecommerce-seo/','/service-business-seo/','/international-seo/','/seo-audit/'])||JSON.stringify(cat.horoshop)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/feeds/','/horoshop/ga4/'])||JSON.stringify(cat.top)!==JSON.stringify(['Про нас','Контакти'])||cat.trigger!==1||!cat.phone||cat.languages!==20)item.errors.push('UA catalogue inventory '+JSON.stringify(cat));
+   const cat=await page.evaluate(()=>{const h=document.querySelector('.mrseo-ua-mega-header'),m=h?.querySelector('[data-ua-mega]');return {groups:[...m?.querySelectorAll('[data-catalog-group]')||[]].map(x=>x.dataset.catalogGroup),parents:m?.querySelectorAll('a.mrseo-catalog-parent[href]').length,links:m?.querySelectorAll('a.mrseo-catalog-link[href]').length,excluded:[...m?.querySelectorAll('a.mrseo-catalog-link[href]')||[]].map(a=>new URL(a.href).pathname).filter(p=>['/google-remarketing/','/horoshop/ga4/','/website-redesign/'].includes(p)),seo:[...m?.querySelectorAll('[data-catalog-group="seo"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),horoshop:[...m?.querySelectorAll('[data-catalog-group="horoshop"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),dev:m?.querySelectorAll('[data-catalog-group="dev"] .mrseo-catalog-link').length,top:[...h?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim()),trigger:h?.querySelectorAll('.services-menu-toggle').length,phone:!!h?.querySelector('a[href^="tel:"]'),languages:h?.querySelectorAll('.mrseo-language-options a').length};});
+   if(JSON.stringify(cat.groups)!==JSON.stringify(['seo','ads','horoshop','sites','dev'])||cat.parents!==5||cat.links!==28||cat.excluded.length!==0||cat.dev!==11||JSON.stringify(cat.seo)!==JSON.stringify(['/local-seo/','/ecommerce-seo/','/service-business-seo/','/international-seo/','/seo-audit/'])||JSON.stringify(cat.horoshop)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/feeds/'])||JSON.stringify(cat.top)!==JSON.stringify(['Про нас','Контакти'])||cat.trigger!==1||!cat.phone||cat.languages!==20)item.errors.push('UA catalogue inventory '+JSON.stringify(cat));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const trigger=page.locator('.mrseo-ua-mega-header .services-menu-toggle');
@@ -874,7 +874,7 @@ async function audit(browser,viewport,lang,slug){
     const panel=page.locator('.mrseo-ua-mega-header .nav-submenu');
     if(!await panel.isVisible()||await services.getAttribute('aria-expanded')!=='true')item.errors.push('UA mobile catalogue cannot open');
     const box=await panel.evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,width:r.width,vw:innerWidth,links:el.querySelectorAll('a.mrseo-catalog-link').length}});
-    if(box.left<-3||box.right>box.vw+3||box.width<200||box.links!==31)item.errors.push('UA mobile catalogue geometry '+JSON.stringify(box));
+    if(box.left<-3||box.right>box.vw+3||box.width<200||box.links!==28)item.errors.push('UA mobile catalogue geometry '+JSON.stringify(box));
    }else{
     const services=page.locator('header.site-header .services-menu-toggle');
     item.stage='open service menu';await services.click({timeout:4000});
