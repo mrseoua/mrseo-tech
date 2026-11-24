@@ -57,7 +57,7 @@ assert "redirect_canonical" in routing and "remove_action('wp_head','rel_canonic
 assert "pre_get_document_title" in routing and "wp_enqueue_style" in routing
 assert "mrseo_ua_dev_new_pages" in i18n and "mrseo_i18n_exact_url($lang,'web-development')" in i18n
 assert "require_once get_template_directory() . '/inc/ua-dev-new-routes.php';" in functions
-assert "mrseo-ua-six-header" in functions and "'2.1.0'" in functions
+assert "mrseo-ua-catalog-header" in functions and "ua-catalog-header.css" in functions
 assert "X-Robots-Tag: noindex, nofollow" in functions
 assert "mrseo_ua_menu_groups()" in nav and "foreach($services['live_extra'] as $slug=>$label)" in nav
 assert "mrseo-ua-six-planned" not in nav and "Сторінка готується" not in nav
