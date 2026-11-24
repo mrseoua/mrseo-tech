@@ -84,3 +84,49 @@
 .psc-seo-related a{color:#634b3e;font-size:15px;line-height:1.5;font-weight:650;text-decoration:underline;text-decoration-color:#c8b6a5;text-underline-offset:4px}
 .psc-seo-related a:hover{color:#9e4435;text-decoration-color:currentColor}
 .psc-seo-related a:focus-visible{outline:3px solid #9e4435;outline-offset:4px;border-radius:2px}
+
+/* Premium editorial refinement shared by exactly five Ukrainian SEO child pages.
+   Each retains its distinct SVG art and existing commercial copy. */
+.pti-page.psc-page{--psc-paper:#f7f3ed;--psc-ink:#242624;--psc-muted:#5b5955;--psc-red:#b94134;--psc-rule:#ded3c7;background:var(--psc-paper);color:var(--psc-ink)}
+.pti-page.psc-page em{color:var(--psc-red)}
+.psc-page .psc-hero{margin:0;border-bottom:1px solid var(--psc-rule);background:radial-gradient(ellipse at 90% 25%,#e9ded1 0%,transparent 55%),#f7f3ed;padding:clamp(75px,8vw,126px) 0}
+.psc-page .psc-hero .pti-wrap{width:min(100% - clamp(38px,5vw,90px),1460px)}
+.psc-page .psc-hero .pti-hero-grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,5vw,90px);align-items:center}
+.psc-page .psc-hero .pti-crumb{font-size:13px;font-weight:670;color:#625e57;margin-bottom:38px}
+.psc-page .psc-hero .pti-kicker{color:var(--psc-red);font-size:12px;letter-spacing:.115em;font-weight:850}
+.psc-page .psc-hero h1{font-size:clamp(48px,5.15vw,85px);font-weight:860;line-height:1.03;letter-spacing:-.065em;color:var(--psc-ink);max-width:760px;margin:18px 0 26px}
+.psc-page .psc-hero .pti-lead{font-size:clamp(18px,1.43vw,21px);font-weight:520;line-height:1.7;max-width:630px;color:#555851}
+.psc-page .psc-hero .pti-footnote{font-size:14px;color:#666059;line-height:1.6;margin-top:22px}
+.psc-page .psc-hero-stage{background:#eee8df;border:1px solid #d5c7b8;border-radius:8px;box-shadow:0 24px 60px #302a2117;padding:18px 16px 0}
+.psc-page .psc-stage-meta{color:#a14a3b;font-size:11px;letter-spacing:.1em;margin:8px 12px 2px}
+.psc-page .psc-hero-scene .pti-scene-controls{margin-top:17px}
+.psc-page .psc-hero-scene .pti-scene-caption{font-size:14px;line-height:1.6;color:#5b5955}
+.psc-page .pti-pill{border-radius:999px;font-size:15px;min-height:52px;padding:13px 23px;background:#242624;color:#fffdf7;border-color:#242624}
+.psc-page .pti-pill:hover{background:var(--psc-red);border-color:var(--psc-red)}
+.psc-page .pti-pill.pti-secondary{color:#954636;background:#faf5ed;border-color:#cabcae}
+.psc-page .pti-section:not(.psc-final){padding-block:clamp(72px,8vw,125px)}
+.psc-page .pti-section-head{gap:clamp(28px,6vw,100px);margin-bottom:43px}
+.psc-page .pti-section-head h2{font-size:clamp(37px,4.1vw,67px);line-height:1.095;letter-spacing:-.055em;color:var(--psc-ink)}
+.psc-page .pti-section-head>p{font-size:clamp(17px,1.3vw,20px);line-height:1.68;color:var(--psc-muted)}
+.psc-page .psc-problems{background:#fbf8f3}
+.psc-page .psc-problem-grid{gap:13px}
+.psc-page .psc-problem-card{border:1px solid var(--psc-rule);border-radius:8px;background:#f8f3ec;padding:clamp(22px,2.7vw,39px);box-shadow:none;min-height:430px}
+.psc-page .psc-problem-card:nth-child(2){background:#eee6dc}
+.psc-page .psc-problem-card .pti-num{color:var(--psc-red);font-size:12px;letter-spacing:.08em}
+.psc-page .psc-problem-card h3{font-size:clamp(23px,2.15vw,32px);line-height:1.19;letter-spacing:-.043em;color:var(--psc-ink)}
+.psc-page .psc-problem-card p{color:var(--psc-muted);font-size:17px;line-height:1.65}
+.psc-page .psc-mini-art{margin-block:21px 23px}
+.psc-page .psc-result{border-left:3px solid var(--psc-red);background:#ede5d8;border-radius:0 7px 7px 0}
+.psc-page .psc-final{background:#242c28;color:#f8f4ed}
+.psc-page .psc-final h2{color:#f8f4ed;font-size:clamp(35px,3.8vw,62px);letter-spacing:-.053em}
+.psc-page .psc-final .pti-kicker{color:#efa894}
+.psc-page .psc-final p{color:#d2dbd2;line-height:1.65;font-size:17px}
+.psc-page .psc-final .pti-pill{background:#f8f4ed;border-color:#f8f4ed;color:#242624;white-space:normal}
+.psc-page .psc-final .pti-pill:hover{background:#eec9b9;border-color:#eec9b9}
+.psc-page .psc-final .psc-seo-related a{color:#e9d3c7;text-decoration-color:#b08a77;font-size:14px}
+.psc-page .psc-final .psc-seo-related a:hover{color:#fff}
+.psc-page .psc-final .psc-final-art{filter:drop-shadow(0 20px 25px #111a1735)}
+@media(max-width:1000px){.psc-page .psc-hero .pti-hero-grid{grid-template-columns:1fr;gap:34px}.psc-page .psc-hero .pti-hero-copy{max-width:860px}.psc-page .psc-hero-scene{max-width:820px}.psc-page .psc-hero h1{max-width:920px}}
+@media(max-width:740px){.psc-page .psc-hero{padding-block:55px 73px}.psc-page .psc-hero .pti-wrap{width:calc(100% - 36px)}.psc-page .psc-problem-grid{grid-template-columns:1fr}.psc-page .psc-problem-card{min-height:0}.psc-page .psc-section-head{gap:16px}.psc-page .psc-hero h1{font-size:clamp(42px,8.9vw,62px)}}
+@media(max-width:480px){.psc-page .psc-hero h1{font-size:clamp(39px,10vw,51px)}.psc-page .psc-hero-stage{padding:10px 6px 0}.psc-page .psc-hero .pti-lead{font-size:17px}.psc-page .psc-hero .pti-actions{flex-direction:column;align-items:stretch}.psc-page .psc-hero .pti-actions .pti-pill{width:100%}.psc-page .psc-stage-meta{font-size:9px}.psc-page .psc-problem-card p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.psc-page .psc-hero *, .psc-page .psc-problem-card{transition:none!important}}
