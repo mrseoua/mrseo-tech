@@ -193,13 +193,13 @@ async function audit(browser,viewport,lang,slug){
       const root=document.querySelector('.pti-page'),stage=root?.querySelector('.pti-stage'),scene=root?.querySelector('.pti-scene');
       const rect=stage?.getBoundingClientRect(),story=root?.querySelector('[data-pti-story]');
       const imgs=[...root?.querySelectorAll('img')||[]];
-      return {route:root?.dataset.ptiService||'',style:!!document.querySelector('link[href*="premium-ua-interiors.css"]'),
+      return {seoHub:!!root?.querySelector('.seo-hub'),route:root?.dataset.ptiService||'',style:!!document.querySelector('link[href*="premium-ua-interiors.css"]'),
         geometry:!!rect&&rect.width>240&&rect.left>=-2&&rect.right<=innerWidth+2,
         scene:!!scene,sceneSvg:!!stage?.querySelector('svg.pti-scene-svg'),sceneMotion:stage?.querySelectorAll('animate,animateMotion,animateTransform').length||0,
         images:imgs.length,realImages:imgs.every(x=>x.getAttribute('src')?.startsWith('data:image/webp;base64,')),
         heroImage:!!stage?.querySelector('img')?.naturalWidth,story:story?.dataset.ptiStory||'',
-        problems:root?.querySelectorAll('section[id$="problems"] article.pti-card,#ukseo-cases article.pti-card').length||0,
-        steps:story?.querySelectorAll('.pti-step').length||0,faq:root?.querySelectorAll('.pti-faq details').length||0,
+        problems:root?.querySelectorAll('section[id$="problems"] article.pti-card, #ukseo-cases article.pti-card,#ukseo-cases .seo-problem').length||0,
+        steps:story?.querySelectorAll('.pti-step,.seo-plan-step').length||0,faq:root?.querySelectorAll('.pti-faq details,.seo-faq details').length||0,
         caps:root?.querySelectorAll('#dev-capabilities .pti-card-art svg').length||0,
         capMotion:root?.querySelectorAll('#dev-capabilities .pti-card-art animate,#dev-capabilities .pti-card-art animateMotion,#dev-capabilities .pti-card-art animateTransform').length||0,
         solutions:root?.querySelectorAll('.pti-solution').length||0,
@@ -209,7 +209,7 @@ async function audit(browser,viewport,lang,slug){
         lowerPause:!!root?.querySelector('.pti-lower-pause'),
         lowerAnimations:[...root?.querySelectorAll('svg.pti-lower-motion')||[]].every(s=>!!s.querySelector('animate,animateMotion,animateTransform')),
         tabs:root?.querySelectorAll('[data-phase]').length||0,pause:!!root?.querySelector('.pti-pause'),
-        final:!!root?.querySelector('.pti-final a[href$="/contact/"]')};
+        final:!!root?.querySelector('.pti-final a[href$="/contact/"],.seo-final a[href$="/contact/"]')};
     })(),
     uaPremiumStyles:!!document.querySelector('link[href*="home-uk-premium.css"]'),
     uaCinematic:document.querySelectorAll('.pt-ua-home .hsix-card').length===5&&document.querySelectorAll('.pt-ua-home .hsix-card h3').length===5,
@@ -319,9 +319,9 @@ async function audit(browser,viewport,lang,slug){
     })(),
     uaSeoVisuals:(()=>{
       if(lang!=='uk'||slug!=='seo')return null;
-      const journey=document.querySelector('#ukseo-journey-title');
+      const journey=document.querySelector('.seo-journey');
       const priorities=document.querySelector('#ukseo-priorities-title');
-      const stages=document.querySelectorAll('.ukseo-visual-journey > li');
+      const stages=document.querySelectorAll('.seo-flow > li');
       const board=document.querySelector('.ukseo-visual-priority-board,.pti-page [data-pti-story="seo"]');
       const css=!!document.querySelector('link[href*="ua-seo-visuals.css"],link[href*="premium-ua-interiors.css"]');
       const rects=[priorities,board].filter(Boolean).map(el=>el.getBoundingClientRect());
@@ -497,7 +497,7 @@ async function audit(browser,viewport,lang,slug){
   const pi=c.premiumInterior;
   if(premiumTarget){
     const expectedStory=slug==='seo'?'seo':slug==='google-ads'?'ads':'dev';
-    if(slug==='seo'?(pi.route!=='seo'||!pi.style||pi.story!=='seo'||pi.problems!==3||pi.steps!==3||pi.faq<3||!pi.final)
+    if(slug==='seo'?(pi.route!=='seo'||!pi.style||!pi.seoHub||pi.story!=='seo'||pi.problems!==3||pi.steps!==3||pi.faq<3||!pi.final)
       :(pi.route!==slug||!pi.style||!pi.geometry||!pi.scene||!pi.sceneSvg||pi.sceneMotion<1||
        pi.images!==(slug==='web-development'?8:2)||!pi.realImages||!pi.heroImage||pi.story!==expectedStory||
        pi.problems!==3||pi.steps!==3||pi.faq<3||pi.tabs!==3||!pi.pause||!pi.final||
@@ -509,7 +509,7 @@ async function audit(browser,viewport,lang,slug){
       'web-development':['dev-sync','dev-crm','dev-module','dev-routing','dev-plan','dev-delivery','dev-support','dev-next']
     }[slug];
     const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
-    if(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations)
+    if(slug!=='seo'&&(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations))
       item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
     if(c.serviceMenuItems!==4||c.menuItems!==20||c.uaPremiumMenuGroups!==7||c.uaPremiumMenuParents!==7||!c.uaPremiumHeaderPhone)
       item.errors.push('Native full menu or contacts missing from premium interior');
@@ -709,7 +709,7 @@ async function audit(browser,viewport,lang,slug){
   }
   if(lang==='uk'&&slug==='seo'){
     const v=c.uaSeoVisuals;
-    if(!v||!v.css||v.journey||!v.priorities||!v.board||v.stageCount!==0||!v.boundariesOK)
+    if(!v||!v.css||!v.journey||!v.priorities||!v.board||v.stageCount!==3||!v.boundariesOK||!v.properOrder)
       item.errors.push('Ukrainian SEO visual story or responsive geometry missing: '+JSON.stringify(v));
   }
   if(!coreShard&&slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
@@ -795,10 +795,10 @@ async function audit(browser,viewport,lang,slug){
      const style=await page.evaluate(()=>{
       const root=document.querySelector('.pti-page[data-pti-service="seo"]');
       const rect=root?.querySelector('.seo-hero')?.getBoundingClientRect();
-      const art=root?.querySelector('.seo-art');
-      return {css:!!document.querySelector('link[href*="seo-home-system.css"]'),
+      const art=root?.querySelector('.seo-journey');
+      return {css:!!document.querySelector('link[href*="seo-hub.css"]'),
        h1:root?.querySelectorAll('h1').length,
-       terrain:!!art&&!!art.querySelector('.seo-home-search')&&art.querySelectorAll('.seo-home-result').length===2,
+       terrain:!!art&&art.querySelectorAll('.seo-flow li').length===3,
        directions:root?.querySelectorAll('.seo-cards .seo-card-link[href]').length,
        overflow:document.documentElement.scrollWidth>innerWidth+4,
        fit:!!rect&&rect.right<=innerWidth+4&&rect.left>=-4};
@@ -808,7 +808,13 @@ async function audit(browser,viewport,lang,slug){
      await hero.screenshot({path:'shots/ua-seo-premium-hero-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
      const cards=page.locator('.seo-cards');
      await cards.scrollIntoViewIfNeeded();
-     await page.waitForFunction(()=>document.querySelectorAll('.seo-cards .seo-home-window').length===5);
+     await page.waitForFunction(()=>document.querySelectorAll('.seo-cards .seo-card-art svg').length===5);
+     const pause=page.locator('.seo-motion'); await pause.click();
+     if(await pause.getAttribute('aria-pressed')!=='true'||!await page.locator('.seo-card-art svg').evaluateAll(nodes=>nodes.every(s=>s.animationsPaused())))item.errors.push('SEO hub pause failed');
+     await pause.click(); await page.emulateMedia({reducedMotion:'reduce'});
+     if(!await pause.isDisabled())item.errors.push('SEO hub reduced motion failed');
+     await page.emulateMedia({reducedMotion:'no-preference'});
+     for(const sel of ['.seo-problems','.seo-plan','.seo-faq','.seo-final']){await page.locator(sel).screenshot({path:'shots/ua-seo-'+sel.slice(1)+'-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});}
      await cards.screenshot({path:'shots/ua-seo-reference-cards-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
     }
    }catch(e){item.errors.push('SEO cinematic hero QA '+e.message)}

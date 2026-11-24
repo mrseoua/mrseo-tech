@@ -1,0 +1,94 @@
+/* UA SEO hub. The homepage supplies the visual vocabulary, not the composition. */
+.pti-page[data-pti-service="seo"]{background:#f7f3ed;color:#252c26}
+#main:has(> .pti-page[data-pti-service="seo"]){width:100%;max-width:none;padding:0;margin:0}
+.seo-hub{--sh-ink:#252c26;--sh-red:var(--mrseo-brand-red,#A84432);--sh-muted:#57554b;--sh-line:#ded3c7;--sh-paper:#f7f3ed;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--sh-paper);color:var(--sh-ink);min-width:0}
+.seo-hub *{box-sizing:border-box}
+.seo-hub .seo-shell{width:min(1350px,90%);margin-inline:auto;min-width:0}
+.seo-hub .seo-kicker{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.105em;line-height:1.45;color:var(--sh-red)}
+.seo-hub .seo-kicker:before{content:"";width:24px;height:2px;background:currentColor;flex:none}
+.seo-hub h1,.seo-hub h2,.seo-hub h3{font-family:inherit;color:var(--sh-ink);font-weight:850;margin:0;line-height:1.06;letter-spacing:-.055em}
+.seo-hub h1{font-size:clamp(49px,6.2vw,96px);line-height:.99;letter-spacing:-.073em;margin-top:20px}
+.seo-hub h2{font-size:clamp(35px,4.1vw,64px);margin-top:15px}
+.seo-hub h3{font-size:clamp(23px,2.1vw,32px);line-height:1.17;letter-spacing:-.04em}
+.seo-hub em{font-style:normal;color:var(--sh-red)}
+.seo-hub p{font-size:17px;line-height:1.65;color:var(--sh-muted)}
+.seo-hub a:focus-visible,.seo-hub button:focus-visible,.seo-hub summary:focus-visible{outline:3px solid var(--sh-red);outline-offset:4px}
+.seo-hub .seo-hero{background:radial-gradient(ellipse at 74% 40%,#fffdf8 0%,#f5efe5 49%,#e9e1d5 100%);padding:clamp(38px,5vw,76px) 0 clamp(40px,5vw,68px);position:relative;isolation:isolate}
+.seo-hub .seo-hero:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#ad9c8410 1px,transparent 1px),linear-gradient(90deg,#ad9c8410 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(90deg,transparent 32%,#000);pointer-events:none}
+.seo-hub .seo-hero-heading{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,68px);align-items:end;margin-bottom:clamp(30px,4vw,58px)}
+.seo-hub .seo-hero-intro .pti-lead{font-size:clamp(17px,1.45vw,21px);line-height:1.68;color:#57554b;max-width:540px}
+.seo-hub .seo-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.seo-hub .seo-button{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:13px 19px;border-radius:28px;border:1px solid #292e28;background:#292e28;color:#fffdf6;font-size:14px;font-weight:750;line-height:1.3;text-decoration:none;transition:background .25s,transform .25s}
+.seo-hub .seo-button:hover{background:var(--sh-red);border-color:var(--sh-red);color:#fff;transform:translateY(-2px)}
+.seo-hub .seo-outline{background:#fdf9f2;color:var(--sh-red);border-color:#c9b7a4}
+.seo-hub .seo-journey{border:1px solid #d9cdbf;border-radius:24px;background:#fffdf8a6;box-shadow:0 24px 65px #55432e10;overflow:hidden}
+.seo-hub .seo-journey-top,.seo-hub .seo-journey-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 23px;font-size:12px;font-weight:750;letter-spacing:.065em;color:#696157}
+.seo-hub .seo-journey-top{border-bottom:1px solid var(--sh-line)}
+.seo-hub .seo-journey-bottom{border-top:1px solid var(--sh-line);letter-spacing:0;font-weight:500}
+.seo-hub .seo-journey-bottom b{color:var(--sh-red)}
+.seo-hub .seo-motion{min-height:40px;padding:8px 12px;border-radius:24px;border:1px solid #c7b5a2;background:#fffaf3;color:#403b32;font-size:12px;font-weight:750;cursor:pointer}
+.seo-hub .seo-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;list-style:none;margin:0;padding:0}
+.seo-hub .seo-flow li{position:relative;padding:clamp(18px,2.3vw,32px);min-width:0;border-right:1px solid var(--sh-line)}
+.seo-hub .seo-flow li:last-child{border-right:0}
+.seo-hub .seo-flow li:not(:last-child):after{content:"→";position:absolute;z-index:1;right:-16px;top:34%;width:32px;height:32px;border:1px solid #d4c7b7;border-radius:50%;display:grid;place-items:center;background:#fffaf3;color:var(--sh-red);font-size:20px}
+.seo-hub .seo-flow-object{background:radial-gradient(ellipse,#fffdf8,#eee4d7);border-radius:13px;aspect-ratio:2.1;display:grid;place-items:center;margin-bottom:18px;overflow:hidden}
+.seo-hub .seo-flow-object svg{height:100%;width:100%;max-height:190px;display:block}
+.seo-hub .seo-flow li>span{font-size:11px;color:var(--sh-red);font-weight:800;letter-spacing:.085em}
+.seo-hub .seo-flow h2{font-size:clamp(22px,2.2vw,32px);margin:8px 0;letter-spacing:-.04em}
+.seo-hub .seo-flow p{font-size:15px}
+.seo-hub .seo-section{padding:clamp(48px,6vw,90px) 0;scroll-margin-top:95px}
+.seo-hub .seo-section-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(26px,3vw,44px)}
+.seo-hub .seo-section-head p{max-width:480px}
+.seo-hub .seo-problems{background:#f7f3ed}
+.seo-hub .seo-problem-list{border-top:1px solid var(--sh-line)}
+.seo-hub .seo-problem{display:grid;grid-template-columns:70px minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(15px,2.5vw,38px);padding:clamp(24px,3vw,42px) 0;border-bottom:1px solid var(--sh-line);align-items:start}
+.seo-hub .seo-index{font-size:38px;line-height:1;font-weight:750;letter-spacing:-.06em;color:var(--sh-red)}
+.seo-hub .seo-problem h3{margin:0 0 11px}
+.seo-hub .seo-problem-answer{border-left:1px solid #c9b7a4;padding-left:clamp(18px,2vw,30px)}
+.seo-hub .seo-problem-answer span{color:var(--sh-red);font-size:11px;letter-spacing:.09em;font-weight:850}
+.seo-hub .seo-problem-answer p{margin-top:8px}
+.seo-hub .seo-directions{background:#eee9e1}
+.seo-hub .seo-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.seo-hub .seo-card{display:grid;grid-template-columns:minmax(0,1fr);border:1px solid var(--sh-line);border-radius:14px;background:#faf7f2;padding:clamp(20px,2.5vw,34px);min-width:0;overflow:hidden}
+.seo-hub .seo-card:first-child{grid-column:1/-1;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:35px}
+.seo-hub .seo-card-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.seo-hub .seo-card .seo-kicker{font-size:10px;letter-spacing:.055em}
+.seo-hub .seo-card h3{margin:13px 0 13px;font-size:clamp(25px,2.7vw,40px)}
+.seo-hub .seo-card p{margin:0 0 17px;max-width:470px}
+.seo-hub .seo-card-link{display:inline-flex;align-items:center;gap:18px;font-size:15px;font-weight:800;padding:5px 0;border-bottom:1px solid #baa69b;text-decoration:none;color:var(--sh-ink)}
+.seo-hub .seo-card-link:hover,.seo-hub .seo-card-link span{color:var(--sh-red)}
+.seo-hub .seo-card-art{width:100%;min-width:0;background:radial-gradient(ellipse,#fffdf7,#f2eadf 65%,#e7dbcb);border-radius:13px;border:1px solid #ded3c7;margin-top:22px;overflow:hidden;display:grid;place-items:center}
+.seo-hub .seo-card:first-child .seo-card-art{margin-top:0}
+.seo-hub .seo-card-art svg{width:100%;height:auto;display:block;max-height:300px;aspect-ratio:720/520}
+.seo-hub .seo-card:first-child .seo-card-art svg{max-height:350px}
+.seo-hub .seo-plan{background:#faf7f2}
+.seo-hub .seo-plan-board{border:1px solid #d4c6b9;border-radius:24px;padding:clamp(24px,3vw,48px);background:linear-gradient(138deg,#fdf8f0,#f2e9de 58%,#ebe0d4);box-shadow:0 15px 35px #4937250b}
+.seo-hub .seo-plan-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.seo-hub .seo-plan-step{background:#fffaf3;border:1px solid #d9cdbf;border-radius:12px;padding:clamp(18px,2vw,28px);min-width:0;display:flex;flex-direction:column}
+.seo-hub .seo-plan-step>span{width:43px;height:43px;display:grid;place-items:center;border:1px solid #c7b5a2;border-radius:50%;font-weight:850;color:var(--sh-red);margin-bottom:19px}
+.seo-hub .seo-plan-step h3{margin:0 0 12px}
+.seo-hub .seo-plan-step p{margin:0 0 19px}
+.seo-hub .seo-plan-step b{font-size:15px;line-height:1.5;border-top:1px solid var(--sh-line);padding-top:13px;margin-top:auto;color:var(--sh-ink)}
+.seo-hub .seo-plan-note{font-size:14px;margin-top:20px}
+.seo-hub .seo-faq{background:var(--sh-paper)}
+.seo-hub .seo-faq-layout{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(24px,5vw,78px)}
+.seo-hub .seo-faq-layout>div:first-child p{margin-top:17px}
+.seo-hub .seo-faq-questions details{border-top:1px solid var(--sh-line);padding:20px 0}
+.seo-hub .seo-faq-questions details:last-child{border-bottom:1px solid var(--sh-line)}
+.seo-hub .seo-faq-questions summary{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:clamp(18px,1.5vw,22px);font-weight:750;line-height:1.4;cursor:pointer;list-style:none}
+.seo-hub .seo-faq-questions summary::-webkit-details-marker{display:none}
+.seo-hub .seo-faq-questions summary:after{content:"+";color:var(--sh-red);font-size:25px;flex:none}
+.seo-hub .seo-faq-questions details[open] summary:after{content:"−"}
+.seo-hub .seo-faq-questions details p{padding:15px 30px 0 0}
+.seo-hub .seo-final{background:var(--sh-paper);padding:0 0 clamp(48px,6vw,90px)}
+.seo-hub .seo-final-inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(24px,5vw,65px);padding:clamp(25px,4vw,55px);border-radius:24px;background:radial-gradient(ellipse at 88% 10%,#40463d,#272d29 72%);box-shadow:0 17px 35px #212b2516}
+.seo-hub .seo-final h2{color:#fffaf5;font-size:clamp(34px,4vw,60px)}
+.seo-hub .seo-final em,.seo-hub .seo-final .seo-kicker{color:#efb8a8}
+.seo-hub .seo-final p{color:#e4e2dc;font-size:clamp(17px,1.3vw,20px);margin:0 0 22px}
+.seo-hub .seo-final .seo-button{background:#fffaf4;color:#252c26;border-color:#fffaf4}
+@keyframes sh-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes sh-scan{0%,100%{transform:translateY(0);opacity:.2}50%{transform:translateY(66px);opacity:.6}}
+@media(prefers-reduced-motion:no-preference){.seo-hub .seo-journey.is-visible:not(.is-paused) .seo-flow-pulse{animation:sh-pulse 4s ease-in-out infinite}.seo-hub .seo-journey.is-visible:not(.is-paused) .seo-scan-mark{animation:sh-scan 5s ease-in-out infinite}}
+@media(max-width:950px){.seo-hub .seo-hero-heading,.seo-hub .seo-section-head,.seo-hub .seo-faq-layout{grid-template-columns:1fr;gap:20px}.seo-hub .seo-problem{grid-template-columns:45px minmax(0,1fr) minmax(0,1fr);gap:18px}.seo-hub .seo-card:first-child{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}.seo-hub .seo-plan-steps{gap:10px}}
+@media(max-width:700px){.seo-hub .seo-shell{width:calc(100% - 36px)}.seo-hub h1{font-size:clamp(42px,11vw,63px);overflow-wrap:anywhere}.seo-hub h2{font-size:clamp(33px,8.5vw,46px)}.seo-hub p{font-size:16px}.seo-hub .seo-flow,.seo-hub .seo-cards,.seo-hub .seo-card:first-child,.seo-hub .seo-plan-steps,.seo-hub .seo-final-inner{grid-template-columns:1fr}.seo-hub .seo-card:first-child{grid-column:auto}.seo-hub .seo-card:first-child .seo-card-art{margin-top:22px}.seo-hub .seo-flow li{border-right:0;border-bottom:1px solid var(--sh-line);padding:18px}.seo-hub .seo-flow li:last-child{border-bottom:0}.seo-hub .seo-flow li:not(:last-child):after{top:auto;right:calc(50% - 16px);bottom:-16px;transform:rotate(90deg)}.seo-hub .seo-journey-top,.seo-hub .seo-journey-bottom{padding:12px;flex-wrap:wrap;letter-spacing:0}.seo-hub .seo-problem{grid-template-columns:38px minmax(0,1fr);gap:12px}.seo-hub .seo-index{font-size:29px}.seo-hub .seo-problem-answer{grid-column:2;padding-left:13px}.seo-hub .seo-card{padding:19px}.seo-hub .seo-plan-board{padding:16px}.seo-hub .seo-final-inner{padding:25px 21px}.seo-hub .seo-faq-questions details p{padding-right:0}}
+@media(prefers-reduced-motion:reduce){.seo-hub *{animation:none!important;transition:none!important}.seo-hub .seo-button:hover{transform:none}}
