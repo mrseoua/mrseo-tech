@@ -13,8 +13,8 @@ if(!defined('ABSPATH'))exit;
     <div class="seo-cine-actions"><a class="seo-cine-cta" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити SEO <span aria-hidden="true">↗</span></a><a class="seo-cine-discover" href="#ukseo-services"><span aria-hidden="true">↘</span> Обрати напрям</a></div>
     <p class="seo-cine-note">Рішення за вашими бізнес-цілями. Без обіцянок гарантованих позицій.</p>
    </div>
-   <div class="seo-cine-art" aria-label="Абстрактна ілюстрація пошукової видимості: ландшафт із п’ятьма світловими маршрутами" role="img">
-    <svg viewBox="0 0 950 680" class="seo-cine-terrain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+   <div class="seo-cine-art">
+    <svg viewBox="0 0 950 680" class="seo-cine-terrain" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Абстрактний ландшафт пошукової видимості зі світловими маршрутами">
      <defs>
       <linearGradient id="seo-ridge-back" x1=".13" y1=".12" x2=".82" y2=".89"><stop stop-color="#c6bab0"/><stop offset=".38" stop-color="#796f6b"/><stop offset=".72" stop-color="#413d3b"/><stop offset="1" stop-color="#211f1f"/></linearGradient>
       <linearGradient id="seo-ridge-mid" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e0d5c9"/><stop offset=".40" stop-color="#877b74"/><stop offset=".73" stop-color="#373331"/><stop offset="1" stop-color="#171819"/></linearGradient>
