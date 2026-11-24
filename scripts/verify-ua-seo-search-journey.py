@@ -1,48 +1,41 @@
 #!/usr/bin/env python3
-"""SEO visual coherence regression: approved home style, distinct live hero, no duplicated content."""
+"""Cinematic Ukrainian SEO hub QA: unchanged intent, five directions, noindex and visual continuity."""
 from pathlib import Path
-root=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
-page=(root/"inc/premium-ua-interiors/seo.php").read_text()
-css=(root/"assets/seo-home-alignment.css").read_text()
-wrapper=(root/"premium-ua-interior.php").read_text()
-base=(root/"assets/premium-ua-interiors.css").read_text()
-home=(root/"home-uk-premium.php").read_text()
-functions=(root/"functions.php").read_text()
-assert "seo-search-journey.php" not in page
-assert not (root/"inc/premium-ua-interiors/seo-search-journey.php").exists()
-assert not (root/"assets/seo-search-journey.css").exists()
-assert "seo-home-alignment.css" in wrapper
-assert "mrseo_slug()==='seo'" in wrapper
-assert 'data-pti-service="seo"' in css
-assert "width:min(100% - clamp(28px,5vw,88px),1580px)" in css
-for token in ("#f9f5ee","#f7f3ed","#252c26","#b94134","border-radius:28px",
-              "radial-gradient","grid-template-columns:1fr","max-width:600px",
-              "prefers-reduced-motion:reduce"):
-    assert token in css,token
-assert page.count("<h1 ")==1
-assert 'class="pti-scene pti-seo pti-seo-console"' in page
-assert 'class="seo-console-results"' in page and 'class="seo-console-diagnostic"' in page
-assert 'class="seo-console-scan"' in page
-assert "animateMotion" not in page[:page.index('id="ukseo-cases"')]
-for key in ("seo-console-sweep","seo-console-line","seo-console-bar","seo-console-check","seo-console-caret"):
-    assert "@keyframes "+key in css,key
-assert page.count('data-phase="')==3
-assert "data-scene-status" in page
-assert "pti-seo-console" in page and "pti-scene-controls" in page
-assert 'id="ukseo-cases"' in page and 'id="ukseo-services"' in page
-assert 'data-pti-faq="seo"' in page
-assert "mrseo_ua_menu_groups()" not in page, "SEO hub must not expose the 18-service registry"
-assert page.count('class="seo-editorial-feature ') == 5
-assert page.count('class="seo-editorial-open"') == 5
-for slug in ("seo-audit", "ecommerce-seo", "local-seo", "service-business-seo", "international-seo"):
-    assert "mrseo_url('"+slug+"','uk')" in page, slug
-assert "seo-editorial-scope" in page
-assert "seo-editorial-intro" in css
-assert "seo-editorial-feature:first-child" in css
-assert "@media(max-width:520px)" in css
-assert "3.0.0" in wrapper
-assert "pti-seo" in base and "pti-stage" in base
+r=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
+page=(r/"inc/premium-ua-interiors/seo.php").read_text()
+hero=(r/"inc/seo-cinematic-hero.php").read_text()
+directions=(r/"inc/seo-cinematic-directions.php").read_text()
+css=(r/"assets/seo-cinematic.css").read_text()
+js=(r/"assets/seo-cinematic.js").read_text()
+wrapper=(r/"premium-ua-interior.php").read_text()
+home=(r/"home-uk-premium.php").read_text()
+functions=(r/"functions.php").read_text()
+style=(r/"style.css").read_text()
+assert "seo-cinematic-hero.php" in page and "seo-cinematic-directions.php" in page
+assert page.count('<section class="pti-section" id="ukseo-cases"')==1
+assert page.count('data-pti-faq="seo"')==1
+assert "seo-editorial-feature" not in page
+assert 'id="pti-title"' in hero and hero.count("<h1 ")==1
+assert "Більше" in hero and "органічних" in hero and "клієнтів" in hero
+assert "SEO-просування сайту в Google" in hero
+assert "class=\"seo-cine-terrain\"" in hero and "class=\"seo-cine-search\"" in hero
+assert "class=\"seo-cine-motion\"" in hero and "aria-pressed=\"false\"" in hero
+assert 'id="ukseo-services"' in directions
+assert "seo_cine_directions=array(" in directions
+for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo"):
+ assert "array('"+slug+"'" in directions,slug
+assert "mrseo_url($dir[0],'uk')" in directions
+assert "seo-cine-manifest" in directions and "seo-cine-direction-grid" in directions
+assert "10+ років" in hero and "Рішення за вашими бізнес-цілями" in hero
+assert "noindex" in functions and "X-Robots-Tag: noindex, nofollow" in functions
+assert "--mrseo-brand-red:#A84432;" in style
+for token in ("--sc-red:var(--mrseo-brand-red,#A84432)","--sc-ivory:#f7f3ed","--sc-ink:#242624","--sc-line:#ded3c7",
+             ".seo-cine-direction-grid",".seo-cine-manifest","@media(max-width:600px)","@media(max-width:380px)",
+             "@media(prefers-reduced-motion:reduce)","seo-cine-paused"):
+ assert token in css,token
+assert "seo-cinematic.css" in wrapper and "seo-cinematic.js" in wrapper
+assert "4.0.0" in wrapper
+assert "prefers-reduced-motion: reduce" in js and "aria-pressed" in js and "visibilitychange" in js
+assert css.count("{")==css.count("}"),"Unbalanced CSS block braces"
 assert 'class="pt-globe"' in home
-assert "X-Robots-Tag: noindex, nofollow" in functions
-assert css.count("{")==css.count("}")
-print("PASS: SEO-specific hero stays animated, no redundant generic cards, aligned colors/layout, 1 H1, original SEO routes/FAQ and noindex")
+print("PASS cinematic SEO: branded open hero, 5 approved links, original content/FAQ, mobile and noindex; homepage untouched")

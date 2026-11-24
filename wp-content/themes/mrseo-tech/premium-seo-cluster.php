@@ -19,7 +19,7 @@ $psc_head=static function($value){echo wp_kses($value,array('em'=>array()));};
 if($psc_audit){require_once get_template_directory().'/inc/ua-final-interior-visuals.php';$psc_plan=mrseo_ua_final_service_copy('seo-audit')['plan'];}
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-psc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
- wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'2.0.0');
+ wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'3.0.0');
  wp_enqueue_script('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.js',array(),'1.0.1',true);
 },100);
 get_header();

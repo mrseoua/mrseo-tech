@@ -497,10 +497,11 @@ async function audit(browser,viewport,lang,slug){
   const pi=c.premiumInterior;
   if(premiumTarget){
     const expectedStory=slug==='seo'?'seo':slug==='google-ads'?'ads':'dev';
-    if(pi.route!==slug||!pi.style||!pi.geometry||!pi.scene||!pi.sceneSvg||pi.sceneMotion<1||
+    if(slug==='seo'?(pi.route!=='seo'||!pi.style||pi.story!=='seo'||pi.problems!==3||pi.steps!==3||pi.faq<3||!pi.final)
+      :(pi.route!==slug||!pi.style||!pi.geometry||!pi.scene||!pi.sceneSvg||pi.sceneMotion<1||
        pi.images!==(slug==='web-development'?8:2)||!pi.realImages||!pi.heroImage||pi.story!==expectedStory||
        pi.problems!==3||pi.steps!==3||pi.faq<3||pi.tabs!==3||!pi.pause||!pi.final||
-       (slug==='web-development'&&(pi.caps!==6||pi.capMotion!==34||pi.solutions!==3)))
+       (slug==='web-development'&&(pi.caps!==6||pi.capMotion!==34||pi.solutions!==3))))
       item.errors.push('UA Premium interior mismatch: '+JSON.stringify(pi));
     const expectedLower={
       seo:['seo-index','seo-cluster','seo-conversion','seo-diagnostic','seo-next'],
@@ -786,38 +787,38 @@ async function audit(browser,viewport,lang,slug){
     await page.evaluate(()=>window.scrollTo(0,0));
   }
   if(lang==='uk'&&slug==='seo'){
-   // Screenshot the original, SEO-specific animated hero, now aligned to the
-   // approved home design rather than adding a second generic card grid.
-   const hero=page.locator('.pti-page[data-pti-service="seo"] .pti-hero');
+   // Visual design and functional QA for the approved cinematic SEO hero.
+   const hero=page.locator('.pti-page[data-pti-service="seo"] .seo-cine-hero');
    try{
-    if(await hero.count()!==1)item.errors.push('SEO premium hero missing or duplicate');
+    if(await hero.count()!==1)item.errors.push('SEO cinematic hero absent or duplicated');
     else {
      const style=await page.evaluate(()=>{
       const root=document.querySelector('.pti-page[data-pti-service="seo"]');
-      const hero=root?.querySelector('.pti-hero');
-      const stage=root?.querySelector('.pti-scene.pti-seo');
-      const rect=hero?.getBoundingClientRect();
-      return {style:!!document.querySelector('link[href*="seo-home-alignment.css"]'),
-              rounded:parseFloat(getComputedStyle(hero).borderTopLeftRadius)>=18,
-              animation:!!stage?.querySelector('.seo-console-scan')&&!!stage?.querySelector('.seo-console-diagnostic'),
-              phases:stage?.querySelectorAll('[data-phase]').length,
-              overflow:document.documentElement.scrollWidth>innerWidth+4,
-              noGeneric:!root?.querySelector('.seo-path'),
-              fit:rect&&rect.right<=innerWidth+4&&rect.left>=-4};
+      const rect=root?.querySelector('.seo-cine-hero')?.getBoundingClientRect();
+      const motion=root?.querySelector('.seo-cine-motion');
+      return {css:!!document.querySelector('link[href*="seo-cinematic.css"]'),
+       script:!!document.querySelector('script[src*="seo-cinematic.js"]'),
+       h1:root?.querySelectorAll('h1').length,
+       terrain:!!root?.querySelector('.seo-cine-terrain .seo-cine-flow path'),
+       search:!!root?.querySelector('.seo-cine-search'),
+       directions:root?.querySelectorAll('.seo-cine-direction-grid>a[href]').length,
+       pause:!!motion&&motion.getAttribute('aria-pressed')==='false',
+       overflow:document.documentElement.scrollWidth>innerWidth+4,
+       fit:!!rect&&rect.right<=innerWidth+4&&rect.left>=-4};
      });
-     if(!style.style||!style.rounded||!style.animation||style.phases!==3||style.overflow||!style.noGeneric||!style.fit)
-      item.errors.push('SEO homepage-style hero regression '+JSON.stringify(style));
+     if(!style.css||!style.script||style.h1!==1||!style.terrain||!style.search||style.directions!==5||!style.pause||style.overflow||!style.fit)item.errors.push('SEO cinematic hero layout '+JSON.stringify(style));
      await page.emulateMedia({reducedMotion:'no-preference'});
-     await page.waitForFunction(()=>document.querySelector('.pti-page[data-pti-service="seo"] .pti-seo-console')?.classList.contains('pti-live'),null,{timeout:6000});
-     const motion=await page.evaluate(()=>['.seo-console-scan','.seo-console-line--strong','.seo-console-bars i'].map(sel=>document.querySelector('.pti-page[data-pti-service="seo"] '+sel)?.getAnimations().some(a=>a.playState==='running')));
-     if(motion.some(x=>!x))item.errors.push('SEO new SERP animation not running '+JSON.stringify(motion));
      await hero.screenshot({path:'shots/ua-seo-premium-hero-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000});
+     const btn=page.locator('.seo-cine-motion');await btn.click();
+     if(await btn.getAttribute('aria-pressed')!=='true')item.errors.push('SEO cinematic pause did not engage');
+     await btn.click();
+     if(await btn.getAttribute('aria-pressed')!=='false')item.errors.push('SEO cinematic motion did not resume');
      await page.emulateMedia({reducedMotion:'reduce'});
-     const reduced=await page.evaluate(()=>getComputedStyle(document.querySelector('.pti-page[data-pti-service="seo"] .seo-console-scan')).animationName);
-     if(reduced!=='none')item.errors.push('SEO SERP reduced-motion regression');
+     const reduce=await page.locator('.seo-cine-flow path').first().evaluate(el=>getComputedStyle(el).animationName);
+     if(reduce!=='none')item.errors.push('SEO cinematic reduced-motion '+reduce);
      await page.emulateMedia({reducedMotion:'no-preference'});
     }
-   }catch(e){item.errors.push('SEO hero design QA '+e.message)}
+   }catch(e){item.errors.push('SEO cinematic hero QA '+e.message)}
   }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
@@ -837,7 +838,7 @@ async function audit(browser,viewport,lang,slug){
    if(!nav||JSON.stringify(nav.cards)!==JSON.stringify(["/analytics/","/google-ads/","/horoshop/","/online-store-development/","/seo/","/service-websites/","/web-development/"])||JSON.stringify(nav.chips)!==JSON.stringify(["/ecommerce-seo/","/performance-max/","/seo-audit/","/wordpress-development/"])||nav.details||!nav.scripts||!nav.style||nav.badLinks)item.errors.push('UA direct card navigation coverage '+JSON.stringify(nav));
   }
   if(lang==='uk'&&slug==='seo'){
-   const hub=await page.evaluate(()=>{const el=document.querySelector('#ukseo-services');if(!el)return null;const links=[...el.querySelectorAll('.seo-editorial-index>a[href]')];return {groups:links.length,links:links.map(a=>new URL(a.href).pathname).sort(),geometry:links.every(a=>{const r=a.getBoundingClientRect();return r.left>=-2&&r.right<=innerWidth+2&&r.width>0&&r.height>0;})};});
+   const hub=await page.evaluate(()=>{const el=document.querySelector('#ukseo-services');if(!el)return null;const links=[...el.querySelectorAll('.seo-cine-direction-grid>a[href]')];return {groups:links.length,links:links.map(a=>new URL(a.href).pathname).sort(),geometry:links.every(a=>{const r=a.getBoundingClientRect();return r.left>=-2&&r.right<=innerWidth+2&&r.width>0&&r.height>0;})};});
    const expectedHub=["/ecommerce-seo/","/international-seo/","/local-seo/","/seo-audit/","/service-business-seo/"];
    if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO five-page editorial hub coverage or geometry '+JSON.stringify(hub));
   }
