@@ -1,0 +1,161 @@
+/* MRSEO / SEO CINEMATIC 2026
+   One branded design language shared with the approved homepage:
+   ivory #f7f3ed, graphite #242624, muted #5b5955, brand red #A84432.
+   Scope: Ukrainian /seo/ ONLY. Never touch homepage Earth or other languages. */
+.pti-page[data-pti-service="seo"]{--sc-ivory:#f7f3ed;--sc-cream:#faf6f1;--sc-ink:#242624;--sc-muted:#5b5955;--sc-red:var(--mrseo-brand-red,#A84432);--sc-red-hover:var(--mrseo-brand-red-hover,#943726);--sc-line:#ded3c7;background:var(--sc-ivory);color:var(--sc-ink);overflow:clip}
+.pti-page[data-pti-service="seo"] :is(.seo-cine-hero,.seo-cine-directions,.seo-cine-manifest) *{box-sizing:border-box}
+.pti-page[data-pti-service="seo"] .seo-cine-shell{width:min(1440px,calc(100% - clamp(34px,7.5vw,136px)));margin-inline:auto}
+.pti-page[data-pti-service="seo"] .seo-cine-kicker{font-size:12px;letter-spacing:.20em;line-height:1.5;color:#453f3b;font-weight:780;text-transform:uppercase}
+.pti-page[data-pti-service="seo"] .seo-cine-hero{position:relative;isolation:isolate;background:radial-gradient(ellipse at 75% 32%,#efe4d9 0%,transparent 46%),linear-gradient(180deg,#f9f5f0 0%,#f7f3ed 100%);overflow:hidden}
+.pti-page[data-pti-service="seo"] .seo-cine-breadcrumbs{display:flex;gap:13px;align-items:center;padding-top:clamp(18px,2.2vw,34px);color:#6c6561;font-size:13px;font-weight:630}
+.pti-page[data-pti-service="seo"] .seo-cine-breadcrumbs a{color:inherit;text-decoration:underline;text-decoration-color:#c6b6aa;text-underline-offset:4px}
+.pti-page[data-pti-service="seo"] .seo-cine-hero-grid{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);align-items:center;gap:0;min-height:clamp(560px,49vw,730px)}
+.pti-page[data-pti-service="seo"] .seo-cine-copy{position:relative;z-index:3;padding:45px 0 45px 0;max-width:690px}
+.pti-page[data-pti-service="seo"] .seo-cine-copy h1{margin:22px 0 25px;display:flex;flex-direction:column;align-items:flex-start;font-size:clamp(46px,5.55vw,86px);font-weight:850;letter-spacing:-.075em;line-height:.985;color:#181b19}
+.pti-page[data-pti-service="seo"] .seo-cine-copy h1 span{display:block;white-space:nowrap}
+.pti-page[data-pti-service="seo"] .seo-cine-copy h1 em{display:block;margin-top:12px;font:italic clamp(36px,4.45vw,72px)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;font-weight:450;white-space:normal;color:var(--sc-red)}
+.pti-page[data-pti-service="seo"] .seo-cine-lead{max-width:510px;color:#3c3e38;line-height:1.62;font-size:clamp(17px,1.37vw,21px);font-weight:500}
+.pti-page[data-pti-service="seo"] .seo-cine-actions{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin:29px 0 0}
+.pti-page[data-pti-service="seo"] .seo-cine-cta{display:inline-flex;justify-content:center;align-items:center;gap:20px;background:var(--sc-red);border:1px solid var(--sc-red);border-radius:999px;padding:15px 25px;min-height:56px;color:#fff!important;font-size:15px;line-height:1.3;font-weight:820;box-shadow:0 7px 20px #973d2a1c;transition:background .25s,transform .25s}
+.pti-page[data-pti-service="seo"] .seo-cine-cta:hover{background:var(--sc-red-hover);transform:translateY(-2px)}
+.pti-page[data-pti-service="seo"] .seo-cine-cta span{font-size:21px;line-height:1}
+.pti-page[data-pti-service="seo"] .seo-cine-discover{display:inline-flex;align-items:center;gap:11px;color:#282522;font-size:15px;font-weight:750;line-height:1.4}
+.pti-page[data-pti-service="seo"] .seo-cine-discover span{display:grid;place-items:center;width:36px;height:36px;border:1px solid #8f8276;border-radius:50%;font-size:18px;transition:background .2s}
+.pti-page[data-pti-service="seo"] .seo-cine-discover:hover span{background:#e8dbd0}
+.pti-page[data-pti-service="seo"] .seo-cine-note{margin-top:22px;font-size:13px;font-weight:570;color:#77706a;max-width:520px}
+.pti-page[data-pti-service="seo"] .seo-cine-art{position:relative;isolation:isolate;align-self:stretch;min-height:560px;margin-right:min(-5vw,-20px);margin-left:-9vw;display:flex;align-items:center;overflow:visible}
+.pti-page[data-pti-service="seo"] .seo-cine-art:before{content:"";position:absolute;inset:11% -10% 5% 6%;background:radial-gradient(ellipse,#a87b5a17,transparent 68%);z-index:-1}
+.pti-page[data-pti-service="seo"] .seo-cine-art:after{content:"";position:absolute;inset:auto -6% -2% -22%;height:25%;background:linear-gradient(0deg,#f7f3ed 8%,#f7f3ed00 100%);pointer-events:none;z-index:2}
+.pti-page[data-pti-service="seo"] .seo-cine-terrain{display:block;width:120%;max-width:none;min-width:0;height:auto;overflow:visible;transform:translateX(0);filter:drop-shadow(0 22px 28px #37312b17)}
+.pti-page[data-pti-service="seo"] .seo-cine-search{position:absolute;top:52%;left:19%;width:62%;min-height:67px;padding:13px 22px;transform:rotate(-6deg) skewX(-5deg);border:1px solid #ffffffb8;border-radius:18px;box-shadow:inset 0 1px 1px #fff8,0 18px 30px #18151456,0 0 0 1px #a76d5f32;background:linear-gradient(130deg,#f6ebe3a6,#2d282a83);backdrop-filter:blur(8px);display:flex;align-items:center;gap:16px;color:#fff;z-index:3;font-size:clamp(12px,1.2vw,19px);font-weight:700;white-space:nowrap}
+.pti-page[data-pti-service="seo"] .seo-cine-search:after{content:"";position:absolute;inset:auto 15% -2px 20%;height:2px;background:linear-gradient(90deg,transparent,#A84432 40%,#e9aa9b 70%,transparent);box-shadow:0 0 16px #A8443266}
+.pti-page[data-pti-service="seo"] .seo-cine-search-icon{font-size:39px;font-weight:300;line-height:1;color:#fff}
+.pti-page[data-pti-service="seo"] .seo-cine-search i{margin-left:auto;display:block;width:2px;height:24px;background:#ebc1b7}
+.pti-page[data-pti-service="seo"] .seo-cine-art-label{position:absolute;font-size:11px;font-weight:830;letter-spacing:.06em;text-shadow:0 1px 6px #f7f3ed;z-index:4;color:#342f2d}
+.pti-page[data-pti-service="seo"] .seo-cine-art-label--one{left:17%;top:47%}
+.pti-page[data-pti-service="seo"] .seo-cine-art-label--two{left:42%;top:32%}
+.pti-page[data-pti-service="seo"] .seo-cine-art-label--three{left:69%;top:17%}
+.pti-page[data-pti-service="seo"] .seo-cine-motion{position:absolute;right:10%;bottom:13%;z-index:5;border:1px solid #bfb0a5;background:#fff8f0d9;backdrop-filter:blur(5px);width:38px;height:38px;display:grid;place-items:center;border-radius:50%;font-size:18px;font-weight:700;color:#514b45;cursor:pointer;box-shadow:0 4px 18px #362c2118}
+.pti-page[data-pti-service="seo"] .seo-cine-credibility{position:relative;z-index:4;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:32px 0 39px;margin-top:-5px;border-top:1px solid #e0d5c9}
+.pti-page[data-pti-service="seo"] .seo-cine-credibility>div{display:flex;align-items:center;gap:20px;min-width:0;padding:0 22px;border-right:1px solid #ded3c7}
+.pti-page[data-pti-service="seo"] .seo-cine-credibility>div:first-child{padding-left:0}
+.pti-page[data-pti-service="seo"] .seo-cine-credibility>div:last-child{border:0;padding-right:0}
+.pti-page[data-pti-service="seo"] .seo-cine-cred-icon{font-family:Georgia,serif;font-weight:400;font-size:clamp(28px,3vw,46px);line-height:1;color:#262b28;min-width:38px;text-align:center}
+.pti-page[data-pti-service="seo"] .seo-cine-credibility p{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pti-page[data-pti-service="seo"] .seo-cine-credibility strong{font-size:clamp(14px,1.12vw,17px);line-height:1.3;font-weight:800;color:#252824}
+.pti-page[data-pti-service="seo"] .seo-cine-credibility small{font-size:clamp(12px,.95vw,15px);line-height:1.35;color:#5f5d59;font-weight:550}
+.pti-page[data-pti-service="seo"] .seo-cine-directions{background:#f7f3ed;padding:clamp(70px,7.5vw,112px) 0 clamp(74px,7vw,108px);border-top:1px solid #e9ded3}
+.pti-page[data-pti-service="seo"] .seo-cine-section-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.55fr);align-items:end;gap:clamp(30px,6vw,110px);margin-bottom:clamp(35px,4vw,60px)}
+.pti-page[data-pti-service="seo"] .seo-cine-section-intro h2{font-size:clamp(40px,4.65vw,70px);letter-spacing:-.069em;line-height:1.05;margin-top:21px;color:#1d1f1e;font-weight:850;max-width:780px}
+.pti-page[data-pti-service="seo"] .seo-cine-section-intro h2 em{font:italic .99em/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.047em;color:var(--sc-red);white-space:normal}
+.pti-page[data-pti-service="seo"] .seo-cine-section-intro>p{font-size:clamp(16px,1.22vw,19px);line-height:1.55;color:#585651;max-width:450px;padding-bottom:4px}
+.pti-page[data-pti-service="seo"] .seo-cine-direction-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.pti-page[data-pti-service="seo"] .seo-cine-direction{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-width:0;height:clamp(310px,27vw,392px);padding:19px 17px 20px;overflow:hidden;border-radius:12px;background:linear-gradient(145deg,#514541 0%,#211f20 68%,#121314 100%);color:#fff!important;border:1px solid #534b48;box-shadow:0 11px 28px #3a30261a;transition:transform .26s,box-shadow .26s}
+.pti-page[data-pti-service="seo"] .seo-cine-direction:hover{transform:translateY(-5px);box-shadow:0 20px 40px #32241f2b}
+.pti-page[data-pti-service="seo"] .seo-cine-direction:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 67% 34%,#d29f8240,transparent 55%);pointer-events:none}
+.pti-page[data-pti-service="seo"] .seo-cine-direction--shop{background:linear-gradient(140deg,#b9a79b 0%,#76655f 32%,#242122 73%,#171718)}
+.pti-page[data-pti-service="seo"] .seo-cine-direction--local{background:linear-gradient(160deg,#8f786d,#3d3434 50%,#191a1b)}
+.pti-page[data-pti-service="seo"] .seo-cine-direction--services{background:linear-gradient(140deg,#98857b,#4b403e 52%,#171718)}
+.pti-page[data-pti-service="seo"] .seo-cine-direction--global{background:radial-gradient(ellipse at 50% 35%,#886554,#292426 70%)}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-number{position:relative;z-index:2;font-size:10px;letter-spacing:.16em;font-weight:830;color:#e9d1c3}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-art{position:absolute;inset:2% 2% 0;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;opacity:.96;z-index:0;transform:translateY(-9px)}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,#201f20a3 70%,#1b1b1bf5 100%);pointer-events:none}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-art svg{display:block;width:100%;max-width:230px;height:75%;overflow:visible;filter:drop-shadow(0 20px 18px #120f1180);transition:transform .45s}
+.pti-page[data-pti-service="seo"] .seo-cine-direction:hover .seo-cine-dir-art svg{transform:scale(1.045) translateY(-3px)}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:9px;margin-top:auto;min-width:0}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-copy strong{font-size:clamp(20px,1.65vw,26px);font-weight:830;line-height:1.17;letter-spacing:-.05em;color:#fff}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-copy small{font-size:clamp(12px,1vw,15px);font-weight:530;color:#f0eae5;line-height:1.42;max-width:180px;padding-right:16px}
+.pti-page[data-pti-service="seo"] .seo-cine-dir-arrow{position:absolute;right:16px;bottom:17px;display:grid;place-items:center;width:29px;height:29px;border:1px solid #f8f3edb3;border-radius:50%;z-index:3;color:#fff;font-size:16px}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest{position:relative;min-height:390px;background:linear-gradient(115deg,#17191a,#252324 60%,#181a19);color:#fff7ef;overflow:hidden}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-layout{position:relative;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1fr);align-items:center;gap:clamp(40px,7vw,120px);padding-top:clamp(65px,7vw,100px);padding-bottom:clamp(65px,7vw,100px)}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-art{position:absolute;top:0;bottom:0;left:-8%;width:75%;overflow:hidden;pointer-events:none;opacity:.68}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-art i{position:absolute;left:-25%;top:-25%;width:150%;height:140%;border-radius:45%;border:1px solid #a6766c50;transform:rotate(-32deg) skewY(-17deg);box-shadow:0 0 60px #a8443209}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-art i:nth-child(2){left:-15%;top:-19%;width:140%;border-color:#a8443280;box-shadow:0 0 20px #A8443245}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-art i:nth-child(3){left:-5%;top:-13%;width:130%;border-color:#ddaa9880}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-art i:nth-child(4){left:5%;top:-7%;width:120%;border-color:#a84432ad}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-art i:nth-child(5){left:15%;top:-1%;width:110%;border-color:#f0c1b445}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-copy{position:relative;z-index:2;grid-column:2;max-width:750px}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest-kicker{color:#e6a99b;font-size:12px;letter-spacing:.17em;font-weight:820}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest h2{font-size:clamp(38px,4.6vw,75px);line-height:1.04;letter-spacing:-.06em;font-weight:820;margin:19px 0}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest h2 em{font:italic .98em Georgia,"Times New Roman",serif;letter-spacing:-.05em;color:#e2a596}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest p{font-size:clamp(17px,1.3vw,20px);line-height:1.65;color:#e2dcd5;max-width:600px}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest a{display:inline-block;color:#fffaf5;margin-top:21px;border-bottom:1px solid #cb9d91;padding-bottom:8px;font-size:15px;font-weight:760}
+.pti-page[data-pti-service="seo"] .seo-cine-manifest a:hover{color:#f1b9aa}
+.pti-page[data-pti-service="seo"] :is(.seo-cine-cta,.seo-cine-discover,.seo-cine-direction,.seo-cine-motion,.seo-cine-manifest a):focus-visible{outline:3px solid var(--sc-red);outline-offset:5px}
+/* Later sections in the same service are part of the same visual identity. */
+.pti-page[data-pti-service="seo"] #ukseo-cases{background:#faf7f2;padding:clamp(77px,8vw,123px) 0}
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-section-head h2{font-size:clamp(39px,4.2vw,68px);letter-spacing:-.058em;color:var(--sc-ink)}
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-card{background:#f7f3ed;border-color:var(--sc-line);border-radius:8px;box-shadow:none;padding:clamp(22px,2.4vw,36px)}
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-card h3{font-size:clamp(23px,2vw,31px);line-height:1.2;letter-spacing:-.04em;color:var(--sc-ink)}
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-card p{font-size:16px;line-height:1.65;color:var(--sc-muted)}
+.pti-page[data-pti-service="seo"] #ukseo-cases .pti-card .pti-num{color:var(--sc-red)}
+.pti-page[data-pti-service="seo"] .pti-faq details{border-color:var(--sc-line)}
+.pti-page[data-pti-service="seo"] .pti-final{background:#242624;color:#fff7ee}
+.pti-page[data-pti-service="seo"] .pti-final h2{color:#fff7ee}
+.pti-page[data-pti-service="seo"] .pti-final .pti-kicker{color:#e9aa9a}
+.pti-page[data-pti-service="seo"] .pti-final .pti-pill{background:#fff7ee;color:#242624;border-color:#fff7ee}
+@media(prefers-reduced-motion:no-preference){
+ .pti-page[data-pti-service="seo"]:not(.seo-cine-paused) .seo-cine-flow path{stroke-dasharray:18 12;animation:sc-flow 14s linear infinite}
+ .pti-page[data-pti-service="seo"]:not(.seo-cine-paused) .seo-cine-marker circle:first-of-type{animation:sc-pulse 4s ease-in-out infinite}
+ .pti-page[data-pti-service="seo"]:not(.seo-cine-paused) .seo-cine-manifest-art i:nth-child(2n){animation:sc-manifest 13s ease-in-out infinite}
+}
+@keyframes sc-flow{to{stroke-dashoffset:-420}}
+@keyframes sc-pulse{0%,100%{opacity:.22;transform:scale(1);transform-origin:714px 122px}50%{opacity:.5;transform:scale(1.3);transform-origin:714px 122px}}
+@keyframes sc-manifest{0%,100%{transform:rotate(-32deg) skewY(-17deg) translateX(0)}50%{transform:rotate(-32deg) skewY(-17deg) translateX(12px)}}
+@media(max-width:1180px){
+ .pti-page[data-pti-service="seo"] .seo-cine-hero-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+ .pti-page[data-pti-service="seo"] .seo-cine-copy h1{font-size:clamp(43px,5.3vw,70px)}
+ .pti-page[data-pti-service="seo"] .seo-cine-direction-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .pti-page[data-pti-service="seo"] .seo-cine-direction{height:350px}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility>div{gap:9px;padding:0 12px}
+}
+@media(max-width:900px){
+ .pti-page[data-pti-service="seo"] .seo-cine-hero-grid{grid-template-columns:1fr;min-height:0}
+ .pti-page[data-pti-service="seo"] .seo-cine-copy{max-width:780px;padding-top:48px;padding-bottom:0}
+ .pti-page[data-pti-service="seo"] .seo-cine-copy h1{font-size:clamp(46px,8.5vw,78px)}
+ .pti-page[data-pti-service="seo"] .seo-cine-art{min-height:0;height:auto;aspect-ratio:950/620;margin-left:0;margin-right:0}
+ .pti-page[data-pti-service="seo"] .seo-cine-terrain{width:100%}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:27px}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility>div{padding:0 15px;border-right:0}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility>div:nth-child(odd){border-right:1px solid var(--sc-line);padding-left:0}
+ .pti-page[data-pti-service="seo"] .seo-cine-section-intro{grid-template-columns:1fr;gap:17px}
+ .pti-page[data-pti-service="seo"] .seo-cine-manifest-layout{grid-template-columns:1fr}
+ .pti-page[data-pti-service="seo"] .seo-cine-manifest-copy{grid-column:1;max-width:690px}
+ .pti-page[data-pti-service="seo"] .seo-cine-manifest-art{left:20%;width:95%;opacity:.24}
+}
+@media(max-width:600px){
+ .pti-page[data-pti-service="seo"] .seo-cine-shell{width:calc(100% - 36px)}
+ .pti-page[data-pti-service="seo"] .seo-cine-breadcrumbs{font-size:12px}
+ .pti-page[data-pti-service="seo"] .seo-cine-copy{padding-top:38px}
+ .pti-page[data-pti-service="seo"] .seo-cine-copy h1{font-size:clamp(41px,10.6vw,61px);letter-spacing:-.065em;line-height:1.035}
+ .pti-page[data-pti-service="seo"] .seo-cine-copy h1 span{white-space:normal}
+ .pti-page[data-pti-service="seo"] .seo-cine-copy h1 em{font-size:clamp(36px,9vw,51px);margin-top:9px}
+ .pti-page[data-pti-service="seo"] .seo-cine-lead{font-size:17px;line-height:1.63}
+ .pti-page[data-pti-service="seo"] .seo-cine-actions{gap:16px}
+ .pti-page[data-pti-service="seo"] .seo-cine-cta{min-height:52px;padding:13px 22px}
+ .pti-page[data-pti-service="seo"] .seo-cine-art{aspect-ratio:950/680;margin:0 -12px}
+ .pti-page[data-pti-service="seo"] .seo-cine-art-label{font-size:8px}
+ .pti-page[data-pti-service="seo"] .seo-cine-search{min-height:42px;border-radius:9px;padding:7px 11px;gap:7px;font-size:11px}
+ .pti-page[data-pti-service="seo"] .seo-cine-search-icon{font-size:22px}
+ .pti-page[data-pti-service="seo"] .seo-cine-search i{height:15px}
+ .pti-page[data-pti-service="seo"] .seo-cine-motion{width:32px;height:32px;font-size:15px;bottom:10%}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility{padding-top:17px;padding-bottom:30px;gap:25px 9px}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility>div{gap:8px;padding:0 8px}
+ .pti-page[data-pti-service="seo"] .seo-cine-cred-icon{min-width:23px;font-size:26px}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility strong{font-size:13px}
+ .pti-page[data-pti-service="seo"] .seo-cine-credibility small{font-size:11px}
+ .pti-page[data-pti-service="seo"] .seo-cine-direction-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .pti-page[data-pti-service="seo"] .seo-cine-direction{height:290px;padding:14px 13px;border-radius:10px}
+ .pti-page[data-pti-service="seo"] .seo-cine-dir-copy strong{font-size:clamp(18px,4.65vw,22px)}
+ .pti-page[data-pti-service="seo"] .seo-cine-dir-copy small{font-size:12px;padding-right:5px}
+ .pti-page[data-pti-service="seo"] .seo-cine-dir-arrow{bottom:13px;right:12px;width:25px;height:25px}
+ .pti-page[data-pti-service="seo"] .seo-cine-section-intro h2{font-size:clamp(39px,9.3vw,54px)}
+ .pti-page[data-pti-service="seo"] .seo-cine-manifest h2{font-size:clamp(38px,9vw,52px)}
+}
+@media(max-width:380px){
+ .pti-page[data-pti-service="seo"] .seo-cine-direction-grid{grid-template-columns:1fr}
+ .pti-page[data-pti-service="seo"] .seo-cine-direction{height:270px}
+ .pti-page[data-pti-service="seo"] .seo-cine-dir-copy strong{font-size:24px}
+ .pti-page[data-pti-service="seo"] .seo-cine-dir-art svg{max-width:240px}
+}
+@media(prefers-reduced-motion:reduce){.pti-page[data-pti-service="seo"] .seo-cine-hero *, .pti-page[data-pti-service="seo"] .seo-cine-directions *, .pti-page[data-pti-service="seo"] .seo-cine-manifest *{animation:none!important;transition:none!important}}
