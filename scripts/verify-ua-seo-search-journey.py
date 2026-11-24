@@ -30,7 +30,17 @@ assert page.count('data-phase="')==3
 assert "data-scene-status" in page
 assert "pti-seo-console" in page and "pti-scene-controls" in page
 assert 'id="ukseo-cases"' in page and 'id="ukseo-services"' in page
-assert "mrseo_ua_menu_groups()" in page and 'data-pti-faq="seo"' in page
+assert 'data-pti-faq="seo"' in page
+assert "mrseo_ua_menu_groups()" not in page, "SEO hub must not expose the 18-service registry"
+assert page.count('class="seo-editorial-feature ') == 5
+assert page.count('class="seo-editorial-open"') == 5
+for slug in ("seo-audit", "ecommerce-seo", "local-seo", "service-business-seo", "international-seo"):
+    assert "mrseo_url('"+slug+"','uk')" in page, slug
+assert "seo-editorial-scope" in page
+assert "seo-editorial-intro" in css
+assert "seo-editorial-feature:first-child" in css
+assert "@media(max-width:520px)" in css
+assert "3.0.0" in wrapper
 assert "pti-seo" in base and "pti-stage" in base
 assert 'class="pt-globe"' in home
 assert "X-Robots-Tag: noindex, nofollow" in functions
