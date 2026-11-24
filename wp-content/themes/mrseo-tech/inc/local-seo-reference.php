@@ -19,6 +19,23 @@ $local_work=array(
  array('03','Сайт і місцеві сторінки','Покращуємо SEO наявних сторінок послуг, заголовки, локальні посадкові сторінки та контакти. Нові сторінки — за підтвердженим попитом і погодженим обсягом.')
 );
 ?>
+<section class="local-ref-position-section" id="local-seo-approach" aria-labelledby="local-ref-position-title">
+ <div class="pti-wrap">
+  <article class="local-ref-position">
+   <div class="local-ref-position-intro">
+    <span class="pti-kicker">МИ НЕ ТИПОВА SEO-АГЕНЦІЯ</span>
+   <h2 id="local-ref-position-title">Ви наймаєте фахівців,<br><em>а не продавців обіцянок.</em></h2>
+    <p class="local-ref-position-motto">Без пафосу. Без переплат. <em>По суті.</em></p>
+   </div>
+   <div class="local-ref-position-grid">
+    <div class="local-ref-position-item"><h3>Не виставляємо рахунки на тисячі доларів лише тому, що можемо.</h3><p>Вартість визначає реальний обсяг роботи, а не амбіції агенції.</p></div>
+    <div class="local-ref-position-item"><h3>Дорогі звіти ще не зробили жоден бізнес успішним.</h3><p>Не підміняємо роботу красивими графіками та показниками, які не мають цінності для вашого бізнесу.</p></div>
+    <div class="local-ref-position-item"><h3>Не заробляємо на вашому незнанні.</h3><p>Не нав’язуємо зайвих послуг і не прикриваємося складними термінами, щоб виправдати високу вартість.</p></div>
+   </div>
+   <div class="local-ref-position-close"><p>Ми зацікавлені не в тому, щоб ви більше платили, а в тому, щоб <strong>ви більше заробляли.</strong></p></div>
+  </article>
+ </div>
+</section>
 <section class="pti-section psc-problems local-ref-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
  <div class="pti-wrap">
   <div class="pti-section-head"><div><span class="pti-kicker">01 / ВПІЗНАЄТЕ СВОЮ СИТУАЦІЮ?</span><h2 id="psc-problem-title">Чому місцеві клієнти <em>обирають інших?</em></h2></div><p>Видимість у пошуку — лише початок. Важливо, щоб люди могли знайти потрібну інформацію та легко звернутися.</p></div>
@@ -46,7 +63,7 @@ $local_work=array(
 <section class="pti-section local-ref-outcome" aria-labelledby="local-reference-outcome">
  <div class="pti-wrap local-ref-outcome-grid">
   <div class="local-ref-result psc-result"><span class="pti-kicker">03 / РЕЗУЛЬТАТ І КОНТРОЛЬ</span><h2 id="local-reference-outcome">Ви бачите, <em>за що платите.</em></h2><p>На старті — список проблем і пріоритети. Після погоджених робіт — перелік внесених змін та звіт про доступні показники.</p><ul><li>Видимість за важливими локальними запитами.</li><li>Покази, переходи та доступні дії в профілі Google.</li><li>Звернення із сайту, якщо налаштовано їх облік.</li></ul><p class="local-ref-small">Порівнюємо зміни з вихідними даними. Позиції залежать також від відстані, конкуренції та алгоритмів Google.</p></div>
-  <div class="local-ref-terms"><span class="pti-kicker">04 / УМОВИ СПІВПРАЦІ</span><h2>Зрозумілий старт.</h2><ol><li><strong>Знайомимося з бізнесом.</strong> Місто, послуги, сайт або профіль Google.</li><li><strong>Погоджуємо план.</strong> Обсяг, вартість, строки й формат роботи до початку.</li><li><strong>Виконуємо та звітуємо.</strong> Погоджені зміни й доступні показники без обіцянок гарантованого ТОПу.</li></ol><p>Можна почати з окремої перевірки або обговорити регулярне просування.</p></div>
+  <div class="local-ref-terms"><span class="pti-kicker">04 / УМОВИ СПІВПРАЦІ</span><h2>Зрозумілий старт.</h2><ol><li><strong>З’ясовуємо, що потрібно.</strong> Враховуємо місто, послуги, стан сайту й профілю Google.</li><li><strong>Погоджуємо розумний бюджет.</strong> Обсяг робіт, вартість і строки відомі до початку.</li><li><strong>Працюємо та звітуємо.</strong> Показуємо конкретні зміни й доступні показники, не обіцяємо гарантованого ТОПу.</li></ol><p>Можна почати з окремої перевірки, без зобов’язання замовляти регулярне просування.</p></div>
  </div>
 </section>
 <section class="pti-section psc-faq-section local-ref-faq">
