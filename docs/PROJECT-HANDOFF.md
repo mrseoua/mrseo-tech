@@ -1054,3 +1054,6 @@
 - Скрипт `seo-cinematic.js` управляет декоративной анимацией hero и существующими нижними SVG, включая клавиатурный pause, reduced-motion, visibility/offscreen. `scripts/verify-ua-seo-search-journey.py` и браузерный `scripts/verify-live-eu-responsive.cjs` адаптированы к новой структуре вместо устаревших проверок псевдо-SERP. Browser test должен пройти desktop 1440, mobile 390 и narrow 360.
 - Изменения ограничены украинским `/seo/` и css для его пяти child pages; глобальный `style.css`, homepage `orbit-lab.php`, multilingual routing/SEO, noindex и остальные 19 языков без изменений.
 - Отдельное указание пользователя: «делай» — **разрешение на реализацию** утверждённого макета, не самостоятельное согласование публикации в production. Создать PR, дождаться CI, просмотреть screenshots if available; **НЕ MERGE** до прямого «публикуй». Rollback = revert PR.
+
+### 24 ноября 2026 — reference artwork implementation
+Owner explicitly requested publication to inspect actual page. Replace UA SEO hero and five cards with six WebP assets extracted from the provided HTML preview; retain real HTML headings and links, lower content, noindex, 20 languages and homepage. Hero labels/search are baked into art; no 3D claim. Updated static/browser assertions for image decoding, links and layout. Visual QA and deployment not yet verified. Rollback: revert this PR.
