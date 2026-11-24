@@ -130,3 +130,29 @@
 @media(max-width:740px){.psc-page .psc-hero{padding-block:55px 73px}.psc-page .psc-hero .pti-wrap{width:calc(100% - 36px)}.psc-page .psc-problem-grid{grid-template-columns:1fr}.psc-page .psc-problem-card{min-height:0}.psc-page .psc-section-head{gap:16px}.psc-page .psc-hero h1{font-size:clamp(42px,8.9vw,62px)}}
 @media(max-width:480px){.psc-page .psc-hero h1{font-size:clamp(39px,10vw,51px)}.psc-page .psc-hero-stage{padding:10px 6px 0}.psc-page .psc-hero .pti-lead{font-size:17px}.psc-page .psc-hero .pti-actions{flex-direction:column;align-items:stretch}.psc-page .psc-hero .pti-actions .pti-pill{width:100%}.psc-page .psc-stage-meta{font-size:9px}.psc-page .psc-problem-card p{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.psc-page .psc-hero *, .psc-page .psc-problem-card{transition:none!important}}
+
+/* Brand lock: all five SEO children reuse the same palette as the SEO hub and homepage.
+   Scoped to this cluster, not a site-wide replacement of icons or platform logos. */
+.pti-page.psc-page{
+ --psc-paper:#f7f3ed;
+ --psc-ink:#242624;
+ --psc-muted:#5b5955;
+ --psc-red:var(--mrseo-brand-red,#A84432);
+ --psc-rule:#ded3c7;
+ background:var(--psc-paper);
+ color:var(--psc-ink);
+}
+.pti-page.psc-page em,
+.pti-page.psc-page .pti-kicker,
+.pti-page.psc-page .psc-stage-meta,
+.pti-page.psc-page .psc-problem-card .pti-num{color:var(--psc-red)}
+.pti-page.psc-page .pti-kicker:before{background:var(--psc-red)}
+.pti-page.psc-page .psc-hero h1,
+.pti-page.psc-page .pti-section-head h2{color:var(--psc-ink)}
+.pti-page.psc-page .psc-hero{background:radial-gradient(ellipse at 76% 33%,#efe4d9,transparent 56%),#f7f3ed}
+.pti-page.psc-page .psc-hero-stage{background:linear-gradient(135deg,#f9f5ef,#e8ded2);border-color:var(--psc-rule)}
+.pti-page.psc-page .psc-problem-card{border-color:var(--psc-rule)}
+.pti-page.psc-page .psc-problem-card p{color:var(--psc-muted)}
+.pti-page.psc-page .pti-pill:hover{background:var(--psc-red);border-color:var(--psc-red)}
+.pti-page.psc-page .psc-result{border-left-color:var(--psc-red)}
+.pti-page.psc-page .psc-seo-related a:focus-visible{outline-color:var(--psc-red)}
