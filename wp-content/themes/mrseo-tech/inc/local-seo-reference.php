@@ -21,15 +21,18 @@ $local_work=array(
 ?>
 <section class="local-ref-position-section" id="local-seo-approach" aria-labelledby="local-ref-position-title">
  <div class="pti-wrap">
-  <article class="local-ref-position" >
-   <span class="pti-kicker">МИ НЕ ТИПОВА SEO-АГЕНЦІЯ</span>
+  <article class="local-ref-position">
+   <div class="local-ref-position-intro">
+    <span class="pti-kicker">МИ НЕ ТИПОВА SEO-АГЕНЦІЯ</span>
    <h2 id="local-ref-position-title">Ви наймаєте фахівців,<br><em>а не продавців обіцянок.</em></h2>
-   <div class="local-ref-position-grid">
-    <div class="local-ref-position-item"><span class="local-ref-position-no" aria-hidden="true">01 /</span><h3>Не виставляємо рахунки на тисячі доларів лише тому, що можемо.</h3><p>Вартість визначає реальний обсяг роботи, а не амбіції агенції.</p></div>
-    <div class="local-ref-position-item"><span class="local-ref-position-no" aria-hidden="true">02 /</span><h3>Дорогі звіти ще не зробили жоден бізнес успішним.</h3><p>Не підміняємо роботу красивими графіками та показниками, які не мають цінності для вашого бізнесу.</p></div>
-    <div class="local-ref-position-item"><span class="local-ref-position-no" aria-hidden="true">03 /</span><h3>Не заробляємо на вашому незнанні.</h3><p>Не нав’язуємо зайвих послуг і не прикриваємося складними термінами, щоб виправдати високу вартість.</p></div>
+    <p class="local-ref-position-motto">Без пафосу. Без переплат. <em>По суті.</em></p>
    </div>
-   <div class="local-ref-position-close"><p class="local-ref-position-motto">Без пафосу. Без переплат. <em>По суті.</em></p><p>Ми зацікавлені не в тому, щоб ви більше платили, а в тому, щоб ви більше заробляли.</p></div>
+   <div class="local-ref-position-grid">
+    <div class="local-ref-position-item"><h3>Не виставляємо рахунки на тисячі доларів лише тому, що можемо.</h3><p>Вартість визначає реальний обсяг роботи, а не амбіції агенції.</p></div>
+    <div class="local-ref-position-item"><h3>Дорогі звіти ще не зробили жоден бізнес успішним.</h3><p>Не підміняємо роботу красивими графіками та показниками, які не мають цінності для вашого бізнесу.</p></div>
+    <div class="local-ref-position-item"><h3>Не заробляємо на вашому незнанні.</h3><p>Не нав’язуємо зайвих послуг і не прикриваємося складними термінами, щоб виправдати високу вартість.</p></div>
+   </div>
+   <div class="local-ref-position-close"><p>Ми зацікавлені не в тому, щоб ви більше платили, а в тому, щоб <strong>ви більше заробляли.</strong></p></div>
   </article>
  </div>
 </section>
