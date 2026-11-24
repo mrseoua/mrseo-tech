@@ -26,7 +26,7 @@ add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-psc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'3.0.0');
  wp_enqueue_style('mrseo-seo-home-system',get_template_directory_uri().'/assets/seo-home-system.css',array('mrseo-psc'),'1.0.0');
- if(in_array(mrseo_slug(),array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),true))wp_enqueue_style('mrseo-local-seo-reference',get_template_directory_uri().'/assets/local-seo-reference.css',array('mrseo-seo-home-system'),'1.0.1');
+ if(in_array(mrseo_slug(),array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),true))wp_enqueue_style('mrseo-local-seo-reference',get_template_directory_uri().'/assets/local-seo-reference.css',array('mrseo-seo-home-system'),'1.0.2');
  wp_enqueue_script('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.js',array(),'1.0.1',true);
 },100);
 get_header();
@@ -39,6 +39,7 @@ get_header();
     <span class="pti-kicker"><?php echo esc_html($psc['kicker']);?></span>
     <h1 id="<?php echo esc_attr($psc_title_id);?>"><?php echo esc_html($psc['headline'][0]);?> <em><?php echo esc_html($psc['headline'][1]);?></em></h1>
     <p class="pti-lead"><?php echo esc_html($psc['lead']);?></p>
+    <?php if($psc_slug==='local-seo'):?><a class="local-ref-hero-promise" href="#local-seo-approach">Без роздутих рахунків. Без порожніх обіцянок. <strong>Ви платите за роботу.</strong> <span aria-hidden="true">↓</span></a><?php endif;?>
     <div class="pti-actions"><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['button']);?> ↗</a><a class="pti-pill pti-secondary" href="#<?php echo esc_attr($psc_problem_id);?>">З чого почнемо ↓</a></div>
     <p class="pti-footnote"><?php echo esc_html($psc['foot']);?></p>
    </div>
