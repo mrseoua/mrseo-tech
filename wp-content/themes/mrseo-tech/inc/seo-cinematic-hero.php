@@ -4,7 +4,7 @@
   <div class="pti-hero-copy">
    <span class="pti-kicker">SEO-ПРОСУВАННЯ · ПОШУК · КЛІЄНТИ</span>
    <h1 id="pti-title">Сайт є.<br><em>А клієнти з Google?</em></h1>
-   <p class="pti-lead">SEO-просування сайту в Google допомагає клієнтам знаходити ваші товари та послуги. З’ясовуємо, чому сайт поступається конкурентам, і погоджуємо конкретні зміни.</p>
+   <p class="pti-lead">SEO-просування сайту допомагає клієнтам знаходити ваші послуги в Google. Перевіримо пошуковий попит, структуру й технічні проблеми, погодимо пріоритети SEO-оптимізації та перевіримо результат.</p>
    <div class="pti-actions"><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити проєкт ↗</a><a class="pti-pill pti-secondary" href="#ukseo-services">Напрями SEO ↓</a></div>
    <p class="pti-footnote seo-home-note">10+ років досвіду в SEO. Контроль змін без обіцянок гарантованих позицій.</p>
   </div>

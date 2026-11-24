@@ -13,7 +13,7 @@ assert "seo-cinematic-hero.php" in page and "seo-cinematic-directions.php" in pa
 assert page.count('<section class="pti-section" id="ukseo-cases"')==1
 assert page.count('data-pti-faq="seo"')==1
 assert hero.count("<h1 ")==1 and 'id="pti-title"' in hero
-assert "SEO-просування сайту в Google" in hero and "10+ років" in hero
+assert "SEO-просування сайту допомагає клієнтам" in hero and "10+ років" in hero
 assert 'class="seo-home-window seo-art"' in hero and 'class="seo-cine-motion"' in hero
 assert 'id="ukseo-services"' in directions and "seo_home_cards=array(" in directions
 for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo"):
