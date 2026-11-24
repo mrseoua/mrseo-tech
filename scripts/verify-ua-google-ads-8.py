@@ -48,3 +48,13 @@ assert "ведення окремо" in semantic["google-ads-audit"]["descriptio
 assert "без гарантій розблокування" in semantic["merchant-center"]["description"]
 assert all(u in semantic for u,_ in semantic["merchant-center"]["related"])
 print("Eight Ukrainian Google Ads pages, seven child routes, unique metadata, no public prices and noindex intact.")
+
+# The real hub uses the same problem-first layout as the five paid campaign pages.
+assert main.count('class="service-problem-answer"')==3 and main.count('class="service-problem-copy"')==3
+assert main.index('id="ukads-problems"')<main.index('id="ukads-services"')<main.index('data-pti-story="ads"')<main.index('id="ukads-pricing"')
+assert main.count('class="service-deliverable"')==1
+assert all("'"+slug+"'=>array(" in main for slug in child)
+assert 'data-service-standard="v1"' in (root/"premium-ua-interior.php").read_text()
+assert "service-standard.css" in (root/"premium-ua-interior.php").read_text()
+assert "prefers-reduced-motion" in (root/"assets/service-standard.css").read_text()
+print("PASS: Ads hub standard v1, seven service destinations, three clear problems/solutions, no pricing changes")
