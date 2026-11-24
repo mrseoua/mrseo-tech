@@ -10,8 +10,11 @@ $psc_art=mrseo_psc_scene_ids($psc_slug);
 if(!$psc||!$psc_art){status_header(404);include get_404_template();return;}
 $psc_audit=$psc_slug==='seo-audit';
 $psc_shop=$psc_slug==='ecommerce-seo';
-$psc_reference=$psc_slug==='local-seo';
-if($psc_reference){$psc['kicker']='ЛОКАЛЬНЕ SEO · GOOGLE MAPS';$psc['button']='Обговорити просування';$psc['foot']='Для бізнесу, який працює в конкретному місті або районі.';}
+require_once get_template_directory().'/inc/seo-reference-content.php';
+$psc_ref_copy=mrseo_seo_reference_content($psc_slug);
+$psc_reference=$psc_slug==='local-seo'||$psc_ref_copy!==null;
+if($psc_slug==='local-seo'){$psc['kicker']='ЛОКАЛЬНЕ SEO · GOOGLE MAPS';$psc['button']='Обговорити просування';$psc['foot']='Для бізнесу, який працює в конкретному місті або районі.';}
+elseif($psc_ref_copy){foreach(array('kicker','button','foot') as $field)$psc[$field]=$psc_ref_copy[$field];}
 $psc_problem_id=$psc['problemId']??'uws-pains';
 $psc_delivery_id=$psc['deliveryId']??'uws-solution-title';
 $psc_title_id=$psc['titleId']??'uws-title';
@@ -23,7 +26,7 @@ add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-psc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.css',array('mrseo-psc-base'),'3.0.0');
  wp_enqueue_style('mrseo-seo-home-system',get_template_directory_uri().'/assets/seo-home-system.css',array('mrseo-psc'),'1.0.0');
- if(mrseo_slug()==='local-seo')wp_enqueue_style('mrseo-local-seo-reference',get_template_directory_uri().'/assets/local-seo-reference.css',array('mrseo-seo-home-system'),'1.0.0');
+ if(in_array(mrseo_slug(),array('local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'),true))wp_enqueue_style('mrseo-local-seo-reference',get_template_directory_uri().'/assets/local-seo-reference.css',array('mrseo-seo-home-system'),'1.0.0');
  wp_enqueue_script('mrseo-psc',get_template_directory_uri().'/assets/premium-seo-cluster.js',array(),'1.0.1',true);
 },100);
 get_header();
@@ -55,7 +58,7 @@ get_header();
    </div>
   </div>
  </section>
- <?php if($psc_reference){require get_template_directory().'/inc/local-seo-reference.php';echo '</div>';get_footer();return;}?>
+ <?php if($psc_reference){require get_template_directory().($psc_slug==='local-seo'?'/inc/local-seo-reference.php':'/inc/seo-reference-sibling.php');echo '</div>';get_footer();return;}?>
  <section class="pti-section psc-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
   <div class="pti-wrap">
    <div class="pti-section-head"><div><span class="pti-kicker">ЯКУ ПРОБЛЕМУ ВИРІШУЄМО</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
