@@ -43,6 +43,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const shown=e=>!!e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden';
       const main=document.querySelector('.pti-page,.hs-premium,.ukseo--horoshop,.about-page,.mrseo-privacy-page');
       const headings=[...document.querySelectorAll('h1')];
+      const stages=[...document.querySelectorAll('[data-ua-stage]')].map(e=>({key:e.dataset.uaStage,visible:shown(e),text:e.textContent.trim().length,top:e.getBoundingClientRect().top,catalog:e.dataset.uaStage==='catalog'?[...e.querySelectorAll('a[href]')].map(a=>new URL(a.href).pathname):[]}));
       const pairs=[...document.querySelectorAll('[data-ua-problem-pair]')];
       const completePairs=pairs.filter(e=>{const answer=e.querySelector('.ua-paired-answer');const p=answer?.querySelector('p');return answer&&p&&shown(p)&&p.textContent.trim().length>20&&!!e.querySelector('h3')?.textContent.trim();}).length;
       const referenceAnswers=referenceSelector?[...document.querySelectorAll(referenceSelector)].filter(e=>shown(e)&&e.textContent.trim().length>20).length:0;
@@ -51,7 +52,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const rootFont=e=>parseFloat(getComputedStyle(e).fontSize);
       const sample=[...document.querySelectorAll('.pti-page.puc-page:not(.ads-v2) .pti-card p,.pti-page[data-pti-service="web-development"] .pti-card p,.udv-card p,.udv-step p,.hs-premium-step p,.hs-premium-faq-list p')].filter(shown);
       const bounds=[...document.querySelectorAll('.pti-hero-copy,.pti-page .pti-wrap,.udv-section>.container,.hs-premium-wrap,.about-hero-copy,.mrseo-privacy-container')].filter(shown).map(e=>({class:e.className,left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right}));
-      return {pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
+      return {stages,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
      },referenceSelectors[slug]||null);
      result.data=data;result.status=response?.status();
      if(data.lang!=='uk-UA')errors.push('Language '+data.lang);
@@ -68,6 +69,14 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      if(paired.has(slug)&&(data.pairs!==3||data.completePairs!==3))errors.push('Missing visible problem-to-solution pairs: '+data.completePairs+'/'+data.pairs);
      if(referenceSelectors[slug]&&data.referenceAnswers!==3)errors.push('Missing reference-layout solutions: '+data.referenceAnswers);
      if(slug==='web-development'&&data.devHubOpen!==3)errors.push('WebDev hub solutions are not visible');
+     if(!editorial.has(slug)){
+      const hubs=['seo','google-ads','horoshop','service-websites','web-development','analytics','online-store-development'];
+      const expected=['hero','problems','approach',...(hubs.includes(slug)?['catalog']:[]),'work','result','terms','faq','cta'];
+      const actual=data.stages.map(e=>e.key);
+      if(JSON.stringify(actual)!==JSON.stringify(expected)||data.stages.some(e=>!e.visible||e.text<20))errors.push('UA v2 stage order '+JSON.stringify({expected,actual}));
+      if(data.stages.some((e,i)=>i&&e.top<data.stages[i-1].top-4))errors.push('UA v2 visual stage order '+JSON.stringify(data.stages.map(e=>[e.key,e.top])));
+      if(hubs.includes(slug)&&!(data.stages.find(e=>e.key==='catalog')?.catalog.length>=4))errors.push('UA v2 category catalogue missing or incomplete');
+     }else if(data.stages.length)errors.push('UA v2 stages leaked onto editorial route');
      if(runtime.length)errors.push(...runtime.map(e=>'JS: '+e));
      // Capture actual hero and a representative lower content block, including any failing URL.
      if(selected.has(slug)||errors.length){
