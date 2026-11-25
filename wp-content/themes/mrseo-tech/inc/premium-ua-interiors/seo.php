@@ -1,7 +1,7 @@
 <?php if(!defined('ABSPATH'))exit; ?>
 <div class="seo-hub">
 <?php require get_template_directory().'/inc/seo-cinematic-hero.php';?>
-<section class="seo-section seo-problems" id="ukseo-cases" aria-labelledby="seo-problems-title">
+<section data-ua-stage="problems" class="seo-section seo-problems" id="ukseo-cases" aria-labelledby="seo-problems-title">
  <div class="seo-shell">
   <div class="seo-section-head"><div><span class="seo-kicker">02 / ДІАГНОСТИКА</span><h2 id="seo-problems-title">Де ви втрачаєте<br><em>клієнтів із Google?</em></h2></div><p>Три ситуації, які варто перевірити першими. Для кожної — своя причина, перевірка і рішення.</p></div>
   <div class="seo-problem-list">
@@ -11,8 +11,9 @@
   </div>
  </div>
 </section>
+<?php mrseo_ua_v2_approach('seo');?>
 <?php require get_template_directory().'/inc/seo-cinematic-directions.php';?>
-<section class="seo-section seo-plan" id="seo-approach" aria-labelledby="ukseo-priorities-title">
+<section data-ua-stage="work" class="seo-section seo-plan" id="seo-approach" aria-labelledby="ukseo-priorities-title">
  <div class="seo-shell">
   <div class="seo-section-head"><div><span class="seo-kicker">04 / ЯК МИ ПРАЦЮЄМО</span><h2 id="ukseo-priorities-title">Не сотня зауважень.<br><em>Зрозумілий план дій.</em></h2></div><p>Ви знаєте, що саме ми перевіряємо, які зміни погоджуємо і як оцінюємо результат.</p></div>
   <div class="seo-plan-board" data-pti-story="seo">
@@ -25,8 +26,10 @@
   </div>
  </div>
 </section>
-<section class="seo-section seo-faq" aria-labelledby="seo-faq-title"><div class="seo-shell seo-faq-layout" data-pti-faq="seo"><div><span class="seo-kicker">05 / ПЕРЕД ПОЧАТКОМ</span><h2 id="seo-faq-title">Коротко про<br><em>співпрацю.</em></h2><p>Що потрібно знати до початку роботи.</p></div><div class="seo-faq-questions"><details><summary>Чи потрібно одразу замовляти щомісячне SEO-просування сайту?</summary><p>Ні. Якщо проблема вузька, можна почати з технічного аудиту, аналізу структури або окремого переліку змін. Регулярну роботу пропонуємо, коли є обґрунтований обсяг завдань. Вартість SEO-просування залежить від розміру сайту, конкуренції та погоджених робіт.</p></details>
+<?php mrseo_ua_v2_result("Погоджений план SEO-робіт, виконані завдання в узгодженому обсязі та контроль доступності сторінок, показів, переходів і звернень за доступними даними. Аудит і впровадження — різні формати роботи.");?>
+<?php mrseo_ua_v2_terms("Вартість регулярного SEO залежить від розміру сайту, конкуренції та обсягу завдань; можна почати з окремої перевірки.");?>
+<section data-ua-stage="faq" class="seo-section seo-faq" aria-labelledby="seo-faq-title"><div class="seo-shell seo-faq-layout" data-pti-faq="seo"><div><span class="seo-kicker">05 / ПЕРЕД ПОЧАТКОМ</span><h2 id="seo-faq-title">Коротко про<br><em>співпрацю.</em></h2><p>Що потрібно знати до початку роботи.</p></div><div class="seo-faq-questions"><details><summary>Чи потрібно одразу замовляти щомісячне SEO-просування сайту?</summary><p>Ні. Якщо проблема вузька, можна почати з технічного аудиту, аналізу структури або окремого переліку змін. Регулярну роботу пропонуємо, коли є обґрунтований обсяг завдань. Вартість SEO-просування залежить від розміру сайту, конкуренції та погоджених робіт.</p></details>
 <details><summary>Коли можна очікувати перші зміни?</summary><p>Спочатку перевіряємо, що виправлення працюють і потрібні сторінки доступні для Google. Зміни показів, кліків і звернень оцінюємо в динаміці; строки залежать від конкуренції та швидкості впровадження.</p></details>
 <details><summary>Що потрібно для початку?</summary><p>Адреса сайту, короткий опис товарів або послуг, цільовий ринок і головна проблема. Доступи до аналітики чи Search Console обговоримо окремо — не надсилайте паролі через форму.</p></details></div></div></section>
-<section class="seo-final" aria-labelledby="seo-final-title"><div class="seo-shell seo-final-inner"><div><span class="seo-kicker">06 / ПЕРШИЙ КРОК</span><h2 id="seo-final-title">Почнімо з того,<br><em>що заважає вашому сайту.</em></h2></div><div><p>Опишіть проблему й залиште адресу сайту. Визначимо, що варто перевірити насамперед.</p><a class="seo-button" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити проєкт ↗</a></div></div></section>
+<section data-ua-stage="cta" class="seo-final" aria-labelledby="seo-final-title"><div class="seo-shell seo-final-inner"><div><span class="seo-kicker">06 / ПЕРШИЙ КРОК</span><h2 id="seo-final-title">Почнімо з того,<br><em>що заважає вашому сайту.</em></h2></div><div><p>Опишіть проблему й залиште адресу сайту. Визначимо, що варто перевірити насамперед.</p><a class="seo-button" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити проєкт ↗</a></div></div></section>
 </div>

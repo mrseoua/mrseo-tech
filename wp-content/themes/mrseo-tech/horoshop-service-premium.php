@@ -24,7 +24,7 @@ $visual=$scenes[$key];
 get_header();
 ?>
 <div class="hs-premium hs-premium--<?php echo esc_attr($key);?>" data-hs-premium="<?php echo esc_attr($key);?>">
- <section class="hs-premium-hero">
+ <section data-ua-stage="hero" class="hs-premium-hero">
   <div class="hs-premium-wrap hs-premium-hero-grid">
    <div class="hs-premium-copy">
     <nav class="hs-premium-breadcrumb" aria-label="Навігаційний шлях"><a href="<?php echo esc_url(mrseo_url('','uk'));?>">Головна</a><span aria-hidden="true">/</span><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Хорошоп</a><span aria-hidden="true">/</span><span><?php echo esc_html($p[0]);?></span></nav>
@@ -84,9 +84,8 @@ get_header();
    </div>
   </div>
  </section>
- <?php mrseo_hs_trust(); ?>
- <?php mrseo_hs_paid_scene($key);?>
- <section class="hs-premium-problems" id="hs-process">
+ 
+ <section data-ua-stage="problems" class="hs-premium-problems" id="hs-process">
   <div class="hs-premium-wrap">
    <div class="hs-premium-head"><span class="hs-premium-eyebrow">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
    <div class="hs-premium-steps">
@@ -101,11 +100,15 @@ get_header();
    </div>
   </div>
  </section>
+ <?php mrseo_ua_v2_approach('horoshop/'.$key);?>
+ <?php mrseo_hs_trust(); ?>
+ <?php mrseo_hs_paid_scene($key);?>
  <?php mrseo_hs_workbench($key);?>
- <section class="hs-premium-outcome">
-  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><p class="ua-paired-terms"><strong>Умови співпраці.</strong> Погоджуємо обсяг, вартість і строки з урахуванням тарифу Хорошоп. Додаткові роботи — лише за домовленістю.</p><?php mrseo_hs_result_visual($key);?><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
+ <section data-ua-stage="result" class="hs-premium-outcome">
+  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><?php mrseo_hs_result_visual($key);?><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
  </section>
- <section class="hs-premium-faq">
+ <?php mrseo_ua_v2_terms("Перед змінами перевіряємо можливості вашого тарифу Хорошоп; оплату платформи й сторонніх сервісів погоджуємо окремо.");?>
+ <section data-ua-stage="faq" class="hs-premium-faq">
   <div class="hs-premium-wrap hs-premium-faq-grid"><div><span class="hs-premium-eyebrow">ПЕРЕД ПОЧАТКОМ</span><h2>Коротко про <em>роботу.</em></h2></div><div class="hs-premium-faq-list">
    <details><summary><?php echo esc_html($p[12]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($p[13]);?></p></details>
    <details><summary><?php echo esc_html($p[14]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($p[15]);?></p></details>
@@ -113,6 +116,6 @@ get_header();
   </div></div>
  </section>
  <section class="hs-premium-related"><div class="hs-premium-wrap"><span class="hs-premium-eyebrow">ПОВ’ЯЗАНІ ПОСЛУГИ</span><div class="hs-premium-related-grid"><a href="<?php echo esc_url(mrseo_url('horoshop','uk'));?>">Усі послуги Хорошоп <span aria-hidden="true">↗</span></a><a href="<?php echo esc_url(mrseo_url($p[16],'uk'));?>"><?php echo esc_html($p[17]);?> <span aria-hidden="true">↗</span></a><?php if($key==='seo'):?><a href="<?php echo esc_url(mrseo_hs_url('audit'));?>">SEO-аудит сайтів на Хорошоп <span aria-hidden="true">↗</span></a><?php elseif($key==='audit'):?><a href="<?php echo esc_url(mrseo_hs_url('seo'));?>">SEO-просування сайтів на Хорошоп <span aria-hidden="true">↗</span></a><?php elseif(in_array($key,array('ads','search-ads','shopping','pmax'),true)):?><?php foreach(array('search-ads'=>'Пошукова реклама для Хорошоп','shopping'=>'Google Shopping для Хорошоп','pmax'=>'Performance Max для Хорошоп') as $other=>$label):?><?php if($key!==$other):?><a href="<?php echo esc_url(mrseo_hs_url($other));?>"><?php echo esc_html($label);?> <span aria-hidden="true">↗</span></a><?php endif;?><?php endforeach;?><?php endif;?></div></div></section>
- <section class="hs-premium-final"><div class="hs-premium-wrap"><div class="hs-story-final-orbit" aria-hidden="true"><i></i><i></i><i></i><span></span></div><span class="hs-premium-eyebrow">Є КОНКРЕТНА ПРОБЛЕМА?</span><h2>Опишіть задачу. <em>Знайдемо реальне рішення.</em></h2><p>Надішліть адресу магазину й поясніть, що не працює. Спочатку перевіримо обсяг задачі та можливості платформи.</p><a class="hs-premium-button hs-premium-button-light" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити Хорошоп ↗</a></div></section>
+ <section data-ua-stage="cta" class="hs-premium-final"><div class="hs-premium-wrap"><div class="hs-story-final-orbit" aria-hidden="true"><i></i><i></i><i></i><span></span></div><span class="hs-premium-eyebrow">Є КОНКРЕТНА ПРОБЛЕМА?</span><h2>Опишіть задачу. <em>Знайдемо реальне рішення.</em></h2><p>Надішліть адресу магазину й поясніть, що не працює. Спочатку перевіримо обсяг задачі та можливості платформи.</p><a class="hs-premium-button hs-premium-button-light" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити Хорошоп ↗</a></div></section>
 </div>
 <?php get_footer();?>

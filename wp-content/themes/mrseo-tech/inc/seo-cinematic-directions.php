@@ -9,7 +9,7 @@ $seo_home_cards=array(
  array('international-seo','Міжнародне SEO','МОВИ / РИНКИ','Узгоджуємо мовні версії, пошуковий попит і технічні налаштування для кожного ринку.',array('Мова','Ринок','Відповідна URL'))
 );
 ?>
-<section class="seo-section seo-directions" id="ukseo-services" aria-labelledby="seo-directions-title">
+<section data-ua-stage="catalog" class="seo-section seo-directions" id="ukseo-services" aria-labelledby="seo-directions-title">
  <div class="seo-shell">
   <div class="seo-section-head"><div><span class="seo-kicker">03 / НАПРЯМИ SEO</span><h2 id="seo-directions-title">Одна мета.<br><em>Різні задачі бізнесу.</em></h2></div><p>Вибираємо напрям відповідно до вашого сайту, ринку та проблеми. Не продаємо однаковий пакет усім.</p></div>
   <div class="seo-cards">

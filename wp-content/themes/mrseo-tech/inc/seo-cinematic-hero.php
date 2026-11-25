@@ -1,6 +1,6 @@
 <?php if(!defined('ABSPATH'))exit; ?>
 <?php require_once get_template_directory().'/inc/seo-hub-premium-art.php'; ?>
-<section class="seo-hero" aria-labelledby="pti-title">
+<section data-ua-stage="hero" class="seo-hero" aria-labelledby="pti-title">
  <div class="seo-shell">
   <div class="seo-hero-heading">
    <div class="seo-hero-copy"><span class="seo-kicker">01 / SEO-ПРОСУВАННЯ</span><h1 id="pti-title">Вас мають знаходити.<br><em>І обирати.</em></h1>
