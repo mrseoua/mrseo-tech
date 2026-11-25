@@ -21,7 +21,7 @@ function mrseo_ads_position_render($slug){
  if(!$copy)return;
  $hub=$slug==='google-ads';
  ?>
- <section class="mrseo-ads-position<?php echo $hub?' mrseo-ads-position-hub':'';?>" id="mrseo-ads-approach" aria-labelledby="mrseo-ads-position-title">
+ <section data-ua-stage="approach" class="mrseo-ads-position<?php echo $hub?' mrseo-ads-position-hub':'';?>" id="mrseo-ads-approach" aria-labelledby="mrseo-ads-position-title">
   <div class="pti-wrap mrseo-ads-position-wrap">
    <div class="mrseo-ads-position-intro">
     <span class="mrseo-ads-position-kicker">МИ ПРАЦЮЄМО ІНАКШЕ</span>

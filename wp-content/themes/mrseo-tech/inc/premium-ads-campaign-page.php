@@ -8,7 +8,7 @@ MRSEO_ADS_BRIEFS
 $ads=$ads_briefs[$psc_slug];
 ?>
 <div class="pti-page puc-page puc-ads-campaign ads-v2" data-puc-route="<?php echo esc_attr($psc_slug);?>" data-ads-layout="problem-solution-v2" id="main-content">
- <section class="pti-hero psc-hero ads-opening" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">
+ <section data-ua-stage="hero" class="pti-hero psc-hero ads-opening" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">
   <div class="pti-wrap">
    <nav class="pti-crumb" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url());?>">Головна</a> / <a href="<?php echo esc_url(mrseo_url('google-ads'));?>">Google Ads</a> / <span><?php echo esc_html($psc['title']);?></span></nav>
    <div class="pti-hero-grid">
@@ -35,8 +35,8 @@ $ads=$ads_briefs[$psc_slug];
    </div>
   </div>
  </section>
- <?php mrseo_ads_position_render($psc_slug);?>
- <section class="pti-section psc-problems ads-diagnosis" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
+ 
+ <section data-ua-stage="problems" class="pti-section psc-problems ads-diagnosis" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
   <div class="pti-wrap">
    <div class="pti-section-head"><div><span class="pti-kicker">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
    <div class="pti-grid psc-problem-grid ads-problem-rows">
@@ -50,27 +50,29 @@ $ads=$ads_briefs[$psc_slug];
    </div>
   </div>
  </section>
+ <?php mrseo_ua_v2_approach($psc_slug);?>
  <?php if(!empty($psc['plan'])):$plan=$psc['plan'];?>
  <section class="pti-section pti-alt puc-plan" aria-labelledby="puc-plan-title"><div class="pti-wrap psc-story-grid">
   <div class="psc-story-visual"><?php mrseo_puc_art($psc_art['plan']);?></div>
   <div><span class="pti-kicker"><?php echo esc_html($plan['eyebrow']);?></span><h2 id="puc-plan-title"><?php echo esc_html($plan['heading'][0]);?> <em><?php echo esc_html($plan['heading'][1]);?></em></h2><p class="pti-lead"><?php echo esc_html($plan['lead']);?></p><div class="pti-steps"><?php foreach($plan['steps'] as $i=>$step):?><div class="pti-step"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div></div><?php endforeach;?></div><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($plan['cta']);?> ↗</a><p class="pti-footnote">Ілюстрація підходу, не клієнтський кейс.</p></div>
  </div></section>
  <?php endif;?>
- <section class="pti-section psc-delivery ads-work" id="uws-solution" aria-labelledby="<?php echo esc_attr($psc_delivery_id);?>">
+ <section data-ua-stage="work" class="pti-section psc-delivery ads-work" id="uws-solution" aria-labelledby="<?php echo esc_attr($psc_delivery_id);?>">
   <div class="pti-wrap">
    <div class="pti-section-head"><div><span class="pti-kicker">02 / ЩО САМЕ РОБИМО</span><h2 id="<?php echo esc_attr($psc_delivery_id);?>"><?php $psc_head($psc['sectionTitle']);?></h2></div><p>Ви розумієте, що перевіряємо, які зміни погоджуємо та як оцінюємо їхній результат.</p></div>
    <div class="ads-work-board">
     <div class="psc-story-visual"><?php mrseo_puc_art($psc_art['storyId']);?></div>
     <div class="psc-delivery-copy"><div class="pti-steps"><?php foreach($psc['benefits'] as $i=>$item):?><div class="pti-step"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></div><?php endforeach;?></div><p class="pti-footnote">Ілюстрація підходу, не дані конкретного проєкту.</p><button class="psc-pause psc-lower-pause" type="button" aria-pressed="false">Призупинити рух</button></div>
    </div>
-   <div class="psc-result ads-result"><div><span class="pti-kicker">03 / ЩО ОТРИМУЄ БІЗНЕС</span><h3><?php echo esc_html($ads['output']);?></h3></div><p><?php echo esc_html($psc['result']);?></p></div>
+   <div data-ua-stage="result" class="psc-result ads-result"><div><span class="pti-kicker">03 / ЩО ОТРИМУЄ БІЗНЕС</span><h3><?php echo esc_html($ads['output']);?></h3></div><p><?php echo esc_html($psc['result']);?></p></div>
   </div>
  </section>
- <section class="pti-section psc-faq-section"><div class="pti-wrap pti-faq">
+ <?php mrseo_ua_v2_terms("Рекламний бюджет Google та вартість наших послуг погоджуємо окремо.");?>
+ <section data-ua-stage="faq" class="pti-section psc-faq-section"><div class="pti-wrap pti-faq">
   <div><span class="pti-kicker">04 / ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>"><?php echo esc_html($psc['faqHeading']??'Коротко про важливе.');?></h2><?php if(!empty($psc['faqLead'])):?><p><?php echo esc_html($psc['faqLead']);?></p><?php endif;?></div>
   <div><?php foreach($psc['faq'] as $i=>$item):?><details><summary><?php echo esc_html($item[0]);?></summary><p><?php echo esc_html($item[1]);?></p></details><?php endforeach;?></div>
  </div></section>
- <section class="pti-final psc-final"><div class="pti-wrap">
+ <section data-ua-stage="cta" class="pti-final psc-final"><div class="pti-wrap">
   <div class="psc-final-art"><?php mrseo_puc_art($psc_art['endId']);?></div>
   <div><span class="pti-kicker">05 / ПЕРШИЙ КРОК</span><h2 id="<?php echo esc_attr($psc_final_id);?>"><?php $psc_head($psc['ctaTitle']);?></h2><p><?php echo esc_html($psc['ctaLead']);?></p><?php if(!empty($psc['related'])):?><div class="puc-related-inline"><?php foreach($psc['related'] as $link):?><a href="<?php echo esc_url(mrseo_url($link[0]));?>"><?php echo esc_html($link[1]);?> ↗</a><?php endforeach;?></div><?php endif;?></div>
   <a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['finalButton']??$psc['button']);?> ↗</a>
