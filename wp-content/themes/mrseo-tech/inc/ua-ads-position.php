@@ -26,7 +26,6 @@ function mrseo_ads_position_render($slug){
    <div class="mrseo-ads-position-intro">
     <span class="mrseo-ads-position-kicker">03 / МИ ПРАЦЮЄМО ІНАКШЕ</span>
     <h2 id="mrseo-ads-position-title"><?php echo esc_html($copy['headline'][0]);?> <em><?php echo esc_html($copy['headline'][1]);?></em></h2>
-    <p class="mrseo-ads-position-motto">Без пафосу. Без переплат. <em>По суті.</em></p>
    </div>
    <div class="mrseo-ads-position-items">
     <?php foreach($copy['items'] as $item):?>
