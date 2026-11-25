@@ -97,12 +97,12 @@ get_header();
  <section data-ua-stage="problems" class="hs-premium-problems" id="hs-process">
   <div class="hs-premium-wrap">
    <div class="hs-premium-head"><span class="hs-premium-eyebrow">02 / ПРОБЛЕМА → РІШЕННЯ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
-   <div class="hs-premium-steps">
+   <div class="hs-premium-steps ua-api-list">
     <?php foreach(array(5,7,9) as $i):?>
-    <article class="hs-premium-step ua-paired-row ua-paired-row--compact" data-ua-problem-pair>
-     <div class="hs-story-step-visual" aria-hidden="true"><span class="hs-story-step-ring"></span><span class="hs-story-step-core"><i></i><i></i><i></i></span><span class="hs-story-step-ray"></span></div>
-     <span class="hs-premium-step-number"><?php echo esc_html(str_pad((string)(($i-5)/2+1),2,'0',STR_PAD_LEFT));?></span>
-     <div class="ua-paired-problem"><span class="ua-pair-label">ПРОБЛЕМА</span><h3><?php echo esc_html($ua_hs_problems[(int)(($i-5)/2)]);?></h3></div>
+    <article class="hs-premium-step ua-paired-row ua-api-row" data-ua-problem-pair>
+     <div class="ua-api-art"><div class="hs-story-step-visual" aria-hidden="true"><span class="hs-story-step-ring"></span><span class="hs-story-step-core"><i></i><i></i><i></i></span><span class="hs-story-step-ray"></span></div>
+     <span class="hs-premium-step-number"><?php echo esc_html(str_pad((string)(($i-5)/2+1),2,'0',STR_PAD_LEFT));?></span></div>
+     <div class="ua-paired-problem"><span class="ua-pair-label"><?php echo esc_html(sprintf('%02d',($i-5)/2+1));?> / ПРОБЛЕМА</span><h3><?php echo esc_html($ua_hs_problems[(int)(($i-5)/2)]);?></h3></div>
      <div class="ua-paired-answer"><span>НАШЕ РІШЕННЯ</span><h4><?php echo esc_html($p[$i]);?></h4><p><?php echo esc_html($p[$i+1]);?></p></div>
     </article>
     <?php endforeach;?>
