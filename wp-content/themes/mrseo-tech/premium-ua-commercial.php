@@ -59,7 +59,7 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
  
  <section data-ua-stage="problems" class="pti-section psc-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
   <div class="pti-wrap">
-   <div class="pti-section-head"><div><span class="pti-kicker">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
+   <div class="pti-section-head"><div><span class="pti-kicker">02 / ПРОБЛЕМА → РІШЕННЯ</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
    <div class="pti-grid psc-problem-grid ua-paired-rows">
    <?php foreach($psc['pains'] as $i=>$problem):$answer=mrseo_ua_problem_answer($psc_slug,$i,$problem);?>
     <article class="pti-card psc-problem-card ua-paired-row" data-ua-problem-pair>
@@ -83,10 +83,10 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
   <div class="pti-wrap psc-story-grid">
    <div class="psc-story-visual"><?php mrseo_puc_art($psc_art['storyId']);?></div>
    <div class="psc-delivery-copy">
-    <span class="pti-kicker"><?php echo esc_html($psc['resultTitle']);?></span>
+    <span class="pti-kicker">04 / КОНКРЕТНІ РОБОТИ</span>
     <h2 id="<?php echo esc_attr($psc_delivery_id);?>"><?php $psc_head($psc['sectionTitle']);?></h2>
     <div class="pti-steps"><?php foreach($psc['benefits'] as $i=>$item):?><div class="pti-step"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></div><?php endforeach;?></div>
-    <div data-ua-stage="result" class="psc-result"><span class="pti-kicker"><?php echo esc_html($psc['resultTitle']);?></span><p><?php echo esc_html($psc['result']);?></p></div>
+    <div data-ua-stage="result" class="psc-result"><span class="pti-kicker">05 / <?php echo esc_html($psc['resultTitle']);?></span><p><?php echo esc_html($psc['result']);?></p></div>
     
     <p class="pti-footnote">Ілюстрація підходу, не дані конкретного проєкту.</p>
     <button class="psc-pause psc-lower-pause" type="button" aria-pressed="false">Призупинити рух</button>
@@ -95,12 +95,12 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
  </section>
  <?php mrseo_ua_v2_terms();?>
  <section data-ua-stage="faq" class="pti-section psc-faq-section"><div class="pti-wrap pti-faq">
-  <div><span class="pti-kicker">ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>"><?php echo esc_html($psc['faqHeading']??'Коротко про важливе.');?></h2><?php if(!empty($psc['faqLead'])):?><p><?php echo esc_html($psc['faqLead']);?></p><?php endif;?></div>
+  <div><span class="pti-kicker">07 / ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>"><?php echo esc_html($psc['faqHeading']??'Коротко про важливе.');?></h2><?php if(!empty($psc['faqLead'])):?><p><?php echo esc_html($psc['faqLead']);?></p><?php endif;?></div>
   <div><?php foreach($psc['faq'] as $i=>$item):?><details><summary><?php echo esc_html($item[0]);?></summary><p><?php echo esc_html($item[1]);?></p></details><?php endforeach;?></div>
  </div></section>
  <section data-ua-stage="cta" class="pti-final psc-final"><div class="pti-wrap">
   <div class="psc-final-art"><?php mrseo_puc_art($psc_art['endId']);?></div>
-  <div><span class="pti-kicker">ПЕРШИЙ КРОК</span><h2 id="<?php echo esc_attr($psc_final_id);?>"><?php $psc_head($psc['ctaTitle']);?></h2><p><?php echo esc_html($psc['ctaLead']);?></p><?php if(!empty($psc['related'])):?><div class="puc-related-inline"><?php foreach($psc['related'] as $link):?><a href="<?php echo esc_url(mrseo_url($link[0]));?>"><?php echo esc_html($link[1]);?> ↗</a><?php endforeach;?></div><?php endif;?></div>
+  <div><span class="pti-kicker">08 / ПЕРШИЙ КРОК</span><h2 id="<?php echo esc_attr($psc_final_id);?>"><?php $psc_head($psc['ctaTitle']);?></h2><p><?php echo esc_html($psc['ctaLead']);?></p><?php if(!empty($psc['related'])):?><div class="puc-related-inline"><?php foreach($psc['related'] as $link):?><a href="<?php echo esc_url(mrseo_url($link[0]));?>"><?php echo esc_html($link[1]);?> ↗</a><?php endforeach;?></div><?php endif;?></div>
   <a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['finalButton']??$psc['button']);?> ↗</a>
  </div></section>
 </div>

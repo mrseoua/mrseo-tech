@@ -5,7 +5,7 @@
  <?php mrseo_ads_position_render('google-ads');?>
 <section data-ua-stage="catalog" class="pti-section service-catalog" id="ukads-services" aria-labelledby="ukads-services-title">
  <div class="pti-wrap">
-  <div class="pti-section-head"><div><span class="pti-kicker">02 / НАПРЯМИ РЕКЛАМИ</span><h2 id="ukads-services-title">Виберіть рішення <em>для своєї задачі.</em></h2></div><p>Не кожному бізнесу потрібні всі типи кампаній. Вибір залежить від попиту, товарів, географії та способу вимірювання результату.</p></div>
+  <div class="pti-section-head"><div><span class="pti-kicker">НАПРЯМИ РЕКЛАМИ</span><h2 id="ukads-services-title">Виберіть рішення <em>для своєї задачі.</em></h2></div><p>Не кожному бізнесу потрібні всі типи кампаній. Вибір залежить від попиту, товарів, географії та способу вимірювання результату.</p></div>
   <?php
   $mrseo_ads_briefs=array(
  'google-search-ads'=>array('Клієнти вже шукають вашу послугу','Показуємо оголошення за релевантними запитами та перевіряємо звернення.','<circle cx="33" cy="31" r="13"/><path d="m43 41 14 14M76 23h65M76 35h47M76 47h55"/>'),

@@ -87,7 +87,7 @@ get_header();
  
  <section data-ua-stage="problems" class="hs-premium-problems" id="hs-process">
   <div class="hs-premium-wrap">
-   <div class="hs-premium-head"><span class="hs-premium-eyebrow">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
+   <div class="hs-premium-head"><span class="hs-premium-eyebrow">02 / ПРОБЛЕМА → РІШЕННЯ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
    <div class="hs-premium-steps">
     <?php foreach(array(5,7,9) as $i):?>
     <article class="hs-premium-step ua-paired-row ua-paired-row--compact" data-ua-problem-pair>
@@ -105,11 +105,11 @@ get_header();
  <?php mrseo_hs_paid_scene($key);?>
  <?php mrseo_hs_workbench($key);?>
  <section data-ua-stage="result" class="hs-premium-outcome">
-  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><?php mrseo_hs_result_visual($key);?><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
+  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">05 / ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><?php mrseo_hs_result_visual($key);?><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
  </section>
  <?php mrseo_ua_v2_terms("Перед змінами перевіряємо можливості вашого тарифу Хорошоп; оплату платформи й сторонніх сервісів погоджуємо окремо.");?>
  <section data-ua-stage="faq" class="hs-premium-faq">
-  <div class="hs-premium-wrap hs-premium-faq-grid"><div><span class="hs-premium-eyebrow">ПЕРЕД ПОЧАТКОМ</span><h2>Коротко про <em>роботу.</em></h2></div><div class="hs-premium-faq-list">
+  <div class="hs-premium-wrap hs-premium-faq-grid"><div><span class="hs-premium-eyebrow">07 / ПЕРЕД ПОЧАТКОМ</span><h2>Коротко про <em>роботу.</em></h2></div><div class="hs-premium-faq-list">
    <details><summary><?php echo esc_html($p[12]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($p[13]);?></p></details>
    <details><summary><?php echo esc_html($p[14]);?><span aria-hidden="true">+</span></summary><p><?php echo esc_html($p[15]);?></p></details>
    <details><summary>Чи залежать зміни від тарифу Хорошоп?<span aria-hidden="true">+</span></summary><p>Так. Перш ніж обіцяти конкретний функціонал, перевіримо його доступність у вашому тарифі та способи реалізації.</p></details>

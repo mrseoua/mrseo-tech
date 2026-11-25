@@ -22,7 +22,7 @@ $local_work=array(
 
 <section data-ua-stage="problems" class="pti-section psc-problems local-ref-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
  <div class="pti-wrap">
-  <div class="pti-section-head"><div><span class="pti-kicker">01 / ВПІЗНАЄТЕ СВОЮ СИТУАЦІЮ?</span><h2 id="psc-problem-title">Чому місцеві клієнти <em>обирають інших?</em></h2></div><p>Видимість у пошуку — лише початок. Важливо, щоб люди могли знайти потрібну інформацію та легко звернутися.</p></div>
+  <div class="pti-section-head"><div><span class="pti-kicker">02 / ВПІЗНАЄТЕ СВОЮ СИТУАЦІЮ?</span><h2 id="psc-problem-title">Чому місцеві клієнти <em>обирають інших?</em></h2></div><p>Видимість у пошуку — лише початок. Важливо, щоб люди могли знайти потрібну інформацію та легко звернутися.</p></div>
   <div class="local-ref-problem-list">
    <?php foreach($local_problems as $i=>$row):?>
     <article class="psc-problem-card local-ref-row">
@@ -38,7 +38,7 @@ $local_work=array(
  <div class="pti-wrap">
   <article class="local-ref-position">
    <div class="local-ref-position-intro">
-    <span class="pti-kicker">МИ НЕ ТИПОВА SEO-АГЕНЦІЯ</span>
+    <span class="pti-kicker">03 / МИ НЕ ТИПОВА SEO-АГЕНЦІЯ</span>
    <h2 id="local-ref-position-title">Ви наймаєте фахівців,<br><em>а не продавців обіцянок.</em></h2>
     <p class="local-ref-position-motto">Без пафосу. Без переплат. <em>По суті.</em></p>
    </div>
@@ -53,7 +53,7 @@ $local_work=array(
 </section>
 <section data-ua-stage="work" class="pti-section pti-alt psc-delivery local-ref-work" id="uws-solution" aria-labelledby="<?php echo esc_attr($psc_delivery_id);?>">
  <div class="pti-wrap">
-  <div class="pti-section-head"><div><span class="pti-kicker">02 / КОНКРЕТНІ РОБОТИ</span><h2 id="<?php echo esc_attr($psc_delivery_id);?>">Що входить <em>у локальне SEO?</em></h2></div><p>Не універсальний пакет. Підбираємо роботи для вашого бізнесу, міста та стану сайту.</p></div>
+  <div class="pti-section-head"><div><span class="pti-kicker">04 / КОНКРЕТНІ РОБОТИ</span><h2 id="<?php echo esc_attr($psc_delivery_id);?>">Що входить <em>у локальне SEO?</em></h2></div><p>Не універсальний пакет. Підбираємо роботи для вашого бізнесу, міста та стану сайту.</p></div>
   <div class="local-ref-work-grid">
    <?php foreach($local_work as $item):?>
     <article class="pti-step local-ref-work-card"><span class="local-ref-label"><?php echo esc_html($item[0]);?> / 03</span><h3><?php echo esc_html($item[1]);?></h3><p><?php echo esc_html($item[2]);?></p></article>
@@ -63,12 +63,12 @@ $local_work=array(
 </section>
 <section class="pti-section local-ref-outcome" aria-labelledby="local-reference-outcome">
  <div class="pti-wrap local-ref-outcome-grid">
-  <div data-ua-stage="result" class="local-ref-result psc-result"><span class="pti-kicker">03 / РЕЗУЛЬТАТ І КОНТРОЛЬ</span><h2 id="local-reference-outcome">Ви бачите, <em>за що платите.</em></h2><p>На старті — список проблем і пріоритети. Після погоджених робіт — перелік внесених змін та звіт про доступні показники.</p><ul><li>Видимість за важливими локальними запитами.</li><li>Покази, переходи та доступні дії в профілі Google.</li><li>Звернення із сайту, якщо налаштовано їх облік.</li></ul><p class="local-ref-small">Порівнюємо зміни з вихідними даними. Позиції залежать також від відстані, конкуренції та алгоритмів Google.</p></div>
-  <div data-ua-stage="terms" class="local-ref-terms"><span class="pti-kicker">04 / УМОВИ СПІВПРАЦІ</span><h2>Зрозумілий старт.</h2><ol><li><strong>З’ясовуємо, що потрібно.</strong> Враховуємо місто, послуги, стан сайту й профілю Google.</li><li><strong>Погоджуємо розумний бюджет.</strong> Обсяг робіт, вартість і строки відомі до початку.</li><li><strong>Працюємо та звітуємо.</strong> Показуємо конкретні зміни й доступні показники, не обіцяємо гарантованого ТОПу.</li></ol><p>Можна почати з окремої перевірки, без зобов’язання замовляти регулярне просування.</p></div>
+  <div data-ua-stage="result" class="local-ref-result psc-result"><span class="pti-kicker">05 / РЕЗУЛЬТАТ І КОНТРОЛЬ</span><h2 id="local-reference-outcome">Ви бачите, <em>за що платите.</em></h2><p>На старті — список проблем і пріоритети. Після погоджених робіт — перелік внесених змін та звіт про доступні показники.</p><ul><li>Видимість за важливими локальними запитами.</li><li>Покази, переходи та доступні дії в профілі Google.</li><li>Звернення із сайту, якщо налаштовано їх облік.</li></ul><p class="local-ref-small">Порівнюємо зміни з вихідними даними. Позиції залежать також від відстані, конкуренції та алгоритмів Google.</p></div>
+  <div data-ua-stage="terms" class="local-ref-terms"><span class="pti-kicker">06 / УМОВИ СПІВПРАЦІ</span><h2>Зрозумілий старт.</h2><ol><li><strong>З’ясовуємо, що потрібно.</strong> Враховуємо місто, послуги, стан сайту й профілю Google.</li><li><strong>Погоджуємо розумний бюджет.</strong> Обсяг робіт, вартість і строки відомі до початку.</li><li><strong>Працюємо та звітуємо.</strong> Показуємо конкретні зміни й доступні показники, не обіцяємо гарантованого ТОПу.</li></ol><p>Можна почати з окремої перевірки, без зобов’язання замовляти регулярне просування.</p></div>
  </div>
 </section>
 <section data-ua-stage="faq" class="pti-section psc-faq-section local-ref-faq">
- <div class="pti-wrap pti-faq"><div><span class="pti-kicker">05 / ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>">Коротко про <em>важливе.</em></h2></div>
+ <div class="pti-wrap pti-faq"><div><span class="pti-kicker">07 / ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>">Коротко про <em>важливе.</em></h2></div>
  <div><?php foreach($psc['faq'] as $item):?><details><summary><?php echo esc_html($item[0]);?></summary><p><?php echo esc_html($item[1]);?></p></details><?php endforeach;?>
  <details><summary>Скільки коштує локальне SEO?</summary><p>Залежить від стану профілю, сайту, кількості локацій та конкуренції. Погоджуємо конкретний обсяг і вартість перед стартом.</p></details>
  <details><summary>Коли можна очікувати зміни?</summary><p>Строк залежить від стану сайту й профілю, конкуренції та переобробки даних Google. Спочатку фіксуємо вихідні показники, потім оцінюємо динаміку після робіт.</p></details></div>
@@ -76,7 +76,7 @@ $local_work=array(
 </section>
 <section data-ua-stage="cta" class="pti-final psc-final local-ref-final" aria-labelledby="<?php echo esc_attr($psc_final_id);?>">
  <div class="pti-wrap"><div class="local-ref-final-card">
-  <div><span class="pti-kicker">ПЕРШИЙ КРОК</span><h2 id="<?php echo esc_attr($psc_final_id);?>">Вас мають знаходити <em>у вашому місті.</em></h2><p>Надішліть назву бізнесу, місто та посилання на сайт або профіль Google. Обговоримо, що заважає отримувати більше місцевих звернень.</p></div>
+  <div><span class="pti-kicker">08 / ПЕРШИЙ КРОК</span><h2 id="<?php echo esc_attr($psc_final_id);?>">Вас мають знаходити <em>у вашому місті.</em></h2><p>Надішліть назву бізнесу, місто та посилання на сайт або профіль Google. Обговоримо, що заважає отримувати більше місцевих звернень.</p></div>
   <div class="local-ref-final-action"><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити просування ↗</a><p>Умови погоджуємо до початку робіт.</p></div>
  </div>
  <nav class="psc-seo-related" aria-label="Суміжні SEO-послуги"><a href="<?php echo esc_url(mrseo_url('seo','uk'));?>">Усі напрями SEO ↗</a><a href="<?php echo esc_url(mrseo_url('service-business-seo','uk'));?>">SEO сайтів послуг ↗</a></nav>
