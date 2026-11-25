@@ -307,7 +307,7 @@ add_action('wp_enqueue_scripts','mrseo_assets');
 add_action('wp_enqueue_scripts',static function(){
  if(mrseo_locale()!=='uk'||mrseo_slug()==='')return;
  if(!mrseo_i18n_current_entry())return;
- wp_enqueue_style('mrseo-ua-brand-accents',get_template_directory_uri().'/assets/ua-brand-accents.css',array('mrseo-style'),'1.0.1');
+ wp_enqueue_style('mrseo-ua-brand-accents',get_template_directory_uri().'/assets/ua-brand-accents.css',array('mrseo-style'),'1.0.2');
 },120);
 /* UA-only interior finish; does not load on the Earth homepage, development or portfolio. */
 add_action('wp_enqueue_scripts',static function(){
