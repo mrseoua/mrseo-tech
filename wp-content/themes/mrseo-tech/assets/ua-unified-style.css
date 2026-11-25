@@ -227,3 +227,9 @@ html[lang="uk-UA"] .pti-page.puc-page.udv-page [data-ua-stage="problems"] .udv-c
  html[lang="uk-UA"] .pti-page[data-pti-service][data-service-standard="v1"] [data-ua-stage="problems"] .service-problem-answer,
  html[lang="uk-UA"] .seo-hub [data-ua-stage="problems"] .seo-problem-answer{padding-left:14px}
 }
+
+/* Keep the problem list one column even when earlier hub styles define a card grid. */
+html[lang="uk-UA"] .pti-page[data-pti-service="web-development"] #problems .ua-api-list,
+html[lang="uk-UA"] .hs-premium [data-ua-stage="problems"] .ua-api-list,
+html[lang="uk-UA"] .ukseo--horoshop [data-ua-stage="problems"] .ua-api-list{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+html[lang="uk-UA"] .pti-page[data-pti-service="web-development"] #problems .ua-api-row>.pti-solution{border-left:2px solid #A84432}

@@ -60,12 +60,26 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const pairs=[...document.querySelectorAll('[data-ua-problem-pair]')];
       const completePairs=pairs.filter(e=>{const answer=e.querySelector('.ua-paired-answer');const p=answer?.querySelector('p');return answer&&p&&shown(p)&&p.textContent.trim().length>20&&!!e.querySelector('h3')?.textContent.trim();}).length;
       const referenceAnswers=referenceSelector?[...document.querySelectorAll(referenceSelector)].filter(e=>shown(e)&&e.textContent.trim().length>20).length:0;
-      const devHubOpen=[...document.querySelectorAll('.pti-page[data-pti-service="web-development"] #problems .pti-solution[open]')].filter(shown).length;
+      const devHubOpen=[...document.querySelectorAll('.pti-page[data-pti-service="web-development"] #problems .pti-solution.ua-paired-answer > p')].filter(shown).length;
+      const problemSection=document.querySelector('[data-ua-stage="problems"]');
+      const readablePairs=[...problemSection?.querySelectorAll('[data-ua-problem-pair], [data-api-pair], .local-ref-row, .ads-problem-row, .service-problem-list > .pti-card')||[]].map(row=>{
+       const pain=row.querySelector('.ua-paired-problem,.local-ref-pain,.ads-problem-copy,.service-problem-copy,.ua-api-problem');
+       const answer=row.querySelector('.ua-paired-answer,.local-ref-answer,.ads-problem-fix,.service-problem-answer,.seo-problem-answer');
+       const paragraph=answer?.querySelector('p'),title=pain?.querySelector('h3');
+       if(!pain||!answer||!paragraph||!title)return {valid:false};
+       const p=pain.getBoundingClientRect(),a=answer.getBoundingClientRect(),style=getComputedStyle(paragraph);
+       const mobile=innerWidth<=600;
+       return {valid:shown(title)&&shown(paragraph)&&paragraph.textContent.trim().length>20&&!!title.textContent.trim(),
+        layout:mobile?a.top>=p.bottom-4:a.left>=p.right-4,
+        font:parseFloat(style.fontSize),line:parseFloat(style.lineHeight),title:title.textContent.trim(),
+        answer:paragraph.textContent.replace(/\s+/g,' ').trim(),bounds:[p.left,p.right,a.left,a.right]};
+      });
+      const problemDetails=problemSection?.querySelectorAll('details:not([open])').length||0;
 
       const rootFont=e=>parseFloat(getComputedStyle(e).fontSize);
       const sample=[...document.querySelectorAll('.pti-page.puc-page:not(.ads-v2) .pti-card p,.pti-page[data-pti-service="web-development"] .pti-card p,.udv-card p,.udv-step p,.hs-premium-step p,.hs-premium-faq-list p')].filter(shown);
       const bounds=[...document.querySelectorAll('.pti-hero-copy,.pti-page .pti-wrap,.udv-section>.container,.hs-premium-wrap,.about-hero-copy,.mrseo-privacy-container')].filter(shown).map(e=>({class:e.className,left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right}));
-      return {stages,approachHeading,approachCopy,devPictureCount:devPictures.length,devPictureUnique:new Set(devPictures).size,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
+      return {stages,readablePairs,problemDetails,approachHeading,approachCopy,devPictureCount:devPictures.length,devPictureUnique:new Set(devPictures).size,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
      },referenceSelectors[slug]||null);
      result.data=data;result.status=response?.status();
      if(data.lang!=='uk-UA')errors.push('Language '+data.lang);
@@ -85,6 +99,9 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      if(slug==='web-development'&&(data.devPictureCount!==8||data.devPictureUnique!==8))errors.push('WebDev repeated or missing capability picture');
      if(!editorial.has(slug)){
       if(!data.approachHeading)errors.push('Missing specific approach heading');
+      if(data.problemDetails||data.readablePairs.length!==3||data.readablePairs.some(p=>!p.valid||!p.layout||p.font<17.9||p.line<p.font*1.45||p.bounds[0]<-3||p.bounds[3]>data.width+3)){
+       errors.push('API reference readability: '+JSON.stringify(data.readablePairs));
+      }
       if(slug!=='local-seo'&&/Без пафосу\.\s*Без переплат\./i.test(data.approachCopy))errors.push('Repeated manifesto slogan');
       const hubs=['seo','google-ads','horoshop','service-websites','web-development','analytics','online-store-development'];
       const expected=['hero','problems','approach',...(hubs.includes(slug)?['catalog']:[]),'work','result','terms','faq','cta'];
@@ -98,7 +115,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      if(selected.has(slug)||errors.length){
       const name=(slug||'home').replaceAll('/','-')+'-'+viewport.width;
       await page.screenshot({path:path.join(out,name+'.jpg'),type:'jpeg',quality:78,animations:'disabled',timeout:15000});
-      const section=page.locator('.local-ref-problems,.ads-diagnosis,.psc-problems,.udv-section--problems,.hs-premium-problems,.pti-section').first();
+      const section=page.locator('[data-ua-stage="problems"]').first();
       if(await section.count()){await section.scrollIntoViewIfNeeded({timeout:5000});await page.screenshot({path:path.join(out,name+'-content.jpg'),type:'jpeg',quality:78,animations:'disabled',timeout:15000});}
      }
     }catch(e){errors.push(String(e));}
@@ -117,7 +134,9 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
   }
  }
  const failures=reports.filter(r=>r.errors.length);
- const summary={routes:routes.length,views:reports.length,failed:failures.length,failures,reports};
+ const solutions=reports.filter(r=>r.viewport===1440&&!editorial.has(r.slug)).flatMap(r=>(r.data?.readablePairs||[]).map(p=>({slug:r.slug,title:p.title,answer:p.answer})));
+ const exactSolutionGroups=Object.values(solutions.reduce((m,p)=>{if(p.answer)(m[p.answer]??=[]).push(p.slug);return m;},Object.create(null))).filter(g=>new Set(g).size>1);
+ const summary={routes:routes.length,views:reports.length,failed:failures.length,solutionCount:solutions.length,exactSolutionGroups,failures,reports};
  await fsp.writeFile(path.join(out,'report.json'),JSON.stringify(summary,null,2));
  console.log('UA QA: '+routes.length+' routes, '+reports.length+' views, '+failures.length+' failed');
  if(failures.length)process.exitCode=1;
