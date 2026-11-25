@@ -814,8 +814,6 @@ async function audit(browser,viewport,lang,slug){
      });
      if(!style.css||style.h1!==1||!style.terrain||style.directions!==5||style.overflow||!style.fit)item.errors.push('SEO reference hero layout '+JSON.stringify(style));
      await page.emulateMedia({reducedMotion:'no-preference'});
-     await hero.evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));
-     await page.screenshot({path:'shots/ua-seo-premium-hero-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000,animations:'disabled'});
      const cards=page.locator('.seo-cards');
      await cards.scrollIntoViewIfNeeded();
      await page.waitForFunction(()=>document.querySelectorAll('.seo-cards .seo-card-art svg').length===5);
@@ -825,9 +823,32 @@ async function audit(browser,viewport,lang,slug){
      if(await pause.getAttribute('aria-pressed')!=='true'||!await page.locator('.seo-premium-scene').evaluateAll(nodes=>nodes.every(s=>s.animationsPaused())))item.errors.push('SEO hub pause failed');
      await pause.evaluate(el=>el.click()); await page.emulateMedia({reducedMotion:'reduce'});
      await page.waitForFunction(()=>document.querySelector('.seo-journey .seo-motion')?.disabled===true,undefined,{timeout:4000}).catch(()=>item.errors.push('SEO hub reduced motion failed'));
-     await page.emulateMedia({reducedMotion:'no-preference'});
-     for(const sel of ['.seo-problems','.seo-plan','.seo-faq','.seo-final']){await page.locator(sel).evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));await page.screenshot({path:'shots/ua-seo-'+sel.slice(1)+'-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000,animations:'disabled'});}
-     await cards.evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));await page.screenshot({path:'shots/ua-seo-reference-cards-'+viewport.name+'.jpg',type:'jpeg',quality:81,timeout:20000,animations:'disabled'});
+     // Complete functional assertions first. Freeze SVG motion before capturing
+     // evidence to avoid mobile compositor timeouts.
+     await page.waitForFunction(()=>[...document.querySelectorAll('.seo-premium-scene')].every(n=>n.animationsPaused()),undefined,{timeout:5000});
+     const capture=async(sel,name)=>{
+      await page.locator(sel).evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));
+      const file='shots/'+name+'-'+viewport.name+'.jpg';
+      try{
+       await page.screenshot({path:file,type:'jpeg',quality:81,timeout:45000,animations:'disabled'});
+      }catch(error){
+       if(!/Timeout/.test(String(error)))throw error;
+       const session=await page.context().newCDPSession(page);
+       try{
+        const image=await session.send('Page.captureScreenshot',{format:'jpeg',quality:81,fromSurface:true,captureBeyondViewport:false});
+        const bytes=Buffer.from(image.data,'base64');
+        if(bytes.length<1000||bytes[0]!==255||bytes[1]!==216)throw Error('Invalid Chromium screenshot '+name);
+        await fs.writeFile(file,bytes);
+       }finally{await session.detach();}
+      }
+      console.log('SEO screenshot captured: '+name+' '+viewport.name);
+     };
+     try{
+      await capture('.seo-hero','ua-seo-premium-hero');
+      for(const sel of ['.seo-problems','.seo-plan','.seo-faq','.seo-final'])await capture(sel,'ua-seo-'+sel.slice(1));
+      await capture('.seo-cards','ua-seo-reference-cards');
+     }finally{await page.emulateMedia({reducedMotion:'no-preference'});}
+
     }
    }catch(e){item.errors.push('SEO cinematic hero QA '+e.message)}
   }
