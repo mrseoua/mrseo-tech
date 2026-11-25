@@ -17,6 +17,7 @@ $psc_final_id=$psc['finalId']??'uws-final-title';
 $psc_faq_id=$psc['faqId']??'uws-faq-title';
 $psc_head=static function($value){echo wp_kses($value,array('em'=>array()));};
 require_once get_template_directory().'/inc/ua-ads-position.php';
+require_once get_template_directory().'/inc/ua-problem-answers.php';
 add_action('wp_enqueue_scripts',static function(){
  wp_enqueue_style('mrseo-puc-base',get_template_directory_uri().'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
  wp_enqueue_style('mrseo-puc',get_template_directory_uri().'/assets/premium-ua-commercial.css',array('mrseo-puc-base'),'1.0.0');
@@ -58,10 +59,14 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
  <?php mrseo_ads_position_render($psc_slug);?>
  <section class="pti-section psc-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
   <div class="pti-wrap">
-   <div class="pti-section-head"><div><span class="pti-kicker">ЯКУ ПРОБЛЕМУ ВИРІШУЄМО</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
-   <div class="pti-grid psc-problem-grid">
-   <?php foreach($psc['pains'] as $i=>$problem):?>
-    <article class="pti-card psc-problem-card"><span class="pti-num"><?php echo esc_html(sprintf('%02d',$i+1));?> / 03</span><div class="psc-mini-art"><?php mrseo_puc_art($psc_art['problem'][$i]);?></div><h3><?php echo esc_html($problem[0]);?></h3><p><?php echo esc_html($problem[1]);?></p></article>
+   <div class="pti-section-head"><div><span class="pti-kicker">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2 id="psc-problem-title"><?php echo esc_html($psc['problemHeading']);?></h2></div><p><?php echo esc_html($psc['problemLead']);?></p></div>
+   <div class="pti-grid psc-problem-grid ua-paired-rows">
+   <?php foreach($psc['pains'] as $i=>$problem):$answer=mrseo_ua_problem_answer($psc_slug,$i,$problem);?>
+    <article class="pti-card psc-problem-card ua-paired-row" data-ua-problem-pair>
+     <div class="psc-mini-art"><?php mrseo_puc_art($psc_art['problem'][$i]);?></div>
+     <div class="ua-paired-problem"><span class="pti-num"><?php echo esc_html(sprintf('%02d',$i+1));?> / ПРОБЛЕМА</span><h3><?php echo esc_html($problem[0]);?></h3><p><?php echo esc_html($problem[1]);?></p></div>
+     <?php if($answer!==''):?><div class="ua-paired-answer"><span>НАШЕ РІШЕННЯ</span><p><?php echo esc_html($answer);?></p></div><?php endif;?>
+    </article>
    <?php endforeach;?>
    </div>
   </div>
@@ -80,6 +85,7 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
     <h2 id="<?php echo esc_attr($psc_delivery_id);?>"><?php $psc_head($psc['sectionTitle']);?></h2>
     <div class="pti-steps"><?php foreach($psc['benefits'] as $i=>$item):?><div class="pti-step"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></div><?php endforeach;?></div>
     <div class="psc-result"><span class="pti-kicker"><?php echo esc_html($psc['resultTitle']);?></span><p><?php echo esc_html($psc['result']);?></p></div>
+    <p class="ua-paired-terms"><strong>Умови співпраці.</strong> До початку погоджуємо обсяг, вартість і строки. Без нав’язаних робіт та обіцянок, які не залежать від нас.</p>
     <p class="pti-footnote">Ілюстрація підходу, не дані конкретного проєкту.</p>
     <button class="psc-pause psc-lower-pause" type="button" aria-pressed="false">Призупинити рух</button>
    </div>
