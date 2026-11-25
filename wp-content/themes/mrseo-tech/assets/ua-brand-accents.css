@@ -36,3 +36,16 @@ body:has([data-pue-route="portfolio"]) :is(.portfolio-hero,.portfolio-heading,.i
  filter:none!important;
  transition:none!important;
 }
+
+/* Preserve approved red on light surfaces, but restore the existing light
+ * accent on the dark closing panels. The generic important rule above must
+ * not override the CTA contrast. SEO hub uses its own label class. */
+.pti-page .seo-hub .seo-kicker{color:var(--mrseo-ua-label-red)!important}
+.pti-page :is(.seo-final,.local-ref-final-card,.psc-final,.pti-final) :is(h1,h2,h3) em,
+.pti-page :is(.seo-final,.local-ref-final-card,.psc-final,.pti-final) :is(.pti-kicker,.seo-kicker){
+ color:var(--mrseo-ua-dark-red)!important;
+}
+/* The seven image-based WebDev pages intentionally retain a light closing panel. */
+.pti-page.udv-page .udv-section--close :is(h2 em,.pti-kicker){
+ color:var(--mrseo-ua-heading-red)!important;
+}
