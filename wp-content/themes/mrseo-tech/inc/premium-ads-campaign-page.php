@@ -44,7 +44,7 @@ $ads=$ads_briefs[$psc_slug];
     <article class="pti-card psc-problem-card ads-problem-row">
      <div class="psc-mini-art"><?php mrseo_puc_art($psc_art['problem'][$i]);?></div>
      <div class="ads-problem-copy"><span class="pti-num"><?php echo esc_html(sprintf('%02d',$i+1));?> / ПРОБЛЕМА</span><h3><?php echo esc_html($problem[0]);?></h3><p><?php echo esc_html($problem[1]);?></p></div>
-     <div class="ads-problem-fix"><span>НАШЕ РІШЕННЯ ↗</span><p><?php echo esc_html($ads['solutions'][$i]);?></p><?php if(!empty($problem[2])&&$problem[2]!==$ads['solutions'][$i]):?><small><?php echo esc_html($problem[2]);?></small><?php endif;?></div>
+     <div class="ads-problem-fix"><span>НАШЕ РІШЕННЯ</span><p><?php echo esc_html($ads['solutions'][$i]);?></p></div>
     </article>
    <?php endforeach;?>
    </div>

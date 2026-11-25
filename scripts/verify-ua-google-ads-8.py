@@ -85,7 +85,7 @@ assert "mrseo_locale()!=='uk'" in commercial and "mrseo_locale()!=='uk'" in hub
 renderer=(root/"inc/ua-ads-position.php").read_text()
 assert renderer.count("if(!$copy)return;")==2 and "return $copy[$slug]??null;" in renderer
 assert renderer.count('id="mrseo-ads-approach"')==1 and 'href="#mrseo-ads-approach"' in renderer
-assert "Без пафосу. Без переплат." in renderer
+assert "Без пафосу. Без переплат." not in renderer, "Keep the approved manifesto only on local SEO, not every service"
 css=(root/"assets/ua-ads-position.css").read_text()
 assert css.count("{")==css.count("}") and "minmax(0,1fr)" in css and "@media(max-width:700px)" in css
 print("PASS: seven unique Ads positioning variants; scoped assets and approved after-problems placement; compact child layouts")
