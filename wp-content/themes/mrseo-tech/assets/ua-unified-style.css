@@ -98,3 +98,29 @@ html[lang="uk-UA"] .contact-brief-note{font-size:18px;line-height:1.6}
  html[lang="uk-UA"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final .pti-wrap,
  html[lang="uk-UA"] .pti-page[data-pti-service="web-development"] .pti-final .pti-wrap{padding:24px 19px}
 }
+
+/* Same visible problem -> answer hierarchy across legacy commercial, WebDev and Horoshop. */
+html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,38px);align-items:center;padding:clamp(22px,3vw,40px) 0;margin:0;border:0;border-top:1px solid #ded3c7;border-radius:0;background:transparent;box-shadow:none}
+html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row:last-child{border-bottom:1px solid #ded3c7}
+html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row>.psc-mini-art{grid-column:auto;grid-row:auto;margin:0;max-width:100%;min-width:0}
+html[lang="uk-UA"] .ua-paired-row .ua-paired-problem,html[lang="uk-UA"] .ua-paired-row .ua-paired-answer{min-width:0;overflow-wrap:break-word}
+html[lang="uk-UA"] .ua-paired-row .ua-paired-problem h3{margin:10px 0;font-size:clamp(23px,2vw,30px);line-height:1.24;color:#252c26}
+html[lang="uk-UA"] .ua-paired-row .ua-paired-problem p,html[lang="uk-UA"] .ua-paired-row .ua-paired-answer p{font-size:clamp(18px,1.35vw,20px);line-height:1.62;margin:8px 0 0;color:#57554b}
+html[lang="uk-UA"] .ua-paired-row .ua-paired-answer{border-left:2px solid var(--mrseo-brand-red,#A84432);padding-left:18px}
+html[lang="uk-UA"] .ua-paired-row .ua-paired-answer>span,html[lang="uk-UA"] .ua-paired-row .ua-pair-label{display:block;color:var(--mrseo-brand-red,#A84432);font-size:14px;line-height:1.4;font-weight:800;letter-spacing:.045em}
+html[lang="uk-UA"] .ua-paired-row .ua-paired-answer h4{font-size:clamp(20px,1.7vw,25px);color:#252c26;line-height:1.3;margin:10px 0}
+html[lang="uk-UA"] .udv-page .udv-section--problems .udv-cards{grid-template-columns:minmax(0,1fr)}
+html[lang="uk-UA"] .udv-page .udv-card.ua-paired-row{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+html[lang="uk-UA"] .hs-premium .hs-premium-step.ua-paired-row{display:flex;flex-direction:column;align-items:stretch;gap:14px}
+html[lang="uk-UA"] .hs-premium .hs-premium-step.ua-paired-row .hs-story-step-visual{align-self:center}
+html[lang="uk-UA"] .pti-page .ua-paired-terms,html[lang="uk-UA"] .hs-premium .ua-paired-terms{font-size:18px;line-height:1.6;font-weight:400;margin:18px 0;color:#57554b}
+html[lang="uk-UA"] .pti-page[data-pti-service="web-development"] #problems .pti-solution[open] p{font-size:18px;line-height:1.6}
+@media(max-width:900px){
+ html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row>.psc-mini-art{grid-column:1/-1;width:min(100%,240px);margin-inline:auto}
+}
+@media(max-width:600px){
+ html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 0}
+ html[lang="uk-UA"] .ua-paired-row .ua-paired-answer{padding-left:14px}
+}
