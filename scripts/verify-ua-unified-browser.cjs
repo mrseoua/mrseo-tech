@@ -7,6 +7,15 @@ const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'../wp-content/themes/mrseo-tech');
 const origin=(process.env.MRSEO_TEST_ORIGIN||'https://mrseo.tech').replace(/\/$/,'');
 const read=(name,marker)=>JSON.parse(fs.readFileSync(path.join(root,name),'utf8').split("<<<'"+marker+"'\n",1+1)[1].split('\n'+marker,1)[0]);
+// Prevent repeated pictures disguised by scene identifiers, labels or timing.
+const authoredArt=Object.assign({},...[1,2,3,4,5,6].map(n=>read('inc/premium-ua-commercial-art-'+n+'.php',n===6?'MRSEO_PUC_EXPANSION_ART':'MRSEO_PUC_ART')));
+const visualSignature=(id,svg)=>svg.replaceAll(id,'SCENE').replace(/<text\b[^>]*>[\s\S]*?<\/text>/g,'').replace(/ dur="[^"]+"/g,'').replace(/ begin="[^"]+"/g,'').replace(/<title>.*?<\/title>/g,'');
+const seenArt=new Map();
+for(const [id,svg] of Object.entries(authoredArt)){
+ const signature=visualSignature(id,svg);
+ if(seenArt.has(signature))throw Error('Duplicate commercial illustration geometry: '+seenArt.get(signature)+' / '+id);
+ seenArt.set(signature,id);
+}
 const semantic=read('inc/ua-semantic-map.php','MRSEO_UA_SEMANTIC_MAP');
 const hs=read('inc/horoshop-premium-routes.php','MRSEO_HS_PAGES');
 const dev=read('inc/ua-dev-new-pages.php','MRSEO_UA_DEV_CONTENT');
@@ -21,7 +30,7 @@ const editorial=new Set(['','about','portfolio','contact','privacy']);
 const coverage=new Set([...paired,'web-development',...Object.keys(referenceSelectors),...editorial]);
 if(routes.some(k=>!coverage.has(k))||coverage.size!==routes.length)throw Error('Missing UA acceptance coverage');
 const viewports=[{width:1440,height:900},{width:390,height:844},{width:360,height:800}];
-const selected=new Set(['local-seo','google-ads','google-ads-audit','merchant-center','horoshop','horoshop/seo','service-websites','web-development','mobile-app-development','about','contact','privacy']);
+const selected=new Set(['local-seo','google-ads','google-ads-audit','merchant-center','horoshop','horoshop/seo','service-websites','web-development','mobile-app-development','analytics','store-conversion','api-integrations','horoshop/audit','about','contact','privacy']);
 const out=process.env.MRSEO_UA_QA_DIR||'shots/ua-unified';
 const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
 (async()=>{
@@ -43,6 +52,10 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const shown=e=>!!e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden';
       const main=document.querySelector('.pti-page,.hs-premium,.ukseo--horoshop,.about-page,.mrseo-privacy-page');
       const headings=[...document.querySelectorAll('h1')];
+      const approach=document.querySelector('[data-ua-stage="approach"]');
+      const approachHeading=approach?.querySelector('h2')?.textContent.replace(/\s+/g,' ').trim()||'';
+      const approachCopy=approach?.textContent.replace(/\s+/g,' ').trim()||'';
+      const devPictures=[...document.querySelectorAll('.pti-page[data-pti-service="web-development"] .pti-card-art img,.pti-page[data-pti-service="web-development"] .pti-story-art img,.pti-page[data-pti-service="web-development"] .pti-hero-art')].map(e=>e.getAttribute('src'));
       const stages=[...document.querySelectorAll('[data-ua-stage]')].map(e=>({key:e.dataset.uaStage,visible:shown(e),text:e.textContent.trim().length,top:e.getBoundingClientRect().top,catalog:e.dataset.uaStage==='catalog'?[...e.querySelectorAll('a[href]')].map(a=>new URL(a.href).pathname):[]}));
       const pairs=[...document.querySelectorAll('[data-ua-problem-pair]')];
       const completePairs=pairs.filter(e=>{const answer=e.querySelector('.ua-paired-answer');const p=answer?.querySelector('p');return answer&&p&&shown(p)&&p.textContent.trim().length>20&&!!e.querySelector('h3')?.textContent.trim();}).length;
@@ -52,7 +65,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const rootFont=e=>parseFloat(getComputedStyle(e).fontSize);
       const sample=[...document.querySelectorAll('.pti-page.puc-page:not(.ads-v2) .pti-card p,.pti-page[data-pti-service="web-development"] .pti-card p,.udv-card p,.udv-step p,.hs-premium-step p,.hs-premium-faq-list p')].filter(shown);
       const bounds=[...document.querySelectorAll('.pti-hero-copy,.pti-page .pti-wrap,.udv-section>.container,.hs-premium-wrap,.about-hero-copy,.mrseo-privacy-container')].filter(shown).map(e=>({class:e.className,left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right}));
-      return {stages,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
+      return {stages,approachHeading,approachCopy,devPictureCount:devPictures.length,devPictureUnique:new Set(devPictures).size,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
      },referenceSelectors[slug]||null);
      result.data=data;result.status=response?.status();
      if(data.lang!=='uk-UA')errors.push('Language '+data.lang);
@@ -69,7 +82,10 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      if(paired.has(slug)&&(data.pairs!==3||data.completePairs!==3))errors.push('Missing visible problem-to-solution pairs: '+data.completePairs+'/'+data.pairs);
      if(referenceSelectors[slug]&&data.referenceAnswers!==3)errors.push('Missing reference-layout solutions: '+data.referenceAnswers);
      if(slug==='web-development'&&data.devHubOpen!==3)errors.push('WebDev hub solutions are not visible');
+     if(slug==='web-development'&&(data.devPictureCount!==8||data.devPictureUnique!==8))errors.push('WebDev repeated or missing capability picture');
      if(!editorial.has(slug)){
+      if(!data.approachHeading)errors.push('Missing specific approach heading');
+      if(slug!=='local-seo'&&/Без пафосу\.\s*Без переплат\./i.test(data.approachCopy))errors.push('Repeated manifesto slogan');
       const hubs=['seo','google-ads','horoshop','service-websites','web-development','analytics','online-store-development'];
       const expected=['hero','problems','approach',...(hubs.includes(slug)?['catalog']:[]),'work','result','terms','faq','cta'];
       const actual=data.stages.map(e=>e.key);
@@ -91,6 +107,15 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
    await ctx.close();
   }));
  }finally{await browser.close();}
+ // Compare actual rendered headings across all commercial pages at each width.
+ for(const viewport of viewports){
+  const headings=new Map();
+  for(const report of reports.filter(r=>r.viewport===viewport.width&&!editorial.has(r.slug)&&r.data?.approachHeading)){
+   const key=report.data.approachHeading.toLocaleLowerCase('uk');
+   if(headings.has(key))report.errors.push('Duplicate approach heading also used on /'+headings.get(key)+'/');
+   else headings.set(key,report.slug);
+  }
+ }
  const failures=reports.filter(r=>r.errors.length);
  const summary={routes:routes.length,views:reports.length,failed:failures.length,failures,reports};
  await fsp.writeFile(path.join(out,'report.json'),JSON.stringify(summary,null,2));
