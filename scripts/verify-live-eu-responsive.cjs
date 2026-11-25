@@ -6,6 +6,7 @@ const {chromium}=require('playwright');
 const readSource=require('node:fs').readFileSync;
 const sourcePath=require('node:path').resolve(__dirname,'../wp-content/themes/mrseo-tech/inc/ua-semantic-map.php');
 const uaSemanticSource=JSON.parse(readSource(sourcePath,'utf8').split("<<<'MRSEO_UA_SEMANTIC_MAP'\n")[1].split('\nMRSEO_UA_SEMANTIC_MAP')[0]);
+const expansionSource=JSON.parse(readSource(require('node:path').join(require('node:path').dirname(sourcePath),'ua-commercial-expansion.php'),'utf8').split("<<<'MRSEO_UA_EXPANSION'\n")[1].split('\nMRSEO_UA_EXPANSION')[0]);
 const HOST=(process.env.MRSEO_TEST_ORIGIN||'https://mrseo.tech').replace(/\/$/,'');
 const allLocales=['fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'];
 const shard=process.env.MRSEO_LOCALE_SHARD===undefined?-1:Number(process.env.MRSEO_LOCALE_SHARD);
@@ -395,8 +396,9 @@ async function audit(browser,viewport,lang,slug){
    const expected=uaSemanticSource[slug];
    const actualMeta=await page.evaluate(()=>({title:document.title,descs:[...document.querySelectorAll('meta[name="description"]')].map(x=>x.content),keywords:document.querySelectorAll('meta[name="keywords"]').length,lead:document.querySelector('.pti-hero-copy .pti-lead,.seo-hero-copy .pti-lead')?.textContent.trim()||''}));
    if(!expected||actualMeta.title!==expected.title||JSON.stringify(actualMeta.descs)!==JSON.stringify([expected.description])||actualMeta.keywords!==0)item.errors.push('UA semantic metadata mismatch '+JSON.stringify({actual:actualMeta,expected:expected&&{title:expected.title,description:expected.description}}));
-   if(expected?.lead&&actualMeta.lead&&actualMeta.lead!==expected.lead)item.errors.push('UA semantic visible lead mismatch '+slug);
-   if(expected?.lead&&(['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs].includes(slug))&&!actualMeta.lead)item.errors.push('UA semantic hero lead absent '+slug);
+   const expectedVisibleLead=expected?.lead||expansionSource[slug]?.lead;
+   if(expectedVisibleLead&&actualMeta.lead&&actualMeta.lead!==expectedVisibleLead)item.errors.push('UA semantic visible lead mismatch '+slug);
+   if(expectedVisibleLead&&(['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs].includes(slug))&&!actualMeta.lead)item.errors.push('UA semantic hero lead absent '+slug);
   }
   const commercialTarget=lang==='uk'&&premiumCommercialSlugs.includes(slug);
   const editorialTarget=lang==='uk'&&premiumEditorialSlugs.includes(slug);
