@@ -307,7 +307,7 @@ add_action('wp_enqueue_scripts','mrseo_assets');
 add_action('wp_enqueue_scripts',static function(){
  if(mrseo_locale()!=='uk'||mrseo_slug()==='')return;
  if(!mrseo_i18n_current_entry())return;
- wp_enqueue_style('mrseo-ua-brand-accents',get_template_directory_uri().'/assets/ua-brand-accents.css',array('mrseo-style'),'1.0.1');
+ wp_enqueue_style('mrseo-ua-brand-accents',get_template_directory_uri().'/assets/ua-brand-accents.css',array('mrseo-style'),'1.0.2');
 },120);
 /* UA-only interior finish; does not load on the Earth homepage, development or portfolio. */
 add_action('wp_enqueue_scripts',static function(){
@@ -484,3 +484,12 @@ add_filter('pre_get_document_title',static function($title){
  return mrseo_premium_tech_preview_request()
   ?'Premium Tech — SEO Design Preview | MrSeo.tech':$title;
 },120);
+
+// Late, UA-only consistency layer. Never load on the homepage or private concept routes.
+function mrseo_ua_unified_style_enabled(){
+ return mrseo_locale()==='uk' && !in_array(mrseo_slug(),array('','orbit-lab','orbit-light'),true) && !is_404();
+}
+add_action('wp_enqueue_scripts',static function(){
+ if(!mrseo_ua_unified_style_enabled())return;
+ wp_enqueue_style('mrseo-ua-unified-style',get_template_directory_uri().'/assets/ua-unified-style.css',array('mrseo-style'),'1.1.0');
+},999);

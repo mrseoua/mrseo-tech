@@ -5,6 +5,8 @@ if(!mrseo_ua_dev_new_route()||!($p=mrseo_ua_dev_new_page())){
  status_header(404);include get_404_template();return;
 }
 require_once get_template_directory().'/inc/ua-dev-master-hero.php';
+require_once get_template_directory().'/inc/ua-problem-answers.php';
+$ua_dev_answers=mrseo_ua_dev_problem_answers(mrseo_slug());
 $scene=$p['scene'];
 $hero_accent=mrseo_udv_master_hero_accents()[$scene]??$p['highlight'];
 // Storyboard describes a real workflow, not fabricated client results.
@@ -52,14 +54,14 @@ get_header();
   </div>
  </section>
  <section class="pti-section udv-section udv-section--problems" id="udv-problems" aria-labelledby="udv-problems-h">
-  <div class="container"><div class="udv-heading"><span class="pti-kicker udv-eyebrow">ЯКУ ПРОБЛЕМУ ВИРІШУЄМО</span><h2 id="udv-problems-h"><?php echo esc_html($p['h1']);?></h2><p>Визначаємо, де саме бізнес втрачає час, дані або контроль над процесом.</p></div>
-   <div class="udv-illustrated-grid"><div class="udv-problem-illustration"><?php mrseo_udv_lower_art($scene,'problem',$p['problems']);?></div><div class="pti-grid udv-cards"><?php foreach($p['problems'] as $i=>$item):?><article class="pti-card udv-card"><span class="udv-count"><?php echo esc_html(sprintf('%02d',$i+1));?></span><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></article><?php endforeach;?></div></div>
+  <div class="container"><div class="udv-heading"><span class="pti-kicker udv-eyebrow">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2 id="udv-problems-h"><?php echo esc_html($p['h1']);?></h2><p>Визначаємо, де саме бізнес втрачає час, дані або контроль над процесом.</p></div>
+   <div class="udv-illustrated-grid"><div class="udv-problem-illustration"><?php mrseo_udv_lower_art($scene,'problem',$p['problems']);?></div><div class="pti-grid udv-cards"><?php foreach($p['problems'] as $i=>$item):?><article class="pti-card udv-card ua-paired-row ua-paired-row--compact" data-ua-problem-pair><div class="ua-paired-problem"><span class="udv-count"><?php echo esc_html(sprintf('%02d',$i+1));?> / ПРОБЛЕМА</span><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div><div class="ua-paired-answer"><span>НАШЕ РІШЕННЯ</span><p><?php echo esc_html($ua_dev_answers[$i]);?></p></div></article><?php endforeach;?></div></div>
   </div>
  </section>
  <section class="pti-section udv-section udv-section--solution" aria-labelledby="udv-solutions-h">
   <div class="container"><div class="udv-heading"><span class="pti-kicker udv-eyebrow">ЩО РОБИМО</span><h2 id="udv-solutions-h">Що зробимо для вашого бізнесу</h2><p>Працюємо з конкретними сценаріями, доступами й перевіркою результату.</p></div>
    <div class="udv-illustrated-grid udv-illustrated-grid--solution"><div class="udv-steps"><?php foreach($p['actions'] as $i=>$item):?><article class="udv-step"><span class="udv-count"><?php echo esc_html(sprintf('%02d',$i+1));?></span><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></article><?php endforeach;?></div><div class="udv-solution-illustration"><?php mrseo_udv_lower_art($scene,'solution',$p['actions']);?></div></div>
-   <div class="udv-result"><span class="udv-eyebrow">КОНКРЕТНИЙ РЕЗУЛЬТАТ</span><p><?php echo esc_html($p['result']);?></p></div>
+   <div class="udv-result"><span class="udv-eyebrow">КОНКРЕТНИЙ РЕЗУЛЬТАТ</span><p><?php echo esc_html($p['result']);?></p><p class="ua-paired-terms"><strong>Умови співпраці.</strong> Погоджуємо функції, інтеграції, вартість і критерії приймання до розробки.</p></div>
   </div>
  </section>
  <section class="pti-section udv-section udv-section--faq" aria-labelledby="udv-faq-h">

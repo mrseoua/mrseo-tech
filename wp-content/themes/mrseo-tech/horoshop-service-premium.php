@@ -6,6 +6,8 @@ require_once get_template_directory().'/inc/horoshop-premium-story.php';
 require_once get_template_directory().'/inc/horoshop-ads-scenes.php';
 if(!$key){status_header(404);get_header();get_footer();return;}
 $p=mrseo_hs_pages()[$key];
+require_once get_template_directory().'/inc/ua-problem-answers.php';
+$ua_hs_problems=mrseo_ua_hs_problem_titles($key);
 $keys=array_keys(mrseo_hs_pages());
 $scenes=array(
  'setup'=>array('Каталог','Кошик','Замовлення'),
@@ -86,14 +88,14 @@ get_header();
  <?php mrseo_hs_paid_scene($key);?>
  <section class="hs-premium-problems" id="hs-process">
   <div class="hs-premium-wrap">
-   <div class="hs-premium-head"><span class="hs-premium-eyebrow">ПОСЛІДОВНІ КРОКИ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
+   <div class="hs-premium-head"><span class="hs-premium-eyebrow">01 / ПРОБЛЕМА → РІШЕННЯ</span><h2>Що зробимо <em>для вашого магазину.</em></h2><p>Починаємо з перевірки реальної ситуації, погоджуємо зміни та перевіряємо їхній результат. Ніяких обіцянок, які не залежать від нас.</p></div>
    <div class="hs-premium-steps">
     <?php foreach(array(5,7,9) as $i):?>
-    <article class="hs-premium-step">
+    <article class="hs-premium-step ua-paired-row ua-paired-row--compact" data-ua-problem-pair>
      <div class="hs-story-step-visual" aria-hidden="true"><span class="hs-story-step-ring"></span><span class="hs-story-step-core"><i></i><i></i><i></i></span><span class="hs-story-step-ray"></span></div>
      <span class="hs-premium-step-number"><?php echo esc_html(str_pad((string)(($i-5)/2+1),2,'0',STR_PAD_LEFT));?></span>
-     <h3><?php echo esc_html($p[$i]);?></h3>
-     <p><?php echo esc_html($p[$i+1]);?></p>
+     <div class="ua-paired-problem"><span class="ua-pair-label">ПРОБЛЕМА</span><h3><?php echo esc_html($ua_hs_problems[(int)(($i-5)/2)]);?></h3></div>
+     <div class="ua-paired-answer"><span>НАШЕ РІШЕННЯ</span><h4><?php echo esc_html($p[$i]);?></h4><p><?php echo esc_html($p[$i+1]);?></p></div>
     </article>
     <?php endforeach;?>
    </div>
@@ -101,7 +103,7 @@ get_header();
  </section>
  <?php mrseo_hs_workbench($key);?>
  <section class="hs-premium-outcome">
-  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><?php mrseo_hs_result_visual($key);?><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
+  <div class="hs-premium-wrap hs-premium-outcome-grid"><div><span class="hs-premium-eyebrow">ПЕРЕВІРЮВАНИЙ РЕЗУЛЬТАТ</span><h2>Що ви <em>отримаєте.</em></h2></div><div><p><?php echo esc_html($p[11]);?></p><p class="ua-paired-terms"><strong>Умови співпраці.</strong> Погоджуємо обсяг, вартість і строки з урахуванням тарифу Хорошоп. Додаткові роботи — лише за домовленістю.</p><?php mrseo_hs_result_visual($key);?><a class="hs-premium-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити мій магазин ↗</a></div></div>
  </section>
  <section class="hs-premium-faq">
   <div class="hs-premium-wrap hs-premium-faq-grid"><div><span class="hs-premium-eyebrow">ПЕРЕД ПОЧАТКОМ</span><h2>Коротко про <em>роботу.</em></h2></div><div class="hs-premium-faq-list">
