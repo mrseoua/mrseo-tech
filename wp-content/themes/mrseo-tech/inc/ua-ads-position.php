@@ -21,10 +21,10 @@ function mrseo_ads_position_render($slug){
  if(!$copy)return;
  $hub=$slug==='google-ads';
  ?>
- <section class="mrseo-ads-position<?php echo $hub?' mrseo-ads-position-hub':'';?>" id="mrseo-ads-approach" aria-labelledby="mrseo-ads-position-title">
+ <section data-ua-stage="approach" class="mrseo-ads-position<?php echo $hub?' mrseo-ads-position-hub':'';?>" id="mrseo-ads-approach" aria-labelledby="mrseo-ads-position-title">
   <div class="pti-wrap mrseo-ads-position-wrap">
    <div class="mrseo-ads-position-intro">
-    <span class="mrseo-ads-position-kicker">МИ ПРАЦЮЄМО ІНАКШЕ</span>
+    <span class="mrseo-ads-position-kicker">03 / МИ ПРАЦЮЄМО ІНАКШЕ</span>
     <h2 id="mrseo-ads-position-title"><?php echo esc_html($copy['headline'][0]);?> <em><?php echo esc_html($copy['headline'][1]);?></em></h2>
     <p class="mrseo-ads-position-motto">Без пафосу. Без переплат. <em>По суті.</em></p>
    </div>

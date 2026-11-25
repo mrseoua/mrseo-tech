@@ -124,3 +124,24 @@ html[lang="uk-UA"] .pti-page[data-pti-service="web-development"] #problems .pti-
  html[lang="uk-UA"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 0}
  html[lang="uk-UA"] .ua-paired-row .ua-paired-answer{padding-left:14px}
 }
+
+/* UA v2: editorial approach, explicit results and terms. */
+html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog){padding:clamp(32px,5vw,68px) 0;background:#f7f3ed;color:#252c26;box-sizing:border-box}
+html[lang="uk-UA"] .ua-v2-wrap{width:min(1350px,90%);margin-inline:auto;min-width:0}
+html[lang="uk-UA"] :is(.ua-v2-approach-grid,.ua-v2-terms-grid){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(24px,5vw,65px);padding:clamp(24px,4vw,48px) 0;border-top:1px solid #ded3c7;border-bottom:1px solid #ded3c7}
+html[lang="uk-UA"] .ua-v2-label{display:block;font-size:14px;font-weight:800;letter-spacing:.075em;color:#A84432;margin-bottom:12px}
+html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog) h2{font-size:clamp(35px,3.85vw,60px);line-height:1.13;letter-spacing:-.04em;color:#252c26;margin:0 0 16px}
+html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog) h2 em{color:#A84432;font-style:normal}
+html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms) p{color:#57554b;font-size:clamp(18px,1.4vw,21px);line-height:1.62;margin:0 0 14px;overflow-wrap:break-word}
+html[lang="uk-UA"] .ua-v2-result{background:#eee5d9}
+html[lang="uk-UA"] .ua-v2-catalog-groups{display:grid;gap:22px;margin:22px 0}
+html[lang="uk-UA"] .ua-v2-catalog-group h3{font-size:21px;color:#252c26;margin:0 0 12px}
+html[lang="uk-UA"] .ua-v2-catalog-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+html[lang="uk-UA"] .ua-v2-catalog-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;overflow-wrap:anywhere;padding:16px 18px;border:1px solid #ded3c7;border-radius:10px;background:#fdfbf7;color:#252c26;font-size:18px;font-weight:650}
+html[lang="uk-UA"] .ua-v2-catalog-links a:hover{border-color:#A84432;color:#A84432}
+html[lang="uk-UA"] .ua-v2-catalog-links a span{color:#A84432}
+@media(max-width:760px){
+ html[lang="uk-UA"] .ua-v2-wrap{width:calc(100% - 36px)}
+ html[lang="uk-UA"] :is(.ua-v2-approach-grid,.ua-v2-terms-grid,.ua-v2-catalog-links){grid-template-columns:minmax(0,1fr)}
+ html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog) h2{font-size:clamp(32px,8vw,45px)}
+}

@@ -18,7 +18,7 @@ function mrseo_hs_story_content($key){
 function mrseo_hs_workbench($key){
  $s=mrseo_hs_story_content($key);if(!$s)return;
  ?>
- <section class="hs-story-workbench" aria-labelledby="hs-story-workbench-title">
+ <section class="hs-story-workbench"<?php if(mrseo_locale()==='uk')echo ' data-ua-stage="work"';?> aria-labelledby="hs-story-workbench-title">
   <div class="hs-premium-wrap hs-story-workbench-grid">
    <div class="hs-story-narrative">
     <span class="hs-premium-eyebrow">НЕ ЛИШЕ РЕКОМЕНДАЦІЇ</span>

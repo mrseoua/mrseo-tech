@@ -8,9 +8,11 @@ $groups=array(
  'МОБІЛЬНА РОЗРОБКА'=>array('mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development')
 );
 ?>
-<section class="udv-hub" aria-labelledby="udv-hub-title">
+<section data-ua-stage="catalog" class="udv-hub" aria-labelledby="udv-hub-title">
  <div class="pti-wrap">
   <div class="udv-hub-intro"><span class="pti-kicker">СПЕЦІАЛІЗОВАНІ РІШЕННЯ</span><h2 id="udv-hub-title">Від задачі бізнесу <em>до конкретного інструменту.</em></h2><p>Оберіть напрям, у якому потрібно прибрати ручні операції, спростити роботу клієнтів або створити мобільний продукт.</p></div>
+  <?php mrseo_ua_v2_catalog('dev',true);?>
+  <div class="ua-v2-catalog-links"><a href="<?php echo esc_url(mrseo_url('business-dashboards','uk'));?>">Дашборди та звітність <span aria-hidden="true">↗</span></a></div>
   <?php foreach($groups as $heading=>$slugs):?>
    <div class="udv-hub-group"><h3><?php echo esc_html($heading);?></h3><div class="udv-hub-grid">
    <?php foreach($slugs as $slug):$page=$pages[$slug];?>

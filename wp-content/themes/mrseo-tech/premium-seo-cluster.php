@@ -32,7 +32,7 @@ add_action('wp_enqueue_scripts',static function(){
 get_header();
 ?>
 <div class="pti-page psc-page" data-psc-route="<?php echo esc_attr($psc_slug);?>" id="main-content"<?php if($psc_reference)echo ' data-service-reference="v1"';?>>
- <section class="pti-hero psc-hero" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">
+ <section data-ua-stage="hero" class="pti-hero psc-hero" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">
   <div class="pti-wrap pti-hero-grid">
    <div class="pti-hero-copy">
     <nav class="pti-crumb" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url());?>">Головна</a> / <a href="<?php echo esc_url(mrseo_url('seo'));?>">SEO</a> / <span><?php echo esc_html($psc['title']);?></span></nav>

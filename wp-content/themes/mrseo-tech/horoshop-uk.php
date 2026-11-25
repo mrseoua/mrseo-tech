@@ -7,7 +7,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 ?>
 <div class="ukseo ukseo--horoshop" id="main-content">
 <section class="ukhoroshop-wrap">
-<section class="special-hero special-hero-horoshop" aria-labelledby="horoshop-title">
+<section data-ua-stage="hero" class="special-hero special-hero-horoshop" aria-labelledby="horoshop-title">
  <div class="container hs-hero-layout">
   <div class="hs-hero-copy">
    <div class="eyebrow"><?php echo esc_html(mrseo_t('СТВОРЕННЯ, SEO ТА РЕКЛАМА МАГАЗИНІВ НА ХОРОШОП','SEO И РАЗВИТИЕ МАГАЗИНОВ НА ХОРОШОП','HOROSHOP SEO'));?></div>
@@ -50,8 +50,8 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
  </div>
 </section>
 </section>
-<?php mrseo_hs_trust(true);?>
-<section class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
+
+<section data-ua-stage="problems" class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
  <div class="ukseo-section-head">
   <div><span class="ukseo-kicker">ПЛАТФОРМА МАЄ СВОЇ ПРАВИЛА</span><h2 id="ukhoroshop-problem-title">Що саме заважає <em>клієнту знайти й купити товар?</em></h2></div>
   <p>SEO-просування магазину на Хорошоп починаємо з перевірки категорій, фільтрів та товарного фіда — з урахуванням можливостей платформи.</p>
@@ -62,16 +62,12 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
   <article class="ukseo-problem-card ua-paired-row" data-ua-problem-pair><div class="ukseo-card-number">03 <span aria-hidden="true">↗</span></div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-feed','');?><h3>Merchant Center відхиляє товари</h3><p>Ціна, наявність або атрибути у фіді не збігаються з тим, що бачить покупець у магазині.</p><div class="ua-paired-answer"><span>НАШЕ РІШЕННЯ</span><p>Зіставляємо товарні дані з картками, виправляємо доступні налаштування й повторно перевіряємо статуси Merchant Center.</p></div></article>
  </div>
 </div></section>
-<section class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">
- <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-store-process','pue-hs-story');?><?php if(mrseo_locale()==='uk')mrseo_pue_pause();?></div>
- <div class="ukseo-delivery-list">
-  <div><span aria-hidden="true">01</span><div><h3>Створення магазину на Хорошоп</h3><p>Структура каталогу, навігація, основні сторінки й готовність до запуску.</p></div></div>
-  <div><span aria-hidden="true">02</span><div><h3>SEO та робота з індексацією</h3><p>Посадкові сторінки під попит, перелінкування, метадані й контроль технічних URL.</p></div></div>
-  <div><span aria-hidden="true">03</span><div><h3>Merchant Center і Google Ads</h3><p>Діагностика товарного фіда, налаштування реклами та перевірка покупок.</p></div></div>
- </div>
-</div></section>
+<?php mrseo_ua_v2_approach('horoshop');?>
+<?php mrseo_hs_trust(true);?>
+
+
 <?php if(mrseo_locale()==='uk'): ?>
-<section class="hs-service-section" id="hs-services" aria-labelledby="hs-services-title">
+<section data-ua-stage="catalog" class="hs-service-section" id="hs-services" aria-labelledby="hs-services-title">
  <div class="container">
   <div class="hs-services-heading">
    <span class="ukseo-kicker">ПОСЛУГИ ДЛЯ ХОРОШОП</span>
@@ -158,7 +154,17 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
  </div>
 </section>
 <?php endif; ?>
-<section class="ukseo-faq" aria-labelledby="ukhoroshop-faq-title"><div class="container ukseo-faq-grid">
+
+<section data-ua-stage="work" class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">
+ <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-store-process','pue-hs-story');?><?php if(mrseo_locale()==='uk')mrseo_pue_pause();?></div>
+ <div class="ukseo-delivery-list">
+  <div><span aria-hidden="true">01</span><div><h3>Створення магазину на Хорошоп</h3><p>Структура каталогу, навігація, основні сторінки й готовність до запуску.</p></div></div>
+  <div><span aria-hidden="true">02</span><div><h3>SEO та робота з індексацією</h3><p>Посадкові сторінки під попит, перелінкування, метадані й контроль технічних URL.</p></div></div>
+  <div><span aria-hidden="true">03</span><div><h3>Merchant Center і Google Ads</h3><p>Діагностика товарного фіда, налаштування реклами та перевірка покупок.</p></div></div>
+ </div>
+</div></section><?php mrseo_ua_v2_result("Залежно від погодженої задачі — підготовлений до запуску магазин, перелік технічних виправлень, оптимізовані сторінки або налаштована реклама з перевіркою обліку покупок.");?>
+<?php mrseo_ua_v2_terms("Перевіряємо можливості тарифу Хорошоп, розділяємо вартість робіт, оплату платформи й рекламний бюджет.");?>
+<section data-ua-stage="faq" class="ukseo-faq" aria-labelledby="ukhoroshop-faq-title"><div class="container ukseo-faq-grid">
  <div><span class="ukseo-kicker">ВАЖЛИВО ЗНАТИ</span><h2 id="ukhoroshop-faq-title">Питання про Хорошоп.</h2><p>Дотримуємося можливостей і правил платформи.</p></div>
  <div class="ukseo-faq-items">
   <details><summary>Чи можна налаштувати SEO-фільтри для Google?<span aria-hidden="true">+</span></summary><p>У Хорошоп передбачені інструменти для SEO-сторінок фільтрів. Які комбінації корисні, визначаємо за попитом і технічними можливостями конкретного каталогу.</p></details>
@@ -166,7 +172,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
   <details><summary>Чи можете допомогти з відхиленнями товарів у Merchant Center?<span aria-hidden="true">+</span></summary><p>Так, аналізуємо діагностику, товарні дані та відповідність магазину фіду. Рішення залежить від причини відхилення та правил Google.</p></details>
  </div>
 </div></section>
-<section class="ukseo-final" aria-labelledby="ukhoroshop-final-title"><div class="container ukseo-final-grid">
+<section data-ua-stage="cta" class="ukseo-final" aria-labelledby="ukhoroshop-final-title"><div class="container ukseo-final-grid">
  <div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-next','pue-hs-next');?><span class="ukseo-kicker">ПЕРШИЙ КРОК</span><h2 id="ukhoroshop-final-title">Магазин працює. <em>Знайдімо, що стримує його зростання.</em></h2><p>Надішліть адресу вашого магазину й коротко опишіть проблему. Почнемо з перевірки того, що справді впливає на результат.</p></div>
  <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити Хорошоп <span aria-hidden="true">↗</span></a>
 </div></section>

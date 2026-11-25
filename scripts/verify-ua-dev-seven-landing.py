@@ -48,7 +48,9 @@ for keyword in ("get_header();","get_footer();","aria-labelledby","id=\"udv-h1\"
 assert "esc_attr($page['meta'])" in routing
 assert "array_keys(mrseo_ua_dev_new_pages())" in routing
 assert "mrseo_ua_dev_new_route()" in routing
-assert "ua-dev-hub-links.php" in interior
+webdev=(t/"inc/premium-ua-interiors/web-development.php").read_text(encoding="utf-8")
+assert "ua-dev-hub-links.php" not in interior
+assert webdev.index('id="problems"')<webdev.index("mrseo_ua_v2_approach('web-development')")<webdev.index("ua-dev-hub-links.php")<webdev.index('data-pti-story="dev"')<webdev.index('data-ua-stage="cta"')
 assert "mrseo_ua_dev_new_pages()" in hub
 assert "client-portals" in hub and "pwa-development" in hub
 assert "udv-hub-grid" in css and "data-pti-service=\"web-development\"" in css

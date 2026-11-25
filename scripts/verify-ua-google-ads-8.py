@@ -69,14 +69,16 @@ for slug,d in position.items():
  assert len(d["headline"])==2 and len(d["items"])==(3 if slug=="google-ads" else 2)
  assert all(d["headline"]) and all(len(item)==2 and all(item) for item in d["items"])
  assert d["hero"] and d["close"]
-assert main.index("mrseo_ads_position_hero('google-ads')")<main.index("mrseo_ads_position_render('google-ads')")<main.index('id="ukads-problems"')
+assert main.index("mrseo_ads_position_hero('google-ads')")<main.index('id="ukads-problems"')<main.index("mrseo_ads_position_render('google-ads')")<main.index('id="ukads-services"')
 campaign=(root/"inc/premium-ads-campaign-page.php").read_text()
 commercial=(root/"premium-ua-commercial.php").read_text()
 hub=(root/"premium-ua-interior.php").read_text()
 for template in (campaign,commercial):
  assert template.count("mrseo_ads_position_hero($psc_slug)")==1
- assert template.count("mrseo_ads_position_render($psc_slug)")==1
- assert template.index("mrseo_ads_position_hero($psc_slug)")<template.index("mrseo_ads_position_render($psc_slug)")<template.index('class="pti-section psc-problems')
+ assert template.count("mrseo_ua_v2_approach($psc_slug)")==1
+ assert template.index("mrseo_ads_position_hero($psc_slug)")<template.index('class="pti-section psc-problems')<template.index("mrseo_ua_v2_approach($psc_slug)")<template.index('class="pti-section psc-delivery')
+sequence=(root/"inc/ua-service-sequence-v2.php").read_text()
+assert "mrseo_ads_position_copy($slug)" in sequence and "mrseo_ads_position_render($slug);return;" in sequence
 assert "if(mrseo_ads_position_copy(mrseo_slug()))wp_enqueue_style" in commercial
 assert "if(mrseo_slug()==='google-ads')wp_enqueue_style('mrseo-ua-ads-position'" in hub
 assert "mrseo_locale()!=='uk'" in commercial and "mrseo_locale()!=='uk'" in hub
@@ -86,4 +88,4 @@ assert renderer.count('id="mrseo-ads-approach"')==1 and 'href="#mrseo-ads-approa
 assert "Без пафосу. Без переплат." in renderer
 css=(root/"assets/ua-ads-position.css").read_text()
 assert css.count("{")==css.count("}") and "minmax(0,1fr)" in css and "@media(max-width:700px)" in css
-print("PASS: seven unique Ads positioning variants; scoped assets and early placement; compact child layouts")
+print("PASS: seven unique Ads positioning variants; scoped assets and approved after-problems placement; compact child layouts")
