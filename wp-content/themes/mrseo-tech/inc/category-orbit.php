@@ -21,7 +21,9 @@ function mrseo_category_is_root(){
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_category_is_root())return;
  wp_enqueue_style('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.css',array('mrseo-style'),'1.0.1');
- wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.0.0');
+ wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.1.0');
+ wp_enqueue_style('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.css',array('mrseo-category-home-layout'),'1.0.0');
+ wp_enqueue_script('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.js',array(),'1.0.0',true);
  wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.js',array(),'1.0.1',true);
 },150);
 function mrseo_category_items($slug){
@@ -65,18 +67,8 @@ function mrseo_category_icon($i){
 function mrseo_category_catalog($slug){
  $d=mrseo_category_home_data()[$slug];$items=mrseo_category_items($slug);
  ?>
- <section data-ua-stage="catalog" class="category-catalog" id="<?php echo esc_attr($d[7]);?>"><div class="category-shell"><span class="category-kicker">НАПРЯМИ РОБОТИ</span><h2><?php echo esc_html(array('seo'=>'Пошукові рішення для вашого сайту','google-ads'=>'Кампанії під вашу економіку','horoshop'=>'Інструменти розвитку магазину','service-websites'=>'Оберіть формат вашого сайту','web-development'=>'Рішення для ваших процесів')[$slug]);?></h2><div class="category-tiles">
+ <section data-ua-stage="catalog" class="category-catalog" id="<?php echo esc_attr($d[7]);?>"><div class="category-shell"><span class="category-kicker">НАПРЯМИ РОБОТИ</span><h2><?php echo esc_html(array('seo'=>'Пошукові рішення для вашого сайту','google-ads'=>'Кампанії під вашу економіку','horoshop'=>'Інструменти розвитку магазину','service-websites'=>'Оберіть формат вашого сайту','web-development'=>'Рішення для ваших процесів')[$slug]);?></h2><div class="category-motion-control"><button type="button" class="category-motion-toggle" aria-pressed="false">Призупинити рух</button><span>Демонстраційні інтерфейси, не дані клієнтів.</span></div><div class="category-tiles">
  <?php $i=0;foreach($items as $path=>$item):?><article class="category-tile"<?php if($slug==='horoshop')echo ' id="hs-'.esc_attr(basename($path)).'"';?>><span class="category-kicker"><?php echo esc_html(sprintf('%02d',++$i));?> / <?php echo esc_html($d[5]);?></span><h3><?php echo esc_html($item[0]);?></h3><div class="category-tile-art" aria-hidden="true"><?php mrseo_category_tile_art($path,$i);?></div><p><?php echo esc_html($item[2]);?></p><a href="<?php echo esc_url($item[1]);?>">Детальніше <span aria-hidden="true">↗</span></a></article><?php endforeach;?>
  </div></div></section><?php
 }
-function mrseo_category_tile_art($path,$i){
- $seed=crc32($path);$kind=$seed%6;
- ?><svg viewBox="0 0 280 136" aria-hidden="true"><rect x="9" y="9" width="262" height="118" rx="10" fill="#fcf9f3" stroke="#d3c2b0"/><path d="M9 27h262" stroke="#d3c2b0"/><g fill="#ad8f7d"><circle cx="20" cy="18" r="2.4"/><circle cx="29" cy="18" r="2.4"/><circle cx="38" cy="18" r="2.4"/></g>
- <?php if($kind===0):?><g fill="#e9d9c8"><rect x="25" y="40" width="230" height="17" rx="7"/><?php for($j=0;$j<3;$j++):?><rect x="25" y="<?php echo 66+$j*17;?>" width="<?php echo 205-($seed%27)-$j*23;?>" height="9" rx="3"/><?php endfor;?></g><circle cx="238" cy="48" r="5" fill="none" stroke="#a84432" stroke-width="2"/>
- <?php elseif($kind===1):?><path d="M27 110h224M27 110V42" stroke="#c8b6a3"/><g fill="#b76e57"><?php for($j=0;$j<6;$j++):$h=15+($seed>>$j)%25+$j*7;?><rect x="<?php echo 43+$j*34;?>" y="<?php echo 110-$h;?>" width="20" height="<?php echo $h;?>" rx="4"/><?php endfor;?></g>
- <?php elseif($kind===2):?><g fill="#ede3d8" stroke="#c8b6a3"><?php for($j=0;$j<3;$j++):?><rect x="<?php echo 25+$j*79;?>" y="43" width="66" height="66" rx="7"/><rect x="<?php echo 34+$j*79;?>" y="51" width="48" height="<?php echo 25+($seed>>$j)%10;?>" rx="4" fill="#ba8c74"/><path d="M<?php echo 35+$j*79;?> 99h43" stroke="#a84432"/><?php endfor;?></g>
- <?php elseif($kind===3):?><g fill="#e7d6c4" stroke="#bca58e"><rect x="25" y="43" width="81" height="64" rx="7"/><rect x="174" y="43" width="81" height="64" rx="7"/><path d="M106 60h68M106 90h68" fill="none" stroke="#a84432" stroke-width="2" stroke-dasharray="4 4"/><circle cx="<?php echo 125+$seed%30;?>" cy="60" r="5" fill="#a84432"/></g>
- <?php elseif($kind===4):?><rect x="28" y="40" width="165" height="73" rx="5" fill="#ede3d5" stroke="#bda992"/><rect x="39" y="50" width="140" height="22" rx="4" fill="#b77761"/><path d="M39 84h83M39 94h105" stroke="#b2a08f" stroke-width="5" stroke-linecap="round"/><rect x="183" y="57" width="<?php echo 39+$seed%8;?>" height="57" rx="6" fill="#fffaf1" stroke="#ac9380"/><path d="M192 70h23M192 80h18" stroke="#a84432" stroke-width="4"/>
- <?php else:?><g fill="#ded0c0" stroke="#b59d87"><circle cx="140" cy="75" r="23"/><?php for($j=0;$j<5;$j++):$a=$j*2*M_PI/5+($seed%19)/19;$x=140+91*cos($a);$y=75+34*sin($a);?><path d="M140 75L<?php echo $x.' '.$y;?>" stroke="#a84432"/><circle cx="<?php echo $x;?>" cy="<?php echo $y;?>" r="11" fill="#f4e9db"/><?php endfor;?></g><?php endif;?>
- </svg><?php
-}
+require_once __DIR__.'/category-tile-scenes.php';

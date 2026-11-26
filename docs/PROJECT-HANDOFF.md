@@ -1156,3 +1156,7 @@ Owner approved five mockups and publication. Added isolated category-orbit PHP/C
 
 ### UA category first-screen redesign — 2026-11-26
 Owner requested simpler homepage composition, unique UA copy and CTA, beautiful rotating planet at top, problems then tiles. Replaced PR215 second orbit with homepage WebGL/Canvas engine and separate procedural themed textures; use native links and original menu inventory; retain existing approved lower content, terms, problem pairs and SEO. No change to homepage source or other languages. Visual parity and live deployment unverified pending QA.
+
+
+### UA category card polish — 2026-11-26
+Owner rejected hash-selected primitive SVG diagrams and redundant large API banner on WebDev. Replaced shared UA category tile art with explicitly authored service-specific animated UI studies (homepage visual language), scoped motion controller with viewport/visibility/reduced-motion/pause. Retained WebDev approved capabilities and text-only three benefits; removed only oversized duplicate API artwork and its now-obsolete pause/illustration note. Homepage and other locales untouched; SEO route/metadata/noindex preserved. Manual live visual QA pending; publication requires owner approval.
