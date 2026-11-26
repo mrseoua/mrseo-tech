@@ -1160,3 +1160,7 @@ Owner requested simpler homepage composition, unique UA copy and CTA, beautiful 
 
 ### UA category card polish — 2026-11-26
 Owner rejected hash-selected primitive SVG diagrams and redundant large API banner on WebDev. Replaced shared UA category tile art with explicitly authored service-specific animated UI studies (homepage visual language), scoped motion controller with viewport/visibility/reduced-motion/pause. Retained WebDev approved capabilities and text-only three benefits; removed only oversized duplicate API artwork and its now-obsolete pause/illustration note. Homepage and other locales untouched; SEO route/metadata/noindex preserved. Manual live visual QA pending; publication requires owner approval.
+
+
+### 26 Nov — image-first premium category tiles
+Owner requested implementation, immediate publishing, approved warm clay-3D visual direction (not more mockups). Cropped 28 actual reference illustrations into locally bundled optimized WebP assets; 6 additional existing premium WebPs and 8 distinct existing gradient/vector scenes supply the remaining real service destinations. All 42 original links and HTML copy remain. Unified image-first numbered tiles, hover/focus motion only; removed duplicate WebDev six-card capability catalogue, carried approved heading and relevant copy into linked catalogue, kept approved text-only work section. No main homepage, metadata, canonical/hreflang, noindex or other locale changes. CI validates artwork and links. Visual quality differs for 8 vector assets and manual visual QA not yet completed.

@@ -5,11 +5,12 @@ from pathlib import Path
 THEME=Path(__file__).resolve().parents[1]/"wp-content/themes/mrseo-tech"
 class Markup(HTMLParser):
     def __init__(self, raw):
-        super().__init__(); self.h1=0; self.links=[]; self.ids=[]; self.feed(raw)
+        super().__init__(); self.h1=0; self.links=[]; self.ids=[]; self.images=[]; self.feed(raw)
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if tag=="h1": self.h1+=1
         if tag=="a": self.links.append(a.get("href",""))
+        if tag=="img": self.images.append(a.get("src",""))
         if "id" in a: self.ids.append(a["id"])
 def render_category(slug, component):
     assert component in ("orbit","catalog")

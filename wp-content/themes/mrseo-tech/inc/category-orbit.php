@@ -21,9 +21,8 @@ function mrseo_category_is_root(){
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_category_is_root())return;
  wp_enqueue_style('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.css',array('mrseo-style'),'1.0.1');
- wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.1.0');
- wp_enqueue_style('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.css',array('mrseo-category-home-layout'),'1.0.0');
- wp_enqueue_script('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.js',array(),'1.0.0',true);
+ wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.2.0');
+ wp_enqueue_style('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.css',array('mrseo-category-home-layout'),'2.0.0');
  wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.js',array(),'1.0.1',true);
 },150);
 function mrseo_category_items($slug){
@@ -66,9 +65,13 @@ function mrseo_category_icon($i){
 }
 function mrseo_category_catalog($slug){
  $d=mrseo_category_home_data()[$slug];$items=mrseo_category_items($slug);
+ if($slug==='web-development'){
+  $approved=array('client-portals'=>'Клієнт бачить свої замовлення, документи або статус заявки без дзвінка менеджеру.','crm-development'=>'Єдине місце, де команда веде заявки, замовлення й завдання замість розрізнених таблиць.','api-integrations'=>'Передаємо замовлення, платежі й залишки між сайтом, CRM та іншими системами.','business-automation'=>'Нова заявка автоматично потрапляє менеджеру, а зміна залишку — у магазин.','custom-functionality'=>'Виправляємо наявні помилки, додаємо потрібні функції та підтримуємо систему після запуску.');
+  foreach($approved as $key=>$copy)if(isset($items[$key]))$items[$key][2]=$copy;
+ }
  ?>
- <section data-ua-stage="catalog" class="category-catalog" id="<?php echo esc_attr($d[7]);?>"><div class="category-shell"><span class="category-kicker">НАПРЯМИ РОБОТИ</span><h2><?php echo esc_html(array('seo'=>'Пошукові рішення для вашого сайту','google-ads'=>'Кампанії під вашу економіку','horoshop'=>'Інструменти розвитку магазину','service-websites'=>'Оберіть формат вашого сайту','web-development'=>'Рішення для ваших процесів')[$slug]);?></h2><div class="category-motion-control"><button type="button" class="category-motion-toggle" aria-pressed="false">Призупинити рух</button><span>Демонстраційні інтерфейси, не дані клієнтів.</span></div><div class="category-tiles">
- <?php $i=0;foreach($items as $path=>$item):?><article class="category-tile"<?php if($slug==='horoshop')echo ' id="hs-'.esc_attr(basename($path)).'"';?>><span class="category-kicker"><?php echo esc_html(sprintf('%02d',++$i));?> / <?php echo esc_html($d[5]);?></span><h3><?php echo esc_html($item[0]);?></h3><div class="category-tile-art" aria-hidden="true"><?php mrseo_category_tile_art($path,$i);?></div><p><?php echo esc_html($item[2]);?></p><a href="<?php echo esc_url($item[1]);?>">Детальніше <span aria-hidden="true">↗</span></a></article><?php endforeach;?>
+ <section data-ua-stage="catalog" class="category-catalog" id="<?php echo esc_attr($d[7]);?>"><div class="category-shell"><span class="category-kicker">НАПРЯМИ РОБОТИ</span><h2><?php echo esc_html(array('seo'=>'Пошукові рішення для вашого сайту','google-ads'=>'Кампанії під вашу економіку','horoshop'=>'Інструменти розвитку магазину','service-websites'=>'Оберіть формат вашого сайту','web-development'=>'Розробка для бізнес-процесу, а не заради коду.')[$slug]);?></h2><div class="category-tiles">
+ <?php $i=0;foreach($items as $path=>$item):?><article class="category-tile"<?php if($slug==='horoshop')echo ' id="hs-'.esc_attr(basename($path)).'"';?>><span class="category-kicker"><?php echo esc_html(sprintf('%02d / %02d',++$i,count($items)));?></span><div class="category-tile-art" aria-hidden="true"><?php mrseo_category_tile_art($path,$i);?></div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[2]);?></p><a href="<?php echo esc_url($item[1]);?>">Дізнатися більше <span aria-hidden="true">↗</span></a></article><?php endforeach;?>
  </div></div></section><?php
 }
 require_once __DIR__.'/category-tile-scenes.php';

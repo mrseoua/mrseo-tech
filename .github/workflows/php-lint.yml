@@ -44,6 +44,8 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
+      - name: Verify category artwork and real service links
+        run: python3 scripts/verify-category-artwork.py
       - name: Verify eight Ukrainian Google Ads pages and internal service routes
         run: python3 scripts/verify-ua-google-ads-8.py
       - name: Verify six Ukrainian Horoshop commercial service destinations
