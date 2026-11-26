@@ -55,7 +55,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const approach=document.querySelector('[data-ua-stage="approach"]');
       const approachHeading=approach?.querySelector('h2')?.textContent.replace(/\s+/g,' ').trim()||'';
       const approachCopy=approach?.textContent.replace(/\s+/g,' ').trim()||'';
-      const devPictures=[...document.querySelectorAll('.pti-page[data-pti-service="web-development"] .pti-card-art img,.pti-page[data-pti-service="web-development"] .pti-story-art img,.pti-page[data-pti-service="web-development"] .pti-hero-art')].map(e=>e.getAttribute('src'));
+      const devPictures=[...document.querySelectorAll('.pti-page[data-pti-service="web-development"] .pti-card-art img,.pti-page[data-pti-service="web-development"] .pti-story-art img,.pti-page[data-pti-service="web-development"] .pti-hero-art,.pti-page[data-pti-service="web-development"] .category-home .pt-globe img')].map(e=>e.getAttribute('src'));
       const stages=[...document.querySelectorAll('[data-ua-stage]')].map(e=>({key:e.dataset.uaStage,visible:shown(e),text:e.textContent.trim().length,top:e.getBoundingClientRect().top,catalog:e.dataset.uaStage==='catalog'?[...e.querySelectorAll('a[href]')].map(a=>new URL(a.href).pathname):[]}));
       const pairs=[...document.querySelectorAll('[data-ua-problem-pair]')];
       const completePairs=pairs.filter(e=>{const answer=e.querySelector('.ua-paired-answer');const p=answer?.querySelector('p');return answer&&p&&shown(p)&&p.textContent.trim().length>20&&!!e.querySelector('h3')?.textContent.trim();}).length;
