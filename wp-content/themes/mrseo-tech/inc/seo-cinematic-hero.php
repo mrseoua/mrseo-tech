@@ -19,3 +19,5 @@
   </div>
  </div>
 </section>
+<?php mrseo_category_orbit('seo');?>
+

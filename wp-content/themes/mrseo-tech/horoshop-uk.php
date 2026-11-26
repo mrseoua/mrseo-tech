@@ -49,6 +49,8 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
   </div>
  </div>
 </section>
+<?php mrseo_category_orbit('horoshop');?>
+
 </section>
 
 <section data-ua-stage="problems" class="ukseo-cases" id="ukhoroshop-start" aria-labelledby="ukhoroshop-problem-title"><div class="container">
