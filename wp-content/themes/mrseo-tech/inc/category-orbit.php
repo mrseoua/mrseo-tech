@@ -29,6 +29,7 @@ function mrseo_category_items($slug){
  require_once get_template_directory().'/inc/home-service-sublinks.php';
  foreach(mrseo_home_subservice_groups($d[9]) as $group)foreach($group['items'] as $item){
   $path=trim(wp_parse_url($item['url'],PHP_URL_PATH),'/');$key=basename($path);
+  if($slug==='google-ads'&&$key==='google-remarketing')continue;
   $out[$path]=array($item['label'],$item['url'],mrseo_category_service_desc()[$key]??'Перевіряємо потреби проєкту й погоджуємо конкретні роботи.');
  }
  if($slug==='horoshop')$out=array('horoshop/setup'=>array('Створення магазину',mrseo_hs_url('setup'),mrseo_category_service_desc()['setup']))+$out;
@@ -46,6 +47,7 @@ function mrseo_category_orbit($slug){
  <h1 class="pt-home-title" id="category-title"><?php echo esc_html($d[1]);?><br><em><?php echo esc_html($d[2]);?></em></h1>
  <p class="pt-home-lead"><?php echo esc_html($d[3]);?></p>
  <?php if($slug==='horoshop'):?><div class="category-partner"><img src="<?php echo esc_url($assets.'horoshop-wordmark.svg');?>" alt="Хорошоп" width="150" height="28"><img src="<?php echo esc_url($assets.'horoshop-partner-active.svg');?>" alt="Офіційний партнер Хорошоп — Partner ACTIVE" width="70" height="52"></div><?php endif;?>
+ <?php if($slug==='google-ads')mrseo_ads_position_hero('google-ads');?>
  <div class="pt-home-actions"><a class="pt-home-cta" href="<?php echo esc_url(mrseo_url('contact','uk'));?>"><?php echo esc_html($d[4]);?> ↗</a><a class="pt-home-secondary" href="#<?php echo esc_attr($d[7]);?>">Переглянути послуги ↓</a></div>
  <p class="pt-home-caption"><i aria-hidden="true"></i>Оберіть супутник або перегляньте каталог нижче. Наведіть на послугу, щоб зупинити орбіту.</p></div>
  <div class="pt-orbit-shell"><div class="pt-orbit" aria-label="Підкатегорії послуг"><div class="pt-orbit-ring" aria-hidden="true"></div><div class="pt-orbit-ring r2" aria-hidden="true"></div><div class="pt-orbit-ring r3" aria-hidden="true"></div><svg class="pt-orbit-lines" aria-hidden="true"></svg>
@@ -64,7 +66,7 @@ function mrseo_category_catalog($slug){
  $d=mrseo_category_home_data()[$slug];$items=mrseo_category_items($slug);
  ?>
  <section data-ua-stage="catalog" class="category-catalog" id="<?php echo esc_attr($d[7]);?>"><div class="category-shell"><span class="category-kicker">НАПРЯМИ РОБОТИ</span><h2><?php echo esc_html(array('seo'=>'Пошукові рішення для вашого сайту','google-ads'=>'Кампанії під вашу економіку','horoshop'=>'Інструменти розвитку магазину','service-websites'=>'Оберіть формат вашого сайту','web-development'=>'Рішення для ваших процесів')[$slug]);?></h2><div class="category-tiles">
- <?php $i=0;foreach($items as $path=>$item):?><article class="category-tile"><span class="category-kicker"><?php echo esc_html(sprintf('%02d',++$i));?> / <?php echo esc_html($d[5]);?></span><h3><?php echo esc_html($item[0]);?></h3><div class="category-tile-art" aria-hidden="true"><?php mrseo_category_tile_art($path,$i);?></div><p><?php echo esc_html($item[2]);?></p><a href="<?php echo esc_url($item[1]);?>">Детальніше <span aria-hidden="true">↗</span></a></article><?php endforeach;?>
+ <?php $i=0;foreach($items as $path=>$item):?><article class="category-tile"<?php if($slug==='horoshop')echo ' id="hs-'.esc_attr(basename($path)).'"';?>><span class="category-kicker"><?php echo esc_html(sprintf('%02d',++$i));?> / <?php echo esc_html($d[5]);?></span><h3><?php echo esc_html($item[0]);?></h3><div class="category-tile-art" aria-hidden="true"><?php mrseo_category_tile_art($path,$i);?></div><p><?php echo esc_html($item[2]);?></p><a href="<?php echo esc_url($item[1]);?>">Детальніше <span aria-hidden="true">↗</span></a></article><?php endforeach;?>
  </div></div></section><?php
 }
 function mrseo_category_tile_art($path,$i){

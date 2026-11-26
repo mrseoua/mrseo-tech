@@ -133,4 +133,11 @@ assert "mrseo_hs_premium_routes_v2" in premium_routes
 assert page.count('class="hs-paid-catalog-card"')==3
 assert "X-Robots-Tag: noindex, nofollow" in functions
 
+import runpy
+_category_check=runpy.run_path(str(Path(__file__).with_name("category-render-check.py")))
+render_category=_category_check["render_category"]
+paths=_category_check["paths"]
+assert render_category("horoshop","orbit").h1==1
+assert paths(render_category("horoshop","catalog"))=={"/horoshop/"+key+"/" for key in ("setup","seo","audit","ads","search-ads","shopping","pmax","feeds","ga4")}
+assert set(anchors)<=set(render_category("horoshop","catalog").ids)
 print("Horoshop UA: six premium routes, premium below-fold motion narratives and interactive hero, original partner visual, metadata, noindex and UA/RU routing preserved.")
