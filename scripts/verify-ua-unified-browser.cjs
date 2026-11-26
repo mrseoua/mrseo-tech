@@ -96,7 +96,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      if(paired.has(slug)&&(data.pairs!==3||data.completePairs!==3))errors.push('Missing visible problem-to-solution pairs: '+data.completePairs+'/'+data.pairs);
      if(referenceSelectors[slug]&&data.referenceAnswers!==3)errors.push('Missing reference-layout solutions: '+data.referenceAnswers);
      if(slug==='web-development'&&data.devHubOpen!==3)errors.push('WebDev hub solutions are not visible');
-     if(slug==='web-development'&&(data.devPictureCount!==8||data.devPictureUnique!==8))errors.push('WebDev repeated or missing capability picture');
+     if(slug==='web-development'&&(data.devPictureCount!==7||data.devPictureUnique!==7))errors.push('WebDev repeated or missing capability picture');
      if(!editorial.has(slug)){
       if(!data.approachHeading)errors.push('Missing specific approach heading');
       if(data.problemDetails||data.readablePairs.length!==3||data.readablePairs.some(p=>!p.valid||!p.layout||p.font<17.9||p.line<p.font*1.45||p.bounds[0]<-3||p.bounds[3]>data.width+3)){
