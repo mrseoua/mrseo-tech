@@ -1164,3 +1164,7 @@ Owner rejected hash-selected primitive SVG diagrams and redundant large API bann
 
 ### 26 Nov — image-first premium category tiles
 Owner requested implementation, immediate publishing, approved warm clay-3D visual direction (not more mockups). Cropped 28 actual reference illustrations into locally bundled optimized WebP assets; 6 additional existing premium WebPs and 8 distinct existing gradient/vector scenes supply the remaining real service destinations. All 42 original links and HTML copy remain. Unified image-first numbered tiles, hover/focus motion only; removed duplicate WebDev six-card capability catalogue, carried approved heading and relevant copy into linked catalogue, kept approved text-only work section. No main homepage, metadata, canonical/hreflang, noindex or other locale changes. CI validates artwork and links. Visual quality differs for 8 vector assets and manual visual QA not yet completed.
+
+
+### 26 Nov — compact WebDev CTA
+Owner screenshot showed white-on-white CTA text caused by legacy `.pti-pill` important color. Replaced only WebDev final CTA with concise heading, one sentence, visible brand-red button; removed decorative SVG and kicker. Fixed identical light-button text conflict on Ukrainian website creation hub. Added browser contrast/visibility check, bumped category CSS version. No route, homepage, other locale or indexing changes. Owner's standing approval to publish UA category corrections applies.
