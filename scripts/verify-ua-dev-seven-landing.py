@@ -51,8 +51,12 @@ assert "mrseo_ua_dev_new_route()" in routing
 webdev=(t/"inc/premium-ua-interiors/web-development.php").read_text(encoding="utf-8")
 assert "ua-dev-hub-links.php" not in interior
 assert webdev.index('id="problems"')<webdev.index("mrseo_ua_v2_approach('web-development')")<webdev.index("ua-dev-hub-links.php")<webdev.index('data-pti-story="dev"')<webdev.index('data-ua-stage="cta"')
-assert "mrseo_ua_dev_new_pages()" in hub
-assert "client-portals" in hub and "pwa-development" in hub
+import runpy
+_category_check=runpy.run_path(str(Path(__file__).with_name("category-render-check.py")))
+render_category=_category_check["render_category"]
+paths=_category_check["paths"]
+assert "mrseo_category_catalog('web-development')" in hub
+assert {"/"+slug+"/" for slug in expected} <= paths(render_category("web-development","catalog"))
 assert "udv-hub-grid" in css and "data-pti-service=\"web-development\"" in css
 assert "mrseo_locale()!=='uk'" in routing
 assert "redirect_canonical" in routing and "remove_action('wp_head','rel_canonical')" in routing

@@ -41,9 +41,12 @@ hub=(ROOT/"inc/premium-ua-interiors/seo.php").read_text(encoding="utf8")
 assert "mrseo_seo_catalog" not in hub, "The SEO hub must not promote 18 services as top-level choices"
 assert "seo-cinematic-directions.php" in hub
 visual=(ROOT/"inc/seo-cinematic-directions.php").read_text(encoding="utf8")
-assert len(re.findall(r"^\s*array\('(?:seo-audit|ecommerce-seo|local-seo|service-business-seo|international-seo)',",visual,re.M))==5, "Exactly five commercial SEO directions"
-for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo"):
-    assert "'"+slug+"'" in visual,slug
+import runpy
+_category_check=runpy.run_path(str(Path(__file__).with_name("category-render-check.py")))
+render_category=_category_check["render_category"]
+paths=_category_check["paths"]
+assert "mrseo_category_catalog('seo')" in visual
+assert paths(render_category("seo","catalog"))=={"/"+slug+"/" for slug in ("seo-audit","ecommerce-seo","local-seo","service-business-seo","international-seo")}
 assert "X-Robots-Tag: noindex, nofollow" in (ROOT/"functions.php").read_text(encoding="utf8")
 assert "function mrseo_i18n_current_entry" in (ROOT/"inc/international-seo.php").read_text(encoding="utf8")
 print("UA SEO: all 19 legacy metadata sets preserved, five primary cinematic links in hub, scoped intent and contextual links OK")

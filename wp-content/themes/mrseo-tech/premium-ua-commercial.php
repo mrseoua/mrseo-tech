@@ -29,7 +29,7 @@ get_header();
 if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaign-page.php';get_footer();return;}
 ?>
 <div class="pti-page puc-page<?php echo $psc_ads_campaign?' puc-ads-campaign':'';?>" data-puc-route="<?php echo esc_attr($psc_slug);?>" id="main-content">
- <section data-ua-stage="hero" class="pti-hero psc-hero" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">
+ <?php if($psc_slug==='service-websites'){mrseo_category_orbit('service-websites');}else{?><section data-ua-stage="hero" class="pti-hero psc-hero" aria-labelledby="<?php echo esc_attr($psc_title_id);?>">
   <div class="pti-wrap pti-hero-grid">
    <div class="pti-hero-copy">
     <nav class="pti-crumb" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url());?>">Головна</a> / <?php if(!empty($psc['parent'])):?><a href="<?php echo esc_url(mrseo_url($psc['parent']));?>"><?php echo esc_html($psc['group']);?></a><?php else:?><span><?php echo esc_html($psc['group']);?></span><?php endif;?> / <span><?php echo esc_html($psc['title']);?></span></nav>
@@ -55,8 +55,8 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
     <p class="pti-footnote psc-demo-note">Ілюстрація принципу, не дані клієнтського проєкту.</p>
    </div>
   </div>
- </section>
-<?php if($psc_slug==='service-websites')mrseo_category_orbit('service-websites');?>
+ </section><?php }?>
+
 
  
  <section data-ua-stage="problems" class="pti-section psc-problems" id="<?php echo esc_attr($psc_problem_id);?>" aria-labelledby="psc-problem-title">
@@ -74,7 +74,7 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
   </div>
  </section>
  <?php mrseo_ua_v2_approach($psc_slug);?>
- <?php $ua_v2_hubs=array('service-websites'=>'sites','analytics'=>'data','online-store-development'=>'commerce');if(isset($ua_v2_hubs[$psc_slug]))mrseo_ua_v2_catalog($ua_v2_hubs[$psc_slug]);?>
+ <?php $ua_v2_hubs=array('service-websites'=>'sites','analytics'=>'data','online-store-development'=>'commerce');if($psc_slug==='service-websites')mrseo_category_catalog('service-websites');elseif(isset($ua_v2_hubs[$psc_slug]))mrseo_ua_v2_catalog($ua_v2_hubs[$psc_slug]);?>
  <?php if(!empty($psc['plan'])):$plan=$psc['plan'];?>
  <section class="pti-section pti-alt puc-plan" aria-labelledby="puc-plan-title"><div class="pti-wrap psc-story-grid">
   <div class="psc-story-visual"><?php mrseo_puc_art($psc_art['plan']);?></div>

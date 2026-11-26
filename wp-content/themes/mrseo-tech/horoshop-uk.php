@@ -7,7 +7,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 ?>
 <div class="ukseo ukseo--horoshop" id="main-content">
 <section class="ukhoroshop-wrap">
-<section data-ua-stage="hero" class="special-hero special-hero-horoshop" aria-labelledby="horoshop-title">
+<?php if(mrseo_locale()==='uk'){mrseo_category_orbit('horoshop');}else{?><section data-ua-stage="hero" class="special-hero special-hero-horoshop" aria-labelledby="horoshop-title">
  <div class="container hs-hero-layout">
   <div class="hs-hero-copy">
    <div class="eyebrow"><?php echo esc_html(mrseo_t('СТВОРЕННЯ, SEO ТА РЕКЛАМА МАГАЗИНІВ НА ХОРОШОП','SEO И РАЗВИТИЕ МАГАЗИНОВ НА ХОРОШОП','HOROSHOP SEO'));?></div>
@@ -48,8 +48,8 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
    </div>
   </div>
  </div>
-</section>
-<?php mrseo_category_orbit('horoshop');?>
+</section><?php }?>
+
 
 </section>
 
@@ -69,7 +69,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 
 
 <?php if(mrseo_locale()==='uk'): ?>
-<section data-ua-stage="catalog" class="hs-service-section" id="hs-services" aria-labelledby="hs-services-title">
+<?php if(mrseo_locale()==='uk'){mrseo_category_catalog('horoshop');}else{?><section data-ua-stage="catalog" class="hs-service-section" id="hs-services" aria-labelledby="hs-services-title">
  <div class="container">
   <div class="hs-services-heading">
    <span class="ukseo-kicker">ПОСЛУГИ ДЛЯ ХОРОШОП</span>
@@ -154,7 +154,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
   </div>
   <p class="hs-services-footnote">Якщо потрібні функції, яких немає в поточному тарифі або налаштуваннях Хорошоп, окремо погодимо альтернативу. Не обіцяємо змін, які платформа не підтримує.</p>
  </div>
-</section>
+</section><?php }?>
 <?php endif; ?>
 
 <section data-ua-stage="work" class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">

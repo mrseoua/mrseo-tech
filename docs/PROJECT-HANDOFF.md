@@ -1152,3 +1152,7 @@ PR #213 merged 6c08eb3208a9341f6278c2ea26f1f6c33b75ee6c; Deploy WordPress theme 
 
 ### 26 ноября — UA category orbit navigation
 Owner approved five mockups and publication. Added isolated category-orbit PHP/CSS/JS to five existing Ukrainian hubs; preserves old hero, content, SEO and homepage. Real anchor links, animated satellite positions, hover/focus pause, reduced motion, mobile grid. This is a first functional CSS3D interpretation, not pixel-identical generated mockups; visual QA and CI pending. Rollback revert PR.
+
+
+### UA category first-screen redesign — 2026-11-26
+Owner requested simpler homepage composition, unique UA copy and CTA, beautiful rotating planet at top, problems then tiles. Replaced PR215 second orbit with homepage WebGL/Canvas engine and separate procedural themed textures; use native links and original menu inventory; retain existing approved lower content, terms, problem pairs and SEO. No change to homepage source or other languages. Visual parity and live deployment unverified pending QA.

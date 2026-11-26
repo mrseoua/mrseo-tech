@@ -35,10 +35,17 @@ for slug, variants in required_variants.items():
  assert all(kw in semantic[slug]["secondary"] for kw in variants),(slug,variants)
 
 main=(root/"inc/premium-ua-interiors/google-ads.php").read_text(encoding="utf-8")
-assert "mrseo_ua_menu_groups()" in main
-assert "mrseo_url($mrseo_ads_service[0],'uk')" in main
-assert "mrseo_ads_catalog" in main
-assert main.count("<h1 ")==1
+import runpy
+_category_check=runpy.run_path(str(Path(__file__).with_name("category-render-check.py")))
+render_category=_category_check["render_category"]
+paths=_category_check["paths"]
+assert "mrseo_category_orbit('google-ads')" in main and "mrseo_category_catalog('google-ads')" in main
+hero=render_category("google-ads","orbit")
+catalog=render_category("google-ads","catalog")
+assert hero.h1==1 and catalog.h1==0
+assert paths(catalog)=={"/"+slug+"/" for slug in child if slug!="google-remarketing"}
+assert paths(hero)==paths(catalog)|{"/contact/"}
+assert "ukads-services" in catalog.ids
 assert all(price not in main for price in ("5 000", "5 900", "10 000", "9 500"))
 assert "ФОРМАТИ СПІВПРАЦІ" in main
 assert "Обговорити рекламу" in main and "Обговорити магазин" in main
@@ -51,9 +58,9 @@ print("Eight Ukrainian Google Ads pages, seven child routes, unique metadata, no
 
 # The real hub uses the same problem-first layout as the five paid campaign pages.
 assert main.count('class="service-problem-answer"')==3 and main.count('class="service-problem-copy"')==3
-assert main.index('id="ukads-problems"')<main.index('id="ukads-services"')<main.index('data-pti-story="ads"')<main.index('id="ukads-pricing"')
+assert main.index('id="ukads-problems"')<main.index("mrseo_category_catalog('google-ads')")<main.index('data-pti-story="ads"')<main.index('id="ukads-pricing"')
 assert main.count('class="service-deliverable"')==1
-assert all("'"+slug+"'=>array(" in main for slug in child)
+assert len(paths(catalog))==6
 assert 'data-service-standard="v1"' in (root/"premium-ua-interior.php").read_text()
 assert "service-standard.css" in (root/"premium-ua-interior.php").read_text()
 assert "prefers-reduced-motion" in (root/"assets/service-standard.css").read_text()
@@ -62,14 +69,14 @@ print("PASS: Ads hub standard v1, seven service destinations, three clear proble
 # Positioning: seven active routes (eight original routes retained); unique service-specific messages, a shared slogan and no SEO copy changes.
 position=embedded("inc/ua-ads-position.php","MRSEO_ADS_POSITION")
 assert set(position)==set(pages)-{'google-remarketing'}
-assert "if($mrseo_ads_service[0]==='google-remarketing')continue;" in main
+assert '/google-remarketing/' not in paths(catalog)
 assert len({d["hero"] for d in position.values()})==7
 assert len({tuple(d["headline"]) for d in position.values()})==7
 for slug,d in position.items():
  assert len(d["headline"])==2 and len(d["items"])==(3 if slug=="google-ads" else 2)
  assert all(d["headline"]) and all(len(item)==2 and all(item) for item in d["items"])
  assert d["hero"] and d["close"]
-assert main.index("mrseo_ads_position_hero('google-ads')")<main.index('id="ukads-problems"')<main.index("mrseo_ads_position_render('google-ads')")<main.index('id="ukads-services"')
+assert main.index("mrseo_category_orbit('google-ads')")<main.index('id="ukads-problems"')<main.index("mrseo_ads_position_render('google-ads')")<main.index("mrseo_category_catalog('google-ads')")
 campaign=(root/"inc/premium-ads-campaign-page.php").read_text()
 commercial=(root/"premium-ua-commercial.php").read_text()
 hub=(root/"premium-ua-interior.php").read_text()
