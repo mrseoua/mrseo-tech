@@ -93,6 +93,10 @@ jobs:
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
         run: node scripts/verify-ua-unified-browser.cjs
+      - name: Check scoped mobile SEO pilot and desktop restoration
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+        run: node scripts/verify-ua-seo-mobile-pilot.cjs
       - name: Test contact submission against isolated WordPress with mail intercepted
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080

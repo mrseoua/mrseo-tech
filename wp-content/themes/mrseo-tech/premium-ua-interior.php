@@ -13,6 +13,13 @@ add_action('wp_enqueue_scripts',static function(){
   wp_enqueue_script('mrseo-seo-cinematic',get_template_directory_uri().'/assets/seo-cinematic.js',array(),'2.3.0',true);
  }
 },100);
+// Mobile-only SEO hub pilot; leave desktop and all other routes untouched.
+if($pti_slug==='seo'){
+ add_action('wp_enqueue_scripts',static function(){
+  wp_enqueue_style('mrseo-seo-mobile-pilot',get_template_directory_uri().'/assets/seo-mobile-pilot.css',array('mrseo-seo-hub'),'1.0.0','(max-width: 680px)');
+  wp_enqueue_script('mrseo-seo-mobile-pilot',get_template_directory_uri().'/assets/seo-mobile-pilot.js',array(),'1.0.0',true);
+ },210);
+}
 get_header();
 ?>
 <div class="pti-page" data-pti-service="<?php echo esc_attr($pti_slug);?>"<?php if($pti_slug==='google-ads')echo ' data-service-standard="v1"';?>>
