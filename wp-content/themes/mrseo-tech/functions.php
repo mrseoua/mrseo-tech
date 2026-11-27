@@ -504,7 +504,9 @@ add_action('wp_enqueue_scripts',static function(){
  $entry=mrseo_i18n_current_entry();
  $slug=$entry['slug']??null;
  if($slug===null||$slug==='seo'||isset(mrseo_ua_retired_services()[$slug]))return;
- if(!isset(mrseo_ua_semantic_map()[$slug]))return;
- wp_enqueue_style('mrseo-ua-mobile-compact',get_template_directory_uri().'/assets/ua-mobile-compact.css',array('mrseo-style'),'1.0.0','(max-width: 680px)');
+ $hs_key=function_exists('mrseo_hs_key')?mrseo_hs_key():null;
+ $dev=function_exists('mrseo_ua_dev_new_page')?mrseo_ua_dev_new_page($slug):null;
+ if(!isset(mrseo_ua_semantic_map()[$slug])&&!$hs_key&&!$dev)return;
+ wp_enqueue_style('mrseo-ua-mobile-compact',get_template_directory_uri().'/assets/ua-mobile-compact.css',array('mrseo-style'),'1.0.1','(max-width: 680px)');
  wp_enqueue_script('mrseo-ua-mobile-compact',get_template_directory_uri().'/assets/ua-mobile-compact.js',array(),'1.0.0',true);
 },1200);

@@ -50,10 +50,10 @@
  html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-heading{gap:12px;margin-bottom:18px}
  html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-heading h2{font-size:32px;line-height:1.15}
  html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-grid{gap:12px}
- html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card{padding:16px;gap:12px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card{padding:14px;gap:0}
  html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card-header h3{font-size:25px}
- html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card-footer p{font-size:17px;line-height:1.5;margin-block:8px 12px}
- html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-cta{padding:22px 18px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card-footer p{font-size:16px;line-height:1.5;margin-block:8px 10px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-cta{min-height:0;padding:0}
  html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .ph-confidential{padding-block:24px;gap:14px}
  html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .ph-confidential h2{font-size:30px;line-height:1.18}
  /* Editorial pages: no disclosure of legal or commercial terms. */
@@ -62,10 +62,14 @@
  html[lang="uk-UA"] .about-page .about-hero-copy h1{font-size:clamp(34px,8.8vw,42px);line-height:1.12;margin-block:12px 16px}
  html[lang="uk-UA"] .about-page :is(.about-method,.about-fit,.about-final) h2{font-size:30px;line-height:1.2}
  html[lang="uk-UA"] .about-page :is(.about-method-item,.about-fit-card){padding:16px}
- html[lang="uk-UA"] .mx-experience :is(.mx-hero,.mx-policy,.mx-values,.mx-skills){padding-block:26px;gap:14px}
+ html[lang="uk-UA"] .mx-experience :is(.mx-hero,.mx-policy,.mx-skills){padding-block:24px;gap:12px}
  html[lang="uk-UA"] .mx-experience .mx-hero h1{font-size:clamp(34px,8.8vw,42px);line-height:1.12}
  html[lang="uk-UA"] .mx-experience :is(.mx-policy,.mx-skills,.mx-cta) h2{font-size:30px;line-height:1.2}
- html[lang="uk-UA"] .mx-experience .mx-value{padding:16px}
+ html[lang="uk-UA"] .mx-experience .mx-values{padding-block:0 24px;gap:10px}
+ html[lang="uk-UA"] .mx-experience .mx-value{padding:14px 12px}
+ html[lang="uk-UA"] .mx-experience .mx-skills-grid{margin-top:18px}
+ html[lang="uk-UA"] .mx-experience .mx-skill{padding:14px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-cta-content{padding:22px 18px}
  html[lang="uk-UA"] .mp-price .mp-price-hero{padding-block:28px;gap:18px}
  html[lang="uk-UA"] .mp-price .mp-price-hero h1{font-size:clamp(34px,8.8vw,42px);line-height:1.12;margin-bottom:14px}
  html[lang="uk-UA"] .mp-price .mp-price-feature{padding:20px}
