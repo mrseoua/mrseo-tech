@@ -16,7 +16,7 @@ concurrency:
 jobs:
   ua-all-routes:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 45
     services:
       mysql:
         image: mysql:8.0
@@ -97,6 +97,10 @@ jobs:
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
         run: node scripts/verify-ua-seo-mobile-pilot.cjs
+      - name: Compare all 42 mobile pages against original and verify desktop isolation
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+        run: node scripts/verify-ua-mobile-compact.cjs
       - name: Test contact submission against isolated WordPress with mail intercepted
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
@@ -114,6 +118,7 @@ jobs:
           name: ua-unified-style-preview
           path: |
             shots/ua-unified/
+            shots/ua-mobile-compact/
             /tmp/mrseo-preview-server.log
           if-no-files-found: warn
           retention-days: 7

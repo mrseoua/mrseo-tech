@@ -24,6 +24,8 @@ const uaExpansionSlugs=["semantic-core","seo-content","google-search-ads","googl
 const commercialTwoFaq=["merchant-center","google-shopping","ga4-conversions","business-dashboards","reporting-automation","online-store-development","catalog-automation","api-integrations","web-applications","custom-functionality","website-audit","traffic-recovery"];
 const premiumEditorialFamilies={"horoshop":["hs-categories","hs-filters","hs-feed","hs-store-process","hs-next"],"about":["about-experience","about-listen","about-investigate","about-solve","about-network","about-fit-store","about-fit-service","about-fit-ads","about-next"],"portfolio":["portfolio-count","portfolio-seo","portfolio-ads","portfolio-data","portfolio-web","portfolio-sectors","portfolio-lock","portfolio-next"],"contact":["contact-describe","contact-address","contact-next"],"privacy":[]};
 const premiumEditorialSlugs=Object.keys(premiumEditorialFamilies);
+const categoryHubs={'seo':['seo',5],'google-ads':['ads',4],'horoshop':['horoshop',4],'service-websites':['sites',4],'web-development':['dev',14]};
+const categoryCopySource=JSON.parse(readSource(require('node:path').join(require('node:path').dirname(sourcePath),'category-orbit.php'),'utf8').match(/function mrseo_category_home_data\(\)\{return json_decode\('([^']+)',true\);\}/)[1]);
 const premiumSeoSlugs=['local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'];
 const retiredUA=JSON.parse(readSource(require('node:path').join(require('node:path').dirname(sourcePath),'ua-retired-services.json'),'utf8'));
 const allUaPremiumSlugs=['','seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs].filter(k=>!Object.hasOwn(retiredUA,k));
@@ -117,7 +119,7 @@ async function audit(browser,viewport,lang,slug){
     internalWidth:document.documentElement.scrollWidth,
     clientWidth:document.documentElement.clientWidth,
     viewport:innerWidth,
-    hero:!!document.querySelector(slug===''?(uaHome?'.pt-ua-home .pt-home':'.orbit-lab .lab-shell'):coreShard?'.pti-page .pti-hero,.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
+    hero:!!document.querySelector(slug===''?(uaHome?'.pt-ua-home .pt-home':'.orbit-lab .lab-shell'):coreShard?'.pti-page .pti-hero,.ukseo-hero,.special-hero,.about-hero,.portfolio-hero,.mx-hero,.category-home .pt-home,.seo-hero,.intl-hero,.dev-hero,.pl-svc-hero,.inner-hero,.sp-hero':'.eu-hero'),
     sharedHeader:!!document.querySelector('header.site-header .nav-dropdown .services-menu-toggle'),
     sharedFooter:!!document.querySelector('footer.mrseo-footer'),
     footerLabels:[...document.querySelectorAll('footer.mrseo-footer .mrseo-footer-col a')].map(a=>a.textContent.trim()),
@@ -162,7 +164,7 @@ async function audit(browser,viewport,lang,slug){
       };
     })(),
     orbitMaster:!!document.querySelector(uaHome?'.pt-ua-home .pt-orbit':'.orbit-lab .lab-shell .lab-visual'),
-    uaPremiumHome:!!document.querySelector('.pt-ua-home'),
+    uaPremiumHome:!!document.querySelector('.pt-ua-home:not(.category-home)'),
     premiumCommercial:(()=>{
       const root=document.querySelector('.puc-page'),hero=root?.querySelector('.psc-hero-stage'),scenes=[...root?.querySelectorAll('svg.puc-motion')||[]];
       return {route:root?.dataset.pucRoute||'',css:!!document.querySelector('link[href*="premium-ua-commercial.css"]'),hero:!!hero,
@@ -370,7 +372,10 @@ async function audit(browser,viewport,lang,slug){
    const verify=(nodes,color)=>nodes.filter(n=>getComputedStyle(n).color!==color||Number(getComputedStyle(n).opacity)<.99).map(n=>({text:n.textContent.trim().slice(0,100),color:getComputedStyle(n).color,opacity:getComputedStyle(n).opacity}));
    return {loaded,headings:headings.length,labels:labels.length,dark:dark.length,wrong:[...verify([...headings,...labels].filter(n=>!darkClosing(n)),'rgb(168, 68, 50)'),...verify([...headings,...labels].filter(darkClosing),'rgb(242, 163, 140)'),...verify(dark,'rgb(242, 163, 140)')]};
   });
-  if(lang==='uk'&&slug!==''&&slug!=='portfolio'){
+  if(lang==='uk'&&slug==='portfolio'){
+   const experience=await page.evaluate(()=>({root:!!document.querySelector('[data-experience="uk"]'),labels:[...document.querySelectorAll('.mx-kicker')].map(n=>({text:n.textContent.trim(),color:getComputedStyle(n).color})),values:document.querySelectorAll('.mx-value').length,art:!!document.querySelector('.mx-art'),cta:!!document.querySelector('.mx-cta a[href$="/contact/"]')}));
+   if(!experience.root||experience.labels.length<3||experience.labels.some(l=>!l.text)||experience.values!==4||!experience.art||!experience.cta||c.portfolioCards!==0)item.errors.push('UA confidential experience page '+JSON.stringify(experience));
+  }else if(lang==='uk'&&slug!==''){
    const needsHeading=slug!=='privacy';
    if(!accent.loaded||accent.labels<1||(needsHeading&&accent.headings<1)||(slug==='horoshop'&&accent.headings<5)||(slug==='portfolio'&&accent.dark!==1)||accent.wrong.length)item.errors.push('UA brand accent regression '+JSON.stringify(accent));
    item.brandAccent=accent;
@@ -387,7 +392,7 @@ async function audit(browser,viewport,lang,slug){
   }else if(accent.loaded)item.errors.push('UA brand accent stylesheet leaked to '+lang+'/'+slug);
   // Copy quality: the 30 structured UA service pages must have actual
   // service-specific introductory text, not old generic template fallbacks.
-  if(lang==='uk'&&await page.locator('.puc-page,.psc-page').count()){
+  if(lang==='uk'&&!Object.hasOwn(categoryHubs,slug)&&await page.locator('.puc-page,.psc-page').count()){
    const intro=await page.evaluate(()=>{const root=document.querySelector('.puc-page,.psc-page');if(!root)return null;return {foot:root.querySelector('.pti-hero-copy .pti-footnote')?.textContent.trim()||'',heading:root.querySelector('.psc-problems #psc-problem-title')?.textContent.trim()||'',lead:root.querySelector('.psc-problems .pti-section-head>p')?.textContent.trim()||''};});
    const forbidden=["Спочатку підтверджуємо причину. Потім пропонуємо рішення.","Спочатку перевіряємо причину, потім погоджуємо зміни.","Що заважає отримувати результат?","Перевіряємо конкретні ситуації вашого бізнесу."];
    if(!intro||Object.values(intro).some(v=>!v||forbidden.includes(v)))item.errors.push('UA service introduction missing or generic: '+JSON.stringify(intro));
@@ -395,16 +400,16 @@ async function audit(browser,viewport,lang,slug){
   const exactPath=url;
   if(lang==='uk'){
    const expected=uaSemanticSource[slug];
-   const actualMeta=await page.evaluate(()=>({title:document.title,descs:[...document.querySelectorAll('meta[name="description"]')].map(x=>x.content),keywords:document.querySelectorAll('meta[name="keywords"]').length,lead:document.querySelector('.pti-hero-copy .pti-lead,.seo-hero-copy .pti-lead')?.textContent.trim()||''}));
+   const actualMeta=await page.evaluate(()=>({title:document.title,descs:[...document.querySelectorAll('meta[name="description"]')].map(x=>x.content),keywords:document.querySelectorAll('meta[name="keywords"]').length,lead:document.querySelector('.pti-hero-copy .pti-lead,.seo-hero-copy .pti-lead,.category-home .pt-home-lead')?.textContent.trim()||''}));
    if(!expected||actualMeta.title!==expected.title||JSON.stringify(actualMeta.descs)!==JSON.stringify([expected.description])||actualMeta.keywords!==0)item.errors.push('UA semantic metadata mismatch '+JSON.stringify({actual:actualMeta,expected:expected&&{title:expected.title,description:expected.description}}));
-   const expectedVisibleLead=expected?.lead||expansionSource[slug]?.lead;
+   const expectedVisibleLead=categoryCopySource[slug]?.[3]||expected?.lead||expansionSource[slug]?.lead;
    if(expectedVisibleLead&&actualMeta.lead&&actualMeta.lead!==expectedVisibleLead)item.errors.push('UA semantic visible lead mismatch '+slug);
    if(expectedVisibleLead&&(['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs].includes(slug))&&!actualMeta.lead)item.errors.push('UA semantic hero lead absent '+slug);
   }
   const commercialTarget=lang==='uk'&&premiumCommercialSlugs.includes(slug);
   const editorialTarget=lang==='uk'&&premiumEditorialSlugs.includes(slug);
   const commercial=c.premiumCommercial,ed=c.premiumEditorial;
-  if(commercialTarget){
+  if(commercialTarget&&slug!=='service-websites'){
     if(uaExpansionSlugs.includes(slug)){
      const meta=await page.evaluate(()=>({desc:[...document.querySelectorAll('meta[name="description"]')].map(x=>x.content),canonical:document.querySelector('link[rel="canonical"]')?.href,alternates:[...document.querySelectorAll('link[rel="alternate"][hreflang]')].map(x=>x.hreflang),h1:document.querySelectorAll('h1').length}));
      if(meta.desc.length!==1||!meta.desc[0]||meta.h1!==1||meta.canonical!==HOST+'/'+slug+'/'||JSON.stringify(meta.alternates)!==JSON.stringify(['uk-UA']))item.errors.push('UA expansion SEO metadata regression '+JSON.stringify(meta));
@@ -445,8 +450,8 @@ async function audit(browser,viewport,lang,slug){
       await page.emulateMedia({reducedMotion:'no-preference'});
       await page.evaluate(()=>window.scrollTo(0,0));
     }
-  }else if(commercial.route||commercial.css)item.errors.push('UA commercial redesign leaked to '+lang+'/'+slug);
-  if(editorialTarget&&slug!=='portfolio'){
+  }else if(!commercialTarget&&(commercial.route||commercial.css))item.errors.push('UA commercial redesign leaked to '+lang+'/'+slug);
+  if(editorialTarget&&!['portfolio','horoshop'].includes(slug)){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
     if(c.serviceMenuItems!==31||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
@@ -467,7 +472,7 @@ async function audit(browser,viewport,lang,slug){
       try{await page.waitForFunction(()=>matchMedia('(prefers-reduced-motion: reduce)').matches&&[...document.querySelectorAll('svg.pue-motion')].every(s=>s.animationsPaused())&&document.querySelector('.pue-pause')?.disabled,{},{timeout:5000})}catch(_){item.errors.push('UA editorial reduced motion failed')}
       await page.emulateMedia({reducedMotion:'no-preference'});await page.evaluate(()=>window.scrollTo(0,0));
     }
-  }else if(ed.route||ed.css||ed.families.length)item.errors.push('UA editorial redesign leaked to '+lang+'/'+slug);
+  }else if(!editorialTarget&&(ed.route||ed.css||ed.families.length))item.errors.push('UA editorial redesign leaked to '+lang+'/'+slug);
   const clusterTarget=lang==='uk'&&premiumSeoSlugs.includes(slug);
   const cluster=c.premiumSeoCluster;
   if(clusterTarget){
@@ -500,69 +505,37 @@ async function audit(browser,viewport,lang,slug){
   }else if(cluster.route||cluster.css)item.errors.push('UA premium SEO cluster leaked to '+lang+'/'+slug);
   const premiumTarget=lang==='uk'&&['seo','google-ads','web-development'].includes(slug);
   const pi=c.premiumInterior;
-  if(premiumTarget){
-    const expectedStory=slug==='seo'?'seo':slug==='google-ads'?'ads':'dev';
-    if(slug==='seo'?(pi.route!=='seo'||!pi.style||!pi.seoHub||pi.story!=='seo'||pi.problems!==3||pi.steps!==3||pi.faq<3||!pi.final)
-      :(pi.route!==slug||!pi.style||!pi.geometry||!pi.scene||!pi.sceneSvg||pi.sceneMotion<1||
-       pi.images!==(slug==='web-development'?8:2)||!pi.realImages||!pi.heroImage||pi.story!==expectedStory||
-       pi.problems!==3||pi.steps!==3||pi.faq<3||pi.tabs!==3||!pi.pause||!pi.final||
-       (slug==='web-development'&&(pi.caps!==6||pi.capMotion!==34||pi.solutions!==3))))
-      item.errors.push('UA Premium interior mismatch: '+JSON.stringify(pi));
-    const expectedLower={
-      seo:['seo-index','seo-cluster','seo-conversion','seo-diagnostic','seo-next'],
-      'google-ads':['ads-waste','ads-event','ads-budget','ads-allocation','ads-search-plan','ads-shopping-plan','ads-next'],
-      'web-development':['dev-sync','dev-crm','dev-module','dev-routing','dev-plan','dev-delivery','dev-support','dev-next']
-    }[slug];
-    const expectedLowerStory={seo:'seo-diagnostic','google-ads':'ads-allocation','web-development':'dev-routing'}[slug];
-    if(slug!=='seo'&&(JSON.stringify(pi.lowerFamilies)!==JSON.stringify(expectedLower)||pi.lowerStory!==expectedLowerStory||!pi.lowerGeometry||!pi.lowerPause||!pi.lowerAnimations))
-      item.errors.push('Unique lower-section scenes missing or overflowing: '+JSON.stringify(pi));
-    if(c.serviceMenuItems!==31||c.menuItems!==20||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||!c.uaPremiumHeaderPhone)
-      item.errors.push('Native full menu or contacts missing from premium interior');
-    if(pi.scene&&pi.tabs===3&&pi.pause){
-      const stage=page.locator('.pti-page .pti-stage');const scene=page.locator('.pti-page .pti-scene');
-      const button=page.locator('.pti-page .pti-pause');
-      await stage.scrollIntoViewIfNeeded();
-      await page.locator('.pti-page [data-phase="2"]').click();
-      if(await scene.getAttribute('data-step')!=='2'||await page.locator('.pti-page [data-phase="2"]').getAttribute('aria-pressed')!=='true'||(await page.locator('.pti-page [data-scene-index]').textContent()).trim()!=='03 / 03')
-        item.errors.push('Premium scene phase switch broken');
-      await button.evaluate(el=>el.click());
-      if(await button.getAttribute('aria-pressed')!=='true'||await scene.evaluate(e=>e.classList.contains('pti-live')))
-        item.errors.push('Premium pause broken');
-      await page.locator('.pti-page [data-phase="0"]').click();await button.evaluate(el=>el.click());
-      if(pi.lowerPause&&pi.lowerStory){
-        const lower=page.locator('.pti-page .pti-story-art svg.pti-lower-motion');
-        const lowerButton=page.locator('.pti-page .pti-lower-pause');
-        await lower.scrollIntoViewIfNeeded();
-        if(slug==='seo'){
-          const diagnostic=await lower.evaluate(svg=>{const art=svg.parentElement,im=art.querySelector('img');const cs=getComputedStyle(art),is=getComputedStyle(im);return {transparent:cs.backgroundImage==='none'&&cs.backgroundColor==='rgba(0, 0, 0, 0)',clip:is.clipPath.includes('pti-seo-object'),transforms:svg.querySelectorAll('animateTransform[type="rotate"]').length,gear:!!svg.querySelector('image'),scan:!!svg.querySelector('animate[attributeName="y"]')}});
-          if(!diagnostic.transparent||!diagnostic.clip||diagnostic.transforms!==2||!diagnostic.gear||!diagnostic.scan)item.errors.push('SEO diagnostic object not fully integrated: '+JSON.stringify(diagnostic));
-        }
-        // Require actual continuous progress, not a fixed wall-clock sample
-        // taken before observer/scroll reconciliation has run.
-        try{await lower.evaluate(s=>new Promise((resolve,reject)=>{
-          const start=performance.now();let first=null;
-          function sample(){const r=s.getBoundingClientRect(),visible=r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;
-            if(visible&&!s.animationsPaused()){const t=s.getCurrentTime();if(first===null)first=t;if(t>first+.12){resolve();return;}}else first=null;
-            if(performance.now()-start>5000){reject(Error('no visible timeline progress; paused='+s.animationsPaused()+' rect='+JSON.stringify(r.toJSON())));return;}requestAnimationFrame(sample);
-          }sample();
-        }));}catch(e){item.errors.push('Lower scene does not animate in viewport: '+e.message);}
-        await lowerButton.evaluate(el=>el.click());
-        if(await lowerButton.getAttribute('aria-pressed')!=='true'||await button.getAttribute('aria-pressed')!=='true'||!(await lower.evaluate(s=>s.animationsPaused())))
-          item.errors.push('Lower and hero pause controls not synchronized');
-        await lowerButton.evaluate(el=>el.click());
-        await page.emulateMedia({reducedMotion:'reduce'});
-        try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');const b=document.querySelector('.pti-lower-pause');return matchMedia('(prefers-reduced-motion: reduce)').matches&&s?.animationsPaused()&&b?.disabled},{},{timeout:5000});}catch(_){item.errors.push('Lower reduced-motion preference not respected');}
-        await page.emulateMedia({reducedMotion:'no-preference'});
-        await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
-        // Explicitly require offscreen pause after returning to the hero.
-        try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');if(!s)return false;const r=s.getBoundingClientRect();return r.top>=innerHeight&&s.animationsPaused()},{},{timeout:5000});}catch(_){item.errors.push('Lower scene did not pause offscreen');}
-        // Resume once more: catches stale visibility after repeated jumps.
-        await lower.scrollIntoViewIfNeeded();
-        try{await page.waitForFunction(()=>{const s=document.querySelector('.pti-story-art svg.pti-lower-motion');return s&&!s.animationsPaused()},{},{timeout:5000});}catch(_){item.errors.push('Lower scene did not resume on second entry');}
-      }
-      await page.evaluate(()=>window.scrollTo(0,0));
-    }
-  }else if(!clusterTarget&&!commercialTarget&&(pi.route||pi.style))item.errors.push('Premium UA interior leaked onto '+lang+'/'+slug);
+  if(!premiumTarget&&!clusterTarget&&!commercialTarget&&(pi.route||pi.style))item.errors.push('Premium UA interior leaked onto '+lang+'/'+slug);
+  // Current approved five category hubs use orbit navigation, not retired stage illustrations.
+  if(lang==='uk'&&Object.hasOwn(categoryHubs,slug)){
+   const [group,count]=categoryHubs[slug];
+   const hub=await page.evaluate(({group,count})=>{
+    const hero=document.querySelector('.category-home .pt-home'),catalog=document.querySelector('.category-catalog');
+    const shown=e=>{if(!e)return false;const r=e.getBoundingClientRect();return r.width>0&&r.height>0&&r.left>=-3&&r.right<=innerWidth+3&&getComputedStyle(e).visibility!=='hidden';};
+    const links=(root,selector)=>[...root?.querySelectorAll(selector)||[]].map(a=>({path:new URL(a.href).pathname,label:(a.querySelector('.pt-node-label')||a.closest('.category-tile')?.querySelector('h3')||a).textContent.trim()}));
+    const menu=links(document.querySelector('[data-catalog-group="'+group+'"]'),'.mrseo-catalog-link');
+    const satellites=links(hero,'.pt-node[href]'),cards=links(catalog,'.category-tile a[href]');
+    const globe=hero?.querySelector('.pt-globe');
+    const image=globe?.querySelector('img');
+    const stages=[...document.querySelectorAll('[data-ua-stage]')].map(e=>e.dataset.uaStage);
+    const answers=[...document.querySelectorAll('[data-ua-stage="problems"] :is(.seo-problem-answer,.service-problem-answer,.ua-paired-answer,.ua-api-row>.pti-solution)>p')];
+    return {hero:shown(hero),planet:shown(globe),texture:!!image?.getAttribute('src'),canvas:!!globe?.querySelector('canvas'),planetName:globe?.querySelector('.category-planet-name')?.textContent.trim(),pause:!!hero?.querySelector('.pt-rotate'),engine:!!document.querySelector('script[src*="category-orbit-engine.js"]'),css:!!document.querySelector('link[href*="category-home.css"]'),menu,satellites,cards,fit:[...hero?.querySelectorAll('.pt-node')||[],...catalog?.querySelectorAll('.category-tile')||[]].every(shown),stages,answers:answers.length,visibleAnswers:answers.filter(e=>shown(e)&&e.textContent.trim().length>20&&parseFloat(getComputedStyle(e).fontSize)>=17.9).length,cta:!!document.querySelector('[data-ua-stage="cta"] a[href$="/contact/"]'),partner:hero?.querySelectorAll('.category-partner img').length||0};
+   },{group,count});
+   const order=['hero','problems','approach','catalog','work','result','terms','faq','cta'];
+   if(!hub.hero||!hub.planet||!hub.texture||!hub.canvas||!hub.planetName||!hub.pause||!hub.engine||!hub.css||!hub.fit||hub.menu.length!==count||JSON.stringify(hub.menu)!==JSON.stringify(hub.satellites)||JSON.stringify(hub.menu)!==JSON.stringify(hub.cards)||JSON.stringify(hub.stages)!==JSON.stringify(order)||hub.answers!==3||hub.visibleAnswers!==3||!hub.cta||(slug==='horoshop'&&hub.partner!==2))item.errors.push('Approved category orbit regression '+JSON.stringify(hub));
+   const rotate=page.locator('.category-home .pt-rotate');
+   if(await rotate.count()===1){
+    await page.waitForLoadState('load');
+    await page.emulateMedia({reducedMotion:'no-preference'});
+    await rotate.click({timeout:5000});
+    if(await rotate.getAttribute('aria-pressed')!=='true')item.errors.push('Category planet pause failed');
+    await rotate.click({timeout:5000});
+    if(await rotate.getAttribute('aria-pressed')!=='false')item.errors.push('Category planet resume failed');
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await page.waitForFunction(()=>document.querySelector('.category-home .pt-rotate')?.disabled===true,undefined,{timeout:4000}).catch(()=>item.errors.push('Category planet reduced motion failed'));
+    await page.emulateMedia({reducedMotion:'no-preference'});
+   }
+  }
   if(!c.title||c.title.length<(coreShard?8:12))item.errors.push('Missing document title');
   if(c.htmlLang.toLowerCase().split('-')[0]!==lang)item.errors.push('Wrong html lang '+c.htmlLang);
   if(c.h1!==1)item.errors.push('H1 count '+c.h1);
@@ -656,9 +629,9 @@ async function audit(browser,viewport,lang,slug){
   if(slug!==''&&!coreShard&&slug!=='privacy'&&!c.legacyEuStylesheet)item.errors.push('EU interior page styling missing');
   if(slug===''&&lang!=='uk'&&!c.clientBand)item.errors.push('Homepage public client band missing');
   if(lang==='uk'&&slug===''){
-    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==42||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||c.serviceMenuItems!==31||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.orbitStaticTexture||!c.sharedHomepageVisual||!c.uaPremiumControls||!c.uaPremiumResolution)
+    if(c.clientBand||!c.uaPremiumHome||!c.uaPremiumStyles||!c.uaCinematic||c.uaCinematicLinks!==31||c.uaCinematicVisuals!==5||!c.uaCinematicScripts||!c.uaCinematicButtons||!c.uaCinematicReference||c.uaPremiumMenuGroups!==5||c.uaPremiumMenuParents!==5||c.serviceMenuItems!==31||!c.uaPremiumHeaderPhone||c.uaPremiumMenuFont<15||!c.orbitStaticTexture||!c.sharedHomepageVisual||!c.uaPremiumControls||!c.uaPremiumResolution)
       item.errors.push('Approved UA Premium home regression: '+JSON.stringify(c));
-  }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
+  }else if(c.uaPremiumHome||(c.uaPremiumStyles&&!(lang==='uk'&&Object.hasOwn(categoryHubs,slug))))item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
   if(slug==='portfolio'&&(lang==='uk'?c.portfolioCards!==0:c.portfolioCards<5))item.errors.push('Portfolio disclosure regression '+c.portfolioCards);
@@ -688,39 +661,15 @@ async function audit(browser,viewport,lang,slug){
      (!c.uaCommercialVisuals.hiddenOnForeign||c.uaCommercialVisuals.style))
     item.errors.push('UA-only illustrations leaked onto foreign market page');
   if(lang==='uk'&&slug==='google-ads'){
-    const p=c.uaAdsPricing;
-    if(!p||!p.css||p.count!==2||p.stages!==0||!p.pricesCorrect||!p.geometry||!p.heading||!p.heroTrackingOK)
-      item.errors.push('UA Google Ads service formats/visuals missing or overflow: '+JSON.stringify(p));
-  }
-  if(lang==='uk'&&slug==='google-ads'){
-   const v=await page.evaluate(()=>{const root=document.querySelector('.pti-page[data-service-standard="v1"]');return {root:!!root,problems:root?.querySelectorAll('.service-problem-answer').length||0,services:[...root?.querySelectorAll('[data-ads-service]')||[]].map(e=>({slug:e.dataset.adsService,href:e.querySelector('a')?.getAttribute('href')})),result:!!root?.querySelector('.service-deliverable'),css:!!document.querySelector('link[href*="service-standard.css"]')}});
-   const expected=['google-search-ads','performance-max','google-shopping','local-google-ads','google-ads-audit','merchant-center'];
-   if(!v.root||!v.css||v.problems!==3||!v.result||JSON.stringify(v.services.map(s=>s.slug))!==JSON.stringify(expected)||v.services.some(s=>!s.href||new URL(s.href,page.url()).pathname!=='/'+s.slug+'/'))item.errors.push('Google Ads hub service standard '+JSON.stringify(v));
+   const pricing=await page.evaluate(()=>({section:!!document.querySelector('#ukads-pricing'),text:document.querySelector('#ukads-pricing')?.textContent.trim(),answers:document.querySelectorAll('.service-problem-answer p').length,result:!!document.querySelector('.service-deliverable'),css:!!document.querySelector('link[href*="service-standard.css"]')}));
+   if(!pricing.section||!pricing.text||pricing.answers!==3||!pricing.result||!pricing.css)item.errors.push('Google Ads approved pricing/work structure '+JSON.stringify(pricing));
   }
   if(!(lang==='uk'&&slug==='google-ads')&&!c.uaAdsPricing.noLeak)
     item.errors.push('Ukrainian Google Ads pricing leaked onto other pages');
-  if(lang==='uk'&&slug==='horoshop'){
-    const partner=await page.locator('.hs-authentic-logo img,.hs-official-badge').count();
-    const switchers=await page.locator('.hs-switcher button').count();
-    const offer=await page.evaluate(()=>{
-      const ids=['hs-setup','hs-seo','hs-audit','hs-ads','hs-feeds','hs-ga4'];
-      const cards=ids.map(id=>document.getElementById(id));
-      return {cards:cards.length,all:cards.every(x=>!!x),links:cards.filter(Boolean).map(x=>x.querySelectorAll('a[href]').length),
-        css:!!document.querySelector('link[href*="horoshop-services-ua.css"]'),
-        noOverflow:cards.filter(Boolean).every(x=>{const r=x.getBoundingClientRect();return r.left>=-2&&r.right<=window.innerWidth+2;})};
-    });
-    if(partner!==2||switchers!==3||c.uaFourScenes.count!==0||c.uaFourScenes.style||!offer.all||offer.links.some(n=>n!==1)||!offer.css||!offer.noOverflow)
-      item.errors.push('Horoshop interactive hero or six service modules failed '+JSON.stringify(offer));
-  }
   if(lang==='uk'&&slug==='ecommerce-seo'){
     const lab=await page.locator('#ukcommerce-lab .local-ref-work-card').count();
     if(lab!==3||c.uaFourScenes.count!==0||c.uaFourScenes.style)
       item.errors.push('Compact ecommerce work groups or redundant scenes failed: groups='+lab);
-  }
-  if(lang==='uk'&&slug==='seo'){
-    const v=c.uaSeoVisuals;
-    if(!v||!v.css||!v.journey||!v.priorities||!v.board||v.stageCount!==3||!v.boundariesOK||!v.properOrder)
-      item.errors.push('Ukrainian SEO visual story or responsive geometry missing: '+JSON.stringify(v));
   }
   if(!coreShard&&slug==='contact'&&(c.form!==lang||!c.nonce))item.errors.push('Contact form language or nonce missing');
   if(!coreShard&&slug==='contact'&&(!c.contactHeroForm||!c.contactPrivacyNotice||c.contactDecorativeScene))
@@ -796,63 +745,6 @@ async function audit(browser,viewport,lang,slug){
     }
     await page.evaluate(()=>window.scrollTo(0,0));
   }
-  if(lang==='uk'&&slug==='seo'){
-   // Visual design and functional QA for the approved cinematic SEO hero.
-   const hero=page.locator('.pti-page[data-pti-service="seo"] .seo-hero');
-   try{
-    if(await hero.count()!==1)item.errors.push('SEO cinematic hero absent or duplicated');
-    else {
-     const style=await page.evaluate(()=>{
-      const root=document.querySelector('.pti-page[data-pti-service="seo"]');
-      const rect=root?.querySelector('.seo-hero')?.getBoundingClientRect();
-      const art=root?.querySelector('.seo-journey');
-      return {css:!!document.querySelector('link[href*="seo-hub.css"]'),
-       h1:root?.querySelectorAll('h1').length,
-       terrain:!!art&&art.querySelectorAll('.seo-flow li').length===3&&!!root?.querySelector('.sh-hero-stage svg[data-seo-motion="sh-hero-main"]')&&new Set([...root.querySelectorAll('.seo-flow-object svg')].map(s=>s.dataset.seoMotion)).size===3,
-       directions:root?.querySelectorAll('.seo-cards .seo-card-link[href]').length,
-       overflow:document.documentElement.scrollWidth>innerWidth+4,
-       fit:!!rect&&rect.right<=innerWidth+4&&rect.left>=-4};
-     });
-     if(!style.css||style.h1!==1||!style.terrain||style.directions!==5||style.overflow||!style.fit)item.errors.push('SEO reference hero layout '+JSON.stringify(style));
-     await page.emulateMedia({reducedMotion:'no-preference'});
-     const cards=page.locator('.seo-cards');
-     await cards.scrollIntoViewIfNeeded();
-     await page.waitForFunction(()=>document.querySelectorAll('.seo-cards .seo-card-art svg').length===5);
-     const pause=page.locator('.seo-journey .seo-motion');
-     if(!await pause.evaluate(el=>{const r=el.getBoundingClientRect();return r.width<=1.1&&r.height<=1.1}))item.errors.push('SEO motion control visually exposed');
-     await pause.evaluate(el=>el.click());
-     if(await pause.getAttribute('aria-pressed')!=='true'||!await page.locator('.seo-premium-scene').evaluateAll(nodes=>nodes.every(s=>s.animationsPaused())))item.errors.push('SEO hub pause failed');
-     await pause.evaluate(el=>el.click()); await page.emulateMedia({reducedMotion:'reduce'});
-     await page.waitForFunction(()=>document.querySelector('.seo-journey .seo-motion')?.disabled===true,undefined,{timeout:4000}).catch(()=>item.errors.push('SEO hub reduced motion failed'));
-     // Complete functional assertions first. Freeze SVG motion before capturing
-     // evidence to avoid mobile compositor timeouts.
-     await page.waitForFunction(()=>[...document.querySelectorAll('.seo-premium-scene')].every(n=>n.animationsPaused()),undefined,{timeout:5000});
-     const capture=async(sel,name)=>{
-      await page.locator(sel).evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));
-      const file='shots/'+name+'-'+viewport.name+'.jpg';
-      try{
-       await page.screenshot({path:file,type:'jpeg',quality:81,timeout:45000,animations:'disabled'});
-      }catch(error){
-       if(!/Timeout/.test(String(error)))throw error;
-       const session=await page.context().newCDPSession(page);
-       try{
-        const image=await session.send('Page.captureScreenshot',{format:'jpeg',quality:81,fromSurface:true,captureBeyondViewport:false});
-        const bytes=Buffer.from(image.data,'base64');
-        if(bytes.length<1000||bytes[0]!==255||bytes[1]!==216)throw Error('Invalid Chromium screenshot '+name);
-        await fs.writeFile(file,bytes);
-       }finally{await session.detach();}
-      }
-      console.log('SEO screenshot captured: '+name+' '+viewport.name);
-     };
-     try{
-      await capture('.seo-hero','ua-seo-premium-hero');
-      for(const sel of ['.seo-problems','.seo-plan','.seo-faq','.seo-final'])await capture(sel,'ua-seo-'+sel.slice(1));
-      await capture('.seo-cards','ua-seo-reference-cards');
-     }finally{await page.emulateMedia({reducedMotion:'no-preference'});}
-
-    }
-   }catch(e){item.errors.push('SEO cinematic hero QA '+e.message)}
-  }
   if(lang==='uk'&&slug==='portfolio'){
     await page.locator('.mx-art').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
   }
@@ -860,11 +752,6 @@ async function audit(browser,viewport,lang,slug){
    // Validate the approved catalogue; exact inventory and interaction checks also follow below.
    const nav=await page.evaluate(()=>{const root=document.querySelector('.mrseo-ua-mega-header');const menu=root?.querySelector('[data-ua-mega]');const links=[...menu?.querySelectorAll('a.mrseo-catalog-parent[href],a.mrseo-catalog-link[href]')||[]];return {root:!!root,menu:!!menu,links:links.length,badLinks:links.filter(a=>new URL(a.href).origin!==location.origin||!a.textContent.trim()).length,oldMenu:!!document.querySelector('.mrseo-simple-nav--direct')};});
    if(!nav.root||!nav.menu||nav.links!==36||nav.badLinks||nav.oldMenu)item.errors.push('UA catalogue internal navigation '+JSON.stringify(nav));
-  }
-  if(lang==='uk'&&slug==='seo'){
-   const hub=await page.evaluate(()=>{const el=document.querySelector('#ukseo-services');if(!el)return null;const links=[...el.querySelectorAll('.seo-cards .seo-card-link[href]')];return {groups:links.length,links:links.map(a=>new URL(a.href).pathname).sort(),geometry:links.every(a=>{const r=a.getBoundingClientRect();return r.left>=-2&&r.right<=innerWidth+2&&r.width>0&&r.height>0;})};});
-   const expectedHub=["/ecommerce-seo/","/international-seo/","/local-seo/","/seo-audit/","/service-business-seo/"];
-   if(!hub||hub.groups!==5||JSON.stringify(hub.links)!==JSON.stringify(expectedHub)||!hub.geometry)item.errors.push('UA SEO five-page editorial hub coverage or geometry '+JSON.stringify(hub));
   }
   if(lang==='uk'){
    const cat=await page.evaluate(()=>{const h=document.querySelector('.mrseo-ua-mega-header'),m=h?.querySelector('[data-ua-mega]');return {groups:[...m?.querySelectorAll('[data-catalog-group]')||[]].map(x=>x.dataset.catalogGroup),parents:m?.querySelectorAll('a.mrseo-catalog-parent[href]').length,links:m?.querySelectorAll('a.mrseo-catalog-link[href]').length,excluded:[...m?.querySelectorAll('a.mrseo-catalog-link[href]')||[]].map(a=>new URL(a.href).pathname).filter(p=>['/google-remarketing/','/horoshop/ga4/','/website-redesign/'].includes(p)),seo:[...m?.querySelectorAll('[data-catalog-group="seo"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),horoshop:[...m?.querySelectorAll('[data-catalog-group="horoshop"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),dev:m?.querySelectorAll('[data-catalog-group="dev"] .mrseo-catalog-link').length,mobile:[...m?.querySelectorAll('[data-catalog-group="dev"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname).filter(p=>['/mobile-app-development/','/ecommerce-mobile-apps/','/corporate-mobile-apps/','/pwa-development/'].includes(p)),top:[...h?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim()),trigger:h?.querySelectorAll('.services-menu-toggle').length,phone:!!h?.querySelector('a[href^="tel:"]'),languages:h?.querySelectorAll('.mrseo-language-options a').length};});
@@ -927,7 +814,18 @@ async function audit(browser,viewport,lang,slug){
 }
 (async()=>{
  await fs.mkdir('shots',{recursive:true});
- if(coreShard)await assertUaInventory();
+ if(coreShard){
+  await assertUaInventory();
+  // Retired pages are verified as deliberate HTTP 301 redirects, not treated as live landings.
+  for(const [slug,target] of Object.entries(retiredUA)){
+   const url=HOST+'/'+slug+'/',item={url,viewport:'http',stage:'UA retired redirect',errors:[]};
+   try{
+    const response=await fetch(url,{redirect:'manual'});
+    if(response.status!==301||new URL(response.headers.get('location')||'/',url).pathname!=='/'+target+'/')item.errors.push('Expected exact 301 to /'+target+'/; got '+response.status+' '+response.headers.get('location'));
+   }catch(e){item.errors.push(String(e));}
+   results.push(item);
+  }
+ }
  const launchOptions={headless:true,args:['--disable-dev-shm-usage','--enable-webgl','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']};
  // Reset Chromium (including its software WebGL state) between locales/viewport
  // profiles. A single long-lived browser can accumulate GPU load over 165 views
@@ -954,7 +852,7 @@ async function audit(browser,viewport,lang,slug){
    try{
     const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height}});
     const page=await context.newPage();
-    for(const key of ['setup','seo','audit','ads','search-ads','shopping','pmax','feeds','ga4']){
+    for(const key of ['seo','audit','ads','feeds']){
      const url=HOST+'/horoshop/'+key+'/';
      const item={url,viewport:viewport.name,errors:[],stage:'Horoshop premium individual page'};
      try{
@@ -1002,13 +900,6 @@ async function audit(browser,viewport,lang,slug){
        return {count:elements.length,geometry:elements.every(e=>{const r=e.getBoundingClientRect();return r.width>20&&r.right<=innerWidth+4&&r.left>=-4;})};
       });
       if(lower.count!==7||!lower.geometry)item.errors.push('Horoshop below-fold visual geometry '+JSON.stringify(lower));
-      if(['search-ads','shopping','pmax'].includes(key)){
-       if(!state.dedicatedScene||!state.dedicatedSceneCss)item.errors.push('Missing Horoshop paid-service scene '+JSON.stringify(state));
-       const visuals=await page.locator('.hs-ads-demo').count();
-       if(visuals!==1)item.errors.push('Missing unique Horoshop Ads visual');
-       const realLink=await page.locator('.hs-premium-related-grid a[href]').count();
-       if(realLink<3)item.errors.push('New paid-services cross-links missing');
-      }
       if(state.canon!==url)item.errors.push('Horoshop self-canonical '+state.canon);
       if(!/noindex/i.test(state.robots))item.errors.push('Horoshop noindex missing');
       if(/ru\/horoshop\/(setup|seo|audit|ads|feeds|ga4)\//.test(await page.content()))item.errors.push('Invented RU Horoshop subservice URL');
@@ -1110,9 +1001,9 @@ async function audit(browser,viewport,lang,slug){
      console.log((item.errors.length?'FAIL':'PASS')+' UA WebDev '+vp.name+' '+slug+' '+item.errors.join(' | '));
     }
     const hub=await page.goto(HOST+'/web-development/',{waitUntil:'domcontentloaded',timeout:25000});
-    const anchors=await page.locator('.udv-hub-grid .udv-hub-card[href]').count();
+    const anchors=await page.locator('.category-catalog .category-tile a[href]').evaluateAll(links=>links.map(a=>new URL(a.href).pathname));
     const item={url:HOST+'/web-development/',viewport:vp.name,stage:'UA WebDev hub seven links',errors:[]};
-    if(!hub||hub.status()!==200||anchors!==7)item.errors.push('WebDev hub links '+JSON.stringify({status:hub?.status(),anchors}));
+    if(!hub||hub.status()!==200||anchors.length!==14||!newDevSlugs.every(slug=>anchors.includes('/'+slug+'/')))item.errors.push('WebDev hub links '+JSON.stringify({status:hub?.status(),anchors}));
     results.push(item);
     await context.close();
    }finally{await browser.close()}

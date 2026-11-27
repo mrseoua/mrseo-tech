@@ -1,0 +1,100 @@
+/* UA mobile readability; no changes above 680px. Preserve Earth hero geometry,
+   all primary service artwork, links, answers, pricing and form controls. */
+@media(max-width:680px){
+ /* Commercial pages: type hierarchy and compact vertical rhythm. */
+ html[lang="uk-UA"] :is(.pti-page,.hs-premium,.ukseo--horoshop) [data-ua-stage="hero"]:not(.pt-home){padding-block:28px 24px}
+ html[lang="uk-UA"] .pti-page :is(.pti-hero-grid,.udv-hero-grid){gap:18px}
+ html[lang="uk-UA"] :is(.pti-page,.hs-premium,.ukseo--horoshop) [data-ua-stage="hero"]:not(.pt-home) h1{font-size:clamp(32px,8.5vw,42px);line-height:1.12;letter-spacing:-.035em;margin-block:12px 14px}
+ html[lang="uk-UA"] :is(.pti-page,.hs-premium,.ukseo--horoshop) [data-ua-stage="hero"] :is(.pti-lead,.hs-premium-lead,.udv-lead){font-size:18px;line-height:1.5;margin-block:10px 14px}
+ html[lang="uk-UA"] .pti-page .pti-actions{gap:8px;margin-block:14px}
+ html[lang="uk-UA"] .pti-page .pti-actions a{min-height:46px;white-space:normal}
+ html[lang="uk-UA"] .pti-page .pti-scene-controls{gap:8px;margin-top:10px}
+ html[lang="uk-UA"] .pti-page .pti-scene-caption{margin-block:8px;line-height:1.5}
+ html[lang="uk-UA"] .pti-page .pti-section:not([data-ua-stage="result"]),
+ html[lang="uk-UA"] :is(.hs-premium,.ukseo--horoshop) :is([data-ua-stage="problems"],[data-ua-stage="work"],[data-ua-stage="faq"]),
+ html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-terms,.ua-v2-result,.ua-v2-catalog,.local-ref-position-section){padding-block:28px}
+ html[lang="uk-UA"] :is(.pti-page,.hs-premium,.ukseo--horoshop) :is(.pti-section,.udv-section,.hs-premium-problems,.hs-premium-outcome,.hs-premium-faq,.local-ref-position-section) h2,
+ html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog,.category-catalog) h2{font-size:clamp(28px,7.5vw,37px);line-height:1.18;letter-spacing:-.03em;margin-block:8px 14px}
+ html[lang="uk-UA"] :is(.pti-page,.hs-premium,.ukseo--horoshop) :is(.pti-section-head,.udv-heading){gap:10px;margin-bottom:18px}
+ html[lang="uk-UA"] :is(.ua-v2-approach-grid,.ua-v2-terms-grid){padding-block:18px;gap:14px}
+ html[lang="uk-UA"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms) p{font-size:18px;line-height:1.55;margin-bottom:10px}
+ /* Problem explanations optional; solutions always visible and 18px minimum. */
+ html[lang="uk-UA"] [data-ua-stage="problems"] :is(.ua-paired-row,.ua-api-row,.local-ref-row,.ads-problem-row,.service-problem-list>.pti-card){padding-block:18px;gap:12px}
+ html[lang="uk-UA"] [data-ua-stage="problems"] :is(.ua-paired-problem,.ua-api-problem,.local-ref-pain,.ads-problem-copy,.service-problem-copy) h3{font-size:22px;line-height:1.25;margin-block:6px 8px}
+ html[lang="uk-UA"] [data-ua-stage="problems"] :is(.ua-paired-answer,.ua-api-row>.pti-solution,.local-ref-answer,.ads-problem-fix,.service-problem-answer) p{font-size:18px;line-height:1.55;margin-block:6px 0}
+ html[lang="uk-UA"] [data-ua-stage="problems"] :is(.psc-mini-art,.pti-problem-visual,.ua-api-art){width:min(100%,200px);margin-inline:auto}
+ html[lang="uk-UA"] .udv-page [data-ua-stage="problems"] .udv-problem-illustration{width:min(100%,310px)}
+ html[lang="uk-UA"] .ua-mobile-optional[hidden]{display:none!important}
+ html[lang="uk-UA"] .ua-mobile-detail-toggle{display:inline-flex;align-items:center;min-height:44px;padding:6px 0;border:0;background:none;color:#a84432;font:inherit;font-size:14px;font-weight:750;text-align:left;cursor:pointer}
+ html[lang="uk-UA"] .ua-mobile-detail-toggle:focus-visible{outline:2px solid #a84432;outline-offset:3px}
+ html[lang="uk-UA"] .ua-mobile-summary{font-size:18px;line-height:1.5;margin:0 0 6px;color:inherit}
+ /* Four remaining category hubs: keep the planet, satellite inventory and pause.
+    Do not touch the homepage or its Earth. */
+ html[lang="uk-UA"] .category-home .pt-home{padding:22px 16px;gap:14px}
+ html[lang="uk-UA"] .category-home .pt-home .pt-home-title{font-size:clamp(34px,8.6vw,43px);line-height:1.12;margin:14px 0}
+ html[lang="uk-UA"] .category-home .pt-home-lead{font-size:17px;line-height:1.48;margin-bottom:12px}
+ html[lang="uk-UA"] .category-home .pt-home-caption{font-size:13px;line-height:1.45;margin-top:12px;padding-top:10px}
+ html[lang="uk-UA"] .category-home .pt-home .pt-orbit:not(.category-dense-orbit){padding-top:clamp(225px,66vw,300px)}
+ html[lang="uk-UA"] .category-home .pt-home .pt-orbit:not(.category-dense-orbit) .pt-globe{top:clamp(98px,29vw,133px);width:min(55%,230px)}
+ html[lang="uk-UA"] .category-home .pt-home .pt-orbit:not(.category-dense-orbit) .pt-globe-tag{top:clamp(196px,58vw,264px)}
+ html[lang="uk-UA"] .category-home .pt-home .pt-orbit:not(.category-dense-orbit) .pt-orbit-ring{height:clamp(180px,54vw,250px)}
+ /* Dense 14-satellite WebDev uses the same established safe fit. */
+ html[lang="uk-UA"] .category-catalog{padding-block:28px}
+ html[lang="uk-UA"] .category-catalog .category-tiles{gap:12px}
+ html[lang="uk-UA"] .category-catalog .category-tile{padding:14px}
+ html[lang="uk-UA"] .category-catalog .category-tile-art{height:120px;aspect-ratio:auto;margin-bottom:12px}
+ html[lang="uk-UA"] .category-catalog .category-tile h3{font-size:22px;line-height:1.22;margin-bottom:8px}
+ html[lang="uk-UA"] .category-catalog .category-tile p{font-size:17px;line-height:1.5;margin-bottom:6px}
+ /* Homepage BELOW the protected globe. Keep all five service illustrations. */
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix{padding-block:28px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-heading{gap:12px;margin-bottom:18px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-heading h2{font-size:32px;line-height:1.15}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-grid{gap:12px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card{padding:14px;gap:0}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card-header h3{font-size:25px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-card-footer p{font-size:16px;line-height:1.5;margin-block:8px 10px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-cta{min-height:0;padding:0}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .ph-confidential{padding-block:24px;gap:14px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .ph-confidential h2{font-size:30px;line-height:1.18}
+ /* Editorial pages: no disclosure of legal or commercial terms. */
+ html[lang="uk-UA"] .about-page :is(.about-hero,.about-method,.about-fit,.about-final){padding-block:28px}
+ html[lang="uk-UA"] .about-page :is(.about-hero-grid,.about-method-grid,.about-fit-grid,.about-final-inner){gap:14px}
+ html[lang="uk-UA"] .about-page .about-hero-copy h1{font-size:clamp(34px,8.8vw,42px);line-height:1.12;margin-block:12px 16px}
+ html[lang="uk-UA"] .about-page :is(.about-method,.about-fit,.about-final) h2{font-size:30px;line-height:1.2}
+ html[lang="uk-UA"] .about-page :is(.about-method-item,.about-fit-card){padding:16px}
+ html[lang="uk-UA"] .mx-experience :is(.mx-hero,.mx-policy,.mx-skills){padding-block:24px;gap:12px}
+ html[lang="uk-UA"] .mx-experience .mx-hero h1{font-size:clamp(34px,8.8vw,42px);line-height:1.12}
+ html[lang="uk-UA"] .mx-experience :is(.mx-policy,.mx-skills,.mx-cta) h2{font-size:30px;line-height:1.2}
+ html[lang="uk-UA"] .mx-experience .mx-values{padding-block:0 24px;gap:10px}
+ html[lang="uk-UA"] .mx-experience .mx-value{padding:14px 12px}
+ html[lang="uk-UA"] .mx-experience .mx-skills-grid{margin-top:18px}
+ html[lang="uk-UA"] .mx-experience .mx-skill{padding:14px}
+ html[lang="uk-UA"] .pt-ua-home:not(.category-home) .ph-content .hsix-cta-content{padding:22px 18px}
+ html[lang="uk-UA"] .mp-price .mp-price-hero{padding-block:28px;gap:18px}
+ html[lang="uk-UA"] .mp-price .mp-price-hero h1{font-size:clamp(34px,8.8vw,42px);line-height:1.12;margin-bottom:14px}
+ html[lang="uk-UA"] .mp-price .mp-price-feature{padding:20px}
+ html[lang="uk-UA"] .mp-price .mp-grid{gap:12px}
+ html[lang="uk-UA"] .mp-price .mp-card{padding:16px}
+ html[lang="uk-UA"] .mp-price .mp-card-head{margin-bottom:10px}
+ html[lang="uk-UA"] .mp-price .mp-rate{padding-block:10px}
+ html[lang="uk-UA"] .mp-price .mp-conditions{padding-block:28px 20px}
+ html[lang="uk-UA"] .mp-price .mp-price-faq{padding-block:20px 28px}
+ html[lang="uk-UA"] .mrseo-privacy-page{padding-block:30px 44px}
+ html[lang="uk-UA"] .mrseo-privacy-page h1{font-size:clamp(34px,8.8vw,42px);line-height:1.15;margin-block:12px 16px}
+ html[lang="uk-UA"] .mrseo-privacy-page .mrseo-privacy-sections{margin-block:24px}
+ html[lang="uk-UA"] .mrseo-privacy-page section{padding-block:18px}
+ html[lang="uk-UA"] .mrseo-privacy-page section p{font-size:17px;line-height:1.6}
+ html[lang="uk-UA"] .contact-cinematic-hero{padding-block:28px}
+ html[lang="uk-UA"] .contact-cinematic-hero h1{font-size:clamp(34px,8.8vw,42px);line-height:1.12}
+ html[lang="uk-UA"] .contact-layout{gap:18px}
+ html[lang="uk-UA"] .contact-layout :is(.contact-brief,.contact-form-wrap){padding:18px}
+ html[lang="uk-UA"] .contact-layout .contact-field{margin-bottom:12px}
+ html[lang="uk-UA"] .contact-layout :is(input:not([type="hidden"]),textarea,select){font-size:16px}
+ /* Keep two contact actions but reclaim screen width. */
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar{left:auto;right:12px;transform:none;gap:5px;width:auto;max-width:calc(100% - 24px);padding:4px;border-radius:999px}
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-contact-popover,
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-mobile-call{flex:0 0 auto}
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-popover>summary,
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-mobile-call{min-height:44px;padding:8px 10px;gap:6px;border-radius:999px;font-size:12px;white-space:nowrap}
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-ui-panel{left:auto;right:0;bottom:calc(100% + 10px)}
+}
