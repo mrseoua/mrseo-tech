@@ -6,6 +6,7 @@
   <nav class="nav-links" id="main-navigation" aria-label="Основна навігація">
    <div class="nav-dropdown mrseo-catalog-dropdown"><button class="services-menu-toggle" type="button" aria-expanded="false" aria-controls="mrseo-services-menu">Послуги <span class="services-menu-chevron" aria-hidden="true">⌄</span></button><div class="nav-submenu" id="mrseo-services-menu"><?php mrseo_ua_header_catalog();?></div></div>
    <a href="<?php echo esc_url(mrseo_url('pricing','uk'));?>"<?php if($slug==='pricing')echo ' aria-current="page"';?>>Вартість</a>
+   <a href="<?php echo esc_url(mrseo_url('portfolio','uk'));?>"<?php if($slug==='portfolio')echo ' aria-current="page"';?>>Наш досвід</a>
    <a href="<?php echo esc_url(mrseo_url('about','uk'));?>">Про нас</a>
    <a href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Контакти</a>
   </nav>

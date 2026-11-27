@@ -45,7 +45,9 @@ jobs:
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
       - name: Validate Ukrainian price page
-        run: python3 scripts/verify-ua-pricing.py
+        run: |
+          python3 scripts/verify-ua-pricing.py
+          python3 scripts/verify-ua-experience.py
       - name: Validate Ukrainian SEO intent inventory
         run: python3 scripts/verify-ua-intents.py
       - name: Verify category artwork and real service links
