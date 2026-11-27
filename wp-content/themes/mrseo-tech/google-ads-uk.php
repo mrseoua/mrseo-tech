@@ -11,7 +11,7 @@ get_header();
    <div class="ukseo-hero-copy">
     <nav class="ukseo-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>Google Ads</span></nav>
     <div class="ukseo-kicker">НАЛАШТУВАННЯ ТА ВЕДЕННЯ GOOGLE ADS</div>
-    <h1 id="ukads-title">Потрібні заявки з Google? <em>Налаштуємо й вестимемо рекламу.</em></h1>
+    <h1 id="ukads-title">Контекстна реклама Google Ads. <em>Заявки під контролем.</em></h1>
     <p class="ukseo-hero-lead">Запускаємо й регулярно ведемо Google Ads: налаштовуємо пошукову та товарну рекламу, контролюємо запити, витрати й облік заявок. Якщо потрібна лише перевірка наявних кампаній без ведення — це окрема послуга аудиту.</p>
     <div class="ukseo-actions">
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Обговорити мою рекламу <span aria-hidden="true">↗</span></a>

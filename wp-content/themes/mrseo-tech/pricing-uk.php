@@ -29,7 +29,7 @@ get_header();?>
 <div class="mp-price">
  <section class="mp-price-hero mp-price-wrap">
   <div><span class="mp-kicker">ВАРТІСТЬ ПОСЛУГ / MRSEO.TECH</span>
-   <h1>Професійний рівень.<br><em>Без зайвих націнок.</em></h1>
+   <h1>Вартість послуг.<br><em>Професійний рівень без зайвих націнок.</em></h1>
    <p>Зрозумілі стартові ціни на SEO, Google Ads, створення сайтів та розробку. Погоджуємо обсяг робіт і вартість до початку співпраці.</p>
    <a class="mp-button" href="#mp-tariffs">Переглянути ціни <span aria-hidden="true">↓</span></a>
   </div>
