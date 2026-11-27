@@ -34,21 +34,45 @@ const viewports=[{width:1440,height:900},{width:390,height:844},{width:360,heigh
 const selected=new Set(['local-seo','google-ads','google-ads-audit','merchant-center','horoshop','horoshop/seo','service-websites','web-development','mobile-app-development','analytics','store-conversion','api-integrations','horoshop/audit','about','contact','privacy','pricing']);
 const out=process.env.MRSEO_UA_QA_DIR||'shots/ua-unified';
 const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
+const local=['127.0.0.1','localhost'].includes(new URL(origin).hostname);
+const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+let blocked=0;
+async function navigate(page,slug){
+ for(let attempt=0;attempt<(local?1:2);attempt++){
+  if(!local)await pause(1800);
+  const response=await page.goto(urlFor(slug),{waitUntil:'domcontentloaded',timeout:25000});
+  const status=response?.status();
+  if(![429,503].includes(status)||local||attempt===1)return response;
+  const retry=response.headers()['retry-after'];
+  let wait=retry&&/^\d+$/.test(retry)?Number(retry)*1000:retry?Date.parse(retry)-Date.now():8000;
+  if(!Number.isFinite(wait)||wait<0)wait=8000;
+  if(wait>60000)return response;
+  await pause(Math.max(8000,wait));
+ }
+}
 (async()=>{
  await fsp.mkdir(out,{recursive:true});
  const browser=await chromium.launch({headless:true});
  const reports=[];
  try{
-  await Promise.all(viewports.map(async viewport=>{
+  const checkViewport=async viewport=>{
    const ctx=await browser.newContext({viewport,reducedMotion:'reduce'});
    const page=await ctx.newPage();
    let runtime=[];page.on('pageerror',e=>runtime.push(String(e)));
    for(const slug of routes){
+    if(!local&&blocked>=3)break;
     const errors=[];runtime=[];
     const result={slug,viewport:viewport.width,errors};reports.push(result);
     try{
-     const response=await page.goto(urlFor(slug),{waitUntil:'domcontentloaded',timeout:25000});
-     if(!response||response.status()!==200)errors.push('HTTP '+response?.status());
+     const response=await navigate(page,slug);
+     result.status=response?.status();
+     if(!response||response.status()!==200){
+      errors.push('HTTP '+response?.status()+' — no page assertions performed');
+      if([429,503].includes(response?.status()))blocked++;
+      console.log('FAIL '+viewport.width+' /'+slug+' '+errors.join(' | '));
+      continue;
+     }
+     blocked=0;
      await page.evaluate(()=>document.fonts.ready);
      const data=await page.evaluate(referenceSelector=>{
       const shown=e=>!!e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden';
@@ -88,13 +112,13 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const menuGroups=Object.fromEntries([...document.querySelectorAll('[data-catalog-group]')].map(g=>[g.dataset.catalogGroup,[...g.querySelectorAll('.mrseo-catalog-link')].map(a=>[new URL(a.href).pathname,a.textContent.trim()])]));
       const satelliteLinks=[...document.querySelectorAll('.category-home .pt-node')].map(a=>[new URL(a.href).pathname,a.querySelector('.pt-node-label')?.textContent.trim()]);
       const cardLinks=[...document.querySelectorAll('.category-catalog .category-tile')].map(a=>[new URL(a.querySelector('a[href]').href).pathname,a.querySelector('h3')?.textContent.trim()]);
-      return {menuGroups,satelliteLinks,cardLinks,ctaVisible,ctaContrast,stages,readablePairs,problemDetails,approachHeading,approachCopy,devPictureCount:devPictures.length,devPictureUnique:new Set(devPictures).size,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
+      return {menuGroups,satelliteLinks,cardLinks,ctaVisible,ctaContrast,stages,readablePairs,problemDetails,approachHeading,approachCopy,devPictureCount:devPictures.length,devPictureUnique:new Set(devPictures).size,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,titleCount:document.querySelectorAll('head title').length,descriptionCount:document.querySelectorAll('head meta[name="description"]').length,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
      },referenceSelectors[slug]||null);
      result.data=data;result.status=response?.status();
      if(viewport.width===1440){result.content=await page.evaluate(()=>{const main=document.querySelector('main')||document.querySelector('#main');return main?{heading:main.querySelector('h1')?.textContent.trim()||'',paragraphs:[...main.querySelectorAll('p')].filter(p=>p.getClientRects().length&&!p.closest('[aria-hidden="true"],.category-catalog,.pt-orbit-bottom')).map(p=>p.textContent.replace(/\s+/g,' ').trim()).filter(p=>p.length>=45)}:null;});}
      if(data.lang!=='uk-UA')errors.push('Language '+data.lang);
      if(data.h1!==1||!data.h1Text)errors.push('Expected one nonempty H1');
-     if(!data.title||!data.description)errors.push('Missing title or description');
+     if(!data.title||!data.description||data.titleCount!==1||data.descriptionCount!==1)errors.push('Missing or duplicate title/description elements');
      if(!data.canonical||new URL(data.canonical).pathname!==new URL(urlFor(slug)).pathname)errors.push('Canonical mismatch '+data.canonical);
      if(!/noindex/i.test((response?.headers()['x-robots-tag']||'')+' '+data.robots))errors.push('Noindex absent');
      if(new URL(page.url()).pathname!==new URL(urlFor(slug)).pathname)errors.push('Unexpected redirect '+page.url());
@@ -143,7 +167,9 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
     console.log((errors.length?'FAIL':'PASS')+' '+viewport.width+' /'+slug+' '+errors.join(' | '));
    }
    await ctx.close();
-  }));
+  };
+  if(local)await Promise.all(viewports.map(checkViewport));
+  else for(const viewport of viewports){if(blocked>=3)break;await checkViewport(viewport);}
  }finally{await browser.close();}
  // Compare actual rendered headings across all commercial pages at each width.
  for(const viewport of viewports){
@@ -154,7 +180,17 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
    else headings.set(key,report.slug);
   }
  }
+ // Exact rendered metadata duplicates.
+ for(const field of ['title','description']){
+  const seen=new Map();
+  for(const r of reports.filter(r=>r.viewport===1440&&r.status===200&&r.data?.[field])){
+   const key=r.data[field].normalize('NFKC').toLocaleLowerCase('uk').replace(/\s+/g,' ').trim();
+   if(seen.has(key))r.errors.push('Duplicate '+field+' also on /'+seen.get(key)+'/');
+   else seen.set(key,r.slug);
+  }
+ }
  const failures=reports.filter(r=>r.errors.length);
+ const incomplete=routes.length*viewports.length-reports.length;
  const solutions=reports.filter(r=>r.viewport===1440&&!editorial.has(r.slug)).flatMap(r=>(r.data?.readablePairs||[]).map(p=>({slug:r.slug,title:p.title,answer:p.answer})));
  const exactSolutionGroups=Object.values(solutions.reduce((m,p)=>{if(p.answer)(m[p.answer]??=[]).push(p.slug);return m;},Object.create(null))).filter(g=>new Set(g).size>1);
  // Text similarity screening: compare content rather than shared header/menu/card labels.
@@ -167,8 +203,9 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
  const sets=pages.map(shingles),nearDuplicatePairs=[];
  for(let i=0;i<pages.length;i++)for(let j=i+1;j<pages.length;j++){const a=sets[i],b=sets[j];if(!a.size||!b.size)continue;let overlap=0;for(const v of a)if(b.has(v))overlap++;const similarity=overlap/(a.size+b.size-overlap);if(similarity>=.25)nearDuplicatePairs.push({a:pages[i].slug,b:pages[j].slug,similarity:Math.round(similarity*1000)/1000});}
  nearDuplicatePairs.sort((a,b)=>b.similarity-a.similarity);
- const summary={routes:routes.length,views:reports.length,failed:failures.length,solutionCount:solutions.length,exactSolutionGroups,duplicateParagraphs,nearDuplicatePairs,failures,reports};
+ const summary={routes:routes.length,views:reports.length,failed:failures.length,incomplete,solutionCount:solutions.length,exactSolutionGroups,duplicateParagraphs,nearDuplicatePairs,failures,reports};
  await fsp.writeFile(path.join(out,'report.json'),JSON.stringify(summary,null,2));
  console.log('UA QA: '+routes.length+' routes, '+reports.length+' views, '+failures.length+' failed');
- if(failures.length)process.exitCode=1;
+ if(incomplete)console.error('Coverage incomplete: '+incomplete+' views not attempted after repeated server blocks');
+ if(failures.length||incomplete)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exitCode=1;});
