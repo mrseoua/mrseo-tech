@@ -1232,6 +1232,7 @@ function mrseo_ua_semantic_copy($slug,$data){
   foreach($m['related'] as $link)if(!in_array($link[0],array_column($related,0),true))$related[]=$link;
   $data['related']=$related;
  }
+ if(isset($data['related']))$data['related']=array_values(array_filter($data['related'],static fn($link)=>!isset(mrseo_ua_retired_services()[$link[0]])&&$link[0]!==$slug));
  return $data;
 }
 add_filter('pre_get_document_title',function($title){

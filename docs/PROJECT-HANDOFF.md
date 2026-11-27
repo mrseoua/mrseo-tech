@@ -1192,3 +1192,7 @@ Owner requested XML Sitemap completeness, semantic uniqueness, mobile visual and
 Added dedicated post-deploy Ukrainian live prelaunch audit: 75 routes × 3 viewport widths, screenshot each mobile route, rendered paragraph duplicates and trigram similarity candidates, separate cold mobile lab 75 routes in three shards (LCP/CLS, TTFB, transfer size, overflow, broken images; no fabricated INP). This is automated lab evidence, not field Core Web Vitals or human visual/semantic signoff. Review measured failures before index launch.
 
 Additional Serpstat g_ua query sample: створення сайту на хорошоп 10; розробка веб додатків 10; парсинг сайтів 40; розробка мобільних застосунків 20; розробка мобільних додатків 140. The other 19 requested variants were not returned; do not infer zero. Preserve approved 10-year team experience statement on Horoshop hub metadata.
+
+
+### 27 Nov — retire unlisted UA services
+Owner requests removal of 34 older UA service URLs absent from current menu. Keep 41 active pages (five hubs, 31 children, five editorial/legal). Retire exact paths using 301 to topical active routes; remove UA canonical and alternate entries; preserve source archive and other 19 locales. Homepage visual untouched; disclosure links use current menu. noindex unchanged. Expected 659 total canonicals. Tests and deployment pending.

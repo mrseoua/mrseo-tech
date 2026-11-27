@@ -196,7 +196,7 @@ function mrseo_hs_key(){
  if(!preg_match('~^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)$~D',$path,$m))return null;
  return isset(mrseo_hs_pages()[$m[1]])?$m[1]:null;
 }
-function mrseo_hs_url($key){return home_url('/horoshop/'.$key.'/');}
+function mrseo_hs_url($key){$slug='horoshop/'.$key;if(mrseo_locale()==='uk')$slug=mrseo_ua_active_service_slug($slug);return home_url('/'.$slug.'/');}
 add_action('init',function(){
  add_rewrite_rule('^horoshop/(setup|seo|audit|ads|search-ads|shopping|pmax|feeds|ga4)/?$','index.php?mrseo_service=horoshop','top');
 },12);
