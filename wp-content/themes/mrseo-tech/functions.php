@@ -497,3 +497,14 @@ add_action('wp_enqueue_scripts',static function(){
 },999);
 
 require_once get_template_directory().'/inc/ua-service-sequence-v2.php';
+
+/** UA phone-only readability layer. The approved /seo/ pilot remains its own stylesheet. */
+add_action('wp_enqueue_scripts',static function(){
+ if(mrseo_locale()!=='uk'||is_404())return;
+ $entry=mrseo_i18n_current_entry();
+ $slug=$entry['slug']??null;
+ if($slug===null||$slug==='seo'||isset(mrseo_ua_retired_services()[$slug]))return;
+ if(!isset(mrseo_ua_semantic_map()[$slug]))return;
+ wp_enqueue_style('mrseo-ua-mobile-compact',get_template_directory_uri().'/assets/ua-mobile-compact.css',array('mrseo-style'),'1.0.0','(max-width: 680px)');
+ wp_enqueue_script('mrseo-ua-mobile-compact',get_template_directory_uri().'/assets/ua-mobile-compact.js',array(),'1.0.0',true);
+},1200);
