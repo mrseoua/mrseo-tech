@@ -418,7 +418,8 @@ function mrseo_handle_contact() {
  $enquiry_id=$post_lang==='uk'?mrseo_store_ua_enquiry($body):0;
  if($post_lang==='uk'&&!$enquiry_id){delete_transient($rate_key);$finish('error');}
  if($enquiry_id)$subject.=' '.get_the_title($enquiry_id);
- try{$ok=wp_mail('hello@mrseo.tech',$subject,$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));}
+ $recipient=$post_lang==='uk'?'mrseo.com.ua@gmail.com':'hello@mrseo.tech';
+ try{$ok=wp_mail($recipient,$subject,$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));}
  catch(Throwable $e){$ok=false;}
  if($enquiry_id){
   update_post_meta($enquiry_id,'_mrseo_mail_state',$ok?'accepted':'failed');

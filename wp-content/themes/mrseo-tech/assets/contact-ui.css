@@ -103,5 +103,5 @@ html[lang="uk-UA"] .contact-receipt-icon{display:grid;place-items:center;width:4
 html[lang="uk-UA"] .contact-receipt h3{font-size:clamp(25px,4vw,34px);line-height:1.2;margin:0 0 12px}
 html[lang="uk-UA"] .contact-receipt p{font-size:17px;line-height:1.55;margin:0 0 18px}
 html[lang="uk-UA"] .contact-receipt-again{margin-top:20px;white-space:normal}
-html[lang="uk-UA"] .contact-receipt:focus-visible{outline:2px solid #a84432;outline-offset:4px}
+html[lang="uk-UA"] .contact-receipt:focus-visible{outline:2px solid var(--mrseo-brand-red);outline-offset:4px}
 html[lang="uk-UA"] #contact-form button[disabled]{opacity:.65;cursor:wait}
