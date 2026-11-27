@@ -234,7 +234,9 @@ jobs:
           assert len(ga4['head'])==2 and management.count('<h1 ')==1
           assert 'Створюємо нові сайти' in dev['lead'] and 'SEO-просування погоджуємо окремо' in dev['lead']
           assert 'Просуваємо вже створені сайти' in seo['lead'] and 'Новий сайт' in seo['lead']
-          assert 'Налаштуємо й вестимемо рекламу.' in management
+          assert 'Контекстна реклама Google Ads.' in management and 'Заявки під контролем.' in management
+          orbit=(root/'inc/category-orbit.php').read_text()
+          assert 'Налаштовуємо та ведемо контекстну рекламу Google Ads' in orbit
           assert all(price not in management for price in ('5 000','10 000','5 900','9 500'))
           assert 'разову перевірку' in audit['lead'] and 'ведення реклами — окремо' in audit['result']
           assert 'Витрати на рекламу є.' in analytics['headline'] and 'заявки та замовлення' in analytics['lead']
