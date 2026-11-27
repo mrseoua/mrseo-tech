@@ -10,6 +10,7 @@ require_once get_template_directory() . '/inc/ua-dev-new-routes.php';
 require_once get_template_directory() . '/inc/language-dropdown.php';
 require_once get_template_directory() . '/inc/contact-channels.php';
 require_once get_template_directory() . '/inc/contact-ui.php';
+require_once get_template_directory() . '/inc/contact-inbox.php';
 require_once get_template_directory() . '/inc/mega-menu.php';
 require_once get_template_directory() . '/inc/new-service-routes.php';
 require_once get_template_directory() . '/inc/pl-service-routing.php';
@@ -301,7 +302,7 @@ function mrseo_assets(){
  // After theme/intl footer styles: fix the old .footer .container flex layout and normalize full-width footer.
  wp_enqueue_style('mrseo-footer-layout-premium',get_template_directory_uri().'/assets/footer-layout-premium.css',array('mrseo-footer-contact-channels'),'1.0.0');
  wp_enqueue_script('mrseo-ui',get_template_directory_uri().'/assets/site.js',array(),'3.7.5',true);
- wp_enqueue_style('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.css',array('mrseo-footer-layout-premium'),'1.0.4');
+ wp_enqueue_style('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.css',array('mrseo-footer-layout-premium'),'1.0.5');
  wp_enqueue_script('mrseo-contact-ui',get_template_directory_uri().'/assets/contact-ui.js',array(),'1.0.0',true);
 }
 add_action('wp_enqueue_scripts','mrseo_assets');
@@ -392,23 +393,39 @@ add_action('wp_head','mrseo_meta_description',1);
 /** Simple contact form handler; mail delivery depends on server configuration. */
 function mrseo_handle_contact() {
  $post_lang=sanitize_key(wp_unslash($_POST['mrseo_lang']??'uk'));
- $redirect=mrseo_url('contact',in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true)?$post_lang:'uk');
- if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {wp_safe_redirect(add_query_arg('message_status','invalid',$redirect));exit;}
+ $post_lang=in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true)?$post_lang:'uk';
+ $redirect=mrseo_url('contact',$post_lang);
+ $finish=static function($status)use($redirect,$post_lang){
+  $url=add_query_arg('message_status',$status,$redirect);
+  if($post_lang==='uk')$url.='#contact-status';
+  wp_safe_redirect($url,303);exit;
+ };
+ if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {$finish('invalid');}
  if(!empty($_POST['contact_company_extra'])) {wp_safe_redirect($redirect);exit;}
  $name=mb_substr(sanitize_text_field(wp_unslash($_POST['contact_name']??'')),0,90);
  $email=sanitize_email(wp_unslash($_POST['contact_email']??''));
  $site=esc_url_raw(wp_unslash($_POST['contact_site']??''));
  $message=mb_substr(sanitize_textarea_field(wp_unslash($_POST['contact_message']??'')),0,3000);
- if(!$name || !is_email($email) || mb_strlen($message)<10){wp_safe_redirect(add_query_arg('message_status','invalid',$redirect));exit;}
+ if(!$name || !is_email($email) || mb_strlen($message)<10){$finish('invalid');}
  $ip=isset($_SERVER['REMOTE_ADDR'])?sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])):'';
  $rate_key='mrseo_form_'.md5($ip);
- if(get_transient($rate_key)){wp_safe_redirect(add_query_arg('message_status','error',$redirect));exit;}
+ if(get_transient($rate_key)){$finish('error');}
  set_transient($rate_key,1,90);
  $mail_locale=in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true)?strtoupper($post_lang):'UK';
  $body="Язык заявки: $mail_locale\nСтраница: $redirect\nИмя: $name\nEmail: $email\nСайт: $site\n\n$message";
  $subject='Заявка MrSeo.tech ['.$mail_locale.']';
- $ok=wp_mail('hello@mrseo.tech',$subject,$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));
- wp_safe_redirect(add_query_arg('message_status',$ok?'sent':'error',$redirect));exit;
+ // Save first for UA only. A mail transport failure must not lose a real enquiry.
+ $enquiry_id=$post_lang==='uk'?mrseo_store_ua_enquiry($body):0;
+ if($post_lang==='uk'&&!$enquiry_id){delete_transient($rate_key);$finish('error');}
+ if($enquiry_id)$subject.=' '.get_the_title($enquiry_id);
+ $recipient=$post_lang==='uk'?'mrseo.com.ua@gmail.com':'hello@mrseo.tech';
+ try{$ok=wp_mail($recipient,$subject,$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));}
+ catch(Throwable $e){$ok=false;}
+ if($enquiry_id){
+  update_post_meta($enquiry_id,'_mrseo_mail_state',$ok?'accepted':'failed');
+  $finish('received');
+ }
+ $finish($ok?'sent':'error');
 }
 add_action('admin_post_nopriv_mrseo_contact','mrseo_handle_contact');
 add_action('admin_post_mrseo_contact','mrseo_handle_contact');
