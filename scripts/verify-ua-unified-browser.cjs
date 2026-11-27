@@ -155,6 +155,17 @@ async function navigate(page,slug){
       if(data.stages.some((e,i)=>i&&e.top<data.stages[i-1].top-4))errors.push('UA v2 visual stage order '+JSON.stringify(data.stages.map(e=>[e.key,e.top])));
       if(hubs.includes(slug)&&!(data.stages.find(e=>e.key==='catalog')?.catalog.length>=4))errors.push('UA v2 category catalogue missing or incomplete');
      }else if(data.stages.length)errors.push('UA v2 stages leaked onto editorial route');
+     // Fixed controls can overflow the viewport without increasing document.scrollWidth.
+     if(viewport.width<=390){
+      const contact=await page.evaluate(()=>{
+       const bar=document.querySelector('.mrseo-mobile-contact-bar'),write=bar?.querySelector('summary'),call=bar?.querySelector('a.mrseo-mobile-call');
+       if(!bar||!write||!call)return {missing:true};
+       const box=e=>{const r=e.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height};};
+       return {bar:box(bar),write:box(write),call:box(call),width:innerWidth,height:innerHeight,phone:call.getAttribute('href'),message:write.textContent.trim(),icons:bar.querySelectorAll(':scope>details>summary svg,:scope>a svg').length};
+      });
+      result.contactBar=contact;
+      if(contact.missing||Math.abs((contact.bar.left+contact.bar.right)/2-contact.width/2)>2||contact.bar.left<8||contact.bar.right>contact.width-8||contact.bar.bottom>contact.height||Math.abs(contact.write.width-contact.call.width)>3||Math.abs(contact.write.top-contact.call.top)>2||Math.abs(contact.write.height-contact.call.height)>2||contact.write.height<44||contact.call.height<44||contact.write.left<contact.bar.left||contact.call.right>contact.bar.right||contact.write.right>contact.call.left||!contact.phone?.startsWith('tel:')||!contact.message||contact.icons!==2)errors.push('Mobile contact alignment '+JSON.stringify(contact));
+     }
      if(runtime.length)errors.push(...runtime.map(e=>'JS: '+e));
      // Capture actual hero and a representative lower content block, including any failing URL.
      if(viewport.width<=390||selected.has(slug)||errors.length){

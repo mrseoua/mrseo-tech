@@ -59,6 +59,21 @@ const measure=page=>page.evaluate(()=>{
      await toggle.click();assert.equal(await toggle.getAttribute('aria-expanded'),'true');assert.ok(await p.isVisible());
      await toggle.click();assert.equal(await p.isVisible(),false);
     }
+    // Verify popover remains fully in the viewport at both mobile widths.
+    for(const width of [390,360]){
+     await b.setViewportSize({width,height:844});
+     const bar=b.locator('.mrseo-mobile-contact-bar');
+     const summary=bar.locator('summary');
+     await summary.click();
+     const panel=bar.locator('.mrseo-contact-ui-panel');
+     assert.ok(await panel.isVisible(),'Contact messenger menu hidden');
+     const rect=await panel.boundingBox();
+     assert.ok(rect.x>=-1&&rect.x+rect.width<=width+1&&rect.y>=0&&rect.y+rect.height<=844,'Messenger menu off-screen: '+JSON.stringify(rect));
+     assert.equal(await panel.locator('a:visible').count(),3);
+     await summary.click();
+     assert.equal(await panel.isVisible(),false);
+    }
+    await b.setViewportSize({width:390,height:844});
     const name=slug.replaceAll('/','-')||'home';
     await b.evaluate(()=>scrollTo(0,0));
     await b.screenshot({path:path.join(shotDir,name+'-390.jpg'),type:'jpeg',quality:78,animations:'disabled'});
