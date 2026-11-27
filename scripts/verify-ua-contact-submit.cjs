@@ -36,7 +36,7 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   assert.equal(await send({contact_email:'not-an-email'}),'invalid');
   assert.equal(await send({contact_company_extra:'bot'}),null);
   assert.equal(read().length,0,'Invalid/honeypot submission reached wp_mail');
-  assert.equal(await send(),'sent');
+  assert.equal(await send(),'received');
   const records=read();
   assert.equal(records.length,1);
   const mail=records[0];
@@ -46,6 +46,28 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   assert.ok([].concat(mail.headers).join('\n').includes('Reply-To: '+payload.contact_email));
   assert.equal(await send(),'error','Rate limiting failed');
   assert.equal(read().length,1);
+  const inspect=async(reset=false)=>{
+   const response=await ctx.request.post(endpoint.href,{form:{action:'mrseo_ci_enquiry_inspect',...(reset?{reset_rate:'1'}:{})}});
+   assert.equal(response.status(),200);return response.json();
+  };
+  const saved=await inspect(true);
+  assert.equal(saved.length,1);assert.equal(saved[0].status,'private');assert.equal(saved[0].mail,'accepted');assert.ok(saved[0].body.includes(payload.contact_message));
+  await page.goto(origin+'/contact/?message_status=received#contact-status');
+  const receipt=page.locator('#contact-status');
+  assert.ok(await receipt.isVisible());assert.match(await receipt.innerText(),/Заявку отримано/);
+  assert.equal(await page.locator('#contact-form').count(),0);
+  assert.equal(await receipt.locator('.mrseo-contact-ui-links a').count(),3);
+  assert.equal(await send({contact_message:'CI simulate mail failure — preserve this enquiry.'}),'received');
+  const failed=await inspect();
+  assert.equal(failed.length,2);assert.equal(failed[1].mail,'failed');assert.ok(failed[1].body.includes('CI simulate mail failure'));
+  const publicPage=await ctx.request.get(origin+'/?post_type=mrseo_enquiry&p='+failed[1].id);
+  assert.ok(!(await publicPage.text()).includes('CI simulate mail failure'),'Private enquiry content exposed');
+  const admin=await ctx.request.get(origin+'/wp-admin/edit.php?post_type=mrseo_enquiry',{maxRedirects:0});
+  assert.ok([301,302,303,403].includes(admin.status()),'Anonymous inbox access');
+  await page.goto(origin+'/contact/?message_status=error#contact-status');
+  assert.ok(await page.locator('#contact-status[role="alert"]').isVisible());
+  assert.ok(await page.locator('#contact-form').isVisible());
+  console.log('PASS: private UA enquiry stored with successful and failed mail handoff; public receipt/error and anonymous isolation checked.');
   console.log('PASS: actual local form POST, nonce, invalid email, honeypot, mail payload and rate limiting. External delivery NOT tested.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

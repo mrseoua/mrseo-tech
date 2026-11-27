@@ -93,3 +93,15 @@
   max-height:calc(100vh - 100px - env(safe-area-inset-bottom,0px));overflow-y:auto
  }
 }
+
+/* Explicit form receipt, anchored below the fixed header. UA contact only. */
+html[lang="uk-UA"] :is(#contact-status,#contact-form){scroll-margin-top:110px}
+html[lang="uk-UA"] .contact-receipt{padding:22px;border:1px solid #d6cbbd;border-radius:14px;background:#f8f5f0;color:#292f2a;margin-bottom:20px}
+html[lang="uk-UA"] .contact-receipt-success{background:#f1f5ed;border-color:#b7c5b2}
+html[lang="uk-UA"] .contact-receipt-error{background:#fff3ef;border-color:#c78471}
+html[lang="uk-UA"] .contact-receipt-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#292f2a;color:white;font-size:27px;font-weight:800;margin-bottom:15px}
+html[lang="uk-UA"] .contact-receipt h3{font-size:clamp(25px,4vw,34px);line-height:1.2;margin:0 0 12px}
+html[lang="uk-UA"] .contact-receipt p{font-size:17px;line-height:1.55;margin:0 0 18px}
+html[lang="uk-UA"] .contact-receipt-again{margin-top:20px;white-space:normal}
+html[lang="uk-UA"] .contact-receipt:focus-visible{outline:2px solid #a84432;outline-offset:4px}
+html[lang="uk-UA"] #contact-form button[disabled]{opacity:.65;cursor:wait}
