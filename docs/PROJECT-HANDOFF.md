@@ -1238,3 +1238,5 @@ Mobile rollout second CI (46028792004) passed all 126 view checks, 42 comparison
 
 ### Mobile contact alignment hotfix — 27 Nov
 Owner reported bottom write/call controls shifted right after PR232. Root cause: the UA compact CSS explicitly set right:12px and width:auto, with non-growing button columns. Restore horizontal centering and equal-width 44px+ touch targets in the compact stylesheet, keep compact 320px maximum, ensure messenger panel fits viewport, bump CSS cache version to 1.0.2. Approved /seo/ pilot and other locales unchanged. Add per-route 360/390 fixed-bar geometry and menu open/close regression checks, not just document overflow. Production PR232 deployment 46031112046 succeeded; international SEO audit 46031190561 passed; live UA layout audit 46031190383 failed. This hotfix awaits CI and owner approval; no publication yet.
+
+Hotfix initial CI 46041320273 detected centered container but unequal widths (144px vs 158px) on 41 routes at both phone widths. Replaced flex sizing with explicit equal minmax(0,1fr) grid columns and border-box full-width controls. Version 1.0.3. Keep strict geometry and menu checks unchanged; revalidate.
