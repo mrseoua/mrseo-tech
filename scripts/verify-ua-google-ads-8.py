@@ -43,7 +43,7 @@ assert "mrseo_category_orbit('google-ads')" in main and "mrseo_category_catalog(
 hero=render_category("google-ads","orbit")
 catalog=render_category("google-ads","catalog")
 assert hero.h1==1 and catalog.h1==0
-assert paths(catalog)=={"/"+slug+"/" for slug in child if slug!="google-remarketing"}
+assert paths(catalog)=={"/"+slug+"/" for slug in ("google-search-ads","performance-max","google-shopping","local-google-ads")}
 assert paths(hero)==paths(catalog)|{"/contact/"}
 assert "ukads-services" in catalog.ids
 assert all(price not in main for price in ("5 000", "5 900", "10 000", "9 500"))
@@ -60,7 +60,7 @@ print("Eight Ukrainian Google Ads pages, seven child routes, unique metadata, no
 assert main.count('class="service-problem-answer"')==3 and main.count('class="service-problem-copy"')==3
 assert main.index('id="ukads-problems"')<main.index("mrseo_category_catalog('google-ads')")<main.index('data-pti-story="ads"')<main.index('id="ukads-pricing"')
 assert main.count('class="service-deliverable"')==1
-assert len(paths(catalog))==6
+assert len(paths(catalog))==4
 assert 'data-service-standard="v1"' in (root/"premium-ua-interior.php").read_text()
 assert "service-standard.css" in (root/"premium-ua-interior.php").read_text()
 assert "prefers-reduced-motion" in (root/"assets/service-standard.css").read_text()

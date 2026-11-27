@@ -13,12 +13,13 @@ class Markup(HTMLParser):
         if tag=="img": self.images.append(a.get("src",""))
         if "id" in a: self.ids.append(a["id"])
 def render_category(slug, component):
-    assert component in ("orbit","catalog")
+    assert component in ("orbit","catalog","menu")
     code="""<?php
 define('ABSPATH',__DIR__.'/');
 function add_action(...$args){}
 function add_filter(...$args){}
 function mrseo_locale(){return 'uk';}
+function mrseo_slug(){return '';}
 function get_template_directory(){return getcwd();}
 function get_template_directory_uri(){return 'https://example.test/theme';}
 function home_url($s='/'){return 'https://example.test'.$s;}
@@ -32,7 +33,7 @@ require 'inc/mega-menu-trial.php';
 require 'inc/ua-ads-position.php';
 require 'inc/category-orbit.php';
 """
-    code+=f"mrseo_category_{component}('{slug}');"
+    code+= "require_once 'inc/ua-header-six.php';mrseo_ua_header_catalog();" if component=="menu" else f"mrseo_category_{component}('{slug}');"
     p=subprocess.run(["php","-d","display_errors=stderr"],input=code,text=True,cwd=THEME,capture_output=True,check=True)
     assert not p.stderr,p.stderr
     return Markup(p.stdout)

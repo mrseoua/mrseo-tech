@@ -21,7 +21,7 @@ art=(r/"inc/seo-hub-premium-art.php").read_text()
 for scene in ("sh-hero-main","sh-query","sh-find","sh-action","sh-audit","sh-commerce","sh-local","sh-service","sh-international"):
  assert scene in art and "animate" in art
 assert "seo-premium-scene" in js and "buttons.forEach" in js
-assert "home-uk-premium.js" in (r/"inc/category-orbit.php").read_text()
+assert "category-orbit-engine.js" in (r/"inc/category-orbit.php").read_text()
 assert '.seo-hero-visual' not in hero and 'seo-hero-visual' not in hero
 assert 'clip-path:inset(50%)' in (r/'style.css').read_text()
 assert 'ОРГАНІЧНИЙ ПОШУК' in art and 'Умовний приклад пошукової видачі' in art

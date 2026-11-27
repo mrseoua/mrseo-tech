@@ -1,16 +1,6 @@
 <?php
 /** Ukrainian category orbit navigation; existing landing content and metadata remain intact. */
 if (!defined('ABSPATH')) exit;
-function mrseo_category_orbit_data(){
- return array(
- 'seo'=>array('SEO-просування сайтів','seo',array('local-seo'=>'Локальне SEO','ecommerce-seo'=>'SEO інтернет-магазинів','service-business-seo'=>'SEO сайтів послуг','international-seo'=>'Міжнародне SEO','seo-audit'=>'SEO-аудит')),
- 'google-ads'=>array('Реклама Google Ads','ads',array('google-search-ads'=>'Пошукова реклама','google-shopping'=>'Google Shopping','performance-max'=>'Performance Max','merchant-center'=>'Merchant Center','google-ads-audit'=>'Аудит Google Ads','local-google-ads'=>'Локальна реклама')),
- 'horoshop'=>array('Послуги для магазинів на Хорошоп','shop',array('horoshop/setup'=>'Створення магазину','horoshop/seo'=>'SEO на Хорошоп','horoshop/audit'=>'Аудит','horoshop/ads'=>'Google Ads','horoshop/feeds'=>'Товарні фіди','horoshop/ga4'=>'GA4 та конверсії')),
- 'service-websites'=>array('Створення сайтів для бізнесу','sites',array('local-business-websites'=>'Сайт для малого бізнесу','landing-pages'=>'Лендінги','corporate-websites'=>'Корпоративні сайти','website-redesign'=>'Редизайн сайту','website-maintenance'=>'Технічна підтримка')),
- 'web-development'=>array('Веброзробка для бізнесу','dev',array('business-automation'=>'Автоматизація бізнесу','crm-development'=>'CRM','api-integrations'=>'API-інтеграції','ai-agents'=>'AI-агенти','web-applications'=>'Вебзастосунки','mobile-app-development'=>'Мобільні застосунки'))
- );
-}
-
 function mrseo_category_home_data(){return json_decode('{"seo":["SEO-ПРОСУВАННЯ САЙТІВ","Клієнти шукають.","Чому знаходять конкурентів?","Знаходимо, що заважає вашим сторінкам бути видимими в Google: від технічних помилок до невідповідності пошуковому попиту. Погоджуємо роботи, які мають сенс саме для вашого бізнесу.","Знайти причину низької видимості","SEO / ПОШУК","ukseo-cases","ukseo-services","seo","seo"],"google-ads":["КОНТЕКСТНА РЕКЛАМА GOOGLE ADS","Реклама працює.","А бізнес заробляє?","Налаштовуємо та ведемо Google Ads із фокусом на заявки, покупки й витрати. Перевіряємо конверсії та економіку кампаній. Не роздуваємо бюджети й не продаємо красиві звіти.","Перевірити ефективність реклами","ADS / КАМПАНІЇ","ukads-problems","ukads-services","ads","ads"],"horoshop":["СТВОРЕННЯ ТА РОЗВИТОК МАГАЗИНІВ","Магазин відкрито.","А де замовлення?","Допомагаємо запустити магазин на Хорошоп або поліпшити наявний: каталог, SEO, Google Ads, товарні фіди та аналітика. Враховуємо можливості платформи й тарифу.","Знайти точки росту магазину","HOROSHOP / МАГАЗИН","ukhoroshop-start","hs-services","shop","horoshop"],"service-websites":["СТВОРЕННЯ САЙТІВ ДЛЯ БІЗНЕСУ","Ваш бізнес заслуговує","на сайт, який продає.","Проєктуємо сайти, де клієнт швидко розуміє вашу пропозицію, знаходить потрібну послугу та може звернутися. Від структури й дизайну до адаптивності та запуску.","Обговорити майбутній сайт","WEB / ДИЗАЙН","uws-pains","category-services","sites","sites"],"web-development":["ВЕБРОЗРОБКА ДЛЯ БІЗНЕСУ","Бізнес зростає.","Чи встигають ваші системи?","Розробляємо CRM, вебзастосунки, інтеграції й автоматизацію під реальні процеси компанії. Прибираємо ручні операції там, де це виправдано, та погоджуємо критерії приймання.","Розібрати бізнес-процес","DEV / СИСТЕМИ","problems","dev-services","dev","dev"]}',true);}
 function mrseo_category_service_desc(){return json_decode('{"local-seo":"Залучайте клієнтів із вашого міста й регіону.","ecommerce-seo":"Категорії, фільтри та товари під попит покупців.","service-business-seo":"Сторінки послуг, які відповідають запитам клієнтів.","international-seo":"Пошукова стратегія для різних країн і мов.","seo-audit":"Діагностика перешкод і пріоритетний план виправлень.","google-search-ads":"Оголошення за релевантними комерційними запитами.","google-shopping":"Товарні кампанії з контролем якості каталогу.","performance-max":"Кампанії з перевіркою конверсій та економіки продажів.","merchant-center":"Перевірка товарних даних і причин відхилень.","google-ads-audit":"Знаходимо непродуктивні витрати та помилки обліку.","local-google-ads":"Реклама в реальній зоні обслуговування.","google-remarketing":"Повернення зацікавленої аудиторії з урахуванням згоди.","setup":"Каталог, оплата, доставка та перевірка замовлення.","seo":"Категорії та фільтри під пошуковий попит.","audit":"Індексація, canonical і технічні обмеження платформи.","ads":"Кампанії для товарів і контроль покупок.","search-ads":"Пошукові оголошення під асортимент магазину.","shopping":"Товарна реклама на основі коректного фіда.","pmax":"Performance Max із перевіреними сигналами продажів.","feeds":"Точність цін, наявності й атрибутів товарів.","ga4":"Вимірювання покупок і шляху до замовлення.","wordpress-development":"Керований сайт із редактором контенту.","landing-pages":"Окрема пропозиція для цільової рекламної кампанії.","local-business-websites":"Зрозумілі послуги, контакти та зручний запис.","corporate-websites":"Структура для напрямів, команди й клієнтів компанії.","website-redesign":"Оновлення інтерфейсу зі збереженням важливих URL.","website-maintenance":"Оновлення, резервні копії та контроль роботи.","website-speed-security":"Перевірка швидкості й технічних ризиків.","business-automation":"Менше ручних операцій у щоденних процесах.","crm-development":"Заявки, статуси та робота менеджерів в одній системі.","web-applications":"Онлайн-сервіси з бізнес-логікою та ролями.","business-dashboards":"Показники компанії в зрозумілому інтерфейсі.","client-portals":"Доступ клієнтів до статусів, документів і заявок.","api-integrations":"Обмін даними між потрібними сервісами.","custom-functionality":"Функції, яких бракує готовим рішенням.","data-parsing":"Збір та синхронізація потрібних даних.","payment-integration":"Оплата, підтвердження та статуси транзакцій.","ai-agents":"Асистенти для погоджених задач і процесів.","chatbot-development":"Діалоги, відповіді та передача звернень команді.","mobile-app-development":"Мобільний продукт для iOS та Android.","ecommerce-mobile-apps":"Мобільний шлях від каталогу до покупки.","corporate-mobile-apps":"Робочі інструменти для мобільної команди.","pwa-development":"Вебзастосунок із можливостями встановлення."}',true);}
 function mrseo_category_is_root(){
@@ -21,26 +11,24 @@ function mrseo_category_is_root(){
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_category_is_root())return;
  wp_enqueue_style('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.css',array('mrseo-style'),'1.0.1');
- wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.2.1');
+ wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.3.0');
  wp_enqueue_style('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.css',array('mrseo-category-home-layout'),'2.0.2');
- wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.js',array(),'1.0.1',true);
+ wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/category-orbit-engine.js',array(),'1.0.0',true);
 },150);
 function mrseo_category_items($slug){
- $d=mrseo_category_home_data()[$slug];$out=array();
- require_once get_template_directory().'/inc/home-service-sublinks.php';
- foreach(mrseo_home_subservice_groups($d[9]) as $group)foreach($group['items'] as $item){
+ $d=mrseo_category_home_data()[$slug]??null;$out=array();if(!$d)return $out;
+ require_once get_template_directory().'/inc/ua-header-six.php';
+ foreach(mrseo_ua_visible_menu_sections($d[9]) as $group)foreach($group['items'] as $item){
   $path=trim(wp_parse_url($item['url'],PHP_URL_PATH),'/');$key=basename($path);
-  if($slug==='google-ads'&&$key==='google-remarketing')continue;
   $out[$path]=array($item['label'],$item['url'],mrseo_category_service_desc()[$key]??'Перевіряємо потреби проєкту й погоджуємо конкретні роботи.');
  }
- if($slug==='horoshop')$out=array('horoshop/setup'=>array('Створення магазину',mrseo_hs_url('setup'),mrseo_category_service_desc()['setup']))+$out;
  return $out;
 }
 function mrseo_category_orbit($slug){
  $d=mrseo_category_home_data()[$slug]??null;if(mrseo_locale()!=='uk'||!$d)return;
- $nodes=mrseo_category_orbit_data()[$slug][2];$assets=get_template_directory_uri().'/assets/';
+ $nodes=mrseo_category_items($slug);$assets=get_template_directory_uri().'/assets/';
  $map=$assets.'category-map-'.$d[8].'.svg';$preview=$assets.'category-planet-'.$d[8].'.svg';
- $details=mrseo_category_service_desc();
+ $first=reset($nodes);
  ?>
  <div class="pt-ua-home category-home" data-category-home="<?php echo esc_attr($d[8]);?>">
  <section data-ua-stage="hero" class="pt-home" aria-labelledby="category-title">
@@ -51,12 +39,12 @@ function mrseo_category_orbit($slug){
  <?php if($slug==='google-ads')mrseo_ads_position_hero('google-ads');?>
  <div class="pt-home-actions"><a class="pt-home-cta" href="<?php echo esc_url(mrseo_url('contact','uk'));?>"><?php echo esc_html($d[4]);?> ↗</a><a class="pt-home-secondary" href="#<?php echo esc_attr($d[7]);?>">Переглянути послуги ↓</a></div>
  <p class="pt-home-caption"><i aria-hidden="true"></i>Оберіть супутник або перегляньте каталог нижче. Наведіть на послугу, щоб зупинити орбіту.</p></div>
- <div class="pt-orbit-shell"><div class="pt-orbit" aria-label="Підкатегорії послуг"><div class="pt-orbit-ring" aria-hidden="true"></div><div class="pt-orbit-ring r2" aria-hidden="true"></div><div class="pt-orbit-ring r3" aria-hidden="true"></div><svg class="pt-orbit-lines" aria-hidden="true"></svg>
+ <div class="pt-orbit-shell"><div class="pt-orbit<?php if(count($nodes)>6)echo ' category-dense-orbit';?>" aria-label="Підкатегорії послуг"><div class="pt-orbit-ring" aria-hidden="true"></div><div class="pt-orbit-ring r2" aria-hidden="true"></div><div class="pt-orbit-ring r3" aria-hidden="true"></div><svg class="pt-orbit-lines" aria-hidden="true"></svg>
  <div class="pt-globe" data-earth-src="<?php echo esc_url($map);?>" data-map="<?php echo esc_url($map);?>"><img src="<?php echo esc_url($preview);?>" alt="" width="420" height="420" decoding="async"><canvas aria-hidden="true"></canvas></div>
  <div class="pt-globe-tag"><?php echo esc_html($d[5]);?></div>
- <?php $i=0;foreach($nodes as $path=>$label):$key=basename($path);$url=$slug==='horoshop'?mrseo_hs_url($key):($key==='mobile-app-development'?home_url('/'.$key.'/'):mrseo_url($key,'uk'));?>
- <a class="pt-node n<?php echo esc_attr($i);?>" href="<?php echo esc_url($url);?>" data-title="<?php echo esc_attr($label);?>" data-detail="<?php echo esc_attr($details[$key]??$label);?>"><span class="pt-node-icon" aria-hidden="true"><?php mrseo_category_icon($i);?></span><span class="pt-node-label"><?php echo esc_html($label);?></span><span class="pt-node-arrow" aria-hidden="true">↗</span></a><?php $i++;endforeach;?>
- </div><div class="pt-orbit-bottom"><div class="pt-orbit-detail" aria-live="polite"><strong>01 / <?php echo esc_html(reset($nodes));?></strong><span><?php echo esc_html($details[basename(key($nodes))]??reset($nodes));?></span></div><button type="button" class="pt-rotate" aria-pressed="false">Призупинити рух</button></div></div>
+ <?php $i=0;foreach($nodes as $path=>$item):$label=$item[0];$url=$item[1];?>
+ <a class="pt-node n<?php echo esc_attr($i);?>" href="<?php echo esc_url($url);?>" data-title="<?php echo esc_attr($label);?>" data-detail="<?php echo esc_attr($item[2]);?>"><span class="pt-node-icon" aria-hidden="true"><?php mrseo_category_icon($i);?></span><span class="pt-node-label"><?php echo esc_html($label);?></span><span class="pt-node-arrow" aria-hidden="true">↗</span></a><?php $i++;endforeach;?>
+ </div><div class="pt-orbit-bottom"><div class="pt-orbit-detail" aria-live="polite"><strong>01 / <?php echo esc_html($first[0]??'');?></strong><span><?php echo esc_html($first[2]??'');?></span></div><button type="button" class="pt-rotate" aria-pressed="false">Призупинити рух</button></div></div>
  </section></div><?php
 }
 function mrseo_category_icon($i){
