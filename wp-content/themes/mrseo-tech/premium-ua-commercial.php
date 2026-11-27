@@ -76,22 +76,22 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
  <?php mrseo_ua_v2_approach($psc_slug);?>
  <?php $ua_v2_hubs=array('service-websites'=>'sites','analytics'=>'data','online-store-development'=>'commerce');if($psc_slug==='service-websites')mrseo_category_catalog('service-websites');elseif(isset($ua_v2_hubs[$psc_slug]))mrseo_ua_v2_catalog($ua_v2_hubs[$psc_slug]);?>
  <?php if(!empty($psc['plan'])):$plan=$psc['plan'];?>
- <section class="pti-section pti-alt puc-plan" aria-labelledby="puc-plan-title"><div class="pti-wrap psc-story-grid">
-  <div class="psc-story-visual"><?php mrseo_puc_art($psc_art['plan']);?></div>
-  <div><span class="pti-kicker"><?php echo esc_html($plan['eyebrow']);?></span><h2 id="puc-plan-title"><?php echo esc_html($plan['heading'][0]);?> <em><?php echo esc_html($plan['heading'][1]);?></em></h2><p class="pti-lead"><?php echo esc_html($plan['lead']);?></p><div class="pti-steps"><?php foreach($plan['steps'] as $i=>$step):?><div class="pti-step"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div></div><?php endforeach;?></div><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($plan['cta']);?> ↗</a><p class="pti-footnote">Ілюстрація підходу, не клієнтський кейс.</p></div>
+ <section class="pti-section pti-alt puc-plan" aria-labelledby="puc-plan-title"><div class="pti-wrap psc-story-grid<?php if($psc_slug==='service-websites')echo ' category-text-work';?>">
+  <?php if($psc_slug!=='service-websites'){?><div class="psc-story-visual"><?php mrseo_puc_art($psc_art['plan']);?></div><?php }?>
+  <div><span class="pti-kicker"><?php echo esc_html($plan['eyebrow']);?></span><h2 id="puc-plan-title"><?php echo esc_html($plan['heading'][0]);?> <em><?php echo esc_html($plan['heading'][1]);?></em></h2><p class="pti-lead"><?php echo esc_html($plan['lead']);?></p><div class="pti-steps"><?php foreach($plan['steps'] as $i=>$step):?><div class="pti-step"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><h3><?php echo esc_html($step[0]);?></h3><p><?php echo esc_html($step[1]);?></p></div></div><?php endforeach;?></div><?php if($psc_slug!=='service-websites'){?><a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($plan['cta']);?> ↗</a><p class="pti-footnote">Ілюстрація підходу, не клієнтський кейс.</p><?php }?></div>
  </div></section>
  <?php endif;?>
  <section data-ua-stage="work" class="pti-section psc-delivery<?php echo empty($psc['plan'])?' pti-alt':'';?>" id="uws-solution" aria-labelledby="<?php echo esc_attr($psc_delivery_id);?>">
-  <div class="pti-wrap psc-story-grid">
-   <div class="psc-story-visual"><?php mrseo_puc_art($psc_art['storyId']);?></div>
+  <div class="pti-wrap psc-story-grid<?php if($psc_slug==='service-websites')echo ' category-text-work';?>">
+   <?php if($psc_slug!=='service-websites'){?><div class="psc-story-visual"><?php mrseo_puc_art($psc_art['storyId']);?></div><?php }?>
    <div class="psc-delivery-copy">
     <span class="pti-kicker">04 / КОНКРЕТНІ РОБОТИ</span>
     <h2 id="<?php echo esc_attr($psc_delivery_id);?>"><?php $psc_head($psc['sectionTitle']);?></h2>
     <div class="pti-steps"><?php foreach($psc['benefits'] as $i=>$item):?><div class="pti-step"><b><?php echo esc_html(sprintf('%02d',$i+1));?></b><div><h3><?php echo esc_html($item[0]);?></h3><p><?php echo esc_html($item[1]);?></p></div></div><?php endforeach;?></div>
     <div data-ua-stage="result" class="psc-result"><span class="pti-kicker">05 / <?php echo esc_html($psc['resultTitle']);?></span><p><?php echo esc_html($psc['result']);?></p></div>
     
-    <p class="pti-footnote">Ілюстрація підходу, не дані конкретного проєкту.</p>
-    <button class="psc-pause psc-lower-pause" type="button" aria-pressed="false">Призупинити рух</button>
+    <?php if($psc_slug!=='service-websites'){?><p class="pti-footnote">Ілюстрація підходу, не дані конкретного проєкту.</p>
+    <button class="psc-pause psc-lower-pause" type="button" aria-pressed="false">Призупинити рух</button><?php }?>
    </div>
   </div>
  </section>
@@ -100,10 +100,10 @@ if($psc_ads_campaign){require get_template_directory().'/inc/premium-ads-campaig
   <div><span class="pti-kicker">07 / ПЕРЕД ПОЧАТКОМ</span><h2 id="<?php echo esc_attr($psc_faq_id);?>"><?php echo esc_html($psc['faqHeading']??'Коротко про важливе.');?></h2><?php if(!empty($psc['faqLead'])):?><p><?php echo esc_html($psc['faqLead']);?></p><?php endif;?></div>
   <div><?php foreach($psc['faq'] as $i=>$item):?><details><summary><?php echo esc_html($item[0]);?></summary><p><?php echo esc_html($item[1]);?></p></details><?php endforeach;?></div>
  </div></section>
- <section data-ua-stage="cta" class="pti-final psc-final"><div class="pti-wrap">
+ <?php if($psc_slug==='service-websites'){?><?php if(!empty($psc['related'])):?><div class="category-related-links"><?php foreach($psc['related'] as $link):?><a href="<?php echo esc_url(mrseo_url($link[0]));?>"><?php echo esc_html($link[1]);?> ↗</a><?php endforeach;?></div><?php endif;?><section data-ua-stage="cta" class="category-compact-cta category-hub-cta" aria-labelledby="sites-final-title"><div class="category-cta-inner"><div><h2 id="sites-final-title">Потрібен новий сайт?</h2><p>Розкажіть про бізнес. Підберемо формат сайту під ваші задачі.</p></div><a class="category-cta-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити сайт ↗</a></div></section><?php }else{?><section data-ua-stage="cta" class="pti-final psc-final"><div class="pti-wrap">
   <div class="psc-final-art"><?php mrseo_puc_art($psc_art['endId']);?></div>
   <div><span class="pti-kicker">08 / ПЕРШИЙ КРОК</span><h2 id="<?php echo esc_attr($psc_final_id);?>"><?php $psc_head($psc['ctaTitle']);?></h2><p><?php echo esc_html($psc['ctaLead']);?></p><?php if(!empty($psc['related'])):?><div class="puc-related-inline"><?php foreach($psc['related'] as $link):?><a href="<?php echo esc_url(mrseo_url($link[0]));?>"><?php echo esc_html($link[1]);?> ↗</a><?php endforeach;?></div><?php endif;?></div>
   <a class="pti-pill" href="<?php echo esc_url(mrseo_url('contact'));?>"><?php echo esc_html($psc['finalButton']??$psc['button']);?> ↗</a>
- </div></section>
+ </div></section><?php }?>
 </div>
 <?php get_footer();?>
