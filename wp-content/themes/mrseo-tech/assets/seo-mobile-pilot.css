@@ -33,3 +33,26 @@
  .seo-hub .seo-plan-step b{font-size:17px;line-height:1.5;padding-top:8px}
  .seo-hub .seo-faq-questions details{padding:14px 0}
 }
+
+/* Second iteration: benefit-first mobile hero, compact problem cards and contact pill. */
+@media(max-width:680px){
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .category-home .pt-home .pt-home-title{font-size:clamp(31px,8vw,38px);letter-spacing:-.045em;line-height:1.12;margin:12px 0}
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .category-home .pt-home-actions{gap:8px}
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .category-home .pt-home-cta{font-size:14px;padding:12px 16px}
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .category-home .pt-home-secondary{font-size:13px;padding:11px 14px}
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .category-home .pt-home-caption{margin:12px 0 0;padding-top:10px;font-size:13px;line-height:1.4}
+ .seo-hub .seo-mobile-disclosure{margin:0 0 8px}
+ .seo-hub .seo-mobile-disclosure summary{font-size:14px;min-height:44px}
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .seo-problems .seo-problem{padding-block:18px;gap:10px}
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .seo-problems .seo-problem h3{font-size:22px;line-height:1.2;margin:5px 0 8px}
+ html[lang="uk-UA"] .pti-page[data-pti-service="seo"] .seo-hub .seo-problem .seo-problem-answer p{font-size:18px;line-height:1.5;margin-top:7px}
+ .seo-hub .seo-problem p[hidden]{display:none!important}
+ .seo-hub .seo-mobile-pair-more{display:inline-flex;align-items:center;min-height:44px;padding:6px 0;border:0;background:none;color:#a84432;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+ .seo-hub .seo-mobile-pair-more:focus-visible{outline:2px solid #a84432;outline-offset:3px}
+ html[lang="uk-UA"] body:has(.pti-page[data-pti-service="seo"] .seo-hub) .mrseo-mobile-contact-bar{left:auto;right:12px;transform:none;gap:5px;width:auto;max-width:calc(100% - 24px);padding:4px;border-radius:999px;box-shadow:0 5px 20px #14251b26}
+ html[lang="uk-UA"] body:has(.pti-page[data-pti-service="seo"] .seo-hub) .mrseo-mobile-contact-bar>.mrseo-contact-popover,
+ html[lang="uk-UA"] body:has(.pti-page[data-pti-service="seo"] .seo-hub) .mrseo-mobile-contact-bar>.mrseo-mobile-call{flex:0 0 auto}
+ html[lang="uk-UA"] body:has(.pti-page[data-pti-service="seo"] .seo-hub) .mrseo-mobile-contact-bar .mrseo-contact-popover>summary,
+ html[lang="uk-UA"] body:has(.pti-page[data-pti-service="seo"] .seo-hub) .mrseo-mobile-contact-bar>.mrseo-mobile-call{min-height:44px;padding:8px 11px;gap:6px;border-radius:999px;font-size:12px;white-space:nowrap}
+ html[lang="uk-UA"] body:has(.pti-page[data-pti-service="seo"] .seo-hub) .mrseo-mobile-contact-bar .mrseo-contact-ui-panel{left:auto;right:0;bottom:calc(100% + 10px)}
+}
