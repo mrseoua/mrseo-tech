@@ -395,6 +395,14 @@ if __name__ == "__main__":
         assert old not in sitemap and HOST+'/'+target+'/' in sitemap
         status,final,_,_=fetch(old,method='HEAD')
         assert status==200 and final==HOST+'/'+target+'/', ('Retired URL not redirected',old,final)
+    for slug in ('orbit-lab','orbit-light','premium-tech-preview'):
+        url=HOST+'/'+slug+'/'
+        assert url not in sitemap
+        try:
+            fetch(url,method='HEAD')
+            fail('Public test page still accessible: '+url)
+        except HTTPError as error:
+            if error.code!=410: raise
     assert_paired_ru_pages(sitemap)
     for slug in UK_NEW_SLUGS:
         uk_url = HOST + "/en/" + slug + "/"

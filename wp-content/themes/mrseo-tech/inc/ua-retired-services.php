@@ -11,6 +11,20 @@ function mrseo_ua_retired_request(){
  $path=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');
  return mrseo_ua_retired_services()[$path]??null;
 }
+// Retire only the exact Ukrainian prototype URLs. Shared homepage templates
+// remain available to all actual language homepages.
+function mrseo_ua_retired_preview(){
+ $path=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');
+ return in_array($path,array('orbit-lab','orbit-light','premium-tech-preview'),true);
+}
+add_action('template_redirect',function(){
+ if(!mrseo_ua_retired_preview())return;
+ status_header(410);nocache_headers();
+ header('Content-Type: text/plain; charset=UTF-8');
+ header('X-Robots-Tag: noindex, nofollow',true);
+ if(($_SERVER['REQUEST_METHOD']??'GET')!=='HEAD')echo 'Цю тестову сторінку видалено.';
+ exit;
+},-101);
 add_action('template_redirect',function(){
  $target=mrseo_ua_retired_request();if(!$target)return;
  $url=home_url('/'.$target.'/');
