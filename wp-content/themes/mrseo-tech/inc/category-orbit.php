@@ -21,7 +21,7 @@ function mrseo_category_is_root(){
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_category_is_root())return;
  wp_enqueue_style('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.css',array('mrseo-style'),'1.0.1');
- wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.2.0');
+ wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.2.1');
  wp_enqueue_style('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.css',array('mrseo-category-home-layout'),'2.0.1');
  wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.js',array(),'1.0.1',true);
 },150);
@@ -61,7 +61,7 @@ function mrseo_category_orbit($slug){
 }
 function mrseo_category_icon($i){
  $icons=array('<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>','<path d="M3 5h3l3 12h11l2-9H7M10 21h.1M19 21h.1"/>','<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 9h16M8 14h8"/>','<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18 5-5 5-13 0-18"/>','<path d="M5 20V5h14v15zM8 9h8M8 13h8M8 17h5"/>','<path d="m4 9 8-5 8 5-8 5zM4 13l8 5 8-5M4 17l8 5 8-5"/>');
- echo '<svg viewBox="0 0 24 24" fill="none" stroke="#9a4c3b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'.$icons[$i%count($icons)].'</svg>';
+ echo '<svg viewBox="0 0 24 24" fill="none" stroke="#a84432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'.$icons[$i%count($icons)].'</svg>';
 }
 function mrseo_category_catalog($slug){
  $d=mrseo_category_home_data()[$slug];$items=mrseo_category_items($slug);

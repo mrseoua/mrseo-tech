@@ -1168,3 +1168,7 @@ Owner requested implementation, immediate publishing, approved warm clay-3D visu
 
 ### 26 Nov — compact WebDev CTA
 Owner screenshot showed white-on-white CTA text caused by legacy `.pti-pill` important color. Replaced only WebDev final CTA with concise heading, one sentence, visible brand-red button; removed decorative SVG and kicker. Fixed identical light-button text conflict on Ukrainian website creation hub. Added browser contrast/visibility check, bumped category CSS version. No route, homepage, other locale or indexing changes. Owner's standing approval to publish UA category corrections applies.
+
+
+### 27 Nov — UA satellite icon contrast
+Owner requested brand-red satellite glyphs instead of pale white glyphs. Scoped category-home CSS sets icon color and SVG strokes to #a84432, stroke width 2, warm ivory icon backing; cache version 2.2.1. All five Ukrainian category heroes covered, homepage unchanged. Publish under standing owner approval; verify deployment and visual contrast.
