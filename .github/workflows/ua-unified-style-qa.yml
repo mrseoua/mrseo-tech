@@ -5,6 +5,8 @@ on:
     paths:
       - 'wp-content/themes/mrseo-tech/**'
       - 'scripts/verify-ua-unified-browser.cjs'
+      - 'scripts/verify-ua-contact-submit.cjs'
+      - 'scripts/fixtures/ci-contact-mail.php'
       - '.github/workflows/ua-unified-style-qa.yml'
 permissions:
   contents: read
@@ -91,6 +93,16 @@ jobs:
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
         run: node scripts/verify-ua-unified-browser.cjs
+      - name: Test contact submission against isolated WordPress with mail intercepted
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+          MRSEO_MAIL_CAPTURE: /tmp/mrseo-ci-mail.json
+        run: |
+          set -euo pipefail
+          mkdir -p preview-wp/wp-content/mu-plugins
+          cp scripts/fixtures/ci-contact-mail.php preview-wp/wp-content/mu-plugins/ci-contact-mail.php
+          rm -f "$MRSEO_MAIL_CAPTURE"
+          node scripts/verify-ua-contact-submit.cjs
       - name: Upload Ukrainian diagnostics and screenshots
         if: always()
         uses: actions/upload-artifact@v4

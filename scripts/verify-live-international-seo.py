@@ -8,6 +8,8 @@ import concurrent.futures
 import html
 from html.parser import HTMLParser
 from urllib.request import Request, urlopen
+from urllib.parse import urljoin, urlsplit
+import re, unicodedata
 from urllib.error import HTTPError, URLError
 import xml.etree.ElementTree as ET
 
@@ -299,17 +301,33 @@ class HeadParser(HTMLParser):
         self.in_head = False
         self.links = []
         self.robots = []
+        self.titles = []
+        self.descriptions = []
+        self.anchors = []
+        self.in_title = False
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == "head":
             self.in_head = True
+        if tag == 'a' and a.get('href'):
+            self.anchors.append(a['href'])
         if not self.in_head:
             return
+        if tag == 'title':
+            self.titles.append('')
+            self.in_title = True
+        if tag == 'meta' and a.get('name','').lower() == 'description':
+            self.descriptions.append(a.get('content',''))
         if tag == "link":
             self.links.append(a)
         if tag == "meta" and a.get("name", "").lower() == "robots":
             self.robots.append(a.get("content", ""))
+    def handle_data(self, data):
+        if self.in_title:
+            self.titles[-1] += data
     def handle_endtag(self, tag):
+        if tag == 'title':
+            self.in_title = False
         if tag == "head":
             self.in_head = False
 
@@ -339,7 +357,7 @@ def check_head(url):
     robots_header = headers_lower.get("x-robots-tag", "")
     if "noindex" not in robots_header and not any("noindex" in x.lower() for x in parser.robots):
         fail(f"Staging noindex missing on {url}")
-    return url
+    return parser
 
 def check_head_request(url):
     status, target, headers, _ = fetch(url, method="HEAD")
@@ -612,11 +630,47 @@ if __name__ == "__main__":
             if error.code != 404:
                 fail(f"Expected 404 for {path}, got {error.code}")
 
+    ua_metadata = {'title':{}, 'description':{}}
+    ua_extra_links = {}
+    ua_errors = []
     for path in SAMPLE:
         url = HOST + path
         if url not in sitemap:
             fail(f"Sample URL missing from inventory: {url}")
-        check_head(url)
-
+        parser = check_head(url)
+        if url not in ua_urls:
+            continue
+        for field, values in (('title',parser.titles),('description',parser.descriptions)):
+            if len(values)!=1 or not values[0].strip():
+                ua_errors.append(f'{url}: missing or duplicate {field} elements')
+                continue
+            key=re.sub(r'\s+',' ',unicodedata.normalize('NFKC',values[0]).casefold()).strip()
+            old=ua_metadata[field].get(key)
+            if old and old!=url:
+                ua_errors.append(f'Duplicate {field}: {old} / {url}')
+            ua_metadata[field][key]=url
+        for href in parser.anchors:
+            if not href or href.startswith('#'):
+                continue
+            dest=urlsplit(urljoin(url,href))
+            if dest.scheme not in ('http','https') or dest.hostname!='mrseo.tech':
+                continue
+            if dest.path.startswith(('/wp-admin/','/wp-login.php','/wp-json/','/wp-content/')) or dest.query:
+                continue
+            clean=HOST+(dest.path or '/')
+            if clean not in sitemap:
+                ua_extra_links.setdefault(clean,set()).add(url)
+    for link,sources in sorted(ua_extra_links.items()):
+        try:
+            code,final,_,_=fetch(link,method='HEAD')
+            if code!=200:
+                ua_errors.append(f'HTTP {code}: {link}, linked from {sorted(sources)}')
+            elif final!=link:
+                print(f'UA internal redirect: {link} -> {final}')
+        except Exception as exc:
+            ua_errors.append(f'Internal link check failed: {link}, linked from {sorted(sources)}: {exc}')
+    if ua_errors:
+        fail('UA live metadata/link audit:\n'+'\n'.join(ua_errors))
+    print(f'UA live metadata PASS: {len(ua_urls)} pages; unique titles/descriptions; {len(ua_extra_links)} extra internal destinations checked.')
     print(f"Live international SEO PASS: {len(sitemap)} actual HTTP 200 pages, "
           f"{len(SAMPLE)} HTML/canonical/hreflang checks, reciprocal XML sitemap, and staging noindex.")
