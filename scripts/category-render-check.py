@@ -33,7 +33,7 @@ require 'inc/mega-menu-trial.php';
 require 'inc/ua-ads-position.php';
 require 'inc/category-orbit.php';
 """
-    code+=f"mrseo_category_{component}('{slug}');"
+    code+= "require_once 'inc/ua-header-six.php';mrseo_ua_header_catalog();" if component=="menu" else f"mrseo_category_{component}('{slug}');"
     p=subprocess.run(["php","-d","display_errors=stderr"],input=code,text=True,cwd=THEME,capture_output=True,check=True)
     assert not p.stderr,p.stderr
     return Markup(p.stdout)
