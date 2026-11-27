@@ -11,7 +11,7 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
  <div class="container hs-hero-layout">
   <div class="hs-hero-copy">
    <div class="eyebrow"><?php echo esc_html(mrseo_t('СТВОРЕННЯ, SEO ТА РЕКЛАМА МАГАЗИНІВ НА ХОРОШОП','SEO И РАЗВИТИЕ МАГАЗИНОВ НА ХОРОШОП','HOROSHOP SEO'));?></div>
-   <h1 id="horoshop-title"><?php echo wp_kses_post(mrseo_t('Магазин на Хорошоп.<br><em>Що заважає отримувати замовлення?</em>','SEO для Хорошоп.<br><em>Ваш магазин может больше.</em>','Horoshop SEO. Your store can do more.'));?></h1>
+   <h1 id="horoshop-title"><?php echo wp_kses_post(mrseo_t('Послуги для магазинів на Хорошоп.<br><em>Допоможемо розвивати продажі.</em>','SEO для Хорошоп.<br><em>Ваш магазин может больше.</em>','Horoshop SEO. Your store can do more.'));?></h1>
    <p><?php echo esc_html(mrseo_t(
     'Допомагаємо створити магазин на Хорошоп або поліпшити наявний. Якщо товари не видно в Google, фільтри створюють зайві сторінки чи Merchant Center відхиляє товари — перевіримо причину й покажемо доступні рішення.',
     'Категории не находят в Google? Фильтры мешают индексации? Merchant Center отклоняет товары? Находим причину, предлагаем решение с учётом возможностей Хорошоп и проверяем результат.',

@@ -15,7 +15,7 @@ get_header();
    <div class="ukseo-hero-copy">
     <nav class="ukseo-crumbs" aria-label="Навігація"><a href="<?php echo esc_url(mrseo_url()); ?>">Головна</a><span aria-hidden="true">/</span><span>SEO-просування</span></nav>
     <p class="ukseo-kicker"><span aria-hidden="true"></span> SEO-ПРОСУВАННЯ САЙТІВ</p>
-    <h1 id="ukseo-title">Клієнти шукають у Google. <em>А знаходять конкурентів?</em></h1>
+    <h1 id="ukseo-title">SEO-просування сайтів. <em>Допоможемо клієнтам знайти вас.</em></h1>
     <p class="ukseo-hero-lead">Перевіримо, які сторінки Google не показує, які послуги шукають клієнти та чому люди не переходять на ваш сайт. Складемо план виправлень і погодимо, що змінювати першочергово.</p>
     <div class="ukseo-actions">
      <a class="ukseo-button ukseo-button-dark" href="<?php echo esc_url(mrseo_url('contact')); ?>">Розібрати проблему мого сайту <span aria-hidden="true">↗</span></a>
