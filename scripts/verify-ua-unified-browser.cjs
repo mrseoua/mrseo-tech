@@ -79,7 +79,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       const rootFont=e=>parseFloat(getComputedStyle(e).fontSize);
       const sample=[...document.querySelectorAll('.pti-page.puc-page:not(.ads-v2) .pti-card p,.pti-page[data-pti-service="web-development"] .pti-card p,.udv-card p,.udv-step p,.hs-premium-step p,.hs-premium-faq-list p')].filter(shown);
       const bounds=[...document.querySelectorAll('.pti-hero-copy,.pti-page .pti-wrap,.udv-section>.container,.hs-premium-wrap,.about-hero-copy,.mrseo-privacy-container')].filter(shown).map(e=>({class:e.className,left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right}));
-      const cta=document.querySelector('.category-compact-cta a.pti-pill');
+      const cta=document.querySelector('.category-compact-cta a.pti-pill,.category-hub-cta a.category-cta-button');
       const luminance=color=>{const channels=(color.match(/[0-9.]+/g)||[]).slice(0,3).map(v=>{const x=Number(v)/255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4});return channels.length===3?.2126*channels[0]+.7152*channels[1]+.0722*channels[2]:0;};
       const ctaStyle=cta?getComputedStyle(cta):null;const ctaContrast=ctaStyle?((Math.max(luminance(ctaStyle.color),luminance(ctaStyle.backgroundColor))+.05)/(Math.min(luminance(ctaStyle.color),luminance(ctaStyle.backgroundColor))+.05)):0;
       const ctaVisible=!!cta&&shown(cta)&&!!cta.textContent.trim()&&cta.getBoundingClientRect().height>=44;
@@ -99,7 +99,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      if(!['/mobile-app-development/','/ecommerce-mobile-apps/','/corporate-mobile-apps/','/pwa-development/'].every(p=>data.menu.includes(p)))errors.push('Missing mobile service link');
      if(paired.has(slug)&&(data.pairs!==3||data.completePairs!==3))errors.push('Missing visible problem-to-solution pairs: '+data.completePairs+'/'+data.pairs);
      if(referenceSelectors[slug]&&data.referenceAnswers!==3)errors.push('Missing reference-layout solutions: '+data.referenceAnswers);
-     if(slug==='web-development'&&(!data.ctaVisible||data.ctaContrast<4.5))errors.push('WebDev CTA label invisible or low contrast');
+     if(['seo','google-ads','horoshop','service-websites','web-development'].includes(slug)&&(!data.ctaVisible||data.ctaContrast<4.5))errors.push('Category CTA label invisible or low contrast');
      if(slug==='web-development'&&data.devHubOpen!==3)errors.push('WebDev hub solutions are not visible');
      if(slug==='web-development'&&(data.devPictureCount!==15||data.devPictureUnique!==15))errors.push('WebDev repeated or missing capability picture');
      if(!editorial.has(slug)){

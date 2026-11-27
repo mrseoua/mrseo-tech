@@ -157,8 +157,8 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
 </section><?php }?>
 <?php endif; ?>
 
-<section data-ua-stage="work" class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid">
- <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-store-process','pue-hs-story');?><?php if(mrseo_locale()==='uk')mrseo_pue_pause();?></div>
+<section data-ua-stage="work" class="ukseo-delivery" aria-labelledby="ukhoroshop-delivery-title"><div class="container ukseo-delivery-grid<?php if(mrseo_locale()==='uk')echo ' category-text-work';?>">
+ <div><span class="ukseo-kicker">ЩО МОЖНА ДОРУЧИТИ НАМ</span><h2 id="ukhoroshop-delivery-title">Від запуску магазину <em>до пошуку причин слабких продажів.</em></h2><p>Склад послуг залежить від етапу розвитку: новий магазин, існуючий каталог або реклама, яка не дає очікуваного результату.</p></div>
  <div class="ukseo-delivery-list">
   <div><span aria-hidden="true">01</span><div><h3>Створення магазину на Хорошоп</h3><p>Структура каталогу, навігація, основні сторінки й готовність до запуску.</p></div></div>
   <div><span aria-hidden="true">02</span><div><h3>SEO та робота з індексацією</h3><p>Посадкові сторінки під попит, перелінкування, метадані й контроль технічних URL.</p></div></div>
@@ -174,9 +174,9 @@ get_header();if(mrseo_locale()==='uk')mrseo_pue_marker('horoshop');
   <details><summary>Чи можете допомогти з відхиленнями товарів у Merchant Center?<span aria-hidden="true">+</span></summary><p>Так, аналізуємо діагностику, товарні дані та відповідність магазину фіду. Рішення залежить від причини відхилення та правил Google.</p></details>
  </div>
 </div></section>
-<section data-ua-stage="cta" class="ukseo-final" aria-labelledby="ukhoroshop-final-title"><div class="container ukseo-final-grid">
+<?php if(mrseo_locale()==='uk'){?><section data-ua-stage="cta" class="category-compact-cta category-hub-cta" aria-labelledby="ukhoroshop-final-title"><div class="category-cta-inner"><div><h2 id="ukhoroshop-final-title">Потрібно більше замовлень?</h2><p>Надішліть адресу магазину на Хорошоп. Знайдемо точки росту.</p></div><a class="category-cta-button" href="<?php echo esc_url(mrseo_url('contact','uk'));?>">Обговорити магазин ↗</a></div></section><?php }else{?><section data-ua-stage="cta" class="ukseo-final" aria-labelledby="ukhoroshop-final-title"><div class="container ukseo-final-grid">
  <div><?php if(mrseo_locale()==='uk')mrseo_pue_art('hs-next','pue-hs-next');?><span class="ukseo-kicker">ПЕРШИЙ КРОК</span><h2 id="ukhoroshop-final-title">Магазин працює. <em>Знайдімо, що стримує його зростання.</em></h2><p>Надішліть адресу вашого магазину й коротко опишіть проблему. Почнемо з перевірки того, що справді впливає на результат.</p></div>
  <a class="ukseo-button ukseo-button-light" href="<?php echo esc_url(mrseo_url('contact'));?>">Обговорити Хорошоп <span aria-hidden="true">↗</span></a>
-</div></section>
+</div></section><?php }?>
 </div>
 <?php get_footer();?>

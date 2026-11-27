@@ -1172,3 +1172,7 @@ Owner screenshot showed white-on-white CTA text caused by legacy `.pti-pill` imp
 
 ### 27 Nov — UA satellite icon contrast
 Owner requested brand-red satellite glyphs instead of pale white glyphs. Scoped category-home CSS sets icon color and SVG strokes to #a84432, stroke width 2, warm ivory icon backing; cache version 2.2.1. All five Ukrainian category heroes covered, homepage unchanged. Publish under standing owner approval; verify deployment and visual contrast.
+
+
+### 27 Nov — align remaining four UA hubs with WebDev
+Owner requested the approved WebDev category style on SEO, Google Ads, Horoshop and Website Creation. Existing planet heroes, linked premium illustration catalogues and brand-red satellites retained. Removed large repeated lower illustrations from Ads, Horoshop and website creation hub only; retained three-column work copy, results, commercial terms, FAQ, existing related URLs, and plan content. SEO already had a text work block. Four unique compact red-button CTAs matching WebDev; extend browser contrast test to all five hubs. Homepage, WebDev template, child pages, other locales, SEO and noindex unchanged. Standing publication approval; verify live deployment and CI.
