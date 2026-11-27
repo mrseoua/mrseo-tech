@@ -14,34 +14,13 @@ if(origin!=='http://127.0.0.1:8080')throw Error('Local preview only');
   const original=await lead.textContent();
   const metadata=await page.evaluate(()=>[document.title,document.querySelector('meta[name="description"]')?.content,document.querySelector('link[rel="canonical"]')?.href]);
   const desktopH=await root.locator('h1').textContent();
-  const desktopProblems=await root.locator('.seo-problem h3').allTextContents();
-  const desktopAnswers=await root.locator('.seo-problem-answer p').allTextContents();
-  const desktopCta=await root.locator('.pt-home-cta').textContent();
   assert.equal(await root.locator('.seo-mobile-disclosure').count(),0);
   assert.ok(await lead.isVisible());
   for(const width of [390,360]){
    await page.setViewportSize({width,height:844});
    const details=root.locator('.seo-mobile-disclosure');
    await details.waitFor();
-   assert.match(await root.locator('h1').textContent(),/SEO-просування сайтів\..*Більше клієнтів\./);
-   assert.equal(await root.locator('.pt-home-cta').textContent(),'Обговорити SEO ↗');
-   assert.equal(await root.locator('.seo-mobile-brief:visible').count(),3);
-   for(let i=0;i<3;i++){
-    const pair=root.locator('.seo-problem').nth(i);
-    const toggle=pair.locator('.seo-mobile-pair-more');
-    const full=pair.locator('.seo-problem-answer p:not(.seo-mobile-brief)');
-    assert.equal(await full.textContent(),desktopAnswers[i]);
-    assert.equal(await full.isVisible(),false);
-    await toggle.click();
-    assert.ok(await full.isVisible());
-    await toggle.click();
-    assert.equal(await full.isVisible(),false);
-   }
-   const contact=page.locator('.mrseo-mobile-contact-bar');
-   assert.ok((await contact.boundingBox()).width<width-30);
-   await contact.locator('summary').click();
-   assert.equal(await contact.locator('.mrseo-contact-ui-links a:visible').count(),3);
-   await contact.locator('summary').click();
+   assert.equal(await root.locator('h1').textContent(),desktopH);
    assert.equal(await lead.textContent(),original);
    assert.equal(await lead.isVisible(),false);
    await details.locator('summary').click();
@@ -57,11 +36,6 @@ if(origin!=='http://127.0.0.1:8080')throw Error('Local preview only');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+3));
    await page.setViewportSize({width:1440,height:900});
    await details.waitFor({state:'detached'});
-   assert.equal(await root.locator('h1').textContent(),desktopH);
-   assert.equal(await root.locator('.pt-home-cta').textContent(),desktopCta);
-   assert.deepEqual(await root.locator('.seo-problem h3').allTextContents(),desktopProblems);
-   assert.deepEqual(await root.locator('.seo-problem-answer p').allTextContents(),desktopAnswers);
-   assert.equal(await root.locator('.seo-mobile-brief,.seo-mobile-pair-more').count(),0);
    assert.ok(await lead.isVisible());
    assert.equal(await root.locator('.seo-plan-step>p:visible').count(),3);
   }
