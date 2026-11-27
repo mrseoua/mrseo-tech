@@ -90,11 +90,4 @@
  html[lang="uk-UA"] .contact-layout :is(.contact-brief,.contact-form-wrap){padding:18px}
  html[lang="uk-UA"] .contact-layout .contact-field{margin-bottom:12px}
  html[lang="uk-UA"] .contact-layout :is(input:not([type="hidden"]),textarea,select){font-size:16px}
- /* Keep two contact actions but reclaim screen width. */
- html[lang="uk-UA"] .mrseo-mobile-contact-bar{left:auto;right:12px;transform:none;gap:5px;width:auto;max-width:calc(100% - 24px);padding:4px;border-radius:999px}
- html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-contact-popover,
- html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-mobile-call{flex:0 0 auto}
- html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-popover>summary,
- html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-mobile-call{min-height:44px;padding:8px 10px;gap:6px;border-radius:999px;font-size:12px;white-space:nowrap}
- html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-ui-panel{left:auto;right:0;bottom:calc(100% + 10px)}
 }

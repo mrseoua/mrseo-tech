@@ -59,6 +59,25 @@ const measure=page=>page.evaluate(()=>{
      await toggle.click();assert.equal(await toggle.getAttribute('aria-expanded'),'true');assert.ok(await p.isVisible());
      await toggle.click();assert.equal(await p.isVisible(),false);
     }
+    // Verify the single message action and its menu on narrow phones.
+    for(const width of [390,360,320]){
+     await b.setViewportSize({width,height:844});
+     const bar=b.locator('.mrseo-mobile-contact-bar');
+     const summary=bar.locator('summary');
+     assert.equal(await bar.locator('.mrseo-mobile-call').isVisible(),false);
+     const button=await summary.boundingBox();
+     assert.ok(button&&button.x>=8&&button.x+button.width<=width-8&&button.height>=44&&button.width<=160,'Message button out of bounds');
+     await summary.click();
+     const panel=bar.locator('.mrseo-contact-ui-panel');
+     assert.ok(await panel.isVisible(),'Contact messenger menu hidden');
+     const rect=await panel.boundingBox();
+     assert.ok(rect.x>=-1&&rect.x+rect.width<=width+1&&rect.y>=0&&rect.y+rect.height<=844,'Messenger menu off-screen: '+JSON.stringify(rect));
+     assert.equal(await panel.locator('a:visible').count(),3);
+     assert.deepEqual(await panel.locator('a span:first-child').allTextContents(),['Telegram','Viber','WhatsApp']);
+     await summary.click();
+     assert.equal(await panel.isVisible(),false);
+    }
+    await b.setViewportSize({width:390,height:844});
     const name=slug.replaceAll('/','-')||'home';
     await b.evaluate(()=>scrollTo(0,0));
     await b.screenshot({path:path.join(shotDir,name+'-390.jpg'),type:'jpeg',quality:78,animations:'disabled'});
@@ -73,7 +92,9 @@ const measure=page=>page.evaluate(()=>{
    console.log(JSON.stringify(item));
   }
   await b.goto(origin+'/en/',{waitUntil:'load'});
-  assert.equal(await b.locator('link[href*="/ua-mobile-compact.css"]').count(),0);
+  assert.equal(await b.locator('link[href*="ua-mobile-compact.css"]').count(),0);
+  await b.setViewportSize({width:390,height:844});
+  assert.ok(await b.locator('.mrseo-mobile-contact-bar .mrseo-mobile-call').isVisible(),'Foreign locale phone action unexpectedly removed');
  }finally{await browser.close();}
  const failed=results.filter(r=>r.errors.length);
  fs.writeFileSync(path.join(shotDir,'report.json'),JSON.stringify({routes:results.length,failed:failed.length,results},null,2));
