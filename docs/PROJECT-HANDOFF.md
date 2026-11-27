@@ -1176,3 +1176,7 @@ Owner requested brand-red satellite glyphs instead of pale white glyphs. Scoped 
 
 ### 27 Nov — align remaining four UA hubs with WebDev
 Owner requested the approved WebDev category style on SEO, Google Ads, Horoshop and Website Creation. Existing planet heroes, linked premium illustration catalogues and brand-red satellites retained. Removed large repeated lower illustrations from Ads, Horoshop and website creation hub only; retained three-column work copy, results, commercial terms, FAQ, existing related URLs, and plan content. SEO already had a text work block. Four unique compact red-button CTAs matching WebDev; extend browser contrast test to all five hubs. Homepage, WebDev template, child pages, other locales, SEO and noindex unchanged. Standing publication approval; verify live deployment and CI.
+
+
+### 27 Nov — strict visible-menu parity in UA category navigation
+Owner requires satellites and tiles to contain exactly the existing visible menu services, no hidden/legacy pages. Refactored actual compact header into shared visible-menu sections while preserving its output/order/labels. Categories now consume that exact list: SEO 5, Ads 4, Horoshop 4, Websites 4, WebDev 14 (31 total). Dense WebDev orbit uses moving clickable icons plus readable stationary label grid to avoid collisions; category-only engine fork, home sources untouched. Existing service URLs, artwork, metadata and sitemap retained; no deletion or indexing changes. Updated category regression and browser exact menu/links/labels parity. Standing publication approval applies.

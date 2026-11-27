@@ -13,12 +13,13 @@ class Markup(HTMLParser):
         if tag=="img": self.images.append(a.get("src",""))
         if "id" in a: self.ids.append(a["id"])
 def render_category(slug, component):
-    assert component in ("orbit","catalog")
+    assert component in ("orbit","catalog","menu")
     code="""<?php
 define('ABSPATH',__DIR__.'/');
 function add_action(...$args){}
 function add_filter(...$args){}
 function mrseo_locale(){return 'uk';}
+function mrseo_slug(){return '';}
 function get_template_directory(){return getcwd();}
 function get_template_directory_uri(){return 'https://example.test/theme';}
 function home_url($s='/'){return 'https://example.test'.$s;}

@@ -138,6 +138,6 @@ _category_check=runpy.run_path(str(Path(__file__).with_name("category-render-che
 render_category=_category_check["render_category"]
 paths=_category_check["paths"]
 assert render_category("horoshop","orbit").h1==1
-assert paths(render_category("horoshop","catalog"))=={"/horoshop/"+key+"/" for key in ("setup","seo","audit","ads","search-ads","shopping","pmax","feeds","ga4")}
-assert set(anchors)<=set(render_category("horoshop","catalog").ids)
+assert paths(render_category("horoshop","catalog"))=={"/horoshop/"+key+"/" for key in ("seo","audit","ads","feeds")}
+assert {"hs-seo","hs-audit","hs-ads","hs-feeds"}<=set(render_category("horoshop","catalog").ids)
 print("Horoshop UA: six premium routes, premium below-fold motion narratives and interactive hero, original partner visual, metadata, noindex and UA/RU routing preserved.")

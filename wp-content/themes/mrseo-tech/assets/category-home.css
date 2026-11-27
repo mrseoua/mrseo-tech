@@ -4,3 +4,25 @@
 .category-home .pt-home .pt-node-icon svg{color:#a84432;stroke:currentColor;stroke-width:2;opacity:1}
 .category-home .pt-home .pt-node-icon svg :is(path,rect,circle,line,polyline,polygon,ellipse){stroke:currentColor;opacity:1}
 .category-home .pt-home .pt-mobile-sat .pt-node-icon{color:#a84432}
+
+/* Dense menu inventories: keep all labels readable and orbit every matching service icon. */
+.category-home .pt-home .pt-mobile-sat{pointer-events:auto;text-decoration:none}
+.category-home .pt-home .pt-mobile-sat:hover{border-color:#a84432}
+.category-home .pt-home .category-dense-orbit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;height:auto;min-height:0;aspect-ratio:auto;padding-top:clamp(330px,32vw,450px)}
+.category-home .pt-home .category-dense-orbit .pt-globe{top:clamp(155px,15vw,205px);width:min(68%,315px)}
+.category-home .pt-home .category-dense-orbit .pt-globe-tag{top:clamp(295px,29vw,410px)}
+.category-home .pt-home .category-dense-orbit .pt-orbit-ring{top:clamp(155px,15vw,205px);height:clamp(270px,27vw,370px);width:min(90%,500px)}
+.category-home .pt-home .category-dense-orbit .pt-orbit-lines{display:none}
+.category-home .pt-home .category-dense-orbit .pt-mobile-sats{display:block}
+.category-home .pt-home .category-dense-orbit>.pt-node{position:relative!important;inset:auto!important;width:100%!important;min-height:58px;grid-column:auto;justify-self:stretch;transform:none!important}
+.category-home .pt-home .category-dense-orbit .pt-node-label{font-size:14px;overflow-wrap:anywhere}
+@media(max-width:680px){
+ .category-home .pt-home .category-dense-orbit{padding-top:clamp(345px,95vw,475px)}
+ .category-home .pt-home .category-dense-orbit .pt-globe{top:clamp(150px,42vw,210px);width:min(75%,300px)}
+ .category-home .pt-home .category-dense-orbit .pt-globe-tag{top:clamp(315px,86vw,440px)}
+ .category-home .pt-home .category-dense-orbit .pt-orbit-ring{top:clamp(150px,42vw,210px);height:clamp(260px,76vw,360px);transform:translate(-50%,-50%) rotate(-14deg)}
+ .category-home .pt-home .category-dense-orbit .pt-orbit-ring.r2{transform:translate(-50%,-50%) rotate(18deg)}
+ .category-home .pt-home .category-dense-orbit .pt-node-label{font-size:12px}
+ .category-home .pt-home .pt-orbit>.pt-node.n4{grid-column:auto;justify-self:stretch;width:100%}
+ .category-home .pt-home .pt-orbit:not(.category-dense-orbit)>.pt-node.n4:last-of-type{grid-column:1/-1;justify-self:center;width:min(100%,335px)}
+}
