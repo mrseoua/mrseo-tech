@@ -6,8 +6,10 @@ require_once __DIR__.'/international-home-copy.php';
 require_once __DIR__.'/uk-market-home-copy.php';
 function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/');$a=explode('/',$s);return in_array($a[0]??'',array('ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true)?$a[0]:'uk';}
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true))array_shift($a);return sanitize_title($a[0]??'');}
+require_once __DIR__.'/ua-retired-services.php';
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ if($lang==='uk')$slug=mrseo_ua_active_service_slug($slug);
  // Exact UA-only Horoshop subservice links; never fabricate foreign routes.
  if(str_starts_with($slug,'horoshop/')&&function_exists('mrseo_hs_pages')&&isset(mrseo_hs_pages()[substr($slug,9)])){
   if($lang==='uk')return mrseo_i18n_exact_url('uk',$slug);

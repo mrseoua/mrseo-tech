@@ -13,7 +13,10 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 693
+from pathlib import Path
+import json
+RETIRED = json.loads((Path(__file__).resolve().parents[1]/'wp-content/themes/mrseo-tech/inc/ua-retired-services.json').read_text())
+EXPECTED_PAGES = 659
 UA_EXTRA = ['client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development'] + ['horoshop/'+key for key in ('setup','seo','audit','ads','search-ads','shopping','pmax','feeds','ga4')]
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
@@ -274,12 +277,13 @@ def assert_paired_ru_pages(sitemap):
             expected["da-DK"] = HOST + "/da/" + slug + "/"
             for locale, code in FINAL_MARKETS.items():
                 expected[code] = HOST + "/" + locale + "/" + slug + "/"
+        if slug in RETIRED: expected.pop("uk-UA",None)
         if slug == "google-ads-audit":
             if sitemap.get(HOST + "/en/google-ads-audit/") != expected:
                 fail("UK Ads audit not reciprocal with UA/RU/PL/DE")
             if sitemap.get(HOST + "/pl/audyt-google-ads/") != expected:
                 fail("PL Ads audit not reciprocal with UA/RU/UK/DE")
-        if sitemap.get(ua) != expected or sitemap.get(ru) != expected:
+        if (slug not in RETIRED and sitemap.get(ua) != expected) or sitemap.get(ru) != expected:
             fail(f"RU/UA real hreflang counterpart missing or invented: {slug}")
 
 def fetch(url, method="GET", timeout=16):
@@ -380,11 +384,17 @@ if __name__ == "__main__":
         fail(f"Sitemap has {len(sitemap)} URLs; expected {EXPECTED_PAGES}")
 
     ua_urls = [url for url, alts in sitemap.items() if alts.get('uk-UA') == url]
-    assert len(ua_urls) == 75, ('UA sitemap count', len(ua_urls))
+    assert len(ua_urls) == 41, ('UA sitemap count', len(ua_urls))
     for slug in UA_EXTRA:
+        if slug in RETIRED: continue
         url = HOST + '/' + slug + '/'
         assert sitemap.get(url) == {'uk-UA': url}, ('Missing UA-only canonical', slug)
-    SAMPLE[:] = sorted(set(SAMPLE) | {url[len(HOST):] for url in ua_urls})
+    SAMPLE[:] = sorted(path for path in set(SAMPLE) | {url[len(HOST):] for url in ua_urls} if path.strip('/') not in RETIRED)
+    for slug,target in RETIRED.items():
+        old=HOST+'/'+slug+'/'
+        assert old not in sitemap and HOST+'/'+target+'/' in sitemap
+        status,final,_,_=fetch(old,method='HEAD')
+        assert status==200 and final==HOST+'/'+target+'/', ('Retired URL not redirected',old,final)
     assert_paired_ru_pages(sitemap)
     for slug in UK_NEW_SLUGS:
         uk_url = HOST + "/en/" + slug + "/"
@@ -463,6 +473,7 @@ if __name__ == "__main__":
                 expected["da-DK"] = HOST + "/da/" + slug + "/"
                 for locale, code in FINAL_MARKETS.items():
                     expected[code] = HOST + "/" + locale + "/" + slug + "/"
+        if slug in RETIRED: expected.pop("uk-UA",None)
         if any(sitemap.get(href) != expected for href in expected.values()):
             fail(f"Unpaired real international service: {slug}")
 

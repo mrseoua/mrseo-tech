@@ -209,7 +209,11 @@ function mrseo_i18n_page_groups() {
     // Additional original UA services: one genuine Ukrainian version each.
     foreach(array_keys(mrseo_ua_dev_new_pages()) as $slug)$groups[]=array('group'=>'ua-dev:'.$slug,'pages'=>array('uk'=>$slug));
     foreach(array_keys(mrseo_hs_pages()) as $key)$groups[]=array('group'=>'ua-horoshop:'.$key,'pages'=>array('uk'=>'horoshop/'.$key));
-    return $groups;
+    foreach($groups as $i=>$group){
+        if(isset($group['pages']['uk'])&&isset(mrseo_ua_retired_services()[$group['pages']['uk']]))unset($groups[$i]['pages']['uk']);
+        if(!$groups[$i]['pages'])unset($groups[$i]);
+    }
+    return $groups=array_values($groups);
 }
 
 /**

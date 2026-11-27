@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (693 URLs)
+ * - all completed pages are represented exactly once (659 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -71,8 +71,8 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 78, 'Expected 78 editorial equivalence groups');
-assert_seo(count($inventory) === 693, 'Expected 693 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($groups) === 59, 'Expected 59 active editorial equivalence groups');
+assert_seo(count($inventory) === 659, 'Expected 659 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
     'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs(),mrseo_ua_expansion_slugs(),array_keys(mrseo_ua_dev_new_pages()),array_map(static fn($key)=>'horoshop/'.$key,array_keys(mrseo_hs_pages()))),
@@ -98,6 +98,7 @@ $expected = [
 ];
 foreach ($expected as $lang => $slugs) {
     $expected[$lang] = array_values(array_unique($slugs));
+    if($lang==='uk')$expected[$lang]=array_values(array_diff($expected[$lang],array_keys(mrseo_ua_retired_services())));
 }
 $seen = [];
 $url_groups = [];
@@ -114,8 +115,8 @@ foreach ($inventory as $entry) {
     $url_groups[$url] = $entry['group'];
     assert_seo(isset($entry['alternates'][$codes[$lang]]) &&
         $entry['alternates'][$codes[$lang]] === $url, "Missing self hreflang on $url");
-    if(str_starts_with($entry['group'],'en-gb-only:')||str_starts_with($entry['group'],'ua-expansion:')||str_starts_with($entry['group'],'ua-dev:')||str_starts_with($entry['group'],'ua-horoshop:'))
-        assert_seo(count($entry['alternates']) === 1, "UK-specific service has false foreign translations: $url");
+    if(count($entry['alternates'])===1)
+        assert_seo($entry['alternates']===array($codes[$lang]=>$url), "Single-locale self alternate: $url");
     else
         assert_seo(count($entry['alternates']) >= 2, "Invalid hreflang on $url");
     if ($entry['default'] !== null) {
@@ -124,7 +125,7 @@ foreach ($inventory as $entry) {
         $home_count++;
     }
 }
-assert_seo(count($seen) === 693 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 659 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -192,6 +193,7 @@ foreach(mrseo_ua_website_slugs() as $slug){
   'Missing full original localized content '.$slug);
  assert_seo($ua['lead']!==$ru['lead'],'Untranslated Russian lead '.$slug);
  foreach(array('uk','ru') as $language){
+  if($language==='uk'&&isset(mrseo_ua_retired_services()[$slug]))continue;
   $_SERVER['REQUEST_URI']=mrseo_i18n_exact_url($language,$slug);
   $entry=mrseo_i18n_current_entry();
   assert_seo($entry&&$entry['group']==='ua-service:'.$slug,'Missing exact canonical '.$language.'/'.$slug);
@@ -226,10 +228,11 @@ foreach(mrseo_ua_website_slugs() as $slug){
    foreach(mrseo_final_market_codes() as $final_locale=>$final_code)
     if(in_array($slug,mrseo_final_market_slugs($final_locale),true))
      $expectedAlternates[$final_code]='https://mrseo.tech/'.$final_locale.'/'.$slug.'/';
+  if(isset(mrseo_ua_retired_services()[$slug]))unset($expectedAlternates['uk-UA']);
   assert_seo($entry['alternates']===$expectedAlternates,
     'Wrong genuine international hreflang set '.$slug);
   $other=$language==='uk'?'ru':'uk';
-  assert_seo(mrseo_url($slug,$other)===mrseo_i18n_exact_url($other,$slug),
+  assert_seo(mrseo_url($slug,$other)===mrseo_i18n_exact_url($other,$other==='uk'?mrseo_ua_active_service_slug($slug):$slug),
     'Language selector cannot reach true RU/UA counterpart '.$slug);
  }
  // Third languages have no completed individual copies; use a real parent page.
@@ -330,7 +333,7 @@ foreach(array('catalog-automation','api-integrations','web-applications','ga4-co
  $_SERVER['REQUEST_URI']='/en/'.$slug.'/';
  $entry=mrseo_i18n_current_entry();
  assert_seo($entry && $entry['group']==='ua-ru:'.$slug &&
-   $entry['alternates']===array_merge(array('uk-UA'=>'https://mrseo.tech/'.$slug.'/',
+   $entry['alternates']===array_merge(isset(mrseo_ua_retired_services()[$slug])?array():array('uk-UA'=>'https://mrseo.tech/'.$slug.'/'),array(
    'ru'=>'https://mrseo.tech/ru/'.$slug.'/',
    'en-GB'=>'https://mrseo.tech/en/'.$slug.'/'),
    in_array($slug,mrseo_pl_service_slugs(),true)?array('pl-PL'=>'https://mrseo.tech/pl/'.$slug.'/'):array(),
@@ -398,7 +401,8 @@ foreach($exp as $slug=>$d){
  $_SERVER['REQUEST_URI']='/'.$slug.'/';
  assert_seo(mrseo_ua_expansion_route(),'New UA route missing '.$slug);
  $entry=mrseo_i18n_current_entry();
- assert_seo($entry&&count($entry['alternates'])===1&&$entry['canonical']==='https://mrseo.tech/'.$slug.'/','False alternate or canonical '.$slug);
+ if(isset(mrseo_ua_retired_services()[$slug]))assert_seo($entry===null,'Archived service still in SEO registry '.$slug);
+ else assert_seo($entry&&count($entry['alternates'])===1&&$entry['canonical']==='https://mrseo.tech/'.$slug.'/','False alternate or canonical '.$slug);
  assert_seo(count($d['headline'])===2&&count($d['pains'])===3&&count($d['benefits'])===3&&count($d['faq'])===3&&count($d['tabs'])===3,'Incomplete new commercial copy '.$slug);
  foreach(mrseo_i18n_locale_codes() as $language=>$code){
   if($language==='uk')continue;
@@ -412,7 +416,7 @@ foreach(array('title','lead','foot','problemHeading','problemLead','result','des
 // UA semantic coverage and exact emitted metadata for each real canonical page.
 $ua_map=mrseo_ua_semantic_map();
 $ua_inventory=array_values(array_filter($inventory,static function($e){return $e['language']==='uk';}));
-assert_seo(count($ua_map)===59&&count($ua_inventory)===75,'UA semantic coverage');
+assert_seo(count($ua_map)===59&&count($ua_inventory)===41,'UA semantic coverage');
 foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===59,'Duplicate UA semantic '.$field);
 foreach($ua_inventory as $entry){
  $slug=$entry['slug'];$_SERVER['REQUEST_URI']=parse_url($entry['loc'],PHP_URL_PATH);
@@ -434,7 +438,7 @@ foreach($ua_inventory as $entry){
  assert_seo(strpos($head,'name="keywords"')===false,'Hidden meta keywords '.$slug);
  $titles=$GLOBALS['test_filters']['pre_get_document_title'][999]??array();
  assert_seo(count($titles)===1&&call_user_func($titles[0],'fallback')===$m['title'],'Wrong UA title '.$slug);
- foreach($m['related']??array() as $link)assert_seo($link[0]!==$slug&&isset($seen[mrseo_i18n_exact_url('uk',$link[0])]),'Bad UA semantic related link '.$slug);
+ foreach($m['related']??array() as $link)assert_seo($link[0]!==$slug&&isset($seen[mrseo_i18n_exact_url('uk',mrseo_ua_active_service_slug($link[0]))]),'Bad UA semantic related link '.$slug);
 }
 $_SERVER['REQUEST_URI']='/ru/seo/';
 assert_seo(mrseo_ua_semantic_current()===null,'UA semantics leaked to RU');
@@ -450,7 +454,7 @@ foreach(mrseo_ua_menu_groups() as $group){
 $commercial_slugs=array_keys(array_filter(mrseo_ua_semantic_map(),static function($m){return $m['intent']==='commercial';}));
 sort($menu_slugs);sort($commercial_slugs);
 assert_seo(count(mrseo_ua_menu_groups())===7&&count($menu_slugs)===54&&$menu_slugs===$commercial_slugs,'UA architecture menu coverage');
-foreach($menu_slugs as $slug)assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Invalid UA menu URL '.$slug);
+foreach($menu_slugs as $slug)assert_seo(isset($seen[mrseo_i18n_exact_url('uk',mrseo_ua_active_service_slug($slug))]),'Invalid UA menu URL '.$slug);
 $seo_group=array_values(array_filter(mrseo_ua_menu_groups(),static function($g){return $g['key']==='seo';}))[0];
 $seo_hub_slugs=array();foreach($seo_group['sections'] as $section){foreach($section['items'] as $item)$seo_hub_slugs[]=$item[0];}
 assert_seo(count($seo_group['sections'])===5&&count($seo_hub_slugs)===18&&count(array_unique($seo_hub_slugs))===18&&$seo_group['planned']===array(),'Complete SEO hub inventory');
@@ -460,5 +464,10 @@ foreach(mrseo_ua_menu_groups() as $group){foreach($group['planned'] as $item)$pl
 foreach(mrseo_ua_menu_industries() as $group){foreach($group['items'] as $item)$planned_menu[]=$item[0];}
 assert_seo(count($planned_menu)===39&&count(array_unique($planned_menu))===39,'UA planned menu coverage');
 foreach($planned_menu as $slug)assert_seo(!in_array($slug,$menu_slugs,true)&&!in_array($slug,array('horoshop-integrations','horoshop-automation','horoshop-migration'),true),'Invalid planned menu scope '.$slug);
+foreach(mrseo_ua_retired_services() as $slug=>$target){
+ $_SERVER['REQUEST_URI']='/'.$slug.'/?utm_source=qa';
+ assert_seo(mrseo_i18n_current_entry()===null&&mrseo_ua_retired_request()===$target,'Retired UA URL still active '.$slug);
+ assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$target)])&&!isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Retirement target/source incorrect '.$slug);
+}
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";

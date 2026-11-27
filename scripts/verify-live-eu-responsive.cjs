@@ -25,7 +25,8 @@ const commercialTwoFaq=["merchant-center","google-shopping","ga4-conversions","b
 const premiumEditorialFamilies={"horoshop":["hs-categories","hs-filters","hs-feed","hs-store-process","hs-next"],"about":["about-experience","about-listen","about-investigate","about-solve","about-network","about-fit-store","about-fit-service","about-fit-ads","about-next"],"portfolio":["portfolio-count","portfolio-seo","portfolio-ads","portfolio-data","portfolio-web","portfolio-sectors","portfolio-lock","portfolio-next"],"contact":["contact-describe","contact-address","contact-next"],"privacy":[]};
 const premiumEditorialSlugs=Object.keys(premiumEditorialFamilies);
 const premiumSeoSlugs=['local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'];
-const allUaPremiumSlugs=['','seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs];
+const retiredUA=JSON.parse(readSource(require('node:path').join(require('node:path').dirname(sourcePath),'ua-retired-services.json'),'utf8'));
+const allUaPremiumSlugs=['','seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs].filter(k=>!Object.hasOwn(retiredUA,k));
 // The actual WordPress SEO inventory, not menu labels, defines completion.
 async function assertUaInventory(){
  const response=await fetch(HOST+'/mrseo-locales-sitemap.xml');
@@ -34,9 +35,9 @@ async function assertUaInventory(){
  const published=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1].replace(/&amp;/g,'&')).pathname.replace(/^\/+|\/+$/g,''));
  const foreign=new Set(['ru','en','pl','de',...allLocales]);
  const ua=published.filter(path=>!foreign.has(path.split('/')[0]));
- const expected=new Set(allUaPremiumSlugs),actual=new Set(ua);
+ const expected=new Set([...allUaPremiumSlugs,'horoshop/seo','horoshop/audit','horoshop/ads','horoshop/feeds','client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development']),actual=new Set(ua);
  const missing=[...actual].filter(path=>!expected.has(path)),extra=[...expected].filter(path=>!actual.has(path));
- if(expected.size!==59||ua.length!==actual.size||missing.length||extra.length)throw Error('UA Premium inventory mismatch '+JSON.stringify({expected:expected.size,actual:actual.size,missing,extra,duplicates:ua.length-actual.size}));
+ if(expected.size!==41||ua.length!==actual.size||missing.length||extra.length)throw Error('UA Premium inventory mismatch '+JSON.stringify({expected:expected.size,actual:actual.size,missing,extra,duplicates:ua.length-actual.size}));
  console.log('UA Premium route coverage: '+actual.size+' canonical routes');
 }
 async function auditUaScenePlayback(page,selector,item){
@@ -937,6 +938,7 @@ async function audit(browser,viewport,lang,slug){
    try{
     const selectedSlugs=coreShard&&lang==='uk'?allUaPremiumSlugs:(coreShard&&lang==='ru'?[...new Set([...slugs,...ruPilotSlugs,...ruNewSlugs])]:(coreShard&&lang==='en'?[...new Set([...slugs,...enGbExisting,...enGbNewSlugs,'about','portfolio','contact'])]:(coreShard&&lang==='pl'?[...slugs,'tworzenie-stron-internetowych']:(quick&&!coreShard&&lang==='fr'?['','seo',...sceneSlugs.filter(x=>x!=='seo'),'contact','privacy']:slugs))));
     for(const slug of selectedSlugs){
+     if(lang==='uk'&&Object.hasOwn(retiredUA,slug))continue;
      if(viewport.name==='wide'&&slug!==''&&!(lang==='uk'&&['seo','google-ads','web-development',...premiumSeoSlugs,...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,...uaFinalSlugs,'local-seo','landing-pages','store-conversion','website-speed-security'].includes(slug))&&!(lang==='ru'&&['seo','google-ads','analytics','service-websites','horoshop','landing-pages','google-ads-audit','website-maintenance'].includes(slug))&&!(lang==='en'&&['seo','analytics','service-websites','website-design','landing-pages','store-conversion','api-integrations'].includes(slug)))continue;
      if(viewport.name==='narrow'&&!['','seo','contact'].includes(slug)&&!(lang==='uk'&&['google-ads','web-development','merchant-center',...premiumCommercialSlugs,...premiumEditorialSlugs,...uaFourSlugs,...uaFinalSlugs,...uaNewSlugs].includes(slug))&&!(lang==='ru'&&[...ruPilotSlugs,...ruNewSlugs].includes(slug))&&!(lang==='en'&&[...enGbExisting,...enGbNewSlugs].includes(slug)))continue;
      await audit(browser,viewport,lang,slug);

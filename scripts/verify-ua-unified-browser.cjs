@@ -19,7 +19,8 @@ for(const [id,svg] of Object.entries(authoredArt)){
 const semantic=read('inc/ua-semantic-map.php','MRSEO_UA_SEMANTIC_MAP');
 const hs=read('inc/horoshop-premium-routes.php','MRSEO_HS_PAGES');
 const dev=read('inc/ua-dev-new-pages.php','MRSEO_UA_DEV_CONTENT');
-const routes=[...new Set([...Object.keys(semantic),...Object.keys(hs).map(k=>'horoshop/'+k),...Object.keys(dev)])];
+const retired=JSON.parse(fs.readFileSync(path.join(root,'inc/ua-retired-services.json'),'utf8'));
+const routes=[...new Set([...Object.keys(semantic),...Object.keys(hs).map(k=>'horoshop/'+k),...Object.keys(dev)])].filter(slug=>!Object.hasOwn(retired,slug));
 const commercial=Object.assign({},read('inc/premium-ua-commercial-routes.php','MRSEO_PUC_ROUTES'),read('inc/premium-ua-commercial-routes.php','MRSEO_PUC_EXPANSION_ROUTES'));
 const campaign=new Set(['google-search-ads','performance-max','google-shopping','local-google-ads','google-remarketing']);
 const paired=new Set([...Object.keys(commercial).filter(k=>!campaign.has(k)),...Object.keys(hs).map(k=>'horoshop/'+k),...Object.keys(dev),'horoshop']);
@@ -28,7 +29,7 @@ for(const k of ['local-seo','ecommerce-seo','service-business-seo','internationa
 for(const k of campaign)referenceSelectors[k]='.ads-problem-fix p';
 const editorial=new Set(['','about','portfolio','contact','privacy']);
 const coverage=new Set([...paired,'web-development',...Object.keys(referenceSelectors),...editorial]);
-if(routes.some(k=>!coverage.has(k))||coverage.size!==routes.length)throw Error('Missing UA acceptance coverage');
+if(routes.some(k=>!coverage.has(k))||[...coverage].filter(k=>!Object.hasOwn(retired,k)).length!==routes.length)throw Error('Missing UA acceptance coverage');
 const viewports=[{width:1440,height:900},{width:390,height:844},{width:360,height:800}];
 const selected=new Set(['local-seo','google-ads','google-ads-audit','merchant-center','horoshop','horoshop/seo','service-websites','web-development','mobile-app-development','analytics','store-conversion','api-integrations','horoshop/audit','about','contact','privacy']);
 const out=process.env.MRSEO_UA_QA_DIR||'shots/ua-unified';

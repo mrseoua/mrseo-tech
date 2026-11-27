@@ -21,7 +21,7 @@ jobs:
           node-version: '22'
       - run: npm install --no-save --no-package-lock playwright@1.56.1
       - run: npx playwright install --with-deps chromium
-      - name: All 75 routes, desktop and both mobile widths, semantic duplicate screening
+      - name: All 41 routes, desktop and both mobile widths, semantic duplicate screening
         run: node scripts/verify-ua-unified-browser.cjs
       - uses: actions/upload-artifact@v4
         if: always()
