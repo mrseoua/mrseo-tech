@@ -29,6 +29,7 @@ require_once get_template_directory() . '/inc/international-seo.php';
 require_once get_template_directory() . '/inc/horoshop-premium-routes.php';
 require_once get_template_directory() . '/inc/category-orbit.php';
 require_once get_template_directory() . '/inc/privacy-page.php';
+require_once get_template_directory() . '/inc/ua-pricing-route.php';
 require_once get_template_directory() . '/inc/eu-routing.php';
 require_once get_template_directory() . '/inc/customer-journeys.php';
 require_once get_template_directory() . '/inc/motion-scenes.php';
@@ -294,7 +295,7 @@ function mrseo_assets(){
  wp_enqueue_style('mrseo-services-menu-toggle',get_template_directory_uri().'/assets/services-menu-toggle.css',array('mrseo-style'),'2.6.0');
  if(mrseo_locale()==='uk'){
   wp_enqueue_style('mrseo-ua-simple-menu',get_template_directory_uri().'/assets/ua-simple-menu.css',array('mrseo-services-menu-toggle'),'1.1.0');
-  wp_enqueue_style('mrseo-ua-catalog-header',get_template_directory_uri().'/assets/ua-catalog-header.css',array('mrseo-ua-simple-menu'),'1.3.0');
+  wp_enqueue_style('mrseo-ua-catalog-header',get_template_directory_uri().'/assets/ua-catalog-header.css',array('mrseo-ua-simple-menu'),'4.0.1');
  }
  wp_enqueue_style('mrseo-footer-contact-channels',get_template_directory_uri().'/assets/footer-contact-channels.css',array('mrseo-style'),'1.0.0');
  // After theme/intl footer styles: fix the old .footer .container flex layout and normalize full-width footer.

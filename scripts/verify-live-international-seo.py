@@ -16,7 +16,7 @@ SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
 from pathlib import Path
 import json
 RETIRED = json.loads((Path(__file__).resolve().parents[1]/'wp-content/themes/mrseo-tech/inc/ua-retired-services.json').read_text())
-EXPECTED_PAGES = 659
+EXPECTED_PAGES = 660
 UA_EXTRA = ['client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development'] + ['horoshop/'+key for key in ('setup','seo','audit','ads','search-ads','shopping','pmax','feeds','ga4')]
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
@@ -384,7 +384,8 @@ if __name__ == "__main__":
         fail(f"Sitemap has {len(sitemap)} URLs; expected {EXPECTED_PAGES}")
 
     ua_urls = [url for url, alts in sitemap.items() if alts.get('uk-UA') == url]
-    assert len(ua_urls) == 41, ('UA sitemap count', len(ua_urls))
+    assert len(ua_urls) == 42, ('UA sitemap count', len(ua_urls))
+    assert sitemap.get(HOST+'/pricing/') == {'uk-UA':HOST+'/pricing/'}
     for slug in UA_EXTRA:
         if slug in RETIRED: continue
         url = HOST + '/' + slug + '/'

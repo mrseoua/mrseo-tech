@@ -44,6 +44,8 @@ jobs:
           }
           echo "UK route functions loaded and 13 service pages resolved successfully.\n";
           PHP
+      - name: Validate Ukrainian price page
+        run: python3 scripts/verify-ua-pricing.py
       - name: Validate Ukrainian SEO intent inventory
         run: python3 scripts/verify-ua-intents.py
       - name: Verify category artwork and real service links
@@ -287,7 +289,7 @@ jobs:
               assert a[ids[0]].count('data-puc-part=')==3
           print('20 unique commercial landings and 120 original animated SVGs verified')
           PY
-      - name: Run international SEO pre-indexing audit (659 routes)
+      - name: Run international SEO pre-indexing audit (660 routes)
         run: |
           php -l scripts/verify-international-seo.php
           php -d display_errors=1 scripts/verify-international-seo.php

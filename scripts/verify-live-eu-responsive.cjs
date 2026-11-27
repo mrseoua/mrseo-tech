@@ -35,9 +35,9 @@ async function assertUaInventory(){
  const published=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1].replace(/&amp;/g,'&')).pathname.replace(/^\/+|\/+$/g,''));
  const foreign=new Set(['ru','en','pl','de',...allLocales]);
  const ua=published.filter(path=>!foreign.has(path.split('/')[0]));
- const expected=new Set([...allUaPremiumSlugs,'horoshop/seo','horoshop/audit','horoshop/ads','horoshop/feeds','client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development']),actual=new Set(ua);
+ const expected=new Set([...allUaPremiumSlugs,'pricing','horoshop/seo','horoshop/audit','horoshop/ads','horoshop/feeds','client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development']),actual=new Set(ua);
  const missing=[...actual].filter(path=>!expected.has(path)),extra=[...expected].filter(path=>!actual.has(path));
- if(expected.size!==41||ua.length!==actual.size||missing.length||extra.length)throw Error('UA Premium inventory mismatch '+JSON.stringify({expected:expected.size,actual:actual.size,missing,extra,duplicates:ua.length-actual.size}));
+ if(expected.size!==42||ua.length!==actual.size||missing.length||extra.length)throw Error('UA Premium inventory mismatch '+JSON.stringify({expected:expected.size,actual:actual.size,missing,extra,duplicates:ua.length-actual.size}));
  console.log('UA Premium route coverage: '+actual.size+' canonical routes');
 }
 async function auditUaScenePlayback(page,selector,item){

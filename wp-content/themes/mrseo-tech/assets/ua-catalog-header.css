@@ -58,3 +58,6 @@
 }
 @media(max-width:700px){.mrseo-mega--catalog .mrseo-catalog-grid,.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-links{grid-template-columns:1fr}.mrseo-mega--catalog .mrseo-catalog-group--dev .mrseo-catalog-links{gap:10px}}
 @media(prefers-reduced-motion:reduce){.site-header.mrseo-ua-mega-header *{animation:none!important;transition:none!important}}
+
+/* Keep the additional price link readable in the existing desktop header. */
+@media(min-width:951px){.site-header.mrseo-ua-mega-header .nav-links{gap:clamp(12px,1.5vw,24px)}}

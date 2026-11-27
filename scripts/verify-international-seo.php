@@ -4,7 +4,7 @@
  * Load actual routing/data files and execute their registered wp_head callbacks.
  *
  * Assertions:
- * - all completed pages are represented exactly once (659 URLs)
+ * - all completed pages are represented exactly once (660 URLs)
  * - locale tags and self canonicals have no invented parent-page alternates
  * - reciprocal hreflang annotations are the same in sitemap and in HTML
  * - localized slugs with different spellings resolve in the language selector
@@ -71,11 +71,11 @@ function assert_seo($condition, $message) {
 $inventory = mrseo_i18n_inventory();
 $groups = mrseo_i18n_page_groups();
 $codes = mrseo_i18n_locale_codes();
-assert_seo(count($groups) === 59, 'Expected 59 active editorial equivalence groups');
-assert_seo(count($inventory) === 659, 'Expected 659 completed country-language URLs, got ' . count($inventory));
+assert_seo(count($groups) === 60, 'Expected 60 active editorial equivalence groups');
+assert_seo(count($inventory) === 660, 'Expected 660 completed country-language URLs, got ' . count($inventory));
 
 $expected = [
-    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ua_website_slugs(),mrseo_ua_expansion_slugs(),array_keys(mrseo_ua_dev_new_pages()),array_map(static fn($key)=>'horoshop/'.$key,array_keys(mrseo_hs_pages()))),
+    'uk' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy','pricing'],mrseo_new_service_slugs(),mrseo_ua_website_slugs(),mrseo_ua_expansion_slugs(),array_keys(mrseo_ua_dev_new_pages()),array_map(static fn($key)=>'horoshop/'.$key,array_keys(mrseo_hs_pages()))),
     'ru' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','horoshop','privacy'],mrseo_new_service_slugs(),mrseo_ru_website_slugs()),
     'en' => array_merge(mrseo_int_pages(), ['service-websites','performance-max','privacy'], mrseo_uk_market_new_slugs(),mrseo_en_gb_slugs()),
     'pl' => array_merge(mrseo_int_pages(), ['privacy'],mrseo_pl_service_slugs()),
@@ -125,7 +125,7 @@ foreach ($inventory as $entry) {
         $home_count++;
     }
 }
-assert_seo(count($seen) === 659 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
+assert_seo(count($seen) === 660 && $home_count === 20, 'Unexpected sitemap coverage or fallback');
 foreach ($expected as $lang => $slugs) {
     foreach ($slugs as $slug) {
         $expected_url = mrseo_i18n_exact_url($lang, $slug);
@@ -416,8 +416,8 @@ foreach(array('title','lead','foot','problemHeading','problemLead','result','des
 // UA semantic coverage and exact emitted metadata for each real canonical page.
 $ua_map=mrseo_ua_semantic_map();
 $ua_inventory=array_values(array_filter($inventory,static function($e){return $e['language']==='uk';}));
-assert_seo(count($ua_map)===59&&count($ua_inventory)===41,'UA semantic coverage');
-foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===59,'Duplicate UA semantic '.$field);
+assert_seo(count($ua_map)===60&&count($ua_inventory)===42,'UA semantic coverage');
+foreach(array('primary','title','description') as $field)assert_seo(count(array_unique(array_column($ua_map,$field)))===60,'Duplicate UA semantic '.$field);
 foreach($ua_inventory as $entry){
  $slug=$entry['slug'];$_SERVER['REQUEST_URI']=parse_url($entry['loc'],PHP_URL_PATH);
  if(!isset($ua_map[$slug])){
@@ -470,10 +470,10 @@ foreach(mrseo_ua_retired_services() as $slug=>$target){
  assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$target)])&&!isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Retirement target/source incorrect '.$slug);
 }
 // Verify the actual current compact menu, not the archived service taxonomy.
-// Its 36 service URLs plus five editorial/legal pages must match the active UA inventory.
+// Its 36 service URLs plus six editorial/legal pages must match the active UA inventory.
 require_once $root.'/inc/ua-header-six.php';
 $_SERVER['REQUEST_URI']='/';
-$protected=array('','about','portfolio','contact','privacy');
+$protected=array('','about','portfolio','contact','privacy','pricing');
 foreach(mrseo_ua_menu_groups() as $group){
  if(!in_array($group['key'],array('seo','ads','horoshop','sites','dev'),true))continue;
  $protected[]=$group['parent'];
@@ -483,7 +483,7 @@ foreach(mrseo_ua_menu_groups() as $group){
 }
 $actual=array_column($ua_inventory,'slug');
 sort($protected);sort($actual);
-assert_seo(count($protected)===41&&$protected===$actual,'Active UA URLs differ from actual menu and protected editorial pages');
+assert_seo(count($protected)===42&&$protected===$actual,'Active UA URLs differ from actual menu and protected editorial pages');
 assert_seo(!array_intersect($protected,array_keys(mrseo_ua_retired_services())),'A menu or protected page was retired');
 foreach(array('orbit-lab','orbit-light','premium-tech-preview') as $preview){
  $_SERVER['REQUEST_URI']='/'.$preview.'/';
@@ -493,6 +493,6 @@ foreach(array('','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da
  $_SERVER['REQUEST_URI']=$locale?'/'.$locale.'/':'/';
  assert_seo(!mrseo_ua_retired_preview()&&mrseo_i18n_current_entry()!==null,'Homepage blocked '.$locale);
 }
-echo "UA menu protection PASS: 36 service URLs, 5 editorial/legal pages, 34 retired services, 3 retired prototypes, all 20 homepages.\n";
+echo "UA menu protection PASS: 36 service URLs, 6 editorial/legal pages, 34 retired services, 3 retired prototypes, all 20 homepages.\n";
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";

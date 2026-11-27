@@ -12,11 +12,11 @@ def norm(s):
 primary={slug:v["primary"] for slug,v in base.items()}
 primary.update({slug:v["terms"][0] for slug,v in dev.items()})
 primary.update({"horoshop/"+slug:v[0] for slug,v in hs.items()})
-assert len(primary)==75
-assert len(set(map(norm,primary.values())))==75, "Exact primary intent duplication"
+assert len(primary)==76
+assert len(set(map(norm,primary.values())))==76, "Exact primary intent duplication"
 assert "розробка особистого кабінету" not in base["web-applications"]["secondary"]
 assert "створення сайту на хорошоп" not in [base["horoshop"]["primary"],*base["horoshop"]["secondary"]]
 for k in ("title","description"):
-    assert len(set(norm(v[k]) for v in base.values()))==59,k
+    assert len(set(norm(v[k]) for v in base.values()))==60,k
 assert all(len(v["secondary"])==len(set(v["secondary"])) for v in base.values())
-print("75 UA intent records; distinct normalized primary targets; 59 unique title/description records. Near-duplicate and SERP intent review remain separate.")
+print("76 source intent records; distinct normalized primary targets; 60 unique title/description records. Near-duplicate and SERP intent review remain separate.")
