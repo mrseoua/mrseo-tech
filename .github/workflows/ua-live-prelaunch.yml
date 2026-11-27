@@ -1,0 +1,58 @@
+name: Ukrainian live prelaunch audit
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Deploy WordPress theme"]
+    types: [completed]
+permissions:
+  contents: read
+concurrency:
+  group: ua-live-prelaunch
+  cancel-in-progress: true
+jobs:
+  ua-live-layout:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: All 75 routes, desktop and both mobile widths, semantic duplicate screening
+        run: node scripts/verify-ua-unified-browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ua-live-layout-and-text
+          path: shots/ua-unified/
+          retention-days: 14
+  ua-mobile-lab:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Cold mobile synthetic LCP, CLS and load diagnostics
+        env:
+          MRSEO_PERF_SHARDS: '3'
+          MRSEO_PERF_SHARD: ${{ matrix.shard }}
+        run: node scripts/measure-ua-mobile-performance.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ua-mobile-lab-${{ matrix.shard }}
+          path: shots/ua-performance/
+          retention-days: 14
