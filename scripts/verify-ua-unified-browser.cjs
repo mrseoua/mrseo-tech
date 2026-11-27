@@ -27,11 +27,11 @@ const paired=new Set([...Object.keys(commercial).filter(k=>!campaign.has(k)),...
 const referenceSelectors={'seo':'.seo-problem-answer p','google-ads':'.service-problem-answer p'};
 for(const k of ['local-seo','ecommerce-seo','service-business-seo','international-seo','seo-audit'])referenceSelectors[k]='.local-ref-answer p';
 for(const k of campaign)referenceSelectors[k]='.ads-problem-fix p';
-const editorial=new Set(['','about','portfolio','contact','privacy']);
+const editorial=new Set(['','about','portfolio','contact','privacy','pricing']);
 const coverage=new Set([...paired,'web-development',...Object.keys(referenceSelectors),...editorial]);
 if(routes.some(k=>!coverage.has(k))||[...coverage].filter(k=>!Object.hasOwn(retired,k)).length!==routes.length)throw Error('Missing UA acceptance coverage');
 const viewports=[{width:1440,height:900},{width:390,height:844},{width:360,height:800}];
-const selected=new Set(['local-seo','google-ads','google-ads-audit','merchant-center','horoshop','horoshop/seo','service-websites','web-development','mobile-app-development','analytics','store-conversion','api-integrations','horoshop/audit','about','contact','privacy']);
+const selected=new Set(['local-seo','google-ads','google-ads-audit','merchant-center','horoshop','horoshop/seo','service-websites','web-development','mobile-app-development','analytics','store-conversion','api-integrations','horoshop/audit','about','contact','privacy','pricing']);
 const out=process.env.MRSEO_UA_QA_DIR||'shots/ua-unified';
 const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
 (async()=>{
@@ -110,6 +110,10 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      const groupKey={'seo':'seo','google-ads':'ads','horoshop':'horoshop','service-websites':'sites','web-development':'dev'}[slug];
      if(groupKey){const expected=JSON.stringify(data.menuGroups[groupKey]);if(JSON.stringify(data.satelliteLinks)!==expected||JSON.stringify(data.cardLinks)!==expected)errors.push('Category links/labels differ from visible menu');}
      if(slug==='web-development'&&(data.devPictureCount!==14||data.devPictureUnique!==14))errors.push('WebDev repeated or missing capability picture');
+     if(slug==='pricing'){
+      const prices=await page.evaluate(()=>({groups:document.querySelectorAll('.mp-card[data-pricing-group]').length,rows:document.querySelectorAll('.mp-rate').length,cta:!!document.querySelector('.mp-final a[href$="/contact/"]'),menu:!!document.querySelector('header .nav-links a[href$="/pricing/"]')}));
+      if(prices.groups!==5||prices.rows!==12||!prices.cta||!prices.menu)errors.push('Pricing page inventory '+JSON.stringify(prices));
+     }
      if(!editorial.has(slug)){
       if(!data.approachHeading)errors.push('Missing specific approach heading');
       if(data.problemDetails||data.readablePairs.length!==3||data.readablePairs.some(p=>!p.valid||!p.layout||p.font<17.9||p.line<p.font*1.45||p.bounds[0]<-3||p.bounds[3]>data.width+3)){
