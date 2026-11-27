@@ -284,7 +284,8 @@ function mrseo_ua_semantic_map(){
       "ведення pmax",
       "pmax",
       "перформанс макс",
-      "google performance max"
+      "google performance max",
+      "perf max"
     ],
     "title": "Performance Max — налаштування та ведення кампаній | MrSeo.tech",
     "description": "Налаштування Performance Max: перевірка товарного фіда, цілей, покупок, витрат і маржі. Ведення кампаній з урахуванням економіки магазину.",
