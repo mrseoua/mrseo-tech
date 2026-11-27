@@ -206,6 +206,9 @@ function mrseo_i18n_page_groups() {
         $groups[]=array('group'=>'platform:woocommerce-shopify','pages'=>$pages);
     }
     foreach(mrseo_ua_expansion_slugs() as $slug)$groups[]=array('group'=>'ua-expansion:'.$slug,'pages'=>array('uk'=>$slug));
+    // Additional original UA services: one genuine Ukrainian version each.
+    foreach(array_keys(mrseo_ua_dev_new_pages()) as $slug)$groups[]=array('group'=>'ua-dev:'.$slug,'pages'=>array('uk'=>$slug));
+    foreach(array_keys(mrseo_hs_pages()) as $key)$groups[]=array('group'=>'ua-horoshop:'.$key,'pages'=>array('uk'=>'horoshop/'.$key));
     return $groups;
 }
 
@@ -264,6 +267,7 @@ function mrseo_i18n_current_entry() {
     $path = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/', '/');
     $language = mrseo_locale();
     $slug = mrseo_slug();
+    if($language==='uk'&&function_exists('mrseo_hs_key')&&($hs=mrseo_hs_key()))$slug='horoshop/'.$hs;
     $expected = ($language === 'uk' ? '' : $language . '/') . $slug;
     if ($path !== trim($expected, '/')) return null;
     foreach (mrseo_i18n_inventory() as $entry) {

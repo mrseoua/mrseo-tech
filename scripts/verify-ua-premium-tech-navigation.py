@@ -11,35 +11,25 @@ functions=(theme/"functions.php").read_text(encoding="utf-8")
 taxonomy=(theme/"inc/mega-menu-trial.php").read_text(encoding="utf-8")
 nav=nav.split("function mrseo_ua_header_catalog()",1)[1]
 assert "mrseo_ua_header_catalog()" in header and "mrseo-ua-mega-header" in header
-assert nav.count("mrseo_hs_url($anchor)") == 1
-assert nav.count("mrseo_url($slug,'uk')") == 3
-assert "foreach($groups as $group)" in nav
-assert "'commerce'=>'Інтернет-магазини'" not in nav and "'data'=>'Аналітика'" not in nav
-assert "if(!isset($names[$key]))continue;" in nav
-assert "'sites'=>'Сайти'" in nav and "'dev'=>'Веброзробка'" in nav
-for slug in ("local-seo","ecommerce-seo","service-business-seo","international-seo","seo-audit"):
-    assert "'"+slug+"'=>'" in nav, slug
-assert "SEO-послуги" in nav and "foreach($seo_services as $slug=>$label)" in nav
-assert "SEO та просування" in nav and "Товари та аналітика" in nav
-assert "foreach($horoshop_groups as $heading=>$services)" in nav
-for key in ("seo","audit","ads","search-ads","shopping","pmax","feeds","ga4"):
-    assert "'"+key+"'=>" in nav, key
-# The flat UA catalogue preserves all four WebDev groups and real URLs.
+# The header and category catalogue now share a renderer. Test emitted URLs,
+# not the number of PHP statements in a refactored function.
+import runpy
+checks=runpy.run_path(str(Path(__file__).with_name("category-render-check.py")))
+menu=checks["paths"](checks["render_category"]("seo","menu"))
+parents={"/seo/","/google-ads/","/horoshop/","/service-websites/","/web-development/","/contact/"}
+assert len(menu)==37 and parents<=menu
+children=set()
+for slug,count in {"seo":5,"google-ads":4,"horoshop":4,"service-websites":4,"web-development":14}.items():
+    catalog=checks["paths"](checks["render_category"](slug,"catalog"))
+    orbit=checks["paths"](checks["render_category"](slug,"orbit"))-{"/contact/"}
+    assert len(catalog)==count and catalog==orbit
+    assert not children.intersection(catalog)
+    children.update(catalog)
+assert children==menu-parents
+assert "mrseo_ua_visible_menu_sections($key)" in nav
 for heading in ("Бізнес-системи","Інтеграції й функціонал","Штучний інтелект","Мобільні застосунки"):
-    assert "'"+heading+"'=>array(" in nav, heading
-for label in ("Вебзастосунки","Особисті кабінети клієнтів","Дашборди та звітність",
-              "Інтеграція сервісів через API","Парсинг і синхронізація даних",
-              "Інтеграція платіжних систем","AI-агенти для бізнесу",
-              "Мобільні застосунки для iOS та Android","Застосунок для інтернет-магазину",
-              "Застосунок для команди","PWA-застосунки"):
-    assert label in nav, label
-assert "elseif($key==='dev')" in nav
-assert "foreach($dev_groups as $heading=>$services)" in nav
-assert "foreach($services['live_extra'] as $slug=>$label)" in nav
-assert 'mrseo_ua_menu_groups()' in nav
-assert 'class="mrseo-ua-six-planned"' not in nav
-assert 'Сторінка готується' not in nav
-assert nav.count("home_url('/'.$slug.'/')")==1
+    assert heading in nav
+assert "Сторінка готується" not in nav
 assert "mrseo-catalog-parent" in nav and "mrseo-catalog-subgroup" in nav
 assert "<details" not in nav
 assert "pointerdown" in js and "Escape" in js and "hoverOnly" in js and "pointerenter" in js

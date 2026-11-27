@@ -48,6 +48,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
     try{
      const response=await page.goto(urlFor(slug),{waitUntil:'domcontentloaded',timeout:25000});
      if(!response||response.status()!==200)errors.push('HTTP '+response?.status());
+     await page.evaluate(()=>document.fonts.ready);
      const data=await page.evaluate(referenceSelector=>{
       const shown=e=>!!e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden';
       const main=document.querySelector('.pti-page,.hs-premium,.ukseo--horoshop,.about-page,.mrseo-privacy-page');
@@ -89,6 +90,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
       return {menuGroups,satelliteLinks,cardLinks,ctaVisible,ctaContrast,stages,readablePairs,problemDetails,approachHeading,approachCopy,devPictureCount:devPictures.length,devPictureUnique:new Set(devPictures).size,pairs:pairs.length,completePairs,devHubOpen,referenceAnswers,lang:document.documentElement.lang,h1:headings.length,h1Text:headings[0]?.textContent.trim(),title:document.title,description:document.querySelector('meta[name="description"]')?.content,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content||'',width:innerWidth,scrollWidth:document.documentElement.scrollWidth,css:[...document.querySelectorAll('link[rel="stylesheet"]')].some(e=>e.href.includes('/assets/ua-unified-style.css')),styleH1:headings[0]?rootFont(headings[0]):null,main:main?.className||null,minCopy:sample.length?Math.min(...sample.map(rootFont)):null,bounds:bounds.filter(x=>x.left<-3||x.right>innerWidth+3),menu:[...document.querySelectorAll('.mrseo-catalog-link[href]')].map(a=>new URL(a.href).pathname),parents:document.querySelectorAll('.mrseo-catalog-parent').length};
      },referenceSelectors[slug]||null);
      result.data=data;result.status=response?.status();
+     if(viewport.width===1440){result.content=await page.evaluate(()=>{const main=document.querySelector('main')||document.querySelector('#main');return main?{heading:main.querySelector('h1')?.textContent.trim()||'',paragraphs:[...main.querySelectorAll('p')].filter(p=>p.getClientRects().length&&!p.closest('[aria-hidden="true"],.category-catalog,.pt-orbit-bottom')).map(p=>p.textContent.replace(/\s+/g,' ').trim()).filter(p=>p.length>=45)}:null;});}
      if(data.lang!=='uk-UA')errors.push('Language '+data.lang);
      if(data.h1!==1||!data.h1Text)errors.push('Expected one nonempty H1');
      if(!data.title||!data.description)errors.push('Missing title or description');
@@ -122,7 +124,7 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      }else if(data.stages.length)errors.push('UA v2 stages leaked onto editorial route');
      if(runtime.length)errors.push(...runtime.map(e=>'JS: '+e));
      // Capture actual hero and a representative lower content block, including any failing URL.
-     if(selected.has(slug)||errors.length){
+     if(viewport.width<=390||selected.has(slug)||errors.length){
       const name=(slug||'home').replaceAll('/','-')+'-'+viewport.width;
       await page.screenshot({path:path.join(out,name+'.jpg'),type:'jpeg',quality:78,animations:'disabled',timeout:15000});
       const section=page.locator('[data-ua-stage="problems"]').first();
@@ -146,7 +148,17 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
  const failures=reports.filter(r=>r.errors.length);
  const solutions=reports.filter(r=>r.viewport===1440&&!editorial.has(r.slug)).flatMap(r=>(r.data?.readablePairs||[]).map(p=>({slug:r.slug,title:p.title,answer:p.answer})));
  const exactSolutionGroups=Object.values(solutions.reduce((m,p)=>{if(p.answer)(m[p.answer]??=[]).push(p.slug);return m;},Object.create(null))).filter(g=>new Set(g).size>1);
- const summary={routes:routes.length,views:reports.length,failed:failures.length,solutionCount:solutions.length,exactSolutionGroups,failures,reports};
+ // Text similarity screening: compare content rather than shared header/menu/card labels.
+ const pages=reports.filter(r=>r.viewport===1440&&r.content);
+ const normalize=s=>s.toLocaleLowerCase('uk').normalize('NFKC').replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();
+ const paragraphs=new Map();
+ for(const r of pages)for(const p of new Set(r.content.paragraphs.map(normalize))){if(!paragraphs.has(p))paragraphs.set(p,[]);paragraphs.get(p).push(r.slug);}
+ const duplicateParagraphs=[...paragraphs].filter(([p,slugs])=>slugs.length>1).map(([text,slugs])=>({text,slugs}));
+ const shingles=r=>{const w=normalize(r.content.paragraphs.join(' ')).split(' '),s=new Set();for(let i=0;i+2<w.length;i++)s.add(w.slice(i,i+3).join(' '));return s;};
+ const sets=pages.map(shingles),nearDuplicatePairs=[];
+ for(let i=0;i<pages.length;i++)for(let j=i+1;j<pages.length;j++){const a=sets[i],b=sets[j];if(!a.size||!b.size)continue;let overlap=0;for(const v of a)if(b.has(v))overlap++;const similarity=overlap/(a.size+b.size-overlap);if(similarity>=.25)nearDuplicatePairs.push({a:pages[i].slug,b:pages[j].slug,similarity:Math.round(similarity*1000)/1000});}
+ nearDuplicatePairs.sort((a,b)=>b.similarity-a.similarity);
+ const summary={routes:routes.length,views:reports.length,failed:failures.length,solutionCount:solutions.length,exactSolutionGroups,duplicateParagraphs,nearDuplicatePairs,failures,reports};
  await fsp.writeFile(path.join(out,'report.json'),JSON.stringify(summary,null,2));
  console.log('UA QA: '+routes.length+' routes, '+reports.length+' views, '+failures.length+' failed');
  if(failures.length)process.exitCode=1;

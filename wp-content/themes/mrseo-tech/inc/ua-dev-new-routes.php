@@ -24,6 +24,13 @@ add_filter('template_include',function($template){
  return mrseo_ua_dev_new_route()?get_template_directory().'/ua-dev-new-landing.php':$template;
 },125);
 add_filter('redirect_canonical',function($url){return mrseo_ua_dev_new_route()?false:$url;},100);
+add_action('template_redirect',function(){
+ if(!mrseo_ua_dev_new_route()||!in_array($_SERVER['REQUEST_METHOD']??'GET',array('GET','HEAD'),true))return;
+ $path=parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH);
+ if(substr($path,-1)==='/')return;
+ $url=home_url('/'.mrseo_slug().'/');if(!empty($_SERVER['QUERY_STRING']))$url.='?'.$_SERVER['QUERY_STRING'];
+ wp_safe_redirect($url,301);exit;
+},1);
 add_action('wp',function(){
  if(mrseo_ua_dev_new_route())remove_action('wp_head','rel_canonical');
 },2);
@@ -36,7 +43,7 @@ add_action('wp_head',function(){
  $page=mrseo_ua_dev_new_page();
  echo '<meta name="description" content="'.esc_attr($page['meta']).'">'."\n";
  // Only one exact Ukrainian version exists; no fabricated hreflang alternates.
- echo '<link rel="canonical" href="'.esc_url(home_url('/'.mrseo_slug().'/')).'">'."\n";
+ // Canonical and self hreflang come from the shared international registry.
 },6);
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_ua_dev_new_route() && !(mrseo_locale()==='uk'&&mrseo_slug()==='web-development'))return;

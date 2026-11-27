@@ -36,7 +36,8 @@ assert m,"semantic map"
 data=json.loads(m.group(1))
 info=data['horoshop']
 assert len(info["description"])>=110
-assert all(x in info['secondary'] for x in ["сайт на хорошоп","хорошоп створити сайт","seo хорошоп"])
+assert info["primary"]=="послуги для магазинів на хорошоп"
+assert all(x not in info["secondary"] for x in ["хорошоп створити сайт","seo хорошоп"])
 assert "🛒" not in info["description"]
 
 # Separate premium pages: one real WP route per offering; never placeholder anchors.
@@ -46,7 +47,7 @@ premium_css=(root/"assets/horoshop-premium-pages.css").read_text(encoding="utf-8
 assert "horoshop-premium-routes.php" in functions
 assert "mrseo_hs_key()" in premium and "hs-premium-visual" in premium
 assert "get_header()" in premium and "get_footer()" in premium
-assert "rel=\"canonical\"" in premium_routes
+assert "mrseo_hs_pages()" in (root/"inc/international-seo.php").read_text()
 assert "search-ads|shopping|pmax" in premium_routes and "add_rewrite_rule(" in premium_routes
 assert "mrseo_hs_url($anchor)" in header
 for key in ("setup","seo","audit","ads","feeds","ga4"):

@@ -8,6 +8,11 @@ function mrseo_locale(){$s=trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_P
 function mrseo_slug(){$a=explode('/',trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/'));if(in_array($a[0]??'',array('ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true))array_shift($a);return sanitize_title($a[0]??'');}
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
+ // Exact UA-only Horoshop subservice links; never fabricate foreign routes.
+ if(str_starts_with($slug,'horoshop/')&&function_exists('mrseo_hs_pages')&&isset(mrseo_hs_pages()[substr($slug,9)])){
+  if($lang==='uk')return mrseo_i18n_exact_url('uk',$slug);
+  return $lang==='ru'?mrseo_i18n_exact_url('ru','horoshop'):mrseo_i18n_exact_url($lang,'web-development');
+ }
  // Ukrainian-only WebDev landings: foreign language selectors lead to an existing real parent,
  // never a fictional /ru/client-portals/ (or any other untranslated) page.
  if(function_exists('mrseo_ua_dev_new_pages') && isset(mrseo_ua_dev_new_pages()[$slug])){

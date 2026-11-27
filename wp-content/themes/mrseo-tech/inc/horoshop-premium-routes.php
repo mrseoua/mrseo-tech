@@ -14,10 +14,10 @@ function mrseo_hs_pages(){
     "Структура каталогу",
     "Узгоджуємо категорії, атрибути, картки товарів та навігацію.",
     "Оформлення замовлення",
-    "Перевіряємо корзину, способи доставки, оплати та доступні інтеграції.",
+    "Перевіряємо кошик, способи доставки, оплати та доступні інтеграції.",
     "Контроль запуску",
     "Тестуємо шлях покупця на телефоні й комп’ютері та фіксуємо невирішені питання.",
-    "Працюючий сценарій від вибору товару до тестового замовлення.",
+    "Робочий сценарій від вибору товару до тестового замовлення.",
     "Чи потрібна окрема розробка?",
     "Не обов’язково. Спочатку оцінюємо стандартні можливості та тариф Хорошоп.",
     "Чи входить SEO в запуск?",
@@ -208,6 +208,13 @@ add_action('init',function(){
 },45);
 add_filter('pre_handle_404',function($pre){return mrseo_hs_key()?true:$pre;},110);
 add_filter('redirect_canonical',function($url){return mrseo_hs_key()?false:$url;},110);
+add_action('template_redirect',function(){
+ if(!($key=mrseo_hs_key())||!in_array($_SERVER['REQUEST_METHOD']??'GET',array('GET','HEAD'),true))return;
+ $path=parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH);
+ if(substr($path,-1)==='/')return;
+ $url=mrseo_hs_url($key);if(!empty($_SERVER['QUERY_STRING']))$url.='?'.$_SERVER['QUERY_STRING'];
+ wp_safe_redirect($url,301);exit;
+},1);
 add_filter('template_include',function($template){
  return mrseo_hs_key()?get_template_directory().'/horoshop-service-premium.php':$template;
 },110);
@@ -269,7 +276,7 @@ add_action('wp_head',function(){
  $p=mrseo_hs_pages()[$k];
  $m=mrseo_hs_search_meta($k);
  echo '<meta name="description" content="'.esc_attr($m[1]).'">'."\n";
- echo '<link rel="canonical" href="'.esc_url(mrseo_hs_url($k)).'">'."\n";
+ // Canonical and self hreflang come from the shared international registry.
 },2);
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_hs_key())return;

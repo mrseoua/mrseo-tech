@@ -13,7 +13,8 @@ import xml.etree.ElementTree as ET
 
 HOST = "https://mrseo.tech"
 SITEMAP = HOST + "/mrseo-locales-sitemap.xml"
-EXPECTED_PAGES = 677
+EXPECTED_PAGES = 693
+UA_EXTRA = ['client-portals','data-parsing','payment-integration','mobile-app-development','ecommerce-mobile-apps','corporate-mobile-apps','pwa-development'] + ['horoshop/'+key for key in ('setup','seo','audit','ads','search-ads','shopping','pmax','feeds','ga4')]
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
       "x": "http://www.w3.org/1999/xhtml"}
 USER_AGENT = "MrSeoInternationalPrelaunchAudit/1.0"
@@ -378,6 +379,12 @@ if __name__ == "__main__":
     if len(sitemap) != EXPECTED_PAGES:
         fail(f"Sitemap has {len(sitemap)} URLs; expected {EXPECTED_PAGES}")
 
+    ua_urls = [url for url, alts in sitemap.items() if alts.get('uk-UA') == url]
+    assert len(ua_urls) == 75, ('UA sitemap count', len(ua_urls))
+    for slug in UA_EXTRA:
+        url = HOST + '/' + slug + '/'
+        assert sitemap.get(url) == {'uk-UA': url}, ('Missing UA-only canonical', slug)
+    SAMPLE[:] = sorted(set(SAMPLE) | {url[len(HOST):] for url in ua_urls})
     assert_paired_ru_pages(sitemap)
     for slug in UK_NEW_SLUGS:
         uk_url = HOST + "/en/" + slug + "/"
