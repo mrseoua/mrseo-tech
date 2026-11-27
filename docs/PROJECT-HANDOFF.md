@@ -1180,3 +1180,7 @@ Owner requested the approved WebDev category style on SEO, Google Ads, Horoshop 
 
 ### 27 Nov — strict visible-menu parity in UA category navigation
 Owner requires satellites and tiles to contain exactly the existing visible menu services, no hidden/legacy pages. Refactored actual compact header into shared visible-menu sections while preserving its output/order/labels. Categories now consume that exact list: SEO 5, Ads 4, Horoshop 4, Websites 4, WebDev 14 (31 total). Dense WebDev orbit uses moving clickable icons plus readable stationary label grid to avoid collisions; category-only engine fork, home sources untouched. Existing service URLs, artwork, metadata and sitemap retained; no deletion or indexing changes. Updated category regression and browser exact menu/links/labels parity. Standing publication approval applies.
+
+
+### 27 Nov — thematic planet materials for five UA hubs
+Owner requested different planet tones and labels without changing shape. Category-only WebGL shader and Canvas fallback now use the same five material palettes (SEO olive, Ads terracotta, Horoshop amber/sand, Websites ivory, Dev graphite/teal); static previews recolored, readable short planet names and matching lower tags. Retain existing thematic surface geometry, sphere lighting/rotation, 31 menu links, brand-red satellite icons, homepage, other locales and SEO/noindex. CSS and JS cache versions bumped; approved immediate publication. Visual verification pending.

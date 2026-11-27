@@ -11,9 +11,9 @@ function mrseo_category_is_root(){
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_category_is_root())return;
  wp_enqueue_style('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.css',array('mrseo-style'),'1.0.1');
- wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.3.0');
+ wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.4.0');
  wp_enqueue_style('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.css',array('mrseo-category-home-layout'),'2.0.2');
- wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/category-orbit-engine.js',array(),'1.0.0',true);
+ wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/category-orbit-engine.js',array(),'1.1.0',true);
 },150);
 function mrseo_category_items($slug){
  $d=mrseo_category_home_data()[$slug]??null;$out=array();if(!$d)return $out;
@@ -40,7 +40,7 @@ function mrseo_category_orbit($slug){
  <div class="pt-home-actions"><a class="pt-home-cta" href="<?php echo esc_url(mrseo_url('contact','uk'));?>"><?php echo esc_html($d[4]);?> ↗</a><a class="pt-home-secondary" href="#<?php echo esc_attr($d[7]);?>">Переглянути послуги ↓</a></div>
  <p class="pt-home-caption"><i aria-hidden="true"></i>Оберіть супутник або перегляньте каталог нижче. Наведіть на послугу, щоб зупинити орбіту.</p></div>
  <div class="pt-orbit-shell"><div class="pt-orbit<?php if(count($nodes)>6)echo ' category-dense-orbit';?>" aria-label="Підкатегорії послуг"><div class="pt-orbit-ring" aria-hidden="true"></div><div class="pt-orbit-ring r2" aria-hidden="true"></div><div class="pt-orbit-ring r3" aria-hidden="true"></div><svg class="pt-orbit-lines" aria-hidden="true"></svg>
- <div class="pt-globe" data-earth-src="<?php echo esc_url($map);?>" data-map="<?php echo esc_url($map);?>"><img src="<?php echo esc_url($preview);?>" alt="" width="420" height="420" decoding="async"><canvas aria-hidden="true"></canvas></div>
+ <div class="pt-globe" data-earth-src="<?php echo esc_url($map);?>" data-map="<?php echo esc_url($map);?>"><img src="<?php echo esc_url($preview);?>" alt="" width="420" height="420" decoding="async"><canvas aria-hidden="true"></canvas><span class="category-planet-name" aria-hidden="true"><?php echo esc_html(array('seo'=>'SEO','ads'=>'Google Ads','shop'=>'Хорошоп','sites'=>'WEB','dev'=>'DEV')[$d[8]]);?></span></div>
  <div class="pt-globe-tag"><?php echo esc_html($d[5]);?></div>
  <?php $i=0;foreach($nodes as $path=>$item):$label=$item[0];$url=$item[1];?>
  <a class="pt-node n<?php echo esc_attr($i);?>" href="<?php echo esc_url($url);?>" data-title="<?php echo esc_attr($label);?>" data-detail="<?php echo esc_attr($item[2]);?>"><span class="pt-node-icon" aria-hidden="true"><?php mrseo_category_icon($i);?></span><span class="pt-node-label"><?php echo esc_html($label);?></span><span class="pt-node-arrow" aria-hidden="true">↗</span></a><?php $i++;endforeach;?>
