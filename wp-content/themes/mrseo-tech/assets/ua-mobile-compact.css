@@ -90,11 +90,4 @@
  html[lang="uk-UA"] .contact-layout :is(.contact-brief,.contact-form-wrap){padding:18px}
  html[lang="uk-UA"] .contact-layout .contact-field{margin-bottom:12px}
  html[lang="uk-UA"] .contact-layout :is(input:not([type="hidden"]),textarea,select){font-size:16px}
- /* Symmetric, compact bottom contact bar: equal columns and centred labels. */
- html[lang="uk-UA"] .mrseo-mobile-contact-bar{box-sizing:border-box;left:50%;right:auto;transform:translateX(-50%);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:6px;width:min(calc(100% - 24px),320px);max-width:calc(100% - 24px);padding:5px;border-radius:16px}
- html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-contact-popover,
- html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-mobile-call{box-sizing:border-box;min-width:0;width:100%;margin:0}
- html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-popover>summary,
- html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-mobile-call{box-sizing:border-box;display:flex;width:100%;height:100%;min-height:44px;min-width:0;padding:8px 6px;gap:6px;border-radius:11px;font-size:13px;white-space:normal;justify-content:center;text-align:center;align-items:center}
- html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-ui-panel{box-sizing:border-box;left:0;right:auto;bottom:calc(100% + 10px);width:min(305px,calc(100vw - 44px))}
 }

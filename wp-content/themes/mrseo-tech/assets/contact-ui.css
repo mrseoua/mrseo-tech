@@ -67,3 +67,29 @@
 .mrseo-privacy-notice{margin:14px 0 18px;color:#616963;font-size:13px;line-height:1.65}
 .mrseo-privacy-notice a{color:var(--mrseo-brand-red)!important;text-decoration:underline;text-underline-offset:3px;font-weight:750}
 .mrseo-privacy-notice a:focus-visible{outline:2px solid var(--mrseo-brand-red);outline-offset:3px}
+
+/* UA phone-only: one message action; telephone remains in footer and contact page.
+   Keep this shared rule independent of the compact service-page stylesheet. */
+@media(max-width:700px){
+ html[lang="uk-UA"] .mrseo-header-phone,
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-mobile-call{display:none}
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar{
+  box-sizing:border-box;left:auto;right:max(16px,env(safe-area-inset-right,0px));transform:none;
+  width:min(144px,calc(100% - 32px));max-width:calc(100% - 32px);padding:0;gap:0;
+  background:transparent;border:0;border-radius:999px;box-shadow:none
+ }
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar>.mrseo-contact-popover{box-sizing:border-box;flex:1 1 100%;min-width:0;width:100%;margin:0}
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-popover>summary{
+  box-sizing:border-box;display:flex;align-items:center;justify-content:center;
+  width:100%;min-height:48px;margin:0;padding:10px 14px;gap:8px;
+  border-radius:999px;font-size:14px;line-height:1.25;white-space:nowrap;
+  color:#fff;background:#292f2a;border:1px solid #292f2a;box-shadow:0 8px 26px #14251b30
+ }
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-popover[open]>summary,
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-popover>summary:hover{background:#414840;border-color:#414840}
+ html[lang="uk-UA"] .mrseo-mobile-contact-bar .mrseo-contact-ui-panel{
+  box-sizing:border-box;left:auto;right:0;top:auto;bottom:calc(100% + 12px);
+  width:min(305px,calc(100vw - max(16px,env(safe-area-inset-right,0px)) - 16px));
+  max-height:calc(100vh - 100px - env(safe-area-inset-bottom,0px));overflow-y:auto
+ }
+}
