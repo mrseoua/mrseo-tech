@@ -110,6 +110,10 @@ const urlFor=slug=>origin+'/'+(slug?slug+'/':'');
      const groupKey={'seo':'seo','google-ads':'ads','horoshop':'horoshop','service-websites':'sites','web-development':'dev'}[slug];
      if(groupKey){const expected=JSON.stringify(data.menuGroups[groupKey]);if(JSON.stringify(data.satelliteLinks)!==expected||JSON.stringify(data.cardLinks)!==expected)errors.push('Category links/labels differ from visible menu');}
      if(slug==='web-development'&&(data.devPictureCount!==14||data.devPictureUnique!==14))errors.push('WebDev repeated or missing capability picture');
+     if(slug==='portfolio'){
+      const exp=await page.evaluate(()=>({root:!!document.querySelector('[data-experience="uk"]'),cards:document.querySelectorAll('.client-directory-card,.eu-project-card').length,values:document.querySelectorAll('.mx-value').length,menu:!!document.querySelector('header a[href$="/portfolio/"][aria-current="page"]'),cta:!!document.querySelector('.mx-cta a[href$="/contact/"]')}));
+      if(!exp.root||exp.cards!==0||exp.values!==4||!exp.menu||!exp.cta)errors.push('Confidential experience inventory '+JSON.stringify(exp));
+     }
      if(slug==='pricing'){
       const prices=await page.evaluate(()=>({groups:document.querySelectorAll('.mp-card[data-pricing-group]').length,rows:document.querySelectorAll('.mp-rate').length,cta:!!document.querySelector('.mp-final a[href$="/contact/"]'),menu:!!document.querySelector('header .nav-links a[href$="/pricing/"]')}));
       if(prices.groups!==5||prices.rows!==12||!prices.cta||!prices.menu)errors.push('Pricing page inventory '+JSON.stringify(prices));

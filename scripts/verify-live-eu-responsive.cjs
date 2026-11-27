@@ -370,7 +370,7 @@ async function audit(browser,viewport,lang,slug){
    const verify=(nodes,color)=>nodes.filter(n=>getComputedStyle(n).color!==color||Number(getComputedStyle(n).opacity)<.99).map(n=>({text:n.textContent.trim().slice(0,100),color:getComputedStyle(n).color,opacity:getComputedStyle(n).opacity}));
    return {loaded,headings:headings.length,labels:labels.length,dark:dark.length,wrong:[...verify([...headings,...labels].filter(n=>!darkClosing(n)),'rgb(168, 68, 50)'),...verify([...headings,...labels].filter(darkClosing),'rgb(242, 163, 140)'),...verify(dark,'rgb(242, 163, 140)')]};
   });
-  if(lang==='uk'&&slug!==''){
+  if(lang==='uk'&&slug!==''&&slug!=='portfolio'){
    const needsHeading=slug!=='privacy';
    if(!accent.loaded||accent.labels<1||(needsHeading&&accent.headings<1)||(slug==='horoshop'&&accent.headings<5)||(slug==='portfolio'&&accent.dark!==1)||accent.wrong.length)item.errors.push('UA brand accent regression '+JSON.stringify(accent));
    item.brandAccent=accent;
@@ -446,7 +446,7 @@ async function audit(browser,viewport,lang,slug){
       await page.evaluate(()=>window.scrollTo(0,0));
     }
   }else if(commercial.route||commercial.css)item.errors.push('UA commercial redesign leaked to '+lang+'/'+slug);
-  if(editorialTarget){
+  if(editorialTarget&&slug!=='portfolio'){
     if(ed.route!==slug||!ed.css||JSON.stringify(ed.families)!==JSON.stringify(premiumEditorialFamilies[slug])||!ed.geometry||!ed.animations||ed.pause!==(slug==='privacy'?0:1)||(slug==='privacy'&&!ed.privacy)||(slug==='contact'&&!ed.contactForm)||(slug==='horoshop'&&ed.partner!==2)||(slug==='about'&&ed.experience!=='10')||(slug==='portfolio'&&ed.portfolioCards<5))
       item.errors.push('UA editorial native content or motion missing: '+JSON.stringify(ed));
     if(c.serviceMenuItems!==31||c.menuItems!==20||!c.uaPremiumHeaderPhone)item.errors.push('UA editorial menu/contacts missing');
@@ -661,8 +661,8 @@ async function audit(browser,viewport,lang,slug){
   }else if(c.uaPremiumHome||c.uaPremiumStyles)item.errors.push('UA premium homepage leaked into '+lang+'/'+slug);
   if(!coreShard&&['seo','google-ads','web-development'].includes(slug)&&c.marketOffers!==3)item.errors.push('Market offer cards '+c.marketOffers);
   if(!coreShard&&sceneSlugs.includes(slug)&&(!c.bespokeHeroArt||!c.bespokeHeroStyles))item.errors.push('Service-specific illustration or stylesheet missing: '+slug);
-  if(slug==='portfolio'&&c.portfolioCards<5)item.errors.push('Public portfolio cards '+c.portfolioCards);
-  if(lang==='uk'&&uaFinalSlugs.includes(slug)&&!clusterTarget&&!commercialTarget){
+  if(slug==='portfolio'&&(lang==='uk'?c.portfolioCards!==0:c.portfolioCards<5))item.errors.push('Portfolio disclosure regression '+c.portfolioCards);
+  if(lang==='uk'&&uaFinalSlugs.includes(slug)&&slug!=='portfolio'&&!clusterTarget&&!commercialTarget){
     const v=c.uaFinalScenes;
     const services=['seo-audit','performance-max'].includes(slug);
     if(!v||!v.stylesheet||v.count!==1||v.headings.some(h=>!h)||
@@ -854,7 +854,7 @@ async function audit(browser,viewport,lang,slug){
    }catch(e){item.errors.push('SEO cinematic hero QA '+e.message)}
   }
   if(lang==='uk'&&slug==='portfolio'){
-    await page.locator('.uaf-story--portfolio').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
+    await page.locator('.mx-art').screenshot({path:'shots/ua-portfolio-visual-'+viewport.name+'.jpg',type:'jpeg',quality:76}).catch(e=>item.errors.push('Portfolio illustration screenshot failed: '+e.message));
   }
   if(lang==='uk'){
    // Validate the approved catalogue; exact inventory and interaction checks also follow below.
@@ -868,7 +868,7 @@ async function audit(browser,viewport,lang,slug){
   }
   if(lang==='uk'){
    const cat=await page.evaluate(()=>{const h=document.querySelector('.mrseo-ua-mega-header'),m=h?.querySelector('[data-ua-mega]');return {groups:[...m?.querySelectorAll('[data-catalog-group]')||[]].map(x=>x.dataset.catalogGroup),parents:m?.querySelectorAll('a.mrseo-catalog-parent[href]').length,links:m?.querySelectorAll('a.mrseo-catalog-link[href]').length,excluded:[...m?.querySelectorAll('a.mrseo-catalog-link[href]')||[]].map(a=>new URL(a.href).pathname).filter(p=>['/google-remarketing/','/horoshop/ga4/','/website-redesign/'].includes(p)),seo:[...m?.querySelectorAll('[data-catalog-group="seo"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),horoshop:[...m?.querySelectorAll('[data-catalog-group="horoshop"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname),dev:m?.querySelectorAll('[data-catalog-group="dev"] .mrseo-catalog-link').length,mobile:[...m?.querySelectorAll('[data-catalog-group="dev"] .mrseo-catalog-link')||[]].map(a=>new URL(a.href).pathname).filter(p=>['/mobile-app-development/','/ecommerce-mobile-apps/','/corporate-mobile-apps/','/pwa-development/'].includes(p)),top:[...h?.querySelectorAll('.nav-links>a')||[]].map(a=>a.textContent.trim()),trigger:h?.querySelectorAll('.services-menu-toggle').length,phone:!!h?.querySelector('a[href^="tel:"]'),languages:h?.querySelectorAll('.mrseo-language-options a').length};});
-   if(JSON.stringify(cat.groups)!==JSON.stringify(['seo','ads','horoshop','sites','dev'])||cat.parents!==5||cat.links!==31||cat.excluded.length!==0||cat.dev!==14||JSON.stringify(cat.mobile)!==JSON.stringify(['/mobile-app-development/','/ecommerce-mobile-apps/','/corporate-mobile-apps/','/pwa-development/'])||JSON.stringify(cat.seo)!==JSON.stringify(['/local-seo/','/ecommerce-seo/','/service-business-seo/','/international-seo/','/seo-audit/'])||JSON.stringify(cat.horoshop)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/feeds/'])||JSON.stringify(cat.top)!==JSON.stringify(['Про нас','Контакти'])||cat.trigger!==1||!cat.phone||cat.languages!==20)item.errors.push('UA catalogue inventory '+JSON.stringify(cat));
+   if(JSON.stringify(cat.groups)!==JSON.stringify(['seo','ads','horoshop','sites','dev'])||cat.parents!==5||cat.links!==31||cat.excluded.length!==0||cat.dev!==14||JSON.stringify(cat.mobile)!==JSON.stringify(['/mobile-app-development/','/ecommerce-mobile-apps/','/corporate-mobile-apps/','/pwa-development/'])||JSON.stringify(cat.seo)!==JSON.stringify(['/local-seo/','/ecommerce-seo/','/service-business-seo/','/international-seo/','/seo-audit/'])||JSON.stringify(cat.horoshop)!==JSON.stringify(['/horoshop/seo/','/horoshop/audit/','/horoshop/ads/','/horoshop/feeds/'])||JSON.stringify(cat.top)!==JSON.stringify(['Вартість','Наш досвід','Про нас','Контакти'])||cat.trigger!==1||!cat.phone||cat.languages!==20)item.errors.push('UA catalogue inventory '+JSON.stringify(cat));
   }
   if(lang==='uk'&&slug===''&&viewport.name==='wide'){
    const trigger=page.locator('.mrseo-ua-mega-header .services-menu-toggle');
