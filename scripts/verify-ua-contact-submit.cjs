@@ -20,12 +20,13 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   const action=await form.getAttribute('action');
   const endpoint=new URL(action,origin);
   assert.equal(endpoint.origin,origin);
-  assert.equal(endpoint.pathname,'/wp-admin/admin-post.php');
+  assert.equal(endpoint.pathname,'/contact/');
+  const legacyEndpoint=new URL('/wp-admin/admin-post.php',origin);
   const nonce=await form.locator('[name="mrseo_nonce"]').inputValue();
   assert.ok(nonce);
   const payload={action:'mrseo_contact',mrseo_nonce:nonce,mrseo_lang:'uk',contact_name:'CI test',contact_email:'qa@example.invalid',contact_site:'https://example.invalid/',contact_message:'CI contact validation, no real mail delivery.',contact_company_extra:''};
   const send=async(overrides={})=>{
-   const r=await ctx.request.post(endpoint.href,{form:{...payload,...overrides},maxRedirects:0});
+   const r=await ctx.request.post(legacyEndpoint.href,{form:{...payload,...overrides},maxRedirects:0});
    assert.ok([302,303].includes(r.status()),'Unexpected form status '+r.status());
    const dest=new URL(r.headers().location,origin);
    assert.equal(dest.origin,origin);
@@ -34,9 +35,25 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   };
   assert.equal(await send({mrseo_nonce:'invalid'}),'invalid');
   assert.equal(await send({contact_email:'not-an-email'}),'invalid');
-  assert.equal(await send({contact_company_extra:'bot'}),null);
+  assert.equal(await send({contact_company_extra:'bot'}),'invalid');
+  const invalidDirect=await ctx.request.post(endpoint.href,{form:{...payload,contact_company_extra:'bot'},maxRedirects:0});
+  assert.equal(invalidDirect.status(),200);
+  assert.match(await invalidDirect.text(),/Перевірте дані форми/);
   assert.equal(read().length,0,'Invalid/honeypot submission reached wp_mail');
-  assert.equal(await send(),'received');
+  await form.locator('[name="contact_name"]').fill(payload.contact_name);
+  await form.locator('[name="contact_email"]').fill(payload.contact_email);
+  await form.locator('[name="contact_site"]').fill(payload.contact_site);
+  await form.locator('[name="contact_message"]').fill(payload.contact_message);
+  assert.equal(await form.locator('[name="contact_company_extra"]').inputValue(),'');
+  assert.equal(await form.locator('[name="contact_company_extra"]').isVisible(),false);
+  const [posted]=await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),form.locator('button[type=submit]').click()]);
+  assert.equal(posted.status(),200);
+  assert.equal(posted.request().method(),'POST');
+  assert.equal(new URL(page.url()).pathname,'/contact/');
+  assert.ok(await page.locator('#contact-status').isVisible());
+  assert.match(await page.locator('#contact-status').innerText(),/Заявку отримано/);
+  assert.equal(await page.locator('#contact-form').count(),0);
+  assert.match(posted.headers()['cache-control']||'',/no-cache|no-store/);
   const records=read();
   assert.equal(records.length,1);
   const mail=records[0];
@@ -48,7 +65,7 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   assert.equal(await send(),'error','Rate limiting failed');
   assert.equal(read().length,1);
   const inspect=async(reset=false)=>{
-   const response=await ctx.request.post(endpoint.href,{form:{action:'mrseo_ci_enquiry_inspect',...(reset?{reset_rate:'1'}:{})}});
+   const response=await ctx.request.post(legacyEndpoint.href,{form:{action:'mrseo_ci_enquiry_inspect',...(reset?{reset_rate:'1'}:{})}});
    assert.equal(response.status(),200);return response.json();
   };
   const saved=await inspect(true);
@@ -58,7 +75,13 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   assert.ok(await receipt.isVisible());assert.match(await receipt.innerText(),/Заявку отримано/);
   assert.equal(await page.locator('#contact-form').count(),0);
   assert.equal(await receipt.locator('.mrseo-contact-ui-links a').count(),3);
-  assert.equal(await send({contact_message:'CI simulate mail failure — preserve this enquiry.'}),'received');
+  await page.goto(origin+'/contact/');
+  await page.locator('#c-name').fill(payload.contact_name);
+  await page.locator('#c-email').fill(payload.contact_email);
+  await page.locator('#c-msg').fill('CI simulate mail failure — preserve this enquiry.');
+  const [failedPost]=await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.locator('#contact-form button[type=submit]').click()]);
+  assert.equal(failedPost.status(),200);
+  assert.match(await page.locator('#contact-status').innerText(),/Заявку отримано/);
   const failed=await inspect();
   assert.equal(failed.length,2);assert.equal(failed[1].mail,'failed');assert.ok(failed[1].body.includes('CI simulate mail failure'));
   const publicPage=await ctx.request.get(origin+'/?post_type=mrseo_enquiry&p='+failed[1].id);

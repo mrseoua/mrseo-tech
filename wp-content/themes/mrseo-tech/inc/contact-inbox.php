@@ -30,7 +30,7 @@ add_action('manage_mrseo_enquiry_posts_custom_column',static function($column,$i
  echo esc_html($labels[get_post_meta($id,'_mrseo_mail_state',true)]??'Невідомо');
 },10,2);
 add_action('template_redirect',static function(){
- if(mrseo_locale()==='uk'&&mrseo_slug()==='contact'&&isset($_GET['message_status'])){
+ if(mrseo_locale()==='uk'&&mrseo_slug()==='contact'){
   if(!defined('DONOTCACHEPAGE'))define('DONOTCACHEPAGE',true);
   nocache_headers();
  }

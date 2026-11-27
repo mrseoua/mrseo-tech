@@ -391,44 +391,63 @@ function mrseo_meta_description(){
 add_action('wp_head','mrseo_meta_description',1);
 
 /** Simple contact form handler; mail delivery depends on server configuration. */
-function mrseo_handle_contact() {
+function mrseo_handle_contact($direct_ua=false) {
  $post_lang=sanitize_key(wp_unslash($_POST['mrseo_lang']??'uk'));
  $post_lang=in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true)?$post_lang:'uk';
+ if($direct_ua)$post_lang='uk';
  $redirect=mrseo_url('contact',$post_lang);
- $finish=static function($status)use($redirect,$post_lang){
+ $finish=static function($status)use($redirect,$post_lang,$direct_ua){
+  if($direct_ua){
+   // Return the result in this POST response; no redirect/query-string dependency.
+   $GLOBALS['mrseo_ua_contact_result']=$status;
+   nocache_headers();
+   return;
+  }
   $url=add_query_arg('message_status',$status,$redirect);
   if($post_lang==='uk')$url.='#contact-status';
   wp_safe_redirect($url,303);exit;
  };
- if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {$finish('invalid');}
- if(!empty($_POST['contact_company_extra'])) {wp_safe_redirect($redirect);exit;}
+ if ($_SERVER['REQUEST_METHOD']!=='POST' || !isset($_POST['mrseo_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mrseo_nonce'])),'mrseo_contact_submit')) {return $finish('invalid');}
+ if(!empty($_POST['contact_company_extra'])) {
+  if($post_lang==='uk')return $finish('invalid');
+  wp_safe_redirect($redirect);exit;
+ }
  $name=mb_substr(sanitize_text_field(wp_unslash($_POST['contact_name']??'')),0,90);
  $email=sanitize_email(wp_unslash($_POST['contact_email']??''));
  $site=esc_url_raw(wp_unslash($_POST['contact_site']??''));
  $message=mb_substr(sanitize_textarea_field(wp_unslash($_POST['contact_message']??'')),0,3000);
- if(!$name || !is_email($email) || mb_strlen($message)<10){$finish('invalid');}
+ if(!$name || !is_email($email) || mb_strlen($message)<10){return $finish('invalid');}
  $ip=isset($_SERVER['REMOTE_ADDR'])?sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])):'';
  $rate_key='mrseo_form_'.md5($ip);
- if(get_transient($rate_key)){$finish('error');}
+ if(get_transient($rate_key)){return $finish('error');}
  set_transient($rate_key,1,90);
  $mail_locale=in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true)?strtoupper($post_lang):'UK';
  $body="Язык заявки: $mail_locale\nСтраница: $redirect\nИмя: $name\nEmail: $email\nСайт: $site\n\n$message";
  $subject='Заявка MrSeo.tech ['.$mail_locale.']';
  // Save first for UA only. A mail transport failure must not lose a real enquiry.
  $enquiry_id=$post_lang==='uk'?mrseo_store_ua_enquiry($body):0;
- if($post_lang==='uk'&&!$enquiry_id){delete_transient($rate_key);$finish('error');}
+ if($post_lang==='uk'&&!$enquiry_id){delete_transient($rate_key);return $finish('error');}
  if($enquiry_id)$subject.=' '.get_the_title($enquiry_id);
  $recipient=$post_lang==='uk'?'mrseo.com.ua@gmail.com':'hello@mrseo.tech';
  try{$ok=wp_mail($recipient,$subject,$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));}
  catch(Throwable $e){$ok=false;}
  if($enquiry_id){
   update_post_meta($enquiry_id,'_mrseo_mail_state',$ok?'accepted':'failed');
-  $finish('received');
+  return $finish('received');
  }
- $finish($ok?'sent':'error');
+ return $finish($ok?'sent':'error');
 }
 add_action('admin_post_nopriv_mrseo_contact','mrseo_handle_contact');
 add_action('admin_post_mrseo_contact','mrseo_handle_contact');
+// Direct frontend submission avoids hosting/security redirects of wp-admin/admin-post.php.
+add_action('template_redirect',static function(){
+ if(mrseo_locale()!=='uk'||mrseo_slug()!=='contact'||($_SERVER['REQUEST_METHOD']??'')!=='POST')return;
+ if(sanitize_key(wp_unslash($_POST['action']??''))!=='mrseo_contact')return;
+ if(!defined('DONOTCACHEPAGE'))define('DONOTCACHEPAGE',true);
+ nocache_headers();
+ mrseo_handle_contact(true);
+},-100);
+add_filter('redirect_canonical',static function($url){return isset($GLOBALS['mrseo_ua_contact_result'])?false:$url;},130);
 
 /**
  * Permanent noindex for internal design concepts. This remains ACTIVE after
