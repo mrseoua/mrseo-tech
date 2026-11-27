@@ -1218,3 +1218,11 @@ Owner approved publication of PR #229 on 27 Nov. Pre-release Ads regression caug
 
 ### UA technical closure — 27 Nov
 Production SEO release #229 deployed successfully. Live international audit 46011179722 passed 660 canonical HTTP 200 HEAD requests and 222 HTML/canonical/hreflang checks. UA isolated browser audit passed; live full browser audit 46011179756 returned 58 HTTP 429 and 68 HTTP 503, so rendered production QA is not certified. Mobile labs passed 42 routes without execution errors; 35/42 LCP <=2.5s, 42/42 CLS <=0.1 in one synthetic run. Prepared slower sequential live browser checks with bounded retry, explicit incomplete coverage failure, exact rendered UA metadata duplication checks, and same-origin internal link HTTP audit. No production protection, homepage, content, routing or indexing settings changed. Actual inbox delivery remains unverified. Browser preview shard 3 previously failed legacy category layout assertions; do not claim all preview workflows green.
+
+
+### UA mobile SEO readability pilot — 27 Nov
+Owner requested lighter mobile-only presentation, no desktop changes. Prepared isolated /seo/ pilot at <=680px: shorter introductory summary with original lead available via native details; work steps show results first, extra detail expandable; compact section spacing and smaller category artwork/orbit. H1, canonical, meta, links, original text, desktop and homepage preserved. Browser regression covers mobile interaction, resizing back to desktop, metadata, and home isolation. No publication before owner review. No claim of visual or conversion improvement before inspection.
+
+
+### Owner-approved mobile pilot release — 27 Nov
+Owner reviewed the first mobile /seo/ screenshots and explicitly requested publishing that first variant only, retaining the category planet and all satellites. Revert the second iteration to the exact first tested implementation (a741b8cb24360e42a8a759871582461b4a035f60); only this handoff note differs. Scope: Ukrainian SEO hub <=680px, no other page, no homepage or desktop changes. Original text, metadata, links, noindex preserved. First iteration UA unified style QA 46021281481, Theme international QA 46021281542 and UK safety QA 46021281337 passed. Production deployment and owner phone review are separate acceptance checks.
