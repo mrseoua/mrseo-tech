@@ -25,6 +25,7 @@ function mrseo_url($slug='',$lang=null){
   if($lang==='uk')return home_url('/'.$slug.'/');
   return mrseo_i18n_exact_url($lang,$extra['fallback']);
  }
+ if($slug==='pricing')return home_url($lang==='uk'?'/pricing/':'/'.$lang.'/');
  if($slug==='privacy')return home_url('/'.($lang==='uk'?'':$lang.'/').'privacy/');
  // A real Russian page always wins over UK-only slug fallbacks. In particular,
  // google-ads-audit exists independently on /ru/ and must not become /ru/google-ads/.
