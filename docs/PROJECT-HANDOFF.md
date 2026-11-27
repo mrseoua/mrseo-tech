@@ -1196,3 +1196,7 @@ Additional Serpstat g_ua query sample: створення сайту на хор
 
 ### 27 Nov — retire unlisted UA services
 Owner requests removal of 34 older UA service URLs absent from current menu. Keep 41 active pages (five hubs, 31 children, five editorial/legal). Retire exact paths using 301 to topical active routes; remove UA canonical and alternate entries; preserve source archive and other 19 locales. Homepage visual untouched; disclosure links use current menu. noindex unchanged. Expected 659 total canonicals. Tests and deployment pending.
+
+
+### 27 Nov — exact menu safety and test-route cleanup
+PR225 deploy succeeded (45997320894); UA layout live audit blocked by HTTP 429/503, not a valid visual result. Owner confirmed keep every actual menu page, delete only unnecessary/test pages; 301 not required. Retain already deployed topical redirects for 34 old services to avoid unnecessary redirect-policy churn. Three exact root UA prototype URLs orbit-lab, orbit-light, premium-tech-preview return HTTP 410; shared templates and all locale homepages unchanged. Add independent runtime registry equality against current visible menu and five editorial/legal pages (41), zero retired overlap, test-route absence and all twenty homepages. No database purge. noindex remains.

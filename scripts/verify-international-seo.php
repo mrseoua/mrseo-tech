@@ -469,5 +469,30 @@ foreach(mrseo_ua_retired_services() as $slug=>$target){
  assert_seo(mrseo_i18n_current_entry()===null&&mrseo_ua_retired_request()===$target,'Retired UA URL still active '.$slug);
  assert_seo(isset($seen[mrseo_i18n_exact_url('uk',$target)])&&!isset($seen[mrseo_i18n_exact_url('uk',$slug)]),'Retirement target/source incorrect '.$slug);
 }
+// Verify the actual current compact menu, not the archived service taxonomy.
+// Its 36 service URLs plus five editorial/legal pages must match the active UA inventory.
+require_once $root.'/inc/ua-header-six.php';
+$_SERVER['REQUEST_URI']='/';
+$protected=array('','about','portfolio','contact','privacy');
+foreach(mrseo_ua_menu_groups() as $group){
+ if(!in_array($group['key'],array('seo','ads','horoshop','sites','dev'),true))continue;
+ $protected[]=$group['parent'];
+ foreach(mrseo_ua_visible_menu_sections($group['key']) as $section)foreach($section['items'] as $item){
+  $protected[]=trim(parse_url($item['url'],PHP_URL_PATH),'/');
+ }
+}
+$actual=array_column($ua_inventory,'slug');
+sort($protected);sort($actual);
+assert_seo(count($protected)===41&&$protected===$actual,'Active UA URLs differ from actual menu and protected editorial pages');
+assert_seo(!array_intersect($protected,array_keys(mrseo_ua_retired_services())),'A menu or protected page was retired');
+foreach(array('orbit-lab','orbit-light','premium-tech-preview') as $preview){
+ $_SERVER['REQUEST_URI']='/'.$preview.'/';
+ assert_seo(mrseo_ua_retired_preview()&&mrseo_i18n_current_entry()===null,'Public prototype '.$preview);
+}
+foreach(array('','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr') as $locale){
+ $_SERVER['REQUEST_URI']=$locale?'/'.$locale.'/':'/';
+ assert_seo(!mrseo_ua_retired_preview()&&mrseo_i18n_current_entry()!==null,'Homepage blocked '.$locale);
+}
+echo "UA menu protection PASS: 36 service URLs, 5 editorial/legal pages, 34 retired services, 3 retired prototypes, all 20 homepages.\n";
 echo "International SEO PASS: " . count($inventory) . " real canonical URLs, " .
     count($groups) . " equivalence groups, full reciprocal hreflang, matched menus and identical XML inventory.\n";
