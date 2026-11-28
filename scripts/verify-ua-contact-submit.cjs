@@ -91,6 +91,30 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   await page.goto(origin+'/contact/?message_status=error#contact-status');
   assert.ok(await page.locator('#contact-status[role="alert"]').isVisible());
   assert.ok(await page.locator('#contact-form').isVisible());
+  // Default-off release remains covered above. Test opt-in with mocked Siteverify only.
+  await inspect(true);
+  await ctx.setExtraHTTPHeaders({'X-Mrseo-Ci-Turnstile':'mock'});
+  await ctx.route('https://challenges.cloudflare.com/turnstile/v0/api.js',route=>route.fulfill({status:200,contentType:'application/javascript',body:'/* CI mock: no external challenge */'}));
+  await page.goto(origin+'/contact/',{waitUntil:'domcontentloaded'});
+  assert.equal(await page.locator('.cf-turnstile[data-action="contact"]').count(),1);
+  assert.equal(await page.locator('.cf-turnstile').getAttribute('data-sitekey'),'0x4AAAAAAGW4oUSM5z0gmwex');
+  assert.ok(!(await page.content()).includes('ci-only-not-a-production-secret'));
+  const protectedPayload={...payload,mrseo_nonce:await page.locator('[name="mrseo_nonce"]').inputValue()};
+  const before=read().length;
+  for(const token of ['', 'ci-invalid','ci-wrong-host','ci-wrong-action','ci-outage']){
+   const r=await ctx.request.post(endpoint.href,{headers:{'X-Mrseo-Ci-Turnstile':'mock'},form:{...protectedPayload,'cf-turnstile-response':token}});
+   assert.equal(r.status(),200);
+   assert.match(await r.text(),/Перевірку безпеки не пройдено/);
+   assert.match(await r.text(),/CI contact validation, no real mail delivery/);
+  }
+  assert.equal(read().length,before);
+  const accepted=await ctx.request.post(endpoint.href,{headers:{'X-Mrseo-Ci-Turnstile':'mock'},form:{...protectedPayload,'cf-turnstile-response':'ci-valid'}});
+  assert.equal(accepted.status(),200);
+  assert.match(await accepted.text(),/Заявку отримано/);
+  assert.equal(read().length,before+1);
+  assert.deepEqual([].concat(read().at(-1).to),['mrseo.com.ua@gmail.com','chessnok@ukr.net']);
+  assert.equal((await inspect()).length,3);
+  console.log('PASS: opt-in Turnstile markup and mocked server verification: missing/invalid/wrong host/wrong action/outage reject before storage, valid token accepted. Real Cloudflare challenge NOT tested.');
   console.log('PASS: private UA enquiry stored with successful and failed mail handoff; public receipt/error and anonymous isolation checked.');
   console.log('PASS: actual local form POST, nonce, invalid email, honeypot, mail payload and rate limiting. External delivery NOT tested.');
  }finally{await browser.close();}
