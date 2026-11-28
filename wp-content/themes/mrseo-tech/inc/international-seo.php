@@ -206,9 +206,9 @@ function mrseo_i18n_page_groups() {
         $groups[]=array('group'=>'platform:woocommerce-shopify','pages'=>$pages);
     }
     foreach(mrseo_ua_expansion_slugs() as $slug)$groups[]=array('group'=>'ua-expansion:'.$slug,'pages'=>array('uk'=>$slug));
-    $groups[]=array('group'=>'ua-pricing','pages'=>array('uk'=>'pricing'));
+    $groups[]=array('group'=>'ua-pricing','pages'=>array('uk'=>'pricing','ru'=>'pricing'));
     // Additional original UA services: one genuine Ukrainian version each.
-    foreach(array_keys(mrseo_ua_dev_new_pages()) as $slug)$groups[]=array('group'=>'ua-dev:'.$slug,'pages'=>array('uk'=>$slug));
+    foreach(array_keys(mrseo_ua_dev_new_pages()) as $slug){$pages=array('uk'=>$slug);if(function_exists('mrseo_ru_dev_pages')&&isset(mrseo_ru_dev_pages()[$slug]))$pages['ru']=$slug;$groups[]=array('group'=>'ua-dev:'.$slug,'pages'=>$pages);}
     foreach(array_keys(mrseo_hs_pages()) as $key)$groups[]=array('group'=>'ua-horoshop:'.$key,'pages'=>array('uk'=>'horoshop/'.$key));
     foreach($groups as $i=>$group){
         if(isset($group['pages']['uk'])&&isset(mrseo_ua_retired_services()[$group['pages']['uk']]))unset($groups[$i]['pages']['uk']);
