@@ -6,6 +6,7 @@ on:
       - 'wp-content/themes/mrseo-tech/**'
       - 'scripts/verify-ua-unified-browser.cjs'
       - 'scripts/verify-ua-contact-submit.cjs'
+      - 'scripts/verify-ua-orbit-controls.cjs'
       - 'scripts/fixtures/ci-contact-mail.php'
       - '.github/workflows/ua-unified-style-qa.yml'
 permissions:
@@ -89,6 +90,30 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
+      - name: Verify raw international sitemap on isolated WordPress
+        run: |
+          python3 - <<'PY'
+          from urllib.request import urlopen
+          import xml.etree.ElementTree as ET
+          with urlopen('http://127.0.0.1:8080/mrseo-locales-sitemap.xml',timeout=15) as response:
+              assert response.status==200
+              assert 'xml' in response.headers.get('Content-Type','').lower()
+              raw=response.read()
+          ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9','x':'http://www.w3.org/1999/xhtml'}
+          root=ET.fromstring(raw)
+          assert root.tag=='{'+ns['s']+'}urlset'
+          # Reproduce leading XML whitespace observed in live audit; no stripping.
+          assert ET.fromstring(b'\n'+raw).tag==root.tag
+          rows=root.findall('s:url',ns)
+          locs=[row.findtext('s:loc',namespaces=ns) for row in rows]
+          assert len(rows)==660 and len(set(locs))==660
+          assert all(loc and row.findall('x:link',ns) for loc,row in zip(locs,rows))
+          print('PASS: raw UTF-8 sitemap, 660 unique URLs, hreflang links and whitespace tolerance')
+          PY
+      - name: Verify button-free category orbit and reduced motion
+        env:
+          MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
+        run: node scripts/verify-ua-orbit-controls.cjs
       - name: Check every Ukrainian route at 1440, 390 and 360 pixels
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080

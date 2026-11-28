@@ -106,6 +106,10 @@ async function audit(browser,viewport,lang,slug){
   item.check=await page.evaluate(({lang,slug,width,coreShard})=>{
    const canonical=[...document.querySelectorAll('link[rel=canonical]')].map(x=>x.href);
    const body=document.body;
+   const uaContactForm=document.querySelector('form#contact-form');
+   const uaContactValid=!!uaContactForm&&uaContactForm.method==='post'&&new URL(uaContactForm.action).origin===location.origin&&new URL(uaContactForm.action).pathname==='/contact/'&&
+    !!uaContactForm.querySelector('input[name="action"][value="mrseo_contact"]')&&!!uaContactForm.querySelector('input[name="mrseo_lang"][value="uk"]')&&
+    !!uaContactForm.querySelector('input[name="mrseo_nonce"]')&&!!uaContactForm.querySelector('textarea[name="contact_message"]')&&!!uaContactForm.querySelector('.mrseo-privacy-notice');
    const uaHome=lang==='uk'&&slug==='';
    const node=slug===''?document.querySelector(uaHome?'.pt-ua-home .pt-orbit':'.orbit-lab .lab-visual'):document.querySelector('.eu-orbit-scene');
    const earth=slug===''?node?.querySelector(uaHome?'.pt-globe':'.lab-core'):node?.querySelector('.eu-earth-core');
@@ -182,7 +186,7 @@ async function audit(browser,viewport,lang,slug){
       return {route:marker?.dataset.pueRoute||'',css:!!document.querySelector('link[href*="premium-ua-editorial.css"]'),
         families:scenes.map(el=>el.dataset.pueScene),geometry:scenes.every(el=>{const r=el.getBoundingClientRect();return r.width>0&&r.height>0&&r.left>=-2&&r.right<=innerWidth+2}),
         animations:scenes.every(el=>!!el.querySelector('animate,animateMotion,animateTransform')),pause:document.querySelectorAll('.pue-pause').length,
-        privacy:!!document.querySelector('.mrseo-privacy-page'),contactForm:!!document.querySelector('form[action*="admin-post.php"] input[name="mrseo_nonce"]')&&!!document.querySelector('form textarea[name="contact_message"]')&&!!document.querySelector('form .mrseo-privacy-notice'),
+        privacy:!!document.querySelector('.mrseo-privacy-page'),contactForm:lang==='uk'?uaContactValid:!!document.querySelector('form[action*="admin-post.php"] input[name="mrseo_nonce"]')&&!!document.querySelector('form textarea[name="contact_message"]')&&!!document.querySelector('form .mrseo-privacy-notice'),
         partner:document.querySelectorAll('.hs-authentic-logo img,.hs-official-badge').length,
         portfolioCards:document.querySelectorAll('.client-directory-card').length,
         experience:document.querySelector('.about-experience-number')?.textContent.trim()||''};
@@ -274,8 +278,8 @@ async function audit(browser,viewport,lang,slug){
         planSteps:services?(compactAudit?sections[0]:sections[1])?.querySelectorAll('.ua4-plan-step').length||0:0,
         ordered:sections.length===1||(sections.length===2&&!!(sections[0].compareDocumentPosition(sections[1])&Node.DOCUMENT_POSITION_FOLLOWING)),
         geometry:boxRects.length>0&&boxRects.every(r=>r.w>250&&r.left>=-2&&r.right<=innerWidth+2),
-        formIntact:slug==='contact'?!!document.querySelector('form[action*="admin-post.php"] input[name="mrseo_nonce"]')&&
-            !!document.querySelector('form[action*="admin-post.php"] textarea[name="contact_message"]'):true,
+        formIntact:slug==='contact'?(lang==='uk'?uaContactValid:!!document.querySelector('form[action*="admin-post.php"] input[name="mrseo_nonce"]')&&
+            !!document.querySelector('form[action*="admin-post.php"] textarea[name="contact_message"]')):true,
         noLeak:!target&&!stylesheet&&sections.length===0};
     })(),
     uaFourScenes:(()=>{
@@ -522,19 +526,10 @@ async function audit(browser,viewport,lang,slug){
     return {hero:shown(hero),planet:shown(globe),texture:!!image?.getAttribute('src'),canvas:!!globe?.querySelector('canvas'),planetName:globe?.querySelector('.category-planet-name')?.textContent.trim(),pause:!!hero?.querySelector('.pt-rotate'),engine:!!document.querySelector('script[src*="category-orbit-engine.js"]'),css:!!document.querySelector('link[href*="category-home.css"]'),menu,satellites,cards,fit:[...hero?.querySelectorAll('.pt-node')||[],...catalog?.querySelectorAll('.category-tile')||[]].every(shown),stages,answers:answers.length,visibleAnswers:answers.filter(e=>shown(e)&&e.textContent.trim().length>20&&parseFloat(getComputedStyle(e).fontSize)>=17.9).length,cta:!!document.querySelector('[data-ua-stage="cta"] a[href$="/contact/"]'),partner:hero?.querySelectorAll('.category-partner img').length||0};
    },{group,count});
    const order=['hero','problems','approach','catalog','work','result','terms','faq','cta'];
-   if(!hub.hero||!hub.planet||!hub.texture||!hub.canvas||!hub.planetName||!hub.pause||!hub.engine||!hub.css||!hub.fit||hub.menu.length!==count||JSON.stringify(hub.menu)!==JSON.stringify(hub.satellites)||JSON.stringify(hub.menu)!==JSON.stringify(hub.cards)||JSON.stringify(hub.stages)!==JSON.stringify(order)||hub.answers!==3||hub.visibleAnswers!==3||!hub.cta||(slug==='horoshop'&&hub.partner!==2))item.errors.push('Approved category orbit regression '+JSON.stringify(hub));
-   const rotate=page.locator('.category-home .pt-rotate');
-   if(await rotate.count()===1){
-    await page.waitForLoadState('load');
-    await page.emulateMedia({reducedMotion:'no-preference'});
-    await rotate.click({timeout:5000});
-    if(await rotate.getAttribute('aria-pressed')!=='true')item.errors.push('Category planet pause failed');
-    await rotate.click({timeout:5000});
-    if(await rotate.getAttribute('aria-pressed')!=='false')item.errors.push('Category planet resume failed');
-    await page.emulateMedia({reducedMotion:'reduce'});
-    await page.waitForFunction(()=>document.querySelector('.category-home .pt-rotate')?.disabled===true,undefined,{timeout:4000}).catch(()=>item.errors.push('Category planet reduced motion failed'));
-    await page.emulateMedia({reducedMotion:'no-preference'});
-   }
+   if(!hub.hero||!hub.planet||!hub.texture||!hub.canvas||!hub.planetName||hub.pause||!hub.engine||!hub.css||!hub.fit||hub.menu.length!==count||JSON.stringify(hub.menu)!==JSON.stringify(hub.satellites)||JSON.stringify(hub.menu)!==JSON.stringify(hub.cards)||JSON.stringify(hub.stages)!==JSON.stringify(order)||hub.answers!==3||hub.visibleAnswers!==3||!hub.cta||(slug==='horoshop'&&hub.partner!==2))item.errors.push('Approved category orbit regression '+JSON.stringify(hub));
+   await page.emulateMedia({reducedMotion:'reduce'});
+   await page.waitForFunction(()=>document.querySelector('.category-home .pt-orbit')?.dataset.orbitMotion==='reduced',undefined,{timeout:4000}).catch(()=>item.errors.push('Category orbit reduced motion failed'));
+   await page.emulateMedia({reducedMotion:'no-preference'});
   }
   if(!c.title||c.title.length<(coreShard?8:12))item.errors.push('Missing document title');
   if(c.htmlLang.toLowerCase().split('-')[0]!==lang)item.errors.push('Wrong html lang '+c.htmlLang);

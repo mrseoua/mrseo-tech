@@ -18,9 +18,18 @@ add_filter('pre_handle_404',function($pre){
 },1);
 add_action('template_redirect',function(){
  if(!get_query_var('mrseo_locales_sitemap'))return;
+ // Remove only incidental whitespace from an existing writable PHP output buffer.
+ // Never hide warnings or arbitrary output; the strict XML audit must expose those.
+ $prefix=ob_get_contents();
+ if(is_string($prefix)&&$prefix!==''&&strspn($prefix," \t\r\n")===strlen($prefix)){
+  $buffer=ob_get_status();
+  if(($buffer['flags']??0)&PHP_OUTPUT_HANDLER_CLEANABLE)ob_clean();
+ }
  status_header(200);nocache_headers();header('Content-Type: application/xml; charset=UTF-8');
  $esc=function($s){return htmlspecialchars($s,ENT_QUOTES|ENT_XML1,'UTF-8');};
- echo '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+ // The XML declaration is optional for UTF-8. A valid document without it also
+ // tolerates XML whitespace already emitted by host/bootstrap code before this hook.
+ // Encoding is explicit in Content-Type; preserve the exact sitemap inventory.
  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'."\n";
  foreach(mrseo_localized_sitemap_paths() as $entry){
   echo ' <url><loc>'.$esc($entry['loc']).'</loc>'."\n";
