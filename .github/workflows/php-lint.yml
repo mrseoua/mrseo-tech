@@ -751,7 +751,7 @@ jobs:
           assert "require_once get_template_directory() . '/inc/eu-routing.php'" in functions
           assert "Язык заявки: $mail_locale" in functions
           assert "Заявка MrSeo.tech ['.$mail_locale.']" in functions
-          assert "$recipient=$post_lang==='uk'?'mrseo.com.ua@gmail.com':'hello@mrseo.tech';" in functions
+          assert "$recipient=$post_lang==='uk'?array('mrseo.com.ua@gmail.com','chessnok@ukr.net'):'hello@mrseo.tech';" in functions
           assert "wp_mail($recipient,$subject,$body" in functions
           assert "'From: MrSeo.tech <hello@mrseo.tech>'" in functions
           assert "'Reply-To: '.$email" in functions
