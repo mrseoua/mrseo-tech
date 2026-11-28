@@ -36,3 +36,13 @@
 .category-home .pt-home .pt-globe .category-planet-name{position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(15px,2vw,32px);font-weight:850;letter-spacing:-.045em;line-height:1.15;white-space:nowrap;color:#fffdf7;text-shadow:0 2px 5px #221d1750;background:color-mix(in srgb,var(--planet-accent) 92%,#231f1a);padding:.32em .62em;border:1px solid #fff7e580;border-radius:9px;box-shadow:0 4px 16px #201b2330,inset 0 1px 1px #fff4;pointer-events:none}
 .category-home .pt-home .pt-globe-tag{color:var(--planet-accent);background:var(--planet-tag);border:1px solid color-mix(in srgb,var(--planet-accent) 35%,#e4dbcf);border-radius:999px;padding:5px 12px;font-size:11px;letter-spacing:.08em;max-width:100%}
 @media(max-width:680px){.category-home .pt-home .pt-globe .category-planet-name{font-size:clamp(15px,4.5vw,24px)}.category-home .pt-home .pt-globe-tag{font-size:10px}}
+
+/* Keep the pause control in its own grid track; never under the live detail.
+   Scoped to service category hubs, not the approved Earth homepage. */
+.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:center;gap:12px;position:relative;isolation:isolate;min-width:0}
+.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-orbit-detail{position:relative;inset:auto;transform:none;grid-column:1;grid-row:1;width:auto;min-width:0;max-width:100%;overflow-wrap:anywhere;z-index:0}
+.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-rotate{position:relative;inset:auto;transform:none;grid-column:2;grid-row:1;justify-self:end;align-self:center;z-index:1;min-width:0;max-width:100%;white-space:normal;min-height:44px;pointer-events:auto}
+@media(max-width:680px){
+ .category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom{grid-template-columns:minmax(0,1fr);align-items:start}
+ .category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-rotate{grid-column:1;grid-row:2;justify-self:start}
+}

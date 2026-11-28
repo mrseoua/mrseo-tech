@@ -377,7 +377,15 @@ if __name__ == "__main__":
     status, target, headers, body = fetch(SITEMAP)
     if status != 200 or target != SITEMAP:
         fail(f"Sitemap inaccessible: {status} {target}")
-    root = ET.fromstring(body)
+    try:
+        root = ET.fromstring(body)
+    except ET.ParseError as exc:
+        fail(f"Invalid raw sitemap XML at {SITEMAP}: {exc}")
+    if root.tag != "{"+NS["s"]+"}urlset":
+        fail(f"Unexpected sitemap root: {root.tag}")
+    content_type = next((v for k,v in headers.items() if k.lower()=="content-type"), "")
+    if "xml" not in content_type.lower():
+        fail(f"Sitemap response is not XML: {content_type}")
     sitemap = {}
     for node in root.findall("s:url", NS):
         loc_node = node.find("s:loc", NS)

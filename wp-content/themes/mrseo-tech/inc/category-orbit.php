@@ -11,7 +11,7 @@ function mrseo_category_is_root(){
 add_action('wp_enqueue_scripts',function(){
  if(!mrseo_category_is_root())return;
  wp_enqueue_style('mrseo-category-home-engine',get_template_directory_uri().'/assets/home-uk-premium.css',array('mrseo-style'),'1.0.1');
- wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.4.0');
+ wp_enqueue_style('mrseo-category-home-layout',get_template_directory_uri().'/assets/category-home.css',array('mrseo-category-home-engine'),'2.4.1');
  wp_enqueue_style('mrseo-category-tiles',get_template_directory_uri().'/assets/category-tiles.css',array('mrseo-category-home-layout'),'2.0.2');
  wp_enqueue_script('mrseo-category-home-engine',get_template_directory_uri().'/assets/category-orbit-engine.js',array(),'1.1.0',true);
 },150);
