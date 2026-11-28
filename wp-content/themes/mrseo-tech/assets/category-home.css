@@ -46,3 +46,10 @@
  .category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom{grid-template-columns:minmax(0,1fr);align-items:start}
  .category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-rotate{grid-column:1;grid-row:2;justify-self:start}
 }
+
+/* The shared stylesheet intentionally visually hides decorative controls.
+   Restore the actual category pause button only, including pointer access.
+   All other motion controls and the homepage retain the owner's global rule. */
+.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>button.pt-rotate:not(:focus-visible){
+ position:relative!important;width:auto!important;height:auto!important;min-width:0!important;min-height:44px!important;max-width:100%!important;max-height:none!important;margin:0!important;padding:8px 13px!important;overflow:visible!important;clip:auto!important;clip-path:none!important;white-space:normal!important;border:1px solid #c7b5a2!important
+}
