@@ -5,6 +5,10 @@ $dev_locale=mrseo_locale();
 if($dev_locale==='uk')require_once get_template_directory().'/inc/ua-commercial-visuals.php';
 $dev=mrseo_dev_page($dev_locale);
 if(!$dev){status_header(404);include get_404_template();return;}
+if($dev_locale==='ru'&&($semantic=mrseo_ru_semantic_current())){
+ $dev['headline']=esc_html($semantic['headline'][0]).'<br><em>'.esc_html($semantic['headline'][1]).'</em>';
+ $dev['lead']=$semantic['lead'];
+}
 $is_int_dev=in_array($dev_locale,array('pl','de'),true);
 $dev_nav=array(
  'uk'=>array('SEO','SEO інтернет-магазинів','Google Ads','Аналітика','SEO-аудит','Веброзробка'),
