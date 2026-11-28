@@ -428,7 +428,7 @@ function mrseo_handle_contact($direct_ua=false) {
  $enquiry_id=$post_lang==='uk'?mrseo_store_ua_enquiry($body):0;
  if($post_lang==='uk'&&!$enquiry_id){delete_transient($rate_key);return $finish('error');}
  if($enquiry_id)$subject.=' '.get_the_title($enquiry_id);
- $recipient=$post_lang==='uk'?'mrseo.com.ua@gmail.com':'hello@mrseo.tech';
+ $recipient=$post_lang==='uk'?array('mrseo.com.ua@gmail.com','chessnok@ukr.net'):'hello@mrseo.tech';
  try{$ok=wp_mail($recipient,$subject,$body,array('From: MrSeo.tech <hello@mrseo.tech>','Reply-To: '.$email));}
  catch(Throwable $e){$ok=false;}
  if($enquiry_id){

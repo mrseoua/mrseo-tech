@@ -57,7 +57,7 @@ const read=()=>fs.existsSync(capture)?JSON.parse(fs.readFileSync(capture,'utf8')
   const records=read();
   assert.equal(records.length,1);
   const mail=records[0];
-  assert.deepEqual([].concat(mail.to),['mrseo.com.ua@gmail.com']);
+  assert.deepEqual([].concat(mail.to),['mrseo.com.ua@gmail.com','chessnok@ukr.net']);
   assert.ok([].concat(mail.headers).join('\n').includes('From: MrSeo.tech <hello@mrseo.tech>'));
   assert.ok(mail.subject.includes('[UK]'));
   assert.ok(mail.message.includes(payload.contact_message));
