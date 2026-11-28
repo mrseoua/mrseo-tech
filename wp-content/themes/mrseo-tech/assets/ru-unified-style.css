@@ -1,0 +1,235 @@
+/* UA service consistency v1. Explicitly scoped; preserve accepted SEO/Ads layouts, art, header and homepage. */
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2),
+html[lang="ru"] .pti-page[data-pti-service="web-development"],
+html[lang="ru"] .pti-page.puc-page.udv-page{
+ --ua-paper:#f7f3ed;--ua-ink:#252c26;--ua-muted:#57554b;--ua-line:#ded3c7;--ua-red:var(--mrseo-brand-red,#A84432);
+ background:var(--ua-paper);color:var(--ua-ink);
+ font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-wrap,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-wrap,
+html[lang="ru"] .pti-page.puc-page.udv-page .pti-wrap,
+html[lang="ru"] .hs-premium .hs-premium-wrap{width:min(1350px,90%);margin-inline:auto;min-width:0}
+html[lang="ru"] .pti-page.puc-page.udv-page .udv-section>.container{width:min(1350px,90%);max-width:none;padding-inline:0;margin-inline:auto}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-hero h1,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-hero h1,
+html[lang="ru"] .pti-page.puc-page.udv-page .pti-hero h1,
+html[lang="ru"] .hs-premium h1{
+ font-size:clamp(44px,4.65vw,76px);line-height:1.06;letter-spacing:-.052em;overflow-wrap:break-word
+}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-section h2,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-section h2,
+html[lang="ru"] .pti-page.puc-page.udv-page .udv-section:not(.udv-section--close) h2,
+html[lang="ru"] .hs-premium :is(.hs-premium-problems,.hs-premium-outcome,.hs-premium-faq) h2{
+ font-size:clamp(35px,3.85vw,60px);line-height:1.13;letter-spacing:-.04em;overflow-wrap:break-word
+}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) :is(.pti-card,.pti-step) h3,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] :is(.pti-card,.pti-step) h3,
+html[lang="ru"] .pti-page.puc-page.udv-page :is(.udv-card,.udv-step) h3,
+html[lang="ru"] .hs-premium .hs-premium-step h3{
+ font-size:clamp(23px,2vw,30px);line-height:1.24;letter-spacing:-.025em;overflow-wrap:break-word
+}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) :is(.pti-lead,.pti-section-head>p,.pti-card p,.pti-step p,.psc-result p,.pti-faq details p),
+html[lang="ru"] .pti-page[data-pti-service="web-development"] :is(.pti-lead,.pti-section-head>p,.pti-card p,.pti-step p,.pti-faq details p,.udv-hub-intro>p),
+html[lang="ru"] .pti-page.puc-page.udv-page :is(.udv-heading>p,.udv-card p,.udv-step p,.udv-faq-list details>p),
+html[lang="ru"] .hs-premium :is(.hs-premium-issue,.hs-premium-head p,.hs-premium-step p,.hs-premium-faq-list p),
+html[lang="ru"] .ukseo--horoshop :is(.hs-services-heading>p,.hs-service-card p),
+html[lang="ru"] .special-hero-horoshop .hs-hero-copy>p,
+html[lang="ru"] .about-page :is(.about-method-item p,.about-fit-card p),
+html[lang="ru"] .mrseo-privacy-page section p{
+ font-size:clamp(18px,1.35vw,20px);line-height:1.62
+}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-section:not(.pti-alt),
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-section:not(.pti-alt){background:var(--ua-paper)}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-section.pti-alt,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-section.pti-alt{background:#eee9e1}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-problem-card{
+ border:1px solid var(--ua-line);border-radius:12px;background:#faf7f2;box-shadow:none;min-width:0
+}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-problem-card:hover{border-color:#cbb8a5;box-shadow:none}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-result{background:#f0e5d8;border-color:var(--ua-red)}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-faq summary,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-faq summary,
+html[lang="ru"] .pti-page.puc-page.udv-page .udv-faq-list summary,
+html[lang="ru"] .hs-premium .hs-premium-faq-list summary{font-size:clamp(19px,1.5vw,22px);line-height:1.4}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final{background:var(--ua-paper);border:0;padding:0 0 clamp(45px,6vw,85px)}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final .pti-wrap,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final .pti-wrap{box-sizing:border-box;background:#292e28;border-radius:18px;padding:clamp(24px,4vw,48px);gap:clamp(20px,3vw,38px)}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final h2,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final h2{color:#fffaf3;font-size:clamp(32px,3.3vw,50px)}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final :is(em,.pti-kicker,.puc-related-inline a),
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final :is(em,.pti-kicker){color:#efb8a8}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final p,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final p{color:#e4ddd3;font-size:18px;line-height:1.6}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final .pti-pill,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final .pti-pill{color:#252c26;background:#fffaf3;border-color:#fffaf3;white-space:normal;text-align:center}
+html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final .pti-pill:hover,
+html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final .pti-pill:hover{background:#ead8c9;border-color:#ead8c9;color:#252c26}
+html[lang="ru"] .pti-page.puc-page.udv-page .udv-section--close p{font-size:18px;line-height:1.62}
+html[lang="ru"] .mrseo-privacy-page{background:#f7f3ed}
+html[lang="ru"] .about-page .about-hero-copy h1,
+html[lang="ru"] .portfolio-hero h1,
+html[lang="ru"] .contact-cinematic-hero h1{font-size:clamp(44px,4.65vw,76px);line-height:1.08;overflow-wrap:break-word}
+html[lang="ru"] .portfolio-hero> .container>p,
+html[lang="ru"] .contact-cinematic-hero> .container>p,
+html[lang="ru"] .contact-brief-note{font-size:18px;line-height:1.6}
+@media(max-width:950px){
+ html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final .pti-wrap,
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final .pti-wrap{display:flex;flex-direction:column;align-items:flex-start}
+}
+@media(max-width:700px){
+ html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-wrap,
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-wrap,
+ html[lang="ru"] .pti-page.puc-page.udv-page .pti-wrap,
+ html[lang="ru"] .pti-page.puc-page.udv-page .udv-section>.container,
+ html[lang="ru"] .hs-premium .hs-premium-wrap{width:calc(100% - 36px)}
+ html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-hero h1,
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-hero h1,
+ html[lang="ru"] .pti-page.puc-page.udv-page .pti-hero h1,
+ html[lang="ru"] .hs-premium h1,
+ html[lang="ru"] .about-page .about-hero-copy h1,
+ html[lang="ru"] .portfolio-hero h1,
+ html[lang="ru"] .contact-cinematic-hero h1{font-size:clamp(36px,9.4vw,52px);letter-spacing:-.04em}
+ html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .pti-section h2,
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-section h2,
+ html[lang="ru"] .pti-page.puc-page.udv-page .udv-section:not(.udv-section--close) h2,
+ html[lang="ru"] .hs-premium :is(.hs-premium-problems,.hs-premium-outcome,.hs-premium-faq) h2{font-size:clamp(32px,8vw,45px)}
+ html[lang="ru"] .pti-page.puc-page[data-puc-route]:not(.ads-v2) .psc-final .pti-wrap,
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] .pti-final .pti-wrap{padding:24px 19px}
+}
+
+/* Same visible problem -> answer hierarchy across legacy commercial, WebDev and Horoshop. */
+html[lang="ru"] .pti-page.puc-page[data-puc-route] .ua-paired-rows{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+html[lang="ru"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,38px);align-items:center;padding:clamp(22px,3vw,40px) 0;margin:0;border:0;border-top:1px solid #ded3c7;border-radius:0;background:transparent;box-shadow:none}
+html[lang="ru"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row:last-child{border-bottom:1px solid #ded3c7}
+html[lang="ru"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row>.psc-mini-art{grid-column:auto;grid-row:auto;margin:0;max-width:100%;min-width:0}
+html[lang="ru"] .ua-paired-row .ua-paired-problem,html[lang="ru"] .ua-paired-row .ua-paired-answer{min-width:0;overflow-wrap:break-word}
+html[lang="ru"] .ua-paired-row .ua-paired-problem h3{margin:10px 0;font-size:clamp(23px,2vw,30px);line-height:1.24;color:#252c26}
+html[lang="ru"] .ua-paired-row .ua-paired-problem p,html[lang="ru"] .ua-paired-row .ua-paired-answer p{font-size:clamp(18px,1.35vw,20px);line-height:1.62;margin:8px 0 0;color:#57554b}
+html[lang="ru"] .ua-paired-row .ua-paired-answer{border-left:2px solid var(--mrseo-brand-red,#A84432);padding-left:18px}
+html[lang="ru"] .ua-paired-row .ua-paired-answer>span,html[lang="ru"] .ua-paired-row .ua-pair-label{display:block;color:var(--mrseo-brand-red,#A84432);font-size:14px;line-height:1.4;font-weight:800;letter-spacing:.045em}
+html[lang="ru"] .ua-paired-row .ua-paired-answer h4{font-size:clamp(20px,1.7vw,25px);color:#252c26;line-height:1.3;margin:10px 0}
+html[lang="ru"] .udv-page .udv-section--problems .udv-cards{grid-template-columns:minmax(0,1fr)}
+html[lang="ru"] .udv-page .udv-card.ua-paired-row{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+html[lang="ru"] .hs-premium .hs-premium-step.ua-paired-row{display:flex;flex-direction:column;align-items:stretch;gap:14px}
+html[lang="ru"] .hs-premium .hs-premium-step.ua-paired-row .hs-story-step-visual{align-self:center}
+html[lang="ru"] .pti-page .ua-paired-terms,html[lang="ru"] .hs-premium .ua-paired-terms{font-size:18px;line-height:1.6;font-weight:400;margin:18px 0;color:#57554b}
+html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .pti-solution[open] p{font-size:18px;line-height:1.6}
+@media(max-width:900px){
+ html[lang="ru"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ html[lang="ru"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row>.psc-mini-art{grid-column:1/-1;width:min(100%,240px);margin-inline:auto}
+}
+@media(max-width:600px){
+ html[lang="ru"] .pti-page.puc-page[data-puc-route] .ua-paired-rows>.ua-paired-row{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 0}
+ html[lang="ru"] .ua-paired-row .ua-paired-answer{padding-left:14px}
+}
+
+/* UA v2: editorial approach, explicit results and terms. */
+html[lang="ru"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog){padding:clamp(32px,5vw,68px) 0;background:#f7f3ed;color:#252c26;box-sizing:border-box}
+html[lang="ru"] .ua-v2-wrap{width:min(1350px,90%);margin-inline:auto;min-width:0}
+html[lang="ru"] :is(.ua-v2-approach-grid,.ua-v2-terms-grid){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(24px,5vw,65px);padding:clamp(24px,4vw,48px) 0;border-top:1px solid #ded3c7;border-bottom:1px solid #ded3c7}
+html[lang="ru"] .ua-v2-label{display:block;font-size:14px;font-weight:800;letter-spacing:.075em;color:#A84432;margin-bottom:12px}
+html[lang="ru"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog) h2{font-size:clamp(35px,3.85vw,60px);line-height:1.13;letter-spacing:-.04em;color:#252c26;margin:0 0 16px}
+html[lang="ru"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog) h2 em{color:#A84432;font-style:normal}
+html[lang="ru"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms) p{color:#57554b;font-size:clamp(18px,1.4vw,21px);line-height:1.62;margin:0 0 14px;overflow-wrap:break-word}
+html[lang="ru"] .ua-v2-result{background:#eee5d9}
+html[lang="ru"] .ua-v2-catalog-groups{display:grid;gap:22px;margin:22px 0}
+html[lang="ru"] .ua-v2-catalog-group h3{font-size:21px;color:#252c26;margin:0 0 12px}
+html[lang="ru"] .ua-v2-catalog-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+html[lang="ru"] .ua-v2-catalog-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;overflow-wrap:anywhere;padding:16px 18px;border:1px solid #ded3c7;border-radius:10px;background:#fdfbf7;color:#252c26;font-size:18px;font-weight:650}
+html[lang="ru"] .ua-v2-catalog-links a:hover{border-color:#A84432;color:#A84432}
+html[lang="ru"] .ua-v2-catalog-links a span{color:#A84432}
+@media(max-width:760px){
+ html[lang="ru"] .ua-v2-wrap{width:calc(100% - 36px)}
+ html[lang="ru"] :is(.ua-v2-approach-grid,.ua-v2-terms-grid,.ua-v2-catalog-links){grid-template-columns:minmax(0,1fr)}
+ html[lang="ru"] :is(.ua-v2-approach,.ua-v2-result,.ua-v2-terms,.ua-v2-catalog) h2{font-size:clamp(32px,8vw,45px)}
+}
+
+/* API-integrations reference: keep the approved commercial template unchanged.
+ * The other UA families adopt its clean problem/answer hierarchy. */
+html[lang="ru"] [data-ua-stage="problems"] .ua-api-list{
+ display:grid;grid-template-columns:minmax(0,1fr);gap:0;border:0
+}
+html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-list>.ua-api-row,
+html[lang="ru"] .hs-premium [data-ua-stage="problems"] .ua-api-list>.ua-api-row,
+html[lang="ru"] .ukseo--horoshop [data-ua-stage="problems"] .ua-api-list>.ua-api-row{
+ display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr) minmax(0,1fr);
+ gap:clamp(18px,3vw,38px);align-items:center;
+ padding:clamp(22px,3vw,40px) 0;margin:0;min-height:0;
+ border:0;border-top:1px solid #ded3c7;border-radius:0;
+ background:transparent;box-shadow:none;overflow:visible
+}
+html[lang="ru"] [data-ua-stage="problems"] .ua-api-list>.ua-api-row:last-child{border-bottom:1px solid #ded3c7}
+html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-row>.pti-problem-visual,
+html[lang="ru"] [data-ua-stage="problems"] .ua-api-row>.ua-api-art{
+ grid-column:auto;grid-row:auto;min-width:0;max-width:100%;margin:0;
+}
+html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-row>.pti-solution{
+ grid-column:auto;grid-row:auto;margin:0;border-top:0;padding:0 0 0 18px
+}
+html[lang="ru"] .hs-premium .ua-api-art{display:grid;justify-items:center;gap:4px}
+html[lang="ru"] .hs-premium .ua-api-art .hs-story-step-visual{margin:0}
+html[lang="ru"] .hs-premium .ua-api-art .hs-premium-step-number{font-size:17px;line-height:1.2;margin:0}
+html[lang="ru"] .ukseo--horoshop .ua-api-art .pue-art{width:100%;max-width:260px;margin:0 auto}
+html[lang="ru"] .ukseo--horoshop .ua-api-art .ukseo-card-number{font-size:14px;line-height:1.4;margin:0 0 8px}
+html[lang="ru"] .ua-api-label{display:block;color:#A84432;font-size:14px;line-height:1.4;font-weight:800;letter-spacing:.045em;margin-bottom:8px}
+/* Match the API reference's 18–20px reading size, restrained rule and no heavy panel. */
+html[lang="ru"] .pti-page.psc-page[data-service-reference="v1"] [data-ua-stage="problems"] .local-ref-row p,
+html[lang="ru"] .pti-page.puc-ads-campaign.ads-v2 [data-ua-stage="problems"] .ads-problem-row p,
+html[lang="ru"] .pti-page[data-pti-service][data-service-standard="v1"] [data-ua-stage="problems"] .service-problem-list p,
+html[lang="ru"] .seo-hub [data-ua-stage="problems"] .seo-problem p{
+ font-size:clamp(18px,1.35vw,20px);line-height:1.62;color:#57554b;font-weight:400;margin:8px 0 0
+}
+html[lang="ru"] .pti-page.psc-page[data-service-reference="v1"] [data-ua-stage="problems"] .local-ref-answer,
+html[lang="ru"] .pti-page.puc-ads-campaign.ads-v2 [data-ua-stage="problems"] .ads-problem-fix,
+html[lang="ru"] .pti-page[data-pti-service][data-service-standard="v1"] [data-ua-stage="problems"] .service-problem-answer,
+html[lang="ru"] .seo-hub [data-ua-stage="problems"] .seo-problem-answer{
+ padding:0 0 0 18px;border:0;border-left:2px solid #A84432;
+ border-radius:0;background:transparent;box-shadow:none;min-width:0
+}
+html[lang="ru"] .pti-page.psc-page[data-service-reference="v1"] [data-ua-stage="problems"] .local-ref-label,
+html[lang="ru"] .pti-page.puc-ads-campaign.ads-v2 [data-ua-stage="problems"] .ads-problem-fix>span,
+html[lang="ru"] .pti-page[data-pti-service][data-service-standard="v1"] [data-ua-stage="problems"] .service-label,
+html[lang="ru"] .seo-hub [data-ua-stage="problems"] .seo-problem-answer>span{font-size:14px;line-height:1.4;font-weight:800;letter-spacing:.045em}
+html[lang="ru"] .udv-page [data-ua-stage="problems"] .udv-illustrated-grid{
+ display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.65fr);gap:clamp(18px,3vw,38px);align-items:start
+}
+html[lang="ru"] .pti-page.puc-page.udv-page [data-ua-stage="problems"] .udv-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+html[lang="ru"] .pti-page.puc-page.udv-page [data-ua-stage="problems"] .udv-card.ua-paired-row{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(14px,2vw,26px);
+ align-items:start;padding:24px 0;margin:0;border:0;border-top:1px solid #ded3c7;border-radius:0;background:transparent;box-shadow:none
+}
+html[lang="ru"] .pti-page.puc-page.udv-page [data-ua-stage="problems"] .udv-card.ua-paired-row:last-child{border-bottom:1px solid #ded3c7}
+@media(max-width:950px){
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-list>.ua-api-row,
+ html[lang="ru"] .hs-premium [data-ua-stage="problems"] .ua-api-list>.ua-api-row,
+ html[lang="ru"] .ukseo--horoshop [data-ua-stage="problems"] .ua-api-list>.ua-api-row{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)
+ }
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-row>.pti-problem-visual,
+ html[lang="ru"] [data-ua-stage="problems"] .ua-api-row>.ua-api-art{
+  grid-column:1/-1;width:min(100%,240px);margin-inline:auto
+ }
+ html[lang="ru"] .udv-page [data-ua-stage="problems"] .udv-illustrated-grid{grid-template-columns:minmax(0,1fr)}
+ html[lang="ru"] .udv-page [data-ua-stage="problems"] .udv-problem-illustration{width:min(100%,440px);margin-inline:auto}
+}
+@media(max-width:700px){
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-list>.ua-api-row,
+ html[lang="ru"] .hs-premium [data-ua-stage="problems"] .ua-api-list>.ua-api-row,
+ html[lang="ru"] .ukseo--horoshop [data-ua-stage="problems"] .ua-api-list>.ua-api-row,
+ html[lang="ru"] .pti-page.puc-page.udv-page [data-ua-stage="problems"] .udv-card.ua-paired-row{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 0}
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-row>.pti-problem-visual,
+ html[lang="ru"] [data-ua-stage="problems"] .ua-api-row>.ua-api-art{grid-column:auto}
+ html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-row>.pti-solution,
+ html[lang="ru"] .pti-page.psc-page[data-service-reference="v1"] [data-ua-stage="problems"] .local-ref-answer,
+ html[lang="ru"] .pti-page.puc-ads-campaign.ads-v2 [data-ua-stage="problems"] .ads-problem-fix,
+ html[lang="ru"] .pti-page[data-pti-service][data-service-standard="v1"] [data-ua-stage="problems"] .service-problem-answer,
+ html[lang="ru"] .seo-hub [data-ua-stage="problems"] .seo-problem-answer{padding-left:14px}
+}
+
+/* Keep the problem list one column even when earlier hub styles define a card grid. */
+html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-list,
+html[lang="ru"] .hs-premium [data-ua-stage="problems"] .ua-api-list,
+html[lang="ru"] .ukseo--horoshop [data-ua-stage="problems"] .ua-api-list{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+html[lang="ru"] .pti-page[data-pti-service="web-development"] #problems .ua-api-row>.pti-solution{border-left:2px solid #A84432}

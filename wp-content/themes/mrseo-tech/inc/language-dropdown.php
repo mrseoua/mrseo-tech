@@ -11,6 +11,7 @@ if (!defined('ABSPATH')) exit;
 function mrseo_render_language_dropdown($slug = null, $current = null, $placement = 'header') {
     $slug = $slug === null ? mrseo_slug() : $slug;
     $current = $current === null ? mrseo_locale() : $current;
+    if(in_array($current,array('uk','ru'),true)&&function_exists('mrseo_i18n_current_entry')&&($entry=mrseo_i18n_current_entry())&&str_starts_with($entry['slug'],'horoshop/')) $slug=$entry['slug'];
 
     $languages = array(
         'uk' => array('short' => 'UA', 'name' => 'Українська'),

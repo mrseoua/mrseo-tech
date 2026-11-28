@@ -205,11 +205,11 @@ function mrseo_i18n_page_groups() {
         if(function_exists('mrseo_final_market_alternates'))$pages=array_merge($pages,mrseo_final_market_alternates('woocommerce-shopify-stores'));
         $groups[]=array('group'=>'platform:woocommerce-shopify','pages'=>$pages);
     }
-    foreach(mrseo_ua_expansion_slugs() as $slug)$groups[]=array('group'=>'ua-expansion:'.$slug,'pages'=>array('uk'=>$slug));
-    $groups[]=array('group'=>'ua-pricing','pages'=>array('uk'=>'pricing'));
+    foreach(mrseo_ua_expansion_slugs() as $slug){$pages=array('uk'=>$slug);if(function_exists('mrseo_ru_expansion_data')&&isset(mrseo_ru_expansion_data()[$slug]))$pages['ru']=$slug;$groups[]=array('group'=>'ua-expansion:'.$slug,'pages'=>$pages);}
+    $groups[]=array('group'=>'ua-pricing','pages'=>array('uk'=>'pricing','ru'=>'pricing'));
     // Additional original UA services: one genuine Ukrainian version each.
-    foreach(array_keys(mrseo_ua_dev_new_pages()) as $slug)$groups[]=array('group'=>'ua-dev:'.$slug,'pages'=>array('uk'=>$slug));
-    foreach(array_keys(mrseo_hs_pages()) as $key)$groups[]=array('group'=>'ua-horoshop:'.$key,'pages'=>array('uk'=>'horoshop/'.$key));
+    foreach(array_keys(mrseo_ua_dev_new_pages()) as $slug){$pages=array('uk'=>$slug);if(function_exists('mrseo_ru_dev_pages')&&isset(mrseo_ru_dev_pages()[$slug]))$pages['ru']=$slug;$groups[]=array('group'=>'ua-dev:'.$slug,'pages'=>$pages);}
+    foreach(array_keys(mrseo_hs_pages()) as $key){$pages=array('uk'=>'horoshop/'.$key);if(function_exists('mrseo_ru_hs_pages')&&isset(mrseo_ru_hs_pages()[$key]))$pages['ru']='horoshop/'.$key;$groups[]=array('group'=>'ua-horoshop:'.$key,'pages'=>$pages);}
     foreach($groups as $i=>$group){
         if(isset($group['pages']['uk'])&&isset(mrseo_ua_retired_services()[$group['pages']['uk']]))unset($groups[$i]['pages']['uk']);
         if(!$groups[$i]['pages'])unset($groups[$i]);
@@ -273,6 +273,7 @@ function mrseo_i18n_current_entry() {
     $language = mrseo_locale();
     $slug = mrseo_slug();
     if($language==='uk'&&function_exists('mrseo_hs_key')&&($hs=mrseo_hs_key()))$slug='horoshop/'.$hs;
+    if($language==='ru'&&function_exists('mrseo_ru_hs_key')&&($hs=mrseo_ru_hs_key()))$slug='horoshop/'.$hs;
     $expected = ($language === 'uk' ? '' : $language . '/') . $slug;
     if ($path !== trim($expected, '/')) return null;
     foreach (mrseo_i18n_inventory() as $entry) {

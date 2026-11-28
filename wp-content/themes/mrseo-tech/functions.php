@@ -28,6 +28,8 @@ require_once get_template_directory() . '/inc/da-service-routing.php';
 require_once get_template_directory() . '/inc/final-market-services.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/international-seo.php';
+require_once get_template_directory() . '/inc/ru-semantic-map.php';
+require_once get_template_directory() . '/inc/ru-parity-routes.php';
 require_once get_template_directory() . '/inc/horoshop-premium-routes.php';
 require_once get_template_directory() . '/inc/category-orbit.php';
 require_once get_template_directory() . '/inc/privacy-page.php';
@@ -327,6 +329,8 @@ add_action('wp_enqueue_scripts',static function(){
 },130);
 
 function mrseo_meta_description(){
+ $ruSemantic=mrseo_ru_semantic_current();
+ if($ruSemantic){echo '<meta name="description" content="'.esc_attr($ruSemantic['description']).'">'."\n";return;}
  if(function_exists('mrseo_ua_semantic_current')&&mrseo_ua_semantic_current())return;
  // UK original service routes render their own single page-specific meta description.
  if(mrseo_locale()==='en' &&

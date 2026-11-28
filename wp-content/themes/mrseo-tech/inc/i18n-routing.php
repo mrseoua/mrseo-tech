@@ -10,6 +10,7 @@ require_once __DIR__.'/ua-retired-services.php';
 function mrseo_url($slug='',$lang=null){
  $lang=$lang?:mrseo_locale();$slug=trim($slug,'/');
  if($lang==='uk')$slug=mrseo_ua_active_service_slug($slug);
+ if($lang==='ru'&&function_exists('mrseo_ru_parity_new_slugs')&&in_array($slug,mrseo_ru_parity_new_slugs(),true))return mrseo_i18n_exact_url('ru',$slug);
  // Exact UA-only Horoshop subservice links; never fabricate foreign routes.
  if(str_starts_with($slug,'horoshop/')&&function_exists('mrseo_hs_pages')&&isset(mrseo_hs_pages()[substr($slug,9)])){
   if($lang==='uk')return mrseo_i18n_exact_url('uk',$slug);

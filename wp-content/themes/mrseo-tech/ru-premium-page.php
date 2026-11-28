@@ -6,6 +6,8 @@ require_once get_template_directory().'/inc/service-editorial.php';
 $slug=mrseo_slug();
 $page=mrseo_ru_premium_content($slug);
 $story=mrseo_customer_journey_copy($slug,'ru');
+$semantic=mrseo_ru_semantic_current();
+if($semantic&&$page&&$story){$page['headline']=$semantic['headline'];$story['lead']=$semantic['lead'];}
 if (!$page || !$story || empty($story['stories'])) { status_header(404); include get_404_template(); return; }
 $editorial=mrseo_service_editorial()[$slug]['ru']??null;
 $faq=$page['faq']??array();
