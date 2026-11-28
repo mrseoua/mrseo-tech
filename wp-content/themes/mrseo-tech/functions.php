@@ -11,6 +11,7 @@ require_once get_template_directory() . '/inc/language-dropdown.php';
 require_once get_template_directory() . '/inc/contact-channels.php';
 require_once get_template_directory() . '/inc/contact-ui.php';
 require_once get_template_directory() . '/inc/contact-inbox.php';
+require_once get_template_directory() . '/inc/contact-turnstile.php';
 require_once get_template_directory() . '/inc/mega-menu.php';
 require_once get_template_directory() . '/inc/new-service-routes.php';
 require_once get_template_directory() . '/inc/pl-service-routing.php';
@@ -420,6 +421,7 @@ function mrseo_handle_contact($direct_ua=false) {
  $ip=isset($_SERVER['REMOTE_ADDR'])?sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])):'';
  $rate_key='mrseo_form_'.md5($ip);
  if(get_transient($rate_key)){return $finish('error');}
+ if(!mrseo_turnstile_verify($post_lang))return $finish('challenge');
  set_transient($rate_key,1,90);
  $mail_locale=in_array($post_lang,array('uk','ru','en','pl','de','fr','it','es','nl','ro','cs','pt','sv','da','fi','hu','sk','el','bg','hr'),true)?strtoupper($post_lang):'UK';
  $body="Язык заявки: $mail_locale\nСтраница: $redirect\nИмя: $name\nEmail: $email\nСайт: $site\n\n$message";
