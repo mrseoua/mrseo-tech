@@ -17,7 +17,7 @@ add_action('wp_enqueue_scripts',static function(){
  if(mrseo_locale()!=='ru'||mrseo_slug()==='')return;
  $uri=get_template_directory_uri();
  if(mrseo_ru_price_route())wp_enqueue_style('mrseo-ru-pricing',$uri.'/assets/ua-pricing.css',array('mrseo-style'),'1.0.0');
- if(mrseo_ru_dev_route()||mrseo_ru_price_route()||mrseo_ru_expansion_route()||mrseo_ru_hs_key()||mrseo_ru_hub_route()){
+ if(mrseo_ru_dev_route()||mrseo_ru_price_route()||mrseo_ru_expansion_route()||mrseo_ru_hs_key()||mrseo_ru_hub_route()||(mrseo_locale()==='ru'&&mrseo_slug()!==''&&($entry=mrseo_i18n_current_entry())&&isset($entry['alternates']['uk-UA']))){
   wp_enqueue_style('mrseo-ru-mobile-compact',$uri.'/assets/ru-mobile-compact.css',array('mrseo-style'),'1.0.0','(max-width: 680px)');
   wp_enqueue_script('mrseo-ru-mobile-compact',$uri.'/assets/ru-mobile-compact.js',array(),'1.0.0',true);
  }
@@ -62,7 +62,7 @@ add_action('wp_enqueue_scripts',static function(){
  if(mrseo_ru_expansion_route()){
   wp_enqueue_style('mrseo-ru-puc-base',$uri.'/assets/premium-ua-interiors.css',array('mrseo-style'),'1.1.1');
   wp_enqueue_style('mrseo-ru-puc',$uri.'/assets/premium-ua-commercial.css',array('mrseo-ru-puc-base'),'1.0.0');
-  wp_enqueue_script('mrseo-ru-puc',$uri.'/assets/premium-ua-commercial.js',array(),'1.1.0',true);
+  wp_enqueue_script('mrseo-ru-puc',$uri.'/assets/ru-premium-commercial.js',array(),'1.1.0',true);
  }
  if(mrseo_ru_hs_key()){
   wp_enqueue_style('mrseo-ru-hs',$uri.'/assets/horoshop-premium-pages.css',array('mrseo-style'),'1.2.0');
@@ -70,3 +70,9 @@ add_action('wp_enqueue_scripts',static function(){
   wp_enqueue_script('mrseo-ru-hs-motion',$uri.'/assets/horoshop-premium-motion.js',array(),'1.0.0',true);
  }
 },150);
+
+add_action('wp_enqueue_scripts',static function(){
+ if(mrseo_locale()!=='ru'||mrseo_slug()==='')return;
+ $entry=mrseo_i18n_current_entry();if(!$entry||!isset($entry['alternates']['uk-UA']))return;
+ wp_enqueue_style('mrseo-ru-unified',get_template_directory_uri().'/assets/ru-unified-style.css',array('mrseo-style'),'1.0.0');
+},999);
