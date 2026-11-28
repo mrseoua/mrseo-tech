@@ -526,19 +526,10 @@ async function audit(browser,viewport,lang,slug){
     return {hero:shown(hero),planet:shown(globe),texture:!!image?.getAttribute('src'),canvas:!!globe?.querySelector('canvas'),planetName:globe?.querySelector('.category-planet-name')?.textContent.trim(),pause:!!hero?.querySelector('.pt-rotate'),engine:!!document.querySelector('script[src*="category-orbit-engine.js"]'),css:!!document.querySelector('link[href*="category-home.css"]'),menu,satellites,cards,fit:[...hero?.querySelectorAll('.pt-node')||[],...catalog?.querySelectorAll('.category-tile')||[]].every(shown),stages,answers:answers.length,visibleAnswers:answers.filter(e=>shown(e)&&e.textContent.trim().length>20&&parseFloat(getComputedStyle(e).fontSize)>=17.9).length,cta:!!document.querySelector('[data-ua-stage="cta"] a[href$="/contact/"]'),partner:hero?.querySelectorAll('.category-partner img').length||0};
    },{group,count});
    const order=['hero','problems','approach','catalog','work','result','terms','faq','cta'];
-   if(!hub.hero||!hub.planet||!hub.texture||!hub.canvas||!hub.planetName||!hub.pause||!hub.engine||!hub.css||!hub.fit||hub.menu.length!==count||JSON.stringify(hub.menu)!==JSON.stringify(hub.satellites)||JSON.stringify(hub.menu)!==JSON.stringify(hub.cards)||JSON.stringify(hub.stages)!==JSON.stringify(order)||hub.answers!==3||hub.visibleAnswers!==3||!hub.cta||(slug==='horoshop'&&hub.partner!==2))item.errors.push('Approved category orbit regression '+JSON.stringify(hub));
-   const rotate=page.locator('.category-home .pt-rotate');
-   if(await rotate.count()===1){
-    await page.waitForLoadState('load');
-    await page.emulateMedia({reducedMotion:'no-preference'});
-    await rotate.click({timeout:5000});
-    if(await rotate.getAttribute('aria-pressed')!=='true')item.errors.push('Category planet pause failed');
-    await rotate.click({timeout:5000});
-    if(await rotate.getAttribute('aria-pressed')!=='false')item.errors.push('Category planet resume failed');
-    await page.emulateMedia({reducedMotion:'reduce'});
-    await page.waitForFunction(()=>document.querySelector('.category-home .pt-rotate')?.disabled===true,undefined,{timeout:4000}).catch(()=>item.errors.push('Category planet reduced motion failed'));
-    await page.emulateMedia({reducedMotion:'no-preference'});
-   }
+   if(!hub.hero||!hub.planet||!hub.texture||!hub.canvas||!hub.planetName||hub.pause||!hub.engine||!hub.css||!hub.fit||hub.menu.length!==count||JSON.stringify(hub.menu)!==JSON.stringify(hub.satellites)||JSON.stringify(hub.menu)!==JSON.stringify(hub.cards)||JSON.stringify(hub.stages)!==JSON.stringify(order)||hub.answers!==3||hub.visibleAnswers!==3||!hub.cta||(slug==='horoshop'&&hub.partner!==2))item.errors.push('Approved category orbit regression '+JSON.stringify(hub));
+   await page.emulateMedia({reducedMotion:'reduce'});
+   await page.waitForFunction(()=>document.querySelector('.category-home .pt-orbit')?.dataset.orbitMotion==='reduced',undefined,{timeout:4000}).catch(()=>item.errors.push('Category orbit reduced motion failed'));
+   await page.emulateMedia({reducedMotion:'no-preference'});
   }
   if(!c.title||c.title.length<(coreShard?8:12))item.errors.push('Missing document title');
   if(c.htmlLang.toLowerCase().split('-')[0]!==lang)item.errors.push('Wrong html lang '+c.htmlLang);

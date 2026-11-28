@@ -37,19 +37,6 @@
 .category-home .pt-home .pt-globe-tag{color:var(--planet-accent);background:var(--planet-tag);border:1px solid color-mix(in srgb,var(--planet-accent) 35%,#e4dbcf);border-radius:999px;padding:5px 12px;font-size:11px;letter-spacing:.08em;max-width:100%}
 @media(max-width:680px){.category-home .pt-home .pt-globe .category-planet-name{font-size:clamp(15px,4.5vw,24px)}.category-home .pt-home .pt-globe-tag{font-size:10px}}
 
-/* Keep the pause control in its own grid track; never under the live detail.
-   Scoped to service category hubs, not the approved Earth homepage. */
-.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:center;gap:12px;position:relative;isolation:isolate;min-width:0}
-.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-orbit-detail{position:relative;inset:auto;transform:none;grid-column:1;grid-row:1;width:auto;min-width:0;max-width:100%;overflow-wrap:anywhere;z-index:0}
-.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-rotate{position:relative;inset:auto;transform:none;grid-column:2;grid-row:1;justify-self:end;align-self:center;z-index:1;min-width:0;max-width:100%;white-space:normal;min-height:44px;pointer-events:auto}
-@media(max-width:680px){
- .category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom{grid-template-columns:minmax(0,1fr);align-items:start}
- .category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-rotate{grid-column:1;grid-row:2;justify-self:start}
-}
-
-/* The shared stylesheet intentionally visually hides decorative controls.
-   Restore the actual category pause button only, including pointer access.
-   All other motion controls and the homepage retain the owner's global rule. */
-.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>button.pt-rotate:not(:focus-visible){
- position:relative!important;width:auto!important;height:auto!important;min-width:0!important;min-height:44px!important;max-width:100%!important;max-height:none!important;margin:0!important;padding:8px 13px!important;overflow:visible!important;clip:auto!important;clip-path:none!important;white-space:normal!important;border:1px solid #c7b5a2!important
-}
+/* Category information now spans the full width: no motion button. */
+.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom{display:block;min-width:0}
+.category-home .pt-home .pt-orbit-shell>.pt-orbit-bottom>.pt-orbit-detail{position:relative;inset:auto;transform:none;width:auto;min-width:0;max-width:100%;overflow-wrap:anywhere}

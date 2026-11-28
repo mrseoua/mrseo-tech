@@ -110,7 +110,7 @@ jobs:
           assert all(loc and row.findall('x:link',ns) for loc,row in zip(locs,rows))
           print('PASS: raw UTF-8 sitemap, 660 unique URLs, hreflang links and whitespace tolerance')
           PY
-      - name: Verify category orbit pause button using real pointer clicks
+      - name: Verify button-free category orbit and reduced motion
         env:
           MRSEO_TEST_ORIGIN: http://127.0.0.1:8080
         run: node scripts/verify-ua-orbit-controls.cjs
