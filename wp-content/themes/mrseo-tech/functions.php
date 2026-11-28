@@ -29,6 +29,7 @@ require_once get_template_directory() . '/inc/final-market-services.php';
 require_once get_template_directory() . '/inc/uk-market-routing.php';
 require_once get_template_directory() . '/inc/international-seo.php';
 require_once get_template_directory() . '/inc/ru-semantic-map.php';
+require_once get_template_directory() . '/inc/ru-parity-routes.php';
 require_once get_template_directory() . '/inc/horoshop-premium-routes.php';
 require_once get_template_directory() . '/inc/category-orbit.php';
 require_once get_template_directory() . '/inc/privacy-page.php';
