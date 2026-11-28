@@ -3,6 +3,7 @@
 if(!defined('ABSPATH'))exit;
 require_once __DIR__.'/ru-dev-premium-routes.php';
 require_once __DIR__.'/ru-parity-content.php';
+require_once __DIR__.'/ru-category-orbit.php';
 function mrseo_ru_parity_new_slugs(){return array_merge(array_keys(mrseo_ru_dev_pages()),array('pricing'),array_keys(mrseo_ru_expansion_data()),array_map(static fn($k)=>'horoshop/'.$k,array_keys(mrseo_ru_hs_pages())));}
 function mrseo_ru_price_route(){return mrseo_locale()==='ru'&&trim(parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)??'/','/')==='ru/pricing';}
 add_action('init',static function(){add_rewrite_rule('^ru/pricing/?$','index.php?mrseo_lang=ru&mrseo_service=pricing','top');},13);
@@ -16,7 +17,7 @@ add_action('wp_enqueue_scripts',static function(){
  if(mrseo_locale()!=='ru'||mrseo_slug()==='')return;
  $uri=get_template_directory_uri();
  if(mrseo_ru_price_route())wp_enqueue_style('mrseo-ru-pricing',$uri.'/assets/ua-pricing.css',array('mrseo-style'),'1.0.0');
- if(mrseo_ru_dev_route()||mrseo_ru_price_route()||mrseo_ru_expansion_route()||mrseo_ru_hs_key()){
+ if(mrseo_ru_dev_route()||mrseo_ru_price_route()||mrseo_ru_expansion_route()||mrseo_ru_hs_key()||mrseo_ru_hub_route()){
   wp_enqueue_style('mrseo-ru-mobile-compact',$uri.'/assets/ru-mobile-compact.css',array('mrseo-style'),'1.0.0','(max-width: 680px)');
   wp_enqueue_script('mrseo-ru-mobile-compact',$uri.'/assets/ru-mobile-compact.js',array(),'1.0.0',true);
  }
